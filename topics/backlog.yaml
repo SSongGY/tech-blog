@@ -42,7 +42,7 @@ topics:
     difficulty: intermediate
     angle: "선행 컬럼 선택도에 따라 스캔 범위가 몇 배 달라지는지 행 수로 측정"
     code: python
-    status: todo
+    status: writing
   - id: db-003
     title: "트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가"
     category: Database
@@ -453,7 +453,7 @@ topics:
     difficulty: beginner
     angle: "CACHE/NOCACHE와 인스턴스 재기동 시 번호 건너뜀을 매뉴얼 근거로 정리"
     code: sql
-    status: todo
+    status: writing
   - id: tb-002
     title: "Tibero 7 계층 질의 — CONNECT BY와 순환 참조"
     category: Database
@@ -715,7 +715,7 @@ topics:
     difficulty: beginner
     angle: "SELECT * 를 쓰면 안 되는 이유를 실행계획으로 보인다"
     code: python
-    status: todo
+    status: writing
   - id: bas-002
     title: "WHERE 조건 — AND와 OR의 우선순위"
     category: Database
@@ -979,7 +979,7 @@ topics:
     difficulty: intermediate
     angle: "단계별 산출물과 각 단계에서 놓치면 무엇이 무너지는지"
     code: none
-    status: todo
+    status: writing
   - id: pe-002
     title: "소프트웨어 아키텍처 4+1 뷰"
     category: PE
@@ -989,7 +989,7 @@ topics:
     difficulty: intermediate
     angle: "뷰마다 누구의 관심사를 담는지 이해관계자 기준으로 정리"
     code: none
-    status: todo
+    status: writing
   - id: pe-003
     title: "결합도와 응집도 — 등급별 판별 기준"
     category: PE

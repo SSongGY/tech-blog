@@ -117,7 +117,7 @@ python scripts/blog.py relink                 # 같은 기능 글끼리 상호 �
 python scripts/blog.py lint                   # 글 규칙 검사
 python scripts/blog.py index                  # 글 목록 페이지(POSTS.md) 재생성
 python scripts/blog.py done tb-001            # 발행 완료 처리 + 이력 기록
-python scripts/blog.py tistory my-slug        # 티스토리용 변환
+python scripts/blog.py tistory my-slug        # 티스토리용 변환 (도식은 PNG로 구워짐)
 ```
 
 도식을 그린 뒤에는 브라우저로 직접 열어 글자 잘림·겹침을 확인한다.
@@ -147,6 +147,49 @@ Windows 콘솔에서 한글이 깨지면 `PYTHONUTF8=1`을 앞에 붙인다.
 
 `manual-only` 글은 나중에 그 제품이 있는 환경에서 `/blog-daily`를 돌리면 예제를 실제로 돌려
 출력을 채우고 `executed`로 승격한다. 새 글보다 이 승격이 우선이다.
+
+## 티스토리·네이버 발행
+
+**자동 발행은 불가능하다.** 티스토리 Open API는 2024년 2월, 네이버 블로그 글쓰기 API는
+2020년 5월에 종료됐다. 붙여넣기 외에 방법이 없다.
+
+```bash
+python scripts/blog.py tistory <slug>
+```
+
+`dist/tistory/` 아래에 두 가지가 나온다.
+
+| 산출물 | 용도 |
+|---|---|
+| `<날짜>-<slug>.md` | 프론트매터를 뺀 본문. 에디터에 통째로 붙여넣는다 |
+| `<날짜>-<slug>/*.png` | 도식을 PNG로 구운 것. 따로 업로드한다 |
+
+명령 출력에 제목·카테고리·태그·요약이 같이 찍히므로 그대로 옮겨 적으면 된다.
+
+### 왜 PNG인가
+
+도식 원본은 SVG지만 티스토리·네이버 에디터는 SVG 업로드를 받아주지 않는 경우가 많다.
+PNG는 어디서나 된다. 폭 1320px(2배 해상도)로 구워 블로그에서 글자가 또렷하다.
+
+변환에는 `svglib`, `reportlab`, `rlPyCairo`가 필요하다.
+
+```bash
+python -m pip install svglib reportlab rlPyCairo
+```
+
+한글 폰트가 등록되지 않으면 글자가 전부 ■로 나온다. `blog.py`의 `register_korean_fonts()`가
+맑은 고딕(Windows)이나 나눔고딕·Noto CJK(Linux)를 찾아 등록하고, 못 찾으면 **에러로 멈춘다.**
+깨진 이미지를 조용히 만들어내지 않는다.
+
+### 붙여넣기 절차
+
+1. 티스토리 글쓰기 → 오른쪽 위에서 에디터를 **마크다운**으로 바꾼다
+2. `<날짜>-<slug>.md` 내용을 전부 붙여넣는다
+3. 본문에 `[[도식 fig/....svg]]` 표식이 남아 있다. 그 자리에 해당 PNG를 업로드해 넣는다
+4. 제목·카테고리·태그를 명령 출력대로 입력한다
+5. 발행
+
+`dist/`는 git에 올라가지 않는다. 언제든 다시 만들 수 있다.
 
 ## 글에 적용되는 규칙
 

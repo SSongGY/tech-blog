@@ -441,6 +441,87 @@ def cmd_done(args: argparse.Namespace) -> int:
     return 0
 
 
+# 도식 SVG가 쓰는 font-family 이름들. 이 이름으로 한글 폰트를 등록해야
+# reportlab이 한글을 두부(■)로 그리지 않는다.
+SVG_FONT_NAMES = ("Segoe UI", "Malgun Gothic", "sans-serif", "Helvetica")
+
+KOREAN_FONT_CANDIDATES = (
+    # (일반, 굵게)
+    (r"C:\Windows\Fonts\malgun.ttf", r"C:\Windows\Fonts\malgunbd.ttf"),
+    ("/usr/share/fonts/truetype/nanum/NanumGothic.ttf",
+     "/usr/share/fonts/truetype/nanum/NanumGothicBold.ttf"),
+    ("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+     "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"),
+)
+
+_fonts_ready: bool | None = None
+
+
+def register_korean_fonts() -> bool:
+    """한글이 그려지도록 폰트를 reportlab에 등록한다.
+
+    svglib은 SVG의 font-family 이름을 그대로 reportlab에 넘긴다. 그 이름으로 등록된
+    폰트가 없으면 Helvetica로 떨어지고, Helvetica에는 한글 글리프가 없어 ■로 나온다.
+    """
+    global _fonts_ready
+    if _fonts_ready is not None:
+        return _fonts_ready
+
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+
+    regular = bold = None
+    for regular_path, bold_path in KOREAN_FONT_CANDIDATES:
+        if Path(regular_path).exists():
+            regular = regular_path
+            bold = bold_path if Path(bold_path).exists() else regular_path
+            break
+
+    if regular is None:
+        _fonts_ready = False
+        return False
+
+    for name in SVG_FONT_NAMES:
+        pdfmetrics.registerFont(TTFont(name, regular))
+        pdfmetrics.registerFont(TTFont(f"{name}-Bold", bold))
+        pdfmetrics.registerFontFamily(name, normal=name, bold=f"{name}-Bold")
+
+    _fonts_ready = True
+    return True
+
+
+def rasterize(svg_path: Path, out_dir: Path, scale: float = 2.0) -> Path | None:
+    """도식 SVG를 PNG로 굽는다.
+
+    티스토리·네이버 에디터는 SVG 업로드를 받아주지 않는 경우가 많다. PNG는 어디서나 된다.
+    svglib이 없으면 건너뛰고 None을 돌려준다 (SVG 원본은 그대로 남는다).
+    """
+    try:
+        from reportlab.graphics import renderPM
+        from svglib.svglib import svg2rlg
+    except ImportError:
+        return None
+
+    if not register_korean_fonts():
+        raise SystemExit(
+            "한글 폰트를 찾지 못했다. 이대로 구우면 한글이 ■로 나온다.\n"
+            "KOREAN_FONT_CANDIDATES에 쓸 수 있는 폰트 경로를 추가할 것."
+        )
+
+    drawing = svg2rlg(str(svg_path))
+    if drawing is None:
+        return None
+
+    drawing.scale(scale, scale)  # 2배로 구워야 블로그에서 글자가 또렷하다
+    drawing.width *= scale
+    drawing.height *= scale
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"{svg_path.stem}.png"
+    renderPM.drawToFile(drawing, str(out_path), fmt="PNG", dpi=72)
+    return out_path
+
+
 def cmd_tistory(args: argparse.Namespace) -> int:
     """티스토리 마크다운 에디터에 그대로 붙여넣을 본문을 만든다."""
     matches = sorted(POSTS_DIR.glob(f"**/*-{args.slug}/index.md"))
@@ -475,11 +556,20 @@ def cmd_tistory(args: argparse.Namespace) -> int:
     print(f"태그    : {','.join(meta['tags'])}")
     print(f"요약    : {meta.get('description', '')}")
     if figures:
-        print(f"\n업로드할 도식 {len(figures)}개:")
+        print(f"\n업로드할 도식 {len(figures)}개 (PNG로 구워 둠):")
+        missing_converter = False
         for alt_text, rel_path in figures:
-            print(f"  {source.parent / rel_path}")
+            svg_path = source.parent / rel_path
+            png_path = rasterize(svg_path, out.parent / source.parent.name)
+            if png_path is None:
+                missing_converter = True
+                print(f"  {svg_path}  (PNG 변환 실패 — SVG 원본)")
+            else:
+                print(f"  {png_path}")
             print(f"      대체 텍스트: {alt_text}")
         print("  변환본의 [[도식 ...]] 표식 자리에 업로드한 이미지를 넣을 것.")
+        if missing_converter:
+            print("\n  PNG 변환기가 없다: python -m pip install svglib reportlab")
     if not meta.get("verified"):
         print("\n경고: verified=false. 예제 코드 실행 검증이 끝나지 않았다.")
     return 0
