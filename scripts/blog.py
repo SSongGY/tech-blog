@@ -2,11 +2,12 @@
 """기술 블로그 운영 CLI.
 
 사용법:
-    python scripts/blog.py pick              # 오늘 쓸 주제 선정 (기본문법 2 + 제품 1 + 일반 2)
+    python scripts/blog.py pick              # 오늘 쓸 주제 선정 (하루 5편, 트랙별 편성)
     python scripts/blog.py new <id> <slug>   # 글 폴더 스캐폴딩
     python scripts/blog.py related [feature] # 같은 기능으로 쓴 글 목록
     python scripts/blog.py relink            # 같은 기능 글끼리 상호 링크 재생성
     python scripts/blog.py lint              # 글 규칙 검사
+    python scripts/blog.py index             # 글 목록 페이지(POSTS.md) 재생성
     python scripts/blog.py done <id>         # 주제를 done으로 표시하고 이력 기록
     python scripts/blog.py tistory <slug>    # 티스토리 붙여넣기용 변환
     python scripts/blog.py status            # 백로그 잔량과 발행 현황
@@ -634,6 +635,81 @@ def cmd_lint(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
+INDEX_PATH = ROOT / "POSTS.md"
+
+VERIFICATION_LABEL = {
+    "executed": "실행 검증",
+    "manual-only": "문서 근거",
+}
+
+
+def cmd_index(args: argparse.Namespace) -> int:
+    """글 목록 페이지를 다시 만든다.
+
+    글이 카테고리 폴더 여러 단계 아래에 흩어져 있어 폴더를 헤집지 않고는 볼 수가 없다.
+    GitHub에서 바로 눌러 들어갈 수 있는 목록을 한 장으로 만든다.
+    """
+    entries: list[dict] = []
+    for path in POSTS_DIR.glob("**/index.md"):
+        meta = read_meta(path)
+        if not meta:
+            continue
+        entries.append({"meta": meta, "path": path})
+
+    if not entries:
+        print("아직 작성된 글이 없다.")
+        return 1
+
+    entries.sort(key=lambda e: (str(e["meta"].get("date", "")), e["path"].parent.name),
+                 reverse=True)
+
+    today = dt.date.today().isoformat()
+    lines = [
+        "# 글 목록\n\n",
+        f"총 **{len(entries)}편** · 갱신 {today}\n\n",
+        "> 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.\n\n",
+    ]
+
+    for track in TRACKS:
+        group = [e for e in entries if track_of(e["meta"]) == track]
+        if not group:
+            continue
+        lines.append(f"## {TRACK_LABEL[track]} ({track}) — {len(group)}편\n\n")
+        lines.append("| 날짜 | 제목 | 난이도 | 환경 | 검증 |\n")
+        lines.append("|---|---|---|---|---|\n")
+        for entry in group:
+            meta, path = entry["meta"], entry["path"]
+            link = path.relative_to(ROOT).as_posix()
+            environment = ", ".join(meta.get("environment") or []) or "—"
+            verification = VERIFICATION_LABEL.get(
+                meta.get("verification"), meta.get("verification") or "—"
+            )
+            if not meta.get("verified"):
+                verification += " (미완)"
+            lines.append(
+                f"| {meta.get('date', '')} | [{meta.get('title', path.parent.name)}]({link}) "
+                f"| {meta.get('difficulty', '')} | {environment} | {verification} |\n"
+            )
+        lines.append("\n")
+
+    # 같은 기능을 여러 환경에서 다룬 글 묶음
+    index = published_index()
+    crossing = {f: e for f, e in index.items() if len(e) > 1}
+    if crossing:
+        lines.append("## 같은 기능을 여러 환경에서 다룬 글\n\n")
+        for feature, group in sorted(crossing.items()):
+            lines.append(f"**`{feature}`**\n\n")
+            for entry in group:
+                link = entry["path"].relative_to(ROOT).as_posix()
+                origin = entry["product"] or entry["environment"] or "—"
+                lines.append(f"- [{entry['title']}]({link}) — {origin}\n")
+            lines.append("\n")
+
+    INDEX_PATH.write_text("".join(lines), encoding="utf-8")
+    print(f"생성: {INDEX_PATH.relative_to(ROOT)} ({len(entries)}편)")
+    return 0
+
+
 def cmd_status(args: argparse.Namespace) -> int:
     data = load_backlog()
     topics = data["topics"]
@@ -717,6 +793,9 @@ def main() -> int:
     p_lint = sub.add_parser("lint", help="글 규칙 검사 (길이·도식·출처·링크·검증)")
     p_lint.add_argument("slug", nargs="?", help="생략하면 전체 검사")
     p_lint.set_defaults(func=cmd_lint)
+
+    p_index = sub.add_parser("index", help="글 목록 페이지(POSTS.md) 재생성")
+    p_index.set_defaults(func=cmd_index)
 
     p_status = sub.add_parser("status", help="백로그/발행 현황")
     p_status.set_defaults(func=cmd_status)

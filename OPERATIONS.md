@@ -98,6 +98,13 @@ python scripts/blog.py relink                          # 상호 링크 블록 �
 현재 제품·일반 양쪽에 짝이 맞는 `feature`는 다섯 개다 — `explain-plan`, `optimizer-hint`,
 `row-limiting`, `table-partitioning`, `transaction-isolation`.
 
+## 쓴 글 보기
+
+루트의 **[POSTS.md](POSTS.md)** 가 글 목록이다. 트랙별로 묶여 있고 제목을 누르면 바로 열린다.
+날짜·난이도·환경(버전)·검증 방식이 한눈에 보이고, 같은 기능을 여러 환경에서 다룬 글도 묶여 있다.
+
+`python scripts/blog.py index`로 다시 만든다. 직접 고치지 않는다.
+
 ## 사용법
 
 ```bash
@@ -108,6 +115,7 @@ python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, c
 python scripts/blog.py related sequence       # 같은 기능으로 쓴 글 찾기
 python scripts/blog.py relink                 # 같은 기능 글끼리 상호 링크 재생성
 python scripts/blog.py lint                   # 글 규칙 검사
+python scripts/blog.py index                  # 글 목록 페이지(POSTS.md) 재생성
 python scripts/blog.py done tb-001            # 발행 완료 처리 + 이력 기록
 python scripts/blog.py tistory my-slug        # 티스토리용 변환
 ```

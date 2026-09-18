@@ -100,11 +100,15 @@ python scripts/blog.py new <id> <영문-slug>
 
 ```bash
 python scripts/blog.py relink
+python scripts/blog.py index
 python scripts/blog.py lint
 ```
 
 `relink`는 같은 `feature` 글끼리 서로를 가리키는 블록을 재생성한다. 기존 글에도 역링크가 생기므로
 그 글들도 함께 커밋해야 한다.
+
+`index`는 루트의 `POSTS.md`(글 목록 페이지)를 다시 만든다. 사용자가 이 파일로 글을 찾으므로
+새 글을 쓸 때마다 반드시 갱신한다.
 
 **`lint`를 통과하지 못한 글은 커밋하지 않는다.**
 
