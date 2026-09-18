@@ -715,7 +715,7 @@ topics:
     difficulty: beginner
     angle: "SELECT * 를 쓰면 안 되는 이유를 실행계획으로 보인다"
     code: python
-    status: writing
+    status: done
   - id: bas-002
     title: "WHERE 조건 — AND와 OR의 우선순위"
     category: Database
