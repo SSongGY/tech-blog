@@ -1,0 +1,395 @@
+# 주제 백로그
+# status: todo | writing | done
+# ratio: DB/백엔드 60% + IT 전반 40% (blog.py pick이 이 비율을 맞춰 하루 2편을 고른다)
+# angle: 일반론과 구별되는 이 글만의 각도. 이게 비면 글이 뻔해진다.
+
+meta:
+  target_ratio:
+    core: 0.6      # Database, Backend, Performance
+    general: 0.4   # Language, Infra, Architecture, Security, Tooling
+  low_watermark: 10   # todo가 이 아래로 떨어지면 주제를 보충한다
+
+topics:
+  # ---------- Database ----------
+  - id: db-001
+    title: "B-Tree 인덱스를 못 타는 조건들"
+    category: Database
+    tags: [index, btree, sqlite, explain]
+    difficulty: intermediate
+    angle: "이론이 아니라 SQLite에서 EXPLAIN QUERY PLAN으로 직접 재현해 보인다"
+    code: python
+    status: done
+  - id: db-002
+    title: "복합 인덱스의 컬럼 순서가 성능을 가르는 이유"
+    category: Database
+    tags: [index, composite, cardinality]
+    difficulty: intermediate
+    angle: "선행 컬럼 선택도에 따라 스캔 범위가 몇 배 달라지는지 행 수로 측정"
+    code: python
+    status: todo
+  - id: db-003
+    title: "트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가"
+    category: Database
+    tags: [transaction, isolation, mvcc]
+    difficulty: intermediate
+    angle: "두 세션을 동시에 띄워 dirty read/non-repeatable/phantom을 각각 재현"
+    code: python
+    status: todo
+  - id: db-004
+    title: "MVCC는 왜 읽기 잠금을 없앴고 무엇을 대가로 치르는가"
+    category: Database
+    tags: [mvcc, undo, vacuum]
+    difficulty: advanced
+    angle: "버전 체인이 쌓이는 과정을 도식화하고 롱 트랜잭션의 비용을 계산"
+    code: sql
+    status: todo
+  - id: db-005
+    title: "데드락은 어떻게 만들어지고 DB는 누구를 죽이는가"
+    category: Database
+    tags: [deadlock, lock, wait-for-graph]
+    difficulty: intermediate
+    angle: "wait-for 그래프를 그리고 victim 선정 기준을 실측으로 확인"
+    code: python
+    status: todo
+  - id: db-006
+    title: "실행계획의 비용(cost)은 무엇을 세는 숫자인가"
+    category: Database
+    tags: [optimizer, cost, statistics]
+    difficulty: advanced
+    angle: "통계가 틀어졌을 때 옵티마이저가 어떻게 오판하는지 강제로 재현"
+    code: sql
+    status: todo
+  - id: db-007
+    title: "N+1 쿼리는 왜 반복해서 생기고 어떻게 잡아내는가"
+    category: Database
+    tags: [orm, n-plus-one, query-log]
+    difficulty: beginner
+    angle: "쿼리 로그 카운터를 붙여 N+1을 자동 탐지하는 테스트를 작성"
+    code: python
+    status: todo
+  - id: db-008
+    title: "커서 기반 페이지네이션이 OFFSET을 이기는 지점"
+    category: Database
+    tags: [pagination, offset, keyset]
+    difficulty: intermediate
+    angle: "페이지 깊이에 따른 응답시간 곡선을 직접 측정해 교차점을 찾는다"
+    code: python
+    status: todo
+  - id: db-009
+    title: "NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유"
+    category: Database
+    tags: ["null", three-valued-logic, sql]
+    difficulty: beginner
+    angle: "3값 논리 진리표를 실제 쿼리 결과와 대조"
+    code: sql
+    status: todo
+  - id: db-010
+    title: "파티셔닝이 항상 빨라지지 않는 이유"
+    category: Database
+    tags: [partition, pruning, global-index]
+    difficulty: advanced
+    angle: "파티션 프루닝이 깨지는 조건과 글로벌 인덱스 비용을 정리"
+    code: sql
+    status: todo
+  - id: db-011
+    title: "WAL은 왜 데이터 파일보다 먼저 쓰이는가"
+    category: Database
+    tags: [wal, durability, checkpoint]
+    difficulty: advanced
+    angle: "SQLite WAL 파일을 직접 열어 프레임이 쌓이는 걸 바이트로 확인"
+    code: python
+    status: todo
+  - id: db-012
+    title: "옵티마이저 힌트를 쓰기 전에 확인해야 할 3가지"
+    category: Database
+    tags: [hint, plan-stability, statistics]
+    difficulty: advanced
+    angle: "힌트로 덮은 문제가 나중에 어떻게 되돌아오는지 사례로 정리"
+    code: sql
+    status: todo
+
+  # ---------- Backend ----------
+  - id: be-001
+    title: "커넥션 풀은 왜 크게 잡을수록 느려지는가"
+    category: Backend
+    tags: [connection-pool, littles-law, throughput]
+    difficulty: intermediate
+    angle: "리틀의 법칙으로 적정 크기를 계산하고 실측 그래프로 검증"
+    code: python
+    status: todo
+  - id: be-002
+    title: "멱등키(Idempotency Key)로 중복 결제를 막는 설계"
+    category: Backend
+    tags: [idempotency, retry, api]
+    difficulty: intermediate
+    angle: "재시도·동시요청·부분실패 3가지 경우를 모두 통과하는 구현"
+    code: python
+    status: todo
+  - id: be-003
+    title: "HTTP Keep-Alive를 껐다 켰을 때 실제로 달라지는 것"
+    category: Backend
+    tags: [http, keep-alive, tcp]
+    difficulty: intermediate
+    angle: "TCP 핸드셰이크 횟수를 소켓 수준에서 세어 비교"
+    code: python
+    status: todo
+  - id: be-004
+    title: "재시도에 지수 백오프와 지터가 둘 다 필요한 이유"
+    category: Backend
+    tags: [retry, backoff, jitter, thundering-herd]
+    difficulty: intermediate
+    angle: "지터 없는 백오프가 만드는 재시도 폭풍을 시뮬레이션으로 재현"
+    code: python
+    status: todo
+  - id: be-005
+    title: "서킷 브레이커의 3상태는 각각 어떤 장애를 막는가"
+    category: Backend
+    tags: [circuit-breaker, resilience, failure]
+    difficulty: intermediate
+    angle: "상태 전이 다이어그램대로 동작하는 최소 구현을 직접 작성"
+    code: python
+    status: todo
+  - id: be-006
+    title: "분산 락을 Redis로 만들 때 빠지는 함정"
+    category: Backend
+    tags: [distributed-lock, redis, fencing-token]
+    difficulty: advanced
+    angle: "TTL 만료와 GC 정지가 겹칠 때 락이 깨지는 시나리오를 타임라인으로"
+    code: python
+    status: todo
+  - id: be-007
+    title: "낙관적 잠금과 비관적 잠금, 어느 쪽이 언제 싼가"
+    category: Backend
+    tags: [locking, optimistic, version]
+    difficulty: intermediate
+    angle: "충돌률을 0%부터 올려가며 두 방식의 처리량 역전 지점을 측정"
+    code: python
+    status: todo
+  - id: be-008
+    title: "캐시 스탬피드를 막는 세 가지 방법 비교"
+    category: Backend
+    tags: [cache, stampede, mutex, probabilistic]
+    difficulty: advanced
+    angle: "락/조기만료/백그라운드 갱신을 같은 부하로 돌려 히트율 비교"
+    code: python
+    status: todo
+  - id: be-009
+    title: "아웃박스 패턴 없이 이벤트가 유실되는 경로"
+    category: Backend
+    tags: [outbox, transaction, kafka, dual-write]
+    difficulty: advanced
+    angle: "이중 쓰기 실패 지점을 5곳으로 나눠 각각 무엇이 깨지는지"
+    code: python
+    status: todo
+  - id: be-010
+    title: "타임아웃을 계층마다 다르게 줘야 하는 이유"
+    category: Backend
+    tags: [timeout, cascading-failure, budget]
+    difficulty: intermediate
+    angle: "타임아웃 예산(budget)을 계층별로 배분하는 계산식"
+    code: python
+    status: todo
+
+  # ---------- Performance ----------
+  - id: perf-001
+    title: "p99가 평균보다 훨씬 나쁜 이유 — 큐잉 이론 최소한"
+    category: Performance
+    tags: [latency, percentile, queueing]
+    difficulty: intermediate
+    angle: "이용률 70%와 90%에서 대기시간이 몇 배 벌어지는지 시뮬레이션"
+    code: python
+    status: todo
+  - id: perf-002
+    title: "벤치마크가 거짓말하는 5가지 방식"
+    category: Performance
+    tags: [benchmark, warmup, measurement]
+    difficulty: intermediate
+    angle: "같은 코드로 2배 차이 나는 측정 결과를 일부러 만들어 보인다"
+    code: python
+    status: todo
+  - id: perf-003
+    title: "CPU 캐시 라인을 의식하면 같은 루프가 몇 배 빨라진다"
+    category: Performance
+    tags: [cache-line, locality, false-sharing]
+    difficulty: advanced
+    angle: "행 우선/열 우선 순회와 false sharing을 실측으로 대조"
+    code: c
+    status: todo
+  - id: perf-004
+    title: "GC 로그에서 실제로 봐야 할 지표"
+    category: Performance
+    tags: [gc, pause, allocation-rate]
+    difficulty: advanced
+    angle: "할당률과 승격률로 힙 설정을 역산하는 절차"
+    code: java
+    status: todo
+
+  # ---------- Language ----------
+  - id: lang-001
+    title: "파이썬 GIL이 없어지면 무엇이 달라지는가"
+    category: Language
+    tags: [python, gil, free-threading, concurrency]
+    difficulty: advanced
+    angle: "free-threaded 빌드에서 CPU/IO 작업을 각각 측정"
+    code: python
+    status: todo
+  - id: lang-002
+    title: "Go의 context 취소는 어떻게 goroutine까지 전파되는가"
+    category: Language
+    tags: [go, context, cancellation, goroutine]
+    difficulty: intermediate
+    angle: "취소 신호가 닿지 않아 누수되는 goroutine을 재현하고 잡는다"
+    code: go
+    status: todo
+  - id: lang-003
+    title: "Rust의 소유권이 런타임 비용 없이 메모리를 지키는 원리"
+    category: Language
+    tags: [rust, ownership, borrow-checker]
+    difficulty: intermediate
+    angle: "컴파일 에러 메시지 3개를 해부해 규칙을 역으로 도출"
+    code: rust
+    status: todo
+  - id: lang-004
+    title: "자바스크립트 이벤트 루프에서 마이크로태스크가 먼저인 이유"
+    category: Language
+    tags: [javascript, event-loop, microtask, promise]
+    difficulty: intermediate
+    angle: "출력 순서 퀴즈 5개를 명세 기준으로 하나씩 해설"
+    code: javascript
+    status: todo
+  - id: lang-005
+    title: "async/await가 숨기고 있는 상태 머신"
+    category: Language
+    tags: [async, state-machine, coroutine]
+    difficulty: advanced
+    angle: "변환 결과를 펼쳐 await 지점이 어디로 바뀌는지 보인다"
+    code: python
+    status: todo
+
+  # ---------- Infra ----------
+  - id: infra-001
+    title: "컨테이너는 가상머신이 아니다 — namespace와 cgroup으로 보는 격리"
+    category: Infra
+    tags: [container, namespace, cgroup, linux]
+    difficulty: intermediate
+    angle: "unshare 명령으로 컨테이너 비슷한 걸 손으로 만들어 본다"
+    code: shell
+    status: todo
+  - id: infra-002
+    title: "도커 이미지 레이어를 이해하면 빌드가 10배 빨라진다"
+    category: Infra
+    tags: [docker, layer, cache, dockerfile]
+    difficulty: beginner
+    angle: "같은 Dockerfile을 순서만 바꿔 빌드 시간을 실측 비교"
+    code: dockerfile
+    status: todo
+  - id: infra-003
+    title: "쿠버네티스 readiness와 liveness를 헷갈리면 생기는 장애"
+    category: Infra
+    tags: [kubernetes, probe, rollout]
+    difficulty: intermediate
+    angle: "잘못된 프로브 설정이 롤링 배포를 무너뜨리는 시퀀스를 도식화"
+    code: yaml
+    status: todo
+  - id: infra-004
+    title: "TLS 핸드셰이크에서 실제로 오가는 것"
+    category: Infra
+    tags: [tls, handshake, certificate, openssl]
+    difficulty: intermediate
+    angle: "openssl s_client 출력을 한 줄씩 해독"
+    code: shell
+    status: todo
+  - id: infra-005
+    title: "리눅스에서 파일을 지웠는데 용량이 안 줄어드는 이유"
+    category: Infra
+    tags: [linux, inode, file-descriptor, lsof]
+    difficulty: beginner
+    angle: "열린 파일 디스크립터를 lsof로 추적해 원인을 특정"
+    code: shell
+    status: todo
+
+  # ---------- Architecture ----------
+  - id: arch-001
+    title: "CAP 정리에서 흔히 오독되는 세 가지"
+    category: Architecture
+    tags: [cap, consistency, partition]
+    difficulty: intermediate
+    angle: "흔한 오독을 원 정의에 비춰 교정하고 PACELC까지 연결"
+    code: none
+    status: todo
+  - id: arch-002
+    title: "이벤트 소싱이 감당해야 하는 진짜 비용"
+    category: Architecture
+    tags: [event-sourcing, cqrs, replay]
+    difficulty: advanced
+    angle: "스냅샷 없이 리플레이가 선형으로 느려지는 걸 수치로 보인다"
+    code: python
+    status: todo
+  - id: arch-003
+    title: "사가 패턴의 보상 트랜잭션은 왜 어려운가"
+    category: Architecture
+    tags: [saga, compensation, distributed-transaction]
+    difficulty: advanced
+    angle: "보상이 실패하는 경우를 어떻게 다룰지가 핵심"
+    code: python
+    status: todo
+  - id: arch-004
+    title: "모놀리스를 쪼개기 전에 확인할 경계 찾기"
+    category: Architecture
+    tags: [microservice, bounded-context, coupling]
+    difficulty: intermediate
+    angle: "커밋 히스토리에서 함께 바뀌는 파일을 군집화해 경계를 추정"
+    code: python
+    status: todo
+
+  # ---------- Security ----------
+  - id: sec-001
+    title: "SQL 인젝션은 이스케이프가 아니라 바인딩으로 막는다"
+    category: Security
+    tags: [sql-injection, prepared-statement, binding]
+    difficulty: beginner
+    angle: "문자열 조합이 뚫리는 입력을 보이고 바인딩과 대조"
+    code: python
+    status: todo
+  - id: sec-002
+    title: "비밀번호 해시에 bcrypt/argon2를 쓰는 이유"
+    category: Security
+    tags: [password, hash, bcrypt, argon2, salt]
+    difficulty: intermediate
+    angle: "SHA-256 대비 초당 시도 횟수를 직접 측정해 차이를 보인다"
+    code: python
+    status: todo
+  - id: sec-003
+    title: "JWT를 세션 대신 쓸 때 포기하는 것"
+    category: Security
+    tags: [jwt, session, revocation, stateless]
+    difficulty: intermediate
+    angle: "즉시 로그아웃 요구가 들어오면 무엇이 무너지는지"
+    code: python
+    status: todo
+
+  # ---------- Tooling ----------
+  - id: tool-001
+    title: "git rebase와 merge가 만드는 히스토리의 차이"
+    category: Tooling
+    tags: [git, rebase, merge, history]
+    difficulty: beginner
+    angle: "같은 작업을 두 방식으로 돌려 그래프와 bisect 결과를 비교"
+    code: shell
+    status: todo
+  - id: tool-002
+    title: "git bisect로 버그가 들어온 커밋을 자동으로 찾기"
+    category: Tooling
+    tags: [git, bisect, debugging, automation]
+    difficulty: intermediate
+    angle: "bisect run에 테스트 스크립트를 물려 완전 자동화"
+    code: shell
+    status: done
+  - id: tool-003
+    title: "플레임 그래프를 제대로 읽는 법"
+    category: Tooling
+    tags: [profiling, flamegraph, perf]
+    difficulty: intermediate
+    angle: "폭과 높이가 각각 무엇을 뜻하는지, 오독하기 쉬운 패턴 3가지"
+    code: python
+    status: todo
