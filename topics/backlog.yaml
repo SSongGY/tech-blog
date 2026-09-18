@@ -989,7 +989,7 @@ topics:
     difficulty: intermediate
     angle: "뷰마다 누구의 관심사를 담는지 이해관계자 기준으로 정리"
     code: none
-    status: writing
+    status: done
   - id: pe-003
     title: "결합도와 응집도 — 등급별 판별 기준"
     category: PE
