@@ -223,6 +223,18 @@ desc MAXVALUE    -1                                        2
 전체 스크립트: [`code/sequence_examples.sql`](code/sequence_examples.sql)
 (`tbsql <사용자>/<비밀번호> @sequence_examples.sql`)
 
+> **스크립트로 돌릴 때 걸리는 함정 둘.** 파일 끝에 `EXIT`가 없으면 `tbsql`이 프롬프트에서
+> 대기해 무인 실행이 멈춘다. 그리고 문장 뒤에 같은 줄로 주석을 달면 **다음 문장이
+> `TBR-8004` 구문 오류로 깨진다.**
+>
+> ```text
+> SELECT p1.NEXTVAL FROM dual;        -- 줄 끝 주석
+> SELECT p1.NEXTVAL FROM dual;        →  TBR-8004: Syntax error.
+> ```
+>
+> 주석을 독립된 줄로 옮기면 정상 동작한다. 예제 스크립트의 주석이 모두 자기 줄에
+> 있는 이유다.
+
 속성을 모두 지정하면 이렇게 된다.
 
 ```sql
