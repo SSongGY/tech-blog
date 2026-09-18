@@ -2,7 +2,7 @@
 """기술 블로그 운영 CLI.
 
 사용법:
-    python scripts/blog.py pick              # 오늘 쓸 주제 선정 (하루 5편, 트랙별 편성)
+    python scripts/blog.py pick              # 오늘 쓸 주제 선정 (하루 3편)
     python scripts/blog.py new <id> <slug>   # 글 폴더 스캐폴딩
     python scripts/blog.py related [feature] # 같은 기능으로 쓴 글 목록
     python scripts/blog.py relink            # 같은 기능 글끼리 상호 링크 재생성
@@ -38,19 +38,21 @@ FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 
 CORE_CATEGORIES = {"Database", "Backend", "Performance"}
 
-TRACKS = ("basics", "product", "pe", "general")
+TRACKS = ("basics", "product", "pe", "linux", "general")
 
-# 하루 5편을 유지한다. 기본 문법(basics)을 다 쓰고 나면 그 한 자리를 기술사가 가져간다.
-# pe = 정보관리기술사 시험 과목 기술. 목표가 걸린 트랙이라 줄어드는 일이 없다.
-# product는 한 제품을 끝내면 다음 제품으로 넘어가므로 소진되지 않는다(PRODUCT_ROTATION).
-PLAN_WITH_BASICS = {"basics": 1, "product": 1, "pe": 2, "general": 1}   # 합 5편
-PLAN_AFTER_BASICS = {"basics": 0, "product": 1, "pe": 3, "general": 1}  # 합 5편
+# 하루 3편. 5편은 한 번에 쓰기에 너무 오래 걸린다.
+#   DB문법 1 + 기술사 1 + 세 번째 자리 1
+# 세 번째 자리는 ROTATING_TRACKS 중 지금까지 가장 적게 쓴 트랙이 가져간다.
+FIXED_TRACKS = {"basics": 1, "pe": 1}
+ROTATING_TRACKS = ("product", "linux", "general")
+POSTS_PER_DAY = sum(FIXED_TRACKS.values()) + 1
 
 
 TRACK_LABEL = {
     "basics": "DB문법",
     "product": "DB기능",
     "pe": "기술사",
+    "linux": "리눅스",
     "general": "일반",
 }
 
@@ -62,15 +64,38 @@ def count_todo(data: dict, track: str) -> int:
     )
 
 
-def daily_plan(data: dict) -> dict[str, int]:
-    """남은 기본 문법 주제 수에 따라 오늘의 트랙별 편수를 정한다.
+def count_done(data: dict, track: str) -> int:
+    return sum(
+        1 for t in data["topics"]
+        if t["status"] == "done" and track_of(t) == track
+    )
 
-    기본 문법이 남아 있으면 그 한 편을 쓰고, 소진되면 그 자리를 기술사가 가져간다.
-    어느 쪽이든 하루 5편이다.
+
+def daily_plan(data: dict) -> dict[str, int]:
+    """오늘의 트랙별 편수를 정한다. 합은 항상 POSTS_PER_DAY(3편)다.
+
+    DB문법과 기술사는 고정이고, 세 번째 자리는 지금까지 가장 적게 쓴 트랙이 가져간다.
+    남은 주제가 없는 트랙은 후보에서 빠지므로, 한 트랙이 소진돼도 편수는 줄지 않는다.
     """
-    if count_todo(data, "basics") >= PLAN_WITH_BASICS["basics"]:
-        return dict(PLAN_WITH_BASICS)
-    return dict(PLAN_AFTER_BASICS)
+    plan = {track: 0 for track in TRACKS}
+
+    for track, count in FIXED_TRACKS.items():
+        plan[track] = min(count, count_todo(data, track))
+
+    slots = POSTS_PER_DAY - sum(plan.values())
+    for _ in range(slots):
+        candidates = [
+            track for track in ROTATING_TRACKS
+            if count_todo(data, track) > plan[track]
+        ]
+        if not candidates:  # 고정 트랙에서 남은 자리를 메운다
+            candidates = [t for t in TRACKS if count_todo(data, t) > plan[t]]
+        if not candidates:
+            break
+        # 발행 수가 가장 적은 트랙 → 같으면 ROTATING_TRACKS 순서
+        plan[min(candidates, key=lambda t: (count_done(data, t) + plan[t], TRACKS.index(t)))] += 1
+
+    return plan
 
 
 # 트랙별 본문 길이 기준(공백·코드블록·표·인용·참고자료 제외)
@@ -81,6 +106,7 @@ BODY_CHARS_BY_TRACK = {
     "basics": (1200, 2500),
     "product": (1500, 3800),
     "pe": (1500, 3000),
+    "linux": (1200, 2800),
     "general": (1800, 3500),
 }
 
@@ -168,7 +194,9 @@ def pick_sequential(data: dict, track: str, count: int) -> list[dict]:
 def pick_topics(data: dict, counts: dict[str, int] | None = None) -> list[dict]:
     counts = counts or daily_plan(data)
     picked: list[dict] = []
-    for track in ("basics", "product", "pe"):
+    for track in TRACKS:
+        if track == "general":
+            continue
         picked += pick_sequential(data, track, counts.get(track, 0))
     return picked + pick_general(data, counts.get("general", 0))
 
@@ -857,10 +885,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    composition = " + ".join(f"{t} {n}" for t, n in PLAN_WITH_BASICS.items())
+    composition = f"하루 {POSTS_PER_DAY}편"
     p_pick = sub.add_parser("pick", help=f"오늘 쓸 주제 선정 ({composition})")
-    for track, need in PLAN_WITH_BASICS.items():
-        p_pick.add_argument(f"--{track}", type=int, help=f"기본 {need}")
+    for track in TRACKS:
+        p_pick.add_argument(f"--{track}", type=int, help="이 트랙 편수를 직접 지정")
     p_pick.set_defaults(func=cmd_pick)
 
     p_related = sub.add_parser("related", help="같은 feature로 쓴 글 목록")

@@ -11,12 +11,14 @@ meta:
   # 하루 편수는 blog.py의 daily_plan()이 정한다.
   # basics = DB 기본 문법 / product = DB 제품 기능(Tibero 7)
   # pe     = 정보관리기술사 시험 과목 기술 / general = 그 외 IT 기술
-  # 어느 쪽이든 하루 5편이다.
-  # 기본 문법이 남아 있는 동안: basics 1 + product 1 + pe 2 + general 1
-  # 기본 문법을 다 쓰고 나면 : product 1 + pe 3 + general 1  (빈 자리를 기술사가 가져간다)
+  # 하루 3편. 편성은 blog.py의 daily_plan()이 정한다.
+  #   고정   : basics 1 (DB 기본 문법) + pe 1 (정보관리기술사)
+  #   세 번째: product / linux / general 중 지금까지 가장 적게 쓴 트랙 1
+  # 한 트랙이 소진돼도 나머지가 메우므로 편수는 줄지 않는다.
   posts_per_day:
-    with_basics: {basics: 1, product: 1, pe: 2, general: 1}
-    after_basics: {basics: 0, product: 1, pe: 3, general: 1}
+    fixed: {basics: 1, pe: 1}
+    rotating: [product, linux, general]
+    total: 3
   # 제품 트랙은 한 제품을 끝내면 다음 제품으로 넘어간다. 그래야 소진되지 않고,
   # 같은 feature 키로 제품 간 비교 글이 이어진다.
   product_rotation: [Tibero 7, Oracle 19c, MySQL 8.0, PostgreSQL 16]
@@ -307,6 +309,7 @@ topics:
     title: "컨테이너는 가상머신이 아니다 — namespace와 cgroup으로 보는 격리"
     category: Infra
     subcategory: linux
+    track: linux
     tags: [container, namespace, cgroup, linux]
     difficulty: intermediate
     angle: "unshare 명령으로 컨테이너 비슷한 걸 손으로 만들어 본다"
@@ -334,6 +337,7 @@ topics:
     title: "TLS 핸드셰이크에서 실제로 오가는 것"
     category: Infra
     subcategory: tls
+    track: linux
     tags: [tls, handshake, certificate, openssl]
     difficulty: intermediate
     angle: "openssl s_client 출력을 한 줄씩 해독"
@@ -343,6 +347,7 @@ topics:
     title: "리눅스에서 파일을 지웠는데 용량이 안 줄어드는 이유"
     category: Infra
     subcategory: linux
+    track: linux
     tags: [linux, inode, file-descriptor, lsof]
     difficulty: beginner
     angle: "열린 파일 디스크립터를 lsof로 추적해 원인을 특정"
@@ -1583,4 +1588,298 @@ topics:
     difficulty: intermediate
     angle: "시스템 권한·객체 권한·롤의 관계와 WITH ADMIN/GRANT OPTION"
     code: sql
+    status: todo
+
+  # ========== 리눅스 서버 명령 (track: linux) ==========
+  # 서버에 붙어 실제로 치는 명령. 돌릴 수 있는 환경이면 실행해서 출력을 싣고,
+  # 아니면 man page·공식 문서 근거로 쓰고 verification: manual-only 로 표시한다.
+  - id: lx-001
+    title: "ps와 top — 프로세스 상태를 읽는 법"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "STAT 컬럼의 각 글자가 뜻하는 것과 좀비·D 상태를 구분"
+    code: shell
+    status: todo
+  - id: lx-002
+    title: "df와 du — 디스크가 찼을 때 범인 찾기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "df와 du 합계가 어긋나는 대표 원인 세 가지"
+    code: shell
+    status: todo
+  - id: lx-003
+    title: "free와 vmstat — 메모리 부족을 판단하는 기준"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "available과 free의 차이, buff/cache를 부족으로 오해하는 실수"
+    code: shell
+    status: todo
+  - id: lx-004
+    title: "ss와 netstat — 포트와 연결 상태 확인"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "TIME_WAIT가 쌓이는 이유와 그게 문제인 경우"
+    code: shell
+    status: todo
+  - id: lx-005
+    title: "lsof — 파일을 붙잡고 있는 프로세스 찾기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "지운 파일이 용량을 안 돌려주는 상황을 lsof로 특정"
+    code: shell
+    status: todo
+  - id: lx-006
+    title: "grep — 로그에서 원하는 줄만 뽑기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "-A/-B/-C 문맥 출력과 -P 정규식이 필요한 순간"
+    code: shell
+    status: todo
+  - id: lx-007
+    title: "awk — 로그를 표로 집계하기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "필드 분리와 연관배열로 상태코드별 건수를 한 줄에"
+    code: shell
+    status: todo
+  - id: lx-008
+    title: "sed — 파일 일괄 치환의 안전한 사용법"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "-i를 쓰기 전에 반드시 하는 확인 절차"
+    code: shell
+    status: todo
+  - id: lx-009
+    title: "find — 조건으로 찾아서 바로 처리하기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "-exec와 -print0 | xargs -0의 차이, 공백 파일명 함정"
+    code: shell
+    status: todo
+  - id: lx-010
+    title: "tail -f와 journalctl — 로그를 실시간으로 쫓기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "로테이션이 일어나면 tail -f가 멈추는 이유와 -F"
+    code: shell
+    status: todo
+  - id: lx-011
+    title: "systemctl — 서비스 기동, 중지, 자동시작"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "enable과 start를 헷갈려 재부팅 후 안 뜨는 사고"
+    code: shell
+    status: todo
+  - id: lx-012
+    title: "crontab — 정기 작업이 안 도는 이유"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "cron의 PATH가 로그인 셸과 다르다는 것을 실제로 확인"
+    code: shell
+    status: todo
+  - id: lx-013
+    title: "chmod와 chown — 권한 표기 읽기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "숫자 표기와 기호 표기 대응, 디렉터리의 x가 뜻하는 것"
+    code: shell
+    status: todo
+  - id: lx-014
+    title: "ln — 하드링크와 심볼릭 링크"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "inode 관점에서 둘의 차이와 원본을 지웠을 때의 결과"
+    code: shell
+    status: todo
+  - id: lx-015
+    title: "tar와 gzip — 압축과 해제, 그리고 옵션 순서"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "절대경로가 들어간 아카이브를 푸는 위험"
+    code: shell
+    status: todo
+  - id: lx-016
+    title: "rsync — 증분 전송과 --delete의 위험"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "끝 슬래시 하나로 결과가 달라지는 것을 예제로"
+    code: shell
+    status: todo
+  - id: lx-017
+    title: "kill과 시그널 — TERM, KILL, HUP의 차이"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "9번을 먼저 쓰면 안 되는 이유와 프로세스가 안 죽는 경우"
+    code: shell
+    status: todo
+  - id: lx-018
+    title: "nohup, screen, tmux — 세션이 끊겨도 살아남기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "SIGHUP 전파 경로로 세 방법의 차이를 설명"
+    code: shell
+    status: todo
+  - id: lx-019
+    title: "xargs — 파이프로 인자를 넘기는 법"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "-n, -P로 병렬 처리하고 -0으로 공백 파일명을 넘기기"
+    code: shell
+    status: todo
+  - id: lx-020
+    title: "sort, uniq, wc — 텍스트 집계 조합"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "uniq -c 앞에 sort가 반드시 와야 하는 이유"
+    code: shell
+    status: todo
+  - id: lx-021
+    title: "ulimit — 자원 한도와 too many open files"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "soft/hard 한도와 서비스에 적용되는 실제 값 확인 경로"
+    code: shell
+    status: todo
+  - id: lx-022
+    title: "iostat와 sar — I/O 병목 확인"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, advanced]
+    difficulty: advanced
+    angle: "%util이 100%여도 병목이 아닌 경우"
+    code: shell
+    status: todo
+  - id: lx-023
+    title: "strace — 프로세스가 무엇을 하는지 들여다보기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, advanced]
+    difficulty: advanced
+    angle: "멈춘 프로세스가 어느 시스템콜에서 대기 중인지 특정"
+    code: shell
+    status: todo
+  - id: lx-024
+    title: "dmesg — 커널 로그에서 OOM Killer 흔적 찾기"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "어떤 프로세스가 왜 선택됐는지 점수 기준으로"
+    code: shell
+    status: todo
+  - id: lx-025
+    title: "ip와 route — 네트워크 설정 확인"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "ifconfig 대신 ip를 쓰는 이유와 명령 대응표"
+    code: shell
+    status: todo
+  - id: lx-026
+    title: "curl — API 디버깅에 필요한 옵션"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "-v, -w로 응답 시간 구간을 나눠 측정"
+    code: shell
+    status: todo
+  - id: lx-027
+    title: "openssl s_client — 인증서 확인과 만료 점검"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "체인이 끊겼을 때 출력에서 무엇이 달라지는지"
+    code: shell
+    status: todo
+  - id: lx-028
+    title: "환경변수와 셸 초기화 순서"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, intermediate]
+    difficulty: intermediate
+    angle: "로그인 셸과 비로그인 셸에서 읽는 파일이 다른 것을 실측"
+    code: shell
+    status: todo
+  - id: lx-029
+    title: "watch와 반복 실행 — 변화만 눈에 띄게"
+    category: Linux
+    subcategory: command
+    track: linux
+    tags: [linux, shell, beginner]
+    difficulty: beginner
+    angle: "-d 옵션으로 달라진 부분만 강조해 추세를 본다"
+    code: shell
     status: todo
