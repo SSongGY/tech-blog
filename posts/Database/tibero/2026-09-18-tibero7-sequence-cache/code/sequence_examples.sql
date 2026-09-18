@@ -1,7 +1,8 @@
 -- Tibero 7 시퀀스 예제 모음
 --
 -- 이 파일은 실행 검증을 거치지 않았다. 문법은 Tibero 7.2.6 SQL 참조 안내서의
--- CREATE SEQUENCE / ALTER SEQUENCE / DROP SEQUENCE 항목을 근거로 작성했다.
+-- CREATE SEQUENCE / ALTER SEQUENCE / DROP SEQUENCE / CREATE TABLE 항목,
+-- 주석의 에러 번호는 같은 버전 에러 참조 안내서(6000.dd / 7000.ddl)를 근거로 했다.
 -- tbsql로 접속해 직접 돌려 확인할 것.
 --
 -- 실행: tbsql <사용자>/<비밀번호> @sequence_examples.sql
@@ -28,6 +29,9 @@ CREATE SEQUENCE countdown_seq
     NOCYCLE;
 
 -- 4. 순환 시퀀스. MAXVALUE에 닿으면 MINVALUE로 돌아간다.
+--    오름차순에서 CYCLE은 MAXVALUE와 함께 지정해야 한다(에러 7136).
+--    내림차순이면 MINVALUE와 함께다(7135).
+--    캐시 크기는 한 사이클보다 작아야 한다(7340). 아래는 사이클 12개에 캐시 4개다.
 CREATE SEQUENCE slot_seq
     START WITH 1
     MINVALUE 1
@@ -37,10 +41,14 @@ CREATE SEQUENCE slot_seq
     CACHE 4;
 
 -- 5. 값 발급. CURRVAL을 쓰기 전에 NEXTVAL을 최소 한 번 호출해야 한다.
+--    순서를 바꾸면 에러 6003(ERROR_DD_SEQ_NO_CURRVAL)이 난다.
 SELECT order_seq.NEXTVAL FROM dual;
 SELECT order_seq.CURRVAL FROM dual;
 
 -- 6. INSERT에서 쓰는 형태. VALUES 절과 INSERT ... SELECT 모두 사용 가능하다.
+--    created_at의 기본값에는 SYSDATE를 썼다. 컬럼 DEFAULT에 NEXTVAL을 쓸 수 있는지는
+--    매뉴얼 두 페이지가 반대로 적고 있어(스키마 객체 = 불가 / CREATE TABLE = 가능)
+--    이 스크립트에서는 쓰지 않는다. 자기 버전에서 직접 확인할 항목이다.
 CREATE TABLE order_item (
     order_id   NUMBER PRIMARY KEY,
     product_id NUMBER NOT NULL,
@@ -55,6 +63,7 @@ INSERT INTO order_item (order_id, product_id)
      VALUES (order_seq.NEXTVAL, order_seq.NEXTVAL);
 
 -- 8. 정의 변경. 앞으로 발급될 번호에만 적용되고, 캐시에 있던 값은 무효화된다.
+--    ALTER에서 START WITH는 쓸 수 없다(7008). CREATE에서 RESTART는 쓸 수 없다(7615).
 ALTER SEQUENCE invoice_seq INCREMENT BY 10;
 ALTER SEQUENCE invoice_seq NOCACHE;
 
@@ -65,7 +74,12 @@ ALTER SEQUENCE invoice_seq RESTART START WITH 5000;
 -- 10. 정의 확인. 캐시 개수와 마지막 발급 값을 여기서 본다.
 SELECT * FROM user_sequences;
 
--- 11. 정리
+-- 11. identity 컬럼 (Tibero 7 FS02부터 지원)
+--     구성요소는 ALWAYS / BY DEFAULT / ON NULL / sequence_attributes 네 가지다.
+--     문법 도식이 매뉴얼에서 이미지로만 제공되어 여기에 DDL을 적지 않는다.
+--     추정한 문법을 싣지 않기 위한 것이다. CREATE TABLE 문법 도식을 직접 확인할 것.
+
+-- 12. 정리
 DROP TABLE order_item;
 DROP SEQUENCE order_seq;
 DROP SEQUENCE invoice_seq;
