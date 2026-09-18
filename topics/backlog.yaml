@@ -979,7 +979,7 @@ topics:
     difficulty: intermediate
     angle: "단계별 산출물과 각 단계에서 놓치면 무엇이 무너지는지"
     code: none
-    status: writing
+    status: done
   - id: pe-002
     title: "소프트웨어 아키텍처 4+1 뷰"
     category: PE
