@@ -14,7 +14,7 @@
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
-| 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | beginner | Tibero 7.2.6 | 문서 근거 |
+| 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | beginner | Tibero 7.2 | 실행 검증 |
 
 ## 기술사 (pe) — 2편
 

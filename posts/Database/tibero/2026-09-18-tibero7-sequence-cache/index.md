@@ -5,21 +5,26 @@ categories: [Database]
 subcategory: tibero
 track: product
 tags: [tibero, sequence, sql]
-description: "Tibero 7 시퀀스의 속성과 기본값, 번호가 건너뛰는 세 경로(비정상 종료·ALTER SEQUENCE·클러스터 NOORDER), 그리고 구성요소 표에 없는 제약을 에러 코드(7340 캐시<사이클 등)로 정리했다. 컬럼 DEFAULT에 NEXTVAL을 쓸 수 있는지는 매뉴얼 두 페이지가 반대로 적는다."
+description: "Tibero 7.2에서 시퀀스 예제를 직접 돌려 확인했다. 기본 MAXVALUE는 INT64_MAX가 아니라 9가 28개이고 내림차순 MINVALUE는 27개로 한 자리 비대칭이다. 기본 캐시는 20개. 매뉴얼이 엇갈리던 컬럼 DEFAULT의 NEXTVAL은 실제로 동작하고, ALTER SEQUENCE RESTART는 START WITH가 아니라 MINVALUE로 돌아간다."
 difficulty: beginner
 product: Tibero
 product_version: "7"
 feature: sequence
-environment: ["Tibero 7.2.6"]
-verification: manual-only
+environment: ["Tibero 7.2"]
+verification: executed
 verified: true
 topic_id: tb-001
 ---
 
-> **실행 검증 없음.** 이 글은 Tibero 7.2.6 공개 매뉴얼을 근거로 문법과 동작을 정리한
-> 것이다. 작성 환경에 `tbsql`이 없어 예제를 실행하지 않았으므로 **출력이나 측정값은
-> 싣지 않는다.** 근거를 찾지 못한 동작은 쓰지 않고, 매뉴얼이 명시하지 않은 항목은
-> 그렇다고 밝혔다.
+> **실행 검증 완료.** 이 글의 모든 출력은 **Tibero 7.2** 인스턴스에서 실제로 돌려
+> 받은 것이다. 버전은 `SELECT * FROM v$version`으로 확인했고 `PRODUCT_MAJOR 7`,
+> `PRODUCT_MINOR 2`다. 인용한 매뉴얼은 **7.2.6판**으로, 인스턴스 버전과는 다른
+> 값이니 섞어 읽지 않도록 주의한다.
+>
+> 검증은 빈 스키마에 예제 객체만 만들어 돌리고, 끝나면 전부 지우는 방식으로 했다.
+>
+> 매뉴얼만 보고는 판단할 수 없어 남겨뒀던 항목 두 개가 이 과정에서 해결됐고,
+> 매뉴얼 기준으로 적었던 기본값 하나가 **틀렸다는 것을 발견했다.** 본문에 표시해 뒀다.
 
 ## 들어가며
 
@@ -42,9 +47,8 @@ DDL이 막히는 제약을 매뉴얼에 적힌 것만 골라 묶는다.
 | `NEXTVAL` | 시퀀스 값을 증가시키고 증가된 값을 반환 |
 | `CURRVAL` | 현재 세션에서 마지막으로 조회한 `NEXTVAL` 값을 반환 |
 
-`CURRVAL`을 쓰려면 같은 세션에서 `NEXTVAL`을 먼저 호출해야 한다. 이름은 최대 30자이고
-**테이블과 같은 네임스페이스를 쓴다.** 같은 스키마의 테이블·동의어·PSM 객체와 겹치면
-생성되지 않는다.
+`CURRVAL`은 같은 세션에서 `NEXTVAL`을 먼저 호출해야 쓸 수 있다. 이름은 최대 30자이고
+**테이블과 같은 네임스페이스**라, 같은 스키마의 테이블·동의어·PSM 객체와 겹치면 안 된다.
 
 의사 컬럼은 쓸 수 있는 자리가 정해져 있다.
 
@@ -55,8 +59,30 @@ DDL이 막히는 제약을 매뉴얼에 적힌 것만 골라 묶는다.
   `CREATE TABLE`/`ALTER TABLE`의 `DEFAULT` 값, `CHECK` 제약 조건
 
 `DEFAULT` 항목은 **매뉴얼 안에서 반대로 적혀 있다.** 스키마 객체 페이지는 사용 불가
-목록에 넣고, `CREATE TABLE` 페이지의 `DEFAULT expr` 항목은 `CURRVAL`과 `NEXTVAL`을
-지정할 수 있다고 적는다. 실행해 확인할 수 없어 **어느 쪽이 맞는지 단정하지 않는다.**
+목록에 넣는데, `CREATE TABLE` 페이지는 지정할 수 있다고 적는다.
+
+**돌려보니 `CREATE TABLE` 페이지가 맞다.** 생성도 되고 값도 들어간다.
+
+```sql
+CREATE TABLE order_item (
+    order_id   NUMBER DEFAULT order_seq.NEXTVAL PRIMARY KEY,
+    product_id NUMBER NOT NULL
+);
+INSERT INTO order_item (product_id) VALUES (10);
+SELECT order_id, product_id FROM order_item;
+```
+
+```text
+Table 'ORDER_ITEM' created.
+1 row inserted.
+  ORDER_ID PRODUCT_ID
+---------- ----------
+         2         10
+```
+
+다만 **매뉴얼이 엇갈리는 문법에 운영 코드를 얹는 것은 여전히 권하지 않는다.** 다음
+버전에서 어느 쪽으로 정리될지 알 수 없다. 자동 채움이 목적이면 아래 identity 컬럼이
+명시적으로 지원되는 길이다.
 
 순번 자동 채움에는 **identity 컬럼**이 따로 있다. `identity_clause`는 **Tibero 7
 FS02부터 지원**하고 구성요소는 네 가지다.
@@ -68,8 +94,35 @@ FS02부터 지원**하고 구성요소는 네 가지다.
 | `ON NULL` | `INSERT` 시 NULL이 들어오면 시퀀스 값을 할당 |
 | `sequence_attributes` | 시작 값, 증가 값 등을 지정 |
 
-> `identity_clause`의 문법 도식은 매뉴얼에서 이미지로만 제공된다. 그래서 이 글은
-> 구성요소만 옮긴다. 정확한 키워드 배치는 `CREATE TABLE` 문법 도식을 직접 확인할 것.
+문법 도식이 매뉴얼에서 이미지로만 제공되어 키워드 배치를 글로 확인할 수 없었다.
+실기에서 확인한 형태는 이렇다.
+
+```sql
+CREATE TABLE emp_identity (
+    emp_id NUMBER GENERATED ALWAYS AS IDENTITY,
+    name   VARCHAR(20)
+);
+INSERT INTO emp_identity (name) VALUES ('kim');
+INSERT INTO emp_identity (name) VALUES ('lee');
+SELECT emp_id, name FROM emp_identity;
+```
+
+```text
+    EMP_ID NAME
+---------- --------------------
+         1 kim
+         2 lee
+```
+
+`ALWAYS`에 값을 직접 넣으면 막힌다.
+
+```text
+INSERT INTO emp_identity (emp_id, name) VALUES (99, 'park')
+TBR-8162: Cannot insert into an always identity column.
+```
+
+identity 컬럼은 내부적으로 시퀀스를 하나 만든다. `USER_SEQUENCES`를 보면
+`ISEQ$$_<객체번호>` 형태로 같이 잡힌다. 캐시 개수도 기본값 20이 붙는다.
 
 ## 구조
 
@@ -98,16 +151,30 @@ FS02부터 지원**하고 구성요소는 네 가지다.
 |---|---|
 | `INCREMENT BY` | `1`. 양수면 증가, 음수면 감소 |
 | `START WITH` | 증가 값이 양수면 `MINVALUE`, 음수면 `MAXVALUE` |
-| `MAXVALUE` | `NOMAXVALUE`와 같다. 증가 값이 양수면 `INT64_MAX`, 음수면 `-1` |
-| `MINVALUE` | `NOMINVALUE`와 같다. 증가 값이 양수면 `1`, 음수면 `INT64_MIN` |
+| `MAXVALUE` | `NOMAXVALUE`와 같다. 양수면 **9가 28개**(`10^28-1`), 음수면 `-1` |
+| `MINVALUE` | `NOMINVALUE`와 같다. 양수면 `1`, 음수면 **9가 27개**(`-(10^27-1)`) |
 | `CYCLE` / `NOCYCLE` | `NOCYCLE`. 한계에 닿으면 더 이상 값을 만들지 않는다 |
 | `ORDER` / `NOORDER` | `NOORDER`. `ORDER`는 클러스터 환경에서만 지정할 수 있다 |
-| `CACHE` / `NOCACHE` | **매뉴얼에 기본 개수가 명시되어 있지 않다** |
+| `CACHE` / `NOCACHE` | 매뉴얼에 없으나 **실측 기본값은 20** |
 
-마지막 줄을 그대로 적은 이유가 있다. `CACHE` 생략 시 몇 개가 잡히는지는 매뉴얼에
-나오지 않는다. 다른 DB의 기본값을 가져와 추정하지 말고 `USER_SEQUENCES`(또는
-`ALL_SEQUENCES`, `DBA_SEQUENCES`)를 조회해 확인하는 편이 맞다. `INCREMENT BY`에는
-제약이 하나 더 붙는다. `MAXVALUE - MINVALUE`보다 클 수 없다.
+`MAXVALUE` 줄은 매뉴얼을 근거로 `INT64_MAX`라고 적었다가 고쳤다. 실제로 뽑아 보면
+다른 값이고, **오름차순과 내림차순이 한 자리 어긋난다.**
+
+```text
+KIND             VAL                                  DIGITS
+---------------- -------------------------------- ----------
+asc MAXVALUE     9999999999999999999999999999             28
+asc MINVALUE     1                                         1
+desc MINVALUE    -999999999999999999999999999             28
+desc MAXVALUE    -1                                        2
+```
+
+`desc MINVALUE`의 28은 부호를 포함한 길이라 9는 27개다. `INT64_MAX`(약 9.2×10^18)와는
+자리수 자체가 다르다. **다른 DB의 기본값을 가져와 추정하면 이렇게 틀린다.**
+`USER_SEQUENCES`(또는 `ALL_SEQUENCES`, `DBA_SEQUENCES`)를 조회하는 편이 맞다.
+
+`INCREMENT BY`에는 제약이 하나 더 붙는다. `MAXVALUE - MINVALUE`보다 클 수 없고,
+어기면 7424가 난다.
 
 값이 증가하는 단위는 행이다. 매뉴얼은 **다섯 가지**를 든다. 최상위 `SELECT`가 반환하는 행,
 `INSERT ... SELECT`에서 선택된 행, `CREATE TABLE ... AS SELECT`에서 선택된 행,
@@ -126,6 +193,7 @@ FS02부터 지원**하고 구성요소는 네 가지다.
 | 7136 `ERROR_DDL_MUST_SPECIFY_MAXVAL` | 오름차순에서 `CYCLE`은 `MAXVALUE`와 함께 써야 한다 |
 | 7135 `ERROR_DDL_MUST_SPECIFY_MINVAL` | 내림차순에서 `CYCLE`은 `MINVALUE`와 함께 써야 한다 |
 | 7340 `ERROR_DDL_SEQ_CACHE_OVER_ONE_CYCLE` | **캐시 크기는 한 사이클보다 작아야 한다** |
+| 7424 | `INCREMENT`는 `MAXVALUE - MINVALUE`보다 작아야 한다 |
 | 7008 `ERROR_DDL_NOSTARTWITH_FOR_ALTER` | `START WITH`는 `CREATE`에서만 허용된다 |
 | 7615 `ERROR_DDL_CANT_RESTART_WITH_CREATE_SEQUENCE` | `RESTART`는 `CREATE`에서 허용되지 않는다 |
 | 7583 `ERROR_SEQ_CANNOT_BE_ACCESSED` | 이미 삭제되었거나 다른 세션이 삭제 중인 시퀀스 |
@@ -174,28 +242,67 @@ CREATE SEQUENCE invoice_seq
 CREATE SEQUENCE countdown_seq INCREMENT BY -1 MAXVALUE 1000 MINVALUE 1 NOCYCLE;
 ```
 
-시작값으로 되돌릴 때 시퀀스를 다시 만들 필요는 없다. `RESTART`가 있다.
+되돌릴 때 시퀀스를 다시 만들 필요는 없다. `RESTART`가 있다. **그런데 어디로
+되돌아가는지가 예상과 다르다.**
+
+`START WITH 1000`으로 만든 시퀀스에 `RESTART`를 걸어 봤다.
 
 ```sql
+CREATE SEQUENCE invoice_seq START WITH 1000 INCREMENT BY 1 CACHE 100;
+SELECT invoice_seq.NEXTVAL FROM dual;   -- 1000
 ALTER SEQUENCE invoice_seq RESTART;
+SELECT invoice_seq.NEXTVAL FROM dual;   -- ?
+```
+
+```text
+   NEXTVAL
+----------
+      1000
+Sequence 'INVOICE_SEQ' altered.
+   NEXTVAL
+----------
+         1
+```
+
+**1000이 아니라 1이다.** `RESTART`는 `START WITH`로 준 값이 아니라 `MINVALUE`로
+돌아간다. 위 시퀀스는 `MINVALUE`를 생략해 기본값 1이 잡혔고, 그래서 1이 나왔다.
+"시작값으로 되돌린다"고 이해하면 틀린다. 원래 시작값으로 맞추려면 값을 직접 준다.
+
+```sql
 ALTER SEQUENCE invoice_seq RESTART START WITH 5000;
+SELECT invoice_seq.NEXTVAL FROM dual;   -- 5000
 ```
 
 `START WITH` 자체는 `ALTER`로 바꿀 수 없다(7008). 특정 값으로 옮기려면 위처럼
 `RESTART START WITH`를 쓴다.
 
-**이 절의 예제에는 출력이 없다.** 실행 검증을 하지 않았으므로 결과를 싣지 않는다.
+### 캐시 때문에 LAST_NUMBER는 발급 값이 아니다
+
+`NEXTVAL`을 세 번만 호출한 시퀀스의 `LAST_NUMBER`가 21로 잡힌다.
+
+```text
+SEQUENCE_NAME            CACHE_SIZE LAST_NUMBER
+------------------------ ---------- -----------
+ORDER_SEQ                        20          21
+```
+
+캐시 20개를 미리 확보해서 데이터 사전에는 **다음에 확보할 값**이 적힌 것이다.
+마지막으로 발급된 번호를 알고 싶어 `LAST_NUMBER`를 읽으면 캐시 크기만큼 앞서 있다.
+내림차순도 같아서, 1000에서 시작한 시퀀스는 980이 적힌다.
 
 ## 실무에서 주의할 점
 
-- **연속성이 필요하면 시퀀스를 쓰지 않는다.** 세금계산서 번호처럼 빈 번호가 문제가
-  되는 요건이라면 맞는 도구가 아니다. 위 세 경로 중 하나만 발생해도 구멍이 생긴다.
+- **연속성이 필요하면 시퀀스를 쓰지 않는다.** 세금계산서 번호처럼 빈 번호가 문제면
+  맞는 도구가 아니다. 위 세 경로 중 하나만 발생해도 구멍이 생긴다.
 - **`CACHE` 개수는 발급 속도와 최대 누락 개수를 동시에 정한다.** 크게 잡으면 데이터
   사전 갱신이 줄지만 비정상 종료 시 잃는 번호도 그만큼 늘어난다.
 - **운영 중 `ALTER SEQUENCE`는 번호 구멍을 만든다.** 점검 시간에 하고 변경 전후 값을
   기록해 둔다.
-- **컬럼 `DEFAULT`에 `NEXTVAL`을 쓸 수 있는지는 매뉴얼이 엇갈린다.** 확인 전에는
-  `INSERT`에서 명시적으로 호출하거나 identity 컬럼을 쓰는 쪽이 안전하다.
+- **컬럼 `DEFAULT`의 `NEXTVAL`은 되지만 운영에는 identity 컬럼을 쓴다.** 매뉴얼이
+  엇갈리는 문법은 다음 버전에서 어느 쪽으로 정리될지 알 수 없다.
+- **`RESTART`는 `START WITH`가 아니라 `MINVALUE`로 돌아간다.** 원래 시작값으로
+  맞추려면 `RESTART START WITH <값>`으로 직접 준다.
+- **`LAST_NUMBER`를 마지막 발급 번호로 읽지 않는다.** 캐시 크기만큼 앞서 있다.
 - **`CYCLE`을 쓸 때 캐시 개수를 사이클보다 크게 잡지 않는다.** 7340으로 막힌다.
 - **`CURRVAL`은 세션에 묶인다(6003).** 커넥션 풀에서 `NEXTVAL`과 `CURRVAL`을 다른
   요청에 나눠 호출하면 같은 세션이라는 보장이 없다.
@@ -204,12 +311,12 @@ ALTER SEQUENCE invoice_seq RESTART START WITH 5000;
 
 ## 정리
 
-- 시퀀스는 유일한 값을 빠르게 주는 객체다. **번호의 연속성은 보장 대상이 아니다.**
-- 생략 기본값은 `INCREMENT BY 1`, `NOCYCLE`, `NOORDER`다. 캐시 기본 개수는 매뉴얼에
-  없으므로 인스턴스에서 직접 확인한다.
-- 번호가 건너뛰는 경로는 세 가지다. 비정상 종료, `ALTER SEQUENCE`, 클러스터 `NOORDER`.
-- 구성요소 표에 없는 제약은 에러 코드로 확인한다. 특히 7340(캐시 < 사이클).
-- 컬럼 `DEFAULT`는 매뉴얼 두 페이지가 반대로 적는다. 자동 채움은 identity 컬럼(FS02부터).
+- 시퀀스는 유일한 값을 빠르게 주는 객체다. **연속성은 보장 대상이 아니다.**
+- 매뉴얼과 달랐던 것: 기본 `CACHE`는 **20**, 기본 `MAXVALUE`는 `INT64_MAX`가 아니라
+  **9가 28개**(내림차순 `MINVALUE`는 27개).
+- 예상과 달랐던 것: `RESTART`는 `MINVALUE`로 가고, `LAST_NUMBER`는 캐시만큼 앞선다.
+- 매뉴얼이 엇갈렸던 것: 컬럼 `DEFAULT`의 `NEXTVAL`은 7.2에서 동작한다.
+- 번호가 건너뛰는 경로 셋: 비정상 종료, `ALTER SEQUENCE`, 클러스터 `NOORDER`.
 
 ## 참고 자료
 
