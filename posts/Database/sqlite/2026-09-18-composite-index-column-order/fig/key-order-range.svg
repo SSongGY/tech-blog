@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340" font-family="system-ui, 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="340" fill="#ffffff"/>
+  <text x="20" y="28" font-size="15" font-weight="700" fill="#1b1b1b">같은 조건, 다른 컬럼 순서 — 인덱스가 훑는 구간</text>
+
+  <text x="20" y="58" font-size="13" font-weight="600" fill="#1b1b1b">① ix_event_status_created (status, created_at) — 키가 status 먼저 정렬된다</text>
+  <rect x="20" y="70" width="200" height="46" fill="#f0f0f0" stroke="#999999" stroke-width="1.3"/>
+  <text x="120" y="98" font-size="12.5" text-anchor="middle" fill="#555555">status = active</text>
+  <rect x="220" y="70" width="200" height="46" fill="#f0f0f0" stroke="#999999" stroke-width="1.3"/>
+  <text x="320" y="98" font-size="12.5" text-anchor="middle" fill="#555555">status = dormant</text>
+  <rect x="420" y="70" width="200" height="46" fill="#f0f0f0" stroke="#999999" stroke-width="1.3"/>
+  <text x="520" y="98" font-size="12.5" text-anchor="middle" fill="#555555">locked · &lt; cutoff</text>
+  <rect x="620" y="70" width="240" height="46" fill="#e4f1e9" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="740" y="98" font-size="12.5" text-anchor="middle" fill="#1b1b1b">locked · &gt;= cutoff</text>
+  <text x="20" y="138" font-size="12.5" fill="#2d6a4f">읽는 구간 2,523행 — 결과 행 수와 같다. 버리는 행이 없다.</text>
+
+  <text x="20" y="186" font-size="13" font-weight="600" fill="#1b1b1b">② ix_event_created_status (created_at, status) — 키가 created_at 먼저 정렬된다</text>
+  <rect x="20" y="198" width="420" height="46" fill="#f0f0f0" stroke="#999999" stroke-width="1.3"/>
+  <text x="230" y="226" font-size="12.5" text-anchor="middle" fill="#555555">created_at &lt; cutoff · 249,925행 · 건너뜀</text>
+  <rect x="440" y="198" width="420" height="46" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="650" y="226" font-size="12.5" text-anchor="middle" fill="#1b1b1b">created_at &gt;= cutoff · 50,075행 읽고 status로 걸러냄</text>
+  <text x="20" y="266" font-size="12.5" fill="#9d0208">읽는 구간 50,075행 — 결과 2,523행의 19.8배. 나머지 47,552행은 버린다.</text>
+
+  <line x1="20" y1="288" x2="860" y2="288" stroke="#dddddd" stroke-width="1"/>
+  <text x="20" y="310" font-size="12" fill="#666666">조건: WHERE status = 'locked' AND created_at &gt;= cutoff</text>
+  <text x="20" y="328" font-size="12" fill="#666666">측정: SQLite 3.49.1 · app_event 30만 행 · status 분포 active 70% / dormant 25% / locked 5%</text>
+</svg>

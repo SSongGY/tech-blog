@@ -42,7 +42,7 @@ topics:
     difficulty: intermediate
     angle: "선행 컬럼 선택도에 따라 스캔 범위가 몇 배 달라지는지 행 수로 측정"
     code: python
-    status: writing
+    status: done
   - id: db-003
     title: "트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가"
     category: Database
