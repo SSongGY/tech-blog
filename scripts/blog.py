@@ -100,7 +100,10 @@ def cmd_pick(args: argparse.Namespace) -> int:
     today = dt.date.today().isoformat()
     print(f"# {today} 작성 대상 {len(picked)}편\n")
     for i, topic in enumerate(picked, 1):
-        print(f"[{i}] {topic['id']} · {topic['category']} · {topic['difficulty']}")
+        area = topic["category"]
+        if topic.get("subcategory"):
+            area += f"/{topic['subcategory']}"
+        print(f"[{i}] {topic['id']} · {area} · {topic['difficulty']}")
         print(f"    제목: {topic['title']}")
         print(f"    각도: {topic['angle']}")
         print(f"    예제: {topic['code']}  태그: {', '.join(topic['tags'])}")
@@ -110,6 +113,18 @@ def cmd_pick(args: argparse.Namespace) -> int:
     if remaining <= data["meta"]["low_watermark"]:
         print(f"경고: todo 주제가 {remaining}개 남았다. 백로그를 보충할 것.")
     return 0
+
+
+def post_dir_for(topic: dict, day: dt.date, slug: str) -> Path:
+    """글이 들어갈 경로를 만든다.
+
+    분야별로 찾아보기 쉽도록 카테고리 폴더 아래에 둔다. 특정 제품·도구에 묶인
+    주제는 subcategory를 한 단계 더 둔다 (예: posts/Database/oracle/...).
+    """
+    parts = [topic["category"]]
+    if topic.get("subcategory"):
+        parts.append(topic["subcategory"])
+    return POSTS_DIR.joinpath(*parts) / f"{day.isoformat()}-{slug}"
 
 
 def slugify(text: str) -> str:
@@ -128,7 +143,7 @@ def cmd_new(args: argparse.Namespace) -> int:
 
     today = dt.date.today()
     slug = slugify(args.slug)
-    post_dir = POSTS_DIR / f"{today.isoformat()}-{slug}"
+    post_dir = post_dir_for(topic, today, slug)
     if post_dir.exists():
         print(f"이미 존재한다: {post_dir}")
         return 1
@@ -138,7 +153,8 @@ def cmd_new(args: argparse.Namespace) -> int:
     index_md = f"""---
 title: "{topic['title']}"
 date: {today.isoformat()}
-categories: [{topic['category']}]
+categories: [{topic["category"]}]
+subcategory: {topic.get("subcategory") or ""}
 tags: [{tags}]
 description: ""
 difficulty: {topic['difficulty']}
@@ -208,9 +224,9 @@ FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 
 def cmd_tistory(args: argparse.Namespace) -> int:
     """티스토리 마크다운 에디터에 그대로 붙여넣을 본문을 만든다."""
-    matches = sorted(POSTS_DIR.glob(f"*-{args.slug}/index.md"))
+    matches = sorted(POSTS_DIR.glob(f"**/*-{args.slug}/index.md"))
     if not matches:
-        print(f"posts/*-{args.slug}/index.md 를 찾을 수 없다.")
+        print(f"posts/**/*-{args.slug}/index.md 를 찾을 수 없다.")
         return 1
 
     source = matches[-1]
@@ -269,13 +285,13 @@ def cmd_status(args: argparse.Namespace) -> int:
         f"= {ratio:.0%} (목표 {data['meta']['target_ratio']['core']:.0%})"
     )
     unverified = [
-        p for p in POSTS_DIR.glob("*/index.md")
+        p for p in POSTS_DIR.glob("**/index.md")
         if "verified: true" not in p.read_text(encoding="utf-8")
     ]
     if unverified:
         print(f"\n미검증 글 {len(unverified)}편:")
         for path in unverified:
-            print(f"  {path.parent.name}")
+            print(f"  {path.parent.relative_to(POSTS_DIR)}")
     return 0
 
 

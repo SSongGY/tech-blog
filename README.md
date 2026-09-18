@@ -24,12 +24,35 @@ IT 기술 글을 매일 2편 작성해 마크다운 원본과 실행 가능한 �
 │  ├─ backlog.yaml              주제 백로그 (status: todo/writing/done)
 │  └─ published.md              발행 이력 — 중복 확인용
 ├─ posts/
-│  └─ YYYY-MM-DD-<slug>/
+│  └─ <카테고리>/[<제품·도구>/]YYYY-MM-DD-<slug>/
 │     ├─ index.md               본문 (Jekyll/Hugo 호환 프론트매터)
 │     └─ code/                  실행 가능한 예제 소스 + README
 ├─ dist/tistory/                티스토리 붙여넣기용 변환본 (git 추적 제외)
 └─ scripts/blog.py              운영 CLI
 ```
+
+## 글 분류
+
+글은 **분야별 폴더**에 들어간다. 경로는 백로그의 `category`와 `subcategory`로 결정된다.
+
+```
+posts/
+├─ Database/
+│  ├─ sqlite/2026-09-18-btree-index-not-used/
+│  ├─ oracle/        ← Oracle 전용 글이 생기면 여기에
+│  └─ mariadb/
+├─ Backend/
+│  └─ redis/
+├─ Tooling/
+│  └─ git/2026-09-18-git-bisect-run-automation/
+├─ Language/ (python, go, rust, javascript)
+├─ Infra/    (linux, docker, kubernetes, tls)
+├─ Performance/, Architecture/, Security/
+```
+
+카테고리 8종은 `blog.py`의 `CORE_CATEGORIES` 기준으로 core/general이 갈린다.
+`subcategory`는 **특정 제품·도구에 묶인 주제에만** 붙인다. 벤더 중립 주제
+(예: MVCC 일반론, CAP 정리)는 비워 두면 카테고리 폴더 바로 아래에 들어간다.
 
 ## 사용법
 
