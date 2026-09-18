@@ -26,6 +26,7 @@ IT 기술 글을 매일 2편 작성해 마크다운 원본과 실행 가능한 �
 ├─ posts/
 │  └─ <카테고리>/[<제품·도구>/]YYYY-MM-DD-<slug>/
 │     ├─ index.md               본문 (Jekyll/Hugo 호환 프론트매터)
+│     ├─ fig/                   도식 SVG (공식 문서 근거 + 출처 표기 필수)
 │     └─ code/                  실행 가능한 예제 소스 + README
 ├─ dist/tistory/                티스토리 붙여넣기용 변환본 (git 추적 제외)
 └─ scripts/blog.py              운영 CLI
@@ -60,8 +61,15 @@ posts/
 python scripts/blog.py status                 # 백로그 잔량, 발행 비율, 미검증 글
 python scripts/blog.py pick                   # 오늘 쓸 주제 2개 선정
 python scripts/blog.py new db-001 my-slug     # 글 폴더 스캐폴딩
+python scripts/blog.py lint                   # 글 규칙 검사 (길이·도식·출처·링크·검증)
 python scripts/blog.py done db-001            # 발행 완료 처리 + 이력 기록
 python scripts/blog.py tistory my-slug        # 티스토리용 변환
+```
+
+도식을 그린 뒤에는 브라우저로 직접 열어 글자 잘림·겹침을 확인한다.
+
+```bash
+python -m http.server 8771 --bind 127.0.0.1
 ```
 
 Windows 콘솔에서 한글이 깨지면 `PYTHONUTF8=1`을 앞에 붙인다.
@@ -71,14 +79,21 @@ Windows 콘솔에서 한글이 깨지면 `PYTHONUTF8=1`을 앞에 붙인다.
 1. `pick`으로 주제 2개를 받는다 (core/general 비율을 자동으로 맞춘다)
 2. `new`로 폴더를 만든다
 3. `code/`에 예제를 작성하고 **실제로 실행해 출력을 확인한다**
-4. 확인한 출력을 본문에 그대로 싣고 프론트매터 `verified: true`로 바꾼다
-5. `done`으로 이력에 기록하고 커밋한다
-6. `tistory`로 변환본을 뽑아 에디터에 붙여넣고 발행한다
+4. 공식 문서에서 구조 근거를 찾아 `fig/`에 SVG 도식을 그리고, **도식 아래에 출처를 남긴다**
+5. 확인한 출력을 본문에 그대로 싣고 프론트매터 `verified: true`로 바꾼다
+6. `lint`를 통과시킨다
+7. `done`으로 이력에 기록하고 커밋한다
+8. `tistory`로 변환본을 뽑아 에디터에 붙여넣고 발행한다 (도식 SVG는 따로 업로드)
 
 ## 글에 적용되는 규칙
 
-상세 규칙은 [CLAUDE.md](CLAUDE.md)에 있다. 핵심은 하나다.
+상세 규칙은 [CLAUDE.md](CLAUDE.md)에 있다. 핵심은 셋이다.
 
-> **검증되지 않은 문장은 쓰지 않는다.** 예제 코드는 반드시 실행해 출력까지 확인한 뒤 싣는다.
+> **1. 검증되지 않은 문장은 쓰지 않는다.** 예제 코드는 반드시 실행해 출력까지 확인한 뒤 싣는다.
+> 실행할 수 없는 예제(상용 DB, 유료 서비스 등)는 본문에 미검증 표시를 남긴다.
+>
+> **2. 도식은 공식 자료를 근거로 그리고 출처를 남긴다.** 내부 구조를 추측으로 그리지 않는다.
+>
+> **3. 들어가며는 독자가 겪어봤을 법한 일상 장면으로 시작한다.** 이론 요약으로 시작하지 않는다.
 
-실행할 수 없는 예제(상용 DB, 유료 서비스 등)는 본문에 미검증 표시를 남긴다.
+1과 2는 `blog.py lint`가 기계적으로 검사한다. 3은 사람이 읽고 판단한다.

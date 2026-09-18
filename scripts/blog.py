@@ -6,6 +6,7 @@
     python scripts/blog.py new <id> <slug>   # 글 폴더 스캐폴딩
     python scripts/blog.py done <id>         # 주제를 done으로 표시하고 이력 기록
     python scripts/blog.py tistory <slug>    # 티스토리 붙여넣기용 변환
+    python scripts/blog.py lint              # 글 규칙 검사
     python scripts/blog.py status            # 백로그 잔량과 발행 현황
 """
 
@@ -149,6 +150,7 @@ def cmd_new(args: argparse.Namespace) -> int:
         return 1
 
     (post_dir / "code").mkdir(parents=True)
+    (post_dir / "fig").mkdir()
     tags = ", ".join(topic["tags"])
     index_md = f"""---
 title: "{topic['title']}"
@@ -168,9 +170,9 @@ topic_id: {topic['id']}
 
 ## 구조
 
-```mermaid
-flowchart LR
-```
+![](fig/.svg)
+
+> **구조 근거**: 공식 문서 링크 (섹션·앵커까지)
 
 ## 동작 원리
 
@@ -218,7 +220,7 @@ def cmd_done(args: argparse.Namespace) -> int:
     return 0
 
 
-MERMAID_BLOCK = re.compile(r"```mermaid\n(.*?)```", re.DOTALL)
+FIGURE_IMAGE = re.compile(r"!\[([^\]]*)\]\((fig/[^)]+)\)")
 FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 
 
@@ -239,12 +241,10 @@ def cmd_tistory(args: argparse.Namespace) -> int:
     meta = yaml.safe_load(fm_match.group(1))
     body = raw[fm_match.end():]
 
-    # 티스토리 에디터는 mermaid를 렌더링하지 않는다. SVG로 뽑아 대체하도록 안내를 남긴다.
-    diagram_count = len(MERMAID_BLOCK.findall(body))
-    body = MERMAID_BLOCK.sub(
-        lambda m: f"> (도식: 아래 Mermaid를 SVG로 변환해 이미지로 첨부할 것)\n\n"
-        f"```\n{m.group(1)}```",
-        body,
+    # 도식 SVG는 티스토리에 따로 업로드해야 한다. 자리에 표식을 남겨 빠뜨리지 않게 한다.
+    figures = FIGURE_IMAGE.findall(body)
+    body = FIGURE_IMAGE.sub(
+        lambda m: f"[[도식 {m.group(2)} — 업로드 후 이 줄을 이미지로 교체]]", body
     )
 
     DIST_DIR.mkdir(parents=True, exist_ok=True)
@@ -257,11 +257,96 @@ def cmd_tistory(args: argparse.Namespace) -> int:
     print(f"카테고리: {meta['categories'][0]}")
     print(f"태그    : {','.join(meta['tags'])}")
     print(f"요약    : {meta.get('description', '')}")
-    if diagram_count:
-        print(f"\n주의: Mermaid 도식 {diagram_count}개는 이미지로 바꿔 첨부해야 한다.")
+    if figures:
+        print(f"\n업로드할 도식 {len(figures)}개:")
+        for alt_text, rel_path in figures:
+            print(f"  {source.parent / rel_path}")
+            print(f"      대체 텍스트: {alt_text}")
+        print("  변환본의 [[도식 ...]] 표식 자리에 업로드한 이미지를 넣을 것.")
     if not meta.get("verified"):
         print("\n경고: verified=false. 예제 코드 실행 검증이 끝나지 않았다.")
     return 0
+
+
+CODE_FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
+REFERENCE_SECTION = re.compile(r"^## 참고 자료\n.*", re.MULTILINE | re.DOTALL)
+MARKDOWN_LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+SOURCE_NOTE = re.compile(r"^> \*\*[^*]*근거\*\*", re.MULTILINE)
+
+BODY_MIN_CHARS = 1800
+BODY_MAX_CHARS = 3500
+
+
+def body_length(text: str) -> int:
+    """읽는 분량만 센다.
+
+    프론트매터·코드블록·표·인용(출처)·참고 자료·링크 URL은 읽는 분량이 아니므로 제외한다.
+    """
+    body = FRONTMATTER.sub("", text)
+    body = REFERENCE_SECTION.sub("", body)
+    body = CODE_FENCE.sub("", body)
+    body = "\n".join(
+        line for line in body.splitlines()
+        if not line.startswith(("|", ">", "!["))
+    )
+    body = MARKDOWN_LINK.sub(r"\1", body)  # 링크는 표시 텍스트만 남긴다
+    return len(re.sub(r"\s", "", body))
+
+
+def lint_post(path: Path) -> list[str]:
+    text = path.read_text(encoding="utf-8")
+    problems: list[str] = []
+
+    fm_match = FRONTMATTER.match(text)
+    if not fm_match:
+        return ["프론트매터가 없다"]
+    meta = yaml.safe_load(fm_match.group(1))
+
+    if not meta.get("verified"):
+        problems.append("verified: false — 예제 검증이 끝나지 않았다")
+    if not meta.get("description"):
+        problems.append("description이 비어 있다")
+
+    chars = body_length(text)
+    if not BODY_MIN_CHARS <= chars <= BODY_MAX_CHARS:
+        problems.append(f"본문 {chars:,}자 (기준 {BODY_MIN_CHARS:,}~{BODY_MAX_CHARS:,})")
+
+    figures = FIGURE_IMAGE.findall(text)
+    if not figures:
+        problems.append("도식이 없다 (최소 1개)")
+    source_count = len(SOURCE_NOTE.findall(text))
+    if source_count < len(figures):
+        problems.append(f"도식 {len(figures)}개인데 출처 표기는 {source_count}개")
+    if "```mermaid" in text:
+        problems.append("mermaid 블록이 남아 있다 (SVG로 바꿀 것)")
+
+    for link in re.findall(r"\]\((?!https?:)([^)#]+)\)", text):
+        if not (path.parent / link).exists():
+            problems.append(f"깨진 링크: {link}")
+
+    return problems
+
+
+def cmd_lint(args: argparse.Namespace) -> int:
+    targets = sorted(POSTS_DIR.glob("**/index.md"))
+    if args.slug:
+        targets = [p for p in targets if args.slug in p.parent.name]
+    if not targets:
+        print("검사할 글이 없다.")
+        return 1
+
+    failed = 0
+    for path in targets:
+        rel = path.parent.relative_to(POSTS_DIR)
+        problems = lint_post(path)
+        if problems:
+            failed += 1
+            print(f"[NG] {rel}")
+            for problem in problems:
+                print(f"     - {problem}")
+        else:
+            print(f"[OK] {rel}  본문 {body_length(path.read_text(encoding='utf-8')):,}자")
+    return 1 if failed else 0
 
 
 def cmd_status(args: argparse.Namespace) -> int:
@@ -315,6 +400,10 @@ def main() -> int:
     p_tistory = sub.add_parser("tistory", help="티스토리용 변환")
     p_tistory.add_argument("slug")
     p_tistory.set_defaults(func=cmd_tistory)
+
+    p_lint = sub.add_parser("lint", help="글 규칙 검사 (길이·도식·출처·링크·검증)")
+    p_lint.add_argument("slug", nargs="?", help="생략하면 전체 검사")
+    p_lint.set_defaults(func=cmd_lint)
 
     p_status = sub.add_parser("status", help="백로그/발행 현황")
     p_status.set_defaults(func=cmd_status)

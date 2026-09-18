@@ -12,7 +12,9 @@ topic_id: db-001
 
 ## 들어가며
 
-인덱스를 만들었는데 쿼리가 그대로 느린 상황은 흔하다. 실행계획을 열어 보면 `SEARCH`가 아니라 `SCAN`이 찍혀 있고, 조건 컬럼에는 분명 인덱스가 걸려 있다. 원인은 대개 인덱스가 없어서가 아니라 **WHERE 절을 쓴 방식이 인덱스를 못 쓰게 만들어서**다.
+업무로든 개인 프로젝트로든 테이블에 데이터가 쌓이다 보면, 어느 순간 목록 조회가 눈에 띄게 느려진다. 실행계획을 뽑아 보고 조건에 쓰는 컬럼에 인덱스를 하나 걸어 배포한다. 그런데 응답 시간이 그대로다. 다시 열어 보면 `SEARCH`가 아니라 `SCAN`이 찍혀 있고, 그 컬럼에는 분명 인덱스가 걸려 있다.
+
+이때 대부분은 인덱스를 하나 더 만들거나 힌트를 붙이는 쪽으로 간다. 그런데 원인은 대개 인덱스가 없어서가 아니라 **WHERE 절을 쓴 방식이 인덱스를 못 쓰게 만들어서**다. 인덱스를 아무리 더 만들어도 같은 방식으로 조건을 쓰면 결과는 같다.
 
 이 글은 그 조건들을 나열하는 대신, SQLite에 20만 행을 넣고 WHERE 절 표현만 바꿔가며 실행계획과 실행 시간을 나란히 측정한다. 예상과 다른 결과가 세 군데 나온다.
 
@@ -26,35 +28,22 @@ B-Tree 인덱스는 **키 값이 정렬된 상태로** 저장된 트리다. 탐�
 
 ## 구조
 
-```mermaid
-flowchart TD
-    subgraph tree["B-Tree 인덱스 (email 기준 정렬)"]
-        root["루트<br/>user080000 | user160000"]
-        branch1["브랜치<br/>user040000 | user080000"]
-        branch2["브랜치<br/>user120000 | user160000"]
-        leaf1["리프<br/>user123455 → rowid 123455"]
-        leaf2["리프<br/>user123456 → rowid 123456"]
-    end
-    table[("테이블 (힙)<br/>user_id, login_name, ...")]
+![인덱스 b-tree의 탐색 경로와 테이블 재접근](fig/btree-lookup.svg)
 
-    root -->|"키 비교 1회"| branch2
-    branch2 -->|"키 비교 1회"| leaf2
-    leaf2 -.->|"rowid로 테이블 재접근"| table
-
-    style leaf2 fill:#2d6a4f,color:#fff
-```
+> **구조 근거**: [SQLite Database File Format §1.6 B-tree Pages](https://www.sqlite.org/fileformat2.html#b_tree_pages)
+> — interior page가 키 K개와 포인터 K+1개를 번갈아 담고 키가 고유·오름차순이라는 점, leaf page에는
+> 포인터가 없다는 점, index b-tree의 셀이 인덱싱된 컬럼 뒤에 해당 행의 rowid를 붙여 저장한다는 점을
+> 이 문서에 근거해 그렸다.
 
 조건이 SARGable하면 루트에서 리프까지 **트리 높이만큼만** 비교하고 끝난다(SEARCH). SARGable하지 않으면 리프를 처음부터 끝까지 훑는다(SCAN).
 
-한 가지 더 봐야 할 것이 위 그림의 점선이다. 인덱스에는 키와 rowid만 있으므로, SELECT 목록에 인덱스에 없는 컬럼이 있으면 **행마다 테이블로 되돌아가야 한다**. 이 재접근 비용이 뒤에서 결과를 뒤집는다.
+한 가지 더 봐야 할 것이 위 그림의 점선이다. 인덱스 셀에는 키와 rowid만 있으므로, SELECT 목록에 인덱스에 없는 컬럼이 있으면 **행마다 테이블로 되돌아가야 한다**. 이 재접근 비용이 뒤에서 결과를 뒤집는다.
 
-```mermaid
-flowchart LR
-    A["WHERE email = 'user123456@...'"] -->|"SARGable"| B["트리 탐색<br/>비교 3~4회"]
-    C["WHERE lower(email) = '...'"] -->|"변환 후 순서 깨짐"| D["리프 전체 스캔<br/>비교 200,000회"]
-    style B fill:#2d6a4f,color:#fff
-    style D fill:#9d0208,color:#fff
-```
+![SARGable 여부에 따라 갈리는 실행계획](fig/sargable.svg)
+
+> **판정 기준 근거**: [SQLite — Query Planning](https://www.sqlite.org/queryplanner.html),
+> [SQLite — Indexes On Expressions](https://www.sqlite.org/expridx.html).
+> 그림 안의 수치(0.00ms / 16.88ms)는 이 글에서 직접 측정한 값이다.
 
 ## 동작 원리
 
