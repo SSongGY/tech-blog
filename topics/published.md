@@ -7,3 +7,4 @@
 | 2026-09-18 | db-001 | Database | B-Tree 인덱스를 못 타는 조건들 |
 | 2026-09-18 | tool-002 | Tooling | git bisect로 버그가 들어온 커밋을 자동으로 찾기 |
 | 2026-09-18 | bas-001 | Database | SELECT 기본 — 컬럼 고르기와 별칭 |
+| 2026-09-18 | tb-001 | Database | Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간 |

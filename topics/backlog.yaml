@@ -453,7 +453,7 @@ topics:
     difficulty: beginner
     angle: "CACHE/NOCACHE와 인스턴스 재기동 시 번호 건너뜀을 매뉴얼 근거로 정리"
     code: sql
-    status: writing
+    status: done
   - id: tb-002
     title: "Tibero 7 계층 질의 — CONNECT BY와 순환 참조"
     category: Database
