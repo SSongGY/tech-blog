@@ -3,10 +3,14 @@ title: "git bisect로 버그가 들어온 커밋을 자동으로 찾기"
 date: 2026-09-18
 categories: [Tooling]
 subcategory: git
+track: general
 tags: [git, bisect, debugging, automation]
 description: "커밋 64개 중 버그가 들어온 하나를 git bisect run으로 찾는다. 빌드가 깨진 커밋을 만났을 때의 exit 125 처리까지 실제로 돌려 확인했다."
 difficulty: intermediate
 verified: true
+feature: git-bisect
+environment: ["git 2.54.0.windows.1", "Python 3.13.5"]
+verification: executed
 topic_id: tool-002
 ---
 

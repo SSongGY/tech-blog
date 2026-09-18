@@ -7,7 +7,19 @@ meta:
   target_ratio:
     core: 0.6      # Database, Backend, Performance
     general: 0.4   # Language, Infra, Architecture, Security, Tooling
-  low_watermark: 10   # todo가 이 아래로 떨어지면 주제를 보충한다
+  low_watermark: 10   # 트랙별 todo가 이 아래로 떨어지면 주제를 보충한다
+  # 하루 편수는 blog.py의 daily_plan()이 정한다.
+  # basics = DB 기본 문법 / product = DB 제품 기능(Tibero 7)
+  # pe     = 정보관리기술사 시험 과목 기술 / general = 그 외 IT 기술
+  # 어느 쪽이든 하루 5편이다.
+  # 기본 문법이 남아 있는 동안: basics 1 + product 1 + pe 2 + general 1
+  # 기본 문법을 다 쓰고 나면 : product 1 + pe 3 + general 1  (빈 자리를 기술사가 가져간다)
+  posts_per_day:
+    with_basics: {basics: 1, product: 1, pe: 2, general: 1}
+    after_basics: {basics: 0, product: 1, pe: 3, general: 1}
+  # 제품 트랙은 한 제품을 끝내면 다음 제품으로 넘어간다. 그래야 소진되지 않고,
+  # 같은 feature 키로 제품 간 비교 글이 이어진다.
+  product_rotation: [Tibero 7, Oracle 19c, MySQL 8.0, PostgreSQL 16]
 
 topics:
   # ---------- Database ----------
@@ -16,6 +28,7 @@ topics:
     category: Database
     subcategory: sqlite
     tags: [index, btree, sqlite, explain]
+    feature: index-usage
     difficulty: intermediate
     angle: "이론이 아니라 SQLite에서 EXPLAIN QUERY PLAN으로 직접 재현해 보인다"
     code: python
@@ -25,6 +38,7 @@ topics:
     category: Database
     subcategory: sqlite
     tags: [index, composite, cardinality]
+    feature: composite-index
     difficulty: intermediate
     angle: "선행 컬럼 선택도에 따라 스캔 범위가 몇 배 달라지는지 행 수로 측정"
     code: python
@@ -34,6 +48,7 @@ topics:
     category: Database
     subcategory: sqlite
     tags: [transaction, isolation, mvcc]
+    feature: transaction-isolation
     difficulty: intermediate
     angle: "두 세션을 동시에 띄워 dirty read/non-repeatable/phantom을 각각 재현"
     code: python
@@ -42,6 +57,7 @@ topics:
     title: "MVCC는 왜 읽기 잠금을 없앴고 무엇을 대가로 치르는가"
     category: Database
     tags: [mvcc, undo, vacuum]
+    feature: mvcc
     difficulty: advanced
     angle: "버전 체인이 쌓이는 과정을 도식화하고 롱 트랜잭션의 비용을 계산"
     code: sql
@@ -50,6 +66,7 @@ topics:
     title: "데드락은 어떻게 만들어지고 DB는 누구를 죽이는가"
     category: Database
     tags: [deadlock, lock, wait-for-graph]
+    feature: deadlock
     difficulty: intermediate
     angle: "wait-for 그래프를 그리고 victim 선정 기준을 실측으로 확인"
     code: python
@@ -58,6 +75,7 @@ topics:
     title: "실행계획의 비용(cost)은 무엇을 세는 숫자인가"
     category: Database
     tags: [optimizer, cost, statistics]
+    feature: explain-plan
     difficulty: advanced
     angle: "통계가 틀어졌을 때 옵티마이저가 어떻게 오판하는지 강제로 재현"
     code: sql
@@ -75,6 +93,7 @@ topics:
     category: Database
     subcategory: sqlite
     tags: [pagination, offset, keyset]
+    feature: row-limiting
     difficulty: intermediate
     angle: "페이지 깊이에 따른 응답시간 곡선을 직접 측정해 교차점을 찾는다"
     code: python
@@ -83,6 +102,7 @@ topics:
     title: "NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유"
     category: Database
     tags: ["null", three-valued-logic, sql]
+    feature: null-semantics
     difficulty: beginner
     angle: "3값 논리 진리표를 실제 쿼리 결과와 대조"
     code: sql
@@ -91,6 +111,7 @@ topics:
     title: "파티셔닝이 항상 빨라지지 않는 이유"
     category: Database
     tags: [partition, pruning, global-index]
+    feature: table-partitioning
     difficulty: advanced
     angle: "파티션 프루닝이 깨지는 조건과 글로벌 인덱스 비용을 정리"
     code: sql
@@ -100,6 +121,7 @@ topics:
     category: Database
     subcategory: sqlite
     tags: [wal, durability, checkpoint]
+    feature: write-ahead-log
     difficulty: advanced
     angle: "SQLite WAL 파일을 직접 열어 프레임이 쌓이는 걸 바이트로 확인"
     code: python
@@ -108,6 +130,7 @@ topics:
     title: "옵티마이저 힌트를 쓰기 전에 확인해야 할 3가지"
     category: Database
     tags: [hint, plan-stability, statistics]
+    feature: optimizer-hint
     difficulty: advanced
     angle: "힌트로 덮은 문제가 나중에 어떻게 되돌아오는지 사례로 정리"
     code: sql
@@ -365,6 +388,7 @@ topics:
     title: "SQL 인젝션은 이스케이프가 아니라 바인딩으로 막는다"
     category: Security
     tags: [sql-injection, prepared-statement, binding]
+    feature: sql-injection
     difficulty: beginner
     angle: "문자열 조합이 뚫리는 입력을 보이고 바인딩과 대조"
     code: python
@@ -412,4 +436,1151 @@ topics:
     difficulty: intermediate
     angle: "폭과 높이가 각각 무엇을 뜻하는지, 오독하기 쉬운 패턴 3가지"
     code: python
+    status: todo
+
+  # ========== 제품 시리즈: Tibero 7 (track: product) ==========
+  # 실행 환경이 없으면 공식 매뉴얼 근거로만 쓰고 verification: manual-only 로 표시한다.
+  # feature 키가 같은 다른 제품 글이 있으면 서로 링크하고 비교 절을 넣는다.
+  - id: tb-001
+    title: "Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: sequence
+    tags: [tibero, sequence, sql]
+    difficulty: beginner
+    angle: "CACHE/NOCACHE와 인스턴스 재기동 시 번호 건너뜀을 매뉴얼 근거로 정리"
+    code: sql
+    status: todo
+  - id: tb-002
+    title: "Tibero 7 계층 질의 — CONNECT BY와 순환 참조"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: hierarchical-query
+    tags: [tibero, hierarchical-query, sql]
+    difficulty: intermediate
+    angle: "LEVEL·CONNECT_BY_ISCYCLE·NOCYCLE의 역할을 조직도 예제로"
+    code: sql
+    status: todo
+  - id: tb-003
+    title: "Tibero 7 분석 함수 — 윈도우 절을 정확히 쓰는 법"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: window-function
+    tags: [tibero, window-function, sql]
+    difficulty: intermediate
+    angle: "ROWS와 RANGE의 차이가 결과를 어떻게 바꾸는지"
+    code: sql
+    status: todo
+  - id: tb-004
+    title: "Tibero 7 MERGE 문 — UPSERT를 한 문장으로"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: merge
+    tags: [tibero, merge, sql]
+    difficulty: intermediate
+    angle: "WHEN MATCHED/NOT MATCHED 조합과 DELETE 절까지"
+    code: sql
+    status: todo
+  - id: tb-005
+    title: "Tibero 7 파티션 테이블 — 종류별로 언제 쓰는가"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: table-partitioning
+    tags: [tibero, table-partitioning, sql]
+    difficulty: advanced
+    angle: "RANGE·LIST·HASH·COMPOSITE를 선택 기준으로 갈라 정리"
+    code: sql
+    status: todo
+  - id: tb-006
+    title: "Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: index-types
+    tags: [tibero, index-types, sql]
+    difficulty: intermediate
+    angle: "함수 기반·비트맵·리버스·유니크를 쓸 자리 기준으로"
+    code: sql
+    status: todo
+  - id: tb-007
+    title: "Tibero 7 옵티마이저 힌트 — 문법과 적용 확인"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: optimizer-hint
+    tags: [tibero, optimizer-hint, sql]
+    difficulty: advanced
+    angle: "힌트가 무시되는 조건과 적용 여부를 확인하는 방법"
+    code: sql
+    status: todo
+  - id: tb-008
+    title: "Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: explain-plan
+    tags: [tibero, explain-plan, sql]
+    difficulty: intermediate
+    angle: "계획을 뽑는 세 가지 경로와 각각이 보여주는 것의 차이"
+    code: sql
+    status: todo
+  - id: tb-009
+    title: "Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: transaction-isolation
+    tags: [tibero, transaction-isolation, sql]
+    difficulty: intermediate
+    angle: "지원하는 수준과 SET TRANSACTION 문법을 매뉴얼 기준으로"
+    code: sql
+    status: todo
+  - id: tb-010
+    title: "Tibero 7 PSM — 저장 프로시저 기본 문법"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: stored-procedure
+    tags: [tibero, stored-procedure, sql]
+    difficulty: beginner
+    angle: "선언부·예외부 구조와 파라미터 모드(IN/OUT/INOUT)"
+    code: sql
+    status: todo
+  - id: tb-011
+    title: "Tibero 7 외부 테이블 — 파일을 테이블처럼 읽기"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: external-table
+    tags: [tibero, external-table, sql]
+    difficulty: intermediate
+    angle: "DIRECTORY 객체부터 ACCESS PARAMETERS까지 한 줄씩"
+    code: sql
+    status: todo
+  - id: tb-012
+    title: "Tibero 7 딕셔너리 뷰 — 무엇을 어디서 찾는가"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: system-catalog
+    tags: [tibero, system-catalog, sql]
+    difficulty: beginner
+    angle: "DBA_/ALL_/USER_ 접두사 체계와 자주 쓰는 뷰 목록"
+    code: sql
+    status: todo
+  - id: tb-013
+    title: "Tibero 7 LOB — CLOB/BLOB 저장과 조회"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: lob
+    tags: [tibero, lob, sql]
+    difficulty: intermediate
+    angle: "인라인 저장 조건과 LOB 세그먼트가 따로 생기는 시점"
+    code: sql
+    status: todo
+  - id: tb-014
+    title: "Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: datetime-types
+    tags: [tibero, datetime-types, sql]
+    difficulty: beginner
+    angle: "WITH TIME ZONE 계열까지 포함해 정밀도와 연산 규칙"
+    code: sql
+    status: todo
+  - id: tb-015
+    title: "Tibero 7 WITH 절 — CTE와 재귀 질의"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: cte
+    tags: [tibero, cte, sql]
+    difficulty: intermediate
+    angle: "재귀 CTE와 CONNECT BY 중 언제 무엇을 쓰는가"
+    code: sql
+    status: todo
+  - id: tb-016
+    title: "Tibero 7 페이징 — ROWNUM과 그 함정"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: row-limiting
+    tags: [tibero, row-limiting, sql]
+    difficulty: intermediate
+    angle: "ROWNUM이 정렬 전에 붙는 이유와 올바른 페이징 문법"
+    code: sql
+    status: todo
+  - id: tb-017
+    title: "Tibero 7 제약조건 — 종류와 검증 시점"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: constraints
+    tags: [tibero, constraints, sql]
+    difficulty: beginner
+    angle: "DEFERRABLE과 NOVALIDATE가 실제로 바꾸는 것"
+    code: sql
+    status: todo
+  - id: tb-018
+    title: "Tibero 7 머티리얼라이즈드 뷰 — 갱신 방식 고르기"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: materialized-view
+    tags: [tibero, materialized-view, sql]
+    difficulty: advanced
+    angle: "COMPLETE·FAST·ON COMMIT 갱신의 전제 조건"
+    code: sql
+    status: todo
+  - id: tb-019
+    title: "Tibero 7 시노님 — 공용과 전용의 차이"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: synonym
+    tags: [tibero, synonym, sql]
+    difficulty: beginner
+    angle: "이름 해석 순서에서 시노님이 놓인 자리"
+    code: sql
+    status: todo
+  - id: tb-020
+    title: "Tibero 7 권한과 롤 — GRANT 체계 정리"
+    category: Database
+    subcategory: tibero
+    track: product
+    product: Tibero
+    product_version: "7"
+    feature: privileges
+    tags: [tibero, privileges, sql]
+    difficulty: intermediate
+    angle: "시스템 권한·객체 권한·롤의 관계와 WITH ADMIN/GRANT OPTION"
+    code: sql
+    status: todo
+
+  # ========== DB 기본 문법 (track: basics) ==========
+  # 전부 SQLite로 재현 가능한 표준 SQL 범위. 특정 제품에 묶이지 않는다.
+  # 분량 기준이 짧고(1,200~2,500자) 실행 검증이 쉬워 하루 편수를 받치는 트랙이다.
+  # 이 트랙이 소진되면 daily_plan()이 하루 4편으로 자동 전환한다.
+  - id: bas-001
+    title: "SELECT 기본 — 컬럼 고르기와 별칭"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "SELECT * 를 쓰면 안 되는 이유를 실행계획으로 보인다"
+    code: python
+    status: todo
+  - id: bas-002
+    title: "WHERE 조건 — AND와 OR의 우선순위"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "괄호를 빼먹으면 결과가 어떻게 달라지는지 같은 데이터로 대조"
+    code: python
+    status: todo
+  - id: bas-003
+    title: "ORDER BY — 다중 정렬과 NULL이 놓이는 자리"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: null-ordering
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "NULLS FIRST/LAST 기본값이 엔진마다 다른 것을 실측"
+    code: python
+    status: todo
+  - id: bas-004
+    title: "LIMIT과 OFFSET — 결과를 잘라내는 문법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: row-limiting
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "OFFSET이 커질수록 왜 느려지는지 행 수로 설명"
+    code: python
+    status: todo
+  - id: bas-005
+    title: "DISTINCT — 중복 제거가 정렬을 부르는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "실행계획에서 DISTINCT가 어떤 연산으로 바뀌는지 확인"
+    code: python
+    status: todo
+  - id: bas-006
+    title: "GROUP BY와 집계 함수 — 묶는 기준 정하기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "집계 함수가 NULL을 세지 않는 것을 COUNT(*)와 대조"
+    code: python
+    status: todo
+  - id: bas-007
+    title: "HAVING과 WHERE — 어느 단계에서 걸러지는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "질의 처리 순서를 그려 두 절의 자리를 구분"
+    code: python
+    status: todo
+  - id: bas-008
+    title: "INNER JOIN — 두 테이블을 잇는 기본"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "조인 조건을 빼먹으면 행 수가 곱해지는 것을 숫자로"
+    code: python
+    status: todo
+  - id: bas-009
+    title: "LEFT JOIN — 없는 쪽을 남기는 조인"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "WHERE에 조건을 쓰면 LEFT JOIN이 INNER가 되는 함정"
+    code: python
+    status: todo
+  - id: bas-010
+    title: "CROSS JOIN과 SELF JOIN — 언제 쓰는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, intermediate]
+    difficulty: intermediate
+    angle: "날짜 채우기와 계층 비교라는 실제 용도 두 가지"
+    code: python
+    status: todo
+  - id: bas-011
+    title: "서브쿼리 세 가지 — 스칼라, 인라인 뷰, 상관"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: subquery
+    tags: [sql, basics, intermediate]
+    difficulty: intermediate
+    angle: "상관 서브쿼리가 행마다 실행되는 것을 실행계획으로"
+    code: python
+    status: todo
+  - id: bas-012
+    title: "IN, EXISTS, NOT IN — 결과가 갈리는 지점"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: exists-vs-in
+    tags: [sql, basics, intermediate]
+    difficulty: intermediate
+    angle: "NOT IN에 NULL이 섞이면 결과가 빈다는 것을 재현"
+    code: python
+    status: todo
+  - id: bas-013
+    title: "UNION과 UNION ALL — 중복 제거 비용"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "UNION이 정렬을 부르는 것을 실행계획과 시간으로 대조"
+    code: python
+    status: todo
+  - id: bas-014
+    title: "CASE WHEN — 조건부 값과 피벗"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "CASE로 행을 열로 돌리는 수동 피벗까지"
+    code: python
+    status: todo
+  - id: bas-015
+    title: "COALESCE와 NULLIF — NULL을 다루는 두 함수"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: null-semantics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "NULL이 연산·비교·집계에서 각각 다르게 동작하는 것과 함께"
+    code: python
+    status: todo
+  - id: bas-016
+    title: "INSERT — 단건, 다건, SELECT로 넣기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "INSERT SELECT로 대량 적재할 때 컬럼 순서가 맞는지 확인하는 법"
+    code: python
+    status: todo
+  - id: bas-017
+    title: "UPDATE — 조건 없는 UPDATE를 막는 습관"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "먼저 SELECT로 대상을 세어보는 절차를 예제로"
+    code: python
+    status: todo
+  - id: bas-018
+    title: "DELETE, TRUNCATE, DROP — 무엇이 어디까지 지우는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "롤백 가능 여부와 저장 공간 반환 차이를 표로"
+    code: python
+    status: todo
+  - id: bas-019
+    title: "CREATE TABLE — 타입과 기본 제약조건"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: constraints
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "NOT NULL·UNIQUE·CHECK·DEFAULT가 각각 언제 검사되는지"
+    code: python
+    status: todo
+  - id: bas-020
+    title: "ALTER TABLE — 컬럼을 바꿀 때의 제약"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, intermediate]
+    difficulty: intermediate
+    angle: "SQLite가 지원하지 않는 변경과 우회 절차"
+    code: python
+    status: todo
+  - id: bas-021
+    title: "VIEW — 만들고 쓰는 법, 그리고 한계"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: view
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "뷰를 통한 갱신이 되는 조건과 안 되는 조건"
+    code: python
+    status: todo
+  - id: bas-022
+    title: "트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: transaction-basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "SAVEPOINT로 부분 롤백하는 흐름을 두 세션으로"
+    code: python
+    status: todo
+  - id: bas-023
+    title: "문자열 함수 기본 — 자르기, 붙이기, 바꾸기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "인덱스를 죽이는 문자열 함수 사용 위치를 함께 짚는다"
+    code: python
+    status: todo
+  - id: bas-024
+    title: "날짜와 시간 다루기 — 저장과 연산"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    feature: datetime-types
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "문자열로 저장한 날짜가 정렬·비교에서 어떻게 깨지는지"
+    code: python
+    status: todo
+  - id: bas-025
+    title: "숫자 타입과 반올림 — 돈을 다룰 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, basics, beginner]
+    difficulty: beginner
+    angle: "부동소수점으로 금액을 더하면 틀어지는 것을 실제 값으로"
+    code: python
+    status: todo
+
+  # ========== 정보관리기술사 시험 과목 (track: pe) ==========
+  # 기술사 답안 형태로 쓴다: 정의 → 등장 배경 → 구성요소 → 도식 → 비교 → 고려사항.
+  # 실행 예제가 없는 주제가 많으므로 기본은 verification: manual-only.
+  # 대신 표준 문서·공식 자료 근거가 반드시 있어야 한다. 도식이 특히 중요하다.
+  - id: pe-001
+    title: "요구공학 — 도출부터 검증까지 4단계"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "단계별 산출물과 각 단계에서 놓치면 무엇이 무너지는지"
+    code: none
+    status: todo
+  - id: pe-002
+    title: "소프트웨어 아키텍처 4+1 뷰"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "뷰마다 누구의 관심사를 담는지 이해관계자 기준으로 정리"
+    code: none
+    status: todo
+  - id: pe-003
+    title: "결합도와 응집도 — 등급별 판별 기준"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: beginner
+    angle: "코드 조각으로 각 등급을 판별하는 연습"
+    code: none
+    status: todo
+  - id: pe-004
+    title: "테스트 레벨과 테스트 기법 분류"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "V모델에 레벨을 얹고 블랙박스·화이트박스 기법을 배치"
+    code: none
+    status: todo
+  - id: pe-005
+    title: "형상관리 — 4대 활동과 베이스라인"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "식별·통제·감사·기록이 실제로 언제 일어나는지"
+    code: none
+    status: todo
+  - id: pe-006
+    title: "CMMI 성숙도 5단계와 프로세스 영역"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "단계별로 조직에서 실제 무엇이 달라지는지"
+    code: none
+    status: todo
+  - id: pe-007
+    title: "애자일과 DevOps — 무엇이 같고 무엇이 다른가"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "가치 흐름 관점에서 두 개념의 적용 범위를 구분"
+    code: none
+    status: todo
+  - id: pe-008
+    title: "MSA — 분해 기준과 감당해야 할 비용"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: advanced
+    angle: "모놀리스 대비 얻는 것과 잃는 것을 항목별로"
+    code: none
+    status: todo
+  - id: pe-009
+    title: "정규화 1NF부터 BCNF까지"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: intermediate
+    angle: "각 단계에서 제거되는 이상현상을 예제 릴레이션으로"
+    code: none
+    status: todo
+  - id: pe-010
+    title: "트랜잭션 ACID와 격리 수준"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: intermediate
+    angle: "격리 수준별로 허용되는 이상현상을 표로 대응"
+    code: none
+    status: todo
+  - id: pe-011
+    title: "분산 데이터베이스 — 투명성 6가지"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: advanced
+    angle: "각 투명성이 깨졌을 때 개발자가 무엇을 떠안는지"
+    code: none
+    status: todo
+  - id: pe-012
+    title: "데이터 모델링 3단계 — 개념·논리·물리"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: beginner
+    angle: "단계별 산출물과 전환 시 결정되는 사항"
+    code: none
+    status: todo
+  - id: pe-013
+    title: "데이터 품질 관리 — 지표와 프로파일링"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: intermediate
+    angle: "완전성·유일성·유효성 등 지표를 측정 가능한 형태로"
+    code: none
+    status: todo
+  - id: pe-014
+    title: "OSI 7계층과 TCP/IP 4계층 대응"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: beginner
+    angle: "계층별 PDU와 대표 프로토콜, 장비를 한 장에"
+    code: none
+    status: todo
+  - id: pe-015
+    title: "TCP 3-way 핸드셰이크와 흐름·혼잡 제어"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: intermediate
+    angle: "혼잡 제어 알고리즘 단계를 상태 변화로"
+    code: none
+    status: todo
+  - id: pe-016
+    title: "라우팅 프로토콜 — 거리벡터와 링크상태"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: intermediate
+    angle: "수렴 시간과 확장성 차이가 생기는 이유"
+    code: none
+    status: todo
+  - id: pe-017
+    title: "SDN과 NFV — 제어와 데이터 평면 분리"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: advanced
+    angle: "기존 네트워크 대비 무엇이 프로그래밍 가능해지는가"
+    code: none
+    status: todo
+  - id: pe-018
+    title: "대칭키와 공개키 — 쓰임이 갈리는 지점"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: beginner
+    angle: "속도와 키 분배 문제로 하이브리드 방식이 나온 경위"
+    code: none
+    status: todo
+  - id: pe-019
+    title: "전자서명과 PKI 구성요소"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: intermediate
+    angle: "인증서 검증 경로를 단계별로 추적"
+    code: none
+    status: todo
+  - id: pe-020
+    title: "접근통제 모델 — DAC, MAC, RBAC, ABAC"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: intermediate
+    angle: "같은 요구사항을 네 모델로 각각 표현해 비교"
+    code: none
+    status: todo
+  - id: pe-021
+    title: "침해사고 대응 절차 6단계"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: intermediate
+    angle: "단계별 산출물과 증거 보전에서 틀리기 쉬운 것"
+    code: none
+    status: todo
+  - id: pe-022
+    title: "개인정보 비식별 조치 — 기법과 적정성 평가"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: advanced
+    angle: "k-익명성·l-다양성·t-근접성이 막는 공격이 각각 다르다"
+    code: none
+    status: todo
+  - id: pe-023
+    title: "제로 트러스트 — 경계 보안과 무엇이 다른가"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: advanced
+    angle: "핵심 원칙과 도입 시 선행되어야 할 것"
+    code: none
+    status: todo
+  - id: pe-024
+    title: "프로세스와 스레드 — 문맥 교환 비용"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: beginner
+    angle: "PCB에 저장되는 것과 교환 시 실제로 드는 비용"
+    code: none
+    status: todo
+  - id: pe-025
+    title: "CPU 스케줄링 알고리즘 비교"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: intermediate
+    angle: "같은 작업 집합으로 평균 대기시간을 계산해 대조"
+    code: none
+    status: todo
+  - id: pe-026
+    title: "가상 메모리 — 페이지 교체 알고리즘"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: intermediate
+    angle: "참조 문자열로 LRU·FIFO·Optimal 부재율을 직접 계산"
+    code: none
+    status: todo
+  - id: pe-027
+    title: "교착상태 — 발생 조건 4가지와 해결 전략"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: intermediate
+    angle: "예방·회피·탐지·회복이 각각 어느 조건을 건드리는지"
+    code: none
+    status: todo
+  - id: pe-028
+    title: "클라우드 서비스 모델과 책임 공유"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: beginner
+    angle: "IaaS·PaaS·SaaS에서 누가 무엇까지 책임지는지 경계선으로"
+    code: none
+    status: todo
+  - id: pe-029
+    title: "컨테이너와 가상머신 — 격리 수준의 차이"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: intermediate
+    angle: "하이퍼바이저와 컨테이너 런타임의 위치를 도식으로"
+    code: none
+    status: todo
+  - id: pe-030
+    title: "블록체인 합의 알고리즘 — PoW, PoS, PBFT"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: advanced
+    angle: "처리량·최종성·장애 허용을 축으로 비교"
+    code: none
+    status: todo
+  - id: pe-031
+    title: "머신러닝 모델 평가 지표"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: intermediate
+    angle: "정밀도와 재현율이 상충하는 상황을 혼동행렬로"
+    code: none
+    status: todo
+  - id: pe-032
+    title: "PMBOK 지식 영역과 프로세스 그룹"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: intermediate
+    angle: "매트릭스로 보고 실제 프로젝트 흐름에 대응"
+    code: none
+    status: todo
+  - id: pe-033
+    title: "ITIL 서비스 관리 — 사건·문제·변경의 구분"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: intermediate
+    angle: "같은 장애를 세 프로세스가 어떻게 나눠 다루는지"
+    code: none
+    status: todo
+  - id: pe-034
+    title: "IT 거버넌스와 COBIT — 관리와 거버넌스의 분리"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: advanced
+    angle: "EDM과 APO 이하의 역할 구분"
+    code: none
+    status: todo
+  - id: pe-035
+    title: "정보시스템 감리 — 시점별 점검 항목"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: intermediate
+    angle: "요구정의·설계·종료 감리에서 각각 무엇을 보는지"
+    code: none
+    status: todo
+
+  # ========== 제품 시리즈: Oracle 19c (track: product) ==========
+  # Tibero 7 시리즈와 같은 feature 키를 쓴다. 두 제품 글이 서로를 가리키고
+  # 비교 절이 붙는다. blog.py relink가 상호 링크를 만든다.
+  - id: or-001
+    title: "Oracle 19c 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: sequence
+    tags: [oracle, sequence, sql]
+    difficulty: beginner
+    angle: "CACHE 설정과 RAC 환경에서 순번이 어긋나는 조건"
+    code: sql
+    status: todo
+  - id: or-002
+    title: "Oracle 19c 계층 질의 — CONNECT BY와 순환 참조"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: hierarchical-query
+    tags: [oracle, hierarchical-query, sql]
+    difficulty: intermediate
+    angle: "LEVEL·CONNECT_BY_ISCYCLE·NOCYCLE을 조직도 예제로"
+    code: sql
+    status: todo
+  - id: or-003
+    title: "Oracle 19c 분석 함수 — 윈도우 절을 정확히 쓰는 법"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: window-function
+    tags: [oracle, window-function, sql]
+    difficulty: intermediate
+    angle: "ROWS와 RANGE의 차이가 결과를 어떻게 바꾸는지"
+    code: sql
+    status: todo
+  - id: or-004
+    title: "Oracle 19c MERGE 문 — UPSERT를 한 문장으로"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: merge
+    tags: [oracle, merge, sql]
+    difficulty: intermediate
+    angle: "WHEN MATCHED/NOT MATCHED 조합과 DELETE 절까지"
+    code: sql
+    status: todo
+  - id: or-005
+    title: "Oracle 19c 파티션 테이블 — 종류별로 언제 쓰는가"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: table-partitioning
+    tags: [oracle, table-partitioning, sql]
+    difficulty: advanced
+    angle: "RANGE·LIST·HASH·COMPOSITE를 선택 기준으로 갈라 정리"
+    code: sql
+    status: todo
+  - id: or-006
+    title: "Oracle 19c 인덱스 종류 — B-Tree 말고 무엇이 있는가"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: index-types
+    tags: [oracle, index-types, sql]
+    difficulty: intermediate
+    angle: "함수 기반·비트맵·리버스·유니크를 쓸 자리 기준으로"
+    code: sql
+    status: todo
+  - id: or-007
+    title: "Oracle 19c 옵티마이저 힌트 — 문법과 적용 확인"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: optimizer-hint
+    tags: [oracle, optimizer-hint, sql]
+    difficulty: advanced
+    angle: "힌트가 무시되는 조건과 적용 여부를 확인하는 방법"
+    code: sql
+    status: todo
+  - id: or-008
+    title: "Oracle 19c 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: explain-plan
+    tags: [oracle, explain-plan, sql]
+    difficulty: intermediate
+    angle: "계획을 뽑는 세 가지 경로와 각각이 보여주는 것의 차이"
+    code: sql
+    status: todo
+  - id: or-009
+    title: "Oracle 19c 트랜잭션 격리 수준 — 지원 범위와 설정"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: transaction-isolation
+    tags: [oracle, transaction-isolation, sql]
+    difficulty: intermediate
+    angle: "지원하는 수준과 SET TRANSACTION 문법"
+    code: sql
+    status: todo
+  - id: or-010
+    title: "Oracle 19c PL/SQL — 저장 프로시저 기본 문법"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: stored-procedure
+    tags: [oracle, stored-procedure, sql]
+    difficulty: beginner
+    angle: "선언부·예외부 구조와 파라미터 모드(IN/OUT/IN OUT)"
+    code: sql
+    status: todo
+  - id: or-011
+    title: "Oracle 19c 외부 테이블 — 파일을 테이블처럼 읽기"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: external-table
+    tags: [oracle, external-table, sql]
+    difficulty: intermediate
+    angle: "DIRECTORY 객체부터 ACCESS PARAMETERS까지 한 줄씩"
+    code: sql
+    status: todo
+  - id: or-012
+    title: "Oracle 19c 딕셔너리 뷰 — 무엇을 어디서 찾는가"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: system-catalog
+    tags: [oracle, system-catalog, sql]
+    difficulty: beginner
+    angle: "DBA_/ALL_/USER_ 접두사 체계와 자주 쓰는 뷰 목록"
+    code: sql
+    status: todo
+  - id: or-013
+    title: "Oracle 19c LOB — CLOB/BLOB 저장과 조회"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: lob
+    tags: [oracle, lob, sql]
+    difficulty: intermediate
+    angle: "인라인 저장 조건과 LOB 세그먼트가 따로 생기는 시점"
+    code: sql
+    status: todo
+  - id: or-014
+    title: "Oracle 19c 날짜·시간 타입 — DATE와 TIMESTAMP의 차이"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: datetime-types
+    tags: [oracle, datetime-types, sql]
+    difficulty: beginner
+    angle: "WITH TIME ZONE 계열까지 포함해 정밀도와 연산 규칙"
+    code: sql
+    status: todo
+  - id: or-015
+    title: "Oracle 19c WITH 절 — CTE와 재귀 질의"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: cte
+    tags: [oracle, cte, sql]
+    difficulty: intermediate
+    angle: "재귀 CTE와 CONNECT BY 중 언제 무엇을 쓰는가"
+    code: sql
+    status: todo
+  - id: or-016
+    title: "Oracle 19c 페이징 — ROWNUM과 FETCH FIRST"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: row-limiting
+    tags: [oracle, row-limiting, sql]
+    difficulty: intermediate
+    angle: "ROWNUM이 정렬 전에 붙는 이유와 12c 이후 FETCH FIRST 문법"
+    code: sql
+    status: todo
+  - id: or-017
+    title: "Oracle 19c 제약조건 — 종류와 검증 시점"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: constraints
+    tags: [oracle, constraints, sql]
+    difficulty: beginner
+    angle: "DEFERRABLE과 NOVALIDATE가 실제로 바꾸는 것"
+    code: sql
+    status: todo
+  - id: or-018
+    title: "Oracle 19c 머티리얼라이즈드 뷰 — 갱신 방식 고르기"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: materialized-view
+    tags: [oracle, materialized-view, sql]
+    difficulty: advanced
+    angle: "COMPLETE·FAST·ON COMMIT 갱신의 전제 조건"
+    code: sql
+    status: todo
+  - id: or-019
+    title: "Oracle 19c 시노님 — 공용과 전용의 차이"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: synonym
+    tags: [oracle, synonym, sql]
+    difficulty: beginner
+    angle: "이름 해석 순서에서 시노님이 놓인 자리"
+    code: sql
+    status: todo
+  - id: or-020
+    title: "Oracle 19c 권한과 롤 — GRANT 체계 정리"
+    category: Database
+    subcategory: oracle
+    track: product
+    product: Oracle
+    product_version: "19c"
+    feature: privileges
+    tags: [oracle, privileges, sql]
+    difficulty: intermediate
+    angle: "시스템 권한·객체 권한·롤의 관계와 WITH ADMIN/GRANT OPTION"
+    code: sql
     status: todo

@@ -2,11 +2,13 @@
 """기술 블로그 운영 CLI.
 
 사용법:
-    python scripts/blog.py pick              # 오늘 쓸 주제 2개 선정
+    python scripts/blog.py pick              # 오늘 쓸 주제 선정 (기본문법 2 + 제품 1 + 일반 2)
     python scripts/blog.py new <id> <slug>   # 글 폴더 스캐폴딩
+    python scripts/blog.py related [feature] # 같은 기능으로 쓴 글 목록
+    python scripts/blog.py relink            # 같은 기능 글끼리 상호 링크 재생성
+    python scripts/blog.py lint              # 글 규칙 검사
     python scripts/blog.py done <id>         # 주제를 done으로 표시하고 이력 기록
     python scripts/blog.py tistory <slug>    # 티스토리 붙여넣기용 변환
-    python scripts/blog.py lint              # 글 규칙 검사
     python scripts/blog.py status            # 백로그 잔량과 발행 현황
 """
 
@@ -14,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import os
 import re
 import sys
 from pathlib import Path
@@ -29,8 +32,58 @@ PUBLISHED_PATH = ROOT / "topics" / "published.md"
 POSTS_DIR = ROOT / "posts"
 DIST_DIR = ROOT / "dist" / "tistory"
 
+FIGURE_IMAGE = re.compile(r"!\[([^\]]*)\]\((fig/[^)]+)\)")
+FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
+
 CORE_CATEGORIES = {"Database", "Backend", "Performance"}
-POSTS_PER_DAY = 2
+
+TRACKS = ("basics", "product", "pe", "general")
+
+# 하루 5편을 유지한다. 기본 문법(basics)을 다 쓰고 나면 그 한 자리를 기술사가 가져간다.
+# pe = 정보관리기술사 시험 과목 기술. 목표가 걸린 트랙이라 줄어드는 일이 없다.
+# product는 한 제품을 끝내면 다음 제품으로 넘어가므로 소진되지 않는다(PRODUCT_ROTATION).
+PLAN_WITH_BASICS = {"basics": 1, "product": 1, "pe": 2, "general": 1}   # 합 5편
+PLAN_AFTER_BASICS = {"basics": 0, "product": 1, "pe": 3, "general": 1}  # 합 5편
+
+
+TRACK_LABEL = {
+    "basics": "DB문법",
+    "product": "DB기능",
+    "pe": "기술사",
+    "general": "일반",
+}
+
+
+def count_todo(data: dict, track: str) -> int:
+    return sum(
+        1 for t in data["topics"]
+        if t["status"] == "todo" and track_of(t) == track
+    )
+
+
+def daily_plan(data: dict) -> dict[str, int]:
+    """남은 기본 문법 주제 수에 따라 오늘의 트랙별 편수를 정한다.
+
+    기본 문법이 남아 있으면 그 한 편을 쓰고, 소진되면 그 자리를 기술사가 가져간다.
+    어느 쪽이든 하루 5편이다.
+    """
+    if count_todo(data, "basics") >= PLAN_WITH_BASICS["basics"]:
+        return dict(PLAN_WITH_BASICS)
+    return dict(PLAN_AFTER_BASICS)
+
+
+# 트랙별 본문 길이 기준(공백·코드블록·표·인용·참고자료 제외)
+BODY_CHARS_BY_TRACK = {
+    "basics": (1200, 2500),
+    "product": (1500, 3000),
+    "pe": (1500, 3000),
+    "general": (1800, 3500),
+}
+
+
+def track_of(topic: dict) -> str:
+    track = topic.get("track") or "general"
+    return track if track in TRACKS else "general"
 
 
 def load_backlog() -> dict:
@@ -65,54 +118,203 @@ def count_published(topics: list[dict]) -> tuple[int, int]:
     return core, len(done) - core
 
 
-def pick_topics(data: dict, count: int = POSTS_PER_DAY) -> list[dict]:
-    """누적 발행 비율이 목표(core 60%)에 가까워지도록 탐욕적으로 고른다."""
+def pick_general(data: dict, count: int) -> list[dict]:
+    """일반 트랙에서 누적 core 비율이 목표(60%)에 가까워지도록 탐욕적으로 고른다."""
     topics = data["topics"]
     target_core = data["meta"]["target_ratio"]["core"]
     core_done, general_done = count_published(topics)
 
-    available = [t for t in topics if t["status"] == "todo"]
+    available = [
+        t for t in topics
+        if t["status"] == "todo" and track_of(t) == "general"
+    ]
     picked: list[dict] = []
 
     for _ in range(min(count, len(available))):
         core_pool = [t for t in available if is_core(t) and t not in picked]
-        general_pool = [t for t in available if not is_core(t) and t not in picked]
+        plain_pool = [t for t in available if not is_core(t) and t not in picked]
+        if not core_pool and not plain_pool:
+            break
 
         total = core_done + general_done + len(picked)
         current_core = core_done + sum(1 for t in picked if is_core(t))
-        # 다음 한 편을 core로 뽑았을 때와 general로 뽑았을 때의 목표 이탈도를 비교
+        # 다음 한 편을 core로 뽑았을 때와 아닐 때의 목표 이탈도를 비교
         gap_if_core = abs((current_core + 1) / (total + 1) - target_core)
-        gap_if_general = abs(current_core / (total + 1) - target_core)
+        gap_if_plain = abs(current_core / (total + 1) - target_core)
 
-        prefer_core = gap_if_core <= gap_if_general
-        pool = (core_pool or general_pool) if prefer_core else (general_pool or core_pool)
+        prefer_core = gap_if_core <= gap_if_plain
+        pool = (core_pool or plain_pool) if prefer_core else (plain_pool or core_pool)
         picked.append(pool[0])
 
     return picked
 
 
+def pick_sequential(data: dict, track: str, count: int) -> list[dict]:
+    """백로그 순서대로 고른다.
+
+    제품 시리즈와 기본 문법은 순서대로 쌓아야 시리즈로 읽히므로 비율 계산을 하지 않는다.
+    """
+    available = [
+        t for t in data["topics"]
+        if t["status"] == "todo" and track_of(t) == track
+    ]
+    return available[:count]
+
+
+def pick_topics(data: dict, counts: dict[str, int] | None = None) -> list[dict]:
+    counts = counts or daily_plan(data)
+    picked: list[dict] = []
+    for track in ("basics", "product", "pe"):
+        picked += pick_sequential(data, track, counts.get(track, 0))
+    return picked + pick_general(data, counts.get("general", 0))
+
+
 def cmd_pick(args: argparse.Namespace) -> int:
     data = load_backlog()
-    picked = pick_topics(data, args.count)
+    counts = daily_plan(data)
+    for track in TRACKS:
+        override = getattr(args, track, None)
+        if override is not None:
+            counts[track] = override
+
+    picked = pick_topics(data, counts)
     if not picked:
         print("백로그에 todo 주제가 없다. topics/backlog.yaml을 보충할 것.")
         return 1
 
+    published = published_index()
     today = dt.date.today().isoformat()
     print(f"# {today} 작성 대상 {len(picked)}편\n")
+
     for i, topic in enumerate(picked, 1):
         area = topic["category"]
         if topic.get("subcategory"):
             area += f"/{topic['subcategory']}"
-        print(f"[{i}] {topic['id']} · {area} · {topic['difficulty']}")
+        label = TRACK_LABEL[track_of(topic)]
+        print(f"[{i}] {topic['id']} · {label} · {area} · {topic['difficulty']}")
         print(f"    제목: {topic['title']}")
         print(f"    각도: {topic['angle']}")
         print(f"    예제: {topic['code']}  태그: {', '.join(topic['tags'])}")
+        if topic.get("product"):
+            print(f"    제품: {topic['product']} {topic['product_version']}"
+                  f"  (버전을 본문과 프론트매터에 반드시 명시)")
+
+        feature = topic.get("feature")
+        if feature:
+            siblings = [p for p in published.get(feature, []) if p["topic_id"] != topic["id"]]
+            if siblings:
+                print(f"    같은 기능({feature})으로 이미 쓴 글 — 링크와 비교 절을 넣을 것:")
+                for sibling in siblings:
+                    origin = sibling["product"] or sibling["environment"] or "?"
+                    print(f"      · {sibling['title']}  [{origin}]")
+                    print(f"        {sibling['path']}")
+            else:
+                print(f"    같은 기능({feature})으로 쓴 글 없음 — 비교 절 불필요")
         print()
 
-    remaining = sum(1 for t in data["topics"] if t["status"] == "todo")
-    if remaining <= data["meta"]["low_watermark"]:
-        print(f"경고: todo 주제가 {remaining}개 남았다. 백로그를 보충할 것.")
+    for track, need in counts.items():
+        remaining = sum(
+            1 for t in data["topics"]
+            if t["status"] == "todo" and track_of(t) == track
+        )
+        if not need:
+            print(f"{track:8s} todo {remaining:3d}개 (오늘은 배정 없음)")
+            continue
+        flag = "  ← 보충 필요" if remaining <= data["meta"]["low_watermark"] else ""
+        print(f"{track:8s} todo {remaining:3d}개 (약 {remaining // need}일분){flag}")
+    return 0
+
+
+# ---------------------------------------------------------------- 제품 간 비교 연결
+
+RELATED_BLOCK = re.compile(
+    r"<!-- related:start -->\n.*?<!-- related:end -->\n", re.DOTALL
+)
+
+
+def read_meta(path: Path) -> dict | None:
+    fm_match = FRONTMATTER.match(path.read_text(encoding="utf-8"))
+    return yaml.safe_load(fm_match.group(1)) if fm_match else None
+
+
+def published_index() -> dict[str, list[dict]]:
+    """feature 키별로 이미 쓴 글 목록을 모은다."""
+    index: dict[str, list[dict]] = {}
+    for path in sorted(POSTS_DIR.glob("**/index.md")):
+        meta = read_meta(path)
+        if not meta or not meta.get("feature"):
+            continue
+        environment = meta.get("environment") or []
+        index.setdefault(meta["feature"], []).append({
+            "topic_id": meta.get("topic_id", ""),
+            "title": meta.get("title", path.parent.name),
+            "product": (
+                f"{meta['product']} {meta.get('product_version', '')}".strip()
+                if meta.get("product") else ""
+            ),
+            "environment": ", ".join(environment) if environment else "",
+            "path": path,
+        })
+    return index
+
+
+def cmd_related(args: argparse.Namespace) -> int:
+    index = published_index()
+    features = [args.feature] if args.feature else sorted(index)
+    if not features:
+        print("feature가 지정된 글이 없다.")
+        return 1
+
+    for feature in features:
+        entries = index.get(feature, [])
+        print(f"\n[{feature}] {len(entries)}편")
+        for entry in entries:
+            origin = entry["product"] or entry["environment"] or "?"
+            print(f"  {entry['title']}")
+            print(f"    {origin}  ·  {entry['path'].relative_to(POSTS_DIR)}")
+    return 0
+
+
+def cmd_relink(args: argparse.Namespace) -> int:
+    """feature가 같은 글들끼리 서로를 가리키는 블록을 다시 만든다.
+
+    새 글이 추가되면 기존 글에도 역링크가 생겨야 하므로 매번 전체를 재생성한다.
+    """
+    index = published_index()
+    changed = 0
+
+    for feature, entries in index.items():
+        if len(entries) < 2:
+            continue
+        for entry in entries:
+            others = [e for e in entries if e["path"] != entry["path"]]
+            rows = []
+            for other in others:
+                rel = os.path.relpath(other["path"], entry["path"].parent)
+                rel = rel.replace(os.sep, "/")
+                origin = other["product"] or other["environment"] or ""
+                suffix = f" — {origin}" if origin else ""
+                rows.append(f"> - [{other['title']}]({rel}){suffix}")
+
+            block = (
+                "<!-- related:start -->\n"
+                f"> **같은 기능을 다른 환경에서 다룬 글** (`{feature}`)\n"
+                + "\n".join(rows)
+                + "\n<!-- related:end -->\n"
+            )
+            text = entry["path"].read_text(encoding="utf-8")
+            if RELATED_BLOCK.search(text):
+                patched = RELATED_BLOCK.sub(lambda _: block, text)
+            else:  # 첫 문단 앞, 프론트매터 바로 뒤에 넣는다
+                fm_match = FRONTMATTER.match(text)
+                cut = fm_match.end()
+                patched = text[:cut] + "\n" + block + text[cut:]
+            if patched != text:
+                entry["path"].write_text(patched, encoding="utf-8")
+                changed += 1
+                print(f"갱신: {entry['path'].parent.relative_to(POSTS_DIR)}  ({feature})")
+
+    print(f"\n{changed}개 글의 관련 글 블록을 갱신했다.")
     return 0
 
 
@@ -151,15 +353,33 @@ def cmd_new(args: argparse.Namespace) -> int:
 
     (post_dir / "code").mkdir(parents=True)
     (post_dir / "fig").mkdir()
+
+    is_product = track_of(topic) == "product"
+    product_lines = ""
+    if is_product:
+        product_lines = (
+            f"product: {topic['product']}\n"
+            f"product_version: \"{topic['product_version']}\"\n"
+        )
+    # 제품 글은 기본이 매뉴얼 근거다. 실행 환경이 있으면 executed로 올린다.
+    # 제품·기술사 글은 실행할 수 없는 경우가 많다. 기본을 매뉴얼 근거로 두고
+    # 실행 환경이 있으면 executed로 올린다.
+    verification = "executed" if track_of(topic) in ("basics", "general") else "manual-only"
+    environment = f'["{topic["product"]} {topic["product_version"]}"]' if is_product else "[]"
+
     tags = ", ".join(topic["tags"])
     index_md = f"""---
 title: "{topic['title']}"
 date: {today.isoformat()}
 categories: [{topic["category"]}]
 subcategory: {topic.get("subcategory") or ""}
+track: {track_of(topic)}
 tags: [{tags}]
 description: ""
 difficulty: {topic['difficulty']}
+{product_lines}feature: {topic.get("feature") or ""}
+environment: {environment}
+verification: {verification}
 verified: false
 topic_id: {topic['id']}
 ---
@@ -218,10 +438,6 @@ def cmd_done(args: argparse.Namespace) -> int:
         fp.write(line)
     print(f"완료 처리: {topic['id']} — {topic['title']}")
     return 0
-
-
-FIGURE_IMAGE = re.compile(r"!\[([^\]]*)\]\((fig/[^)]+)\)")
-FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 
 
 def cmd_tistory(args: argparse.Namespace) -> int:
@@ -293,6 +509,67 @@ def body_length(text: str) -> int:
     return len(re.sub(r"\s", "", body))
 
 
+HAS_VERSION_NUMBER = re.compile(r"\d")
+MANUAL_ONLY_NOTICE = "실행 검증 없음"
+
+
+def lint_versions(meta: dict, text: str) -> list[str]:
+    """버전 명시와 검증 방식 표기를 검사한다.
+
+    독자가 "내 버전에서도 그런가"를 판단할 수 있어야 하므로 버전은 필수다.
+    """
+    problems: list[str] = []
+
+    environment = meta.get("environment") or []
+    if not environment:
+        problems.append("environment가 비어 있다 — 쓴 도구·DB의 버전을 명시할 것")
+    for item in environment:
+        if not HAS_VERSION_NUMBER.search(str(item)):
+            problems.append(f'environment "{item}"에 버전 숫자가 없다')
+
+    verification = meta.get("verification")
+    if verification not in ("executed", "manual-only"):
+        problems.append(
+            f"verification이 executed/manual-only가 아니다: {verification!r}"
+        )
+    elif verification == "manual-only" and MANUAL_ONLY_NOTICE not in text:
+        problems.append(
+            f'verification: manual-only인데 본문에 "{MANUAL_ONLY_NOTICE}" 안내가 없다'
+        )
+
+    if meta.get("product"):
+        version = str(meta.get("product_version") or "")
+        if not version:
+            problems.append("product는 있는데 product_version이 없다")
+        elif not HAS_VERSION_NUMBER.search(version):
+            problems.append(f'product_version "{version}"에 버전 숫자가 없다')
+        if version and version not in meta.get("title", ""):
+            problems.append(f'제목에 제품 버전("{version}")이 드러나지 않는다')
+
+    return problems
+
+
+def lint_related(meta: dict, path: Path, text: str) -> list[str]:
+    """같은 feature 글이 이미 있으면 상호 링크가 들어 있어야 한다."""
+    feature = meta.get("feature")
+    if not feature:
+        return []
+
+    siblings = [
+        entry for entry in published_index().get(feature, [])
+        if entry["path"] != path
+    ]
+    if not siblings:
+        return []
+    if not RELATED_BLOCK.search(text):
+        names = ", ".join(e["title"] for e in siblings)
+        return [
+            f"같은 기능({feature})의 글이 있는데 관련 글 블록이 없다 "
+            f"— blog.py relink 실행 필요 (대상: {names})"
+        ]
+    return []
+
+
 def lint_post(path: Path) -> list[str]:
     text = path.read_text(encoding="utf-8")
     problems: list[str] = []
@@ -303,13 +580,18 @@ def lint_post(path: Path) -> list[str]:
     meta = yaml.safe_load(fm_match.group(1))
 
     if not meta.get("verified"):
-        problems.append("verified: false — 예제 검증이 끝나지 않았다")
+        problems.append("verified: false — 검증이 끝나지 않았다")
     if not meta.get("description"):
         problems.append("description이 비어 있다")
 
+    problems += lint_versions(meta, text)
+    problems += lint_related(meta, path, text)
+
+    track = track_of(meta)
+    low, high = BODY_CHARS_BY_TRACK[track]
     chars = body_length(text)
-    if not BODY_MIN_CHARS <= chars <= BODY_MAX_CHARS:
-        problems.append(f"본문 {chars:,}자 (기준 {BODY_MIN_CHARS:,}~{BODY_MAX_CHARS:,})")
+    if not low <= chars <= high:
+        problems.append(f"본문 {chars:,}자 ({track} 기준 {low:,}~{high:,})")
 
     # 코드 블록 안의 마크다운 예시는 실제 도식·링크가 아니므로 제외한다
     linkable = CODE_FENCE.sub("", text)
@@ -362,20 +644,39 @@ def cmd_status(args: argparse.Namespace) -> int:
     core_done, general_done = count_published(topics)
     total_done = core_done + general_done
     ratio = core_done / total_done if total_done else 0.0
-    todo = by_status.get("todo", 0)
 
-    print(f"백로그   : 전체 {len(topics)}편")
+    plan = daily_plan(data)
+    total_per_day = sum(plan.values())
+    print(f"백로그   : 전체 {len(topics)}편 (하루 {total_per_day}편 기준)")
     for status in ("todo", "writing", "done"):
         print(f"  {status:8s} {by_status.get(status, 0)}")
-    print(f"남은 일수: 약 {todo // POSTS_PER_DAY}일 (하루 {POSTS_PER_DAY}편 기준)")
+
+    print("\n트랙별 잔량")
+    for track, need in plan.items():
+        remaining = sum(
+            1 for t in topics if t["status"] == "todo" and track_of(t) == track
+        )
+        flag = "  ← 보충 필요" if remaining <= data["meta"]["low_watermark"] else ""
+        print(f"  {track:8s} todo {remaining:3d}개 · 하루 {need}편 → 약 "
+              f"{remaining // need if need else 0}일분{flag}")
+
     print(
-        f"비율     : core {core_done} / general {general_done} "
+        f"\n일반 트랙 비율: core {core_done} / general {general_done} "
         f"= {ratio:.0%} (목표 {data['meta']['target_ratio']['core']:.0%})"
     )
-    unverified = [
-        p for p in POSTS_DIR.glob("**/index.md")
-        if "verified: true" not in p.read_text(encoding="utf-8")
-    ]
+
+    manual_only = 0
+    unverified = []
+    for path in sorted(POSTS_DIR.glob("**/index.md")):
+        meta = read_meta(path) or {}
+        if not meta.get("verified"):
+            unverified.append(path)
+        if meta.get("verification") == "manual-only":
+            manual_only += 1
+
+    if manual_only:
+        print(f"\n실행 검증 없는 글: {manual_only}편 "
+              f"(실행 환경이 있는 곳에서 `blog.py lint` 후 executed로 승격 가능)")
     if unverified:
         print(f"\n미검증 글 {len(unverified)}편:")
         for path in unverified:
@@ -387,9 +688,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
 
-    p_pick = sub.add_parser("pick", help="오늘 쓸 주제 선정")
-    p_pick.add_argument("-n", "--count", type=int, default=POSTS_PER_DAY)
+    composition = " + ".join(f"{t} {n}" for t, n in PLAN_WITH_BASICS.items())
+    p_pick = sub.add_parser("pick", help=f"오늘 쓸 주제 선정 ({composition})")
+    for track, need in PLAN_WITH_BASICS.items():
+        p_pick.add_argument(f"--{track}", type=int, help=f"기본 {need}")
     p_pick.set_defaults(func=cmd_pick)
+
+    p_related = sub.add_parser("related", help="같은 feature로 쓴 글 목록")
+    p_related.add_argument("feature", nargs="?", help="생략하면 전체 feature")
+    p_related.set_defaults(func=cmd_related)
+
+    p_relink = sub.add_parser("relink", help="같은 feature 글끼리 상호 링크 블록 재생성")
+    p_relink.set_defaults(func=cmd_relink)
 
     p_new = sub.add_parser("new", help="글 폴더 스캐폴딩")
     p_new.add_argument("topic_id")

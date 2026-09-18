@@ -3,10 +3,14 @@ title: "B-Tree 인덱스를 못 타는 조건들"
 date: 2026-09-18
 categories: [Database]
 subcategory: sqlite
+track: general
 tags: [index, btree, sqlite, explain]
 description: "인덱스를 만들어 놨는데 실행계획에 SCAN이 찍히는 11가지 경우를 SQLite 20만 행으로 직접 재현하고, 인덱스를 타고도 더 느려지는 지점을 측정했다."
 difficulty: intermediate
 verified: true
+feature: index-usage
+environment: ["SQLite 3.49.1", "Python 3.13.5"]
+verification: executed
 topic_id: db-001
 ---
 
