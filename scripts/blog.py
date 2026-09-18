@@ -311,16 +311,19 @@ def lint_post(path: Path) -> list[str]:
     if not BODY_MIN_CHARS <= chars <= BODY_MAX_CHARS:
         problems.append(f"본문 {chars:,}자 (기준 {BODY_MIN_CHARS:,}~{BODY_MAX_CHARS:,})")
 
-    figures = FIGURE_IMAGE.findall(text)
+    # 코드 블록 안의 마크다운 예시는 실제 도식·링크가 아니므로 제외한다
+    linkable = CODE_FENCE.sub("", text)
+
+    figures = FIGURE_IMAGE.findall(linkable)
     if not figures:
         problems.append("도식이 없다 (최소 1개)")
-    source_count = len(SOURCE_NOTE.findall(text))
+    source_count = len(SOURCE_NOTE.findall(linkable))
     if source_count < len(figures):
         problems.append(f"도식 {len(figures)}개인데 출처 표기는 {source_count}개")
     if "```mermaid" in text:
         problems.append("mermaid 블록이 남아 있다 (SVG로 바꿀 것)")
 
-    for link in re.findall(r"\]\((?!https?:)([^)#]+)\)", text):
+    for link in re.findall(r"\]\((?!https?:)([^)#]+)\)", linkable):
         if not (path.parent / link).exists():
             problems.append(f"깨진 링크: {link}")
 
