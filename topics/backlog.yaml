@@ -54,7 +54,7 @@ topics:
     difficulty: intermediate
     angle: "두 세션을 동시에 띄워 dirty read/non-repeatable/phantom을 각각 재현"
     code: python
-    status: todo
+    status: done
   - id: db-004
     title: "MVCC는 왜 읽기 잠금을 없앴고 무엇을 대가로 치르는가"
     category: Database
@@ -730,7 +730,7 @@ topics:
     difficulty: beginner
     angle: "괄호를 빼먹으면 결과가 어떻게 달라지는지 같은 데이터로 대조"
     code: python
-    status: todo
+    status: done
   - id: bas-003
     title: "ORDER BY — 다중 정렬과 NULL이 놓이는 자리"
     category: Database
@@ -1004,7 +1004,7 @@ topics:
     difficulty: beginner
     angle: "코드 조각으로 각 등급을 판별하는 연습"
     code: none
-    status: todo
+    status: done
   - id: pe-004
     title: "테스트 레벨과 테스트 기법 분류"
     category: PE
