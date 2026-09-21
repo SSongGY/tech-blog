@@ -2435,3 +2435,25 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-086
+    title: "품질속성 시나리오와 유틸리티 트리"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: intermediate
+    angle: "품질속성 요구를 자극-응답 시나리오로 구체화하고 유틸리티 트리로 우선순위를 매기는 절차. ATAM 답안에서 5단계가 왜 분석 범위를 정하는 단계인지 설명하려면 이 개념이 먼저 서야 한다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-087
+    title: "정보시스템 감리"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: intermediate
+    angle: "전자정부법에 근거한 제3자 검토 제도. 사업관리 위탁(PMO)과 목적·시점·책임이 어떻게 다른지를 축으로"
+    code: none
+    origin: exam
+    status: todo

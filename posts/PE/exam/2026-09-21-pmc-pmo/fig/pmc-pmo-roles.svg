@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" width="880" height="390" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="390" fill="#f7f7f4"/>
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- 발주기관 -->
+  <rect x="330" y="22" width="220" height="50" rx="6" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+  <text x="440" y="43" font-size="15" fill="#1a1a1a" text-anchor="middle" font-weight="bold">발주기관</text>
+  <text x="440" y="62" font-size="12" fill="#555" text-anchor="middle">사업 목적·예산·최종 책임</text>
+
+  <!-- PMO -->
+  <rect x="40" y="128" width="340" height="126" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="58" y="152" font-size="15" fill="#1b4332" font-weight="bold">PMO — 사업관리 위탁</text>
+  <text x="58" y="176" font-size="13" fill="#222">근거: 전자정부법 제64조의2 (법정 제도)</text>
+  <text x="58" y="198" font-size="13" fill="#222">범위: 기획 · 집행 · 사후관리 3단계</text>
+  <text x="58" y="220" font-size="13" fill="#222">역할: 관리·감독, 위험 식별, 의사결정 지원</text>
+  <text x="58" y="242" font-size="13" fill="#2d6a4f">결정 권한은 발주기관에 남는다</text>
+
+  <!-- PMC -->
+  <rect x="500" y="128" width="340" height="126" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="518" y="152" font-size="15" fill="#7c3d06" font-weight="bold">PMC — 발주자 대행 사업관리</text>
+  <text x="518" y="176" font-size="13" fill="#222">근거: 계약. 정보화 분야 법정 정의 없음</text>
+  <text x="518" y="198" font-size="13" fill="#222">범위: 기획 · 조달 · 구축 · 운영 전 생애주기</text>
+  <text x="518" y="220" font-size="13" fill="#222">역할: 발주자를 대리해 수행사를 통제</text>
+  <text x="518" y="242" font-size="13" fill="#b45309">위임받은 범위의 결정을 대신한다</text>
+
+  <!-- 수행사업자 -->
+  <rect x="330" y="310" width="220" height="50" rx="6" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+  <text x="440" y="331" font-size="15" fill="#1a1a1a" text-anchor="middle" font-weight="bold">수행사업자</text>
+  <text x="440" y="350" font-size="12" fill="#555" text-anchor="middle">설계·구축·이행</text>
+
+  <!-- 발주기관 → PMO / PMC -->
+  <path d="M 360 72 L 210 72 L 210 124" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <text x="214" y="104" font-size="12" fill="#1b4332">위탁 · 관리감독 업무</text>
+  <path d="M 520 72 L 670 72 L 670 124" fill="none" stroke="#b45309" stroke-width="1.6" marker-end="url(#a1)"/>
+  <text x="484" y="104" font-size="12" fill="#7c3d06">대행 · 발주자 권한 일부</text>
+
+  <!-- PMO / PMC → 수행사업자 -->
+  <path d="M 210 258 L 210 335 L 326 335" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <text x="214" y="282" font-size="12" fill="#1b4332">검토 · 조정 · 시정 요구</text>
+  <path d="M 670 258 L 670 335 L 554 335" fill="none" stroke="#b45309" stroke-width="1.6" marker-end="url(#a1)"/>
+  <text x="530" y="282" font-size="12" fill="#7c3d06">지시 · 통제</text>
+
+  <!-- 계약선 -->
+  <line x1="440" y1="76" x2="440" y2="306" stroke="#555" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#a1)"/>
+  <text x="440" y="382" font-size="12" fill="#555" text-anchor="middle">점선은 구축 계약 관계다. 어느 방식을 쓰든 계약 당사자는 발주기관과 수행사업자로 그대로 남는다</text>
+</svg>
