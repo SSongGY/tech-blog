@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">4대 활동이 생명주기의 어디에서 일어나는가</text>
+
+  <rect x="60" y="50" width="760" height="32" fill="#f5f7f9" stroke="#495057" stroke-width="1.4" rx="4"/>
+  <text x="440" y="71" text-anchor="middle" font-size="13" fill="#1b1b1b">① 식별 — 무엇을 형상 항목으로 둘지 정하고 베이스라인을 세운다</text>
+
+  <path d="M150 82 L150 94" stroke="#495057" stroke-width="1.2"/>
+  <path d="M330 82 L330 94" stroke="#495057" stroke-width="1.2"/>
+  <path d="M530 82 L530 94" stroke="#495057" stroke-width="1.2"/>
+  <path d="M740 82 L740 94" stroke="#495057" stroke-width="1.2"/>
+
+  <rect x="94" y="96" width="112" height="32" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="150" y="117" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">기능</text>
+  <rect x="274" y="96" width="112" height="32" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="330" y="117" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">할당</text>
+  <rect x="474" y="96" width="112" height="32" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="530" y="117" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">개발</text>
+  <rect x="684" y="96" width="112" height="32" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="740" y="117" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">제품</text>
+
+  <path d="M150 128 L150 150" stroke="#2d6a4f" stroke-width="1.5"/>
+  <path d="M330 128 L330 150" stroke="#2d6a4f" stroke-width="1.5"/>
+  <path d="M530 128 L530 150" stroke="#2d6a4f" stroke-width="1.5"/>
+  <path d="M740 128 L740 150" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <line x1="60" y1="152" x2="828" y2="152" stroke="#495057" stroke-width="2"/>
+  <path d="M828 152 L818 147 L818 157 Z" fill="#495057"/>
+  <circle cx="150" cy="152" r="5" fill="#2d6a4f"/>
+  <circle cx="330" cy="152" r="5" fill="#2d6a4f"/>
+  <circle cx="530" cy="152" r="5" fill="#2d6a4f"/>
+  <circle cx="740" cy="152" r="5" fill="#2d6a4f"/>
+  <text x="828" y="142" text-anchor="end" font-size="13" fill="#6c757d">생명주기</text>
+
+  <text x="150" y="174" text-anchor="middle" font-size="13" fill="#495057">시스템 요구사항 확정</text>
+  <text x="330" y="174" text-anchor="middle" font-size="13" fill="#495057">SRS·인터페이스 명세 확정</text>
+  <text x="530" y="174" text-anchor="middle" font-size="13" fill="#495057">생명주기 중 선택 시점</text>
+  <text x="740" y="174" text-anchor="middle" font-size="13" fill="#495057">통합용으로 인도</text>
+
+  <rect x="150" y="192" width="670" height="32" fill="#f5f7f9" stroke="#495057" stroke-width="1.4" rx="4"/>
+  <text x="485" y="213" text-anchor="middle" font-size="13" fill="#1b1b1b">② 통제 — 베이스라인이 선 뒤의 변경은 전부 요청·평가·판정을 거친다</text>
+
+  <rect x="150" y="232" width="670" height="32" fill="#f5f7f9" stroke="#495057" stroke-width="1.4" rx="4"/>
+  <text x="485" y="253" text-anchor="middle" font-size="13" fill="#1b1b1b">③ 기록 — 통제가 처리한 모든 건의 상태를 남기고 보고한다</text>
+
+  <rect x="560" y="272" width="200" height="32" fill="#fdf0d5" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="660" y="293" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">④ 감사 — FCA·PCA</text>
+  <text x="660" y="322" text-anchor="middle" font-size="13" fill="#495057">제품 베이스라인을 세우기 전에 수행한다</text>
+
+  <text x="440" y="356" text-anchor="middle" font-size="13" fill="#6c757d">초록 = 베이스라인 4종 · 주황 = 통과해야 다음으로 넘어가는 지점</text>
+</svg>
