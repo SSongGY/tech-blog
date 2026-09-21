@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">다크 팩토리 — 제어 계층과 사람이 남는 자리</text>
+
+  <!-- 좌측: IEC 62264 계층 -->
+  <text x="48" y="64" font-size="14" font-weight="bold" fill="#4a5568">제어 계층 (IEC 62264-1)</text>
+
+  <rect x="48" y="76" width="400" height="44" fill="#f5f7f9" stroke="#9aa5b1" stroke-width="1.2" rx="4"/>
+  <text x="70" y="104" font-size="14" fill="#1b1b1b">Level 4 — 경영 계획 · 물류 (ERP)</text>
+
+  <rect x="48" y="128" width="400" height="44" fill="#f5f7f9" stroke="#9aa5b1" stroke-width="1.2" rx="4"/>
+  <text x="70" y="156" font-size="14" fill="#1b1b1b">Level 3 — 제조운영관리 (MES)</text>
+
+  <rect x="48" y="180" width="400" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="70" y="208" font-size="14" font-weight="bold" fill="#2d6a4f">Level 2 — 감시 · 제어 (PLC · DCS)</text>
+
+  <rect x="48" y="232" width="400" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="70" y="260" font-size="14" font-weight="bold" fill="#2d6a4f">Level 1 — 센서 · 액추에이터 · 로봇</text>
+
+  <rect x="48" y="284" width="400" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="70" y="312" font-size="14" font-weight="bold" fill="#2d6a4f">Level 0 — 물리 공정</text>
+
+  <!-- 무인화 구간 표시 -->
+  <line x1="462" y1="180" x2="462" y2="328" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="474" y="240" font-size="13" font-weight="bold" fill="#2d6a4f">무인 운전 구간</text>
+  <text x="474" y="260" font-size="13" fill="#4a5568">현장 작업자 없이</text>
+  <text x="474" y="278" font-size="13" fill="#4a5568">연속 가동</text>
+
+  <!-- 우측: 사람이 남는 자리 -->
+  <rect x="620" y="76" width="226" height="96" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="5"/>
+  <text x="733" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">사람이 남는 자리</text>
+  <text x="640" y="126" font-size="13" fill="#1b1b1b">원격 감시 · 예외 개입</text>
+  <text x="640" y="146" font-size="13" fill="#1b1b1b">정비 · 치공구 교체</text>
+  <text x="640" y="166" font-size="13" fill="#1b1b1b">공정 설계 · 프로그래밍</text>
+
+  <line x1="452" y1="98" x2="616" y2="112" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <line x1="452" y1="150" x2="616" y2="136" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+
+  <!-- 하단: 전제 조건 -->
+  <text x="48" y="366" font-size="14" font-weight="bold" fill="#1b1b1b">성립 전제</text>
+  <rect x="48" y="378" width="256" height="36" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="176" y="401" text-anchor="middle" font-size="13" fill="#1b1b1b">디지털 트윈 (ISO 23247)</text>
+
+  <rect x="316" y="378" width="256" height="36" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="444" y="401" text-anchor="middle" font-size="13" fill="#1b1b1b">로봇 안전 (ISO 10218-1)</text>
+
+  <rect x="584" y="378" width="262" height="36" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="715" y="401" text-anchor="middle" font-size="13" fill="#1b1b1b">소품종 대량 · 저변동 생산</text>
+</svg>

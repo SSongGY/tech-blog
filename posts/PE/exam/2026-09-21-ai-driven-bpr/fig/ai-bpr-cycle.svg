@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="arwg" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">AI 기반 BPR의 4단계 순환과 각 단계의 근거 표준</text>
+
+  <!-- 단계 박스 4개 -->
+  <rect x="34" y="70" width="180" height="76" fill="#f5f7f9" stroke="#4a5568" stroke-width="1.4" rx="5"/>
+  <text x="124" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① As-Is 가시화</text>
+  <text x="124" y="120" text-anchor="middle" font-size="13" fill="#4a5568">이벤트 로그 수집</text>
+  <text x="124" y="138" text-anchor="middle" font-size="13" fill="#4a5568">프로세스 마이닝</text>
+
+  <rect x="256" y="70" width="180" height="76" fill="#f5f7f9" stroke="#4a5568" stroke-width="1.4" rx="5"/>
+  <text x="346" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② To-Be 재설계</text>
+  <text x="346" y="120" text-anchor="middle" font-size="13" fill="#4a5568">병목·재작업 구간</text>
+  <text x="346" y="138" text-anchor="middle" font-size="13" fill="#4a5568">통합 · 제거 · 병렬화</text>
+
+  <rect x="478" y="70" width="180" height="76" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="5"/>
+  <text x="568" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">③ 실행 자동화</text>
+  <text x="568" y="120" text-anchor="middle" font-size="13" fill="#4a5568">판단 모델 · 규칙</text>
+  <text x="568" y="138" text-anchor="middle" font-size="13" fill="#4a5568">사람은 예외만 처리</text>
+
+  <rect x="700" y="70" width="146" height="76" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="5"/>
+  <text x="773" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">④ 감시 · 통제</text>
+  <text x="773" y="120" text-anchor="middle" font-size="13" fill="#4a5568">적합성 검사</text>
+  <text x="773" y="138" text-anchor="middle" font-size="13" fill="#4a5568">위험 · 영향 평가</text>
+
+  <line x1="214" y1="108" x2="252" y2="108" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="436" y1="108" x2="474" y2="108" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="658" y1="108" x2="696" y2="108" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arwg)"/>
+
+  <!-- 되먹임 -->
+  <path d="M773,146 L773,186 L124,186 L124,150" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arw)"/>
+  <rect x="380" y="174" width="140" height="24" fill="#ffffff"/>
+  <text x="450" y="191" text-anchor="middle" font-size="13" fill="#b45309">실행 로그가 다시 입력</text>
+
+  <!-- 근거 표준 띠 -->
+  <text x="34" y="236" font-size="14" font-weight="bold" fill="#1b1b1b">단계별 근거 표준</text>
+
+  <rect x="34" y="248" width="180" height="58" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="124" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">IEEE 1849</text>
+  <text x="124" y="291" text-anchor="middle" font-size="13" fill="#4a5568">XES 이벤트 로그</text>
+
+  <rect x="256" y="248" width="180" height="58" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="346" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">Hammer &amp; Champy</text>
+  <text x="346" y="291" text-anchor="middle" font-size="13" fill="#4a5568">근본 · 급진 · 극적 · 프로세스</text>
+
+  <rect x="478" y="248" width="180" height="58" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="568" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">ISO/IEC 22989</text>
+  <text x="568" y="291" text-anchor="middle" font-size="13" fill="#4a5568">AI 시스템 생애주기</text>
+
+  <rect x="700" y="248" width="146" height="58" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="773" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">ISO/IEC 42001</text>
+  <text x="773" y="291" text-anchor="middle" font-size="13" fill="#4a5568">NIST AI RMF</text>
+
+  <!-- 효과 -->
+  <rect x="34" y="330" width="812" height="62" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.4" rx="5"/>
+  <text x="440" y="354" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">도입 효과</text>
+  <text x="440" y="378" text-anchor="middle" font-size="13" fill="#1b1b1b">리드타임 단축 · 원가 절감 · 품질 편차 축소 · 의사결정 근거의 데이터화</text>
+</svg>
