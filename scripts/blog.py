@@ -55,6 +55,8 @@ TRACK_LABEL = {
     "pe": "기술사",
     "linux": "리눅스",
     "general": "일반",
+    # exam 은 백로그에 없고 글에만 있다(POST_TRACKS). index 가 쓴다.
+    "exam": "기출문제",
 }
 
 
@@ -813,7 +815,8 @@ def cmd_index(args: argparse.Namespace) -> int:
         "> 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.\n\n",
     ]
 
-    for track in TRACKS:
+    # 총 편수는 exam 글까지 세므로 목록도 POST_TRACKS 로 돌아야 수가 맞는다.
+    for track in POST_TRACKS:
         group = [e for e in entries if track_of(e["meta"]) == track]
         if not group:
             continue
