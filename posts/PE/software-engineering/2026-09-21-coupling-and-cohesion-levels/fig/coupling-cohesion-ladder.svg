@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="512" viewBox="0 0 880 512" font-family="'Segoe UI', 'Malgun Gothic', sans-serif">
+  <rect width="880" height="512" fill="#fbfbf9"/>
+  <defs>
+    <linearGradient id="gd" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2d6a4f"/><stop offset="50%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#9d0208"/>
+    </linearGradient>
+    <marker id="down" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="12" refX="12" refY="6" orient="auto">
+      <polygon points="0 0, 12 6, 0 12" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <text x="20" y="32" font-size="16" font-weight="600" fill="#1f2937">결합도 6단계와 응집도 7단계 — 위가 좋고 아래로 갈수록 나쁘다</text>
+
+  <text x="24" y="62" font-size="13" font-weight="600" fill="#2d6a4f">좋음</text>
+  <line x1="36" y1="72" x2="36" y2="452" stroke="url(#gd)" stroke-width="5" marker-end="url(#down)"/>
+  <text x="24" y="482" font-size="13" font-weight="600" fill="#9d0208">나쁨</text>
+
+  <text x="60" y="74" font-size="14" font-weight="600" fill="#1f2937">결합도 Coupling — 6단계</text>
+  <text x="460" y="74" font-size="14" font-weight="600" fill="#1f2937">응집도 Cohesion — 7단계</text>
+
+  <rect x="60" y="86" width="360" height="50" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="5"/>
+  <text x="76" y="108" font-size="14" font-weight="600" fill="#1b4332">1. 자료 data</text>
+  <text x="76" y="127" font-size="13" fill="#374151">필요한 값만 인자로 전달</text>
+  <rect x="60" y="141" width="360" height="50" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="5"/>
+  <text x="76" y="163" font-size="14" font-weight="600" fill="#1b4332">2. 스탬프 stamp</text>
+  <text x="76" y="182" font-size="13" fill="#374151">구조체째 넘기고 일부만 씀</text>
+  <rect x="60" y="196" width="360" height="50" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5" rx="5"/>
+  <text x="76" y="218" font-size="14" font-weight="600" fill="#7c3d06">3. 제어 control</text>
+  <text x="76" y="237" font-size="13" fill="#374151">플래그로 상대 흐름을 지시</text>
+  <rect x="60" y="251" width="360" height="50" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5" rx="5"/>
+  <text x="76" y="273" font-size="14" font-weight="600" fill="#7c3d06">4. 외부 external</text>
+  <text x="76" y="292" font-size="13" fill="#374151">외부 포맷·프로토콜을 공유</text>
+  <rect x="60" y="306" width="360" height="50" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="5"/>
+  <text x="76" y="328" font-size="14" font-weight="600" fill="#9d0208">5. 공통 common</text>
+  <text x="76" y="347" font-size="13" fill="#374151">전역 데이터 영역을 공유</text>
+  <rect x="60" y="361" width="360" height="50" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="5"/>
+  <text x="76" y="383" font-size="14" font-weight="600" fill="#9d0208">6. 내용 content</text>
+  <text x="76" y="402" font-size="13" fill="#374151">상대 내부를 직접 참조</text>
+
+  <rect x="460" y="86" width="360" height="50" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="5"/>
+  <text x="476" y="108" font-size="14" font-weight="600" fill="#1b4332">1. 기능적 functional</text>
+  <text x="476" y="127" font-size="13" fill="#374151">한 가지 기능만 수행</text>
+  <rect x="460" y="141" width="360" height="50" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="5"/>
+  <text x="476" y="163" font-size="14" font-weight="600" fill="#1b4332">2. 순차적 sequential</text>
+  <text x="476" y="182" font-size="13" fill="#374151">앞의 출력이 뒤의 입력</text>
+  <rect x="460" y="196" width="360" height="50" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="5"/>
+  <text x="476" y="218" font-size="14" font-weight="600" fill="#1b4332">3. 교환적 communicational</text>
+  <text x="476" y="237" font-size="13" fill="#374151">같은 입출력 데이터를 다룸</text>
+  <rect x="460" y="251" width="360" height="50" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5" rx="5"/>
+  <text x="476" y="273" font-size="14" font-weight="600" fill="#7c3d06">4. 절차적 procedural</text>
+  <text x="476" y="292" font-size="13" fill="#374151">정해진 순서대로 실행</text>
+  <rect x="460" y="306" width="360" height="50" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5" rx="5"/>
+  <text x="476" y="328" font-size="14" font-weight="600" fill="#7c3d06">5. 시간적 temporal</text>
+  <text x="476" y="347" font-size="13" fill="#374151">같은 시점에 함께 실행</text>
+  <rect x="460" y="361" width="360" height="50" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="5"/>
+  <text x="476" y="383" font-size="14" font-weight="600" fill="#9d0208">6. 논리적 logical</text>
+  <text x="476" y="402" font-size="13" fill="#374151">비슷한 일을 플래그로 분기</text>
+  <rect x="460" y="416" width="360" height="50" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="5"/>
+  <text x="476" y="438" font-size="14" font-weight="600" fill="#9d0208">7. 우연적 coincidental</text>
+  <text x="476" y="457" font-size="13" fill="#374151">관련 없는 것을 모아 둠</text>
+
+  <text x="60" y="440" font-size="13" fill="#4b5563">설계 목표는 하나다.</text>
+  <text x="60" y="462" font-size="13" fill="#4b5563">두 사다리 모두 위쪽에 머무르게 한다.</text>
+  <text x="20" y="504" font-size="13" fill="#4b5563">색은 순위를 3등분한 것이다: 위 1/3 초록, 가운데 주황, 아래 1/3 빨강.</text>
+</svg>
