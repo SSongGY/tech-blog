@@ -10,6 +10,7 @@ IT 기술 글을 매일 **9~10편** 작성해 마크다운 원본과 실행 가�
 | 17:00 | `tech-blog-concept` | 2편 | 15시 답안에서 나온 개념을 `pe` 글로 |
 | 21:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
+| 매 정각 | `tech-blog-watch` | — | 멈춘 회차 감시. 알림만 |
 
 07:00·21:00 회차의 트랙 구성은 다음과 같다.
 
@@ -141,6 +142,7 @@ python scripts/blog.py exam-done <id> …       # 기출 풀이 완료 처리
 python scripts/blog.py exam-skip <id> --reason "…"   # 근거 부족으로 건너뜀
 python scripts/blog.py exam-status            # 기출 진행 현황
 python scripts/blog.py tasks-diff             # 스케줄 작업 사본이 실제와 같은지 대조
+python scripts/check_stuck.py                 # 권한 프롬프트 앞에서 멈춘 회차 찾기
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
 python scripts/blog.py related sequence       # 같은 기능으로 쓴 글 찾기
 python scripts/blog.py relink                 # 같은 기능 글끼리 상호 링크 재생성

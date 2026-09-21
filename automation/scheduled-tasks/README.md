@@ -1,6 +1,6 @@
 # 스케줄 작업 정의
 
-이 폴더의 `.md` 네 개는 **Claude Code 스케줄 작업의 원본**이다. 실제 작업은
+이 폴더의 `.md` 다섯 개는 **Claude Code 스케줄 작업의 원본**이다. 실제 작업은
 `~/.claude/scheduled-tasks/<taskId>/SKILL.md`에 저장되는데, 그 폴더는 머신에 묶여 있어
 저장소에 들어오지 않는다. 그래서 여기에 사본을 둔다.
 
@@ -10,6 +10,7 @@
 | `tech-blog-exam.md` | `tech-blog-exam` | `0 15 * * *` | 기출 답안 (단답형 2 / 논술형 1) |
 | `tech-blog-concept.md` | `tech-blog-concept` | `0 17 * * *` | 15시 답안에서 나온 개념을 `pe` 글 2편으로 |
 | `tech-blog-healthcheck.md` | `tech-blog-healthcheck` | `0 9 * * *` | 점검만. 저장소 수정 금지 |
+| `tech-blog-watch.md` | `tech-blog-watch` | `0 * * * *` | 멈춘 회차 감시. 알림만 |
 
 cron은 **UTC가 아니라 로컬 시각**으로 해석된다.
 
@@ -29,7 +30,7 @@ Claude Code에 이렇게 말하면 된다. 네 개를 한 번에 시켜도 되�
 PYTHONUTF8=1 python scripts/blog.py tasks-diff
 ```
 
-네 작업을 실제 작업과 하나씩 대조해 `[같음]` / `[다름]` / `[없음]` / `[사본없음]`을 낸다.
+각 작업을 실제 작업과 하나씩 대조해 `[같음]` / `[다름]` / `[없음]` / `[사본없음]`을 낸다.
 줄 끝 차이(CRLF vs LF)는 어긋난 것으로 보지 않는다. 어긋나면 종료 코드가 1이다.
 
 **매일 9시 점검 루틴이 이 명령을 돌린다.** 어긋나면 보고만 하고 고치지는 않는다 —
