@@ -36,6 +36,22 @@ PYTHONUTF8=1 python scripts/blog.py exam-pick
 
   건너뛴 뒤 `exam-pick`을 다시 돌려 다음 문제를 받는다.
 
+### 받아온 자료를 읽을 때
+
+`WebFetch`가 받은 PDF·텍스트는 **저장소 밖**에 떨어진다. 그 폴더로 `cd` 하지 말고
+**저장소 루트에 선 채 절대경로로** 읽는다. `cd`로 작업 폴더를 벗어나면 권한을 묻느라
+무인 실행이 멈춘다.
+
+```bash
+# 이렇게 — 명령이 grep/sed/python 으로 시작한다
+grep -n -i "phase" "C:/Users/song/.claude/projects/.../tool-results/atam.txt"
+
+# 이렇게 하지 않는다 — cd 로 작업 폴더를 벗어난다
+cd "C:/Users/song/.claude/projects/.../tool-results" && grep -n -i "phase" atam.txt
+```
+
+웹 요청은 `curl` 대신 `WebFetch`·`WebSearch`를 쓴다.
+
 ## 3. 글 만들기
 
 ```bash
@@ -56,7 +72,7 @@ track: exam
 exam_kind: short          # short(단답형) | essay(논술형)
 tags: [정보관리기술사, 기출문제, <주제 태그>]
 description: "한 줄 요약"
-difficulty: intermediate
+difficulty: 중급
 environment: ["<근거 문서와 판/연도>"]   # 예: "ISO/IEC 25010:2011"
 verification: manual-only
 verified: true

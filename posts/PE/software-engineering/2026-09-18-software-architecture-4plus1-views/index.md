@@ -6,7 +6,7 @@ subcategory: software-engineering
 track: pe
 tags: [정보관리기술사, software-engineering, 개념정리]
 description: "4+1 뷰를 Kruchten의 1995년 원 논문 기준으로 정리했다. 뷰마다 누구의 관심사를 담는지, 구성요소와 연결이 무엇인지, 어떤 뷰를 생략할 수 있는지를 논문의 Table 1과 Tailoring 절 근거로 묶었다."
-difficulty: intermediate
+difficulty: 중급
 feature:
 environment: ["IEEE Software 12(6) 1995", "ISO/IEC/IEEE 42010:2022"]
 verification: manual-only

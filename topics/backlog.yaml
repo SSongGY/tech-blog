@@ -31,7 +31,7 @@ topics:
     subcategory: sqlite
     tags: [index, btree, sqlite, explain]
     feature: index-usage
-    difficulty: intermediate
+    difficulty: 중급
     angle: "이론이 아니라 SQLite에서 EXPLAIN QUERY PLAN으로 직접 재현해 보인다"
     code: python
     status: done
@@ -41,7 +41,7 @@ topics:
     subcategory: sqlite
     tags: [index, composite, cardinality]
     feature: composite-index
-    difficulty: intermediate
+    difficulty: 중급
     angle: "선행 컬럼 선택도에 따라 스캔 범위가 몇 배 달라지는지 행 수로 측정"
     code: python
     status: done
@@ -51,7 +51,7 @@ topics:
     subcategory: sqlite
     tags: [transaction, isolation, mvcc]
     feature: transaction-isolation
-    difficulty: intermediate
+    difficulty: 중급
     angle: "두 세션을 동시에 띄워 dirty read/non-repeatable/phantom을 각각 재현"
     code: python
     status: done
@@ -60,7 +60,7 @@ topics:
     category: Database
     tags: [mvcc, undo, vacuum]
     feature: mvcc
-    difficulty: advanced
+    difficulty: 심화
     angle: "버전 체인이 쌓이는 과정을 도식화하고 롱 트랜잭션의 비용을 계산"
     code: sql
     status: todo
@@ -69,7 +69,7 @@ topics:
     category: Database
     tags: [deadlock, lock, wait-for-graph]
     feature: deadlock
-    difficulty: intermediate
+    difficulty: 중급
     angle: "wait-for 그래프를 그리고 victim 선정 기준을 실측으로 확인"
     code: python
     status: todo
@@ -78,7 +78,7 @@ topics:
     category: Database
     tags: [optimizer, cost, statistics]
     feature: explain-plan
-    difficulty: advanced
+    difficulty: 심화
     angle: "통계가 틀어졌을 때 옵티마이저가 어떻게 오판하는지 강제로 재현"
     code: sql
     status: todo
@@ -86,7 +86,7 @@ topics:
     title: "N+1 쿼리는 왜 반복해서 생기고 어떻게 잡아내는가"
     category: Database
     tags: [orm, n-plus-one, query-log]
-    difficulty: beginner
+    difficulty: 입문
     angle: "쿼리 로그 카운터를 붙여 N+1을 자동 탐지하는 테스트를 작성"
     code: python
     status: todo
@@ -96,7 +96,7 @@ topics:
     subcategory: sqlite
     tags: [pagination, offset, keyset]
     feature: row-limiting
-    difficulty: intermediate
+    difficulty: 중급
     angle: "페이지 깊이에 따른 응답시간 곡선을 직접 측정해 교차점을 찾는다"
     code: python
     status: todo
@@ -105,7 +105,7 @@ topics:
     category: Database
     tags: ["null", three-valued-logic, sql]
     feature: null-semantics
-    difficulty: beginner
+    difficulty: 입문
     angle: "3값 논리 진리표를 실제 쿼리 결과와 대조"
     code: sql
     status: todo
@@ -114,7 +114,7 @@ topics:
     category: Database
     tags: [partition, pruning, global-index]
     feature: table-partitioning
-    difficulty: advanced
+    difficulty: 심화
     angle: "파티션 프루닝이 깨지는 조건과 글로벌 인덱스 비용을 정리"
     code: sql
     status: todo
@@ -124,7 +124,7 @@ topics:
     subcategory: sqlite
     tags: [wal, durability, checkpoint]
     feature: write-ahead-log
-    difficulty: advanced
+    difficulty: 심화
     angle: "SQLite WAL 파일을 직접 열어 프레임이 쌓이는 걸 바이트로 확인"
     code: python
     status: todo
@@ -133,7 +133,7 @@ topics:
     category: Database
     tags: [hint, plan-stability, statistics]
     feature: optimizer-hint
-    difficulty: advanced
+    difficulty: 심화
     angle: "힌트로 덮은 문제가 나중에 어떻게 되돌아오는지 사례로 정리"
     code: sql
     status: todo
@@ -143,7 +143,7 @@ topics:
     title: "커넥션 풀은 왜 크게 잡을수록 느려지는가"
     category: Backend
     tags: [connection-pool, littles-law, throughput]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "리틀의 법칙으로 적정 크기를 계산하고 실측 그래프로 검증"
     code: python
     status: todo
@@ -151,7 +151,7 @@ topics:
     title: "멱등키(Idempotency Key)로 중복 결제를 막는 설계"
     category: Backend
     tags: [idempotency, retry, api]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "재시도·동시요청·부분실패 3가지 경우를 모두 통과하는 구현"
     code: python
     status: todo
@@ -159,7 +159,7 @@ topics:
     title: "HTTP Keep-Alive를 껐다 켰을 때 실제로 달라지는 것"
     category: Backend
     tags: [http, keep-alive, tcp]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "TCP 핸드셰이크 횟수를 소켓 수준에서 세어 비교"
     code: python
     status: todo
@@ -167,7 +167,7 @@ topics:
     title: "재시도에 지수 백오프와 지터가 둘 다 필요한 이유"
     category: Backend
     tags: [retry, backoff, jitter, thundering-herd]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지터 없는 백오프가 만드는 재시도 폭풍을 시뮬레이션으로 재현"
     code: python
     status: todo
@@ -175,7 +175,7 @@ topics:
     title: "서킷 브레이커의 3상태는 각각 어떤 장애를 막는가"
     category: Backend
     tags: [circuit-breaker, resilience, failure]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "상태 전이 다이어그램대로 동작하는 최소 구현을 직접 작성"
     code: python
     status: todo
@@ -184,7 +184,7 @@ topics:
     category: Backend
     subcategory: redis
     tags: [distributed-lock, redis, fencing-token]
-    difficulty: advanced
+    difficulty: 심화
     angle: "TTL 만료와 GC 정지가 겹칠 때 락이 깨지는 시나리오를 타임라인으로"
     code: python
     status: todo
@@ -192,7 +192,7 @@ topics:
     title: "낙관적 잠금과 비관적 잠금, 어느 쪽이 언제 싼가"
     category: Backend
     tags: [locking, optimistic, version]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "충돌률을 0%부터 올려가며 두 방식의 처리량 역전 지점을 측정"
     code: python
     status: todo
@@ -200,7 +200,7 @@ topics:
     title: "캐시 스탬피드를 막는 세 가지 방법 비교"
     category: Backend
     tags: [cache, stampede, mutex, probabilistic]
-    difficulty: advanced
+    difficulty: 심화
     angle: "락/조기만료/백그라운드 갱신을 같은 부하로 돌려 히트율 비교"
     code: python
     status: todo
@@ -209,7 +209,7 @@ topics:
     category: Backend
     subcategory: kafka
     tags: [outbox, transaction, kafka, dual-write]
-    difficulty: advanced
+    difficulty: 심화
     angle: "이중 쓰기 실패 지점을 5곳으로 나눠 각각 무엇이 깨지는지"
     code: python
     status: todo
@@ -217,7 +217,7 @@ topics:
     title: "타임아웃을 계층마다 다르게 줘야 하는 이유"
     category: Backend
     tags: [timeout, cascading-failure, budget]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "타임아웃 예산(budget)을 계층별로 배분하는 계산식"
     code: python
     status: todo
@@ -227,7 +227,7 @@ topics:
     title: "p99가 평균보다 훨씬 나쁜 이유 — 큐잉 이론 최소한"
     category: Performance
     tags: [latency, percentile, queueing]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "이용률 70%와 90%에서 대기시간이 몇 배 벌어지는지 시뮬레이션"
     code: python
     status: todo
@@ -235,7 +235,7 @@ topics:
     title: "벤치마크가 거짓말하는 5가지 방식"
     category: Performance
     tags: [benchmark, warmup, measurement]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "같은 코드로 2배 차이 나는 측정 결과를 일부러 만들어 보인다"
     code: python
     status: todo
@@ -243,7 +243,7 @@ topics:
     title: "CPU 캐시 라인을 의식하면 같은 루프가 몇 배 빨라진다"
     category: Performance
     tags: [cache-line, locality, false-sharing]
-    difficulty: advanced
+    difficulty: 심화
     angle: "행 우선/열 우선 순회와 false sharing을 실측으로 대조"
     code: c
     status: todo
@@ -252,7 +252,7 @@ topics:
     category: Performance
     subcategory: java
     tags: [gc, pause, allocation-rate]
-    difficulty: advanced
+    difficulty: 심화
     angle: "할당률과 승격률로 힙 설정을 역산하는 절차"
     code: java
     status: todo
@@ -263,7 +263,7 @@ topics:
     category: Language
     subcategory: python
     tags: [python, gil, free-threading, concurrency]
-    difficulty: advanced
+    difficulty: 심화
     angle: "free-threaded 빌드에서 CPU/IO 작업을 각각 측정"
     code: python
     status: todo
@@ -272,7 +272,7 @@ topics:
     category: Language
     subcategory: go
     tags: [go, context, cancellation, goroutine]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "취소 신호가 닿지 않아 누수되는 goroutine을 재현하고 잡는다"
     code: go
     status: todo
@@ -281,7 +281,7 @@ topics:
     category: Language
     subcategory: rust
     tags: [rust, ownership, borrow-checker]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "컴파일 에러 메시지 3개를 해부해 규칙을 역으로 도출"
     code: rust
     status: todo
@@ -290,7 +290,7 @@ topics:
     category: Language
     subcategory: javascript
     tags: [javascript, event-loop, microtask, promise]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "출력 순서 퀴즈 5개를 명세 기준으로 하나씩 해설"
     code: javascript
     status: todo
@@ -299,7 +299,7 @@ topics:
     category: Language
     subcategory: python
     tags: [async, state-machine, coroutine]
-    difficulty: advanced
+    difficulty: 심화
     angle: "변환 결과를 펼쳐 await 지점이 어디로 바뀌는지 보인다"
     code: python
     status: todo
@@ -311,7 +311,7 @@ topics:
     subcategory: linux
     track: linux
     tags: [container, namespace, cgroup, linux]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "unshare 명령으로 컨테이너 비슷한 걸 손으로 만들어 본다"
     code: shell
     status: todo
@@ -320,7 +320,7 @@ topics:
     category: Infra
     subcategory: docker
     tags: [docker, layer, cache, dockerfile]
-    difficulty: beginner
+    difficulty: 입문
     angle: "같은 Dockerfile을 순서만 바꿔 빌드 시간을 실측 비교"
     code: dockerfile
     status: todo
@@ -329,7 +329,7 @@ topics:
     category: Infra
     subcategory: kubernetes
     tags: [kubernetes, probe, rollout]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "잘못된 프로브 설정이 롤링 배포를 무너뜨리는 시퀀스를 도식화"
     code: yaml
     status: todo
@@ -339,7 +339,7 @@ topics:
     subcategory: tls
     track: linux
     tags: [tls, handshake, certificate, openssl]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "openssl s_client 출력을 한 줄씩 해독"
     code: shell
     status: done
@@ -349,7 +349,7 @@ topics:
     subcategory: linux
     track: linux
     tags: [linux, inode, file-descriptor, lsof]
-    difficulty: beginner
+    difficulty: 입문
     angle: "열린 파일 디스크립터를 lsof로 추적해 원인을 특정"
     code: shell
     status: todo
@@ -359,7 +359,7 @@ topics:
     title: "CAP 정리에서 흔히 오독되는 세 가지"
     category: Architecture
     tags: [cap, consistency, partition]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "흔한 오독을 원 정의에 비춰 교정하고 PACELC까지 연결"
     code: none
     status: todo
@@ -367,7 +367,7 @@ topics:
     title: "이벤트 소싱이 감당해야 하는 진짜 비용"
     category: Architecture
     tags: [event-sourcing, cqrs, replay]
-    difficulty: advanced
+    difficulty: 심화
     angle: "스냅샷 없이 리플레이가 선형으로 느려지는 걸 수치로 보인다"
     code: python
     status: todo
@@ -375,7 +375,7 @@ topics:
     title: "사가 패턴의 보상 트랜잭션은 왜 어려운가"
     category: Architecture
     tags: [saga, compensation, distributed-transaction]
-    difficulty: advanced
+    difficulty: 심화
     angle: "보상이 실패하는 경우를 어떻게 다룰지가 핵심"
     code: python
     status: todo
@@ -383,7 +383,7 @@ topics:
     title: "모놀리스를 쪼개기 전에 확인할 경계 찾기"
     category: Architecture
     tags: [microservice, bounded-context, coupling]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "커밋 히스토리에서 함께 바뀌는 파일을 군집화해 경계를 추정"
     code: python
     status: todo
@@ -394,7 +394,7 @@ topics:
     category: Security
     tags: [sql-injection, prepared-statement, binding]
     feature: sql-injection
-    difficulty: beginner
+    difficulty: 입문
     angle: "문자열 조합이 뚫리는 입력을 보이고 바인딩과 대조"
     code: python
     status: todo
@@ -402,7 +402,7 @@ topics:
     title: "비밀번호 해시에 bcrypt/argon2를 쓰는 이유"
     category: Security
     tags: [password, hash, bcrypt, argon2, salt]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "SHA-256 대비 초당 시도 횟수를 직접 측정해 차이를 보인다"
     code: python
     status: todo
@@ -410,7 +410,7 @@ topics:
     title: "JWT를 세션 대신 쓸 때 포기하는 것"
     category: Security
     tags: [jwt, session, revocation, stateless]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "즉시 로그아웃 요구가 들어오면 무엇이 무너지는지"
     code: python
     status: todo
@@ -421,7 +421,7 @@ topics:
     category: Tooling
     subcategory: git
     tags: [git, rebase, merge, history]
-    difficulty: beginner
+    difficulty: 입문
     angle: "같은 작업을 두 방식으로 돌려 그래프와 bisect 결과를 비교"
     code: shell
     status: todo
@@ -430,7 +430,7 @@ topics:
     category: Tooling
     subcategory: git
     tags: [git, bisect, debugging, automation]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "bisect run에 테스트 스크립트를 물려 완전 자동화"
     code: shell
     status: done
@@ -438,7 +438,7 @@ topics:
     title: "플레임 그래프를 제대로 읽는 법"
     category: Tooling
     tags: [profiling, flamegraph, perf]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "폭과 높이가 각각 무엇을 뜻하는지, 오독하기 쉬운 패턴 3가지"
     code: python
     status: todo
@@ -455,7 +455,7 @@ topics:
     product_version: "7"
     feature: sequence
     tags: [tibero, sequence, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "CACHE/NOCACHE와 인스턴스 재기동 시 번호 건너뜀을 매뉴얼 근거로 정리"
     code: sql
     status: done
@@ -468,7 +468,7 @@ topics:
     product_version: "7"
     feature: hierarchical-query
     tags: [tibero, hierarchical-query, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "LEVEL·CONNECT_BY_ISCYCLE·NOCYCLE의 역할을 조직도 예제로"
     code: sql
     status: todo
@@ -481,7 +481,7 @@ topics:
     product_version: "7"
     feature: window-function
     tags: [tibero, window-function, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "ROWS와 RANGE의 차이가 결과를 어떻게 바꾸는지"
     code: sql
     status: todo
@@ -494,7 +494,7 @@ topics:
     product_version: "7"
     feature: merge
     tags: [tibero, merge, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "WHEN MATCHED/NOT MATCHED 조합과 DELETE 절까지"
     code: sql
     status: todo
@@ -507,7 +507,7 @@ topics:
     product_version: "7"
     feature: table-partitioning
     tags: [tibero, table-partitioning, sql]
-    difficulty: advanced
+    difficulty: 심화
     angle: "RANGE·LIST·HASH·COMPOSITE를 선택 기준으로 갈라 정리"
     code: sql
     status: todo
@@ -520,7 +520,7 @@ topics:
     product_version: "7"
     feature: index-types
     tags: [tibero, index-types, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "함수 기반·비트맵·리버스·유니크를 쓸 자리 기준으로"
     code: sql
     status: todo
@@ -533,7 +533,7 @@ topics:
     product_version: "7"
     feature: optimizer-hint
     tags: [tibero, optimizer-hint, sql]
-    difficulty: advanced
+    difficulty: 심화
     angle: "힌트가 무시되는 조건과 적용 여부를 확인하는 방법"
     code: sql
     status: todo
@@ -546,7 +546,7 @@ topics:
     product_version: "7"
     feature: explain-plan
     tags: [tibero, explain-plan, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "계획을 뽑는 세 가지 경로와 각각이 보여주는 것의 차이"
     code: sql
     status: todo
@@ -559,7 +559,7 @@ topics:
     product_version: "7"
     feature: transaction-isolation
     tags: [tibero, transaction-isolation, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지원하는 수준과 SET TRANSACTION 문법을 매뉴얼 기준으로"
     code: sql
     status: todo
@@ -572,7 +572,7 @@ topics:
     product_version: "7"
     feature: stored-procedure
     tags: [tibero, stored-procedure, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "선언부·예외부 구조와 파라미터 모드(IN/OUT/INOUT)"
     code: sql
     status: todo
@@ -585,7 +585,7 @@ topics:
     product_version: "7"
     feature: external-table
     tags: [tibero, external-table, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "DIRECTORY 객체부터 ACCESS PARAMETERS까지 한 줄씩"
     code: sql
     status: todo
@@ -598,7 +598,7 @@ topics:
     product_version: "7"
     feature: system-catalog
     tags: [tibero, system-catalog, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "DBA_/ALL_/USER_ 접두사 체계와 자주 쓰는 뷰 목록"
     code: sql
     status: todo
@@ -611,7 +611,7 @@ topics:
     product_version: "7"
     feature: lob
     tags: [tibero, lob, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "인라인 저장 조건과 LOB 세그먼트가 따로 생기는 시점"
     code: sql
     status: todo
@@ -624,7 +624,7 @@ topics:
     product_version: "7"
     feature: datetime-types
     tags: [tibero, datetime-types, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "WITH TIME ZONE 계열까지 포함해 정밀도와 연산 규칙"
     code: sql
     status: todo
@@ -637,7 +637,7 @@ topics:
     product_version: "7"
     feature: cte
     tags: [tibero, cte, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "재귀 CTE와 CONNECT BY 중 언제 무엇을 쓰는가"
     code: sql
     status: todo
@@ -650,7 +650,7 @@ topics:
     product_version: "7"
     feature: row-limiting
     tags: [tibero, row-limiting, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "ROWNUM이 정렬 전에 붙는 이유와 올바른 페이징 문법"
     code: sql
     status: todo
@@ -663,7 +663,7 @@ topics:
     product_version: "7"
     feature: constraints
     tags: [tibero, constraints, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "DEFERRABLE과 NOVALIDATE가 실제로 바꾸는 것"
     code: sql
     status: todo
@@ -676,7 +676,7 @@ topics:
     product_version: "7"
     feature: materialized-view
     tags: [tibero, materialized-view, sql]
-    difficulty: advanced
+    difficulty: 심화
     angle: "COMPLETE·FAST·ON COMMIT 갱신의 전제 조건"
     code: sql
     status: todo
@@ -689,7 +689,7 @@ topics:
     product_version: "7"
     feature: synonym
     tags: [tibero, synonym, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "이름 해석 순서에서 시노님이 놓인 자리"
     code: sql
     status: todo
@@ -702,7 +702,7 @@ topics:
     product_version: "7"
     feature: privileges
     tags: [tibero, privileges, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "시스템 권한·객체 권한·롤의 관계와 WITH ADMIN/GRANT OPTION"
     code: sql
     status: todo
@@ -717,7 +717,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "SELECT * 를 쓰면 안 되는 이유를 실행계획으로 보인다"
     code: python
     status: done
@@ -727,7 +727,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "괄호를 빼먹으면 결과가 어떻게 달라지는지 같은 데이터로 대조"
     code: python
     status: done
@@ -738,7 +738,7 @@ topics:
     track: basics
     feature: null-ordering
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "NULLS FIRST/LAST 기본값이 엔진마다 다른 것을 실측"
     code: python
     status: done
@@ -749,7 +749,7 @@ topics:
     track: basics
     feature: row-limiting
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "OFFSET이 커질수록 왜 느려지는지 행 수로 설명"
     code: python
     status: todo
@@ -759,7 +759,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "실행계획에서 DISTINCT가 어떤 연산으로 바뀌는지 확인"
     code: python
     status: todo
@@ -769,7 +769,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "집계 함수가 NULL을 세지 않는 것을 COUNT(*)와 대조"
     code: python
     status: todo
@@ -779,7 +779,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "질의 처리 순서를 그려 두 절의 자리를 구분"
     code: python
     status: todo
@@ -789,7 +789,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "조인 조건을 빼먹으면 행 수가 곱해지는 것을 숫자로"
     code: python
     status: todo
@@ -799,7 +799,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "WHERE에 조건을 쓰면 LEFT JOIN이 INNER가 되는 함정"
     code: python
     status: todo
@@ -809,7 +809,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "날짜 채우기와 계층 비교라는 실제 용도 두 가지"
     code: python
     status: todo
@@ -820,7 +820,7 @@ topics:
     track: basics
     feature: subquery
     tags: [sql, basics, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "상관 서브쿼리가 행마다 실행되는 것을 실행계획으로"
     code: python
     status: todo
@@ -831,7 +831,7 @@ topics:
     track: basics
     feature: exists-vs-in
     tags: [sql, basics, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "NOT IN에 NULL이 섞이면 결과가 빈다는 것을 재현"
     code: python
     status: todo
@@ -841,7 +841,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "UNION이 정렬을 부르는 것을 실행계획과 시간으로 대조"
     code: python
     status: todo
@@ -851,7 +851,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "CASE로 행을 열로 돌리는 수동 피벗까지"
     code: python
     status: todo
@@ -862,7 +862,7 @@ topics:
     track: basics
     feature: null-semantics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "NULL이 연산·비교·집계에서 각각 다르게 동작하는 것과 함께"
     code: python
     status: todo
@@ -872,7 +872,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "INSERT SELECT로 대량 적재할 때 컬럼 순서가 맞는지 확인하는 법"
     code: python
     status: todo
@@ -882,7 +882,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "먼저 SELECT로 대상을 세어보는 절차를 예제로"
     code: python
     status: todo
@@ -892,7 +892,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "롤백 가능 여부와 저장 공간 반환 차이를 표로"
     code: python
     status: todo
@@ -903,7 +903,7 @@ topics:
     track: basics
     feature: constraints
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "NOT NULL·UNIQUE·CHECK·DEFAULT가 각각 언제 검사되는지"
     code: python
     status: todo
@@ -913,7 +913,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "SQLite가 지원하지 않는 변경과 우회 절차"
     code: python
     status: todo
@@ -924,7 +924,7 @@ topics:
     track: basics
     feature: view
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "뷰를 통한 갱신이 되는 조건과 안 되는 조건"
     code: python
     status: todo
@@ -935,7 +935,7 @@ topics:
     track: basics
     feature: transaction-basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "SAVEPOINT로 부분 롤백하는 흐름을 두 세션으로"
     code: python
     status: todo
@@ -945,7 +945,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "인덱스를 죽이는 문자열 함수 사용 위치를 함께 짚는다"
     code: python
     status: todo
@@ -956,7 +956,7 @@ topics:
     track: basics
     feature: datetime-types
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "문자열로 저장한 날짜가 정렬·비교에서 어떻게 깨지는지"
     code: python
     status: todo
@@ -966,7 +966,7 @@ topics:
     subcategory: sql-basics
     track: basics
     tags: [sql, basics, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "부동소수점으로 금액을 더하면 틀어지는 것을 실제 값으로"
     code: python
     status: todo
@@ -981,7 +981,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "단계별 산출물과 각 단계에서 놓치면 무엇이 무너지는지"
     code: none
     status: done
@@ -991,7 +991,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "뷰마다 누구의 관심사를 담는지 이해관계자 기준으로 정리"
     code: none
     status: done
@@ -1001,7 +1001,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: beginner
+    difficulty: 입문
     angle: "코드 조각으로 각 등급을 판별하는 연습"
     code: none
     status: done
@@ -1011,7 +1011,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "V모델에 레벨을 얹고 블랙박스·화이트박스 기법을 배치"
     code: none
     status: done
@@ -1021,7 +1021,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "식별·통제·감사·기록이 실제로 언제 일어나는지"
     code: none
     status: todo
@@ -1031,7 +1031,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "단계별로 조직에서 실제 무엇이 달라지는지"
     code: none
     status: todo
@@ -1041,7 +1041,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "가치 흐름 관점에서 두 개념의 적용 범위를 구분"
     code: none
     status: todo
@@ -1051,7 +1051,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "모놀리스 대비 얻는 것과 잃는 것을 항목별로"
     code: none
     status: todo
@@ -1061,7 +1061,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, database, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "각 단계에서 제거되는 이상현상을 예제 릴레이션으로"
     code: none
     status: todo
@@ -1071,7 +1071,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, database, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "격리 수준별로 허용되는 이상현상을 표로 대응"
     code: none
     status: todo
@@ -1081,7 +1081,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, database, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "각 투명성이 깨졌을 때 개발자가 무엇을 떠안는지"
     code: none
     status: todo
@@ -1091,7 +1091,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, database, 개념정리]
-    difficulty: beginner
+    difficulty: 입문
     angle: "단계별 산출물과 전환 시 결정되는 사항"
     code: none
     status: todo
@@ -1101,7 +1101,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, database, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "완전성·유일성·유효성 등 지표를 측정 가능한 형태로"
     code: none
     status: todo
@@ -1111,7 +1111,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, network, 개념정리]
-    difficulty: beginner
+    difficulty: 입문
     angle: "계층별 PDU와 대표 프로토콜, 장비를 한 장에"
     code: none
     status: todo
@@ -1121,7 +1121,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, network, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "혼잡 제어 알고리즘 단계를 상태 변화로"
     code: none
     status: todo
@@ -1131,7 +1131,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, network, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "수렴 시간과 확장성 차이가 생기는 이유"
     code: none
     status: todo
@@ -1141,7 +1141,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, network, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "기존 네트워크 대비 무엇이 프로그래밍 가능해지는가"
     code: none
     status: todo
@@ -1151,7 +1151,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, security, 개념정리]
-    difficulty: beginner
+    difficulty: 입문
     angle: "속도와 키 분배 문제로 하이브리드 방식이 나온 경위"
     code: none
     status: todo
@@ -1161,7 +1161,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, security, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "인증서 검증 경로를 단계별로 추적"
     code: none
     status: todo
@@ -1171,7 +1171,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, security, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "같은 요구사항을 네 모델로 각각 표현해 비교"
     code: none
     status: todo
@@ -1181,7 +1181,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, security, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "단계별 산출물과 증거 보전에서 틀리기 쉬운 것"
     code: none
     status: todo
@@ -1191,7 +1191,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, security, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "k-익명성·l-다양성·t-근접성이 막는 공격이 각각 다르다"
     code: none
     status: todo
@@ -1201,7 +1201,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, security, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "핵심 원칙과 도입 시 선행되어야 할 것"
     code: none
     status: todo
@@ -1211,7 +1211,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, system, 개념정리]
-    difficulty: beginner
+    difficulty: 입문
     angle: "PCB에 저장되는 것과 교환 시 실제로 드는 비용"
     code: none
     status: todo
@@ -1221,7 +1221,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, system, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "같은 작업 집합으로 평균 대기시간을 계산해 대조"
     code: none
     status: todo
@@ -1231,7 +1231,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, system, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "참조 문자열로 LRU·FIFO·Optimal 부재율을 직접 계산"
     code: none
     status: todo
@@ -1241,7 +1241,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, system, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "예방·회피·탐지·회복이 각각 어느 조건을 건드리는지"
     code: none
     status: todo
@@ -1251,7 +1251,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, emerging-tech, 개념정리]
-    difficulty: beginner
+    difficulty: 입문
     angle: "IaaS·PaaS·SaaS에서 누가 무엇까지 책임지는지 경계선으로"
     code: none
     status: todo
@@ -1261,7 +1261,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, emerging-tech, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "하이퍼바이저와 컨테이너 런타임의 위치를 도식으로"
     code: none
     status: todo
@@ -1271,7 +1271,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, emerging-tech, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "처리량·최종성·장애 허용을 축으로 비교"
     code: none
     status: todo
@@ -1281,7 +1281,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, emerging-tech, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "정밀도와 재현율이 상충하는 상황을 혼동행렬로"
     code: none
     status: todo
@@ -1291,7 +1291,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "매트릭스로 보고 실제 프로젝트 흐름에 대응"
     code: none
     status: todo
@@ -1301,7 +1301,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "같은 장애를 세 프로세스가 어떻게 나눠 다루는지"
     code: none
     status: todo
@@ -1311,7 +1311,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: advanced
+    difficulty: 심화
     angle: "EDM과 APO 이하의 역할 구분"
     code: none
     status: todo
@@ -1321,7 +1321,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "요구정의·설계·종료 감리에서 각각 무엇을 보는지"
     code: none
     status: todo
@@ -1338,7 +1338,7 @@ topics:
     product_version: "19c"
     feature: sequence
     tags: [oracle, sequence, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "CACHE 설정과 RAC 환경에서 순번이 어긋나는 조건"
     code: sql
     status: todo
@@ -1351,7 +1351,7 @@ topics:
     product_version: "19c"
     feature: hierarchical-query
     tags: [oracle, hierarchical-query, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "LEVEL·CONNECT_BY_ISCYCLE·NOCYCLE을 조직도 예제로"
     code: sql
     status: todo
@@ -1364,7 +1364,7 @@ topics:
     product_version: "19c"
     feature: window-function
     tags: [oracle, window-function, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "ROWS와 RANGE의 차이가 결과를 어떻게 바꾸는지"
     code: sql
     status: todo
@@ -1377,7 +1377,7 @@ topics:
     product_version: "19c"
     feature: merge
     tags: [oracle, merge, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "WHEN MATCHED/NOT MATCHED 조합과 DELETE 절까지"
     code: sql
     status: todo
@@ -1390,7 +1390,7 @@ topics:
     product_version: "19c"
     feature: table-partitioning
     tags: [oracle, table-partitioning, sql]
-    difficulty: advanced
+    difficulty: 심화
     angle: "RANGE·LIST·HASH·COMPOSITE를 선택 기준으로 갈라 정리"
     code: sql
     status: todo
@@ -1403,7 +1403,7 @@ topics:
     product_version: "19c"
     feature: index-types
     tags: [oracle, index-types, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "함수 기반·비트맵·리버스·유니크를 쓸 자리 기준으로"
     code: sql
     status: todo
@@ -1416,7 +1416,7 @@ topics:
     product_version: "19c"
     feature: optimizer-hint
     tags: [oracle, optimizer-hint, sql]
-    difficulty: advanced
+    difficulty: 심화
     angle: "힌트가 무시되는 조건과 적용 여부를 확인하는 방법"
     code: sql
     status: todo
@@ -1429,7 +1429,7 @@ topics:
     product_version: "19c"
     feature: explain-plan
     tags: [oracle, explain-plan, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "계획을 뽑는 세 가지 경로와 각각이 보여주는 것의 차이"
     code: sql
     status: todo
@@ -1442,7 +1442,7 @@ topics:
     product_version: "19c"
     feature: transaction-isolation
     tags: [oracle, transaction-isolation, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지원하는 수준과 SET TRANSACTION 문법"
     code: sql
     status: todo
@@ -1455,7 +1455,7 @@ topics:
     product_version: "19c"
     feature: stored-procedure
     tags: [oracle, stored-procedure, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "선언부·예외부 구조와 파라미터 모드(IN/OUT/IN OUT)"
     code: sql
     status: todo
@@ -1468,7 +1468,7 @@ topics:
     product_version: "19c"
     feature: external-table
     tags: [oracle, external-table, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "DIRECTORY 객체부터 ACCESS PARAMETERS까지 한 줄씩"
     code: sql
     status: todo
@@ -1481,7 +1481,7 @@ topics:
     product_version: "19c"
     feature: system-catalog
     tags: [oracle, system-catalog, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "DBA_/ALL_/USER_ 접두사 체계와 자주 쓰는 뷰 목록"
     code: sql
     status: todo
@@ -1494,7 +1494,7 @@ topics:
     product_version: "19c"
     feature: lob
     tags: [oracle, lob, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "인라인 저장 조건과 LOB 세그먼트가 따로 생기는 시점"
     code: sql
     status: todo
@@ -1507,7 +1507,7 @@ topics:
     product_version: "19c"
     feature: datetime-types
     tags: [oracle, datetime-types, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "WITH TIME ZONE 계열까지 포함해 정밀도와 연산 규칙"
     code: sql
     status: todo
@@ -1520,7 +1520,7 @@ topics:
     product_version: "19c"
     feature: cte
     tags: [oracle, cte, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "재귀 CTE와 CONNECT BY 중 언제 무엇을 쓰는가"
     code: sql
     status: todo
@@ -1533,7 +1533,7 @@ topics:
     product_version: "19c"
     feature: row-limiting
     tags: [oracle, row-limiting, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "ROWNUM이 정렬 전에 붙는 이유와 12c 이후 FETCH FIRST 문법"
     code: sql
     status: todo
@@ -1546,7 +1546,7 @@ topics:
     product_version: "19c"
     feature: constraints
     tags: [oracle, constraints, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "DEFERRABLE과 NOVALIDATE가 실제로 바꾸는 것"
     code: sql
     status: todo
@@ -1559,7 +1559,7 @@ topics:
     product_version: "19c"
     feature: materialized-view
     tags: [oracle, materialized-view, sql]
-    difficulty: advanced
+    difficulty: 심화
     angle: "COMPLETE·FAST·ON COMMIT 갱신의 전제 조건"
     code: sql
     status: todo
@@ -1572,7 +1572,7 @@ topics:
     product_version: "19c"
     feature: synonym
     tags: [oracle, synonym, sql]
-    difficulty: beginner
+    difficulty: 입문
     angle: "이름 해석 순서에서 시노님이 놓인 자리"
     code: sql
     status: todo
@@ -1585,7 +1585,7 @@ topics:
     product_version: "19c"
     feature: privileges
     tags: [oracle, privileges, sql]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "시스템 권한·객체 권한·롤의 관계와 WITH ADMIN/GRANT OPTION"
     code: sql
     status: todo
@@ -1599,7 +1599,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "STAT 컬럼의 각 글자가 뜻하는 것과 좀비·D 상태를 구분"
     code: shell
     status: todo
@@ -1609,7 +1609,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "df와 du 합계가 어긋나는 대표 원인 세 가지"
     code: shell
     status: todo
@@ -1619,7 +1619,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "available과 free의 차이, buff/cache를 부족으로 오해하는 실수"
     code: shell
     status: todo
@@ -1629,7 +1629,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "TIME_WAIT가 쌓이는 이유와 그게 문제인 경우"
     code: shell
     status: todo
@@ -1639,7 +1639,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지운 파일이 용량을 안 돌려주는 상황을 lsof로 특정"
     code: shell
     status: todo
@@ -1649,7 +1649,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "-A/-B/-C 문맥 출력과 -P 정규식이 필요한 순간"
     code: shell
     status: todo
@@ -1659,7 +1659,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "필드 분리와 연관배열로 상태코드별 건수를 한 줄에"
     code: shell
     status: todo
@@ -1669,7 +1669,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "-i를 쓰기 전에 반드시 하는 확인 절차"
     code: shell
     status: todo
@@ -1679,7 +1679,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "-exec와 -print0 | xargs -0의 차이, 공백 파일명 함정"
     code: shell
     status: todo
@@ -1689,7 +1689,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "로테이션이 일어나면 tail -f가 멈추는 이유와 -F"
     code: shell
     status: todo
@@ -1699,7 +1699,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "enable과 start를 헷갈려 재부팅 후 안 뜨는 사고"
     code: shell
     status: todo
@@ -1709,7 +1709,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "cron의 PATH가 로그인 셸과 다르다는 것을 실제로 확인"
     code: shell
     status: todo
@@ -1719,7 +1719,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "숫자 표기와 기호 표기 대응, 디렉터리의 x가 뜻하는 것"
     code: shell
     status: todo
@@ -1729,7 +1729,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "inode 관점에서 둘의 차이와 원본을 지웠을 때의 결과"
     code: shell
     status: todo
@@ -1739,7 +1739,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "절대경로가 들어간 아카이브를 푸는 위험"
     code: shell
     status: todo
@@ -1749,7 +1749,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "끝 슬래시 하나로 결과가 달라지는 것을 예제로"
     code: shell
     status: todo
@@ -1759,7 +1759,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "9번을 먼저 쓰면 안 되는 이유와 프로세스가 안 죽는 경우"
     code: shell
     status: todo
@@ -1769,7 +1769,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "SIGHUP 전파 경로로 세 방법의 차이를 설명"
     code: shell
     status: todo
@@ -1779,7 +1779,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "-n, -P로 병렬 처리하고 -0으로 공백 파일명을 넘기기"
     code: shell
     status: todo
@@ -1789,7 +1789,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "uniq -c 앞에 sort가 반드시 와야 하는 이유"
     code: shell
     status: todo
@@ -1799,7 +1799,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "soft/hard 한도와 서비스에 적용되는 실제 값 확인 경로"
     code: shell
     status: todo
@@ -1809,7 +1809,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, advanced]
-    difficulty: advanced
+    difficulty: 심화
     angle: "%util이 100%여도 병목이 아닌 경우"
     code: shell
     status: todo
@@ -1819,7 +1819,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, advanced]
-    difficulty: advanced
+    difficulty: 심화
     angle: "멈춘 프로세스가 어느 시스템콜에서 대기 중인지 특정"
     code: shell
     status: todo
@@ -1829,7 +1829,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "어떤 프로세스가 왜 선택됐는지 점수 기준으로"
     code: shell
     status: todo
@@ -1839,7 +1839,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "ifconfig 대신 ip를 쓰는 이유와 명령 대응표"
     code: shell
     status: todo
@@ -1849,7 +1849,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "-v, -w로 응답 시간 구간을 나눠 측정"
     code: shell
     status: todo
@@ -1859,7 +1859,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "체인이 끊겼을 때 출력에서 무엇이 달라지는지"
     code: shell
     status: todo
@@ -1869,7 +1869,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, intermediate]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "로그인 셸과 비로그인 셸에서 읽는 파일이 다른 것을 실측"
     code: shell
     status: todo
@@ -1879,7 +1879,7 @@ topics:
     subcategory: command
     track: linux
     tags: [linux, shell, beginner]
-    difficulty: beginner
+    difficulty: 입문
     angle: "-d 옵션으로 달라진 부분만 강조해 추세를 본다"
     code: shell
     status: todo
@@ -1891,7 +1891,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, agile, sdlc, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "규모·요구 변동성·계약 형태 세 축으로 갈리는 판단 기준"
     code: none
     origin: manual
@@ -1902,7 +1902,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, cbd, reuse, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "재사용 단위가 커질수록 무엇을 얻고 무엇을 잃는지"
     code: none
     origin: manual
@@ -1913,7 +1913,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, design-pattern, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "생성·구조·행위로 나누는 기준과 시험에 나오는 대표 패턴"
     code: none
     origin: manual
@@ -1924,7 +1924,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, architecture, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "의존성 방향을 뒤집는다는 말이 코드에서 실제로 무엇인지"
     code: none
     origin: manual
@@ -1935,7 +1935,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, msa, saga, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "분산 트랜잭션을 포기하고 보상으로 푸는 대가"
     code: none
     origin: manual
@@ -1946,7 +1946,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, refactoring, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "언제 하지 말아야 하는지까지 포함해서"
     code: none
     origin: manual
@@ -1957,7 +1957,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, technical-debt, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "의도한 부채와 방치된 부채를 가르는 기준"
     code: none
     origin: manual
@@ -1968,7 +1968,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, devops, cicd, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지표 4개가 각각 무엇의 대리 측정인지"
     code: none
     origin: manual
@@ -1979,7 +1979,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, quality, coq, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "예방·평가·실패 비용의 비율이 성숙도를 드러내는 방식"
     code: none
     origin: manual
@@ -1990,7 +1990,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, pm, schedule, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "주공정 계산을 직접 해보고 여유시간이 뜻하는 것"
     code: none
     origin: manual
@@ -2001,7 +2001,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, normalization, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "각 단계에서 제거되는 이상현상을 예제 테이블로"
     code: none
     origin: manual
@@ -2012,7 +2012,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, transaction, 2pc, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "2PC가 막지 못하는 블로킹 구간이 어디인지"
     code: none
     origin: manual
@@ -2023,7 +2023,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, cap, distributed, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "P를 포기할 수 없다는 전제가 왜 성립하는지"
     code: none
     origin: manual
@@ -2034,7 +2034,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, dw, lakehouse, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "스키마를 언제 강제하느냐가 만드는 차이"
     code: none
     origin: manual
@@ -2045,7 +2045,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, governance, quality, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "품질 지표 6개와 조직 역할 정의"
     code: none
     origin: manual
@@ -2056,7 +2056,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, nosql, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "접근 패턴이 모델을 정한다는 원칙"
     code: none
     origin: manual
@@ -2067,7 +2067,7 @@ topics:
     subcategory: database
     track: pe
     tags: [정보관리기술사, modeling, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "단계마다 무엇이 확정되고 무엇을 미루는지"
     code: none
     origin: manual
@@ -2078,7 +2078,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, tcp, congestion, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "Reno·CUBIC·BBR이 무엇을 신호로 삼는지"
     code: none
     origin: manual
@@ -2089,7 +2089,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, sdn, nfv, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "분리해서 얻는 것과 새로 생기는 단일 장애점"
     code: none
     origin: manual
@@ -2100,7 +2100,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, ipv6, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "듀얼스택·터널링·변환을 언제 쓰는지"
     code: none
     origin: manual
@@ -2111,7 +2111,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, 5g, slicing, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "슬라이스별 SLA를 물리 자원으로 어떻게 보장하는지"
     code: none
     origin: manual
@@ -2122,7 +2122,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, quic, http3, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "TCP 위에서 못 풀던 문제를 UDP로 내려가 푼 이유"
     code: none
     origin: manual
@@ -2133,7 +2133,7 @@ topics:
     subcategory: network
     track: pe
     tags: [정보관리기술사, load-balancing, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "세션 고정이 필요한 순간과 그 비용"
     code: none
     origin: manual
@@ -2144,7 +2144,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, zero-trust, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "경계 방어와 무엇이 근본적으로 다른지"
     code: none
     origin: manual
@@ -2155,7 +2155,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, pki, certificate, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "폐기 확인(CRL·OCSP)이 실제로 어디서 깨지는지"
     code: none
     origin: manual
@@ -2166,7 +2166,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, privacy, anonymization, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "k-익명성·l-다양성이 막는 공격과 못 막는 공격"
     code: none
     origin: manual
@@ -2177,7 +2177,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, isms-p, compliance, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "관리체계와 보호대책을 나눈 이유"
     code: none
     origin: manual
@@ -2188,7 +2188,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, supply-chain, sbom, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "SBOM이 있어도 못 막는 것"
     code: none
     origin: manual
@@ -2199,7 +2199,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, access-control, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "권한 폭발을 어느 모델이 어떻게 줄이는지"
     code: none
     origin: manual
@@ -2210,7 +2210,7 @@ topics:
     subcategory: security
     track: pe
     tags: [정보관리기술사, ransomware, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "백업만으로 부족한 이유와 3-2-1 규칙"
     code: none
     origin: manual
@@ -2221,7 +2221,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, scheduling, os, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "FCFS·SJF·RR을 직접 계산해 비교"
     code: none
     origin: manual
@@ -2232,7 +2232,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, paging, os, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "FIFO·LRU·Optimal을 같은 참조열로 계산"
     code: none
     origin: manual
@@ -2243,7 +2243,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, deadlock, os, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "은행원 알고리즘을 직접 돌려 안전 상태 판정"
     code: none
     origin: manual
@@ -2254,7 +2254,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, raid, storage, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "쓰기 페널티를 숫자로 비교"
     code: none
     origin: manual
@@ -2265,7 +2265,7 @@ topics:
     subcategory: system
     track: pe
     tags: [정보관리기술사, cache, memory, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "MESI 상태 전이를 표로"
     code: none
     origin: manual
@@ -2276,7 +2276,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, llm, ai, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "트랜스포머 구조에서 비용과 환각이 나오는 지점"
     code: none
     origin: manual
@@ -2287,7 +2287,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, rag, ai, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "검색이 틀리면 생성이 무엇을 해도 안 되는 구조"
     code: none
     origin: manual
@@ -2298,7 +2298,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, mlops, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "데이터 드리프트와 개념 드리프트를 나누는 이유"
     code: none
     origin: manual
@@ -2309,7 +2309,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, digital-twin, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "시뮬레이션과 무엇이 다른지"
     code: none
     origin: manual
@@ -2320,7 +2320,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, pqc, crypto, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지금 수집해 나중에 복호하는 위협 모델"
     code: none
     origin: manual
@@ -2331,7 +2331,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, edge, cloud, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "지연·대역폭·프라이버시 중 무엇 때문에 내리는 결정인지"
     code: none
     origin: manual
@@ -2342,7 +2342,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, xai, ai, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "모델 내재적 방법과 사후 설명의 신뢰도 차이"
     code: none
     origin: manual
@@ -2353,7 +2353,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, isp, ismp, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "산출물과 발주 시점이 갈리는 지점"
     code: none
     origin: manual
@@ -2364,7 +2364,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, governance, cobit, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "거버넌스와 관리를 나눈 이유"
     code: none
     origin: manual
@@ -2375,7 +2375,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, itsm, itil, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "프로세스 중심에서 가치 흐름으로 옮겨간 배경"
     code: none
     origin: manual
@@ -2386,7 +2386,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, audit, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "감리와 검수가 무엇이 다른지"
     code: none
     origin: manual
@@ -2397,7 +2397,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, tco, roi, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "숨은 비용을 어디까지 TCO에 넣는지"
     code: none
     origin: manual
@@ -2408,7 +2408,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, sla, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "가용률 99.9%가 실제로 허용하는 장애 시간"
     code: none
     origin: manual
@@ -2419,7 +2419,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, bpr, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "리엔지니어링이 실패한다고 알려진 이유와, AI 도입이 그 원인을 건드리는 지점"
     code: none
     origin: exam
@@ -2430,7 +2430,7 @@ topics:
     subcategory: emerging-tech
     track: pe
     tags: [정보관리기술사, smart-factory, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "스마트 팩토리 성숙도 단계에서 어디에 놓이는지, 무인화를 막는 것이 기술인지 예외 처리인지"
     code: none
     origin: exam
@@ -2441,7 +2441,7 @@ topics:
     subcategory: software-engineering
     track: pe
     tags: [정보관리기술사, software-engineering, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "품질속성 요구를 자극-응답 시나리오로 구체화하고 유틸리티 트리로 우선순위를 매기는 절차. ATAM 답안에서 5단계가 왜 분석 범위를 정하는 단계인지 설명하려면 이 개념이 먼저 서야 한다"
     code: none
     origin: exam
@@ -2452,7 +2452,7 @@ topics:
     subcategory: it-management
     track: pe
     tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: intermediate
+    difficulty: 중급
     angle: "전자정부법에 근거한 제3자 검토 제도. 사업관리 위탁(PMO)과 목적·시점·책임이 어떻게 다른지를 축으로"
     code: none
     origin: exam

@@ -258,7 +258,7 @@ categories: [Database]                          # 최상위 1개
 subcategory: sqlite                             # 제품·도구에 묶인 주제만
 tags: [index, btree, sqlite]                    # 3~6개, 소문자
 description: "한 줄 요약. 검색 결과에 노출되는 문장."
-difficulty: intermediate                        # beginner | intermediate | advanced
+difficulty: 중급                                 # 입문 | 중급 | 심화
 feature: index-usage                            # 제품 간 비교를 잇는 키 (없으면 생략)
 environment: ["SQLite 3.49.1", "Python 3.13.5"] # 버전 숫자까지 필수
 verification: executed                          # executed | manual-only
@@ -277,7 +277,7 @@ categories: [Database]
 subcategory: tibero
 tags: [tibero, sequence, sql]
 description: "..."
-difficulty: beginner
+difficulty: 입문
 product: Tibero
 product_version: "7"
 feature: sequence

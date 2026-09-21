@@ -6,7 +6,7 @@ subcategory: git
 track: general
 tags: [git, bisect, debugging, automation]
 description: "커밋 64개 중 버그가 들어온 하나를 git bisect run으로 찾는다. 빌드가 깨진 커밋을 만났을 때의 exit 125 처리까지 실제로 돌려 확인했다."
-difficulty: intermediate
+difficulty: 중급
 verified: true
 feature: git-bisect
 environment: ["git 2.54.0.windows.1", "Python 3.13.5"]

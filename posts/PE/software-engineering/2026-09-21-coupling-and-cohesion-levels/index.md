@@ -6,7 +6,7 @@ subcategory: software-engineering
 track: pe
 tags: [정보관리기술사, software-engineering, 개념정리]
 description: "결합도 6단계와 응집도 7단계를 코드 조각으로 판별하는 기준을 정리한다. ISO/IEC/IEEE 24765는 결합도를 6종으로 나열하지만 스탬프와 외부는 그 목록에 없다 — 답안에서 출처를 어떻게 밝혀야 하는지까지."
-difficulty: beginner
+difficulty: 입문
 feature:
 environment: ["ISO/IEC/IEEE 24765:2017", "ISO/IEC TR 19759:2016 (SWEBOK V3)"]
 verification: manual-only

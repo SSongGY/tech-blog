@@ -7,7 +7,7 @@ track: exam
 exam_kind: short
 tags: [정보관리기술사, 기출문제, bpr, process-mining, ai-governance]
 description: "AI가 BPR의 As-Is 가시화·재설계·실행·통제 네 단계에 어떻게 들어가는지를 정리하고, 도입 효과를 답안에 쓸 수 있는 형태로 항목화했다."
-difficulty: intermediate
+difficulty: 중급
 environment: ["Hammer & Champy, Reengineering the Corporation (1993)", "IEEE 1849-2023 (XES)", "ISO/IEC 22989:2022", "ISO/IEC 42001:2023", "NIST AI RMF 1.0 (2023)"]
 verification: manual-only
 verified: true

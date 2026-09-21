@@ -6,7 +6,7 @@ subcategory: tls
 track: linux
 tags: [tls, handshake, certificate, openssl]
 description: "openssl s_client 출력을 한 줄씩 해독했다. 기본 협상에서 양자내성 하이브리드 그룹이 잡히면서 ClientHello가 313바이트에서 1,489바이트로 늘었고, 세션 재사용은 받는 바이트를 줄이는 대신 보내는 바이트를 늘렸다."
-difficulty: intermediate
+difficulty: 중급
 feature: tls-handshake
 environment: ["OpenSSL 3.5.6 (2026-04-07)", "Git Bash on Windows 11", "Python 3.13.5"]
 verification: executed

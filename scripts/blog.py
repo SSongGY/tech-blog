@@ -39,6 +39,10 @@ FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 
 CORE_CATEGORIES = {"Database", "Backend", "Performance"}
 
+# 난이도는 읽는 사람에게 그대로 보이는 값이라 한국어로 쓴다.
+# 심화는 "수준이 높다"가 아니라 "더 깊이 들어간다"는 뜻으로 골랐다.
+DIFFICULTIES = ("입문", "중급", "심화")
+
 TRACKS = ("basics", "product", "pe", "linux", "general")
 
 # 하루 3편. 5편은 한 번에 쓰기에 너무 오래 걸린다.
@@ -719,6 +723,10 @@ def lint_post(path: Path) -> list[str]:
         problems.append("verified: false — 검증이 끝나지 않았다")
     if not meta.get("description"):
         problems.append("description이 비어 있다")
+    if meta.get("difficulty") not in DIFFICULTIES:
+        problems.append(
+            f"difficulty가 {'·'.join(DIFFICULTIES)} 중 하나가 아니다: {meta.get('difficulty')!r}"
+        )
 
     problems += lint_versions(meta, text)
     problems += lint_related(meta, path, text)
@@ -1151,8 +1159,7 @@ def main() -> int:
     p_add.add_argument("--tags", required=True, help="쉼표로 구분")
     p_add.add_argument("--angle", required=True, help="이 주제를 어느 각도로 쓸지")
     p_add.add_argument("--category", help="생략하면 트랙 기본값")
-    p_add.add_argument("--difficulty", default="intermediate",
-                       choices=["beginner", "intermediate", "advanced"])
+    p_add.add_argument("--difficulty", default="중급", choices=DIFFICULTIES)
     p_add.add_argument("--code", default="none")
     p_add.add_argument("--origin", default="manual", choices=["manual", "exam"],
                        help="exam: 기출 풀이에서 나온 개념. 개념 루틴이 먼저 집는다")

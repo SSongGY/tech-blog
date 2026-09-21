@@ -6,7 +6,7 @@ subcategory: sqlite
 track: general
 tags: [transaction, isolation, mvcc]
 description: "SQLite에는 격리 수준을 고르는 다이얼이 없다. 대신 트랜잭션 경계를 어디에 긋느냐가 반복 읽기와 팬텀을 결정했고, BEGIN을 잘못 쓰자 두 연결이 서로를 기다리다 아무것도 커밋하지 못했다."
-difficulty: intermediate
+difficulty: 중급
 feature: transaction-isolation
 environment: ["SQLite 3.49.1", "Python 3.13.5"]
 verification: executed

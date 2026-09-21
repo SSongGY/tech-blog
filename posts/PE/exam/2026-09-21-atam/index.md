@@ -7,7 +7,7 @@ track: exam
 exam_kind: short
 tags: [정보관리기술사, 기출문제, software-architecture, quality-attributes, atam]
 description: "ATAM을 품질속성 절충점을 찾는 시나리오 기반 아키텍처 평가 방법으로 정의하고, 9단계 4묶음과 산출물 6가지를 원 기술보고서 근거로 정리했다."
-difficulty: intermediate
+difficulty: 중급
 environment: ["CMU/SEI-2000-TR-004 (2000.8)", "Evaluating Software Architectures (2002)"]
 verification: manual-only
 verified: true

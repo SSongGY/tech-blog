@@ -6,7 +6,7 @@ subcategory: sql-basics
 track: basics
 tags: [sql, basics, beginner]
 description: "괄호 하나를 빼먹자 같은 질의가 6,703행이 아니라 9,982행을 돌려줬다. AND가 OR보다 먼저 묶인다는 규칙과 NULL이 섞였을 때 벌어지는 일을 20,000행으로 확인했다."
-difficulty: beginner
+difficulty: 입문
 feature:
 environment: ["SQLite 3.49.1", "Python 3.13.5"]
 verification: executed

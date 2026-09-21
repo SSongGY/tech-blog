@@ -6,7 +6,7 @@ subcategory: emerging-tech
 track: pe
 tags: [정보관리기술사, smart-factory, 개념정리]
 description: "다크 팩토리를 스마트 팩토리 성숙도 6단계 위에 올려놓고, 무인화를 막는 것이 설비 기술인지 예외 처리인지를 가른다. acatech 성숙도 모델의 5단계와 6단계 사이가 갈림길이다."
-difficulty: intermediate
+difficulty: 중급
 feature:
 environment: ["acatech Industrie 4.0 Maturity Index (2017, UPDATE 2020)", "IEC 62264-1:2013", "ISO 13374-1:2003", "ISO 23247-1:2021", "ISO 10218-1:2025"]
 verification: manual-only

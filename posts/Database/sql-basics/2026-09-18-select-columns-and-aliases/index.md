@@ -6,7 +6,7 @@ subcategory: sql-basics
 track: basics
 tags: [sql, basics, beginner]
 description: "SELECT * 대신 필요한 컬럼만 고르면 같은 질의가 53ms에서 11ms가 된다. 별칭을 어디에 쓸 수 있는지, SQLite가 표준과 다르게 허용하는 자리가 어디인지 20만 행으로 확인했다."
-difficulty: beginner
+difficulty: 입문
 feature:
 environment: ["SQLite 3.49.1", "Python 3.13.5"]
 verification: executed

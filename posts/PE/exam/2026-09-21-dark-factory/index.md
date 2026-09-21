@@ -7,7 +7,7 @@ track: exam
 exam_kind: short
 tags: [정보관리기술사, 기출문제, smart-factory, automation, digital-twin]
 description: "다크 팩토리를 제어 계층 관점에서 정의하고, 성립 전제와 한계를 표준 문서와 2차 자료 교차 확인으로 정리했다."
-difficulty: intermediate
+difficulty: 중급
 environment: ["IEC 62264-1:2013", "ISO 23247-1:2021", "ISO 10218-1:2025"]
 verification: manual-only
 verified: true

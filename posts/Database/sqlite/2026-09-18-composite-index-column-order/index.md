@@ -6,7 +6,7 @@ subcategory: sqlite
 track: general
 tags: [index, composite, cardinality]
 description: "같은 두 컬럼으로 순서만 바꾼 인덱스 두 개를 30만 행에 걸고 비교했다. 훑는 구간이 19.8배 차이 났고, 정렬을 없애는 쪽에서는 500배가 났다. 반대로 순서가 전혀 영향을 주지 않는 조건도 있었다."
-difficulty: intermediate
+difficulty: 중급
 feature: composite-index
 environment: ["SQLite 3.49.1", "Python 3.13.5"]
 verification: executed

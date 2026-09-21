@@ -6,7 +6,7 @@ subcategory: it-management
 track: pe
 tags: [정보관리기술사, bpr, 개념정리]
 description: "BPR의 정의 네 단어와 Hammer의 재설계 7원칙을 원 출처로 정리하고, 리엔지니어링이 무너지는 세 층위 가운데 AI가 실제로 해결하는 범위가 어디까지인지 구분한다. 널리 인용되는 70% 실패율을 답안에 쓸 때의 함정까지."
-difficulty: intermediate
+difficulty: 중급
 feature:
 environment: ["Hammer & Champy, Reengineering the Corporation (1993)", "Process Mining Manifesto (LNBIP 99, 2012)", "IEEE 1849-2016 (XES)", "ISO/IEC 42001:2023", "NIST AI RMF 1.0 (2023)"]
 verification: manual-only

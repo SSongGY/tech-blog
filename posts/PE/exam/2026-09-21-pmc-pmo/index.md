@@ -7,7 +7,7 @@ track: exam
 exam_kind: short
 tags: [정보관리기술사, 기출문제, pmo, project-management, e-government]
 description: "정보화사업에서 발주기관이 사업관리 역량을 외부에서 조달하는 두 방식으로 PMC와 PMO를 놓고, 근거·권한·책임 경계를 법령과 교차 확인한 자료로 비교했다."
-difficulty: intermediate
+difficulty: 중급
 environment: ["전자정부법 제64조의2", "전자정부사업관리 위탁에 관한 규정 (2024.6.27 일부개정)", "PMBOK Guide 5th Edition (2013)"]
 verification: manual-only
 verified: true

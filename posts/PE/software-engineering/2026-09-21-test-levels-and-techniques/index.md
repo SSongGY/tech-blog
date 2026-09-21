@@ -6,7 +6,7 @@ subcategory: software-engineering
 track: pe
 tags: [정보관리기술사, software-engineering, 개념정리, testing]
 description: "테스트 레벨 5개와 테스트 기법 3분류를 ISTQB 정의로 정리하고, 문장 커버리지 100%가 분기 커버리지 100%를 보장하지 않는다는 명제를 실행 추적으로 직접 계산해 확인했다."
-difficulty: intermediate
+difficulty: 중급
 feature: test-levels
 environment: ["ISTQB CTFL Syllabus v4.0.1 (2024-09-15)", "Python 3.13.5"]
 verification: executed

@@ -6,7 +6,7 @@ subcategory: tibero
 track: product
 tags: [tibero, sequence, sql]
 description: "Tibero 7.2에서 시퀀스 예제를 직접 돌려 확인했다. 기본 MAXVALUE는 INT64_MAX가 아니라 9가 28개이고 내림차순 MINVALUE는 27개로 한 자리 비대칭이다. 기본 캐시는 20개. 매뉴얼이 엇갈리던 컬럼 DEFAULT의 NEXTVAL은 실제로 동작하고, ALTER SEQUENCE RESTART는 START WITH가 아니라 MINVALUE로 돌아간다."
-difficulty: beginner
+difficulty: 입문
 product: Tibero
 product_version: "7"
 feature: sequence

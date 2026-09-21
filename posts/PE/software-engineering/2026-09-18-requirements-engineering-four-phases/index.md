@@ -6,7 +6,7 @@ subcategory: software-engineering
 track: pe
 tags: [정보관리기술사, software-engineering, 개념정리]
 description: "요구공학 4단계를 SWEBOK V3.0 기준으로 정리했다. 단계별 하위 항목 개수(출처 6·기법 6·분석 활동 5·문서 3종·검증 기법 4)와 각 단계를 건너뛰면 무엇이 무너지는지를 답안 형태로 묶었다."
-difficulty: intermediate
+difficulty: 중급
 feature:
 environment: ["SWEBOK Guide V3.0", "ISO/IEC/IEEE 29148:2018"]
 verification: manual-only
