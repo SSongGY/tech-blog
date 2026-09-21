@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 조건을 WHERE에 두느냐 CONNECT BY에 두느냐</text>
+
+  <line x1="440" y1="50" x2="440" y2="390" stroke="#dee2e6" stroke-width="1"/>
+
+  <text x="40" y="66" font-size="15" font-weight="bold" fill="#1b1b1b">① WHERE 절에 두면</text>
+  <text x="40" y="90" font-size="13" fill="#495057">WHERE emp_name &lt;&gt; '오세훈'</text>
+  <line x1="230" y1="140" x2="120" y2="172" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="230" y1="140" x2="330" y2="172" stroke="#495057" stroke-width="1.4"/>
+  <line x1="120" y1="200" x2="80" y2="232" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="120" y1="200" x2="190" y2="232" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="80" y1="260" x2="80" y2="292" stroke="#495057" stroke-width="1.4"/>
+  <line x1="330" y1="200" x2="330" y2="232" stroke="#495057" stroke-width="1.4"/>
+  <rect x="195" y="112" width="70" height="28" fill="#ffffff" stroke="#495057" stroke-width="1.8" rx="4"/>
+  <text x="230" y="131" text-anchor="middle" font-size="13" font-weight="normal" fill="#1b1b1b">한지원</text>
+  <rect x="85" y="172" width="70" height="28" fill="#f8f9fa" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="4 3" rx="4"/>
+  <text x="120" y="191" text-anchor="middle" font-size="13" font-weight="normal" fill="#9d0208">오세훈</text>
+  <rect x="295" y="172" width="70" height="28" fill="#ffffff" stroke="#495057" stroke-width="1.8" rx="4"/>
+  <text x="330" y="191" text-anchor="middle" font-size="13" font-weight="normal" fill="#1b1b1b">배수진</text>
+  <rect x="45" y="232" width="70" height="28" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8" rx="4"/>
+  <text x="80" y="251" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">노태경</text>
+  <rect x="155" y="232" width="70" height="28" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8" rx="4"/>
+  <text x="190" y="251" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">임하윤</text>
+  <rect x="295" y="232" width="70" height="28" fill="#ffffff" stroke="#495057" stroke-width="1.8" rx="4"/>
+  <text x="330" y="251" text-anchor="middle" font-size="13" font-weight="normal" fill="#1b1b1b">서아린</text>
+  <rect x="45" y="292" width="70" height="28" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8" rx="4"/>
+  <text x="80" y="311" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">구민재</text>
+  <text x="40" y="352" font-size="14" font-weight="bold" fill="#9d0208">결과 6행 — 오세훈만 빠지고 부하는 남는다</text>
+  <text x="40" y="376" font-size="13" fill="#495057">부하들의 LEVEL 값은 3·4 그대로 나온다</text>
+
+  <text x="460" y="66" font-size="15" font-weight="bold" fill="#1b1b1b">② CONNECT BY 절에 두면</text>
+  <text x="460" y="90" font-size="13" fill="#495057">CONNECT BY PRIOR ... AND emp_name &lt;&gt; '오세훈'</text>
+  <line x1="650" y1="140" x2="540" y2="172" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="650" y1="140" x2="750" y2="172" stroke="#495057" stroke-width="1.4"/>
+  <line x1="540" y1="200" x2="500" y2="232" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="540" y1="200" x2="610" y2="232" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="500" y1="260" x2="500" y2="292" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="750" y1="200" x2="750" y2="232" stroke="#495057" stroke-width="1.4"/>
+  <rect x="615" y="112" width="70" height="28" fill="#ffffff" stroke="#495057" stroke-width="1.8" rx="4"/>
+  <text x="650" y="131" text-anchor="middle" font-size="13" font-weight="normal" fill="#1b1b1b">한지원</text>
+  <rect x="505" y="172" width="70" height="28" fill="#f8f9fa" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="4 3" rx="4"/>
+  <text x="540" y="191" text-anchor="middle" font-size="13" font-weight="normal" fill="#9d0208">오세훈</text>
+  <rect x="715" y="172" width="70" height="28" fill="#ffffff" stroke="#495057" stroke-width="1.8" rx="4"/>
+  <text x="750" y="191" text-anchor="middle" font-size="13" font-weight="normal" fill="#1b1b1b">배수진</text>
+  <rect x="465" y="232" width="70" height="28" fill="#f8f9fa" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="4 3" rx="4"/>
+  <text x="500" y="251" text-anchor="middle" font-size="13" font-weight="normal" fill="#9d0208">노태경</text>
+  <rect x="575" y="232" width="70" height="28" fill="#f8f9fa" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="4 3" rx="4"/>
+  <text x="610" y="251" text-anchor="middle" font-size="13" font-weight="normal" fill="#9d0208">임하윤</text>
+  <rect x="715" y="232" width="70" height="28" fill="#ffffff" stroke="#495057" stroke-width="1.8" rx="4"/>
+  <text x="750" y="251" text-anchor="middle" font-size="13" font-weight="normal" fill="#1b1b1b">서아린</text>
+  <rect x="465" y="292" width="70" height="28" fill="#f8f9fa" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="4 3" rx="4"/>
+  <text x="500" y="311" text-anchor="middle" font-size="13" font-weight="normal" fill="#9d0208">구민재</text>
+  <text x="460" y="352" font-size="14" font-weight="bold" fill="#2d6a4f">결과 3행 — 오세훈 가지가 통째로 잘린다</text>
+  <text x="460" y="376" font-size="13" fill="#495057">자식을 찾으러 내려가지 않기 때문이다</text>
+
+  <text x="440" y="406" text-anchor="middle" font-size="13" fill="#6c757d">붉은 점선 = 결과에서 빠진 행 · 초록 = 부모가 빠졌는데도 남은 행</text>
+</svg>
