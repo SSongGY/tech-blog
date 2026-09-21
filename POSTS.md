@@ -1,27 +1,30 @@
 # 글 목록
 
-총 **21편** · 갱신 2026-09-21
+총 **24편** · 갱신 2026-09-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 3편
+## DB문법 (basics) — 4편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-22 | [LIMIT과 OFFSET — 결과를 잘라내는 문법](posts/Database/sql-basics/2026-09-22-limit-offset-pagination/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-21 | [WHERE 조건 — AND와 OR의 우선순위](posts/Database/sql-basics/2026-09-21-where-and-or-precedence/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 1편
+## DB기능 (product) — 2편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 8편
+## 기술사 (pe) — 9편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-22 | [형상관리 — 4대 활동과 베이스라인](posts/PE/software-engineering/2026-09-22-configuration-management-baseline/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), ISO/IEC/IEEE 24765:2017, IEEE 828-2012 | 문서 근거 |
 | 2026-09-21 | [테스트 레벨과 테스트 기법 분류](posts/PE/software-engineering/2026-09-21-test-levels-and-techniques/index.md) | 중급 | ISTQB CTFL Syllabus v4.0.1 (2024-09-15), Python 3.13.5 | 실행 검증 |
 | 2026-09-21 | [품질속성 시나리오와 유틸리티 트리](posts/PE/software-engineering/2026-09-21-quality-attribute-scenario-utility-tree/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), CMU/SEI-2003-TR-016 (2003.8) | 문서 근거 |
 | 2026-09-21 | [정보시스템 감리 — 제3자 점검이 법으로 자리 잡은 구조](posts/PE/it-management/2026-09-21-information-system-audit/index.md) | 중급 | 전자정부법 (법률 제21394호, 2026.2.27. 일부개정), 전자정부법 시행령 (대통령령 제36605호, 2026.8.25. 일부개정), 정보시스템 감리기준 (행정안전부고시 제2024-53호, 2024.6.27.) | 문서 근거 |

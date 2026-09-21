@@ -471,7 +471,7 @@ topics:
     difficulty: 중급
     angle: "LEVEL·CONNECT_BY_ISCYCLE·NOCYCLE의 역할을 조직도 예제로"
     code: sql
-    status: todo
+    status: done
   - id: tb-003
     title: "Tibero 7 분석 함수 — 윈도우 절을 정확히 쓰는 법"
     category: Database
@@ -752,7 +752,7 @@ topics:
     difficulty: 입문
     angle: "OFFSET이 커질수록 왜 느려지는지 행 수로 설명"
     code: python
-    status: todo
+    status: done
   - id: bas-005
     title: "DISTINCT — 중복 제거가 정렬을 부르는 이유"
     category: Database
@@ -1024,7 +1024,7 @@ topics:
     difficulty: 중급
     angle: "식별·통제·감사·기록이 실제로 언제 일어나는지"
     code: none
-    status: todo
+    status: done
   - id: pe-006
     title: "CMMI 성숙도 5단계와 프로세스 영역"
     category: PE
