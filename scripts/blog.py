@@ -1179,8 +1179,8 @@ def cmd_tasks_diff(args: argparse.Namespace) -> int:
     strays = {p.name for p in LIVE_TASK_DIR.glob("tech-blog-*") if p.is_dir()}
     strays -= {p.stem for p in copies}
     for task_id in sorted(strays):
-        print(f"  [사본없음] {task_id} — 머신에는 있는데 저장소에 사본이 없다.
-      등록된 작업이면 사본을 만들고, 앱에서 지운 작업이면 남은 폴더를 지운다.")
+        print(f"  [사본없음] {task_id} — 머신에는 있는데 저장소에 사본이 없다.")
+        print("      등록된 작업이면 사본을 만들고, 앱에서 지운 작업이면 남은 폴더를 지운다.")
         drifted.append(f"{task_id}: 사본 없음")
 
     if not drifted:
