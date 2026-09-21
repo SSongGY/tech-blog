@@ -5,7 +5,7 @@ categories: [PE]
 subcategory: it-management
 track: pe
 tags: [정보관리기술사, bpr, 개념정리]
-description: "BPR의 정의 네 단어와 Hammer의 재설계 7원칙을 원 출처로 정리하고, 리엔지니어링이 무너지는 세 층위 가운데 AI가 실제로 닿는 곳이 어디까지인지 구분한다. 널리 인용되는 70% 실패율을 답안에 쓸 때의 함정까지."
+description: "BPR의 정의 네 단어와 Hammer의 재설계 7원칙을 원 출처로 정리하고, 리엔지니어링이 무너지는 세 층위 가운데 AI가 실제로 해결하는 범위가 어디까지인지 구분한다. 널리 인용되는 70% 실패율을 답안에 쓸 때의 함정까지."
 difficulty: intermediate
 feature:
 environment: ["Hammer & Champy, Reengineering the Corporation (1993)", "Process Mining Manifesto (LNBIP 99, 2012)", "IEEE 1849-2016 (XES)", "ISO/IEC 42001:2023", "NIST AI RMF 1.0 (2023)"]
@@ -83,17 +83,17 @@ AI가 들어오면 여기에 실행 절차 **4단계**가 얹힌다.
 
 ## 도식
 
-![BPR이 무너지는 세 층위와 AI가 닿는 범위](fig/bpr-failure-layers.svg)
+![BPR이 무너지는 세 층위와 AI가 해결하는 범위](fig/bpr-failure-layers.svg)
 
 > **출처**: 층위 구분은 [Michael Hammer, "Reengineering Work: Don't Automate,
 > Obliterate", HBR 1990](https://hbr.org/1990/07/reengineering-work-dont-automate-obliterate)의
 > 논지와 [Thomas H. Davenport, "The Fad That Forgot People", Fast Company, 1995-11](https://www.fastcompany.com/26310/fad-forgot-people)의
 > 비판을 대비시킨 것이다. ① 층에 프로세스 마이닝을 대응시킨 근거는
 > [Process Mining Manifesto §1 (three main types of process mining)](https://www.tf-pm.org/resources/manifesto),
-> ③ 층을 AI가 닿지 않는 영역으로 둔 근거는 Davenport(1995)가 지목한 조직·인력 문제다.
+> ③ 층을 AI가 해결하지 못하는 영역으로 둔 근거는 Davenport(1995)가 지목한 조직·인력 문제다.
 
 답안지에는 왼쪽 세 칸, 오른쪽 세 칸, 가운데 화살표 셋이면 된다. 오른쪽 칸의 색만
-다르게 칠해도 "닿는다 / 일부 / 닿지 않는다"가 전달된다.
+다르게 칠해도 "해결한다 / 일부 / 해결하지 못한다"가 전달된다.
 
 ## 비교
 
@@ -146,7 +146,7 @@ BPM의 주기로 돌리는 절충에 가깝다.
 - 정의는 네 단어로 외운다 — **근본적·급진적·극적·프로세스**. 개선과 재설계를 가르는 기준이다.
 - Hammer의 재설계 원칙은 **7개**, AI 기반 실행 절차는 **4단계**, 프로세스 마이닝은 **3종**,
   이벤트 로그 성숙도는 **5단계**, NIST AI RMF는 **4개 기능**이다. 개수를 먼저 적고 시작한다.
-- 실패 층위는 세 개로 잡는다. **① 근거 층 → AI가 대체, ② 설계 층 → 일부, ③ 조직 층 → 닿지 않음.**
+- 실패 층위는 세 개로 잡는다. **① 근거 층 → AI가 대체, ② 설계 층 → 일부, ③ 조직 층 → 해결 못 함.**
 - 70%라는 숫자는 저자 본인이 비과학적 추정이라고 적은 값이다. 단서 없이 쓰지 않는다.
 - 원안은 일회성 프로젝트였지만 AI 기반은 ④가 ①로 되먹임되는 **순환 구조**라는 점이
   두 시대를 가르는 한 줄이다.

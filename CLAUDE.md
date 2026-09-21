@@ -271,7 +271,7 @@ topic_id: db-001
 
 ```yaml
 ---
-title: "Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간"
+title: "Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간"
 date: 2026-09-19
 categories: [Database]
 subcategory: tibero
