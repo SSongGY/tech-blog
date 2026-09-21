@@ -2413,3 +2413,25 @@ topics:
     code: none
     origin: manual
     status: todo
+  - id: pe-084
+    title: "업무 프로세스 재설계(BPR) — 원안과 AI 도입 이후"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, bpr, 개념정리]
+    difficulty: intermediate
+    angle: "리엔지니어링이 실패한다고 알려진 이유와, AI 도입이 그 원인을 건드리는 지점"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-085
+    title: "다크 팩토리 — 무인화가 성립하기 위한 전제"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, smart-factory, 개념정리]
+    difficulty: intermediate
+    angle: "스마트 팩토리 성숙도 단계에서 어디에 놓이는지, 무인화를 막는 것이 기술인지 예외 처리인지"
+    code: none
+    origin: exam
+    status: todo
