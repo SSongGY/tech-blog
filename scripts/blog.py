@@ -998,6 +998,74 @@ def cmd_exam_status(args: argparse.Namespace) -> int:
     return 0
 
 
+# --- 백로그에 주제 추가 -------------------------------------------------------
+#
+# 기출 풀이 루틴이 "블로그에 아직 없는 개념"을 만나면 여기로 등록한다. 답안은 답안대로
+# 쓰고, 개념 정리는 작성 루틴(pe 트랙)이 나중에 가져간다. 루틴이 YAML을 직접 편집하면
+# 주석과 인라인 표기가 깨지므로 반드시 이 명령을 쓴다.
+
+TRACK_ID_PREFIX = {
+    "basics": "db",
+    "product": "tb",
+    "pe": "pe",
+    "linux": "infra",
+    "general": "gen",
+}
+TRACK_DEFAULT_CATEGORY = {"pe": "PE", "linux": "Infra"}
+
+# 자동 등록분은 파일 끝의 전용 구획에 모은다. 손으로 정리한 위쪽 구획을 건드리지 않는다.
+AUTO_SECTION = "  # ========== 기출 풀이에서 등록된 개념 (blog.py add-topic) =========="
+
+
+def next_topic_id(raw: str, prefix: str) -> str:
+    used = [int(n) for n in re.findall(rf"^  - id: {prefix}-(\d+)$", raw, re.MULTILINE)]
+    return f"{prefix}-{max(used, default=0) + 1:03d}"
+
+
+def cmd_add_topic(args: argparse.Namespace) -> int:
+    raw = BACKLOG_PATH.read_text(encoding="utf-8")
+
+    title = args.title.strip()
+    if f'title: "{title}"' in raw:
+        print(f"이미 백로그에 있다: {title}")
+        return 0
+    if PUBLISHED_PATH.exists() and title in PUBLISHED_PATH.read_text(encoding="utf-8"):
+        print(f"이미 발행했다: {title}")
+        return 0
+
+    category = args.category or TRACK_DEFAULT_CATEGORY.get(args.track)
+    if not category:
+        raise SystemExit(f"{args.track} 트랙은 --category를 직접 지정해야 한다.")
+
+    topic_id = next_topic_id(raw, TRACK_ID_PREFIX[args.track])
+    tags = [t.strip() for t in args.tags.split(",") if t.strip()]
+    entry = "\n".join(
+        [
+            f"  - id: {topic_id}",
+            f'    title: "{title}"',
+            f"    category: {category}",
+            f"    subcategory: {args.subcategory}",
+            f"    track: {args.track}",
+            f"    tags: [{', '.join(tags)}]",
+            f"    difficulty: {args.difficulty}",
+            f'    angle: "{args.angle}"',
+            f"    code: {args.code}",
+            f"    status: todo",
+        ]
+    )
+
+    body = raw.rstrip("\n")
+    if AUTO_SECTION not in body:
+        body += f"\n\n{AUTO_SECTION}"
+    body += f"\n{entry}\n"
+    BACKLOG_PATH.write_text(body, encoding="utf-8")
+
+    # 쓴 뒤 반드시 다시 읽어 본다. 백로그가 깨지면 작성 루틴 전체가 멈춘다.
+    yaml.safe_load(body)
+    print(f"{topic_id} 등록 — {title}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -1034,6 +1102,18 @@ def main() -> int:
 
     p_index = sub.add_parser("index", help="글 목록 페이지(POSTS.md) 재생성")
     p_index.set_defaults(func=cmd_index)
+
+    p_add = sub.add_parser("add-topic", help="백로그에 주제 추가 (기출 풀이에서 나온 개념 등)")
+    p_add.add_argument("--track", required=True, choices=TRACKS)
+    p_add.add_argument("--title", required=True)
+    p_add.add_argument("--subcategory", required=True)
+    p_add.add_argument("--tags", required=True, help="쉼표로 구분")
+    p_add.add_argument("--angle", required=True, help="이 주제를 어느 각도로 쓸지")
+    p_add.add_argument("--category", help="생략하면 트랙 기본값")
+    p_add.add_argument("--difficulty", default="intermediate",
+                       choices=["beginner", "intermediate", "advanced"])
+    p_add.add_argument("--code", default="none")
+    p_add.set_defaults(func=cmd_add_topic)
 
     p_exam_pick = sub.add_parser("exam-pick", help="다음에 풀 기출문제 (단답형 2 / 논술형 1)")
     p_exam_pick.set_defaults(func=cmd_exam_pick)
