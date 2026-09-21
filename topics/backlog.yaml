@@ -1883,3 +1883,533 @@ topics:
     angle: "-d 옵션으로 달라진 부분만 강조해 추세를 본다"
     code: shell
     status: todo
+
+  # ========== 기출 풀이에서 등록된 개념 (blog.py add-topic) ==========
+  - id: pe-036
+    title: "애자일과 폭포수 — 무엇을 기준으로 고르는가"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, agile, sdlc, 개념정리]
+    difficulty: intermediate
+    angle: "규모·요구 변동성·계약 형태 세 축으로 갈리는 판단 기준"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-037
+    title: "컴포넌트 기반 개발(CBD)과 소프트웨어 재사용 수준"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, cbd, reuse, 개념정리]
+    difficulty: intermediate
+    angle: "재사용 단위가 커질수록 무엇을 얻고 무엇을 잃는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-038
+    title: "GoF 디자인 패턴 23개의 3분류"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, design-pattern, 개념정리]
+    difficulty: intermediate
+    angle: "생성·구조·행위로 나누는 기준과 시험에 나오는 대표 패턴"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-039
+    title: "클린 아키텍처와 헥사고날 아키텍처"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, architecture, 개념정리]
+    difficulty: intermediate
+    angle: "의존성 방향을 뒤집는다는 말이 코드에서 실제로 무엇인지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-040
+    title: "마이크로서비스 분해 전략과 사가(Saga) 패턴"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, msa, saga, 개념정리]
+    difficulty: intermediate
+    angle: "분산 트랜잭션을 포기하고 보상으로 푸는 대가"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-041
+    title: "리팩토링 — 코드 스멜 분류와 적용 시점"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, refactoring, 개념정리]
+    difficulty: intermediate
+    angle: "언제 하지 말아야 하는지까지 포함해서"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-042
+    title: "기술부채 — 측정 방법과 상환 전략"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, technical-debt, 개념정리]
+    difficulty: intermediate
+    angle: "의도한 부채와 방치된 부채를 가르는 기준"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-043
+    title: "DevOps 파이프라인 구성요소와 DORA 4지표"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, devops, cicd, 개념정리]
+    difficulty: intermediate
+    angle: "지표 4개가 각각 무엇의 대리 측정인지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-044
+    title: "소프트웨어 품질 비용(COQ)과 결함 제거 효율"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, quality, coq, 개념정리]
+    difficulty: intermediate
+    angle: "예방·평가·실패 비용의 비율이 성숙도를 드러내는 방식"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-045
+    title: "프로젝트 일정 관리 — CPM과 PERT"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, pm, schedule, 개념정리]
+    difficulty: intermediate
+    angle: "주공정 계산을 직접 해보고 여유시간이 뜻하는 것"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-046
+    title: "정규화 1NF~BCNF와 반정규화 판단 기준"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, normalization, 개념정리]
+    difficulty: intermediate
+    angle: "각 단계에서 제거되는 이상현상을 예제 테이블로"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-047
+    title: "트랜잭션 ACID와 2단계 커밋(2PC)"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, transaction, 2pc, 개념정리]
+    difficulty: intermediate
+    angle: "2PC가 막지 못하는 블로킹 구간이 어디인지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-048
+    title: "분산 데이터베이스 — CAP 정리와 BASE"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, cap, distributed, 개념정리]
+    difficulty: intermediate
+    angle: "P를 포기할 수 없다는 전제가 왜 성립하는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-049
+    title: "데이터 웨어하우스·데이터 레이크·레이크하우스"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, dw, lakehouse, 개념정리]
+    difficulty: intermediate
+    angle: "스키마를 언제 강제하느냐가 만드는 차이"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-050
+    title: "데이터 거버넌스와 데이터 품질 관리 체계"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, governance, quality, 개념정리]
+    difficulty: intermediate
+    angle: "품질 지표 6개와 조직 역할 정의"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-051
+    title: "NoSQL 4가지 유형과 선택 기준"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, nosql, 개념정리]
+    difficulty: intermediate
+    angle: "접근 패턴이 모델을 정한다는 원칙"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-052
+    title: "데이터 모델링 — 개념·논리·물리 3단계"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, modeling, 개념정리]
+    difficulty: intermediate
+    angle: "단계마다 무엇이 확정되고 무엇을 미루는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-053
+    title: "TCP 혼잡 제어 알고리즘 비교"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, tcp, congestion, 개념정리]
+    difficulty: intermediate
+    angle: "Reno·CUBIC·BBR이 무엇을 신호로 삼는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-054
+    title: "SDN과 NFV — 제어 평면 분리"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, sdn, nfv, 개념정리]
+    difficulty: intermediate
+    angle: "분리해서 얻는 것과 새로 생기는 단일 장애점"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-055
+    title: "IPv6 전환 기술 3가지"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, ipv6, 개념정리]
+    difficulty: intermediate
+    angle: "듀얼스택·터널링·변환을 언제 쓰는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-056
+    title: "5G 네트워크 슬라이싱"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, 5g, slicing, 개념정리]
+    difficulty: intermediate
+    angle: "슬라이스별 SLA를 물리 자원으로 어떻게 보장하는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-057
+    title: "QUIC와 HTTP/3"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, quic, http3, 개념정리]
+    difficulty: intermediate
+    angle: "TCP 위에서 못 풀던 문제를 UDP로 내려가 푼 이유"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-058
+    title: "로드 밸런싱 — L4와 L7, 분배 알고리즘"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, load-balancing, 개념정리]
+    difficulty: intermediate
+    angle: "세션 고정이 필요한 순간과 그 비용"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-059
+    title: "제로 트러스트 아키텍처 — NIST SP 800-207"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, zero-trust, 개념정리]
+    difficulty: intermediate
+    angle: "경계 방어와 무엇이 근본적으로 다른지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-060
+    title: "공개키 기반구조(PKI)와 인증서 검증 경로"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, pki, certificate, 개념정리]
+    difficulty: intermediate
+    angle: "폐기 확인(CRL·OCSP)이 실제로 어디서 깨지는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-061
+    title: "개인정보 비식별 조치 5단계와 적정성 평가"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, privacy, anonymization, 개념정리]
+    difficulty: intermediate
+    angle: "k-익명성·l-다양성이 막는 공격과 못 막는 공격"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-062
+    title: "ISMS-P 인증 체계와 통제 항목 구조"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, isms-p, compliance, 개념정리]
+    difficulty: intermediate
+    angle: "관리체계와 보호대책을 나눈 이유"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-063
+    title: "공급망 보안과 SBOM"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, supply-chain, sbom, 개념정리]
+    difficulty: intermediate
+    angle: "SBOM이 있어도 못 막는 것"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-064
+    title: "접근통제 모델 — DAC·MAC·RBAC·ABAC"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, access-control, 개념정리]
+    difficulty: intermediate
+    angle: "권한 폭발을 어느 모델이 어떻게 줄이는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-065
+    title: "랜섬웨어 대응 체계 — 예방·탐지·복구"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, ransomware, 개념정리]
+    difficulty: intermediate
+    angle: "백업만으로 부족한 이유와 3-2-1 규칙"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-066
+    title: "프로세스 스케줄링 알고리즘과 평균 대기시간 계산"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, scheduling, os, 개념정리]
+    difficulty: intermediate
+    angle: "FCFS·SJF·RR을 직접 계산해 비교"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-067
+    title: "페이지 교체 알고리즘과 벨레이디의 이상현상"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, paging, os, 개념정리]
+    difficulty: intermediate
+    angle: "FIFO·LRU·Optimal을 같은 참조열로 계산"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-068
+    title: "교착상태 4조건과 해결 기법"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, deadlock, os, 개념정리]
+    difficulty: intermediate
+    angle: "은행원 알고리즘을 직접 돌려 안전 상태 판정"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-069
+    title: "RAID 레벨별 특성과 선택 기준"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, raid, storage, 개념정리]
+    difficulty: intermediate
+    angle: "쓰기 페널티를 숫자로 비교"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-070
+    title: "메모리 계층과 캐시 일관성 프로토콜"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, cache, memory, 개념정리]
+    difficulty: intermediate
+    angle: "MESI 상태 전이를 표로"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-071
+    title: "대규모 언어 모델(LLM)의 구조와 한계"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, llm, ai, 개념정리]
+    difficulty: intermediate
+    angle: "트랜스포머 구조에서 비용과 환각이 나오는 지점"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-072
+    title: "RAG 구성요소와 검색 품질 지표"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, rag, ai, 개념정리]
+    difficulty: intermediate
+    angle: "검색이 틀리면 생성이 무엇을 해도 안 되는 구조"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-073
+    title: "MLOps 파이프라인과 모델 드리프트 대응"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, mlops, 개념정리]
+    difficulty: intermediate
+    angle: "데이터 드리프트와 개념 드리프트를 나누는 이유"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-074
+    title: "디지털 트윈 — ISO 23247 프레임워크"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, digital-twin, 개념정리]
+    difficulty: intermediate
+    angle: "시뮬레이션과 무엇이 다른지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-075
+    title: "양자 내성 암호(PQC)와 전환 전략"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, pqc, crypto, 개념정리]
+    difficulty: intermediate
+    angle: "지금 수집해 나중에 복호하는 위협 모델"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-076
+    title: "엣지 컴퓨팅과 클라우드 연계 구조"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, edge, cloud, 개념정리]
+    difficulty: intermediate
+    angle: "지연·대역폭·프라이버시 중 무엇 때문에 내리는 결정인지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-077
+    title: "설명가능 AI(XAI) 기법 분류"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, xai, ai, 개념정리]
+    difficulty: intermediate
+    angle: "모델 내재적 방법과 사후 설명의 신뢰도 차이"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-078
+    title: "ISP와 ISMP — 무엇이 다른가"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, isp, ismp, 개념정리]
+    difficulty: intermediate
+    angle: "산출물과 발주 시점이 갈리는 지점"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-079
+    title: "IT 거버넌스 — COBIT 2019 구성요소"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, governance, cobit, 개념정리]
+    difficulty: intermediate
+    angle: "거버넌스와 관리를 나눈 이유"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-080
+    title: "ITSM과 ITIL 4 — 서비스 가치 시스템"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, itsm, itil, 개념정리]
+    difficulty: intermediate
+    angle: "프로세스 중심에서 가치 흐름으로 옮겨간 배경"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-081
+    title: "정보시스템 감리 절차와 단계별 점검 항목"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, audit, 개념정리]
+    difficulty: intermediate
+    angle: "감리와 검수가 무엇이 다른지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-082
+    title: "IT 투자 평가 — TCO와 ROI"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, tco, roi, 개념정리]
+    difficulty: intermediate
+    angle: "숨은 비용을 어디까지 TCO에 넣는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-083
+    title: "SLA 지표 설계와 측정"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, sla, 개념정리]
+    difficulty: intermediate
+    angle: "가용률 99.9%가 실제로 허용하는 장애 시간"
+    code: none
+    origin: manual
+    status: todo

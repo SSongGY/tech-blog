@@ -48,6 +48,10 @@ FIXED_TRACKS = {"basics": 1, "pe": 1}
 ROTATING_TRACKS = ("product", "linux", "general")
 POSTS_PER_DAY = sum(FIXED_TRACKS.values()) + 1
 
+# 작성 루틴은 하루 두 회차(07시·21시), 개념 루틴(17시)은 pe 를 2편 가져간다.
+DAILY_RUNS_PER_DAY = 2
+CONCEPT_POSTS_PER_DAY = 2
+
 
 TRACK_LABEL = {
     "basics": "DB문법",
@@ -865,13 +869,17 @@ def cmd_status(args: argparse.Namespace) -> int:
     ratio = core_done / total_done if total_done else 0.0
 
     plan = daily_plan(data)
-    total_per_day = sum(plan.values())
+    # daily_plan 은 한 회차분이다. 하루에 7시·21시 두 회차가 돌고, pe 는
+    # 17시 개념 루틴이 2편을 더 가져간다. 잔량을 일수로 환산할 때 이걸 반영한다.
+    per_day = {track: need * DAILY_RUNS_PER_DAY for track, need in plan.items()}
+    per_day["pe"] = per_day.get("pe", 0) + CONCEPT_POSTS_PER_DAY
+    total_per_day = sum(per_day.values())
     print(f"백로그   : 전체 {len(topics)}편 (하루 {total_per_day}편 기준)")
     for status in ("todo", "writing", "done"):
         print(f"  {status:8s} {by_status.get(status, 0)}")
 
     print("\n트랙별 잔량")
-    for track, need in plan.items():
+    for track, need in per_day.items():
         remaining = sum(
             1 for t in topics if t["status"] == "todo" and track_of(t) == track
         )
