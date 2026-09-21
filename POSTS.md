@@ -42,3 +42,10 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | intermediate | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | intermediate | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
+## 기출문제 (exam) — 2편
+
+| 날짜 | 제목 | 난이도 | 환경 | 검증 |
+|---|---|---|---|---|
+| 2026-09-21 | [기출문제 — 다크 팩토리(Dark Factory)](posts/PE/exam/2026-09-21-dark-factory/index.md) | intermediate | IEC 62264-1:2013, ISO 23247-1:2021, ISO 10218-1:2025 | 문서 근거 |
+| 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | intermediate | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
+
