@@ -16,6 +16,7 @@
 from __future__ import annotations
 
 import argparse
+import collections
 import datetime as dt
 import os
 import re
@@ -102,6 +103,13 @@ def daily_plan(data: dict) -> dict[str, int]:
 # product 상한은 3,000으로 잡았다가 3,800으로 올렸다. 실행 검증된 제품 글은
 # 속성 기본값·에러 코드·실측 출처를 함께 담아야 해서 서술이 길어진다.
 # 실제로 첫 제품 글(Tibero 시퀀스)이 군살을 덜어내고도 3,700자를 넘었다.
+# exam 은 백로그가 아니라 저장소 밖 기출 데이터에서 온다. TRACKS 에 넣으면
+# status/pick 이 백로그에 없는 트랙을 세게 되므로 글 트랙만 따로 둔다.
+POST_TRACKS = TRACKS + ("exam",)
+
+# 기출 답안은 배점에 따라 분량이 갈린다. 단답형 A4 1장, 논술형 A4 3장.
+EXAM_BODY_CHARS = {"short": (900, 2200), "essay": (2200, 4500)}
+
 BODY_CHARS_BY_TRACK = {
     "basics": (1200, 2500),
     "product": (1500, 3800),
@@ -113,7 +121,7 @@ BODY_CHARS_BY_TRACK = {
 
 def track_of(topic: dict) -> str:
     track = topic.get("track") or "general"
-    return track if track in TRACKS else "general"
+    return track if track in POST_TRACKS else "general"
 
 
 def load_backlog() -> dict:
@@ -710,10 +718,24 @@ def lint_post(path: Path) -> list[str]:
     problems += lint_related(meta, path, text)
 
     track = track_of(meta)
-    low, high = BODY_CHARS_BY_TRACK[track]
+    if track == "exam":
+        kind = meta.get("exam_kind")
+        if kind not in EXAM_BODY_CHARS:
+            problems.append("exam_kind가 short/essay가 아니다")
+        low, high = EXAM_BODY_CHARS.get(kind, (900, 4500))
+        label = f"exam/{kind}"
+    else:
+        low, high = BODY_CHARS_BY_TRACK[track]
+        label = track
     chars = body_length(text)
     if not low <= chars <= high:
-        problems.append(f"본문 {chars:,}자 ({track} 기준 {low:,}~{high:,})")
+        problems.append(f"본문 {chars:,}자 ({label} 기준 {low:,}~{high:,})")
+
+    # 회차·번호는 글에 남기지 않는다 (CLAUDE.md §11). 프론트매터까지 통째로 본다.
+    if track == "exam":
+        leak = re.search(r"제?\s*1[0-9]{2}\s*회|[1-4]\s*교시\s*[0-9]+\s*번", text)
+        if leak:
+            problems.append(f"회차·번호 표기가 남아 있다: {leak.group(0).strip()!r}")
 
     # 코드 블록 안의 마크다운 예시는 실제 도식·링크가 아니므로 제외한다
     linkable = CODE_FENCE.sub("", text)
@@ -881,6 +903,101 @@ def cmd_status(args: argparse.Namespace) -> int:
     return 0
 
 
+# --- 기출문제 풀이 트랙 (오후 3시 루틴) -------------------------------------
+#
+# 문제 데이터는 저장소 밖에 둔다. 공공누리는 제140회부터 적용되므로 그 이전 회차의
+# 문제 원문을 공개 저장소에 올릴 수 없다. 경로는 EXAM_SRC_DIR로 바꿀 수 있다.
+
+EXAM_DIR = Path(os.environ.get("EXAM_SRC_DIR", ROOT.parent / "tech_blog_exam_src"))
+EXAM_PATH = EXAM_DIR / "exam-questions.yaml"
+
+# 배점이 다르므로 한 회차에 푸는 문제 수도 다르다. 단답형 10점, 논술형 25점.
+EXAM_BATCH = {"short": 2, "essay": 1}
+EXAM_KIND_LABEL = {"short": "단답형", "essay": "논술형"}
+
+
+def load_exam() -> list[dict]:
+    if not EXAM_PATH.exists():
+        raise SystemExit(
+            f"기출 데이터가 없다: {EXAM_PATH}\n"
+            "저장소 밖에 두는 파일이다. EXAM_SRC_DIR로 경로를 지정하거나 파일을 복구한다."
+        )
+    return yaml.safe_load(EXAM_PATH.read_text(encoding="utf-8"))["questions"]
+
+
+def set_exam_status(question_id: str, new_status: str, reason: str = "") -> None:
+    """해당 문제의 status 줄만 바꾼다. 백로그와 같은 이유로 통째로 다시 쓰지 않는다."""
+    raw = EXAM_PATH.read_text(encoding="utf-8")
+    block = re.compile(
+        rf"(^  - id: {re.escape(question_id)}\n(?:(?!^  - id: ).*\n)*?    status: )\w+"
+        r"(?:\n    reason: .*)?",
+        re.MULTILINE,
+    )
+    tail = f"\n    reason: \"{reason}\"" if reason else ""
+    patched, hit_count = block.subn(rf"\g<1>{new_status}{tail}", raw)
+    if hit_count != 1:
+        raise SystemExit(f"{question_id}의 status 줄을 정확히 찾지 못했다 (매칭 {hit_count}건).")
+    EXAM_PATH.write_text(patched, encoding="utf-8")
+
+
+def cmd_exam_pick(args: argparse.Namespace) -> int:
+    """다음에 풀 문제를 정한다. 최신 회차부터 교시 순서대로 내려간다."""
+    pending = [q for q in load_exam() if q["status"] in ("todo", "writing")]
+    if not pending:
+        print("풀 문제가 없다. 기출 데이터를 확인한다.")
+        return 1
+
+    kind = pending[0]["kind"]
+    # 단답형과 논술형을 한 회차에 섞지 않는다. 답안 분량과 구조가 다르다.
+    batch = [q for q in pending if q["kind"] == kind][: EXAM_BATCH[kind]]
+
+    print(f"{EXAM_KIND_LABEL[kind]} {len(batch)}문제\n")
+    for question in batch:
+        print(f"  [{question['id']}] {question['question']}")
+    print(
+        f"\n남은 문제: 단답형 {sum(1 for q in pending if q['kind'] == 'short')}, "
+        f"논술형 {sum(1 for q in pending if q['kind'] == 'essay')}"
+    )
+    print("\n글에는 회차·번호를 쓰지 않는다. 문제 원문도 그대로 옮기지 않는다.")
+    return 0
+
+
+def cmd_exam_done(args: argparse.Namespace) -> int:
+    for question_id in args.question_ids:
+        set_exam_status(question_id, "done")
+        print(f"{question_id} -> done")
+    return 0
+
+
+def cmd_exam_skip(args: argparse.Namespace) -> int:
+    """근거를 못 찾아 못 쓴 문제. 이유를 남긴다 — §10."""
+    set_exam_status(args.question_id, "skipped", args.reason)
+    print(f"{args.question_id} -> skipped ({args.reason})")
+    return 0
+
+
+def cmd_exam_status(args: argparse.Namespace) -> int:
+    questions = load_exam()
+    print(f"기출 데이터: {EXAM_PATH}")
+    print(f"전체 {len(questions)}문제\n")
+    for kind in ("short", "essay"):
+        subset = [q for q in questions if q["kind"] == kind]
+        tally = collections.Counter(q["status"] for q in subset)
+        done = tally.get("done", 0)
+        runs_left = -(-tally.get("todo", 0) // EXAM_BATCH[kind])  # 올림
+        print(
+            f"  {EXAM_KIND_LABEL[kind]:4s} {len(subset):3d}문제 — "
+            f"done {done}, todo {tally.get('todo', 0)}, skipped {tally.get('skipped', 0)}"
+            f"  (남은 회차 {runs_left})"
+        )
+    skipped = [q for q in questions if q["status"] == "skipped"]
+    if skipped:
+        print("\n건너뛴 문제:")
+        for question in skipped:
+            print(f"  [{question['id']}] {question.get('reason', '이유 없음')}")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -917,6 +1034,21 @@ def main() -> int:
 
     p_index = sub.add_parser("index", help="글 목록 페이지(POSTS.md) 재생성")
     p_index.set_defaults(func=cmd_index)
+
+    p_exam_pick = sub.add_parser("exam-pick", help="다음에 풀 기출문제 (단답형 2 / 논술형 1)")
+    p_exam_pick.set_defaults(func=cmd_exam_pick)
+
+    p_exam_done = sub.add_parser("exam-done", help="기출문제 풀이 완료 처리")
+    p_exam_done.add_argument("question_ids", nargs="+")
+    p_exam_done.set_defaults(func=cmd_exam_done)
+
+    p_exam_skip = sub.add_parser("exam-skip", help="근거 부족으로 건너뛴 기출문제")
+    p_exam_skip.add_argument("question_id")
+    p_exam_skip.add_argument("--reason", required=True, help="왜 못 썼는지")
+    p_exam_skip.set_defaults(func=cmd_exam_skip)
+
+    p_exam_status = sub.add_parser("exam-status", help="기출 풀이 진행 현황")
+    p_exam_status.set_defaults(func=cmd_exam_status)
 
     p_status = sub.add_parser("status", help="백로그/발행 현황")
     p_status.set_defaults(func=cmd_status)
