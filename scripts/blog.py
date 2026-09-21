@@ -1115,6 +1115,65 @@ def cmd_add_topic(args: argparse.Namespace) -> int:
     return 0
 
 
+# --- 스케줄 작업 사본 대조 ---------------------------------------------------
+#
+# 실제 작업은 ~/.claude/scheduled-tasks/<taskId>/SKILL.md 에 있고 머신에 묶여 있다.
+# 저장소의 automation/scheduled-tasks/ 는 그 사본이라 한쪽만 고치면 조용히 어긋난다.
+# 점검 루틴이 매일 이 명령으로 대조한다. 고치지는 않는다 — 어느 쪽이 맞는지는 사람이 정한다.
+
+TASK_COPY_DIR = ROOT / "automation" / "scheduled-tasks"
+LIVE_TASK_DIR = Path(
+    os.environ.get("SCHEDULED_TASKS_DIR", Path.home() / ".claude" / "scheduled-tasks")
+)
+
+
+def normalized(path: Path) -> str:
+    """줄 끝 차이는 어긋난 것으로 보지 않는다. 저장소는 CRLF, 실제 작업은 LF 일 수 있다."""
+    return path.read_text(encoding="utf-8").replace("\r\n", "\n").strip()
+
+
+def cmd_tasks_diff(args: argparse.Namespace) -> int:
+    copies = sorted(TASK_COPY_DIR.glob("tech-blog-*.md"))
+    if not copies:
+        raise SystemExit(f"사본이 없다: {TASK_COPY_DIR}")
+
+    drifted: list[str] = []
+    print(f"사본   {TASK_COPY_DIR}")
+    print(f"실제   {LIVE_TASK_DIR}\n")
+
+    for copy_path in copies:
+        task_id = copy_path.stem
+        live_path = LIVE_TASK_DIR / task_id / "SKILL.md"
+        if not live_path.exists():
+            print(f"  [없음] {task_id} — 이 머신에 등록되지 않았다")
+            drifted.append(f"{task_id}: 미등록")
+        elif normalized(copy_path) == normalized(live_path):
+            print(f"  [같음] {task_id}")
+        else:
+            print(f"  [다름] {task_id}")
+            drifted.append(f"{task_id}: 내용 불일치")
+
+    strays = {p.name for p in LIVE_TASK_DIR.glob("tech-blog-*") if p.is_dir()}
+    strays -= {p.stem for p in copies}
+    for task_id in sorted(strays):
+        print(f"  [사본없음] {task_id} — 실제로는 도는데 저장소에 사본이 없다")
+        drifted.append(f"{task_id}: 사본 없음")
+
+    if not drifted:
+        print("\n전부 일치한다.")
+        return 0
+
+    print("\n어긋난 작업:")
+    for line in drifted:
+        print(f"  - {line}")
+    print(
+        "\n어느 쪽이 맞는지 정한 뒤 한쪽을 다른 쪽에 맞춘다.\n"
+        "  실제 작업이 맞으면: automation/scheduled-tasks/ 로 복사해 커밋\n"
+        "  사본이 맞으면:     그 내용으로 작업 프롬프트를 갱신"
+    )
+    return 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -1183,6 +1242,9 @@ def main() -> int:
 
     p_exam_status = sub.add_parser("exam-status", help="기출 풀이 진행 현황")
     p_exam_status.set_defaults(func=cmd_exam_status)
+
+    p_tasks = sub.add_parser("tasks-diff", help="스케줄 작업 사본과 실제 작업 대조")
+    p_tasks.set_defaults(func=cmd_tasks_diff)
 
     p_status = sub.add_parser("status", help="백로그/발행 현황")
     p_status.set_defaults(func=cmd_status)

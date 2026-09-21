@@ -140,6 +140,7 @@ python scripts/blog.py exam-pick              # 다음에 풀 기출문제
 python scripts/blog.py exam-done <id> …       # 기출 풀이 완료 처리
 python scripts/blog.py exam-skip <id> --reason "…"   # 근거 부족으로 건너뜀
 python scripts/blog.py exam-status            # 기출 진행 현황
+python scripts/blog.py tasks-diff             # 스케줄 작업 사본이 실제와 같은지 대조
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
 python scripts/blog.py related sequence       # 같은 기능으로 쓴 글 찾기
 python scripts/blog.py relink                 # 같은 기능 글끼리 상호 링크 재생성

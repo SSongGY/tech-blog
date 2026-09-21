@@ -34,8 +34,13 @@ description: 어제 15·17·21시와 오늘 7시 회차가 정상이었는지 �
 | `enabled: false` | **문제.** 작업이 꺼져 있다고 보고 |
 | `tech-blog-daily` 마지막 실행이 **15시간** 넘게 없음 | **문제.** 회차를 건너뛰었다고 보고 |
 | `exam`·`concept` 마지막 실행이 **26시간** 넘게 없음 | **문제.** 하루 1회이므로 하루치를 빠뜨린 것 |
+| `nextRunAt`이 **모레 이후** | **문제.** 예약이 하루 이상 건너뛰어졌다 |
 
 앱이 꺼져 있어 밀린 정도는 문제로 보지 않되, 위 한계를 넘으면 알린다.
+
+**수동 실행은 그날의 예약 실행을 대체한다.** 손으로 한 번 돌리면 그날 예약분은 건너뛰고
+`nextRunAt`이 다음 날로 넘어간다. 실행 이력이 있는데 예약 시각에 안 돈 것처럼 보이면
+이 경우인지 먼저 확인한다.
 
 ### 2. 아직 실행 중이면
 
@@ -55,6 +60,7 @@ cd /d/workspace/claude/tech_blog
 PYTHONUTF8=1 python scripts/blog.py lint
 PYTHONUTF8=1 python scripts/blog.py status
 PYTHONUTF8=1 python scripts/blog.py exam-status
+PYTHONUTF8=1 python scripts/blog.py tasks-diff
 git log --oneline -12
 git status --short
 git rev-parse HEAD origin/main
@@ -63,11 +69,14 @@ git rev-parse HEAD origin/main
 확인할 것:
 
 - `lint`에 `[NG]`가 있으면 **문제.** 어느 글의 어떤 항목인지 보고
+- `tasks-diff`가 `[다름]`·`[없음]`·`[사본없음]`을 내면 **문제.** 스케줄 작업과
+  `automation/scheduled-tasks/`의 사본이 어긋난 것이다. 어느 작업인지 보고한다.
+  **직접 맞추지 않는다** — 어느 쪽이 맞는지는 사용자가 정한다
 - 워킹트리에 커밋 안 된 변경이 남아 있으면 **문제**
 - `HEAD`와 `origin/main` 해시가 다르면 **푸시가 안 된 것.** 문제로 보고
 - 최근 24시간 글이 **9편보다 적으면** 그 사실과 회차별 편수를 보고
 - 트랙별 `todo` 잔량이 `low_watermark`(10) 이하인 트랙이 있으면 알려준다.
-  **`pe` 트랙은 특히 본다** — 하루 4편(7시·21시 각 1편 + 17시 2편)이 나가므로 가장 빨리 마른다
+  **`basics`를 특히 본다** — 표준 SQL 기본 문법은 실제로 유한해서 가장 먼저 마른다
 - `exam-status`에 `skipped`가 늘었으면 어느 문제를 왜 건너뛰었는지 알려준다
 - `verification: manual-only` 글이 쌓여 있으면 편수를 알려준다
 
