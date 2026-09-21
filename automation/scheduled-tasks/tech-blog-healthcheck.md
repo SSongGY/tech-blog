@@ -23,6 +23,9 @@ description: 어제 15·17·21시와 오늘 7시 회차가 정상이었는지 �
 ### 1. 실행 이력 확인
 
 `mcp__scheduled-tasks__list_scheduled_tasks`로 네 작업의 `enabled`·`nextRunAt`·`lastRunAt`을 본다.
+**돌아온 taskId 목록과 `automation/scheduled-tasks/`의 파일 목록이 같은지도 본다.**
+어느 한쪽에만 있으면 보고한다 — 작업을 지웠는데 사본이 남았거나, 사본만 있고
+등록이 안 된 것이다. `tasks-diff`는 파일만 비교해서 이 경우를 잡지 못한다.
 `mcp__scheduled-tasks__list_task_runs`를 `tech-blog-daily`, `tech-blog-exam`,
 `tech-blog-concept` **각각에 대해** 호출한다.
 

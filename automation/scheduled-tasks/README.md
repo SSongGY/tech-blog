@@ -1,6 +1,6 @@
 # 스케줄 작업 정의
 
-이 폴더의 `.md` 다섯 개는 **Claude Code 스케줄 작업의 원본**이다. 실제 작업은
+이 폴더의 `.md` 네 개는 **Claude Code 스케줄 작업의 원본**이다. 실제 작업은
 `~/.claude/scheduled-tasks/<taskId>/SKILL.md`에 저장되는데, 그 폴더는 머신에 묶여 있어
 저장소에 들어오지 않는다. 그래서 여기에 사본을 둔다.
 
@@ -10,7 +10,6 @@
 | `tech-blog-exam.md` | `tech-blog-exam` | `0 15 * * *` | 기출 답안 (단답형 2 / 논술형 1) |
 | `tech-blog-concept.md` | `tech-blog-concept` | `0 17 * * *` | 15시 답안에서 나온 개념을 `pe` 글 2편으로 |
 | `tech-blog-healthcheck.md` | `tech-blog-healthcheck` | `0 9 * * *` | 점검만. 저장소 수정 금지 |
-| `tech-blog-watch.md` | `tech-blog-watch` | `0 * * * *` | 멈춘 회차 감시. 알림만 |
 
 cron은 **UTC가 아니라 로컬 시각**으로 해석된다.
 
@@ -37,6 +36,10 @@ PYTHONUTF8=1 python scripts/blog.py tasks-diff
 어느 쪽이 맞는지는 사람이 정한다.
 
 실제 작업 폴더가 다른 곳이면 `SCHEDULED_TASKS_DIR` 환경변수로 지정한다.
+
+**이 대조는 파일만 본다.** 작업을 앱에서 지워도 `SKILL.md` 폴더는 남을 수 있고,
+그때는 `[같음]`으로 넘어간다. 등록 자체가 맞는지는 `list_scheduled_tasks` 결과와
+이 폴더의 목록을 견줘야 알 수 있다. 점검 루틴이 그 대조를 한다.
 
 ## 고칠 때
 

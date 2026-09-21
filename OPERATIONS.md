@@ -26,7 +26,6 @@ PYTHONUTF8=1 python scripts/blog.py lint     # 글 규칙 검사
 | 17:00 | `tech-blog-concept` | 2편 | 15시 답안에서 나온 개념을 `pe` 글로 |
 | 21:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
-| 매 정각 | `tech-blog-watch` | — | 멈춘 회차 감시. 알림만 |
 
 07:00·21:00 회차의 트랙 구성은 다음과 같다.
 
@@ -158,7 +157,7 @@ python scripts/blog.py exam-done <id> …       # 기출 풀이 완료 처리
 python scripts/blog.py exam-skip <id> --reason "…"   # 근거 부족으로 건너뜀
 python scripts/blog.py exam-status            # 기출 진행 현황
 python scripts/blog.py tasks-diff             # 스케줄 작업 사본이 실제와 같은지 대조
-python scripts/check_stuck.py                 # 권한 프롬프트 앞에서 멈춘 회차 찾기
+python scripts/check_stuck.py                 # 멈춘 회차 찾기 (손으로 확인할 때)
 python scripts/blog.py run-example <글 폴더>  # 예제를 돌려 code/output.txt 에 기록
 python scripts/blog.py run-examples           # executed 글의 예제를 전부 다시 돌린다
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
