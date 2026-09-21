@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf7"/>
+
+  <text x="40" y="40" font-size="19" font-weight="bold" fill="#1b1b1b">성숙도 6단계와 다크 팩토리가 성립하는 지점</text>
+
+  <text x="52" y="76" font-size="13.5" font-weight="bold" fill="#555">단계</text>
+  <text x="278" y="76" font-size="13.5" font-weight="bold" fill="#555">그 단계가 답하는 질문</text>
+  <text x="608" y="76" font-size="13.5" font-weight="bold" fill="#555">사람이 하는 일</text>
+
+  <!-- 1 -->
+  <rect x="40" y="88" width="800" height="46" rx="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1.3"/>
+  <line x1="266" y1="88" x2="266" y2="134" stroke="#ddddd6" stroke-width="1"/>
+  <line x1="596" y1="88" x2="596" y2="134" stroke="#ddddd6" stroke-width="1"/>
+  <text x="52" y="117" font-size="14" fill="#333">1 전산화</text>
+  <text x="278" y="117" font-size="14" fill="#333">도구가 전산화되어 있는가</text>
+  <text x="608" y="117" font-size="14" fill="#333">직접 조작한다</text>
+
+  <!-- 2 -->
+  <rect x="40" y="140" width="800" height="46" rx="5" fill="#ffffff" stroke="#9a9a9a" stroke-width="1.3"/>
+  <line x1="266" y1="140" x2="266" y2="186" stroke="#ddddd6" stroke-width="1"/>
+  <line x1="596" y1="140" x2="596" y2="186" stroke="#ddddd6" stroke-width="1"/>
+  <text x="52" y="169" font-size="14" fill="#333">2 연결성</text>
+  <text x="278" y="169" font-size="14" fill="#333">서로 연결되어 있는가</text>
+  <text x="608" y="169" font-size="14" fill="#333">시스템을 잇는다</text>
+
+  <!-- 3 -->
+  <rect x="40" y="192" width="800" height="46" rx="5" fill="#fdf8ef" stroke="#b45309" stroke-width="1.5"/>
+  <line x1="266" y1="192" x2="266" y2="238" stroke="#e8d5b5" stroke-width="1"/>
+  <line x1="596" y1="192" x2="596" y2="238" stroke="#e8d5b5" stroke-width="1"/>
+  <text x="52" y="221" font-size="14" fill="#7c3d06">3 가시성</text>
+  <text x="278" y="221" font-size="14" fill="#7c3d06">지금 무슨 일이 일어나는가</text>
+  <text x="608" y="221" font-size="14" fill="#7c3d06">보고 판단한다</text>
+
+  <!-- 4 -->
+  <rect x="40" y="244" width="800" height="46" rx="5" fill="#fdf8ef" stroke="#b45309" stroke-width="1.5"/>
+  <line x1="266" y1="244" x2="266" y2="290" stroke="#e8d5b5" stroke-width="1"/>
+  <line x1="596" y1="244" x2="596" y2="290" stroke="#e8d5b5" stroke-width="1"/>
+  <text x="52" y="273" font-size="14" fill="#7c3d06">4 투명성</text>
+  <text x="278" y="273" font-size="14" fill="#7c3d06">왜 그 일이 일어나는가</text>
+  <text x="608" y="273" font-size="14" fill="#7c3d06">원인을 해석한다</text>
+
+  <!-- 5 -->
+  <rect x="40" y="296" width="800" height="46" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <line x1="266" y1="296" x2="266" y2="342" stroke="#e8d5b5" stroke-width="1"/>
+  <line x1="596" y1="296" x2="596" y2="342" stroke="#e8d5b5" stroke-width="1"/>
+  <text x="52" y="325" font-size="14" font-weight="bold" fill="#7c3d06">5 예측 역량</text>
+  <text x="278" y="325" font-size="14" fill="#7c3d06">앞으로 무슨 일이 일어나는가</text>
+  <text x="608" y="325" font-size="14" font-weight="bold" fill="#7c3d06">조치는 사람이 한다</text>
+
+  <!-- 성립선 -->
+  <text x="40" y="371" font-size="14" font-weight="bold" fill="#9d0208">다크 팩토리 성립선</text>
+  <line x1="200" y1="366" x2="840" y2="366" stroke="#9d0208" stroke-width="2" stroke-dasharray="8 5"/>
+
+  <!-- 6 -->
+  <rect x="40" y="382" width="800" height="46" rx="5" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2.2"/>
+  <line x1="266" y1="382" x2="266" y2="428" stroke="#bcd8c8" stroke-width="1"/>
+  <line x1="596" y1="382" x2="596" y2="428" stroke="#bcd8c8" stroke-width="1"/>
+  <text x="52" y="411" font-size="14" font-weight="bold" fill="#1b4332">6 적응성</text>
+  <text x="278" y="411" font-size="14" fill="#1b4332">자율적 대응을 어떻게 달성하는가</text>
+  <text x="608" y="411" font-size="14" font-weight="bold" fill="#1b4332">원격 감시와 예외만</text>
+
+  <line x1="40" y1="452" x2="840" y2="452" stroke="#cfcfc7" stroke-width="1"/>
+  <text x="40" y="478" font-size="13.5" fill="#333">1~2단계는 디지털화 구간, 3~6단계가 Industrie 4.0 구간이다. 무인화는 6단계를 전제로 한다.</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf7"/>
+
+  <text x="40" y="40" font-size="19" font-weight="bold" fill="#1b1b1b">BPR이 무너지는 세 층위와 AI가 닿는 범위</text>
+
+  <text x="40" y="76" font-size="14" font-weight="bold" fill="#444">리엔지니어링이 무너지는 자리</text>
+  <text x="500" y="76" font-size="14" font-weight="bold" fill="#444">AI 도입이 실제로 닿는 범위</text>
+
+  <!-- row 1 : 근거 층 -->
+  <rect x="40" y="90" width="380" height="76" rx="6" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.5"/>
+  <text x="58" y="120" font-size="15" font-weight="bold" fill="#1b1b1b">① 근거 층 — As-Is를 무엇으로 아는가</text>
+  <text x="58" y="146" font-size="13.5" fill="#444">담당자 기억 · 인터뷰 · 문서화된 표준 절차</text>
+
+  <line x1="428" y1="128" x2="492" y2="128" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ah-ok)"/>
+
+  <rect x="500" y="90" width="340" height="76" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="518" y="120" font-size="15" font-weight="bold" fill="#1b4332">대체된다 — 프로세스 마이닝</text>
+  <text x="518" y="146" font-size="13.5" fill="#1b4332">이벤트 로그에서 실제 경로를 복원</text>
+
+  <!-- row 2 : 설계 층 -->
+  <rect x="40" y="182" width="380" height="76" rx="6" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.5"/>
+  <text x="58" y="212" font-size="15" font-weight="bold" fill="#1b1b1b">② 설계 층 — To-Be를 어떻게 검증하는가</text>
+  <text x="58" y="238" font-size="13.5" fill="#444">가동 전까지 효과를 알 수 없다</text>
+
+  <line x1="428" y1="220" x2="492" y2="220" stroke="#b45309" stroke-width="2.5" marker-end="url(#ah-warn)"/>
+
+  <rect x="500" y="182" width="340" height="76" rx="6" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="518" y="212" font-size="15" font-weight="bold" fill="#7c3d06">일부만 닿는다 — 시뮬레이션</text>
+  <text x="518" y="238" font-size="13.5" fill="#7c3d06">복원 모델의 품질이 결과의 상한</text>
+
+  <!-- row 3 : 조직 층 -->
+  <rect x="40" y="274" width="380" height="76" rx="6" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.5"/>
+  <text x="58" y="304" font-size="15" font-weight="bold" fill="#1b1b1b">③ 조직 층 — 권한 · 역할 · 저항</text>
+  <text x="58" y="330" font-size="13.5" fill="#444">직무를 통합하면 권한이 옮겨간다</text>
+
+  <line x1="428" y1="312" x2="492" y2="312" stroke="#9d0208" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ah-no)"/>
+
+  <rect x="500" y="274" width="340" height="76" rx="6" fill="#fbe9e9" stroke="#9d0208" stroke-width="2"/>
+  <text x="518" y="304" font-size="15" font-weight="bold" fill="#7a0206">닿지 않는다 — 조직의 문제</text>
+  <text x="518" y="330" font-size="13.5" fill="#7a0206">합의와 권한 재배치는 데이터가 못 정한다</text>
+
+  <line x1="40" y1="368" x2="840" y2="368" stroke="#cfcfc7" stroke-width="1"/>
+  <text x="40" y="396" font-size="13.5" fill="#333">①은 도구의 문제, ③은 조직의 문제다. 답안에서 둘을 섞으면 진단이 흐려진다.</text>
+
+  <defs>
+    <marker id="ah-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ah-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <marker id="ah-no" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>

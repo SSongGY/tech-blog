@@ -72,6 +72,8 @@ AI 기반 BPR은 그 판단의 입력을 데이터로 바꾼다.
   기존 BPR에는 없던 항목이다. ISO/IEC 42001의 AI 영향평가와 NIST AI RMF의
   네 기능(GOVERN·MAP·MEASURE·MANAGE)을 통제 장치로 함께 세운다.
 
+> 개념 정리: [업무 프로세스 재설계(BPR) — 원안과 AI 도입 이후](../../it-management/2026-09-21-bpr-reengineering-and-ai/index.md)
+
 끝
 
 ## 답안 작성 메모
