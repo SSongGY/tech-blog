@@ -12,6 +12,11 @@ venv/
 *.sqlite3
 *.log
 
+# 이 PC 환경에 묶인 설정 — 저장소가 아니라 머신에 속한다.
+# 자동 실행 루틴이 git add -A 를 쓰므로 여기서 막지 않으면 딸려 올라간다.
+.claude/settings.json
+.claude/settings.local.json
+
 # 편집기 / OS
 .vscode/
 .idea/
