@@ -1,7 +1,23 @@
 # 운영 가이드
 
 IT 기술 글을 매일 **9~10편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
-**다른 PC에서 이어받으려면 [SETUP.md](SETUP.md)를 먼저 본다.**
+## 문서 안내
+
+| 문서 | 무엇이 있나 |
+|---|---|
+| [POSTS.md](POSTS.md) | 작성한 글 목록 |
+| [SETUP.md](SETUP.md) | **다른 PC에서 이어받는 절차** |
+| [CLAUDE.md](CLAUDE.md) | 글쓰기 규칙 전문 — 트랙·톤·도식·출처 등급·기출 답안 형식 |
+| [references/naming-conventions.md](references/naming-conventions.md) | 언어별 변수명 규칙 |
+| [automation/scheduled-tasks/](automation/scheduled-tasks/) | 스케줄 작업 원본과 등록법 |
+| 이 문서 | 구조·명령어·하루 흐름·발행 절차 |
+
+```bash
+pip install -r requirements.txt
+PYTHONUTF8=1 python scripts/blog.py status   # 백로그 잔량
+PYTHONUTF8=1 python scripts/blog.py lint     # 글 규칙 검사
+```
+
 
 | 시각 | 루틴 | 편수 | 내용 |
 |---|---|---|---|
@@ -143,6 +159,8 @@ python scripts/blog.py exam-skip <id> --reason "…"   # 근거 부족으로 건
 python scripts/blog.py exam-status            # 기출 진행 현황
 python scripts/blog.py tasks-diff             # 스케줄 작업 사본이 실제와 같은지 대조
 python scripts/check_stuck.py                 # 권한 프롬프트 앞에서 멈춘 회차 찾기
+python scripts/blog.py run-example <글 폴더>  # 예제를 돌려 code/output.txt 에 기록
+python scripts/blog.py run-examples           # executed 글의 예제를 전부 다시 돌린다
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
 python scripts/blog.py related sequence       # 같은 기능으로 쓴 글 찾기
 python scripts/blog.py relink                 # 같은 기능 글끼리 상호 링크 재생성

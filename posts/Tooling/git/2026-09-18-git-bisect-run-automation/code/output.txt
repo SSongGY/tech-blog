@@ -1,0 +1,51 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python bisect_demo.py
+# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+커밋 64개 생성 · 버그 유입 지점 r041 (b490bd17)
+판정 불가 커밋: r039, r043, r047
+이론상 필요한 테스트 횟수: 약 log2(64) = 6회
+
+----------------------------------------------------------------------
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 15 revisions left to test after this (roughly 4 steps)
+[b2a3e5b0f718a83f9d18524fee429db0d8541dca] r047: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 15 revisions left to test after this (roughly 4 steps)
+[680f2d722a63917df23ed1f07de966a4c0ac4fd2] r033: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 14 revisions left to test after this (roughly 4 steps)
+[31f60f31547401cfc05f1fcac15def4baecbf1a7] r048: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 7 revisions left to test after this (roughly 3 steps)
+[52e1f5c776c7f82edca51550c6573a5eb7fad7bc] r040: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 3 revisions left to test after this (roughly 2 steps)
+[272b1bd89836ba7f47f0f1dba33d6afe212d9caa] r044: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 1 revision left to test after this (roughly 1 step)
+[94a1336f386aa54681bd0150acb8c33dd2fe787a] r042: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[b490bd1750d276bb7a54a2bd550e17dd7297e548] r041: 일상적인 수정
+running 'C:\Users\song\AppData\Local\Programs\Python\Python313\python.exe' 'C:\Users\song\AppData\Local\Temp\bisect_demo_t3to6j4g\check_commit.py'
+b490bd1750d276bb7a54a2bd550e17dd7297e548 is the first bad commit
+commit b490bd1750d276bb7a54a2bd550e17dd7297e548
+Author: bisect demo <demo@example.com>
+Date:   Mon Sep 21 17:26:00 2026 +0900
+
+    r041: 일상적인 수정
+
+ CHANGELOG.md | 2 +-
+ stats.py     | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+bisect found first bad commit
+----------------------------------------------------------------------
+찾은 커밋   : b490bd17
+실제 버그   : b490bd17
+일치 여부   : 일치
+테스트 횟수 : 8회 (전수 조사라면 64회)

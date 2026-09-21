@@ -1,0 +1,34 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python isolation_anomalies.py
+# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+SQLite 3.49.1
+
+### 1. 더티 리드 — 기본값에서는 안 보이고, 공유 캐시에서만 보인다
+  기본(캐시 비공유)  커밋 전 읽기 = 1000
+  공유 캐시 + read_uncommitted=1  커밋 전 읽기 = 9999
+  그 트랜잭션이 롤백된 뒤        다시 읽기 = 1000
+  → 읽은 9999는 어느 시점에도 커밋된 적 없는 값이다
+
+### 2. 반복 읽기와 팬텀 — journal_mode = delete
+  [트랜잭션 안] 쓰기 거부(database is locked)           1회차 1000 → 2회차 1000 → 끝난 뒤 1000
+  [autocommit ] 쓰기 성공                               1회차 1000 → 2회차 2000 → 끝난 뒤 2000
+  [트랜잭션 안] 삽입 거부(database is locked)           COUNT 5 → 5 → 끝난 뒤 5
+  [autocommit ] 삽입 성공                               COUNT 5 → 6 → 끝난 뒤 6
+
+### 2. 반복 읽기와 팬텀 — journal_mode = wal
+  [트랜잭션 안] 쓰기 성공                               1회차 1000 → 2회차 1000 → 끝난 뒤 2000
+  [autocommit ] 쓰기 성공                               1회차 1000 → 2회차 2000 → 끝난 뒤 2000
+  [트랜잭션 안] 삽입 성공                               COUNT 5 → 5 → 끝난 뒤 6
+  [autocommit ] 삽입 성공                               COUNT 5 → 6 → 끝난 뒤 6
+
+### 3. 갱신 분실 — 막히기는 하는데, 어디서 막히느냐가 다르다
+  BEGIN           / delete B의 BEGIN 성공         B의 UPDATE 거부         A의 COMMIT 거부         최종 잔액 1000
+  BEGIN           / wal    B의 BEGIN 성공         B의 UPDATE 거부         A의 COMMIT 성공         최종 잔액 1100
+  BEGIN IMMEDIATE / delete B의 BEGIN 거부         B의 UPDATE -          A의 COMMIT 성공         최종 잔액 1100
+  BEGIN IMMEDIATE / wal    B의 BEGIN 거부         B의 UPDATE -          A의 COMMIT 성공         최종 잔액 1100
+

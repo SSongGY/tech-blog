@@ -1,0 +1,44 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python index_probe.py
+# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+SQLite 3.49.1 · 200,000행 · 최소 5회 측정
+
+[A] SELECT user_id — 인덱스만 읽어도 답이 나오는 커버링 상황
+케이스                                  인덱스          결과행     시간(ms)  실행계획
+----------------------------------------------------------------------------------------------------------------------
+① 단일 컬럼 등치                           사용             1       0.00  SEARCH app_user USING COVERING INDEX ix_app_user_email (email=?)
+② 컬럼에 함수 적용                          미사용            1      16.92  SCAN app_user USING COVERING INDEX ix_app_user_email
+③ 컬럼에 연산 적용                          미사용       35,744      13.10  SCAN app_user USING COVERING INDEX ix_app_user_status_created_at
+④ 접두 LIKE (기본)                       미사용           10       5.80  SCAN app_user USING COVERING INDEX ix_app_user_email
+⑤ 접두 LIKE (case_sensitive_like=ON)   사용            10       0.00  SEARCH app_user USING COVERING INDEX ix_app_user_email (email>? AND email<?)
+⑥ 선행 와일드카드 LIKE                      미사용            2       9.24  SCAN app_user USING COVERING INDEX ix_app_user_email
+⑦ 복합 인덱스 선행 컬럼 사용                    사용         1,711       0.39  SEARCH app_user USING COVERING INDEX ix_app_user_status_created_at (status=? AND created_at>?)
+⑧ 복합 인덱스 선행 컬럼 생략                    사용        35,744       9.43  SEARCH app_user USING COVERING INDEX ix_app_user_status_created_at (ANY(status) AND created_at>?)
+⑨ 선택도가 낮은 등치                         사용       139,855      39.70  SEARCH app_user USING COVERING INDEX ix_app_user_status_created_at (status=?)
+⑩ 부정 조건                              미사용      199,999      57.64  SCAN app_user USING COVERING INDEX ix_app_user_email
+⑪ OR 로 묶인 서로 다른 인덱스                  사용        39,580      10.07  MULTI-INDEX OR / INDEX 1 / SEARCH app_user USING INDEX ix_app_user_email (email=?) / INDEX 2 / SEARCH app_user USING INDEX ix_app_user_region_code (region_code=?)
+
+[B] SELECT login_name — 인덱스에 없는 컬럼이라 테이블을 다시 읽어야 하는 상황
+케이스                                  인덱스          결과행     시간(ms)  실행계획
+----------------------------------------------------------------------------------------------------------------------
+① 단일 컬럼 등치                           사용             1       0.00  SEARCH app_user USING INDEX ix_app_user_email (email=?)
+② 컬럼에 함수 적용                          미사용            1      18.07  SCAN app_user
+③ 컬럼에 연산 적용                          미사용       35,744      14.94  SCAN app_user
+④ 접두 LIKE (기본)                       미사용           10       6.66  SCAN app_user
+⑤ 접두 LIKE (case_sensitive_like=ON)   사용            10       0.00  SEARCH app_user USING INDEX ix_app_user_email (email>? AND email<?)
+⑥ 선행 와일드카드 LIKE                      미사용            2      10.24  SCAN app_user
+⑦ 복합 인덱스 선행 컬럼 사용                    사용         1,711       0.91  SEARCH app_user USING INDEX ix_app_user_status_created_at (status=? AND created_at>?)
+⑧ 복합 인덱스 선행 컬럼 생략                    사용        35,744      20.72  SEARCH app_user USING INDEX ix_app_user_status_created_at (ANY(status) AND created_at>?)
+⑨ 선택도가 낮은 등치                         사용       139,855      88.24  SEARCH app_user USING INDEX ix_app_user_status_created_at (status=?)
+⑩ 부정 조건                              미사용      199,999      63.12  SCAN app_user
+⑪ OR 로 묶인 서로 다른 인덱스                  사용        39,580      16.41  MULTI-INDEX OR / INDEX 1 / SEARCH app_user USING INDEX ix_app_user_email (email=?) / INDEX 2 / SEARCH app_user USING INDEX ix_app_user_region_code (region_code=?)
+
+[추가] lower(email)에 표현식 인덱스를 만들면 ②는 어떻게 되는가
+케이스                                  인덱스          결과행     시간(ms)  실행계획
+----------------------------------------------------------------------------------------------------------------------
+② 재측정 (표현식 인덱스 추가 후)                 사용             1       0.00  SEARCH app_user USING COVERING INDEX ix_app_user_email_lower (<expr>=?)

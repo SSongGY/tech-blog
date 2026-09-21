@@ -19,7 +19,10 @@ import argparse
 import collections
 import datetime as dt
 import os
+import platform
 import re
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 
@@ -653,6 +656,25 @@ HAS_VERSION_NUMBER = re.compile(r"\d")
 MANUAL_ONLY_NOTICE = "실행 검증 없음"
 
 
+def lint_examples(meta: dict, path: Path) -> list[str]:
+    """executed 라면 실제로 돌린 기록이 있어야 한다.
+
+    다만 이 환경에서 돌릴 수 없는 예제까지 걸지는 않는다 (tbsql 이 없는 곳의 Tibero 글).
+    run-example 이 건너뛰는 것과 같은 기준으로 판단해 둘이 어긋나지 않게 한다.
+    """
+    code_dir = path.parent / "code"
+    if meta.get("verification") != "executed" or not code_dir.is_dir():
+        return []
+    if (code_dir / OUTPUT_NAME).exists():
+        return []
+    command = example_command(code_dir)
+    if not command:
+        return [f"code/README.md 에서 실행 명령을 찾을 수 없다 ('## 실행' 절이나 bash 블록)"]
+    if shutil.which(command.split()[0]) is None:
+        return []  # 이 환경에 없는 도구다. 있는 곳에서 run-example 을 돌린다
+    return [f"executed 인데 code/{OUTPUT_NAME} 이 없다 — blog.py run-example 로 남긴다"]
+
+
 def lint_versions(meta: dict, text: str) -> list[str]:
     """버전 명시와 검증 방식 표기를 검사한다.
 
@@ -728,6 +750,7 @@ def lint_post(path: Path) -> list[str]:
             f"difficulty가 {'·'.join(DIFFICULTIES)} 중 하나가 아니다: {meta.get('difficulty')!r}"
         )
 
+    problems += lint_examples(meta, path)
     problems += lint_versions(meta, text)
     problems += lint_related(meta, path, text)
 
@@ -1174,6 +1197,114 @@ def cmd_tasks_diff(args: argparse.Namespace) -> int:
     return 1
 
 
+# --- 예제 실제 수행 기록 -----------------------------------------------------
+#
+# 본문에 붙인 출력이 정말 돌려서 나온 것인지는 글만 봐서 알 수 없다. 그래서 예제를
+# 실제로 돌리고 그 출력을 code/output.txt 에 남긴다. 검증이 주장이 아니라 기록이 된다.
+#
+# 명령은 code/README.md 의 "## 실행" 절 첫 bash 블록에서 읽는다. 문서에 적힌 명령과
+# 실제로 돌린 명령이 어긋나지 않게 하려는 것이다.
+
+RUN_SECTION = re.compile(r"^##\s*실행\s*$(.*?)(?=^##\s|\Z)", re.MULTILINE | re.DOTALL)
+BASH_BLOCK = re.compile(r"```bash\n(.*?)```", re.DOTALL)
+OUTPUT_NAME = "output.txt"
+RUN_TIMEOUT_SECONDS = 300
+
+
+def example_command(code_dir: Path) -> str | None:
+    """code/README.md 의 '## 실행' 절에서 첫 명령을 뽑는다."""
+    readme = code_dir / "README.md"
+    if not readme.exists():
+        return None
+    text = readme.read_text(encoding="utf-8")
+    # "## 실행" 절이 있으면 거기서, 없으면 파일의 첫 bash 블록에서 읽는다.
+    # README 형식이 글마다 조금씩 다르다.
+    section = RUN_SECTION.search(text)
+    block = BASH_BLOCK.search(section.group(1) if section else text)
+    if not block:
+        return None
+    for line in block.group(1).splitlines():
+        line = line.strip()
+        if line and not line.startswith("#"):
+            return line.split("#")[0].strip()  # 줄 끝 설명 주석을 떼어낸다
+    return None
+
+
+def cmd_run_example(args: argparse.Namespace) -> int:
+    post_dir = Path(args.post)
+    code_dir = post_dir / "code"
+    if not code_dir.is_dir():
+        raise SystemExit(f"code 폴더가 없다: {code_dir}")
+
+    command = args.command or example_command(code_dir)
+    if not command:
+        raise SystemExit(
+            f"{code_dir/'README.md'} 의 '## 실행' 절에서 명령을 찾지 못했다. "
+            "--command 로 직접 지정한다."
+        )
+
+    executable = command.split()[0]
+    if shutil.which(executable) is None:
+        print(f"[건너뜀] {post_dir}")
+        print(f"  '{executable}' 가 PATH에 없다. 이 환경에서는 돌릴 수 없다.")
+        return 2
+
+    print(f"[실행] {post_dir}\n  $ {command}")
+    started = dt.datetime.now()
+    completed = subprocess.run(
+        command, cwd=code_dir, shell=True, capture_output=True,
+        text=True, encoding="utf-8", errors="replace",
+        timeout=RUN_TIMEOUT_SECONDS,
+        env={**os.environ, "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8"},
+    )
+    body = completed.stdout + (
+        f"\n--- stderr ---\n{completed.stderr}" if completed.stderr.strip() else ""
+    )
+
+    header = "\n".join([
+        "# 이 파일은 예제를 실제로 돌린 기록이다.",
+        "# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.",
+        "#",
+        f"# 명령      : {command}",
+        f"# 수행 시각 : {started:%Y-%m-%d %H:%M} ({dt.datetime.now().astimezone().tzname()})",
+        f"# 환경      : Python {platform.python_version()} / {platform.system()} {platform.release()}",
+        f"# 종료 코드 : {completed.returncode}",
+        "",
+        "",
+    ])
+    (code_dir / OUTPUT_NAME).write_text(header + body, encoding="utf-8")
+
+    lines = body.count("\n")
+    print(f"  종료 코드 {completed.returncode} · {lines}줄 -> {code_dir/OUTPUT_NAME}")
+    if completed.returncode != 0:
+        print("  종료 코드가 0이 아니다. 예제가 의도한 실패인지 확인한다.")
+    return 0
+
+
+def cmd_run_examples(args: argparse.Namespace) -> int:
+    """executed 로 표시된 글의 예제를 전부 돌린다."""
+    ran = skipped = failed = 0
+    for path in sorted(POSTS_DIR.rglob("index.md")):
+        meta = read_meta(path) or {}
+        if meta.get("verification") != "executed" or not (path.parent / "code").is_dir():
+            continue
+        # 한 글이 실패해도 나머지는 계속 돌린다. 어디가 막혔는지 한 번에 보는 게 낫다.
+        try:
+            result = cmd_run_example(argparse.Namespace(post=str(path.parent), command=None))
+        except (SystemExit, subprocess.SubprocessError) as error:
+            print(f"[실패] {path.parent}\n  {error}")
+            failed += 1
+            continue
+        if result == 0:
+            ran += 1
+        elif result == 2:
+            skipped += 1
+        else:
+            failed += 1
+    print(f"\n돌린 예제 {ran}개 · 환경 없어 건너뜀 {skipped}개 · 실패 {failed}개")
+    return 1 if failed else 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -1203,6 +1334,14 @@ def main() -> int:
     p_tistory = sub.add_parser("tistory", help="티스토리용 변환")
     p_tistory.add_argument("slug")
     p_tistory.set_defaults(func=cmd_tistory)
+
+    p_run = sub.add_parser("run-example", help="글 하나의 예제를 돌려 code/output.txt 에 기록")
+    p_run.add_argument("post", help="글 폴더 경로")
+    p_run.add_argument("--command", help="README에서 못 읽을 때 직접 지정")
+    p_run.set_defaults(func=cmd_run_example)
+
+    p_runs = sub.add_parser("run-examples", help="executed 글의 예제를 전부 돌린다")
+    p_runs.set_defaults(func=cmd_run_examples)
 
     p_lint = sub.add_parser("lint", help="글 규칙 검사 (길이·도식·출처·링크·검증)")
     p_lint.add_argument("slug", nargs="?", help="생략하면 전체 검사")
