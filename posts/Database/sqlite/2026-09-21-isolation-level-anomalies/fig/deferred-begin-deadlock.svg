@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Segoe UI', 'Malgun Gothic', sans-serif">
+  <rect width="880" height="430" fill="#fbfbf9"/>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <text x="20" y="30" font-size="16" font-weight="600" fill="#1f2937">BEGIN(DEFERRED)으로 읽고 나서 쓰면 — 잠금 상태의 변화</text>
+
+  <!-- step headers -->
+  <text x="203" y="62" font-size="13" text-anchor="middle" fill="#4b5563">① 둘 다 SELECT</text>
+  <text x="349" y="62" font-size="13" text-anchor="middle" fill="#4b5563">② A가 UPDATE</text>
+  <text x="495" y="62" font-size="13" text-anchor="middle" fill="#4b5563">③ B가 UPDATE</text>
+  <text x="641" y="62" font-size="13" text-anchor="middle" fill="#4b5563">④ A가 COMMIT</text>
+  <text x="787" y="62" font-size="13" text-anchor="middle" fill="#4b5563">⑤ 결과</text>
+
+  <!-- lane A -->
+  <text x="20" y="120" font-size="14" font-weight="600" fill="#1f2937">연결 A</text>
+  <rect x="136" y="95" width="134" height="38" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="4"/>
+  <text x="203" y="119" font-size="13" text-anchor="middle" fill="#1b4332">SHARED</text>
+  <rect x="282" y="95" width="134" height="38" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="4"/>
+  <text x="349" y="119" font-size="13" text-anchor="middle" fill="#1b4332">RESERVED</text>
+  <rect x="428" y="95" width="134" height="38" fill="#f3f4f6" stroke="#9ca3af" rx="4"/>
+  <text x="495" y="119" font-size="13" text-anchor="middle" fill="#4b5563">RESERVED 유지</text>
+  <rect x="574" y="95" width="134" height="38" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5" rx="4"/>
+  <text x="641" y="119" font-size="13" text-anchor="middle" fill="#7c3d06">EXCLUSIVE 필요</text>
+  <rect x="720" y="95" width="134" height="38" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="4"/>
+  <text x="787" y="119" font-size="13" font-weight="600" text-anchor="middle" fill="#9d0208">커밋 거부</text>
+
+  <!-- lane B -->
+  <text x="20" y="230" font-size="14" font-weight="600" fill="#1f2937">연결 B</text>
+  <rect x="136" y="205" width="134" height="38" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.5" rx="4"/>
+  <text x="203" y="229" font-size="13" text-anchor="middle" fill="#1b4332">SHARED</text>
+  <rect x="282" y="205" width="134" height="38" fill="#f3f4f6" stroke="#9ca3af" rx="4"/>
+  <text x="349" y="229" font-size="13" text-anchor="middle" fill="#4b5563">SHARED 유지</text>
+  <rect x="428" y="205" width="134" height="38" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="4"/>
+  <text x="495" y="229" font-size="13" font-weight="600" text-anchor="middle" fill="#9d0208">승격 거부</text>
+  <rect x="574" y="205" width="134" height="38" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5" rx="4"/>
+  <text x="641" y="229" font-size="13" text-anchor="middle" fill="#7c3d06">SHARED 안 풀림</text>
+  <rect x="720" y="205" width="134" height="38" fill="#fbe3e3" stroke="#9d0208" stroke-width="1.5" rx="4"/>
+  <text x="787" y="229" font-size="13" font-weight="600" text-anchor="middle" fill="#9d0208">롤백</text>
+
+  <!-- mutual wait -->
+  <line x1="600" y1="140" x2="600" y2="198" stroke="#9d0208" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="682" y1="198" x2="682" y2="140" stroke="#9d0208" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="641" y="166" font-size="12" text-anchor="middle" fill="#9d0208">서로 대기</text>
+
+  <!-- bottom panel -->
+  <rect x="16" y="268" width="848" height="146" fill="#fdf5f5" stroke="#9d0208" stroke-width="1.5" rx="6"/>
+  <text x="32" y="292" font-size="14" font-weight="600" fill="#9d0208">교착 — 재시도해도 풀리지 않는다</text>
+  <text x="32" y="318" font-size="13" fill="#374151">A의 COMMIT은 EXCLUSIVE가 필요하고, EXCLUSIVE는 모든 SHARED가 풀려야 얻는다. 그런데 B가 SHARED를 쥐고 있다.</text>
+  <text x="32" y="342" font-size="13" fill="#374151">B의 UPDATE는 RESERVED가 필요하고, RESERVED는 한 번에 하나뿐이다. 그런데 A가 그것을 쥐고 있다.</text>
+  <text x="32" y="368" font-size="13" font-weight="600" fill="#9d0208">결과: 최종 잔액 1000 — 두 연결 모두 아무것도 커밋하지 못했다.</text>
+  <text x="32" y="392" font-size="13" fill="#374151">BEGIN IMMEDIATE로 시작하면 B가 ①에서 먼저 거부되고, A는 1100으로 커밋된다.</text>
+</svg>
