@@ -1,6 +1,17 @@
 # 운영 가이드
 
-IT 기술 글을 매일 **5편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
+IT 기술 글을 매일 **9~10편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
+**다른 PC에서 이어받으려면 [SETUP.md](SETUP.md)를 먼저 본다.**
+
+| 시각 | 루틴 | 편수 | 내용 |
+|---|---|---|---|
+| 07:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
+| 15:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
+| 17:00 | `tech-blog-concept` | 2편 | 15시 답안에서 나온 개념을 `pe` 글로 |
+| 21:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
+| 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
+
+07:00·21:00 회차의 트랙 구성은 다음과 같다.
 
 | 트랙 | 편수 | 내용 |
 |---|---|---|
@@ -10,7 +21,6 @@ IT 기술 글을 매일 **5편** 작성해 마크다운 원본과 실행 가능�
 | **리눅스** `linux` | 돌아가며 | 서버 운영에서 실제로 치는 명령 |
 | **일반** `general` | 1편 | 그 외 IT 기술 |
 
-**회차당 3편, 하루 2회(오전 7시·오후 7시) → 하루 6편.**
 세 번째 자리는 `product` / `linux` / `general` 중 가장 적게 쓴 트랙이 가져간다.
 한 트랙이 소진돼도 나머지가 메우므로 편수는 줄지 않는다.
 
@@ -46,8 +56,19 @@ IT 기술 글을 매일 **5편** 작성해 마크다운 원본과 실행 가능�
 │     ├─ fig/                   도식 SVG (공식 문서 근거 + 출처 표기 필수)
 │     └─ code/                  실행 가능한 예제 소스 + README
 ├─ dist/tistory/                티스토리 붙여넣기용 변환본 (git 추적 제외)
+├─ automation/scheduled-tasks/  스케줄 작업 4개의 원본 사본 + 등록법
+├─ .claude/
+│  ├─ commands/*.md             회차별 절차서 (슬래시 명령)
+│  └─ settings.example.json     권한 설정 템플릿 (실제 settings.json 은 gitignore)
+├─ SETUP.md                     다른 PC에서 이어받는 절차
+├─ requirements.txt             파이썬 의존성 (실제로 돌려 본 버전)
 └─ scripts/blog.py              운영 CLI
 ```
+
+저장소 **바깥**에 있는 것이 둘 있다. `SETUP.md`를 본다.
+
+- `.claude/settings.json` — 권한 설정. 머신에 묶여 있다
+- `../tech_blog_exam_src/` — 기출문제 PDF와 465문제 데이터. 공공누리가 140회부터만 적용된다
 
 ## 글 분류
 
@@ -111,8 +132,14 @@ python scripts/blog.py relink                          # 상호 링크 블록 �
 
 ```bash
 python scripts/blog.py status                 # 트랙별 잔량, 비율, 미검증·미실행 글
-python scripts/blog.py pick                   # 오늘 쓸 주제 선정 (제품 2 + 일반 3)
+python scripts/blog.py pick                   # 이번 회차에 쓸 주제 3편 선정
 python scripts/blog.py pick --general 6       # 일반 주제를 더 받아 실행 가능한 것 고르기
+python scripts/blog.py pick-concepts          # 17시용 pe 주제 2편 (기출발 우선)
+python scripts/blog.py add-topic --track pe … # 백로그에 주제 추가 (--origin exam)
+python scripts/blog.py exam-pick              # 다음에 풀 기출문제
+python scripts/blog.py exam-done <id> …       # 기출 풀이 완료 처리
+python scripts/blog.py exam-skip <id> --reason "…"   # 근거 부족으로 건너뜀
+python scripts/blog.py exam-status            # 기출 진행 현황
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
 python scripts/blog.py related sequence       # 같은 기능으로 쓴 글 찾기
 python scripts/blog.py relink                 # 같은 기능 글끼리 상호 링크 재생성
@@ -133,13 +160,13 @@ Windows 콘솔에서 한글이 깨지면 `PYTHONUTF8=1`을 앞에 붙인다.
 ## 하루 작업 흐름
 
 0. 실행 환경을 확인한다 (`command -v tbsql` 등). 이후 검증 방식이 여기에 달려 있다
-1. `pick`으로 제품 2 + 일반 3을 받는다. 같은 기능으로 쓴 글이 있으면 함께 표시된다
+1. `pick`으로 이번 회차 3편을 받는다. 같은 기능으로 쓴 글이 있으면 함께 표시된다
 2. `new`로 폴더를 만든다
 3. 예제를 작성한다
    - 일반 트랙: **실제로 실행해 출력을 확인한다** (`verification: executed`)
    - 제품 트랙에 실행 환경이 없으면: 공식 매뉴얼 근거로 쓰고 `manual-only`로 표시.
      **출력을 지어내지 않는다**
-4. 공식 문서에서 구조 근거를 찾아 `fig/`에 SVG 도식을 그리고, **도식 아래에 출처를 남긴다**
+4. 공식 문서를 근거로 `fig/`에 SVG 도식을 그리고, **도식 아래에 `> **출처**:` 줄을 남긴다**
 5. **버전을 직접 뽑아 `environment`에 숫자까지 적는다**
 6. 같은 기능의 글이 있으면 `## 다른 환경에서는` 절로 비교한다
 7. `relink`로 상호 링크를 만든다 (기존 글에도 역링크가 생긴다)

@@ -1,0 +1,41 @@
+{
+  "_주석": [
+    "이 파일은 템플릿이다. 실제로 쓰려면 같은 폴더에 settings.json 으로 복사한다.",
+    "settings.json 은 .gitignore 대상이다 — 머신에 묶인 설정이고, 자동 실행 루틴이",
+    "git add -A 를 쓰므로 막지 않으면 저장소에 딸려 올라간다.",
+    "",
+    "defaultMode 가 auto 여야 스케줄 작업이 권한을 묻지 않고 끝까지 돈다.",
+    "acceptEdits 는 파일 편집만 자동 수락하고 Bash·MCP 호출은 여전히 물어본다.",
+    "bypassPermissions 는 쓰지 않는다 — 이 루틴은 ssh 와 git push 권한을 들고 무인으로 돈다.",
+    "",
+    "allow 규칙은 명령 문자열 앞에서부터 맞춰 본다. Bash(python *) 는",
+    "PYTHONUTF8=1 python ... 과 맞지 않으므로 두 형태를 다 적어 둔다."
+  ],
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Read", "Glob", "Grep", "WebSearch", "WebFetch",
+      "Bash(python *)", "Bash(python -m *)", "Bash(pip *)",
+      "Bash(PYTHONUTF8=1 python *)",
+      "Bash(git status*)", "Bash(git log*)", "Bash(git diff*)", "Bash(git show*)",
+      "Bash(git add *)", "Bash(git commit *)", "Bash(git push)", "Bash(git push origin main)",
+      "Bash(git pull*)", "Bash(git fetch*)", "Bash(git mv *)", "Bash(git config user.*)",
+      "Bash(git rev-parse*)", "Bash(git ls-files*)", "Bash(git ls-tree*)",
+      "Bash(ssh *)", "Bash(scp *)", "Bash(wsl *)",
+      "Bash(ls *)", "Bash(cat *)", "Bash(head *)", "Bash(tail *)", "Bash(wc *)",
+      "Bash(find *)", "Bash(grep *)", "Bash(sed -n *)", "Bash(sort *)", "Bash(uniq *)",
+      "Bash(diff *)", "Bash(command -v *)", "Bash(mkdir *)", "Bash(cp *)",
+      "Bash(echo *)", "Bash(printf *)", "Bash(sqlite3 *)",
+      "mcp__scheduled-tasks__list_scheduled_tasks",
+      "mcp__scheduled-tasks__list_task_runs"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)", "Bash(rm -rf ~*)",
+      "Bash(git push --force*)", "Bash(git push -f*)",
+      "Bash(git reset --hard*)", "Bash(git clean -*)",
+      "Bash(git filter-branch*)", "Bash(git rebase*)",
+      "Bash(ssh * sudo *)", "Bash(ssh * rm *)",
+      "Bash(chmod 777 *)"
+    ]
+  }
+}

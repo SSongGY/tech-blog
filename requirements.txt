@@ -1,0 +1,12 @@
+# scripts/blog.py 가 쓰는 것. 여기 적힌 버전은 실제로 돌려 본 조합이다.
+# Python 3.13.5 에서 확인했다.
+
+PyYAML==6.0.3          # 백로그·기출 데이터 읽기
+
+# 도식 SVG -> PNG (티스토리 붙여넣기용). blog.py tistory 에서만 쓴다.
+svglib==2.2.0
+reportlab==5.0.1
+rlPyCairo==0.4.0       # reportlab 의 렌더링 백엔드. 없으면 SVG 변환이 실패한다
+
+# 기출문제 PDF 파싱. 저장소 밖 tech_blog_exam_src/ 를 다룰 때만 필요하다.
+pypdf==6.19.0
