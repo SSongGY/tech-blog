@@ -1022,6 +1022,35 @@ def next_topic_id(raw: str, prefix: str) -> str:
     return f"{prefix}-{max(used, default=0) + 1:03d}"
 
 
+def cmd_pick_concepts(args: argparse.Namespace) -> int:
+    """개념 글로 쓸 pe 주제를 고른다. 기출 풀이에서 등록된 것을 먼저 집는다.
+
+    오후 3시에 푼 문제의 개념을 오후 5시에 정리하는 흐름이다. 기출발 주제가
+    모자라면 기존 pe 백로그로 채운다 — 루틴이 할 일 없이 도는 것보다 낫다.
+    """
+    data = load_backlog()
+    todo = [
+        t for t in data["topics"]
+        if t["status"] == "todo" and track_of(t) == "pe"
+    ]
+    from_exam = [t for t in todo if t.get("origin") == "exam"]
+    others = [t for t in todo if t.get("origin") != "exam"]
+    picked = (from_exam + others)[: args.count]
+
+    if not picked:
+        print("pe 트랙에 todo 주제가 없다. 백로그를 채운다.")
+        return 1
+
+    for topic in picked:
+        tag = "기출발" if topic.get("origin") == "exam" else "백로그"
+        print(f"  [{topic['id']}] ({tag}) {topic['title']}")
+        print(f"      각도: {topic['angle']}")
+    if len(picked) < args.count:
+        print(f"\n{args.count}편을 채우지 못했다 — pe todo가 {len(todo)}개뿐이다.")
+    print(f"\n기출발 잔량 {len(from_exam)}개 / pe 전체 todo {len(todo)}개")
+    return 0
+
+
 def cmd_add_topic(args: argparse.Namespace) -> int:
     raw = BACKLOG_PATH.read_text(encoding="utf-8")
 
@@ -1050,6 +1079,7 @@ def cmd_add_topic(args: argparse.Namespace) -> int:
             f"    difficulty: {args.difficulty}",
             f'    angle: "{args.angle}"',
             f"    code: {args.code}",
+            f"    origin: {args.origin}",
             f"    status: todo",
         ]
     )
@@ -1113,7 +1143,13 @@ def main() -> int:
     p_add.add_argument("--difficulty", default="intermediate",
                        choices=["beginner", "intermediate", "advanced"])
     p_add.add_argument("--code", default="none")
+    p_add.add_argument("--origin", default="manual", choices=["manual", "exam"],
+                       help="exam: 기출 풀이에서 나온 개념. 개념 루틴이 먼저 집는다")
     p_add.set_defaults(func=cmd_add_topic)
+
+    p_concepts = sub.add_parser("pick-concepts", help="개념 글로 쓸 pe 주제 (기출발 우선)")
+    p_concepts.add_argument("--count", type=int, default=2)
+    p_concepts.set_defaults(func=cmd_pick_concepts)
 
     p_exam_pick = sub.add_parser("exam-pick", help="다음에 풀 기출문제 (단답형 2 / 논술형 1)")
     p_exam_pick.set_defaults(func=cmd_exam_pick)
