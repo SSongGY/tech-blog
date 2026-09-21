@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 ORDER BY, 엔진에 따라 NULL이 놓이는 자리</text>
+
+  <!-- 왼쪽: NULL을 가장 작은 값으로 보는 엔진 -->
+  <rect x="30" y="52" width="400" height="168" fill="#f5f7f9" stroke="#c8d0d8" stroke-width="1" rx="6"/>
+  <text x="230" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">SQLite 3.49.1 · MySQL 8.0</text>
+  <text x="230" y="97" text-anchor="middle" font-size="13" fill="#b45309">NULL을 모든 값보다 작게 본다</text>
+
+  <text x="50" y="137" font-size="14" font-weight="bold" fill="#2d6a4f">ASC</text>
+  <rect x="100" y="117" width="70" height="30" fill="#fdf0d5" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="135" y="137" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">NULL</text>
+  <rect x="178" y="117" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="213" y="137" text-anchor="middle" font-size="14" fill="#1b1b1b">150</text>
+  <rect x="256" y="117" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="291" y="137" text-anchor="middle" font-size="14" fill="#1b1b1b">300</text>
+  <rect x="334" y="117" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="369" y="137" text-anchor="middle" font-size="14" fill="#1b1b1b">500</text>
+
+  <text x="50" y="197" font-size="14" font-weight="bold" fill="#2d6a4f">DESC</text>
+  <rect x="100" y="177" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="135" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">500</text>
+  <rect x="178" y="177" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="213" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">300</text>
+  <rect x="256" y="177" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="291" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">150</text>
+  <rect x="334" y="177" width="70" height="30" fill="#fdf0d5" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="369" y="197" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">NULL</text>
+
+  <!-- 오른쪽: NULL을 가장 큰 값으로 보는 엔진 -->
+  <rect x="450" y="52" width="400" height="168" fill="#f5f7f9" stroke="#c8d0d8" stroke-width="1" rx="6"/>
+  <text x="650" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">PostgreSQL 16 · Oracle 19c</text>
+  <text x="650" y="97" text-anchor="middle" font-size="13" fill="#b45309">NULL을 모든 값보다 크게 본다</text>
+
+  <text x="470" y="137" font-size="14" font-weight="bold" fill="#2d6a4f">ASC</text>
+  <rect x="520" y="117" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="555" y="137" text-anchor="middle" font-size="14" fill="#1b1b1b">150</text>
+  <rect x="598" y="117" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="633" y="137" text-anchor="middle" font-size="14" fill="#1b1b1b">300</text>
+  <rect x="676" y="117" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="711" y="137" text-anchor="middle" font-size="14" fill="#1b1b1b">500</text>
+  <rect x="754" y="117" width="70" height="30" fill="#fdf0d5" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="789" y="137" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">NULL</text>
+
+  <text x="470" y="197" font-size="14" font-weight="bold" fill="#2d6a4f">DESC</text>
+  <rect x="520" y="177" width="70" height="30" fill="#fdf0d5" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="555" y="197" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">NULL</text>
+  <rect x="598" y="177" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="633" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">500</text>
+  <rect x="676" y="177" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="711" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">300</text>
+  <rect x="754" y="177" width="70" height="30" fill="#ffffff" stroke="#9aa5b1" stroke-width="1" rx="4"/>
+  <text x="789" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">150</text>
+
+  <!-- 아래: 명시하면 통일된다 -->
+  <rect x="30" y="242" width="820" height="130" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5" rx="6"/>
+  <text x="440" y="270" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">ORDER BY bonus ASC NULLS LAST — 명시하면 네 엔진이 같은 자리를 준다</text>
+
+  <rect x="288" y="288" width="70" height="30" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5" rx="4"/>
+  <text x="323" y="308" text-anchor="middle" font-size="14" fill="#1b1b1b">150</text>
+  <rect x="366" y="288" width="70" height="30" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5" rx="4"/>
+  <text x="401" y="308" text-anchor="middle" font-size="14" fill="#1b1b1b">300</text>
+  <rect x="444" y="288" width="70" height="30" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5" rx="4"/>
+  <text x="479" y="308" text-anchor="middle" font-size="14" fill="#1b1b1b">500</text>
+  <rect x="522" y="288" width="70" height="30" fill="#fdf0d5" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="557" y="308" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">NULL</text>
+
+  <text x="440" y="344" text-anchor="middle" font-size="13" fill="#9d0208">단, MySQL 8.0에는 이 문법이 없다</text>
+  <text x="440" y="362" text-anchor="middle" font-size="13" fill="#1b1b1b">ORDER BY bonus IS NULL, bonus 로 같은 자리를 만든다</text>
+</svg>
