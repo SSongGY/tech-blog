@@ -128,7 +128,7 @@ identity 컬럼은 내부적으로 시퀀스를 하나 만든다. `USER_SEQUENCE
 
 ![시퀀스 값이 나오는 경로와 번호가 건너뛰는 지점](fig/sequence-cache-path.svg)
 
-> **구조 근거**: [Tibero 7.2.6 SQL 참조 안내서 — CREATE SEQUENCE](https://docs.tibero.com/tibero-manuals/7.2.6.manuals/sql-reference-guide/data-definition-language/create-sequence.md)
+> **출처**: [Tibero 7.2.6 SQL 참조 안내서 — CREATE SEQUENCE](https://docs.tibero.com/tibero-manuals/7.2.6.manuals/sql-reference-guide/data-definition-language/create-sequence.md)
 > (`CACHE`는 지정한 개수만큼 값을 캐시에 저장하고 모두 사용하면 그 수만큼 다시 가져오며
 > 그때마다 데이터 사전을 갱신한다는 점, 비정상 종료 시 캐시에 저장된 값이 유실될 수 있다는 점,
 > `NOORDER`가 노드별 캐시를 유지한다는 점),

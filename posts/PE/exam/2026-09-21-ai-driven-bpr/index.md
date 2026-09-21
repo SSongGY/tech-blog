@@ -37,7 +37,7 @@ AI 기반 BPR은 그 판단의 입력을 데이터로 바꾼다.
 
 ![AI 기반 BPR의 4단계 순환과 단계별 근거 표준](fig/ai-bpr-cycle.svg)
 
-> **구조 근거**: [IEEE 1849-2016 XES Standard](https://www.tf-pm.org/resources/xes-standard/for-researchers/ieee-1849-2016-xes) · [ISO/IEC 42001:2023 §4–§10](https://www.iso.org/standard/42001) · [NIST AI RMF 1.0 §5 (GOVERN·MAP·MEASURE·MANAGE)](https://www.nist.gov/itl/ai-risk-management-framework)
+> **출처**: [IEEE 1849-2016 XES Standard](https://www.tf-pm.org/resources/xes-standard/for-researchers/ieee-1849-2016-xes) · [ISO/IEC 42001:2023 §4–§10](https://www.iso.org/standard/42001) · [NIST AI RMF 1.0 §5 (GOVERN·MAP·MEASURE·MANAGE)](https://www.nist.gov/itl/ai-risk-management-framework)
 
 | 단계 | 하는 일 | 근거 |
 |---|---|---|

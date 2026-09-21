@@ -48,7 +48,7 @@ topic_id: db-002
 
 ![컬럼 순서에 따라 달라지는 인덱스 탐색 구간](fig/key-order-range.svg)
 
-> **구조 근거**: [SQLite — Query Planning §1.6 Multi-Column Indices](https://www.sqlite.org/queryplanner.html#_multi_column_indices)
+> **출처**: [SQLite — Query Planning §1.6 Multi-Column Indices](https://www.sqlite.org/queryplanner.html#_multi_column_indices)
 > — 복합 인덱스의 키가 선행 컬럼부터 차례로 정렬되고, 등치 조건이 이어지는 동안만
 > 탐색 구간을 좁힐 수 있으며 범위 조건 이후의 컬럼은 구간을 좁히지 못한다는 점을
 > 이 문서에 근거해 그렸다. 그림의 행 수(2,523 / 50,075 / 249,925)와 19.8배는

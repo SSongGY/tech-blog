@@ -46,7 +46,7 @@ SQLite에는 이 네 단계를 고르는 설정이 없다. 문서가 밝히는 �
 
 ![BEGIN(DEFERRED)으로 읽고 나서 쓸 때의 잠금 상태 변화](fig/deferred-begin-deadlock.svg)
 
-> **구조 근거**: [SQLite — File Locking And Concurrency §3.0 Locking](https://www.sqlite.org/lockingv3.html#locking).
+> **출처**: [SQLite — File Locking And Concurrency §3.0 Locking](https://www.sqlite.org/lockingv3.html#locking).
 > `SHARED`는 여러 개가 공존할 수 있고, `RESERVED`는 한 번에 하나만 활성화되며,
 > `EXCLUSIVE`는 다른 어떤 잠금과도 공존하지 못한다는 점이 그림의 근거다.
 > 잔액 1000 / 1100 값은 이 글에서 직접 측정한 결과다.

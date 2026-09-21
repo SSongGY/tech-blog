@@ -85,7 +85,7 @@ AI가 들어오면 여기에 실행 절차 **4단계**가 얹힌다.
 
 ![BPR이 무너지는 세 층위와 AI가 닿는 범위](fig/bpr-failure-layers.svg)
 
-> **구조 근거**: 층위 구분은 [Michael Hammer, "Reengineering Work: Don't Automate,
+> **출처**: 층위 구분은 [Michael Hammer, "Reengineering Work: Don't Automate,
 > Obliterate", HBR 1990](https://hbr.org/1990/07/reengineering-work-dont-automate-obliterate)의
 > 논지와 [Thomas H. Davenport, "The Fad That Forgot People", Fast Company, 1995-11](https://www.fastcompany.com/26310/fad-forgot-people)의
 > 비판을 대비시킨 것이다. ① 층에 프로세스 마이닝을 대응시킨 근거는

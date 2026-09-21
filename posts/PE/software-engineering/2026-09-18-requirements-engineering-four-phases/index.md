@@ -131,7 +131,7 @@ SRS는 **다섯 가지 근거**를 동시에 제공한다. 설계 착수 전 엄
 
 ![요구공학 4단계와 요구사항 관리](fig/re-four-phases.svg)
 
-> **구조 근거**: [SWEBOK Guide V3.0](https://ieeecs-media.computer.org/media/education/swebok/swebok-v3.pdf)
+> **출처**: [SWEBOK Guide V3.0](https://ieeecs-media.computer.org/media/education/swebok/swebok-v3.pdf)
 > Chapter 1 Software Requirements — 3. Requirements Elicitation, 4. Requirements Analysis,
 > 5. Requirements Specification, 6. Requirements Validation의 주제 분해를 4단계로 옮겼고,
 > 반복 화살표와 하단 관리 띠는 같은 장 2.1 Process Models(생애주기 전반에 걸쳐 정제되는

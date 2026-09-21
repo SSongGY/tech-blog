@@ -80,7 +80,7 @@ ISTQB CTFL v4.0.1 §2.2.1이 기술하는 레벨은 다음 **5개**다.
 
 ![V모델 위의 테스트 레벨 5개와 테스트 기법 3분류](fig/test-levels-and-techniques.svg)
 
-> **구조 근거**: 오른쪽 5개 레벨과 그 순서는
+> **출처**: 오른쪽 5개 레벨과 그 순서는
 > [ISTQB CTFL Syllabus v4.0.1 §2.2.1 Test Levels](https://astqb.org/assets/documents/ISTQB_CTFL_Syllabus_v4.0.1.pdf)(p.28-29),
 > 아래 기법 3분류와 세부 기법 이름은 같은 문서 §4.1·§4.2·§4.3·§4.4(p.38-44)를 근거로 했다.
 > V모델을 순차적 개발 모델의 예로 드는 것은 §2.1(p.25)이고, 순차 모델에서 한 레벨의 종료 기준이

@@ -438,7 +438,7 @@ topic_id: {topic['id']}
 
 ![](fig/.svg)
 
-> **구조 근거**: 공식 문서 링크 (섹션·앵커까지)
+> **출처**: 공식 문서 링크 (섹션·앵커까지)
 
 ## 동작 원리
 
@@ -623,7 +623,7 @@ def cmd_tistory(args: argparse.Namespace) -> int:
 CODE_FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
 REFERENCE_SECTION = re.compile(r"^## 참고 자료\n.*", re.MULTILINE | re.DOTALL)
 MARKDOWN_LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
-SOURCE_NOTE = re.compile(r"^> \*\*[^*]*근거\*\*", re.MULTILINE)
+SOURCE_NOTE = re.compile(r"^> \*\*출처\*\*", re.MULTILINE)
 
 BODY_MIN_CHARS = 1800
 BODY_MAX_CHARS = 3500

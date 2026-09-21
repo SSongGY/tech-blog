@@ -48,7 +48,7 @@ NULL은 "값이 없음"을 뜻하는 표시다. 0도 아니고 빈 문자열도 
 
 ![엔진별 NULL 정렬 위치 비교](fig/null-ordering-by-engine.svg)
 
-> **구조 근거**: SQLite는 [SQLite — SELECT §4 The ORDER BY clause](https://www.sqlite.org/lang_select.html#the_order_by_clause)
+> **출처**: SQLite는 [SQLite — SELECT §4 The ORDER BY clause](https://www.sqlite.org/lang_select.html#the_order_by_clause)
 > 가 "SQLite considers NULL values to be smaller than any other values for sorting purposes"라고 적는다.
 > MySQL은 [MySQL 8.0 Reference Manual §5.3.4.6 Working with NULL Values](https://dev.mysql.com/doc/refman/8.0/en/working-with-null.html)
 > 가 ASC일 때 NULL이 먼저 온다고 적는다. PostgreSQL은

@@ -49,7 +49,7 @@ SELECT title AS book_title, price / 1000 AS price_in_thousand FROM book;
 
 ![SELECT 목록에 따라 갈리는 읽기 경로](fig/select-read-path.svg)
 
-> **구조 근거**: [SQLite — Covering Indices](https://www.sqlite.org/optoverview.html#covidx)
+> **출처**: [SQLite — Covering Indices](https://www.sqlite.org/optoverview.html#covidx)
 > (필요한 모든 컬럼이 인덱스에 있으면 원본 테이블을 찾아가지 않는다는 점),
 > [SQLite Database File Format §2.2 Representation Of SQL Indices](https://www.sqlite.org/fileformat2.html#representation_of_sql_indices)
 > (인덱스 항목이 인덱싱된 컬럼 값 뒤에 해당 행의 rowid를 붙여 저장한다는 점).

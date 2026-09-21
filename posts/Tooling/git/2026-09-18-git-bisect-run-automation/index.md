@@ -36,14 +36,14 @@ topic_id: tool-002
 
 ![이분 탐색으로 후보가 줄어드는 과정](fig/bisect-narrowing.svg)
 
-> **알고리즘 근거**: [git-bisect-lk2009 — 이분 탐색 알고리즘 설명](https://git-scm.com/docs/git-bisect-lk2009).
+> **출처**: [git-bisect-lk2009 — 이분 탐색 알고리즘 설명](https://git-scm.com/docs/git-bisect-lk2009).
 > 후보 수는 커밋이 일직선으로 이어진 경우의 값이다. 머지가 섞이면 실제 후보 수는 달라진다.
 
 종료 코드와 git의 판정은 이렇게 대응한다.
 
 ![종료 코드와 bisect 판정의 대응](fig/exit-codes.svg)
 
-> **규약 근거**: [git-bisect 매뉴얼](https://git-scm.com/docs/git-bisect)의 "Bisect run" 절.
+> **출처**: [git-bisect 매뉴얼](https://git-scm.com/docs/git-bisect)의 "Bisect run" 절.
 > 문서는 테스트 명령이 good/old이면 0으로, bad/new이면 125를 제외한 1~127로 끝나야 한다고 명시한다.
 > 126과 127은 POSIX 셸이 "실행 불가"와 "명령 없음"에 쓰는 값이라, 그보다 낮으면서 가장 큰 값인
 > 125가 skip 용도로 선택됐다.

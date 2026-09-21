@@ -58,7 +58,7 @@ Negotiated TLS1.3 group: X25519MLKEM768
 
 ![TLS 1.2와 1.3의 핸드셰이크 메시지 순서](fig/handshake-tls12-vs-tls13.svg)
 
-> **구조 근거**: TLS 1.3 메시지 순서와 `{ }` 표기(핸드셰이크 키로 암호화됨)는
+> **출처**: TLS 1.3 메시지 순서와 `{ }` 표기(핸드셰이크 키로 암호화됨)는
 > [RFC 8446 §2 Protocol Overview, Figure 1: Message Flow for Full TLS Handshake](https://www.rfc-editor.org/rfc/rfc8446.html#section-2),
 > TLS 1.2 순서는 [RFC 5246 §7.3 Handshake Protocol Overview, Figure 1](https://www.rfc-editor.org/rfc/rfc5246.html#section-7.3)이다.
 > 그림에 그린 메시지 목록과 순서는 아래 실습의 `-msg` 출력과 대조해 일치를 확인했다.

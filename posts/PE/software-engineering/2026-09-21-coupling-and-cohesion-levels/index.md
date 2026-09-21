@@ -82,7 +82,7 @@ Constantine이 제시하고 Stevens·Myers·Constantine이 1974년 IBM Systems J
 
 ![결합도 6단계와 응집도 7단계](fig/coupling-cohesion-ladder.svg)
 
-> **구조 근거**: 각 단계의 정의는 [ISO/IEC/IEEE 24765:2017 Systems and software
+> **출처**: 각 단계의 정의는 [ISO/IEC/IEEE 24765:2017 Systems and software
 > engineering — Vocabulary](https://pascal.computer.org/sev_display/index.action)의
 > `content coupling` · `common-environment coupling` · `control coupling` · `data coupling`
 > 및 `functional` · `sequential` · `communicational` · `procedural` · `temporal` ·

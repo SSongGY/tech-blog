@@ -41,9 +41,9 @@ verified: true
 
 ![다크 팩토리의 제어 계층과 사람이 남는 자리](fig/dark-factory-layers.svg)
 
-> **구조 근거**: [IEC 62264-1 / ISA-95 기능 계층 Level 0–4](https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard) · [ISO 23247-1:2021 Digital twin framework for manufacturing](https://www.iso.org/standard/75066.html) · [ISO 10218-1:2025 Robotics — Safety requirements](https://www.iso.org/standard/73933.html) — 계층은 1차 표준, 무인 운전 구간의 구분은 (2차 자료 기반)
+> **출처**: [IEC 62264-1 / ISA-95 기능 계층 Level 0–4](https://www.isa.org/standards-and-publications/isa-standards/isa-95-standard) · [ISO 23247-1:2021 Digital twin framework for manufacturing](https://www.iso.org/standard/75066.html) · [ISO 10218-1:2025 Robotics — Safety requirements](https://www.iso.org/standard/73933.html) — 계층은 1차 표준, 무인 운전 구간의 구분은 (2차 자료 기반)
 
-IEC 62264-1의 기능 계층으로 보면 다크 팩토리는 **Level 0~2를 무인으로 닫는 것**이다.
+IEC 62264-1의 기능 계층으로 보면 다크 팩토리는 **Level 0~2를 무인으로 운영하는 것**이다.
 Level 3(MES)과 Level 4(ERP)는 여전히 사람이 다루되 자리를 현장 밖으로 옮긴다.
 성립 전제는 **3가지**다.
 
@@ -72,7 +72,7 @@ Level 3(MES)과 Level 4(ERP)는 여전히 사람이 다루되 자리를 현장 �
   누를 사람도 없다는 뜻이다. 제어망 침해가 곧 설비 사고로 이어지므로
   기능 안전과 OT 보안을 분리해 다루면 안 된다.
 - **적용 범위를 공정 단위로 끊는다.** 공장 전체를 한 번에 무인화하는 대신
-  변동이 작은 공정부터 구간을 닫고 넓히는 접근이 현실적이다.
+  변동이 작은 공정부터 무인으로 돌리고 넓히는 접근이 현실적이다.
 
 > 개념 정리: [다크 팩토리 — 무인화가 성립하기 위한 전제](../../emerging-tech/2026-09-21-dark-factory-prerequisites/index.md)
 

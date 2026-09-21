@@ -88,7 +88,7 @@ Garlan과 Shaw, CMU의 Abowd와 Allen, SEI의 Clements 등 여러 저자가 이�
 
 ![4+1 뷰 모델과 뷰별 이해관계자](fig/four-plus-one-views.svg)
 
-> **구조 근거**: [P. Kruchten, "Architectural Blueprints — The 4+1 View Model of Software Architecture", IEEE Software 12(6), Nov 1995, pp. 42-50](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf)
+> **출처**: [P. Kruchten, "Architectural Blueprints — The 4+1 View Model of Software Architecture", IEEE Software 12(6), Nov 1995, pp. 42-50](https://www.cs.ubc.ca/~gregor/teaching/papers/4+1view-architecture.pdf)
 > — 네 뷰의 배치와 시나리오의 중앙 위치는 논문 Figure 1, 각 박스의 구성요소·연결·컨테이너·
 > 이해관계자·관심사는 논문 Table 1을 그대로 옮겼다. Figure 1은 물리 뷰의 이해관계자를
 > 시스템 엔지니어로, Table 1은 시스템 설계자로 적는다. 그림에는 Table 1을 따랐다.

@@ -50,7 +50,7 @@ SQL에서 순서는 **`NOT` → `AND` → `OR`**이다. `AND`가 `OR`보다 높�
 
 ![괄호 유무에 따라 갈리는 조건 묶음](fig/and-or-binding.svg)
 
-> **구조 근거**: [SQLite — SQL Language Expressions §2 Operators, and Parse-Affecting Attributes](https://www.sqlite.org/lang_expr.html#operators_and_parse_affecting_attributes)
+> **출처**: [SQLite — SQL Language Expressions §2 Operators, and Parse-Affecting Attributes](https://www.sqlite.org/lang_expr.html#operators_and_parse_affecting_attributes)
 > 의 우선순위 표. 높은 것부터 나열된 목록의 맨 아래 세 줄이 `NOT [expr]` → `AND` → `OR` 순이다.
 > 그림의 9,982행 / 6,703행 / 3,279행은 이 글에서 직접 측정한 값이다.
 

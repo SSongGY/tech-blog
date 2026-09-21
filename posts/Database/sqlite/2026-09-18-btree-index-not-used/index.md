@@ -34,7 +34,7 @@ B-Tree 인덱스는 **키 값이 정렬된 상태로** 저장된 트리다. 탐�
 
 ![인덱스 b-tree의 탐색 경로와 테이블 재접근](fig/btree-lookup.svg)
 
-> **구조 근거**: [SQLite Database File Format §1.6 B-tree Pages](https://www.sqlite.org/fileformat2.html#b_tree_pages)
+> **출처**: [SQLite Database File Format §1.6 B-tree Pages](https://www.sqlite.org/fileformat2.html#b_tree_pages)
 > — interior page가 키 K개와 포인터 K+1개를 번갈아 담고 키가 고유·오름차순이라는 점, leaf page에는
 > 포인터가 없다는 점, index b-tree의 셀이 인덱싱된 컬럼 뒤에 해당 행의 rowid를 붙여 저장한다는 점을
 > 이 문서에 근거해 그렸다.
@@ -45,7 +45,7 @@ B-Tree 인덱스는 **키 값이 정렬된 상태로** 저장된 트리다. 탐�
 
 ![SARGable 여부에 따라 갈리는 실행계획](fig/sargable.svg)
 
-> **판정 기준 근거**: [SQLite — Query Planning](https://www.sqlite.org/queryplanner.html),
+> **출처**: [SQLite — Query Planning](https://www.sqlite.org/queryplanner.html),
 > [SQLite — Indexes On Expressions](https://www.sqlite.org/expridx.html).
 > 그림 안의 수치(0.00ms / 16.88ms)는 이 글에서 직접 측정한 값이다.
 
