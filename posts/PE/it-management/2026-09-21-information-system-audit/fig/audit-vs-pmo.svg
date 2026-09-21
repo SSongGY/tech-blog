@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#fbfaf7"/>
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#1f2937">감리와 사업관리 위탁(PMO)이 붙는 자리</text>
+
+  <defs>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- 발주기관 -->
+  <rect x="340" y="60" width="200" height="56" rx="6" fill="#e5e7eb" stroke="#374151" stroke-width="1.8"/>
+  <text x="440" y="94" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">발주기관</text>
+
+  <!-- PMO -->
+  <rect x="40" y="150" width="220" height="60" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+  <text x="150" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">전자정부사업관리자(PMO)</text>
+  <text x="150" y="196" font-size="12" text-anchor="middle" fill="#374151">관리·감독 업무를 위탁받는다</text>
+
+  <!-- 수행사업자 -->
+  <rect x="340" y="200" width="200" height="60" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="226" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">수행사업자</text>
+  <text x="440" y="246" font-size="12" text-anchor="middle" fill="#374151">시스템을 만든다</text>
+
+  <!-- 감리법인 -->
+  <rect x="620" y="150" width="220" height="60" rx="6" fill="#eef5f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="730" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#14532d">감리법인</text>
+  <text x="730" y="196" font-size="12" text-anchor="middle" fill="#14532d">제3자로 점검한다</text>
+
+  <g stroke="#374151" stroke-width="1.5" marker-end="url(#a3)" fill="none">
+    <path d="M360 118 H150 V146"/>
+    <path d="M520 118 H730 V146"/>
+    <line x1="440" y1="118" x2="440" y2="196"/>
+    <path d="M150 212 V230 H336"/>
+    <path d="M730 212 V230 H544"/>
+  </g>
+
+  <text x="196" y="138" font-size="12" fill="#4b5563">위탁</text>
+  <text x="640" y="138" font-size="12" fill="#14532d">발주</text>
+  <text x="452" y="142" font-size="12" fill="#4b5563">구축 계약</text>
+  <text x="200" y="248" font-size="12" fill="#4b5563">관리·감독</text>
+  <text x="600" y="248" font-size="12" fill="#14532d">점검·시정 요구</text>
+
+  <!-- 독립성 표시 -->
+  <path d="M266 180 H614" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6 5"/>
+  <rect x="378" y="167" width="124" height="25" fill="#fbfaf7"/>
+  <text x="440" y="185" font-size="12" text-anchor="middle" fill="#9d0208">특수관계 금지</text>
+
+  <line x1="20" y1="282" x2="860" y2="282" stroke="#d1d5db" stroke-width="1"/>
+  <text x="20" y="306" font-size="13" fill="#9d0208">감리법인은 수행사업자와도, 전자정부사업관리자와도 독립성을 해칠 특수관계가 없어야 한다.</text>
+  <text x="20" y="326" font-size="12" fill="#6b7280">구축 계약의 당사자는 발주기관과 수행사업자다. PMO도 감리법인도 그 자리에 들어가지 않는다.</text>
+</svg>

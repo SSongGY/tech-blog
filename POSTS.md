@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **19편** · 갱신 2026-09-21
+총 **21편** · 갱신 2026-09-21
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -18,11 +18,13 @@
 |---|---|---|---|---|
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 6편
+## 기술사 (pe) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-21 | [테스트 레벨과 테스트 기법 분류](posts/PE/software-engineering/2026-09-21-test-levels-and-techniques/index.md) | 중급 | ISTQB CTFL Syllabus v4.0.1 (2024-09-15), Python 3.13.5 | 실행 검증 |
+| 2026-09-21 | [품질속성 시나리오와 유틸리티 트리](posts/PE/software-engineering/2026-09-21-quality-attribute-scenario-utility-tree/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), CMU/SEI-2003-TR-016 (2003.8) | 문서 근거 |
+| 2026-09-21 | [정보시스템 감리 — 제3자 점검이 법으로 자리 잡은 구조](posts/PE/it-management/2026-09-21-information-system-audit/index.md) | 중급 | 전자정부법 (법률 제21394호, 2026.2.27. 일부개정), 전자정부법 시행령 (대통령령 제36605호, 2026.8.25. 일부개정), 정보시스템 감리기준 (행정안전부고시 제2024-53호, 2024.6.27.) | 문서 근거 |
 | 2026-09-21 | [다크 팩토리 — 무인화가 성립하기 위한 전제](posts/PE/emerging-tech/2026-09-21-dark-factory-prerequisites/index.md) | 중급 | acatech Industrie 4.0 Maturity Index (2017, UPDATE 2020), IEC 62264-1:2013, ISO 13374-1:2003, ISO 23247-1:2021, ISO 10218-1:2025 | 문서 근거 |
 | 2026-09-21 | [결합도와 응집도 — 등급별 판별 기준](posts/PE/software-engineering/2026-09-21-coupling-and-cohesion-levels/index.md) | 입문 | ISO/IEC/IEEE 24765:2017, ISO/IEC TR 19759:2016 (SWEBOK V3) | 문서 근거 |
 | 2026-09-21 | [업무 프로세스 재설계(BPR) — 원안과 AI 도입 이후](posts/PE/it-management/2026-09-21-bpr-reengineering-and-ai/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), Process Mining Manifesto (LNBIP 99, 2012), IEEE 1849-2016 (XES), ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |

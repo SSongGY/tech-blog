@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="390" viewBox="0 0 880 390" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="390" fill="#fbfaf7"/>
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#1f2937">유틸리티 트리 — 비즈니스 동인을 시나리오까지 내려 우선순위를 매긴다</text>
+
+  <!-- 연결선 -->
+  <g stroke="#6b7280" stroke-width="1.4" fill="none">
+    <path d="M125 193 H143 V115 H160"/>
+    <path d="M125 193 H143 V270 H160"/>
+    <path d="M280 115 H300 V74 H320"/>
+    <path d="M280 115 H300 V164 H320"/>
+    <path d="M280 270 H300 V270 H320"/>
+    <path d="M460 74 H480 V59 H500"/>
+    <path d="M460 74 H480 V107 H500"/>
+    <path d="M460 164 H480 V164 H500"/>
+    <path d="M460 270 H480 V270 H500"/>
+  </g>
+
+  <!-- 뿌리 -->
+  <rect x="20" y="170" width="105" height="46" rx="6" fill="#e5e7eb" stroke="#374151" stroke-width="1.6"/>
+  <text x="72" y="199" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">유틸리티</text>
+
+  <!-- 품질속성 -->
+  <rect x="160" y="95" width="120" height="40" rx="5" fill="#ffffff" stroke="#374151" stroke-width="1.4"/>
+  <text x="220" y="120" font-size="14" text-anchor="middle" fill="#111827">성능</text>
+  <rect x="160" y="250" width="120" height="40" rx="5" fill="#ffffff" stroke="#374151" stroke-width="1.4"/>
+  <text x="220" y="275" font-size="14" text-anchor="middle" fill="#111827">변경용이성</text>
+
+  <!-- 하위 요인 -->
+  <rect x="320" y="55" width="140" height="38" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="390" y="79" font-size="13" text-anchor="middle" fill="#111827">자료 지연시간</text>
+  <rect x="320" y="145" width="140" height="38" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="390" y="169" font-size="13" text-anchor="middle" fill="#111827">트랜잭션 처리량</text>
+  <rect x="320" y="250" width="140" height="40" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="390" y="275" font-size="13" text-anchor="middle" fill="#111827">새 상품군 추가</text>
+
+  <!-- 잎: 시나리오 -->
+  <rect x="500" y="40" width="350" height="38" rx="5" fill="#eef5f1" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="64" font-size="13" fill="#14532d">고객 DB 저장 지연을 200ms 이하로  ( M , L )</text>
+
+  <rect x="500" y="88" width="350" height="38" rx="5" fill="#fdf3e7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="514" y="112" font-size="13" fill="#7c2d12">영상을 실시간으로 전달  ( H , M )</text>
+
+  <rect x="500" y="145" width="350" height="38" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="514" y="169" font-size="13" fill="#374151">인증 서버 평균 처리량을 최대로  ( ? , ? )</text>
+
+  <rect x="500" y="250" width="350" height="40" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="514" y="275" font-size="13" fill="#374151">새 상품군을 4인·주 이내에 추가  ( ? , ? )</text>
+
+  <!-- 범례 -->
+  <line x1="20" y1="315" x2="860" y2="315" stroke="#d1d5db" stroke-width="1"/>
+  <text x="20" y="338" font-size="13" fill="#374151">잎마다 ( 성공에 대한 중요도 , 달성에 대한 위험도 )를 H · M · L 로 매긴다.</text>
+  <text x="20" y="360" font-size="13" fill="#7c2d12">중요도가 높고 위험도도 남은 잎( H , M )부터 아키텍처를 집중해 조사한다. ( M , L )은 뒤로 미룬다.</text>
+  <text x="20" y="382" font-size="12" fill="#6b7280">( ? , ? )는 원 보고서 본문이 값을 밝히지 않은 잎이다. 지어내지 않고 비워 둔다.</text>
+</svg>
