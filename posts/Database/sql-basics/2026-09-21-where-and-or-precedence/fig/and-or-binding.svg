@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Segoe UI', 'Malgun Gothic', sans-serif">
+  <rect width="880" height="470" fill="#fbfbf9"/>
+  <text x="20" y="30" font-size="16" font-weight="600" fill="#1f2937">같은 조건을 두 가지로 묶은 결과 (20,000행 중)</text>
+
+  <!-- ===== Panel A : 괄호 없음 ===== -->
+  <rect x="16" y="46" width="848" height="176" fill="#fffaf3" stroke="#b45309" stroke-width="1.5" rx="6"/>
+  <text x="32" y="70" font-size="14" font-weight="600" fill="#b45309">괄호 없음 — AND가 먼저 묶인다</text>
+  <text x="700" y="70" font-size="14" font-weight="600" fill="#b45309">9,982행</text>
+
+  <!-- edges -->
+  <line x1="440" y1="108" x2="220" y2="130" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="440" y1="108" x2="620" y2="130" stroke="#b45309" stroke-width="2"/>
+  <line x1="620" y1="163" x2="520" y2="185" stroke="#b45309" stroke-width="2"/>
+  <line x1="620" y1="163" x2="740" y2="185" stroke="#b45309" stroke-width="2"/>
+
+  <!-- root OR -->
+  <rect x="410" y="80" width="60" height="28" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" rx="4"/>
+  <text x="440" y="99" font-size="14" font-weight="600" text-anchor="middle" fill="#374151">OR</text>
+  <!-- leaf -->
+  <rect x="135" y="130" width="170" height="30" fill="#ffffff" stroke="#9ca3af" rx="4"/>
+  <text x="220" y="150" font-size="13" text-anchor="middle" fill="#374151">status = 'canceled'</text>
+  <!-- AND -->
+  <rect x="590" y="130" width="60" height="30" fill="#fde9cf" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="620" y="150" font-size="14" font-weight="600" text-anchor="middle" fill="#7c3d06">AND</text>
+  <!-- AND leaves -->
+  <rect x="435" y="185" width="170" height="30" fill="#ffffff" stroke="#9ca3af" rx="4"/>
+  <text x="520" y="205" font-size="13" text-anchor="middle" fill="#374151">status = 'pending'</text>
+  <rect x="665" y="185" width="150" height="30" fill="#ffffff" stroke="#9ca3af" rx="4"/>
+  <text x="740" y="205" font-size="13" text-anchor="middle" fill="#374151">amount &gt; 50000</text>
+
+  <!-- ===== Panel B : 괄호로 OR 먼저 ===== -->
+  <rect x="16" y="246" width="848" height="176" fill="#f3faf6" stroke="#2d6a4f" stroke-width="1.5" rx="6"/>
+  <text x="32" y="270" font-size="14" font-weight="600" fill="#2d6a4f">괄호를 치면 — OR이 먼저 묶인다</text>
+  <text x="700" y="270" font-size="14" font-weight="600" fill="#2d6a4f">6,703행</text>
+
+  <line x1="440" y1="308" x2="260" y2="330" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="440" y1="308" x2="700" y2="330" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="260" y1="363" x2="150" y2="385" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="260" y1="363" x2="370" y2="385" stroke="#2d6a4f" stroke-width="2"/>
+
+  <rect x="410" y="280" width="60" height="28" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" rx="4"/>
+  <text x="440" y="299" font-size="14" font-weight="600" text-anchor="middle" fill="#374151">AND</text>
+  <rect x="230" y="330" width="60" height="30" fill="#d7ede1" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="260" y="350" font-size="14" font-weight="600" text-anchor="middle" fill="#1b4332">OR</text>
+  <rect x="625" y="330" width="150" height="30" fill="#ffffff" stroke="#9ca3af" rx="4"/>
+  <text x="700" y="350" font-size="13" text-anchor="middle" fill="#374151">amount &gt; 50000</text>
+  <rect x="65" y="385" width="170" height="30" fill="#ffffff" stroke="#9ca3af" rx="4"/>
+  <text x="150" y="405" font-size="13" text-anchor="middle" fill="#374151">status = 'canceled'</text>
+  <rect x="285" y="385" width="170" height="30" fill="#ffffff" stroke="#9ca3af" rx="4"/>
+  <text x="370" y="405" font-size="13" text-anchor="middle" fill="#374151">status = 'pending'</text>
+
+  <text x="20" y="450" font-size="13" fill="#4b5563">우선순위: NOT &gt; AND &gt; OR — 아래쪽으로 갈수록 늦게 묶인다. 두 해석의 차이는 3,279행.</text>
+</svg>
