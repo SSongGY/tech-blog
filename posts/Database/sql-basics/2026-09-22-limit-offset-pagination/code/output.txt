@@ -1,0 +1,62 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python limit_offset.py
+# 수행 시각 : 2026-09-22 08:32 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+SQLite 3.49.1
+전체 행 수 200,000 · 한 페이지 10행
+
+-- 1. 앞에서 3행만
+   SELECT id, title FROM article ORDER BY id LIMIT 3
+   1  글 000001
+   2  글 000002
+   3  글 000003
+
+-- 2. 3행을 건너뛰고 3행
+   SELECT id, title FROM article ORDER BY id LIMIT 3 OFFSET 3
+   4  글 000004
+   5  글 000005
+   6  글 000006
+
+-- 3. 쉼표 문법 — 앞이 OFFSET, 뒤가 개수다
+   SELECT id, title FROM article ORDER BY id LIMIT 3, 3
+   4  글 000004
+   5  글 000005
+   6  글 000006
+
+-- 4. OFFSET 이 전체 행 수를 넘으면
+   SELECT id, title FROM article ORDER BY id LIMIT 3 OFFSET 200000
+   (행 없음)
+
+-- 5. LIMIT 이 음수면 SQLite 는 제한 없음으로 읽는다 (OFFSET 은 살아 있다)
+   SELECT id, title FROM article ORDER BY id LIMIT -1 OFFSET 199998
+   199999  글 199999
+   200000  글 200000
+
+-- 6. OFFSET 을 키우면서 가상 머신 명령 개수를 센다
+   OFFSET       0  명령        70개  (첫 페이지의    1.0배)     0.0 ms
+   OFFSET   1,000  명령     2,070개  (첫 페이지의   29.6배)     0.2 ms
+   OFFSET  10,000  명령    20,070개  (첫 페이지의  286.7배)     1.8 ms
+   OFFSET 100,000  명령   200,070개  (첫 페이지의 2858.1배)    18.0 ms
+   OFFSET 199,990  명령   400,050개  (첫 페이지의 5715.0배)    36.3 ms
+
+-- 7. 같은 10행을 마지막 읽은 id 로 집는다
+   id >       0   명령        60개     0.1 ms
+   id >   1,000   명령        59개     0.0 ms
+   id >  10,000   명령        59개     0.0 ms
+   id > 100,000   명령        59개     0.0 ms
+   id > 199,990   명령        59개     0.0 ms
+
+-- 8. 두 방식의 실행 계획
+   OFFSET: SCAN article
+   키셋: SEARCH article USING INTEGER PRIMARY KEY (rowid>?)
+
+-- 9. ORDER BY 없는 LIMIT 은 어느 행이 나올지 정해져 있지 않다
+   인덱스 없음       결과 [1, 2, 3]
+                계획 SCAN article
+   인덱스 생성 후     결과 [1000, 2000, 3000]
+                계획 SCAN article USING COVERING INDEX ix_article_view_count
+
