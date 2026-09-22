@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **41편** · 갱신 2026-09-22
+총 **44편** · 갱신 2026-09-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 7편
+## DB문법 (basics) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-23 | [INNER JOIN — 두 테이블을 잇는 기본](posts/Database/sql-basics/2026-09-23-inner-join-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-22 | [LIMIT과 OFFSET — 결과를 잘라내는 문법](posts/Database/sql-basics/2026-09-22-limit-offset-pagination/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-22 | [HAVING과 WHERE — 어느 단계에서 걸러지는가](posts/Database/sql-basics/2026-09-22-having-vs-where/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-22 | [GROUP BY와 집계 함수 — 묶는 기준 정하기](posts/Database/sql-basics/2026-09-22-group-by-aggregate-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -16,18 +17,20 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 3편
+## DB기능 (product) — 4편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-23 | [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-22 | [Tibero 7 MERGE 문 — UPSERT를 한 문장으로, 그리고 DELETE 절의 함정](posts/Database/tibero/2026-09-22-tibero7-merge-upsert/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 16편
+## 기술사 (pe) — 17편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-23 | [정규화 1NF부터 BCNF까지](posts/PE/database/2026-09-23-normalization-1nf-to-bcnf/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Windows 11 | 실행 검증 |
 | 2026-09-22 | [SQuaRE 표준군 구조 — 5개 부문과 확장 부문, 그리고 품질 모델 4종](posts/PE/software-engineering/2026-09-22-square-standard-family-structure/index.md) | 중급 | ISO/IEC 25000:2014 (2판), ISO/IEC 25002:2024 (1판), ISO/IEC 25010:2023 (2판), ISO/IEC 25019:2023 (1판) | 문서 근거 |
 | 2026-09-22 | [MSA — 분해 기준과 감당해야 할 비용](posts/PE/software-engineering/2026-09-22-msa-decomposition-and-cost/index.md) | 심화 | NIST SP 800-204 (2019-08) | 문서 근거 |
 | 2026-09-22 | [형상관리 — 4대 활동과 베이스라인](posts/PE/software-engineering/2026-09-22-configuration-management-baseline/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), ISO/IEC/IEEE 24765:2017, IEEE 828-2012 | 문서 근거 |

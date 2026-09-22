@@ -484,7 +484,7 @@ topics:
     difficulty: 중급
     angle: "ROWS와 RANGE의 차이가 결과를 어떻게 바꾸는지"
     code: sql
-    status: todo
+    status: done
   - id: tb-004
     title: "Tibero 7 MERGE 문 — UPSERT를 한 문장으로"
     category: Database
@@ -792,7 +792,7 @@ topics:
     difficulty: 입문
     angle: "조인 조건을 빼먹으면 행 수가 곱해지는 것을 숫자로"
     code: python
-    status: todo
+    status: done
   - id: bas-009
     title: "LEFT JOIN — 없는 쪽을 남기는 조인"
     category: Database
@@ -1064,7 +1064,7 @@ topics:
     difficulty: 중급
     angle: "각 단계에서 제거되는 이상현상을 예제 릴레이션으로"
     code: none
-    status: todo
+    status: done
   - id: pe-010
     title: "트랜잭션 ACID와 격리 수준"
     category: PE
