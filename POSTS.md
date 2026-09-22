@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **32편** · 갱신 2026-09-22
+총 **36편** · 갱신 2026-09-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -23,12 +23,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 11편
+## 기술사 (pe) — 13편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-22 | [SQuaRE 표준군 구조 — 5개 부문과 확장 부문, 그리고 품질 모델 4종](posts/PE/software-engineering/2026-09-22-square-standard-family-structure/index.md) | 중급 | ISO/IEC 25000:2014 (2판), ISO/IEC 25002:2024 (1판), ISO/IEC 25010:2023 (2판), ISO/IEC 25019:2023 (1판) | 문서 근거 |
 | 2026-09-22 | [형상관리 — 4대 활동과 베이스라인](posts/PE/software-engineering/2026-09-22-configuration-management-baseline/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), ISO/IEC/IEEE 24765:2017, IEEE 828-2012 | 문서 근거 |
 | 2026-09-22 | [CMMI 성숙도 레벨과 프랙티스 영역 — 0단계부터 5단계까지](posts/PE/software-engineering/2026-09-22-cmmi-maturity-levels/index.md) | 중급 | CMMI V3.0 (2023), CMMI V2.0 (2018), ISO/IEC 33001:2015, ISO/IEC 33004:2015 | 문서 근거 |
+| 2026-09-22 | [BM25 — 확률적 적합성 프레임워크가 낳은 순위 함수와 두 매개변수](posts/PE/software-engineering/2026-09-22-bm25-probabilistic-relevance/index.md) | 중급 | Robertson & Zaragoza, FnTIR 3(4), 2009, Apache Lucene 10.3.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-22 | [애자일과 DevOps — 무엇이 같고 무엇이 다른가](posts/PE/software-engineering/2026-09-22-agile-and-devops-scope/index.md) | 중급 | ISO/IEC/IEEE 32675:2022, IEEE Std 2675-2021, 애자일 선언문 (2001), Scrum Guide 2020 | 문서 근거 |
 | 2026-09-21 | [테스트 레벨과 테스트 기법 분류](posts/PE/software-engineering/2026-09-21-test-levels-and-techniques/index.md) | 중급 | ISTQB CTFL Syllabus v4.0.1 (2024-09-15), Python 3.13.5 | 실행 검증 |
 | 2026-09-21 | [품질속성 시나리오와 유틸리티 트리](posts/PE/software-engineering/2026-09-21-quality-attribute-scenario-utility-tree/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), CMU/SEI-2003-TR-016 (2003.8) | 문서 근거 |
@@ -55,10 +57,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 6편
+## 기출문제 (exam) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-22 | [기출문제 — 좀비 프로세스](posts/PE/exam/2026-09-22-zombie-process/index.md) | 중급 | IEEE Std 1003.1-2024 (POSIX.1-2024), Linux man-pages — wait(2)·proc(5)·pid_namespaces(7), 2026-09-22 조회, Docker Engine CLI 문서 (docker run --init), 2026-09-22 조회 | 문서 근거 |
+| 2026-09-22 | [기출문제 — 잭나이프 기법의 편향 감소와 분산 추정](posts/PE/exam/2026-09-22-jackknife-resampling/index.md) | 중급 | Python 3.13.5, Efron & Stein, Ann. Statist. 9(3), 1981, Shao & Wu, Ann. Statist. 17(3), 1989 | 실행 검증 |
 | 2026-09-22 | [기출문제 — ISO/IEC 25010 제품 품질 모델의 주특성과 부특성](posts/PE/exam/2026-09-22-iso-iec-25010-product-quality-model/index.md) | 중급 | ISO/IEC 25010:2023 (2판, 2023-11), ISO/IEC 25010:2011 (1판) | 문서 근거 |
 | 2026-09-22 | [기출문제 — 어휘 검색과 의미 검색을 결합한 하이브리드 검색](posts/PE/exam/2026-09-22-hybrid-search-lexical-vector/index.md) | 중급 | Cormack et al., SIGIR 2009 (RRF), Karpukhin et al., EMNLP 2020 (DPR), Bruch et al., ACM TOIS 2023 | 문서 근거 |
 | 2026-09-21 | [기출문제 — PMC와 PMO 비교](posts/PE/exam/2026-09-21-pmc-pmo/index.md) | 중급 | 전자정부법 제64조의2, 전자정부사업관리 위탁에 관한 규정 (2024.6.27 일부개정), PMBOK Guide 5th Edition (2013) | 문서 근거 |

@@ -2687,7 +2687,7 @@ topics:
     angle: "ISO/IEC 25000~25099가 품질 관리·모델·측정·요구·평가 5개 부문으로 나뉜 구조와, 25010 2판에서 사용 품질(25019)·모델 개요(25002)가 분리된 이유. 25010 답안에서 판을 밝혀야 하는 근거가 여기서 나온다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-089
     title: "BM25 — 확률적 적합성 프레임워크에서 나온 순위 함수"
     category: PE
@@ -2698,7 +2698,7 @@ topics:
     angle: "TF 포화(k1)와 문서 길이 정규화(b)가 왜 필요한지, TF-IDF와 무엇이 다른지. 하이브리드 검색 답안에서 어휘 경로를 한 줄로 설명하려면 이 함수의 성질이 먼저 서야 한다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-090
     title: "근사 최근접 이웃 탐색과 HNSW 색인"
     category: PE
@@ -2707,6 +2707,28 @@ topics:
     tags: [정보관리기술사, database, 개념정리]
     difficulty: 중급
     angle: "정확 최근접 탐색이 왜 안 되는지, 계층 그래프로 후보를 좁히는 구조와 재현율·지연의 절충. 의미 검색 경로가 상위 k만 돌려주는 이유"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-091
+    title: "부트스트랩 재표집 — 복원추출로 추정량의 분포를 세우는 절차"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "잭나이프 답안에서 대비로 쓴 부트스트랩을 따로 세운다. 복원추출 B회로 추정량의 표본분포를 직접 만들고, 백분위수·BCa 신뢰구간이 어디서 갈리는지. 잭나이프가 실패하는 중앙값에서 부트스트랩이 되는 이유가 핵심"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-092
+    title: "프로세스 상태 전이 모델 — 5상태와 대기 큐"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "생성·준비·실행·대기·종료 5상태와 전이 조건, 준비 큐와 장치별 대기 큐의 분리. 좀비 답안에서 종료 상태가 왜 따로 남는지를 이 모델 위에 올려야 설명이 닫힌다. 중기 스케줄러가 넣는 보류 상태까지 7상태로 확장"
     code: none
     origin: exam
     status: todo
