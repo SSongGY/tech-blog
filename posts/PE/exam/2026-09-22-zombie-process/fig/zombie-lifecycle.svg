@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="370" viewBox="0 0 880 370" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="370" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <!-- 상단 흐름: 실행 → 종료 → 좀비 -->
+  <rect x="20" y="52" width="180" height="56" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="110" y="78" text-anchor="middle" font-size="15" fill="#0f172a">자식 프로세스 실행</text>
+  <text x="110" y="98" text-anchor="middle" font-size="13" fill="#475569">상태 R / S</text>
+
+  <path d="M 200 80 L 268 80" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#a1)"/>
+  <text x="234" y="70" text-anchor="middle" font-size="13" fill="#334155">_exit()</text>
+
+  <rect x="270" y="40" width="240" height="80" rx="6" fill="#fdf1e7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="390" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">좀비 프로세스 (상태 Z)</text>
+  <text x="390" y="88" text-anchor="middle" font-size="13" fill="#0f172a">주소 공간 · 파일 기술자 반납 완료</text>
+  <text x="390" y="108" text-anchor="middle" font-size="13" fill="#0f172a">PID · 종료 상태 · 자원 사용량만 남음</text>
+
+  <text x="390" y="20" text-anchor="middle" font-size="13" fill="#475569">부모에게 SIGCHLD 전달</text>
+
+  <!-- 좀비 → 소멸 (정상 경로) -->
+  <path d="M 510 80 L 596 80" stroke="#2d6a4f" stroke-width="1.8" fill="none" marker-end="url(#a2)"/>
+  <text x="553" y="70" text-anchor="middle" font-size="13" fill="#2d6a4f">부모가 wait()</text>
+
+  <rect x="598" y="52" width="262" height="56" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="729" y="78" text-anchor="middle" font-size="15" fill="#0f172a">프로세스 수명 종료</text>
+  <text x="729" y="98" text-anchor="middle" font-size="13" fill="#2d6a4f">PID를 시스템에 반납</text>
+
+  <!-- 좀비 → 누적 (실패 경로) -->
+  <path d="M 390 120 L 390 176" stroke="#9d0208" stroke-width="1.8" fill="none" marker-end="url(#a3)"/>
+  <text x="400" y="152" text-anchor="start" font-size="13" fill="#9d0208">부모가 wait()를 부르지 않는다</text>
+
+  <rect x="230" y="178" width="320" height="56" rx="6" fill="#fdeaea" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="390" y="204" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">프로세스 테이블 슬롯 점유</text>
+  <text x="390" y="224" text-anchor="middle" font-size="13" fill="#0f172a">PID 고갈 → 새 프로세스 생성 실패</text>
+
+  <!-- 부모가 먼저 죽는 경우 -->
+  <path d="M 230 206 L 160 206 L 160 262" stroke="#2d6a4f" stroke-width="1.8" fill="none" marker-end="url(#a2)"/>
+  <text x="152" y="240" text-anchor="end" font-size="13" fill="#2d6a4f">부모 종료</text>
+
+  <rect x="20" y="264" width="300" height="80" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="170" y="290" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">init 또는 서브리퍼로 재부모</text>
+  <text x="170" y="311" text-anchor="middle" font-size="13" fill="#0f172a">해당 PID 네임스페이스의 1번 프로세스</text>
+  <text x="170" y="331" text-anchor="middle" font-size="13" fill="#0f172a">자동으로 wait()를 불러 거둔다</text>
+
+  <path d="M 320 304 L 392 304" stroke="#2d6a4f" stroke-width="1.8" fill="none" marker-end="url(#a2)"/>
+
+  <rect x="394" y="264" width="466" height="80" rx="6" fill="#fdf1e7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="627" y="290" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">컨테이너에서 어긋나는 지점</text>
+  <text x="627" y="311" text-anchor="middle" font-size="13" fill="#0f172a">1번이 애플리케이션이면 wait()를 부르지 않는다</text>
+  <text x="627" y="331" text-anchor="middle" font-size="13" fill="#0f172a">거둘 주체가 없어 좀비가 그대로 쌓인다</text>
+</svg>
