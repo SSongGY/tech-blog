@@ -22,3 +22,8 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# 도식 확인용 임시 파일 — 저장소에 남기지 않는다.
+# 루틴이 git add -A 를 쓰므로 막지 않으면 공개 저장소에 올라간다.
+figcheck.html
+*.figcheck.html

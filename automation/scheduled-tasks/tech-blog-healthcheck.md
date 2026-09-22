@@ -51,11 +51,11 @@ description: 어제 15·17·21시와 오늘 7시 회차가 정상이었는지 �
 저장소 파일을 **절대 건드리지 않는다.** 진행 상황만 읽는다.
 
 ```bash
-cd /d/workspace/claude/tech_blog
-find posts -name index.md -newermt '-6 hours' -exec wc -c {} \;
+PYTHONUTF8=1 python scripts/blog.py recent 6
 ```
 
-본문이 600바이트 안팎이면 뼈대만 있는 상태다. 2시간 넘게 그대로면 멈춘 것으로 보고한다.
+`<- 뼈대만` 표시가 붙은 글은 아직 본문이 없다. 2시간 넘게 그대로면 멈춘 것으로 보고한다.
+`find -exec`는 쓰지 않는다 — 임의 명령을 실행하는 구문이라 권한 프롬프트에서 멈춘다.
 
 ### 3. 끝났으면 결과 확인
 

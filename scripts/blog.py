@@ -23,6 +23,9 @@ import platform
 import re
 import shutil
 import subprocess
+import sqlite3
+import urllib.error
+import urllib.request
 import sys
 from pathlib import Path
 
@@ -1306,6 +1309,304 @@ def cmd_run_examples(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
+# --- 실행 환경 판별 ----------------------------------------------------------
+#
+# 회차 시작 때 무엇을 실행 검증할 수 있는지 정한다. 예전에는 절차서에서 셸 for 루프로
+# 돌렸는데, 복합 명령이라 허용 규칙(앞에서부터 맞추는 방식)에 걸리지 않아 무인 회차가
+# 권한 프롬프트 앞에서 멈췄다. 명령 하나로 합쳐 Bash(python *) 하나에 걸리게 한다.
+
+DB_CLIENTS = ("tbsql", "sqlplus", "mysql", "psql")
+TOOLCHAINS = ("go", "cargo", "docker", "openssl", "sqlite3")
+# 리눅스 트랙이 쓰는 조회 도구. Git Bash 에는 일부만 있고, 없는 것을 다루는 주제는
+# 이 환경에서 검증할 수 없으므로 todo 로 되돌린다.
+LINUX_TOOLS = ("ps", "top", "df", "du", "free", "vmstat", "iostat",
+               "ss", "netstat", "lsof", "unshare", "stat", "strace", "systemctl")
+
+
+def tool_version(name: str) -> str:
+    """--version 을 물어 첫 줄만 가져온다. 버전은 environment 에 그대로 쓴다 (§5)."""
+    path = shutil.which(name)
+    if path is None:
+        return "없음"
+    for flag in ("--version", "-version", "-v"):
+        try:
+            done = subprocess.run([name, flag], capture_output=True, text=True,
+                                  timeout=15, encoding="utf-8", errors="replace")
+        except (OSError, subprocess.SubprocessError):
+            continue
+        line = (done.stdout or done.stderr).strip().splitlines()
+        if line:
+            return line[0].strip()
+    return "있음 (버전 확인 실패)"
+
+
+def wsl_usable() -> str:
+    """`wsl -l -q` 는 미설치 상태에서도 종료 코드 0 을 준다. 실제로 실행해 봐야 안다."""
+    if shutil.which("wsl") is None:
+        return "없음"
+    try:
+        done = subprocess.run(["wsl", "-e", "bash", "-c", "echo ok"],
+                              capture_output=True, text=True, timeout=30,
+                              encoding="utf-8", errors="replace")
+    except (OSError, subprocess.SubprocessError):
+        return "실행 불가"
+    return "사용 가능" if "ok" in (done.stdout or "") else "미설치 (명령만 있음)"
+
+
+def cmd_env(args: argparse.Namespace) -> int:
+    print(f"플랫폼   {platform.system()} {platform.release()}")
+    print(f"파이썬   {platform.python_version()}")
+    print(f"SQLite   {sqlite3.sqlite_version}  (파이썬 내장)")
+    print(f"git      {tool_version('git')}")
+
+    print("\nDB 클라이언트 — 있으면 그 제품 글을 executed 로 쓴다 (§6)")
+    for name in DB_CLIENTS:
+        print(f"  {name:8s} {tool_version(name)}")
+
+    print("\n그 밖의 도구")
+    for name in TOOLCHAINS:
+        print(f"  {name:8s} {tool_version(name)}")
+
+    print("\n리눅스 조회 도구 — 없는 것을 다루는 주제는 이 환경에서 검증할 수 없다")
+    missing = []
+    for name in LINUX_TOOLS:
+        found = shutil.which(name)
+        print(f"  {name:10s} {'있음' if found else '없음'}")
+        if not found:
+            missing.append(name)
+
+    print(f"\nWSL      {wsl_usable()}")
+    if missing:
+        print(f"없는 도구 {len(missing)}개: {', '.join(missing)}")
+    print("\n버전 문자열은 프론트매터 environment 에 그대로 옮긴다 (§5).")
+    return 0
+
+# --- 최근에 손댄 글 --------------------------------------------------------
+#
+# 점검 루틴이 "회차가 진행 중인지, 뼈대만 만들고 멈췄는지"를 판단할 때 쓴다.
+# 예전에는 find -exec wc 로 돌렸는데, -exec 는 임의 명령을 실행하는 구문이라
+# 무인 회차가 권한을 묻는 자리에서 멈췄다. 명령 하나로 합친다.
+
+SKELETON_BYTES = 800  # 이보다 작으면 프론트매터와 제목만 있는 상태로 본다
+
+
+def cmd_recent(args: argparse.Namespace) -> int:
+    hours = [int(h) for h in str(args.hours).split(",") if h.strip()]
+    now = dt.datetime.now().timestamp()
+
+    for limit in hours:
+        cutoff = now - limit * 3600
+        found = [
+            (p, p.stat().st_size)
+            for p in sorted(POSTS_DIR.rglob("index.md"))
+            if p.stat().st_mtime >= cutoff
+        ]
+        print(f"최근 {limit}시간 내 수정된 글 — {len(found)}편")
+        for path, size in found:
+            mark = "   <- 뼈대만" if size < SKELETON_BYTES else ""
+            print(f"  {size:>7,} B  {path.parent.relative_to(POSTS_DIR)}{mark}")
+        if not found:
+            print("  (없음)")
+        print()
+
+    print(f"{SKELETON_BYTES:,}바이트 미만은 아직 본문이 없는 상태다.")
+    print("회차가 돌고 있지 않은데 뼈대만 남아 있으면 중간에 멈춘 것이다.")
+    return 0
+
+# --- 도식 기계 검사 ----------------------------------------------------------
+#
+# §4 의 규칙 중 기계로 확인할 수 있는 것을 검사한다. 예전에는 로컬 HTTP 서버를 띄우고
+# curl 로 200 을 받아 "브라우저로 확인했다"고 처리했는데, 그건 파일이 서빙된다는 뜻일
+# 뿐 글자가 잘렸는지 겹쳤는지와 무관하다. 실제로 그 두 가지는 사람이 열어 봐야 잡혔다.
+#
+# 여기서 잡는 것: 캔버스 폭, 배경 rect, 글자 크기, 박스 수, 글자가 캔버스를 넘어가는지.
+# 겹침은 잡지 못한다. 그건 사람이 본다.
+
+VIEWBOX = re.compile(r'viewBox\s*=\s*"([\d.\s-]+)"')
+SVG_RECT = re.compile(r"<rect\b[^>]*>")
+SVG_TEXT = re.compile(r'<text\b([^>]*)>(.*?)</text>', re.DOTALL)
+ATTR = re.compile(r'(\w[\w-]*)\s*=\s*"([^"]*)"')
+TAG_INSIDE = re.compile(r"<[^>]+>")
+
+MIN_FONT_SIZE = 13.0
+MAX_BOXES = 12
+DEFAULT_FONT_SIZE = 16.0
+# 한글은 글자폭이 글자크기와 거의 같고 영문·숫자는 그 절반쯤이다. 대략만 잡으면 된다.
+WIDE_CHAR = re.compile(r"[가-힣ㄱ-ㅎㅏ-ㅣ一-龥]")
+
+
+def text_width(content: str, font_size: float) -> float:
+    wide = len(WIDE_CHAR.findall(content))
+    return wide * font_size + (len(content) - wide) * font_size * 0.55
+
+
+def check_svg(path: Path) -> list[str]:
+    svg = path.read_text(encoding="utf-8")
+    problems: list[str] = []
+
+    box = VIEWBOX.search(svg)
+    if not box:
+        return ["viewBox 가 없다"]
+    numbers = [float(n) for n in box.group(1).split()]
+    if len(numbers) != 4:
+        return [f"viewBox 값이 4개가 아니다: {box.group(1)}"]
+    width, height = numbers[2], numbers[3]
+    if not 700 <= width <= 1000:
+        problems.append(f"캔버스 폭 {width:.0f} — 880 안팎을 권한다 (§4)")
+
+    rects = SVG_RECT.findall(svg)
+    # x·y 를 생략하면 0 이 기본값이다. 캔버스를 거의 덮는 rect 를 배경으로 본다.
+    background = []
+    for rect in rects:
+        values = dict(ATTR.findall(rect))
+        if (float(values.get("x", 0)) <= 1 and float(values.get("y", 0)) <= 1
+                and float(values.get("width", 0)) >= width * 0.9):
+            background.append(rect)
+    if not background:
+        problems.append("배경 rect 가 없다 — 다크 모드에서 읽히지 않는다 (§4)")
+    if len(rects) - len(background) > MAX_BOXES:
+        problems.append(f"박스 {len(rects) - len(background)}개 — {MAX_BOXES}개를 넘겼다 (§4)")
+
+    for attrs, inner in SVG_TEXT.findall(svg):
+        values = dict(ATTR.findall(attrs))
+        content = TAG_INSIDE.sub("", inner).strip()
+        if not content:
+            continue
+        size = float(values.get("font-size", DEFAULT_FONT_SIZE))
+        if size < MIN_FONT_SIZE:
+            problems.append(f'글자 크기 {size}px — {MIN_FONT_SIZE}px 이상 (§4): "{content[:24]}"')
+        span = text_width(content, size)
+        # text-anchor 에 따라 x 가 왼쪽 끝이 아닐 수 있다.
+        anchor = values.get("text-anchor", "start")
+        origin = float(values.get("x", 0))
+        start = origin - span / 2 if anchor == "middle" else (
+            origin - span if anchor == "end" else origin)
+        end = start + span
+        if end > width:
+            problems.append(
+                f'글자가 캔버스를 {end - width:.0f}px 넘어간다: "{content[:24]}"'
+            )
+    return problems
+
+
+def cmd_check_svg(args: argparse.Namespace) -> int:
+    targets = [Path(args.target)] if args.target else sorted(POSTS_DIR.rglob("fig/*.svg"))
+    bad = 0
+    for path in targets:
+        problems = check_svg(path)
+        label = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
+        if problems:
+            bad += 1
+            print(f"[NG] {label}")
+            for line in problems:
+                print(f"     - {line}")
+        elif args.target:
+            print(f"[OK] {label}")
+    print(f"\n도식 {len(targets)}개 · 문제 {bad}개")
+    print("겹침은 기계로 못 잡는다. 사람이 볼 때 브라우저로 연다 (§4).")
+    return 1 if bad else 0
+
+# --- 인용 링크 검사 ----------------------------------------------------------
+#
+# 두 가지를 본다.
+#   1. 링크가 살아 있는가 (상태 코드)
+#   2. §4 가 요구한 앵커가 그 페이지에 실제로 있는가
+#
+# 앵커가 틀리면 독자는 문서 맨 위로 떨어지고, 근거를 적은 의미가 사라진다.
+# 페이지 구조가 바뀌어 조용히 깨지기도 한다.
+#
+# 예전에는 셸 for 루프 + curl 로 돌렸는데 복합 명령이라 무인 회차가 멈췄다. 한 명령으로
+# 합치면서 같은 페이지는 한 번만 받고, 앵커가 없는 링크는 본문을 받지 않는다.
+
+EXTERNAL_LINK = re.compile(r"\((https?://[^)\s]+)\)")
+LINK_TIMEOUT = 20
+USER_AGENT = "tech-blog-link-check/1.0 (+https://github.com/SSongGY/tech-blog)"
+
+
+def request_url(url: str, method: str) -> tuple[int | None, str, bytes]:
+    """(상태 코드, content-type, 본문). 실패하면 코드가 None 이다."""
+    request = urllib.request.Request(
+        url, method=method, headers={"User-Agent": USER_AGENT}
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=LINK_TIMEOUT) as response:
+            body = b"" if method == "HEAD" else response.read(3_000_000)
+            return response.status, response.headers.get("Content-Type", ""), body
+    except urllib.error.HTTPError as error:
+        return error.code, error.headers.get("Content-Type", "") if error.headers else "", b""
+    except Exception as error:
+        return None, f"{type(error).__name__}: {error}", b""
+
+
+def anchor_present(body: bytes, anchor: str) -> bool:
+    text = body.decode("utf-8", errors="replace")
+    quoted = re.escape(anchor)
+    return bool(re.search(rf'(?:id|name)\s*=\s*["\']{quoted}["\']', text))
+
+
+def cmd_check_links(args: argparse.Namespace) -> int:
+    if args.post:
+        # 상대경로로 줘도 되게 절대경로로 맞춘다
+        posts = [Path(args.post).resolve() / "index.md"]
+    else:
+        posts = sorted(POSTS_DIR.rglob("index.md"))
+
+    pages: dict[str, tuple[int | None, str, bytes]] = {}
+    checked = broken = blocked = missing_anchor = 0
+
+    for post in posts:
+        text = CODE_FENCE.sub("", post.read_text(encoding="utf-8"))
+        urls = sorted(set(EXTERNAL_LINK.findall(text)))
+        if not urls:
+            continue
+        print(f"\n{post.parent.relative_to(POSTS_DIR)}")
+
+        for url in urls:
+            base, _, anchor = url.partition("#")
+            # 앵커가 있으면 본문이 필요하고, 없으면 상태 코드만 보면 된다.
+            method = "GET" if anchor else "HEAD"
+            key = f"{method} {base}"
+            if key not in pages:
+                status, content_type, body = request_url(base, method)
+                if status == 405 and method == "HEAD":  # HEAD 를 막는 서버가 있다
+                    status, content_type, body = request_url(base, "GET")
+                pages[key] = (status, content_type, body)
+            status, content_type, body = pages[key]
+            checked += 1
+
+            if status is None:
+                broken += 1
+                print(f"  [실패]     ---  {url}")
+                print(f"             {content_type}")
+                continue
+            if status in (401, 403, 429):
+                # 봇 차단·요청 제한이다. 죽은 링크와 구분한다 — iso.org 는 같은 사이트
+                # 안에서도 어떤 문서는 200, 어떤 문서는 403 을 주고 매번 달라진다.
+                blocked += 1
+                print(f"  [차단]     {status}  {url}  (봇 차단으로 보인다. 직접 열어 확인)")
+                continue
+            if status >= 400:
+                broken += 1
+                print(f"  [끊김]     {status}  {url}")
+                continue
+            if not anchor:
+                print(f"  [정상]     {status}  {url}")
+            elif "html" not in content_type.lower():
+                print(f"  [앵커생략] {status}  {url}  (HTML 이 아니라 확인 불가)")
+            elif anchor_present(body, anchor):
+                print(f"  [정상]     {status}  {url}")
+            else:
+                missing_anchor += 1
+                print(f"  [앵커없음] {status}  {url}")
+
+    print(f"\n링크 {checked}개 · 끊김 {broken}개 · 차단 {blocked}개 · 앵커 없음 {missing_anchor}개")
+    if missing_anchor:
+        print("앵커가 없으면 독자가 문서 맨 위로 떨어진다. 실제 앵커를 찾아 고친다.")
+    if broken:
+        print("끊긴 링크는 대체 출처를 찾는다. 근거가 사라졌으면 그 문장도 다시 본다.")
+    return 1 if (broken or missing_anchor) else 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="기술 블로그 운영 CLI")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -1343,6 +1644,22 @@ def main() -> int:
 
     p_runs = sub.add_parser("run-examples", help="executed 글의 예제를 전부 돌린다")
     p_runs.set_defaults(func=cmd_run_examples)
+
+    p_env = sub.add_parser("env", help="실행 환경 판별 (버전·DB 클라이언트·리눅스 도구)")
+    p_env.set_defaults(func=cmd_env)
+
+    p_recent = sub.add_parser("recent", help="최근 수정된 글과 크기")
+    p_recent.add_argument("hours", nargs="?", default="6",
+                          help="쉼표로 여러 개 (예: 6,24)")
+    p_recent.set_defaults(func=cmd_recent)
+
+    p_svg = sub.add_parser("check-svg", help="도식의 기계 검사 (폭·배경·글자·넘침)")
+    p_svg.add_argument("target", nargs="?", help="생략하면 전체")
+    p_svg.set_defaults(func=cmd_check_svg)
+
+    p_links = sub.add_parser("check-links", help="인용 링크와 앵커가 살아 있는지 확인")
+    p_links.add_argument("--post", help="글 폴더 하나만")
+    p_links.set_defaults(func=cmd_check_links)
 
     p_lint = sub.add_parser("lint", help="글 규칙 검사 (길이·도식·출처·링크·검증)")
     p_lint.add_argument("slug", nargs="?", help="생략하면 전체 검사")

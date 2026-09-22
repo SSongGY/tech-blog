@@ -12,12 +12,11 @@ description: 이번 회차의 기술 블로그 글 3편을 작성하고 커밋�
 먼저 무엇을 검증할 수 있는 환경인지 확인한다. 이후 판단이 여기에 달려 있다.
 
 ```bash
-python --version
-git --version
-for cli in tbsql sqlplus mysql psql go cargo docker; do
-  command -v "$cli" >/dev/null && echo "있음: $cli" || echo "없음: $cli"
-done
+PYTHONUTF8=1 python scripts/blog.py env
 ```
+
+**셸 `for` 루프로 직접 돌리지 않는다.** 복합 명령은 허용 규칙에 걸리지 않아
+무인 회차가 권한 프롬프트 앞에서 멈춘다. 같은 이유로 `curl`·`find -exec`·서브셸도 쓰지 않는다.
 
 해당 제품의 클라이언트가 있으면 제품 글도 `verification: executed`로 쓸 수 있다.
 없으면 `manual-only`다.
@@ -78,13 +77,17 @@ python scripts/blog.py new <id> <영문-slug>
 - **도식을 최소 1개, `fig/` 아래 SVG로 직접 작성한다.**
   - 먼저 **공식 문서에서 구조 근거를 찾는다.** 파일 포맷 명세, 매뉴얼, RFC, 논문 순으로 우선한다
   - 근거를 못 찾은 부분은 그리지 않는다. 내부 구조를 추측으로 그리지 않는다
-  - **도식 바로 아래에 근거 문서를 인용한다.** 섹션 번호나 앵커까지 적는다
-  - 브라우저가 있으면 아래 명령으로 열어 글자 잘림·겹침을 눈으로 확인한다
+  - **도식 바로 아래에 `> **출처**:` 줄을 넣는다.** 섹션 번호나 앵커까지 적는다.
+    앵커가 실제로 있는지는 `blog.py check-links`가 확인한다
+  - **기계 검사를 돌린다.** 캔버스 폭·배경 rect·글자 크기·박스 수·글자 넘침을 본다
+
     ```bash
-    python -m http.server 8771 --bind 127.0.0.1
+    PYTHONUTF8=1 python scripts/blog.py check-svg posts/<...>/fig/<이름>.svg
     ```
-  - 브라우저가 없으면 좌표와 텍스트 길이를 계산해 경계 침범·겹침을 검산한다.
-    한글 약 13px/자(font-size 13 기준), 영문·숫자 약 7px/자로 잡는다
+
+    HTTP 서버를 띄우고 `curl`로 200을 받는 방식은 쓰지 않는다. 그건 파일이 서빙된다는
+    뜻일 뿐, 글자가 잘렸는지와 무관하다. 검사용 HTML을 저장소에 만들지도 않는다
+  - **겹침은 기계로 못 잡는다.** 사람이 볼 때 `file://`로 직접 열어 확인한다
   - **도식이 나타내는 의미가 맞는지 반드시 검산한다**
 - `code/README.md`에 실행 방법과 바꿔볼 값을 적는다
 - 본문 길이를 트랙 기준에 맞춘다 (`lint`가 트랙별로 센다)

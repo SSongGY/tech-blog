@@ -30,13 +30,12 @@ description: D:\workspace\claude\tech_blog에서 회차당 3편씩(오전 7시·
 이후 검증 방식이 전부 여기에 달려 있다.
 
 ```bash
-python --version
-git --version
-for cli in tbsql sqlplus mysql psql go cargo docker; do
-  command -v "$cli" >/dev/null && echo "있음: $cli" || echo "없음: $cli"
-done
-wsl -l -q 2>/dev/null && echo "WSL 사용 가능" || echo "WSL 없음"
+PYTHONUTF8=1 python scripts/blog.py env
 ```
+
+**셸 `for` 루프나 복합 명령으로 직접 확인하지 않는다.** 허용 규칙에 걸리지 않아
+무인 회차가 권한 프롬프트 앞에서 멈춘다. `curl`·`find -exec`·서브셸도 같은 이유로 쓰지 않는다.
+WSL 판별도 이 명령이 한다 — `wsl -l -q`는 미설치 상태에서도 종료 코드 0을 준다.
 
 **WSL이 있으면 리눅스 트랙 예제를 실제로 돌린다.** Git Bash에 없는 명령
 (`systemctl`, `journalctl`, `ss`, `lsof`, `iostat`, `top`, `free`, `dmesg` 등)도

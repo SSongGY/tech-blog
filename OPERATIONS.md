@@ -158,6 +158,10 @@ python scripts/blog.py exam-skip <id> --reason "…"   # 근거 부족으로 건
 python scripts/blog.py exam-status            # 기출 진행 현황
 python scripts/blog.py tasks-diff             # 스케줄 작업 사본이 실제와 같은지 대조
 python scripts/check_stuck.py                 # 멈춘 회차 찾기 (손으로 확인할 때)
+python scripts/blog.py env                    # 실행 환경 판별 (버전·DB 클라이언트·리눅스 도구)
+python scripts/blog.py recent 6,24            # 최근 수정된 글과 크기
+python scripts/blog.py check-svg              # 도식 기계 검사 (폭·배경·글자·넘침)
+python scripts/blog.py check-links            # 인용 링크와 앵커가 살아 있는지
 python scripts/blog.py run-example <글 폴더>  # 예제를 돌려 code/output.txt 에 기록
 python scripts/blog.py run-examples           # executed 글의 예제를 전부 다시 돌린다
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
