@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" role="img" aria-label="CMMI 성숙도 레벨 0에서 5까지의 계단과 각 단계의 관리 범위">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf9"/>
+
+  <text x="440" y="30" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1f2933">CMMI 성숙도 레벨 — 6단계(ML0~ML5)</text>
+
+  <!-- 계단: 아래에서 위로 ML0 → ML5 -->
+  <!-- 각 단계 박스: 왼쪽 들여쓰기가 늘어나며 위로 쌓인다 -->
+
+  <rect x="60" y="342" width="300" height="46" rx="4" fill="#f5f7fa" stroke="#9d0208" stroke-width="1.4"/>
+  <text x="76" y="362" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208">ML0 미완성 (Incomplete)</text>
+  <text x="76" y="380" font-family="sans-serif" font-size="13" fill="#52606d">일이 끝날 수도, 안 끝날 수도 있다</text>
+
+  <rect x="120" y="288" width="300" height="46" rx="4" fill="#f5f7fa" stroke="#b45309" stroke-width="1.4"/>
+  <text x="136" y="308" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">ML1 초기 (Initial)</text>
+  <text x="136" y="326" font-family="sans-serif" font-size="13" fill="#52606d">일은 끝나지만 자주 늦는다</text>
+
+  <rect x="180" y="234" width="320" height="46" rx="4" fill="#ffffff" stroke="#3e4c59" stroke-width="1.4"/>
+  <text x="196" y="254" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1f2933">ML2 관리됨 (Managed)</text>
+  <text x="196" y="272" font-family="sans-serif" font-size="13" fill="#52606d">프로젝트 단위로 계획·수행·측정한다</text>
+
+  <rect x="240" y="180" width="340" height="46" rx="4" fill="#ffffff" stroke="#3e4c59" stroke-width="1.4"/>
+  <text x="256" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1f2933">ML3 정의됨 (Defined)</text>
+  <text x="256" y="218" font-family="sans-serif" font-size="13" fill="#52606d">조직 표준이 기준이 된다. 사후 대응에서 사전 대응으로</text>
+
+  <rect x="300" y="126" width="360" height="46" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="316" y="146" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">ML4 정량적 관리 (Quantitatively Managed)</text>
+  <text x="316" y="164" font-family="sans-serif" font-size="13" fill="#52606d">데이터로 측정하고 통제한다</text>
+
+  <rect x="360" y="72" width="360" height="46" rx="4" fill="#e7f3ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="376" y="92" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">ML5 최적화 (Optimizing)</text>
+  <text x="376" y="110" font-family="sans-serif" font-size="13" fill="#52606d">안정적이면서 유연하다. 지속적 개선에 집중한다</text>
+
+  <!-- 오른쪽 축: 관리 단위가 넓어지는 방향 -->
+  <line x1="770" y1="388" x2="770" y2="76" stroke="#7b8794" stroke-width="1.2"/>
+  <path d="M 766 80 L 770 68 L 774 80 z" fill="#7b8794"/>
+  <text x="786" y="372" font-family="sans-serif" font-size="13" fill="#52606d">관리 없음</text>
+  <text x="786" y="262" font-family="sans-serif" font-size="13" fill="#52606d">프로젝트</text>
+  <text x="786" y="208" font-family="sans-serif" font-size="13" fill="#52606d">조직</text>
+  <text x="786" y="100" font-family="sans-serif" font-size="13" fill="#52606d">개선 활동</text>
+  <text x="786" y="58" font-family="sans-serif" font-size="13" font-weight="bold" fill="#3e4c59">관리 단위</text>
+
+  <text x="60" y="410" font-family="sans-serif" font-size="13" fill="#52606d">ML2~ML5는 각 단계에 정해진 프랙티스 영역 집합을 모두 만족해야 부여된다. 건너뛸 수 없다.</text>
+</svg>
