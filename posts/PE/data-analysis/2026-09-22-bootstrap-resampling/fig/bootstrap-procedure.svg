@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1b2a1f">부트스트랩 재표집 — 복제값 분포를 만들고 세 가지로 읽는다</text>
+
+  <!-- 1. 원 표본 -->
+  <rect x="24" y="72" width="176" height="76" rx="6" fill="#eef4ef" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="112" y="100" font-size="14" font-weight="bold" fill="#1b2a1f" text-anchor="middle">원 표본 x</text>
+  <text x="112" y="122" font-size="13" fill="#3c4a40" text-anchor="middle">(x₁, x₂, …, xₙ)</text>
+  <text x="112" y="140" font-size="13" fill="#3c4a40" text-anchor="middle">θ̂ = t(x)</text>
+
+  <line x1="200" y1="110" x2="248" y2="110" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#a1)"/>
+  <text x="224" y="64" font-size="13" fill="#2d6a4f" text-anchor="middle">복원추출</text>
+
+  <!-- 2. 부트스트랩 표본 -->
+  <rect x="252" y="72" width="182" height="76" rx="6" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <text x="343" y="98" font-size="14" font-weight="bold" fill="#1b2a1f" text-anchor="middle">부트스트랩 표본</text>
+  <text x="343" y="120" font-size="13" fill="#3c4a40" text-anchor="middle">x*₁, x*₂, …, x*_B</text>
+  <text x="343" y="138" font-size="13" fill="#3c4a40" text-anchor="middle">각각 n개, 중복 허용</text>
+
+  <line x1="434" y1="110" x2="482" y2="110" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#a1)"/>
+  <text x="458" y="64" font-size="13" fill="#2d6a4f" text-anchor="middle">같은 t(·)</text>
+
+  <!-- 3. 복제값 -->
+  <rect x="486" y="72" width="164" height="76" rx="6" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <text x="568" y="98" font-size="14" font-weight="bold" fill="#1b2a1f" text-anchor="middle">복제값 B개</text>
+  <text x="568" y="120" font-size="13" fill="#3c4a40" text-anchor="middle">θ̂*ᵢ = t(x*ᵢ)</text>
+  <text x="568" y="138" font-size="13" fill="#3c4a40" text-anchor="middle">i = 1 … B</text>
+
+  <line x1="650" y1="110" x2="698" y2="110" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#a1)"/>
+
+  <!-- 4. 복제값 분포 -->
+  <rect x="702" y="72" width="154" height="76" rx="6" fill="#eef4ef" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="779" y="98" font-size="14" font-weight="bold" fill="#1b2a1f" text-anchor="middle">복제값 분포 Ĝ</text>
+  <rect x="722" y="116" width="14" height="10" fill="#9bb7a3"/>
+  <rect x="740" y="108" width="14" height="18" fill="#7aa285"/>
+  <rect x="758" y="102" width="14" height="24" fill="#2d6a4f"/>
+  <rect x="776" y="110" width="14" height="16" fill="#7aa285"/>
+  <rect x="794" y="116" width="14" height="10" fill="#9bb7a3"/>
+  <rect x="812" y="120" width="14" height="6" fill="#c3d6c8"/>
+  <text x="779" y="142" font-size="13" fill="#3c4a40" text-anchor="middle">치우침이 여기 남는다</text>
+
+  <!-- 분기 -->
+  <line x1="779" y1="148" x2="779" y2="188" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="150" y1="188" x2="779" y2="188" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="150" y1="188" x2="150" y2="228" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="450" y1="188" x2="450" y2="228" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="740" y1="188" x2="740" y2="228" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- 읽는 방법 3가지 -->
+  <rect x="24" y="232" width="252" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="150" y="258" font-size="14" font-weight="bold" fill="#1b2a1f" text-anchor="middle">① 표준오차</text>
+  <text x="150" y="282" font-size="13" fill="#3c4a40" text-anchor="middle">복제값의 표준편차</text>
+  <text x="150" y="304" font-size="13" fill="#3c4a40" text-anchor="middle">B = 50 ~ 200 이면 자리를 잡는다</text>
+  <text x="150" y="326" font-size="13" fill="#3c4a40" text-anchor="middle">구간은 θ̂ ± z·σ̂ (1차 정확)</text>
+
+  <rect x="300" y="232" width="252" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="426" y="258" font-size="14" font-weight="bold" fill="#1b2a1f" text-anchor="middle">② 백분위수 구간</text>
+  <text x="426" y="282" font-size="13" fill="#3c4a40" text-anchor="middle">Ĝ⁻¹(α), Ĝ⁻¹(1−α) 를 그대로</text>
+  <text x="426" y="304" font-size="13" fill="#3c4a40" text-anchor="middle">B ≥ 1,000 이 필요하다</text>
+  <text x="426" y="326" font-size="13" fill="#3c4a40" text-anchor="middle">1차 정확 · 변환에 불변</text>
+
+  <rect x="576" y="232" width="280" height="104" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.8"/>
+  <text x="716" y="258" font-size="14" font-weight="bold" fill="#7c3d06" text-anchor="middle">③ BCa 구간</text>
+  <text x="716" y="282" font-size="13" fill="#7c3d06" text-anchor="middle">같은 Ĝ 에서 읽되 자리를 옮긴다</text>
+  <text x="716" y="304" font-size="13" fill="#7c3d06" text-anchor="middle">z₀ (편향) · a (가속도) 로 보정</text>
+  <text x="716" y="326" font-size="13" fill="#7c3d06" text-anchor="middle">2차 정확</text>
+
+  <!-- z0, a 의 출처 -->
+  <line x1="112" y1="148" x2="112" y2="382" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <line x1="112" y1="382" x2="700" y2="382" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <line x1="700" y1="382" x2="700" y2="342" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a2)"/>
+  <text x="404" y="404" font-size="13" fill="#b45309" text-anchor="middle">가속도 a 는 원 표본을 하나씩 뺀 잭나이프 n회에서 나온다</text>
+
+  <line x1="826" y1="148" x2="826" y2="224" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#a2)"/>
+  <text x="820" y="214" font-size="13" fill="#b45309" text-anchor="end">z₀ 는 Ĝ 에서</text>
+
+  <text x="24" y="444" font-size="13" fill="#4a5a4e">1차 정확 = 포함확률 오차 O(1/√n) · 2차 정확 = O(1/n). 셋 다 같은 복제값에서 나오며, 다른 것은 끝점을 어디서 읽느냐뿐이다.</text>
+</svg>
