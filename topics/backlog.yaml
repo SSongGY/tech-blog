@@ -2457,3 +2457,223 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-013
+    title: "JOIN — 두 테이블을 잇는 기준"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, join, sql, basics]
+    difficulty: 입문
+    angle: "INNER와 LEFT의 차이를 행 수로 확인하고, ON과 WHERE에 조건을 두는 자리가 결과를 어떻게 바꾸는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-014
+    title: "LEFT JOIN 뒤 WHERE가 INNER JOIN이 되는 순간"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, join, null, basics]
+    difficulty: 입문
+    angle: "바깥 조인으로 남긴 NULL 행을 WHERE가 다시 걸러내는 흔한 실수"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-015
+    title: "서브쿼리 세 자리 — SELECT·FROM·WHERE"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, subquery, basics]
+    difficulty: 입문
+    angle: "같은 결과를 세 자리에서 각각 써 보고 언제 무엇이 읽기 쉬운지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-016
+    title: "IN과 EXISTS — 무엇이 다른가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, subquery, in-exists, basics]
+    difficulty: 입문
+    angle: "NULL이 섞였을 때 NOT IN이 빈 결과를 내는 이유를 실제로 재현"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-017
+    title: "HAVING과 WHERE — 거르는 시점이 다르다"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, group-by, having, basics]
+    difficulty: 입문
+    angle: "집계 전후로 조건이 갈리는 것을 같은 질의 두 벌로"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-018
+    title: "COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, aggregate, null, basics]
+    difficulty: 입문
+    angle: "NULL을 세느냐 마느냐. COUNT(DISTINCT)까지 셋을 나란히"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-019
+    title: "NULL 비교 — = NULL이 안 되는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, null, three-valued-logic, basics]
+    difficulty: 입문
+    angle: "삼값 논리를 진리표로 보이고 IS NULL·COALESCE·IFNULL로 다루는 법"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-020
+    title: "CASE WHEN — 조건에 따라 값 바꾸기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, case, sql, basics]
+    difficulty: 입문
+    angle: "단순 CASE와 검색 CASE, 그리고 집계 안에 넣어 가로로 펴는 방법"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-021
+    title: "INSERT의 세 가지 형태"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, insert, dml, basics]
+    difficulty: 입문
+    angle: "값 나열·SELECT 결과 삽입·여러 행 한 번에. 컬럼 목록을 생략하면 생기는 일"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-022
+    title: "UPDATE와 DELETE — 조건을 빠뜨리면"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, update, delete, dml, basics]
+    difficulty: 입문
+    angle: "WHERE 없는 UPDATE가 무엇을 하는지 직접 보고, 트랜잭션으로 되돌리는 법"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-023
+    title: "트랜잭션 — COMMIT과 ROLLBACK"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, transaction, dml, basics]
+    difficulty: 입문
+    angle: "묶어야 하는 두 문장 사이에서 실패했을 때 무엇이 남는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-024
+    title: "기본 키와 UNIQUE 제약"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, constraint, key, basics]
+    difficulty: 입문
+    angle: "둘 다 중복을 막는데 무엇이 다른지. NULL 허용 여부와 개수 제한"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-025
+    title: "외래 키 — 참조 무결성과 ON DELETE"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, constraint, foreign-key, basics]
+    difficulty: 입문
+    angle: "SQLite는 기본이 꺼져 있다. 켜고 끄고를 비교해 무엇이 막히는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-026
+    title: "NOT NULL과 DEFAULT — 값이 없을 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, constraint, default, basics]
+    difficulty: 입문
+    angle: "빈 문자열과 NULL을 구분하고, DEFAULT가 적용되는 시점"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-027
+    title: "자료형 — SQLite의 동적 타입"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, datatype, sqlite, basics]
+    difficulty: 입문
+    angle: "선언한 타입과 실제 저장되는 타입이 다를 수 있다는 것을 typeof()로 확인"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-028
+    title: "날짜와 시간 다루기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, datetime, function, basics]
+    difficulty: 입문
+    angle: "문자열로 저장된 날짜를 비교·계산하는 법과 형식이 어긋나면 생기는 일"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-029
+    title: "문자열 함수 — 자르기, 잇기, 바꾸기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, string, function, basics]
+    difficulty: 입문
+    angle: "SUBSTR·REPLACE·TRIM과 || 연결. NULL이 하나만 섞여도 전체가 NULL이 되는 것"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-030
+    title: "UNION과 UNION ALL — 중복을 어떻게 할까"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, set-operation, basics]
+    difficulty: 입문
+    angle: "정렬·중복 제거 비용의 차이와 INTERSECT·EXCEPT까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-031
+    title: "VIEW — 질의에 이름 붙이기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, view, sql, basics]
+    difficulty: 입문
+    angle: "반복되는 질의를 뷰로 묶을 때 얻는 것과 잃는 것"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-032
+    title: "인덱스 만들기 — CREATE INDEX 기본"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, ddl, basics]
+    difficulty: 입문
+    angle: "언제 만들고 언제 만들지 않는가. 쓰기 비용과 저장 공간을 실제로 재서"
+    code: python
+    origin: manual
+    status: todo
