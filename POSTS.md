@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **30편** · 갱신 2026-09-22
+총 **32편** · 갱신 2026-09-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -55,10 +55,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 4편
+## 기출문제 (exam) — 6편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-22 | [기출문제 — ISO/IEC 25010 제품 품질 모델의 주특성과 부특성](posts/PE/exam/2026-09-22-iso-iec-25010-product-quality-model/index.md) | 중급 | ISO/IEC 25010:2023 (2판, 2023-11), ISO/IEC 25010:2011 (1판) | 문서 근거 |
+| 2026-09-22 | [기출문제 — 어휘 검색과 의미 검색을 결합한 하이브리드 검색](posts/PE/exam/2026-09-22-hybrid-search-lexical-vector/index.md) | 중급 | Cormack et al., SIGIR 2009 (RRF), Karpukhin et al., EMNLP 2020 (DPR), Bruch et al., ACM TOIS 2023 | 문서 근거 |
 | 2026-09-21 | [기출문제 — PMC와 PMO 비교](posts/PE/exam/2026-09-21-pmc-pmo/index.md) | 중급 | 전자정부법 제64조의2, 전자정부사업관리 위탁에 관한 규정 (2024.6.27 일부개정), PMBOK Guide 5th Edition (2013) | 문서 근거 |
 | 2026-09-21 | [기출문제 — 다크 팩토리(Dark Factory)](posts/PE/exam/2026-09-21-dark-factory/index.md) | 중급 | IEC 62264-1:2013, ISO 23247-1:2021, ISO 10218-1:2025 | 문서 근거 |
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |

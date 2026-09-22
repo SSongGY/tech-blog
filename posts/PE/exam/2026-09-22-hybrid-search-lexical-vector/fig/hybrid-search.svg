@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1b1b1b">하이브리드 검색 — 두 검색 경로와 융합 계층</text>
+
+  <!-- 질의 -->
+  <rect x="30" y="180" width="118" height="54" rx="6" fill="#e9eef3" stroke="#44576a" stroke-width="1.5"/>
+  <text x="89" y="203" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">질의</text>
+  <text x="89" y="222" font-size="13" text-anchor="middle" fill="#44576a">q</text>
+
+  <path d="M 148 195 L 190 122" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+  <path d="M 148 219 L 190 292" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#44576a"/>
+    </marker>
+  </defs>
+
+  <!-- 어휘 경로 -->
+  <rect x="192" y="72" width="196" height="76" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="290" y="96" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">어휘 검색 경로</text>
+  <text x="290" y="116" font-size="13" text-anchor="middle" fill="#333">역색인 + BM25 점수</text>
+  <text x="290" y="136" font-size="13" text-anchor="middle" fill="#333">용어가 겹칠 때 강하다</text>
+
+  <!-- 의미 경로 -->
+  <rect x="192" y="266" width="196" height="76" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="290" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">의미 검색 경로</text>
+  <text x="290" y="310" font-size="13" text-anchor="middle" fill="#333">임베딩 + 벡터 색인(ANN)</text>
+  <text x="290" y="330" font-size="13" text-anchor="middle" fill="#333">표현이 달라도 뜻으로 찾는다</text>
+
+  <path d="M 388 110 L 432 110" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+  <path d="M 388 304 L 432 304" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+  <!-- 후보 목록 -->
+  <rect x="434" y="82" width="126" height="56" rx="6" fill="#f4f1e8" stroke="#b45309" stroke-width="1.5"/>
+  <text x="497" y="105" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">상위 k 순위 목록</text>
+  <text x="497" y="124" font-size="13" text-anchor="middle" fill="#333">r₁(d)</text>
+
+  <rect x="434" y="276" width="126" height="56" rx="6" fill="#f4f1e8" stroke="#b45309" stroke-width="1.5"/>
+  <text x="497" y="299" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">상위 k 순위 목록</text>
+  <text x="497" y="318" font-size="13" text-anchor="middle" fill="#333">r₂(d)</text>
+
+  <path d="M 560 110 L 604 178" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+  <path d="M 560 304 L 604 236" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+
+  <!-- 융합 -->
+  <rect x="606" y="150" width="238" height="114" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="2"/>
+  <text x="725" y="174" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">융합 계층</text>
+  <text x="725" y="196" font-size="13" text-anchor="middle" fill="#333">순위 기반 — RRF</text>
+  <text x="725" y="215" font-size="13" text-anchor="middle" fill="#44576a">Σ 1 / (k + r(d))</text>
+  <text x="725" y="237" font-size="13" text-anchor="middle" fill="#333">점수 기반 — 볼록 결합</text>
+  <text x="725" y="256" font-size="13" text-anchor="middle" fill="#44576a">정규화 후 가중합</text>
+
+  <path d="M 725 264 L 725 300" stroke="#44576a" stroke-width="1.5" fill="none" marker-end="url(#ah)"/>
+  <rect x="634" y="302" width="182" height="44" rx="6" fill="#e9eef3" stroke="#44576a" stroke-width="1.5"/>
+  <text x="725" y="330" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">최종 순위</text>
+
+  <rect x="30" y="368" width="814" height="44" rx="6" fill="#f2f4f0" stroke="#7a8a7a" stroke-width="1"/>
+  <text x="46" y="389" font-size="13" fill="#9d0208">주의 — 두 경로의 점수는 척도가 다르다. 정규화 없이 더하지 않는다.</text>
+  <text x="46" y="406" font-size="13" fill="#333">상위 k 밖으로 밀린 문서는 융합이 살려내지 못하므로, k가 재현율의 상한이 된다.</text>
+</svg>

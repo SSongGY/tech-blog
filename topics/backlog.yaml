@@ -2677,3 +2677,36 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: pe-088
+    title: "SQuaRE 표준군 구조와 품질 모델의 분화"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "ISO/IEC 25000~25099가 품질 관리·모델·측정·요구·평가 5개 부문으로 나뉜 구조와, 25010 2판에서 사용 품질(25019)·모델 개요(25002)가 분리된 이유. 25010 답안에서 판을 밝혀야 하는 근거가 여기서 나온다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-089
+    title: "BM25 — 확률적 적합성 프레임워크에서 나온 순위 함수"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "TF 포화(k1)와 문서 길이 정규화(b)가 왜 필요한지, TF-IDF와 무엇이 다른지. 하이브리드 검색 답안에서 어휘 경로를 한 줄로 설명하려면 이 함수의 성질이 먼저 서야 한다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-090
+    title: "근사 최근접 이웃 탐색과 HNSW 색인"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "정확 최근접 탐색이 왜 안 되는지, 계층 그래프로 후보를 좁히는 구조와 재현율·지연의 절충. 의미 검색 경로가 상위 k만 돌려주는 이유"
+    code: none
+    origin: exam
+    status: todo

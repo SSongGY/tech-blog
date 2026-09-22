@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#1b1b1b">ISO/IEC 25010:2023 제품 품질 모델 — 주특성 9, 부특성 40</text>
+
+  <rect x="24" y="52" width="832" height="40" rx="6" fill="#e9eef3" stroke="#44576a" stroke-width="1.5"/>
+  <text x="440" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">ICT 제품 · 소프트웨어 제품의 품질</text>
+  <text x="440" y="86" font-size="13" text-anchor="middle" fill="#44576a">요구 명세 · 측정 · 평가의 참조 모델 (2판, 2023-11)</text>
+
+  <path d="M 440 92 L 440 112" stroke="#44576a" stroke-width="1.5" fill="none"/>
+  <path d="M 105 112 L 775 112" stroke="#44576a" stroke-width="1.5" fill="none"/>
+  <path d="M 105 112 L 105 130 M 273 112 L 273 130 M 440 112 L 440 130 M 607 112 L 607 130 M 775 112 L 775 130" stroke="#44576a" stroke-width="1.5" fill="none"/>
+  <path d="M 189 250 L 189 268 M 356 250 L 356 268 M 524 250 L 524 268 M 691 250 L 691 268" stroke="#44576a" stroke-width="1.5" fill="none"/>
+  <path d="M 189 250 L 691 250" stroke="#44576a" stroke-width="1.5" fill="none"/>
+  <path d="M 440 250 L 440 236" stroke="#44576a" stroke-width="1.5" fill="none"/>
+
+  <!-- 1열 -->
+  <g>
+    <rect x="30" y="130" width="150" height="106" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="1.5"/>
+    <text x="105" y="152" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">기능 적합성 (3)</text>
+    <text x="105" y="174" font-size="13" text-anchor="middle" fill="#333">기능 완전성</text>
+    <text x="105" y="193" font-size="13" text-anchor="middle" fill="#333">기능 정확성</text>
+    <text x="105" y="212" font-size="13" text-anchor="middle" fill="#333">기능 적절성</text>
+  </g>
+  <g>
+    <rect x="198" y="130" width="150" height="106" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="1.5"/>
+    <text x="273" y="152" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">성능 효율성 (3)</text>
+    <text x="273" y="174" font-size="13" text-anchor="middle" fill="#333">시간 반응성</text>
+    <text x="273" y="193" font-size="13" text-anchor="middle" fill="#333">자원 사용률</text>
+    <text x="273" y="212" font-size="13" text-anchor="middle" fill="#333">용량</text>
+  </g>
+  <g>
+    <rect x="365" y="130" width="150" height="106" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="1.5"/>
+    <text x="440" y="152" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">호환성 (2)</text>
+    <text x="440" y="174" font-size="13" text-anchor="middle" fill="#333">공존성</text>
+    <text x="440" y="193" font-size="13" text-anchor="middle" fill="#333">상호운용성</text>
+  </g>
+  <g>
+    <rect x="532" y="130" width="150" height="106" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+    <text x="607" y="152" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">상호작용 능력 (8)</text>
+    <text x="607" y="174" font-size="13" text-anchor="middle" fill="#333">적절성 식별 가능성</text>
+    <text x="607" y="193" font-size="13" text-anchor="middle" fill="#333">학습성 · 운용성</text>
+    <text x="607" y="212" font-size="13" text-anchor="middle" fill="#333">사용자 오류 방지 등</text>
+    <text x="607" y="229" font-size="13" text-anchor="middle" fill="#b45309">← 사용성 개명</text>
+  </g>
+  <g>
+    <rect x="700" y="130" width="150" height="106" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="1.5"/>
+    <text x="775" y="152" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">신뢰성 (4)</text>
+    <text x="775" y="174" font-size="13" text-anchor="middle" fill="#333">무결함성</text>
+    <text x="775" y="193" font-size="13" text-anchor="middle" fill="#333">가용성 · 결함 허용성</text>
+    <text x="775" y="212" font-size="13" text-anchor="middle" fill="#333">복구성</text>
+  </g>
+
+  <!-- 2열 -->
+  <g>
+    <rect x="114" y="268" width="150" height="106" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="1.5"/>
+    <text x="189" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">보안성 (6)</text>
+    <text x="189" y="312" font-size="13" text-anchor="middle" fill="#333">기밀성 · 무결성</text>
+    <text x="189" y="331" font-size="13" text-anchor="middle" fill="#333">부인 방지 · 인증성</text>
+    <text x="189" y="350" font-size="13" text-anchor="middle" fill="#333">책임 추적성 · 저항성</text>
+  </g>
+  <g>
+    <rect x="281" y="268" width="150" height="106" rx="6" fill="#ffffff" stroke="#44576a" stroke-width="1.5"/>
+    <text x="356" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">유지보수성 (5)</text>
+    <text x="356" y="312" font-size="13" text-anchor="middle" fill="#333">모듈성 · 재사용성</text>
+    <text x="356" y="331" font-size="13" text-anchor="middle" fill="#333">분석성 · 수정 용이성</text>
+    <text x="356" y="350" font-size="13" text-anchor="middle" fill="#333">시험 용이성</text>
+  </g>
+  <g>
+    <rect x="449" y="268" width="150" height="106" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+    <text x="524" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">유연성 (4)</text>
+    <text x="524" y="312" font-size="13" text-anchor="middle" fill="#333">적응성 · 확장성</text>
+    <text x="524" y="331" font-size="13" text-anchor="middle" fill="#333">설치 용이성</text>
+    <text x="524" y="350" font-size="13" text-anchor="middle" fill="#333">대체 가능성</text>
+    <text x="524" y="367" font-size="13" text-anchor="middle" fill="#b45309">← 이식성 개명</text>
+  </g>
+  <g>
+    <rect x="616" y="268" width="150" height="106" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="691" y="290" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">안전성 (5)</text>
+    <text x="691" y="312" font-size="13" text-anchor="middle" fill="#333">운용 제약 · 위험 식별</text>
+    <text x="691" y="331" font-size="13" text-anchor="middle" fill="#333">안전 실패 · 위험 경고</text>
+    <text x="691" y="350" font-size="13" text-anchor="middle" fill="#333">안전한 통합</text>
+    <text x="691" y="367" font-size="13" text-anchor="middle" fill="#2d6a4f">← 2판 신규</text>
+  </g>
+
+  <rect x="30" y="398" width="820" height="52" rx="6" fill="#f2f4f0" stroke="#7a8a7a" stroke-width="1"/>
+  <text x="46" y="419" font-size="13" fill="#2d6a4f">■ 2판 신규</text>
+  <text x="140" y="419" font-size="13" fill="#b45309">■ 1판에서 이름이 바뀐 주특성</text>
+  <text x="46" y="440" font-size="13" fill="#333">사용 품질 모델은 ISO/IEC 25019로, 품질 모델 개요·사용법은 ISO/IEC 25002로 분리되었다</text>
+</svg>
