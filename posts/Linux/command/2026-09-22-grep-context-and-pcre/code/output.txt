@@ -2,7 +2,7 @@
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
 # 명령      : bash grep_context.sh
-# 수행 시각 : 2026-09-22 13:06 (대한민국 표준시)
+# 수행 시각 : 2026-09-22 13:15 (대한민국 표준시)
 # 환경      : Python 3.13.5 / Windows 11
 # 종료 코드 : 0
 
@@ -128,3 +128,63 @@ $ grep -q FATAL app.log
 
 $ grep -q ERROR app.log
 (종료 코드 0)
+
+==============================================================
+## 12. 여러 파일과 재귀 — 파일 이름이 언제 붙는가
+
+$ grep -r ERROR grep_demo_tree
+grep_demo_tree/patterns.txt:ERROR
+grep_demo_tree/svc/http.log:2026-09-22T09:00:12 ERROR http  upstream returned 503
+grep_demo_tree/svc/pool.log:2026-09-22T09:00:05 ERROR pool  acquire failed: timeout
+
+$ grep -r -l ERROR grep_demo_tree
+grep_demo_tree/patterns.txt
+grep_demo_tree/svc/http.log
+grep_demo_tree/svc/pool.log
+
+$ grep -r -L ERROR grep_demo_tree
+grep_demo_tree/etc/app.conf
+grep_demo_tree/svc/quiet.log
+
+$ grep -r -h ERROR grep_demo_tree
+ERROR
+2026-09-22T09:00:12 ERROR http  upstream returned 503
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout
+
+$ grep -H ERROR grep_demo_tree/svc/pool.log
+grep_demo_tree/svc/pool.log:2026-09-22T09:00:05 ERROR pool  acquire failed: timeout
+
+$ grep -r '--include=*.conf' timeout grep_demo_tree
+grep_demo_tree/etc/app.conf:timeout = 5000
+
+$ grep -r '--exclude=*.log' timeout grep_demo_tree
+grep_demo_tree/etc/app.conf:timeout = 5000
+
+==============================================================
+## 13. 패턴 여러 개, 줄 전체, 개수 제한
+
+$ grep -e ERROR -e WARN app.log
+2026-09-22T09:00:03 WARN  pool  wait time above threshold wait=812ms
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+2026-09-22T09:00:12 ERROR http  upstream returned 503 for /api/stock
+
+$ grep -f grep_demo_tree/patterns.txt app.log
+2026-09-22T09:00:03 WARN  pool  wait time above threshold wait=812ms
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+2026-09-22T09:00:12 ERROR http  upstream returned 503 for /api/stock
+
+$ grep -c -m 1 INFO app.log
+1
+
+$ grep -x ERROR app.log
+(종료 코드 1)
+
+$ grep -c -x '.*ERROR.*' app.log
+2
+
+$ grep ERROR 'grep_demo_tree/없는파일.log'
+grep: grep_demo_tree/없는파일.log: No such file or directory
+(종료 코드 2)
+
+$ grep -s ERROR 'grep_demo_tree/없는파일.log'
+(종료 코드 2)

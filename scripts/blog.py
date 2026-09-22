@@ -738,13 +738,14 @@ def lint_related(meta: dict, path: Path, text: str) -> list[str]:
     return []
 
 
-def lint_post(path: Path) -> list[str]:
+def lint_post(path: Path) -> tuple[list[str], list[str]]:
     text = path.read_text(encoding="utf-8")
-    problems: list[str] = []
+    problems: list[str] = []   # 고쳐야 하는 것
+    notes: list[str] = []      # 알리기만 하는 것
 
     fm_match = FRONTMATTER.match(text)
     if not fm_match:
-        return ["프론트매터가 없다"]
+        return ["프론트매터가 없다"], []
     meta = yaml.safe_load(fm_match.group(1))
 
     if not meta.get("verified"):
@@ -771,8 +772,12 @@ def lint_post(path: Path) -> list[str]:
         low, high = BODY_CHARS_BY_TRACK[track]
         label = track
     chars = body_length(text)
-    if not low <= chars <= high:
-        problems.append(f"본문 {chars:,}자 ({label} 기준 {low:,}~{high:,})")
+    # 하한과 상한은 성격이 다르다. 너무 짧으면 주제를 얕게 다뤘다는 뜻이라 고쳐야 하지만,
+    # 길다는 것은 그 자체로 잘못이 아니다. 옵션이 많은 명령을 빠짐없이 다루면 길어진다.
+    if chars < low:
+        problems.append(f"본문 {chars:,}자 — {label} 하한 {low:,}자에 못 미친다. 얕게 다뤘는지 본다")
+    elif chars > high:
+        notes.append(f"본문 {chars:,}자 — {label} 기준 {high:,}자를 넘었다. 늘어진 곳이 없는지만 본다")
 
     # 회차·번호는 글에 남기지 않는다 (CLAUDE.md §11). 프론트매터까지 통째로 본다.
     if track == "exam":
@@ -796,7 +801,7 @@ def lint_post(path: Path) -> list[str]:
         if not (path.parent / link).exists():
             problems.append(f"깨진 링크: {link}")
 
-    return problems
+    return problems, notes
 
 
 def cmd_lint(args: argparse.Namespace) -> int:
@@ -807,17 +812,25 @@ def cmd_lint(args: argparse.Namespace) -> int:
         print("검사할 글이 없다.")
         return 1
 
-    failed = 0
+    failed = noted = 0
     for path in targets:
         rel = path.parent.relative_to(POSTS_DIR)
-        problems = lint_post(path)
+        problems, notes = lint_post(path)
+        chars = body_length(path.read_text(encoding="utf-8"))
         if problems:
             failed += 1
             print(f"[NG] {rel}")
             for problem in problems:
                 print(f"     - {problem}")
+        elif notes:
+            noted += 1
+            print(f"[주의] {rel}  본문 {chars:,}자")
         else:
-            print(f"[OK] {rel}  본문 {body_length(path.read_text(encoding='utf-8')):,}자")
+            print(f"[OK] {rel}  본문 {chars:,}자")
+        for note in notes:
+            print(f"       {note}")
+    if noted:
+        print(f"\n주의 {noted}편 — 고쳐야 하는 것은 아니다.")
     return 1 if failed else 0
 
 

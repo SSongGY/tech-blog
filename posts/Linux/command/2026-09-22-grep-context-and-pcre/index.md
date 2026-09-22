@@ -68,6 +68,37 @@ topic_id: lx-006
 12줄짜리 샘플 로그를 스크립트가 직접 만들어 돌렸다. 전체 소스:
 [`code/grep_context.sh`](code/grep_context.sh), 실행 기록: [`code/output.txt`](code/output.txt)
 
+### 옵션은 네 갈래로 묶인다
+
+옵션이 많아 보이지만 **무엇을 정하느냐**로 갈린다. 아래는 이 글에서 전부 실제로 돌려 본 것이다.
+
+| 갈래 | 옵션 | 하는 일 |
+|---|---|---|
+| **무엇을 패턴으로 읽는가** | `-F` | 정규식이 아니라 고정 문자열로 |
+| | `-G` | BRE (기본값) |
+| | `-E` | ERE — `+`, `?`, `\|`를 역슬래시 없이 |
+| | `-P` | PCRE — `\d`, 전방탐색 |
+| | `-e 패턴` | 패턴을 여러 개 |
+| | `-f 파일` | 패턴을 파일에서 읽어 |
+| **어디까지 맞아야 하는가** | `-i` | 대소문자 무시 |
+| | `-w` | 단어 경계가 맞을 때만 |
+| | `-x` | 줄 전체가 맞을 때만 |
+| | `-v` | 맞지 **않는** 줄만 |
+| **무엇을 보여줄 것인가** | `-n` | 줄 번호 |
+| | `-c` | 걸린 **줄 수** |
+| | `-o` | 맞은 부분만 |
+| | `-l` / `-L` | 걸린 / 안 걸린 **파일 이름만** |
+| | `-h` / `-H` | 파일 이름 숨김 / 강제 표시 |
+| | `-q` | 아무것도 출력하지 않고 종료 코드만 |
+| | `-m N` | N건에서 멈춤 |
+| | `-A` / `-B` / `-C N` | 뒤 / 앞 / 양쪽 N줄을 함께 |
+| **어느 파일을 볼 것인가** | `-r` / `-R` | 디렉터리를 따라 내려가며 (`-R`은 심볼릭 링크도) |
+| | `--include` / `--exclude` | 파일 이름 패턴으로 추리기 |
+| | `-s` | 파일을 못 읽어도 에러 메시지를 내지 않음 |
+
+`-r`처럼 **여러 파일을 대상으로 하면 출력 형식이 바뀐다.** 파일이 하나일 때는 줄만 나오지만
+둘 이상이면 `파일명:줄`이 된다. 스크립트에서 이 차이를 놓치면 파싱이 어긋난다.
+
 ### 앞뒤를 같이 본다
 
 ```
@@ -155,6 +186,56 @@ $ grep -q ERROR app.log   →  (종료 코드 0)
 POSIX가 정한 값이다. 0은 찾음, 1은 못 찾음, 2 이상은 오류다. 스크립트에서
 `if grep -q ...`로 분기할 때 쓰는 근거가 이것이고, `set -e`를 켠 스크립트에서
 못 찾은 grep 때문에 스크립트가 통째로 죽는 원인도 이것이다.
+
+### 여러 파일을 뒤질 때 달라지는 것
+
+```text
+$ grep -r ERROR grep_demo_tree
+grep_demo_tree/patterns.txt:ERROR
+grep_demo_tree/svc/http.log:2026-09-22T09:00:12 ERROR http  upstream returned 503
+grep_demo_tree/svc/pool.log:2026-09-22T09:00:05 ERROR pool  acquire failed: timeout
+
+$ grep -r -l ERROR grep_demo_tree
+grep_demo_tree/patterns.txt
+grep_demo_tree/svc/http.log
+grep_demo_tree/svc/pool.log
+
+$ grep -r -L ERROR grep_demo_tree
+grep_demo_tree/etc/app.conf
+grep_demo_tree/svc/quiet.log
+```
+
+`-l`은 **걸린 파일 이름만**, `-L`은 그 반대다. "에러가 난 서비스"보다 "로그를 남기지 않은
+서비스"를 찾을 때 `-L`이 답이 된다. `-h`를 붙이면 파일 이름이 빠져 내용만 모이고,
+`-H`를 붙이면 파일이 하나여도 이름이 붙는다. 스크립트에서는 파일 개수에 따라 형식이
+흔들리지 않게 둘 중 하나를 **명시하는 편이 안전하다.**
+
+### 줄 전체가 맞아야 할 때
+
+```text
+$ grep -x ERROR app.log
+(종료 코드 1)
+
+$ grep -c -x '.*ERROR.*' app.log
+2
+```
+
+`-x`는 줄 **전체**가 패턴과 맞을 때만 잡는다. 로그에 `ERROR`만 있는 줄은 없으므로 0건이다.
+설정 파일에서 `debug`라는 값 자체를 찾을 때처럼, 부분 일치를 원치 않는 자리에 쓴다.
+
+### 에러 메시지를 감추는 것과 종료 코드는 별개다
+
+```text
+$ grep ERROR 'grep_demo_tree/없는파일.log'
+grep: grep_demo_tree/없는파일.log: No such file or directory
+(종료 코드 2)
+
+$ grep -s ERROR 'grep_demo_tree/없는파일.log'
+(종료 코드 2)
+```
+
+`-s`는 **메시지만** 감춘다. 종료 코드는 2 그대로다. 파일이 없어도 조용히 넘어가길 바라며
+`-s`를 붙였다가, `set -e` 스크립트가 여전히 죽는 이유가 이것이다.
 
 ## 실무에서 주의할 점
 

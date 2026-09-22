@@ -5,6 +5,7 @@
 set -u
 
 readonly LOG_FILE="app.log"
+readonly TREE_DIR="grep_demo_tree"
 
 section() {
   echo
@@ -56,6 +57,27 @@ make_log() {
 2026-09-22T09:00:14 error pool  retry scheduled in 2s
 2026-09-22T09:00:15 INFO  http  GET /api/health 200 2ms
 LOG
+}
+
+
+# 여러 파일에 걸친 옵션(-r, -l, -h, --include)은 파일이 둘 이상이어야 차이가 보인다.
+# ERROR 가 있는 파일과 없는 파일, 확장자가 다른 파일을 섞어 둔다.
+make_tree() {
+  mkdir -p "${TREE_DIR}/svc" "${TREE_DIR}/etc"
+  cat >"${TREE_DIR}/svc/pool.log" <<'POOL'
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout
+2026-09-22T09:00:06 INFO  pool  released
+POOL
+  cat >"${TREE_DIR}/svc/http.log" <<'HTTP'
+2026-09-22T09:00:12 ERROR http  upstream returned 503
+2026-09-22T09:00:13 INFO  http  POST 201
+HTTP
+  echo 'INFO only in this one' >"${TREE_DIR}/svc/quiet.log"
+  cat >"${TREE_DIR}/etc/app.conf" <<'CONF'
+timeout = 5000
+retry = 2
+CONF
+  printf 'ERROR\nWARN\n' >"${TREE_DIR}/patterns.txt"
 }
 
 main() {
@@ -110,6 +132,34 @@ main() {
   section "11. 못 찾으면 종료 코드가 1 이다"
   run_rc grep -q FATAL "${LOG_FILE}"
   run_rc grep -q ERROR "${LOG_FILE}"
+
+
+  section "12. 여러 파일과 재귀 — 파일 이름이 언제 붙는가"
+  make_tree
+  run grep -r ERROR "${TREE_DIR}"
+  run grep -r -l ERROR "${TREE_DIR}"
+  run grep -r -L ERROR "${TREE_DIR}"
+  run grep -r -h ERROR "${TREE_DIR}"
+  run grep -H ERROR "${TREE_DIR}/svc/pool.log"
+  run grep -r --include="*.conf" timeout "${TREE_DIR}"
+  run grep -r --exclude="*.log" timeout "${TREE_DIR}"
+
+  section "13. 패턴 여러 개, 줄 전체, 개수 제한"
+  run grep -e ERROR -e WARN "${LOG_FILE}"
+  run grep -f "${TREE_DIR}/patterns.txt" "${LOG_FILE}"
+  run grep -c -m 1 INFO "${LOG_FILE}"
+  run grep -x "ERROR" "${LOG_FILE}"
+  run grep -c -x ".*ERROR.*" "${LOG_FILE}"
+  # -s 가 감추는 것은 stderr 로 나가는 에러 메시지다. 표준 출력과 합쳐 찍어야
+  # 있고 없고가 한자리에서 보인다.
+  echo
+  show_command grep ERROR "${TREE_DIR}/없는파일.log"
+  grep ERROR "${TREE_DIR}/없는파일.log" 2>&1 || echo "(종료 코드 $?)"
+  echo
+  show_command grep -s ERROR "${TREE_DIR}/없는파일.log"
+  grep -s ERROR "${TREE_DIR}/없는파일.log" 2>&1 || echo "(종료 코드 $?)"
+
+  rm -rf "${TREE_DIR}"
 
   rm -f "${LOG_FILE}"
 }
