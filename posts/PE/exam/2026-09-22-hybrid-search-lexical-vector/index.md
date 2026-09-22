@@ -98,6 +98,8 @@ Questions에서는 DPR 78.4, 결합 76.6으로 **결합이 단독 의미 검색�
   비용이 더해지므로, **결합으로 얻는 정확도 이득이 이 비용을 넘는지**를 영역별로
   측정해 정해야 한다. 앞의 Natural Questions 사례처럼 넘지 못하는 경우가 있다.
 
+> 개념 정리: [BM25 — 확률적 적합성 프레임워크가 낳은 순위 함수와 두 매개변수](../../software-engineering/2026-09-22-bm25-probabilistic-relevance/index.md)
+
 끝
 
 ## 답안 작성 메모
