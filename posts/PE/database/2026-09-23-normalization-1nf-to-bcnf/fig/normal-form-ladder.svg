@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">정규형 4단계 — 각 단계가 무엇을 제거하는가</text>
+  <text x="40" y="56" font-size="13" fill="#555">수강(학번, 과목코드, 학생이름, 학과, 학과사무실, 담당교수, 성적) · 후보키 (학번, 과목코드)</text>
+
+  <!-- ladder -->
+  <rect x="40" y="76" width="188" height="72" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="134" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">1NF</text>
+  <text x="134" y="121" font-size="13" text-anchor="middle" fill="#444">모든 칸이 원자값</text>
+  <text x="134" y="139" font-size="13" text-anchor="middle" fill="#b45309">반복 그룹 제거</text>
+
+  <rect x="248" y="76" width="188" height="72" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="342" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">2NF</text>
+  <text x="342" y="121" font-size="13" text-anchor="middle" fill="#444">1NF + 완전 함수 종속</text>
+  <text x="342" y="139" font-size="13" text-anchor="middle" fill="#b45309">부분 함수 종속 제거</text>
+
+  <rect x="456" y="76" width="188" height="72" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="550" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">3NF</text>
+  <text x="550" y="121" font-size="13" text-anchor="middle" fill="#444">2NF + 비이행 종속</text>
+  <text x="550" y="139" font-size="13" text-anchor="middle" fill="#b45309">이행 함수 종속 제거</text>
+
+  <rect x="664" y="76" width="176" height="72" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="752" y="100" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">BCNF</text>
+  <text x="752" y="121" font-size="13" text-anchor="middle" fill="#444">모든 결정자가 후보키</text>
+  <text x="752" y="139" font-size="13" text-anchor="middle" fill="#b45309">기본속성 이상 제거</text>
+
+  <path d="M 228 112 L 244 112" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 436 112 L 452 112" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 644 112 L 660 112" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- decomposition -->
+  <text x="40" y="188" font-size="14" font-weight="bold" fill="#1b1b1b">예제 릴레이션이 단계마다 몇 개로 쪼개지는가</text>
+
+  <rect x="40" y="202" width="240" height="96" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="58" y="226" font-size="14" font-weight="bold" fill="#b45309">1NF — 릴레이션 1개</text>
+  <text x="58" y="248" font-size="13" fill="#333">수강(S, C, N, D, O, P, G)</text>
+  <text x="58" y="270" font-size="13" fill="#333">부분 종속 S→N, S→D, C→P</text>
+  <text x="58" y="290" font-size="13" fill="#333">이행 종속 S→D→O</text>
+
+  <path d="M 284 250 L 306 250" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="312" y="202" width="240" height="96" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="330" y="226" font-size="14" font-weight="bold" fill="#1b1b1b">2NF — 릴레이션 3개</text>
+  <text x="330" y="248" font-size="13" fill="#333">학생(S, N, D, O)</text>
+  <text x="330" y="270" font-size="13" fill="#333">과목(C, P)</text>
+  <text x="330" y="290" font-size="13" fill="#333">수강(S, C, G)</text>
+
+  <path d="M 556 250 L 578 250" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="584" y="202" width="256" height="96" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="602" y="226" font-size="14" font-weight="bold" fill="#2d6a4f">3NF — 릴레이션 4개</text>
+  <text x="602" y="248" font-size="13" fill="#333">학생(S, N, D) · 학과(D, O)</text>
+  <text x="602" y="270" font-size="13" fill="#333">과목(C, P) · 수강(S, C, G)</text>
+  <text x="602" y="290" font-size="13" fill="#2d6a4f">여기서는 BCNF 도 함께 만족한다</text>
+
+  <!-- notes -->
+  <rect x="40" y="322" width="386" height="98" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="58" y="346" font-size="14" font-weight="bold" fill="#1b1b1b">분해가 갖춰야 할 두 조건</text>
+  <text x="58" y="368" font-size="13" fill="#333">① 무손실 조인 — 공통 속성이 한쪽을 결정해야 한다</text>
+  <text x="58" y="390" font-size="13" fill="#333">② 종속성 보존 — 원래 FD 를 한 릴레이션 안에서</text>
+  <text x="74" y="410" font-size="13" fill="#333">확인할 수 있어야 한다</text>
+
+  <rect x="446" y="322" width="394" height="98" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="464" y="346" font-size="14" font-weight="bold" fill="#9d0208">BCNF 는 ②를 보장하지 못한다</text>
+  <text x="464" y="368" font-size="13" fill="#333">강의(S, C, P), FD 는 (S,C)→P 와 P→C</text>
+  <text x="464" y="390" font-size="13" fill="#333">BCNF 분해 (P,C) / (S,P) 는 무손실이지만</text>
+  <text x="464" y="410" font-size="13" fill="#333">(S,C)→P 가 어느 릴레이션에도 남지 않는다</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+</svg>
