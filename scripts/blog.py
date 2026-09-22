@@ -1445,14 +1445,15 @@ def text_width(content: str, font_size: float) -> float:
 
 def check_svg(path: Path) -> list[str]:
     svg = path.read_text(encoding="utf-8")
-    problems: list[str] = []
+    problems: list[str] = []   # 고쳐야 하는 것
+    notes: list[str] = []      # 알리기만 하는 것
 
     box = VIEWBOX.search(svg)
     if not box:
-        return ["viewBox 가 없다"]
+        return ["viewBox 가 없다"], []
     numbers = [float(n) for n in box.group(1).split()]
     if len(numbers) != 4:
-        return [f"viewBox 값이 4개가 아니다: {box.group(1)}"]
+        return [f"viewBox 값이 4개가 아니다: {box.group(1)}"], []
     width, height = numbers[2], numbers[3]
     if not 700 <= width <= 1000:
         problems.append(f"캔버스 폭 {width:.0f} — 880 안팎을 권한다 (§4)")
@@ -1467,8 +1468,11 @@ def check_svg(path: Path) -> list[str]:
             background.append(rect)
     if not background:
         problems.append("배경 rect 가 없다 — 다크 모드에서 읽히지 않는다 (§4)")
-    if len(rects) - len(background) > MAX_BOXES:
-        problems.append(f"박스 {len(rects) - len(background)}개 — {MAX_BOXES}개를 넘겼다 (§4)")
+    boxes = len(rects) - len(background)
+    if boxes > MAX_BOXES:
+        # 권고 상한이지 못 읽는 문제가 아니다. 게다가 값 칸(150, 300, NULL …)까지
+        # 개념 박스와 같은 무게로 세므로 실제보다 많이 나온다. 알리되 실패로 치지 않는다.
+        notes.append(f"박스 {boxes}개 — §4 권고는 {MAX_BOXES}개다. 값 칸이 많은 도식이면 넘어간다")
 
     for attrs, inner in SVG_TEXT.findall(svg):
         values = dict(ATTR.findall(attrs))
@@ -1489,23 +1493,29 @@ def check_svg(path: Path) -> list[str]:
             problems.append(
                 f'글자가 캔버스를 {end - width:.0f}px 넘어간다: "{content[:24]}"'
             )
-    return problems
+    return problems, notes
 
 
 def cmd_check_svg(args: argparse.Namespace) -> int:
     targets = [Path(args.target)] if args.target else sorted(POSTS_DIR.rglob("fig/*.svg"))
     bad = 0
+    noted = 0
     for path in targets:
-        problems = check_svg(path)
+        problems, notes = check_svg(path)
         label = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
         if problems:
             bad += 1
             print(f"[NG] {label}")
             for line in problems:
                 print(f"     - {line}")
+        elif notes:
+            noted += 1
+            print(f"[주의] {label}")
         elif args.target:
             print(f"[OK] {label}")
-    print(f"\n도식 {len(targets)}개 · 문제 {bad}개")
+        for line in notes:
+            print(f"       {line}")
+    print(f"\n도식 {len(targets)}개 · 문제 {bad}개 · 주의 {noted}개")
     print("겹침은 기계로 못 잡는다. 사람이 볼 때 브라우저로 연다 (§4).")
     return 1 if bad else 0
 
