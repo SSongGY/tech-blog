@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfbf8"/>
+
+  <text x="40" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">awk가 입력을 다루는 단위 — 레코드와 필드</text>
+  <text x="40" y="54" font-size="13" fill="#555">왼쪽이 실행 순서, 오른쪽이 접근 로그 한 줄을 FS 기본값으로 나눈 결과</text>
+
+  <!-- left pipeline -->
+  <g>
+    <rect x="40" y="74" width="380" height="46" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="56" y="94" font-size="14" font-weight="bold" fill="#2d6a4f">BEGIN { }</text>
+    <text x="56" y="112" font-size="13" fill="#333">입력을 읽기 전에 한 번. FS·OFS·머리말을 여기서</text>
+
+    <rect x="40" y="144" width="380" height="46" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="56" y="164" font-size="14" font-weight="bold" fill="#1b1b1b">레코드 하나를 읽는다</text>
+    <text x="56" y="182" font-size="13" fill="#333">경계는 RS (기본 개행). 읽을 때마다 NR 이 1 늘어난다</text>
+
+    <rect x="40" y="214" width="380" height="46" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="56" y="234" font-size="14" font-weight="bold" fill="#1b1b1b">필드로 나눈다</text>
+    <text x="56" y="252" font-size="13" fill="#333">경계는 FS (기본 연속 공백). 개수가 NF</text>
+
+    <rect x="40" y="284" width="380" height="46" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="56" y="304" font-size="14" font-weight="bold" fill="#1b1b1b">규칙마다 패턴을 판정한다</text>
+    <text x="56" y="322" font-size="13" fill="#333">참이면 액션 실행. 액션이 없으면 그 줄을 출력</text>
+
+    <rect x="40" y="354" width="380" height="46" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+    <text x="56" y="374" font-size="14" font-weight="bold" fill="#b45309">연관배열에 누적한다</text>
+    <text x="56" y="392" font-size="13" fill="#333">count[$8]++ — 키는 문자열, 없던 키는 만들어진다</text>
+
+    <rect x="40" y="424" width="380" height="42" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="56" y="444" font-size="14" font-weight="bold" fill="#2d6a4f">END { }</text>
+    <text x="56" y="460" font-size="13" fill="#333">입력이 끝난 뒤 한 번. 모아 둔 배열을 여기서 출력</text>
+  </g>
+
+  <path d="M 230 120 L 230 140" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 230 190 L 230 210" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 230 260 L 230 280" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 230 330 L 230 350" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 230 400 L 230 420" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- loop back -->
+  <path d="M 40 377 L 18 377 L 18 167 L 36 167" stroke="#b45309" stroke-width="1.5" fill="none" stroke-dasharray="5 3" marker-end="url(#ar2)"/>
+  <rect x="22" y="198" width="16" height="148" fill="#fbfbf8"/>
+  <text x="33" y="272" font-size="13" fill="#b45309" transform="rotate(-90 33 272)" text-anchor="middle">남은 레코드만큼 반복</text>
+
+  <!-- right: field table -->
+  <g>
+    <rect x="470" y="74" width="390" height="392" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="486" y="96" font-size="13" font-weight="bold" fill="#1b1b1b">$0 = 접근 로그 한 줄</text>
+    <line x1="470" y1="108" x2="860" y2="108" stroke="#cccccc" stroke-width="1"/>
+
+    <text x="492" y="132" font-size="13" font-weight="bold" fill="#444">$1</text>
+    <text x="545" y="132" font-size="13" fill="#1b1b1b">10.0.0.4</text>
+
+    <text x="492" y="162" font-size="13" font-weight="bold" fill="#444">$2</text>
+    <text x="545" y="162" font-size="13" fill="#1b1b1b">-</text>
+
+    <text x="492" y="192" font-size="13" font-weight="bold" fill="#444">$3</text>
+    <text x="545" y="192" font-size="13" fill="#1b1b1b">-</text>
+
+    <text x="492" y="222" font-size="13" font-weight="bold" fill="#444">$4</text>
+    <text x="545" y="222" font-size="13" fill="#1b1b1b">[22/Sep/2026:09:00:01]</text>
+
+    <text x="492" y="252" font-size="13" font-weight="bold" fill="#444">$5</text>
+    <text x="545" y="252" font-size="13" fill="#1b1b1b">"GET</text>
+
+    <rect x="478" y="266" width="374" height="28" rx="4" fill="#eef5f0"/>
+    <text x="492" y="285" font-size="13" font-weight="bold" fill="#2d6a4f">$6</text>
+    <text x="545" y="285" font-size="13" fill="#1b1b1b">/api/orders</text>
+    <text x="730" y="285" font-size="13" fill="#2d6a4f">경로</text>
+
+    <text x="492" y="315" font-size="13" font-weight="bold" fill="#444">$7</text>
+    <text x="545" y="315" font-size="13" fill="#1b1b1b">HTTP/1.1"</text>
+
+    <rect x="478" y="329" width="374" height="28" rx="4" fill="#eef5f0"/>
+    <text x="492" y="348" font-size="13" font-weight="bold" fill="#2d6a4f">$8</text>
+    <text x="545" y="348" font-size="13" fill="#1b1b1b">200</text>
+    <text x="730" y="348" font-size="13" fill="#2d6a4f">상태코드</text>
+
+    <rect x="478" y="363" width="374" height="28" rx="4" fill="#eef5f0"/>
+    <text x="492" y="382" font-size="13" font-weight="bold" fill="#2d6a4f">$9</text>
+    <text x="545" y="382" font-size="13" fill="#1b1b1b">41</text>
+    <text x="730" y="382" font-size="13" fill="#2d6a4f">응답시간(ms)</text>
+
+    <line x1="470" y1="404" x2="860" y2="404" stroke="#cccccc" stroke-width="1"/>
+    <text x="486" y="426" font-size="13" fill="#9d0208">NF = 9</text>
+    <text x="486" y="448" font-size="13" fill="#333">날짜 대괄호가 한 필드, 요청 줄이 세 필드다</text>
+  </g>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
