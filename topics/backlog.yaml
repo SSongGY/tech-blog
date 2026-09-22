@@ -1652,7 +1652,7 @@ topics:
     difficulty: 입문
     angle: "-A/-B/-C 문맥 출력과 -P 정규식이 필요한 순간"
     code: shell
-    status: todo
+    status: done
   - id: lx-007
     title: "awk — 로그를 표로 집계하기"
     category: Linux

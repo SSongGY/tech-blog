@@ -1,0 +1,130 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : bash grep_context.sh
+# 수행 시각 : 2026-09-22 13:06 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+bash    : 5.3.9(1)-release
+grep    : grep (GNU grep) 3.0
+로그     : app.log (12줄)
+
+==============================================================
+## 1. 걸린 줄만 나온다
+
+$ grep ERROR app.log
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+2026-09-22T09:00:12 ERROR http  upstream returned 503 for /api/stock
+
+==============================================================
+## 2. 앞뒤를 같이 본다
+
+$ grep -C 1 ERROR app.log
+2026-09-22T09:00:04 INFO  http  GET /api/orders 200 39ms
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+2026-09-22T09:00:05 INFO  http  GET /api/orders 500 5002ms
+--
+2026-09-22T09:00:11 INFO  http  POST /api/orders 201 88ms
+2026-09-22T09:00:12 ERROR http  upstream returned 503 for /api/stock
+2026-09-22T09:00:13 INFO  http  POST /api/orders 201 91ms
+
+$ grep -c -C 1 ERROR app.log
+2
+
+==============================================================
+## 3. -A 와 -B 는 방향이 다르다
+
+$ grep -A 2 'acquire failed' app.log
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+2026-09-22T09:00:05 INFO  http  GET /api/orders 500 5002ms
+2026-09-22T09:00:06 INFO  pool  connection released id=17
+
+$ grep -B 2 'acquire failed' app.log
+2026-09-22T09:00:03 WARN  pool  wait time above threshold wait=812ms
+2026-09-22T09:00:04 INFO  http  GET /api/orders 200 39ms
+2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+
+==============================================================
+## 4. 줄 번호와 건수
+
+$ grep -n ERROR app.log
+5:2026-09-22T09:00:05 ERROR pool  acquire failed: timeout after 5000ms
+9:2026-09-22T09:00:12 ERROR http  upstream returned 503 for /api/stock
+
+$ grep -c ERROR app.log
+2
+
+$ grep -ic error app.log
+3
+
+==============================================================
+## 5. 점은 임의의 한 글자다
+
+$ grep -c 5.0 app.log
+2
+
+$ grep -c -F 5.0 app.log
+0
+(종료 코드 1)
+
+==============================================================
+## 6. 단어 경계
+
+$ grep -c id=1 app.log
+2
+
+$ grep -c -w id=1 app.log
+0
+(종료 코드 1)
+
+==============================================================
+## 7. BRE / ERE / PCRE 가 같은 패턴을 다르게 읽는다
+
+$ grep -c 'wait=[0-9]\+ms' app.log
+2
+
+$ grep -c -E 'wait=[0-9]+ms' app.log
+2
+
+$ grep -c -E 'wait=\d+ms' app.log
+0
+(종료 코드 1)
+
+$ grep -c -P 'wait=\d+ms' app.log
+2
+
+==============================================================
+## 8. PCRE 가 필요한 순간 — 있고 없고를 한 번에
+
+$ grep -P '^(?=.*ERROR)(?!.*timeout)' app.log
+2026-09-22T09:00:12 ERROR http  upstream returned 503 for /api/stock
+
+==============================================================
+## 9. 매칭된 부분만 뽑아 집계
+
+$ grep -o -P '(?<= )\d{3}(?= \d+ms)' app.log
+200
+200
+500
+201
+201
+200
+
+==============================================================
+## 10. -c 는 줄 수지 매칭 수가 아니다
+
+$ grep -c 00 app.log
+12
+
+$ grep -o '00' app.log | wc -l
+18
+
+==============================================================
+## 11. 못 찾으면 종료 코드가 1 이다
+
+$ grep -q FATAL app.log
+(종료 코드 1)
+
+$ grep -q ERROR app.log
+(종료 코드 0)
