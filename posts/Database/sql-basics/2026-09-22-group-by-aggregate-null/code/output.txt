@@ -1,0 +1,104 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python group_by_null.py
+# 수행 시각 : 2026-09-22 11:12 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+SQLite 3.49.1
+==============================================================
+## 1. 집계 함수는 NULL 을 세지 않는다
+[1-1 테이블 전체]
+  SQL  : SELECT COUNT(*), COUNT(bonus), SUM(bonus), AVG(bonus) FROM employee
+  행   : 9 | 5 | 1300 | 260.0
+
+[1-2 팀별]
+  SQL  : SELECT team, COUNT(*), COUNT(bonus), SUM(bonus), AVG(bonus) FROM employee GROUP BY team
+  행   : NULL | 1 | 1 | 100 | 100.0
+  행   : 개발 | 3 | 2 | 600 | 300.0
+  행   : 영업 | 2 | 2 | 600 | 300.0
+  행   : 지원 | 3 | 0 | NULL | NULL
+
+==============================================================
+## 2. AVG 의 분모는 COUNT(*) 가 아니다
+[2-1 개발팀의 AVG 와 손계산]
+  SQL  : SELECT team, AVG(bonus), SUM(bonus) * 1.0 / COUNT(*) FROM employee WHERE team = '개발' GROUP BY team
+  행   : 개발 | 300.0 | 200.0
+
+[2-2 NULL 을 0 으로 채우면]
+  SQL  : SELECT AVG(COALESCE(bonus, 0)) FROM employee WHERE team = '개발'
+  행   : 200.0
+
+==============================================================
+## 3. 전부 NULL 인 그룹
+[3-1 지원팀은 bonus 가 전부 NULL]
+  SQL  : SELECT team, COUNT(*), COUNT(bonus), SUM(bonus), AVG(bonus), MAX(bonus) FROM employee WHERE team = '지원' GROUP BY team
+  행   : 지원 | 3 | 0 | NULL | NULL | NULL
+
+[3-2 SQLite 의 TOTAL 은 0 을 돌려준다]
+  SQL  : SELECT team, TOTAL(bonus) FROM employee WHERE team = '지원' GROUP BY team
+  행   : 지원 | 0.0
+
+==============================================================
+## 4. GROUP BY 는 NULL 을 한 그룹으로 묶는다
+[4-1 team 이 NULL 인 행도 그룹이 된다]
+  SQL  : SELECT team, COUNT(*) FROM employee GROUP BY team ORDER BY team
+  행   : NULL | 1
+  행   : 개발 | 3
+  행   : 영업 | 2
+  행   : 지원 | 3
+
+[4-2 같은 행을 WHERE team = NULL 로 찾으면]
+  SQL  : SELECT COUNT(*) FROM employee WHERE team = NULL
+  행   : 0
+
+[4-3 IS NULL 로 찾으면]
+  SQL  : SELECT COUNT(*) FROM employee WHERE team IS NULL
+  행   : 1
+
+==============================================================
+## 5. WHERE 와 HAVING
+[5-1 HAVING 은 묶은 뒤에 걸린다]
+  SQL  : SELECT team, COUNT(*) FROM employee GROUP BY team HAVING COUNT(*) >= 3
+  행   : 개발 | 3
+  행   : 지원 | 3
+
+[5-2 WHERE 로 먼저 걸러 내면 그룹 자체가 달라진다]
+  SQL  : SELECT team, COUNT(*) FROM employee WHERE bonus IS NOT NULL GROUP BY team HAVING COUNT(*) >= 3
+  행   : (없음)
+
+==============================================================
+## 6. SELECT 목록에 집계 대상이 아닌 컬럼을 두면
+[6-1 MAX 와 같이 쓴 name]
+  SQL  : SELECT team, name, MAX(bonus) FROM employee GROUP BY team
+  행   : NULL | 윤바다 | 100
+  행   : 개발 | 김하나 | 400
+  행   : 영업 | 최나영 | 300
+  행   : 지원 | 신겨울 | NULL
+
+[6-2 COUNT 와 같이 쓴 name]
+  SQL  : SELECT team, name, COUNT(*) FROM employee GROUP BY team
+  행   : NULL | 윤바다 | 1
+  행   : 개발 | 김하나 | 3
+  행   : 영업 | 최나영 | 2
+  행   : 지원 | 한여름 | 3
+
+==============================================================
+## 7. 실행계획
+[7-1 인덱스 없음]
+  SQL  : SELECT team, COUNT(*) FROM employee GROUP BY team
+  QUERY PLAN
+  |--SCAN employee
+  `--USE TEMP B-TREE FOR GROUP BY
+
+[7-2 ix_employee_team 생성 후]
+  SQL  : SELECT team, COUNT(*) FROM employee GROUP BY team
+  QUERY PLAN
+  `--SCAN employee USING COVERING INDEX ix_employee_team
+
+[7-3 인덱스에 없는 컬럼을 집계하면]
+  SQL  : SELECT team, COUNT(bonus) FROM employee GROUP BY team
+  QUERY PLAN
+  `--SCAN employee USING INDEX ix_employee_team
+

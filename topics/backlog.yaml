@@ -772,7 +772,7 @@ topics:
     difficulty: 입문
     angle: "집계 함수가 NULL을 세지 않는 것을 COUNT(*)와 대조"
     code: python
-    status: todo
+    status: done
   - id: bas-007
     title: "HAVING과 WHERE — 어느 단계에서 걸러지는가"
     category: Database

@@ -27,3 +27,4 @@
 | 2026-09-22 | bas-005 | Database | DISTINCT — 중복 제거가 정렬을 부르는 이유 |
 | 2026-09-22 | pe-006 | PE | CMMI 성숙도 5단계와 프로세스 영역 |
 | 2026-09-22 | tb-004 | Database | Tibero 7 MERGE 문 — UPSERT를 한 문장으로 |
+| 2026-09-22 | bas-006 | Database | GROUP BY와 집계 함수 — 묶는 기준 정하기 |

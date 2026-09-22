@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="452" viewBox="0 0 880 452" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="452" fill="#fbfbf8"/>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">GROUP BY 로 묶은 뒤, COUNT(*) 와 집계 함수가 서로 다른 것을 센다</text>
+  <text x="24" y="52" font-size="13" fill="#555">같은 그룹 · 같은 행 수인데 결과가 갈리는 이유는 NULL 칸 하나다</text>
+
+  <!-- ============ 패널 1 : 개발팀 ============ -->
+  <rect x="20" y="68" width="840" height="150" rx="6" fill="#ffffff" stroke="#c9c9c2"/>
+
+  <rect x="36" y="112" width="96" height="62" rx="4" fill="#eef2f6" stroke="#5a6b7c"/>
+  <text x="84" y="138" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">개발</text>
+  <text x="84" y="159" font-size="13" fill="#555" text-anchor="middle">3행</text>
+
+  <text x="152" y="103" font-size="13" fill="#555">그룹 안의 bonus 칸</text>
+  <rect x="152" y="112" width="62" height="40" rx="3" fill="#ffffff" stroke="#5a6b7c"/>
+  <text x="183" y="138" font-size="15" fill="#1b1b1b" text-anchor="middle">400</text>
+  <rect x="222" y="112" width="62" height="40" rx="3" fill="#fdf2e2" stroke="#b45309"/>
+  <text x="253" y="138" font-size="15" fill="#b45309" text-anchor="middle">NULL</text>
+  <rect x="292" y="112" width="62" height="40" rx="3" fill="#ffffff" stroke="#5a6b7c"/>
+  <text x="323" y="138" font-size="15" fill="#1b1b1b" text-anchor="middle">200</text>
+
+  <!-- 위 경로 : COUNT(*) -->
+  <path d="M 132 92 L 596 92" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#ar-green)"/>
+  <text x="300" y="85" font-size="13" fill="#2d6a4f">COUNT(*) 는 칸을 보지 않고 행만 센다</text>
+
+  <!-- 아래 경로 : 집계 함수 -->
+  <path d="M 358 132 L 402 132" stroke="#b45309" stroke-width="2" fill="none" marker-end="url(#ar-amber)"/>
+  <rect x="406" y="104" width="152" height="56" rx="4" fill="#fdf2e2" stroke="#b45309"/>
+  <text x="482" y="126" font-size="13" fill="#b45309" text-anchor="middle">집계 함수는</text>
+  <text x="482" y="146" font-size="13" fill="#b45309" text-anchor="middle">NULL 칸을 건너뛴다</text>
+  <path d="M 562 132 L 596 132" stroke="#b45309" stroke-width="2" fill="none" marker-end="url(#ar-amber)"/>
+
+  <rect x="600" y="82" width="244" height="120" rx="4" fill="#f6f8f6" stroke="#5a6b7c"/>
+  <text x="614" y="105" font-size="14" fill="#2d6a4f">COUNT(*)      = 3</text>
+  <text x="614" y="128" font-size="14" fill="#1b1b1b">COUNT(bonus)  = 2</text>
+  <text x="614" y="151" font-size="14" fill="#1b1b1b">SUM(bonus)    = 600</text>
+  <text x="614" y="174" font-size="14" fill="#1b1b1b">AVG(bonus)    = 300.0</text>
+  <text x="614" y="194" font-size="13" fill="#b45309">분모는 3 이 아니라 2 다</text>
+
+  <!-- ============ 패널 2 : 지원팀 ============ -->
+  <rect x="20" y="232" width="840" height="150" rx="6" fill="#ffffff" stroke="#c9c9c2"/>
+
+  <rect x="36" y="276" width="96" height="62" rx="4" fill="#eef2f6" stroke="#5a6b7c"/>
+  <text x="84" y="302" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">지원</text>
+  <text x="84" y="323" font-size="13" fill="#555" text-anchor="middle">3행</text>
+
+  <text x="152" y="267" font-size="13" fill="#555">세 칸이 전부 NULL</text>
+  <rect x="152" y="276" width="62" height="40" rx="3" fill="#fdf2e2" stroke="#b45309"/>
+  <text x="183" y="302" font-size="15" fill="#b45309" text-anchor="middle">NULL</text>
+  <rect x="222" y="276" width="62" height="40" rx="3" fill="#fdf2e2" stroke="#b45309"/>
+  <text x="253" y="302" font-size="15" fill="#b45309" text-anchor="middle">NULL</text>
+  <rect x="292" y="276" width="62" height="40" rx="3" fill="#fdf2e2" stroke="#b45309"/>
+  <text x="323" y="302" font-size="15" fill="#b45309" text-anchor="middle">NULL</text>
+
+  <path d="M 132 256 L 596 256" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#ar-green)"/>
+  <text x="300" y="249" font-size="13" fill="#2d6a4f">행은 그대로 3개다</text>
+
+  <path d="M 358 296 L 402 296" stroke="#9d0208" stroke-width="2" fill="none" marker-end="url(#ar-red)"/>
+  <rect x="406" y="268" width="152" height="56" rx="4" fill="#fbeaea" stroke="#9d0208"/>
+  <text x="482" y="290" font-size="13" fill="#9d0208" text-anchor="middle">건너뛰고 나면</text>
+  <text x="482" y="310" font-size="13" fill="#9d0208" text-anchor="middle">남는 값이 없다</text>
+  <path d="M 562 296 L 596 296" stroke="#9d0208" stroke-width="2" fill="none" marker-end="url(#ar-red)"/>
+
+  <rect x="600" y="246" width="244" height="120" rx="4" fill="#f6f8f6" stroke="#5a6b7c"/>
+  <text x="614" y="269" font-size="14" fill="#2d6a4f">COUNT(*)      = 3</text>
+  <text x="614" y="292" font-size="14" fill="#1b1b1b">COUNT(bonus)  = 0</text>
+  <text x="614" y="315" font-size="14" fill="#9d0208">SUM(bonus)    = NULL</text>
+  <text x="614" y="338" font-size="14" fill="#9d0208">AVG(bonus)    = NULL</text>
+  <text x="614" y="358" font-size="13" fill="#b45309">0 이 아니라 NULL 이다</text>
+
+  <text x="24" y="412" font-size="13" fill="#1b1b1b">묶을 때와 셀 때의 NULL 취급이 반대다. GROUP BY 는 team 이 NULL 인 행들을 서로 같다고 보아 한 그룹으로 모으고,</text>
+  <text x="24" y="434" font-size="13" fill="#1b1b1b">집계 함수는 그 그룹 안에서 NULL 인 칸을 없는 값으로 보아 세지 않는다.</text>
+
+  <defs>
+    <marker id="ar-green" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ar-amber" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#b45309"/>
+    </marker>
+    <marker id="ar-red" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
