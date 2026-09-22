@@ -1397,6 +1397,64 @@ def cmd_env(args: argparse.Namespace) -> int:
     print("\n버전 문자열은 프론트매터 environment 에 그대로 옮긴다 (§5).")
     return 0
 
+# --- PDF 본문 뽑기 ---------------------------------------------------------
+#
+# 조사 단계에서 표준 문서나 논문이 PDF 로 오는 일이 잦다. WebFetch 가 받아 둔
+# 파일을 읽으려고 매번 python -c 로 pypdf 를 부르면, 임의 코드라 허용 규칙에
+# 걸리지 않고 무인 회차가 권한 프롬프트 앞에서 멈춘다. 명령으로 고정한다.
+
+
+def cmd_pdf_text(args: argparse.Namespace) -> int:
+    try:
+        import pypdf
+    except ImportError:
+        print("[NG] pypdf 가 없다. pip install -r requirements.txt")
+        return 1
+
+    wanted = None
+    if args.pages:
+        wanted = set()
+        for part in args.pages.split(","):
+            part = part.strip()
+            if "-" in part:
+                lo, hi = part.split("-", 1)
+                wanted.update(range(int(lo), int(hi) + 1))
+            elif part:
+                wanted.add(int(part))
+
+    needle = args.find.lower() if args.find else None
+    rc = 0
+    for name in args.paths:
+        path = Path(name)
+        if not path.exists():
+            print(f"[NG] 파일이 없다: {path}")
+            rc = 1
+            continue
+        try:
+            reader = pypdf.PdfReader(str(path))
+        except Exception as exc:                       # 손상된 PDF·암호화 등
+            print(f"[NG] {path.name}: {exc}")
+            rc = 1
+            continue
+
+        print(f"=== {path.name} · {len(reader.pages)}쪽 ===")
+        hits = 0
+        for no, page in enumerate(reader.pages, start=1):
+            if wanted and no not in wanted:
+                continue
+            try:
+                text = page.extract_text() or ""
+            except Exception as exc:
+                text = f"[추출 실패: {exc}]"
+            if needle and needle not in text.lower():
+                continue
+            hits += 1
+            print(f"\n--- {no}쪽 ---")
+            print(text.strip())
+        if needle and hits == 0:
+            print(f"\n'{args.find}' 를 담은 쪽이 없다.")
+    return rc
+
 # --- 최근에 손댄 글 --------------------------------------------------------
 #
 # 점검 루틴이 "회차가 진행 중인지, 뼈대만 만들고 멈췄는지"를 판단할 때 쓴다.
@@ -1673,6 +1731,12 @@ def main() -> int:
 
     p_env = sub.add_parser("env", help="실행 환경 판별 (버전·DB 클라이언트·리눅스 도구)")
     p_env.set_defaults(func=cmd_env)
+
+    p_pdf = sub.add_parser("pdf-text", help="PDF 본문을 쪽 단위로 뽑는다 (조사용)")
+    p_pdf.add_argument("paths", nargs="+", help="PDF 파일 경로")
+    p_pdf.add_argument("--pages", help="쪽 범위. 예: 1-5,12")
+    p_pdf.add_argument("--find", help="이 문자열을 담은 쪽만 출력")
+    p_pdf.set_defaults(func=cmd_pdf_text)
 
     p_recent = sub.add_parser("recent", help="최근 수정된 글과 크기")
     p_recent.add_argument("hours", nargs="?", default="6",

@@ -57,3 +57,12 @@ description: 15시 기출 답안에서 나온 개념을 정보관리기술사 �
 ```
 Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
 ```
+
+## 명령 실행 규칙
+
+- **Bash 도구로 실행한다.** PowerShell 도구는 허용 규칙이 없어 전부 물어본다
+- **`cd`로 작업 폴더를 옮기지 않는다.** 이미 저장소 루트에서 시작한다
+- **명령 앞에 환경변수나 변수 할당을 붙이지 않는다.** 규칙이 맨 앞부분으로 맞춰 본다
+- **`python -c`로 즉석 코드를 짜지 않는다.** 필요한 일은 `blog.py`에 명령이 있다.
+  PDF 본문은 `python scripts/blog.py pdf-text <경로> --find <검색어>`
+- `for` 루프·`find -exec`·서브셸·`xargs` 같은 복합 명령을 쓰지 않는다

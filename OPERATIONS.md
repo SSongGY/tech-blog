@@ -162,6 +162,7 @@ python scripts/blog.py env                    # 실행 환경 판별 (버전·DB
 python scripts/blog.py recent 6,24            # 최근 수정된 글과 크기
 python scripts/blog.py check-svg              # 도식 기계 검사 (폭·배경·글자·넘침)
 python scripts/blog.py check-links            # 인용 링크와 앵커가 살아 있는지
+python scripts/blog.py pdf-text <파일> --find BM25   # PDF 본문을 쪽 단위로 (조사용)
 python scripts/blog.py run-example <글 폴더>  # 예제를 돌려 code/output.txt 에 기록
 python scripts/blog.py run-examples           # executed 글의 예제를 전부 다시 돌린다
 python scripts/blog.py new tb-001 my-slug     # 글 폴더 스캐폴딩 (fig/, code/ 포함)
