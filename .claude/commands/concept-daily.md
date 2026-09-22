@@ -19,7 +19,8 @@ description: 기출 풀이에서 나온 개념을 정보관리기술사 개념 �
 - **`python -c`로 즉석 코드를 짜지 않는다.** 임의 코드는 규칙으로 허용할 수 없는 종류다.
   자주 하는 일은 `blog.py`에 명령이 있다 (`env`·`recent`·`check-svg`·`check-links`·`pdf-text`).
   없으면 그때 `blog.py`에 명령을 추가하고, 그 사실을 보고에 적는다
-- **복합 명령을 피한다.** `for` 루프, `find -exec`, 서브셸 `( ... &)`, `xargs`는
+- **복합 명령을 피한다.** `for`·`while` 루프, `sleep`으로 버티는 대기,
+  `find -exec`, 서브셸 `( ... &)`, `xargs`, 명령 치환 `$(...)`은
   규칙으로 맞출 수 없다
 - 웹 요청은 `curl` 대신 `WebFetch`·`WebSearch`를 쓴다.
   받은 것이 PDF면 `python scripts/blog.py pdf-text <경로> --find <검색어>`로 본문을 본다

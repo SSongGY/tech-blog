@@ -19,11 +19,25 @@ description: 정보관리기술사 기출문제를 풀어 답안 형태로 쓰�
 - **`python -c`로 즉석 코드를 짜지 않는다.** 임의 코드는 규칙으로 허용할 수 없는 종류다.
   자주 하는 일은 `blog.py`에 명령이 있다 (`env`·`recent`·`check-svg`·`check-links`·`pdf-text`).
   없으면 그때 `blog.py`에 명령을 추가하고, 그 사실을 보고에 적는다
-- **복합 명령을 피한다.** `for` 루프, `find -exec`, 서브셸 `( ... &)`, `xargs`는
+- **복합 명령을 피한다.** `for`·`while` 루프, `sleep`으로 버티는 대기,
+  `find -exec`, 서브셸 `( ... &)`, `xargs`, 명령 치환 `$(...)`은
   규칙으로 맞출 수 없다
 - 웹 요청은 `curl` 대신 `WebFetch`·`WebSearch`를 쓴다.
   받은 것이 PDF면 `python scripts/blog.py pdf-text <경로> --find <검색어>`로 본문을 본다
 
+
+## 시작 전 — 다른 회차와 겹치지 않는지 확인
+
+`mcp__scheduled-tasks__list_task_runs`로 `tech-blog-concept`과 `tech-blog-daily`에
+`status: running`인 실행이 있는지 본다. 같은 저장소에 두 세션이 동시에 쓰면
+커밋이 엉킨다.
+
+돌고 있으면 **셸로 기다리지 않는다.** `while`과 `sleep`으로 커밋을 기다리는
+루프는 허용 규칙으로 맞출 수 없어 회차가 그 자리에서 멈춘다. 기다려야 하면
+`list_task_runs`를 다시 불러 확인한다 — 도구 호출은 권한 규칙과 무관하다.
+
+세 번 확인해도 안 끝나면 오늘은 건너뛰고 **그 사실을 보고한다.** 억지로
+같이 커밋하는 것보다 한 회차를 거르는 편이 낫다.
 
 ## 먼저 읽을 것
 

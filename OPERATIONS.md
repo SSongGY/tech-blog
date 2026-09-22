@@ -24,10 +24,10 @@ python scripts/blog.py lint     # 글 규칙 검사
 | 07:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 15:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
 | 17:00 | `tech-blog-concept` | 2편 | 15시 답안에서 나온 개념을 `pe` 글로 |
-| 21:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
+| 19:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
 
-07:00·21:00 회차의 트랙 구성은 다음과 같다.
+07:00·19:00 회차의 트랙 구성은 다음과 같다.
 
 | 트랙 | 편수 | 내용 |
 |---|---|---|
