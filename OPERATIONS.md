@@ -14,8 +14,8 @@ IT 기술 글을 매일 **9~10편** 작성해 마크다운 원본과 실행 가�
 
 ```bash
 pip install -r requirements.txt
-PYTHONUTF8=1 python scripts/blog.py status   # 백로그 잔량
-PYTHONUTF8=1 python scripts/blog.py lint     # 글 규칙 검사
+python scripts/blog.py status   # 백로그 잔량
+python scripts/blog.py lint     # 글 규칙 검사
 ```
 
 
@@ -179,7 +179,9 @@ python scripts/blog.py tistory my-slug        # 티스토리용 변환 (도식�
 python -m http.server 8771 --bind 127.0.0.1
 ```
 
-Windows 콘솔에서 한글이 깨지면 `PYTHONUTF8=1`을 앞에 붙인다.
+`blog.py`가 출력 인코딩을 스스로 맞추므로 윈도우에서도 환경변수 없이 한글이 나온다.
+**`PYTHONUTF8=1`을 앞에 붙이지 않는다** — 셸마다 문법이 달라(`VAR=1 cmd` 대
+`$env:VAR=1; cmd`) 무인 회차가 허용 규칙에 걸리지 않아 멈춘다.
 
 ## 하루 작업 흐름
 

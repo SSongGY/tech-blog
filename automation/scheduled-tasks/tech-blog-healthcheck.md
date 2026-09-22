@@ -51,7 +51,7 @@ description: 어제 15·17·21시와 오늘 7시 회차가 정상이었는지 �
 저장소 파일을 **절대 건드리지 않는다.** 진행 상황만 읽는다.
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py recent 6
+python scripts/blog.py recent 6
 ```
 
 `<- 뼈대만` 표시가 붙은 글은 아직 본문이 없다. 2시간 넘게 그대로면 멈춘 것으로 보고한다.
@@ -61,10 +61,10 @@ PYTHONUTF8=1 python scripts/blog.py recent 6
 
 ```bash
 cd /d/workspace/claude/tech_blog
-PYTHONUTF8=1 python scripts/blog.py lint
-PYTHONUTF8=1 python scripts/blog.py status
-PYTHONUTF8=1 python scripts/blog.py exam-status
-PYTHONUTF8=1 python scripts/blog.py tasks-diff
+python scripts/blog.py lint
+python scripts/blog.py status
+python scripts/blog.py exam-status
+python scripts/blog.py tasks-diff
 git log --oneline -12
 git status --short
 git rev-parse HEAD origin/main

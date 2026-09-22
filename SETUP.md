@@ -37,11 +37,14 @@ pip install -r requirements.txt
 ## 3. 잘 돌아가는지 확인
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py status    # 백로그 잔량
-PYTHONUTF8=1 python scripts/blog.py lint      # 기존 글이 전부 [OK] 여야 한다
+python scripts/blog.py status    # 백로그 잔량
+python scripts/blog.py lint      # 기존 글이 전부 [OK] 여야 한다
 ```
 
-윈도우 콘솔에서 한글이 깨지면 `PYTHONUTF8=1`을 앞에 붙인다. 리눅스·맥에서는 없어도 된다.
+`blog.py`가 시작할 때 출력 인코딩을 스스로 맞추므로(`sys.stdout.reconfigure`)
+윈도우에서도 `PYTHONUTF8=1` 없이 한글이 나온다. 앞에 붙이지 않는다 —
+환경변수를 붙이면 셸에 따라 문법이 갈리고(`VAR=1 cmd` 대 `$env:VAR=1; cmd`),
+무인 회차가 허용 규칙에 걸리지 않아 멈춘다.
 
 ## 4. Claude에게 규칙 읽히기
 
@@ -106,7 +109,7 @@ tech_blog_exam_src/
 직접 복사한다.
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py exam-status   # 잘 잡혔는지 확인
+python scripts/blog.py exam-status   # 잘 잡혔는지 확인
 ```
 
 ## 8. Tibero 실행 검증 (선택)
@@ -119,9 +122,9 @@ PYTHONUTF8=1 python scripts/blog.py exam-status   # 잘 잡혔는지 확인
 ## 옮긴 뒤 확인할 것
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py lint        # 전부 [OK]
-PYTHONUTF8=1 python scripts/blog.py status      # 트랙별 잔량
-PYTHONUTF8=1 python scripts/blog.py exam-status # 7번을 했다면
+python scripts/blog.py lint        # 전부 [OK]
+python scripts/blog.py status      # 트랙별 잔량
+python scripts/blog.py exam-status # 7번을 했다면
 git log --oneline -5
 ```
 

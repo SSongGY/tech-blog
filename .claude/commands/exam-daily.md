@@ -5,6 +5,9 @@ description: 정보관리기술사 기출문제를 풀어 답안 형태로 쓰�
 오늘치 기출문제 풀이를 쓴다. 개념 정리(`pe` 트랙)와 **다르다.** 여기서는
 **답안지에 그대로 옮겨 쓸 수 있는 형태**로 쓴다.
 
+
+**명령 앞에 `PYTHONUTF8=1` 같은 환경변수를 붙이지 않는다.** `blog.py`가 인코딩을 스스로 맞추고, 환경변수를 붙이면 셸 문법이 갈려 무인 회차가 멈춘다.
+
 ## 먼저 읽을 것
 
 1. `CLAUDE.md` **§11 기출문제 풀이** — 답안 구조, 표기 금지 규칙
@@ -14,7 +17,7 @@ description: 정보관리기술사 기출문제를 풀어 답안 형태로 쓰�
 ## 1. 문제 고르기
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py exam-pick
+python scripts/blog.py exam-pick
 ```
 
 단답형이면 **2문제**, 논술형이면 **1문제**가 나온다. 손으로 고르지 않는다.
@@ -31,7 +34,7 @@ PYTHONUTF8=1 python scripts/blog.py exam-pick
 - **3건을 못 채운다** → 쓰지 않는다:
 
   ```bash
-  PYTHONUTF8=1 python scripts/blog.py exam-skip <id> --reason "왜 못 썼는지"
+  python scripts/blog.py exam-skip <id> --reason "왜 못 썼는지"
   ```
 
   건너뛴 뒤 `exam-pick`을 다시 돌려 다음 문제를 받는다.
@@ -119,7 +122,7 @@ verified: true
 길게 풀지 않는다.** 답안은 답안대로 끝내고, 개념은 등록만 해둔다.
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py add-topic \
+python scripts/blog.py add-topic \
   --track pe --title "<개념 이름>" --subcategory <분야> \
   --tags "정보관리기술사,<분야>,개념정리" \
   --angle "<어느 각도로 쓸지>" --origin exam
@@ -144,7 +147,7 @@ grep -i "<개념 영문/한글>" POSTS.md
 ## 5. 검사
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py lint
+python scripts/blog.py lint
 ```
 
 `[NG]`가 하나라도 있으면 고친 뒤 다시 돌린다. lint는 회차·번호가 새어 나갔는지도 검사한다.
@@ -152,8 +155,8 @@ PYTHONUTF8=1 python scripts/blog.py lint
 ## 6. 마무리
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py exam-done <id> [<id>...]
-PYTHONUTF8=1 python scripts/blog.py index
+python scripts/blog.py exam-done <id> [<id>...]
+python scripts/blog.py index
 git add -A
 git commit -F - <<'MSG'
 exam: <주제>

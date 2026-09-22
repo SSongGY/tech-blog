@@ -25,7 +25,7 @@ description: 정보관리기술사 기출문제를 답안 형태로 풀어 쓰�
 
 ## 한 회차 분량
 
-`PYTHONUTF8=1 python scripts/blog.py exam-pick`이 정해준다.
+`python scripts/blog.py exam-pick`이 정해준다.
 단답형이면 2문제, 논술형이면 1문제다. **문제 1개당 글 1편**이다.
 손으로 고르지 않고, 편수를 늘리지도 않는다.
 

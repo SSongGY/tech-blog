@@ -5,6 +5,9 @@ description: 기출 풀이에서 나온 개념을 정보관리기술사 개념 �
 오후 3시에 푼 기출문제의 **개념**을 정리한다. 답안(`exam` 트랙)이 아니라
 **개념 글(`pe` 트랙)** 2편이다. 둘의 차이는 `CLAUDE.md` §11에 있다.
 
+
+**명령 앞에 `PYTHONUTF8=1` 같은 환경변수를 붙이지 않는다.** `blog.py`가 인코딩을 스스로 맞추고, 환경변수를 붙이면 셸 문법이 갈려 무인 회차가 멈춘다.
+
 ## 먼저 읽을 것
 
 1. `CLAUDE.md` **§7 정보관리기술사 글** — 개념 글의 9단 구조. 이게 본체다
@@ -21,7 +24,7 @@ description: 기출 풀이에서 나온 개념을 정보관리기술사 개념 �
 ## 1. 주제 고르기
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py pick-concepts
+python scripts/blog.py pick-concepts
 ```
 
 **기출발**로 표시된 주제를 먼저 준다 — 오늘 오후 3시 답안에서 등록된 개념이다.
@@ -31,7 +34,7 @@ PYTHONUTF8=1 python scripts/blog.py pick-concepts
 ## 2. 글 만들기
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py new <topic_id> <slug>
+python scripts/blog.py new <topic_id> <slug>
 ```
 
 §7의 구조를 그대로 따른다.
@@ -74,7 +77,7 @@ ls posts/PE/exam/
 ## 4. 검사
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py lint
+python scripts/blog.py lint
 ```
 
 `[NG]`가 하나라도 있으면 고친 뒤 다시 돌린다.
@@ -82,8 +85,8 @@ PYTHONUTF8=1 python scripts/blog.py lint
 ## 5. 마무리
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py done <topic_id>
-PYTHONUTF8=1 python scripts/blog.py index
+python scripts/blog.py done <topic_id>
+python scripts/blog.py index
 git add -A
 git commit -F - <<'MSG'
 post: <제목>

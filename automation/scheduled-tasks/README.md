@@ -26,7 +26,7 @@ Claude Code에 이렇게 말하면 된다. 네 개를 한 번에 시켜도 되�
 ## 어긋났는지 확인
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py tasks-diff
+python scripts/blog.py tasks-diff
 ```
 
 각 작업을 실제 작업과 하나씩 대조해 `[같음]` / `[다름]` / `[없음]` / `[사본없음]`을 낸다.

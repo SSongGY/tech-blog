@@ -130,7 +130,7 @@
 - **돌린 기록을 `code/output.txt`로 남긴다.** `verification: executed` 글의 의무다.
 
   ```bash
-  PYTHONUTF8=1 python scripts/blog.py run-example posts/<카테고리>/<...>/
+  python scripts/blog.py run-example posts/<카테고리>/<...>/
   ```
 
   명령·수행 시각·환경·종료 코드가 머리말로 붙고 그 아래에 출력이 그대로 들어간다.
@@ -432,7 +432,7 @@ topic_id: tb-001
 - 답안을 쓰다 **블로그에 없는 개념**을 만나면, 답안은 답안대로 끝내고 개념은 백로그에 넣는다:
 
   ```bash
-  PYTHONUTF8=1 python scripts/blog.py add-topic \
+  python scripts/blog.py add-topic \
     --track pe --title "<개념 이름>" --subcategory <분야> \
     --tags "정보관리기술사,<분야>,개념정리" \
     --angle "<어느 각도로 쓸지>" --origin exam

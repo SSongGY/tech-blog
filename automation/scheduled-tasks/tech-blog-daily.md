@@ -30,7 +30,7 @@ description: D:\workspace\claude\tech_blog에서 회차당 3편씩(오전 7시·
 이후 검증 방식이 전부 여기에 달려 있다.
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py env
+python scripts/blog.py env
 ```
 
 **셸 `for` 루프나 복합 명령으로 직접 확인하지 않는다.** 허용 규칙에 걸리지 않아

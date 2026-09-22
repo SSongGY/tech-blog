@@ -25,7 +25,7 @@ description: 15시 기출 답안에서 나온 개념을 정보관리기술사 �
 
 ## 무엇을 쓰는가
 
-`PYTHONUTF8=1 python scripts/blog.py pick-concepts`가 정해준다.
+`python scripts/blog.py pick-concepts`가 정해준다.
 15시 답안에서 `--origin exam`으로 등록된 **기출발** 주제를 먼저 준다.
 기출발이 2개가 안 되면 기존 `pe` 백로그에서 채워 준다 — 그것도 정상이다.
 손으로 고르지 않고, 편수를 늘리지도 않는다.

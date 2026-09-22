@@ -7,12 +7,15 @@ description: 이번 회차의 기술 블로그 글 3편을 작성하고 커밋�
 **타협 불가**: 검증되지 않은 문장은 쓰지 않는다 · 버전을 반드시 명시한다 ·
 회사 내부 정보를 넣지 않는다.
 
+
+**명령 앞에 `PYTHONUTF8=1` 같은 환경변수를 붙이지 않는다.** `blog.py`가 인코딩을 스스로 맞추고, 환경변수를 붙이면 셸 문법이 갈려 무인 회차가 멈춘다.
+
 ## 0. 실행 환경 판별
 
 먼저 무엇을 검증할 수 있는 환경인지 확인한다. 이후 판단이 여기에 달려 있다.
 
 ```bash
-PYTHONUTF8=1 python scripts/blog.py env
+python scripts/blog.py env
 ```
 
 **셸 `for` 루프로 직접 돌리지 않는다.** 복합 명령은 허용 규칙에 걸리지 않아
@@ -82,7 +85,7 @@ python scripts/blog.py new <id> <영문-slug>
   - **기계 검사를 돌린다.** 캔버스 폭·배경 rect·글자 크기·박스 수·글자 넘침을 본다
 
     ```bash
-    PYTHONUTF8=1 python scripts/blog.py check-svg posts/<...>/fig/<이름>.svg
+    python scripts/blog.py check-svg posts/<...>/fig/<이름>.svg
     ```
 
     HTTP 서버를 띄우고 `curl`로 200을 받는 방식은 쓰지 않는다. 그건 파일이 서빙된다는
