@@ -1,0 +1,132 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python inner_join_basics.py
+# 수행 시각 : 2026-09-23 08:29 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+SQLite 3.49.1
+
+=== 1. 두 표의 행 수 ===
+
+[1-A 고객]
+  SELECT COUNT(*) FROM customer
+  (4,)
+  -> 1행
+
+[1-B 주문]
+  SELECT COUNT(*) FROM sale_order
+  (7,)
+  -> 1행
+
+=== 2. 조인 조건이 없으면 곱해진다 ===
+
+[2-A CROSS JOIN]
+  SELECT COUNT(*) FROM customer CROSS JOIN sale_order
+  (28,)
+  -> 1행
+
+[2-B 쉼표 조인, WHERE 없음]
+  SELECT COUNT(*) FROM customer, sale_order
+  (28,)
+  -> 1행
+
+[2-C INNER JOIN ON 1=1]
+  SELECT COUNT(*) FROM customer INNER JOIN sale_order ON 1 = 1
+  (28,)
+  -> 1행
+
+=== 3. 조인 조건을 주면 ===
+
+[3-A INNER JOIN ON]
+  SELECT c.name, o.id, o.amount FROM customer AS c INNER JOIN sale_order AS o ON o.customer_id = c.id ORDER BY o.id
+  ('김서준', 101, 120)
+  ('김서준', 102, 80)
+  ('김서준', 103, 200)
+  ('이하윤', 104, 150)
+  ('김서준', 107, 80)
+  -> 5행
+
+[3-B 쉼표 조인 + WHERE (같은 결과)]
+  SELECT c.name, o.id, o.amount FROM customer AS c, sale_order AS o WHERE o.customer_id = c.id ORDER BY o.id
+  ('김서준', 101, 120)
+  ('김서준', 102, 80)
+  ('김서준', 103, 200)
+  ('이하윤', 104, 150)
+  ('김서준', 107, 80)
+  -> 5행
+
+[3-C USING (컬럼 이름이 같을 때)]
+  SELECT customer_id, COUNT(*) FROM sale_order INNER JOIN shipment USING (customer_id) GROUP BY customer_id
+  (1, 8)
+  (2, 1)
+  -> 2행
+
+=== 4. 짝이 없는 행은 사라진다 ===
+
+[4-A 주문이 없는 고객]
+  SELECT c.name FROM customer AS c INNER JOIN sale_order AS o ON o.customer_id = c.id WHERE c.id = 4
+  (0건)
+
+[4-B 고객이 없는 주문 (customer_id = 9)]
+  SELECT o.id FROM sale_order AS o INNER JOIN customer AS c ON o.customer_id = c.id WHERE o.id = 105
+  (0건)
+
+[4-C NULL 키는 무엇과도 짝이 되지 않는다]
+  SELECT o.id FROM sale_order AS o INNER JOIN customer AS c ON o.customer_id = c.id WHERE o.id = 106
+  (0건)
+
+[4-D NULL = NULL 도 짝이 아니다]
+  SELECT COUNT(*) FROM sale_order AS a INNER JOIN sale_order AS b ON a.customer_id = b.customer_id WHERE a.id = 106 AND b.id = 106
+  (0,)
+  -> 1행
+
+=== 5. 합계가 틀어지는 자리 ===
+
+[5-A 주문만 집계]
+  SELECT SUM(amount) FROM sale_order WHERE customer_id = 1
+  (480,)
+  -> 1행
+
+[5-B 배송을 함께 조인하고 집계]
+  SELECT SUM(o.amount) FROM sale_order AS o INNER JOIN shipment AS s ON s.customer_id = o.customer_id WHERE o.customer_id = 1
+  (960,)
+  -> 1행
+
+[5-C 조인 결과를 그대로 본다]
+  SELECT o.id, s.id, o.amount FROM sale_order AS o INNER JOIN shipment AS s ON s.customer_id = o.customer_id WHERE o.customer_id = 1 ORDER BY o.id, s.id
+  (101, 201, 120)
+  (101, 202, 120)
+  (102, 201, 80)
+  (102, 202, 80)
+  (103, 201, 200)
+  (103, 202, 200)
+  (107, 201, 80)
+  (107, 202, 80)
+  -> 8행
+
+[5-D DISTINCT 로 덮으면]
+  SELECT SUM(DISTINCT o.amount) FROM sale_order AS o INNER JOIN shipment AS s ON s.customer_id = o.customer_id WHERE o.customer_id = 1
+  (400,)
+  -> 1행
+
+=== 6. 실행계획 ===
+
+[6-A 인덱스 없음]
+  EXPLAIN QUERY PLAN SELECT c.name, o.amount FROM customer AS c INNER JOIN sale_order AS o ON o.customer_id = c.id
+  (3, 0, 216, 'SCAN o')
+  (5, 0, 45, 'SEARCH c USING INTEGER PRIMARY KEY (rowid=?)')
+  -> 2행
+
+[6-B 조인 키에 인덱스를 만든 뒤]
+  EXPLAIN QUERY PLAN SELECT c.name, o.amount FROM customer AS c INNER JOIN sale_order AS o ON o.customer_id = c.id
+  (3, 0, 216, 'SCAN o')
+  (5, 0, 45, 'SEARCH c USING INTEGER PRIMARY KEY (rowid=?)')
+  -> 2행
+
+[6-C 한쪽을 먼저 좁히면]
+  EXPLAIN QUERY PLAN SELECT c.name, o.amount FROM customer AS c INNER JOIN sale_order AS o ON o.customer_id = c.id WHERE c.city = '서울'
+  (4, 0, 216, 'SCAN c')
+  (8, 0, 62, 'SEARCH o USING INDEX ix_sale_order_customer_id (customer_id=?)')
+  -> 2행

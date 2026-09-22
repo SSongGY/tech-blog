@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="490" viewBox="0 0 880 490" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="490" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">조인 결과가 몇 행이 되는가</text>
+  <text x="40" y="56" font-size="13" fill="#555">customer 4행 · sale_order 7행 · shipment 3행 (고객 1번 앞으로 2건)</text>
+
+  <!-- panel A -->
+  <text x="40" y="92" font-size="14" font-weight="bold" fill="#1b1b1b">가. 조건이 없으면 모든 짝, 조건을 주면 맞는 짝만</text>
+
+  <rect x="40" y="106" width="150" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="115" y="130" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">customer</text>
+  <text x="115" y="150" font-size="13" text-anchor="middle" fill="#444">4행</text>
+
+  <text x="205" y="141" font-size="16" text-anchor="middle" fill="#444">×</text>
+
+  <rect x="222" y="106" width="150" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="297" y="130" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">sale_order</text>
+  <text x="297" y="150" font-size="13" text-anchor="middle" fill="#444">7행</text>
+
+  <path d="M 376 135 L 408 135" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="414" y="106" width="176" height="58" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="502" y="130" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">조건 없는 조인</text>
+  <text x="502" y="150" font-size="13" text-anchor="middle" fill="#444">모든 짝 28행</text>
+
+  <path d="M 594 135 L 626 135" stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
+  <text x="610" y="123" font-size="13" text-anchor="middle" fill="#2d6a4f">ON</text>
+
+  <rect x="632" y="106" width="208" height="58" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="736" y="130" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">o.customer_id = c.id</text>
+  <text x="736" y="150" font-size="13" text-anchor="middle" fill="#444">참인 짝만 5행</text>
+
+  <text x="40" y="190" font-size="13" fill="#555">28행 중 23행은 조건이 거짓이라 버려진다. 짝이 없는 고객(4번), 없는 고객을 가리키는 주문, 키가 NULL인 주문이 여기서 사라진다.</text>
+
+  <line x1="40" y1="212" x2="840" y2="212" stroke="#d8d8d2" stroke-width="1"/>
+
+  <!-- panel B -->
+  <text x="40" y="244" font-size="14" font-weight="bold" fill="#1b1b1b">나. 1:N 관계를 둘 붙이면 행이 곱해진다 (고객 1번만 본 것)</text>
+
+  <rect x="40" y="260" width="164" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="122" y="284" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">주문 4행</text>
+  <text x="122" y="304" font-size="13" text-anchor="middle" fill="#444">120 · 80 · 200 · 80</text>
+
+  <text x="219" y="295" font-size="16" text-anchor="middle" fill="#444">×</text>
+
+  <rect x="236" y="260" width="164" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="318" y="284" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">배송 2행</text>
+  <text x="318" y="304" font-size="13" text-anchor="middle" fill="#444">201 · 202</text>
+
+  <path d="M 404 289 L 436 289" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="442" y="260" width="180" height="58" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="532" y="284" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">조인 결과 8행</text>
+  <text x="532" y="304" font-size="13" text-anchor="middle" fill="#444">주문마다 2번씩</text>
+
+  <path d="M 626 289 L 658 289" stroke="#9d0208" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <text x="642" y="277" font-size="13" text-anchor="middle" fill="#9d0208">SUM</text>
+
+  <rect x="664" y="260" width="176" height="58" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="752" y="284" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">480 → 960</text>
+  <text x="752" y="304" font-size="13" text-anchor="middle" fill="#444">금액이 두 번 더해진다</text>
+
+  <rect x="40" y="342" width="386" height="124" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="58" y="366" font-size="14" font-weight="bold" fill="#1b1b1b">조인 결과 8행 (주문번호, 배송번호, 금액)</text>
+  <text x="58" y="390" font-size="13" fill="#444">(101, 201, 120)</text>
+  <text x="58" y="410" font-size="13" fill="#444">(102, 201, 80)</text>
+  <text x="58" y="430" font-size="13" fill="#444">(103, 201, 200)</text>
+  <text x="58" y="450" font-size="13" fill="#444">(107, 201, 80)</text>
+  <text x="240" y="390" font-size="13" fill="#444">(101, 202, 120)</text>
+  <text x="240" y="410" font-size="13" fill="#444">(102, 202, 80)</text>
+  <text x="240" y="430" font-size="13" fill="#444">(103, 202, 200)</text>
+  <text x="240" y="450" font-size="13" fill="#444">(107, 202, 80)</text>
+
+  <rect x="446" y="342" width="394" height="124" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="464" y="366" font-size="14" font-weight="bold" fill="#2d6a4f">행 수를 정하는 것은 조건이지 표가 아니다</text>
+  <text x="464" y="392" font-size="13" fill="#333">결과 행 수는 왼쪽 표의 행 수와 무관하다.</text>
+  <text x="464" y="414" font-size="13" fill="#333">한쪽 키가 몇 번 나오느냐가 그대로 배수가 된다.</text>
+  <text x="464" y="436" font-size="13" fill="#333">집계를 붙이기 전에 조인 결과를 먼저 세어 본다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
