@@ -24,3 +24,6 @@
 | 2026-09-22 | bas-004 | Database | LIMIT과 OFFSET — 결과를 잘라내는 문법 |
 | 2026-09-22 | tb-002 | Database | Tibero 7 계층 질의 — CONNECT BY와 순환 참조 |
 | 2026-09-22 | pe-005 | PE | 형상관리 — 4대 활동과 베이스라인 |
+| 2026-09-22 | bas-005 | Database | DISTINCT — 중복 제거가 정렬을 부르는 이유 |
+| 2026-09-22 | pe-006 | PE | CMMI 성숙도 5단계와 프로세스 영역 |
+| 2026-09-22 | tb-004 | Database | Tibero 7 MERGE 문 — UPSERT를 한 문장으로 |

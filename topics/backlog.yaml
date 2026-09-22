@@ -497,7 +497,7 @@ topics:
     difficulty: 중급
     angle: "WHEN MATCHED/NOT MATCHED 조합과 DELETE 절까지"
     code: sql
-    status: todo
+    status: done
   - id: tb-005
     title: "Tibero 7 파티션 테이블 — 종류별로 언제 쓰는가"
     category: Database
@@ -762,7 +762,7 @@ topics:
     difficulty: 입문
     angle: "실행계획에서 DISTINCT가 어떤 연산으로 바뀌는지 확인"
     code: python
-    status: todo
+    status: done
   - id: bas-006
     title: "GROUP BY와 집계 함수 — 묶는 기준 정하기"
     category: Database
@@ -1034,7 +1034,7 @@ topics:
     difficulty: 중급
     angle: "단계별로 조직에서 실제 무엇이 달라지는지"
     code: none
-    status: todo
+    status: done
   - id: pe-007
     title: "애자일과 DevOps — 무엇이 같고 무엇이 다른가"
     category: PE
