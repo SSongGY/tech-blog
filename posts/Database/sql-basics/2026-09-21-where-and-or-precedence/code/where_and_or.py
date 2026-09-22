@@ -50,6 +50,36 @@ def report(conn: sqlite3.Connection, where: str) -> int:
     return n
 
 
+def plan_tree(conn, sql, params=()):
+    """EXPLAIN QUERY PLAN 결과를 sqlite3 CLI 가 보여주는 모양 그대로 만든다.
+
+    detail 문자열만 라벨 붙여 찍으면 사람이 정리한 표처럼 보인다. CLI 와 같은 모양이면
+    도구가 돌려준 값이라는 것이 글에서 바로 드러난다. 트리 구조는 각 행의
+    (id, parent) 로 만든다 — 서브쿼리나 조인이 있으면 실제로 여러 단이 나온다.
+    """
+    rows = conn.execute("EXPLAIN QUERY PLAN " + sql, params).fetchall()
+    children = {}
+    for node_id, parent_id, _, detail in rows:
+        children.setdefault(parent_id, []).append((node_id, detail))
+
+    lines = ["QUERY PLAN"]
+
+    def walk(parent_id, prefix):
+        items = children.get(parent_id, [])
+        for index, (node_id, detail) in enumerate(items):
+            last = index == len(items) - 1
+            lines.append(prefix + ("`--" if last else "|--") + detail)
+            walk(node_id, prefix + ("   " if last else "|  "))
+
+    walk(0, "")
+    return "\n".join(lines)
+
+
+def indented_plan(conn, sql, params=(), indent="   "):
+    """plan_tree 를 본문에 넣기 좋게 들여쓴다."""
+    return "\n".join(indent + line for line in plan_tree(conn, sql, params).splitlines())
+
+
 def main() -> None:
     conn = build_database()
     print(f"SQLite {sqlite3.sqlite_version} / 전체 {ROW_COUNT:,}행\n")
@@ -88,12 +118,9 @@ def main() -> None:
         "status = 'paid' OR amount > 50000",
         "status = 'paid' OR status = 'pending'",
     ):
-        plan = conn.execute(
-            f"EXPLAIN QUERY PLAN SELECT id FROM customer_order WHERE {where}"
-        ).fetchall()
         print(f"  WHERE {where}")
-        for step in plan:
-            print(f"      {step[3]}")
+        print(indented_plan(conn, f"SELECT id FROM customer_order WHERE {where}",
+                            indent="      "))
         print()
     conn.close()
 

@@ -2,7 +2,7 @@
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
 # 명령      : python where_and_or.py
-# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
+# 수행 시각 : 2026-09-22 10:48 (대한민국 표준시)
 # 환경      : Python 3.13.5 / Windows 11
 # 종료 코드 : 0
 
@@ -33,18 +33,22 @@ SQLite 3.49.1 / 전체 20,000행
 
 ### 4. 실행계획: OR을 어떻게 쓰느냐로 인덱스 사용이 갈린다
   WHERE status = 'canceled' OR status = 'pending' AND amount > 50000
-      MULTI-INDEX OR
-      INDEX 1
-      SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
-      INDEX 2
-      SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
+      QUERY PLAN
+      `--MULTI-INDEX OR
+         |--INDEX 1
+         |  `--SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
+         `--INDEX 2
+            `--SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
 
   WHERE status = 'paid' AND amount > 50000
-      SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
+      QUERY PLAN
+      `--SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
 
   WHERE status = 'paid' OR amount > 50000
-      SCAN customer_order
+      QUERY PLAN
+      `--SCAN customer_order
 
   WHERE status = 'paid' OR status = 'pending'
-      SEARCH customer_order USING COVERING INDEX ix_customer_order_status (status=?)
+      QUERY PLAN
+      `--SEARCH customer_order USING COVERING INDEX ix_customer_order_status (status=?)
 

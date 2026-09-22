@@ -117,9 +117,11 @@ SELECT id, title FROM article WHERE id > 100000 ORDER BY id LIMIT 10;
 
 ```
    인덱스 없음       결과 [1, 2, 3]
-                계획 SCAN article
+   QUERY PLAN
+   `--SCAN article
    인덱스 생성 후     결과 [1000, 2000, 3000]
-                계획 SCAN article USING COVERING INDEX ix_article_view_count
+   QUERY PLAN
+   `--SCAN article USING COVERING INDEX ix_article_view_count
 ```
 
 돌려준 글이 통째로 바뀌었다. SQLite 문서가 `ORDER BY`가 없으면 행 순서는 정의되지 않는다고

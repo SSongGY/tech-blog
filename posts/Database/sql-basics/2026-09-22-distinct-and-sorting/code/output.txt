@@ -2,7 +2,7 @@
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
 # 명령      : python distinct_plan.py
-# 수행 시각 : 2026-09-22 09:05 (대한민국 표준시)
+# 수행 시각 : 2026-09-22 10:48 (대한민국 표준시)
 # 환경      : Python 3.13.5 / Windows 11
 # 종료 코드 : 0
 
@@ -47,32 +47,38 @@ SQLite 3.49.1
 
 ## 2. 인덱스가 없을 때의 실행계획
 [2-1 DISTINCT]
-  SQL  : SELECT DISTINCT team FROM employee
-  계획 : SCAN employee
-  계획 : USE TEMP B-TREE FOR DISTINCT
+  SQL : SELECT DISTINCT team FROM employee
+  QUERY PLAN
+  |--SCAN employee
+  `--USE TEMP B-TREE FOR DISTINCT
 
 [2-2 GROUP BY]
-  SQL  : SELECT team FROM employee GROUP BY team
-  계획 : SCAN employee
-  계획 : USE TEMP B-TREE FOR GROUP BY
+  SQL : SELECT team FROM employee GROUP BY team
+  QUERY PLAN
+  |--SCAN employee
+  `--USE TEMP B-TREE FOR GROUP BY
 
 [2-3 그냥 SELECT]
-  SQL  : SELECT team FROM employee
-  계획 : SCAN employee
+  SQL : SELECT team FROM employee
+  QUERY PLAN
+  `--SCAN employee
 
 ## 3. 인덱스를 만들면 달라지는가
 [3-1 DISTINCT]
-  SQL  : SELECT DISTINCT team FROM employee
-  계획 : SCAN employee USING COVERING INDEX ix_employee_team
+  SQL : SELECT DISTINCT team FROM employee
+  QUERY PLAN
+  `--SCAN employee USING COVERING INDEX ix_employee_team
 
 [3-2 DISTINCT 두 컬럼]
-  SQL  : SELECT DISTINCT team, grade FROM employee
-  계획 : SCAN employee USING INDEX ix_employee_team
-  계획 : USE TEMP B-TREE FOR DISTINCT
+  SQL : SELECT DISTINCT team, grade FROM employee
+  QUERY PLAN
+  |--SCAN employee USING INDEX ix_employee_team
+  `--USE TEMP B-TREE FOR DISTINCT
 
 [3-3 두 컬럼 인덱스 생성 후]
-  SQL  : SELECT DISTINCT team, grade FROM employee
-  계획 : SCAN employee USING COVERING INDEX ix_employee_team_grade
+  SQL : SELECT DISTINCT team, grade FROM employee
+  QUERY PLAN
+  `--SCAN employee USING COVERING INDEX ix_employee_team_grade
 
 ## 4. 정렬은 덤이지 약속이 아니다
 [4-1 grade만]
@@ -89,8 +95,9 @@ SQLite 3.49.1
   행   : 책임 | 지원
 
 [4-3 위 질의의 계획]
-  SQL  : SELECT DISTINCT grade, team FROM employee
-  계획 : SCAN employee USING COVERING INDEX ix_employee_team_grade
+  SQL : SELECT DISTINCT grade, team FROM employee
+  QUERY PLAN
+  `--SCAN employee USING COVERING INDEX ix_employee_team_grade
 
 [4-4 순서를 요구하면]
   SQL  : SELECT DISTINCT grade, team FROM employee ORDER BY grade, team
@@ -101,16 +108,19 @@ SQLite 3.49.1
   행   : 책임 | 지원
 
 [4-5 그때의 계획]
-  SQL  : SELECT DISTINCT grade, team FROM employee ORDER BY grade, team
-  계획 : SCAN employee USING COVERING INDEX ix_employee_team_grade
-  계획 : USE TEMP B-TREE FOR ORDER BY
+  SQL : SELECT DISTINCT grade, team FROM employee ORDER BY grade, team
+  QUERY PLAN
+  |--SCAN employee USING COVERING INDEX ix_employee_team_grade
+  `--USE TEMP B-TREE FOR ORDER BY
 
 ## 5. DISTINCT가 지워지는 경우
 [5-1 PK에 DISTINCT]
-  SQL  : SELECT DISTINCT id FROM employee
-  계획 : SCAN employee USING COVERING INDEX ix_employee_team
+  SQL : SELECT DISTINCT id FROM employee
+  QUERY PLAN
+  `--SCAN employee USING COVERING INDEX ix_employee_team
 
 [5-2 PK에 DISTINCT 없이]
-  SQL  : SELECT id FROM employee
-  계획 : SCAN employee USING COVERING INDEX ix_employee_team
+  SQL : SELECT id FROM employee
+  QUERY PLAN
+  `--SCAN employee USING COVERING INDEX ix_employee_team
 

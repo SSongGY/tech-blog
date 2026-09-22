@@ -87,9 +87,10 @@ SELECT DISTINCT team, name  FROM employee    →  8행 (한 행도 안 줄었다
 ### 인덱스가 없을 때
 
 ```
-SQL  : SELECT DISTINCT team FROM employee
-계획 : SCAN employee
-계획 : USE TEMP B-TREE FOR DISTINCT
+SQL : SELECT DISTINCT team FROM employee
+QUERY PLAN
+|--SCAN employee
+`--USE TEMP B-TREE FOR DISTINCT
 ```
 
 `GROUP BY team`으로 바꿔도 `USE TEMP B-TREE FOR GROUP BY`가 나온다. 같은 일을 이름만
@@ -100,17 +101,19 @@ SQL  : SELECT DISTINCT team FROM employee
 ```
 CREATE INDEX ix_employee_team ON employee (team);
 
-SQL  : SELECT DISTINCT team FROM employee
-계획 : SCAN employee USING COVERING INDEX ix_employee_team
+SQL : SELECT DISTINCT team FROM employee
+QUERY PLAN
+`--SCAN employee USING COVERING INDEX ix_employee_team
 ```
 
 **`USE TEMP B-TREE FOR DISTINCT` 줄이 사라졌다.** 다만 이 인덱스는 `team` 하나뿐이라,
 컬럼을 하나 늘리면 다시 임시 B-Tree가 돌아온다.
 
 ```
-SQL  : SELECT DISTINCT team, grade FROM employee
-계획 : SCAN employee USING INDEX ix_employee_team
-계획 : USE TEMP B-TREE FOR DISTINCT
+SQL : SELECT DISTINCT team, grade FROM employee
+QUERY PLAN
+|--SCAN employee USING INDEX ix_employee_team
+`--USE TEMP B-TREE FOR DISTINCT
 ```
 
 `(team, grade)` 인덱스를 추가로 만들자 다시 한 줄이 된다. **중복 판정에 쓰는 컬럼이
@@ -123,7 +126,8 @@ SQL  : SELECT DISTINCT team, grade FROM employee
 
 ```
 SQL  : SELECT DISTINCT grade, team FROM employee
-계획 : SCAN employee USING COVERING INDEX ix_employee_team_grade
+QUERY PLAN
+`--SCAN employee USING COVERING INDEX ix_employee_team_grade
 행   : 선임 | 개발
 행   : 책임 | 개발
 행   : 선임 | 영업
@@ -136,8 +140,10 @@ SQL  : SELECT DISTINCT grade, team FROM employee
 `ORDER BY grade, team`을 붙이자 순서가 잡히는데, 그 대신 계획에 줄이 하나 늘었다.
 
 ```
-계획 : SCAN employee USING COVERING INDEX ix_employee_team_grade
-계획 : USE TEMP B-TREE FOR ORDER BY
+SQL : SELECT DISTINCT grade, team FROM employee ORDER BY grade, team
+QUERY PLAN
+|--SCAN employee USING COVERING INDEX ix_employee_team_grade
+`--USE TEMP B-TREE FOR ORDER BY
 ```
 
 **중복 제거로 아낀 임시 B-Tree를 정렬하느라 다시 만들었다.** 순서가 필요하면 `DISTINCT`에
@@ -146,8 +152,13 @@ SQL  : SELECT DISTINCT grade, team FROM employee
 ### 중복이 있을 수 없으면 아예 안 한다
 
 ```
-SQL  : SELECT DISTINCT id FROM employee   계획 : SCAN employee USING COVERING INDEX ix_employee_team
-SQL  : SELECT id FROM employee            계획 : SCAN employee USING COVERING INDEX ix_employee_team
+SQL : SELECT DISTINCT id FROM employee
+QUERY PLAN
+`--SCAN employee USING COVERING INDEX ix_employee_team
+
+SQL : SELECT id FROM employee
+QUERY PLAN
+`--SCAN employee USING COVERING INDEX ix_employee_team
 ```
 
 `id`는 기본 키라 중복이 나올 수 없다. 두 계획이 글자까지 같다는 것은 `DISTINCT`가

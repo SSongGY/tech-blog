@@ -2,7 +2,7 @@
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
 # 명령      : python order_by_nulls.py
-# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
+# 수행 시각 : 2026-09-22 10:48 (대한민국 표준시)
 # 환경      : Python 3.13.5 / Windows 11
 # 종료 코드 : 0
 
@@ -73,6 +73,8 @@ SQLite 3.49.1
 
 -- 8. 동점 행의 순서는 왜 믿으면 안 되는가
    인덱스 없음         결과: ['강민수', '박지훈']
-                  계획: SCAN employee
+   QUERY PLAN
+   `--SCAN employee
    인덱스 생성 후       결과: ['박지훈', '강민수']
-                  계획: SEARCH employee USING COVERING INDEX idx_bonus_name (bonus=?)
+   QUERY PLAN
+   `--SEARCH employee USING COVERING INDEX idx_bonus_name (bonus=?)

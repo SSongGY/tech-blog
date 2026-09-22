@@ -2,7 +2,7 @@
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
 # 명령      : python limit_offset.py
-# 수행 시각 : 2026-09-22 08:32 (대한민국 표준시)
+# 수행 시각 : 2026-09-22 10:48 (대한민국 표준시)
 # 환경      : Python 3.13.5 / Windows 11
 # 종료 코드 : 0
 
@@ -40,8 +40,8 @@ SQLite 3.49.1
    OFFSET       0  명령        70개  (첫 페이지의    1.0배)     0.0 ms
    OFFSET   1,000  명령     2,070개  (첫 페이지의   29.6배)     0.2 ms
    OFFSET  10,000  명령    20,070개  (첫 페이지의  286.7배)     1.8 ms
-   OFFSET 100,000  명령   200,070개  (첫 페이지의 2858.1배)    18.0 ms
-   OFFSET 199,990  명령   400,050개  (첫 페이지의 5715.0배)    36.3 ms
+   OFFSET 100,000  명령   200,070개  (첫 페이지의 2858.1배)    18.4 ms
+   OFFSET 199,990  명령   400,050개  (첫 페이지의 5715.0배)    42.7 ms
 
 -- 7. 같은 10행을 마지막 읽은 id 로 집는다
    id >       0   명령        60개     0.1 ms
@@ -51,12 +51,18 @@ SQLite 3.49.1
    id > 199,990   명령        59개     0.0 ms
 
 -- 8. 두 방식의 실행 계획
-   OFFSET: SCAN article
-   키셋: SEARCH article USING INTEGER PRIMARY KEY (rowid>?)
+   OFFSET
+   QUERY PLAN
+   `--SCAN article
+   키셋
+   QUERY PLAN
+   `--SEARCH article USING INTEGER PRIMARY KEY (rowid>?)
 
 -- 9. ORDER BY 없는 LIMIT 은 어느 행이 나올지 정해져 있지 않다
    인덱스 없음       결과 [1, 2, 3]
-                계획 SCAN article
+   QUERY PLAN
+   `--SCAN article
    인덱스 생성 후     결과 [1000, 2000, 3000]
-                계획 SCAN article USING COVERING INDEX ix_article_view_count
+   QUERY PLAN
+   `--SCAN article USING COVERING INDEX ix_article_view_count
 

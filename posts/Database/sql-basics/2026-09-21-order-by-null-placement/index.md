@@ -138,10 +138,12 @@ SELECT name, team, bonus FROM employee ORDER BY team DESC, bonus ASC NULLS LAST;
 정말 그런지 확인하려고 **질의는 한 글자도 바꾸지 않고 인덱스만 하나 만들어** 다시 돌렸다.
 
 ```
-인덱스 없음         결과: ['강민수', '박지훈']
-               계획: SCAN employee
-인덱스 생성 후       결과: ['박지훈', '강민수']
-               계획: SEARCH employee USING COVERING INDEX idx_bonus_name (bonus=?)
+   인덱스 없음         결과: ['강민수', '박지훈']
+   QUERY PLAN
+   `--SCAN employee
+   인덱스 생성 후       결과: ['박지훈', '강민수']
+   QUERY PLAN
+   `--SEARCH employee USING COVERING INDEX idx_bonus_name (bonus=?)
 ```
 
 순서가 뒤집혔다. `ORDER BY bonus DESC`는 그대로인데 결과가 달라진 것은,

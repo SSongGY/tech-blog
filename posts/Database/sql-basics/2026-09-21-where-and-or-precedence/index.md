@@ -93,11 +93,12 @@ DB가 조건을 어떻게 묶었는지는 `EXPLAIN QUERY PLAN`으로도 드러�
 
 ```text
   WHERE status = 'canceled' OR status = 'pending' AND amount > 50000
-      MULTI-INDEX OR
-      INDEX 1
-      SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
-      INDEX 2
-      SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
+      QUERY PLAN
+      `--MULTI-INDEX OR
+         |--INDEX 1
+         |  `--SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
+         `--INDEX 2
+            `--SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
 ```
 
 `OR` 갈래가 **세 개가 아니라 두 개**다. `AND`가 먼저 묶여 한 덩어리가 됐기 때문이다.
@@ -148,14 +149,18 @@ DB가 조건을 어떻게 묶었는지는 `EXPLAIN QUERY PLAN`으로도 드러�
   다른 컬럼과 묶인 `OR`은 전체 스캔이 됐다.
 
 ```text
+
   WHERE status = 'paid' AND amount > 50000
-      SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
+      QUERY PLAN
+      `--SEARCH customer_order USING INDEX ix_customer_order_status (status=?)
 
   WHERE status = 'paid' OR amount > 50000
-      SCAN customer_order
+      QUERY PLAN
+      `--SCAN customer_order
 
   WHERE status = 'paid' OR status = 'pending'
-      SEARCH customer_order USING COVERING INDEX ix_customer_order_status (status=?)
+      QUERY PLAN
+      `--SEARCH customer_order USING COVERING INDEX ix_customer_order_status (status=?)
 ```
 
 같은 컬럼끼리의 `OR`이 인덱스를 타는 건 SQLite가 그 조건을 `IN`으로 바꿔 쓰기 때문이다.
