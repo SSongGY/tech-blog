@@ -1,0 +1,114 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 명령      : python having_vs_where.py
+# 수행 시각 : 2026-09-22 19:08 (대한민국 표준시)
+# 환경      : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+sqlite3.sqlite_version = 3.49.1
+
+--- 1. 그룹 전체
+SELECT region, COUNT(*) AS cnt, SUM(amount) AS total
+FROM sale
+GROUP BY region
+ORDER BY region
+   ('광주', 1, 50)
+   ('대구', 2, 300)
+   ('부산', 2, 240)
+   ('서울', 3, 400)
+
+--- 2. WHERE — 그룹을 만들기 전에 행을 버린다
+SELECT region, COUNT(*) AS cnt, SUM(amount) AS total
+FROM sale
+WHERE channel = '온라인'
+GROUP BY region
+ORDER BY region
+   ('대구', 2, 300)
+   ('부산', 1, 150)
+   ('서울', 2, 320)
+
+--- 3. HAVING — 그룹을 만든 뒤 그룹을 버린다
+SELECT region, COUNT(*) AS cnt, SUM(amount) AS total
+FROM sale
+GROUP BY region
+HAVING COUNT(*) >= 2
+ORDER BY region
+   ('대구', 2, 300)
+   ('부산', 2, 240)
+   ('서울', 3, 400)
+
+--- 4. WHERE에 집계 함수를 쓰면
+SELECT region, COUNT(*) AS cnt
+FROM sale
+WHERE COUNT(*) >= 2
+GROUP BY region
+  [에러] OperationalError: misuse of aggregate: COUNT()
+
+--- 5. GROUP BY 없는 HAVING — 테이블 전체가 한 그룹
+SELECT COUNT(*) AS cnt, SUM(amount) AS total
+FROM sale
+HAVING SUM(amount) > 100
+   (8, 990)
+
+--- 6. GROUP BY 없는 HAVING — 조건이 거짓이면
+SELECT COUNT(*) AS cnt, SUM(amount) AS total
+FROM sale
+HAVING SUM(amount) > 100000
+   (0건)
+
+--- 7. SELECT 별칭을 WHERE에서 참조
+SELECT region, amount AS won
+FROM sale
+WHERE won > 250
+   ('대구', 300)
+
+--- 8. SELECT 별칭을 HAVING에서 참조
+SELECT region, SUM(amount) AS total
+FROM sale
+GROUP BY region
+HAVING total > 250
+ORDER BY region
+   ('대구', 300)
+   ('서울', 400)
+
+--- 9. 집계 함수는 NULL을 세지 않는다
+SELECT region,
+       COUNT(*)      AS cnt_all,
+       COUNT(amount) AS cnt_amount,
+       SUM(amount)   AS total,
+       AVG(amount)   AS avg_amount
+FROM sale
+WHERE region = '대구'
+GROUP BY region
+   ('대구', 2, 1, 300, 300.0)
+
+--- 10. HAVING에 집계가 아닌 조건 — 실행은 된다
+SELECT region, COUNT(*) AS cnt
+FROM sale
+GROUP BY region
+HAVING region <> '서울'
+ORDER BY region
+   ('광주', 1)
+   ('대구', 2)
+   ('부산', 2)
+
+--- 11. 그룹 안에서 값이 갈리는 컬럼을 HAVING에 쓰면
+SELECT region, COUNT(*) AS cnt, GROUP_CONCAT(channel) AS channels
+FROM sale
+GROUP BY region
+HAVING channel = '온라인'
+ORDER BY region
+   ('대구', 2, '온라인,온라인')
+   ('부산', 2, '온라인,오프라인')
+   ('서울', 3, '온라인,오프라인,온라인')
+
+--- 12-A. WHERE region = '서울'
+SELECT region, COUNT(*) FROM sale WHERE region = '서울' GROUP BY region
+QUERY PLAN
+`--SEARCH sale USING COVERING INDEX ix_sale_region (region=?)
+
+--- 12-B. HAVING region = '서울'
+SELECT region, COUNT(*) FROM sale GROUP BY region HAVING region = '서울'
+QUERY PLAN
+`--SEARCH sale USING COVERING INDEX ix_sale_region (region=?)

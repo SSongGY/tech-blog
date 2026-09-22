@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">질의 처리 순서 — 8건이 어느 단계에서 줄어드는가</text>
+  <text x="40" y="56" font-size="13" fill="#555">sale 8행 · GROUP BY region · HAVING COUNT(*) &gt;= 2</text>
+
+  <!-- row 1 -->
+  <g>
+    <rect x="40" y="80" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="125" y="103" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">1. FROM</text>
+    <text x="125" y="121" font-size="13" text-anchor="middle" fill="#444">읽을 행을 정한다</text>
+    <text x="125" y="152" font-size="13" text-anchor="middle" fill="#2d6a4f">행 8건</text>
+
+    <rect x="245" y="80" width="170" height="52" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.5"/>
+    <text x="330" y="103" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">2. WHERE</text>
+    <text x="330" y="121" font-size="13" text-anchor="middle" fill="#444">행 하나씩 판정</text>
+    <text x="330" y="152" font-size="13" text-anchor="middle" fill="#2d6a4f">행 8건 (조건 없음)</text>
+
+    <rect x="450" y="80" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="535" y="103" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">3. GROUP BY</text>
+    <text x="535" y="121" font-size="13" text-anchor="middle" fill="#444">행을 그룹에 배정</text>
+    <text x="535" y="152" font-size="13" text-anchor="middle" fill="#2d6a4f">그룹 4개</text>
+
+    <rect x="655" y="80" width="170" height="52" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2.5"/>
+    <text x="740" y="103" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">4. HAVING</text>
+    <text x="740" y="121" font-size="13" text-anchor="middle" fill="#444">그룹 하나씩 판정</text>
+    <text x="740" y="152" font-size="13" text-anchor="middle" fill="#2d6a4f">그룹 3개</text>
+  </g>
+
+  <path d="M 210 106 L 240 106" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 415 106 L 445 106" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 620 106 L 650 106" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- wrap -->
+  <path d="M 825 132 L 850 132 L 850 190 L 30 190 L 30 248 L 36 248" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- row 2 -->
+  <g>
+    <rect x="40" y="222" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="125" y="245" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">5. 결과 컬럼</text>
+    <text x="125" y="263" font-size="13" text-anchor="middle" fill="#444">집계값·별칭 확정</text>
+
+    <rect x="245" y="222" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="330" y="245" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">6. DISTINCT</text>
+    <text x="330" y="263" font-size="13" text-anchor="middle" fill="#444">중복 결과행 제거</text>
+
+    <rect x="450" y="222" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="535" y="245" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">7. ORDER BY</text>
+    <text x="535" y="263" font-size="13" text-anchor="middle" fill="#444">결과행 정렬</text>
+
+    <rect x="655" y="222" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="740" y="245" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">8. LIMIT</text>
+    <text x="740" y="263" font-size="13" text-anchor="middle" fill="#444">돌려줄 개수를 자름</text>
+  </g>
+
+  <path d="M 210 248 L 240 248" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 415 248 L 445 248" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 620 248 L 650 248" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- notes -->
+  <rect x="40" y="316" width="380" height="82" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="58" y="340" font-size="14" font-weight="bold" fill="#2d6a4f">WHERE — 2단계, 판정 단위는 행</text>
+  <text x="58" y="362" font-size="13" fill="#333">아직 그룹이 없으므로 집계 함수를 쓸 수 없다.</text>
+  <text x="58" y="382" font-size="13" fill="#333">여기서 버린 행은 집계에 아예 들어가지 않는다.</text>
+
+  <rect x="445" y="316" width="380" height="82" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="463" y="340" font-size="14" font-weight="bold" fill="#b45309">HAVING — 4단계, 판정 단위는 그룹</text>
+  <text x="463" y="362" font-size="13" fill="#333">집계값이 이미 나와 있으므로 그것으로 거른다.</text>
+  <text x="463" y="382" font-size="13" fill="#333">버려도 이미 계산에 들어간 행은 되돌릴 수 없다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+</svg>
