@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="424" viewBox="0 0 880 424" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="424" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">배포 단위가 어디서 끊기는가 — 모놀리식과 마이크로서비스</text>
+  <text x="40" y="56" font-size="13" fill="#555">점선이 독립 배포 경계. 경계가 하나에서 셋으로 늘면 호출이 프로세스 안에서 네트워크로 옮겨 간다</text>
+
+  <!-- left: monolith -->
+  <text x="60" y="94" font-size="15" font-weight="bold" fill="#1b1b1b">모놀리식</text>
+  <text x="150" y="94" font-size="13" fill="#555">배포 단위 1개 · 저장소 1개</text>
+
+  <rect x="60" y="108" width="330" height="116" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <text x="74" y="130" font-size="13" fill="#2d6a4f">하나의 실행 아티팩트</text>
+
+  <rect x="74" y="142" width="98" height="46" rx="5" fill="#eef5f0" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="123" y="170" font-size="13" text-anchor="middle" fill="#1b1b1b">주문 모듈</text>
+
+  <rect x="180" y="142" width="98" height="46" rx="5" fill="#eef5f0" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="229" y="170" font-size="13" text-anchor="middle" fill="#1b1b1b">재고 모듈</text>
+
+  <rect x="286" y="142" width="98" height="46" rx="5" fill="#eef5f0" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="335" y="170" font-size="13" text-anchor="middle" fill="#1b1b1b">결제 모듈</text>
+
+  <text x="225" y="208" font-size="13" text-anchor="middle" fill="#2d6a4f">모듈 간 호출 = 함수 호출</text>
+
+  <path d="M 225 224 L 225 254" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="150" y="256" width="150" height="46" rx="5" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="225" y="284" font-size="13" text-anchor="middle" fill="#1b1b1b">공유 데이터베이스</text>
+
+  <text x="60" y="334" font-size="13" fill="#2d6a4f">얻는 것 — 한 트랜잭션으로 정합성 보장,</text>
+  <text x="126" y="354" font-size="13" fill="#2d6a4f">통합 시험이 한 곳에서 끝난다</text>
+  <text x="60" y="380" font-size="13" fill="#9d0208">잃는 것 — 한 줄만 고쳐도 전체 재배포,</text>
+  <text x="126" y="400" font-size="13" fill="#9d0208">몰린 기능만 골라 증설할 수 없다</text>
+
+  <!-- divider -->
+  <line x1="424" y1="80" x2="424" y2="406" stroke="#cccccc" stroke-width="1.5"/>
+
+  <!-- right: MSA -->
+  <text x="458" y="94" font-size="15" font-weight="bold" fill="#1b1b1b">마이크로서비스</text>
+  <text x="590" y="94" font-size="13" fill="#555">배포 단위 3개 · 저장소 3개</text>
+
+  <rect x="458" y="108" width="382" height="40" rx="5" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="649" y="133" font-size="13" text-anchor="middle" fill="#b45309">API 게이트웨이 — 인증·라우팅·유량 제어를 여기서 떠안는다</text>
+
+  <rect x="458" y="162" width="118" height="110" rx="8" fill="none" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <rect x="470" y="180" width="94" height="74" rx="5" fill="#eef5f0" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="517" y="205" font-size="13" text-anchor="middle" fill="#1b1b1b">주문 서비스</text>
+  <line x1="480" y1="216" x2="554" y2="216" stroke="#bbbbbb" stroke-width="1"/>
+  <text x="517" y="238" font-size="13" text-anchor="middle" fill="#555">전용 주문 DB</text>
+
+  <rect x="590" y="162" width="118" height="110" rx="8" fill="none" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <rect x="602" y="180" width="94" height="74" rx="5" fill="#eef5f0" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="649" y="205" font-size="13" text-anchor="middle" fill="#1b1b1b">재고 서비스</text>
+  <line x1="612" y1="216" x2="686" y2="216" stroke="#bbbbbb" stroke-width="1"/>
+  <text x="649" y="238" font-size="13" text-anchor="middle" fill="#555">전용 재고 DB</text>
+
+  <rect x="722" y="162" width="118" height="110" rx="8" fill="none" stroke="#2d6a4f" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <rect x="734" y="180" width="94" height="74" rx="5" fill="#eef5f0" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="781" y="205" font-size="13" text-anchor="middle" fill="#1b1b1b">결제 서비스</text>
+  <line x1="744" y1="216" x2="818" y2="216" stroke="#bbbbbb" stroke-width="1"/>
+  <text x="781" y="238" font-size="13" text-anchor="middle" fill="#555">전용 결제 DB</text>
+
+  <path d="M 564 199 L 598 199" stroke="#9d0208" stroke-width="1.5" fill="none" marker-end="url(#ar3)"/>
+  <path d="M 696 199 L 730 199" stroke="#9d0208" stroke-width="1.5" fill="none" marker-end="url(#ar3)"/>
+  <text x="649" y="300" font-size="13" text-anchor="middle" fill="#9d0208">서비스 간 호출 = 네트워크 호출 (실패·지연이 정상 상태)</text>
+
+  <text x="458" y="334" font-size="13" fill="#2d6a4f">얻는 것 — 서비스별 독립 배포와 선택적 증설,</text>
+  <text x="524" y="354" font-size="13" fill="#2d6a4f">팀마다 다른 기술 선택</text>
+  <text x="458" y="380" font-size="13" fill="#9d0208">잃는 것 — 분산 트랜잭션, 버전 공존,</text>
+  <text x="524" y="400" font-size="13" fill="#9d0208">통합 시험에 전 서비스가 필요</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
