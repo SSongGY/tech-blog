@@ -1044,7 +1044,7 @@ topics:
     difficulty: 중급
     angle: "가치 흐름 관점에서 두 개념의 적용 범위를 구분"
     code: none
-    status: todo
+    status: done
   - id: pe-008
     title: "MSA — 분해 기준과 감당해야 할 비용"
     category: PE

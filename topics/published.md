@@ -28,3 +28,4 @@
 | 2026-09-22 | pe-006 | PE | CMMI 성숙도 5단계와 프로세스 영역 |
 | 2026-09-22 | tb-004 | Database | Tibero 7 MERGE 문 — UPSERT를 한 문장으로 |
 | 2026-09-22 | bas-006 | Database | GROUP BY와 집계 함수 — 묶는 기준 정하기 |
+| 2026-09-22 | pe-007 | PE | 애자일과 DevOps — 무엇이 같고 무엇이 다른가 |

@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **28편** · 갱신 2026-09-22
+총 **29편** · 갱신 2026-09-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -23,12 +23,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 10편
+## 기술사 (pe) — 11편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-22 | [형상관리 — 4대 활동과 베이스라인](posts/PE/software-engineering/2026-09-22-configuration-management-baseline/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), ISO/IEC/IEEE 24765:2017, IEEE 828-2012 | 문서 근거 |
 | 2026-09-22 | [CMMI 성숙도 레벨과 프랙티스 영역 — 0단계부터 5단계까지](posts/PE/software-engineering/2026-09-22-cmmi-maturity-levels/index.md) | 중급 | CMMI V3.0 (2023), CMMI V2.0 (2018), ISO/IEC 33001:2015, ISO/IEC 33004:2015 | 문서 근거 |
+| 2026-09-22 | [애자일과 DevOps — 무엇이 같고 무엇이 다른가](posts/PE/software-engineering/2026-09-22-agile-and-devops-scope/index.md) | 중급 | ISO/IEC/IEEE 32675:2022, IEEE Std 2675-2021, 애자일 선언문 (2001), Scrum Guide 2020 | 문서 근거 |
 | 2026-09-21 | [테스트 레벨과 테스트 기법 분류](posts/PE/software-engineering/2026-09-21-test-levels-and-techniques/index.md) | 중급 | ISTQB CTFL Syllabus v4.0.1 (2024-09-15), Python 3.13.5 | 실행 검증 |
 | 2026-09-21 | [품질속성 시나리오와 유틸리티 트리](posts/PE/software-engineering/2026-09-21-quality-attribute-scenario-utility-tree/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), CMU/SEI-2003-TR-016 (2003.8) | 문서 근거 |
 | 2026-09-21 | [정보시스템 감리 — 제3자 점검이 법으로 자리 잡은 구조](posts/PE/it-management/2026-09-21-information-system-audit/index.md) | 중급 | 전자정부법 (법률 제21394호, 2026.2.27. 일부개정), 전자정부법 시행령 (대통령령 제36605호, 2026.8.25. 일부개정), 정보시스템 감리기준 (행정안전부고시 제2024-53호, 2024.6.27.) | 문서 근거 |

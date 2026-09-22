@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="404" viewBox="0 0 880 404" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="404" fill="#fbfbf8"/>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">가치 흐름 위에서 애자일과 DevOps 가 덮는 구간</text>
+  <text x="24" y="52" font-size="13" fill="#555">겹치는 자리는 개발·테스트 한 칸이고, 나머지 네 칸은 한쪽만 덮는다</text>
+
+  <!-- 애자일 되돌림 -->
+  <text x="197" y="80" font-size="13" fill="#333" text-anchor="middle">증분마다 되돌아간다 (스프린트 리뷰·회고)</text>
+  <path d="M 349 118 C 349 90, 45 90, 45 118" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar-dark)"/>
+
+  <!-- 애자일 구간 -->
+  <rect x="41" y="120" width="312" height="38" rx="4" fill="#eef2f6" stroke="#333"/>
+  <text x="197" y="144" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">애자일 — 요구를 작동하는 증분으로</text>
+
+  <!-- 생애주기 5칸 -->
+  <rect x="41" y="172" width="150" height="50" rx="4" fill="#ffffff" stroke="#333"/>
+  <text x="116" y="203" font-size="14" fill="#1b1b1b" text-anchor="middle">요구·계획</text>
+
+  <rect x="203" y="172" width="150" height="50" rx="4" fill="#fdf2e2" stroke="#b45309" stroke-width="2"/>
+  <text x="278" y="203" font-size="14" fill="#b45309" text-anchor="middle">개발·테스트</text>
+
+  <rect x="365" y="172" width="150" height="50" rx="4" fill="#ffffff" stroke="#333"/>
+  <text x="440" y="203" font-size="14" fill="#1b1b1b" text-anchor="middle">빌드·패키지</text>
+
+  <rect x="527" y="172" width="150" height="50" rx="4" fill="#ffffff" stroke="#333"/>
+  <text x="602" y="203" font-size="14" fill="#1b1b1b" text-anchor="middle">배포</text>
+
+  <rect x="689" y="172" width="150" height="50" rx="4" fill="#ffffff" stroke="#333"/>
+  <text x="764" y="203" font-size="14" fill="#1b1b1b" text-anchor="middle">운영·모니터링</text>
+
+  <path d="M 191 197 L 201 197" stroke="#333" stroke-width="1.6"/>
+  <path d="M 353 197 L 363 197" stroke="#333" stroke-width="1.6"/>
+  <path d="M 515 197 L 525 197" stroke="#333" stroke-width="1.6"/>
+  <path d="M 677 197 L 687 197" stroke="#333" stroke-width="1.6"/>
+
+  <!-- DevOps 구간 -->
+  <rect x="41" y="236" width="798" height="38" rx="4" fill="#eef2f6" stroke="#333"/>
+  <text x="440" y="260" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">DevOps — 구상부터 운영·폐기까지 전 생애주기</text>
+
+  <!-- DevOps 되돌림 -->
+  <path d="M 835 276 C 835 312, 45 312, 45 276" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar-dark)"/>
+  <text x="440" y="332" font-size="13" fill="#333" text-anchor="middle">운영에서 얻은 지표로 되돌아간다 (배포 빈도 · 변경 실패율 · 복구 시간)</text>
+
+  <text x="24" y="366" font-size="13" fill="#1b1b1b">애자일은 개발 구간의 일하는 방식이고, DevOps 는 그 구간을 포함한 생애주기 전체의 원칙과 실천이다.</text>
+  <text x="24" y="388" font-size="13" fill="#1b1b1b">그래서 둘은 대체 관계가 아니라 층위가 다르다. 애자일 없이도 DevOps 가 성립한다고 표준이 명시한다.</text>
+
+  <defs>
+    <marker id="ar-dark" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
