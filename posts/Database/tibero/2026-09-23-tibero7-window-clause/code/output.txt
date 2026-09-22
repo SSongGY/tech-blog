@@ -1,0 +1,295 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# 원격 Tibero 에 SSH 로 붙어 돌렸다 (§6). 접속 정보는 저장소에 두지 않는다.
+#
+# 명령      : tbsql -s <계정>/<비밀번호> @window_clause.sql   (SET ECHO ON 으로 문장과 결과를 함께)
+# 수행 시각 : 2026-09-23 09:12 (대한민국 표준시)
+# 환경      : Tibero 7.2 / Linux x86_64
+# 종료 코드 : 0  (스크립트 마지막의 남은 객체 수가 0 이면 정리까지 끝난 것이다)
+#
+# 출력에서 호스트명·경로·IP·내부 빌드 번호를 지웠다. 에러 10개는 윈도우 절의 제약을
+# 보여주려고 일부러 일으킨 것이며 code/README.md 에 목록이 있다.
+
+SQL>
+SQL> PROMPT ===== 0. 준비 =====
+===== 0. 준비 =====
+SQL> CREATE TABLE sale_daily (
+   2   sale_day NUMBER NOT NULL,
+   3   amount   NUMBER NOT NULL
+   4 );
+
+Table 'SALE_DAILY' created.
+
+SQL> INSERT INTO sale_daily VALUES (1, 10);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_daily VALUES (2, 20);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_daily VALUES (3, 30);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_daily VALUES (3, 40);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_daily VALUES (5, 50);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_daily VALUES (8, 60);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_daily VALUES (9, 70);
+
+1 row inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> SELECT sale_day, amount FROM sale_daily ORDER BY sale_day, amount;
+
+  SALE_DAY     AMOUNT
+---------- ----------
+         1         10
+         2         20
+         3         30
+         3         40
+         5         50
+         8         60
+         9         70
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 1. ORDER BY 만 쓰면 기본 윈도우가 RANGE 다 =====
+===== 1. ORDER BY 만 쓰면 기본 윈도우가 RANGE 다 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ORDER BY sale_day) AS default_win,
+   3        SUM(amount) OVER (ORDER BY sale_day
+   4             RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS range_win,
+   5        SUM(amount) OVER (ORDER BY sale_day
+   6             ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS rows_win
+   7   FROM sale_daily
+   8  ORDER BY sale_day, amount;
+
+  SALE_DAY     AMOUNT DEFAULT_WIN  RANGE_WIN   ROWS_WIN
+---------- ---------- ----------- ---------- ----------
+         1         10          10         10         10
+         2         20          30         30         30
+         3         30         100        100         60
+         3         40         100        100        100
+         5         50         150        150        150
+         8         60         210        210        210
+         9         70         280        280        280
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 2. ORDER BY 가 없으면 파티션 전체가 윈도우다 =====
+===== 2. ORDER BY 가 없으면 파티션 전체가 윈도우다 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER () AS whole_set
+   3   FROM sale_daily
+   4  ORDER BY sale_day, amount;
+
+  SALE_DAY     AMOUNT  WHOLE_SET
+---------- ---------- ----------
+         1         10        280
+         2         20        280
+         3         30        280
+         3         40        280
+         5         50        280
+         8         60        280
+         9         70        280
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 3. ROWS 2 PRECEDING 과 RANGE 2 PRECEDING =====
+===== 3. ROWS 2 PRECEDING 과 RANGE 2 PRECEDING =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ORDER BY sale_day
+   3             ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rows_2p,
+   4        COUNT(*) OVER (ORDER BY sale_day
+   5             ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS rows_cnt,
+   6        SUM(amount) OVER (ORDER BY sale_day
+   7             RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_2p,
+   8        COUNT(*) OVER (ORDER BY sale_day
+   9             RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_cnt
+  10   FROM sale_daily
+  11  ORDER BY sale_day, amount;
+
+  SALE_DAY     AMOUNT    ROWS_2P   ROWS_CNT   RANGE_2P  RANGE_CNT
+---------- ---------- ---------- ---------- ---------- ----------
+         1         10         10          1         10          1
+         2         20         30          2         30          2
+         3         30         60          3        100          4
+         3         40         90          3        100          4
+         5         50        120          3        120          3
+         8         60        150          3         60          1
+         9         70        180          3        130          2
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 4. LAST_VALUE 는 기본 윈도우에서 현재 행까지만 본다 =====
+===== 4. LAST_VALUE 는 기본 윈도우에서 현재 행까지만 본다 =====
+SQL> SELECT sale_day, amount,
+   2        FIRST_VALUE(amount) OVER (ORDER BY sale_day) AS first_default,
+   3        LAST_VALUE(amount) OVER (ORDER BY sale_day) AS last_default,
+   4        LAST_VALUE(amount) OVER (ORDER BY sale_day
+   5             ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS last_full
+   6   FROM sale_daily
+   7  ORDER BY sale_day, amount;
+
+  SALE_DAY     AMOUNT FIRST_DEFAULT LAST_DEFAULT  LAST_FULL
+---------- ---------- ------------- ------------ ----------
+         1         10            10           10         70
+         2         20            10           20         70
+         3         30            10           40         70
+         3         40            10           40         70
+         5         50            10           50         70
+         8         60            10           60         70
+         9         70            10           70         70
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 5. RANGE 에 정렬 키를 둘 주면 =====
+===== 5. RANGE 에 정렬 키를 둘 주면 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ORDER BY sale_day, amount
+   3             RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS bad_range
+   4   FROM sale_daily;
+TBR-8067: Invalid window value used in analytic clause.
+at line 3, column 13 of null:
+            RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS bad_range
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+SQL>
+SQL> PROMPT ===== 6. ROWS 에 정렬 키를 둘 주면 =====
+===== 6. ROWS 에 정렬 키를 둘 주면 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ORDER BY sale_day, amount
+   3             ROWS BETWEEN 2 PRECEDING AND CURRENT ROW) AS ok_rows
+   4   FROM sale_daily
+   5  ORDER BY sale_day, amount;
+
+  SALE_DAY     AMOUNT    OK_ROWS
+---------- ---------- ----------
+         1         10         10
+         2         20         30
+         3         30         60
+         3         40         90
+         5         50        120
+         8         60        150
+         9         70        180
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 7. 윈도우 절을 순위 함수에 붙이면 =====
+===== 7. 윈도우 절을 순위 함수에 붙이면 =====
+SQL> SELECT sale_day, amount,
+   2        RANK() OVER (ORDER BY sale_day
+   3             ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_rank
+   4   FROM sale_daily;
+TBR-8004: Syntax error.
+at line 3, column 13 of null:
+            ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_rank
+            ^
+
+SQL>
+SQL> PROMPT ===== 8. RANGE 오프셋에 음수를 주면 =====
+===== 8. RANGE 오프셋에 음수를 주면 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ORDER BY sale_day
+   3             RANGE BETWEEN -1 PRECEDING AND CURRENT ROW) AS bad_offset
+   4   FROM sale_daily;
+TBR-11005: Specified value '-1' is invalid for mathematical function argument(s).
+at line 3, column 28 of null:
+            RANGE BETWEEN -1 PRECEDING AND CURRENT ROW) AS bad_offset
+                          ^
+
+SQL>
+SQL> PROMPT ===== 9. 앞뒤를 뒤집어 주면 =====
+===== 9. 앞뒤를 뒤집어 주면 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ORDER BY sale_day
+   3             ROWS BETWEEN CURRENT ROW AND 2 PRECEDING) AS bad_order
+   4   FROM sale_daily;
+TBR-8067: Invalid window value used in analytic clause.
+at line 3, column 18 of null:
+            ROWS BETWEEN CURRENT ROW AND 2 PRECEDING) AS bad_order
+                 ^^^^^^^
+
+SQL>
+SQL> PROMPT ===== 10. ORDER BY 없이 ROWS 를 쓰면 =====
+===== 10. ORDER BY 없이 ROWS 를 쓰면 =====
+SQL> SELECT sale_day, amount,
+   2        SUM(amount) OVER (ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS no_order
+   3   FROM sale_daily;
+TBR-8004: Syntax error.
+at line 2, column 26 of null:
+       SUM(amount) OVER (ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS no_order
+                         ^
+
+SQL>
+SQL> PROMPT ===== 11. 다른 순위·오프셋 함수에도 붙여 보면 =====
+===== 11. 다른 순위·오프셋 함수에도 붙여 보면 =====
+SQL> SELECT ROW_NUMBER() OVER (ORDER BY sale_day
+   2          ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_rownum FROM sale_daily;
+TBR-8004: Syntax error.
+at line 2, column 10 of null:
+         ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_rownum FROM sale_daily
+         ^
+
+SQL> SELECT DENSE_RANK() OVER (ORDER BY sale_day
+   2          ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_dense FROM sale_daily;
+TBR-8004: Syntax error.
+at line 2, column 10 of null:
+         ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_dense FROM sale_daily
+         ^
+
+SQL> SELECT LEAD(amount) OVER (ORDER BY sale_day
+   2          ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_lead FROM sale_daily;
+TBR-8004: Syntax error.
+at line 2, column 10 of null:
+         ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_lead FROM sale_daily
+         ^
+
+SQL> SELECT LAG(amount) OVER (ORDER BY sale_day
+   2          ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_lag FROM sale_daily;
+TBR-8004: Syntax error.
+at line 2, column 10 of null:
+         ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_lag FROM sale_daily
+         ^
+
+SQL> SELECT NTILE(2) OVER (ORDER BY sale_day
+   2          ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_ntile FROM sale_daily;
+TBR-8004: Syntax error.
+at line 2, column 10 of null:
+         ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS bad_ntile FROM sale_daily
+         ^
+
+SQL>
+SQL> PROMPT ===== 정리 =====
+===== 정리 =====
+SQL> DROP TABLE sale_daily;
+
+Table 'SALE_DAILY' dropped.
+
+SQL> SELECT COUNT(*) AS obj_left FROM user_objects;
+
+  OBJ_LEFT
+----------
+         0
+
+1 row selected.
+
+SQL> EXIT

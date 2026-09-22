@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">ROWS 와 RANGE — 같은 "2 PRECEDING" 이 다른 창을 만든다</text>
+  <text x="40" y="56" font-size="13" fill="#555">sale_daily 7행 · ORDER BY sale_day · 칸 표기는 sale_day / amount · 굵은 칸이 현재 행</text>
+  <text x="40" y="76" font-size="13" fill="#555">4일 · 6일 · 7일은 데이터가 없다. 이 빈 구간을 두 방식이 다르게 다룬다.</text>
+
+  <!-- ROWS strip -->
+  <text x="40" y="112" font-size="14" font-weight="bold" fill="#2d6a4f">ROWS BETWEEN 2 PRECEDING AND CURRENT ROW — 물리적 행 수로 센다</text>
+  <rect x="322" y="122" width="290" height="42" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2.5"/>
+  <rect x="40" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="84" y="148" font-size="13" text-anchor="middle" fill="#1b1b1b">1 / 10</text>
+  <rect x="136" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="180" y="148" font-size="13" text-anchor="middle" fill="#1b1b1b">2 / 20</text>
+  <rect x="232" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="276" y="148" font-size="13" text-anchor="middle" fill="#1b1b1b">3 / 30</text>
+  <rect x="328" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="372" y="148" font-size="13" text-anchor="middle" fill="#1b1b1b">3 / 40</text>
+  <rect x="424" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="468" y="148" font-size="13" text-anchor="middle" fill="#1b1b1b">5 / 50</text>
+  <rect x="520" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="2.4"/>
+  <text x="564" y="148" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">8 / 60</text>
+  <rect x="616" y="128" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="660" y="148" font-size="13" text-anchor="middle" fill="#1b1b1b">9 / 70</text>
+  <text x="716" y="142" font-size="13" font-weight="bold" fill="#2d6a4f">3행 고정</text>
+  <text x="716" y="162" font-size="13" fill="#333">40+50+60 = 150</text>
+
+  <!-- RANGE strip -->
+  <text x="40" y="216" font-size="14" font-weight="bold" fill="#9d0208">RANGE BETWEEN 2 PRECEDING AND CURRENT ROW — 정렬 키의 값으로 센다</text>
+  <rect x="514" y="226" width="100" height="42" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2.5"/>
+  <rect x="40" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="84" y="252" font-size="13" text-anchor="middle" fill="#1b1b1b">1 / 10</text>
+  <rect x="136" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="180" y="252" font-size="13" text-anchor="middle" fill="#1b1b1b">2 / 20</text>
+  <rect x="232" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="276" y="252" font-size="13" text-anchor="middle" fill="#1b1b1b">3 / 30</text>
+  <rect x="328" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="372" y="252" font-size="13" text-anchor="middle" fill="#1b1b1b">3 / 40</text>
+  <rect x="424" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="468" y="252" font-size="13" text-anchor="middle" fill="#1b1b1b">5 / 50</text>
+  <rect x="520" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="2.4"/>
+  <text x="564" y="252" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">8 / 60</text>
+  <rect x="616" y="232" width="88" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="660" y="252" font-size="13" text-anchor="middle" fill="#1b1b1b">9 / 70</text>
+  <text x="716" y="246" font-size="13" font-weight="bold" fill="#9d0208">1행뿐</text>
+  <text x="716" y="266" font-size="13" fill="#333">60</text>
+  <text x="40" y="292" font-size="13" fill="#555">sale_day 가 6 이상 8 이하인 행만 들어온다. 6일과 7일이 비어 있어 현재 행 혼자 남는다.</text>
+
+  <!-- summary -->
+  <rect x="40" y="326" width="386" height="114" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="58" y="350" font-size="14" font-weight="bold" fill="#2d6a4f">정렬 키가 같은 행이 있을 때</text>
+  <text x="58" y="374" font-size="13" fill="#333">3일 두 행에서 누적 합이 갈린다.</text>
+  <text x="58" y="396" font-size="13" fill="#333">ROWS 는 따로 센다 — 60, 100</text>
+  <text x="58" y="418" font-size="13" fill="#333">RANGE 는 묶어서 센다 — 100, 100</text>
+
+  <rect x="446" y="326" width="394" height="114" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="464" y="350" font-size="14" font-weight="bold" fill="#b45309">무엇을 고를 것인가</text>
+  <text x="464" y="374" font-size="13" fill="#333">최근 N건 이동평균 · 직전 몇 건 → ROWS</text>
+  <text x="464" y="396" font-size="13" fill="#333">최근 N일 · 값 ±N 구간 → RANGE</text>
+  <text x="464" y="418" font-size="13" fill="#333">ORDER BY 만 쓰면 기본 윈도우는 RANGE 다</text>
+</svg>
