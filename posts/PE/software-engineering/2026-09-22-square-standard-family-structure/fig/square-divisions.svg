@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520">
+  <rect x="0" y="0" width="880" height="520" fill="#f8f9fa"/>
+
+  <!-- 확장 부문 테두리 -->
+  <rect x="25" y="30" width="830" height="470" rx="10"
+        fill="#fffbeb" stroke="#b45309" stroke-width="2" stroke-dasharray="8 5"/>
+  <text x="44" y="56" font-family="sans-serif" font-size="14" fill="#b45309" font-weight="bold">
+    ISO/IEC 25050~25099 · 확장 부문 — RUSP, 사용성 보고 형식(CIF), 클라우드·AI 품질 모델
+  </text>
+
+  <!-- 품질 관리 부문 -->
+  <rect x="280" y="72" width="320" height="76" rx="6" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <text x="440" y="97" font-family="sans-serif" font-size="15" fill="#111827" text-anchor="middle" font-weight="bold">ISO/IEC 2500n · 품질 관리 부문</text>
+  <text x="440" y="118" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">공통 용어·참조 모델·계획과 관리</text>
+  <text x="440" y="137" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">25000 · 25001 · 25002</text>
+
+  <!-- 품질 요구 부문 -->
+  <rect x="50" y="252" width="200" height="96" rx="6" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <text x="150" y="285" font-family="sans-serif" font-size="15" fill="#111827" text-anchor="middle" font-weight="bold">ISO/IEC 2503n</text>
+  <text x="150" y="306" font-family="sans-serif" font-size="14" fill="#111827" text-anchor="middle">품질 요구 부문</text>
+  <text x="150" y="330" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">요구사항으로 내린다</text>
+
+  <!-- 품질 평가 부문 -->
+  <rect x="630" y="252" width="200" height="96" rx="6" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <text x="730" y="285" font-family="sans-serif" font-size="15" fill="#111827" text-anchor="middle" font-weight="bold">ISO/IEC 2504n</text>
+  <text x="730" y="306" font-family="sans-serif" font-size="14" fill="#111827" text-anchor="middle">품질 평가 부문</text>
+  <text x="730" y="330" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">평가 절차를 정한다</text>
+
+  <!-- 품질 모델 부문 (중심) -->
+  <rect x="280" y="176" width="320" height="184" rx="6" fill="#e8f3ed" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="440" y="201" font-family="sans-serif" font-size="15" fill="#2d6a4f" text-anchor="middle" font-weight="bold">ISO/IEC 2501n · 품질 모델 부문</text>
+
+  <rect x="296" y="216" width="140" height="50" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="366" y="236" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">25010</text>
+  <text x="366" y="254" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">제품 품질</text>
+
+  <rect x="444" y="216" width="140" height="50" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="236" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">TS 25011</text>
+  <text x="514" y="254" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">IT 서비스 품질</text>
+
+  <rect x="296" y="278" width="140" height="50" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="366" y="298" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">25012</text>
+  <text x="366" y="316" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">데이터 품질</text>
+
+  <rect x="444" y="278" width="140" height="50" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="298" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">25019</text>
+  <text x="514" y="316" font-family="sans-serif" font-size="13" fill="#111827" text-anchor="middle">사용 품질</text>
+
+  <text x="440" y="349" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">무엇을 품질이라 부를지 정한다</text>
+
+  <!-- 품질 측정 부문 -->
+  <rect x="280" y="392" width="320" height="76" rx="6" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <text x="440" y="417" font-family="sans-serif" font-size="15" fill="#111827" text-anchor="middle" font-weight="bold">ISO/IEC 2502n · 품질 측정 부문</text>
+  <text x="440" y="438" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">측정 참조 모델 · 품질 측정 요소(QME)</text>
+  <text x="440" y="457" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">값을 재는 방법은 여기에 있다</text>
+
+  <!-- 연결선 -->
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="440" y1="148" x2="440" y2="172" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="278" y1="300" x2="254" y2="300" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="602" y1="300" x2="626" y2="300" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="440" y1="362" x2="440" y2="388" stroke="#374151" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>
