@@ -133,7 +133,11 @@ post: <제목>
 - 검증: executed | manual-only
 - 예제: <파일> (<언어>)
 - 측정 결과 또는 정리 요약 한두 줄
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
 ```
+
+**서명 줄은 위 형태 그대로 쓴다.** 자기 모델 이름을 적거나 괄호를 붙이지 않는다 (§12).
 
 `relink`로 기존 글이 바뀐 경우는 별도 커밋으로 분리한다.
 

@@ -97,3 +97,11 @@ python scripts/blog.py lint     # 전체 검사
 - 푸시 성공 여부
 
 윈도우 콘솔에서 한글이 깨지면 명령 앞에 `PYTHONUTF8=1`을 붙인다.
+
+## 커밋 서명
+
+커밋 메시지 마지막 줄은 **이 형태 그대로** 쓴다. 자기 모델 이름을 적지 않는다.
+
+```
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```

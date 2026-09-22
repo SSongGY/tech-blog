@@ -85,7 +85,13 @@ PYTHONUTF8=1 python scripts/blog.py lint
 PYTHONUTF8=1 python scripts/blog.py done <topic_id>
 PYTHONUTF8=1 python scripts/blog.py index
 git add -A
-git commit -m "post: <제목>"
+git commit -F - <<'MSG'
+post: <제목>
+
+{본문 — 무엇을 왜 바꿨는지}
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+MSG
 git push
 ```
 

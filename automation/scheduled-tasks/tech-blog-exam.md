@@ -45,3 +45,11 @@ description: 정보관리기술사 기출문제를 답안 형태로 풀어 쓰�
 
 `lint`가 전부 `[OK]`가 된 뒤에 `exam-done` → `index` → 커밋 → 푸시한다.
 끝나면 무엇을 썼는지 한두 줄로 보고한다. 문제가 있었으면 그것도 적는다.
+
+## 커밋 서명
+
+커밋 메시지 마지막 줄은 **이 형태 그대로** 쓴다. 자기 모델 이름을 적지 않는다.
+
+```
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+```

@@ -155,7 +155,13 @@ PYTHONUTF8=1 python scripts/blog.py lint
 PYTHONUTF8=1 python scripts/blog.py exam-done <id> [<id>...]
 PYTHONUTF8=1 python scripts/blog.py index
 git add -A
-git commit -m "exam: <주제>"
+git commit -F - <<'MSG'
+exam: <주제>
+
+{본문 — 무엇을 왜 바꿨는지}
+
+Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
+MSG
 git push
 ```
 
