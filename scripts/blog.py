@@ -1568,7 +1568,21 @@ def check_svg(path: Path) -> list[str]:
 
 
 def cmd_check_svg(args: argparse.Namespace) -> int:
-    targets = [Path(args.target)] if args.target else sorted(POSTS_DIR.rglob("fig/*.svg"))
+    # 글 폴더를 그대로 주는 쪽이 자연스럽다. 파일만 받으면 회차가 fig/ 경로를
+    # 손으로 조립해야 하고, 그러다 폴더를 주면 예전에는 트레이스백이 났다.
+    if not args.target:
+        targets = sorted(POSTS_DIR.rglob("fig/*.svg"))
+    else:
+        targets = []
+        for name in args.target:
+            target = Path(name)
+            if not target.exists():
+                print(f"[NG] 경로가 없다: {target}")
+                return 1
+            targets.extend(sorted(target.rglob("*.svg")) if target.is_dir() else [target])
+        if not targets:
+            print("검사할 SVG 가 없다.")
+            return 0
     bad = 0
     noted = 0
     for path in targets:
@@ -1744,7 +1758,7 @@ def main() -> int:
     p_recent.set_defaults(func=cmd_recent)
 
     p_svg = sub.add_parser("check-svg", help="도식의 기계 검사 (폭·배경·글자·넘침)")
-    p_svg.add_argument("target", nargs="?", help="생략하면 전체")
+    p_svg.add_argument("target", nargs="*", help="글 폴더나 SVG 파일. 생략하면 전체")
     p_svg.set_defaults(func=cmd_check_svg)
 
     p_links = sub.add_parser("check-links", help="인용 링크와 앵커가 살아 있는지 확인")
