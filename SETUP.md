@@ -54,9 +54,9 @@ python scripts/blog.py lint      # 기존 글이 전부 [OK] 여야 한다
 | 읽는 것 | 무엇이 들어 있나 |
 |---|---|
 | `CLAUDE.md` | 글쓰기 규칙 전부 — 트랙, 톤, 도식, 출처 등급, 기출 답안 형식 |
-| `.claude/commands/blog-daily.md` | 7시·19시 회차 절차 |
-| `.claude/commands/exam-daily.md` | 15시 기출 답안 절차 |
-| `.claude/commands/concept-daily.md` | 17시 개념 정리 절차 |
+| `.claude/commands/blog-daily.md` | 7시·19시·23시 회차 절차 |
+| `.claude/commands/exam-daily.md` | 2시·15시 기출 답안 절차 |
+| `.claude/commands/concept-daily.md` | 4시·17시 개념 정리 절차 |
 | `references/naming-conventions.md` | 언어별 변수명 규칙 |
 | `OPERATIONS.md` | 운영 전반 — 구조, 명령어, 발행 절차 |
 
@@ -81,10 +81,13 @@ cp .claude/settings.example.json .claude/settings.json
 작업 프롬프트에 **절대경로가 박혀 있으니 새 PC 경로로 바꿔서** 등록한다.
 
 ```
+02:00  tech-blog-exam        기출 답안 (단답형 2 / 논술형 1)
+04:00  tech-blog-concept     개념 정리 2편
 07:00  tech-blog-daily       3편
 15:00  tech-blog-exam        기출 답안 (단답형 2 / 논술형 1)
 17:00  tech-blog-concept     개념 정리 2편
 19:00  tech-blog-daily       3편
+23:00  tech-blog-daily       3편
 09:00  tech-blog-healthcheck 점검만
 ```
 
@@ -94,7 +97,7 @@ cp .claude/settings.example.json .claude/settings.json
 
 ## 7. 기출문제 데이터 (선택)
 
-15시·17시 루틴을 쓸 때만 필요하다. 저장소 **바깥**에 둔다.
+기출·개념 루틴을 쓸 때만 필요하다. 저장소 **바깥**에 둔다.
 
 ```
 tech_blog_exam_src/

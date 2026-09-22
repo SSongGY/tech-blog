@@ -1,6 +1,6 @@
 # 운영 가이드
 
-IT 기술 글을 매일 **9~10편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
+IT 기술 글을 매일 **19편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
 ## 문서 안내
 
 | 문서 | 무엇이 있나 |
@@ -21,13 +21,16 @@ python scripts/blog.py lint     # 글 규칙 검사
 
 | 시각 | 루틴 | 편수 | 내용 |
 |---|---|---|---|
+| 02:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
+| 04:00 | `tech-blog-concept` | 2편 | 새벽 답안에서 나온 개념을 `pe` 글로 |
 | 07:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 15:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
-| 17:00 | `tech-blog-concept` | 2편 | 15시 답안에서 나온 개념을 `pe` 글로 |
+| 17:00 | `tech-blog-concept` | 2편 | 오후 답안에서 나온 개념을 `pe` 글로 |
 | 19:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
+| 23:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
 
-07:00·19:00 회차의 트랙 구성은 다음과 같다.
+작성 회차(07·19·23시)의 트랙 구성은 다음과 같다.
 
 | 트랙 | 편수 | 내용 |
 |---|---|---|
@@ -150,7 +153,7 @@ python scripts/blog.py relink                          # 상호 링크 블록 �
 python scripts/blog.py status                 # 트랙별 잔량, 비율, 미검증·미실행 글
 python scripts/blog.py pick                   # 이번 회차에 쓸 주제 3편 선정
 python scripts/blog.py pick --general 6       # 일반 주제를 더 받아 실행 가능한 것 고르기
-python scripts/blog.py pick-concepts          # 17시용 pe 주제 2편 (기출발 우선)
+python scripts/blog.py pick-concepts          # 개념 회차용 pe 주제 2편 (기출발 우선)
 python scripts/blog.py add-topic --track pe … # 백로그에 주제 추가 (--origin exam)
 python scripts/blog.py exam-pick              # 다음에 풀 기출문제
 python scripts/blog.py exam-done <id> …       # 기출 풀이 완료 처리

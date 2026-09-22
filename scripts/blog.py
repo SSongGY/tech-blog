@@ -58,9 +58,13 @@ FIXED_TRACKS = {"basics": 1, "pe": 1}
 ROTATING_TRACKS = ("product", "linux", "general")
 POSTS_PER_DAY = sum(FIXED_TRACKS.values()) + 1
 
-# 작성 루틴은 하루 두 회차(07시·21시), 개념 루틴(17시)은 pe 를 2편 가져간다.
-DAILY_RUNS_PER_DAY = 2
-CONCEPT_POSTS_PER_DAY = 2
+# 작성 루틴은 하루 세 회차(07·19·23시), 개념 루틴은 두 회차(04·17시)이고
+# 회차마다 pe 를 2편 가져간다. 기출 루틴도 두 회차(02·15시)다.
+# status 의 잔량 계산이 이 숫자를 쓰므로, 스케줄을 바꾸면 여기도 같이 고친다.
+DAILY_RUNS_PER_DAY = 3
+CONCEPT_RUNS_PER_DAY = 2
+CONCEPT_POSTS_PER_DAY = 2 * CONCEPT_RUNS_PER_DAY
+EXAM_RUNS_PER_DAY = 2
 
 
 TRACK_LABEL = {
@@ -1046,10 +1050,11 @@ def cmd_exam_status(args: argparse.Namespace) -> int:
         tally = collections.Counter(q["status"] for q in subset)
         done = tally.get("done", 0)
         runs_left = -(-tally.get("todo", 0) // EXAM_BATCH[kind])  # 올림
+        days_left = -(-runs_left // EXAM_RUNS_PER_DAY)
         print(
             f"  {EXAM_KIND_LABEL[kind]:4s} {len(subset):3d}문제 — "
             f"done {done}, todo {tally.get('todo', 0)}, skipped {tally.get('skipped', 0)}"
-            f"  (남은 회차 {runs_left})"
+            f"  (남은 회차 {runs_left} · 약 {days_left}일분)"
         )
     skipped = [q for q in questions if q["status"] == "skipped"]
     if skipped:
