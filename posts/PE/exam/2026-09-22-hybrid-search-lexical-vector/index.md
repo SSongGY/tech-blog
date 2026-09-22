@@ -99,6 +99,8 @@ Questions에서는 DPR 78.4, 결합 76.6으로 **결합이 단독 의미 검색�
   측정해 정해야 한다. 앞의 Natural Questions 사례처럼 넘지 못하는 경우가 있다.
 
 > 개념 정리: [BM25 — 확률적 적합성 프레임워크가 낳은 순위 함수와 두 매개변수](../../software-engineering/2026-09-22-bm25-probabilistic-relevance/index.md)
+>
+> 개념 정리: [근사 최근접 이웃 탐색과 HNSW 색인 — 정확한 답을 포기하고 얻는 것](../../database/2026-09-22-approximate-nearest-neighbor-hnsw/index.md)
 
 끝
 

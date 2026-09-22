@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1b2a1f">HNSW — 위층에서 방향을 잡고 0층에서 후보를 모은다</text>
+
+  <!-- 계층 2 -->
+  <rect x="150" y="56" width="700" height="72" rx="6" fill="#eef4ef" stroke="#c3d6c8"/>
+  <text x="24" y="86" font-size="14" font-weight="bold" fill="#1b2a1f">계층 2</text>
+  <text x="24" y="106" font-size="13" fill="#4a5a4e">ef = 1</text>
+  <text x="24" y="124" font-size="13" fill="#4a5a4e">탐욕 하강</text>
+
+  <circle cx="240" cy="92" r="17" fill="#2d6a4f" stroke="#1b4332" stroke-width="2"/>
+  <text x="240" y="97" font-size="13" fill="#ffffff" text-anchor="middle">ep</text>
+  <circle cx="620" cy="92" r="17" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="620" y="97" font-size="13" fill="#1b2a1f" text-anchor="middle">E</text>
+  <line x1="257" y1="92" x2="603" y2="92" stroke="#98ab9d" stroke-width="1.5"/>
+  <path d="M 262 80 L 598 80" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 계층 1 -->
+  <rect x="150" y="176" width="700" height="72" rx="6" fill="#eef4ef" stroke="#c3d6c8"/>
+  <text x="24" y="206" font-size="14" font-weight="bold" fill="#1b2a1f">계층 1</text>
+  <text x="24" y="226" font-size="13" fill="#4a5a4e">ef = 1</text>
+  <text x="24" y="244" font-size="13" fill="#4a5a4e">탐욕 하강</text>
+
+  <circle cx="240" cy="212" r="17" fill="#ffffff" stroke="#98ab9d" stroke-width="2"/>
+  <text x="240" y="217" font-size="13" fill="#1b2a1f" text-anchor="middle">A</text>
+  <circle cx="400" cy="212" r="17" fill="#ffffff" stroke="#98ab9d" stroke-width="2"/>
+  <text x="400" y="217" font-size="13" fill="#1b2a1f" text-anchor="middle">C</text>
+  <circle cx="620" cy="212" r="17" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="620" y="217" font-size="13" fill="#1b2a1f" text-anchor="middle">E</text>
+  <circle cx="760" cy="212" r="17" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="760" y="217" font-size="13" fill="#1b2a1f" text-anchor="middle">G</text>
+  <line x1="257" y1="212" x2="383" y2="212" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="417" y1="212" x2="603" y2="212" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="637" y1="212" x2="743" y2="212" stroke="#98ab9d" stroke-width="1.5"/>
+  <path d="M 642 200 L 738 200" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 계층 0 -->
+  <rect x="150" y="296" width="700" height="86" rx="6" fill="#eef4ef" stroke="#c3d6c8"/>
+  <text x="24" y="326" font-size="14" font-weight="bold" fill="#1b2a1f">계층 0</text>
+  <text x="24" y="346" font-size="13" fill="#4a5a4e">ef 만큼</text>
+  <text x="24" y="364" font-size="13" fill="#4a5a4e">후보 유지</text>
+
+  <circle cx="200" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="260" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="320" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="380" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="440" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="500" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="560" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="620" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="680" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <circle cx="740" cy="339" r="14" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="740" y="344" font-size="13" fill="#1b2a1f" text-anchor="middle">G</text>
+  <circle cx="800" cy="339" r="14" fill="#ffffff" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="214" y1="339" x2="246" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="274" y1="339" x2="306" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="334" y1="339" x2="366" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="394" y1="339" x2="426" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="454" y1="339" x2="486" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="514" y1="339" x2="546" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="574" y1="339" x2="606" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="634" y1="339" x2="666" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="694" y1="339" x2="726" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+  <line x1="754" y1="339" x2="786" y2="339" stroke="#98ab9d" stroke-width="1.5"/>
+
+  <!-- ef 후보창 -->
+  <rect x="656" y="312" width="172" height="54" rx="26" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="742" y="394" font-size="13" fill="#b45309" text-anchor="middle">ef 후보창 — 여기 든 것만 결과가 된다</text>
+
+  <!-- 하강 -->
+  <line x1="620" y1="110" x2="620" y2="194" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="760" y1="230" x2="745" y2="322" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="634" y="158" font-size="13" fill="#2d6a4f">같은 원소로 하강</text>
+
+  <!-- 질의 -->
+  <text x="672" y="288" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">질의 q</text>
+  <line x1="672" y1="292" x2="678" y2="322" stroke="#9d0208" stroke-width="2"/>
+
+  <!-- 범례 -->
+  <text x="24" y="424" font-size="13" fill="#4a5a4e">
+    계층 배정 l = ⌊−ln(unif(0,1))·mL⌋ · mL = 1/ln(M) · 한 계층 올라갈 때마다 원소 수가 약 1/M 로 줄어든다
+  </text>
+</svg>
