@@ -16,20 +16,20 @@
   <!-- 왼쪽 설명 패널 -->
   <rect x="24" y="96" width="272" height="300" rx="6" fill="#ffffff" stroke="#cbd5e1"/>
   <text x="40" y="124" font-size="13.5" font-weight="600" fill="#0f172a">왜 빠른가</text>
-  <text x="40" y="152" font-size="12.5" fill="#334155">interior page의 키는 전부 고유하고</text>
-  <text x="40" y="172" font-size="12.5" fill="#334155">오름차순으로 정렬돼 있다.</text>
-  <text x="40" y="202" font-size="12.5" fill="#334155">키 X의 왼쪽 포인터는 X 이하,</text>
-  <text x="40" y="222" font-size="12.5" fill="#334155">오른쪽 포인터는 X 초과를 가리킨다.</text>
-  <text x="40" y="252" font-size="12.5" fill="#334155">leaf page에는 포인터가 없고</text>
-  <text x="40" y="272" font-size="12.5" fill="#334155">키와 rowid만 들어 있다.</text>
+  <text x="40" y="152" font-size="13" fill="#334155">interior page의 키는 전부 고유하고</text>
+  <text x="40" y="172" font-size="13" fill="#334155">오름차순으로 정렬돼 있다.</text>
+  <text x="40" y="202" font-size="13" fill="#334155">키 X의 왼쪽 포인터는 X 이하,</text>
+  <text x="40" y="222" font-size="13" fill="#334155">오른쪽 포인터는 X 초과를 가리킨다.</text>
+  <text x="40" y="252" font-size="13" fill="#334155">leaf page에는 포인터가 없고</text>
+  <text x="40" y="272" font-size="13" fill="#334155">키와 rowid만 들어 있다.</text>
   <line x1="40" y1="296" x2="280" y2="296" stroke="#e2e8f0"/>
-  <text x="40" y="324" font-size="12.5" fill="#9d0208">→ 조건이 이 정렬 순서를 깨면</text>
-  <text x="40" y="344" font-size="12.5" fill="#9d0208">   리프를 처음부터 끝까지 훑는다</text>
-  <text x="40" y="374" font-size="12.5" fill="#64748b">트리 높이만큼만 비교하면 끝난다</text>
+  <text x="40" y="324" font-size="13" fill="#9d0208">→ 조건이 이 정렬 순서를 깨면</text>
+  <text x="40" y="344" font-size="13" fill="#9d0208">   리프를 처음부터 끝까지 훑는다</text>
+  <text x="40" y="374" font-size="13" fill="#64748b">트리 높이만큼만 비교하면 끝난다</text>
 
   <!-- 루트 -->
   <rect x="320" y="96" width="536" height="54" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-  <text x="332" y="116" font-size="12" font-weight="600" fill="#475569">interior page (루트) — 키 K개 · 포인터 K+1개</text>
+  <text x="332" y="116" font-size="13" font-weight="600" fill="#475569">interior page (루트) — 키 K개 · 포인터 K+1개</text>
   <line x1="320" y1="124" x2="856" y2="124" stroke="#e2e8f0"/>
   <circle cx="352" cy="139" r="5" fill="#334155"/>
   <text x="427" y="144" font-size="13" fill="#0f172a" text-anchor="middle">user080000</text>
@@ -38,11 +38,11 @@
   <circle cx="652" cy="139" r="6" fill="#2d6a4f"/>
 
   <path d="M652,150 L652,196" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="664" y="178" font-size="12.5" fill="#2d6a4f">키 비교 1회</text>
+  <text x="664" y="178" font-size="13" fill="#2d6a4f">키 비교 1회</text>
 
   <!-- 브랜치 -->
   <rect x="380" y="196" width="476" height="54" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
-  <text x="392" y="216" font-size="12" font-weight="600" fill="#475569">interior page</text>
+  <text x="392" y="216" font-size="13" font-weight="600" fill="#475569">interior page</text>
   <line x1="380" y1="224" x2="856" y2="224" stroke="#e2e8f0"/>
   <circle cx="420" cy="239" r="5" fill="#334155"/>
   <text x="495" y="244" font-size="13" fill="#0f172a" text-anchor="middle">user120000</text>
@@ -51,20 +51,20 @@
   <circle cx="720" cy="239" r="5" fill="#334155"/>
 
   <path d="M570,250 L570,296" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
-  <text x="582" y="278" font-size="12.5" fill="#2d6a4f">키 비교 1회</text>
+  <text x="582" y="278" font-size="13" fill="#2d6a4f">키 비교 1회</text>
 
   <!-- 리프 -->
   <rect x="380" y="296" width="476" height="88" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
-  <text x="392" y="316" font-size="12" font-weight="600" fill="#2d6a4f">leaf page — 포인터 없음, 키만 저장</text>
+  <text x="392" y="316" font-size="13" font-weight="600" fill="#2d6a4f">leaf page — 포인터 없음, 키만 저장</text>
   <line x1="380" y1="324" x2="856" y2="324" stroke="#e2e8f0"/>
-  <text x="392" y="345" font-size="12.5" fill="#475569">셀 = [ 인덱싱된 컬럼 , rowid ]</text>
-  <text x="392" y="366" font-size="12.5" fill="#0f172a">= [ 'user123456@example.com' , 123456 ]</text>
+  <text x="392" y="345" font-size="13" fill="#475569">셀 = [ 인덱싱된 컬럼 , rowid ]</text>
+  <text x="392" y="366" font-size="13" fill="#0f172a">= [ 'user123456@example.com' , 123456 ]</text>
 
   <path d="M570,384 L570,420" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#ahg)"/>
-  <text x="582" y="406" font-size="12.5" fill="#64748b">SELECT에 인덱스 밖 컬럼이 있을 때만 재접근</text>
+  <text x="582" y="406" font-size="13" fill="#64748b">SELECT에 인덱스 밖 컬럼이 있을 때만 재접근</text>
 
   <!-- 테이블 -->
   <rect x="380" y="420" width="476" height="46" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 3"/>
-  <text x="392" y="440" font-size="12" font-weight="600" fill="#475569">table b-tree — rowid로 행을 찾는다</text>
-  <text x="392" y="459" font-size="12.5" fill="#0f172a">user_id, email, login_name, status, region_code, created_at</text>
+  <text x="392" y="440" font-size="13" font-weight="600" fill="#475569">table b-tree — rowid로 행을 찾는다</text>
+  <text x="392" y="459" font-size="13" fill="#0f172a">user_id, email, login_name, status, region_code, created_at</text>
 </svg>

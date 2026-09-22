@@ -13,28 +13,28 @@
   <text x="46" y="138" font-size="13" fill="#222">① ATAM 방법 설명</text>
   <text x="46" y="162" font-size="13" fill="#222">② 비즈니스 동인 발표</text>
   <text x="46" y="186" font-size="13" fill="#222">③ 아키텍처 발표</text>
-  <text x="46" y="208" font-size="12" fill="#555">발표자: 평가팀·PM·아키텍트</text>
+  <text x="46" y="208" font-size="13" fill="#555">발표자: 평가팀·PM·아키텍트</text>
 
   <rect x="245" y="86" width="190" height="134" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
   <text x="340" y="110" font-size="15" fill="#7c3d06" text-anchor="middle" font-weight="bold">조사·분석</text>
   <text x="261" y="138" font-size="13" fill="#222">④ 아키텍처 접근법 식별</text>
   <text x="261" y="162" font-size="13" fill="#222">⑤ 유틸리티 트리 작성</text>
   <text x="261" y="186" font-size="13" fill="#222">⑥ 접근법 분석</text>
-  <text x="261" y="208" font-size="12" fill="#7c3d06">위험·민감점·절충점 식별</text>
+  <text x="261" y="208" font-size="13" fill="#7c3d06">위험·민감점·절충점 식별</text>
 
   <rect x="460" y="86" width="190" height="134" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
   <text x="555" y="110" font-size="15" fill="#7c3d06" text-anchor="middle" font-weight="bold">검증 Testing</text>
   <text x="476" y="138" font-size="13" fill="#222">⑦ 시나리오 도출·우선순위</text>
   <text x="476" y="162" font-size="13" fill="#222">⑧ 접근법 재분석</text>
-  <text x="476" y="190" font-size="12" fill="#7c3d06">⑦의 상위 시나리오를</text>
-  <text x="476" y="208" font-size="12" fill="#7c3d06">⑥에 대한 시험 사례로 쓴다</text>
+  <text x="476" y="190" font-size="13" fill="#7c3d06">⑦의 상위 시나리오를</text>
+  <text x="476" y="208" font-size="13" fill="#7c3d06">⑥에 대한 시험 사례로 쓴다</text>
 
   <rect x="675" y="86" width="175" height="134" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
   <text x="762" y="110" font-size="15" fill="#1b4332" text-anchor="middle" font-weight="bold">보고 Reporting</text>
   <text x="691" y="138" font-size="13" fill="#222">⑨ 결과 발표</text>
-  <text x="691" y="164" font-size="12" fill="#555">이해관계자 전원에게</text>
-  <text x="691" y="182" font-size="12" fill="#555">발표하고 보고서로</text>
-  <text x="691" y="200" font-size="12" fill="#555">완화 방안까지 정리</text>
+  <text x="691" y="164" font-size="13" fill="#555">이해관계자 전원에게</text>
+  <text x="691" y="182" font-size="13" fill="#555">발표하고 보고서로</text>
+  <text x="691" y="200" font-size="13" fill="#555">완화 방안까지 정리</text>
 
   <!-- 화살표 -->
   <defs>
@@ -48,11 +48,11 @@
 
   <!-- 되돌아가는 반복 -->
   <path d="M 555 224 L 555 246 L 340 246 L 340 224" fill="none" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ar)"/>
-  <text x="448" y="264" font-size="12" fill="#7c3d06" text-anchor="middle">새 정보가 나오면 ④~⑥으로 되돌아간다</text>
+  <text x="448" y="264" font-size="13" fill="#7c3d06" text-anchor="middle">새 정보가 나오면 ④~⑥으로 되돌아간다</text>
 
   <!-- 산출물 -->
   <rect x="30" y="286" width="820" height="86" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.6"/>
   <text x="46" y="310" font-size="15" fill="#1b4332" font-weight="bold">산출물 6가지</text>
   <text x="46" y="336" font-size="13" fill="#222">유틸리티 트리 · 아키텍처 접근법(스타일) 목록 · 시나리오 · 위험/비위험 · 민감점 · 절충점</text>
-  <text x="46" y="360" font-size="12" fill="#555">판정이 아니라 이 여섯 가지를 남기는 것이 평가의 목적이다</text>
+  <text x="46" y="360" font-size="13" fill="#555">판정이 아니라 이 여섯 가지를 남기는 것이 평가의 목적이다</text>
 </svg>

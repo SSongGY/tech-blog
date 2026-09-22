@@ -156,6 +156,8 @@ SELECT name, team, bonus FROM employee
  ORDER BY bonus DESC NULLS LAST, hired_on ASC;
 ```
 
+> 이 절의 출력은 [`code/output.txt`](code/output.txt)에 수행 기록으로 남아 있다.
+
 ## 실무에서 주의할 점
 
 - **엔진을 옮기면 NULL 자리가 바뀐다.** SQLite·MySQL은 NULL을 가장 작게, PostgreSQL·Oracle은

@@ -161,6 +161,8 @@ CREATE INDEX ix_app_user_email_lower ON app_user(lower(email));
 
 재측정하면 `SEARCH app_user USING COVERING INDEX ix_app_user_email_lower (<expr>=?)`로 바뀌고 16.88ms → 0.00ms가 된다. 조건식과 인덱스 정의가 **문자 그대로 일치**해야 한다는 점만 주의하면 된다.
 
+> 이 절의 출력은 [`code/output.txt`](code/output.txt)에 수행 기록으로 남아 있다.
+
 ## 실무에서 주의할 점
 
 - **왼쪽에 함수를 씌우지 않는다.** `WHERE DATE(created_at) = '2026-09-18'` 대신 `WHERE created_at >= ... AND created_at < ...`로 범위를 쓴다. 암묵적 형변환도 마찬가지다. 문자열 컬럼에 숫자 리터럴을 비교하면 DB가 컬럼 쪽을 변환하면서 인덱스가 죽는 경우가 있다.

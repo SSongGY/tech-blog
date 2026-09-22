@@ -43,7 +43,7 @@
   <!-- mutual wait -->
   <line x1="600" y1="140" x2="600" y2="198" stroke="#9d0208" stroke-width="2" marker-end="url(#ar)"/>
   <line x1="682" y1="198" x2="682" y2="140" stroke="#9d0208" stroke-width="2" marker-end="url(#ar)"/>
-  <text x="641" y="166" font-size="12" text-anchor="middle" fill="#9d0208">서로 대기</text>
+  <text x="641" y="166" font-size="13" text-anchor="middle" fill="#9d0208">서로 대기</text>
 
   <!-- bottom panel -->
   <rect x="16" y="268" width="848" height="146" fill="#fdf5f5" stroke="#9d0208" stroke-width="1.5" rx="6"/>

@@ -31,7 +31,7 @@
   <rect x="431" y="105" width="105" height="50" rx="5" fill="#ffffff" stroke="#374151" stroke-width="1.4"/>
   <text x="483" y="135" font-size="14" text-anchor="middle" fill="#111827">④ 산출물</text>
 
-  <text x="425" y="182" font-size="12" text-anchor="middle" fill="#4b5563">어떤 상태에서, 무엇이 자극을 받았는가</text>
+  <text x="425" y="182" font-size="13" text-anchor="middle" fill="#4b5563">어떤 상태에서, 무엇이 자극을 받았는가</text>
 
   <rect x="575" y="120" width="110" height="50" rx="5" fill="#ffffff" stroke="#374151" stroke-width="1.4"/>
   <text x="630" y="150" font-size="14" text-anchor="middle" fill="#111827">⑤ 응답</text>
@@ -42,5 +42,5 @@
   <line x1="20" y1="215" x2="860" y2="215" stroke="#d1d5db" stroke-width="1"/>
   <text x="20" y="240" font-size="13" fill="#14532d">⑥이 빠지면 시나리오가 아니다. 시간과 돈만 충분하면 어떤 변경이든 가능하기 때문이다.</text>
   <text x="20" y="262" font-size="13" fill="#374151">예: 차고문이 닫히는 중에(③) 문 앞의 물체를(①) 센서가 감지하면(②·④) 문이 멈춘다(⑤) — 1밀리초 이내(⑥).</text>
-  <text x="20" y="286" font-size="12" fill="#6b7280">④ 산출물은 아직 설계 전이면 비워 둘 수 있다. 나머지 다섯은 비우지 않는다.</text>
+  <text x="20" y="286" font-size="13" fill="#6b7280">④ 산출물은 아직 설계 전이면 비워 둘 수 있다. 나머지 다섯은 비우지 않는다.</text>
 </svg>

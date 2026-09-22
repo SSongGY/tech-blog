@@ -669,6 +669,9 @@ def lint_examples(meta: dict, path: Path) -> list[str]:
     if meta.get("verification") != "executed" or not code_dir.is_dir():
         return []
     if (code_dir / OUTPUT_NAME).exists():
+        # 기록을 만들어 놓고 글에서 가리키지 않으면 독자는 그런 파일이 있는 줄 모른다.
+        if f"code/{OUTPUT_NAME}" not in path.read_text(encoding="utf-8"):
+            return [f"본문에서 code/{OUTPUT_NAME} 를 가리키지 않는다 — 수행 기록 링크를 넣는다"]
         return []
     command = example_command(code_dir)
     if not command:

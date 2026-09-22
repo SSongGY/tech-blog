@@ -9,32 +9,31 @@
 
   <rect x="40" y="56" width="300" height="108" rx="5" fill="#f2f8f4" stroke="#2d6a4f" stroke-width="1.6"/>
   <text x="56" y="80" font-size="13" font-weight="600" fill="#1b1b1b">논리 뷰 (Logical View)</text>
-  <text x="56" y="104" font-size="12" fill="#444444">관심사: 기능성</text>
-  <text x="56" y="126" font-size="12" fill="#444444">이해관계자: 최종 사용자</text>
-  <text x="56" y="148" font-size="12" fill="#666666">구성요소: 클래스 / 컨테이너: 클래스 범주</text>
+  <text x="56" y="104" font-size="13" fill="#444444">관심사: 기능성</text>
+  <text x="56" y="126" font-size="13" fill="#444444">이해관계자: 최종 사용자</text>
+  <text x="56" y="148" font-size="13" fill="#666666">구성요소: 클래스 / 컨테이너: 클래스 범주</text>
 
   <rect x="520" y="56" width="300" height="108" rx="5" fill="#f2f8f4" stroke="#2d6a4f" stroke-width="1.6"/>
   <text x="536" y="80" font-size="13" font-weight="600" fill="#1b1b1b">개발 뷰 (Development View)</text>
-  <text x="536" y="104" font-size="12" fill="#444444">관심사: 조직, 재사용, 이식성</text>
-  <text x="536" y="126" font-size="12" fill="#444444">이해관계자: 개발자, 관리자</text>
-  <text x="536" y="148" font-size="12" fill="#666666">구성요소: 모듈, 서브시스템</text>
+  <text x="536" y="104" font-size="13" fill="#444444">관심사: 조직, 재사용, 이식성</text>
+  <text x="536" y="126" font-size="13" fill="#444444">이해관계자: 개발자, 관리자</text>
+  <text x="536" y="148" font-size="13" fill="#666666">구성요소: 모듈, 서브시스템</text>
 
   <rect x="350" y="172" width="180" height="72" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="2"/>
   <text x="440" y="196" font-size="13" font-weight="600" text-anchor="middle" fill="#1b1b1b">시나리오 (+1)</text>
-  <text x="440" y="216" font-size="11.5" text-anchor="middle" fill="#444444">관심사: 이해 가능성</text>
-  <text x="440" y="234" font-size="11.5" text-anchor="middle" fill="#666666">네 뷰를 잇는다</text>
+  <text x="440" y="216" font-size="13" text-anchor="middle" fill="#444444">관심사: 이해 가능성</text>
+  <text x="440" y="234" font-size="13" text-anchor="middle" fill="#666666">네 뷰를 잇는다</text>
 
   <rect x="40" y="252" width="300" height="108" rx="5" fill="#f2f8f4" stroke="#2d6a4f" stroke-width="1.6"/>
   <text x="56" y="276" font-size="13" font-weight="600" fill="#1b1b1b">프로세스 뷰 (Process View)</text>
-  <text x="56" y="300" font-size="12" fill="#444444">관심사: 성능, 가용성, 무결성</text>
-  <text x="56" y="322" font-size="12" fill="#444444">이해관계자: 시스템 설계자, 통합자</text>
-  <text x="56" y="344" font-size="12" fill="#666666">구성요소: 태스크 / 컨테이너: 프로세스</text>
+  <text x="56" y="300" font-size="13" fill="#444444">관심사: 성능, 가용성, 무결성</text>
+  <text x="56" y="322" font-size="13" fill="#444444">이해관계자: 시스템 설계자, 통합자</text>
+  <text x="56" y="344" font-size="13" fill="#666666">구성요소: 태스크 / 컨테이너: 프로세스</text>
 
   <rect x="520" y="252" width="300" height="108" rx="5" fill="#f2f8f4" stroke="#2d6a4f" stroke-width="1.6"/>
   <text x="536" y="276" font-size="13" font-weight="600" fill="#1b1b1b">물리 뷰 (Physical View)</text>
-  <text x="536" y="300" font-size="12" fill="#444444">관심사: 확장성, 성능, 가용성</text>
-  <text x="536" y="322" font-size="12" fill="#444444">이해관계자: 시스템 설계자</text>
-  <text x="536" y="344" font-size="12" fill="#666666">구성요소: 노드 / 연결: 통신 매체</text>
+  <text x="536" y="300" font-size="13" fill="#444444">관심사: 확장성, 성능, 가용성</text>
+  <text x="536" y="322" font-size="13" fill="#444444">이해관계자: 시스템 설계자</text>
+  <text x="536" y="344" font-size="13" fill="#666666">구성요소: 노드 / 연결: 통신 매체</text>
 
-  <text x="20" y="384" font-size="11.5" fill="#666666">근거: P. Kruchten, "Architectural Blueprints — The 4+1 View Model of Software Architecture", IEEE Software 12(6), 1995, Figure 1 및 Table 1</text>
 </svg>

@@ -222,6 +222,8 @@ at line 4, column 19 of null:
 Tibero 7.2는 이 절을 지원하지 않는다. 타깃에만 있는 행을 정리하려면 별도 `DELETE` 문을
 쓰거나, 피드에 삭제 표시 컬럼을 넣어 `DELETE WHERE`로 처리해야 한다.
 
+> 이 절의 출력은 [`code/output.txt`](code/output.txt)에 수행 기록으로 남아 있다.
+
 ## 실무에서 주의할 점
 
 - **`DELETE WHERE`의 조건은 갱신 후 값으로 읽힌다.** "원래 재고가 0이던 것을 지운다"를

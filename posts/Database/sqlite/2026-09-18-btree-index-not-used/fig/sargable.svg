@@ -15,40 +15,40 @@
 
   <!-- good path -->
   <rect x="24" y="86" width="300" height="72" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
-  <text x="38" y="110" font-size="12.5" font-weight="600" fill="#2d6a4f">SARGable</text>
+  <text x="38" y="110" font-size="13" font-weight="600" fill="#2d6a4f">SARGable</text>
   <text x="38" y="133" font-size="13" fill="#0f172a">WHERE email = 'user123456@…'</text>
-  <text x="38" y="151" font-size="12.5" fill="#64748b">컬럼이 가공되지 않은 채 비교된다</text>
+  <text x="38" y="151" font-size="13" fill="#64748b">컬럼이 가공되지 않은 채 비교된다</text>
 
   <path d="M324,122 L404,122" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a1)"/>
 
   <rect x="412" y="86" width="240" height="72" rx="6" fill="#e8f3ed" stroke="#2d6a4f" stroke-width="1.5"/>
   <text x="426" y="112" font-size="13" font-weight="600" fill="#2d6a4f">SEARCH</text>
   <text x="426" y="133" font-size="13" fill="#0f172a">루트→리프 키 비교 3~4회</text>
-  <text x="426" y="151" font-size="12.5" fill="#2d6a4f">0.00 ms</text>
+  <text x="426" y="151" font-size="13" fill="#2d6a4f">0.00 ms</text>
 
   <!-- bad path -->
   <rect x="24" y="196" width="300" height="72" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
-  <text x="38" y="220" font-size="12.5" font-weight="600" fill="#9d0208">SARGable 하지 않음</text>
+  <text x="38" y="220" font-size="13" font-weight="600" fill="#9d0208">SARGable 하지 않음</text>
   <text x="38" y="243" font-size="13" fill="#0f172a">WHERE lower(email) = 'user123456@…'</text>
-  <text x="38" y="261" font-size="12.5" fill="#64748b">변환값의 순서는 인덱스가 모른다</text>
+  <text x="38" y="261" font-size="13" fill="#64748b">변환값의 순서는 인덱스가 모른다</text>
 
   <path d="M324,232 L404,232" stroke="#9d0208" stroke-width="2" marker-end="url(#a2)"/>
 
   <rect x="412" y="196" width="240" height="72" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
   <text x="426" y="222" font-size="13" font-weight="600" fill="#9d0208">SCAN</text>
   <text x="426" y="243" font-size="13" fill="#0f172a">리프 전체 200,000행 비교</text>
-  <text x="426" y="261" font-size="12.5" fill="#9d0208">16.88 ms</text>
+  <text x="426" y="261" font-size="13" fill="#9d0208">16.88 ms</text>
 
   <!-- fix note -->
   <rect x="676" y="86" width="180" height="182" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
-  <text x="690" y="110" font-size="12.5" font-weight="600" fill="#b45309">되살리는 법</text>
-  <text x="690" y="136" font-size="12.5" fill="#334155">표현식 인덱스를</text>
-  <text x="690" y="154" font-size="12.5" fill="#334155">조건식과 똑같이</text>
-  <text x="690" y="172" font-size="12.5" fill="#334155">만들어 둔다.</text>
-  <text x="690" y="200" font-size="11.5" fill="#0f172a">CREATE INDEX …</text>
-  <text x="690" y="217" font-size="11.5" fill="#0f172a">ON app_user</text>
-  <text x="690" y="234" font-size="11.5" fill="#0f172a">(lower(email));</text>
-  <text x="690" y="258" font-size="12.5" fill="#2d6a4f">→ 다시 SEARCH</text>
+  <text x="690" y="110" font-size="13" font-weight="600" fill="#b45309">되살리는 법</text>
+  <text x="690" y="136" font-size="13" fill="#334155">표현식 인덱스를</text>
+  <text x="690" y="154" font-size="13" fill="#334155">조건식과 똑같이</text>
+  <text x="690" y="172" font-size="13" fill="#334155">만들어 둔다.</text>
+  <text x="690" y="200" font-size="13" fill="#0f172a">CREATE INDEX …</text>
+  <text x="690" y="217" font-size="13" fill="#0f172a">ON app_user</text>
+  <text x="690" y="234" font-size="13" fill="#0f172a">(lower(email));</text>
+  <text x="690" y="258" font-size="13" fill="#2d6a4f">→ 다시 SEARCH</text>
 
-  <text x="24" y="302" font-size="12.5" fill="#64748b">측정: SQLite 3.49.1 · app_user 200,000행 · SELECT user_id · 5회 중 최솟값</text>
+  <text x="24" y="302" font-size="13" fill="#64748b">측정: SQLite 3.49.1 · app_user 200,000행 · SELECT user_id · 5회 중 최솟값</text>
 </svg>

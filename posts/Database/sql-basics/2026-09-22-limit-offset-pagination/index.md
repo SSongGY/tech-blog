@@ -125,6 +125,8 @@ SELECT id, title FROM article WHERE id > 100000 ORDER BY id LIMIT 10;
 돌려준 글이 통째로 바뀌었다. SQLite 문서가 `ORDER BY`가 없으면 행 순서는 정의되지 않는다고
 못박아 둔 그대로다. **페이지를 나눌 생각이라면 `ORDER BY`는 선택이 아니다.**
 
+> 이 절의 출력은 [`code/output.txt`](code/output.txt)에 수행 기록으로 남아 있다.
+
 ## 실무에서 주의할 점
 
 - **쉼표 문법은 쓰지 않는다.** `LIMIT 30, 10`은 30개가 아니라 10개를 돌려준다.

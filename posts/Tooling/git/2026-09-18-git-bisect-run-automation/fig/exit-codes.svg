@@ -12,7 +12,7 @@
 
   <rect x="24" y="150" width="150" height="56" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
   <text x="99" y="174" font-size="13" font-weight="600" fill="#0f172a" text-anchor="middle">테스트 명령</text>
-  <text x="99" y="193" font-size="12.5" fill="#64748b" text-anchor="middle">실행</text>
+  <text x="99" y="193" font-size="13" fill="#64748b" text-anchor="middle">실행</text>
 
   <path d="M174,178 L228,178" stroke="#64748b" stroke-width="2" marker-end="url(#b1)"/>
 
@@ -21,29 +21,29 @@
   <text x="299" y="114" font-size="14" font-weight="600" fill="#2d6a4f" text-anchor="middle">0</text>
   <rect x="386" y="86" width="470" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f"/>
   <text x="400" y="106" font-size="13" font-weight="600" fill="#2d6a4f">good / old</text>
-  <text x="400" y="123" font-size="12.5" fill="#334155">이 커밋은 정상. 탐색 범위를 뒤쪽(더 최근)으로 옮긴다</text>
+  <text x="400" y="123" font-size="13" fill="#334155">이 커밋은 정상. 탐색 범위를 뒤쪽(더 최근)으로 옮긴다</text>
 
   <!-- 1-124,126,127 -->
   <rect x="236" y="142" width="126" height="44" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
   <text x="299" y="163" font-size="13" font-weight="600" fill="#9d0208" text-anchor="middle">1 ~ 124</text>
-  <text x="299" y="179" font-size="12" fill="#9d0208" text-anchor="middle">126, 127</text>
+  <text x="299" y="179" font-size="13" fill="#9d0208" text-anchor="middle">126, 127</text>
   <rect x="386" y="142" width="470" height="44" rx="5" fill="#ffffff" stroke="#9d0208"/>
   <text x="400" y="162" font-size="13" font-weight="600" fill="#9d0208">bad / new</text>
-  <text x="400" y="179" font-size="12.5" fill="#334155">이 커밋에 문제 있음. 탐색 범위를 앞쪽(더 과거)으로 옮긴다</text>
+  <text x="400" y="179" font-size="13" fill="#334155">이 커밋에 문제 있음. 탐색 범위를 앞쪽(더 과거)으로 옮긴다</text>
 
   <!-- 125 -->
   <rect x="236" y="198" width="126" height="44" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
   <text x="299" y="226" font-size="14" font-weight="600" fill="#b45309" text-anchor="middle">125</text>
   <rect x="386" y="198" width="470" height="44" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
   <text x="400" y="218" font-size="13" font-weight="600" fill="#b45309">skip — 판정 불가</text>
-  <text x="400" y="235" font-size="12.5" fill="#334155">빌드·임포트 실패 등. 건너뛰고 이웃 커밋을 대신 테스트한다</text>
+  <text x="400" y="235" font-size="13" fill="#334155">빌드·임포트 실패 등. 건너뛰고 이웃 커밋을 대신 테스트한다</text>
 
   <!-- >=128 -->
   <rect x="236" y="254" width="126" height="44" rx="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
   <text x="299" y="282" font-size="14" font-weight="600" fill="#475569" text-anchor="middle">128 이상</text>
   <rect x="386" y="254" width="470" height="44" rx="5" fill="#ffffff" stroke="#475569"/>
   <text x="400" y="274" font-size="13" font-weight="600" fill="#475569">bisect 중단</text>
-  <text x="400" y="291" font-size="12.5" fill="#334155">더 진행하지 않고 그 자리에서 멈춘다</text>
+  <text x="400" y="291" font-size="13" fill="#334155">더 진행하지 않고 그 자리에서 멈춘다</text>
 
   <line x1="228" y1="108" x2="228" y2="276" stroke="#cbd5e1"/>
   <path d="M228,108 L236,108 M228,164 L236,164 M228,220 L236,220 M228,276 L236,276" stroke="#64748b" stroke-width="1.5"/>

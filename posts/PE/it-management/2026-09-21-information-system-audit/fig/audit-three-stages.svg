@@ -11,15 +11,15 @@
   <!-- 단계 -->
   <rect x="40" y="60" width="230" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.8" stroke-dasharray="7 4"/>
   <text x="155" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#7c2d12">요구정의단계</text>
-  <text x="155" y="105" font-size="12" text-anchor="middle" fill="#7c2d12">요구사항정의서를 점검</text>
+  <text x="155" y="105" font-size="13" text-anchor="middle" fill="#7c2d12">요구사항정의서를 점검</text>
 
   <rect x="320" y="60" width="230" height="56" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.6"/>
   <text x="435" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">설계단계</text>
-  <text x="435" y="105" font-size="12" text-anchor="middle" fill="#374151">설계 산출물을 점검</text>
+  <text x="435" y="105" font-size="13" text-anchor="middle" fill="#374151">설계 산출물을 점검</text>
 
   <rect x="600" y="60" width="230" height="56" rx="6" fill="#eef5f1" stroke="#2d6a4f" stroke-width="1.8"/>
   <text x="715" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#14532d">종료단계</text>
-  <text x="715" y="105" font-size="12" text-anchor="middle" fill="#14532d">검사 전 적합·부적합 판정</text>
+  <text x="715" y="105" font-size="13" text-anchor="middle" fill="#14532d">검사 전 적합·부적합 판정</text>
 
   <g stroke="#374151" stroke-width="1.6" marker-end="url(#a2)" fill="none">
     <line x1="272" y1="88" x2="316" y2="88"/>
@@ -54,5 +54,5 @@
   <line x1="40" y1="265" x2="840" y2="265" stroke="#d1d5db" stroke-width="1"/>
   <text x="40" y="290" font-size="13" fill="#7c2d12">사업비 20억원 미만이거나 사업기간 6개월 미만이면 요구정의단계를 뺀 2단계감리를 할 수 있다.</text>
   <text x="40" y="312" font-size="13" fill="#7c2d12">이때 요구사항정의서 점검은 발주자가 직접 한다. 없어지는 것이 아니라 발주자에게 넘어간다.</text>
-  <text x="40" y="336" font-size="12" fill="#6b7280">감리보고서는 ②의 감리수행결과보고서와 ④의 시정조치확인보고서 두 가지를 함께 가리킨다.</text>
+  <text x="40" y="336" font-size="13" fill="#6b7280">감리보고서는 ②의 감리수행결과보고서와 ④의 시정조치확인보고서 두 가지를 함께 가리킨다.</text>
 </svg>

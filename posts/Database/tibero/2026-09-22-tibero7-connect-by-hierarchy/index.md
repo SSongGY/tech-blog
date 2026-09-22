@@ -172,6 +172,8 @@ TBR-10064: Loop detected during CONNECT BY operation.
 에러로 막히지 않는다는 점이 오히려 위험하다. `PRIOR`를 빠뜨린 질의는 구문 오류 없이
 조용히 1행을 돌려주므로, "데이터가 없나 보다"로 넘어가기 쉽다.
 
+> 이 절의 출력은 [`code/output.txt`](code/output.txt)에 수행 기록으로 남아 있다.
+
 ## 실무에서 주의할 점
 
 - **조건의 자리를 먼저 정한다.** "이 사람만 목록에서 빼기"는 `WHERE`, "이 조직 아래를
