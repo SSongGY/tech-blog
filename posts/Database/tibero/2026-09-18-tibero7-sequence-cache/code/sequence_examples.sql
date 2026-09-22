@@ -1,6 +1,7 @@
 -- Tibero 7 시퀀스 예제 모음
 --
--- Tibero 7.2.6(PRODUCT_MAJOR 7, PRODUCT_MINOR 2)에서 전부 실행해 확인했다.
+-- Tibero 7.2(PRODUCT_MAJOR 7, PRODUCT_MINOR 2)에서 전부 실행해 확인했다.
+-- 인용한 매뉴얼은 7.2.6판이다. 매뉴얼 판번호와 인스턴스 버전은 다른 값이다.
 -- 주석의 에러 번호와 기대값은 실제로 받은 것이다.
 --
 -- 실행: tbsql <사용자>/<비밀번호> @sequence_examples.sql
@@ -81,7 +82,7 @@ SELECT ring_seq.NEXTVAL FROM dual;
 
 -- ================================================================
 -- 6. 컬럼 DEFAULT에 NEXTVAL. 매뉴얼 두 페이지가 반대로 적는 항목인데
---    7.2.6에서는 동작한다. 다만 운영 코드라면 identity 컬럼 쪽이 안전하다.
+--    7.2에서는 동작한다. 다만 운영 코드라면 identity 컬럼 쪽이 안전하다.
 -- ================================================================
 CREATE TABLE order_item (
     order_id   NUMBER DEFAULT order_seq.NEXTVAL PRIMARY KEY,

@@ -1,0 +1,429 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# 원격 Tibero 에 SSH 로 붙어 돌렸다 (§6). 접속 정보는 저장소에 두지 않는다.
+#
+# 명령      : tbsql <계정>/<비밀번호> @sequence_examples.sql   (SET ECHO ON 으로 문장과 결과를 함께)
+# 수행 시각 : 2026-09-22 10:34 (대한민국 표준시)
+# 환경      : Tibero 7.2 / Linux x86_64
+# 종료 코드 : 0  (스크립트 마지막의 남은 객체 수가 0 이면 정리까지 끝난 것이다)
+#
+# 출력에서 호스트명·경로·IP·내부 빌드 번호를 지웠다. 에러는 제약을 보여주려고
+# 일부러 일으킨 것이며 code/README.md 에 목록이 있다.
+
+tbSQL 7
+
+TmaxTibero Corporation Copyright (c) 2020-. All rights reserved.
+
+Connected to Tibero.
+
+SQL> -- Tibero 7 시퀀스 예제 모음
+SQL> --
+SQL> -- Tibero 7.2.6(PRODUCT_MAJOR 7, PRODUCT_MINOR 2)에서 전부 실행해 확인했다.
+SQL> -- 주석의 에러 번호와 기대값은 실제로 받은 것이다.
+SQL> --
+SQL> -- 실행: tbsql <사용자>/<비밀번호> @sequence_examples.sql
+SQL> --
+SQL> -- tbsql 스크립트 모드의 두 가지 제약 때문에 이 파일의 형식이 이렇다.
+SQL> --   1) 끝에 EXIT가 없으면 프롬프트에서 대기한다. 무인 실행이 멈춘다.
+SQL> --   2) 문장 뒤에 같은 줄로 `-- 주석`을 달면 다음 문장이 TBR-8004로 깨진다.
+SQL> --      그래서 모든 주석을 독립된 줄에 둔다. code/README.md에 재현 예가 있다.
+SQL>
+SQL> SET LINESIZE 220
+SQL> SET PAGESIZE 60
+SQL>
+SQL> -- ================================================================
+SQL> -- 1. 기본형. 생략한 속성의 실측 기본값을 바로 확인한다.
+SQL> --    INCREMENT BY 1, NOCYCLE(N), NOORDER(N), MINVALUE 1, CACHE 20,
+SQL> --    MAXVALUE 9999999999999999999999999999 (9가 28개. INT64_MAX가 아니다)
+SQL> -- ================================================================
+SQL> CREATE SEQUENCE order_seq;
+
+Sequence 'ORDER_SEQ' created.
+
+SQL>
+SQL> COL sequence_name FORMAT A14
+SQL> COL max_value FORMAT 99999999999999999999999999999
+SQL> SELECT sequence_name, min_value, max_value, increment_by,
+   2        cycle_flag, order_flag, cache_size, last_number
+   3   FROM user_sequences WHERE sequence_name = 'ORDER_SEQ';
+
+SEQUENCE_NAME   MIN_VALUE                      MAX_VALUE INCREMENT_BY CYCLE_FLAG ORDER_FLAG CACHE_SIZE LAST_NUMBER
+-------------- ---------- ------------------------------ ------------ ---------- ---------- ---------- -----------
+ORDER_SEQ               1   9999999999999999999999999999            1 N          N                  20           1
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 2. CURRVAL은 같은 세션에서 NEXTVAL을 먼저 불러야 한다.
+SQL> --    아래 첫 문장은 TBR-6003, 이어지는 두 문장은 각각 1을 반환한다.
+SQL> -- ================================================================
+SQL> SELECT order_seq.CURRVAL FROM dual;
+TBR-6003: Sequence "ORDER_SEQ" has not been accessed in this session: no CURRVAL available.
+
+SQL> SELECT order_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         1
+
+1 row selected.
+
+SQL> SELECT order_seq.CURRVAL FROM dual;
+
+   CURRVAL
+----------
+         1
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 3. 내림차순. START WITH를 생략하면 MAXVALUE에서 시작해 1000이 나온다.
+SQL> -- ================================================================
+SQL> CREATE SEQUENCE countdown_seq INCREMENT BY -1 MAXVALUE 1000 MINVALUE 1 NOCYCLE;
+
+Sequence 'COUNTDOWN_SEQ' created.
+
+SQL> SELECT countdown_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+      1000
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 4. 구성요소 표에 없는 제약들. 전부 생성 단계에서 막힌다.
+SQL> -- ================================================================
+SQL>
+SQL> -- 오름차순 CYCLE에는 MAXVALUE가 필요하다 → TBR-7136
+SQL> CREATE SEQUENCE bad_cycle_seq START WITH 1 MINVALUE 1 INCREMENT BY 1 CYCLE;
+TBR-7136: In ascending sequences, the CYCLE option must be used with MAXVALUE.
+
+SQL>
+SQL> -- 캐시 크기는 한 사이클보다 작아야 한다 → TBR-7340 (사이클 12개에 캐시 20개)
+SQL> CREATE SEQUENCE bad_cache_seq START WITH 1 MINVALUE 1 MAXVALUE 12
+   2     INCREMENT BY 1 CYCLE CACHE 20;
+TBR-7340: Sequence cache size must be less than one cycle.
+
+SQL>
+SQL> -- INCREMENT는 MAXVALUE - MINVALUE보다 작아야 한다 → TBR-7424
+SQL> CREATE SEQUENCE big_step_seq MINVALUE 1 MAXVALUE 10 INCREMENT BY 100;
+TBR-7424: INCREMENT must be less than MAXVALUE minus MINVALUE.
+at line 1, column 53 of null:
+CREATE SEQUENCE big_step_seq MINVALUE 1 MAXVALUE 10 INCREMENT BY 100
+                                                    ^^^^^^^^^^^^^^^^
+
+SQL>
+SQL> -- RESTART는 CREATE에서 쓸 수 없다 → TBR-7615
+SQL> CREATE SEQUENCE bad_restart_seq RESTART START WITH 5;
+TBR-7615: Restart option is not allowed for create sequence
+
+SQL>
+SQL> -- 사이클보다 작은 캐시는 통과한다
+SQL> CREATE SEQUENCE slot_seq START WITH 1 MINVALUE 1 MAXVALUE 12
+   2     INCREMENT BY 1 CYCLE CACHE 4;
+
+Sequence 'SLOT_SEQ' created.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 5. 한계에 닿았을 때.
+SQL> --    NOCYCLE은 1, 2를 내고 세 번째에 TBR-6004로 멈춘다.
+SQL> -- ================================================================
+SQL> CREATE SEQUENCE tiny_seq START WITH 1 MINVALUE 1 MAXVALUE 2
+   2     INCREMENT BY 1 NOCYCLE NOCACHE;
+
+Sequence 'TINY_SEQ' created.
+
+SQL> SELECT tiny_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         1
+
+1 row selected.
+
+SQL> SELECT tiny_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         2
+
+1 row selected.
+
+SQL> SELECT tiny_seq.NEXTVAL FROM dual;
+TBR-6004: Sequence "TINY_SEQ" has exceeded its available range.
+
+SQL>
+SQL> -- CYCLE은 1, 2, 3을 낸 뒤 MINVALUE로 돌아가 다시 1을 낸다.
+SQL> CREATE SEQUENCE ring_seq START WITH 1 MINVALUE 1 MAXVALUE 3
+   2     INCREMENT BY 1 CYCLE NOCACHE;
+
+Sequence 'RING_SEQ' created.
+
+SQL> SELECT ring_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         1
+
+1 row selected.
+
+SQL> SELECT ring_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         2
+
+1 row selected.
+
+SQL> SELECT ring_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         3
+
+1 row selected.
+
+SQL> SELECT ring_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         1
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 6. 컬럼 DEFAULT에 NEXTVAL. 매뉴얼 두 페이지가 반대로 적는 항목인데
+SQL> --    7.2.6에서는 동작한다. 다만 운영 코드라면 identity 컬럼 쪽이 안전하다.
+SQL> -- ================================================================
+SQL> CREATE TABLE order_item (
+   2     order_id   NUMBER DEFAULT order_seq.NEXTVAL PRIMARY KEY,
+   3     product_id NUMBER NOT NULL,
+   4     created_at DATE DEFAULT SYSDATE
+   5 );
+
+Table 'ORDER_ITEM' created.
+
+SQL> INSERT INTO order_item (product_id) VALUES (10);
+
+1 row inserted.
+
+SQL> SELECT order_id, product_id FROM order_item;
+
+  ORDER_ID PRODUCT_ID
+---------- ----------
+         2         10
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 7. 한 행에서 NEXTVAL이 여러 번 나와도 증가는 한 번이다.
+SQL> --    아래 SELECT의 두 컬럼에는 같은 값이 들어 있다.
+SQL> -- ================================================================
+SQL> DROP TABLE order_item;
+
+Table 'ORDER_ITEM' dropped.
+
+SQL> CREATE TABLE order_item (
+   2     order_id   NUMBER PRIMARY KEY,
+   3     product_id NUMBER NOT NULL
+   4 );
+
+Table 'ORDER_ITEM' created.
+
+SQL> INSERT INTO order_item (order_id, product_id)
+   2      VALUES (order_seq.NEXTVAL, order_seq.NEXTVAL);
+
+1 row inserted.
+
+SQL> SELECT order_id, product_id FROM order_item;
+
+  ORDER_ID PRODUCT_ID
+---------- ----------
+         3          3
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 8. ALTER.
+SQL> --    START WITH는 못 바꾼다 → TBR-7008
+SQL> --    RESTART는 START WITH로 준 1000이 아니라 MINVALUE 기본값 1로 돌아간다.
+SQL> --    특정 값이 필요하면 RESTART START WITH로 직접 준다.
+SQL> -- ================================================================
+SQL> CREATE SEQUENCE invoice_seq START WITH 1000 INCREMENT BY 1 CACHE 100;
+
+Sequence 'INVOICE_SEQ' created.
+
+SQL> SELECT invoice_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+      1000
+
+1 row selected.
+
+SQL>
+SQL> ALTER SEQUENCE invoice_seq START WITH 2000;
+TBR-7008: START WITH is not allowed for ALTER sequences.
+at line 1, column 28 of null:
+ALTER SEQUENCE invoice_seq START WITH 2000
+                           ^^^^^^^^^^^^^^^
+
+SQL>
+SQL> ALTER SEQUENCE invoice_seq INCREMENT BY 10;
+
+Sequence 'INVOICE_SEQ' altered.
+
+SQL> ALTER SEQUENCE invoice_seq NOCACHE;
+
+Sequence 'INVOICE_SEQ' altered.
+
+SQL>
+SQL> ALTER SEQUENCE invoice_seq RESTART;
+
+Sequence 'INVOICE_SEQ' altered.
+
+SQL> SELECT invoice_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         1
+
+1 row selected.
+
+SQL>
+SQL> ALTER SEQUENCE invoice_seq RESTART START WITH 5000;
+
+Sequence 'INVOICE_SEQ' altered.
+
+SQL> SELECT invoice_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+      5000
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 9. identity 컬럼 (Tibero 7 FS02부터).
+SQL> --    문법 도식이 매뉴얼에서 이미지로만 제공되어 실기에서 확인한 형태다.
+SQL> --    emp_id에 1, 2가 자동으로 들어간다.
+SQL> -- ================================================================
+SQL> CREATE TABLE emp_identity (
+   2     emp_id NUMBER GENERATED ALWAYS AS IDENTITY,
+   3     name   VARCHAR(20)
+   4 );
+
+Table 'EMP_IDENTITY' created.
+
+SQL> INSERT INTO emp_identity (name) VALUES ('kim');
+
+1 row inserted.
+
+SQL> INSERT INTO emp_identity (name) VALUES ('lee');
+
+1 row inserted.
+
+SQL> SELECT emp_id, name FROM emp_identity;
+
+    EMP_ID NAME
+---------- --------------------
+         1 kim
+         2 lee
+
+2 rows selected.
+
+SQL>
+SQL> -- ALWAYS 컬럼에 값을 직접 넣으면 막힌다 → TBR-8162
+SQL> INSERT INTO emp_identity (emp_id, name) VALUES (99, 'park');
+TBR-8162: Cannot insert into an always identity column.
+at line 1, column 28 of null:
+INSERT INTO emp_identity (emp_id, name) VALUES (99, 'park')
+                          ^
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 10. 정의 확인.
+SQL> --     LAST_NUMBER는 마지막 발급 번호가 아니라 캐시로 미리 확보한 다음 값이다.
+SQL> --     NEXTVAL을 세 번 부른 ORDER_SEQ가 CACHE 20이라 21로 찍힌다.
+SQL> --     identity가 만든 ISEQ$$_<객체번호> 시퀀스도 같이 보인다.
+SQL> -- ================================================================
+SQL> COL sequence_name FORMAT A24
+SQL> SELECT sequence_name, cache_size, last_number
+   2   FROM user_sequences ORDER BY sequence_name;
+
+SEQUENCE_NAME            CACHE_SIZE LAST_NUMBER
+------------------------ ---------- -----------
+COUNTDOWN_SEQ                    20         980
+INVOICE_SEQ                       0        5010
+ISEQ$$_4093                      20          21
+ORDER_SEQ                        20          21
+RING_SEQ                          0           2
+SLOT_SEQ                          4           1
+TINY_SEQ                          0           3
+
+7 rows selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 11. 정리. 예제 객체만 지운다. 마지막 두 카운트는 0이어야 한다.
+SQL> -- ================================================================
+SQL> DROP TABLE order_item;
+
+Table 'ORDER_ITEM' dropped.
+
+SQL> DROP TABLE emp_identity;
+
+Table 'EMP_IDENTITY' dropped.
+
+SQL> DROP SEQUENCE order_seq;
+
+Sequence 'ORDER_SEQ' dropped.
+
+SQL> DROP SEQUENCE invoice_seq;
+
+Sequence 'INVOICE_SEQ' dropped.
+
+SQL> DROP SEQUENCE countdown_seq;
+
+Sequence 'COUNTDOWN_SEQ' dropped.
+
+SQL> DROP SEQUENCE slot_seq;
+
+Sequence 'SLOT_SEQ' dropped.
+
+SQL> DROP SEQUENCE tiny_seq;
+
+Sequence 'TINY_SEQ' dropped.
+
+SQL> DROP SEQUENCE ring_seq;
+
+Sequence 'RING_SEQ' dropped.
+
+SQL>
+SQL> SELECT COUNT(*) AS seq_left FROM user_sequences;
+
+  SEQ_LEFT
+----------
+         0
+
+1 row selected.
+
+SQL> SELECT COUNT(*) AS tab_left FROM user_tables;
+
+  TAB_LEFT
+----------
+         0
+
+1 row selected.
+
+SQL>
+SQL> EXIT
+Disconnected.
