@@ -2709,7 +2709,7 @@ topics:
     angle: "정확 최근접 탐색이 왜 안 되는지, 계층 그래프로 후보를 좁히는 구조와 재현율·지연의 절충. 의미 검색 경로가 상위 k만 돌려주는 이유"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-091
     title: "부트스트랩 재표집 — 복원추출로 추정량의 분포를 세우는 절차"
     category: PE
@@ -2720,7 +2720,7 @@ topics:
     angle: "잭나이프 답안에서 대비로 쓴 부트스트랩을 따로 세운다. 복원추출 B회로 추정량의 표본분포를 직접 만들고, 백분위수·BCa 신뢰구간이 어디서 갈리는지. 잭나이프가 실패하는 중앙값에서 부트스트랩이 되는 이유가 핵심"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-092
     title: "프로세스 상태 전이 모델 — 5상태와 대기 큐"
     category: PE
