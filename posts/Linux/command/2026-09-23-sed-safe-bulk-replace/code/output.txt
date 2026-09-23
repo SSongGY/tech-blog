@@ -3,10 +3,9 @@
 #
 # 글        : posts\Linux\command\2026-09-23-sed-safe-bulk-replace
 # 명령      : bash sed_safe_replace.sh
-# 수행 시각 : 2026-09-23 14:27 (대한민국 표준시)
-# 소요      : 2.5초
+# 수행 시각 : 2026-09-23 14:38 (대한민국 표준시)
+# 소요      : 2.2초
 # 실행 환경 : Python 3.13.5 / Windows 11
-#             SQLite 3.49.1 (파이썬 내장)
 # 선언 환경 : GNU sed 4.9, bash 5.3.9, Windows 11
 # 종료 코드 : 0
 

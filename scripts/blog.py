@@ -1567,8 +1567,11 @@ def cmd_run_example(args: argparse.Namespace) -> int:
         f"# 수행 시각 : {started:%Y-%m-%d %H:%M} ({dt.datetime.now().astimezone().tzname()})",
         f"# 소요      : {elapsed:.1f}초",
         f"# 실행 환경 : Python {platform.python_version()} / {platform.system()} {platform.release()}",
-        f"#             SQLite {sqlite3.sqlite_version} (파이썬 내장)",
     ]
+    # SQLite 버전은 파이썬 예제에서만 뜻이 있다. bash 예제 머리말에 끼우면
+    # 그 글이 SQLite 를 쓰는 것처럼 보인다.
+    if executable.startswith("python"):
+        lines_out.append(f"#             SQLite {sqlite3.sqlite_version} (파이썬 내장)")
     # 프론트매터가 선언한 버전과 실제로 돌린 환경이 어긋나면 글이 틀린 것이다 (§5).
     if declared:
         lines_out.append(f"# 선언 환경 : {', '.join(str(v) for v in declared)}")
