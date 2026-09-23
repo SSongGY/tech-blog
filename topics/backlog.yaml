@@ -802,7 +802,7 @@ topics:
     difficulty: 입문
     angle: "WHERE에 조건을 쓰면 LEFT JOIN이 INNER가 되는 함정"
     code: python
-    status: todo
+    status: done
   - id: bas-010
     title: "CROSS JOIN과 SELF JOIN — 언제 쓰는가"
     category: Database
@@ -1074,7 +1074,7 @@ topics:
     difficulty: 중급
     angle: "격리 수준별로 허용되는 이상현상을 표로 대응"
     code: none
-    status: todo
+    status: done
   - id: pe-011
     title: "분산 데이터베이스 — 투명성 6가지"
     category: PE
@@ -1568,7 +1568,7 @@ topics:
     difficulty: 중급
     angle: "-i를 쓰기 전에 반드시 하는 확인 절차"
     code: shell
-    status: todo
+    status: done
   - id: lx-009
     title: "find — 조건으로 찾아서 바로 처리하기"
     category: Linux
