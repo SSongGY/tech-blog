@@ -14,6 +14,11 @@ verified: true
 topic_id: db-003
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`transaction-isolation`)
+> - [트랜잭션 ACID와 격리 수준 — 이상현상으로 수준을 정의하는 방식](../../../PE/database/2026-09-23-acid-and-isolation-levels/index.md) — PostgreSQL 16 문서, Berenson et al., SIGMOD 1995
+<!-- related:end -->
+
 ## 들어가며
 
 정산 화면을 만들다 보면 같은 페이지 안에서 숫자가 안 맞는 일이 생긴다. 위쪽 합계는
