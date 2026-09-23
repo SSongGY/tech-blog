@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">분산 DBMS가 숨기는 것 — 투명성 6가지</text>
+  <text x="30" y="56" font-size="13" fill="#555">응용은 위의 한 상자만 보고, 아래의 사실은 분산 DBMS가 맡는다</text>
+
+  <!-- application -->
+  <rect x="250" y="72" width="380" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="94" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">응용 프로그램</text>
+  <text x="440" y="113" font-size="13" text-anchor="middle" fill="#444">SELECT … FROM emp — 하나의 논리 DB로 본다</text>
+
+  <path d="M 440 122 L 440 142" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- group labels -->
+  <text x="30" y="166" font-size="13" font-weight="bold" fill="#2d6a4f">데이터가 어디에 어떻게 있는가</text>
+  <text x="600" y="166" font-size="13" font-weight="bold" fill="#b45309">여럿이 동시에, 고장 속에서</text>
+
+  <!-- data placement group -->
+  <rect x="30" y="176" width="170" height="62" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="115" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">① 분할 투명성</text>
+  <text x="115" y="222" font-size="13" text-anchor="middle" fill="#333">조각으로 나뉜 것</text>
+
+  <rect x="210" y="176" width="170" height="62" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="295" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">② 위치 투명성</text>
+  <text x="295" y="222" font-size="13" text-anchor="middle" fill="#333">어느 사이트에 있는지</text>
+
+  <rect x="390" y="176" width="170" height="62" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="475" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">③ 중복 투명성</text>
+  <text x="475" y="222" font-size="13" text-anchor="middle" fill="#333">사본이 여러 개인 것</text>
+
+  <!-- transaction group -->
+  <rect x="600" y="176" width="120" height="62" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="660" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">⑤ 병행</text>
+  <text x="660" y="222" font-size="13" text-anchor="middle" fill="#333">동시 실행</text>
+
+  <rect x="730" y="176" width="120" height="62" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="790" y="200" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">⑥ 장애</text>
+  <text x="790" y="222" font-size="13" text-anchor="middle" fill="#333">사이트·링크 고장</text>
+
+  <!-- local mapping -->
+  <rect x="30" y="250" width="530" height="44" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="46" y="277" font-size="14" font-weight="bold" fill="#2d6a4f">④ 지역사상 투명성</text>
+  <text x="196" y="277" font-size="13" fill="#333">각 사이트의 DBMS·데이터 표현이 서로 다른 것</text>
+
+  <rect x="600" y="250" width="250" height="44" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="725" y="270" font-size="13" text-anchor="middle" fill="#333">분산 동시성 제어(2PL 변형)</text>
+  <text x="725" y="287" font-size="13" text-anchor="middle" fill="#333">분산 커밋(2PC) · 복구</text>
+
+  <path d="M 440 294 L 440 318" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- sites -->
+  <rect x="80" y="322" width="220" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="190" y="346" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">사이트 A (서울)</text>
+  <text x="190" y="368" font-size="13" text-anchor="middle" fill="#333">emp 조각1 · dept 사본</text>
+
+  <rect x="330" y="322" width="220" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="346" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">사이트 B (부산)</text>
+  <text x="440" y="368" font-size="13" text-anchor="middle" fill="#333">emp 조각2 · dept 사본</text>
+
+  <rect x="580" y="322" width="220" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="690" y="346" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">사이트 C (이기종)</text>
+  <text x="690" y="368" font-size="13" text-anchor="middle" fill="#333">다른 DBMS · 다른 타입</text>
+
+  <line x1="30" y1="414" x2="850" y2="414" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="440" font-size="13" fill="#333">초록 셋은 데이터 배치, 점선 하나는 이기종성, 주황 둘은 트랜잭션이 숨긴다.</text>
+  <text x="30" y="460" font-size="13" fill="#555">하나가 깨질 때마다 그 칸의 사실을 응용 코드가 직접 다뤄야 한다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+</svg>
