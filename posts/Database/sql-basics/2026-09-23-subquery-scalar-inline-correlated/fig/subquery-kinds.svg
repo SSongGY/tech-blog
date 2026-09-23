@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">서브쿼리 세 가지 — 놓인 자리와 도는 횟수</text>
+  <text x="30" y="56" font-size="13" fill="#555">employee 8행 기준. 횟수는 서브쿼리 본문이 읽은 행 수이며 아래 실습의 실제 출력이다.</text>
+
+  <!-- column 1: scalar -->
+  <rect x="30" y="76" width="260" height="150" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="100" font-size="15" font-weight="bold" fill="#1b1b1b">가. 스칼라 서브쿼리</text>
+  <text x="46" y="124" font-size="13" fill="#333">자리: SELECT 목록 등 값 하나가</text>
+  <text x="46" y="142" font-size="13" fill="#333">들어갈 곳</text>
+  <text x="46" y="166" font-size="13" fill="#333">결과: 1행 1열 = 값 하나</text>
+  <text x="46" y="190" font-size="13" fill="#333">0행이면 NULL</text>
+  <text x="46" y="210" font-size="13" fill="#b45309">여러 행이면 SQLite는 첫 행</text>
+
+  <!-- column 2: inline view -->
+  <rect x="310" y="76" width="260" height="150" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="326" y="100" font-size="15" font-weight="bold" fill="#1b1b1b">나. 인라인 뷰</text>
+  <text x="326" y="124" font-size="13" fill="#333">자리: FROM 절</text>
+  <text x="326" y="148" font-size="13" fill="#333">결과: 여러 행·여러 열의 표</text>
+  <text x="326" y="172" font-size="13" fill="#333">별칭을 붙여 다른 표처럼</text>
+  <text x="326" y="190" font-size="13" fill="#333">조인한다</text>
+
+  <!-- column 3: correlated -->
+  <rect x="590" y="76" width="260" height="150" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="606" y="100" font-size="15" font-weight="bold" fill="#1b1b1b">다. 상관 서브쿼리</text>
+  <text x="606" y="124" font-size="13" fill="#333">자리: 어디든 (주로 WHERE)</text>
+  <text x="606" y="148" font-size="13" fill="#333">특징: 바깥 표의 컬럼을</text>
+  <text x="606" y="166" font-size="13" fill="#333">안에서 참조한다</text>
+  <text x="606" y="190" font-size="13" fill="#333">x.dept_id = e.dept_id</text>
+
+  <!-- execution count row -->
+
+  <rect x="30" y="276" width="260" height="84" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="46" y="302" font-size="13" font-weight="bold" fill="#2d6a4f">비상관이면 1번</text>
+  <text x="46" y="324" font-size="13" fill="#333">결과를 재사용한다</text>
+  <text x="46" y="346" font-size="13" fill="#333">읽은 행 8</text>
+
+  <rect x="310" y="276" width="260" height="84" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="326" y="302" font-size="13" font-weight="bold" fill="#2d6a4f">1번 만들고 조인</text>
+  <text x="326" y="324" font-size="13" fill="#333">부서 평균 3행을 한 번에</text>
+  <text x="326" y="346" font-size="13" fill="#333">읽은 행 8</text>
+
+  <rect x="590" y="276" width="260" height="84" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="606" y="302" font-size="13" font-weight="bold" fill="#9d0208">바깥 행마다 1번</text>
+  <text x="606" y="324" font-size="13" fill="#333">8번 × 8행 = 읽은 행 64</text>
+  <text x="606" y="346" font-size="13" fill="#2d6a4f">dept_id 인덱스가 있으면 22</text>
+
+  <line x1="160" y1="226" x2="160" y2="274" stroke="#8a8a84" stroke-width="1.2" marker-end="url(#ar)"/>
+  <line x1="440" y1="226" x2="440" y2="274" stroke="#8a8a84" stroke-width="1.2" marker-end="url(#ar)"/>
+  <line x1="720" y1="226" x2="720" y2="274" stroke="#8a8a84" stroke-width="1.2" marker-end="url(#ar)"/>
+
+  <text x="30" y="396" font-size="13" fill="#333">나와 다는 같은 질문(부서 평균보다 많이 받는 직원)에 같은 3행을 돌려준다.</text>
+  <text x="30" y="418" font-size="13" fill="#333">결과가 같아도 읽는 양은 8 대 64로 갈린다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>

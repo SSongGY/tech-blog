@@ -1,0 +1,162 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-23-subquery-scalar-inline-correlated
+# 명령      : python subquery_kinds.py
+# 수행 시각 : 2026-09-23 23:09 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[department]  3행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+-----
+  10 | 개발
+  20 | 영업
+  30 | 인사
+
+[employee]  8행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  name    | TEXT    | NOT NULL
+  dept_id | INTEGER | NOT NULL
+  salary  | INTEGER | NOT NULL
+
+  id | name   | dept_id | salary
+  ---+--------+---------+-------
+   1 | 한지우 |      10 |    700
+   2 | 오민재 |      10 |    500
+   3 | 윤서아 |      10 |    600
+   4 | 장하준 |      20 |    400
+   5 | 임채원 |      20 |    800
+   6 | 서도윤 |      20 |    600
+   7 | 배수아 |      30 |    450
+   8 | 문태오 |      30 |    550
+
+
+=== 1. 스칼라 서브쿼리 — 값 하나 ===
+
+[1-A 회사 평균을 옆 칸에]
+  SELECT e.name, e.salary, (SELECT AVG(salary) FROM employee WHERE tick()) AS company_avg FROM employee AS e ORDER BY e.id
+  ('한지우', 700, 575.0)
+  ('오민재', 500, 575.0)
+  ('윤서아', 600, 575.0)
+  ('장하준', 400, 575.0)
+  ('임채원', 800, 575.0)
+  ('서도윤', 600, 575.0)
+  ('배수아', 450, 575.0)
+  ('문태오', 550, 575.0)
+  -> 8행, tick() 호출 8회
+
+[1-B 부서 이름을 스칼라 서브쿼리로]
+  SELECT e.name, (SELECT d.name FROM department AS d WHERE d.id = e.dept_id) AS dept FROM employee AS e WHERE e.id <= 3 ORDER BY e.id
+  ('한지우', '개발')
+  ('오민재', '개발')
+  ('윤서아', '개발')
+  -> 3행, tick() 호출 0회
+
+[1-C 결과가 0행이면 NULL]
+  SELECT d.name, (SELECT e.name FROM employee AS e WHERE e.dept_id = d.id AND e.salary > 750) AS over_750 FROM department AS d ORDER BY d.id
+  ('개발', None)
+  ('영업', '임채원')
+  ('인사', None)
+  -> 3행, tick() 호출 0회
+
+[1-D 결과가 여러 행이면? (SQLite)]
+  SELECT d.name, (SELECT e.name FROM employee AS e WHERE e.dept_id = d.id) AS someone FROM department AS d ORDER BY d.id
+  ('개발', '한지우')
+  ('영업', '장하준')
+  ('인사', '배수아')
+  -> 3행, tick() 호출 0회
+
+[1-E 비교 대상이 NULL 이면 행이 빠진다]
+  SELECT e.name FROM employee AS e WHERE e.salary > (SELECT x.salary FROM employee AS x WHERE x.id = 99)
+  -> 0행, tick() 호출 0회
+
+=== 2. 상관 서브쿼리 — 바깥 행마다 다시 돈다 ===
+
+[2-A 부서 평균보다 많이 받는 직원]
+  SELECT e.name, e.dept_id, e.salary FROM employee AS e WHERE e.salary > (SELECT AVG(x.salary) FROM employee AS x WHERE tick() AND x.dept_id = e.dept_id) ORDER BY e.id
+  ('한지우', 10, 700)
+  ('임채원', 20, 800)
+  ('문태오', 30, 550)
+  -> 3행, tick() 호출 64회
+
+[2-B tick() 을 조건 뒤에 두면]
+  SELECT e.name, e.dept_id, e.salary FROM employee AS e WHERE e.salary > (SELECT AVG(x.salary) FROM employee AS x WHERE x.dept_id = e.dept_id AND tick()) ORDER BY e.id
+  ('한지우', 10, 700)
+  ('임채원', 20, 800)
+  ('문태오', 30, 550)
+  -> 3행, tick() 호출 22회
+
+=== 3. 인라인 뷰 — 부서 평균을 한 번 만들어 조인 ===
+
+[3-A 인라인 뷰만 따로]
+  SELECT dept_id, AVG(salary) AS avg_salary FROM employee GROUP BY dept_id ORDER BY dept_id
+  (10, 600.0)
+  (20, 600.0)
+  (30, 500.0)
+  -> 3행, tick() 호출 0회
+
+[3-B 같은 질문을 인라인 뷰로]
+  SELECT e.name, e.dept_id, e.salary, d.avg_salary FROM employee AS e INNER JOIN (SELECT dept_id, AVG(salary) AS avg_salary FROM employee WHERE tick() GROUP BY dept_id) AS d ON d.dept_id = e.dept_id WHERE e.salary > d.avg_salary ORDER BY e.id
+  ('한지우', 10, 700, 600.0)
+  ('임채원', 20, 800, 600.0)
+  ('문태오', 30, 550, 500.0)
+  -> 3행, tick() 호출 8회
+
+=== 4. 실행계획 ===
+
+[4-A 스칼라 (비상관)]
+  QUERY PLAN
+  |--SCAN e
+  `--SCALAR SUBQUERY 1
+     `--SCAN employee
+
+[4-B 상관]
+  QUERY PLAN
+  |--SCAN e
+  `--CORRELATED SCALAR SUBQUERY 1
+     `--SCAN x
+
+[4-C 인라인 뷰]
+  QUERY PLAN
+  |--CO-ROUTINE d
+  |  |--SCAN employee
+  |  `--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN e
+  |--BLOOM FILTER ON d (dept_id=?)
+  `--SEARCH d USING AUTOMATIC COVERING INDEX (dept_id=?)
+
+=== 5. dept_id 인덱스를 만든 뒤 ===
+
+[5-A 상관 (인덱스 있음)]
+  QUERY PLAN
+  |--SCAN e
+  `--CORRELATED SCALAR SUBQUERY 1
+     `--SEARCH x USING INDEX ix_employee_dept_id (dept_id=?)
+
+[5-B 상관 (인덱스 있음)]
+  SELECT e.name, e.dept_id, e.salary FROM employee AS e WHERE e.salary > (SELECT AVG(x.salary) FROM employee AS x WHERE tick() AND x.dept_id = e.dept_id) ORDER BY e.id
+  ('한지우', 10, 700)
+  ('임채원', 20, 800)
+  ('문태오', 30, 550)
+  -> 3행, tick() 호출 22회
