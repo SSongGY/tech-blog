@@ -2,12 +2,16 @@
 # 원격 Tibero 에 SSH 로 붙어 돌렸다 (§6). 접속 정보는 저장소에 두지 않는다.
 #
 # 명령      : tbsql <계정>/<비밀번호> @sequence_examples.sql   (SET ECHO ON 으로 문장과 결과를 함께)
-# 수행 시각 : 2026-09-22 10:34 (대한민국 표준시)
+# 수행 시각 : 2026-09-23 10:05 (대한민국 표준시)
 # 환경      : Tibero 7.2 / Linux x86_64
 # 종료 코드 : 0  (스크립트 마지막의 남은 객체 수가 0 이면 정리까지 끝난 것이다)
 #
 # 출력에서 호스트명·경로·IP·내부 빌드 번호를 지웠다. 에러는 제약을 보여주려고
 # 일부러 일으킨 것이며 code/README.md 에 목록이 있다.
+#
+# 세션을 넘나드는 확인은 이 파일이 아니라 code/output-cross-session.txt 에 있다.
+# 세션이 끊길 때 캐시가 어떻게 되는지는 한 세션 안에서는 볼 수 없기 때문이다.
+
 
 tbSQL 7
 
@@ -15,20 +19,6 @@ TmaxTibero Corporation Copyright (c) 2020-. All rights reserved.
 
 Connected to Tibero.
 
-SQL> -- Tibero 7 시퀀스 예제 모음
-SQL> --
-SQL> -- Tibero 7.2.6(PRODUCT_MAJOR 7, PRODUCT_MINOR 2)에서 전부 실행해 확인했다.
-SQL> -- 주석의 에러 번호와 기대값은 실제로 받은 것이다.
-SQL> --
-SQL> -- 실행: tbsql <사용자>/<비밀번호> @sequence_examples.sql
-SQL> --
-SQL> -- tbsql 스크립트 모드의 두 가지 제약 때문에 이 파일의 형식이 이렇다.
-SQL> --   1) 끝에 EXIT가 없으면 프롬프트에서 대기한다. 무인 실행이 멈춘다.
-SQL> --   2) 문장 뒤에 같은 줄로 `-- 주석`을 달면 다음 문장이 TBR-8004로 깨진다.
-SQL> --      그래서 모든 주석을 독립된 줄에 둔다. code/README.md에 재현 예가 있다.
-SQL>
-SQL> SET LINESIZE 220
-SQL> SET PAGESIZE 60
 SQL>
 SQL> -- ================================================================
 SQL> -- 1. 기본형. 생략한 속성의 실측 기본값을 바로 확인한다.
@@ -198,7 +188,7 @@ SQL> SELECT ring_seq.NEXTVAL FROM dual;
 SQL>
 SQL> -- ================================================================
 SQL> -- 6. 컬럼 DEFAULT에 NEXTVAL. 매뉴얼 두 페이지가 반대로 적는 항목인데
-SQL> --    7.2.6에서는 동작한다. 다만 운영 코드라면 identity 컬럼 쪽이 안전하다.
+SQL> --    7.2에서는 동작한다. 다만 운영 코드라면 identity 컬럼 쪽이 안전하다.
 SQL> -- ================================================================
 SQL> CREATE TABLE order_item (
    2     order_id   NUMBER DEFAULT order_seq.NEXTVAL PRIMARY KEY,
@@ -312,6 +302,236 @@ SQL> SELECT invoice_seq.NEXTVAL FROM dual;
 
 SQL>
 SQL> -- ================================================================
+SQL> -- 8-B. LAST_NUMBER가 무엇인지 먼저 확정한다 (기준선).
+SQL> --      CACHE 5로 만들고 다섯 번 뽑는 동안 LAST_NUMBER는 6에서 움직이지 않는다.
+SQL> --      여섯 번째에 캐시가 소진되어 6이 나오고 그때 LAST_NUMBER가 11로 뛴다.
+SQL> --      즉 LAST_NUMBER는 마지막 발급값이 아니라 다음에 확보할 값이다.
+SQL> -- ================================================================
+SQL> CREATE SEQUENCE base_seq START WITH 1 INCREMENT BY 1 CACHE 5;
+
+Sequence 'BASE_SEQ' created.
+
+SQL> SELECT base_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         1
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'BASE_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+         5           6
+
+1 row selected.
+
+SQL> SELECT base_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         2
+
+1 row selected.
+
+SQL> SELECT base_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         3
+
+1 row selected.
+
+SQL> SELECT base_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         4
+
+1 row selected.
+
+SQL> SELECT base_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         5
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'BASE_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+         5           6
+
+1 row selected.
+
+SQL> SELECT base_seq.NEXTVAL FROM dual;
+
+   NEXTVAL
+----------
+         6
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'BASE_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+         5          11
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
+SQL> -- 8-C. ALTER가 캐시를 무효화한 뒤 어디서 이어지는가.
+SQL> --      매뉴얼은 ALTER SEQUENCE가 캐시에 있던 값을 무효화해 일부 값이
+SQL> --      누락될 수 있다고 적는다. 그렇다면 1을 뽑고(캐시 2~20 확보) ALTER를 건 뒤
+SQL> --      NEXTVAL은 21이 나와야 한다. 네 가지 ALTER로 실제 값을 확인한다.
+SQL> --      2가 나오면 무효화는 하되 번호는 건너뛰지 않는다는 뜻이다.
+SQL> -- ================================================================
+SQL> CREATE SEQUENCE alt_same_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+
+Sequence 'ALT_SAME_SEQ' created.
+
+SQL> SELECT alt_same_seq.NEXTVAL AS before_alter FROM dual;
+
+BEFORE_ALTER
+------------
+           1
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_SAME_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20          21
+
+1 row selected.
+
+SQL> ALTER SEQUENCE alt_same_seq CACHE 20;
+
+Sequence 'ALT_SAME_SEQ' altered.
+
+SQL> SELECT alt_same_seq.NEXTVAL AS after_alter FROM dual;
+
+AFTER_ALTER
+-----------
+          2
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_SAME_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20          22
+
+1 row selected.
+
+SQL>
+SQL> CREATE SEQUENCE alt_incr_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+
+Sequence 'ALT_INCR_SEQ' created.
+
+SQL> SELECT alt_incr_seq.NEXTVAL AS before_alter FROM dual;
+
+BEFORE_ALTER
+------------
+           1
+
+1 row selected.
+
+SQL> ALTER SEQUENCE alt_incr_seq INCREMENT BY 5;
+
+Sequence 'ALT_INCR_SEQ' altered.
+
+SQL> SELECT alt_incr_seq.NEXTVAL AS after_alter FROM dual;
+
+AFTER_ALTER
+-----------
+          6
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_INCR_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20         106
+
+1 row selected.
+
+SQL>
+SQL> CREATE SEQUENCE alt_cache_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+
+Sequence 'ALT_CACHE_SEQ' created.
+
+SQL> SELECT alt_cache_seq.NEXTVAL AS before_alter FROM dual;
+
+BEFORE_ALTER
+------------
+           1
+
+1 row selected.
+
+SQL> ALTER SEQUENCE alt_cache_seq CACHE 30;
+
+Sequence 'ALT_CACHE_SEQ' altered.
+
+SQL> SELECT alt_cache_seq.NEXTVAL AS after_alter FROM dual;
+
+AFTER_ALTER
+-----------
+          2
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_CACHE_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        30          32
+
+1 row selected.
+
+SQL>
+SQL> CREATE SEQUENCE alt_nocache_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+
+Sequence 'ALT_NOCACHE_SEQ' created.
+
+SQL> SELECT alt_nocache_seq.NEXTVAL AS before_alter FROM dual;
+
+BEFORE_ALTER
+------------
+           1
+
+1 row selected.
+
+SQL> ALTER SEQUENCE alt_nocache_seq NOCACHE;
+
+Sequence 'ALT_NOCACHE_SEQ' altered.
+
+SQL> SELECT alt_nocache_seq.NEXTVAL AS after_alter FROM dual;
+
+AFTER_ALTER
+-----------
+          2
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_NOCACHE_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+         0           3
+
+1 row selected.
+
+SQL>
+SQL> -- ================================================================
 SQL> -- 9. identity 컬럼 (Tibero 7 FS02부터).
 SQL> --    문법 도식이 매뉴얼에서 이미지로만 제공되어 실기에서 확인한 형태다.
 SQL> --    emp_id에 1, 2가 자동으로 들어간다.
@@ -361,15 +581,20 @@ SQL> SELECT sequence_name, cache_size, last_number
 
 SEQUENCE_NAME            CACHE_SIZE LAST_NUMBER
 ------------------------ ---------- -----------
+ALT_CACHE_SEQ                    30          32
+ALT_INCR_SEQ                     20         106
+ALT_NOCACHE_SEQ                   0           3
+ALT_SAME_SEQ                     20          22
+BASE_SEQ                          5          11
 COUNTDOWN_SEQ                    20         980
 INVOICE_SEQ                       0        5010
-ISEQ$$_4093                      20          21
+ISEQ$$_4222                      20          21
 ORDER_SEQ                        20          21
 RING_SEQ                          0           2
 SLOT_SEQ                          4           1
 TINY_SEQ                          0           3
 
-7 rows selected.
+12 rows selected.
 
 SQL>
 SQL> -- ================================================================
@@ -390,6 +615,26 @@ Sequence 'ORDER_SEQ' dropped.
 SQL> DROP SEQUENCE invoice_seq;
 
 Sequence 'INVOICE_SEQ' dropped.
+
+SQL> DROP SEQUENCE base_seq;
+
+Sequence 'BASE_SEQ' dropped.
+
+SQL> DROP SEQUENCE alt_same_seq;
+
+Sequence 'ALT_SAME_SEQ' dropped.
+
+SQL> DROP SEQUENCE alt_incr_seq;
+
+Sequence 'ALT_INCR_SEQ' dropped.
+
+SQL> DROP SEQUENCE alt_cache_seq;
+
+Sequence 'ALT_CACHE_SEQ' dropped.
+
+SQL> DROP SEQUENCE alt_nocache_seq;
+
+Sequence 'ALT_NOCACHE_SEQ' dropped.
 
 SQL> DROP SEQUENCE countdown_seq;
 

@@ -1,0 +1,99 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# 원격 Tibero 에 SSH 로 붙어 돌렸다 (§6). 접속 정보는 저장소에 두지 않는다.
+#
+# 명령      : tbsql -s <계정>/<비밀번호> @s1.sql   (세션 1)
+#             tbsql -s <계정>/<비밀번호> @s2.sql   (세션 2)
+#             tbsql -s <계정>/<비밀번호> @s3.sql   (세션 3)
+#             s1~s3 은 code/cache_cross_session.sql 을 셋으로 잘라 만든 것이다.
+# 수행 시각 : 2026-09-23 10:12 (대한민국 표준시)
+# 환경      : Tibero 7.2 / Linux x86_64
+# 종료 코드 : 0  (마지막 시퀀스 수가 0 이면 정리까지 끝난 것이다)
+#
+# 세션을 세 번 따로 띄운 이유는 세션이 끊길 때 캐시에 남은 값이 유실되는지를
+# 보려면 세션을 실제로 끝내야 하기 때문이다. 한 세션 안에서는 볼 수 없다.
+#
+# 읽는 법: 세션 1이 1을 뽑아 캐시에 2~20이 남은 채로 끊겼다.
+#          캐시가 세션 단위라면 세션 2의 값은 21이어야 한다. 2가 나왔다.
+#          세션 3이 ALTER 를 건 뒤에도 3이 나왔다.
+#
+# 출력에서 호스트명·경로·IP·내부 빌드 번호를 지웠다.
+
+SQL> CREATE SEQUENCE xs_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+
+Sequence 'XS_SEQ' created.
+
+SQL> SELECT xs_seq.NEXTVAL AS sess1_val FROM dual;
+
+ SESS1_VAL
+----------
+         1
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'XS_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20          21
+
+1 row selected.
+
+SQL> EXIT
+SQL> SELECT xs_seq.NEXTVAL AS sess2_val FROM dual;
+
+ SESS2_VAL
+----------
+         2
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'XS_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20          21
+
+1 row selected.
+
+SQL> EXIT
+SQL> ALTER SEQUENCE xs_seq CACHE 20;
+
+Sequence 'XS_SEQ' altered.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'XS_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20          21
+
+1 row selected.
+
+SQL> SELECT xs_seq.NEXTVAL AS sess3_val FROM dual;
+
+ SESS3_VAL
+----------
+         3
+
+1 row selected.
+
+SQL> SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'XS_SEQ';
+
+CACHE_SIZE LAST_NUMBER
+---------- -----------
+        20          23
+
+1 row selected.
+
+SQL> DROP SEQUENCE xs_seq;
+
+Sequence 'XS_SEQ' dropped.
+
+SQL> SELECT COUNT(*) AS seq_left FROM user_sequences;
+
+  SEQ_LEFT
+----------
+         0
+
+1 row selected.
+
+SQL> EXIT

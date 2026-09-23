@@ -26,7 +26,7 @@
   <text x="700" y="86" font-size="13" text-anchor="middle" fill="#1b1b1b">세션</text>
   <text x="700" y="108" font-size="13" text-anchor="middle" fill="#555555">CURRVAL은 이 값을 본다</text>
 
-  <text x="20" y="168" font-size="13" font-weight="600" fill="#9d0208">번호가 건너뛰는 세 가지 경로</text>
+  <text x="20" y="168" font-size="13" font-weight="600" fill="#9d0208">번호가 건너뛰는 두 가지 경로 (매뉴얼 근거, 이 환경에서 재현 불가)</text>
 
   <rect x="20" y="182" width="270" height="86" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
   <text x="36" y="206" font-size="13" font-weight="600" fill="#1b1b1b">① 비정상 종료</text>
@@ -34,16 +34,16 @@
   <text x="36" y="248" font-size="13" fill="#555555">유실될 수 있다</text>
 
   <rect x="305" y="182" width="270" height="86" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
-  <text x="321" y="206" font-size="13" font-weight="600" fill="#1b1b1b">② ALTER SEQUENCE</text>
-  <text x="321" y="228" font-size="13" fill="#555555">캐시에 있던 값을</text>
-  <text x="321" y="248" font-size="13" fill="#555555">무효화한다</text>
+  <text x="321" y="206" font-size="13" font-weight="600" fill="#1b1b1b">② 클러스터 NOORDER</text>
+  <text x="321" y="228" font-size="13" fill="#555555">노드별 캐시를 따로 두어</text>
+  <text x="321" y="248" font-size="13" fill="#555555">전체 순서가 달라진다</text>
 
-  <rect x="590" y="182" width="270" height="86" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
-  <text x="606" y="206" font-size="13" font-weight="600" fill="#1b1b1b">③ 클러스터 NOORDER</text>
-  <text x="606" y="228" font-size="13" fill="#555555">노드별 캐시를 따로 두어</text>
-  <text x="606" y="248" font-size="13" fill="#555555">전체 순서가 달라진다</text>
+  <rect x="590" y="182" width="270" height="86" rx="5" fill="#f2f8f4" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="206" font-size="13" font-weight="600" fill="#2d6a4f">ALTER SEQUENCE — 실측</text>
+  <text x="606" y="228" font-size="13" fill="#555555">캐시를 버리되 마지막 발급값</text>
+  <text x="606" y="248" font-size="13" fill="#555555">다음에서 이어진다. 안 건너뛴다</text>
 
   <line x1="20" y1="290" x2="860" y2="290" stroke="#dddddd" stroke-width="1"/>
   <text x="20" y="312" font-size="13" fill="#666666">근거: Tibero 7.2.6 SQL 참조 안내서 — CREATE SEQUENCE(CACHE, NOORDER), ALTER SEQUENCE(sequence_attributes)</text>
-  <text x="20" y="330" font-size="13" fill="#666666">이 글은 실행 검증 없음. 그림은 매뉴얼에 적힌 동작만 나타낸다.</text>
+  <text x="20" y="330" font-size="13" fill="#666666">①②는 매뉴얼 근거다. 오른쪽 초록 칸은 Tibero 7.2에서 직접 돌려 확인한 값이다 (code/output.txt).</text>
 </svg>

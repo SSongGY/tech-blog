@@ -13,6 +13,7 @@
 
 SET LINESIZE 220
 SET PAGESIZE 60
+SET ECHO ON
 
 -- ================================================================
 -- 1. 기본형. 생략한 속성의 실측 기본값을 바로 확인한다.
@@ -126,6 +127,55 @@ ALTER SEQUENCE invoice_seq RESTART START WITH 5000;
 SELECT invoice_seq.NEXTVAL FROM dual;
 
 -- ================================================================
+-- 8-B. LAST_NUMBER가 무엇인지 먼저 확정한다 (기준선).
+--      CACHE 5로 만들고 다섯 번 뽑는 동안 LAST_NUMBER는 6에서 움직이지 않는다.
+--      여섯 번째에 캐시가 소진되어 6이 나오고 그때 LAST_NUMBER가 11로 뛴다.
+--      즉 LAST_NUMBER는 마지막 발급값이 아니라 다음에 확보할 값이다.
+-- ================================================================
+CREATE SEQUENCE base_seq START WITH 1 INCREMENT BY 1 CACHE 5;
+SELECT base_seq.NEXTVAL FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'BASE_SEQ';
+SELECT base_seq.NEXTVAL FROM dual;
+SELECT base_seq.NEXTVAL FROM dual;
+SELECT base_seq.NEXTVAL FROM dual;
+SELECT base_seq.NEXTVAL FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'BASE_SEQ';
+SELECT base_seq.NEXTVAL FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'BASE_SEQ';
+
+-- ================================================================
+-- 8-C. ALTER가 캐시를 무효화한 뒤 어디서 이어지는가.
+--      매뉴얼은 ALTER SEQUENCE가 캐시에 있던 값을 무효화해 일부 값이
+--      누락될 수 있다고 적는다. 그렇다면 1을 뽑고(캐시 2~20 확보) ALTER를 건 뒤
+--      NEXTVAL은 21이 나와야 한다. 네 가지 ALTER로 실제 값을 확인한다.
+--      2가 나오면 무효화는 하되 번호는 건너뛰지 않는다는 뜻이다.
+-- ================================================================
+CREATE SEQUENCE alt_same_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+SELECT alt_same_seq.NEXTVAL AS before_alter FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_SAME_SEQ';
+ALTER SEQUENCE alt_same_seq CACHE 20;
+SELECT alt_same_seq.NEXTVAL AS after_alter FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_SAME_SEQ';
+
+CREATE SEQUENCE alt_incr_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+SELECT alt_incr_seq.NEXTVAL AS before_alter FROM dual;
+ALTER SEQUENCE alt_incr_seq INCREMENT BY 5;
+SELECT alt_incr_seq.NEXTVAL AS after_alter FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_INCR_SEQ';
+
+CREATE SEQUENCE alt_cache_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+SELECT alt_cache_seq.NEXTVAL AS before_alter FROM dual;
+ALTER SEQUENCE alt_cache_seq CACHE 30;
+SELECT alt_cache_seq.NEXTVAL AS after_alter FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_CACHE_SEQ';
+
+CREATE SEQUENCE alt_nocache_seq START WITH 1 INCREMENT BY 1 CACHE 20;
+SELECT alt_nocache_seq.NEXTVAL AS before_alter FROM dual;
+ALTER SEQUENCE alt_nocache_seq NOCACHE;
+SELECT alt_nocache_seq.NEXTVAL AS after_alter FROM dual;
+SELECT cache_size, last_number FROM user_sequences WHERE sequence_name = 'ALT_NOCACHE_SEQ';
+
+-- ================================================================
 -- 9. identity 컬럼 (Tibero 7 FS02부터).
 --    문법 도식이 매뉴얼에서 이미지로만 제공되어 실기에서 확인한 형태다.
 --    emp_id에 1, 2가 자동으로 들어간다.
@@ -158,6 +208,11 @@ DROP TABLE order_item;
 DROP TABLE emp_identity;
 DROP SEQUENCE order_seq;
 DROP SEQUENCE invoice_seq;
+DROP SEQUENCE base_seq;
+DROP SEQUENCE alt_same_seq;
+DROP SEQUENCE alt_incr_seq;
+DROP SEQUENCE alt_cache_seq;
+DROP SEQUENCE alt_nocache_seq;
 DROP SEQUENCE countdown_seq;
 DROP SEQUENCE slot_seq;
 DROP SEQUENCE tiny_seq;
