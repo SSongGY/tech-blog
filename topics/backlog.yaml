@@ -1095,16 +1095,6 @@ topics:
     angle: "단계별 산출물과 전환 시 결정되는 사항"
     code: none
     status: todo
-  - id: pe-013
-    title: "데이터 품질 관리 — 지표와 프로파일링"
-    category: PE
-    subcategory: database
-    track: pe
-    tags: [정보관리기술사, database, 개념정리]
-    difficulty: 중급
-    angle: "완전성·유일성·유효성 등 지표를 측정 가능한 형태로"
-    code: none
-    status: todo
   - id: pe-014
     title: "OSI 7계층과 TCP/IP 4계층 대응"
     category: PE
@@ -1155,16 +1145,6 @@ topics:
     angle: "속도와 키 분배 문제로 하이브리드 방식이 나온 경위"
     code: none
     status: todo
-  - id: pe-019
-    title: "전자서명과 PKI 구성요소"
-    category: PE
-    subcategory: security
-    track: pe
-    tags: [정보관리기술사, security, 개념정리]
-    difficulty: 중급
-    angle: "인증서 검증 경로를 단계별로 추적"
-    code: none
-    status: todo
   - id: pe-020
     title: "접근통제 모델 — DAC, MAC, RBAC, ABAC"
     category: PE
@@ -1185,26 +1165,6 @@ topics:
     angle: "단계별 산출물과 증거 보전에서 틀리기 쉬운 것"
     code: none
     status: todo
-  - id: pe-022
-    title: "개인정보 비식별 조치 — 기법과 적정성 평가"
-    category: PE
-    subcategory: security
-    track: pe
-    tags: [정보관리기술사, security, 개념정리]
-    difficulty: 심화
-    angle: "k-익명성·l-다양성·t-근접성이 막는 공격이 각각 다르다"
-    code: none
-    status: todo
-  - id: pe-023
-    title: "제로 트러스트 — 경계 보안과 무엇이 다른가"
-    category: PE
-    subcategory: security
-    track: pe
-    tags: [정보관리기술사, security, 개념정리]
-    difficulty: 심화
-    angle: "핵심 원칙과 도입 시 선행되어야 할 것"
-    code: none
-    status: todo
   - id: pe-024
     title: "프로세스와 스레드 — 문맥 교환 비용"
     category: PE
@@ -1213,36 +1173,6 @@ topics:
     tags: [정보관리기술사, system, 개념정리]
     difficulty: 입문
     angle: "PCB에 저장되는 것과 교환 시 실제로 드는 비용"
-    code: none
-    status: todo
-  - id: pe-025
-    title: "CPU 스케줄링 알고리즘 비교"
-    category: PE
-    subcategory: system
-    track: pe
-    tags: [정보관리기술사, system, 개념정리]
-    difficulty: 중급
-    angle: "같은 작업 집합으로 평균 대기시간을 계산해 대조"
-    code: none
-    status: todo
-  - id: pe-026
-    title: "가상 메모리 — 페이지 교체 알고리즘"
-    category: PE
-    subcategory: system
-    track: pe
-    tags: [정보관리기술사, system, 개념정리]
-    difficulty: 중급
-    angle: "참조 문자열로 LRU·FIFO·Optimal 부재율을 직접 계산"
-    code: none
-    status: todo
-  - id: pe-027
-    title: "교착상태 — 발생 조건 4가지와 해결 전략"
-    category: PE
-    subcategory: system
-    track: pe
-    tags: [정보관리기술사, system, 개념정리]
-    difficulty: 중급
-    angle: "예방·회피·탐지·회복이 각각 어느 조건을 건드리는지"
     code: none
     status: todo
   - id: pe-028
@@ -1295,40 +1225,6 @@ topics:
     angle: "매트릭스로 보고 실제 프로젝트 흐름에 대응"
     code: none
     status: todo
-  - id: pe-033
-    title: "ITIL 서비스 관리 — 사건·문제·변경의 구분"
-    category: PE
-    subcategory: it-management
-    track: pe
-    tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: 중급
-    angle: "같은 장애를 세 프로세스가 어떻게 나눠 다루는지"
-    code: none
-    status: todo
-  - id: pe-034
-    title: "IT 거버넌스와 COBIT — 관리와 거버넌스의 분리"
-    category: PE
-    subcategory: it-management
-    track: pe
-    tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: 심화
-    angle: "EDM과 APO 이하의 역할 구분"
-    code: none
-    status: todo
-  - id: pe-035
-    title: "정보시스템 감리 — 시점별 점검 항목"
-    category: PE
-    subcategory: it-management
-    track: pe
-    tags: [정보관리기술사, it-management, 개념정리]
-    difficulty: 중급
-    angle: "요구정의·설계·종료 감리에서 각각 무엇을 보는지"
-    code: none
-    status: todo
-
-  # ========== 제품 시리즈: Oracle 19c (track: product) ==========
-  # Tibero 7 시리즈와 같은 feature 키를 쓴다. 두 제품 글이 서로를 가리키고
-  # 비교 절이 붙는다. blog.py relink가 상호 링크를 만든다.
   - id: or-001
     title: "Oracle 19c 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간"
     category: Database
@@ -1995,17 +1891,6 @@ topics:
     code: none
     origin: manual
     status: todo
-  - id: pe-046
-    title: "정규화 1NF~BCNF와 반정규화 판단 기준"
-    category: PE
-    subcategory: database
-    track: pe
-    tags: [정보관리기술사, normalization, 개념정리]
-    difficulty: 중급
-    angle: "각 단계에서 제거되는 이상현상을 예제 테이블로"
-    code: none
-    origin: manual
-    status: todo
   - id: pe-047
     title: "트랜잭션 ACID와 2단계 커밋(2PC)"
     category: PE
@@ -2061,17 +1946,6 @@ topics:
     code: none
     origin: manual
     status: todo
-  - id: pe-052
-    title: "데이터 모델링 — 개념·논리·물리 3단계"
-    category: PE
-    subcategory: database
-    track: pe
-    tags: [정보관리기술사, modeling, 개념정리]
-    difficulty: 중급
-    angle: "단계마다 무엇이 확정되고 무엇을 미루는지"
-    code: none
-    origin: manual
-    status: todo
   - id: pe-053
     title: "TCP 혼잡 제어 알고리즘 비교"
     category: PE
@@ -2080,17 +1954,6 @@ topics:
     tags: [정보관리기술사, tcp, congestion, 개념정리]
     difficulty: 중급
     angle: "Reno·CUBIC·BBR이 무엇을 신호로 삼는지"
-    code: none
-    origin: manual
-    status: todo
-  - id: pe-054
-    title: "SDN과 NFV — 제어 평면 분리"
-    category: PE
-    subcategory: network
-    track: pe
-    tags: [정보관리기술사, sdn, nfv, 개념정리]
-    difficulty: 중급
-    angle: "분리해서 얻는 것과 새로 생기는 단일 장애점"
     code: none
     origin: manual
     status: todo
@@ -2190,17 +2053,6 @@ topics:
     tags: [정보관리기술사, supply-chain, sbom, 개념정리]
     difficulty: 중급
     angle: "SBOM이 있어도 못 막는 것"
-    code: none
-    origin: manual
-    status: todo
-  - id: pe-064
-    title: "접근통제 모델 — DAC·MAC·RBAC·ABAC"
-    category: PE
-    subcategory: security
-    track: pe
-    tags: [정보관리기술사, access-control, 개념정리]
-    difficulty: 중급
-    angle: "권한 폭발을 어느 모델이 어떻게 줄이는지"
     code: none
     origin: manual
     status: todo
@@ -2380,17 +2232,6 @@ topics:
     code: none
     origin: manual
     status: todo
-  - id: pe-081
-    title: "정보시스템 감리 절차와 단계별 점검 항목"
-    category: PE
-    subcategory: it-management
-    track: pe
-    tags: [정보관리기술사, audit, 개념정리]
-    difficulty: 중급
-    angle: "감리와 검수가 무엇이 다른지"
-    code: none
-    origin: manual
-    status: todo
   - id: pe-082
     title: "IT 투자 평가 — TCO와 ROI"
     category: PE
@@ -2457,17 +2298,6 @@ topics:
     code: none
     origin: exam
     status: done
-  - id: db-013
-    title: "JOIN — 두 테이블을 잇는 기준"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, join, sql, basics]
-    difficulty: 입문
-    angle: "INNER와 LEFT의 차이를 행 수로 확인하고, ON과 WHERE에 조건을 두는 자리가 결과를 어떻게 바꾸는지"
-    code: python
-    origin: manual
-    status: todo
   - id: db-014
     title: "LEFT JOIN 뒤 WHERE가 INNER JOIN이 되는 순간"
     category: Database
@@ -2476,39 +2306,6 @@ topics:
     tags: [sql, join, null, basics]
     difficulty: 입문
     angle: "바깥 조인으로 남긴 NULL 행을 WHERE가 다시 걸러내는 흔한 실수"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-015
-    title: "서브쿼리 세 자리 — SELECT·FROM·WHERE"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, subquery, basics]
-    difficulty: 입문
-    angle: "같은 결과를 세 자리에서 각각 써 보고 언제 무엇이 읽기 쉬운지"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-016
-    title: "IN과 EXISTS — 무엇이 다른가"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, subquery, in-exists, basics]
-    difficulty: 입문
-    angle: "NULL이 섞였을 때 NOT IN이 빈 결과를 내는 이유를 실제로 재현"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-017
-    title: "HAVING과 WHERE — 거르는 시점이 다르다"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, group-by, having, basics]
-    difficulty: 입문
-    angle: "집계 전후로 조건이 갈리는 것을 같은 질의 두 벌로"
     code: python
     origin: manual
     status: todo
@@ -2531,50 +2328,6 @@ topics:
     tags: [sql, null, three-valued-logic, basics]
     difficulty: 입문
     angle: "삼값 논리를 진리표로 보이고 IS NULL·COALESCE·IFNULL로 다루는 법"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-020
-    title: "CASE WHEN — 조건에 따라 값 바꾸기"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, case, sql, basics]
-    difficulty: 입문
-    angle: "단순 CASE와 검색 CASE, 그리고 집계 안에 넣어 가로로 펴는 방법"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-021
-    title: "INSERT의 세 가지 형태"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, insert, dml, basics]
-    difficulty: 입문
-    angle: "값 나열·SELECT 결과 삽입·여러 행 한 번에. 컬럼 목록을 생략하면 생기는 일"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-022
-    title: "UPDATE와 DELETE — 조건을 빠뜨리면"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, update, delete, dml, basics]
-    difficulty: 입문
-    angle: "WHERE 없는 UPDATE가 무엇을 하는지 직접 보고, 트랜잭션으로 되돌리는 법"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-023
-    title: "트랜잭션 — COMMIT과 ROLLBACK"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, transaction, dml, basics]
-    difficulty: 입문
-    angle: "묶어야 하는 두 문장 사이에서 실패했을 때 무엇이 남는지"
     code: python
     origin: manual
     status: todo
@@ -2619,50 +2372,6 @@ topics:
     tags: [sql, datatype, sqlite, basics]
     difficulty: 입문
     angle: "선언한 타입과 실제 저장되는 타입이 다를 수 있다는 것을 typeof()로 확인"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-028
-    title: "날짜와 시간 다루기"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, datetime, function, basics]
-    difficulty: 입문
-    angle: "문자열로 저장된 날짜를 비교·계산하는 법과 형식이 어긋나면 생기는 일"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-029
-    title: "문자열 함수 — 자르기, 잇기, 바꾸기"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, string, function, basics]
-    difficulty: 입문
-    angle: "SUBSTR·REPLACE·TRIM과 || 연결. NULL이 하나만 섞여도 전체가 NULL이 되는 것"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-030
-    title: "UNION과 UNION ALL — 중복을 어떻게 할까"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, set-operation, basics]
-    difficulty: 입문
-    angle: "정렬·중복 제거 비용의 차이와 INTERSECT·EXCEPT까지"
-    code: python
-    origin: manual
-    status: todo
-  - id: db-031
-    title: "VIEW — 질의에 이름 붙이기"
-    category: Database
-    subcategory: sql-basics
-    track: basics
-    tags: [sql, view, sql, basics]
-    difficulty: 입문
-    angle: "반복되는 질의를 뷰로 묶을 때 얻는 것과 잃는 것"
     code: python
     origin: manual
     status: todo
@@ -2731,4 +2440,653 @@ topics:
     angle: "생성·준비·실행·대기·종료 5상태와 전이 조건, 준비 큐와 장치별 대기 큐의 분리. 좀비 답안에서 종료 상태가 왜 따로 남는지를 이 모델 위에 올려야 설명이 닫힌다. 중기 스케줄러가 넣는 보류 상태까지 7상태로 확장"
     code: none
     origin: exam
+    status: todo
+  - id: db-033
+    title: "LIKE와 와일드카드 — % 와 _ 가 걸리는 자리"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, like, pattern, basics]
+    difficulty: 입문
+    angle: "앞에 %를 붙이면 인덱스를 못 탄다는 것을 EXPLAIN QUERY PLAN으로 확인하고, 이스케이프가 필요한 경우까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-034
+    title: "BETWEEN과 IN — 범위와 목록을 쓰는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, between, in, basics]
+    difficulty: 입문
+    angle: "경계값이 포함되는지, 날짜에 BETWEEN을 쓸 때 시분초가 잘리는 함정"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-035
+    title: "ORDER BY에 별칭과 표현식 쓰기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, order-by, alias, basics]
+    difficulty: 입문
+    angle: "SELECT에서 만든 별칭을 ORDER BY가 쓸 수 있고 WHERE는 못 쓰는 이유 — 절의 평가 순서"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-036
+    title: "GROUP BY 여러 컬럼 — 묶는 단위가 달라질 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, group-by, basics]
+    difficulty: 입문
+    angle: "컬럼 순서를 바꾸면 결과 행 수가 어떻게 달라지는지 같은 데이터로 나란히"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-037
+    title: "윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, basics]
+    difficulty: 입문
+    angle: "GROUP BY로는 못 하는 일. 집계와 무엇이 다른지 같은 질문을 두 방식으로 풀어 비교"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-038
+    title: "RANK와 DENSE_RANK — 동점을 어떻게 셀까"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, rank, basics]
+    difficulty: 입문
+    angle: "동점이 생겼을 때 다음 등수가 건너뛰는지 아닌지. 세 함수를 한 결과에 나란히 놓고"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-039
+    title: "누적합과 이동평균 — SUM OVER의 프레임"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, frame, basics]
+    difficulty: 입문
+    angle: "ROWS와 RANGE가 다른 값을 내는 지점을 동점 데이터로 재현"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-040
+    title: "CTE — WITH 절로 질의에 이름 붙이기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, cte, with, basics]
+    difficulty: 입문
+    angle: "중첩 서브쿼리를 CTE로 펴면 무엇이 읽기 쉬워지고 무엇을 잃는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-041
+    title: "재귀 CTE — 계층 구조를 펴는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, cte, recursive, basics]
+    difficulty: 입문
+    angle: "조직도나 카테고리 트리를 한 질의로 훑는다. 종료 조건을 빠뜨리면 무슨 일이 나는지까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-042
+    title: "UPSERT — INSERT ... ON CONFLICT"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, upsert, insert, basics]
+    difficulty: 입문
+    angle: "있으면 갱신 없으면 삽입. 충돌 대상을 무엇으로 잡느냐가 결과를 가른다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-043
+    title: "RETURNING — 넣은 값을 그 자리에서 돌려받기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, returning, dml, basics]
+    difficulty: 입문
+    angle: "자동 생성된 키를 다시 조회하지 않고 받는 법. 어느 버전부터 되는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-044
+    title: "GROUP_CONCAT — 여러 행을 한 줄로"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, aggregate, string, basics]
+    difficulty: 입문
+    angle: "구분자 지정과 정렬, 그리고 길이 제한에 걸릴 때"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-045
+    title: "COLLATE — 대소문자와 정렬 규칙"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, collate, sort, basics]
+    difficulty: 입문
+    angle: "같은 데이터가 정렬 규칙에 따라 다른 순서로 나오는 것을 직접 보인다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-046
+    title: "CHECK 제약 — 값의 범위를 DB가 지키게"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, constraint, check, basics]
+    difficulty: 입문
+    angle: "응용에서 막는 것과 무엇이 다른지. 제약을 어긴 데이터가 이미 있을 때"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-047
+    title: "생성 컬럼 — 계산 결과를 컬럼처럼"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, generated-column, basics]
+    difficulty: 입문
+    angle: "VIRTUAL과 STORED의 차이를 저장 공간과 조회 속도로 재서"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-048
+    title: "EXPLAIN QUERY PLAN 읽는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, explain, plan, basics]
+    difficulty: 입문
+    angle: "SCAN과 SEARCH가 무엇을 뜻하는지, USE TEMP B-TREE가 나오면 무엇을 고쳐야 하는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-049
+    title: "인덱스가 여럿일 때 무엇이 쓰이는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, optimizer, basics]
+    difficulty: 입문
+    angle: "옵티마이저가 하나를 고르는 기준과 ANALYZE가 그 판단을 바꾸는 순간"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-050
+    title: "키셋 페이지네이션 — OFFSET을 버리는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, pagination, index, basics]
+    difficulty: 입문
+    angle: "OFFSET이 뒤 페이지로 갈수록 느려지는 것을 행 수를 늘려 가며 재고, 마지막 키로 이어 받는 방식과 비교"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-051
+    title: "임시 테이블과 CTE — 어느 쪽을 쓸까"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, temp-table, cte, basics]
+    difficulty: 입문
+    angle: "같은 중간 결과를 두 번 쓸 때 무엇이 다시 계산되는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: infra-006
+    title: "cut, paste, tr — 텍스트를 칼럼으로 다루기"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, text, cut, command]
+    difficulty: 중급
+    angle: "구분자가 여러 칸 공백일 때 cut이 안 먹는 이유와 그때 쓰는 대안"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-007
+    title: "jq — JSON 로그에서 원하는 값만"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, json, jq, command]
+    difficulty: 중급
+    angle: "필터·선택·배열 펴기까지 자주 쓰는 표현을 갈래로 묶고 각각 실제 로그로"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-008
+    title: "nc — 포트가 열렸는지, 무엇이 오가는지"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, netcat, network, command]
+    difficulty: 중급
+    angle: "방화벽 점검과 간단한 수신 대기. telnet으로 하던 확인을 대신하는 법"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-009
+    title: "dig와 nslookup — DNS가 무엇을 돌려주는지"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, dns, dig, command]
+    difficulty: 중급
+    angle: "레코드 종류별 조회와 응답 구간 읽기. 캐시 때문에 헷갈리는 자리"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-010
+    title: "tcpdump — 패킷을 직접 잡아 보기"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, tcpdump, network, command]
+    difficulty: 중급
+    angle: "필터 문법과 파일로 떠서 나중에 보는 법. 운영 장비에서 조심할 것"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-011
+    title: "mount와 fstab — 파일시스템을 붙이는 법"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, mount, filesystem, command]
+    difficulty: 중급
+    angle: "수동 마운트와 부팅 시 자동 마운트, 그리고 fstab을 잘못 적었을 때 부팅이 막히는 것"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-012
+    title: "lsblk, blkid, df -i — 디스크 구성 읽기"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, disk, storage, command]
+    difficulty: 중급
+    angle: "용량은 남았는데 쓸 수 없는 경우. 아이노드 고갈을 구분하는 법"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-013
+    title: "logrotate — 로그가 디스크를 채우기 전에"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, logrotate, log, command]
+    difficulty: 중급
+    angle: "설정 항목별 동작과 강제 실행으로 검증하는 법. 삭제됐는데 용량이 안 주는 것과의 연결"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-014
+    title: "sudo와 sudoers — 권한을 나눠 주는 법"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, sudo, permission, command]
+    difficulty: 중급
+    angle: "명령 단위 허용, NOPASSWD의 위험, 로그로 누가 무엇을 했는지 보기"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-015
+    title: "ssh config — 접속 설정과 포트 포워딩"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, ssh, tunnel, command]
+    difficulty: 중급
+    angle: "호스트 별칭, 점프 호스트, 로컬·원격 포워딩을 각각 어디에 쓰는지"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-016
+    title: "rsync 말고 scp와 sftp — 언제 무엇을"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, scp, sftp, transfer, command]
+    difficulty: 중급
+    angle: "전송 재개, 권한 보존, 대역 제한에서 갈리는 지점"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-017
+    title: "nice, renice, ionice — 우선순위 조정"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, priority, scheduling, command]
+    difficulty: 중급
+    angle: "CPU와 I/O 우선순위가 따로 노는 것을 부하를 걸어 확인"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-018
+    title: "pgrep과 pkill — 이름으로 프로세스 다루기"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, process, pgrep, command]
+    difficulty: 중급
+    angle: "ps | grep 조합이 자기 자신을 잡는 문제와 패턴이 너무 넓을 때의 사고"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-019
+    title: "systemd 타이머 — cron을 대신할 때"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, systemd, timer, command]
+    difficulty: 중급
+    angle: "cron과 비교해 무엇이 좋아지는지. 실행 이력과 실패 확인이 되는 점"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-020
+    title: "id, groups, getent — 사용자와 그룹 조회"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, user, group, command]
+    difficulty: 중급
+    angle: "권한 문제를 디버깅할 때 먼저 보는 것. 보조 그룹이 반영되는 시점"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-021
+    title: "stat — 파일이 가진 정보 전부"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, stat, file, command]
+    difficulty: 중급
+    angle: "세 가지 시각(atime·mtime·ctime)이 각각 언제 바뀌는지 직접 만들어 확인"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-022
+    title: "diff와 patch — 설정 변경을 추적하기"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, diff, patch, command]
+    difficulty: 중급
+    angle: "통합 형식 읽는 법과 되돌리기. 운영 설정을 고치기 전에 남기는 습관"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-023
+    title: "split과 csplit — 큰 파일 쪼개기"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, split, file, command]
+    difficulty: 중급
+    angle: "크기·줄 수·패턴 기준으로 나누고 다시 합치기. 대용량 로그를 옮길 때"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-024
+    title: "time으로 재는 세 가지 — real, user, sys"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, time, measure, command]
+    difficulty: 중급
+    angle: "세 값의 관계로 CPU 바운드인지 I/O 대기인지 가르는 법"
+    code: bash
+    origin: manual
+    status: todo
+  - id: infra-025
+    title: "locale과 iconv — 한글이 깨질 때"
+    category: Infra
+    subcategory: linux
+    track: linux
+    tags: [linux, locale, encoding, command]
+    difficulty: 중급
+    angle: "정렬 결과가 환경마다 달라지는 것과 인코딩을 바꿔 저장하는 법"
+    code: bash
+    origin: manual
+    status: todo
+  - id: pe-093
+    title: "소프트웨어 개발 보안 — 시큐어 코딩과 SDL"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, security, sdl]
+    difficulty: 중급
+    angle: "설계 단계부터 보안을 넣는 활동. 행정안전부 시큐어 코딩 가이드의 취약점 분류를 뼈대로"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-094
+    title: "소프트웨어 비용 산정 — 기능점수와 COCOMO"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, estimation, fp]
+    difficulty: 중급
+    angle: "기능점수 산정 절차와 조정 계수. 두 방식이 서로 다른 값을 내는 이유"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-095
+    title: "소프트웨어 재공학과 역공학"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, reengineering]
+    difficulty: 중급
+    angle: "레거시를 다루는 네 가지 활동과 각각이 손대는 대상"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-096
+    title: "객체지향 설계 원칙 SOLID 5가지"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, solid, oop]
+    difficulty: 중급
+    angle: "원칙마다 위반 사례와 고친 모습을 짝으로. 답안에서 개수가 점수다"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-097
+    title: "UML 다이어그램 분류 — 구조와 행위"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, uml]
+    difficulty: 중급
+    angle: "14종을 두 갈래로 묶고 시험에 자주 나오는 것만 깊이"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-098
+    title: "소프트웨어 테스트 자동화와 테스트 피라미드"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, test, automation]
+    difficulty: 중급
+    angle: "계층별 비율이 왜 그 모양이어야 하는지. 역피라미드가 만드는 비용"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-099
+    title: "인덱스 구조 비교 — B+트리, 해시, 비트맵"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, index, structure]
+    difficulty: 중급
+    angle: "구조별로 어떤 질의에 강하고 어디서 무너지는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-100
+    title: "데이터베이스 백업과 복구 기법"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, backup, recovery]
+    difficulty: 중급
+    angle: "로그 기반 복구의 REDO·UNDO와 체크포인트. 복구 시점 목표(RPO·RTO)와의 연결"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-101
+    title: "데이터베이스 이중화와 복제 방식"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, replication, ha]
+    difficulty: 중급
+    angle: "동기와 비동기가 일관성·가용성에서 무엇을 맞바꾸는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-102
+    title: "쿼리 최적화 — 옵티마이저의 판단 근거"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, optimizer, statistics]
+    difficulty: 중급
+    angle: "규칙 기반과 비용 기반의 차이, 통계 정보가 틀렸을 때 생기는 일"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-103
+    title: "무선 네트워크 보안 — WPA3와 인증 방식"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, wireless, wpa]
+    difficulty: 중급
+    angle: "이전 방식의 무엇이 깨졌고 무엇으로 막았는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-104
+    title: "네트워크 가상화 — VLAN, VXLAN, 오버레이"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, vlan, vxlan]
+    difficulty: 중급
+    angle: "확장 한계 때문에 다음 기술이 나온 흐름으로"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-105
+    title: "CDN과 캐시 계층 — 응답을 앞당기는 구조"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, cdn, cache]
+    difficulty: 중급
+    angle: "어디에 무엇을 캐시하고 무효화를 어떻게 전파하는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-106
+    title: "웹 취약점 — OWASP Top 10 분류와 대응"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, owasp, web]
+    difficulty: 중급
+    angle: "항목별 원인과 막는 지점. 코드로 막을 것과 설정으로 막을 것을 나눠"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-107
+    title: "암호 알고리즘 안전성 — 키 길이와 수명"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, crypto, key]
+    difficulty: 중급
+    angle: "NIST 권고를 근거로 알고리즘별 권장 기간. 근거 없는 수치를 쓰지 않는다"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-108
+    title: "보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, siem, soar]
+    difficulty: 중급
+    angle: "탐지에서 대응까지 어느 도구가 어디를 맡는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-109
+    title: "파일 시스템 구조 — 아이노드와 저널링"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, filesystem, inode]
+    difficulty: 중급
+    angle: "파일을 지워도 용량이 안 주는 현상이 이 구조에서 어떻게 설명되는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-110
+    title: "입출력 방식 — 폴링, 인터럽트, DMA"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, io, dma]
+    difficulty: 중급
+    angle: "CPU 관여 정도로 셋을 가르고 각각이 유리한 상황"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-111
+    title: "위험 관리 — 식별·분석·대응 절차"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, risk, pmbok]
+    difficulty: 중급
+    angle: "정성·정량 분석 기법과 대응 전략 네 가지"
+    code: none
+    origin: manual
+    status: todo
+  - id: pe-112
+    title: "정보화 사업 발주와 제안 평가"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, procurement, rfp]
+    difficulty: 중급
+    angle: "제안요청서에 무엇을 적어야 나중에 분쟁이 없는지"
+    code: none
+    origin: manual
     status: todo

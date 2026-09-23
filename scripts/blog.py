@@ -1155,6 +1155,24 @@ def cmd_index(args: argparse.Namespace) -> int:
     return 0
 
 
+# 주제를 보충할 때마다 이미 있는 것을 다시 넣었다. 제목이 조금만 달라도
+# add-topic 의 정확 일치 검사를 빠져나간다. 꾸밈말을 걷어낸 뒤 비교해 알린다.
+TITLE_NOISE = re.compile(r"[—\-·,()\s]|기본$|입문$|비교$|구조$|기준$|차이$|방법$")
+
+
+def near_duplicates(data: dict) -> list[tuple[dict, dict]]:
+    pairs, seen = [], {}
+    for topic in data["topics"]:
+        track = track_of(topic)
+        key = TITLE_NOISE.sub("", topic["title"])
+        for other_key, other in seen.get(track, []):
+            short, long_ = sorted((key, other_key), key=len)
+            if len(short) >= 6 and short in long_:
+                pairs.append((other, topic))
+        seen.setdefault(track, []).append((key, topic))
+    return pairs
+
+
 def cmd_status(args: argparse.Namespace) -> int:
     data = load_backlog()
     topics = data["topics"]
@@ -1189,6 +1207,15 @@ def cmd_status(args: argparse.Namespace) -> int:
         f"\n일반 트랙 비율: core {core_done} / general {general_done} "
         f"= {ratio:.0%} (목표 {data['meta']['target_ratio']['core']:.0%})"
     )
+
+    pairs = near_duplicates(data)
+    if pairs:
+        print(f"\n겹쳐 보이는 주제 {len(pairs)}쌍 — 재탕이면 한쪽을 지운다 (§13)")
+        for first, second in pairs[:8]:
+            print(f"  {first['id']} [{first['status'][:4]}] {first['title']}")
+            print(f"  {second['id']} [{second['status'][:4]}] {second['title']}\n")
+        if len(pairs) > 8:
+            print(f"  … {len(pairs) - 8}쌍 더 있다")
 
     manual_only = 0
     unverified = []
