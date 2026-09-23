@@ -1,6 +1,6 @@
 # 운영 가이드
 
-IT 기술 글을 매일 **19편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
+IT 기술 글을 매일 **22편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
 ## 문서 안내
 
 | 문서 | 무엇이 있나 |
@@ -24,13 +24,14 @@ python scripts/blog.py lint     # 글 규칙 검사
 | 02:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
 | 04:00 | `tech-blog-concept` | 2편 | 새벽 답안에서 나온 개념을 `pe` 글로 |
 | 07:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
+| 12:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 15:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
 | 17:00 | `tech-blog-concept` | 2편 | 오후 답안에서 나온 개념을 `pe` 글로 |
 | 19:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 23:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
 
-작성 회차(07·19·23시)의 트랙 구성은 다음과 같다.
+작성 회차(07·12·19·23시)의 트랙 구성은 다음과 같다.
 
 | 트랙 | 편수 | 내용 |
 |---|---|---|
@@ -74,7 +75,8 @@ python scripts/blog.py lint     # 글 규칙 검사
 │     ├─ index.md               본문 (Jekyll/Hugo 호환 프론트매터)
 │     ├─ fig/                   도식 SVG (공식 문서 근거 + 출처 표기 필수)
 │     └─ code/                  실행 가능한 예제 소스 + README
-├─ dist/tistory/                티스토리 붙여넣기용 변환본 (git 추적 제외)
+├─ dist/tistory/                티스토리 붙여넣기용 마크다운 (git 추적 제외)
+├─ dist/naver/                  네이버 붙여넣기용 HTML (git 추적 제외)
 ├─ automation/scheduled-tasks/  스케줄 작업 4개의 원본 사본 + 등록법
 ├─ .claude/
 │  ├─ commands/*.md             회차별 절차서 (슬래시 명령)
@@ -174,7 +176,8 @@ python scripts/blog.py relink                 # 같은 기능 글끼리 상호 �
 python scripts/blog.py lint                   # 글 규칙 검사
 python scripts/blog.py index                  # 글 목록 페이지(POSTS.md) 재생성
 python scripts/blog.py done tb-001            # 발행 완료 처리 + 이력 기록
-python scripts/blog.py tistory my-slug --copy # 티스토리용 변환 + 클립보드 (도식은 저장소 주소)
+python scripts/blog.py tistory my-slug --copy # 티스토리용 변환 + 클립보드 (마크다운)
+python scripts/blog.py naver my-slug --copy   # 네이버용 변환 + 클립보드 (서식 있는 HTML)
 ```
 
 도식을 그린 뒤에는 브라우저로 직접 열어 글자 잘림·겹침을 확인한다.
@@ -276,9 +279,27 @@ python -m pip install svglib reportlab rlPyCairo
 4. 제목·카테고리·태그·요약을 명령 출력대로 입력한다
 5. 발행
 
-네이버 블로그는 마크다운 에디터가 없어 이 변환본을 그대로 쓸 수 없다.
-붙여넣으면 마크다운 기호가 글자로 보인다. 네이버까지 쓰려면 HTML 변환을
-따로 붙여야 한다 — 아직 안 만들었다.
+### 네이버 — `blog.py naver`
+
+네이버 블로그(스마트에디터 ONE)에는 **마크다운 에디터가 없다.** 티스토리용 변환본을
+붙여넣으면 `##`과 `**`가 글자로 보인다. 그래서 HTML로 바꿔 **서식 있는 붙여넣기**를 쓴다.
+
+```bash
+python scripts/blog.py naver <slug> --copy
+```
+
+`dist/naver/<날짜>-<slug>.html`에 남고, 클립보드에는 **서식(CF_HTML)과 일반 텍스트를
+같이** 담는다. 에디터가 제목·표·목록·코드블록을 서식으로 받는다. 44편 전부 변환해
+확인했다 — 제목 8단계, 표, `<pre>` 코드블록, 인용, 이미지가 다 살아 있다.
+
+도식과 링크 처리는 티스토리와 같다. `relink`가 넣는 HTML 주석은 에디터에 그대로
+남으므로 걷어낸다.
+
+서식 복사는 **윈도우에서만** 된다(.NET `DataObject`를 쓴다). 다른 OS에서는 파일을
+브라우저로 열어 전체 선택해 복사한다.
+
+**첫 글은 미리보기로 그림을 확인한다.** 네이버의 외부 이미지 처리는 티스토리와
+다를 수 있고, 여기서 확인할 방법이 없다. 안 뜨면 `--images png`로 뽑아 직접 올린다.
 
 `dist/`는 git에 올라가지 않는다. 언제든 다시 만들 수 있다.
 

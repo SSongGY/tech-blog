@@ -24,6 +24,7 @@ import re
 import shutil
 import subprocess
 import sqlite3
+import tempfile
 import urllib.error
 import urllib.request
 import sys
@@ -58,10 +59,10 @@ FIXED_TRACKS = {"basics": 1, "pe": 1}
 ROTATING_TRACKS = ("product", "linux", "general")
 POSTS_PER_DAY = sum(FIXED_TRACKS.values()) + 1
 
-# 작성 루틴은 하루 세 회차(07·19·23시), 개념 루틴은 두 회차(04·17시)이고
+# 작성 루틴은 하루 네 회차(07·12·19·23시), 개념 루틴은 두 회차(04·17시)이고
 # 회차마다 pe 를 2편 가져간다. 기출 루틴도 두 회차(02·15시)다.
 # status 의 잔량 계산이 이 숫자를 쓰므로, 스케줄을 바꾸면 여기도 같이 고친다.
-DAILY_RUNS_PER_DAY = 3
+DAILY_RUNS_PER_DAY = 4
 CONCEPT_RUNS_PER_DAY = 2
 CONCEPT_POSTS_PER_DAY = 2 * CONCEPT_RUNS_PER_DAY
 EXAM_RUNS_PER_DAY = 2
@@ -647,31 +648,34 @@ def copy_to_clipboard(text: str) -> bool:
     return True
 
 
-def cmd_tistory(args: argparse.Namespace) -> int:
-    """티스토리 마크다운 에디터에 그대로 붙여넣을 본문을 만든다."""
-    matches = sorted(POSTS_DIR.glob(f"**/*-{args.slug}/index.md"))
-    if not matches:
-        print(f"posts/**/*-{args.slug}/index.md 를 찾을 수 없다.")
-        return 1
+def find_post(slug: str) -> Path | None:
+    matches = sorted(POSTS_DIR.glob(f"**/*-{slug}/index.md"))
+    return matches[-1] if matches else None
 
-    source = matches[-1]
+
+def portable_body(source: Path, images: str) -> tuple[dict, str, list, int] | None:
+    """플랫폼에 붙여넣어도 그림과 링크가 살아 있는 본문을 만든다.
+
+    저장소 안에서만 뜻이 있는 상대 경로가 셋 있다 — 도식, code/, 다른 글.
+    그대로 붙여넣으면 그림은 안 뜨고 링크는 전부 죽는다. 저장소가 공개라
+    셋 다 인터넷 주소로 바꿀 수 있다.
+    """
     raw = source.read_text(encoding="utf-8")
     fm_match = FRONTMATTER.match(raw)
     if not fm_match:
         print("프론트매터가 없다.")
-        return 1
+        return None
 
     meta = yaml.safe_load(fm_match.group(1))
     body = raw[fm_match.end():]
-
     figures = FIGURE_IMAGE.findall(body)
-    cdn = repo_cdn_base() if args.images == "cdn" else None
-    if args.images == "cdn" and cdn is None:
+
+    cdn = repo_cdn_base() if images == "cdn" else None
+    if images == "cdn" and cdn is None:
         print("[NG] origin 이 GitHub 저장소가 아니다. --images png 로 돌린다.")
-        return 1
+        return None
 
     if cdn:
-        # 저장소가 공개라 도식이 이미 인터넷에 있다. 주소로 바꿔 두면 업로드가 없어진다.
         def to_url(match: re.Match) -> str:
             rel = (source.parent / match.group(2)).resolve().relative_to(ROOT).as_posix()
             return f"![{match.group(1)}]({cdn}{rel})"
@@ -682,8 +686,6 @@ def cmd_tistory(args: argparse.Namespace) -> int:
             lambda m: f"[[도식 {m.group(2)} — 업로드 후 이 줄을 이미지로 교체]]", body
         )
 
-    # 본문에는 code/ 와 다른 글을 가리키는 상대 경로 링크가 있다. 붙여넣으면
-    # 전부 죽은 링크가 되므로 저장소의 해당 파일 주소로 바꾼다.
     blob = repo_blob_base()
     dead = 0
     if blob:
@@ -694,23 +696,10 @@ def cmd_tistory(args: argparse.Namespace) -> int:
             return f"[{match.group(1)}]({blob}{target.relative_to(ROOT).as_posix()})"
         body, dead = LOCAL_LINK.subn(to_blob, body)
 
-    DIST_DIR.mkdir(parents=True, exist_ok=True)
-    out = DIST_DIR / f"{source.parent.name}.md"
-    text = body.lstrip()
-    out.write_text(text, encoding="utf-8")
+    return meta, body.lstrip(), figures, dead
 
-    print(f"변환 완료: {out.relative_to(ROOT)}")
-    if dead:
-        print(f"  상대 경로 링크 {dead}개를 저장소 주소로 바꿨다 (code/, 다른 글).")
-    if args.copy:
-        print("클립보드에 담았다. 에디터에서 붙여넣기만 하면 된다."
-              if copy_to_clipboard(text) else "[주의] 클립보드 도구가 없어 파일만 만들었다.")
-    print()
-    print("--- 티스토리 발행 정보 (에디터에 직접 입력) ---")
-    print(f"제목    : {meta['title']}")
-    print(f"카테고리: {meta['categories'][0]}")
-    print(f"태그    : {','.join(meta['tags'])}")
-    print(f"요약    : {meta.get('description', '')}")
+
+def report_figures(source: Path, figures: list, cdn: bool, png_dir: Path) -> None:
     if figures and cdn:
         print(f"\n도식 {len(figures)}개 — 저장소 주소로 바꿔 넣었다. 업로드할 것이 없다.")
         stale = 0
@@ -726,17 +715,139 @@ def cmd_tistory(args: argparse.Namespace) -> int:
         print(f"\n업로드할 도식 {len(figures)}개 (PNG로 구워 둠):")
         missing_converter = False
         for alt_text, rel_path in figures:
-            svg_path = source.parent / rel_path
-            png_path = rasterize(svg_path, out.parent / source.parent.name)
+            png_path = rasterize(source.parent / rel_path, png_dir)
             if png_path is None:
                 missing_converter = True
-                print(f"  {svg_path}  (PNG 변환 실패 — SVG 원본)")
+                print(f"  {source.parent / rel_path}  (PNG 변환 실패 — SVG 원본)")
             else:
                 print(f"  {png_path}")
             print(f"      대체 텍스트: {alt_text}")
         print("  변환본의 [[도식 ...]] 표식 자리에 업로드한 이미지를 넣을 것.")
         if missing_converter:
             print("\n  PNG 변환기가 없다: python -m pip install svglib reportlab")
+
+
+def print_publish_info(meta: dict, platform_name: str) -> None:
+    print(f"--- {platform_name} 발행 정보 (에디터에 직접 입력) ---")
+    print(f"제목    : {meta['title']}")
+    print(f"카테고리: {meta['categories'][0]}")
+    print(f"태그    : {','.join(str(t) for t in meta['tags'])}")
+    print(f"요약    : {meta.get('description', '')}")
+
+
+def cmd_tistory(args: argparse.Namespace) -> int:
+    """티스토리 마크다운 에디터에 그대로 붙여넣을 본문을 만든다."""
+    source = find_post(args.slug)
+    if source is None:
+        print(f"posts/**/*-{args.slug}/index.md 를 찾을 수 없다.")
+        return 1
+    prepared = portable_body(source, args.images)
+    if prepared is None:
+        return 1
+    meta, text, figures, dead = prepared
+    cdn = args.images == "cdn"
+
+    DIST_DIR.mkdir(parents=True, exist_ok=True)
+    out = DIST_DIR / f"{source.parent.name}.md"
+    out.write_text(text, encoding="utf-8")
+
+    print(f"변환 완료: {out.relative_to(ROOT)}")
+    if dead:
+        print(f"  상대 경로 링크 {dead}개를 저장소 주소로 바꿨다 (code/, 다른 글).")
+    if args.copy:
+        print("클립보드에 담았다. 에디터에서 붙여넣기만 하면 된다."
+              if copy_to_clipboard(text) else "[주의] 클립보드 도구가 없어 파일만 만들었다.")
+    print()
+    print_publish_info(meta, "티스토리")
+    report_figures(source, figures, cdn, out.parent / source.parent.name)
+    if not meta.get("verified"):
+        print("\n경고: verified=false. 예제 코드 실행 검증이 끝나지 않았다.")
+    return 0
+
+
+# --- 네이버 ------------------------------------------------------------------
+#
+# 네이버 블로그(스마트에디터 ONE)에는 마크다운 에디터가 없다. 마크다운을 그대로
+# 붙이면 ## 과 ** 가 글자로 보인다. 그래서 HTML 로 바꿔 서식 있는 붙여넣기를 쓴다.
+# 클립보드에 CF_HTML 형식으로 담으면 에디터가 제목·표·목록을 서식으로 받는다.
+
+NAVER_STYLE = (
+    "<div style=\"font-family:'맑은 고딕',AppleSDGothicNeo,sans-serif;"
+    "font-size:15px;line-height:1.8\">"
+)
+
+
+def copy_html_to_clipboard(html: str, plain: str) -> bool:
+    """서식 있는 붙여넣기. 윈도우는 CF_HTML 이라는 별도 형식을 쓴다."""
+    if platform.system() != "Windows":
+        return False
+    script = (
+        "Add-Type -AssemblyName System.Windows.Forms;"
+        "$html = [IO.File]::ReadAllText($env:NAVER_HTML, [Text.Encoding]::UTF8);"
+        "$text = [IO.File]::ReadAllText($env:NAVER_TEXT, [Text.Encoding]::UTF8);"
+        "$data = New-Object System.Windows.Forms.DataObject;"
+        "$data.SetData([System.Windows.Forms.DataFormats]::Html, $html);"
+        "$data.SetData([System.Windows.Forms.DataFormats]::UnicodeText, $text);"
+        "[System.Windows.Forms.Clipboard]::SetDataObject($data, $true)"
+    )
+    with tempfile.TemporaryDirectory() as tmp:
+        html_file, text_file = Path(tmp) / "b.html", Path(tmp) / "b.txt"
+        html_file.write_text(html, encoding="utf-8")
+        text_file.write_text(plain, encoding="utf-8")
+        try:
+            done = subprocess.run(
+                ["powershell", "-NoProfile", "-STA", "-Command", script],
+                env={**os.environ, "NAVER_HTML": str(html_file), "NAVER_TEXT": str(text_file)},
+                capture_output=True, timeout=60,
+            )
+        except (OSError, subprocess.SubprocessError):
+            return False
+    return done.returncode == 0
+
+
+def cmd_naver(args: argparse.Namespace) -> int:
+    """네이버 스마트에디터에 서식 그대로 붙여넣을 HTML 을 만든다."""
+    try:
+        import markdown
+    except ImportError:
+        print("[NG] markdown 이 없다. pip install -r requirements.txt")
+        return 1
+
+    source = find_post(args.slug)
+    if source is None:
+        print(f"posts/**/*-{args.slug}/index.md 를 찾을 수 없다.")
+        return 1
+    prepared = portable_body(source, "cdn")
+    if prepared is None:
+        return 1
+    meta, text, figures, dead = prepared
+
+    # relink 가 넣는 HTML 주석은 에디터에 그대로 남으므로 걷어낸다.
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+    html = markdown.markdown(
+        text, extensions=["tables", "fenced_code", "sane_lists", "toc"],
+        extension_configs={"toc": {"permalink": False}},
+    )
+    page = f"{NAVER_STYLE}<h1>{meta['title']}</h1>\n{html}</div>"
+
+    DIST_DIR.parent.mkdir(parents=True, exist_ok=True)
+    out_dir = DIST_DIR.parent / "naver"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / f"{source.parent.name}.html"
+    out.write_text(page, encoding="utf-8")
+
+    print(f"변환 완료: {out.relative_to(ROOT)}")
+    if dead:
+        print(f"  상대 경로 링크 {dead}개를 저장소 주소로 바꿨다 (code/, 다른 글).")
+    if args.copy:
+        print("클립보드에 서식까지 담았다. 에디터에서 붙여넣기만 하면 된다."
+              if copy_html_to_clipboard(page, text)
+              else "[주의] 서식 복사에 실패했다 (윈도우에서만 된다). 파일을 브라우저로 열어 복사한다.")
+    print()
+    print_publish_info(meta, "네이버")
+    report_figures(source, figures, True, out_dir / source.parent.name)
+    print("\n네이버는 외부 이미지 처리가 티스토리와 다를 수 있다. "
+          "첫 글은 발행 전 미리보기로 그림이 뜨는지 확인한다.")
     if not meta.get("verified"):
         print("\n경고: verified=false. 예제 코드 실행 검증이 끝나지 않았다.")
     return 0
@@ -1920,6 +2031,11 @@ def main() -> int:
                            help="cdn: 저장소 주소를 넣어 업로드 없이 (기본) / png: 구워서 직접 업로드")
     p_tistory.add_argument("--copy", action="store_true", help="변환본을 클립보드에 담는다")
     p_tistory.set_defaults(func=cmd_tistory)
+
+    p_naver = sub.add_parser("naver", help="네이버용 변환 (마크다운 에디터가 없어 HTML 로)")
+    p_naver.add_argument("slug")
+    p_naver.add_argument("--copy", action="store_true", help="서식까지 클립보드에 담는다")
+    p_naver.set_defaults(func=cmd_naver)
 
     p_run = sub.add_parser("run-example", help="글 하나의 예제를 돌려 code/output.txt 에 기록")
     p_run.add_argument("post", help="글 폴더 경로")

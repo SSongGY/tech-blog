@@ -1,6 +1,6 @@
 ---
 name: tech-blog-daily
-description: D:\workspace\claude\tech_blog에서 회차당 3편씩(오전 7시·오후 7시·오후 11시) 작성하고 커밋·푸시한다
+description: D:\workspace\claude\tech_blog에서 회차당 3편씩(오전 7시·정오·오후 7시·오후 11시) 작성하고 커밋·푸시한다
 ---
 
 기술 블로그 저장소에서 오늘치 글을 작성하고 커밋·푸시한다.

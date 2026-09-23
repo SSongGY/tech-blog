@@ -10,3 +10,6 @@ rlPyCairo==0.4.0       # reportlab 의 렌더링 백엔드. 없으면 SVG 변환
 
 # 기출문제 PDF 파싱. 저장소 밖 tech_blog_exam_src/ 를 다룰 때만 필요하다.
 pypdf==6.19.0
+
+# 네이버용 마크다운 -> HTML 변환. blog.py naver 에서만 쓴다.
+markdown==3.9
