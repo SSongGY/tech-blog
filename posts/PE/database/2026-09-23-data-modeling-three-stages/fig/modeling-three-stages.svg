@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">데이터 모델링 3단계 — 단계별 산출물과 전환 시 결정 사항</text>
+  <text x="30" y="56" font-size="13" fill="#555">위: 단계와 산출물 · 화살표 아래: 넘어갈 때 정하는 것 · 맨 아래: ANSI/SPARC 스키마 대응</text>
+
+  <!-- stage boxes -->
+  <rect x="30" y="76" width="220" height="130" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="102" font-size="15" font-weight="bold" fill="#1b1b1b">① 개념 모델링</text>
+  <text x="46" y="126" font-size="13" fill="#333">무엇을 관리하는가</text>
+  <text x="46" y="150" font-size="13" fill="#333">산출물: 엔터티·관계 (ER)</text>
+  <text x="46" y="170" font-size="13" fill="#333">키 없음, M:N 허용</text>
+  <text x="46" y="192" font-size="13" fill="#555">IDEF1X ER 수준</text>
+
+  <rect x="330" y="76" width="220" height="130" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="346" y="102" font-size="15" font-weight="bold" fill="#1b1b1b">② 논리 모델링</text>
+  <text x="346" y="126" font-size="13" fill="#333">어떻게 구조화하는가</text>
+  <text x="346" y="150" font-size="13" fill="#333">산출물: 키·속성·관계 확정</text>
+  <text x="346" y="170" font-size="13" fill="#333">DBMS 독립</text>
+  <text x="346" y="192" font-size="13" fill="#555">IDEF1X KB → FA 수준</text>
+
+  <rect x="630" y="76" width="220" height="130" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="646" y="102" font-size="15" font-weight="bold" fill="#1b1b1b">③ 물리 모델링</text>
+  <text x="646" y="126" font-size="13" fill="#333">어디에 어떻게 저장하는가</text>
+  <text x="646" y="150" font-size="13" fill="#333">산출물: 테이블·제약·인덱스</text>
+  <text x="646" y="170" font-size="13" fill="#333">특정 DBMS 종속</text>
+  <text x="646" y="192" font-size="13" fill="#555">DDL로 이어진다</text>
+
+  <line x1="252" y1="141" x2="326" y2="141" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <line x1="552" y1="141" x2="626" y2="141" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- transition decisions -->
+  <rect x="170" y="230" width="270" height="118" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="186" y="254" font-size="14" font-weight="bold" fill="#b45309">개념 → 논리에서 정하는 4가지</text>
+  <text x="186" y="278" font-size="13" fill="#333">1. M:N 관계 해소</text>
+  <text x="186" y="298" font-size="13" fill="#333">2. 기본키 선정과 외래키 이주</text>
+  <text x="186" y="318" font-size="13" fill="#333">3. 식별·비식별 관계 구분</text>
+  <text x="186" y="338" font-size="13" fill="#333">4. 속성 소유 확정(정규화)</text>
+
+  <rect x="470" y="230" width="270" height="118" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="486" y="254" font-size="14" font-weight="bold" fill="#b45309">논리 → 물리에서 정하는 4가지</text>
+  <text x="486" y="278" font-size="13" fill="#333">1. 대상 DBMS 선택</text>
+  <text x="486" y="298" font-size="13" fill="#333">2. 엔터티·속성·관계 → 테이블·컬럼·FK</text>
+  <text x="486" y="318" font-size="13" fill="#333">3. 저장 구조(테이블스페이스·파티션)</text>
+  <text x="486" y="338" font-size="13" fill="#333">4. 접근 구조(인덱스·구체화 뷰)</text>
+
+  <line x1="290" y1="160" x2="290" y2="228" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="590" y1="160" x2="590" y2="228" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- ANSI/SPARC mapping -->
+  <line x1="30" y1="372" x2="850" y2="372" stroke="#d8d8d2" stroke-width="1"/>
+  <rect x="30" y="388" width="520" height="40" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="290" y="413" font-size="13" text-anchor="middle" fill="#2d6a4f">개념 스키마 — 저장·표현 방식과 무관한 전사 통합 정의</text>
+  <rect x="630" y="388" width="220" height="40" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="740" y="413" font-size="13" text-anchor="middle" fill="#2d6a4f">내부 스키마 — DBMS별 물리 구조</text>
+
+  <text x="30" y="454" font-size="13" fill="#555">외부 스키마(사용자 화면·보고서의 관점)는 모델링 단계가 아니라 원천 자료로 쓰인다.</text>
+
+  <defs>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>
