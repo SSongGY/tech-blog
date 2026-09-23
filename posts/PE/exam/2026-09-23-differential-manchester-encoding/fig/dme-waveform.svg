@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="410" viewBox="0 0 880 410" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="410" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">차등 맨체스터 — 같은 비트열, 두 가지 규약</text>
+
+  <!-- 비트 경계(실선)와 비트 중간(점선) -->
+  <g stroke="#9aa5b1" stroke-width="1">
+    <line x1="180" y1="70" x2="180" y2="305"/>
+    <line x1="260" y1="70" x2="260" y2="305"/>
+    <line x1="340" y1="70" x2="340" y2="305"/>
+    <line x1="420" y1="70" x2="420" y2="305"/>
+    <line x1="500" y1="70" x2="500" y2="305"/>
+    <line x1="580" y1="70" x2="580" y2="305"/>
+    <line x1="660" y1="70" x2="660" y2="305"/>
+    <line x1="740" y1="70" x2="740" y2="305"/>
+    <line x1="820" y1="70" x2="820" y2="305"/>
+  </g>
+  <g stroke="#cbd2d9" stroke-width="1" stroke-dasharray="3,4">
+    <line x1="220" y1="90" x2="220" y2="305"/>
+    <line x1="300" y1="90" x2="300" y2="305"/>
+    <line x1="380" y1="90" x2="380" y2="305"/>
+    <line x1="460" y1="90" x2="460" y2="305"/>
+    <line x1="540" y1="90" x2="540" y2="305"/>
+    <line x1="620" y1="90" x2="620" y2="305"/>
+    <line x1="700" y1="90" x2="700" y2="305"/>
+    <line x1="780" y1="90" x2="780" y2="305"/>
+  </g>
+
+  <!-- 입력 비트 -->
+  <text x="24" y="84" font-size="14" font-weight="bold" fill="#1b1b1b">입력 비트</text>
+  <g font-size="16" font-weight="bold" fill="#1b1b1b" text-anchor="middle">
+    <text x="220" y="84">0</text><text x="300" y="84">1</text><text x="380" y="84">0</text><text x="460" y="84">0</text>
+    <text x="540" y="84">1</text><text x="620" y="84">1</text><text x="700" y="84">1</text><text x="780" y="84">0</text>
+  </g>
+
+  <!-- 규약 1: IEEE 802.5 -->
+  <text x="24" y="124" font-size="14" font-weight="bold" fill="#1b1b1b">IEEE 802.5</text>
+  <text x="24" y="144" font-size="13" fill="#4a5568">경계 천이 있음 = 0</text>
+  <text x="24" y="162" font-size="13" fill="#4a5568">중간 천이는 항상</text>
+  <path d="M140,110 H180 V150 H220 V110 H300 V150 H340 V110 H380 V150 H420 V110 H460 V150 H540 V110 H620 V150 H700 V110 H740 V150 H780 V110 H820" fill="none" stroke="#1b1b1b" stroke-width="2.4"/>
+  <g fill="#2d6a4f">
+    <circle cx="180" cy="130" r="6"/><circle cx="340" cy="130" r="6"/><circle cx="420" cy="130" r="6"/><circle cx="740" cy="130" r="6"/>
+  </g>
+
+  <!-- 규약 2: IEEE 802.3cg 10BASE-T1S -->
+  <text x="24" y="264" font-size="14" font-weight="bold" fill="#1b1b1b">10BASE-T1S</text>
+  <text x="24" y="284" font-size="13" fill="#4a5568">중간 천이 있음 = 1</text>
+  <text x="24" y="302" font-size="13" fill="#4a5568">경계 천이는 항상</text>
+  <path d="M140,250 H180 V290 H260 V250 H300 V290 H340 V250 H420 V290 H500 V250 H540 V290 H580 V250 H620 V290 H660 V250 H700 V290 H740 V250 H820" fill="none" stroke="#1b1b1b" stroke-width="2.4"/>
+  <g fill="#2d6a4f">
+    <circle cx="300" cy="270" r="6"/><circle cx="540" cy="270" r="6"/><circle cx="620" cy="270" r="6"/><circle cx="700" cy="270" r="6"/>
+  </g>
+
+  <!-- 범례 -->
+  <circle cx="34" cy="345" r="6" fill="#2d6a4f"/>
+  <text x="48" y="350" font-size="13" fill="#1b1b1b">비트 값을 결정하는 천이 — 방향(상승·하강)은 보지 않고 있는지 없는지만 본다</text>
+  <line x1="28" y1="376" x2="40" y2="376" stroke="#9aa5b1" stroke-width="1.4"/>
+  <text x="48" y="381" font-size="13" fill="#1b1b1b">비트 경계</text>
+  <line x1="130" y1="376" x2="142" y2="376" stroke="#9aa5b1" stroke-width="1.4" stroke-dasharray="3,3"/>
+  <text x="150" y="381" font-size="13" fill="#1b1b1b">비트 중간</text>
+  <text x="250" y="381" font-size="13" fill="#b45309">어느 비트든 천이가 최소 1번 있다 → 수신 측이 이 천이로 클록을 복원</text>
+</svg>
