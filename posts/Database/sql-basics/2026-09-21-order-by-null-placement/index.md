@@ -4,7 +4,7 @@ date: 2026-09-21
 categories: [Database]
 subcategory: sql-basics
 track: basics
-tags: [sql, basics, beginner, null]
+tags: [sql, basics, beginner, "null"]
 description: "같은 ORDER BY bonus ASC가 SQLite에서는 NULL을 맨 위로, PostgreSQL에서는 맨 아래로 보낸다. NULL의 자리를 정하는 규칙과 동점 행의 순서가 왜 안 믿기는지를 SQLite 3.49.1로 확인했다."
 difficulty: 입문
 feature: null-ordering

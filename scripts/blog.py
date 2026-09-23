@@ -581,6 +581,72 @@ def rasterize(svg_path: Path, out_dir: Path, scale: float = 2.0) -> Path | None:
     return out_path
 
 
+LOCAL_LINK = re.compile(r"\[([^\]]*)\]\((?!https?:|#)([^)]+)\)")
+
+
+def github_owner_repo() -> tuple[str, str, str] | None:
+    """(소유자, 저장소, 브랜치). origin 이 GitHub 이 아니면 None."""
+    try:
+        url = subprocess.run(["git", "remote", "get-url", "origin"], cwd=ROOT,
+                             capture_output=True, text=True, check=True).stdout.strip()
+        branch = subprocess.run(["git", "rev-parse", "--abbrev-ref", "HEAD"], cwd=ROOT,
+                                capture_output=True, text=True, check=True).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return None
+    match = re.search(r"github\.com[:/]([^/]+)/(.+?)(?:\.git)?$", url)
+    return (match.group(1), match.group(2), branch) if match else None
+
+
+def repo_blob_base() -> str | None:
+    """소스와 기록 파일을 사람이 읽을 수 있게 가리키는 주소."""
+    info = github_owner_repo()
+    return None if info is None else f"https://github.com/{info[0]}/{info[1]}/blob/{info[2]}/"
+
+
+def repo_cdn_base() -> str | None:
+    """공개 저장소의 파일을 그대로 가리키는 CDN 주소를 만든다.
+
+    저장소가 공개라서 도식이 이미 인터넷에 올라가 있다. 굳이 PNG로 구워
+    에디터에 하나씩 올릴 이유가 없다. jsDelivr 는 image/svg+xml 로 내려주므로
+    마크다운 이미지 문법이 그대로 먹는다. raw.githubusercontent.com 도 되지만
+    GitHub 이 CDN 용도로 쓰지 말라고 안내하므로 jsDelivr 를 쓴다.
+    """
+    info = github_owner_repo()
+    return None if info is None else f"https://cdn.jsdelivr.net/gh/{info[0]}/{info[1]}@{info[2]}/"
+
+
+def pushed_state(path: Path) -> str:
+    """그 파일이 원격에 그대로 올라가 있는지. CDN 주소는 올라간 것만 가리킨다."""
+    rel = path.resolve().relative_to(ROOT).as_posix()
+    try:
+        in_remote = subprocess.run(["git", "cat-file", "-e", f"origin/HEAD:{rel}"],
+                                   cwd=ROOT, capture_output=True).returncode == 0
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", rel],
+                               cwd=ROOT, capture_output=True, text=True).stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        return "확인 불가"
+    if not in_remote:
+        return "원격에 없음 — 푸시해야 보인다"
+    return "원격과 다름 — 푸시해야 최신이 보인다" if dirty else "올라가 있음"
+
+
+def copy_to_clipboard(text: str) -> bool:
+    if platform.system() == "Windows":
+        # clip.exe 는 BOM 이 붙은 UTF-16LE 를 받는다. UTF-8 로 주면 한글이 깨진다.
+        command, payload = ["clip"], b"\xff\xfe" + text.encode("utf-16-le")
+    elif platform.system() == "Darwin":
+        command, payload = ["pbcopy"], text.encode("utf-8")
+    else:
+        command, payload = ["xclip", "-selection", "clipboard"], text.encode("utf-8")
+    if shutil.which(command[0]) is None:
+        return False
+    try:
+        subprocess.run(command, input=payload, check=True)
+    except (OSError, subprocess.SubprocessError):
+        return False
+    return True
+
+
 def cmd_tistory(args: argparse.Namespace) -> int:
     """티스토리 마크다운 에디터에 그대로 붙여넣을 본문을 만든다."""
     matches = sorted(POSTS_DIR.glob(f"**/*-{args.slug}/index.md"))
@@ -598,23 +664,65 @@ def cmd_tistory(args: argparse.Namespace) -> int:
     meta = yaml.safe_load(fm_match.group(1))
     body = raw[fm_match.end():]
 
-    # 도식 SVG는 티스토리에 따로 업로드해야 한다. 자리에 표식을 남겨 빠뜨리지 않게 한다.
     figures = FIGURE_IMAGE.findall(body)
-    body = FIGURE_IMAGE.sub(
-        lambda m: f"[[도식 {m.group(2)} — 업로드 후 이 줄을 이미지로 교체]]", body
-    )
+    cdn = repo_cdn_base() if args.images == "cdn" else None
+    if args.images == "cdn" and cdn is None:
+        print("[NG] origin 이 GitHub 저장소가 아니다. --images png 로 돌린다.")
+        return 1
+
+    if cdn:
+        # 저장소가 공개라 도식이 이미 인터넷에 있다. 주소로 바꿔 두면 업로드가 없어진다.
+        def to_url(match: re.Match) -> str:
+            rel = (source.parent / match.group(2)).resolve().relative_to(ROOT).as_posix()
+            return f"![{match.group(1)}]({cdn}{rel})"
+        body = FIGURE_IMAGE.sub(to_url, body)
+    else:
+        # PNG로 구워 하나씩 올리는 길. 자리에 표식을 남겨 빠뜨리지 않게 한다.
+        body = FIGURE_IMAGE.sub(
+            lambda m: f"[[도식 {m.group(2)} — 업로드 후 이 줄을 이미지로 교체]]", body
+        )
+
+    # 본문에는 code/ 와 다른 글을 가리키는 상대 경로 링크가 있다. 붙여넣으면
+    # 전부 죽은 링크가 되므로 저장소의 해당 파일 주소로 바꾼다.
+    blob = repo_blob_base()
+    dead = 0
+    if blob:
+        def to_blob(match: re.Match) -> str:
+            target = (source.parent / match.group(2)).resolve()
+            if not target.exists() or not target.is_relative_to(ROOT):
+                return match.group(0)
+            return f"[{match.group(1)}]({blob}{target.relative_to(ROOT).as_posix()})"
+        body, dead = LOCAL_LINK.subn(to_blob, body)
 
     DIST_DIR.mkdir(parents=True, exist_ok=True)
     out = DIST_DIR / f"{source.parent.name}.md"
-    out.write_text(body.lstrip(), encoding="utf-8")
+    text = body.lstrip()
+    out.write_text(text, encoding="utf-8")
 
-    print(f"변환 완료: {out.relative_to(ROOT)}\n")
+    print(f"변환 완료: {out.relative_to(ROOT)}")
+    if dead:
+        print(f"  상대 경로 링크 {dead}개를 저장소 주소로 바꿨다 (code/, 다른 글).")
+    if args.copy:
+        print("클립보드에 담았다. 에디터에서 붙여넣기만 하면 된다."
+              if copy_to_clipboard(text) else "[주의] 클립보드 도구가 없어 파일만 만들었다.")
+    print()
     print("--- 티스토리 발행 정보 (에디터에 직접 입력) ---")
     print(f"제목    : {meta['title']}")
     print(f"카테고리: {meta['categories'][0]}")
     print(f"태그    : {','.join(meta['tags'])}")
     print(f"요약    : {meta.get('description', '')}")
-    if figures:
+    if figures and cdn:
+        print(f"\n도식 {len(figures)}개 — 저장소 주소로 바꿔 넣었다. 업로드할 것이 없다.")
+        stale = 0
+        for _alt_text, rel_path in figures:
+            state = pushed_state(source.parent / rel_path)
+            if state != "올라가 있음":
+                stale += 1
+            print(f"  {rel_path}  [{state}]")
+        if stale:
+            print(f"\n  [주의] {stale}개가 아직 원격에 없거나 다르다. "
+                  "먼저 푸시해야 블로그에서 그림이 뜬다.")
+    elif figures:
         print(f"\n업로드할 도식 {len(figures)}개 (PNG로 구워 둠):")
         missing_converter = False
         for alt_text, rel_path in figures:
@@ -763,6 +871,13 @@ def lint_post(path: Path) -> tuple[list[str], list[str]]:
     if meta.get("difficulty") not in DIFFICULTIES:
         problems.append(
             f"difficulty가 {'·'.join(DIFFICULTIES)} 중 하나가 아니다: {meta.get('difficulty')!r}"
+        )
+    # YAML 은 따옴표 없는 null·yes·on 을 값으로 읽는다. 태그 "null" 이 None 이 되어
+    # 목록·변환에서 조용히 사라지거나 터진다. 따옴표로 묶어야 한다.
+    odd = [t for t in (meta.get("tags") or []) if not isinstance(t, str)]
+    if odd:
+        problems.append(
+            f"tags 에 문자열이 아닌 값이 있다: {odd!r} — YAML 이 읽어 버리는 낱말은 따옴표로 묶는다"
         )
 
     problems += lint_examples(meta, path)
@@ -1799,8 +1914,11 @@ def main() -> int:
     p_done.add_argument("topic_id")
     p_done.set_defaults(func=cmd_done)
 
-    p_tistory = sub.add_parser("tistory", help="티스토리용 변환")
+    p_tistory = sub.add_parser("tistory", help="티스토리용 변환 (도식은 저장소 주소로)")
     p_tistory.add_argument("slug")
+    p_tistory.add_argument("--images", choices=("cdn", "png"), default="cdn",
+                           help="cdn: 저장소 주소를 넣어 업로드 없이 (기본) / png: 구워서 직접 업로드")
+    p_tistory.add_argument("--copy", action="store_true", help="변환본을 클립보드에 담는다")
     p_tistory.set_defaults(func=cmd_tistory)
 
     p_run = sub.add_parser("run-example", help="글 하나의 예제를 돌려 code/output.txt 에 기록")

@@ -4,7 +4,7 @@ date: 2026-09-22
 categories: [Database]
 subcategory: sql-basics
 track: basics
-tags: [sql, basics, beginner, group-by, null]
+tags: [sql, basics, beginner, group-by, "null"]
 description: "COUNT(*)는 9인데 COUNT(bonus)는 5다. GROUP BY는 NULL을 같은 값으로 보아 한 그룹에 모으고, 집계 함수는 같은 NULL을 없는 값으로 보아 건너뛴다. SQLite 3.49.1로 두 규칙이 반대인 것을 확인했다."
 difficulty: 입문
 feature: group-by
