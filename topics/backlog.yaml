@@ -2440,7 +2440,7 @@ topics:
     angle: "생성·준비·실행·대기·종료 5상태와 전이 조건, 준비 큐와 장치별 대기 큐의 분리. 좀비 답안에서 종료 상태가 왜 따로 남는지를 이 모델 위에 올려야 설명이 닫힌다. 중기 스케줄러가 넣는 보류 상태까지 7상태로 확장"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-033
     title: "LIKE와 와일드카드 — % 와 _ 가 걸리는 자리"
     category: Database
@@ -3100,7 +3100,7 @@ topics:
     angle: "생성형 AI의 출력 공간에 행동을 더한 VLA 모델과, 실세계 데이터 대신 시뮬레이션·디지털 트윈 합성 데이터로 학습하는 파이프라인을 정보시스템 관점에서 정리. 출처별 정의 차이와 규칙·학습·맥락 기반 3계층 자동화"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-114
     title: "선로 부호화(Line Coding) — NRZ·NRZI·맨체스터·차등 맨체스터·4B5B"
     category: PE
