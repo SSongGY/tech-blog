@@ -1,0 +1,227 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-23-cross-join-and-self-join
+# 명령      : python cross_and_self_join.py
+# 수행 시각 : 2026-09-23 19:06 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  5행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  id         | INTEGER | PK
+  name       | TEXT    | NOT NULL
+  manager_id | INTEGER |
+  dept       | TEXT    | NOT NULL
+  salary     | INTEGER | NOT NULL
+
+  id | name   | manager_id | dept | salary
+  ---+--------+------------+------+-------
+   1 | 한지우 |       NULL | 경영 |    900
+   2 | 오민재 |          1 | 개발 |    700
+   3 | 윤서아 |          2 | 개발 |    750
+   4 | 장하준 |          2 | 개발 |    500
+   5 | 임채원 |          1 | 영업 |    600
+
+[sale]  7행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  id       | INTEGER | PK
+  store_id | INTEGER | NOT NULL
+  sold_on  | TEXT    | NOT NULL
+  amount   | INTEGER | NOT NULL
+
+  id | store_id | sold_on    | amount
+  ---+----------+------------+-------
+   1 |        1 | 2026-09-01 |    120
+   2 |        1 | 2026-09-01 |     30
+   3 |        1 | 2026-09-02 |     80
+   4 |        1 | 2026-09-03 |     60
+   5 |        1 | 2026-09-04 |     90
+   6 |        2 | 2026-09-01 |     50
+   7 |        2 | 2026-09-03 |     70
+
+[store]  2행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+-------
+   1 | 강남점
+   2 | 판교점
+
+
+=== 1. CROSS JOIN 의 행 수 ===
+
+[1-A 매장 x 날짜]
+  WITH RECURSIVE calendar(day) AS ( SELECT '2026-09-01' UNION ALL SELECT date(day, '+1 day') FROM calendar WHERE day < '2026-09-05' ) SELECT t.name, c.day FROM store AS t CROSS JOIN calendar AS c ORDER BY t.id, c.day
+  ('강남점', '2026-09-01')
+  ('강남점', '2026-09-02')
+  ('강남점', '2026-09-03')
+  ('강남점', '2026-09-04')
+  ('강남점', '2026-09-05')
+  ('판교점', '2026-09-01')
+  ('판교점', '2026-09-02')
+  ('판교점', '2026-09-03')
+  ('판교점', '2026-09-04')
+  ('판교점', '2026-09-05')
+  -> 10행
+
+=== 2. 매장별 일 매출 — 빠진 날짜 ===
+
+[2-A sale 만 GROUP BY]
+  SELECT t.name, s.sold_on, SUM(s.amount) FROM sale AS s INNER JOIN store AS t ON t.id = s.store_id GROUP BY t.id, s.sold_on ORDER BY t.id, s.sold_on
+  ('강남점', '2026-09-01', 150)
+  ('강남점', '2026-09-02', 80)
+  ('강남점', '2026-09-03', 60)
+  ('강남점', '2026-09-04', 90)
+  ('판교점', '2026-09-01', 50)
+  ('판교점', '2026-09-03', 70)
+  -> 6행
+
+[2-B 달력 LEFT JOIN sale (매장 구분 없이)]
+  WITH RECURSIVE calendar(day) AS ( SELECT '2026-09-01' UNION ALL SELECT date(day, '+1 day') FROM calendar WHERE day < '2026-09-05' ) SELECT c.day, s.store_id, COALESCE(SUM(s.amount), 0) FROM calendar AS c LEFT JOIN sale AS s ON s.sold_on = c.day GROUP BY c.day, s.store_id ORDER BY c.day, s.store_id
+  ('2026-09-01', 1, 150)
+  ('2026-09-01', 2, 50)
+  ('2026-09-02', 1, 80)
+  ('2026-09-03', 1, 60)
+  ('2026-09-03', 2, 70)
+  ('2026-09-04', 1, 90)
+  ('2026-09-05', None, 0)
+  -> 7행
+
+[2-C 매장 CROSS JOIN 달력 LEFT JOIN sale]
+  WITH RECURSIVE calendar(day) AS ( SELECT '2026-09-01' UNION ALL SELECT date(day, '+1 day') FROM calendar WHERE day < '2026-09-05' ) SELECT t.name, c.day, COALESCE(SUM(s.amount), 0) FROM store AS t CROSS JOIN calendar AS c LEFT JOIN sale AS s ON s.store_id = t.id AND s.sold_on = c.day GROUP BY t.id, c.day ORDER BY t.id, c.day
+  ('강남점', '2026-09-01', 150)
+  ('강남점', '2026-09-02', 80)
+  ('강남점', '2026-09-03', 60)
+  ('강남점', '2026-09-04', 90)
+  ('강남점', '2026-09-05', 0)
+  ('판교점', '2026-09-01', 50)
+  ('판교점', '2026-09-02', 0)
+  ('판교점', '2026-09-03', 70)
+  ('판교점', '2026-09-04', 0)
+  ('판교점', '2026-09-05', 0)
+  -> 10행
+
+=== 3. 조건을 빠뜨린 쉼표 조인 ===
+
+[3-A 조인 조건 있음]
+  SELECT t.name, SUM(s.amount) FROM store AS t, sale AS s WHERE s.store_id = t.id GROUP BY t.id ORDER BY t.id
+  ('강남점', 380)
+  ('판교점', 120)
+  -> 2행
+
+[3-B 조인 조건 빠짐]
+  SELECT t.name, SUM(s.amount) FROM store AS t, sale AS s GROUP BY t.id ORDER BY t.id
+  ('강남점', 500)
+  ('판교점', 500)
+  -> 2행
+
+=== 4. SELF JOIN — 직원과 상사 ===
+
+[4-A INNER JOIN]
+  SELECT e.name, m.name AS manager FROM employee AS e INNER JOIN employee AS m ON m.id = e.manager_id ORDER BY e.id
+  ('오민재', '한지우')
+  ('윤서아', '오민재')
+  ('장하준', '오민재')
+  ('임채원', '한지우')
+  -> 4행
+
+[4-B LEFT JOIN]
+  SELECT e.name, m.name AS manager FROM employee AS e LEFT JOIN employee AS m ON m.id = e.manager_id ORDER BY e.id
+  ('한지우', None)
+  ('오민재', '한지우')
+  ('윤서아', '오민재')
+  ('장하준', '오민재')
+  ('임채원', '한지우')
+  -> 5행
+
+[4-C 상사보다 급여가 많은 직원]
+  SELECT e.name, e.salary, m.name, m.salary FROM employee AS e INNER JOIN employee AS m ON m.id = e.manager_id WHERE e.salary > m.salary
+  ('윤서아', 750, '오민재', 700)
+  -> 1행
+
+=== 5. SELF JOIN — 같은 부서 짝 ===
+
+[5-A 조건 없이 같은 부서]
+  SELECT a.name, b.name FROM employee AS a INNER JOIN employee AS b ON b.dept = a.dept WHERE a.dept = '개발' ORDER BY a.id, b.id
+  ('오민재', '오민재')
+  ('오민재', '윤서아')
+  ('오민재', '장하준')
+  ('윤서아', '오민재')
+  ('윤서아', '윤서아')
+  ('윤서아', '장하준')
+  ('장하준', '오민재')
+  ('장하준', '윤서아')
+  ('장하준', '장하준')
+  -> 9행
+
+[5-B a.id <> b.id]
+  SELECT a.name, b.name FROM employee AS a INNER JOIN employee AS b ON b.dept = a.dept AND a.id <> b.id WHERE a.dept = '개발' ORDER BY a.id, b.id
+  ('오민재', '윤서아')
+  ('오민재', '장하준')
+  ('윤서아', '오민재')
+  ('윤서아', '장하준')
+  ('장하준', '오민재')
+  ('장하준', '윤서아')
+  -> 6행
+
+[5-C a.id < b.id]
+  SELECT a.name, b.name FROM employee AS a INNER JOIN employee AS b ON b.dept = a.dept AND a.id < b.id WHERE a.dept = '개발' ORDER BY a.id, b.id
+  ('오민재', '윤서아')
+  ('오민재', '장하준')
+  ('윤서아', '장하준')
+  -> 3행
+
+=== 6. 실행계획 — CROSS JOIN 은 순서를 고정한다 ===
+
+[6-A store INNER JOIN sale]
+  SELECT s.id, t.name FROM store AS t INNER JOIN sale AS s ON s.store_id = t.id
+  QUERY PLAN
+  |--SCAN s
+  `--SEARCH t USING INTEGER PRIMARY KEY (rowid=?)
+
+[6-B store CROSS JOIN sale]
+  SELECT s.id, t.name FROM store AS t CROSS JOIN sale AS s WHERE s.store_id = t.id
+  QUERY PLAN
+  |--SCAN t
+  |--BLOOM FILTER ON s (store_id=?)
+  `--SEARCH s USING AUTOMATIC COVERING INDEX (store_id=?)
+
+[6-C 6-A 의 결과]
+  SELECT s.id, t.name FROM store AS t INNER JOIN sale AS s ON s.store_id = t.id ORDER BY s.id
+  (1, '강남점')
+  (2, '강남점')
+  (3, '강남점')
+  (4, '강남점')
+  (5, '강남점')
+  (6, '판교점')
+  (7, '판교점')
+  -> 7행
+
+[6-D 6-B 의 결과]
+  SELECT s.id, t.name FROM store AS t CROSS JOIN sale AS s WHERE s.store_id = t.id ORDER BY s.id
+  (1, '강남점')
+  (2, '강남점')
+  (3, '강남점')
+  (4, '강남점')
+  (5, '강남점')
+  (6, '판교점')
+  (7, '판교점')
+  -> 7행

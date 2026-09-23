@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <!-- left: CROSS JOIN -->
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">가. CROSS JOIN — 빈칸까지 있는 격자를 먼저 만든다</text>
+  <text x="30" y="56" font-size="13" fill="#555">store 2행 × calendar 5행 = 10칸, 그 위에 sale 을 LEFT JOIN</text>
+
+  <text x="140" y="92" font-size="13" text-anchor="middle" fill="#333">09-01</text>
+  <text x="200" y="92" font-size="13" text-anchor="middle" fill="#333">09-02</text>
+  <text x="260" y="92" font-size="13" text-anchor="middle" fill="#333">09-03</text>
+  <text x="320" y="92" font-size="13" text-anchor="middle" fill="#333">09-04</text>
+  <text x="380" y="92" font-size="13" text-anchor="middle" fill="#333">09-05</text>
+
+  <text x="30" y="128" font-size="14" font-weight="bold" fill="#1b1b1b">강남점</text>
+  <rect x="112" y="106" width="56" height="34" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="140" y="128" font-size="13" text-anchor="middle" fill="#2d6a4f">150</text>
+  <rect x="172" y="106" width="56" height="34" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="200" y="128" font-size="13" text-anchor="middle" fill="#2d6a4f">80</text>
+  <rect x="232" y="106" width="56" height="34" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="260" y="128" font-size="13" text-anchor="middle" fill="#2d6a4f">60</text>
+  <rect x="292" y="106" width="56" height="34" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="320" y="128" font-size="13" text-anchor="middle" fill="#2d6a4f">90</text>
+  <rect x="352" y="106" width="56" height="34" rx="4" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="380" y="128" font-size="13" text-anchor="middle" fill="#b45309">0</text>
+
+  <text x="30" y="170" font-size="14" font-weight="bold" fill="#1b1b1b">판교점</text>
+  <rect x="112" y="148" width="56" height="34" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="140" y="170" font-size="13" text-anchor="middle" fill="#2d6a4f">50</text>
+  <rect x="172" y="148" width="56" height="34" rx="4" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="200" y="170" font-size="13" text-anchor="middle" fill="#b45309">0</text>
+  <rect x="232" y="148" width="56" height="34" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="260" y="170" font-size="13" text-anchor="middle" fill="#2d6a4f">70</text>
+  <rect x="292" y="148" width="56" height="34" rx="4" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="320" y="170" font-size="13" text-anchor="middle" fill="#b45309">0</text>
+  <rect x="352" y="148" width="56" height="34" rx="4" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="380" y="170" font-size="13" text-anchor="middle" fill="#b45309">0</text>
+
+  <rect x="30" y="204" width="14" height="14" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="50" y="216" font-size="13" fill="#333">sale 에 행이 있던 칸 (6칸)</text>
+  <rect x="230" y="204" width="14" height="14" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="250" y="216" font-size="13" fill="#333">빈칸 → COALESCE로 0 (4칸)</text>
+
+  <text x="30" y="252" font-size="13" fill="#333">sale 만 GROUP BY 하면 초록 6칸만 나온다.</text>
+  <text x="30" y="272" font-size="13" fill="#333">달력만 LEFT JOIN 하면 09-05 한 칸만 생기고</text>
+  <text x="30" y="292" font-size="13" fill="#333">판교점 09-02·09-04 는 여전히 빠진다.</text>
+
+  <line x1="450" y1="80" x2="450" y2="300" stroke="#d8d8d2" stroke-width="1"/>
+
+  <!-- right: SELF JOIN -->
+  <text x="470" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">나. SELF JOIN — 같은 표를 두 번 읽는다</text>
+  <text x="470" y="56" font-size="13" fill="#555">별칭이 두 역할을 가른다: e = 직원, m = 상사</text>
+
+  <rect x="470" y="80" width="170" height="130" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="555" y="102" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">employee AS e</text>
+  <text x="486" y="128" font-size="13" fill="#333">윤서아</text>
+  <text x="486" y="148" font-size="13" fill="#333">manager_id = 2</text>
+  <text x="486" y="168" font-size="13" fill="#333">salary = 750</text>
+  <text x="486" y="196" font-size="13" fill="#555">한지우는 NULL</text>
+
+  <rect x="690" y="80" width="170" height="130" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="775" y="102" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">employee AS m</text>
+  <text x="706" y="128" font-size="13" fill="#333">오민재</text>
+  <text x="706" y="148" font-size="13" fill="#333">id = 2</text>
+  <text x="706" y="168" font-size="13" fill="#333">salary = 700</text>
+
+  <path d="M 640 146 L 688 146" stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
+  <text x="664" y="232" font-size="13" text-anchor="middle" fill="#2d6a4f">ON m.id = e.manager_id</text>
+
+  <text x="470" y="262" font-size="13" fill="#333">한 행의 값을 같은 표의 다른 행 값과 비교할 수 있다.</text>
+  <text x="470" y="282" font-size="13" fill="#333">e.salary &gt; m.salary → 윤서아 1명</text>
+
+  <!-- bottom: pair counts -->
+  <line x1="30" y1="318" x2="850" y2="318" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="346" font-size="14" font-weight="bold" fill="#1b1b1b">같은 부서 짝 (개발 3명) — 조건 하나로 행 수가 갈린다</text>
+
+  <rect x="30" y="362" width="260" height="70" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="46" y="388" font-size="13" font-weight="bold" fill="#9d0208">부서만 같으면 9행</text>
+  <text x="46" y="412" font-size="13" fill="#333">자기 자신과의 짝 3행 포함</text>
+
+  <rect x="310" y="362" width="260" height="70" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="326" y="388" font-size="13" font-weight="bold" fill="#b45309">a.id &lt;&gt; b.id 이면 6행</text>
+  <text x="326" y="412" font-size="13" fill="#333">(A,B)와 (B,A)가 둘 다 나온다</text>
+
+  <rect x="590" y="362" width="260" height="70" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="606" y="388" font-size="13" font-weight="bold" fill="#2d6a4f">a.id &lt; b.id 이면 3행</text>
+  <text x="606" y="412" font-size="13" fill="#333">짝 하나가 한 번씩만</text>
+
+  <text x="30" y="458" font-size="13" fill="#555">값과 행 수는 아래 실습의 실제 출력이다.</text>
+
+  <defs>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>
