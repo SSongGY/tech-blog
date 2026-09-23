@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">같은 1,000행을 파티션 개수만 바꿔 나눈 결과</text>
+  <text x="30" y="56" font-size="13" fill="#555">member_id 1~1000 · 칸 안의 숫자는 통계 수집 후 NUM_ROWS · 칸 너비는 행 수에 비례</text>
+
+  <!-- scale: 1 row = 0.72 px, x from 130 -->
+  <text x="30" y="104" font-size="14" font-weight="bold" fill="#2d6a4f">8개</text>
+  <rect x="130" y="82" width="88.6" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="174" y="104" font-size="13" text-anchor="middle" fill="#333">123</text>
+  <rect x="218.6" y="82" width="105.8" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="271" y="104" font-size="13" text-anchor="middle" fill="#333">147</text>
+  <rect x="324.4" y="82" width="77" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="363" y="104" font-size="13" text-anchor="middle" fill="#333">107</text>
+  <rect x="401.4" y="82" width="90" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="446" y="104" font-size="13" text-anchor="middle" fill="#333">125</text>
+  <rect x="491.4" y="82" width="100.1" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="541" y="104" font-size="13" text-anchor="middle" fill="#333">139</text>
+  <rect x="591.5" y="82" width="92.9" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="638" y="104" font-size="13" text-anchor="middle" fill="#333">129</text>
+  <rect x="684.4" y="82" width="86.4" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="727" y="104" font-size="13" text-anchor="middle" fill="#333">120</text>
+  <rect x="770.8" y="82" width="79.2" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="810" y="104" font-size="13" text-anchor="middle" fill="#333">110</text>
+
+  <text x="30" y="164" font-size="14" font-weight="bold" fill="#2d6a4f">4개</text>
+  <rect x="130" y="142" width="188.6" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="224" y="164" font-size="13" text-anchor="middle" fill="#333">262 = 123 + 139</text>
+  <rect x="318.6" y="142" width="198.7" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="418" y="164" font-size="13" text-anchor="middle" fill="#333">276 = 147 + 129</text>
+  <rect x="517.3" y="142" width="163.4" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="599" y="164" font-size="13" text-anchor="middle" fill="#333">227 = 107 + 120</text>
+  <rect x="680.7" y="142" width="169.3" height="34" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="765" y="164" font-size="13" text-anchor="middle" fill="#333">235 = 125 + 110</text>
+
+  <text x="30" y="224" font-size="14" font-weight="bold" fill="#b45309">5개</text>
+  <rect x="130" y="202" width="88.6" height="34" fill="#eef5f0" stroke="#b45309"/>
+  <text x="174" y="224" font-size="13" text-anchor="middle" fill="#333">123</text>
+  <rect x="218.6" y="202" width="198.7" height="34" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="318" y="224" font-size="13" text-anchor="middle" fill="#333">276</text>
+  <rect x="417.3" y="202" width="163.4" height="34" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="499" y="224" font-size="13" text-anchor="middle" fill="#333">227</text>
+  <rect x="580.7" y="202" width="169.3" height="34" fill="#fdf3e4" stroke="#b45309"/>
+  <text x="665" y="224" font-size="13" text-anchor="middle" fill="#333">235</text>
+  <rect x="750" y="202" width="100" height="34" fill="#eef5f0" stroke="#b45309"/>
+  <text x="800" y="224" font-size="13" text-anchor="middle" fill="#333">139</text>
+
+  <text x="30" y="284" font-size="14" font-weight="bold" fill="#9d0208">3개</text>
+  <rect x="130" y="262" width="188.6" height="34" fill="#eef5f0" stroke="#9d0208"/>
+  <text x="224" y="284" font-size="13" text-anchor="middle" fill="#333">262</text>
+  <rect x="318.6" y="262" width="367.9" height="34" fill="#fbeaea" stroke="#9d0208"/>
+  <text x="502" y="284" font-size="13" text-anchor="middle" fill="#9d0208">511 = 276 + 235</text>
+  <rect x="686.5" y="262" width="163.5" height="34" fill="#eef5f0" stroke="#9d0208"/>
+  <text x="768" y="284" font-size="13" text-anchor="middle" fill="#333">227</text>
+
+  <line x1="30" y1="318" x2="850" y2="318" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="344" font-size="13" fill="#333">8개의 k번과 k+4번을 합친 것이 4개의 k번과 행 수까지 같다.</text>
+  <text x="30" y="366" font-size="13" fill="#333">5개와 3개는 4개의 칸 일부만 쪼개거나 합친 모양이 되어, 가장 큰 칸이 가장 작은 칸의 2배를 넘었다.</text>
+  <text x="30" y="388" font-size="13" fill="#555">시험한 네 개수 가운데 2의 거듭제곱인 4·8에서만 칸이 고르게 나왔다.</text>
+</svg>

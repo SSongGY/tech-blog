@@ -1,0 +1,631 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# 원격 Tibero 에 SSH 로 붙어 돌렸다 (§6). 접속 정보는 저장소에 두지 않는다.
+#
+# 명령      : tbsql -s <계정>/<비밀번호> @partition_types.sql   (SET ECHO ON 으로 문장과 결과를 함께)
+# 수행 시각 : 2026-09-23 19:35 (대한민국 표준시)
+# 환경      : Tibero 7.2 / Linux x86_64
+# 종료 코드 : 0  (스크립트 마지막의 남은 객체 수가 0 이면 정리까지 끝난 것이다)
+#
+# ssh 클라이언트가 붙인 경고 세 줄만 뺐고 tbsql 출력은 그대로다. 호스트명·경로·IP·
+# 내부 빌드 번호는 출력에 없다. TBR 에러 6개는 일부러 일으킨 것이며 code/README.md 에 목록이 있다.
+
+SQL>
+SQL> PROMPT ===== 0. 시작 전 스키마가 비어 있는지 =====
+===== 0. 시작 전 스키마가 비어 있는지 =====
+SQL> SELECT COUNT(*) AS obj_before FROM user_objects;
+
+OBJ_BEFORE
+----------
+         0
+
+1 row selected.
+
+SQL> COLUMN name FORMAT A16
+SQL> COLUMN value FORMAT A10
+SQL> SELECT name, value FROM v$version WHERE name IN ('PRODUCT_MAJOR', 'PRODUCT_MINOR');
+
+NAME             VALUE
+---------------- ----------
+PRODUCT_MAJOR    7
+PRODUCT_MINOR    2
+
+2 rows selected.
+
+SQL>
+SQL> PROMPT ===== 1. RANGE - MAXVALUE 없이 범위 밖 값을 넣으면 =====
+===== 1. RANGE - MAXVALUE 없이 범위 밖 값을 넣으면 =====
+SQL> CREATE TABLE sale_range (
+   2   sale_id NUMBER NOT NULL,
+   3   sold_on DATE,
+   4   amount  NUMBER NOT NULL
+   5 )
+   6 PARTITION BY RANGE (sold_on) (
+   7   PARTITION p2026q1 VALUES LESS THAN (DATE '2026-04-01'),
+   8   PARTITION p2026q2 VALUES LESS THAN (DATE '2026-07-01'),
+   9   PARTITION p2026q3 VALUES LESS THAN (DATE '2026-10-01')
+  10 );
+
+Table 'SALE_RANGE' created.
+
+SQL> INSERT INTO sale_range VALUES (1, DATE '2026-01-15', 100);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_range VALUES (2, DATE '2026-03-31', 200);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_range VALUES (3, DATE '2026-04-01', 300);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_range VALUES (4, DATE '2026-09-30', 400);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_range VALUES (5, DATE '2026-10-01', 500);
+TBR-10018: Partition key does not map to a partition.
+
+SQL> INSERT INTO sale_range VALUES (6, NULL, 600);
+TBR-10018: Partition key does not map to a partition.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL>
+SQL> PROMPT ===== 1-B. 각 파티션에 들어간 행 =====
+===== 1-B. 각 파티션에 들어간 행 =====
+SQL> SELECT 'P2026Q1' AS part, sale_id, TO_CHAR(sold_on, 'YYYY-MM-DD') AS sold_on FROM sale_range PARTITION (p2026q1)
+   2 UNION ALL
+   3 SELECT 'P2026Q2', sale_id, TO_CHAR(sold_on, 'YYYY-MM-DD') AS sold_on FROM sale_range PARTITION (p2026q2)
+   4 UNION ALL
+   5 SELECT 'P2026Q3', sale_id, TO_CHAR(sold_on, 'YYYY-MM-DD') AS sold_on FROM sale_range PARTITION (p2026q3)
+   6 ORDER BY 2;
+
+PART       SALE_ID SOLD_ON
+------- ---------- ----------
+P2026Q1          1 2026-01-15
+P2026Q1          2 2026-03-31
+P2026Q2          3 2026-04-01
+P2026Q3          4 2026-09-30
+
+4 rows selected.
+
+SQL>
+SQL> PROMPT ===== 1-C. MAXVALUE 파티션을 더하면 NULL 도 들어간다 =====
+===== 1-C. MAXVALUE 파티션을 더하면 NULL 도 들어간다 =====
+SQL> ALTER TABLE sale_range ADD PARTITION pmax VALUES LESS THAN (MAXVALUE);
+
+Table 'SALE_RANGE' altered.
+
+SQL> INSERT INTO sale_range VALUES (5, DATE '2026-10-01', 500);
+
+1 row inserted.
+
+SQL> INSERT INTO sale_range VALUES (6, NULL, 600);
+
+1 row inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> SELECT sale_id, TO_CHAR(sold_on, 'YYYY-MM-DD') AS sold_on FROM sale_range PARTITION (pmax) ORDER BY sale_id;
+
+   SALE_ID SOLD_ON
+---------- ----------
+         5 2026-10-01
+         6
+
+2 rows selected.
+
+SQL>
+SQL> PROMPT ===== 1-D. 파티션 키를 바꾸는 UPDATE =====
+===== 1-D. 파티션 키를 바꾸는 UPDATE =====
+SQL> UPDATE sale_range SET sold_on = DATE '2026-05-10' WHERE sale_id = 1;
+TBR-10019: Updating partition key column would cause a partition change.
+
+SQL> ROLLBACK;
+
+Rollback completed.
+
+SQL> ALTER TABLE sale_range ENABLE ROW MOVEMENT;
+
+Table 'SALE_RANGE' altered.
+
+SQL> UPDATE sale_range SET sold_on = DATE '2026-05-10' WHERE sale_id = 1;
+
+1 row updated.
+
+SQL> SELECT sale_id, TO_CHAR(sold_on, 'YYYY-MM-DD') AS sold_on FROM sale_range PARTITION (p2026q2) ORDER BY sale_id;
+
+   SALE_ID SOLD_ON
+---------- ----------
+         1 2026-05-10
+         3 2026-04-01
+
+2 rows selected.
+
+SQL> ROLLBACK;
+
+Rollback completed.
+
+SQL>
+SQL> PROMPT ===== 1-E. 파티션 키 조건과 실행계획 =====
+===== 1-E. 파티션 키 조건과 실행계획 =====
+SQL> SET AUTOTRACE TRACEONLY EXPLAIN
+SQL> SELECT sale_id, amount FROM sale_range WHERE sold_on >= DATE '2026-07-01';
+
+SQL ID: 405682460vkt2
+Child number: 9813
+Plan hash value: 4290077643
+
+Execution Plan
+--------------------------------------------------------------------------------------------------------------------------------------------
+   1  PARTITION RANGE (SUBSET PART) (Cost:13, %%CPU:0, Rows:2) (PS:3, PE:4)
+   2    TABLE ACCESS (FULL): SALE_RANGE (Cost:13, %%CPU:0, Rows:2)
+
+
+Predicate Information
+--------------------------------------------------------------------------------------------------------------------------------------------
+   2 - filter: ("SALE_RANGE"."SOLD_ON" IS NOT NULL) (0.500)
+
+
+Note
+--------------------------------------------------------------------------------------------------------------------------------------------
+   2 - dynamic sampling used for this table (13 blocks)
+
+SQL> SELECT sale_id, amount FROM sale_range WHERE TO_CHAR(sold_on, 'YYYYMM') >= '202607';
+
+SQL ID: 4gu0jdfbnbr46
+Child number: 9814
+Plan hash value: 4290077643
+
+Execution Plan
+--------------------------------------------------------------------------------------------------------------------------------------------
+   1  PARTITION RANGE (ALL PART) (Cost:29, %%CPU:6, Rows:791) (PS:1, PE:4)
+   2    TABLE ACCESS (FULL): SALE_RANGE (Cost:29, %%CPU:6, Rows:791)
+
+
+Predicate Information
+--------------------------------------------------------------------------------------------------------------------------------------------
+   2 - filter: (TO_CHAR("SALE_RANGE"."SOLD_ON",'YYYYMM') >= '202607') (0.100)
+
+
+Note
+--------------------------------------------------------------------------------------------------------------------------------------------
+   2 - dynamic sampling used for this table (14 blocks)
+
+SQL> SET AUTOTRACE OFF
+SQL>
+SQL> PROMPT ===== 1-F. 오래된 분기를 통째로 지운다 =====
+===== 1-F. 오래된 분기를 통째로 지운다 =====
+SQL> ALTER TABLE sale_range DROP PARTITION p2026q1;
+
+Table 'SALE_RANGE' altered.
+
+SQL> SELECT sale_id, TO_CHAR(sold_on, 'YYYY-MM-DD') AS sold_on FROM sale_range ORDER BY sale_id;
+
+   SALE_ID SOLD_ON
+---------- ----------
+         3 2026-04-01
+         4 2026-09-30
+         5 2026-10-01
+         6
+
+4 rows selected.
+
+SQL>
+SQL> PROMPT ===== 2. INTERVAL - 선언하지 않은 범위가 들어오면 =====
+===== 2. INTERVAL - 선언하지 않은 범위가 들어오면 =====
+SQL> CREATE TABLE sale_interval (
+   2   sale_id NUMBER NOT NULL,
+   3   sold_on DATE NOT NULL
+   4 )
+   5 PARTITION BY RANGE (sold_on) INTERVAL (NUMTOYMINTERVAL(1, 'MONTH')) (
+   6   PARTITION p202609 VALUES LESS THAN (DATE '2026-10-01')
+   7 );
+
+Table 'SALE_INTERVAL' created.
+
+SQL> INSERT INTO sale_interval VALUES (1, DATE '2026-09-10');
+
+1 row inserted.
+
+SQL> INSERT INTO sale_interval VALUES (2, DATE '2026-10-05');
+
+1 row inserted.
+
+SQL> INSERT INTO sale_interval VALUES (3, DATE '2027-01-20');
+
+1 row inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> COLUMN partition_name FORMAT A16
+SQL> COLUMN bound FORMAT A40
+SQL> SELECT partition_no, partition_name, bound
+   2   FROM user_tab_partitions
+   3  WHERE table_name = 'SALE_INTERVAL'
+   4  ORDER BY partition_no;
+
+PARTITION_NO PARTITION_NAME   BOUND
+------------ ---------------- ----------------------------------------
+           1 P202609          TO_DATE('2026/10/01 00:00:00', 'SYYYY/MM
+                              /DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN
+
+           2 _TIBERO_P429600  TO_DATE('2026/11/01 00:00:00', 'SYYYY/MM
+                              /DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN
+
+           3 _TIBERO_P429700  TO_DATE('2027/02/01 00:00:00', 'SYYYY/MM
+                              /DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN
+
+
+3 rows selected.
+
+SQL>
+SQL> PROMPT ===== 3. LIST - 목록에 없는 값과 DEFAULT =====
+===== 3. LIST - 목록에 없는 값과 DEFAULT =====
+SQL> CREATE TABLE store_list (
+   2   store_id NUMBER NOT NULL,
+   3   region   VARCHAR(10)
+   4 )
+   5 PARTITION BY LIST (region) (
+   6   PARTITION p_capital VALUES ('SEOUL', 'GYEONGGI'),
+   7   PARTITION p_south   VALUES ('BUSAN', 'ULSAN')
+   8 );
+
+Table 'STORE_LIST' created.
+
+SQL> INSERT INTO store_list VALUES (1, 'SEOUL');
+
+1 row inserted.
+
+SQL> INSERT INTO store_list VALUES (2, 'BUSAN');
+
+1 row inserted.
+
+SQL> INSERT INTO store_list VALUES (3, 'JEJU');
+TBR-10018: Partition key does not map to a partition.
+
+SQL> INSERT INTO store_list VALUES (4, NULL);
+TBR-10018: Partition key does not map to a partition.
+
+SQL> ALTER TABLE store_list ADD PARTITION p_etc VALUES (DEFAULT);
+
+Table 'STORE_LIST' altered.
+
+SQL> INSERT INTO store_list VALUES (3, 'JEJU');
+
+1 row inserted.
+
+SQL> INSERT INTO store_list VALUES (4, NULL);
+
+1 row inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> SELECT 'P_CAPITAL' AS part, store_id, region FROM store_list PARTITION (p_capital)
+   2 UNION ALL
+   3 SELECT 'P_SOUTH', store_id, region FROM store_list PARTITION (p_south)
+   4 UNION ALL
+   5 SELECT 'P_ETC', store_id, region FROM store_list PARTITION (p_etc)
+   6 ORDER BY 2;
+
+PART        STORE_ID REGION
+--------- ---------- ----------
+P_CAPITAL          1 SEOUL
+P_SOUTH            2 BUSAN
+P_ETC              3 JEJU
+P_ETC              4
+
+4 rows selected.
+
+SQL>
+SQL> PROMPT ===== 3-B. LIST 키는 컬럼 하나만 =====
+===== 3-B. LIST 키는 컬럼 하나만 =====
+SQL> CREATE TABLE store_list2 (
+   2   store_id NUMBER NOT NULL,
+   3   region   VARCHAR(10),
+   4   channel  VARCHAR(10)
+   5 )
+   6 PARTITION BY LIST (region, channel) (
+   7   PARTITION p1 VALUES (('SEOUL', 'WEB'))
+   8 );
+TBR-7230: List partitioning allows only a single partitioning key column.
+at line 6, column 20 of null:
+PARTITION BY LIST (region, channel) (
+                   ^^^^^^^^^^^^^^^
+
+SQL>
+SQL> PROMPT ===== 4. HASH - 1000 행을 4 개로 =====
+===== 4. HASH - 1000 행을 4 개로 =====
+SQL> CREATE TABLE member_hash (
+   2   member_id NUMBER NOT NULL,
+   3   name      VARCHAR(20)
+   4 )
+   5 PARTITION BY HASH (member_id) PARTITIONS 4;
+
+Table 'MEMBER_HASH' created.
+
+SQL> INSERT INTO member_hash SELECT LEVEL, 'M' || LEVEL FROM dual CONNECT BY LEVEL <= 1000;
+
+1000 rows inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> EXEC DBMS_STATS.GATHER_TABLE_STATS('TIBERO', 'MEMBER_HASH');
+
+PSM completed.
+
+SQL> SELECT partition_no, partition_name, num_rows
+   2   FROM user_tab_partitions
+   3  WHERE table_name = 'MEMBER_HASH'
+   4  ORDER BY partition_no;
+
+PARTITION_NO PARTITION_NAME     NUM_ROWS
+------------ ---------------- ----------
+           1 _TIBERO_P430300         262
+           2 _TIBERO_P430400         276
+           3 _TIBERO_P430500         227
+           4 _TIBERO_P430600         235
+
+4 rows selected.
+
+SQL>
+SQL> PROMPT ===== 4-B. 파티션 수를 3 개로 하면 =====
+===== 4-B. 파티션 수를 3 개로 하면 =====
+SQL> CREATE TABLE member_hash3 (
+   2   member_id NUMBER NOT NULL
+   3 )
+   4 PARTITION BY HASH (member_id) PARTITIONS 3;
+
+Table 'MEMBER_HASH3' created.
+
+SQL> INSERT INTO member_hash3 SELECT LEVEL FROM dual CONNECT BY LEVEL <= 1000;
+
+1000 rows inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> EXEC DBMS_STATS.GATHER_TABLE_STATS('TIBERO', 'MEMBER_HASH3');
+
+PSM completed.
+
+SQL> SELECT partition_no, partition_name, num_rows
+   2   FROM user_tab_partitions
+   3  WHERE table_name = 'MEMBER_HASH3'
+   4  ORDER BY partition_no;
+
+PARTITION_NO PARTITION_NAME     NUM_ROWS
+------------ ---------------- ----------
+           1 _TIBERO_P430900         262
+           2 _TIBERO_P431000         511
+           3 _TIBERO_P431100         227
+
+3 rows selected.
+
+SQL>
+SQL> PROMPT ===== 4-C. 파티션 수를 5 개, 8 개로 하면 =====
+===== 4-C. 파티션 수를 5 개, 8 개로 하면 =====
+SQL> CREATE TABLE member_hash5 (
+   2   member_id NUMBER NOT NULL
+   3 )
+   4 PARTITION BY HASH (member_id) PARTITIONS 5;
+
+Table 'MEMBER_HASH5' created.
+
+SQL> INSERT INTO member_hash5 SELECT LEVEL FROM dual CONNECT BY LEVEL <= 1000;
+
+1000 rows inserted.
+
+SQL> CREATE TABLE member_hash8 (
+   2   member_id NUMBER NOT NULL
+   3 )
+   4 PARTITION BY HASH (member_id) PARTITIONS 8;
+
+Table 'MEMBER_HASH8' created.
+
+SQL> INSERT INTO member_hash8 SELECT LEVEL FROM dual CONNECT BY LEVEL <= 1000;
+
+1000 rows inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> EXEC DBMS_STATS.GATHER_TABLE_STATS('TIBERO', 'MEMBER_HASH5');
+
+PSM completed.
+
+SQL> EXEC DBMS_STATS.GATHER_TABLE_STATS('TIBERO', 'MEMBER_HASH8');
+
+PSM completed.
+
+SQL> SELECT table_name, partition_no, num_rows
+   2   FROM user_tab_partitions
+   3  WHERE table_name IN ('MEMBER_HASH5', 'MEMBER_HASH8')
+   4  ORDER BY table_name, partition_no;
+
+TABLE_NAME
+--------------------------------------------------------------------------------------------------------------------------------
+PARTITION_NO   NUM_ROWS
+------------ ----------
+MEMBER_HASH5
+           1        123
+
+MEMBER_HASH5
+           2        276
+
+MEMBER_HASH5
+           3        227
+
+MEMBER_HASH5
+           4        235
+
+MEMBER_HASH5
+           5        139
+
+MEMBER_HASH8
+           1        123
+
+MEMBER_HASH8
+           2        147
+
+MEMBER_HASH8
+           3        107
+
+MEMBER_HASH8
+           4        125
+
+MEMBER_HASH8
+           5        139
+
+MEMBER_HASH8
+           6        129
+
+MEMBER_HASH8
+           7        120
+
+MEMBER_HASH8
+           8        110
+
+
+13 rows selected.
+
+SQL>
+SQL> PROMPT ===== 4-D. 파티션 종류 요약 =====
+===== 4-D. 파티션 종류 요약 =====
+SQL> COLUMN table_name FORMAT A16
+SQL> SELECT table_name, partitioning_type, subpartitioning_type, partition_count, partitioning_key_count
+   2   FROM user_part_tables
+   3  ORDER BY table_name;
+
+TABLE_NAME       PARTITIONING_TYPE SUBPARTITIONING_TYPE PARTITION_COUNT PARTITIONING_KEY_COUNT
+---------------- ----------------- -------------------- --------------- ----------------------
+MEMBER_HASH      HASH              NONE                               4                      1
+MEMBER_HASH3     HASH              NONE                               3                      1
+MEMBER_HASH5     HASH              NONE                               5                      1
+MEMBER_HASH8     HASH              NONE                               8                      1
+SALE_INTERVAL    RANGE             NONE                               3                      1
+SALE_RANGE       RANGE             NONE                               3                      1
+STORE_LIST       LIST              NONE                               3                      1
+
+7 rows selected.
+
+SQL>
+SQL> PROMPT ===== 5. COMPOSITE - RANGE 아래 LIST =====
+===== 5. COMPOSITE - RANGE 아래 LIST =====
+SQL> CREATE TABLE sale_composite (
+   2   sale_id NUMBER NOT NULL,
+   3   sold_on DATE NOT NULL,
+   4   channel VARCHAR(10) NOT NULL
+   5 )
+   6 PARTITION BY RANGE (sold_on)
+   7 SUBPARTITION BY LIST (channel)
+   8 SUBPARTITION TEMPLATE (
+   9   SUBPARTITION s_web   VALUES ('WEB'),
+  10   SUBPARTITION s_store VALUES ('STORE'),
+  11   SUBPARTITION s_etc   VALUES (DEFAULT)
+  12 ) (
+  13   PARTITION p2026h1 VALUES LESS THAN (DATE '2026-07-01'),
+  14   PARTITION p2026h2 VALUES LESS THAN (DATE '2027-01-01')
+  15 );
+
+Table 'SALE_COMPOSITE' created.
+
+SQL> INSERT INTO sale_composite VALUES (1, DATE '2026-02-01', 'WEB');
+
+1 row inserted.
+
+SQL> INSERT INTO sale_composite VALUES (2, DATE '2026-08-01', 'STORE');
+
+1 row inserted.
+
+SQL> INSERT INTO sale_composite VALUES (3, DATE '2026-08-02', 'PHONE');
+
+1 row inserted.
+
+SQL> COMMIT;
+
+Commit completed.
+
+SQL> COLUMN subpartition_name FORMAT A20
+SQL> SELECT partition_name, subpartition_name
+   2   FROM user_tab_subpartitions
+   3  WHERE table_name = 'SALE_COMPOSITE'
+   4  ORDER BY partition_name, subpartition_no;
+
+PARTITION_NAME   SUBPARTITION_NAME
+---------------- --------------------
+P2026H1          P2026H1_S_WEB
+P2026H1          P2026H1_S_STORE
+P2026H1          P2026H1_S_ETC
+P2026H2          P2026H2_S_WEB
+P2026H2          P2026H2_S_STORE
+P2026H2          P2026H2_S_ETC
+
+6 rows selected.
+
+SQL> SELECT sale_id, channel FROM sale_composite SUBPARTITION (p2026h2_s_etc);
+
+   SALE_ID CHANNEL
+---------- ----------
+         3 PHONE
+
+1 row selected.
+
+SQL>
+SQL> PROMPT ===== 6. 정리 =====
+===== 6. 정리 =====
+SQL> DROP TABLE sale_range PURGE;
+
+Table 'SALE_RANGE' dropped.
+
+SQL> DROP TABLE sale_interval PURGE;
+
+Table 'SALE_INTERVAL' dropped.
+
+SQL> DROP TABLE store_list PURGE;
+
+Table 'STORE_LIST' dropped.
+
+SQL> DROP TABLE member_hash PURGE;
+
+Table 'MEMBER_HASH' dropped.
+
+SQL> DROP TABLE member_hash3 PURGE;
+
+Table 'MEMBER_HASH3' dropped.
+
+SQL> DROP TABLE member_hash5 PURGE;
+
+Table 'MEMBER_HASH5' dropped.
+
+SQL> DROP TABLE member_hash8 PURGE;
+
+Table 'MEMBER_HASH8' dropped.
+
+SQL> DROP TABLE sale_composite PURGE;
+
+Table 'SALE_COMPOSITE' dropped.
+
+SQL> SELECT COUNT(*) AS obj_left FROM user_objects;
+
+  OBJ_LEFT
+----------
+         0
+
+1 row selected.
+
+SQL>
+SQL> EXIT
