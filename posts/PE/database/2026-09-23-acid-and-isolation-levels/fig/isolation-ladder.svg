@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">격리 수준의 사다리 — 한 칸 오를 때마다 막히는 이상현상</text>
+  <text x="40" y="56" font-size="13" fill="#555">P0(더티 라이트)는 모든 수준에서 막는다 · 화살표 위 글자가 그 칸에서 새로 막히는 현상</text>
+
+  <!-- ladder: bottom to top -->
+  <rect x="60" y="410" width="250" height="56" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="185" y="434" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">READ UNCOMMITTED</text>
+  <text x="185" y="454" font-size="13" text-anchor="middle" fill="#444">P1 · P2 · P3 허용</text>
+
+  <rect x="60" y="300" width="250" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="185" y="324" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">READ COMMITTED</text>
+  <text x="185" y="344" font-size="13" text-anchor="middle" fill="#444">P2 · P3 허용 (P4 · A5A도)</text>
+
+  <rect x="60" y="190" width="250" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="185" y="214" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">REPEATABLE READ</text>
+  <text x="185" y="234" font-size="13" text-anchor="middle" fill="#444">P3만 허용</text>
+
+  <rect x="60" y="80" width="250" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="185" y="104" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">SERIALIZABLE</text>
+  <text x="185" y="124" font-size="13" text-anchor="middle" fill="#444">허용하는 현상 없음</text>
+
+  <path d="M 185 408 L 185 360" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="200" y="390" font-size="13" fill="#1b1b1b">P1 더티 리드</text>
+
+  <path d="M 185 298 L 185 250" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="200" y="280" font-size="13" fill="#1b1b1b">P2 반복 불가능 읽기</text>
+
+  <path d="M 185 188 L 185 140" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="200" y="170" font-size="13" fill="#1b1b1b">P3 팬텀</text>
+
+  <!-- snapshot isolation branch -->
+  <rect x="520" y="245" width="300" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="670" y="270" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">SNAPSHOT ISOLATION</text>
+  <text x="670" y="290" font-size="13" text-anchor="middle" fill="#444">표준 밖의 수준 · 다중 버전</text>
+  <text x="670" y="306" font-size="13" text-anchor="middle" fill="#9d0208">A5B 쓰기 스큐 허용</text>
+
+  <path d="M 312 328 L 516 290" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <text x="330" y="298" font-size="13" fill="#1b1b1b">P2 · P4 · A5A 막음</text>
+
+  <path d="M 568 243 L 312 116" stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
+  <text x="452" y="162" font-size="13" fill="#2d6a4f">A5B · P3(넓은 해석) 막음</text>
+
+  <text x="520" y="350" font-size="13" fill="#333">REPEATABLE READ와는 우열이 없다.</text>
+  <text x="520" y="370" font-size="13" fill="#333">· SI는 팬텀(엄밀 해석 A3)을 막는다</text>
+  <text x="520" y="390" font-size="13" fill="#333">· RR은 쓰기 스큐를 막는다</text>
+  <text x="520" y="416" font-size="13" fill="#555">P4 갱신 분실 · A5A 읽기 스큐 ·</text>
+  <text x="520" y="436" font-size="13" fill="#555">A5B 쓰기 스큐는 ANSI 정의에 없고</text>
+  <text x="520" y="456" font-size="13" fill="#555">Berenson 외(1995)가 추가했다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>
