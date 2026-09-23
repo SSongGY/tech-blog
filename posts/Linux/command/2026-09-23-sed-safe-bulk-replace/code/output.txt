@@ -1,0 +1,301 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-09-23-sed-safe-bulk-replace
+# 명령      : bash sed_safe_replace.sh
+# 수행 시각 : 2026-09-23 14:27 (대한민국 표준시)
+# 소요      : 2.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : GNU sed 4.9, bash 5.3.9, Windows 11
+# 종료 코드 : 0
+
+
+===== 0. 버전
+$ sed --version | head -1
+sed (GNU sed) 4.9
+$ bash --version | head -1
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+
+===== 1. 바꾸기 전 — 파일 내용
+$ cat -n app.conf
+     1	# primary: 10.0.0.1
+     2	db.host=10.0.0.1
+     3	db.replica=10.0.0.12
+     4	backup.host=10.0.0.100
+     5	cache.bytes=10000001
+     6	log.dir=/var/log/app
+
+===== 2. 흔히 치는 명령을 미리보기로 돌린다 (-n + p 플래그: 바뀐 줄만 찍기)
+$ sed -n 's/10.0.0.1/10.0.0.2/gp' app.conf
+# primary: 10.0.0.2
+db.host=10.0.0.2
+db.replica=10.0.0.22
+backup.host=10.0.0.200
+cache.bytes=10.0.0.2
+
+===== 3. 점만 이스케이프하면 — cache.bytes 는 빠지지만 12 와 100 이 여전히 걸린다
+$ sed -n 's/10\.0\.0\.1/10.0.0.2/gp' app.conf
+# primary: 10.0.0.2
+db.host=10.0.0.2
+db.replica=10.0.0.22
+backup.host=10.0.0.200
+
+===== 4. 점을 이스케이프하고 경계를 건다
+$ sed -n 's/\b10\.0\.0\.1\b/10.0.0.2/gp' app.conf
+# primary: 10.0.0.2
+db.host=10.0.0.2
+$ sed -n 's/=10\.0\.0\.1$/=10.0.0.2/p' app.conf
+db.host=10.0.0.2
+
+===== 5. 파일 전체를 diff 로 미리 본다
+$ sed 's/=10\.0\.0\.1$/=10.0.0.2/' app.conf | diff -u app.conf - | tail -n +3
+@@ -1,5 +1,5 @@
+ # primary: 10.0.0.1
+-db.host=10.0.0.1
++db.host=10.0.0.2
+ db.replica=10.0.0.12
+ backup.host=10.0.0.100
+ cache.bytes=10000001
+
+===== 6. 치환이 한 건도 없어도 sed 는 0 을 돌려준다
+$ sed -n 's/=10\.9\.9\.9$/=10.0.0.2/p' app.conf; echo "종료 코드 $?"
+종료 코드 0
+$ grep -c '=10\.9\.9\.9$' app.conf
+0
+(종료 코드 1)
+
+===== 7. -i.bak — 백업을 남기고 고친 뒤 diff
+$ sed -i.bak 's/=10\.0\.0\.1$/=10.0.0.2/' app.conf
+$ ls app.conf*
+app.conf
+app.conf.bak
+$ diff app.conf.bak app.conf
+2c2
+< db.host=10.0.0.1
+---
+> db.host=10.0.0.2
+(종료 코드 1)
+
+===== 8. -i 접미사에 * 를 쓰면 파일 이름 자리에 들어간다
+$ sed -i'orig_*' 's/db.pool=20/db.pool=40/' batch.conf
+$ ls orig_* batch.conf
+batch.conf
+orig_batch.conf
+
+===== 9. -i 는 새 파일을 만든다 — 하드 링크가 끊긴다
+$ ln batch.conf batch.link
+$ stat -c '%h %n' batch.conf batch.link
+2 batch.conf
+2 batch.link
+$ sed -i 's/db.pool=40/db.pool=60/' batch.conf
+$ stat -c '%h %n' batch.conf batch.link
+1 batch.conf
+1 batch.link
+$ grep pool batch.conf batch.link
+batch.conf:db.pool=60
+batch.link:db.pool=40
+
+===== 10. 여러 파일 — $ 주소는 기본이 이어 붙인 한 흐름, -s 면 파일마다
+$ sed -n '$p' app.conf batch.conf
+db.pool=60
+$ sed -s -n '$p' app.conf batch.conf
+log.dir=/var/log/app
+db.pool=60
+$ sed -n '1p' app.conf batch.conf
+# primary: 10.0.0.1
+$ sed -s -n '1p' app.conf batch.conf
+# primary: 10.0.0.1
+db.host=10.0.0.1
+
+===== 11. BRE 와 ERE (-E)
+$ sed -n 's/\(db\)\.\([a-z]*\)=/\1_\2: /p' app.conf
+db_host: 10.0.0.2
+db_replica: 10.0.0.12
+$ sed -E -n 's/(db)\.([a-z]+)=/\1_\2: /p' app.conf
+db_host: 10.0.0.2
+db_replica: 10.0.0.12
+$ echo 'a+b' | sed 's/a+/X/'
+Xb
+$ echo 'aaab' | sed -E 's/a+/X/'
+Xb
+
+===== 12. 구분자를 바꾼다 — 경로에 / 가 들어 있을 때
+$ sed -n 's|/var/log/app|/data/log/app|p' app.conf
+log.dir=/data/log/app
+
+===== 13. -e 여러 개와 -f 스크립트 파일
+$ sed -e 's/db.host/DB_HOST/' -e '/^#/d' app.conf
+DB_HOST=10.0.0.2
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+$ cat rename.sed
+s/db.host/DB_HOST/
+/^#/d
+$ sed -f rename.sed app.conf
+DB_HOST=10.0.0.2
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+
+===== 14. 주소 — 줄 번호, 범위, 정규식, 부정, 단계, 0,/re/
+$ sed -n '2,3p' app.conf
+db.host=10.0.0.2
+db.replica=10.0.0.12
+$ sed -n '/replica/,$p' app.conf
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+$ sed '/^#/!s/10\.0\.0/192.168.0/' app.conf
+# primary: 10.0.0.1
+db.host=192.168.0.2
+db.replica=192.168.0.12
+backup.host=192.168.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+$ sed -n '1~2p' app.conf
+# primary: 10.0.0.1
+db.replica=10.0.0.12
+cache.bytes=10000001
+$ printf 'x=1\nx=2\nx=3\n' | sed '0,/x=/s//y=/'
+y=1
+x=2
+x=3
+$ printf 'x=1\nx=2\nx=3\n' | sed '1,/x=/s/x=/y=/'
+y=1
+y=2
+x=3
+
+===== 15. s 명령 플래그 — g, 숫자, I, w
+$ echo 'a-a-a-a' | sed 's/a/X/'
+X-a-a-a
+$ echo 'a-a-a-a' | sed 's/a/X/3'
+a-a-X-a
+$ echo 'a-a-a-a' | sed 's/a/X/2g'
+a-X-X-X
+$ echo 'DB.HOST=1' | sed 's/db\.host/db.host/I'
+db.host=1
+$ sed -n 's/10\.0\.0/192.168.0/w changed.txt' app.conf
+$ cat changed.txt
+# primary: 192.168.0.1
+db.host=192.168.0.2
+db.replica=192.168.0.12
+backup.host=192.168.0.100
+
+===== 16. 줄 단위 명령 — d, a, i, c, y, q
+$ sed '/^#/d' app.conf
+db.host=10.0.0.2
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+$ sed '/^db.host/a db.timeout=5' app.conf
+# primary: 10.0.0.1
+db.host=10.0.0.2
+db.timeout=5
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+$ sed '/^db.host/i # 2026-09-23 이전' app.conf
+# primary: 10.0.0.1
+# 2026-09-23 이전
+db.host=10.0.0.2
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+$ sed '/^log.dir/c log.dir=/data/log' app.conf
+# primary: 10.0.0.1
+db.host=10.0.0.2
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/data/log
+$ echo 'db.host' | sed 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'
+DB.HOST
+$ sed '/replica/q' app.conf
+# primary: 10.0.0.1
+db.host=10.0.0.2
+db.replica=10.0.0.12
+$ sed '/replica/q5' app.conf > /dev/null; echo "종료 코드 $?"
+종료 코드 5
+
+===== 17. -z — 줄 경계를 넘는 치환
+$ sed -z 's/\n/,/g' batch.conf; echo
+db.host=10.0.0.1,db.pool=60,
+
+===== 18. CRLF 파일 — -b 로 열면 리눅스와 같이 \r 이 보인다
+$ sed -n 'l' crlf.conf
+db.host=10.0.0.1$
+db.pool=20$
+$ sed -b -n 'l' crlf.conf
+db.host=10.0.0.1\r$
+db.pool=20\r$
+$ sed -b -n 's/=20$/=40/p' crlf.conf
+$ sed -b -n 's/=20\r$/=40\r/p' crlf.conf | od -c | head -2
+0000000   d   b   .   p   o   o   l   =   4   0  \r  \n
+0000014
+
+===== 19. -l — l 명령의 줄 바꿈 폭
+$ echo 'db.host=10.0.0.1;db.pool=20' | sed -n -l 12 'l'
+db.host=10.\
+0.0.1;db.po\
+ol=20$
+
+===== 20. --sandbox — w·r·e 명령을 막는다
+$ sed --sandbox -n 's/10/20/w out.txt' app.conf
+sed: -e expression #1, char 9: e/r/w commands disabled in sandbox mode
+(종료 코드 1)
+
+===== 21. --posix — GNU 확장을 끈다
+$ echo 'aaab' | sed 's/a\+/X/'
+Xb
+$ echo 'aaab' | sed --posix 's/a\+/X/'
+aaab
+
+===== 22. --debug — 스크립트를 어떻게 읽었는지 보여 준다
+$ echo 'db.host=10.0.0.1' | sed --debug 's/=10\.0\.0\.1$/=10.0.0.2/'
+SED PROGRAM:
+  s/=10\\.0\\.0\\.1$/=10.0.0.2/
+INPUT:   'STDIN' line 1
+PATTERN: db.host=10.0.0.1
+COMMAND: s/=10\\.0\\.0\\.1$/=10.0.0.2/
+MATCHED REGEX REGISTERS
+  regex[0] = 7-16 '=10.0.0.1'
+PATTERN: db.host=10.0.0.2
+END-OF-CYCLE:
+db.host=10.0.0.2
+
+===== 23. -i 와 접미사 사이에 공백을 넣으면
+$ sed -i .bak 's/db.pool=60/db.pool=70/' batch.conf
+sed: -e expression #1, char 1: unknown command: `.'
+(종료 코드 1)
+
+===== 24. 링크를 유지하며 고치기 — 원본에 덮어쓴다
+$ stat -c '%h %n' batch.conf
+1 batch.conf
+$ ln batch.conf batch.link2
+$ sed 's/db.pool=60/db.pool=80/' batch.conf > batch.tmp && cat batch.tmp > batch.conf && rm batch.tmp
+$ stat -c '%h %n' batch.conf batch.link2
+2 batch.conf
+2 batch.link2
+$ grep pool batch.conf batch.link2
+batch.conf:db.pool=80
+batch.link2:db.pool=80
+
+===== 25. -i 없이 여러 파일에 1i — 첫 파일에만 들어간다
+$ sed '1i # managed' app.conf batch.conf
+# managed
+# primary: 10.0.0.1
+db.host=10.0.0.2
+db.replica=10.0.0.12
+backup.host=10.0.0.100
+cache.bytes=10000001
+log.dir=/var/log/app
+db.host=10.0.0.1
+db.pool=80
