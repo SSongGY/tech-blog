@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **51편** · 갱신 2026-09-23
+총 **54편** · 갱신 2026-09-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 9편
+## DB문법 (basics) — 10편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-23 | [LEFT JOIN — 없는 쪽을 남기는 조인](posts/Database/sql-basics/2026-09-23-left-join-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-23 | [INNER JOIN — 두 테이블을 잇는 기본](posts/Database/sql-basics/2026-09-23-inner-join-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-09-23 | [CROSS JOIN과 SELF JOIN — 언제 쓰는가](posts/Database/sql-basics/2026-09-23-cross-join-and-self-join/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-22 | [LIMIT과 OFFSET — 결과를 잘라내는 문법](posts/Database/sql-basics/2026-09-22-limit-offset-pagination/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-22 | [HAVING과 WHERE — 어느 단계에서 걸러지는가](posts/Database/sql-basics/2026-09-22-having-vs-where/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-22 | [GROUP BY와 집계 함수 — 묶는 기준 정하기](posts/Database/sql-basics/2026-09-22-group-by-aggregate-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -18,22 +19,24 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 4편
+## DB기능 (product) — 5편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-23 | [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
+| 2026-09-23 | [Tibero 7 파티션 테이블 — 종류별로 언제 쓰는가](posts/Database/tibero/2026-09-23-tibero7-partition-table-types/index.md) | 심화 | Tibero 7.2 | 실행 검증 |
 | 2026-09-22 | [Tibero 7 MERGE 문 — UPSERT를 한 문장으로, 그리고 DELETE 절의 함정](posts/Database/tibero/2026-09-22-tibero7-merge-upsert/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 20편
+## 기술사 (pe) — 21편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-23 | [프로세스 상태 전이 모델 — 5상태와 대기 큐](posts/PE/system/2026-09-23-process-state-transition-model/index.md) | 중급 | Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018), Stallings, Operating Systems: Internals and Design Principles §3.2, IEEE Std 1003.1-2024 (POSIX.1-2024), Linux man-pages — proc_pid_stat(5)·proc_loadavg(5), 2026-09-23 조회 | 문서 근거 |
 | 2026-09-23 | [Physical AI — 인지·추론·행동 순환과 시뮬레이션 기반 학습](posts/PE/emerging-tech/2026-09-23-physical-ai-perception-action-loop/index.md) | 중급 | RT-2 arXiv:2307.15818 (2023-07), GR00T N1 arXiv:2503.14734 (2025-03), Tobin et al. arXiv:1703.06907 (2017-03), WEF Physical AI White Paper (2025-09), ISO 23247-1:2021, ISO 10218-1:2025 | 문서 근거 |
 | 2026-09-23 | [정규화 1NF부터 BCNF까지](posts/PE/database/2026-09-23-normalization-1nf-to-bcnf/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Windows 11 | 실행 검증 |
+| 2026-09-23 | [분산 데이터베이스 — 투명성 6가지](posts/PE/database/2026-09-23-distributed-database-transparency/index.md) | 심화 | Özsu & Valduriez, IEEE Computer 24(8) 1991, Oracle Database 19c 문서, Oracle Database 11g R2 문서 | 문서 근거 |
 | 2026-09-23 | [트랜잭션 ACID와 격리 수준 — 이상현상으로 수준을 정의하는 방식](posts/PE/database/2026-09-23-acid-and-isolation-levels/index.md) | 중급 | PostgreSQL 16 문서, Berenson et al., SIGMOD 1995 | 문서 근거 |
 | 2026-09-22 | [SQuaRE 표준군 구조 — 5개 부문과 확장 부문, 그리고 품질 모델 4종](posts/PE/software-engineering/2026-09-22-square-standard-family-structure/index.md) | 중급 | ISO/IEC 25000:2014 (2판), ISO/IEC 25002:2024 (1판), ISO/IEC 25010:2023 (2판), ISO/IEC 25019:2023 (1판) | 문서 근거 |
 | 2026-09-22 | [MSA — 분해 기준과 감당해야 할 비용](posts/PE/software-engineering/2026-09-22-msa-decomposition-and-cost/index.md) | 심화 | NIST SP 800-204 (2019-08) | 문서 근거 |

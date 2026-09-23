@@ -510,7 +510,7 @@ topics:
     difficulty: 심화
     angle: "RANGE·LIST·HASH·COMPOSITE를 선택 기준으로 갈라 정리"
     code: sql
-    status: todo
+    status: done
   - id: tb-006
     title: "Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가"
     category: Database
@@ -812,7 +812,7 @@ topics:
     difficulty: 중급
     angle: "날짜 채우기와 계층 비교라는 실제 용도 두 가지"
     code: python
-    status: todo
+    status: done
   - id: bas-011
     title: "서브쿼리 세 가지 — 스칼라, 인라인 뷰, 상관"
     category: Database
@@ -1084,7 +1084,7 @@ topics:
     difficulty: 심화
     angle: "각 투명성이 깨졌을 때 개발자가 무엇을 떠안는지"
     code: none
-    status: todo
+    status: done
   - id: pe-012
     title: "데이터 모델링 3단계 — 개념·논리·물리"
     category: PE
