@@ -2,6 +2,8 @@
 
 import sqlite3
 
+from dbshow import print_dataset, print_environment
+
 TIE_QUERY = "SELECT name FROM employee WHERE bonus = 300 ORDER BY bonus DESC"
 
 
@@ -71,8 +73,9 @@ def indented_plan(conn, sql, params=(), indent="   "):
 
 
 def main():
-    print(f"SQLite {sqlite3.sqlite_version}")
+    print_environment()
     conn = sqlite3.connect(":memory:")
+    print_dataset(conn)
     build_sample(conn)
 
     show(conn, "1. 오름차순 기본값 — NULL은 어디로 가는가", "bonus ASC")

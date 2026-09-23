@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import random
 import sqlite3
+
+from dbshow import print_dataset, print_environment
 import time
 
 ROW_COUNT = 200_000
@@ -136,8 +138,9 @@ def show_star_breaks_on_schema_change(conn: sqlite3.Connection) -> None:
 
 
 def main() -> None:
-    print(f"SQLite {sqlite3.sqlite_version} · 행 {ROW_COUNT:,} · 각 질의 {REPEAT_COUNT}회 중 최솟값")
+    print_environment()
     conn = build_database()
+    print_dataset(conn)
     compare_select_list(conn)
     show_alias_rules(conn)
     show_star_breaks_on_schema_change(conn)

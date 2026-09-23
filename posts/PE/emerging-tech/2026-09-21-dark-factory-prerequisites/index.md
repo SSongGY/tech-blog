@@ -98,7 +98,7 @@ acatech Industrie 4.0 Maturity Index는 디지털 성숙도를 **6단계**로 �
 
 > **출처**: 6단계와 각 단계가 답하는 질문은
 > [acatech STUDY, *Industrie 4.0 Maturity Index* (2017) Figure 5 및 §3.1.1–3.1.6](https://www.acatech.de/wp-content/uploads/2018/03/acatech_STUDIE_Maturity_Index_eng_WEB.pdf)을
-> 따랐다. 6단계의 정의("사람의 도움 없이 조치를 자동 실행")도 같은 문서 §3.1.6이다.
+> 따랐다. 6단계의 정의("사람의 도움 없이 조치를 자동 실행")도 같은 문서의 6단계 항목(§3.1.6)에서 가져왔다.
 > "사람이 하는 일" 열은 각 단계 설명에서 사람이 수행한다고 적힌 행위를 옮긴 것이며,
 > 다크 팩토리 성립선의 위치는 §2의 정의 2요건을 6단계 정의에 대응시킨 것이다 (2차 자료 기반).
 

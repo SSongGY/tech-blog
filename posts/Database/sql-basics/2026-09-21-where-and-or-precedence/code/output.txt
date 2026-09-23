@@ -1,12 +1,53 @@
 # 이 파일은 예제를 실제로 돌린 기록이다.
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
+# 글        : posts\Database\sql-basics\2026-09-21-where-and-or-precedence
 # 명령      : python where_and_or.py
-# 수행 시각 : 2026-09-22 10:48 (대한민국 표준시)
-# 환경      : Python 3.13.5 / Windows 11
+# 수행 시각 : 2026-09-23 09:03 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5
 # 종료 코드 : 0
 
-SQLite 3.49.1 / 전체 20,000행
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer_order]  20000행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  id          | INTEGER | PK
+  status      | TEXT    | NOT NULL
+  amount      | INTEGER | NOT NULL
+  coupon_code | TEXT    |
+
+  id | status   | amount | coupon_code
+  ---+----------+--------+------------
+   1 | paid     |   5000 | CP1
+   2 | canceled |  21000 | NULL
+   3 | paid     |  93000 | NULL
+   4 | paid     |  46000 | NULL
+   5 | canceled |   9000 | NULL
+   6 | canceled |  26000 | NULL
+   7 | paid     |  71000 | NULL
+   8 | canceled |  26000 | NULL
+   9 | pending  |  37000 | NULL
+  10 | pending  |  69000 | NULL
+  11 | canceled |  84000 | CP5
+  12 | pending  |   8000 | CP5
+  … 19988행 더 있음
+
+[인덱스]
+  이름                     | 대상 표        | 정의
+  -------------------------+----------------+-----------------------------------------------------------------
+  ix_customer_order_status | customer_order | CREATE INDEX ix_customer_order_status ON customer_order (status)
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
 
 ### 1. AND와 OR을 섞으면 괄호 유무로 결과가 갈린다
    9,982행  WHERE status = 'canceled' OR status = 'pending' AND amount > 50000

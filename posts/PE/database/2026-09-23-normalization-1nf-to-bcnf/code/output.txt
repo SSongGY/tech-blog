@@ -1,24 +1,34 @@
 # 이 파일은 예제를 실제로 돌린 기록이다.
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
+# 글        : posts\PE\database\2026-09-23-normalization-1nf-to-bcnf
 # 명령      : python normal_forms.py
-# 수행 시각 : 2026-09-23 08:38 (대한민국 표준시)
-# 환경      : Python 3.13.5 / Windows 11
+# 수행 시각 : 2026-09-23 09:04 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : Python 3.13.5, SQLite 3.49.1, Windows 11
 # 종료 코드 : 0
 
-SQLite 3.49.1
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
 
 --- 정규화 전 수강 (CDGNOPS) ---
   FD  C -> P
   FD  D -> O
-  FD  S -> N
   FD  S -> D
+  FD  S -> N
   FD  CS -> G
   후보키   ['CS']
   기본속성 CS · 비기본속성 DGNOP
-  2NF 위반(부분 함수 종속)      ['C -> P', 'S -> N', 'S -> D']
+  2NF 위반(부분 함수 종속)      ['C -> P', 'S -> D', 'S -> N']
   3NF 위반(이행 함수 종속)      ['D -> O']
-  BCNF 위반(결정자가 비 슈퍼키) ['C -> P', 'D -> O', 'S -> N', 'S -> D']
+  BCNF 위반(결정자가 비 슈퍼키) ['C -> P', 'D -> O', 'S -> D', 'S -> N']
 
 === 2NF 분해 — 부분 함수 종속 제거 ===
   DNOS / CGPS  공통 S -> 폐포 DNOS  [무손실]

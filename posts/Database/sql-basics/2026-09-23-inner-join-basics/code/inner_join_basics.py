@@ -6,6 +6,8 @@
 
 import sqlite3
 
+from dbshow import print_dataset, print_environment
+
 CUSTOMERS = [
     (1, "김서준", "서울"),
     (2, "이하윤", "부산"),
@@ -77,8 +79,9 @@ def show(conn: sqlite3.Connection, label: str, sql: str) -> None:
 
 
 def main() -> None:
-    print(f"SQLite {sqlite3.sqlite_version}")
     conn = build_database()
+    print_environment()
+    print_dataset(conn)
 
     print("\n=== 1. 두 표의 행 수 ===")
     show(conn, "1-A 고객", "SELECT COUNT(*) FROM customer")

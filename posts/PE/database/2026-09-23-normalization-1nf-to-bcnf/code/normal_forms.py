@@ -6,6 +6,8 @@
 """
 
 import sqlite3
+
+from dbshow import print_environment
 from itertools import combinations
 
 # 속성 기호 — S 학번, C 과목코드, N 학생이름, D 학과, O 학과사무실, P 담당교수, G 성적
@@ -217,7 +219,7 @@ def anomaly_demo() -> None:
 
 
 def main() -> None:
-    print(f"SQLite {sqlite3.sqlite_version}")
+    print_environment()
 
     check_forms("정규화 전 수강", ENROLL_ATTRS, ENROLL_FDS)
 

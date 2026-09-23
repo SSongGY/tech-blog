@@ -1,9 +1,13 @@
 # 이 파일은 예제를 실제로 돌린 기록이다.
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
+# 글        : posts\PE\data-analysis\2026-09-22-bootstrap-resampling
 # 명령      : python bootstrap_probe.py
-# 수행 시각 : 2026-09-22 17:18 (대한민국 표준시)
-# 환경      : Python 3.13.5 / Windows 11
+# 수행 시각 : 2026-09-23 09:04 (대한민국 표준시)
+# 소요      : 24.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : Python 3.13.5, Efron, Ann. Statist. 7(1), 1979, Efron & Narasimhan, 2018 preprint
 # 종료 코드 : 0
 
 [1] 표준오차 추정 - 복원추출 B회의 복제값이 흩어진 정도

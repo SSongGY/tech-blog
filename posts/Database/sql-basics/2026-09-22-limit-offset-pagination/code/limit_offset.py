@@ -5,6 +5,8 @@
 """
 
 import sqlite3
+
+from dbshow import print_dataset, print_environment
 import time
 
 ROW_COUNT = 200_000
@@ -85,11 +87,12 @@ def indented_plan(conn, sql, params=(), indent="   "):
 
 
 def main():
-    print(f"SQLite {sqlite3.sqlite_version}")
+    print_environment()
     print(f"전체 행 수 {ROW_COUNT:,} · 한 페이지 {PAGE_SIZE}행")
     print()
 
     conn = sqlite3.connect(":memory:")
+    print_dataset(conn)
     build_sample(conn)
 
     show(conn, "1. 앞에서 3행만", "SELECT id, title FROM article ORDER BY id LIMIT 3")

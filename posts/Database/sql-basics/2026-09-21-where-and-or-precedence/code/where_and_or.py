@@ -6,6 +6,8 @@
 import random
 import sqlite3
 
+from dbshow import print_dataset, print_environment
+
 RANDOM_SEED = 20260921
 ROW_COUNT = 20_000
 STATUS_VALUES = ("paid", "pending", "canceled")
@@ -82,7 +84,8 @@ def indented_plan(conn, sql, params=(), indent="   "):
 
 def main() -> None:
     conn = build_database()
-    print(f"SQLite {sqlite3.sqlite_version} / 전체 {ROW_COUNT:,}행\n")
+    print_dataset(conn)
+    print_environment()
 
     print("### 1. AND와 OR을 섞으면 괄호 유무로 결과가 갈린다")
     no_paren = report(conn, "status = 'canceled' OR status = 'pending' AND amount > 50000")

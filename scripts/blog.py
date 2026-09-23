@@ -638,6 +638,10 @@ CODE_FENCE = re.compile(r"^```.*?^```", re.MULTILINE | re.DOTALL)
 REFERENCE_SECTION = re.compile(r"^## 참고 자료\n.*", re.MULTILINE | re.DOTALL)
 MARKDOWN_LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 SOURCE_NOTE = re.compile(r"^> \*\*출처\*\*", re.MULTILINE)
+# 본문에서 "§3.285는" 처럼 절 번호 뒤에 조사가 바로 붙은 자리를 찾는다.
+# 이 글 자체의 절을 가리키는 §4·§11 은 독자가 같은 문서 안에서 찾을 수 있으므로
+# 두 자리 이상, 즉 점이 들어간 번호만 본다.
+BARE_SECTION = re.compile(r"§\d+(?:\.\d+)+(?=[은는이가을를의에도와과만])")
 
 BODY_MIN_CHARS = 1800
 BODY_MAX_CHARS = 3500
@@ -804,6 +808,17 @@ def lint_post(path: Path) -> tuple[list[str], list[str]]:
     for link in re.findall(r"\]\((?!https?:)([^)#]+)\)", linkable):
         if not (path.parent / link).exists():
             problems.append(f"깨진 링크: {link}")
+
+    # 본문에서 절 번호를 주어로 쓴 자리 (§4). 번호 뒤에 조사가 바로 붙으면
+    # 그 절이 무엇인지 모른 채 읽어야 한다. 링크 제목 안의 번호는 이름이
+    # 붙어 있으므로 걸리지 않는다 — 조사가 아니라 영문이 뒤따르기 때문이다.
+    bare = BARE_SECTION.findall(linkable)
+    if bare:
+        shown = ", ".join(sorted(set(bare))[:4])
+        problems.append(
+            f"본문에서 절 번호를 단독으로 썼다 ({len(bare)}곳): {shown} — "
+            "무엇인지를 쓰고 번호는 괄호로 붙인다 (§4)"
+        )
 
     return problems, notes
 
@@ -1286,23 +1301,71 @@ def cmd_run_example(args: argparse.Namespace) -> int:
         f"\n--- stderr ---\n{completed.stderr}" if completed.stderr.strip() else ""
     )
 
-    header = "\n".join([
+    meta = read_meta(post_dir / "index.md") or {}
+    declared = meta.get("environment") or []
+    elapsed = (dt.datetime.now() - started).total_seconds()
+
+    lines_out = [
         "# 이 파일은 예제를 실제로 돌린 기록이다.",
         "# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.",
         "#",
+        f"# 글        : {post_dir.relative_to(ROOT) if post_dir.is_relative_to(ROOT) else post_dir}",
         f"# 명령      : {command}",
         f"# 수행 시각 : {started:%Y-%m-%d %H:%M} ({dt.datetime.now().astimezone().tzname()})",
-        f"# 환경      : Python {platform.python_version()} / {platform.system()} {platform.release()}",
-        f"# 종료 코드 : {completed.returncode}",
-        "",
-        "",
-    ])
+        f"# 소요      : {elapsed:.1f}초",
+        f"# 실행 환경 : Python {platform.python_version()} / {platform.system()} {platform.release()}",
+        f"#             SQLite {sqlite3.sqlite_version} (파이썬 내장)",
+    ]
+    # 프론트매터가 선언한 버전과 실제로 돌린 환경이 어긋나면 글이 틀린 것이다 (§5).
+    if declared:
+        lines_out.append(f"# 선언 환경 : {', '.join(str(v) for v in declared)}")
+    lines_out += [f"# 종료 코드 : {completed.returncode}", "", ""]
+    header = "\n".join(lines_out)
     (code_dir / OUTPUT_NAME).write_text(header + body, encoding="utf-8")
 
     lines = body.count("\n")
     print(f"  종료 코드 {completed.returncode} · {lines}줄 -> {code_dir/OUTPUT_NAME}")
     if completed.returncode != 0:
         print("  종료 코드가 0이 아니다. 예제가 의도한 실패인지 확인한다.")
+    return 0
+
+
+# --- dbshow 배포 ------------------------------------------------------------
+#
+# 예제는 그 자체로 돌아가야 하므로(§3) 저장소 어딘가를 import 하지 않는다.
+# 그래서 도우미를 글 폴더마다 복사해 두고, 원본이 바뀌면 다시 뿌린다.
+
+DBSHOW_SRC = ROOT / "references/dbshow.py"
+
+
+def cmd_sync_dbshow(args: argparse.Namespace) -> int:
+    if not DBSHOW_SRC.exists():
+        print(f"[NG] 원본이 없다: {DBSHOW_SRC}")
+        return 1
+    source = DBSHOW_SRC.read_text(encoding="utf-8")
+
+    copied = same = 0
+    for path in sorted(POSTS_DIR.rglob("code/dbshow.py")):
+        if path.read_text(encoding="utf-8") == source:
+            same += 1
+            continue
+        path.write_text(source, encoding="utf-8")
+        copied += 1
+        print(f"[갱신] {path.relative_to(ROOT)}")
+
+    for name in args.post or []:
+        target = Path(name) / "code/dbshow.py"
+        if not target.parent.is_dir():
+            print(f"[NG] code 폴더가 없다: {target.parent}")
+            return 1
+        if target.exists() and target.read_text(encoding="utf-8") == source:
+            same += 1
+            continue
+        target.write_text(source, encoding="utf-8")
+        copied += 1
+        print(f"[복사] {target.resolve().relative_to(ROOT)}")
+
+    print(f"\n갱신 {copied}곳 · 이미 같음 {same}곳")
     return 0
 
 
@@ -1744,6 +1807,10 @@ def main() -> int:
     p_run.add_argument("post", help="글 폴더 경로")
     p_run.add_argument("--command", help="README에서 못 읽을 때 직접 지정")
     p_run.set_defaults(func=cmd_run_example)
+
+    p_dbshow = sub.add_parser("sync-dbshow", help="references/dbshow.py 를 글 폴더에 복사·갱신")
+    p_dbshow.add_argument("post", nargs="*", help="새로 넣을 글 폴더 (생략하면 기존 사본만 갱신)")
+    p_dbshow.set_defaults(func=cmd_sync_dbshow)
 
     p_runs = sub.add_parser("run-examples", help="executed 글의 예제를 전부 돌린다")
     p_runs.set_defaults(func=cmd_run_examples)

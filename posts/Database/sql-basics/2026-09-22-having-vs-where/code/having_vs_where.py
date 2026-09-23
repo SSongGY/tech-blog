@@ -5,6 +5,8 @@ SQLite 내장 모듈만 쓴다. 외부 의존성 없음.
 
 import sqlite3
 
+from dbshow import print_dataset, print_environment
+
 SCHEMA = """
 CREATE TABLE sale (
     id          INTEGER PRIMARY KEY,
@@ -43,10 +45,11 @@ def show(conn, label, sql):
 
 def main():
     conn = sqlite3.connect(":memory:")
+    print_dataset(conn)
     conn.executescript(SCHEMA)
     conn.executemany("INSERT INTO sale VALUES (?, ?, ?, ?)", ROWS)
 
-    print(f"sqlite3.sqlite_version = {sqlite3.sqlite_version}")
+    print_environment()
 
     show(conn, "1. 그룹 전체", """
 SELECT region, COUNT(*) AS cnt, SUM(amount) AS total

@@ -6,6 +6,8 @@ COUNT(*) / COUNT(컬럼) / SUM / AVG 의 결과와 실행계획을 나란히 뽑
 
 import sqlite3
 
+from dbshow import print_dataset, print_environment
+
 # bonus 에 None 을 섞어 둔 것이 이 예제의 전부다. 지원팀은 세 명 모두 None 이다.
 EMPLOYEE_ROWS = [
     (1, "김하나", "개발", 400),
@@ -74,7 +76,8 @@ def section(title):
 
 def main():
     conn = open_db()
-    print(f"SQLite {sqlite3.sqlite_version}")
+    print_dataset(conn)
+    print_environment()
 
     section("1. 집계 함수는 NULL 을 세지 않는다")
     show_rows(

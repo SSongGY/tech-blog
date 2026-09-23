@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import random
 import sqlite3
+
+from dbshow import print_dataset, print_environment
 import time
 from dataclasses import dataclass
 
@@ -191,7 +193,7 @@ def case_statistics_dependency() -> None:
 
 
 def main() -> None:
-    print(f"SQLite {sqlite3.sqlite_version} · 행 {ROW_COUNT:,} · 각 케이스 {REPEAT_COUNT}회 중 최솟값")
+    print_environment()
     conn = build_database()
 
     distribution = conn.execute(

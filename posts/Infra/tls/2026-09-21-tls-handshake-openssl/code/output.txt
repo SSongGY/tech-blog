@@ -1,9 +1,13 @@
 # 이 파일은 예제를 실제로 돌린 기록이다.
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
+# 글        : posts\Infra\tls\2026-09-21-tls-handshake-openssl
 # 명령      : bash handshake_probe.sh
-# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
-# 환경      : Python 3.13.5 / Windows 11
+# 수행 시각 : 2026-09-23 09:03 (대한민국 표준시)
+# 소요      : 22.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5
 # 종료 코드 : 0
 
 
@@ -25,7 +29,7 @@ Peer Temp Key: X25519, 253 bits
 <<< TLS 1.3, Handshake [length 04ba], ServerHello
 <<< TLS 1.3, Handshake [length 000a], EncryptedExtensions
 <<< TLS 1.3, Handshake [length 09ab], Certificate
-<<< TLS 1.3, Handshake [length 004f], CertificateVerify
+<<< TLS 1.3, Handshake [length 004e], CertificateVerify
 <<< TLS 1.3, Handshake [length 0034], Finished
 >>> TLS 1.3, Handshake [length 0034], Finished
 
@@ -48,7 +52,7 @@ Peer Temp Key: X25519, 253 bits
 ===== 6. 세션 티켓 저장과 재사용 =====
   티켓 저장됨: 1786 바이트
   -- 티켓 없이 새로 접속
-SSL handshake has read 3858 bytes and written 1632 bytes
+SSL handshake has read 3860 bytes and written 1632 bytes
 New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
   -- 저장한 티켓으로 재접속
 SSL handshake has read 1307 bytes and written 1887 bytes

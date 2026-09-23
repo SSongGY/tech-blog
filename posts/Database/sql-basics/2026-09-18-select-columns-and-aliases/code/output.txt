@@ -1,17 +1,61 @@
 # 이 파일은 예제를 실제로 돌린 기록이다.
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
+# 글        : posts\Database\sql-basics\2026-09-18-select-columns-and-aliases
 # 명령      : python select_basics.py
-# 수행 시각 : 2026-09-21 17:25 (대한민국 표준시)
-# 환경      : Python 3.13.5 / Windows 11
+# 수행 시각 : 2026-09-23 09:03 (대한민국 표준시)
+# 소요      : 1.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5
 # 종료 코드 : 0
 
-SQLite 3.49.1 · 행 200,000 · 각 질의 5회 중 최솟값
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[book]  200000행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  book_id     | INTEGER | PK
+  genre       | TEXT    | NOT NULL
+  title       | TEXT    | NOT NULL
+  author_name | TEXT    | NOT NULL
+  summary     | TEXT    | NOT NULL
+  price       | INTEGER | NOT NULL
+
+  book_id | genre   | title       | author_name | summary                                                                                                                                                                                                  | price
+  --------+---------+-------------+-------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------
+        1 | science | book-000001 | author-1263 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 85982
+        2 | fiction | book-000002 | author-4970 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 61519
+        3 | science | book-000003 | author-2665 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 25543
+        4 | science | book-000004 | author-0898 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 76936
+        5 | poetry  | book-000005 | author-3027 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 21360
+        6 | fiction | book-000006 | author-1784 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 29947
+        7 | fiction | book-000007 | author-2756 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 28883
+        8 | poetry  | book-000008 | author-2372 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 35843
+        9 | poetry  | book-000009 | author-4075 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 41472
+       10 | poetry  | book-000010 | author-1839 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 76596
+       11 | history | book-000011 | author-4149 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 13499
+       12 | poetry  | book-000012 | author-1284 | ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss | 31364
+  … 199988행 더 있음
+
+[인덱스]
+  이름                | 대상 표 | 정의
+  --------------------+---------+-------------------------------------------------------
+  ix_book_genre_title | book    | CREATE INDEX ix_book_genre_title ON book(genre, title)
+
 
 ### 1. SELECT * 와 필요한 컬럼만 고른 질의
-  SELECT *          51.16ms  40,262행
+  SELECT *          51.64ms  40,262행
       SEARCH book USING INDEX ix_book_genre_title (genre=?)
-  SELECT title      11.21ms  40,262행
+  SELECT title      10.53ms  40,262행
       SEARCH book USING COVERING INDEX ix_book_genre_title (genre=?)
 
 ### 2. 별칭을 쓸 수 있는 자리

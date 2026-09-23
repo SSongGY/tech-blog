@@ -6,6 +6,8 @@
 
 import sqlite3
 
+from dbshow import print_dataset, print_environment
+
 # 중복이 섞이도록 같은 (team, grade) 조합을 여러 번 넣는다.
 EMPLOYEE_ROWS = [
     ("김서연", "개발", "선임"),
@@ -81,10 +83,11 @@ def show_plan(conn, label, sql):
 
 
 def main():
-    print("SQLite", sqlite3.sqlite_version)
+    print_environment()
     print("=" * 62)
 
     conn = build_database()
+    print_dataset(conn)
 
     print("## 1. DISTINCT는 무엇을 지우는가")
     show_rows(conn, "1-1 중복 포함", "SELECT team FROM employee")

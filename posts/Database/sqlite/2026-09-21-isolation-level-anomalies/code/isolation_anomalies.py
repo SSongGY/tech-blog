@@ -9,6 +9,8 @@
 import os
 import pathlib
 import sqlite3
+
+from dbshow import print_dataset, print_environment
 import tempfile
 
 WORK_DIR = pathlib.Path(tempfile.mkdtemp(prefix="isolation-"))
@@ -168,7 +170,13 @@ def short(result: str) -> str:
 
 
 def main() -> None:
-    print(f"SQLite {sqlite3.sqlite_version}\n")
+    print_environment()
+    # 세 실험 모두 이 표를 같은 상태에서 다시 만들어 쓴다
+    reset("delete")
+    probe = sqlite3.connect(DB_PATH)
+    print_dataset(probe)
+    probe.close()
+
     demo_dirty_read()
     demo_repeatable("delete")
     demo_repeatable("wal")

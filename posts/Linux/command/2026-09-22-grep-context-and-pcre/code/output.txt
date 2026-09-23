@@ -1,9 +1,13 @@
 # 이 파일은 예제를 실제로 돌린 기록이다.
 # scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
 #
+# 글        : posts\Linux\command\2026-09-22-grep-context-and-pcre
 # 명령      : bash grep_context.sh
-# 수행 시각 : 2026-09-22 13:15 (대한민국 표준시)
-# 환경      : Python 3.13.5 / Windows 11
+# 수행 시각 : 2026-09-23 09:04 (대한민국 표준시)
+# 소요      : 1.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : GNU grep 3.0, bash 5.3.9, Windows 11
 # 종료 코드 : 0
 
 bash    : 5.3.9(1)-release

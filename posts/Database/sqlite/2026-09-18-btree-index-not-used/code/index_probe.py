@@ -11,6 +11,8 @@ from __future__ import annotations
 
 import random
 import sqlite3
+
+from dbshow import print_dataset, print_environment
 import sys
 import time
 from dataclasses import dataclass, field
@@ -162,8 +164,9 @@ def print_report(results: list[ProbeResult]) -> None:
 
 
 def main() -> None:
-    print(f"SQLite {sqlite3.sqlite_version} · {ROW_COUNT:,}행 · 최소 {REPEAT_COUNT}회 측정\n")
+    print_environment()
     conn = build_database()
+    print_dataset(conn)
     cases = build_cases()
 
     print("[A] SELECT user_id — 인덱스만 읽어도 답이 나오는 커버링 상황")
