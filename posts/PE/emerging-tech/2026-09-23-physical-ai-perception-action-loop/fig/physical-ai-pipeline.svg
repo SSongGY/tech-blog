@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">Physical AI — 가상에서 배우고 현실에서 순환한다</text>
+
+  <!-- 좌: 가상 환경 -->
+  <rect x="20" y="50" width="300" height="360" fill="#f5f7f9" stroke="#9aa5b1" stroke-width="1" rx="6"/>
+  <text x="170" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">가상 환경 — 학습 파이프라인</text>
+
+  <rect x="50" y="90" width="240" height="54" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="170" y="113" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 디지털 트윈 구축</text>
+  <text x="170" y="132" text-anchor="middle" font-size="13" fill="#4a5568">실제 공간과 동기화된 가상 표현</text>
+
+  <rect x="50" y="170" width="240" height="54" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="170" y="193" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 합성 데이터 생성</text>
+  <text x="170" y="212" text-anchor="middle" font-size="13" fill="#4a5568">조명 · 질감 · 마찰을 무작위화</text>
+
+  <rect x="50" y="250" width="240" height="54" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6" rx="4"/>
+  <text x="170" y="273" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 가상 환경 학습</text>
+  <text x="170" y="292" text-anchor="middle" font-size="13" fill="#4a5568">강화학습 · 모방학습</text>
+
+  <rect x="50" y="330" width="240" height="54" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="170" y="353" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 가상 검증</text>
+  <text x="170" y="372" text-anchor="middle" font-size="13" fill="#4a5568">가상 로봇 여러 대로 정책 시험</text>
+
+  <line x1="170" y1="144" x2="170" y2="166" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <line x1="170" y1="224" x2="170" y2="246" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <line x1="170" y1="304" x2="170" y2="326" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+
+  <!-- 가운데: 배포와 현실 격차 -->
+  <line x1="290" y1="357" x2="536" y2="357" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#a2)"/>
+  <text x="420" y="348" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">⑤ 엣지 배포</text>
+  <text x="420" y="376" text-anchor="middle" font-size="13" fill="#2d6a4f">로봇 탑재 장치에서 실시간 추론</text>
+
+  <line x1="536" y1="120" x2="294" y2="120" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#a3)"/>
+  <text x="420" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">현실 격차 (reality gap)</text>
+  <text x="420" y="140" text-anchor="middle" font-size="13" fill="#b45309">실패 사례로 시뮬레이터를 보정</text>
+
+  <!-- 우: 물리 세계 순환 -->
+  <rect x="540" y="50" width="320" height="360" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1" rx="6"/>
+  <text x="700" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">물리 세계 — 인지 · 추론 · 행동 순환</text>
+
+  <rect x="560" y="150" width="130" height="54" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4" rx="4"/>
+  <text x="625" y="173" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">인지</text>
+  <text x="625" y="192" text-anchor="middle" font-size="13" fill="#4a5568">카메라·LiDAR·촉각</text>
+
+  <rect x="710" y="150" width="130" height="54" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6" rx="4"/>
+  <text x="775" y="173" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">추론 · 계획</text>
+  <text x="775" y="192" text-anchor="middle" font-size="13" fill="#4a5568">VLA 모델</text>
+
+  <rect x="710" y="290" width="130" height="54" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4" rx="4"/>
+  <text x="775" y="313" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">행동</text>
+  <text x="775" y="332" text-anchor="middle" font-size="13" fill="#4a5568">액추에이터</text>
+
+  <rect x="560" y="290" width="130" height="54" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="625" y="313" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">물리 환경</text>
+  <text x="625" y="332" text-anchor="middle" font-size="13" fill="#4a5568">사물 · 사람 · 공간</text>
+
+  <line x1="690" y1="177" x2="706" y2="177" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a2)"/>
+  <line x1="775" y1="204" x2="775" y2="286" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a2)"/>
+  <line x1="710" y1="317" x2="694" y2="317" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a2)"/>
+  <line x1="625" y1="290" x2="625" y2="208" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a2)"/>
+  <text x="700" y="252" text-anchor="middle" font-size="13" fill="#2d6a4f">제어 주기마다 반복</text>
+
+  <!-- 하단: 학습 데이터 3종 -->
+  <text x="20" y="440" font-size="14" font-weight="bold" fill="#1b1b1b">학습 데이터 3종</text>
+  <text x="140" y="440" font-size="13" fill="#1b1b1b">실제 로봇 궤적 + 사람 시연 영상 + 합성 데이터 (GR00T N1)</text>
+  <text x="140" y="463" font-size="13" fill="#b45309">합성 데이터는 실세계 데이터를 대체하지 않고 모자란 양을 채운다</text>
+</svg>

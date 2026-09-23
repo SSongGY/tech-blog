@@ -84,6 +84,8 @@ WEF 백서는 로봇 시스템을 **규칙 기반·학습 기반·맥락 기반 
 관계가 아니라 **공존하는 계층형 자동화**라고 본다. 변동이 적은 반복 공정은 규칙 기반이
 여전히 맞고, Physical AI는 변동이 크거나 처음 보는 환경에서 값을 한다.
 
+> 개념 정리: [Physical AI — 인지·추론·행동 순환과 시뮬레이션 기반 학습](../../emerging-tech/2026-09-23-physical-ai-perception-action-loop/index.md)
+>
 > 개념 정리: [다크 팩토리 — 무인화가 성립하기 위한 전제](../../emerging-tech/2026-09-21-dark-factory-prerequisites/index.md)
 
 끝
