@@ -175,6 +175,9 @@ python scripts/blog.py related sequence       # 같은 기능으로 쓴 글 찾�
 python scripts/blog.py relink                 # 같은 기능 글끼리 상호 링크 재생성
 python scripts/blog.py lint                   # 글 규칙 검사
 python scripts/blog.py index                  # 글 목록 페이지(POSTS.md) 재생성
+python scripts/blog.py blocked               # 보류된 주제 (무인 회차가 건너뛴다)
+python scripts/blog.py unblock lx-009        # 보류 해제 — 다음 회차가 집어 간다
+python scripts/blog.py reset-writing --dry-run  # 멈춘 회차가 남긴 것 확인
 python scripts/blog.py done tb-001            # 발행 완료 처리 + 이력 기록
 python scripts/blog.py tistory my-slug --copy # 티스토리용 변환 + 클립보드 (마크다운)
 python scripts/blog.py naver my-slug --copy   # 네이버용 변환 + 클립보드 (서식 있는 HTML)

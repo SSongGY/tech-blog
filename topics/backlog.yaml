@@ -1578,7 +1578,8 @@ topics:
     difficulty: 중급
     angle: "-exec와 -print0 | xargs -0의 차이, 공백 파일명 함정"
     code: shell
-    status: todo
+    status: blocked
+    blocked_note: find -exec 예제가 허용 규칙에 걸린다. code/ 안에서 run-example 로 돌리도록 각도를 바꾼 뒤 사람이 있을 때 시도
   - id: lx-010
     title: "tail -f와 journalctl — 로그를 실시간으로 쫓기"
     category: Linux

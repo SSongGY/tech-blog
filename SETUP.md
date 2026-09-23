@@ -89,7 +89,7 @@ cp .claude/settings.example.json .claude/settings.json
 17:00  tech-blog-concept     개념 정리 2편
 19:00  tech-blog-daily       3편
 23:00  tech-blog-daily       3편
-09:00  tech-blog-healthcheck 점검만
+매시 30분  tech-blog-healthcheck 멈춘 회차 감시 (9시대엔 하루치 점검)
 ```
 
 등록한 뒤 **한 번씩 수동 실행해 본다.** 권한을 묻는지 확인하는 것이 목적이다.

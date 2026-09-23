@@ -1191,8 +1191,10 @@ def cmd_status(args: argparse.Namespace) -> int:
     per_day["pe"] = per_day.get("pe", 0) + CONCEPT_POSTS_PER_DAY
     total_per_day = sum(per_day.values())
     print(f"백로그   : 전체 {len(topics)}편 (하루 {total_per_day}편 기준)")
-    for status in ("todo", "writing", "done"):
-        print(f"  {status:8s} {by_status.get(status, 0)}")
+    for status in ("todo", "writing", "blocked", "done"):
+        count = by_status.get(status, 0)
+        hint = "  ← 무인 회차가 건너뛴다. blog.py blocked" if status == "blocked" and count else ""
+        print(f"  {status:8s} {count}{hint}")
 
     print("\n트랙별 잔량")
     for track, need in per_day.items():
@@ -1622,6 +1624,113 @@ def cmd_sync_dbshow(args: argparse.Namespace) -> int:
         print(f"[복사] {target.resolve().relative_to(ROOT)}")
 
     print(f"\n갱신 {copied}곳 · 이미 같음 {same}곳")
+    return 0
+
+
+# --- 멈춘 회차가 남긴 것 치우기 ---------------------------------------------
+#
+# 회차가 중간에 끊기면 뼈대만 있는 글 폴더와 status: writing 인 백로그 항목이 남는다.
+# 그대로 두면 다음 회차의 pick 이 그 주제를 건너뛰어, 반쪽짜리 글이 영영 남는다.
+# 손으로 치우기에는 항목이 흩어져 있어 빠뜨리기 쉬우므로 명령으로 둔다.
+
+
+def set_note(topic_id: str, note: str) -> None:
+    """주제 블록의 status 줄 아래에 메모 한 줄을 넣는다(있으면 갈아끼운다)."""
+    raw = BACKLOG_PATH.read_text(encoding="utf-8")
+    raw = re.sub(
+        rf"(^  - id: {re.escape(topic_id)}\n(?:(?!^  - id: ).*\n)*?)    blocked_note: .*\n",
+        r"\1", raw, count=1, flags=re.MULTILINE,
+    )
+    block = re.compile(
+        rf"(^  - id: {re.escape(topic_id)}\n(?:(?!^  - id: ).*\n)*?    status: \w+\n)",
+        re.MULTILINE,
+    )
+    patched, hits = block.subn(rf"\g<1>    blocked_note: {note}\n", raw)
+    if hits != 1:
+        raise SystemExit(f"{topic_id}의 status 줄을 찾지 못했다 (매칭 {hits}건).")
+    BACKLOG_PATH.write_text(patched, encoding="utf-8")
+
+
+def cmd_blocked(args: argparse.Namespace) -> int:
+    """사람이 있을 때만 다시 시도할 주제. 무인 회차는 이것을 집지 않는다."""
+    data = load_backlog()
+    held = [t for t in data["topics"] if t["status"] == "blocked"]
+    if not held:
+        print("보류된 주제가 없다.")
+        return 0
+    print(f"보류된 주제 {len(held)}개 — 무인 회차는 건너뛴다\n")
+    for topic in held:
+        print(f"  {topic['id']}  [{track_of(topic)}]  {topic['title']}")
+        if topic.get("blocked_note"):
+            print(f"      {topic['blocked_note']}")
+    print("\n다시 쓰게 하려면:")
+    print(f"  python scripts/blog.py unblock {held[0]['id']}       # 하나만")
+    print("  python scripts/blog.py unblock --all              # 전부")
+    print("\n되돌린 뒤 /blog-daily 를 직접 돌리면 그 자리에서 승인하며 갈 수 있다.")
+    return 0
+
+
+def cmd_unblock(args: argparse.Namespace) -> int:
+    data = load_backlog()
+    held = [t for t in data["topics"] if t["status"] == "blocked"]
+    targets = held if args.all else [t for t in held if t["id"] in set(args.topic_id)]
+    unknown = set(args.topic_id) - {t["id"] for t in targets}
+    if unknown:
+        print(f"[NG] 보류 상태가 아니거나 없는 주제: {', '.join(sorted(unknown))}")
+        return 1
+    if not targets:
+        print("되돌릴 주제가 없다. --all 이나 주제 id 를 준다.")
+        return 1
+    for topic in targets:
+        set_status(topic["id"], "todo")
+        print(f"[todo] {topic['id']}  {topic['title']}")
+    print(f"\n{len(targets)}개를 todo 로 되돌렸다. 다음 회차가 집어 간다.")
+    return 0
+
+
+def cmd_reset_writing(args: argparse.Namespace) -> int:
+    data = load_backlog()
+    writing = [t for t in data["topics"] if t["status"] == "writing"]
+    if not writing:
+        print("writing 상태인 주제가 없다. 치울 것이 없다.")
+        return 0
+
+    print(f"writing 상태인 주제 {len(writing)}개")
+    skeletons = []
+    for topic in writing:
+        print(f"  {topic['id']}  {topic['title']}")
+        for path in sorted(POSTS_DIR.rglob("index.md")):
+            meta = read_meta(path) or {}
+            if meta.get("topic_id") != topic["id"]:
+                continue
+            size = path.stat().st_size
+            mark = "뼈대만" if size < SKELETON_BYTES else "본문 있음 — 지우지 않는다"
+            print(f"      {path.relative_to(ROOT)}  {size:,} B  [{mark}]")
+            if size < SKELETON_BYTES:
+                skeletons.append(path.parent)
+
+    # 기본값이 blocked 인 이유. todo 로 되돌리면 다음 무인 회차가 같은 주제를 다시
+    # 집고, 멈추게 만든 원인이 그대로라면 같은 자리에서 또 멈춘다. 그러면 그 작업의
+    # 다음 회차들까지 계속 막힌다. 사람이 있을 때 다시 시도하도록 옆으로 빼 둔다.
+    new_status = args.to
+    if args.dry_run:
+        print(f"\n--dry-run 이라 아무것도 바꾸지 않았다. "
+              f"{new_status} 로 바꿀 주제 {len(writing)}개 · 지울 폴더 {len(skeletons)}개")
+        return 0
+
+    # 본문이 있는 글은 건드리지 않는다. 끊긴 회차가 거의 다 써 놓았을 수 있다.
+    for folder in skeletons:
+        shutil.rmtree(folder)
+        print(f"[삭제] {folder.relative_to(ROOT)}")
+    for topic in writing:
+        set_status(topic["id"], new_status)
+        if new_status == "blocked":
+            note = args.note or f"{dt.date.today()} 회차가 중간에 멈춰 보류"
+            set_note(topic["id"], note)
+        print(f"[{new_status}] {topic['id']}")
+    print(f"\n주제 {len(writing)}개를 {new_status} 로 바꾸고 뼈대 폴더 {len(skeletons)}개를 지웠다.")
+    if new_status == "blocked":
+        print("무인 회차는 이 주제를 건너뛴다. `blog.py blocked` 로 목록을 본다.")
     return 0
 
 
@@ -2075,6 +2184,21 @@ def main() -> int:
     p_dbshow = sub.add_parser("sync-dbshow", help="references/dbshow.py 를 글 폴더에 복사·갱신")
     p_dbshow.add_argument("post", nargs="*", help="새로 넣을 글 폴더 (생략하면 기존 사본만 갱신)")
     p_dbshow.set_defaults(func=cmd_sync_dbshow)
+
+    p_reset = sub.add_parser("reset-writing", help="멈춘 회차가 남긴 뼈대와 writing 상태 정리")
+    p_reset.add_argument("--dry-run", action="store_true", help="무엇을 치울지 보기만 한다")
+    p_reset.add_argument("--to", choices=("blocked", "todo"), default="blocked",
+                         help="blocked: 사람이 있을 때만 다시 (기본) / todo: 다음 회차가 바로 집는다")
+    p_reset.add_argument("--note", help="왜 보류하는지 한 줄")
+    p_reset.set_defaults(func=cmd_reset_writing)
+
+    p_blocked = sub.add_parser("blocked", help="보류된 주제 — 무인 회차가 건너뛰는 것")
+    p_blocked.set_defaults(func=cmd_blocked)
+
+    p_unblock = sub.add_parser("unblock", help="보류를 풀어 다시 쓰게 한다")
+    p_unblock.add_argument("topic_id", nargs="*", help="풀 주제 id")
+    p_unblock.add_argument("--all", action="store_true", help="보류된 것 전부")
+    p_unblock.set_defaults(func=cmd_unblock)
 
     p_runs = sub.add_parser("run-examples", help="executed 글의 예제를 전부 돌린다")
     p_runs.set_defaults(func=cmd_run_examples)
