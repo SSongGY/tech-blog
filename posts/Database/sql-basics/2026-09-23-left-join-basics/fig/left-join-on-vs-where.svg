@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">LEFT JOIN이 결과를 만드는 순서</text>
+  <text x="40" y="56" font-size="13" fill="#555">customer 4행 · sale_order 5행 · '완료' 주문만 붙이려는 두 가지 쓰기</text>
+
+  <!-- stage headers -->
+  <rect x="160" y="74" width="220" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="270" y="96" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">① ON 조건으로 짝 찾기</text>
+  <text x="270" y="114" font-size="13" text-anchor="middle" fill="#444">참인 짝만 남긴다</text>
+
+  <rect x="400" y="74" width="220" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="510" y="96" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">② 짝 없는 왼쪽 행 추가</text>
+  <text x="510" y="114" font-size="13" text-anchor="middle" fill="#444">오른쪽 컬럼은 NULL</text>
+
+  <rect x="640" y="74" width="200" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="740" y="96" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">③ WHERE로 거르기</text>
+  <text x="740" y="114" font-size="13" text-anchor="middle" fill="#444">조인이 끝난 뒤</text>
+
+  <!-- lane A: condition in ON -->
+  <text x="40" y="170" font-size="14" font-weight="bold" fill="#2d6a4f">가. ON에</text>
+  <text x="40" y="190" font-size="13" fill="#555">status = '완료'</text>
+
+  <rect x="160" y="144" width="220" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="176" y="168" font-size="13" fill="#333">김서준 · 101 완료</text>
+  <text x="176" y="188" font-size="13" fill="#333">김서준 · 102 완료</text>
+  <text x="176" y="208" font-size="13" fill="#333">박도윤 · 105 완료</text>
+  <text x="176" y="234" font-size="13" font-weight="bold" fill="#2d6a4f">3행</text>
+
+  <rect x="400" y="144" width="220" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="416" y="168" font-size="13" fill="#333">위 3행 +</text>
+  <text x="416" y="188" font-size="13" fill="#333">이하윤 · NULL</text>
+  <text x="416" y="208" font-size="13" fill="#333">최시우 · NULL</text>
+  <text x="416" y="234" font-size="13" font-weight="bold" fill="#2d6a4f">5행</text>
+
+  <rect x="640" y="144" width="200" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="656" y="168" font-size="13" fill="#333">WHERE 없음</text>
+  <text x="656" y="188" font-size="13" fill="#333">고객 4명이 전부 남는다</text>
+  <text x="656" y="234" font-size="13" font-weight="bold" fill="#2d6a4f">5행</text>
+
+  <path d="M 380 196 L 398 196" stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
+  <path d="M 620 196 L 638 196" stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
+
+  <!-- lane B: condition in WHERE -->
+  <text x="40" y="296" font-size="14" font-weight="bold" fill="#9d0208">나. WHERE에</text>
+  <text x="40" y="316" font-size="13" fill="#555">status = '완료'</text>
+
+  <rect x="160" y="270" width="220" height="124" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="176" y="292" font-size="13" fill="#333">김서준 · 101 완료</text>
+  <text x="176" y="310" font-size="13" fill="#333">김서준 · 102 완료</text>
+  <text x="176" y="328" font-size="13" fill="#333">김서준 · 103 취소</text>
+  <text x="176" y="346" font-size="13" fill="#333">이하윤 · 104 취소</text>
+  <text x="176" y="364" font-size="13" fill="#333">박도윤 · 105 완료</text>
+  <text x="176" y="386" font-size="13" font-weight="bold" fill="#1b1b1b">5행</text>
+
+  <rect x="400" y="270" width="220" height="124" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="416" y="294" font-size="13" fill="#333">위 5행 +</text>
+  <text x="416" y="314" font-size="13" fill="#333">최시우 · NULL</text>
+  <text x="416" y="340" font-size="13" fill="#555">이하윤은 짝이 있으므로</text>
+  <text x="416" y="358" font-size="13" fill="#555">여기서 추가되지 않는다</text>
+  <text x="416" y="380" font-size="13" font-weight="bold" fill="#1b1b1b">6행</text>
+
+  <rect x="640" y="270" width="200" height="124" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="656" y="294" font-size="13" fill="#333">취소 주문 2행 탈락</text>
+  <text x="656" y="314" font-size="13" fill="#333">NULL = '완료' 는 참이</text>
+  <text x="656" y="334" font-size="13" fill="#333">아니므로 최시우도 탈락</text>
+  <text x="656" y="358" font-size="13" fill="#9d0208">INNER JOIN과 같은 결과</text>
+  <text x="656" y="380" font-size="13" font-weight="bold" fill="#9d0208">3행</text>
+
+  <path d="M 380 332 L 398 332" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <path d="M 620 332 L 638 332" stroke="#9d0208" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <line x1="40" y1="414" x2="840" y2="414" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="40" y="440" font-size="13" fill="#333">②에서 NULL로 채워 넣은 행은 ③의 조건에서 오른쪽 컬럼이 전부 NULL이다.</text>
+  <text x="40" y="460" font-size="13" fill="#333">오른쪽 표 컬럼에 거는 WHERE 조건은 그 행을 버리므로, LEFT JOIN을 쓴 의미가 없어진다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>

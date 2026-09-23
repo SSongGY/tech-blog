@@ -1,0 +1,216 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-23-left-join-basics
+# 명령      : python left_join_basics.py
+# 수행 시각 : 2026-09-23 13:21 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer]  4행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+-------
+   1 | 김서준
+   2 | 이하윤
+   3 | 박도윤
+   4 | 최시우
+
+[sale_order]  5행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  id          | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  status      | TEXT    | NOT NULL
+  amount      | INTEGER | NOT NULL
+  coupon_code | TEXT    |
+
+  id  | customer_id | status | amount | coupon_code
+  ----+-------------+--------+--------+------------
+  101 |           1 | 완료   |    120 | WELCOME
+  102 |           1 | 완료   |     80 | NULL
+  103 |           1 | 취소   |    200 | NULL
+  104 |           2 | 취소   |    150 | WELCOME
+  105 |           3 | 완료   |     90 | NULL
+
+[shipment]  2행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  id       | INTEGER | PK
+  order_id | INTEGER | NOT NULL
+
+  id  | order_id
+  ----+---------
+  301 |      101
+  302 |      105
+
+
+=== 1. INNER JOIN 과 LEFT JOIN 의 행 수 ===
+
+[1-A INNER JOIN]
+  SELECT c.name, o.id, o.status FROM customer AS c INNER JOIN sale_order AS o ON o.customer_id = c.id ORDER BY c.id, o.id
+  ('김서준', 101, '완료')
+  ('김서준', 102, '완료')
+  ('김서준', 103, '취소')
+  ('이하윤', 104, '취소')
+  ('박도윤', 105, '완료')
+  -> 5행
+
+[1-B LEFT JOIN]
+  SELECT c.name, o.id, o.status FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id ORDER BY c.id, o.id
+  ('김서준', 101, '완료')
+  ('김서준', 102, '완료')
+  ('김서준', 103, '취소')
+  ('이하윤', 104, '취소')
+  ('박도윤', 105, '완료')
+  ('최시우', None, None)
+  -> 6행
+
+=== 2. '완료' 주문만 붙이고 싶을 때 ===
+
+[2-A 조건을 WHERE 에]
+  SELECT c.name, o.id, o.status FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id WHERE o.status = '완료' ORDER BY c.id, o.id
+  ('김서준', 101, '완료')
+  ('김서준', 102, '완료')
+  ('박도윤', 105, '완료')
+  -> 3행
+
+[2-B 조건을 ON 에]
+  SELECT c.name, o.id, o.status FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' ORDER BY c.id, o.id
+  ('김서준', 101, '완료')
+  ('김서준', 102, '완료')
+  ('이하윤', None, None)
+  ('박도윤', 105, '완료')
+  ('최시우', None, None)
+  -> 5행
+
+[2-C WHERE 에 OR IS NULL 을 덧붙이면]
+  SELECT c.name, o.id, o.status FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id WHERE o.status = '완료' OR o.id IS NULL ORDER BY c.id, o.id
+  ('김서준', 101, '완료')
+  ('김서준', 102, '완료')
+  ('박도윤', 105, '완료')
+  ('최시우', None, None)
+  -> 4행
+
+=== 3. 고객별 완료 주문 수 ===
+
+[3-A COUNT(*)]
+  SELECT c.name, COUNT(*) FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' GROUP BY c.id ORDER BY c.id
+  ('김서준', 2)
+  ('이하윤', 1)
+  ('박도윤', 1)
+  ('최시우', 1)
+  -> 4행
+
+[3-B COUNT(o.id)]
+  SELECT c.name, COUNT(o.id) FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' GROUP BY c.id ORDER BY c.id
+  ('김서준', 2)
+  ('이하윤', 0)
+  ('박도윤', 1)
+  ('최시우', 0)
+  -> 4행
+
+[3-C SUM 은 0 이 아니라 NULL]
+  SELECT c.name, SUM(o.amount), COALESCE(SUM(o.amount), 0) FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' GROUP BY c.id ORDER BY c.id
+  ('김서준', 200, 200)
+  ('이하윤', None, 0)
+  ('박도윤', 90, 90)
+  ('최시우', None, 0)
+  -> 4행
+
+=== 4. 주문이 없는 고객 찾기 ===
+
+[4-A 키 컬럼으로 IS NULL]
+  SELECT c.name FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id WHERE o.id IS NULL
+  ('최시우',)
+  -> 1행
+
+[4-B 비어 있을 수 있는 컬럼으로 IS NULL]
+  SELECT c.name, o.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id WHERE o.coupon_code IS NULL ORDER BY c.id, o.id
+  ('김서준', 102)
+  ('김서준', 103)
+  ('박도윤', 105)
+  ('최시우', None)
+  -> 4행
+
+[4-C NOT EXISTS]
+  SELECT c.name FROM customer AS c WHERE NOT EXISTS (SELECT 1 FROM sale_order AS o WHERE o.customer_id = c.id)
+  ('최시우',)
+  -> 1행
+
+=== 5. 왼쪽 표 조건을 ON 에 쓰면 ===
+
+[5-A 왼쪽 표 조건을 WHERE 에]
+  SELECT c.name, o.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id WHERE c.id = 1 ORDER BY c.id, o.id
+  ('김서준', 101)
+  ('김서준', 102)
+  ('김서준', 103)
+  -> 3행
+
+[5-B 왼쪽 표 조건을 ON 에]
+  SELECT c.name, o.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND c.id = 1 ORDER BY c.id, o.id
+  ('김서준', 101)
+  ('김서준', 102)
+  ('김서준', 103)
+  ('이하윤', None)
+  ('박도윤', None)
+  ('최시우', None)
+  -> 6행
+
+=== 6. LEFT JOIN 뒤에 INNER JOIN 을 이으면 ===
+
+[6-A LEFT JOIN 만]
+  SELECT c.name, o.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' ORDER BY c.id, o.id
+  ('김서준', 101)
+  ('김서준', 102)
+  ('이하윤', None)
+  ('박도윤', 105)
+  ('최시우', None)
+  -> 5행
+
+[6-B 이어서 INNER JOIN shipment]
+  SELECT c.name, o.id, s.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' INNER JOIN shipment AS s ON s.order_id = o.id ORDER BY c.id, o.id
+  ('김서준', 101, 301)
+  ('박도윤', 105, 302)
+  -> 2행
+
+[6-C 이어서 LEFT JOIN shipment]
+  SELECT c.name, o.id, s.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료' LEFT JOIN shipment AS s ON s.order_id = o.id ORDER BY c.id, o.id
+  ('김서준', 101, 301)
+  ('김서준', 102, None)
+  ('이하윤', None, None)
+  ('박도윤', 105, 302)
+  ('최시우', None, None)
+  -> 5행
+
+=== 7. 실행계획 ===
+
+[7-A LEFT JOIN, 조건을 ON 에]
+  SELECT c.name, o.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id AND o.status = '완료'
+  QUERY PLAN
+  |--SCAN c
+  |--BLOOM FILTER ON o (customer_id=? AND status=?)
+  `--SEARCH o USING AUTOMATIC PARTIAL COVERING INDEX (customer_id=? AND status=?) LEFT-JOIN
+
+[7-B LEFT JOIN, 조건을 WHERE 에]
+  SELECT c.name, o.id FROM customer AS c LEFT JOIN sale_order AS o ON o.customer_id = c.id WHERE o.status = '완료'
+  QUERY PLAN
+  |--SCAN o
+  `--SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
