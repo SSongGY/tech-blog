@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">uniq -c 는 바로 앞 줄과만 비교한다 — sort 가 앞에 와야 하는 이유</text>
+  <text x="30" y="56" font-size="13" fill="#555">ip.txt 10줄. 칸 안의 숫자는 10.0.0.x 의 x, "3×7"은 7이 3번. 결과는 아래 실습 12장의 실제 출력이다.</text>
+
+  <!-- input -->
+  <rect x="30" y="150" width="150" height="110" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="176" font-size="14" font-weight="bold" fill="#1b1b1b">입력 순서</text>
+  <text x="46" y="202" font-size="13" fill="#333">4 7 4 9 4</text>
+  <text x="46" y="224" font-size="13" fill="#333">7 9 4 2 7</text>
+  <text x="46" y="246" font-size="13" fill="#555">같은 값이 흩어짐</text>
+
+  <!-- row A: uniq -c directly -->
+  <text x="200" y="98" font-size="13" font-weight="bold" fill="#9d0208">uniq -c</text>
+  <rect x="290" y="76" width="560" height="56" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="306" y="100" font-size="13" fill="#333">1×4  1×7  1×4  1×9  1×4  1×7  1×9  1×4  1×2  1×7</text>
+  <text x="306" y="120" font-size="13" fill="#9d0208">앞 줄과 값이 달라 매번 새 묶음 → 10줄 모두 1</text>
+
+  <!-- row B: sort | uniq -c | sort -rn -->
+  <text x="200" y="288" font-size="13" font-weight="bold" fill="#2d6a4f">sort</text>
+  <rect x="250" y="270" width="170" height="80" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="264" y="296" font-size="13" fill="#333">2 4 4 4 4</text>
+  <text x="264" y="318" font-size="13" fill="#333">7 7 7 9 9</text>
+  <text x="264" y="340" font-size="13" fill="#2d6a4f">같은 값이 이웃함</text>
+
+  <text x="430" y="288" font-size="13" font-weight="bold" fill="#2d6a4f">uniq -c</text>
+  <rect x="500" y="270" width="150" height="80" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="296" font-size="13" fill="#333">1×2  4×4</text>
+  <text x="514" y="318" font-size="13" fill="#333">3×7  2×9</text>
+  <text x="514" y="340" font-size="13" fill="#555">값 순서 그대로</text>
+
+  <text x="656" y="288" font-size="13" font-weight="bold" fill="#2d6a4f">sort -rn</text>
+  <rect x="720" y="270" width="130" height="80" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="734" y="296" font-size="13" fill="#333">4×4  3×7</text>
+  <text x="734" y="318" font-size="13" fill="#333">2×9  1×2</text>
+  <text x="734" y="340" font-size="13" fill="#555">많은 순</text>
+
+  <!-- arrows -->
+  <path d="M 180 180 L 240 104 L 288 104" fill="none" stroke="#9d0208" stroke-width="1.3" marker-end="url(#arr)"/>
+  <path d="M 180 230 L 230 310 L 248 310" fill="none" stroke="#2d6a4f" stroke-width="1.3" marker-end="url(#arg)"/>
+  <line x1="420" y1="310" x2="498" y2="310" stroke="#2d6a4f" stroke-width="1.3" marker-end="url(#arg)"/>
+  <line x1="650" y1="310" x2="718" y2="310" stroke="#2d6a4f" stroke-width="1.3" marker-end="url(#arg)"/>
+
+  <text x="30" y="386" font-size="13" fill="#333">uniq 는 이웃한 줄끼리만 같은지 본다. 떨어져 있는 같은 값은 서로 다른 묶음으로 세어진다.</text>
+  <text x="30" y="406" font-size="13" fill="#333">sort 가 같은 값을 붙여 놓아야 uniq -c 의 숫자가 "값별 건수"가 된다.</text>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

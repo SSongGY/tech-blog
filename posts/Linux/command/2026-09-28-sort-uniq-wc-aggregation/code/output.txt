@@ -1,0 +1,309 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-09-28-sort-uniq-wc-aggregation
+# 명령      : bash sort_uniq_wc.sh
+# 수행 시각 : 2026-09-28 08:38 (대한민국 표준시)
+# 소요      : 5.0초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+===== 0. 버전과 로케일
+$ sort --version | head -1
+sort (GNU coreutils) 8.32
+$ uniq --version | head -1
+uniq (GNU coreutils) 8.32
+$ wc --version | head -1
+wc (GNU coreutils) 8.32
+$ bash --version | head -1
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+$ echo "LANG=${LANG:-} LC_ALL=${LC_ALL:-}"
+LANG= LC_ALL=
+
+===== 1. 기본 정렬은 로케일을 따른다
+$ LC_ALL=C sort words.txt
+Apple
+Banana
+_tmp
+apple
+banana
+cherry
+$ LC_ALL=en_US.UTF-8 sort words.txt
+_tmp
+apple
+Apple
+banana
+Banana
+cherry
+
+===== 2. 숫자 정렬 -n, -g, -h
+$ sort numbers.txt | paste -sd' '
+-3 1.5 10 100 2 9
+$ sort -n numbers.txt | paste -sd' '
+-3 1.5 2 9 10 100
+$ sort -n general.txt | paste -sd' '
+0x10 1e3 5 20
+$ sort -g general.txt | paste -sd' '
+5 0x10 20 1e3
+$ sort -n sizes.txt | paste -sd' '
+1G 1K 2M 3K 512
+$ sort -h sizes.txt | paste -sd' '
+512 1K 3K 2M 1G
+
+===== 3. 버전 -V, 월 -M, 역순 -r
+$ sort versions.txt | paste -sd' '
+app-1.10.0 app-1.2.0 app-1.2.10 app-1.9.3
+$ sort -V versions.txt | paste -sd' '
+app-1.2.0 app-1.2.10 app-1.9.3 app-1.10.0
+$ sort -M months.txt | paste -sd' '
+xyz jan feb MAR Dec
+$ sort -rn numbers.txt | paste -sd' '
+100 10 9 2 1.5 -3
+$ sort --sort=version -r versions.txt | paste -sd' '
+app-1.10.0 app-1.9.3 app-1.2.10 app-1.2.0
+
+===== 4. 비교 전 문자 다루기 -f, -b, -d, -i
+$ LC_ALL=C sort words.txt | paste -sd' '
+Apple Banana _tmp apple banana cherry
+$ LC_ALL=C sort -f words.txt | paste -sd' '
+Apple apple Banana banana cherry _tmp
+$ LC_ALL=C sort blanks.txt | cat -A
+  zeta$
+ beta$
+alpha$
+$ LC_ALL=C sort -b blanks.txt | cat -A
+alpha$
+ beta$
+  zeta$
+$ LC_ALL=C sort dict.txt | paste -sd'|'
+a.3|a_1|b 1|b-2
+$ LC_ALL=C sort -d dict.txt | paste -sd'|'
+a_1|a.3|b 1|b-2
+$ LC_ALL=C sort nonprint.txt | cat -A
+a^Bz$
+ab$
+b^Ax$
+$ LC_ALL=C sort -i nonprint.txt | cat -A
+ab$
+a^Bz$
+b^Ax$
+
+===== 5. 키 -k 와 구분자 -t
+$ sort -t, -k3 staff.csv | paste -sd' '
+han,hr,1200 lee,ops,450 jung,dev,500 park,dev,500 kim,dev,700 choi,ops,800
+$ sort -t, -k3n staff.csv | paste -sd' '
+lee,ops,450 jung,dev,500 park,dev,500 kim,dev,700 choi,ops,800 han,hr,1200
+$ sort -t, -k2,2 -k3,3nr staff.csv
+kim,dev,700
+jung,dev,500
+park,dev,500
+han,hr,1200
+choi,ops,800
+lee,ops,450
+$ sort -t, -k2 staff.csv | paste -sd' '
+jung,dev,500 park,dev,500 kim,dev,700 han,hr,1200 lee,ops,450 choi,ops,800
+$ sort -t, -k2,2 staff.csv | paste -sd' '
+jung,dev,500 kim,dev,700 park,dev,500 han,hr,1200 choi,ops,800 lee,ops,450
+$ sort -t, -k2 --debug staff.csv 2>&1 | head -6
+sort: text ordering performed using simple byte comparison
+jung,dev,500
+     _______
+____________
+park,dev,500
+     _______
+$ sort -t, -k2,2 --debug staff.csv 2>&1 | head -6
+sort: text ordering performed using simple byte comparison
+jung,dev,500
+     ___
+____________
+kim,dev,700
+    ___
+$ sort -s -k2.1,2.1 status.log
+09:00:01 200 /api/orders
+09:00:02 200 /api/stock
+09:00:05 500 /api/orders
+09:00:06 200 /api/orders
+09:00:08 404 /healthz
+09:00:09 500 /api/orders
+09:00:12 503 /api/stock
+$ sort -s -k2.1,2.1 --debug status.log 2>&1 | head -4
+sort: text ordering performed using simple byte comparison
+sort: leading blanks are significant in key 1; consider also specifying 'b'
+09:00:01 200 /api/orders
+        _
+$ sort -s -b -k2.1,2.1 status.log
+09:00:01 200 /api/orders
+09:00:02 200 /api/stock
+09:00:06 200 /api/orders
+09:00:08 404 /healthz
+09:00:05 500 /api/orders
+09:00:09 500 /api/orders
+09:00:12 503 /api/stock
+
+===== 6. 안정 정렬 -s
+$ sort -t, -k3,3n staff.csv | paste -sd' '
+lee,ops,450 jung,dev,500 park,dev,500 kim,dev,700 choi,ops,800 han,hr,1200
+$ sort -s -t, -k3,3n staff.csv | paste -sd' '
+lee,ops,450 park,dev,500 jung,dev,500 kim,dev,700 choi,ops,800 han,hr,1200
+$ sort -s -t, -k3,3n -r staff.csv | paste -sd' '
+lee,ops,450 park,dev,500 jung,dev,500 kim,dev,700 choi,ops,800 han,hr,1200
+$ sort -s -t, -k3,3nr staff.csv | paste -sd' '
+han,hr,1200 choi,ops,800 kim,dev,700 park,dev,500 jung,dev,500 lee,ops,450
+
+===== 7. 중복 제거 -u
+$ sort -u ip.txt | paste -sd' '
+10.0.0.2 10.0.0.4 10.0.0.7 10.0.0.9
+$ sort -t, -k2,2 -u staff.csv | paste -sd' '
+kim,dev,700 han,hr,1200 lee,ops,450
+$ sort -f -u levels.txt | paste -sd' '
+ERROR warn
+
+===== 8. 검사 -c, -C
+$ sort -c numbers.txt
+[종료 코드 1]
+$ sort -C numbers.txt
+[종료 코드 1]
+$ sort -n numbers.txt | sort -nc
+$ sort -u ip.txt | sort -cu
+$ sort ip.txt | sort -cu
+[종료 코드 1]
+
+===== 9. 병합 -m, 출력 -o, 여러 파일
+$ sort -m sorted_a.txt sorted_b.txt | paste -sd' '
+a b c d e f
+$ sort sorted_b.txt sorted_a.txt | paste -sd' '
+a b c d e f
+$ cp numbers.txt redirect.txt && sort -n redirect.txt > redirect.txt; wc -l redirect.txt
+0 redirect.txt
+$ cp numbers.txt inplace.txt && sort -n -o inplace.txt inplace.txt; paste -sd' ' inplace.txt
+-3 1.5 2 9 10 100
+$ sort --files0-from=names0.txt | head -3
+10.0.0.2
+10.0.0.4
+10.0.0.4
+
+===== 10. 구분자 -z, 무작위 -R
+$ printf 'b\0a\0c\0' | sort -z | tr '\0' ' '; echo
+a b c 
+$ sort -R --random-source=seed.bin ip.txt | paste -sd' '
+10.0.0.2 10.0.0.7 10.0.0.7 10.0.0.7 10.0.0.4 10.0.0.4 10.0.0.4 10.0.0.4 10.0.0.9 10.0.0.9
+$ sort -R --random-source=seed.bin ip.txt | paste -sd' '
+10.0.0.2 10.0.0.7 10.0.0.7 10.0.0.7 10.0.0.4 10.0.0.4 10.0.0.4 10.0.0.4 10.0.0.9 10.0.0.9
+
+===== 11. 자원 -S, -T, --parallel, --batch-size, --compress-program
+$ sort ip.txt | md5sum
+593f3c20089da5e07e0bcde8697e9d20 *-
+$ sort -S 1K -T . --parallel=1 --batch-size=2 ip.txt | md5sum
+593f3c20089da5e07e0bcde8697e9d20 *-
+$ sort -S 1K --compress-program=gzip ip.txt | md5sum
+593f3c20089da5e07e0bcde8697e9d20 *-
+
+===== 12. uniq 는 바로 앞 줄과만 비교한다
+$ uniq ip.txt | paste -sd' '
+10.0.0.4 10.0.0.7 10.0.0.4 10.0.0.9 10.0.0.4 10.0.0.7 10.0.0.9 10.0.0.4 10.0.0.2 10.0.0.7
+$ uniq -c ip.txt
+      1 10.0.0.4
+      1 10.0.0.7
+      1 10.0.0.4
+      1 10.0.0.9
+      1 10.0.0.4
+      1 10.0.0.7
+      1 10.0.0.9
+      1 10.0.0.4
+      1 10.0.0.2
+      1 10.0.0.7
+$ sort ip.txt | uniq -c
+      1 10.0.0.2
+      4 10.0.0.4
+      3 10.0.0.7
+      2 10.0.0.9
+$ sort ip.txt | uniq -c | sort -rn
+      4 10.0.0.4
+      3 10.0.0.7
+      2 10.0.0.9
+      1 10.0.0.2
+$ sort ip.txt | uniq -c | sort -k1,1nr -k2,2V
+      4 10.0.0.4
+      3 10.0.0.7
+      2 10.0.0.9
+      1 10.0.0.2
+
+===== 13. uniq 가 무엇을 남기는가 -d, -D, -u, --all-repeated, --group
+$ sort ip.txt | uniq -d | paste -sd' '
+10.0.0.4 10.0.0.7 10.0.0.9
+$ sort ip.txt | uniq -D | paste -sd' '
+10.0.0.4 10.0.0.4 10.0.0.4 10.0.0.4 10.0.0.7 10.0.0.7 10.0.0.7 10.0.0.9 10.0.0.9
+$ sort ip.txt | uniq -u | paste -sd' '
+10.0.0.2
+$ sort ip.txt | uniq --all-repeated=separate
+10.0.0.4
+10.0.0.4
+10.0.0.4
+10.0.0.4
+
+10.0.0.7
+10.0.0.7
+10.0.0.7
+
+10.0.0.9
+10.0.0.9
+$ sort ip.txt | uniq --group=append | head -6
+10.0.0.2
+
+10.0.0.4
+10.0.0.4
+10.0.0.4
+10.0.0.4
+
+===== 14. uniq 가 무엇을 비교하는가 -i, -f, -s, -w, -z
+$ uniq -i levels.txt | paste -sd' '
+ERROR warn
+$ uniq -c -f1 fields.txt
+      2 x1 GET /a
+      2 x3 POST /b
+$ uniq -c -s2 fields.txt
+      2 x1 GET /a
+      2 x3 POST /b
+$ uniq -c -w1 fields.txt
+      3 x1 GET /a
+      1 y4 POST /b
+$ printf 'a\0a\0b\0' | uniq -z | tr '\0' ' '; echo
+a b 
+$ sort -u ip.txt > u1.txt; sort ip.txt | uniq > u2.txt; cmp u1.txt u2.txt && echo same
+same
+
+===== 15. wc 가 세는 것 -l, -w, -c, -m, -L
+$ wc spaces.txt
+ 3  5 32 spaces.txt
+$ wc -l no_newline.txt
+2 no_newline.txt
+$ wc -w spaces.txt
+5 spaces.txt
+$ LC_ALL=C wc -c -m hangul.txt
+18 18 hangul.txt
+$ LC_ALL=en_US.UTF-8 wc -c -m hangul.txt
+10 18 hangul.txt
+$ LC_ALL=en_US.UTF-8 wc -L hangul.txt
+9 hangul.txt
+$ wc -m -c -l hangul.txt
+ 2 18 18 hangul.txt
+
+===== 16. wc 의 출력 모양 — 여러 파일, 표준 입력, --files0-from
+$ wc -l ip.txt words.txt empty.txt
+ 10 ip.txt
+  6 words.txt
+  0 empty.txt
+ 16 total
+$ wc -l < ip.txt
+10
+$ cat ip.txt | wc -l
+10
+$ wc -l --files0-from=names0.txt
+ 10 ip.txt
+  6 words.txt
+ 16 total
+
+--- stderr ---
+sort: numbers.txt:3: disorder: 100
+sort: -:3: disorder: 10.0.0.4
