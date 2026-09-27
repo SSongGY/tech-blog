@@ -64,3 +64,10 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다. 다른 회차를 기다려야 하면
   `mcp__scheduled-tasks__list_task_runs` 를 다시 부른다
+
+## 멈춘 회차를 만나면
+
+`list_task_runs` 에서 다른 작업이 `running` 인데 `started_at` 이 **3시간**을
+넘었으면 돌고 있는 것이 아니라 **멈춘 것이다.** 기다리지 말고
+`PushNotification` 으로 알리고 오늘 회차는 건너뛴다. 저장소는 건드리지 않는다.
+조용히 건너뛰면 아무도 모른 채 며칠이 빈다.

@@ -823,7 +823,7 @@ topics:
     difficulty: 중급
     angle: "상관 서브쿼리가 행마다 실행되는 것을 실행계획으로"
     code: python
-    status: todo
+    status: done
   - id: bas-012
     title: "IN, EXISTS, NOT IN — 결과가 갈리는 지점"
     category: Database
@@ -1094,7 +1094,7 @@ topics:
     difficulty: 입문
     angle: "단계별 산출물과 전환 시 결정되는 사항"
     code: none
-    status: todo
+    status: done
   - id: pe-014
     title: "OSI 7계층과 TCP/IP 4계층 대응"
     category: PE
@@ -1508,7 +1508,8 @@ topics:
     difficulty: 입문
     angle: "df와 du 합계가 어긋나는 대표 원인 세 가지"
     code: shell
-    status: todo
+    status: blocked
+    blocked_note: df/du 예제를 bash 로 직접 돌리다 권한에 막혔다. 허용 규칙을 넣었으니 unblock 하면 된다
   - id: lx-003
     title: "free와 vmstat — 메모리 부족을 판단하는 기준"
     category: Linux
