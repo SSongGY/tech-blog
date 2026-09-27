@@ -1,0 +1,163 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-28-in-exists-not-in-null
+# 명령      : python in_exists_not_in.py
+# 수행 시각 : 2026-09-28 08:23 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer]  5행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+-------
+   1 | 한지우
+   2 | 오민재
+   3 | 윤서아
+   4 | 장하준
+   5 | 임채원
+
+[purchase]  6행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  id          | INTEGER | PK
+  customer_id | INTEGER |
+  amount      | INTEGER | NOT NULL
+
+  id  | customer_id | amount
+  ----+-------------+-------
+  101 |           1 |  12000
+  102 |           1 |   8000
+  103 |           2 |  30000
+  104 |           3 |   5000
+  105 |        NULL |   7000
+  106 |           3 |   9000
+
+
+== 1. 목록에 NULL 이 있을 때 IN / NOT IN 이 돌려주는 값 ==
+
+[1-A 목록에 있는 값]
+  SELECT 1 IN (1, 2, NULL), 1 NOT IN (1, 2, NULL)
+  (1, 0)
+  -> 1행
+
+[1-B 목록에 없는 값]
+  SELECT 3 IN (1, 2, NULL), 3 NOT IN (1, 2, NULL)
+  (None, None)
+  -> 1행
+
+[1-C NULL 이 없는 목록]
+  SELECT 3 IN (1, 2), 3 NOT IN (1, 2)
+  (0, 1)
+  -> 1행
+
+[1-D 왼쪽이 NULL]
+  SELECT NULL IN (1, 2), NULL NOT IN (1, 2)
+  (None, None)
+  -> 1행
+
+[1-E 풀어 쓴 NOT IN]
+  SELECT 3 <> 1 AND 3 <> 2 AND 3 <> NULL
+  (None,)
+  -> 1행
+
+== 2. 산 적이 있는 고객 — IN, EXISTS, JOIN ==
+
+[2-A IN]
+  SELECT c.id, c.name FROM customer AS c WHERE c.id IN (SELECT p.customer_id FROM purchase AS p) ORDER BY c.id
+  (1, '한지우')
+  (2, '오민재')
+  (3, '윤서아')
+  -> 3행
+
+[2-B EXISTS]
+  SELECT c.id, c.name FROM customer AS c WHERE EXISTS (SELECT 1 FROM purchase AS p WHERE p.customer_id = c.id) ORDER BY c.id
+  (1, '한지우')
+  (2, '오민재')
+  (3, '윤서아')
+  -> 3행
+
+[2-C INNER JOIN]
+  SELECT c.id, c.name FROM customer AS c INNER JOIN purchase AS p ON p.customer_id = c.id ORDER BY c.id
+  (1, '한지우')
+  (1, '한지우')
+  (2, '오민재')
+  (3, '윤서아')
+  (3, '윤서아')
+  -> 5행
+
+== 3. 한 번도 안 산 고객 — NOT IN, NOT EXISTS, LEFT JOIN ==
+
+[3-A NOT IN]
+  SELECT c.id, c.name FROM customer AS c WHERE c.id NOT IN (SELECT p.customer_id FROM purchase AS p) ORDER BY c.id
+  -> 0행
+
+[3-B NOT EXISTS]
+  SELECT c.id, c.name FROM customer AS c WHERE NOT EXISTS (SELECT 1 FROM purchase AS p WHERE p.customer_id = c.id) ORDER BY c.id
+  (4, '장하준')
+  (5, '임채원')
+  -> 2행
+
+[3-C LEFT JOIN ... IS NULL]
+  SELECT c.id, c.name FROM customer AS c LEFT JOIN purchase AS p ON p.customer_id = c.id WHERE p.id IS NULL ORDER BY c.id
+  (4, '장하준')
+  (5, '임채원')
+  -> 2행
+
+[3-D NOT IN + IS NOT NULL]
+  SELECT c.id, c.name FROM customer AS c WHERE c.id NOT IN (SELECT p.customer_id FROM purchase AS p WHERE p.customer_id IS NOT NULL) ORDER BY c.id
+  (4, '장하준')
+  (5, '임채원')
+  -> 2행
+
+== 4. 비회원 결제를 지우면 ==
+
+[4-A NOT IN (NULL 행 삭제 후)]
+  SELECT c.id, c.name FROM customer AS c WHERE c.id NOT IN (SELECT p.customer_id FROM purchase AS p) ORDER BY c.id
+  (4, '장하준')
+  (5, '임채원')
+  -> 2행
+
+== 5. 실행계획 ==
+
+[5-A IN]
+  QUERY PLAN
+  |--SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+  `--LIST SUBQUERY 1
+     |--SCAN p
+     `--CREATE BLOOM FILTER
+
+[5-B EXISTS]
+  QUERY PLAN
+  |--SCAN c
+  `--CORRELATED SCALAR SUBQUERY 1
+     `--SCAN p
+
+[5-C NOT IN]
+  QUERY PLAN
+  |--SCAN c
+  `--LIST SUBQUERY 1
+     |--SCAN p
+     `--CREATE BLOOM FILTER
+
+[5-D NOT EXISTS]
+  QUERY PLAN
+  |--SCAN c
+  `--CORRELATED SCALAR SUBQUERY 1
+     `--SCAN p
