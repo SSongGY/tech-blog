@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">OSI 7계층과 TCP/IP 4계층 — 표준 문서가 적은 대응</text>
+  <text x="30" y="56" font-size="13" fill="#555">왼쪽 ITU-T X.200 | ISO/IEC 7498-1, 오른쪽 RFC 1122 · RFC 1812. 주황 점선은 두 RFC가 다르게 적거나 모델 밖에 둔 부분</text>
+
+  <text x="40" y="82" font-size="14" font-weight="bold" fill="#1b1b1b">OSI 참조 모델</text>
+  <text x="440" y="82" font-size="14" font-weight="bold" fill="#1b1b1b">인터넷 프로토콜 계층</text>
+  <text x="700" y="82" font-size="14" font-weight="bold" fill="#1b1b1b">전송 단위 (RFC 1122)</text>
+
+  <!-- OSI 7 layers -->
+  <rect x="40" y="92" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="117" font-size="13" fill="#1b1b1b">7 응용 Application</text>
+  <rect x="40" y="136" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="161" font-size="13" fill="#1b1b1b">6 표현 Presentation</text>
+  <rect x="40" y="180" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="205" font-size="13" fill="#1b1b1b">5 세션 Session</text>
+  <rect x="40" y="224" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="249" font-size="13" fill="#1b1b1b">4 전송 Transport</text>
+  <rect x="40" y="268" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="293" font-size="13" fill="#1b1b1b">3 네트워크 Network</text>
+  <rect x="40" y="312" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="337" font-size="13" fill="#1b1b1b">2 데이터 링크 Data Link</text>
+  <rect x="40" y="356" width="260" height="40" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="56" y="381" font-size="13" fill="#1b1b1b">1 물리 Physical</text>
+
+  <!-- TCP/IP layers -->
+  <rect x="440" y="92" width="230" height="84" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="456" y="130" font-size="13" font-weight="bold" fill="#1b1b1b">응용 Application</text>
+  <text x="456" y="152" font-size="13" fill="#333">Telnet, FTP, SMTP, DNS</text>
+
+  <text x="456" y="205" font-size="13" fill="#b45309">↑↓ 세션 기능은 응용·전송에 나뉨</text>
+
+  <rect x="440" y="224" width="230" height="40" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="456" y="249" font-size="13" font-weight="bold" fill="#1b1b1b">전송 Transport</text>
+  <text x="580" y="249" font-size="13" fill="#333">TCP, UDP</text>
+
+  <rect x="440" y="268" width="230" height="40" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="456" y="293" font-size="13" font-weight="bold" fill="#1b1b1b">인터넷 Internet</text>
+  <text x="572" y="293" font-size="13" fill="#333">IP, ICMP</text>
+
+  <rect x="440" y="312" width="230" height="40" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="456" y="337" font-size="13" font-weight="bold" fill="#1b1b1b">링크 Link</text>
+  <text x="548" y="337" font-size="13" fill="#333">망마다 다름</text>
+
+  <rect x="440" y="356" width="230" height="40" rx="4" fill="#fff7ed" stroke="#b45309" stroke-width="1.3" stroke-dasharray="5 4"/>
+  <text x="456" y="381" font-size="13" fill="#b45309">물리 매체 — 4계층 밖</text>
+
+  <!-- row connectors -->
+  <line x1="300" y1="112" x2="438" y2="112" stroke="#8a8a84" stroke-width="1"/>
+  <line x1="300" y1="156" x2="438" y2="156" stroke="#8a8a84" stroke-width="1"/>
+  <line x1="300" y1="200" x2="438" y2="200" stroke="#b45309" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="300" y1="244" x2="438" y2="244" stroke="#8a8a84" stroke-width="1"/>
+  <line x1="300" y1="288" x2="438" y2="288" stroke="#8a8a84" stroke-width="1"/>
+  <line x1="300" y1="332" x2="438" y2="332" stroke="#8a8a84" stroke-width="1"/>
+  <line x1="300" y1="376" x2="438" y2="376" stroke="#b45309" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- PDU names -->
+  <text x="700" y="249" font-size="13" fill="#333">세그먼트 (TCP)</text>
+  <text x="700" y="293" font-size="13" fill="#333">IP 데이터그램</text>
+  <text x="700" y="337" font-size="13" fill="#333">프레임</text>
+  <text x="700" y="381" font-size="13" fill="#333">비트 (X.200 7.7)</text>
+
+  <text x="30" y="428" font-size="13" fill="#333">RFC 1122는 인터넷 응용 계층이 OSI의 표현·응용 두 계층을 합친 것이라 적고,</text>
+  <text x="30" y="448" font-size="13" fill="#333">RFC 1812는 세션 계층 기능 일부가 응용에, 연결 수립·해제 기능 일부가 전송에 들어 있다고 적는다.</text>
+  <text x="30" y="468" font-size="13" fill="#333">RFC 1812의 링크 계층은 인터넷 계층 아래, 물리 계층 위의 전부다.</text>
+</svg>
