@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">디지털 포렌식 절차 — 매체가 증거가 되기까지</text>
+
+  <!-- NIST 4단계 -->
+  <text x="20" y="66" font-size="13" fill="#4a5568">NIST SP 800-86 4단계</text>
+
+  <rect x="20" y="78" width="190" height="58" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="115" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 수집</text>
+  <text x="115" y="122" text-anchor="middle" font-size="13" fill="#4a5568">식별 · 기록 · 무결성 보존</text>
+
+  <rect x="240" y="78" width="190" height="58" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="335" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 조사</text>
+  <text x="335" y="122" text-anchor="middle" font-size="13" fill="#4a5568">도구로 관련 데이터 추출</text>
+
+  <rect x="460" y="78" width="190" height="58" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="555" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 분석</text>
+  <text x="555" y="122" text-anchor="middle" font-size="13" fill="#4a5568">질문에 답하는 정보 도출</text>
+
+  <rect x="680" y="78" width="180" height="58" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="770" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">④ 보고</text>
+  <text x="770" y="122" text-anchor="middle" font-size="13" fill="#4a5568">수행 내용 · 개선 권고</text>
+
+  <line x1="210" y1="107" x2="236" y2="107" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="430" y1="107" x2="456" y2="107" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="650" y1="107" x2="676" y2="107" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+
+  <!-- 변환 -->
+  <text x="20" y="170" font-size="13" fill="#4a5568">변환</text>
+  <text x="115" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">매체</text>
+  <text x="335" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">데이터</text>
+  <text x="555" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">정보</text>
+  <text x="770" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">증거</text>
+  <line x1="150" y1="165" x2="296" y2="165" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="374" y1="165" x2="524" y2="165" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="586" y1="165" x2="740" y2="165" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+
+  <!-- ISO 27037: 수집 단계 세분 -->
+  <path d="M20,206 L20,200 L430,200 L430,206" fill="none" stroke="#b45309" stroke-width="1.2"/>
+  <text x="225" y="222" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">ISO/IEC 27037 — 수집을 4개 처리로 세분</text>
+
+  <rect x="34" y="234" width="92" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.2" rx="4"/>
+  <text x="80" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">식별</text>
+  <text x="80" y="280" text-anchor="middle" font-size="13" fill="#4a5568">찾고 기록</text>
+
+  <rect x="134" y="234" width="92" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.2" rx="4"/>
+  <text x="180" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">수집</text>
+  <text x="180" y="280" text-anchor="middle" font-size="13" fill="#4a5568">매체 확보</text>
+
+  <rect x="234" y="234" width="92" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.2" rx="4"/>
+  <text x="280" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">획득</text>
+  <text x="280" y="280" text-anchor="middle" font-size="13" fill="#4a5568">사본 생성</text>
+
+  <rect x="334" y="234" width="86" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.2" rx="4"/>
+  <text x="377" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">보존</text>
+  <text x="377" y="280" text-anchor="middle" font-size="13" fill="#4a5568">무결성 유지</text>
+
+  <!-- 무결성 장치 -->
+  <text x="460" y="222" font-size="13" font-weight="bold" fill="#1b1b1b">무결성을 지키는 장치</text>
+  <text x="460" y="246" font-size="13" fill="#1b1b1b">· 쓰기 방지 장치로 원본에 쓰지 않는다</text>
+  <text x="460" y="268" font-size="13" fill="#1b1b1b">· 원본과 사본의 해시 값을 비교한다</text>
+  <text x="460" y="290" font-size="13" fill="#1b1b1b">· 조사 · 분석은 사본으로만 한다</text>
+  <text x="460" y="312" font-size="13" fill="#1b1b1b">· 휘발성 높은 것부터 수집한다 (RFC 3227)</text>
+
+  <!-- 연계 보관성 -->
+  <line x1="20" y1="340" x2="860" y2="340" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="440" y="362" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">연계 보관성(Chain of Custody) — 전 단계에 걸쳐 기록</text>
+  <text x="440" y="381" text-anchor="middle" font-size="13" fill="#4a5568">누가 · 언제 · 어디서 발견 · 수집했고, 누가 보관 · 인계했는가</text>
+</svg>
