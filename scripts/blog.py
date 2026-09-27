@@ -1771,6 +1771,10 @@ TOOLCHAINS = ("go", "cargo", "docker", "openssl", "sqlite3")
 LINUX_TOOLS = ("ps", "top", "df", "du", "free", "vmstat", "iostat",
                "ss", "netstat", "lsof", "unshare", "stat", "strace", "systemctl")
 
+# 리눅스 글은 이 도구들의 버전을 environment 에 숫자까지 적어야 한다 (§5).
+# 회차가 bash --version 을 직접 부르면 허용 규칙에 없어 멈추므로 여기서 같이 준다.
+SHELL_TOOLS = ("bash", "sed", "grep", "awk", "sort", "find", "tar", "curl", "jq")
+
 
 def tool_version(name: str) -> str:
     """--version 을 물어 첫 줄만 가져온다. 버전은 environment 에 그대로 쓴다 (§5)."""
@@ -1779,13 +1783,21 @@ def tool_version(name: str) -> str:
         return "없음"
     for flag in ("--version", "-version", "-v"):
         try:
-            done = subprocess.run([name, flag], capture_output=True, text=True,
+            # 이름이 아니라 which 가 찾은 경로로 부른다. 윈도우는 PATH 해석이
+            # 달라서 System32\find.exe 가 Git Bash 의 GNU find 를 가로챈다.
+            done = subprocess.run([path, flag], capture_output=True, text=True,
                                   timeout=15, encoding="utf-8", errors="replace")
         except (OSError, subprocess.SubprocessError):
             continue
         line = (done.stdout or done.stderr).strip().splitlines()
-        if line:
-            return line[0].strip()
+        if not line:
+            continue
+        first = line[0].strip()
+        # 버전 숫자가 없으면 --version 을 모르는 다른 명령이 PATH 앞에 있는 것이다.
+        # 윈도우의 find.exe·sort.exe 가 GNU 판을 가린다. 그대로 쓰면 글이 틀린다.
+        if not re.search(r"\d+\.\d+", first):
+            return f"[주의] --version 을 모른다. GNU 판이 아닐 수 있다 → {path}"
+        return first
     return "있음 (버전 확인 실패)"
 
 
@@ -1814,6 +1826,10 @@ def cmd_env(args: argparse.Namespace) -> int:
 
     print("\n그 밖의 도구")
     for name in TOOLCHAINS:
+        print(f"  {name:8s} {tool_version(name)}")
+
+    print("\n셸·텍스트 도구 — 이 줄을 environment 에 그대로 옮긴다 (§5)")
+    for name in SHELL_TOOLS:
         print(f"  {name:8s} {tool_version(name)}")
 
     print("\n리눅스 조회 도구 — 없는 것을 다루는 주제는 이 환경에서 검증할 수 없다")
