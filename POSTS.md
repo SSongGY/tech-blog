@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **59편** · 갱신 2026-09-28
+총 **61편** · 갱신 2026-09-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -78,10 +78,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 10편
+## 기출문제 (exam) — 12편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-28 | [기출문제 — 비인간 신원(NHI)의 보안 취약점](posts/PE/exam/2026-09-28-non-human-identity-security-weaknesses/index.md) | 중급 | OWASP NHI Top 10 (2025), NIST SP 800-207A (2023-09), IETF draft-ietf-wimse-arch-08 (2026-07) | 문서 근거 |
+| 2026-09-28 | [기출문제 — 디지털 포렌식](posts/PE/exam/2026-09-28-digital-forensics/index.md) | 중급 | NIST SP 800-86 (2006-08), ISO/IEC 27037:2012, RFC 3227 (2002-02) | 문서 근거 |
 | 2026-09-23 | [기출문제 — Physical AI와 생성형 AI 비교](posts/PE/exam/2026-09-23-physical-ai-vs-generative-ai/index.md) | 중급 | NIST AI 600-1 (2024-07), RT-2 arXiv:2307.15818 (2023-07), WEF Physical AI White Paper (2025-09) | 문서 근거 |
 | 2026-09-23 | [기출문제 — 차등 맨체스터(Differential Manchester) 부호화](posts/PE/exam/2026-09-23-differential-manchester-encoding/index.md) | 중급 | IEEE 802.5 (Token Ring), IEEE 802.3cg Draft D0.3 (2017-11), Python 3.13.5 | 실행 검증 |
 | 2026-09-22 | [기출문제 — 좀비 프로세스](posts/PE/exam/2026-09-22-zombie-process/index.md) | 중급 | IEEE Std 1003.1-2024 (POSIX.1-2024), Linux man-pages — wait(2)·proc(5)·pid_namespaces(7), 2026-09-22 조회, Docker Engine CLI 문서 (docker run --init), 2026-09-22 조회 | 문서 근거 |

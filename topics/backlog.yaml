@@ -1508,7 +1508,7 @@ topics:
     difficulty: 입문
     angle: "df와 du 합계가 어긋나는 대표 원인 세 가지"
     code: shell
-    status: blocked
+    status: todo
     blocked_note: df/du 예제를 bash 로 직접 돌리다 권한에 막혔다. 허용 규칙을 넣었으니 unblock 하면 된다
   - id: lx-003
     title: "free와 vmstat — 메모리 부족을 판단하는 기준"
@@ -3111,6 +3111,28 @@ topics:
     tags: [정보관리기술사, network, 개념정리]
     difficulty: 중급
     angle: "천이 방향·유무·레벨 중 무엇으로 비트를 싣는지를 축으로 부호를 분류하고, 클록 복원·DC 균형·대역폭 비용의 트레이드오프를 비교표로. 10BASE-T1S처럼 블록 부호와 선로 부호를 겹쳐 쓰는 이유"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-115
+    title: "비인간 신원(NHI)과 워크로드 신원 관리"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "서비스 계정·API 키·인증서의 수명주기, 베어러 자격증명과 소유 증명, SPIFFE·WIMSE 기반 워크로드 신원"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-116
+    title: "디지털 포렌식 절차와 증거 무결성"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "NIST SP 800-86 4단계와 ISO/IEC 27037 증거 처리 과정, 연계 보관성·해시·휘발성 순서, 포렌식 준비도"
     code: none
     origin: exam
     status: todo
