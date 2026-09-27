@@ -834,7 +834,7 @@ topics:
     difficulty: 중급
     angle: "NOT IN에 NULL이 섞이면 결과가 빈다는 것을 재현"
     code: python
-    status: todo
+    status: done
   - id: bas-013
     title: "UNION과 UNION ALL — 중복 제거 비용"
     category: Database
@@ -1104,7 +1104,7 @@ topics:
     difficulty: 입문
     angle: "계층별 PDU와 대표 프로토콜, 장비를 한 장에"
     code: none
-    status: todo
+    status: done
   - id: pe-015
     title: "TCP 3-way 핸드셰이크와 흐름·혼잡 제어"
     category: PE
@@ -1690,7 +1690,7 @@ topics:
     difficulty: 입문
     angle: "uniq -c 앞에 sort가 반드시 와야 하는 이유"
     code: shell
-    status: todo
+    status: done
   - id: lx-021
     title: "ulimit — 자원 한도와 too many open files"
     category: Linux
