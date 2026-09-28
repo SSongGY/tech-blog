@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **70편** · 갱신 2026-09-28
+총 **73편** · 갱신 2026-09-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 13편
+## DB문법 (basics) — 14편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-28 | [UNION과 UNION ALL — 중복 제거 비용](posts/Database/sql-basics/2026-09-28-union-vs-union-all/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [IN, EXISTS, NOT IN — 결과가 갈리는 지점](posts/Database/sql-basics/2026-09-28-in-exists-not-in-null/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-09-28 | [CASE WHEN — 조건부 값과 피벗](posts/Database/sql-basics/2026-09-28-case-when-conditional-pivot/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-23 | [서브쿼리 세 가지 — 스칼라, 인라인 뷰, 상관](posts/Database/sql-basics/2026-09-23-subquery-scalar-inline-correlated/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-23 | [LEFT JOIN — 없는 쪽을 남기는 조인](posts/Database/sql-basics/2026-09-23-left-join-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-23 | [INNER JOIN — 두 테이블을 잇는 기본](posts/Database/sql-basics/2026-09-23-inner-join-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -22,21 +23,23 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 5편
+## DB기능 (product) — 6편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-28 | [Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가](posts/Database/tibero/2026-09-28-tibero7-index-types/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-23 | [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-23 | [Tibero 7 파티션 테이블 — 종류별로 언제 쓰는가](posts/Database/tibero/2026-09-23-tibero7-partition-table-types/index.md) | 심화 | Tibero 7.2 | 실행 검증 |
 | 2026-09-22 | [Tibero 7 MERGE 문 — UPSERT를 한 문장으로, 그리고 DELETE 절의 함정](posts/Database/tibero/2026-09-22-tibero7-merge-upsert/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 28편
+## 기술사 (pe) — 29편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-28 | [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](posts/PE/network/2026-09-28-tcp-handshake-flow-congestion-control/index.md) | 중급 | RFC 9293 (2022-08, STD 7), RFC 5681 (2009-09), RFC 9438 (2023-08), RFC 1122 (1989-10) | 문서 근거 |
+| 2026-09-28 | [라우팅 프로토콜 — 거리벡터와 링크상태](posts/PE/network/2026-09-28-routing-distance-vector-vs-link-state/index.md) | 중급 | RFC 2453 (1998-11, STD 56), RFC 2328 (1998-04, STD 54), Python 3.13.5 | 실행 검증 |
 | 2026-09-28 | [OSI 7계층과 TCP/IP 4계층 대응](posts/PE/network/2026-09-28-osi-7-layer-vs-tcpip-4-layer/index.md) | 입문 | ITU-T X.200 (07/1994) = ISO/IEC 7498-1:1994, RFC 1122 (1989-10, STD 3), RFC 1812 (1995-06), RFC 8446 (2018-08) | 문서 근거 |
 | 2026-09-28 | [비인간 신원(NHI)과 워크로드 신원 관리](posts/PE/security/2026-09-28-non-human-identity-workload-identity/index.md) | 중급 | OWASP NHI Top 10 (2025), NIST SP 800-207A (2023-09), IETF draft-ietf-wimse-arch-08 (2026-07), RFC 6750 (2012-10), RFC 9449 (2023-09) | 문서 근거 |
 | 2026-09-28 | [선로 부호화(Line Coding) — NRZ·NRZI·맨체스터·차등 맨체스터·4B5B](posts/PE/network/2026-09-28-line-coding-schemes/index.md) | 중급 | IEEE 802.3cg Draft D2.0 Clause 147 (2018-09), Intel UTMI Specification 1.05 (2001), Python 3.13.5 | 실행 검증 |

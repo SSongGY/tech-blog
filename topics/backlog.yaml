@@ -523,7 +523,7 @@ topics:
     difficulty: 중급
     angle: "함수 기반·비트맵·리버스·유니크를 쓸 자리 기준으로"
     code: sql
-    status: todo
+    status: done
   - id: tb-007
     title: "Tibero 7 옵티마이저 힌트 — 문법과 적용 확인"
     category: Database
@@ -854,7 +854,7 @@ topics:
     difficulty: 입문
     angle: "CASE로 행을 열로 돌리는 수동 피벗까지"
     code: python
-    status: todo
+    status: done
   - id: bas-015
     title: "COALESCE와 NULLIF — NULL을 다루는 두 함수"
     category: Database
@@ -1124,7 +1124,7 @@ topics:
     difficulty: 중급
     angle: "수렴 시간과 확장성 차이가 생기는 이유"
     code: none
-    status: todo
+    status: done
   - id: pe-017
     title: "SDN과 NFV — 제어와 데이터 평면 분리"
     category: PE
