@@ -3113,7 +3113,7 @@ topics:
     angle: "천이 방향·유무·레벨 중 무엇으로 비트를 싣는지를 축으로 부호를 분류하고, 클록 복원·DC 균형·대역폭 비용의 트레이드오프를 비교표로. 10BASE-T1S처럼 블록 부호와 선로 부호를 겹쳐 쓰는 이유"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-115
     title: "비인간 신원(NHI)과 워크로드 신원 관리"
     category: PE
@@ -3124,7 +3124,7 @@ topics:
     angle: "서비스 계정·API 키·인증서의 수명주기, 베어러 자격증명과 소유 증명, SPIFFE·WIMSE 기반 워크로드 신원"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-116
     title: "디지털 포렌식 절차와 증거 무결성"
     category: PE

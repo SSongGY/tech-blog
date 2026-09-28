@@ -53,3 +53,5 @@
 | 2026-09-28 | bas-012 | Database | IN, EXISTS, NOT IN — 결과가 갈리는 지점 |
 | 2026-09-28 | pe-014 | PE | OSI 7계층과 TCP/IP 4계층 대응 |
 | 2026-09-28 | lx-020 | Linux | sort, uniq, wc — 텍스트 집계 조합 |
+| 2026-09-28 | pe-114 | PE | 선로 부호화(Line Coding) — NRZ·NRZI·맨체스터·차등 맨체스터·4B5B |
+| 2026-09-28 | pe-115 | PE | 비인간 신원(NHI)과 워크로드 신원 관리 |
