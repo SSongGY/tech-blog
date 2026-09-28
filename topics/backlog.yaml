@@ -865,7 +865,7 @@ topics:
     difficulty: 입문
     angle: "NULL이 연산·비교·집계에서 각각 다르게 동작하는 것과 함께"
     code: python
-    status: todo
+    status: done
   - id: bas-016
     title: "INSERT — 단건, 다건, SELECT로 넣기"
     category: Database
@@ -1134,7 +1134,7 @@ topics:
     difficulty: 심화
     angle: "기존 네트워크 대비 무엇이 프로그래밍 가능해지는가"
     code: none
-    status: todo
+    status: done
   - id: pe-018
     title: "대칭키와 공개키 — 쓰임이 갈리는 지점"
     category: PE
@@ -1680,7 +1680,7 @@ topics:
     difficulty: 중급
     angle: "-n, -P로 병렬 처리하고 -0으로 공백 파일명을 넘기기"
     code: shell
-    status: todo
+    status: done
   - id: lx-020
     title: "sort, uniq, wc — 텍스트 집계 조합"
     category: Linux

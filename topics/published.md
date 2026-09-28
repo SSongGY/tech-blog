@@ -63,3 +63,6 @@
 | 2026-09-28 | bas-014 | Database | CASE WHEN — 조건부 값과 피벗 |
 | 2026-09-28 | tb-006 | Database | Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가 |
 | 2026-09-28 | pe-016 | PE | 라우팅 프로토콜 — 거리벡터와 링크상태 |
+| 2026-09-28 | bas-015 | Database | COALESCE와 NULLIF — NULL을 다루는 두 함수 |
+| 2026-09-28 | pe-017 | PE | SDN과 NFV — 제어와 데이터 평면 분리 |
+| 2026-09-28 | lx-019 | Linux | xargs — 파이프로 인자를 넘기는 법 |
