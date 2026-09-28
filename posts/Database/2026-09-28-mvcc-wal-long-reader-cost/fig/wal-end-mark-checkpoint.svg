@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">WAL 모드에서 읽기 트랜잭션 하나가 체크포인트를 멈추는 자리</text>
+  <text x="30" y="56" font-size="13" fill="#555">읽는 쪽이 BEGIN 후 첫 SELECT 를 한 시점(WAL 비어 있음)에서 커밋이 1,200번 쌓인 상태</text>
+
+  <!-- reader -->
+  <rect x="200" y="80" width="250" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="325" y="104" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">읽는 쪽 연결</text>
+  <text x="325" y="124" font-size="13" fill="#333" text-anchor="middle">end mark = 프레임 0 (시작 시점)</text>
+
+  <!-- writer -->
+  <rect x="600" y="80" width="250" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="725" y="104" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">쓰는 쪽 연결</text>
+  <text x="725" y="124" font-size="13" fill="#333" text-anchor="middle">COMMIT 마다 끝에 프레임 추가</text>
+
+  <!-- WAL file -->
+  <text x="470" y="176" font-size="13" font-weight="bold" fill="#1b1b1b">WAL 파일 (-wal)</text>
+  <rect x="200" y="186" width="70" height="50" fill="#eeeeea" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="235" y="215" font-size="13" fill="#333" text-anchor="middle">헤더</text>
+  <rect x="270" y="186" width="120" height="50" fill="#fdf3e7" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="330" y="215" font-size="13" fill="#333" text-anchor="middle">프레임 1</text>
+  <rect x="390" y="186" width="120" height="50" fill="#fdf3e7" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="450" y="215" font-size="13" fill="#333" text-anchor="middle">프레임 2</text>
+  <rect x="510" y="186" width="120" height="50" fill="#fdf3e7" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="570" y="215" font-size="13" fill="#333" text-anchor="middle">…</text>
+  <rect x="630" y="186" width="120" height="50" fill="#fdf3e7" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="690" y="215" font-size="13" fill="#333" text-anchor="middle">프레임 1200</text>
+
+  <!-- end mark line -->
+  <line x1="270" y1="180" x2="270" y2="246" stroke="#9d0208" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="300" y1="136" x2="274" y2="182" stroke="#8a8a84" stroke-width="1.2" marker-end="url(#ar)"/>
+  <line x1="725" y1="136" x2="700" y2="182" stroke="#8a8a84" stroke-width="1.2" marker-end="url(#ar)"/>
+
+  <text x="200" y="266" font-size="13" fill="#333">프레임 = 프레임 헤더 24바이트 + 페이지 4,096바이트. 이 실험은 커밋 1번에 프레임 1개</text>
+
+  <!-- DB file -->
+  <rect x="30" y="186" width="140" height="130" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="100" y="244" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">데이터베이스</text>
+  <text x="100" y="264" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">파일</text>
+
+  <!-- checkpoint -->
+  <rect x="200" y="300" width="430" height="74" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="216" y="326" font-size="13" font-weight="bold" fill="#9d0208">체크포인트: end mark 를 넘은 프레임은 옮기지 못한다</text>
+  <text x="216" y="348" font-size="13" fill="#333">가장 오래된 읽기의 end mark 가 0 이므로 옮길 수 있는 프레임 0개</text>
+  <text x="216" y="366" font-size="13" fill="#333">완료되지 않았으니 WAL 을 처음부터 다시 쓰지도(리셋) 못한다</text>
+  <line x1="200" y1="337" x2="174" y2="300" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- reader reads -->
+  <rect x="200" y="394" width="430" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="216" y="418" font-size="13" font-weight="bold" fill="#2d6a4f">읽는 쪽은 end mark 앞까지만 본다</text>
+  <text x="216" y="438" font-size="13" fill="#333">WAL 에 자기 몫의 프레임이 없으니 페이지를 DB 파일에서 읽는다</text>
+  <line x1="200" y1="422" x2="100" y2="320" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arg)"/>
+
+  <text x="30" y="484" font-size="13" fill="#333">읽기가 끝나야 체크포인트가 1,200개를 옮기고 WAL 을 되감을 수 있다. 그때까지 WAL 은 커밋 수에 비례해 커진다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

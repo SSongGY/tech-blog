@@ -1,0 +1,94 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\2026-09-28-mvcc-wal-long-reader-cost
+# 명령      : python mvcc_wal_cost.py
+# 수행 시각 : 2026-09-28 12:09 (대한민국 표준시)
+# 소요      : 1.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  100행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  owner   | TEXT    | NOT NULL
+  balance | INTEGER | NOT NULL
+
+  id | owner  | balance
+  ---+--------+--------
+   1 | 고객1  |    1000
+   2 | 고객2  |    1000
+   3 | 고객3  |    1000
+   4 | 고객4  |    1000
+   5 | 고객5  |    1000
+   6 | 고객6  |    1000
+   7 | 고객7  |    1000
+   8 | 고객8  |    1000
+   9 | 고객9  |    1000
+  10 | 고객10 |    1000
+  11 | 고객11 |    1000
+  12 | 고객12 |    1000
+  … 88행 더 있음
+
+
+== 1. rollback journal(DELETE) 모드 — 읽기가 쓰기를 막는다 ==
+  journal_mode = delete
+  읽기   BEGIN                                            성공
+  읽기   SELECT balance FROM account WHERE id = 1         성공 -> [(1000,)]
+  쓰기   BEGIN                                            성공
+  쓰기   UPDATE account SET balance = 900 WHERE id = 1    성공
+  쓰기   COMMIT                                           에러: database is locked
+  읽기   COMMIT                                           성공
+  쓰기   COMMIT                                           성공
+  읽기   SELECT balance FROM account WHERE id = 1         성공 -> [(900,)]
+
+== 2. WAL 모드 — 쓰기가 통과하고 읽기는 시작 시점을 본다 ==
+  journal_mode = wal
+  읽기   BEGIN                                            성공
+  읽기   SELECT balance FROM account WHERE id = 1         성공 -> [(1000,)]
+  쓰기   BEGIN                                            성공
+  쓰기   UPDATE account SET balance = 900 WHERE id = 1    성공
+  쓰기   COMMIT                                           성공
+  쓰기   SELECT balance FROM account WHERE id = 1         성공 -> [(900,)]
+  읽기   SELECT balance FROM account WHERE id = 1         성공 -> [(1000,)]
+  읽기   COMMIT                                           성공
+  읽기   SELECT balance FROM account WHERE id = 1         성공 -> [(900,)]
+
+== 3. 대가 — 열린 읽기 트랜잭션이 체크포인트를 멈춘다 ==
+  page_size = 4096, wal_autocheckpoint = 1000
+
+[읽기 트랜잭션 없이] 커밋 200번마다 PASSIVE 체크포인트 결과와 WAL 크기
+  커밋 누계 | busy | log | checkpointed | WAL 크기(바이트)
+        200 |    0 | 200 |          200 |        824,032
+        400 |    0 | 200 |          200 |        824,032
+        600 |    0 | 200 |          200 |        824,032
+        800 |    0 | 200 |          200 |        824,032
+      1,000 |    0 | 200 |          200 |        824,032
+      1,200 |    0 | 200 |          200 |        824,032
+  최신 SUM(balance) = 98800
+  읽기 종료 후 TRUNCATE 체크포인트: busy=0 log=0 checkpointed=0 WAL 크기=0
+
+[읽기 트랜잭션을 연 채] 커밋 200번마다 PASSIVE 체크포인트 결과와 WAL 크기
+  읽는 쪽 시작 시점 SUM(balance) = 100000
+  커밋 누계 | busy | log | checkpointed | WAL 크기(바이트)
+        200 |    0 | 200 |            0 |        824,032
+        400 |    0 | 400 |            0 |      1,648,032
+        600 |    0 | 600 |            0 |      2,472,032
+        800 |    0 | 800 |            0 |      3,296,032
+      1,000 |    0 | 1000 |            0 |      4,120,032
+      1,200 |    0 | 1200 |            0 |      4,944,032
+  읽는 쪽이 지금 보는 SUM(balance) = 100000
+  최신 SUM(balance) = 98800
+  읽기 종료 후 TRUNCATE 체크포인트: busy=0 log=0 checkpointed=0 WAL 크기=0
