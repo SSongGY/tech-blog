@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="450" viewBox="0 0 880 450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">하이브리드 암호 — 공개키로 대칭키를 세우고, 데이터는 대칭키로 암호화한다</text>
+
+  <text x="40" y="66" font-size="15" font-weight="bold" fill="#1b1b1b">송신자</text>
+  <text x="40" y="276" font-size="15" font-weight="bold" fill="#1b1b1b">수신자</text>
+
+  <!-- 송신자 줄 -->
+  <rect x="40" y="80" width="170" height="60" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="125" y="106" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 캡슐화 (KEM)</text>
+  <text x="125" y="126" text-anchor="middle" font-size="13" fill="#495057">수신자 공개키 사용</text>
+
+  <rect x="250" y="80" width="170" height="60" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="335" y="106" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 키 유도 (KDF)</text>
+  <text x="335" y="126" text-anchor="middle" font-size="13" fill="#495057">공유 비밀 → 대칭키</text>
+
+  <rect x="460" y="80" width="170" height="60" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="545" y="106" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 암호화 (AEAD)</text>
+  <text x="545" y="126" text-anchor="middle" font-size="13" fill="#495057">대칭키로 평문 처리</text>
+
+  <line x1="210" y1="110" x2="240" y2="110" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="240,105 250,110 240,115" fill="#495057"/>
+  <line x1="420" y1="110" x2="450" y2="110" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="450,105 460,110 450,115" fill="#495057"/>
+
+  <!-- 전송 -->
+  <rect x="670" y="160" width="170" height="70" fill="#f1f3f5" stroke="#495057" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="755" y="188" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 전송</text>
+  <text x="755" y="210" text-anchor="middle" font-size="13" fill="#495057">캡슐(enc) + 암호문</text>
+
+  <line x1="630" y1="110" x2="755" y2="110" stroke="#495057" stroke-width="1.5"/>
+  <line x1="755" y1="110" x2="755" y2="150" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="750,150 755,160 760,150" fill="#495057"/>
+  <path d="M125,140 L125,154 L660,154" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="660,149 670,154 660,159" fill="#b45309"/>
+  <text x="400" y="172" text-anchor="middle" font-size="13" fill="#b45309">캡슐(enc)</text>
+
+  <!-- 수신자 줄 -->
+  <rect x="40" y="290" width="170" height="60" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="125" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑤ 역캡슐화 (KEM)</text>
+  <text x="125" y="336" text-anchor="middle" font-size="13" fill="#495057">수신자 개인키 사용</text>
+
+  <rect x="250" y="290" width="170" height="60" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="335" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑥ 키 유도 (KDF)</text>
+  <text x="335" y="336" text-anchor="middle" font-size="13" fill="#495057">같은 대칭키를 얻는다</text>
+
+  <rect x="460" y="290" width="170" height="60" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="545" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑦ 복호화 (AEAD)</text>
+  <text x="545" y="336" text-anchor="middle" font-size="13" fill="#495057">위변조면 실패한다</text>
+
+  <line x1="210" y1="320" x2="240" y2="320" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="240,315 250,320 240,325" fill="#495057"/>
+  <line x1="420" y1="320" x2="450" y2="320" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="450,315 460,320 450,325" fill="#495057"/>
+
+  <path d="M755,230 L755,262 L125,262 L125,280" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="120,280 125,290 130,280" fill="#b45309"/>
+  <path d="M755,262 L545,262 L545,280" fill="none" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="540,280 545,290 550,280" fill="#495057"/>
+
+  <!-- 범례 -->
+  <rect x="40" y="376" width="16" height="16" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="64" y="389" font-size="13" fill="#1b1b1b">공개키 연산 — 암호화 컨텍스트마다 한 번, 키를 세우는 데만 쓴다</text>
+  <rect x="40" y="402" width="16" height="16" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="64" y="415" font-size="13" fill="#1b1b1b">대칭키 연산 — 데이터 전체를 처리한다</text>
+  <text x="840" y="438" text-anchor="end" font-size="13" fill="#6c757d">HPKE 기본 모드(mode_base) 기준. 인증 모드는 송신자 키나 사전 공유키가 더 들어간다.</text>
+</svg>
