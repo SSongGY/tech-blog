@@ -1,0 +1,244 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-09-28-xargs-args-parallel-null
+# 명령      : bash xargs_options.sh
+# 수행 시각 : 2026-09-28 23:14 (대한민국 표준시)
+# 소요      : 9.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+================================================================
+0. 환경
+================================================================
+xargs (GNU findutils) 4.10.0
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+Your environment variables take up 4786 bytes
+POSIX upper limit on argument length (this system): 25166
+POSIX smallest allowable upper limit on argument length (all systems): 4096
+Maximum length of command we could actually use: 20380
+Size of command buffer we are actually using: 25166
+Maximum parallelism (--max-procs must be no greater): 2147483647
+
+
+================================================================
+1. 입력을 어떻게 나누는가 — 기본은 공백과 줄바꿈
+================================================================
+$ printf 'a b\nc\n' | xargs -n 1 echo
+a
+b
+c
+[종료 코드 0]
+
+$ echo "'a b' c" | xargs -n 1 echo
+a b
+c
+[종료 코드 0]
+
+$ echo 'a\ b c' | xargs -n 1 echo
+a b
+c
+[종료 코드 0]
+
+$ printf 'hi\n' | xargs
+hi
+[종료 코드 0]
+
+================================================================
+2. 공백 든 파일 이름 — 기본 모드가 깨지는 자리
+================================================================
+$ find logs -name '*.log' | sort | xargs ls -1
+xargs: unmatched single quote; by default quotes are special to xargs unless you use the -0 option
+ls: cannot access 'lines.log': No such file or directory
+logs/app.log
+[종료 코드 123]
+
+$ find logs -name '*.log' | sort | xargs -d '\n' ls -1
+ls: cannot access 'lines.log': No such file or directory
+ls: cannot access 'logs/two': No such file or directory
+logs/app.log
+logs/it's.log
+logs/report 2026.log
+[종료 코드 123]
+
+$ find logs -name '*.log' -print0 | sort -z | xargs -0 ls -1
+logs/app.log
+logs/it's.log
+logs/report 2026.log
+logs/two
+lines.log
+[종료 코드 0]
+
+$ find logs -name '*.log' -print0 | sort -z | xargs -0 -n 1 printf '[%s]\n'
+[logs/app.log]
+[logs/it's.log]
+[logs/report 2026.log]
+[logs/two
+lines.log]
+[종료 코드 0]
+
+================================================================
+3. 입력 끝 — -E, -a
+================================================================
+$ printf 'a\nSTOP\nb\n' | xargs -E STOP echo
+a
+[종료 코드 0]
+
+$ printf 'a\0STOP\0b\0' | xargs -0 -E STOP echo
+xargs: warning: the -E option has no effect if -0 or -d is used.
+
+a STOP b
+[종료 코드 0]
+
+$ xargs -a items.txt echo
+alpha beta gamma
+[종료 코드 0]
+
+================================================================
+4. 한 번에 몇 개씩 — -n, -L, -l
+================================================================
+$ printf '1 2 3\n4 5\n6\n' | xargs -n 2 echo
+1 2
+3 4
+5 6
+[종료 코드 0]
+
+$ printf '1 2 3\n4 5\n6\n' | xargs -L 1 echo
+1 2 3
+4 5
+6
+[종료 코드 0]
+
+$ printf '1 2 \n3\n4\n' | xargs -L 1 echo
+1 2 3
+4
+[종료 코드 0]
+
+$ printf '1 2\n\n3\n' | xargs -l echo
+1 2
+3
+[종료 코드 0]
+
+================================================================
+5. 명령줄 길이 — -s, -x
+================================================================
+$ seq 1 12 | xargs -s 20 echo
+1 2 3 4 5 6 7
+8 9 10 11 12
+[종료 코드 0]
+
+$ seq 1 12 | xargs -s 20 -x echo
+1 2 3 4 5 6 7
+8 9 10 11 12
+[종료 코드 0]
+
+$ seq 1 12 | xargs -n 10 -s 20 echo
+1 2 3 4 5 6 7
+8 9 10 11 12
+[종료 코드 0]
+
+$ seq 1 12 | xargs -n 10 -s 20 -x echo
+xargs: argument list too long
+[종료 코드 1]
+
+$ echo 123456789012345678901234567890 | xargs -s 20 echo
+xargs: argument line too long
+[종료 코드 1]
+
+================================================================
+6. 자리 바꿔 넣기 — -I, -i
+================================================================
+$ printf 'a b\nc\n' | xargs -I {} echo '<{}>'
+<a b>
+<c>
+[종료 코드 0]
+
+$ printf 'x\ny\n' | xargs -I @ echo @-@
+x-x
+y-y
+[종료 코드 0]
+
+$ printf 'x\ny\n' | xargs -i echo 'item={}'
+item=x
+item=y
+[종료 코드 0]
+
+$ printf '  lead\n' | xargs -I {} echo '<{}>'
+<lead>
+[종료 코드 0]
+
+================================================================
+7. 빈 입력 — -r
+================================================================
+$ printf '' | xargs echo 'ran with:'
+ran with:
+[종료 코드 0]
+
+$ printf '' | xargs -r echo 'ran with:'
+[종료 코드 0]
+
+================================================================
+8. 실행 전에 보여 주기 — -t
+================================================================
+$ printf 'a\nb\nc\n' | xargs -t -n 2 echo
+echo a b
+a b
+echo c
+c
+[종료 코드 0]
+
+================================================================
+9. 병렬 — -P, --process-slot-var
+================================================================
+$ printf '0.6\n0.2\n0.4\n' | xargs -n 1 sh -c 'sleep "$0"; echo done $0'
+done 0.6
+done 0.2
+done 0.4
+[종료 코드 0]
+
+$ printf '0.6\n0.2\n0.4\n' | xargs -P 3 -n 1 sh -c 'sleep "$0"; echo done $0'
+done 0.2
+done 0.4
+done 0.6
+[종료 코드 0]
+
+$ seq 1 4 | xargs -P N -n 1 sh -c 'sleep 0.5'   (N = 1, 2, 4)
+-P 1 : 2254 ms
+-P 2 : 1348 ms
+-P 4 : 770 ms
+
+$ seq 1 4 | xargs -P 2 -n 1 --process-slot-var=SLOT sh -c 'echo item $0 slot $SLOT' | sort
+item 1 slot 0
+item 2 slot 1
+item 3 slot 0
+item 4 slot 1
+[종료 코드 0]
+
+$ seq 1 6 | xargs -P 0 -n 3 echo | sort
+1 2 3
+4 5 6
+[종료 코드 0]
+
+================================================================
+10. 종료 코드
+================================================================
+$ printf 'a\n' | xargs sh -c 'exit 1'
+[종료 코드 123]
+
+$ printf 'a\nb\n' | xargs -n 1 sh -c 'echo run $0; exit 255'
+run a
+xargs: sh: exited with status 255; aborting
+[종료 코드 124]
+
+$ printf 'a\n' | xargs no-such-command
+xargs: no-such-command: No such file or directory
+[종료 코드 127]
+
+$ printf 'a\n' | xargs ./not_exec.sh
+hi
+[종료 코드 0]
+
+$ printf 'a\n' | xargs -s 1 echo
+xargs: cannot fit single argument within argument list size limit
+[종료 코드 1]
+

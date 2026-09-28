@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">xargs가 입력을 명령줄로 바꾸는 세 단계</text>
+  <text x="30" y="56" font-size="13" fill="#555">각 단계를 정하는 옵션이 다르다. 옵션을 갈래로 묶는 기준이 이 단계다</text>
+
+  <!-- 입력 -->
+  <rect x="30" y="90" width="130" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="95" y="118" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">표준 입력</text>
+  <text x="95" y="138" font-size="13" fill="#333" text-anchor="middle">또는 -a 파일</text>
+
+  <!-- 1 나누기 -->
+  <rect x="200" y="80" width="200" height="84" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="300" y="104" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 항목으로 나눈다</text>
+  <text x="300" y="126" font-size="13" fill="#333" text-anchor="middle">기본: 공백·줄바꿈</text>
+  <text x="300" y="146" font-size="13" fill="#333" text-anchor="middle">-d 문자 / -0 널</text>
+
+  <!-- 2 묶기 -->
+  <rect x="440" y="80" width="200" height="84" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="540" y="104" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">② 명령줄로 묶는다</text>
+  <text x="540" y="126" font-size="13" fill="#333" text-anchor="middle">-n 개수 / -L 줄 수</text>
+  <text x="540" y="146" font-size="13" fill="#333" text-anchor="middle">-s 길이 / -I 자리</text>
+
+  <!-- 3 실행 -->
+  <rect x="680" y="80" width="170" height="84" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="765" y="104" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">③ 실행한다</text>
+  <text x="765" y="126" font-size="13" fill="#333" text-anchor="middle">-P 동시 개수</text>
+  <text x="765" y="146" font-size="13" fill="#333" text-anchor="middle">-t 보여 주기 / -r</text>
+
+  <line x1="160" y1="122" x2="196" y2="122" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="400" y1="122" x2="436" y2="122" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="640" y1="122" x2="676" y2="122" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 기본 모드의 함정 -->
+  <rect x="200" y="200" width="200" height="104" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="300" y="224" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">기본 모드에서 특별한 글자</text>
+  <text x="300" y="246" font-size="13" fill="#333" text-anchor="middle">공백 → 항목을 끊는다</text>
+  <text x="300" y="268" font-size="13" fill="#333" text-anchor="middle">' " → 따옴표로 읽는다</text>
+  <text x="300" y="290" font-size="13" fill="#333" text-anchor="middle">역슬래시 → 다음 글자를 살린다</text>
+  <line x1="300" y1="164" x2="300" y2="196" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <rect x="200" y="320" width="200" height="64" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="300" y="346" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">-0: 널 문자만 끊는다</text>
+  <text x="300" y="366" font-size="13" fill="#333" text-anchor="middle">따옴표·역슬래시 처리를 끈다</text>
+  <line x1="300" y1="304" x2="300" y2="316" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <!-- 종료 코드 -->
+  <rect x="600" y="200" width="250" height="184" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="725" y="224" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">xargs의 종료 코드 (GNU)</text>
+  <text x="620" y="250" font-size="13" fill="#333">0    모두 성공</text>
+  <text x="620" y="272" font-size="13" fill="#333">123  한 번이라도 1~125로 끝남</text>
+  <text x="620" y="294" font-size="13" fill="#333">124  255로 끝남 → 즉시 중단</text>
+  <text x="620" y="316" font-size="13" fill="#333">125  시그널로 죽음</text>
+  <text x="620" y="338" font-size="13" fill="#333">126  실행할 수 없음</text>
+  <text x="620" y="360" font-size="13" fill="#333">127  명령을 못 찾음</text>
+  <line x1="765" y1="164" x2="765" y2="196" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <text x="30" y="420" font-size="13" fill="#333">파일 이름을 넘길 때는 find -print0 | xargs -0 로 ①의 규칙을 바꾸는 것이 안전하다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>
