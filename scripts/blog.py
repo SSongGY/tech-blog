@@ -412,7 +412,13 @@ def cmd_new(args: argparse.Namespace) -> int:
         print(f"이미 존재한다: {post_dir}")
         return 1
 
-    (post_dir / "code").mkdir(parents=True)
+    # 백로그가 code: none 이라고 한 주제는 실행 예제가 없다. 그런데도 빈 code/ 를
+    # 만들어 두면 회차가 rm -rf 로 지우려 하고, rm 은 허용 규칙에 없어 거기서 멈춘다.
+    # 만들지 않는 편이 맞다. 나중에 예제가 생기면 그때 만들면 된다.
+    needs_code = (topic.get("code") or "none") != "none"
+    if needs_code:
+        (post_dir / "code").mkdir(parents=True)
+    post_dir.mkdir(parents=True, exist_ok=True)
     (post_dir / "fig").mkdir()
 
     is_product = track_of(topic) == "product"
@@ -429,6 +435,8 @@ def cmd_new(args: argparse.Namespace) -> int:
     environment = f'["{topic["product"]} {topic["product_version"]}"]' if is_product else "[]"
 
     tags = ", ".join(topic["tags"])
+    # code/ 가 없으면 그 링크는 깨진 링크다. lint 가 실패로 잡는다.
+    example_link = "\n전체 소스: [`code/`](code/)\n" if needs_code else "\n"
     index_md = f"""---
 title: "{topic['title']}"
 date: {today.isoformat()}
@@ -458,9 +466,7 @@ topic_id: {topic['id']}
 ## 동작 원리
 
 ## 실습 예제
-
-전체 소스: [`code/`](code/)
-
+{example_link}
 ## 실무에서 주의할 점
 
 ## 정리
@@ -468,13 +474,16 @@ topic_id: {topic['id']}
 ## 참고 자료
 """
     (post_dir / "index.md").write_text(index_md, encoding="utf-8")
-    (post_dir / "code" / "README.md").write_text(
-        f"# 예제 코드 — {topic['title']}\n\n## 실행\n\n```bash\n```\n",
-        encoding="utf-8",
-    )
+    if needs_code:
+        (post_dir / "code" / "README.md").write_text(
+            f"# 예제 코드 — {topic['title']}\n\n## 실행\n\n```bash\n```\n",
+            encoding="utf-8",
+        )
 
     set_status(topic["id"], "writing")
     print(f"생성: {post_dir.relative_to(ROOT)}")
+    if not needs_code:
+        print("  code/ 는 만들지 않았다 (백로그가 code: none). 예제가 생기면 그때 만든다.")
     return 0
 
 
