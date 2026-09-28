@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">TCP 3-way 핸드셰이크 — 순서 번호와 상태 변화</text>
+  <text x="30" y="56" font-size="13" fill="#555">A가 먼저 연결을 여는 경우. ISN은 A=100, B=300 으로 둔 예</text>
+
+  <!-- endpoints -->
+  <rect x="150" y="74" width="160" height="40" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="230" y="99" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">A (능동 개방)</text>
+  <rect x="570" y="74" width="160" height="40" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="650" y="99" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">B (수동 개방)</text>
+
+  <line x1="230" y1="114" x2="230" y2="370" stroke="#8a8a84" stroke-width="1.5"/>
+  <line x1="650" y1="114" x2="650" y2="370" stroke="#8a8a84" stroke-width="1.5"/>
+
+  <!-- states A -->
+  <text x="216" y="146" font-size="13" fill="#555" text-anchor="end">CLOSED</text>
+  <text x="216" y="190" font-size="13" fill="#b45309" text-anchor="end">SYN-SENT</text>
+  <text x="216" y="300" font-size="13" fill="#2d6a4f" text-anchor="end">ESTABLISHED</text>
+  <!-- states B -->
+  <text x="664" y="146" font-size="13" fill="#555">LISTEN</text>
+  <text x="664" y="236" font-size="13" fill="#b45309">SYN-RECEIVED</text>
+  <text x="664" y="340" font-size="13" fill="#2d6a4f">ESTABLISHED</text>
+
+  <!-- 1 SYN -->
+  <line x1="230" y1="170" x2="646" y2="216" stroke="#1b1b1b" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="440" y="178" font-size="13" fill="#1b1b1b" text-anchor="middle">① &lt;SEQ=100&gt;&lt;CTL=SYN&gt;</text>
+
+  <!-- 2 SYN-ACK -->
+  <line x1="650" y1="236" x2="234" y2="282" stroke="#1b1b1b" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="410" y="238" font-size="13" fill="#1b1b1b" text-anchor="middle">②&lt;SEQ=300&gt;&lt;ACK=101&gt;&lt;CTL=SYN,ACK&gt;</text>
+
+  <!-- 3 ACK -->
+  <line x1="230" y1="300" x2="646" y2="336" stroke="#1b1b1b" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="440" y="306" font-size="13" fill="#1b1b1b" text-anchor="middle">③ &lt;SEQ=101&gt;&lt;ACK=301&gt;&lt;CTL=ACK&gt;</text>
+
+  <text x="30" y="392" font-size="13" fill="#333">SYN 은 순서 번호 1개를 차지한다. 그래서 ACK 는 상대 ISN + 1 을 가리킨다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1b1b1b"/>
+    </marker>
+  </defs>
+</svg>

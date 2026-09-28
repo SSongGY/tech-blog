@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">RFC 5681 혼잡 제어 — 세 단계와 전이 조건</text>
+  <text x="30" y="56" font-size="13" fill="#555">cwnd = 혼잡 윈도, ssthresh = 느린 시작 임계값, SMSS = 송신 최대 세그먼트 크기, FS = FlightSize</text>
+
+  <!-- slow start -->
+  <rect x="40" y="100" width="260" height="96" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="170" y="128" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 느린 시작</text>
+  <text x="170" y="152" font-size="13" fill="#333" text-anchor="middle">cwnd &lt; ssthresh</text>
+  <text x="170" y="174" font-size="13" fill="#333" text-anchor="middle">ACK마다 cwnd += min(N, SMSS)</text>
+
+  <!-- congestion avoidance -->
+  <rect x="580" y="100" width="260" height="96" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="710" y="128" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">② 혼잡 회피</text>
+  <text x="710" y="152" font-size="13" fill="#333" text-anchor="middle">cwnd &gt; ssthresh</text>
+  <text x="710" y="174" font-size="13" fill="#333" text-anchor="middle">RTT당 약 1 SMSS 증가</text>
+
+  <!-- fast recovery -->
+  <rect x="310" y="290" width="260" height="96" rx="8" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="318" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">③ 빠른 재전송·빠른 회복</text>
+  <text x="440" y="342" font-size="13" fill="#333" text-anchor="middle">잃은 세그먼트 즉시 재전송</text>
+  <text x="440" y="364" font-size="13" fill="#333" text-anchor="middle">중복 ACK마다 cwnd += SMSS</text>
+
+  <!-- start arrow -->
+  <line x1="170" y1="70" x2="170" y2="96" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="182" y="88" font-size="13" fill="#555">연결 수립 후 cwnd = IW</text>
+
+  <!-- SS -> CA -->
+  <line x1="300" y1="138" x2="576" y2="138" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arg)"/>
+  <text x="440" y="130" font-size="13" fill="#2d6a4f" text-anchor="middle">cwnd ≥ ssthresh</text>
+
+  <!-- CA/SS -> FR (3 dup ack) -->
+  <line x1="640" y1="196" x2="540" y2="286" stroke="#b45309" stroke-width="1.5" marker-end="url(#aro)"/>
+  <line x1="240" y1="196" x2="340" y2="286" stroke="#b45309" stroke-width="1.5" marker-end="url(#aro)"/>
+  <text x="440" y="222" font-size="13" fill="#b45309" text-anchor="middle">중복 ACK 3개</text>
+  <text x="440" y="242" font-size="13" fill="#333" text-anchor="middle">ssthresh = max(FS/2, 2·SMSS)</text>
+  <text x="440" y="262" font-size="13" fill="#333" text-anchor="middle">cwnd = ssthresh + 3·SMSS</text>
+
+  <!-- FR -> CA -->
+  <path d="M 570 350 C 760 350 800 260 760 200" fill="none" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arg)"/>
+  <text x="640" y="400" font-size="13" fill="#2d6a4f">새 데이터 ACK</text>
+  <text x="640" y="420" font-size="13" fill="#333">cwnd = ssthresh (수축)</text>
+
+  <!-- RTO -> SS -->
+  <path d="M 310 350 C 120 350 80 260 110 200" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="40" y="400" font-size="13" fill="#9d0208">재전송 타임아웃 (어느 단계에서든)</text>
+  <text x="40" y="420" font-size="13" fill="#333">ssthresh = max(FS/2, 2·SMSS), cwnd = 1 SMSS</text>
+
+  <text x="30" y="456" font-size="13" fill="#333">보낼 수 있는 양은 min(cwnd, rwnd). rwnd 는 수신 측이 윈도 필드로 알린 값이다(흐름 제어).</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
