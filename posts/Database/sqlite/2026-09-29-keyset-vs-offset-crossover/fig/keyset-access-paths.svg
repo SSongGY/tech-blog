@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">100,000행 뒤의 10행을 가져올 때 각 질의가 거치는 자리</text>
+
+  <!-- 1. 인덱스가 있을 때 -->
+  <text x="40" y="66" font-size="15" font-weight="bold" fill="#1b1b1b">① 인덱스 (created_at, id) 가 있을 때 — 인덱스를 최신순으로 읽는다</text>
+
+  <text x="40" y="104" font-size="14" font-weight="bold" fill="#1b1b1b">OFFSET</text>
+  <rect x="150" y="84" width="420" height="30" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <rect x="570" y="84" width="30" height="30" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="600" y="84" width="240" height="30" fill="#f1f3f5" stroke="#ced4da" stroke-width="1"/>
+  <text x="360" y="104" text-anchor="middle" font-size="13" fill="#9d0208">처음부터 세며 지나치는 100,000행</text>
+  <text x="720" y="104" text-anchor="middle" font-size="13" fill="#6c757d">읽지 않는다</text>
+
+  <text x="40" y="154" font-size="14" font-weight="bold" fill="#1b1b1b">키셋 A</text>
+  <text x="40" y="170" font-size="13" fill="#6c757d">행 값 비교</text>
+  <rect x="150" y="134" width="420" height="30" fill="#f1f3f5" stroke="#ced4da" stroke-width="1"/>
+  <rect x="570" y="134" width="30" height="30" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="600" y="134" width="240" height="30" fill="#f1f3f5" stroke="#ced4da" stroke-width="1"/>
+  <text x="360" y="154" text-anchor="middle" font-size="13" fill="#2d6a4f">커서 값으로 인덱스를 찾아 들어간다 (SEARCH)</text>
+  <text x="720" y="154" text-anchor="middle" font-size="13" fill="#6c757d">읽지 않는다</text>
+
+  <text x="40" y="204" font-size="14" font-weight="bold" fill="#1b1b1b">키셋 B</text>
+  <text x="40" y="220" font-size="13" fill="#6c757d">OR 조건</text>
+  <rect x="150" y="184" width="420" height="30" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <rect x="570" y="184" width="30" height="30" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="600" y="184" width="240" height="30" fill="#f1f3f5" stroke="#ced4da" stroke-width="1"/>
+  <text x="360" y="204" text-anchor="middle" font-size="13" fill="#9d0208">처음부터 조건을 검사하며 지나치는 100,000행 (SCAN)</text>
+  <text x="720" y="204" text-anchor="middle" font-size="13" fill="#6c757d">읽지 않는다</text>
+
+  <line x1="585" y1="214" x2="585" y2="236" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="585" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">돌려주는 10행</text>
+
+  <!-- 2. 인덱스가 없을 때 -->
+  <text x="40" y="304" font-size="15" font-weight="bold" fill="#1b1b1b">② 인덱스가 없을 때 — 두 질의 모두 표 전체를 읽어 임시 B-트리에 넣는다</text>
+
+  <rect x="40" y="330" width="200" height="120" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="140" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">post 전체 읽기</text>
+  <text x="140" y="400" text-anchor="middle" font-size="13" fill="#495057">SCAN post</text>
+  <text x="140" y="420" text-anchor="middle" font-size="13" fill="#495057">200,000행</text>
+
+  <line x1="240" y1="360" x2="330" y2="360" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="330,355 340,360 330,365" fill="#495057"/>
+  <line x1="240" y1="420" x2="330" y2="420" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="330,415 340,420 330,425" fill="#495057"/>
+
+  <rect x="340" y="332" width="500" height="56" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="360" y="355" font-size="14" font-weight="bold" fill="#9d0208">OFFSET — 임시 B-트리에 OFFSET + LIMIT = 100,010행을 유지</text>
+  <text x="360" y="377" font-size="13" fill="#9d0208">넘치면 임시 파일로 나간다. 다 모은 뒤 앞 100,000행을 버린다</text>
+
+  <rect x="340" y="394" width="500" height="56" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="360" y="417" font-size="14" font-weight="bold" fill="#2d6a4f">키셋 — 커서 조건을 통과한 행 중 LIMIT = 10행만 유지</text>
+  <text x="360" y="439" font-size="13" fill="#2d6a4f">새 행이 마지막 행보다 뒤면 넣지 않고, 앞이면 마지막 행을 지우고 넣는다</text>
+
+  <text x="40" y="490" font-size="13" fill="#495057">유지하는 행 수는 바이트코드 OffsetLimit 이 계산한 카운터(OFFSET 질의) 또는 LIMIT 값(키셋 질의)이 정한다.</text>
+  <text x="40" y="512" font-size="13" fill="#495057">카운터가 0이 되면 IfNotZero 를 지나 Last · IdxLE · Delete 로 마지막 행과 비교해 바꿔 넣는다.</text>
+  <text x="840" y="544" text-anchor="end" font-size="13" fill="#6c757d">※ 초록 칸(10행)은 보이도록 넓게 그렸다. 전체는 200,000행.</text>
+</svg>
