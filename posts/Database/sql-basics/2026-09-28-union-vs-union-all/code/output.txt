@@ -1,0 +1,133 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-28-union-vs-union-all
+# 명령      : python union_vs_union_all.py
+# 수행 시각 : 2026-09-28 12:06 (대한민국 표준시)
+# 소요      : 3.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[online_member]  5행
+  컬럼  | 타입    | 제약
+  ------+---------+---------
+  id    | INTEGER | PK
+  email | TEXT    |
+  name  | TEXT    | NOT NULL
+
+  id | email            | name
+  ---+------------------+-------
+   1 | kim@example.com  | 김도윤
+   2 | lee@example.com  | 이서준
+   3 | park@example.com | 박하은
+   4 | lee@example.com  | 이서준
+   5 | NULL             | 최유나
+
+[store_member]  4행
+  컬럼  | 타입    | 제약
+  ------+---------+---------
+  id    | INTEGER | PK
+  email | TEXT    |
+  name  | TEXT    | NOT NULL
+
+  id  | email            | name
+  ----+------------------+--------
+  901 | park@example.com | 박하은
+  902 | jung@example.com | 정민호
+  903 | kim@example.com  | 김도윤
+  904 | NULL             | 최유나
+
+
+== 1. 두 표를 합친 결과 ==
+
+[1-A UNION ALL (이메일만)]
+  SELECT email FROM online_member UNION ALL SELECT email FROM store_member
+  ('kim@example.com',)
+  ('lee@example.com',)
+  ('park@example.com',)
+  ('lee@example.com',)
+  (None,)
+  ('park@example.com',)
+  ('jung@example.com',)
+  ('kim@example.com',)
+  (None,)
+  -> 9행
+
+[1-B UNION (이메일만)]
+  SELECT email FROM online_member UNION SELECT email FROM store_member
+  (None,)
+  ('jung@example.com',)
+  ('kim@example.com',)
+  ('lee@example.com',)
+  ('park@example.com',)
+  -> 5행
+
+[1-C UNION (이메일, 이름)]
+  SELECT email, name FROM online_member UNION SELECT email, name FROM store_member
+  (None, '최유나')
+  ('jung@example.com', '정민호')
+  ('kim@example.com', '김도윤')
+  ('kim@example.com', '김도윤 ')
+  ('lee@example.com', '이서준')
+  ('park@example.com', '박하은')
+  -> 6행
+
+== 2. 합칠 때의 규칙 ==
+
+[2-A 한쪽 표 안의 중복도 지운다]
+  SELECT email FROM online_member WHERE email = 'lee@example.com' UNION SELECT email FROM store_member WHERE 0
+  ('lee@example.com',)
+  -> 1행
+
+[2-B 컬럼 이름은 첫 SELECT 를 따른다]
+  SELECT email AS contact FROM online_member WHERE id = 1 UNION ALL SELECT name FROM store_member WHERE id = 902
+  ('kim@example.com',)
+  ('정민호',)
+  -> 2행
+  컬럼 이름: ['contact']
+
+[2-C 컬럼 수가 다르면]
+  SELECT email, name FROM online_member UNION SELECT email FROM store_member
+  에러: OperationalError: SELECTs to the left and right of UNION do not have the same number of result columns
+
+[2-D ORDER BY 는 합친 결과 전체에 한 번]
+  SELECT email FROM online_member UNION SELECT email FROM store_member ORDER BY email DESC
+  ('park@example.com',)
+  ('lee@example.com',)
+  ('kim@example.com',)
+  ('jung@example.com',)
+  (None,)
+  -> 5행
+
+== 3. 실행계획 ==
+
+[3-A UNION ALL]
+  QUERY PLAN
+  `--COMPOUND QUERY
+     |--LEFT-MOST SUBQUERY
+     |  `--SCAN online_member
+     `--UNION ALL
+        `--SCAN store_member
+
+[3-B UNION]
+  QUERY PLAN
+  `--COMPOUND QUERY
+     |--LEFT-MOST SUBQUERY
+     |  `--SCAN online_member
+     `--UNION USING TEMP B-TREE
+        `--SCAN store_member
+
+== 4. 시간 — 표마다 200,000행, 5회 중 최솟값 ==
+  UNION ALL  400,000행    127.1 ms
+  UNION      300,085행    482.7 ms
