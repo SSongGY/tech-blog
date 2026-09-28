@@ -85,6 +85,8 @@ verified: true
   방법이 먼저 있어야 한다는 점은 두 기법에 공통이다.
 
 > 개념 정리: [하네스 엔지니어링 — 가이드·센서·세션 밖 상태로 에이전트를 통제하는 구조](../../emerging-tech/2026-09-28-harness-engineering-guides-sensors/index.md)
+>
+> 개념 정리: [컨텍스트 엔지니어링 — 추론 시점에 모델에 들어가는 토큰을 고르는 기술](../../emerging-tech/2026-09-29-context-engineering-token-curation/index.md)
 
 끝
 
