@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">CASE가 값을 고르는 순서, 그리고 그 값으로 행을 열로 돌리는 방법</text>
+
+  <!-- 가. 평가 순서 -->
+  <text x="30" y="72" font-size="15" font-weight="bold" fill="#1b1b1b">가. 검색 CASE의 평가 순서 — 왼쪽 WHEN부터, 처음 참인 것 하나</text>
+
+  <rect x="30" y="92" width="170" height="48" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="115" y="121" font-size="13" fill="#1b1b1b" text-anchor="middle">WHEN 조건1 이 참?</text>
+
+  <rect x="260" y="92" width="170" height="48" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="345" y="121" font-size="13" fill="#1b1b1b" text-anchor="middle">WHEN 조건2 가 참?</text>
+
+  <rect x="490" y="92" width="170" height="48" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="575" y="121" font-size="13" fill="#1b1b1b" text-anchor="middle">ELSE 가 있나?</text>
+
+  <rect x="30" y="186" width="170" height="44" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="115" y="213" font-size="13" fill="#2d6a4f" text-anchor="middle">THEN 값1 (끝)</text>
+
+  <rect x="260" y="186" width="170" height="44" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="345" y="213" font-size="13" fill="#2d6a4f" text-anchor="middle">THEN 값2 (끝)</text>
+
+  <rect x="490" y="186" width="170" height="44" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="575" y="213" font-size="13" fill="#b45309" text-anchor="middle">ELSE 값</text>
+
+  <rect x="700" y="92" width="150" height="48" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="775" y="121" font-size="13" fill="#9d0208" text-anchor="middle">NULL</text>
+
+  <line x1="200" y1="116" x2="256" y2="116" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="228" y="108" font-size="13" fill="#555" text-anchor="middle">아님</text>
+  <line x1="430" y1="116" x2="486" y2="116" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="458" y="108" font-size="13" fill="#555" text-anchor="middle">아님</text>
+  <line x1="660" y1="116" x2="696" y2="116" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="678" y="108" font-size="13" fill="#555" text-anchor="middle">없음</text>
+
+  <line x1="115" y1="140" x2="115" y2="182" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arg)"/>
+  <text x="124" y="166" font-size="13" fill="#2d6a4f">참</text>
+  <line x1="345" y1="140" x2="345" y2="182" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arg)"/>
+  <text x="354" y="166" font-size="13" fill="#2d6a4f">참</text>
+  <line x1="575" y1="140" x2="575" y2="182" stroke="#b45309" stroke-width="1.5" marker-end="url(#aro)"/>
+  <text x="584" y="166" font-size="13" fill="#b45309">있음</text>
+
+  <text x="30" y="258" font-size="13" fill="#333">조건이 NULL 로 평가되면 참이 아닌 것으로 친다. 그래서 amount 가 NULL 인 행은 어느 WHEN 에도 걸리지 않고 ELSE 로 간다.</text>
+
+  <!-- 나. 피벗 -->
+  <text x="30" y="302" font-size="15" font-weight="bold" fill="#1b1b1b">나. 수동 피벗 — 행마다 열 수만큼 CASE 를 계산하고, 월로 묶어 SUM</text>
+
+  <rect x="30" y="330" width="210" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="135" y="355" font-size="13" fill="#1b1b1b" text-anchor="middle">한 행</text>
+  <text x="135" y="376" font-size="13" fill="#333" text-anchor="middle">2026-02 · 서울 · 95</text>
+
+  <rect x="320" y="318" width="250" height="30" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="332" y="338" font-size="13" fill="#1b1b1b">seoul 열 CASE → 95</text>
+  <rect x="320" y="356" width="250" height="30" rx="4" fill="#ffffff" stroke="#8a8a84" stroke-width="1.2"/>
+  <text x="332" y="376" font-size="13" fill="#555">busan 열 CASE → NULL</text>
+  <rect x="320" y="394" width="250" height="30" rx="4" fill="#ffffff" stroke="#8a8a84" stroke-width="1.2"/>
+  <text x="332" y="414" font-size="13" fill="#555">daegu 열 CASE → NULL</text>
+
+  <rect x="620" y="330" width="240" height="60" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="740" y="355" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">GROUP BY sale_month</text>
+  <text x="740" y="376" font-size="13" fill="#333" text-anchor="middle">열마다 SUM — NULL 은 건너뛴다</text>
+
+  <line x1="240" y1="350" x2="316" y2="333" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="240" y1="360" x2="316" y2="371" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="240" y1="370" x2="316" y2="409" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="570" y1="371" x2="616" y2="361" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <text x="30" y="462" font-size="13" fill="#333">표는 한 번만 읽는다(SCAN sale). 지점 수만큼 질의를 따로 돌리는 것이 아니라, 한 행에서 CASE 를 열 수만큼 계산한다.</text>
+  <text x="30" y="486" font-size="13" fill="#333">그 달에 그 지점 행이 없거나 금액이 전부 NULL 이면 그 열에는 NULL 만 모이고, SUM 은 NULL 을 돌려준다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
