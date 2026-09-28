@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+  <text x="440" y="32" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">원본은 한 번만 읽고, 분석은 해시가 같은 사본으로만 한다</text>
+
+  <!-- 원본 매체 -->
+  <rect x="30" y="70" width="170" height="70" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+  <text x="115" y="98" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">원본 매체</text>
+  <text x="115" y="120" font-size="13" text-anchor="middle" fill="#4b5563">라벨 · 봉인 보관</text>
+
+  <!-- 쓰기 방지 장치 -->
+  <rect x="260" y="70" width="170" height="70" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="345" y="98" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">쓰기 방지 장치</text>
+  <text x="345" y="120" font-size="13" text-anchor="middle" fill="#4b5563">write-blocker</text>
+
+  <!-- 비트스트림 이미지 -->
+  <rect x="490" y="70" width="170" height="70" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="575" y="98" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">비트스트림 사본</text>
+  <text x="575" y="120" font-size="13" text-anchor="middle" fill="#4b5563">빈 공간·슬랙 포함</text>
+
+  <!-- 분석 -->
+  <rect x="700" y="70" width="150" height="70" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="775" y="98" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">조사 · 분석</text>
+  <text x="775" y="120" font-size="13" text-anchor="middle" fill="#4b5563">읽기 전용으로</text>
+
+  <g stroke="#374151" stroke-width="1.8" fill="none">
+    <line x1="200" y1="105" x2="258" y2="105" marker-end="url(#arr)"/>
+    <line x1="430" y1="105" x2="488" y2="105" marker-end="url(#arr)"/>
+  </g>
+  <line x1="660" y1="105" x2="698" y2="105" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrg)"/>
+
+  <!-- 해시 비교 -->
+  <rect x="200" y="200" width="480" height="76" rx="8" fill="#f9fafb" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="228" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">해시(메시지 다이제스트) 비교</text>
+  <text x="440" y="252" font-size="14" text-anchor="middle" fill="#2d6a4f">H(원본) = H(사본) 이면 사본을 증거로 쓴다</text>
+  <text x="440" y="270" font-size="13" text-anchor="middle" fill="#4b5563">해시 값은 읽기 전용·한 번 쓰기 매체나 출력물로 따로 보관</text>
+
+  <g stroke="#374151" stroke-width="1.6" fill="none" stroke-dasharray="5 4">
+    <path d="M115,140 V238 H198" marker-end="url(#arr)"/>
+    <path d="M575,140 V198" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- 연계 보관성 기록 -->
+  <rect x="30" y="330" width="820" height="80" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="440" y="358" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">연계 보관성 기록 — 모든 단계에 걸쳐 남긴다</text>
+  <text x="440" y="382" font-size="13" text-anchor="middle" fill="#4b5563">누가 · 언제 · 어디서 발견·수집했는가 / 누가 다뤘는가 / 누가 보관했는가 / 언제 · 어떻게 인계했는가</text>
+  <text x="440" y="400" font-size="13" text-anchor="middle" fill="#4b5563">장비 모델·일련번호, 이미징 도구 이름·버전, 실행한 명령까지 적는다</text>
+</svg>

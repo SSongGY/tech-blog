@@ -99,6 +99,8 @@ readiness)** 는 범위 밖이라고 밝힌다. 그러나 준비도가 없으면
 - **법적 검토**: NIST SP 800-86은 조직마다 적용 법규가 다르므로 법률 자문과 함께 절차를
   세우라고 적는다
 
+> 개념 정리: [디지털 포렌식 절차와 증거 무결성](../../security/2026-09-28-digital-forensics-process-evidence-integrity/index.md)
+
 끝
 
 ## 답안 작성 메모
