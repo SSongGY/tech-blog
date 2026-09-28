@@ -99,7 +99,7 @@ topics:
     difficulty: 중급
     angle: "페이지 깊이에 따른 응답시간 곡선을 직접 측정해 교차점을 찾는다"
     code: python
-    status: todo
+    status: done
   - id: db-009
     title: "NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유"
     category: Database
@@ -875,7 +875,7 @@ topics:
     difficulty: 입문
     angle: "INSERT SELECT로 대량 적재할 때 컬럼 순서가 맞는지 확인하는 법"
     code: python
-    status: todo
+    status: done
   - id: bas-017
     title: "UPDATE — 조건 없는 UPDATE를 막는 습관"
     category: Database
@@ -1144,7 +1144,7 @@ topics:
     difficulty: 입문
     angle: "속도와 키 분배 문제로 하이브리드 방식이 나온 경위"
     code: none
-    status: todo
+    status: done
   - id: pe-020
     title: "접근통제 모델 — DAC, MAC, RBAC, ABAC"
     category: PE
