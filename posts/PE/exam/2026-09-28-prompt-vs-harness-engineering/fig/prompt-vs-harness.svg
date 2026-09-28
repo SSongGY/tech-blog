@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">무엇을 설계하는가 — 입력 문자열 한 벌과 실행 환경 전체</text>
+
+  <!-- 좌: 프롬프트 엔지니어링 -->
+  <rect x="20" y="52" width="270" height="310" fill="#f5f7f9" stroke="#9aa5b1" stroke-width="1" rx="6"/>
+  <text x="155" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">프롬프트 엔지니어링</text>
+  <text x="155" y="98" text-anchor="middle" font-size="13" fill="#4a5568">호출 한 번의 입력을 고친다</text>
+
+  <rect x="45" y="116" width="220" height="50" fill="#ffffff" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="155" y="137" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">프롬프트 템플릿</text>
+  <text x="155" y="156" text-anchor="middle" font-size="13" fill="#4a5568">지시 · 예시 · 역할 · 형식</text>
+
+  <rect x="45" y="196" width="220" height="44" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6" rx="4"/>
+  <text x="155" y="223" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">모델</text>
+
+  <rect x="45" y="270" width="220" height="44" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.2" rx="4"/>
+  <text x="155" y="297" text-anchor="middle" font-size="14" fill="#1b1b1b">출력</text>
+
+  <line x1="155" y1="166" x2="155" y2="192" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <line x1="155" y1="240" x2="155" y2="266" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <path d="M45,292 L30,292 L30,141 L41,141" fill="none" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#a3)"/>
+  <text x="155" y="340" text-anchor="middle" font-size="13" fill="#b45309">평가 → 템플릿 수정 반복</text>
+
+  <!-- 우: 하네스 엔지니어링 -->
+  <rect x="320" y="52" width="540" height="310" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1" rx="6"/>
+  <text x="590" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">하네스 엔지니어링 — 에이전트 = 모델 + 하네스</text>
+  <text x="590" y="98" text-anchor="middle" font-size="13" fill="#4a5568">여러 번의 호출과 도구 실행이 도는 환경을 고친다</text>
+
+  <rect x="340" y="150" width="140" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="410" y="175" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">가이드 (사전)</text>
+  <text x="410" y="194" text-anchor="middle" font-size="13" fill="#4a5568">규칙 문서 · 컨텍스트</text>
+
+  <rect x="520" y="150" width="140" height="64" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6" rx="4"/>
+  <text x="590" y="175" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">에이전트 (모델)</text>
+  <text x="590" y="194" text-anchor="middle" font-size="13" fill="#4a5568">계획 · 도구 호출</text>
+
+  <rect x="700" y="150" width="140" height="64" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="770" y="175" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">도구 · 환경</text>
+  <text x="770" y="194" text-anchor="middle" font-size="13" fill="#4a5568">파일 · 셸 · 브라우저</text>
+
+  <rect x="610" y="262" width="230" height="64" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="725" y="287" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">센서 (사후)</text>
+  <text x="725" y="306" text-anchor="middle" font-size="13" fill="#4a5568">테스트 · 린터 · 행동 평가</text>
+
+  <rect x="340" y="262" width="230" height="64" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="455" y="287" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">기억 (세션 밖 상태)</text>
+  <text x="455" y="306" text-anchor="middle" font-size="13" fill="#4a5568">진행 기록 · 기능 목록 · git</text>
+
+  <line x1="480" y1="182" x2="516" y2="182" stroke="#b45309" stroke-width="1.6" marker-end="url(#a3)"/>
+  <line x1="660" y1="175" x2="696" y2="175" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <line x1="770" y1="214" x2="770" y2="258" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a1)"/>
+  <path d="M640,262 L640,240 L610,240 L610,218" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a2)"/>
+  <text x="650" y="244" font-size="13" fill="#2d6a4f">피드백</text>
+  <line x1="455" y1="262" x2="530" y2="218" stroke="#4a5568" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#a1)"/>
+
+  <text x="590" y="350" text-anchor="middle" font-size="13" fill="#2d6a4f">같은 실수가 반복되면 프롬프트가 아니라 가이드 · 센서를 추가한다</text>
+
+  <!-- 하단 -->
+  <text x="20" y="394" font-size="14" font-weight="bold" fill="#1b1b1b">관계</text>
+  <text x="70" y="394" font-size="13" fill="#1b1b1b">시스템 프롬프트는 하네스의 한 구성요소다 — 프롬프트 엔지니어링은 하네스 엔지니어링 안에 남는다</text>
+  <text x="70" y="418" font-size="13" fill="#4a5568">센서는 계산형(테스트 · 린터, 결정적)과 추론형(AI 리뷰, 비결정적)으로 나뉜다</text>
+</svg>
