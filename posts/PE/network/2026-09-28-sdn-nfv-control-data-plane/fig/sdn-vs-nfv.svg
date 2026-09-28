@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">SDN과 NFV — 무엇을 무엇에서 떼어 내는가</text>
+
+  <line x1="440" y1="54" x2="440" y2="440" stroke="#d6d6d0" stroke-width="1.5"/>
+
+  <!-- SDN -->
+  <text x="30" y="72" font-size="15" font-weight="bold" fill="#2d6a4f">가. SDN — 제어 평면을 장비에서 뗀다</text>
+
+  <rect x="60" y="92" width="320" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="220" y="116" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">응용 평면 (Application)</text>
+  <text x="220" y="136" font-size="13" fill="#333" text-anchor="middle">경로 정책, 부하 분산, 방화벽 규칙</text>
+
+  <text x="232" y="172" font-size="13" fill="#555">북향 인터페이스 (NSAL)</text>
+  <line x1="220" y1="148" x2="220" y2="192" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="60" y="196" width="320" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="220" y="220" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">제어 평면 — 컨트롤러</text>
+  <text x="220" y="240" font-size="13" fill="#333" text-anchor="middle">망 전체를 보고 전달 규칙을 정한다</text>
+
+  <text x="232" y="276" font-size="13" fill="#555">남향 인터페이스 (예: OpenFlow)</text>
+  <line x1="220" y1="252" x2="220" y2="296" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="60" y="300" width="320" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="220" y="324" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">전달(데이터) 평면 — 스위치</text>
+  <text x="220" y="344" font-size="13" fill="#333" text-anchor="middle">받은 규칙대로 패킷을 보내고 버린다</text>
+
+  <text x="30" y="392" font-size="13" fill="#333">떼어 낸 뒤: 망의 동작을 프로그램이 정한다</text>
+  <text x="30" y="412" font-size="13" fill="#333">근거: RFC 7426 평면·추상화 계층 정의</text>
+
+  <!-- NFV -->
+  <text x="470" y="72" font-size="15" font-weight="bold" fill="#b45309">나. NFV — 기능을 전용 장비에서 뗀다</text>
+
+  <rect x="470" y="92" width="240" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="590" y="116" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">VNF</text>
+  <text x="590" y="136" font-size="13" fill="#333" text-anchor="middle">방화벽·NAT·로드밸런서 소프트웨어</text>
+
+  <rect x="470" y="196" width="240" height="160" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="590" y="220" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">NFVI</text>
+  <rect x="486" y="234" width="208" height="46" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1"/>
+  <text x="590" y="262" font-size="13" fill="#333" text-anchor="middle">가상화 계층 (하이퍼바이저)</text>
+  <rect x="486" y="294" width="208" height="46" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1"/>
+  <text x="590" y="322" font-size="13" fill="#333" text-anchor="middle">범용 서버·스토리지·네트워크</text>
+
+  <line x1="590" y1="148" x2="590" y2="192" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="602" y="176" font-size="13" fill="#555">Vn-Nf</text>
+
+  <rect x="730" y="92" width="124" height="264" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="792" y="116" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">MANO</text>
+  <text x="792" y="170" font-size="13" fill="#333" text-anchor="middle">NFVO</text>
+  <text x="792" y="188" font-size="13" fill="#555" text-anchor="middle">서비스 조립</text>
+  <text x="792" y="230" font-size="13" fill="#333" text-anchor="middle">VNFM</text>
+  <text x="792" y="248" font-size="13" fill="#555" text-anchor="middle">VNF 수명주기</text>
+  <text x="792" y="290" font-size="13" fill="#333" text-anchor="middle">VIM</text>
+  <text x="792" y="308" font-size="13" fill="#555" text-anchor="middle">자원 할당</text>
+
+  <line x1="728" y1="120" x2="714" y2="120" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="728" y1="276" x2="714" y2="276" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <text x="470" y="392" font-size="13" fill="#333">떼어 낸 뒤: 기능을 범용 서버에 올렸다 내렸다 한다</text>
+  <text x="470" y="412" font-size="13" fill="#333">근거: ETSI GS NFV 002 기준 구조(7절)</text>
+
+  <text x="30" y="458" font-size="13" fill="#555">둘은 독립이다. SDN은 NFVI의 가상 네트워크를 만드는 방법 중 하나로 쓰일 수 있다(NFV 002 7.2.4).</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>
