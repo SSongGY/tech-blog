@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <text x="440" y="32" font-size="17" font-weight="bold" text-anchor="middle" fill="#111827">같은 8비트, 네 가지 선로 부호</text>
+
+  <!-- 비트 경계(점선)와 비트 중간(옅은 점선) -->
+  <g stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 4">
+    <line x1="220" y1="64" x2="220" y2="436"/><line x1="300" y1="64" x2="300" y2="436"/>
+    <line x1="380" y1="64" x2="380" y2="436"/><line x1="460" y1="64" x2="460" y2="436"/>
+    <line x1="540" y1="64" x2="540" y2="436"/><line x1="620" y1="64" x2="620" y2="436"/>
+    <line x1="700" y1="64" x2="700" y2="436"/><line x1="780" y1="64" x2="780" y2="436"/>
+    <line x1="860" y1="64" x2="860" y2="436"/>
+  </g>
+  <g stroke="#e5e7eb" stroke-width="1" stroke-dasharray="2 4">
+    <line x1="260" y1="90" x2="260" y2="436"/><line x1="340" y1="90" x2="340" y2="436"/>
+    <line x1="420" y1="90" x2="420" y2="436"/><line x1="500" y1="90" x2="500" y2="436"/>
+    <line x1="580" y1="90" x2="580" y2="436"/><line x1="660" y1="90" x2="660" y2="436"/>
+    <line x1="740" y1="90" x2="740" y2="436"/><line x1="820" y1="90" x2="820" y2="436"/>
+  </g>
+
+  <!-- 입력 비트 -->
+  <text x="200" y="82" font-size="14" text-anchor="end" fill="#374151">입력 비트</text>
+  <g font-size="16" font-weight="bold" text-anchor="middle" fill="#111827">
+    <text x="260" y="82">1</text><text x="340" y="82">0</text><text x="420" y="82">1</text><text x="500" y="82">1</text>
+    <text x="580" y="82">0</text><text x="660" y="82">0</text><text x="740" y="82">0</text><text x="820" y="82">0</text>
+  </g>
+
+  <!-- 행 라벨 -->
+  <g font-size="15" font-weight="bold" fill="#111827">
+    <text x="16" y="128">NRZ-L</text>
+    <text x="16" y="218">NRZI (1 = 천이)</text>
+    <text x="16" y="308">맨체스터 (IEEE 802.3)</text>
+    <text x="16" y="398">차등 맨체스터 (T1S)</text>
+  </g>
+  <g font-size="13" fill="#4b5563">
+    <text x="16" y="148">레벨로 싣는다</text>
+    <text x="16" y="238">비트 시작 천이의 유무</text>
+    <text x="16" y="328">중간 천이의 방향</text>
+    <text x="16" y="418">중간 천이의 유무</text>
+  </g>
+
+  <!-- 파형: 시작 전 선로 레벨은 low -->
+  <g fill="none" stroke-width="3" stroke-linejoin="miter">
+    <path stroke="#b45309" d="M206,152 H220 V112 H300 V152 H380 V112 H540 V152 H860"/>
+    <path stroke="#b45309" d="M206,242 H220 V202 H380 V242 H460 V202 H860"/>
+    <path stroke="#2d6a4f" d="M206,332 H260 V292 H340 V332 H420 V292 H460 V332 H500 V292 H580 V332 H620 V292 H660 V332 H700 V292 H740 V332 H780 V292 H820 V332 H860"/>
+    <path stroke="#2d6a4f" d="M206,422 H220 V382 H260 V422 H300 V382 H380 V422 H420 V382 H460 V422 H500 V382 H540 V422 H620 V382 H700 V422 H780 V382 H860"/>
+  </g>
+
+  <!-- 범례 -->
+  <g font-size="13" fill="#374151">
+    <line x1="40" y1="466" x2="72" y2="466" stroke="#2d6a4f" stroke-width="3"/>
+    <text x="80" y="471">비트마다 천이가 있다 — 수신 측이 클록을 뽑는다</text>
+    <line x1="460" y1="466" x2="492" y2="466" stroke="#b45309" stroke-width="3"/>
+    <text x="500" y="471">입력에 따라 천이 없는 구간이 길어진다</text>
+  </g>
+</svg>
