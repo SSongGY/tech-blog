@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **77편** · 갱신 2026-09-29
+총 **79편** · 갱신 2026-09-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -35,10 +35,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 30편
+## 기술사 (pe) — 32편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
+| 2026-09-29 | [컨텍스트 엔지니어링 — 추론 시점에 모델에 들어가는 토큰을 고르는 기술](posts/PE/emerging-tech/2026-09-29-context-engineering-token-curation/index.md) | 중급 | A Survey of Context Engineering arXiv:2507.13334v2 (2025-07), Claude Docs Context windows · Context editing (2026-09 조회), Anthropic Engineering (2025-09-29), LangChain Blog (2025-07-02), Manus Blog (2025-07-18) | 문서 근거 |
 | 2026-09-28 | [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](posts/PE/network/2026-09-28-tcp-handshake-flow-congestion-control/index.md) | 중급 | RFC 9293 (2022-08, STD 7), RFC 5681 (2009-09), RFC 9438 (2023-08), RFC 1122 (1989-10) | 문서 근거 |
 | 2026-09-28 | [SDN과 NFV — 제어와 데이터 평면 분리](posts/PE/network/2026-09-28-sdn-nfv-control-data-plane/index.md) | 심화 | RFC 7426 (2015-01), ETSI GS NFV 002 V1.2.1 (2014-12), ETSI GS NFV 003 V1.2.1 (2014-12) | 문서 근거 |
 | 2026-09-28 | [라우팅 프로토콜 — 거리벡터와 링크상태](posts/PE/network/2026-09-28-routing-distance-vector-vs-link-state/index.md) | 중급 | RFC 2453 (1998-11, STD 56), RFC 2328 (1998-04, STD 54), Python 3.13.5 | 실행 검증 |
