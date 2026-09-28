@@ -1,0 +1,164 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-28-coalesce-nullif-null-handling
+# 명령      : python coalesce_nullif.py
+# 수행 시각 : 2026-09-28 23:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer_order]  5행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  id         | INTEGER | PK
+  customer   | TEXT    | NOT NULL
+  list_price | INTEGER | NOT NULL
+  discount   | INTEGER |
+  quantity   | INTEGER | NOT NULL
+  mobile     | TEXT    |
+  home_phone | TEXT    |
+
+  id | customer | list_price | discount | quantity | mobile        | home_phone
+  ---+----------+------------+----------+----------+---------------+-------------
+   1 | 김도윤   |      30000 |     3000 |        1 | 010-1111-2222 | NULL
+   2 | 이서준   |      45000 |     NULL |        2 |               | 02-333-4444
+   3 | 박하은   |      12000 |        0 |        0 | 010-5555-6666 | 031-777-8888
+   4 | 최유나   |      28000 |     NULL |        1 | NULL          | NULL
+   5 | 정민호   |      50000 |     5000 |        3 |               | NULL
+
+
+== 1. 연산 — NULL이 하나라도 끼면 결과가 NULL ==
+
+[1-A 정가 - 할인액]
+  SELECT id, list_price, discount, list_price - discount AS pay FROM customer_order ORDER BY id
+  (1, 30000, 3000, 27000)
+  (2, 45000, None, None)
+  (3, 12000, 0, 12000)
+  (4, 28000, None, None)
+  (5, 50000, 5000, 45000)
+  -> 5행
+
+[1-B COALESCE(할인액, 0)으로 바꿔 빼면]
+  SELECT id, list_price - COALESCE(discount, 0) AS pay FROM customer_order ORDER BY id
+  (1, 27000)
+  (2, 45000)
+  (3, 12000)
+  (4, 28000)
+  (5, 45000)
+  -> 5행
+
+[1-C 문자열 잇기도 같다]
+  SELECT id, customer || ' / ' || home_phone AS label FROM customer_order ORDER BY id
+  (1, None)
+  (2, '이서준 / 02-333-4444')
+  (3, '박하은 / 031-777-8888')
+  (4, None)
+  (5, None)
+  -> 5행
+
+== 2. 비교 — NULL과의 비교는 참도 거짓도 아니다 ==
+
+[2-A discount = NULL]
+  SELECT id FROM customer_order WHERE discount = NULL
+  -> 0행
+
+[2-B discount IS NULL]
+  SELECT id FROM customer_order WHERE discount IS NULL
+  (2,)
+  (4,)
+  -> 2행
+
+[2-C discount <> 3000 (할인 3000원이 아닌 주문)]
+  SELECT id FROM customer_order WHERE discount <> 3000 ORDER BY id
+  (3,)
+  (5,)
+  -> 2행
+
+[2-D 비교식 자체의 값]
+  SELECT NULL = NULL, NULL <> 1, NULL IS NULL, 1 IS NOT NULL
+  (None, None, 1, 1)
+  -> 1행
+
+== 3. 집계 — 집계 함수는 NULL 행을 건너뛴다 ==
+
+[3-A COUNT(*) 와 COUNT(discount)]
+  SELECT COUNT(*), COUNT(discount) FROM customer_order
+  (5, 3)
+  -> 1행
+
+[3-B SUM·AVG 할인액]
+  SELECT SUM(discount), AVG(discount) FROM customer_order
+  (8000, 2666.6666666666665)
+  -> 1행
+
+[3-C NULL을 0으로 치고 평균]
+  SELECT AVG(COALESCE(discount, 0)) FROM customer_order
+  (1600.0,)
+  -> 1행
+
+[3-D 조건에 맞는 행이 없을 때 SUM]
+  SELECT SUM(discount), COALESCE(SUM(discount), 0) FROM customer_order WHERE list_price > 100000
+  (None, 0)
+  -> 1행
+
+== 4. COALESCE — 인자 여럿 중 첫 번째 NULL 아닌 값 ==
+
+[4-A 휴대폰, 없으면 집전화, 둘 다 없으면 '연락처 없음']
+  SELECT id, COALESCE(mobile, home_phone, '연락처 없음') AS contact FROM customer_order ORDER BY id
+  (1, '010-1111-2222')
+  (2, '')
+  (3, '010-5555-6666')
+  (4, '연락처 없음')
+  (5, '')
+  -> 5행
+
+== 5. NULLIF — 두 값이 같으면 NULL ==
+
+[5-A NULLIF 의 값]
+  SELECT NULLIF(3, 3), NULLIF(3, 4), NULLIF('', ''), NULLIF(NULL, 1)
+  (None, 3, None, None)
+  -> 1행
+
+[5-B 빈 문자열을 NULL로 바꾼 뒤 COALESCE]
+  SELECT id, COALESCE(NULLIF(mobile, ''), home_phone, '연락처 없음') AS contact FROM customer_order ORDER BY id
+  (1, '010-1111-2222')
+  (2, '02-333-4444')
+  (3, '010-5555-6666')
+  (4, '연락처 없음')
+  (5, '연락처 없음')
+  -> 5행
+
+[5-C 수량 0으로 나누기]
+  SELECT id, list_price / quantity AS unit_price FROM customer_order ORDER BY id
+  (1, 30000)
+  (2, 22500)
+  (3, None)
+  (4, 28000)
+  (5, 16666)
+  -> 5행
+
+[5-D NULLIF로 0을 NULL로 바꾼 뒤 나누기]
+  SELECT id, list_price / NULLIF(quantity, 0) AS unit_price FROM customer_order ORDER BY id
+  (1, 30000)
+  (2, 22500)
+  (3, None)
+  (4, 28000)
+  (5, 16666)
+  -> 5행
+
+[5-E 빈 문자열 휴대폰은 IS NULL에 걸리는가]
+  SELECT id FROM customer_order WHERE mobile IS NULL ORDER BY id
+  (4,)
+  -> 1행
