@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **76편** · 갱신 2026-09-28
+총 **77편** · 갱신 2026-09-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -91,10 +91,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 14편
+## 기출문제 (exam) — 15편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-29 | [기출문제 — 서버리스 컴퓨팅](posts/PE/exam/2026-09-29-serverless-computing/index.md) | 중급 | CNCF Serverless Whitepaper v1.0 (2018-02), UC Berkeley EECS-2019-3 (2019-02), AWS Lambda Developer Guide (2026-09 확인) | 문서 근거 |
 | 2026-09-28 | [기출문제 — WBS 작성 방법](posts/PE/exam/2026-09-28-wbs-construction/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), PMBOK Guide 6th Edition (2017) | 문서 근거 |
 | 2026-09-28 | [기출문제 — 프롬프트 엔지니어링과 하네스 엔지니어링 비교](posts/PE/exam/2026-09-28-prompt-vs-harness-engineering/index.md) | 중급 | The Prompt Report arXiv:2406.06608v6 (2025-02), Anthropic Engineering (2025-11-26), martinfowler.com Harness engineering (2026-04-02), Google Developers Blog (2026-09-09) | 문서 근거 |
 | 2026-09-28 | [기출문제 — 비인간 신원(NHI)의 보안 취약점](posts/PE/exam/2026-09-28-non-human-identity-security-weaknesses/index.md) | 중급 | OWASP NHI Top 10 (2025), NIST SP 800-207A (2023-09), IETF draft-ietf-wimse-arch-08 (2026-07) | 문서 근거 |

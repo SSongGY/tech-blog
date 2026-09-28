@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">서버리스(FaaS) 플랫폼의 4가지 구성요소</text>
+
+  <!-- ③ FaaS Controller -->
+  <rect x="300" y="52" width="280" height="62" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="440" y="77" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ FaaS 제어기 (FaaS Controller)</text>
+  <text x="440" y="99" text-anchor="middle" font-size="13" fill="#4a5568">함수·이벤트 소스의 배포 · 제어 · 모니터링</text>
+
+  <!-- ① Event sources -->
+  <rect x="20" y="160" width="220" height="110" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="130" y="186" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 이벤트 소스</text>
+  <text x="130" y="208" text-anchor="middle" font-size="13" fill="#4a5568">HTTP 요청 · 메시지 큐</text>
+  <text x="130" y="228" text-anchor="middle" font-size="13" fill="#4a5568">스트림 · 스토리지 변경</text>
+  <text x="130" y="248" text-anchor="middle" font-size="13" fill="#4a5568">DB 변경 · 타이머</text>
+
+  <!-- ② Function instances -->
+  <rect x="300" y="160" width="280" height="110" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="440" y="186" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 함수 인스턴스</text>
+  <text x="440" y="212" text-anchor="middle" font-size="14" fill="#1b1b1b">fn  ·  fn  ·  fn  ·  …</text>
+  <text x="440" y="236" text-anchor="middle" font-size="13" fill="#4a5568">수요에 따라 0개 ~ N개로 확장</text>
+  <text x="440" y="256" text-anchor="middle" font-size="13" fill="#4a5568">무상태 · 실행 시간 상한</text>
+
+  <!-- ④ Platform services -->
+  <rect x="640" y="160" width="220" height="110" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="750" y="186" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">④ 플랫폼 서비스</text>
+  <text x="750" y="206" text-anchor="middle" font-size="13" fill="#b45309">(BaaS)</text>
+  <text x="750" y="228" text-anchor="middle" font-size="13" fill="#4a5568">객체 스토리지 · DB</text>
+  <text x="750" y="248" text-anchor="middle" font-size="13" fill="#4a5568">메시징 · 인증</text>
+
+  <!-- arrows -->
+  <line x1="240" y1="215" x2="296" y2="215" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <text x="268" y="206" text-anchor="middle" font-size="13" fill="#2d6a4f">트리거</text>
+  <line x1="580" y1="215" x2="636" y2="215" stroke="#b45309" stroke-width="1.6" marker-end="url(#a3)"/>
+  <text x="608" y="206" text-anchor="middle" font-size="13" fill="#b45309">상태</text>
+  <line x1="360" y1="114" x2="200" y2="156" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="440" y1="114" x2="440" y2="156" stroke="#4a5568" stroke-width="1.4" marker-end="url(#a2)"/>
+
+  <!-- lifecycle band -->
+  <line x1="20" y1="300" x2="860" y2="300" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="20" y="326" font-size="13" font-weight="bold" fill="#1b1b1b">실행 환경 생명주기 (AWS Lambda 예)</text>
+
+  <rect x="20" y="342" width="240" height="58" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="140" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Init</text>
+  <text x="140" y="387" text-anchor="middle" font-size="13" fill="#9d0208">콜드 스타트 — 코드 적재 · 초기화</text>
+
+  <rect x="320" y="342" width="240" height="58" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="440" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Invoke</text>
+  <text x="440" y="387" text-anchor="middle" font-size="13" fill="#2d6a4f">핸들러 실행 · 과금 구간</text>
+
+  <rect x="620" y="342" width="240" height="58" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="740" y="366" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Shutdown</text>
+  <text x="740" y="387" text-anchor="middle" font-size="13" fill="#4a5568">유휴가 길어지면 회수</text>
+
+  <line x1="260" y1="371" x2="316" y2="371" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="560" y1="371" x2="616" y2="371" stroke="#4a5568" stroke-width="1.6" marker-end="url(#a2)"/>
+  <path d="M500,342 C500,320 380,320 380,338" fill="none" stroke="#2d6a4f" stroke-width="1.4" marker-end="url(#a1)"/>
+  <text x="440" y="424" text-anchor="middle" font-size="13" fill="#4a5568">호출이 끝나면 동결(freeze) → 다음 요청에 재사용(웜 스타트)</text>
+</svg>
