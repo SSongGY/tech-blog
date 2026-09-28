@@ -63,7 +63,7 @@ topics:
     difficulty: 심화
     angle: "버전 체인이 쌓이는 과정을 도식화하고 롱 트랜잭션의 비용을 계산"
     code: sql
-    status: todo
+    status: done
   - id: db-005
     title: "데드락은 어떻게 만들어지고 DB는 누구를 죽이는가"
     category: Database
@@ -844,7 +844,7 @@ topics:
     difficulty: 입문
     angle: "UNION이 정렬을 부르는 것을 실행계획과 시간으로 대조"
     code: python
-    status: todo
+    status: done
   - id: bas-014
     title: "CASE WHEN — 조건부 값과 피벗"
     category: Database
@@ -1114,7 +1114,7 @@ topics:
     difficulty: 중급
     angle: "혼잡 제어 알고리즘 단계를 상태 변화로"
     code: none
-    status: todo
+    status: done
   - id: pe-016
     title: "라우팅 프로토콜 — 거리벡터와 링크상태"
     category: PE

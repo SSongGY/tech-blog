@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **63편** · 갱신 2026-09-28
+총 **66편** · 갱신 2026-09-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 12편
+## DB문법 (basics) — 13편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-28 | [UNION과 UNION ALL — 중복 제거 비용](posts/Database/sql-basics/2026-09-28-union-vs-union-all/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [IN, EXISTS, NOT IN — 결과가 갈리는 지점](posts/Database/sql-basics/2026-09-28-in-exists-not-in-null/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-23 | [서브쿼리 세 가지 — 스칼라, 인라인 뷰, 상관](posts/Database/sql-basics/2026-09-23-subquery-scalar-inline-correlated/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-23 | [LEFT JOIN — 없는 쪽을 남기는 조인](posts/Database/sql-basics/2026-09-23-left-join-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -31,10 +32,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 25편
+## 기술사 (pe) — 26편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-28 | [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](posts/PE/network/2026-09-28-tcp-handshake-flow-congestion-control/index.md) | 중급 | RFC 9293 (2022-08, STD 7), RFC 5681 (2009-09), RFC 9438 (2023-08), RFC 1122 (1989-10) | 문서 근거 |
 | 2026-09-28 | [OSI 7계층과 TCP/IP 4계층 대응](posts/PE/network/2026-09-28-osi-7-layer-vs-tcpip-4-layer/index.md) | 입문 | ITU-T X.200 (07/1994) = ISO/IEC 7498-1:1994, RFC 1122 (1989-10, STD 3), RFC 1812 (1995-06), RFC 8446 (2018-08) | 문서 근거 |
 | 2026-09-28 | [비인간 신원(NHI)과 워크로드 신원 관리](posts/PE/security/2026-09-28-non-human-identity-workload-identity/index.md) | 중급 | OWASP NHI Top 10 (2025), NIST SP 800-207A (2023-09), IETF draft-ietf-wimse-arch-08 (2026-07), RFC 6750 (2012-10), RFC 9449 (2023-09) | 문서 근거 |
 | 2026-09-28 | [선로 부호화(Line Coding) — NRZ·NRZI·맨체스터·차등 맨체스터·4B5B](posts/PE/network/2026-09-28-line-coding-schemes/index.md) | 중급 | IEEE 802.3cg Draft D2.0 Clause 147 (2018-09), Intel UTMI Specification 1.05 (2001), Python 3.13.5 | 실행 검증 |
@@ -71,10 +73,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 4편
+## 일반 (general) — 5편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-28 | [MVCC는 왜 읽기 잠금을 없앴고 무엇을 대가로 치르는가 — SQLite WAL로 잰 비용](posts/Database/2026-09-28-mvcc-wal-long-reader-cost/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-21 | [트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가](posts/Database/sqlite/2026-09-21-isolation-level-anomalies/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [git bisect로 버그가 들어온 커밋을 자동으로 찾기](posts/Tooling/git/2026-09-18-git-bisect-run-automation/index.md) | 중급 | git 2.54.0.windows.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
