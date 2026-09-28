@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">거리벡터와 링크상태 — 무엇을, 누구에게 보내고, 무엇으로 계산하는가</text>
+
+  <line x1="440" y1="56" x2="440" y2="420" stroke="#d6d6d0" stroke-width="1.5"/>
+
+  <!-- 거리벡터 -->
+  <text x="30" y="72" font-size="15" font-weight="bold" fill="#b45309">가. 거리벡터 (RIP)</text>
+
+  <rect x="30" y="90" width="380" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="220" y="114" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">보내는 것: 내 거리표 (목적지, 거리)</text>
+  <text x="220" y="136" font-size="13" fill="#333" text-anchor="middle">받는 쪽: 직접 연결된 이웃만</text>
+
+  <rect x="30" y="182" width="380" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="220" y="206" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">계산: 이웃이 알린 거리 + 링크 비용의 최솟값</text>
+  <text x="220" y="228" font-size="13" fill="#333" text-anchor="middle">Bellman-Ford — 다음 홉과 거리만 안다</text>
+
+  <rect x="30" y="274" width="380" height="58" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="220" y="298" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">끊기면: 이웃이 옛 거리를 다시 알려 준다</text>
+  <text x="220" y="320" font-size="13" fill="#333" text-anchor="middle">거리가 한 단계씩 올라 16(무한)에서 멈춘다</text>
+
+  <rect x="30" y="358" width="380" height="50" rx="6" fill="#ffffff" stroke="#8a8a84" stroke-width="1.2"/>
+  <text x="220" y="388" font-size="13" fill="#555" text-anchor="middle">완화책: split horizon · poisoned reverse · triggered update</text>
+
+  <line x1="220" y1="148" x2="220" y2="178" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="220" y1="240" x2="220" y2="270" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="220" y1="332" x2="220" y2="354" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 링크상태 -->
+  <text x="470" y="72" font-size="15" font-weight="bold" fill="#2d6a4f">나. 링크상태 (OSPF)</text>
+
+  <rect x="470" y="90" width="380" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="660" y="114" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">보내는 것: 내 링크 상태 (LSA)</text>
+  <text x="660" y="136" font-size="13" fill="#333" text-anchor="middle">받는 쪽: 영역 전체 (flooding)</text>
+
+  <rect x="470" y="182" width="380" height="58" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="660" y="206" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">모든 라우터가 같은 링크상태 DB 를 가진다</text>
+  <text x="660" y="228" font-size="13" fill="#333" text-anchor="middle">영역의 토폴로지 전체를 안다</text>
+
+  <rect x="470" y="274" width="380" height="58" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="660" y="298" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">계산: 자신을 루트로 최단 경로 트리</text>
+  <text x="660" y="320" font-size="13" fill="#333" text-anchor="middle">끊기면 새 LSA 가 퍼지고, 받은 라우터가 다시 계산</text>
+
+  <rect x="470" y="358" width="380" height="50" rx="6" fill="#ffffff" stroke="#8a8a84" stroke-width="1.2"/>
+  <text x="660" y="388" font-size="13" fill="#555" text-anchor="middle">확장: 영역(Area)으로 나눠 안쪽 토폴로지를 밖에 숨긴다</text>
+
+  <line x1="660" y1="148" x2="660" y2="178" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="660" y1="240" x2="660" y2="270" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="660" y1="332" x2="660" y2="354" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <text x="30" y="446" font-size="13" fill="#333">거리벡터 라우터는 이웃이 알린 거리만 가지고, 링크상태 라우터는 영역의 토폴로지 전체를 가진다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>
