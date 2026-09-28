@@ -3135,7 +3135,7 @@ topics:
     angle: "NIST SP 800-86 4단계와 ISO/IEC 27037 증거 처리 과정, 연계 보관성·해시·휘발성 순서, 포렌식 준비도"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-117
     title: "하네스 엔지니어링 — 가이드·센서·세션 밖 상태로 에이전트를 통제하는 구조"
     category: PE
@@ -3146,7 +3146,7 @@ topics:
     angle: "Agent = Model + Harness. 가이드(피드포워드)·센서(피드백), 계산형·추론형 센서, 장기 실행 에이전트의 상태 외부화, 행동 평가. 프롬프트·컨텍스트 엔지니어링과의 관계가 출처마다 다르다는 점을 밝힌다(2차 자료 기반)"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-118
     title: "WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정"
     category: PE

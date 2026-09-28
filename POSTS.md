@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **68편** · 갱신 2026-09-28
+총 **70편** · 갱신 2026-09-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -32,7 +32,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 26편
+## 기술사 (pe) — 28편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -40,6 +40,8 @@
 | 2026-09-28 | [OSI 7계층과 TCP/IP 4계층 대응](posts/PE/network/2026-09-28-osi-7-layer-vs-tcpip-4-layer/index.md) | 입문 | ITU-T X.200 (07/1994) = ISO/IEC 7498-1:1994, RFC 1122 (1989-10, STD 3), RFC 1812 (1995-06), RFC 8446 (2018-08) | 문서 근거 |
 | 2026-09-28 | [비인간 신원(NHI)과 워크로드 신원 관리](posts/PE/security/2026-09-28-non-human-identity-workload-identity/index.md) | 중급 | OWASP NHI Top 10 (2025), NIST SP 800-207A (2023-09), IETF draft-ietf-wimse-arch-08 (2026-07), RFC 6750 (2012-10), RFC 9449 (2023-09) | 문서 근거 |
 | 2026-09-28 | [선로 부호화(Line Coding) — NRZ·NRZI·맨체스터·차등 맨체스터·4B5B](posts/PE/network/2026-09-28-line-coding-schemes/index.md) | 중급 | IEEE 802.3cg Draft D2.0 Clause 147 (2018-09), Intel UTMI Specification 1.05 (2001), Python 3.13.5 | 실행 검증 |
+| 2026-09-28 | [하네스 엔지니어링 — 가이드·센서·세션 밖 상태로 에이전트를 통제하는 구조](posts/PE/emerging-tech/2026-09-28-harness-engineering-guides-sensors/index.md) | 중급 | martinfowler.com Harness engineering (2026-04-02), Anthropic Engineering (2025-11-26), Google Developers Blog (2026-09-09), Anthropic Engineering context engineering (2025-09-29) | 문서 근거 |
+| 2026-09-28 | [디지털 포렌식 절차와 증거 무결성](posts/PE/security/2026-09-28-digital-forensics-process-evidence-integrity/index.md) | 중급 | NIST SP 800-86 (2006-08), ISO/IEC 27037:2012, ISO/IEC 27043:2015, RFC 3227 (2002-02) | 문서 근거 |
 | 2026-09-23 | [프로세스 상태 전이 모델 — 5상태와 대기 큐](posts/PE/system/2026-09-23-process-state-transition-model/index.md) | 중급 | Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018), Stallings, Operating Systems: Internals and Design Principles §3.2, IEEE Std 1003.1-2024 (POSIX.1-2024), Linux man-pages — proc_pid_stat(5)·proc_loadavg(5), 2026-09-23 조회 | 문서 근거 |
 | 2026-09-23 | [Physical AI — 인지·추론·행동 순환과 시뮬레이션 기반 학습](posts/PE/emerging-tech/2026-09-23-physical-ai-perception-action-loop/index.md) | 중급 | RT-2 arXiv:2307.15818 (2023-07), GR00T N1 arXiv:2503.14734 (2025-03), Tobin et al. arXiv:1703.06907 (2017-03), WEF Physical AI White Paper (2025-09), ISO 23247-1:2021, ISO 10218-1:2025 | 문서 근거 |
 | 2026-09-23 | [정규화 1NF부터 BCNF까지](posts/PE/database/2026-09-23-normalization-1nf-to-bcnf/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Windows 11 | 실행 검증 |
