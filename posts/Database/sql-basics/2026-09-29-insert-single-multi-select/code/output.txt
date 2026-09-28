@@ -1,0 +1,99 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-29-insert-single-multi-select
+# 명령      : python insert_basics.py
+# 수행 시각 : 2026-09-29 08:26 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  0행
+  컬럼      | 타입    | 제약
+  ----------+---------+-------------------------
+  member_id | INTEGER | PK
+  name      | TEXT    | NOT NULL
+  email     | TEXT    | NOT NULL
+  grade     | TEXT    | NOT NULL DEFAULT 'basic'
+
+  (행 없음)
+
+[signup_staging]  3행
+  컬럼  | 타입 | 제약
+  ------+------+---------
+  email | TEXT | NOT NULL
+  name  | TEXT | NOT NULL
+
+  email            | name
+  -----------------+-------
+  kim@example.com  | 김하나
+  lee@example.com  | 이두리
+  park@example.com | 박세찬
+
+-- 1. 단건 — 컬럼 이름을 적는다. 빠진 grade 는 DEFAULT 로 채워진다
+   INSERT INTO member (member_id, name, email) VALUES (1, '최고참', 'choi@example.com')
+   성공 · 바뀐 행 1
+
+-- 2. 다건 — VALUES 뒤에 괄호 묶음을 쉼표로 잇는다
+   INSERT INTO member (member_id, name, email, grade) VALUES (2, '정가람', 'jung@example.com', 'gold'), (3, '한별', 'han@example.com', 'basic')
+   성공 · 바뀐 행 2
+
+-- 3. 다건 중 한 행이 실패하면 — 3번 id 가 이미 있다
+   INSERT INTO member (member_id, name, email) VALUES (4, '오늘', 'oh@example.com'), (3, '중복', 'dup@example.com')
+   에러: UNIQUE constraint failed: member.member_id
+
+   SELECT * FROM member ORDER BY member_id
+   1 | 최고참 | choi@example.com | basic
+   2 | 정가람 | jung@example.com | gold
+   3 | 한별 | han@example.com | basic
+
+-- 4. 값 개수가 컬럼 개수와 다르면
+   INSERT INTO member (member_id, name, email) VALUES (5, '개수부족')
+   에러: 2 values for 3 columns
+
+-- 5. 컬럼 이름 없이 넣으면 표의 컬럼 수를 전부 채워야 한다
+   INSERT INTO member VALUES (5, '생략', 'skip@example.com')
+   에러: table member has 4 columns but 3 values were supplied
+
+== INSERT SELECT — 스테이징 표에서 옮겨 담는다
+   스테이징 표의 컬럼 순서는 (email, name), 대상 표는 (name, email) 이다
+
+-- 6. SELECT * 로 옮긴다 — 순서가 뒤집혀 있다
+   INSERT INTO member (name, email) SELECT * FROM signup_staging
+   성공 · 바뀐 행 3
+
+   SELECT member_id, name, email FROM member WHERE member_id > 3
+   4 | kim@example.com | 김하나
+   5 | lee@example.com | 이두리
+   6 | park@example.com | 박세찬
+
+-- 7. 적재 뒤 검사 — 원본에 있는데 대상에 없는 (이름, 이메일) 쌍
+   SELECT name, email FROM signup_staging EXCEPT SELECT name, email FROM member
+   김하나 | kim@example.com
+   박세찬 | park@example.com
+   이두리 | lee@example.com
+
+-- 8. 양쪽에 컬럼 이름을 적어 옮긴다
+   INSERT INTO member (name, email) SELECT name, email FROM signup_staging
+   성공 · 바뀐 행 3
+
+   SELECT member_id, name, email, grade FROM member WHERE member_id > 3
+   4 | 김하나 | kim@example.com | basic
+   5 | 이두리 | lee@example.com | basic
+   6 | 박세찬 | park@example.com | basic
+
+-- 9. 같은 검사를 다시 돌린다
+   SELECT name, email FROM signup_staging EXCEPT SELECT name, email FROM member
+   (행 없음)
+
