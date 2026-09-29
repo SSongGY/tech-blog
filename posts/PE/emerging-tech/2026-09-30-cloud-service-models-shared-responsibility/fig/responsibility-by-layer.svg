@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">서비스 모델별 책임 경계 — 계층마다 누가 맡는가</text>
+
+  <!-- 열 머리 -->
+  <text x="130" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">계층</text>
+  <text x="340" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">온프레미스</text>
+  <text x="480" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">IaaS</text>
+  <text x="620" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">PaaS</text>
+  <text x="760" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">SaaS</text>
+
+  <!-- 행 라벨 -->
+  <text x="130" y="108" text-anchor="middle" font-size="14" fill="#1b1b1b">데이터 · 계정 · 접근 관리</text>
+  <text x="130" y="158" text-anchor="middle" font-size="14" fill="#1b1b1b">애플리케이션</text>
+  <text x="130" y="208" text-anchor="middle" font-size="14" fill="#1b1b1b">네트워크 통제</text>
+  <text x="130" y="258" text-anchor="middle" font-size="14" fill="#1b1b1b">미들웨어 · 런타임</text>
+  <text x="130" y="308" text-anchor="middle" font-size="14" fill="#1b1b1b">운영체제 (게스트 OS)</text>
+  <text x="130" y="358" text-anchor="middle" font-size="14" fill="#1b1b1b">하이퍼바이저</text>
+  <text x="130" y="408" text-anchor="middle" font-size="14" fill="#1b1b1b">물리 호스트 · 망 · 시설</text>
+
+  <!-- 온프레미스: 전부 고객 -->
+  <rect x="280" y="86" width="120" height="340" rx="4" fill="#dbe4ff" stroke="#364fc7" stroke-width="1.5"/>
+  <text x="340" y="262" text-anchor="middle" font-size="14" fill="#1b1b1b">전부 고객</text>
+
+  <!-- IaaS -->
+  <rect x="420" y="86" width="120" height="240" rx="4" fill="#dbe4ff" stroke="#364fc7" stroke-width="1.5"/>
+  <text x="480" y="212" text-anchor="middle" font-size="14" fill="#1b1b1b">고객</text>
+  <rect x="420" y="336" width="120" height="90" rx="4" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="480" y="386" text-anchor="middle" font-size="14" fill="#1b1b1b">제공자</text>
+
+  <!-- PaaS -->
+  <rect x="560" y="86" width="120" height="40" rx="4" fill="#dbe4ff" stroke="#364fc7" stroke-width="1.5"/>
+  <text x="620" y="111" text-anchor="middle" font-size="14" fill="#1b1b1b">고객</text>
+  <rect x="560" y="136" width="120" height="90" rx="4" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="620" y="178" text-anchor="middle" font-size="14" fill="#b45309">공유</text>
+  <text x="620" y="198" text-anchor="middle" font-size="13" fill="#495057">(출처마다 다름)</text>
+  <rect x="560" y="236" width="120" height="190" rx="4" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="620" y="336" text-anchor="middle" font-size="14" fill="#1b1b1b">제공자</text>
+
+  <!-- SaaS -->
+  <rect x="700" y="86" width="120" height="40" rx="4" fill="#dbe4ff" stroke="#364fc7" stroke-width="1.5"/>
+  <text x="760" y="111" text-anchor="middle" font-size="14" fill="#1b1b1b">고객</text>
+  <rect x="700" y="136" width="120" height="40" rx="4" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="760" y="161" text-anchor="middle" font-size="14" fill="#b45309">공유</text>
+  <rect x="700" y="186" width="120" height="240" rx="4" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="760" y="312" text-anchor="middle" font-size="14" fill="#1b1b1b">제공자</text>
+
+  <!-- 경계선 강조 -->
+  <line x1="410" y1="331" x2="550" y2="331" stroke="#9d0208" stroke-width="2.5"/>
+  <line x1="550" y1="231" x2="690" y2="231" stroke="#9d0208" stroke-width="2.5"/>
+  <line x1="690" y1="181" x2="830" y2="181" stroke="#9d0208" stroke-width="2.5"/>
+
+  <!-- 주석 -->
+  <text x="40" y="462" font-size="13" fill="#495057">붉은 선이 서비스 모델마다 올라가는 경계선이다. 위로 갈수록 고객이 넘기는 계층이 늘어난다.</text>
+  <text x="40" y="484" font-size="13" fill="#495057">맨 윗줄(데이터·계정·접근 관리)은 어느 모델에서도 고객에게 남는다.</text>
+  <text x="40" y="506" font-size="13" fill="#495057">PaaS의 애플리케이션: NIST SP 800-146은 고객의 관리 권한으로, Microsoft는 공유로 적는다.</text>
+</svg>
