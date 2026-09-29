@@ -1,0 +1,82 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-29-update-where-count-first
+# 명령      : python update_basics.py
+# 수행 시각 : 2026-09-29 12:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  5행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  member_id | INTEGER | PK
+  name      | TEXT    | NOT NULL
+  grade     | TEXT    | NOT NULL
+  point     | INTEGER | NOT NULL
+
+  member_id | name   | grade | point
+  ----------+--------+-------+------
+          1 | 김하나 | basic |  1200
+          2 | 이두리 | gold  |  5400
+          3 | 박세찬 | basic |   300
+          4 | 정가람 | basic |  2500
+          5 | 한별   | gold  |  8100
+
+-- 1. WHERE 를 빠뜨리면 — 트랜잭션 안에서 돌리고 되돌린다
+   UPDATE member SET grade = 'gold'  → 바뀐 행 5
+   SELECT grade, COUNT(*) FROM member GROUP BY grade
+   gold | 5
+
+   ROLLBACK 뒤
+   SELECT grade, COUNT(*) FROM member GROUP BY grade
+   basic | 3
+   gold | 2
+
+-- 2. 절차대로 — 포인트 2000 이상인 basic 회원을 gold 로
+   SELECT COUNT(*) FROM member WHERE grade = 'basic' AND point >= 2000  → 1
+   UPDATE member SET grade = 'gold' WHERE grade = 'basic' AND point >= 2000  → 바뀐 행 1
+   같으므로 COMMIT
+
+   SELECT member_id, name, grade, point FROM member ORDER BY member_id
+   1 | 김하나 | basic | 1200
+   2 | 이두리 | gold | 5400
+   3 | 박세찬 | basic | 300
+   4 | 정가람 | gold | 2500
+   5 | 한별 | gold | 8100
+
+-- 3. 센 조건을 UPDATE 로 옮기다 AND 를 OR 로 적었다
+   SELECT COUNT(*) FROM member WHERE grade = 'basic' AND point < 500  → 1
+   UPDATE member SET point = point + 100 WHERE grade = 'basic' OR point < 500  → 바뀐 행 2
+   다르므로 ROLLBACK
+
+   SELECT member_id, name, grade, point FROM member ORDER BY member_id
+   1 | 김하나 | basic | 1200
+   2 | 이두리 | gold | 5400
+   3 | 박세찬 | basic | 300
+   4 | 정가람 | gold | 2500
+   5 | 한별 | gold | 8100
+
+-- 4. 값이 그대로여도 바뀐 행으로 센다
+   UPDATE member SET grade = 'gold' WHERE grade = 'gold'  → 바뀐 행 3
+
+-- 5. SET 의 오른쪽은 바뀌기 전 값을 읽는다 — 두 컬럼 맞바꾸기
+   SELECT a, b FROM pair
+   2 | 1
+
+-- 6. RETURNING — 바뀐 행을 그 자리에서 돌려받는다
+   UPDATE member SET point = point - 300 WHERE member_id = 3 RETURNING member_id, name, point
+   3 | 박세찬 | 0
+
