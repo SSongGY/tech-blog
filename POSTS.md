@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **88편** · 갱신 2026-09-29
+총 **91편** · 갱신 2026-09-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 17편
+## DB문법 (basics) — 18편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-29 | [UPDATE — 조건 없는 UPDATE를 막는 습관](posts/Database/sql-basics/2026-09-29-update-where-count-first/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [INSERT — 단건, 다건, SELECT로 넣기](posts/Database/sql-basics/2026-09-29-insert-single-multi-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-09-29 | [DELETE, TRUNCATE, DROP — 무엇이 어디까지 지우는가](posts/Database/sql-basics/2026-09-29-delete-truncate-drop/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [UNION과 UNION ALL — 중복 제거 비용](posts/Database/sql-basics/2026-09-28-union-vs-union-all/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [IN, EXISTS, NOT IN — 결과가 갈리는 지점](posts/Database/sql-basics/2026-09-28-in-exists-not-in-null/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [COALESCE와 NULLIF — NULL을 다루는 두 함수](posts/Database/sql-basics/2026-09-28-coalesce-nullif-null-handling/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -38,7 +39,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 36편
+## 기술사 (pe) — 37편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -46,6 +47,7 @@
 | 2026-09-29 | [대칭키와 공개키 — 쓰임이 갈리는 지점](posts/PE/security/2026-09-29-symmetric-vs-public-key-hybrid/index.md) | 입문 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), RFC 9180 (2022-02), Diffie·Hellman, IEEE Trans. IT-22(6) (1976-11) | 문서 근거 |
 | 2026-09-29 | [서버리스 컴퓨팅 — FaaS·BaaS와 콜드 스타트](posts/PE/cloud/2026-09-29-serverless-computing-faas-baas/index.md) | 중급 | CNCF Serverless Whitepaper v1.0 (2018-02), UC Berkeley EECS-2019-3 (2019-02), AWS Lambda Developer Guide (2026-09 확인) | 문서 근거 |
 | 2026-09-29 | [오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형](posts/PE/it-management/2026-09-29-open-source-license-compliance-iso-5230/index.md) | 중급 | ISO/IEC 5230:2020 (OpenChain 2.1), GPL-3.0 · AGPL-3.0 (2007), MPL-2.0 (2012), Apache-2.0 (2004) | 문서 근거 |
+| 2026-09-29 | [침해사고 대응 절차 6단계](posts/PE/security/2026-09-29-incident-response-six-phases/index.md) | 중급 | NIST SP 800-61r2 (2012-08), NIST SP 800-61r3 (2025-04), SANS Incident Handler's Handbook (2012-02), ISO/IEC 27035-1:2023 | 문서 근거 |
 | 2026-09-29 | [컨텍스트 엔지니어링 — 추론 시점에 모델에 들어가는 토큰을 고르는 기술](posts/PE/emerging-tech/2026-09-29-context-engineering-token-curation/index.md) | 중급 | A Survey of Context Engineering arXiv:2507.13334v2 (2025-07), Claude Docs Context windows · Context editing (2026-09 조회), Anthropic Engineering (2025-09-29), LangChain Blog (2025-07-02), Manus Blog (2025-07-18) | 문서 근거 |
 | 2026-09-29 | [접근통제 모델 — DAC, MAC, RBAC, ABAC](posts/PE/security/2026-09-29-access-control-dac-mac-rbac-abac/index.md) | 중급 | DoD 5200.28-STD TCSEC (1985-12), NIST SP 800-162 (2014-01, 2019-08 갱신), ANSI INCITS 359-2004 | 문서 근거 |
 | 2026-09-28 | [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](posts/PE/network/2026-09-28-tcp-handshake-flow-congestion-control/index.md) | 중급 | RFC 9293 (2022-08, STD 7), RFC 5681 (2009-09), RFC 9438 (2023-08), RFC 1122 (1989-10) | 문서 근거 |
@@ -79,10 +81,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 6편
+## 리눅스 (linux) — 7편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-29 | [cut, paste, tr — 텍스트를 칼럼으로 다루기](posts/Infra/linux/2026-09-29-cut-paste-tr-columns/index.md) | 중급 | GNU coreutils 8.32 (cut, paste, tr), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-28 | [xargs — 파이프로 인자를 넘기는 법](posts/Linux/command/2026-09-28-xargs-args-parallel-null/index.md) | 중급 | GNU findutils 4.10.0 (xargs), GNU bash 5.3.9 (Git Bash), Windows 11 | 실행 검증 |
 | 2026-09-28 | [sort, uniq, wc — 텍스트 집계 조합](posts/Linux/command/2026-09-28-sort-uniq-wc-aggregation/index.md) | 입문 | GNU coreutils 8.32 (sort, uniq, wc), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-23 | [sed — 파일 일괄 치환을 안전하게 하는 법](posts/Linux/command/2026-09-23-sed-safe-bulk-replace/index.md) | 중급 | GNU sed 4.9, bash 5.3.9, Windows 11 | 실행 검증 |

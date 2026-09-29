@@ -76,3 +76,6 @@
 | 2026-09-29 | tb-007 | Database | Tibero 7 옵티마이저 힌트 — 문법과 적용 확인 |
 | 2026-09-29 | pe-120 | PE | 서버리스 컴퓨팅 — FaaS·BaaS와 콜드 스타트 |
 | 2026-09-29 | pe-121 | PE | 오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형 |
+| 2026-09-29 | bas-018 | Database | DELETE, TRUNCATE, DROP — 무엇이 어디까지 지우는가 |
+| 2026-09-29 | pe-021 | PE | 침해사고 대응 절차 6단계 |
+| 2026-09-29 | infra-006 | Infra | cut, paste, tr — 텍스트를 칼럼으로 다루기 |

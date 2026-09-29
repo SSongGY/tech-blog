@@ -895,7 +895,7 @@ topics:
     difficulty: 입문
     angle: "롤백 가능 여부와 저장 공간 반환 차이를 표로"
     code: python
-    status: todo
+    status: done
   - id: bas-019
     title: "CREATE TABLE — 타입과 기본 제약조건"
     category: Database
@@ -1164,7 +1164,7 @@ topics:
     difficulty: 중급
     angle: "단계별 산출물과 증거 보전에서 틀리기 쉬운 것"
     code: none
-    status: todo
+    status: done
   - id: pe-024
     title: "프로세스와 스레드 — 문맥 교환 비용"
     category: PE
@@ -2662,7 +2662,7 @@ topics:
     angle: "구분자가 여러 칸 공백일 때 cut이 안 먹는 이유와 그때 쓰는 대안"
     code: bash
     origin: manual
-    status: todo
+    status: done
   - id: infra-007
     title: "jq — JSON 로그에서 원하는 값만"
     category: Infra
