@@ -74,3 +74,5 @@
 | 2026-09-29 | bas-017 | Database | UPDATE — 조건 없는 UPDATE를 막는 습관 |
 | 2026-09-29 | pe-020 | PE | 접근통제 모델 — DAC, MAC, RBAC, ABAC |
 | 2026-09-29 | tb-007 | Database | Tibero 7 옵티마이저 힌트 — 문법과 적용 확인 |
+| 2026-09-29 | pe-120 | PE | 서버리스 컴퓨팅 — FaaS·BaaS와 콜드 스타트 |
+| 2026-09-29 | pe-121 | PE | 오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형 |

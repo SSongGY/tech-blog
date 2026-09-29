@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **86편** · 갱신 2026-09-29
+총 **88편** · 갱신 2026-09-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -38,12 +38,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 34편
+## 기술사 (pe) — 36편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
 | 2026-09-29 | [대칭키와 공개키 — 쓰임이 갈리는 지점](posts/PE/security/2026-09-29-symmetric-vs-public-key-hybrid/index.md) | 입문 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), RFC 9180 (2022-02), Diffie·Hellman, IEEE Trans. IT-22(6) (1976-11) | 문서 근거 |
+| 2026-09-29 | [서버리스 컴퓨팅 — FaaS·BaaS와 콜드 스타트](posts/PE/cloud/2026-09-29-serverless-computing-faas-baas/index.md) | 중급 | CNCF Serverless Whitepaper v1.0 (2018-02), UC Berkeley EECS-2019-3 (2019-02), AWS Lambda Developer Guide (2026-09 확인) | 문서 근거 |
+| 2026-09-29 | [오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형](posts/PE/it-management/2026-09-29-open-source-license-compliance-iso-5230/index.md) | 중급 | ISO/IEC 5230:2020 (OpenChain 2.1), GPL-3.0 · AGPL-3.0 (2007), MPL-2.0 (2012), Apache-2.0 (2004) | 문서 근거 |
 | 2026-09-29 | [컨텍스트 엔지니어링 — 추론 시점에 모델에 들어가는 토큰을 고르는 기술](posts/PE/emerging-tech/2026-09-29-context-engineering-token-curation/index.md) | 중급 | A Survey of Context Engineering arXiv:2507.13334v2 (2025-07), Claude Docs Context windows · Context editing (2026-09 조회), Anthropic Engineering (2025-09-29), LangChain Blog (2025-07-02), Manus Blog (2025-07-18) | 문서 근거 |
 | 2026-09-29 | [접근통제 모델 — DAC, MAC, RBAC, ABAC](posts/PE/security/2026-09-29-access-control-dac-mac-rbac-abac/index.md) | 중급 | DoD 5200.28-STD TCSEC (1985-12), NIST SP 800-162 (2014-01, 2019-08 갱신), ANSI INCITS 359-2004 | 문서 근거 |
 | 2026-09-28 | [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](posts/PE/network/2026-09-28-tcp-handshake-flow-congestion-control/index.md) | 중급 | RFC 9293 (2022-08, STD 7), RFC 5681 (2009-09), RFC 9438 (2023-08), RFC 1122 (1989-10) | 문서 근거 |
