@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2933">INSERT·UPDATE 한 행이 표에 들어가기까지</text>
+
+  <!-- 1단계: 값이 정해진다 -->
+  <text x="150" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">값이 정해진다</text>
+  <rect x="40" y="80" width="220" height="64" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="150" y="106" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">문장에 적힌 값</text>
+  <text x="150" y="128" text-anchor="middle" font-size="13" fill="#1f2933">NULL을 적으면 그대로 NULL</text>
+
+  <rect x="40" y="164" width="220" height="64" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="150" y="190" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">DEFAULT</text>
+  <text x="150" y="212" text-anchor="middle" font-size="13" fill="#1f2933">컬럼을 빼먹었을 때만 채운다</text>
+
+  <rect x="40" y="258" width="220" height="80" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="150" y="284" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">타입 친화도</text>
+  <text x="150" y="306" text-anchor="middle" font-size="13" fill="#1f2933">'1500' → 정수 1500</text>
+  <text x="150" y="326" text-anchor="middle" font-size="13" fill="#1f2933">'천원' → 글자 그대로</text>
+
+  <path d="M40,112 L22,112 L22,298 L36,298" fill="none" stroke="#495057" stroke-width="1.5" marker-end="url(#gray)"/>
+  <line x1="150" y1="228" x2="150" y2="254" stroke="#495057" stroke-width="1.5" marker-end="url(#gray)"/>
+  <line x1="262" y1="298" x2="326" y2="298" stroke="#495057" stroke-width="1.5" marker-end="url(#gray)"/>
+
+  <!-- 2단계: 행마다 검사한다 -->
+  <text x="480" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">행마다 검사한다 (문장 끝이 아니라)</text>
+  <rect x="330" y="80" width="300" height="300" rx="8" fill="#fff8eb" stroke="#b45309"/>
+
+  <rect x="350" y="96" width="260" height="70" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="480" y="122" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">NOT NULL</text>
+  <text x="480" y="146" text-anchor="middle" font-size="13" fill="#1f2933">NULL이면 실패 · 빈 문자열은 통과</text>
+
+  <rect x="350" y="186" width="260" height="84" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="480" y="212" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">CHECK</text>
+  <text x="480" y="236" text-anchor="middle" font-size="13" fill="#1f2933">결과가 0(거짓)이면 실패</text>
+  <text x="480" y="256" text-anchor="middle" font-size="13" fill="#b45309">결과가 NULL이면 통과</text>
+
+  <rect x="350" y="290" width="260" height="76" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="480" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">UNIQUE</text>
+  <text x="480" y="340" text-anchor="middle" font-size="13" fill="#1f2933">같은 값이 있으면 실패</text>
+  <text x="480" y="358" text-anchor="middle" font-size="13" fill="#b45309">NULL끼리는 서로 다른 값</text>
+
+  <!-- 결과 -->
+  <line x1="632" y1="144" x2="696" y2="144" stroke="#2d6a4f" stroke-width="2" marker-end="url(#green)"/>
+  <text x="664" y="134" text-anchor="middle" font-size="13" fill="#2d6a4f">전부 통과</text>
+  <rect x="700" y="112" width="150" height="64" rx="6" fill="#e9f5ee" stroke="#2d6a4f"/>
+  <text x="775" y="140" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">저장</text>
+  <text x="775" y="162" text-anchor="middle" font-size="13" fill="#1f2933">다음 행으로</text>
+
+  <line x1="632" y1="318" x2="696" y2="318" stroke="#9d0208" stroke-width="2" marker-end="url(#red)"/>
+  <text x="664" y="308" text-anchor="middle" font-size="13" fill="#9d0208">하나라도</text>
+  <rect x="700" y="276" width="150" height="84" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="775" y="302" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">문장 전체 취소</text>
+  <text x="775" y="324" text-anchor="middle" font-size="13" fill="#1f2933">앞서 바꾼 행도</text>
+  <text x="775" y="344" text-anchor="middle" font-size="13" fill="#1f2933">되돌린다</text>
+
+  <text x="440" y="406" text-anchor="middle" font-size="13" fill="#495057">STRICT 표는 타입 친화도 단계에서 바꿀 수 없는 값을 에러로 막는다</text>
+</svg>

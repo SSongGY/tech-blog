@@ -1,0 +1,125 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-29-create-table-constraints-when-checked
+# 명령      : python constraints_basics.py
+# 수행 시각 : 2026-09-29 23:12 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  2행
+  컬럼       | 타입    | 제약
+  -----------+---------+-------------------------
+  product_id | INTEGER | PK
+  sku        | TEXT    | NOT NULL
+  name       | TEXT    | NOT NULL
+  price      | INTEGER |
+  barcode    | TEXT    |
+  status     | TEXT    | NOT NULL DEFAULT 'draft'
+
+  product_id | sku   | name   | price | barcode | status
+  -----------+-------+--------+-------+---------+-------
+           1 | A-100 | 연필   |   500 | 880001  | draft
+           2 | A-200 | 지우개 |   300 | NULL    | draft
+
+[product 정의문]
+CREATE TABLE product (
+  product_id INTEGER PRIMARY KEY,
+  sku        TEXT    NOT NULL UNIQUE,
+  name       TEXT    NOT NULL,
+  price      INTEGER CHECK (price > 0),
+  barcode    TEXT    UNIQUE,
+  status     TEXT    NOT NULL DEFAULT 'draft'
+)
+
+-- 1. DEFAULT — 컬럼을 빼면 채운다
+   INSERT INTO product (product_id, sku, name, price) VALUES (3, 'A-300', '자', 1200)
+   성공 · 바뀐 행 1
+   SELECT product_id, status FROM product WHERE product_id = 3
+   3 | draft
+
+-- 2. DEFAULT — NULL 을 직접 적으면 채우지 않는다
+   INSERT INTO product (product_id, sku, name, price, status) VALUES (4, 'A-400', '풀', 800, NULL)
+   에러: NOT NULL constraint failed: product.status
+
+-- 3. NOT NULL — 빈 문자열은 NULL 이 아니다
+   INSERT INTO product (product_id, sku, name, price) VALUES (5, 'A-500', NULL, 700)
+   에러: NOT NULL constraint failed: product.name
+   INSERT INTO product (product_id, sku, name, price) VALUES (5, 'A-500', '', 700)
+   성공 · 바뀐 행 1
+
+-- 4. CHECK — 거짓이면 막고, NULL 이면 통과시킨다
+   INSERT INTO product (product_id, sku, name, price) VALUES (6, 'A-600', '가위', 0)
+   에러: CHECK constraint failed: price > 0
+   INSERT INTO product (product_id, sku, name, price) VALUES (6, 'A-600', '가위', NULL)
+   성공 · 바뀐 행 1
+   UPDATE product SET price = -100 WHERE product_id = 1
+   에러: CHECK constraint failed: price > 0
+
+-- 5. UNIQUE — 같은 값은 막고, NULL 끼리는 겹쳐도 된다
+   INSERT INTO product (product_id, sku, name, price, barcode) VALUES (7, 'A-700', '자석', 900, '880001')
+   에러: UNIQUE constraint failed: product.barcode
+   INSERT INTO product (product_id, sku, name, price, barcode) VALUES (7, 'A-700', '자석', 900, NULL)
+   성공 · 바뀐 행 1
+   SELECT COUNT(*) FROM product WHERE barcode IS NULL
+   5
+
+-- 6. 타입 — 선언한 타입과 다른 값
+   INSERT INTO product (product_id, sku, name, price) VALUES (8, 'A-800', '클립', '1500')
+   성공 · 바뀐 행 1
+   INSERT INTO product (product_id, sku, name, price) VALUES (9, 'A-900', '핀', '천원')
+   성공 · 바뀐 행 1
+   SELECT product_id, price, typeof(price) FROM product WHERE product_id IN (8, 9)
+   8 | 1500 | integer
+   9 | 천원 | text
+
+-- 7. 타입 — STRICT 표에서는 막는다
+   INSERT INTO product_strict VALUES (1, '1500')
+   성공 · 바뀐 행 1
+   INSERT INTO product_strict VALUES (2, '천원')
+   에러: cannot store TEXT value in INTEGER column product_strict.price
+   SELECT product_id, price, typeof(price) FROM product_strict
+   1 | 1500 | integer
+
+-- 8. 검사 시점 — 두 행의 sku 를 한 문장으로 맞바꾼다
+   SELECT product_id, sku FROM product WHERE product_id IN (2, 3)
+   2 | A-200
+   3 | A-300
+   UPDATE product SET sku = CASE product_id WHEN 2 THEN 'A-300' WHEN 3 THEN 'A-200' END WHERE product_id IN (2, 3)
+   에러: UNIQUE constraint failed: product.sku
+   SELECT product_id, sku FROM product WHERE product_id IN (2, 3)
+   2 | A-200
+   3 | A-300
+   -- 임시 값을 거쳐 세 문장으로 나누면
+   UPDATE product SET sku = 'TMP' WHERE product_id = 2
+   성공 · 바뀐 행 1
+   UPDATE product SET sku = 'A-200' WHERE product_id = 3
+   성공 · 바뀐 행 1
+   UPDATE product SET sku = 'A-300' WHERE product_id = 2
+   성공 · 바뀐 행 1
+   SELECT product_id, sku FROM product WHERE product_id IN (2, 3)
+   2 | A-300
+   3 | A-200
+
+-- 최종 표
+   SELECT * FROM product ORDER BY product_id
+   1 | A-100 | 연필 | 500 | 880001 | draft
+   2 | A-300 | 지우개 | 300 | NULL | draft
+   3 | A-200 | 자 | 1200 | NULL | draft
+   5 | A-500 |  | 700 | NULL | draft
+   6 | A-600 | 가위 | NULL | NULL | draft
+   7 | A-700 | 자석 | 900 | NULL | draft
+   8 | A-800 | 클립 | 1500 | NULL | draft
+   9 | A-900 | 핀 | 천원 | NULL | draft
