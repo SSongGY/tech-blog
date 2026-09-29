@@ -1,0 +1,138 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-30-alter-table-sqlite-limits
+# 명령      : python alter_table_basics.py
+# 수행 시각 : 2026-09-30 07:11 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+-----
+  member_id | INTEGER | PK
+  name      | TEXT    |
+  phone     | TEXT    |
+
+  member_id | name   | phone
+  ----------+--------+---------
+          1 | 김하나 | 010-1111
+          2 | 이두리 | NULL
+          3 | 박세찬 | 010-3333
+
+[orders]  2행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  order_id  | INTEGER | PK
+  member_id | INTEGER |
+  amount    | INTEGER | NOT NULL
+
+  order_id | member_id | amount
+  ---------+-----------+-------
+        10 |         1 |   5000
+        11 |         3 |   7000
+
+[인덱스]
+  이름            | 대상 표 | 정의
+  ----------------+---------+-----------------------------------------------
+  ix_member_phone | member  | CREATE INDEX ix_member_phone ON member (phone)
+
+-- 1. ADD COLUMN — 끝에 붙고, 기존 행은 기본값을 받는다
+   [성공] ALTER TABLE member ADD COLUMN grade TEXT DEFAULT 'basic'
+   SELECT member_id, name, grade FROM member
+   1 | 김하나 | basic
+   2 | 이두리 | basic
+   3 | 박세찬 | basic
+
+-- 2. ADD COLUMN 이 거절하는 네 가지
+   [실패] ALTER TABLE member ADD COLUMN email TEXT NOT NULL
+          → OperationalError: Cannot add a NOT NULL column with default value NULL
+   [실패] ALTER TABLE member ADD COLUMN email TEXT UNIQUE
+          → OperationalError: Cannot add a UNIQUE column
+   [실패] ALTER TABLE member ADD COLUMN joined_at TEXT DEFAULT CURRENT_TIMESTAMP
+          → OperationalError: Cannot add a column with non-constant default
+   [실패] ALTER TABLE member ADD COLUMN point INTEGER DEFAULT 0 CHECK (point > 0)
+          → OperationalError: CHECK constraint failed
+   [성공] ALTER TABLE member ADD COLUMN email TEXT NOT NULL DEFAULT ''
+
+-- 3. RENAME COLUMN — 인덱스와 뷰의 정의까지 바뀐다
+   [성공] ALTER TABLE member RENAME COLUMN name TO member_name
+   뷰 정의: CREATE VIEW v_member_order AS
+    SELECT m.member_name, o.amount FROM member m JOIN orders o ON o.member_id = m.member_id
+
+-- 4. DROP COLUMN — 인덱스가 걸린 컬럼은 못 지운다
+   [실패] ALTER TABLE member DROP COLUMN phone
+          → OperationalError: error in index ix_member_phone after drop column: no such column: phone
+   [성공] ALTER TABLE member DROP COLUMN email
+
+-- 5. 그 밖의 변경 — 이 판에는 문법이 없다
+   [실패] ALTER TABLE member ALTER COLUMN member_name SET NOT NULL
+          → OperationalError: near "ALTER": syntax error
+   [실패] ALTER TABLE member ALTER COLUMN phone TYPE INTEGER
+          → OperationalError: near "ALTER": syntax error
+
+-- 6. 우회 절차 — 문서의 단계 번호 순서 그대로 (뷰는 9단계에서 다시 만든다)
+   tbl_name = 'member' 로 찾은 객체: [('index', 'ix_member_phone')]
+   [실패] ALTER TABLE new_member RENAME TO member
+          → OperationalError: error in view v_member_order: no such table: main.member
+   ROLLBACK 뒤 member 컬럼: ['member_id', 'member_name', 'phone', 'grade']
+
+-- 7. 우회 절차 — 뷰를 옛 표보다 먼저 지운다
+   tbl_name = 'member' 로 찾은 객체: [('index', 'ix_member_phone')]
+   [성공] 새 표 → 복사 → DROP TABLE member → RENAME → 인덱스·뷰 재생성 → COMMIT
+   orders 정의: CREATE TABLE orders (
+    order_id   INTEGER PRIMARY KEY,
+    member_id  INTEGER REFERENCES member (member_id),
+    amount     INTEGER NOT NULL
+)
+
+[member]  3행
+  컬럼        | 타입    | 제약
+  ------------+---------+----------------
+  member_id   | INTEGER | PK
+  member_name | TEXT    | NOT NULL
+  phone       | TEXT    |
+  grade       | TEXT    | DEFAULT 'basic'
+
+  member_id | member_name | phone    | grade
+  ----------+-------------+----------+------
+          1 | 김하나      | 010-1111 | basic
+          2 | 이두리      | NULL     | basic
+          3 | 박세찬      | 010-3333 | basic
+
+   SELECT * FROM v_member_order
+   김하나 | 5000
+   박세찬 | 7000
+
+   PRAGMA foreign_key_check
+
+   [실패] INSERT INTO member (member_id, member_name) VALUES (4, NULL)
+          → IntegrityError: NOT NULL constraint failed: member.member_name
+
+-- 8. 순서를 바꾸면 — 옛 표 이름을 먼저 바꾼다
+   이름을 바꾼 직후 orders 정의: CREATE TABLE orders (
+    order_id   INTEGER PRIMARY KEY,
+    member_id  INTEGER REFERENCES "old_member" (member_id),
+    amount     INTEGER NOT NULL
+)
+   끝난 뒤 orders 정의: CREATE TABLE orders (
+    order_id   INTEGER PRIMARY KEY,
+    member_id  INTEGER REFERENCES "old_member" (member_id),
+    amount     INTEGER NOT NULL
+)
+   [실패] SELECT * FROM v_member_order
+          → OperationalError: no such table: main.old_member
+   [실패] INSERT INTO orders VALUES (12, 2, 3000)
+          → OperationalError: no such table: main.old_member

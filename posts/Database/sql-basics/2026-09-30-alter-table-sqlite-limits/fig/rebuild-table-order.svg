@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">ALTER TABLE 로 안 되는 변경 — 표를 다시 만드는 순서</text>
+
+  <!-- 1행 -->
+  <rect x="30" y="60" width="190" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="125" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 준비</text>
+  <text x="125" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">foreign_keys=OFF, BEGIN</text>
+
+  <rect x="240" y="60" width="190" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="335" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 딸린 객체 기억</text>
+  <text x="335" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">인덱스·트리거·뷰의 sql</text>
+
+  <rect x="450" y="60" width="190" height="72" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="545" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 뷰를 먼저 DROP</text>
+  <text x="545" y="110" text-anchor="middle" font-size="13" fill="#b45309">실측으로 필요했던 단계</text>
+
+  <rect x="660" y="60" width="190" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="755" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ CREATE new_X</text>
+  <text x="755" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">바꾼 정의로 새 표</text>
+
+  <line x1="220" y1="96" x2="232" y2="96" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="232,91 240,96 232,101" fill="#495057"/>
+  <line x1="430" y1="96" x2="442" y2="96" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="442,91 450,96 442,101" fill="#495057"/>
+  <line x1="640" y1="96" x2="652" y2="96" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="652,91 660,96 652,101" fill="#495057"/>
+
+  <!-- 꺾임 -->
+  <line x1="755" y1="132" x2="755" y2="170" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="750,170 755,180 760,170" fill="#495057"/>
+
+  <!-- 2행 (오른쪽 → 왼쪽) -->
+  <rect x="660" y="180" width="190" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="755" y="208" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑤ 데이터 복사</text>
+  <text x="755" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">INSERT … SELECT</text>
+
+  <rect x="450" y="180" width="190" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="545" y="208" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑥ DROP TABLE X</text>
+  <text x="545" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">옛 표를 지운다</text>
+
+  <rect x="240" y="180" width="190" height="72" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="335" y="208" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑦ new_X RENAME TO X</text>
+  <text x="335" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">스키마 전체를 다시 파싱</text>
+
+  <rect x="30" y="180" width="190" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="125" y="208" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑧ 다시 만들고 확정</text>
+  <text x="125" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">인덱스·뷰, 점검, COMMIT</text>
+
+  <line x1="660" y1="216" x2="648" y2="216" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="648,211 640,216 648,221" fill="#495057"/>
+  <line x1="450" y1="216" x2="438" y2="216" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="438,211 430,216 438,221" fill="#495057"/>
+  <line x1="240" y1="216" x2="228" y2="216" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="228,211 220,216 228,221" fill="#495057"/>
+
+  <!-- 실패 갈래 -->
+  <rect x="240" y="290" width="400" height="62" rx="6" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="440" y="316" text-anchor="middle" font-size="13" fill="#9d0208">③을 건너뛰면 ⑦에서 실패</text>
+  <text x="440" y="338" text-anchor="middle" font-size="13" fill="#1b1b1b">error in view v_member_order: no such table: main.member</text>
+  <line x1="335" y1="252" x2="335" y2="290" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- 주석 -->
+  <text x="30" y="390" font-size="13" fill="#495057">⑥과 ⑦의 순서가 핵심이다. 옛 표 이름을 먼저 바꾸면(X → old_X) 외래 키와 뷰가 old_X 를 따라가</text>
+  <text x="30" y="412" font-size="13" fill="#495057">옛 표를 지운 뒤에는 사라진 표를 가리킨다(실습 8장).</text>
+  <text x="30" y="434" font-size="13" fill="#495057">②의 조회(tbl_name = 'X')에는 뷰가 걸리지 않는다. 뷰는 tbl_name 이 뷰 자신의 이름이다.</text>
+</svg>
