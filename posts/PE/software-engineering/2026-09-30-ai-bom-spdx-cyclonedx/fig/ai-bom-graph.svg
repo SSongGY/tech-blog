@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">AI-BOM — 부품 목록에 모델·데이터셋과 그 관계를 더한다</text>
+
+  <!-- 영역 구분 -->
+  <rect x="20" y="50" width="250" height="250" rx="8" fill="#f8f9fa" stroke="#adb5bd" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="32" y="290" font-size="13" fill="#495057">기존 SBOM 범위</text>
+  <rect x="290" y="150" width="570" height="290" rx="8" fill="#fffaf0" stroke="#b45309" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="302" y="430" font-size="13" fill="#b45309">AI-BOM이 더하는 범위</text>
+
+  <!-- 애플리케이션 -->
+  <rect x="40" y="65" width="210" height="64" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="145" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">AI 애플리케이션</text>
+  <text x="145" y="114" text-anchor="middle" font-size="13" fill="#495057">Package / application</text>
+
+  <!-- 라이브러리 -->
+  <rect x="40" y="200" width="210" height="64" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="145" y="227" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">추론 라이브러리</text>
+  <text x="145" y="249" text-anchor="middle" font-size="13" fill="#495057">Package / library</text>
+
+  <!-- 모델 -->
+  <rect x="310" y="170" width="210" height="84" rx="6" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="415" y="197" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">모델 (파인튜닝판)</text>
+  <text x="415" y="219" text-anchor="middle" font-size="13" fill="#1b1b1b">AIPackage</text>
+  <text x="415" y="239" text-anchor="middle" font-size="13" fill="#1b1b1b">machine-learning-model</text>
+
+  <!-- 기반 모델 -->
+  <rect x="650" y="170" width="190" height="84" rx="6" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="745" y="197" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">기반 모델</text>
+  <text x="745" y="219" text-anchor="middle" font-size="13" fill="#1b1b1b">AIPackage</text>
+  <text x="745" y="239" text-anchor="middle" font-size="13" fill="#1b1b1b">machine-learning-model</text>
+
+  <!-- 데이터셋 -->
+  <rect x="310" y="330" width="210" height="74" rx="6" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="415" y="357" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">학습 데이터셋</text>
+  <text x="415" y="381" text-anchor="middle" font-size="13" fill="#1b1b1b">DatasetPackage / data</text>
+
+  <rect x="610" y="330" width="230" height="74" rx="6" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="725" y="357" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">평가 데이터셋</text>
+  <text x="725" y="381" text-anchor="middle" font-size="13" fill="#1b1b1b">DatasetPackage / data</text>
+
+  <!-- 관계 -->
+  <line x1="145" y1="129" x2="145" y2="196" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="155" y="168" font-size="13" fill="#495057">dependsOn</text>
+
+  <path d="M 250 97 L 415 97 L 415 166" fill="none" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="285" y="89" font-size="13" fill="#495057">dependsOn · hasDataFile</text>
+
+  <line x1="520" y1="212" x2="646" y2="212" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrA)"/>
+  <text x="583" y="203" text-anchor="middle" font-size="13" fill="#b45309">descendantOf</text>
+  <text x="583" y="231" text-anchor="middle" font-size="13" fill="#495057">(pedigree)</text>
+
+  <line x1="415" y1="254" x2="415" y2="326" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrA)"/>
+  <text x="405" y="296" text-anchor="end" font-size="13" fill="#b45309">trainedOn</text>
+
+  <path d="M 490 254 L 490 290 L 725 290 L 725 326" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrA)"/>
+  <text x="735" y="296" font-size="13" fill="#b45309">testedOn</text>
+
+  <text x="20" y="462" font-size="13" fill="#495057">위: SPDX 3.0.1 클래스 · 아래: CycloneDX 1.6 component type. 관계 이름은 SPDX, 괄호는 CycloneDX 필드.</text>
+</svg>

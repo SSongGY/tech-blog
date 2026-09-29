@@ -168,6 +168,10 @@ AI는 오픈소스가 들어오는 단위를 패키지에서 **조각과 가중�
 
 > 개념 정리: [오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형](../../it-management/2026-09-29-open-source-license-compliance-iso-5230/index.md)
 
+> 개념 정리: [AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM](../../software-engineering/2026-09-30-ai-bom-spdx-cyclonedx/index.md)
+
+> 개념 정리: [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](../../emerging-tech/2026-09-30-open-weight-vs-osaid/index.md)
+
 끝
 
 ## 답안 작성 메모
