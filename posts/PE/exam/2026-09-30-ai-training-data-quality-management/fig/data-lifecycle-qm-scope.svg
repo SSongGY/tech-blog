@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="a2" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="a3" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">학습용 데이터 생애주기와 품질관리 범위 3영역</text>
+
+  <!-- 영역 구분 -->
+  <text x="80" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a5568">100 준비·계획</text>
+  <line x1="20" y1="66" x2="140" y2="66" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="440" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a5568">200 구축</text>
+  <line x1="164" y1="66" x2="716" y2="66" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="800" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#4a5568">300 운영·활용</text>
+  <line x1="740" y1="66" x2="860" y2="66" stroke="#4a5568" stroke-width="1.2"/>
+
+  <!-- 단계 박스 6개 -->
+  <rect x="20" y="80" width="120" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="80" y="104" text-anchor="middle" font-size="13" fill="#4a5568">110</text>
+  <text x="80" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">구축계획 수립</text>
+
+  <rect x="164" y="80" width="120" height="64" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="224" y="104" text-anchor="middle" font-size="13" fill="#4a5568">210</text>
+  <text x="224" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">획득/수집</text>
+
+  <rect x="308" y="80" width="120" height="64" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="368" y="104" text-anchor="middle" font-size="13" fill="#4a5568">220</text>
+  <text x="368" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">정제</text>
+
+  <rect x="452" y="80" width="120" height="64" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="512" y="104" text-anchor="middle" font-size="13" fill="#4a5568">230</text>
+  <text x="512" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">가공</text>
+
+  <rect x="596" y="80" width="120" height="64" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="656" y="104" text-anchor="middle" font-size="13" fill="#4a5568">240</text>
+  <text x="656" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">학습</text>
+
+  <rect x="740" y="80" width="120" height="64" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="800" y="104" text-anchor="middle" font-size="13" fill="#4a5568">310</text>
+  <text x="800" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">운영·활용</text>
+
+  <!-- 단계 간 화살표 -->
+  <line x1="140" y1="112" x2="160" y2="112" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="284" y1="112" x2="304" y2="112" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="428" y1="112" x2="448" y2="112" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="572" y1="112" x2="592" y2="112" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="716" y1="112" x2="736" y2="112" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+
+  <!-- 단계별 산출 데이터 -->
+  <line x1="80" y1="144" x2="80" y2="164" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="224" y1="144" x2="224" y2="164" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="368" y1="144" x2="368" y2="164" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="512" y1="144" x2="512" y2="164" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="656" y1="144" x2="656" y2="164" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+  <line x1="800" y1="144" x2="800" y2="164" stroke="#4a5568" stroke-width="1.2" marker-end="url(#a2)"/>
+
+  <text x="80" y="184" text-anchor="middle" font-size="13" fill="#1b1b1b">임무정의</text>
+  <text x="80" y="202" text-anchor="middle" font-size="13" fill="#1b1b1b">품질지표·목표</text>
+  <text x="224" y="184" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">원시데이터</text>
+  <text x="368" y="184" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">원천데이터</text>
+  <text x="368" y="202" text-anchor="middle" font-size="13" fill="#4a5568">중복제거·비식별화</text>
+  <text x="512" y="184" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">라벨링데이터</text>
+  <text x="656" y="184" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">학습용 데이터셋</text>
+  <text x="656" y="202" text-anchor="middle" font-size="13" fill="#4a5568">모델 성능 측정</text>
+  <text x="800" y="184" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">개방 데이터</text>
+  <text x="800" y="202" text-anchor="middle" font-size="13" fill="#4a5568">(AI-Hub 적재)</text>
+
+  <!-- 피드백 -->
+  <path d="M656,212 C656,250 368,250 368,216" fill="none" stroke="#b45309" stroke-width="1.6" marker-end="url(#a3)"/>
+  <text x="512" y="262" text-anchor="middle" font-size="13" fill="#b45309">유효성 미달 → 데이터 보정 · 추가 획득 (피드백)</text>
+
+  <!-- 품질관리 범위 3영역 -->
+  <line x1="20" y1="286" x2="716" y2="286" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="20" y1="280" x2="20" y2="292" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="716" y1="280" x2="716" y2="292" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="30" y="308" font-size="13" font-weight="bold" fill="#2d6a4f">① 구축 프로세스 품질관리</text>
+  <text x="222" y="308" font-size="13" fill="#4a5568">— 공정마다 품질관리 활동을 수행하는지 모니터링하고 문제를 보완</text>
+  <text x="30" y="332" font-size="13" font-weight="bold" fill="#2d6a4f">② 구축 데이터 품질관리</text>
+  <text x="222" y="332" font-size="13" fill="#4a5568">— 원시·원천·라벨링 데이터 자체를 검사하고 오류를 개선</text>
+
+  <line x1="740" y1="286" x2="860" y2="286" stroke="#b45309" stroke-width="2"/>
+  <line x1="740" y1="280" x2="740" y2="292" stroke="#b45309" stroke-width="2"/>
+  <line x1="860" y1="280" x2="860" y2="292" stroke="#b45309" stroke-width="2"/>
+  <text x="800" y="308" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">③ 개방 데이터</text>
+  <text x="800" y="326" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">품질관리</text>
+  <text x="800" y="344" text-anchor="middle" font-size="13" fill="#4a5568">개선의견 대응</text>
+
+  <!-- 품질검사 절차 -->
+  <line x1="20" y1="370" x2="860" y2="370" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="20" y="396" font-size="13" font-weight="bold" fill="#1b1b1b">품질검사 수행 절차 5단계 — 공정마다 반복</text>
+  <text x="440" y="430" text-anchor="middle" font-size="14" fill="#1b1b1b">① 검사대상 정의 → ② 품질검사 실시 → ③ 검사결과 분석 → ④ 개선수행 → ⑤ 품질통제</text>
+  <text x="440" y="454" text-anchor="middle" font-size="13" fill="#4a5568">② 에서 12가지 품질지표(준비성 ~ 유효성)를 체크리스트 · 정량/정성 검사로 적용</text>
+</svg>

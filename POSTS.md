@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **98편** · 갱신 2026-09-29
+총 **99편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -107,10 +107,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 16편
+## 기출문제 (exam) — 17편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [기출문제 — 인공지능 학습용 데이터 품질관리](posts/PE/exam/2026-09-30-ai-training-data-quality-management/index.md) | 중급 | NIA 인공지능 학습용 데이터 품질관리 가이드라인 v3.1 제2권 (2024-01), ISO/IEC 5259-4:2024, ISO/IEC 5259-1:2024, ISO/IEC 8183:2023 | 문서 근거 |
 | 2026-09-29 | [기출문제 — 서버리스 컴퓨팅](posts/PE/exam/2026-09-29-serverless-computing/index.md) | 중급 | CNCF Serverless Whitepaper v1.0 (2018-02), UC Berkeley EECS-2019-3 (2019-02), AWS Lambda Developer Guide (2026-09 확인) | 문서 근거 |
 | 2026-09-29 | [기출문제 — AI 생성 코드와 오픈웨이트 모델의 오픈소스 라이선스 컴플라이언스](posts/PE/exam/2026-09-29-ai-code-open-weight-license-compliance/index.md) | 심화 | ISO/IEC 5230:2020 (OpenChain 2.1), ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023), SPDX 3.0.1 (2024), OSI Open Source AI Definition 1.0 (2024-10), Llama 3.1 Community License (2024-07-23), U.S. Copyright Office, Copyright and AI Part 2 (2025-01) | 문서 근거 |
 | 2026-09-28 | [기출문제 — WBS 작성 방법](posts/PE/exam/2026-09-28-wbs-construction/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), PMBOK Guide 6th Edition (2017) | 문서 근거 |

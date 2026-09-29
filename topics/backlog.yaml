@@ -3543,3 +3543,14 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: pe-124
+    title: "ISO/IEC 5259 — 분석·머신러닝용 데이터 품질 표준 시리즈"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "5개 파트의 역할 분담과 ISO/IEC 25012 대비 추가된 품질 특성, ISO/IEC 8183 데이터 생애주기와의 연결"
+    code: none
+    origin: exam
+    status: todo
