@@ -3213,3 +3213,333 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: fin-001
+    title: "재무제표 세 장은 서로 어떻게 이어지는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 재무제표, 연결고리]
+    difficulty: 입문
+    angle: "재무상태표·손익계산서·현금흐름표를 따로 보면 안 되는 이유. 당기순이익이 이익잉여금으로, 현금흐름이 현금 잔액으로 흘러가는 경로를 가상 회사 한 해 숫자로 잇는다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-002
+    title: "재무상태표 — 자산은 어디서 왔는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 재무상태표, 자산, 부채, 자본]
+    difficulty: 입문
+    angle: "자산 = 부채 + 자본이 항등식인 이유. 같은 자산 100억이라도 빚으로 샀는지 자본으로 샀는지에 따라 무엇이 달라지는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-003
+    title: "유동과 비유동을 왜 나누는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 유동자산, 유동부채, 분류]
+    difficulty: 입문
+    angle: "1년이라는 기준선 하나가 지급능력 판단을 어떻게 바꾸는지. 유동비율이 같아도 내용이 다른 두 회사"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-004
+    title: "손익계산서 — 매출에서 순이익까지 다섯 단계"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 손익계산서, 이익단계]
+    difficulty: 입문
+    angle: "매출총이익·영업이익·법인세차감전순이익·당기순이익이 각각 무엇을 빼고 남은 값인지. 단계마다 무엇을 알 수 있는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-005
+    title: "영업이익과 당기순이익이 크게 벌어질 때"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 영업이익, 순이익, 영업외손익]
+    difficulty: 입문
+    angle: "본업은 멀쩡한데 순이익이 적자인 회사. 영업외손익·금융비용·일회성 손실이 끼어드는 자리"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-006
+    title: "현금흐름표 — 이익이 나는데 돈이 없는 이유"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 현금흐름표, 흑자도산]
+    difficulty: 입문
+    angle: "발생주의와 현금주의의 차이. 매출채권과 재고가 늘면 이익과 현금이 어떻게 갈리는지 직접 계산해서"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-007
+    title: "영업·투자·재무 활동 — 현금흐름 세 갈래 읽기"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 현금흐름, 활동구분]
+    difficulty: 입문
+    angle: "세 부호의 조합(+/-/-)이 회사의 단계를 말해 준다. 성장기·성숙기·쇠퇴기 패턴을 가상 회사 셋으로"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-008
+    title: "감가상각 — 현금이 나가지 않는 비용"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 감가상각, 비현금비용]
+    difficulty: 입문
+    angle: "정액법과 정률법이 같은 자산을 다르게 비용화하는 것을 연도별 표로. 이익은 줄지만 현금은 그대로인 구조"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-009
+    title: "매출채권과 재고자산 — 자산인데 위험한 자산"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 매출채권, 재고자산, 회전율]
+    difficulty: 입문
+    angle: "회전율과 회전일수 계산. 자산이 늘었는데 왜 나쁜 신호일 수 있는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-010
+    title: "주석과 감사보고서 — 본문보다 중요한 자리"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 주석, 감사의견]
+    difficulty: 입문
+    angle: "적정·한정·부적정·의견거절이 뜻하는 것. 우발부채·특수관계자 거래처럼 본문에 안 나오는 것들"
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-011
+    title: "안정성 비율 — 부채비율과 유동비율"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 부채비율, 유동비율, 안정성]
+    difficulty: 중급
+    angle: "계산식과 업종별로 기준이 달라지는 이유. 같은 200%가 제조업과 금융업에서 다르게 읽히는 것"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-012
+    title: "수익성 비율 — ROE와 ROA는 무엇이 다른가"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, roe, roa, 수익성]
+    difficulty: 중급
+    angle: "분모가 자본이냐 자산이냐가 만드는 차이. 부채를 늘려 ROE를 올린 회사를 ROA가 어떻게 드러내는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-013
+    title: "듀폰 분석 — ROE를 세 조각으로 쪼개기"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 듀폰분석, roe, 분해]
+    difficulty: 중급
+    angle: "순이익률 × 자산회전율 × 재무레버리지. 같은 ROE 15%가 셋 중 무엇에서 왔는지에 따라 평가가 갈린다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-014
+    title: "활동성 비율 — 자산을 얼마나 굴리는가"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 회전율, 활동성]
+    difficulty: 중급
+    angle: "총자산회전율·재고회전율·매출채권회전율을 한 회사의 3개년으로 계산해 추세를 본다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-015
+    title: "이자보상배율 — 빚을 감당하는가"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 이자보상배율, 한계기업]
+    difficulty: 중급
+    angle: "영업이익 ÷ 이자비용. 1배 미만이 연속되면 무엇을 뜻하는지, 금리가 오를 때 어떻게 움직이는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-016
+    title: "PER — 이익 대비 주가를 재는 법"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, per, 밸류에이션]
+    difficulty: 중급
+    angle: "계산식과 분모에 무엇을 넣느냐(후행·선행)에 따라 값이 달라지는 것. 적자 회사에서 PER이 무의미해지는 이유"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-017
+    title: "PBR과 청산가치 — 1배 아래가 뜻하는 것"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, pbr, 순자산]
+    difficulty: 중급
+    angle: "장부가와 시장가의 괴리. PBR 0.5배가 저평가일 수도, 자산이 부실할 수도 있는 이유"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-018
+    title: "EV/EBITDA — 빚까지 포함해 회사를 사는 값"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, ev, ebitda]
+    difficulty: 중급
+    angle: "시가총액만 보면 놓치는 것. 부채가 다른 두 회사를 PER과 EV/EBITDA로 각각 비교"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-019
+    title: "배당수익률과 배당성향 — 얼마를 나눠 주는가"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, 배당, 배당성향]
+    difficulty: 중급
+    angle: "두 지표가 각각 무엇을 보는지. 배당성향이 100%를 넘는 회사가 뜻하는 것"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-020
+    title: "현금흐름할인(DCF) — 미래의 돈을 오늘 값으로"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, dcf, 할인율, 현재가치]
+    difficulty: 중급
+    angle: "할인율 1%p 차이가 기업가치를 얼마나 바꾸는지 직접 계산해 민감도로 보인다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-021
+    title: "시가총액과 주가 — 비싼 주식과 비싼 회사"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 시가총액, 주가]
+    difficulty: 입문
+    angle: "주가 5만원이 10만원보다 싸다고 할 수 없는 이유. 발행주식수가 끼어드는 자리"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-022
+    title: "액면분할과 무상증자 — 주식 수가 늘 때"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 액면분할, 무상증자]
+    difficulty: 입문
+    angle: "회사 가치는 그대로인데 주식 수만 바뀌는 경우들. 주주 지분율이 어떻게 유지되는지 계산으로"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-023
+    title: "유상증자 — 지분이 희석된다는 말의 뜻"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 유상증자, 희석]
+    difficulty: 입문
+    angle: "기존 주주의 지분율과 주당가치가 얼마나 줄어드는지. 할인율과 발행 규모를 바꿔 가며"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-024
+    title: "호가와 체결 — 주문이 실제로 어떻게 맺어지는가"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 호가, 체결, 주문]
+    difficulty: 입문
+    angle: "시장가와 지정가, 우선순위 규칙(가격·시간). 호가창 한 장면으로 체결 순서를 따라간다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-025
+    title: "거래량과 거래대금 — 어느 쪽을 봐야 하는가"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 거래량, 거래대금, 유동성]
+    difficulty: 입문
+    angle: "주가가 다른 두 종목을 거래량만으로 비교하면 틀리는 이유"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-026
+    title: "공매도 — 없는 주식을 파는 구조"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 공매도, 대차]
+    difficulty: 입문
+    angle: "빌려서 팔고 되사서 갚는 흐름과 손익 계산. 손실이 이론상 무한인 이유를 숫자로"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-027
+    title: "주가지수는 어떻게 계산되는가"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 지수, 시가총액가중]
+    difficulty: 입문
+    angle: "시가총액 가중과 주가 가중의 차이. 같은 종목 구성으로 두 방식을 계산해 결과가 갈리는 것을 보인다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-028
+    title: "ETF — 바구니를 주식처럼 사고파는 구조"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, etf, 추적오차]
+    difficulty: 입문
+    angle: "순자산가치(NAV)와 시장가격이 벌어지는 이유, 추적오차와 보수가 수익률을 깎는 정도"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-029
+    title: "공시 체계 — 정기·수시·공정공시"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 공시, dart]
+    difficulty: 중급
+    angle: "무엇을 언제 알려야 하는지가 정해져 있는 구조. 사업보고서·분기보고서의 제출 시한"
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-030
+    title: "K-IFRS 연결과 별도 — 어느 쪽을 봐야 하는가"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 연결재무제표, 별도재무제표]
+    difficulty: 중급
+    angle: "지배력 기준과 지분법. 자회사가 많은 회사에서 두 숫자가 크게 갈리는 이유"
+    code: python
+    origin: manual
+    status: todo

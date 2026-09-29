@@ -12,22 +12,23 @@ description: 매시 30분에 멈춘 회차를 찾아 세우고 보류로 빼둔�
 
 **저장소를 고치지 않는다.** 치울 것이 있으면 명령만 알려 준다.
 
-## 점검 대상 — 루틴 3개
+## 점검 대상 — 루틴 4개
 
 | 작업 | 시각 | 편수 |
 |---|---|---|
 | `tech-blog-daily` | 07:00 · 12:00 · 19:00 · 23:00 | 회차당 3편 |
 | `tech-blog-exam` | 02:00 · 15:00 | 회차당 단답형 2편 또는 논술형 1편 |
 | `tech-blog-concept` | 04:00 · 17:00 | 회차당 2편 |
+| `tech-blog-finance` | 21:00 | 2편 (주식·재무, 별도 트랙) |
 
-**하루 총 22편.** 저장소: `D:\workspace\claude\tech_blog`
+**하루 총 24편.** 저장소: `D:\workspace\claude\tech_blog`
 
 ---
 
 ## 1. 멈춘 회차 찾기 (매시)
 
 `mcp__scheduled-tasks__list_task_runs`를 `tech-blog-daily`, `tech-blog-exam`,
-`tech-blog-concept` **각각에 대해** `limit: 1`로 부른다.
+`tech-blog-concept`, `tech-blog-finance` **각각에 대해** `limit: 1`로 부른다.
 
 가장 최근 실행이 `status: running` 이면서 **아래 둘 중 하나라도** 해당하면
 멈춘 것으로 본다.
@@ -117,6 +118,7 @@ python scripts/blog.py recent 3
 | `enabled: false` | **문제.** 작업이 꺼져 있다고 보고 |
 | `tech-blog-daily` 마지막 실행이 **10시간** 넘게 없음 | **문제.** 회차를 건너뛰었다고 보고 |
 | `exam`·`concept` 마지막 실행이 **15시간** 넘게 없음 | **문제.** 한 회차를 빠뜨린 것 |
+| `finance` 마지막 실행이 **26시간** 넘게 없음 | **문제.** 하루 1회이므로 하루치를 빠뜨린 것 |
 | `nextRunAt`이 **모레 이후** | 확인 필요. 아래 주의를 먼저 읽는다 |
 
 앱이 꺼져 있어 밀린 정도는 문제로 보지 않되, 위 한계를 넘으면 알린다.
@@ -149,9 +151,9 @@ git rev-parse HEAD origin/main
   **직접 맞추지 않는다** — 어느 쪽이 맞는지는 사용자가 정한다
 - 워킹트리에 커밋 안 된 변경이 남아 있으면 **문제**
 - `HEAD`와 `origin/main` 해시가 다르면 **푸시가 안 된 것.** 문제로 보고
-- 최근 24시간 글이 **18편보다 적으면** 그 사실과 회차별 편수를 보고
+- 최근 24시간 글이 **20편보다 적으면** 그 사실과 회차별 편수를 보고
 - 트랙별 `todo` 잔량이 `low_watermark`(10) 이하인 트랙이 있으면 알려준다.
-  **`basics`와 `linux`를 특히 본다** — 이 둘은 기출 회차가 채워 주지 않아 먼저 마른다
+  **`basics`·`linux`·`finance`를 특히 본다** — 이 둘은 기출 회차가 채워 주지 않아 먼저 마른다
 - `exam-status`에 `skipped`가 늘었으면 어느 문제를 왜 건너뛰었는지 알려준다
 - `verification: manual-only` 글이 쌓여 있으면 편수를 알려준다
 

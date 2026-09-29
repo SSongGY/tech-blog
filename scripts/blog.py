@@ -66,6 +66,8 @@ DAILY_RUNS_PER_DAY = 4
 CONCEPT_RUNS_PER_DAY = 2
 CONCEPT_POSTS_PER_DAY = 2 * CONCEPT_RUNS_PER_DAY
 EXAM_RUNS_PER_DAY = 2
+# 금융 회차(21시)는 하루 한 번, 2편. 하루 회차의 트랙 배분과는 무관하다.
+FINANCE_POSTS_PER_DAY = 2
 
 
 TRACK_LABEL = {
@@ -74,8 +76,9 @@ TRACK_LABEL = {
     "pe": "기술사",
     "linux": "리눅스",
     "general": "일반",
-    # exam 은 백로그에 없고 글에만 있다(POST_TRACKS). index 가 쓴다.
+    # 아래 둘은 하루 회차의 트랙 배분에 끼지 않는다. 각자 루틴이 따로 있다.
     "exam": "기출문제",
+    "finance": "주식·재무",
 }
 
 
@@ -126,7 +129,10 @@ def daily_plan(data: dict) -> dict[str, int]:
 # 실제로 첫 제품 글(Tibero 시퀀스)이 군살을 덜어내고도 3,700자를 넘었다.
 # exam 은 백로그가 아니라 저장소 밖 기출 데이터에서 온다. TRACKS 에 넣으면
 # status/pick 이 백로그에 없는 트랙을 세게 되므로 글 트랙만 따로 둔다.
-POST_TRACKS = TRACKS + ("exam",)
+# 글에만 있고 하루 회차의 트랙 배분(TRACKS)에는 들어가지 않는 트랙들.
+# exam 은 기출 루틴이, finance 는 금융 루틴이 따로 쓴다. POSTS.md 의
+# 순서도 이 순서를 그대로 따르므로 새 트랙은 뒤에 붙인다.
+POST_TRACKS = TRACKS + ("exam", "finance")
 
 # 기출 답안은 배점에 따라 분량이 갈린다. 단답형 A4 1장, 논술형 A4 3장.
 EXAM_BODY_CHARS = {"short": (900, 2200), "essay": (2200, 4500)}
@@ -1198,6 +1204,8 @@ def cmd_status(args: argparse.Namespace) -> int:
     # 17시 개념 루틴이 2편을 더 가져간다. 잔량을 일수로 환산할 때 이걸 반영한다.
     per_day = {track: need * DAILY_RUNS_PER_DAY for track, need in plan.items()}
     per_day["pe"] = per_day.get("pe", 0) + CONCEPT_POSTS_PER_DAY
+    # finance 는 daily_plan 밖에 있다. 제 루틴이 따로 돈다.
+    per_day["finance"] = FINANCE_POSTS_PER_DAY
     total_per_day = sum(per_day.values())
     print(f"백로그   : 전체 {len(topics)}편 (하루 {total_per_day}편 기준)")
     for status in ("todo", "writing", "blocked", "done"):
@@ -1355,6 +1363,7 @@ TRACK_ID_PREFIX = {
     "pe": "pe",
     "linux": "infra",
     "general": "gen",
+    "finance": "fin",
 }
 TRACK_DEFAULT_CATEGORY = {"pe": "PE", "linux": "Infra"}
 
@@ -1393,6 +1402,31 @@ def cmd_pick_concepts(args: argparse.Namespace) -> int:
     if len(picked) < args.count:
         print(f"\n{args.count}편을 채우지 못했다 — pe todo가 {len(todo)}개뿐이다.")
     print(f"\n기출발 잔량 {len(from_exam)}개 / pe 전체 todo {len(todo)}개")
+    return 0
+
+
+def cmd_pick_finance(args: argparse.Namespace) -> int:
+    """금융 회차가 쓸 주제를 고른다.
+
+    기술 트랙과 달리 배분 계산을 하지 않는다. 주식 용어와 재무제표 읽기는
+    쌓는 순서가 곧 학습 순서라, 백로그에 적힌 차례대로 내려가는 편이 낫다.
+    """
+    data = load_backlog()
+    todo = [
+        t for t in data["topics"]
+        if t["status"] == "todo" and track_of(t) == "finance"
+    ]
+    picked = todo[: args.count]
+    if not picked:
+        print("finance 트랙에 todo 주제가 없다. 백로그를 채운다.")
+        return 1
+
+    for topic in picked:
+        print(f"  [{topic['id']}] ({topic.get('subcategory', '')}) {topic['title']}")
+        print(f"      각도: {topic['angle']}")
+    if len(picked) < args.count:
+        print(f"\n{args.count}편을 채우지 못했다 — finance todo 가 {len(todo)}개뿐이다.")
+    print(f"\nfinance 전체 todo {len(todo)}개")
     return 0
 
 
@@ -2258,7 +2292,10 @@ def main() -> int:
     p_index.set_defaults(func=cmd_index)
 
     p_add = sub.add_parser("add-topic", help="백로그에 주제 추가 (기출 풀이에서 나온 개념 등)")
-    p_add.add_argument("--track", required=True, choices=TRACKS)
+    # finance 도 백로그에 주제를 넣을 수 있어야 한다. exam 은 글만 있고
+    # 주제는 저장소 밖 문제 데이터에서 오므로 여기서 뺀다.
+    p_add.add_argument("--track", required=True,
+                       choices=[t for t in POST_TRACKS if t != "exam"])
     p_add.add_argument("--title", required=True)
     p_add.add_argument("--subcategory", required=True)
     p_add.add_argument("--tags", required=True, help="쉼표로 구분")
@@ -2273,6 +2310,10 @@ def main() -> int:
     p_concepts = sub.add_parser("pick-concepts", help="개념 글로 쓸 pe 주제 (기출발 우선)")
     p_concepts.add_argument("--count", type=int, default=2)
     p_concepts.set_defaults(func=cmd_pick_concepts)
+
+    p_finance = sub.add_parser("pick-finance", help="금융 회차가 쓸 주식·재무 주제")
+    p_finance.add_argument("--count", type=int, default=2)
+    p_finance.set_defaults(func=cmd_pick_finance)
 
     p_exam_pick = sub.add_parser("exam-pick", help="다음에 풀 기출문제 (단답형 2 / 논술형 1)")
     p_exam_pick.set_defaults(func=cmd_exam_pick)

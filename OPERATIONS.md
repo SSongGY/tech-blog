@@ -1,6 +1,6 @@
 # 운영 가이드
 
-IT 기술 글을 매일 **22편** 작성해 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
+IT 기술 글을 매일 22편 작성하고, 밤 9시에 주식·재무 공부 글 2편을 더 쌓아 마크다운 원본과 실행 가능한 예제 코드를 함께 보관한다.
 ## 문서 안내
 
 | 문서 | 무엇이 있나 |
@@ -28,6 +28,7 @@ python scripts/blog.py lint     # 글 규칙 검사
 | 15:00 | `tech-blog-exam` | 단답형 2 / 논술형 1 | 기출 답안 |
 | 17:00 | `tech-blog-concept` | 2편 | 오후 답안에서 나온 개념을 `pe` 글로 |
 | 19:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
+| 21:00 | `tech-blog-finance` | 2편 | 주식 용어·재무제표 (별도 트랙) |
 | 23:00 | `tech-blog-daily` | 3편 | 아래 트랙 구성 |
 | 09:00 | `tech-blog-healthcheck` | — | 점검만. 저장소 수정 금지 |
 
@@ -103,6 +104,8 @@ posts/
 │  ├─ oracle/       ← 제품 시리즈 2순위
 │  ├─ sqlite/2026-09-18-btree-index-not-used/
 │  └─ mariadb/
+├─ Finance/         ← 주식·재무 (track: finance)
+│  └─ statements/, ratios/, valuation/, market/, disclosure/
 ├─ PE/              ← 정보관리기술사 (track: pe)
 │  ├─ software-engineering/, database/, network/, security/
 │  └─ system/, emerging-tech/, it-management/
@@ -156,6 +159,7 @@ python scripts/blog.py status                 # 트랙별 잔량, 비율, 미검
 python scripts/blog.py pick                   # 이번 회차에 쓸 주제 3편 선정
 python scripts/blog.py pick --general 6       # 일반 주제를 더 받아 실행 가능한 것 고르기
 python scripts/blog.py pick-concepts          # 개념 회차용 pe 주제 2편 (기출발 우선)
+python scripts/blog.py pick-finance           # 금융 회차용 주식·재무 주제 2편
 python scripts/blog.py add-topic --track pe … # 백로그에 주제 추가 (--origin exam)
 python scripts/blog.py exam-pick              # 다음에 풀 기출문제
 python scripts/blog.py exam-done <id> …       # 기출 풀이 완료 처리
