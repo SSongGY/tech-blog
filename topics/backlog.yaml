@@ -3180,3 +3180,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-121
+    title: "오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "허용형·카피레프트·네트워크 카피레프트 의무 차이와 ISO/IEC 5230의 6개 요구 영역을 조직 프로그램 관점으로"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-122
+    title: "AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "SBOM이 모델·데이터셋까지 넓어질 때 무엇을 기록하는지, 두 형식의 구성 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-123
+    title: "오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "4가지 자유와 데이터 정보·코드·파라미터 3요소, 가중치만 공개한 모델이 왜 오픈소스가 아닌지"
+    code: none
+    origin: exam
+    status: todo
