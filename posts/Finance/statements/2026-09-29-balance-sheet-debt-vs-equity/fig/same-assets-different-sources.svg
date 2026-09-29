@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">자산은 같고 출처가 다른 두 회사 — 설립 직후 재무상태표 (가상, 억원)</text>
+
+  <!-- 가나전자 -->
+  <text x="225" y="64" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">가나전자 — 설비를 빌린 돈으로</text>
+  <text x="120" y="84" text-anchor="middle" font-size="13" fill="#495057">자산 (무엇을 가졌나)</text>
+  <text x="330" y="84" text-anchor="middle" font-size="13" fill="#495057">부채+자본 (어디서 왔나)</text>
+
+  <rect x="50" y="94" width="140" height="160" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="120" y="170" text-anchor="middle" font-size="14" fill="#1b1b1b">설비 100</text>
+  <rect x="50" y="254" width="140" height="80" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="120" y="299" text-anchor="middle" font-size="14" fill="#1b1b1b">현금 50</text>
+
+  <text x="225" y="220" text-anchor="middle" font-size="18" fill="#495057">=</text>
+
+  <rect x="260" y="94" width="140" height="160" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="330" y="164" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">차입금 100</text>
+  <text x="330" y="184" text-anchor="middle" font-size="13" fill="#1b1b1b">갚아야 할 의무</text>
+  <rect x="260" y="254" width="140" height="80" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="330" y="291" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">자본 50</text>
+  <text x="330" y="311" text-anchor="middle" font-size="13" fill="#1b1b1b">주주 몫</text>
+
+  <!-- 다라물산 -->
+  <text x="655" y="64" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">다라물산 — 설비를 주주 돈으로</text>
+  <text x="550" y="84" text-anchor="middle" font-size="13" fill="#495057">자산 (무엇을 가졌나)</text>
+  <text x="760" y="84" text-anchor="middle" font-size="13" fill="#495057">부채+자본 (어디서 왔나)</text>
+
+  <rect x="480" y="94" width="140" height="160" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="550" y="170" text-anchor="middle" font-size="14" fill="#1b1b1b">설비 100</text>
+  <rect x="480" y="254" width="140" height="80" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="550" y="299" text-anchor="middle" font-size="14" fill="#1b1b1b">현금 50</text>
+
+  <text x="655" y="220" text-anchor="middle" font-size="18" fill="#495057">=</text>
+
+  <rect x="690" y="94" width="140" height="240" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="760" y="206" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">자본 150</text>
+  <text x="760" y="226" text-anchor="middle" font-size="13" fill="#1b1b1b">주주 몫</text>
+
+  <!-- 결과 -->
+  <rect x="50" y="358" width="350" height="72" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.2"/>
+  <text x="62" y="382" font-size="13" fill="#1b1b1b">이자 100 × 5% = 5 → 손익계산서의 비용</text>
+  <text x="62" y="404" font-size="13" fill="#1b1b1b">순이익/자본: 영업이익 15면 20.0%,</text>
+  <text x="62" y="422" font-size="13" fill="#1b1b1b">7.5면 5.0%, 3이면 −4.0%</text>
+
+  <rect x="480" y="358" width="350" height="72" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="492" y="382" font-size="13" fill="#1b1b1b">이자 없음. 주주에게 주는 배당은 비용이 아니다</text>
+  <text x="492" y="404" font-size="13" fill="#1b1b1b">순이익/자본: 영업이익 15면 10.0%,</text>
+  <text x="492" y="422" font-size="13" fill="#1b1b1b">7.5면 5.0%, 3이면 2.0%</text>
+
+  <text x="440" y="462" text-anchor="middle" font-size="13" fill="#495057">왼쪽 기둥은 두 회사가 같다. 오른쪽 기둥의 구성이 이자 부담과, 영업이익이 흔들릴 때 주주 몫이 흔들리는 폭을 정한다.</text>
+</svg>
