@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">기초 재무상태표에서 기말 재무상태표로 — 가나전자(가상), 단위 억원</text>
+
+  <!-- 기초 재무상태표 -->
+  <rect x="20" y="60" width="200" height="360" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="120" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">기초 재무상태표</text>
+  <rect x="28" y="100" width="184" height="24" rx="3" fill="#d8f3dc"/>
+  <text x="36" y="117" font-size="13" fill="#1b1b1b">현금</text>
+  <text x="204" y="117" text-anchor="end" font-size="13" fill="#1b1b1b">100</text>
+  <text x="36" y="145" font-size="13" fill="#1b1b1b">매출채권</text>
+  <text x="204" y="145" text-anchor="end" font-size="13" fill="#1b1b1b">150</text>
+  <text x="36" y="170" font-size="13" fill="#1b1b1b">재고자산</text>
+  <text x="204" y="170" text-anchor="end" font-size="13" fill="#1b1b1b">200</text>
+  <text x="36" y="195" font-size="13" fill="#1b1b1b">유형자산</text>
+  <text x="204" y="195" text-anchor="end" font-size="13" fill="#1b1b1b">800</text>
+  <text x="36" y="222" font-size="13" font-weight="bold" fill="#1b1b1b">자산 계</text>
+  <text x="204" y="222" text-anchor="end" font-size="13" font-weight="bold" fill="#1b1b1b">1,250</text>
+  <line x1="28" y1="236" x2="212" y2="236" stroke="#adb5bd" stroke-width="1"/>
+  <text x="36" y="290" font-size="13" fill="#1b1b1b">차입금</text>
+  <text x="204" y="290" text-anchor="end" font-size="13" fill="#1b1b1b">400</text>
+  <text x="36" y="325" font-size="13" fill="#1b1b1b">자본금</text>
+  <text x="204" y="325" text-anchor="end" font-size="13" fill="#1b1b1b">500</text>
+  <rect x="28" y="350" width="184" height="24" rx="3" fill="#d8f3dc"/>
+  <text x="36" y="367" font-size="13" fill="#1b1b1b">이익잉여금</text>
+  <text x="204" y="367" text-anchor="end" font-size="13" fill="#1b1b1b">350</text>
+  <text x="36" y="402" font-size="13" font-weight="bold" fill="#1b1b1b">부채+자본 계</text>
+  <text x="204" y="402" text-anchor="end" font-size="13" font-weight="bold" fill="#1b1b1b">1,250</text>
+
+  <!-- 현금흐름표 -->
+  <rect x="290" y="60" width="300" height="115" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">현금흐름표</text>
+  <text x="440" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">영업 50 · 투자 −300 · 재무 160</text>
+  <text x="440" y="136" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">현금 증감 −90</text>
+  <text x="440" y="160" text-anchor="middle" font-size="13" fill="#495057">간접법: 순이익 120 + 조정 −70 = 영업 50</text>
+
+  <!-- 손익계산서 -->
+  <rect x="290" y="210" width="300" height="80" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="236" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">손익계산서</text>
+  <text x="440" y="259" text-anchor="middle" font-size="13" fill="#1b1b1b">매출 1,000 − 비용 880</text>
+  <text x="440" y="279" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">당기순이익 120</text>
+
+  <!-- 자본변동표 -->
+  <rect x="290" y="325" width="300" height="95" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="351" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">자본변동표 (이익잉여금 줄)</text>
+  <text x="440" y="376" text-anchor="middle" font-size="13" fill="#1b1b1b">기초 350 + 순이익 120 − 배당 40</text>
+  <text x="440" y="400" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">기말 430</text>
+
+  <!-- 손익계산서 → 위아래 -->
+  <line x1="440" y1="210" x2="440" y2="185" stroke="#495057" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="435,185 440,175 445,185" fill="#495057"/>
+  <text x="452" y="198" font-size="13" fill="#495057">간접법의 출발점</text>
+  <line x1="440" y1="290" x2="440" y2="315" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="435,315 440,325 445,315" fill="#2d6a4f"/>
+  <text x="452" y="310" font-size="13" fill="#2d6a4f">당기순이익이 넘어간다</text>
+
+  <!-- 기초 → 가운데 -->
+  <line x1="220" y1="112" x2="280" y2="112" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="280,107 290,112 280,117" fill="#2d6a4f"/>
+  <line x1="220" y1="362" x2="280" y2="362" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="280,357 290,362 280,367" fill="#2d6a4f"/>
+
+  <!-- 가운데 → 기말 -->
+  <line x1="590" y1="112" x2="650" y2="112" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="650,107 660,112 650,117" fill="#2d6a4f"/>
+  <line x1="590" y1="362" x2="650" y2="362" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="650,357 660,362 650,367" fill="#2d6a4f"/>
+
+  <!-- 기말 재무상태표 -->
+  <rect x="660" y="60" width="200" height="360" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="760" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">기말 재무상태표</text>
+  <rect x="668" y="100" width="184" height="24" rx="3" fill="#d8f3dc"/>
+  <text x="676" y="117" font-size="13" fill="#1b1b1b">현금</text>
+  <text x="844" y="117" text-anchor="end" font-size="13" fill="#1b1b1b">10</text>
+  <text x="676" y="145" font-size="13" fill="#1b1b1b">매출채권</text>
+  <text x="844" y="145" text-anchor="end" font-size="13" fill="#1b1b1b">350</text>
+  <text x="676" y="170" font-size="13" fill="#1b1b1b">재고자산</text>
+  <text x="844" y="170" text-anchor="end" font-size="13" fill="#1b1b1b">150</text>
+  <text x="676" y="195" font-size="13" fill="#1b1b1b">유형자산</text>
+  <text x="844" y="195" text-anchor="end" font-size="13" fill="#1b1b1b">1,020</text>
+  <text x="676" y="222" font-size="13" font-weight="bold" fill="#1b1b1b">자산 계</text>
+  <text x="844" y="222" text-anchor="end" font-size="13" font-weight="bold" fill="#1b1b1b">1,530</text>
+  <line x1="668" y1="236" x2="852" y2="236" stroke="#adb5bd" stroke-width="1"/>
+  <text x="676" y="290" font-size="13" fill="#1b1b1b">차입금</text>
+  <text x="844" y="290" text-anchor="end" font-size="13" fill="#1b1b1b">600</text>
+  <text x="676" y="325" font-size="13" fill="#1b1b1b">자본금</text>
+  <text x="844" y="325" text-anchor="end" font-size="13" fill="#1b1b1b">500</text>
+  <rect x="668" y="350" width="184" height="24" rx="3" fill="#d8f3dc"/>
+  <text x="676" y="367" font-size="13" fill="#1b1b1b">이익잉여금</text>
+  <text x="844" y="367" text-anchor="end" font-size="13" fill="#1b1b1b">430</text>
+  <text x="676" y="402" font-size="13" font-weight="bold" fill="#1b1b1b">부채+자본 계</text>
+  <text x="844" y="402" text-anchor="end" font-size="13" font-weight="bold" fill="#1b1b1b">1,530</text>
+
+  <!-- 주석 -->
+  <text x="20" y="452" font-size="13" fill="#495057">초록 줄 두 개가 세 장을 잇는다: 현금흐름표는 현금 칸을, 자본변동표는 이익잉여금 칸을 기초에서 기말로 옮긴다.</text>
+  <text x="20" y="476" font-size="13" fill="#495057">나머지 칸(매출채권·재고·유형자산·차입금)의 변동은 현금흐름표의 조정 항목과 투자·재무활동에 나뉘어 들어간다.</text>
+</svg>
