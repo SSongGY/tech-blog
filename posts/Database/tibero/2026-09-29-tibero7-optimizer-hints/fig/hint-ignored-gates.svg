@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">Tibero 7 힌트가 계획에 닿기까지 — 걸러지는 네 자리</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">어느 자리에서 걸러져도 오류는 없다. 확인은 실행 계획으로만 한다</text>
+
+  <!-- 1 -->
+  <rect x="40" y="76" width="384" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="56" y="100" font-size="15" font-weight="bold" fill="#1b1b1b">① 자리와 모양</text>
+  <text x="56" y="122" font-size="13" fill="#1b1b1b">SELECT·INSERT·UPDATE·DELETE 바로 뒤, /*+ 는 붙여 쓴다</text>
+  <text x="56" y="140" font-size="13" fill="#1b1b1b">질의 블록마다 힌트 주석 하나</text>
+  <text x="440" y="118" font-size="13" fill="#9d0208">→ 어기면 그냥 주석이다</text>
+
+  <!-- 2 -->
+  <rect x="40" y="166" width="384" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="56" y="190" font-size="15" font-weight="bold" fill="#1b1b1b">② 문법과 이름</text>
+  <text x="56" y="212" font-size="13" fill="#1b1b1b">힌트 이름이 맞고, 별칭이 있으면 별칭으로</text>
+  <text x="56" y="230" font-size="13" fill="#1b1b1b">스키마 이름은 적지 않는다</text>
+  <text x="440" y="208" font-size="13" fill="#9d0208">→ 문법에 안 맞으면 주석 처리, 오류 없음</text>
+
+  <!-- 3 -->
+  <rect x="40" y="256" width="384" height="72" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="56" y="280" font-size="15" font-weight="bold" fill="#1b1b1b">③ 힌트끼리의 충돌</text>
+  <text x="56" y="302" font-size="13" fill="#1b1b1b">같은 인덱스에 INDEX + NO_INDEX, LEADING 끼리 충돌,</text>
+  <text x="56" y="320" font-size="13" fill="#1b1b1b">ORDERED 와 LEADING 을 함께</text>
+  <text x="440" y="292" font-size="13" fill="#9d0208">→ 둘 다 무시 / 둘 다 무시 / LEADING 무시</text>
+
+  <!-- 4 -->
+  <rect x="40" y="346" width="384" height="72" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="56" y="370" font-size="15" font-weight="bold" fill="#1b1b1b">④ 실제로 쓸 수 있는가</text>
+  <text x="56" y="392" font-size="13" fill="#1b1b1b">지정한 접근 방법을 쓸 수 없다, 먼저 조인할 수 없는</text>
+  <text x="56" y="410" font-size="13" fill="#1b1b1b">테이블, 조인 방법 힌트의 테이블이 외부 테이블이다</text>
+  <text x="440" y="382" font-size="13" fill="#b45309">→ 최적화기가 무시한다(조인 방법은 "무시될 수 있다")</text>
+
+  <!-- 계획 -->
+  <rect x="40" y="436" width="384" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="460" font-size="15" font-weight="bold" fill="#2d6a4f">실행 계획에 반영</text>
+  <text x="56" y="480" font-size="13" fill="#1b1b1b">확인: AUTOTRACE, EXPLAIN PLAN + DBMS_XPLAN</text>
+  <text x="440" y="468" font-size="13" fill="#2d6a4f">DBMS_XPLAN 의 OUTLINE = 계획을 재현하는 힌트 목록</text>
+
+  <line x1="220" y1="148" x2="220" y2="162" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="215,160 220,166 225,160" fill="#495057"/>
+  <line x1="220" y1="238" x2="220" y2="252" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="215,250 220,256 225,250" fill="#495057"/>
+  <line x1="220" y1="328" x2="220" y2="342" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="215,340 220,346 225,340" fill="#495057"/>
+  <line x1="220" y1="418" x2="220" y2="432" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="215,430 220,436 225,430" fill="#2d6a4f"/>
+</svg>
