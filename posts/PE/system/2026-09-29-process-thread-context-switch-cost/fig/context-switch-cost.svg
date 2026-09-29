@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2933">문맥 교환 한 번에 하는 일 — 프로세스 사이와 스레드 사이</text>
+
+  <!-- 열 머리 -->
+  <text x="185" y="66" text-anchor="middle" font-size="13" fill="#495057">① 저장</text>
+  <text x="385" y="66" text-anchor="middle" font-size="13" fill="#495057">② 주소 공간</text>
+  <text x="585" y="66" text-anchor="middle" font-size="13" fill="#495057">③ 적재</text>
+  <text x="785" y="66" text-anchor="middle" font-size="13" fill="#495057">④ 간접 비용</text>
+
+  <!-- 위: 프로세스 A → B -->
+  <text x="20" y="118" font-size="14" font-weight="bold" fill="#1f2933">프로세스</text>
+  <text x="20" y="138" font-size="14" font-weight="bold" fill="#1f2933">A → B</text>
+
+  <rect x="100" y="84" width="170" height="80" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="185" y="112" text-anchor="middle" font-size="13" fill="#1f2933">PC·레지스터를</text>
+  <text x="185" y="132" text-anchor="middle" font-size="13" fill="#1f2933">PCB A에 저장</text>
+
+  <rect x="300" y="84" width="170" height="80" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="385" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">바뀐다</text>
+  <text x="385" y="128" text-anchor="middle" font-size="13" fill="#1f2933">PTBR을 B의 것으로</text>
+  <text x="385" y="148" text-anchor="middle" font-size="13" fill="#1f2933">ASID 없으면 TLB 비움</text>
+
+  <rect x="500" y="84" width="170" height="80" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="585" y="112" text-anchor="middle" font-size="13" fill="#1f2933">PCB B에서</text>
+  <text x="585" y="132" text-anchor="middle" font-size="13" fill="#1f2933">PC·레지스터 적재</text>
+
+  <rect x="700" y="84" width="160" height="80" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="780" y="112" text-anchor="middle" font-size="13" fill="#1f2933">B의 데이터로</text>
+  <text x="780" y="132" text-anchor="middle" font-size="13" fill="#1f2933">캐시를 다시 채움</text>
+
+  <line x1="272" y1="124" x2="296" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="472" y1="124" x2="496" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="672" y1="124" x2="696" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 아래: 같은 프로세스의 스레드 T1 → T2 -->
+  <text x="20" y="238" font-size="14" font-weight="bold" fill="#1f2933">스레드</text>
+  <text x="20" y="258" font-size="14" font-weight="bold" fill="#1f2933">T1 → T2</text>
+
+  <rect x="100" y="204" width="170" height="80" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="185" y="232" text-anchor="middle" font-size="13" fill="#1f2933">PC·레지스터·스택</text>
+  <text x="185" y="252" text-anchor="middle" font-size="13" fill="#1f2933">포인터를 저장</text>
+
+  <rect x="300" y="204" width="170" height="80" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-dasharray="6 4"/>
+  <text x="385" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">그대로</text>
+  <text x="385" y="252" text-anchor="middle" font-size="13" fill="#1f2933">같은 주소 공간</text>
+
+  <rect x="500" y="204" width="170" height="80" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="585" y="232" text-anchor="middle" font-size="13" fill="#1f2933">T2의</text>
+  <text x="585" y="252" text-anchor="middle" font-size="13" fill="#1f2933">PC·레지스터 적재</text>
+
+  <rect x="700" y="204" width="160" height="80" rx="6" fill="#fff8eb" stroke="#b45309"/>
+  <text x="780" y="232" text-anchor="middle" font-size="13" fill="#1f2933">두 스레드가 쓰는</text>
+  <text x="780" y="252" text-anchor="middle" font-size="13" fill="#1f2933">데이터에 따라 다름</text>
+
+  <line x1="272" y1="244" x2="296" y2="244" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="472" y1="244" x2="496" y2="244" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="672" y1="244" x2="696" y2="244" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 아래 설명 -->
+  <line x1="100" y1="316" x2="670" y2="316" stroke="#adb5bd"/>
+  <text x="385" y="340" text-anchor="middle" font-size="13" fill="#495057">①~③ 직접 비용 — 커널이 교환하는 동안 쓸모 있는 일은 하지 않는다</text>
+  <text x="780" y="340" text-anchor="middle" font-size="13" fill="#495057">교환이 끝난 뒤 생긴다</text>
+  <text x="440" y="374" text-anchor="middle" font-size="13" fill="#495057">리눅스(NPTL)는 스레드마다 커널 스케줄링 단위가 따로 있어, 스레드 교환도 커널을 거친다</text>
+</svg>
