@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">Tibero 7 실행 계획을 보는 세 경로</text>
+
+  <!-- 열 제목 -->
+  <text x="150" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① EXPLAIN PLAN</text>
+  <text x="440" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 수행 후 DISPLAY_CURSOR</text>
+  <text x="730" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ tbSQL AUTOTRACE</text>
+
+  <!-- 1행: 무엇을 하는가 -->
+  <rect x="40" y="84" width="220" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="150" y="112" text-anchor="middle" font-size="14" fill="#1b1b1b">EXPLAIN PLAN FOR 문장</text>
+  <text x="150" y="134" text-anchor="middle" font-size="13" fill="#495057">계획을 표에 저장, 자동 커밋 없음</text>
+
+  <rect x="305" y="84" width="270" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="112" text-anchor="middle" font-size="14" fill="#1b1b1b">문장을 실제로 수행</text>
+  <text x="440" y="134" text-anchor="middle" font-size="13" fill="#495057">SELECT … / DML</text>
+
+  <rect x="620" y="84" width="220" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="730" y="112" text-anchor="middle" font-size="14" fill="#1b1b1b">SET AUTOTRACE …</text>
+  <text x="730" y="134" text-anchor="middle" font-size="13" fill="#495057">DBA 또는 PLUSTRACE 롤</text>
+
+  <!-- 화살표 -->
+  <line x1="150" y1="154" x2="150" y2="186" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="145,186 150,196 155,186" fill="#495057"/>
+  <line x1="440" y1="154" x2="440" y2="186" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="435,186 440,196 445,186" fill="#495057"/>
+  <line x1="730" y1="154" x2="730" y2="186" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="725,186 730,196 735,186" fill="#495057"/>
+
+  <!-- 2행: 어디에 남는가 -->
+  <rect x="40" y="196" width="220" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="150" y="224" text-anchor="middle" font-size="14" fill="#1b1b1b">PLAN_TABLE</text>
+  <text x="150" y="246" text-anchor="middle" font-size="13" fill="#495057">INTO 로 다른 표 지정 가능</text>
+
+  <rect x="305" y="196" width="270" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="224" text-anchor="middle" font-size="14" fill="#1b1b1b">Physical Plan Cache</text>
+  <text x="440" y="246" text-anchor="middle" font-size="13" fill="#495057">V$SQL_PLAN · V$SQL_PLAN_STATISTICS</text>
+
+  <rect x="620" y="196" width="220" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="730" y="224" text-anchor="middle" font-size="14" fill="#1b1b1b">질의 결과</text>
+  <text x="730" y="246" text-anchor="middle" font-size="13" fill="#495057">TRACEONLY 면 찍지 않음</text>
+
+  <line x1="150" y1="266" x2="150" y2="298" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="145,298 150,308 155,298" fill="#495057"/>
+  <line x1="440" y1="266" x2="440" y2="298" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="435,298 440,308 445,298" fill="#495057"/>
+  <line x1="730" y1="266" x2="730" y2="298" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="725,298 730,308 735,298" fill="#495057"/>
+
+  <!-- 3행: 무엇으로 보는가 -->
+  <rect x="40" y="308" width="220" height="78" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="150" y="334" text-anchor="middle" font-size="14" fill="#1b1b1b">DBMS_XPLAN.DISPLAY</text>
+  <text x="150" y="356" text-anchor="middle" font-size="13" fill="#495057">마지막 EXPLAIN PLAN FOR</text>
+  <text x="150" y="374" text-anchor="middle" font-size="13" fill="#495057">문장의 계획</text>
+
+  <rect x="305" y="308" width="270" height="78" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="334" text-anchor="middle" font-size="14" fill="#1b1b1b">DBMS_XPLAN.DISPLAY_CURSOR</text>
+  <text x="440" y="356" text-anchor="middle" font-size="13" fill="#495057">sql_id 생략 → 세션의</text>
+  <text x="440" y="374" text-anchor="middle" font-size="13" fill="#495057">직전 쿼리(PREV_SQL_ID)</text>
+
+  <rect x="620" y="308" width="220" height="78" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="730" y="334" text-anchor="middle" font-size="14" fill="#1b1b1b">EXPLAIN · STATISTICS</text>
+  <text x="730" y="356" text-anchor="middle" font-size="13" fill="#495057">PLANSTAT: 노드별 수행 시간·</text>
+  <text x="730" y="374" text-anchor="middle" font-size="13" fill="#495057">처리 로우 수·수행 횟수</text>
+
+  <!-- 주의 -->
+  <rect x="305" y="410" width="270" height="62" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="436" text-anchor="middle" font-size="13" fill="#1b1b1b">GATHER_SQL_PLAN_STAT = N 이면</text>
+  <text x="440" y="456" text-anchor="middle" font-size="13" fill="#b45309">Rows·Starts·시간이 0 으로 찍힘</text>
+  <line x1="440" y1="386" x2="440" y2="410" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <text x="595" y="436" font-size="13" fill="#495057">예측값(CARDS·COST)은</text>
+  <text x="595" y="456" font-size="13" fill="#495057">파라미터와 무관하게 나온다</text>
+</svg>
