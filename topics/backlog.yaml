@@ -536,7 +536,7 @@ topics:
     difficulty: 심화
     angle: "힌트가 무시되는 조건과 적용 여부를 확인하는 방법"
     code: sql
-    status: todo
+    status: done
   - id: tb-008
     title: "Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN"
     category: Database
@@ -885,7 +885,7 @@ topics:
     difficulty: 입문
     angle: "먼저 SELECT로 대상을 세어보는 절차를 예제로"
     code: python
-    status: todo
+    status: done
   - id: bas-018
     title: "DELETE, TRUNCATE, DROP — 무엇이 어디까지 지우는가"
     category: Database
@@ -1154,7 +1154,7 @@ topics:
     difficulty: 중급
     angle: "같은 요구사항을 네 모델로 각각 표현해 비교"
     code: none
-    status: todo
+    status: done
   - id: pe-021
     title: "침해사고 대응 절차 6단계"
     category: PE

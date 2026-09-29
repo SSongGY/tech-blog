@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **82편** · 갱신 2026-09-29
+총 **85편** · 갱신 2026-09-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 16편
+## DB문법 (basics) — 17편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-29 | [UPDATE — 조건 없는 UPDATE를 막는 습관](posts/Database/sql-basics/2026-09-29-update-where-count-first/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [INSERT — 단건, 다건, SELECT로 넣기](posts/Database/sql-basics/2026-09-29-insert-single-multi-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [UNION과 UNION ALL — 중복 제거 비용](posts/Database/sql-basics/2026-09-28-union-vs-union-all/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [IN, EXISTS, NOT IN — 결과가 갈리는 지점](posts/Database/sql-basics/2026-09-28-in-exists-not-in-null/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -25,10 +26,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 6편
+## DB기능 (product) — 7편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-29 | [Tibero 7 옵티마이저 힌트 — 문법과 적용 확인](posts/Database/tibero/2026-09-29-tibero7-optimizer-hints/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-28 | [Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가](posts/Database/tibero/2026-09-28-tibero7-index-types/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-23 | [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-23 | [Tibero 7 파티션 테이블 — 종류별로 언제 쓰는가](posts/Database/tibero/2026-09-23-tibero7-partition-table-types/index.md) | 심화 | Tibero 7.2 | 실행 검증 |
@@ -36,13 +38,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 33편
+## 기술사 (pe) — 34편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
 | 2026-09-29 | [대칭키와 공개키 — 쓰임이 갈리는 지점](posts/PE/security/2026-09-29-symmetric-vs-public-key-hybrid/index.md) | 입문 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), RFC 9180 (2022-02), Diffie·Hellman, IEEE Trans. IT-22(6) (1976-11) | 문서 근거 |
 | 2026-09-29 | [컨텍스트 엔지니어링 — 추론 시점에 모델에 들어가는 토큰을 고르는 기술](posts/PE/emerging-tech/2026-09-29-context-engineering-token-curation/index.md) | 중급 | A Survey of Context Engineering arXiv:2507.13334v2 (2025-07), Claude Docs Context windows · Context editing (2026-09 조회), Anthropic Engineering (2025-09-29), LangChain Blog (2025-07-02), Manus Blog (2025-07-18) | 문서 근거 |
+| 2026-09-29 | [접근통제 모델 — DAC, MAC, RBAC, ABAC](posts/PE/security/2026-09-29-access-control-dac-mac-rbac-abac/index.md) | 중급 | DoD 5200.28-STD TCSEC (1985-12), NIST SP 800-162 (2014-01, 2019-08 갱신), ANSI INCITS 359-2004 | 문서 근거 |
 | 2026-09-28 | [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](posts/PE/network/2026-09-28-tcp-handshake-flow-congestion-control/index.md) | 중급 | RFC 9293 (2022-08, STD 7), RFC 5681 (2009-09), RFC 9438 (2023-08), RFC 1122 (1989-10) | 문서 근거 |
 | 2026-09-28 | [SDN과 NFV — 제어와 데이터 평면 분리](posts/PE/network/2026-09-28-sdn-nfv-control-data-plane/index.md) | 심화 | RFC 7426 (2015-01), ETSI GS NFV 002 V1.2.1 (2014-12), ETSI GS NFV 003 V1.2.1 (2014-12) | 문서 근거 |
 | 2026-09-28 | [라우팅 프로토콜 — 거리벡터와 링크상태](posts/PE/network/2026-09-28-routing-distance-vector-vs-link-state/index.md) | 중급 | RFC 2453 (1998-11, STD 56), RFC 2328 (1998-04, STD 54), Python 3.13.5 | 실행 검증 |

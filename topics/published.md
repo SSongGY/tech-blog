@@ -71,3 +71,6 @@
 | 2026-09-29 | bas-016 | Database | INSERT — 단건, 다건, SELECT로 넣기 |
 | 2026-09-29 | db-008 | Database | 커서 기반 페이지네이션이 OFFSET을 이기는 지점 |
 | 2026-09-29 | pe-018 | PE | 대칭키와 공개키 — 쓰임이 갈리는 지점 |
+| 2026-09-29 | bas-017 | Database | UPDATE — 조건 없는 UPDATE를 막는 습관 |
+| 2026-09-29 | pe-020 | PE | 접근통제 모델 — DAC, MAC, RBAC, ABAC |
+| 2026-09-29 | tb-007 | Database | Tibero 7 옵티마이저 힌트 — 문법과 적용 확인 |
