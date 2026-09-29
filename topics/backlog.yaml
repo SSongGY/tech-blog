@@ -3245,7 +3245,7 @@ topics:
     angle: "1년이라는 기준선 하나가 지급능력 판단을 어떻게 바꾸는지. 유동비율이 같아도 내용이 다른 두 회사"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-004
     title: "손익계산서 — 매출에서 순이익까지 다섯 단계"
     category: Finance
@@ -3256,7 +3256,7 @@ topics:
     angle: "매출총이익·영업이익·법인세차감전순이익·당기순이익이 각각 무엇을 빼고 남은 값인지. 단계마다 무엇을 알 수 있는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-005
     title: "영업이익과 당기순이익이 크게 벌어질 때"
     category: Finance
