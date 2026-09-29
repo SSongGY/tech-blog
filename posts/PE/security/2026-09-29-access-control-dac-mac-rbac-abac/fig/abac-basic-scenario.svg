@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">ABAC 기본 흐름 — 요청마다 네 가지 입력을 평가한다</text>
+
+  <!-- 주체 -->
+  <rect x="30" y="150" width="130" height="64" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="95" y="178" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">주체</text>
+  <text x="95" y="199" text-anchor="middle" font-size="13" fill="#495057">(사용자·프로세스)</text>
+
+  <!-- ACM -->
+  <rect x="330" y="140" width="220" height="84" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">접근통제 메커니즘</text>
+  <text x="440" y="194" text-anchor="middle" font-size="13" fill="#1b1b1b">(ACM) 결정 → 집행</text>
+
+  <!-- 객체 -->
+  <rect x="720" y="150" width="130" height="64" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="785" y="178" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">객체</text>
+  <text x="785" y="199" text-anchor="middle" font-size="13" fill="#495057">(파일·레코드·API)</text>
+
+  <!-- ① 요청 -->
+  <line x1="160" y1="182" x2="320" y2="182" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="320,177 330,182 320,187" fill="#495057"/>
+  <text x="245" y="172" text-anchor="middle" font-size="13" fill="#1b1b1b">① 접근 요청</text>
+
+  <!-- ③ 허용 -->
+  <line x1="550" y1="182" x2="710" y2="182" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="710,177 720,182 710,187" fill="#2d6a4f"/>
+  <text x="635" y="172" text-anchor="middle" font-size="13" fill="#2d6a4f">③ 허가되면 접근</text>
+
+  <!-- ② 입력 4개 -->
+  <rect x="120" y="290" width="150" height="56" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="195" y="314" text-anchor="middle" font-size="14" fill="#1b1b1b">ⓐ 정책 규칙</text>
+  <text x="195" y="334" text-anchor="middle" font-size="13" fill="#495057">허용 조합을 적은 식</text>
+
+  <rect x="290" y="290" width="150" height="56" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="365" y="314" text-anchor="middle" font-size="14" fill="#1b1b1b">ⓑ 주체 속성</text>
+  <text x="365" y="334" text-anchor="middle" font-size="13" fill="#495057">이름·소속·인가 등급</text>
+
+  <rect x="460" y="290" width="150" height="56" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="535" y="314" text-anchor="middle" font-size="14" fill="#1b1b1b">ⓒ 객체 속성</text>
+  <text x="535" y="334" text-anchor="middle" font-size="13" fill="#495057">분류·소유자·유형</text>
+
+  <rect x="630" y="290" width="150" height="56" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="705" y="314" text-anchor="middle" font-size="14" fill="#1b1b1b">ⓓ 환경 조건</text>
+  <text x="705" y="334" text-anchor="middle" font-size="13" fill="#495057">시각·위치·위협 수준</text>
+
+  <line x1="195" y1="290" x2="380" y2="232" stroke="#495057" stroke-width="1.2"/>
+  <line x1="365" y1="290" x2="420" y2="232" stroke="#495057" stroke-width="1.2"/>
+  <line x1="535" y1="290" x2="460" y2="232" stroke="#495057" stroke-width="1.2"/>
+  <line x1="705" y1="290" x2="500" y2="232" stroke="#495057" stroke-width="1.2"/>
+  <text x="30" y="266" font-size="13" fill="#b45309">② 네 입력을 평가해 결정</text>
+
+  <text x="30" y="80" font-size="13" fill="#495057">ACM 안은 PEP(집행)·PDP(결정)·PIP(속성 조회)·PAP(정책 관리) 네 기능점으로 나눠 분산 배치할 수 있다.</text>
+  <text x="30" y="102" font-size="13" fill="#495057">사용자를 객체마다 미리 등록하지 않아도 속성과 정책만으로 결정한다 — 역할·ACL 을 사전 할당하는 방식과 갈리는 지점.</text>
+</svg>
