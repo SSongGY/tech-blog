@@ -42,8 +42,9 @@ tbsql -s <사용자>/<비밀번호> @index_types.sql
 
 - 7번 `user_indexes.index_type`에 비트맵·리버스 인덱스가 어떤 값으로 찍히는가.
   매뉴얼의 값 목록은 `NORMAL`, `FUNCTION-BASED`, `LOB` 세 가지다.
-- 6번 리버스 인덱스를 두고 `joined_at BETWEEN ...` 범위 조건을 걸면 실행계획에 그
-  인덱스가 나오는가(`SET AUTOTRACE TRACEONLY EXPLAIN`).
+- 8번: 리버스 인덱스를 힌트로 지정했을 때 등호 조건(8-1)과 `BETWEEN` 범위 조건(8-2)의
+  실행계획이 어떻게 갈리는가. 8-3은 같은 범위 조건을 일반 인덱스로 찾는 비교 기준이다
+  (`SET AUTOTRACE TRACEONLY EXPLAIN`).
 
 ## tbsql 스크립트 모드의 함정
 

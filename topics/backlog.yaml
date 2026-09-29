@@ -72,7 +72,7 @@ topics:
     difficulty: 중급
     angle: "wait-for 그래프를 그리고 victim 선정 기준을 실측으로 확인"
     code: python
-    status: todo
+    status: done
   - id: db-006
     title: "실행계획의 비용(cost)은 무엇을 세는 숫자인가"
     category: Database
@@ -906,7 +906,7 @@ topics:
     difficulty: 입문
     angle: "NOT NULL·UNIQUE·CHECK·DEFAULT가 각각 언제 검사되는지"
     code: python
-    status: todo
+    status: done
   - id: bas-020
     title: "ALTER TABLE — 컬럼을 바꿀 때의 제약"
     category: Database
@@ -1174,7 +1174,7 @@ topics:
     difficulty: 입문
     angle: "PCB에 저장되는 것과 교환 시 실제로 드는 비용"
     code: none
-    status: todo
+    status: done
   - id: pe-028
     title: "클라우드 서비스 모델과 책임 공유"
     category: PE

@@ -38,7 +38,18 @@ SELECT index_name, column_position, column_name, descend
 SELECT index_name, column_position, column_expression
   FROM user_idx_expressions
  WHERE table_name = 'MEMBER_ACCOUNT';
-PROMPT ===== 8. 정리 =====
+PROMPT ===== 8. REVERSE 인덱스로 범위 조건을 찾는가 =====
+INSERT INTO member_account SELECT LEVEL + 1, 'u' || LEVEL || '@example.com', DECODE(MOD(LEVEL, 3), 0, 'GOLD', 'SILVER'), DATE '2026-01-01' + MOD(LEVEL, 300) FROM dual CONNECT BY LEVEL <= 3000;
+EXEC DBMS_STATS.GATHER_TABLE_STATS(USER, 'MEMBER_ACCOUNT');
+SET AUTOTRACE TRACEONLY EXPLAIN
+PROMPT ----- 8-1. 등호 조건, 리버스 인덱스를 힌트로 지정 -----
+SELECT /*+ INDEX(m ix_member_account_joined_rev) */ member_id FROM member_account m WHERE joined_at = DATE '2026-03-01';
+PROMPT ----- 8-2. 범위 조건, 같은 힌트 -----
+SELECT /*+ INDEX(m ix_member_account_joined_rev) */ member_id FROM member_account m WHERE joined_at BETWEEN DATE '2026-03-01' AND DATE '2026-03-03';
+PROMPT ----- 8-3. 범위 조건, 일반 인덱스를 힌트로 지정 -----
+SELECT /*+ INDEX(m ix_member_account_grade_desc) */ member_id FROM member_account m WHERE grade = 'GOLD' AND joined_at BETWEEN DATE '2026-03-01' AND DATE '2026-03-03';
+SET AUTOTRACE OFF
+PROMPT ===== 9. 정리 =====
 ROLLBACK;
 DROP TABLE member_account;
 SELECT COUNT(*) AS obj_left FROM user_objects;
