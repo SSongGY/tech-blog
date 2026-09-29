@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 줄을 세 방식으로 나눈 필드 번호</text>
+  <text x="440" y="56" text-anchor="middle" font-size="14" fill="#1b1b1b" font-family="Consolas,'Courier New',monospace">입력: "␣␣812␣mysql␣␣␣␣12.5␣mysqld"   (␣ = 공백 한 칸)</text>
+
+  <!-- 행 1: cut -d' ' -->
+  <text x="20" y="104" font-size="14" font-weight="bold" fill="#9d0208">cut -d' '</text>
+  <text x="20" y="122" font-size="13" fill="#495057">공백 한 칸마다</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="140" y="84" width="72" height="44" fill="#f8d7da" stroke="#9d0208"/><text x="176" y="102" fill="#495057">1</text><text x="176" y="120" fill="#9d0208">(빈 칸)</text>
+    <rect x="216" y="84" width="72" height="44" fill="#f8d7da" stroke="#9d0208"/><text x="252" y="102" fill="#495057">2</text><text x="252" y="120" fill="#9d0208">(빈 칸)</text>
+    <rect x="292" y="84" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="328" y="102" fill="#495057">3</text><text x="328" y="120" fill="#1b1b1b">812</text>
+    <rect x="368" y="84" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="404" y="102" fill="#495057">4</text><text x="404" y="120" fill="#1b1b1b">mysql</text>
+    <rect x="444" y="84" width="72" height="44" fill="#f8d7da" stroke="#9d0208"/><text x="480" y="102" fill="#495057">5</text><text x="480" y="120" fill="#9d0208">(빈 칸)</text>
+    <rect x="520" y="84" width="72" height="44" fill="#f8d7da" stroke="#9d0208"/><text x="556" y="102" fill="#495057">6</text><text x="556" y="120" fill="#9d0208">(빈 칸)</text>
+    <rect x="596" y="84" width="72" height="44" fill="#f8d7da" stroke="#9d0208"/><text x="632" y="102" fill="#495057">7</text><text x="632" y="120" fill="#9d0208">(빈 칸)</text>
+    <rect x="672" y="84" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="708" y="102" fill="#495057">8</text><text x="708" y="120" fill="#1b1b1b">12.5</text>
+    <rect x="748" y="84" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="784" y="102" fill="#495057">9</text><text x="784" y="120" fill="#1b1b1b">mysqld</text>
+  </g>
+
+  <!-- 행 2: tr -s | cut -->
+  <text x="20" y="184" font-size="14" font-weight="bold" fill="#b45309">tr -s ' ' | cut</text>
+  <text x="20" y="202" font-size="13" fill="#495057">줄인 뒤 한 칸마다</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="140" y="164" width="72" height="44" fill="#fff3cd" stroke="#b45309"/><text x="176" y="182" fill="#495057">1</text><text x="176" y="200" fill="#b45309">(빈 칸)</text>
+    <rect x="216" y="164" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="252" y="182" fill="#495057">2</text><text x="252" y="200" fill="#1b1b1b">812</text>
+    <rect x="292" y="164" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="328" y="182" fill="#495057">3</text><text x="328" y="200" fill="#1b1b1b">mysql</text>
+    <rect x="368" y="164" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="404" y="182" fill="#495057">4</text><text x="404" y="200" fill="#1b1b1b">12.5</text>
+    <rect x="444" y="164" width="72" height="44" fill="#f1f3f5" stroke="#495057"/><text x="480" y="182" fill="#495057">5</text><text x="480" y="200" fill="#1b1b1b">mysqld</text>
+  </g>
+  <text x="530" y="192" font-size="13" fill="#b45309">← 줄 앞 공백이 남아 번호가 밀린다</text>
+
+  <!-- 행 3: awk -->
+  <text x="20" y="264" font-size="14" font-weight="bold" fill="#2d6a4f">awk '{print $N}'</text>
+  <text x="20" y="282" font-size="13" fill="#495057">공백 덩어리마다</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="140" y="244" width="72" height="44" fill="#d8f3dc" stroke="#2d6a4f"/><text x="176" y="262" fill="#495057">1</text><text x="176" y="280" fill="#1b1b1b">812</text>
+    <rect x="216" y="244" width="72" height="44" fill="#d8f3dc" stroke="#2d6a4f"/><text x="252" y="262" fill="#495057">2</text><text x="252" y="280" fill="#1b1b1b">mysql</text>
+    <rect x="292" y="244" width="72" height="44" fill="#d8f3dc" stroke="#2d6a4f"/><text x="328" y="262" fill="#495057">3</text><text x="328" y="280" fill="#1b1b1b">12.5</text>
+    <rect x="368" y="244" width="72" height="44" fill="#d8f3dc" stroke="#2d6a4f"/><text x="404" y="262" fill="#495057">4</text><text x="404" y="280" fill="#1b1b1b">mysqld</text>
+  </g>
+  <text x="454" y="272" font-size="13" fill="#2d6a4f">← 앞뒤 공백을 버리고 덩어리를 한 구분자로 본다</text>
+
+  <text x="20" y="336" font-size="13" fill="#495057">칸 위 숫자가 -f 또는 $N 에 쓰는 필드 번호다. 빨간 칸은 공백과 공백 사이의 빈 필드다.</text>
+  <text x="20" y="360" font-size="13" fill="#495057">cut 의 구분자는 한 글자뿐이라 "공백 여러 칸"을 하나로 볼 방법이 없다(-d', ' 는 에러).</text>
+</svg>
