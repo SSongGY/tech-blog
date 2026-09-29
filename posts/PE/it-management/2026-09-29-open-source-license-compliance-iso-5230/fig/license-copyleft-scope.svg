@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">라이선스 유형 4가지 — 소스 공개 의무가 어디까지 번지는가</text>
+
+  <!-- 허용형 -->
+  <rect x="20" y="60" width="190" height="130" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="115" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">① 허용형</text>
+  <text x="115" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">MIT · BSD · Apache-2.0</text>
+  <text x="115" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">고지 유지</text>
+  <text x="115" y="160" text-anchor="middle" font-size="13" fill="#1b1b1b">수정본 공개 의무 없음</text>
+
+  <!-- 약한 카피레프트 -->
+  <rect x="235" y="60" width="190" height="130" rx="6" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="330" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">② 약한 카피레프트</text>
+  <text x="330" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">MPL-2.0 · LGPL</text>
+  <text x="330" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">그 파일(MPL) · 그 라이브러리</text>
+  <text x="330" y="160" text-anchor="middle" font-size="13" fill="#1b1b1b">(LGPL)만 공개</text>
+
+  <!-- 강한 카피레프트 -->
+  <rect x="450" y="60" width="190" height="130" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="545" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">③ 강한 카피레프트</text>
+  <text x="545" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">GPL-2.0 · GPL-3.0</text>
+  <text x="545" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">그 코드를 바탕으로 한</text>
+  <text x="545" y="160" text-anchor="middle" font-size="13" fill="#1b1b1b">프로그램 전체</text>
+
+  <!-- 네트워크 카피레프트 -->
+  <rect x="665" y="60" width="195" height="130" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="2.5"/>
+  <text x="762" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">④ 네트워크 카피레프트</text>
+  <text x="762" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">AGPL-3.0</text>
+  <text x="762" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">③과 같은 범위</text>
+  <text x="762" y="160" text-anchor="middle" font-size="13" fill="#1b1b1b">+ 네트워크 이용자에게도</text>
+
+  <line x1="20" y1="222" x2="856" y2="222" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="440" y="246" text-anchor="middle" font-size="13" fill="#495057">공개해야 하는 범위가 넓어진다 → 자사 코드와 섞일 때 판단이 무거워진다</text>
+
+  <!-- 의무가 생기는 시점 -->
+  <text x="20" y="290" font-size="14" font-weight="bold" fill="#1b1b1b">의무가 생기는 시점</text>
+  <rect x="20" y="304" width="620" height="44" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="330" y="332" text-anchor="middle" font-size="14" fill="#1b1b1b">①②③ — 소프트웨어를 제3자에게 배포할 때 (바이너리·소스)</text>
+  <rect x="665" y="304" width="195" height="44" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="762" y="332" text-anchor="middle" font-size="14" fill="#1b1b1b">④ — 서비스 제공만으로도</text>
+
+  <text x="20" y="378" font-size="13" fill="#495057">SaaS로만 운영해 배포가 없으면 ①②③의 공개 의무는 대체로 생기지 않지만, ④는 생긴다.</text>
+</svg>

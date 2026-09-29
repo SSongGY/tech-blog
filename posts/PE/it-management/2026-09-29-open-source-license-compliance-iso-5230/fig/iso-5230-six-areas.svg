@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">ISO/IEC 5230 요구 영역 6가지 — 기반 → 지원 → 검토 → 산출물, 그리고 준수</text>
+
+  <!-- 3.1 -->
+  <rect x="20" y="60" width="190" height="130" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="115" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">3.1 프로그램 기반</text>
+  <text x="115" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">정책 · 역량 · 인식</text>
+  <text x="115" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">적용 범위</text>
+  <text x="115" y="156" text-anchor="middle" font-size="13" fill="#b45309">라이선스 의무 검토 절차</text>
+
+  <!-- 3.2 -->
+  <rect x="235" y="60" width="190" height="130" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="330" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">3.2 업무 정의·지원</text>
+  <text x="330" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">외부 문의 창구 공개</text>
+  <text x="330" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">책임자 · 예산 · 법률 자문</text>
+
+  <!-- 3.3 -->
+  <rect x="450" y="60" width="190" height="130" rx="6" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="545" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">3.3 콘텐츠 검토·승인</text>
+  <text x="545" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">BOM 작성·관리</text>
+  <text x="545" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">배포 형태 · 수정 여부</text>
+  <text x="545" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">비호환 · 저작자 표시</text>
+
+  <!-- 3.4 -->
+  <rect x="665" y="60" width="195" height="130" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="762" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">3.4 산출물 생성·제공</text>
+  <text x="762" y="112" text-anchor="middle" font-size="13" fill="#1b1b1b">고지문 · 소스 · 라이선스</text>
+  <text x="762" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">SPDX 문서</text>
+  <text x="762" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">사본 보관</text>
+
+  <line x1="210" y1="125" x2="231" y2="125" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="425" y1="125" x2="446" y2="125" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="640" y1="125" x2="661" y2="125" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 3.5 -->
+  <rect x="450" y="230" width="190" height="80" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="545" y="258" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">3.5 커뮤니티 참여</text>
+  <text x="545" y="284" text-anchor="middle" font-size="13" fill="#1b1b1b">기여를 허용하면 기여 정책</text>
+  <line x1="545" y1="190" x2="545" y2="226" stroke="#495057" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+  <text x="555" y="214" font-size="13" fill="#495057">밖으로 내보낼 때</text>
+
+  <!-- 3.6 -->
+  <rect x="20" y="230" width="405" height="80" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="222" y="258" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">3.6 요구 준수</text>
+  <text x="222" y="284" text-anchor="middle" font-size="13" fill="#1b1b1b">전 요구를 충족한다고 확인 · 유효 18개월</text>
+  <path d="M 762 190 L 762 340 L 222 340 L 222 314" fill="none" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrG)"/>
+  <text x="492" y="360" text-anchor="middle" font-size="13" fill="#2d6a4f">18개월마다 다시 확인한다 — 한 번 만들고 끝나는 프로그램이 아니다</text>
+
+  <text x="20" y="388" font-size="13" fill="#495057">표준은 무엇을 갖출지(what·why)만 정하고, 어떻게·언제(how·when)는 조직에 맡긴다.</text>
+</svg>
