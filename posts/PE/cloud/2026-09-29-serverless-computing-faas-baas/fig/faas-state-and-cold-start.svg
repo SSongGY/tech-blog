@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">FaaS 구성요소 4가지 — 상태는 함수 밖에, 새 인스턴스는 3단계를 거친다</text>
+
+  <!-- 상단: CNCF 4 구성요소 -->
+  <rect x="24" y="60" width="180" height="100" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="114" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 이벤트 소스</text>
+  <text x="114" y="114" text-anchor="middle" font-size="13" fill="#1b1b1b">HTTP 요청 · 큐 메시지</text>
+  <text x="114" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">스트림 레코드 · 배치</text>
+
+  <rect x="240" y="60" width="180" height="100" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="330" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ FaaS 제어기</text>
+  <text x="330" y="114" text-anchor="middle" font-size="13" fill="#1b1b1b">배포 · 제어 · 감시</text>
+  <text x="330" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">인스턴스 수 0 ↔ N</text>
+
+  <rect x="456" y="60" width="180" height="100" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="546" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 함수 인스턴스</text>
+  <text x="546" y="114" text-anchor="middle" font-size="13" fill="#1b1b1b">무상태 · 짧은 수명</text>
+  <text x="546" y="134" text-anchor="middle" font-size="13" fill="#b45309">언제 회수될지 모른다</text>
+
+  <rect x="672" y="60" width="184" height="100" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="764" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">④ 플랫폼 서비스</text>
+  <text x="764" y="114" text-anchor="middle" font-size="13" fill="#1b1b1b">BaaS: 객체 저장소 · DB</text>
+  <text x="764" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">세션·중간 결과를 둔다</text>
+
+  <line x1="204" y1="110" x2="236" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="420" y1="110" x2="452" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="636" y1="102" x2="668" y2="102" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrG)"/>
+  <line x1="668" y1="120" x2="640" y2="120" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrG)"/>
+  <text x="652" y="180" text-anchor="middle" font-size="13" fill="#2d6a4f">상태 읽기·쓰기</text>
+
+  <line x1="24" y1="206" x2="856" y2="206" stroke="#ced4da" stroke-width="1"/>
+
+  <!-- 하단: 콜드 / 웜 경로 -->
+  <text x="24" y="236" font-size="14" font-weight="bold" fill="#9d0208">콜드 스타트 — 쓸 수 있는 인스턴스가 없을 때 (버클리 논문의 3요인)</text>
+
+  <rect x="24" y="252" width="170" height="70" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="109" y="282" text-anchor="middle" font-size="14" fill="#1b1b1b">(1) 함수 실행 환경</text>
+  <text x="109" y="304" text-anchor="middle" font-size="14" fill="#1b1b1b">기동</text>
+
+  <rect x="226" y="252" width="170" height="70" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="311" y="282" text-anchor="middle" font-size="14" fill="#1b1b1b">(2) 런타임·라이브러리</text>
+  <text x="311" y="304" text-anchor="middle" font-size="14" fill="#1b1b1b">초기화</text>
+
+  <rect x="428" y="252" width="170" height="70" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="513" y="282" text-anchor="middle" font-size="14" fill="#1b1b1b">(3) 사용자 초기화 코드</text>
+  <text x="513" y="304" text-anchor="middle" font-size="13" fill="#1b1b1b">핸들러 바깥 코드</text>
+
+  <line x1="194" y1="287" x2="222" y2="287" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrR)"/>
+  <line x1="396" y1="287" x2="424" y2="287" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrR)"/>
+  <line x1="598" y1="287" x2="668" y2="310" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrR)"/>
+
+  <rect x="672" y="280" width="184" height="90" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="764" y="316" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">핸들러 실행</text>
+  <text x="764" y="340" text-anchor="middle" font-size="13" fill="#1b1b1b">과금은 실행 시간 단위</text>
+
+  <text x="24" y="376" font-size="14" font-weight="bold" fill="#2d6a4f">웜 스타트 — 얼려 둔 인스턴스를 재사용할 때</text>
+  <line x1="400" y1="371" x2="668" y2="352" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrG)"/>
+  <text x="24" y="402" font-size="13" fill="#1b1b1b">(1)~(3)을 건너뛴다. 핸들러 바깥에서 만든 DB 연결·/tmp 캐시가 남아 있을 수 있다</text>
+
+  <text x="24" y="448" font-size="13" fill="#495057">(2)·(3)이 (1)보다 길어질 수 있다 — 콜드 스타트를 줄이는 손잡이는 대부분 사용자 쪽에 있다.</text>
+</svg>
