@@ -3223,7 +3223,7 @@ topics:
     angle: "재무상태표·손익계산서·현금흐름표를 따로 보면 안 되는 이유. 당기순이익이 이익잉여금으로, 현금흐름이 현금 잔액으로 흘러가는 경로를 가상 회사 한 해 숫자로 잇는다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-002
     title: "재무상태표 — 자산은 어디서 왔는가"
     category: Finance
@@ -3234,7 +3234,7 @@ topics:
     angle: "자산 = 부채 + 자본이 항등식인 이유. 같은 자산 100억이라도 빚으로 샀는지 자본으로 샀는지에 따라 무엇이 달라지는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-003
     title: "유동과 비유동을 왜 나누는가"
     category: Finance
