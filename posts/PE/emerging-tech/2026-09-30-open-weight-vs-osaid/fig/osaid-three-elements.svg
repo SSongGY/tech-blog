@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">OSAID 1.0 — 4가지 자유를 행사하려면 3요소가 모두 필요하다</text>
+
+  <!-- 4가지 자유 띠 -->
+  <rect x="40" y="52" width="800" height="62" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">4가지 자유</text>
+  <text x="440" y="100" text-anchor="middle" font-size="14" fill="#1b1b1b">사용(Use) · 연구(Study) · 수정(Modify) · 공유(Share) — 허락 없이, 어떤 목적으로든</text>
+
+  <text x="440" y="140" text-anchor="middle" font-size="13" fill="#495057">행사하려면 "수정에 선호되는 형태"를 받아야 한다</text>
+
+  <!-- 3요소 -->
+  <rect x="40" y="155" width="250" height="120" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="165" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">① 데이터 정보</text>
+  <text x="165" y="208" text-anchor="middle" font-size="13" fill="#1b1b1b">학습 데이터 설명 · 출처</text>
+  <text x="165" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">공개 데이터 목록</text>
+  <text x="165" y="252" text-anchor="middle" font-size="13" fill="#1b1b1b">못 넘기는 데이터는 상세 기술</text>
+
+  <rect x="315" y="155" width="250" height="120" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">② 코드</text>
+  <text x="440" y="208" text-anchor="middle" font-size="13" fill="#1b1b1b">데이터 처리 · 학습 · 검증</text>
+  <text x="440" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">추론 코드 전체</text>
+  <text x="440" y="252" text-anchor="middle" font-size="13" fill="#1b1b1b">OSI 승인 라이선스</text>
+
+  <rect x="590" y="155" width="250" height="120" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="715" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">③ 파라미터</text>
+  <text x="715" y="208" text-anchor="middle" font-size="13" fill="#1b1b1b">가중치 · 설정값</text>
+  <text x="715" y="230" text-anchor="middle" font-size="13" fill="#1b1b1b">OSI 승인 조건(terms)</text>
+
+  <!-- 오픈소스 AI 범위 -->
+  <path d="M 40 292 L 40 304 L 840 304 L 840 292" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="326" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">오픈소스 AI = ①②③ 전부 + 용도 제한 없는 조건</text>
+
+  <!-- 오픈웨이트 범위 -->
+  <rect x="590" y="350" width="250" height="70" rx="6" fill="#fde8e8" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="715" y="377" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">오픈웨이트</text>
+  <text x="715" y="401" text-anchor="middle" font-size="13" fill="#1b1b1b">③만 공개, 조건은 제공자 고유</text>
+  <line x1="715" y1="275" x2="715" y2="346" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <text x="40" y="370" font-size="13" fill="#9d0208">①② 없음 → 연구·수정의 자유를</text>
+  <text x="40" y="390" font-size="13" fill="#9d0208">실제로 행사할 수 없다</text>
+  <text x="40" y="414" font-size="13" fill="#9d0208">용도 제한 → 사용의 자유와 충돌</text>
+</svg>
