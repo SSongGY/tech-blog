@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **101편** · 갱신 2026-09-30
+총 **104편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 19편
+## DB문법 (basics) — 20편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [ALTER TABLE — 컬럼을 바꿀 때의 제약](posts/Database/sql-basics/2026-09-30-alter-table-sqlite-limits/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [UPDATE — 조건 없는 UPDATE를 막는 습관](posts/Database/sql-basics/2026-09-29-update-where-count-first/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [INSERT — 단건, 다건, SELECT로 넣기](posts/Database/sql-basics/2026-09-29-insert-single-multi-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [DELETE, TRUNCATE, DROP — 무엇이 어디까지 지우는가](posts/Database/sql-basics/2026-09-29-delete-truncate-drop/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -28,10 +29,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 7편
+## DB기능 (product) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](posts/Database/tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-29 | [Tibero 7 옵티마이저 힌트 — 문법과 적용 확인](posts/Database/tibero/2026-09-29-tibero7-optimizer-hints/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-28 | [Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가](posts/Database/tibero/2026-09-28-tibero7-index-types/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-23 | [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
@@ -40,11 +42,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 40편
+## 기술사 (pe) — 41편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
+| 2026-09-30 | [클라우드 서비스 모델과 책임 공유](posts/PE/emerging-tech/2026-09-30-cloud-service-models-shared-responsibility/index.md) | 입문 | NIST SP 800-145 (2011-09), NIST SP 800-146 (2012-05), Microsoft Learn Shared responsibility in the cloud (2026-08-24), AWS Shared Responsibility Model (2026-09 확인) | 문서 근거 |
 | 2026-09-30 | [AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM](posts/PE/software-engineering/2026-09-30-ai-bom-spdx-cyclonedx/index.md) | 중급 | SPDX 3.0.1 (2024), CycloneDX 1.6 = ECMA-424 1판 (2024-06), NTIA SBOM Minimum Elements (2021-07) | 문서 근거 |
 | 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
 | 2026-09-29 | [대칭키와 공개키 — 쓰임이 갈리는 지점](posts/PE/security/2026-09-29-symmetric-vs-public-key-hybrid/index.md) | 입문 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), RFC 9180 (2022-02), Diffie·Hellman, IEEE Trans. IT-22(6) (1976-11) | 문서 근거 |

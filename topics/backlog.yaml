@@ -549,7 +549,7 @@ topics:
     difficulty: 중급
     angle: "계획을 뽑는 세 가지 경로와 각각이 보여주는 것의 차이"
     code: sql
-    status: todo
+    status: done
   - id: tb-009
     title: "Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정"
     category: Database
@@ -916,7 +916,7 @@ topics:
     difficulty: 중급
     angle: "SQLite가 지원하지 않는 변경과 우회 절차"
     code: python
-    status: todo
+    status: done
   - id: bas-021
     title: "VIEW — 만들고 쓰는 법, 그리고 한계"
     category: Database
@@ -1184,7 +1184,7 @@ topics:
     difficulty: 입문
     angle: "IaaS·PaaS·SaaS에서 누가 무엇까지 책임지는지 경계선으로"
     code: none
-    status: todo
+    status: done
   - id: pe-029
     title: "컨테이너와 가상머신 — 격리 수준의 차이"
     category: PE

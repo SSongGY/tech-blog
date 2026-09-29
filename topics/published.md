@@ -88,3 +88,6 @@
 | 2026-09-29 | pe-024 | PE | 프로세스와 스레드 — 문맥 교환 비용 |
 | 2026-09-30 | pe-122 | PE | AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM |
 | 2026-09-30 | pe-123 | PE | 오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0) |
+| 2026-09-30 | bas-020 | Database | ALTER TABLE — 컬럼을 바꿀 때의 제약 |
+| 2026-09-30 | tb-008 | Database | Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN |
+| 2026-09-30 | pe-028 | PE | 클라우드 서비스 모델과 책임 공유 |
