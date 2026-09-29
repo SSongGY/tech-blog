@@ -1,0 +1,81 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\2026-09-29-sqlite-deadlock-busy-victim
+# 명령      : python deadlock_victim.py
+# 수행 시각 : 2026-09-29 23:08 (대한민국 표준시)
+# 소요      : 4.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+  timeout busy_timeout 1초 (두 연결 모두)
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  2행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  account_id | INTEGER | PK
+  owner      | TEXT    | NOT NULL
+  balance    | INTEGER | NOT NULL
+
+  account_id | owner | balance
+  -----------+-------+--------
+           1 | A     |     100
+           2 | B     |     100
+
+  연결 SQL                                                             결과                     시간   그 뒤 상태
+
+[1] 교착 없는 경합 — B 는 아직 아무것도 읽지 않았다 (rollback 저널)
+  A  BEGIN IMMEDIATE                                                 성공                     0.000s  트랜잭션 열림
+  A  UPDATE account SET balance = balance - 10 WHERE account_id = 1  성공                     0.001s  트랜잭션 열림
+  B  BEGIN IMMEDIATE                                                 SQLITE_BUSY            1.202s  트랜잭션 없음
+  A  COMMIT                                                          성공                     0.004s  트랜잭션 없음
+
+[2-A] 교착 — 둘 다 읽은 뒤 A 가 먼저 쓴다 (rollback 저널)
+  A  BEGIN                                                           성공                     0.000s  트랜잭션 열림
+  A  SELECT balance FROM account WHERE account_id = 1                성공                     0.000s  트랜잭션 열림
+  B  BEGIN                                                           성공                     0.000s  트랜잭션 열림
+  B  SELECT balance FROM account WHERE account_id = 2                성공                     0.000s  트랜잭션 열림
+  A  UPDATE account SET balance = 90 WHERE account_id = 1            성공                     0.000s  트랜잭션 열림
+  B  UPDATE account SET balance = 90 WHERE account_id = 2            SQLITE_BUSY            0.000s  트랜잭션 열림
+  A  COMMIT                                                          SQLITE_BUSY            1.184s  트랜잭션 열림
+  B  ROLLBACK                                                        성공                     0.000s  트랜잭션 없음
+  A  COMMIT                                                          성공                     0.005s  트랜잭션 없음
+
+[2-B] 교착 — 둘 다 읽은 뒤 B 가 먼저 쓴다 (rollback 저널)
+  A  BEGIN                                                           성공                     0.000s  트랜잭션 열림
+  A  SELECT balance FROM account WHERE account_id = 1                성공                     0.000s  트랜잭션 열림
+  B  BEGIN                                                           성공                     0.000s  트랜잭션 열림
+  B  SELECT balance FROM account WHERE account_id = 2                성공                     0.000s  트랜잭션 열림
+  B  UPDATE account SET balance = 90 WHERE account_id = 2            성공                     0.000s  트랜잭션 열림
+  A  UPDATE account SET balance = 90 WHERE account_id = 1            SQLITE_BUSY            0.000s  트랜잭션 열림
+  B  COMMIT                                                          SQLITE_BUSY            1.193s  트랜잭션 열림
+  A  ROLLBACK                                                        성공                     0.000s  트랜잭션 없음
+  B  COMMIT                                                          성공                     0.004s  트랜잭션 없음
+
+[3] BEGIN IMMEDIATE — A 가 0.3초 뒤 커밋한다 (rollback 저널)
+  A  BEGIN IMMEDIATE                                                 성공                     0.000s  트랜잭션 열림
+  A  UPDATE account SET balance = 90 WHERE account_id = 1            성공                     0.000s  트랜잭션 열림
+  B  BEGIN IMMEDIATE                                                 성공                     0.335s  트랜잭션 열림
+  B  UPDATE account SET balance = 90 WHERE account_id = 2            성공                     0.003s  트랜잭션 열림
+  B  COMMIT                                                          성공                     0.004s  트랜잭션 없음
+
+[4] 같은 순서를 WAL 에서
+  A  BEGIN                                                           성공                     0.000s  트랜잭션 열림
+  A  SELECT balance FROM account WHERE account_id = 1                성공                     0.001s  트랜잭션 열림
+  B  BEGIN                                                           성공                     0.000s  트랜잭션 열림
+  B  SELECT balance FROM account WHERE account_id = 2                성공                     0.000s  트랜잭션 열림
+  A  UPDATE account SET balance = 90 WHERE account_id = 1            성공                     0.000s  트랜잭션 열림
+  B  UPDATE account SET balance = 90 WHERE account_id = 2            SQLITE_BUSY            0.000s  트랜잭션 열림
+  A  COMMIT                                                          성공                     0.001s  트랜잭션 없음
+  B  UPDATE account SET balance = 90 WHERE account_id = 2            SQLITE_BUSY_SNAPSHOT   0.000s  트랜잭션 열림
+  B  ROLLBACK                                                        성공                     0.000s  트랜잭션 없음
