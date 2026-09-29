@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **99편** · 갱신 2026-09-30
+총 **101편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -40,10 +40,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 38편
+## 기술사 (pe) — 40편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
+| 2026-09-30 | [AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM](posts/PE/software-engineering/2026-09-30-ai-bom-spdx-cyclonedx/index.md) | 중급 | SPDX 3.0.1 (2024), CycloneDX 1.6 = ECMA-424 1판 (2024-06), NTIA SBOM Minimum Elements (2021-07) | 문서 근거 |
 | 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
 | 2026-09-29 | [대칭키와 공개키 — 쓰임이 갈리는 지점](posts/PE/security/2026-09-29-symmetric-vs-public-key-hybrid/index.md) | 입문 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), RFC 9180 (2022-02), Diffie·Hellman, IEEE Trans. IT-22(6) (1976-11) | 문서 근거 |
 | 2026-09-29 | [서버리스 컴퓨팅 — FaaS·BaaS와 콜드 스타트](posts/PE/cloud/2026-09-29-serverless-computing-faas-baas/index.md) | 중급 | CNCF Serverless Whitepaper v1.0 (2018-02), UC Berkeley EECS-2019-3 (2019-02), AWS Lambda Developer Guide (2026-09 확인) | 문서 근거 |

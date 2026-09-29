@@ -3201,7 +3201,7 @@ topics:
     angle: "SBOM이 모델·데이터셋까지 넓어질 때 무엇을 기록하는지, 두 형식의 구성 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-123
     title: "오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)"
     category: PE
@@ -3212,7 +3212,7 @@ topics:
     angle: "4가지 자유와 데이터 정보·코드·파라미터 3요소, 가중치만 공개한 모델이 왜 오픈소스가 아닌지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: fin-001
     title: "재무제표 세 장은 서로 어떻게 이어지는가"
     category: Finance
