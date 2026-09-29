@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">문장마다 어디까지 지우는가 (SQLite 3.49.1)</text>
+
+  <!-- 열 머리 -->
+  <text x="330" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">DELETE … WHERE</text>
+  <text x="500" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">DELETE (WHERE 없음)</text>
+  <text x="670" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">DROP TABLE</text>
+  <text x="810" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">VACUUM</text>
+
+  <!-- 행 머리 -->
+  <rect x="30" y="90" width="200" height="60" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="130" y="116" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">표 정의</text>
+  <text x="130" y="136" text-anchor="middle" font-size="13" fill="#495057">sqlite_schema 의 한 줄</text>
+
+  <rect x="30" y="165" width="200" height="60" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="130" y="191" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">행</text>
+  <text x="130" y="211" text-anchor="middle" font-size="13" fill="#495057">표의 B-tree 페이지</text>
+
+  <rect x="30" y="240" width="200" height="60" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="130" y="266" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">파일 크기</text>
+  <text x="130" y="286" text-anchor="middle" font-size="13" fill="#495057">빈 페이지를 OS 에 반환</text>
+
+  <rect x="30" y="315" width="200" height="60" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="130" y="341" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">BEGIN 안에서</text>
+  <text x="130" y="361" text-anchor="middle" font-size="13" fill="#495057">ROLLBACK 으로 되돌리기</text>
+
+  <!-- DELETE WHERE -->
+  <text x="330" y="126" text-anchor="middle" font-size="14" fill="#2d6a4f">남는다</text>
+  <text x="330" y="201" text-anchor="middle" font-size="14" fill="#9d0208">고른 행만</text>
+  <text x="330" y="276" text-anchor="middle" font-size="14" fill="#2d6a4f">그대로</text>
+  <text x="330" y="351" text-anchor="middle" font-size="14" fill="#2d6a4f">된다</text>
+
+  <!-- DELETE all -->
+  <text x="500" y="126" text-anchor="middle" font-size="14" fill="#2d6a4f">남는다</text>
+  <text x="500" y="201" text-anchor="middle" font-size="14" fill="#9d0208">전부</text>
+  <text x="500" y="276" text-anchor="middle" font-size="14" fill="#2d6a4f">그대로 (빈 페이지로)</text>
+  <text x="500" y="351" text-anchor="middle" font-size="14" fill="#2d6a4f">된다</text>
+
+  <!-- DROP -->
+  <text x="670" y="126" text-anchor="middle" font-size="14" fill="#9d0208">사라진다</text>
+  <text x="670" y="201" text-anchor="middle" font-size="14" fill="#9d0208">전부</text>
+  <text x="670" y="276" text-anchor="middle" font-size="14" fill="#2d6a4f">그대로 (빈 페이지로)</text>
+  <text x="670" y="351" text-anchor="middle" font-size="14" fill="#2d6a4f">된다</text>
+
+  <!-- VACUUM -->
+  <text x="810" y="126" text-anchor="middle" font-size="14" fill="#495057">—</text>
+  <text x="810" y="201" text-anchor="middle" font-size="14" fill="#495057">—</text>
+  <text x="810" y="276" text-anchor="middle" font-size="14" fill="#9d0208">줄어든다</text>
+  <text x="810" y="351" text-anchor="middle" font-size="14" fill="#495057">BEGIN 안 불가</text>
+
+  <!-- 구분선 -->
+  <line x1="245" y1="157" x2="870" y2="157" stroke="#dee2e6" stroke-width="1"/>
+  <line x1="245" y1="232" x2="870" y2="232" stroke="#dee2e6" stroke-width="1"/>
+  <line x1="245" y1="307" x2="870" y2="307" stroke="#dee2e6" stroke-width="1"/>
+
+  <!-- 주석 -->
+  <text x="30" y="412" font-size="13" fill="#495057">빨간 글자는 그 문장이 지우거나 바꾸는 칸이다. 지운 행이 차지하던 페이지는 파일 안의 빈 페이지 목록으로 간다.</text>
+  <text x="30" y="436" font-size="13" fill="#495057">auto_vacuum = FULL 이면 커밋할 때 빈 페이지를 파일 끝으로 옮겨 잘라 낸다. SQLite 에는 TRUNCATE 문이 없다.</text>
+</svg>

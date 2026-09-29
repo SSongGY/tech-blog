@@ -1,0 +1,77 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-29-delete-truncate-drop
+# 명령      : python delete_truncate_drop.py
+# 수행 시각 : 2026-09-29 19:09 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  4행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  product_id | INTEGER | PK
+  name       | TEXT    | NOT NULL
+  price      | INTEGER | NOT NULL
+
+  product_id | name   | price
+  -----------+--------+------
+           1 | 연필   |   500
+           2 | 공책   |  1500
+           3 | 지우개 |   300
+           4 | 볼펜   |  1000
+
+-- 1. DELETE ... WHERE — 고른 행만 지우고, ROLLBACK 으로 되돌린다
+   DELETE FROM product WHERE price < 1000  → 지운 행 2
+   SELECT product_id, name FROM product ORDER BY product_id
+   2 | 공책
+   4 | 볼펜
+
+   ROLLBACK 뒤
+   SELECT COUNT(*) FROM product
+   4
+
+-- 2. WHERE 없는 DELETE — 행은 전부 사라지고 표는 남는다
+   DELETE FROM product  → 지운 행 4
+   남은 표: ['product']
+   SELECT COUNT(*) FROM product
+   0
+
+   ROLLBACK 뒤
+   SELECT COUNT(*) FROM product
+   4
+
+-- 3. DROP TABLE — 표 정의까지 사라진다. SQLite 에서는 이것도 ROLLBACK 된다
+   DROP TABLE product
+   남은 표: []
+   SELECT COUNT(*) FROM product  → 에러: no such table: product
+   ROLLBACK 뒤
+   남은 표: ['product']
+   SELECT COUNT(*) FROM product
+   4
+
+-- 4. TRUNCATE — SQLite 에는 이 문장이 없다
+   TRUNCATE TABLE product  → 에러: near "TRUNCATE": syntax error
+
+-- 5. 지워도 파일은 줄지 않는다 — 빈 페이지로 남고 VACUUM 이 돌려준다
+   파일  4232 KB · 전체 페이지 1058 · 빈 페이지    0  ← 20000행 넣은 뒤
+   파일  4232 KB · 전체 페이지 1058 · 빈 페이지 1056  ← DELETE (WHERE 없음) 뒤
+   파일  4232 KB · 전체 페이지 1058 · 빈 페이지 1057  ← DROP TABLE 뒤
+   BEGIN 안에서 VACUUM  → 에러: cannot VACUUM from within a transaction
+   파일     4 KB · 전체 페이지    1 · 빈 페이지    0  ← VACUUM 뒤
+
+-- 6. auto_vacuum = FULL 이면 커밋 시점에 파일이 줄어든다
+   파일  4240 KB · 전체 페이지 1060 · 빈 페이지    0  ← 20000행 넣은 뒤
+   파일    12 KB · 전체 페이지    3 · 빈 페이지    0  ← DELETE (WHERE 없음) 뒤
