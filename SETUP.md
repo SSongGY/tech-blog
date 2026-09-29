@@ -57,7 +57,7 @@ python scripts/blog.py lint      # 기존 글이 전부 [OK] 여야 한다
 | `.claude/commands/blog-daily.md` | 7시·12시·19시·23시 회차 절차 |
 | `.claude/commands/exam-daily.md` | 2시·15시 기출 답안 절차 |
 | `.claude/commands/concept-daily.md` | 4시·17시 개념 정리 절차 |
-| `.claude/commands/finance-daily.md` | 21시 주식·재무 절차 |
+| `.claude/commands/finance-daily.md` | 10시·21시 주식·재무 절차 |
 | `references/naming-conventions.md` | 언어별 변수명 규칙 |
 | `OPERATIONS.md` | 운영 전반 — 구조, 명령어, 발행 절차 |
 
@@ -85,6 +85,7 @@ cp .claude/settings.example.json .claude/settings.json
 02:00  tech-blog-exam        기출 답안 (단답형 2 / 논술형 1)
 04:00  tech-blog-concept     개념 정리 2편
 07:00  tech-blog-daily       3편
+10:00  tech-blog-finance     주식·재무 2편
 12:00  tech-blog-daily       3편
 15:00  tech-blog-exam        기출 답안 (단답형 2 / 논술형 1)
 17:00  tech-blog-concept     개념 정리 2편

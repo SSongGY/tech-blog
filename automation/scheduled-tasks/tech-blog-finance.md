@@ -1,6 +1,6 @@
 ---
 name: tech-blog-finance
-description: 주식 용어와 재무제표 읽는 법을 2편 정리하고 커밋한다 (가상 회사 숫자로만)
+description: 주식 용어와 재무제표 읽는 법을 회차당 2편 정리하고 커밋한다 (가상 회사 숫자로만)
 ---
 
 저장소 `D:\workspace\claude\tech_blog` 에서 주식·재무 공부 글 2편을 쓰고 커밋·푸시한다.

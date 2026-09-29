@@ -66,8 +66,8 @@ DAILY_RUNS_PER_DAY = 4
 CONCEPT_RUNS_PER_DAY = 2
 CONCEPT_POSTS_PER_DAY = 2 * CONCEPT_RUNS_PER_DAY
 EXAM_RUNS_PER_DAY = 2
-# 금융 회차(21시)는 하루 한 번, 2편. 하루 회차의 트랙 배분과는 무관하다.
-FINANCE_POSTS_PER_DAY = 2
+# 금융 회차(10시·21시)는 하루 두 번, 회차당 2편. 트랙 배분과는 무관하다.
+FINANCE_POSTS_PER_DAY = 4
 
 
 TRACK_LABEL = {
