@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **121편** · 갱신 2026-10-01
+총 **123편** · 갱신 2026-10-01
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -46,10 +46,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 46편
+## 기술사 (pe) — 48편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ](posts/PE/network/2026-10-01-packet-scheduling-pq-wrr-drr-wfq/index.md) | 중급 | Shreedhar & Varghese, DRR, ACM SIGCOMM 1995, Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Katevenis et al., WRR, IEEE JSAC 1991, Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
+| 2026-10-01 | [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](posts/PE/network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md) | 심화 | NVIDIA DGX SuperPOD Reference Architecture H100 · GB200 (2025-11 갱신), IBTA RoCEv2 Annex A17 (2014), Guo et al., RDMA over Commodity Ethernet at Scale, SIGCOMM 2016, Narayanan et al., Megatron-LM, SC21 | 문서 근거 |
 | 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
 | 2026-09-30 | [머신러닝 모델 평가 지표 — 혼동행렬에서 정밀도와 재현율이 갈리는 곳](posts/PE/emerging-tech/2026-09-30-ml-evaluation-metrics-confusion-matrix/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 문서, Google Machine Learning Crash Course (2026-09-30 열람) | 실행 검증 |
 | 2026-09-30 | [LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬](posts/PE/system/2026-09-30-llm-parallelism-data-tensor-pipeline/index.md) | 중급 | Narayanan et al., Megatron-LM, SC21 (arXiv 2104.04473), Rajbhandari et al., ZeRO, SC20 (arXiv 1910.02054) | 문서 근거 |

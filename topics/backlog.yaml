@@ -3575,7 +3575,7 @@ topics:
     angle: "노드 내 스케일업과 노드 간 스케일아웃 네트워크를 나누는 이유, RDMA와 fat-tree·레일 최적화 구성을 공식 참조 아키텍처 기준으로"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-127
     title: "패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ"
     category: PE
@@ -3586,7 +3586,7 @@ topics:
     angle: "흐름 간 격리·지연 상한·구현 복잡도 세 축으로 네 기법을 비교하고, 가변 길이 패킷에서 WRR이 불공정해지는 이유와 DRR의 적자 카운터를 계산으로 보인다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-128
     title: "능동 큐 관리(AQM) — RED와 CoDel"
     category: PE
