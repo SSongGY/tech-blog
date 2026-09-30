@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **116편** · 갱신 2026-09-30
+총 **117편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -143,11 +143,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 7편
+## 주식·재무 (finance) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-30 | [영업이익과 당기순이익이 크게 벌어질 때](posts/Finance/statements/2026-09-30-operating-vs-net-income-gap/index.md) | 입문 | Python 3.13.5, K-IFRS 제1001호·제1021호·제1036호 | 실행 검증 |
+| 2026-09-30 | [감가상각 — 현금이 나가지 않는 비용](posts/Finance/statements/2026-09-30-depreciation-non-cash-expense/index.md) | 입문 | Python 3.13.5, K-IFRS 제1016호·제1007호 | 실행 검증 |
 | 2026-09-30 | [영업·투자·재무 활동 — 현금흐름 세 갈래 읽기](posts/Finance/statements/2026-09-30-cash-flow-three-activities/index.md) | 입문 | Python 3.13.5, K-IFRS 제1007호 | 실행 검증 |
 | 2026-09-30 | [현금흐름표 — 이익이 나는데 돈이 없는 이유](posts/Finance/statements/2026-09-30-cash-flow-profit-without-cash/index.md) | 입문 | Python 3.13.5, K-IFRS 제1001호·제1007호·제1115호 | 실행 검증 |
 | 2026-09-29 | [재무제표 세 장은 서로 어떻게 이어지는가](posts/Finance/statements/2026-09-29-three-statements-linkage/index.md) | 입문 | Python 3.13.5, K-IFRS 제1001호·제1007호 | 실행 검증 |

@@ -3300,7 +3300,7 @@ topics:
     angle: "정액법과 정률법이 같은 자산을 다르게 비용화하는 것을 연도별 표로. 이익은 줄지만 현금은 그대로인 구조"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-009
     title: "매출채권과 재고자산 — 자산인데 위험한 자산"
     category: Finance
