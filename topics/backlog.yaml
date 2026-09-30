@@ -81,7 +81,7 @@ topics:
     difficulty: 심화
     angle: "통계가 틀어졌을 때 옵티마이저가 어떻게 오판하는지 강제로 재현"
     code: sql
-    status: todo
+    status: done
   - id: db-007
     title: "N+1 쿼리는 왜 반복해서 생기고 어떻게 잡아내는가"
     category: Database
@@ -938,7 +938,7 @@ topics:
     difficulty: 입문
     angle: "SAVEPOINT로 부분 롤백하는 흐름을 두 세션으로"
     code: python
-    status: todo
+    status: done
   - id: bas-023
     title: "문자열 함수 기본 — 자르기, 붙이기, 바꾸기"
     category: Database
@@ -1204,7 +1204,7 @@ topics:
     difficulty: 심화
     angle: "처리량·최종성·장애 허용을 축으로 비교"
     code: none
-    status: todo
+    status: done
   - id: pe-031
     title: "머신러닝 모델 평가 지표"
     category: PE

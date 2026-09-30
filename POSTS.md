@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **112편** · 갱신 2026-09-30
+총 **115편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 21편
+## DB문법 (basics) — 22편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT](posts/Database/sql-basics/2026-09-30-transaction-commit-rollback-savepoint/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [VIEW — 만들고 쓰는 법, 그리고 한계](posts/Database/sql-basics/2026-09-30-sqlite-view-updatable/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [ALTER TABLE — 컬럼을 바꿀 때의 제약](posts/Database/sql-basics/2026-09-30-alter-table-sqlite-limits/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [UPDATE — 조건 없는 UPDATE를 막는 습관](posts/Database/sql-basics/2026-09-29-update-where-count-first/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -43,7 +44,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 44편
+## 기술사 (pe) — 45편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -52,6 +53,7 @@
 | 2026-09-30 | [ISO/IEC 5259 — 분석·머신러닝용 데이터 품질 표준 시리즈](posts/PE/data-analysis/2026-09-30-iso-iec-5259-data-quality-series/index.md) | 중급 | ISO/IEC 5259-1:2024, ISO/IEC 5259-2:2024, ISO/IEC 5259-3:2024, ISO/IEC 5259-4:2024, ISO/IEC 5259-5:2025 | 문서 근거 |
 | 2026-09-30 | [컨테이너와 가상머신 — 격리 수준의 차이](posts/PE/emerging-tech/2026-09-30-container-vs-vm-isolation/index.md) | 중급 | NIST SP 800-125 (2011-01), NIST SP 800-190 (2017-09), Linux man-pages 6.19 (2026-02-08) | 문서 근거 |
 | 2026-09-30 | [클라우드 서비스 모델과 책임 공유](posts/PE/emerging-tech/2026-09-30-cloud-service-models-shared-responsibility/index.md) | 입문 | NIST SP 800-145 (2011-09), NIST SP 800-146 (2012-05), Microsoft Learn Shared responsibility in the cloud (2026-08-24), AWS Shared Responsibility Model (2026-09 확인) | 문서 근거 |
+| 2026-09-30 | [블록체인 합의 알고리즘 — PoW, PoS, PBFT](posts/PE/emerging-tech/2026-09-30-blockchain-consensus-pow-pos-pbft/index.md) | 심화 | NIST IR 8202 (2018-10), Bitcoin 백서 (2008), Castro·Liskov PBFT (OSDI 1999), Python 3.13.5 | 실행 검증 |
 | 2026-09-30 | [AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM](posts/PE/software-engineering/2026-09-30-ai-bom-spdx-cyclonedx/index.md) | 중급 | SPDX 3.0.1 (2024), CycloneDX 1.6 = ECMA-424 1판 (2024-06), NTIA SBOM Minimum Elements (2021-07) | 문서 근거 |
 | 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
 | 2026-09-29 | [대칭키와 공개키 — 쓰임이 갈리는 지점](posts/PE/security/2026-09-29-symmetric-vs-public-key-hybrid/index.md) | 입문 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), RFC 9180 (2022-02), Diffie·Hellman, IEEE Trans. IT-22(6) (1976-11) | 문서 근거 |
@@ -105,10 +107,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 7편
+## 일반 (general) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [데드락은 어떻게 만들어지고 SQLite는 누구에게 BUSY를 돌려주는가](posts/Database/2026-09-29-sqlite-deadlock-busy-victim/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [커서 기반 페이지네이션이 OFFSET을 이기는 지점 — SQLite 3.49.1로 잰 깊이별 비용](posts/Database/sqlite/2026-09-29-keyset-vs-offset-crossover/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-28 | [MVCC는 왜 읽기 잠금을 없앴고 무엇을 대가로 치르는가 — SQLite WAL로 잰 비용](posts/Database/2026-09-28-mvcc-wal-long-reader-cost/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -152,6 +155,11 @@
 | 2026-09-29 | [재무상태표 — 자산은 어디서 왔는가](posts/Finance/statements/2026-09-29-balance-sheet-debt-vs-equity/index.md) | 입문 | Python 3.13.5, 재무보고를 위한 개념체계(2018), K-IFRS 제1032호 | 실행 검증 |
 
 ## 같은 기능을 여러 환경에서 다룬 글
+
+**`explain-plan`**
+
+- [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](posts/Database/tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) — Tibero 7
 
 **`row-limiting`**
 
