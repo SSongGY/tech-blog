@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">혼동행렬 한 장에서 지표를 읽는 방향</text>
+  <text x="30" y="56" font-size="13" fill="#555">거래 20건, 임계값 0.5 일 때의 값 (예제 output.txt)</text>
+
+  <!-- 축 머리 -->
+  <text x="330" y="96" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">예측</text>
+  <text x="250" y="122" font-size="13" fill="#333" text-anchor="middle">양성 (사기)</text>
+  <text x="410" y="122" font-size="13" fill="#333" text-anchor="middle">음성 (정상)</text>
+  <text x="60" y="222" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">실제</text>
+  <text x="120" y="182" font-size="13" fill="#333" text-anchor="middle">양성 (5)</text>
+  <text x="120" y="282" font-size="13" fill="#333" text-anchor="middle">음성 (15)</text>
+
+  <!-- 네 칸 -->
+  <rect x="170" y="134" width="160" height="90" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="250" y="172" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">TP = 3</text>
+  <text x="250" y="196" font-size="13" fill="#333" text-anchor="middle">사기를 사기로</text>
+
+  <rect x="330" y="134" width="160" height="90" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="410" y="172" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">FN = 2</text>
+  <text x="410" y="196" font-size="13" fill="#333" text-anchor="middle">놓친 사기</text>
+
+  <rect x="170" y="234" width="160" height="90" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="250" y="272" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">FP = 3</text>
+  <text x="250" y="296" font-size="13" fill="#333" text-anchor="middle">오탐 (정상을 사기로)</text>
+
+  <rect x="330" y="234" width="160" height="90" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="410" y="272" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">TN = 12</text>
+  <text x="410" y="296" font-size="13" fill="#333" text-anchor="middle">정상을 정상으로</text>
+
+  <!-- 재현율: 실제 양성 행 -->
+  <path d="M 496 140 L 506 140 L 506 218 L 496 218" fill="none" stroke="#1b1b1b" stroke-width="1.8"/>
+  <text x="520" y="168" font-size="14" font-weight="bold" fill="#1b1b1b">재현율 = TP / (TP + FN)</text>
+  <text x="520" y="190" font-size="13" fill="#333">실제 사기 중 잡아낸 비율 = 3/5 = 0.600</text>
+  <text x="520" y="210" font-size="13" fill="#555">(행으로 읽는다)</text>
+
+  <path d="M 496 240 L 506 240 L 506 318 L 496 318" fill="none" stroke="#1b1b1b" stroke-width="1.8"/>
+  <text x="520" y="268" font-size="14" font-weight="bold" fill="#1b1b1b">특이도 = TN / (TN + FP)</text>
+  <text x="520" y="290" font-size="13" fill="#333">실제 정상 중 정상으로 둔 비율 = 12/15 = 0.800</text>
+  <text x="520" y="310" font-size="13" fill="#555">1 − 특이도 = 거짓 양성률(FPR)</text>
+
+  <!-- 정밀도: 예측 양성 열 -->
+  <path d="M 176 330 L 176 340 L 324 340 L 324 330" fill="none" stroke="#1b1b1b" stroke-width="1.8"/>
+  <text x="170" y="364" font-size="14" font-weight="bold" fill="#1b1b1b">정밀도 = TP / (TP + FP)</text>
+  <text x="170" y="386" font-size="13" fill="#333">사기라고 한 것 중 진짜 사기 = 3/6 = 0.500 (열로 읽는다)</text>
+
+  <line x1="30" y1="408" x2="850" y2="408" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="434" font-size="13" fill="#333">정확도 = (TP + TN) / 전체 = 15/20 = 0.750 — 네 칸을 다 쓰지만 양성이 적으면 TN 이 값을 끌고 간다.</text>
+  <text x="30" y="458" font-size="13" fill="#333">임계값을 올리면 예측 양성 열이 줄어 FP 가 줄고(정밀도 쪽) FN 이 늘어난다(재현율 쪽).</text>
+</svg>
