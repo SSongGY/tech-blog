@@ -164,6 +164,8 @@ AI 슈퍼컴퓨팅 플랫폼은 이종 가속기, 2단 인터커넥트, 계층�
 안에서는 가속기 자원을 공동 자산으로 배분·측정하는 거버넌스를 함께 갖춰야 한다.
 
 > 개념 정리: [LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬](../../system/2026-09-30-llm-parallelism-data-tensor-pipeline/index.md)
+>
+> 개념 정리: [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](../../network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md)
 
 끝
 

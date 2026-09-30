@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">GPU 클러스터 인터커넥트 — 노드 안 스케일업과 레일 최적화 스케일아웃</text>
+
+  <!-- 스파인 -->
+  <rect x="200" y="58" width="480" height="44" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="86" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">스파인 스위치 — 레일 사이, 확장 단위(SU) 사이 트래픽</text>
+
+  <!-- 리프 -->
+  <rect x="60" y="150" width="160" height="42" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="140" y="176" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">레일 0 리프</text>
+  <rect x="260" y="150" width="160" height="42" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="340" y="176" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">레일 1 리프</text>
+  <rect x="460" y="150" width="160" height="42" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="540" y="176" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">레일 2 리프</text>
+  <rect x="660" y="150" width="160" height="42" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="740" y="176" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">레일 3 리프</text>
+
+  <line x1="140" y1="150" x2="300" y2="102" stroke="#8a8a84" stroke-width="1.5"/>
+  <line x1="340" y1="150" x2="390" y2="102" stroke="#8a8a84" stroke-width="1.5"/>
+  <line x1="540" y1="150" x2="490" y2="102" stroke="#8a8a84" stroke-width="1.5"/>
+  <line x1="740" y1="150" x2="580" y2="102" stroke="#8a8a84" stroke-width="1.5"/>
+  <text x="700" y="126" font-size="13" fill="#555">fat-tree</text>
+
+  <!-- 레일 연결: 같은 번호 GPU 는 같은 리프 -->
+  <g stroke="#2d6a4f" stroke-width="1.6">
+    <line x1="95" y1="300" x2="120" y2="192"/>
+    <line x1="515" y1="300" x2="160" y2="192"/>
+    <line x1="185" y1="300" x2="320" y2="192"/>
+    <line x1="605" y1="300" x2="360" y2="192"/>
+    <line x1="275" y1="300" x2="520" y2="192"/>
+    <line x1="695" y1="300" x2="560" y2="192"/>
+    <line x1="365" y1="300" x2="720" y2="192"/>
+    <line x1="785" y1="300" x2="760" y2="192"/>
+  </g>
+
+  <!-- 노드 A -->
+  <rect x="40" y="258" width="380" height="210" rx="8" fill="none" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="408" y="460" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="end">노드 A</text>
+  <rect x="60" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="95" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU0</text>
+  <text x="95" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <rect x="150" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="185" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU1</text>
+  <text x="185" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <rect x="240" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="275" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU2</text>
+  <text x="275" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <rect x="330" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="365" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU3</text>
+  <text x="365" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <g stroke="#b45309" stroke-width="1.6">
+    <line x1="95" y1="344" x2="200" y2="398"/>
+    <line x1="185" y1="344" x2="220" y2="398"/>
+    <line x1="275" y1="344" x2="240" y2="398"/>
+    <line x1="365" y1="344" x2="260" y2="398"/>
+  </g>
+  <rect x="120" y="398" width="220" height="50" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="230" y="419" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">NVSwitch</text>
+  <text x="230" y="438" font-size="13" fill="#333" text-anchor="middle">노드 안 NVLink 전 연결</text>
+
+  <!-- 노드 B -->
+  <rect x="460" y="258" width="380" height="210" rx="8" fill="none" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="828" y="460" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="end">노드 B</text>
+  <rect x="480" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="515" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU0</text>
+  <text x="515" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <rect x="570" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="605" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU1</text>
+  <text x="605" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <rect x="660" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="695" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU2</text>
+  <text x="695" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <rect x="750" y="300" width="70" height="44" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="785" y="320" font-size="13" fill="#1b1b1b" text-anchor="middle">GPU3</text>
+  <text x="785" y="337" font-size="13" fill="#555" text-anchor="middle">+NIC</text>
+  <g stroke="#b45309" stroke-width="1.6">
+    <line x1="515" y1="344" x2="620" y2="398"/>
+    <line x1="605" y1="344" x2="640" y2="398"/>
+    <line x1="695" y1="344" x2="660" y2="398"/>
+    <line x1="785" y1="344" x2="680" y2="398"/>
+  </g>
+  <rect x="540" y="398" width="220" height="50" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="650" y="419" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">NVSwitch</text>
+  <text x="650" y="438" font-size="13" fill="#333" text-anchor="middle">노드 안 NVLink 전 연결</text>
+
+  <!-- 범례 -->
+  <line x1="40" y1="500" x2="80" y2="500" stroke="#b45309" stroke-width="2"/>
+  <text x="90" y="505" font-size="13" fill="#333">스케일업: 노드(랙) 안 GPU 사이. 영역은 좁고 대역폭은 가장 크다</text>
+  <line x1="40" y1="530" x2="80" y2="530" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="90" y="535" font-size="13" fill="#333">스케일아웃: 노드 사이 RDMA(InfiniBand·RoCE). 같은 번호 GPU 는 같은 리프에 → 한 홉</text>
+</svg>
