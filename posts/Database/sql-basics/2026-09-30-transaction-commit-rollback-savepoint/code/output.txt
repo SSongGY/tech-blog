@@ -1,0 +1,109 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-30-transaction-commit-rollback-savepoint
+# 명령      : python transaction_basics.py
+# 수행 시각 : 2026-09-30 19:05 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+  journal_mode delete
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  2행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  account_id | INTEGER | PK
+  owner      | TEXT    | NOT NULL
+  balance    | INTEGER | NOT NULL
+
+  account_id | owner  | balance
+  -----------+--------+--------
+           1 | 김하나 |   10000
+           2 | 이두리 |    5000
+
+[transfer_log]  0행
+  컬럼   | 타입    | 제약
+  -------+---------+---------
+  log_id | INTEGER | PK
+  memo   | TEXT    | NOT NULL
+
+  (행 없음)
+
+
+== 1. BEGIN 없이 쓰면 문장마다 바로 저장된다 (자동 커밋)
+   [A] UPDATE account SET balance = balance + 100 WHERE account_id = 1 → 성공  (트랜잭션 없음)
+   [B] 잔액 조회 → 1번=10100, 2번=5000
+   [A] UPDATE account SET balance = balance - 100 WHERE account_id = 1 → 성공  (트랜잭션 없음)
+
+== 2. BEGIN ~ COMMIT — 끝나기 전에는 다른 세션에 안 보인다
+   [A] BEGIN                                                      → 성공  (트랜잭션 진행 중)
+   [A] UPDATE account SET balance = balance - 3000 WHERE account_id = 1 → 성공  (트랜잭션 진행 중)
+   [A] UPDATE account SET balance = balance + 3000 WHERE account_id = 2 → 성공  (트랜잭션 진행 중)
+   [A] 잔액 조회 → 1번=7000, 2번=8000
+   [B] 잔액 조회 → 1번=10000, 2번=5000
+   [A] COMMIT                                                     → 성공  (트랜잭션 없음)
+   [B] 잔액 조회 → 1번=7000, 2번=8000
+
+== 3. ROLLBACK — BEGIN 이후 한 일을 전부 되돌린다
+   [A] BEGIN                                                      → 성공  (트랜잭션 진행 중)
+   [A] UPDATE account SET balance = 0 WHERE account_id = 1        → 성공  (트랜잭션 진행 중)
+   [A] 잔액 조회 → 1번=0, 2번=8000
+   [A] ROLLBACK                                                   → 성공  (트랜잭션 없음)
+   [A] 잔액 조회 → 1번=7000, 2번=8000
+
+== 4. 쓰는 중인 트랜잭션이 있으면 다른 세션은 쓰지 못한다
+   [A] BEGIN                                                      → 성공  (트랜잭션 진행 중)
+   [A] UPDATE account SET balance = balance - 1 WHERE account_id = 1 → 성공  (트랜잭션 진행 중)
+   [B] UPDATE account SET balance = balance + 1 WHERE account_id = 2 → OperationalError: database is locked  (트랜잭션 없음)
+   [B] 잔액 조회 → 1번=7000, 2번=8000
+   [A] ROLLBACK                                                   → 성공  (트랜잭션 없음)
+   [B] UPDATE account SET balance = balance + 0 WHERE account_id = 2 → 성공  (트랜잭션 없음)
+
+== 5. SAVEPOINT — 중간 지점까지만 되돌린다
+   [A] BEGIN                                                      → 성공  (트랜잭션 진행 중)
+   [A] INSERT INTO transfer_log (memo) VALUES ('첫째')              → 성공  (트랜잭션 진행 중)
+   [A] SAVEPOINT sp1                                              → 성공  (트랜잭션 진행 중)
+   [A] INSERT INTO transfer_log (memo) VALUES ('둘째')              → 성공  (트랜잭션 진행 중)
+   [A] transfer_log → ['첫째', '둘째']
+   [A] ROLLBACK TO sp1                                            → 성공  (트랜잭션 진행 중)
+   [A] transfer_log → ['첫째']
+   [A] INSERT INTO transfer_log (memo) VALUES ('셋째')              → 성공  (트랜잭션 진행 중)
+   [A] ROLLBACK TO sp1                                            → 성공  (트랜잭션 진행 중)
+   [A] transfer_log → ['첫째']
+   [A] INSERT INTO transfer_log (memo) VALUES ('넷째')              → 성공  (트랜잭션 진행 중)
+   [A] RELEASE sp1                                                → 성공  (트랜잭션 진행 중)
+   [A] ROLLBACK TO sp1                                            → OperationalError: no such savepoint: sp1  (트랜잭션 진행 중)
+   [A] COMMIT                                                     → 성공  (트랜잭션 없음)
+   [B] transfer_log → ['첫째', '넷째']
+
+== 6. BEGIN 없이 SAVEPOINT 로 시작하면 RELEASE 가 COMMIT 이 된다
+   [A] SAVEPOINT outer_sp                                         → 성공  (트랜잭션 진행 중)
+   [A] INSERT INTO transfer_log (memo) VALUES ('다섯째')             → 성공  (트랜잭션 진행 중)
+   [B] transfer_log → ['첫째', '넷째']
+   [A] RELEASE outer_sp                                           → 성공  (트랜잭션 없음)
+   [B] transfer_log → ['첫째', '넷째', '다섯째']
+
+== 7. 트랜잭션 도중 한 문장이 실패하면
+   [A] BEGIN                                                      → 성공  (트랜잭션 진행 중)
+   [A] UPDATE account SET balance = balance + 500 WHERE account_id = 2 → 성공  (트랜잭션 진행 중)
+   [A] UPDATE account SET balance = balance - 99999 WHERE account_id = 1 → IntegrityError: CHECK constraint failed: balance >= 0  (트랜잭션 진행 중)
+   [A] 잔액 조회 → 1번=7000, 2번=8500
+   [A] ROLLBACK                                                   → 성공  (트랜잭션 없음)
+   [A] 잔액 조회 → 1번=7000, 2번=8000
+
+== 8. COMMIT 없이 연결을 닫으면
+   [C] BEGIN                                                      → 성공  (트랜잭션 진행 중)
+   [C] UPDATE account SET balance = 1 WHERE account_id = 1        → 성공  (트랜잭션 진행 중)
+   [C] 연결 종료 (COMMIT 하지 않음)
+   [A] 잔액 조회 → 1번=7000, 2번=8000

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">트랜잭션 하나 안에서 저장점이 움직이는 순서 (실습 5장)</text>
+
+  <!-- 1행 -->
+  <rect x="30" y="62" width="190" height="80" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="125" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① BEGIN</text>
+  <text x="125" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 없음</text>
+  <text x="125" y="130" text-anchor="middle" font-size="13" fill="#495057">저장점: 없음</text>
+
+  <rect x="240" y="62" width="190" height="80" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="335" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② INSERT '첫째'</text>
+  <text x="335" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 첫째</text>
+  <text x="335" y="130" text-anchor="middle" font-size="13" fill="#495057">저장점: 없음</text>
+
+  <rect x="450" y="62" width="190" height="80" rx="6" fill="#e7f1ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="545" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ SAVEPOINT sp1</text>
+  <text x="545" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 첫째</text>
+  <text x="545" y="130" text-anchor="middle" font-size="13" fill="#495057">저장점: sp1</text>
+
+  <rect x="660" y="62" width="190" height="80" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="755" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ INSERT '둘째'</text>
+  <text x="755" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 첫째, 둘째</text>
+  <text x="755" y="130" text-anchor="middle" font-size="13" fill="#495057">저장점: sp1</text>
+
+  <line x1="220" y1="102" x2="232" y2="102" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="232,97 240,102 232,107" fill="#495057"/>
+  <line x1="430" y1="102" x2="442" y2="102" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="442,97 450,102 442,107" fill="#495057"/>
+  <line x1="640" y1="102" x2="652" y2="102" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="652,97 660,102 652,107" fill="#495057"/>
+
+  <!-- 1행 끝에서 2행 처음으로 -->
+  <polyline points="755,142 755,170 60,170 60,204" fill="none" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="55,204 60,212 65,204" fill="#495057"/>
+
+  <!-- 2행 -->
+  <rect x="30" y="212" width="190" height="80" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="125" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">⑤ ROLLBACK TO sp1</text>
+  <text x="125" y="260" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 첫째</text>
+  <text x="125" y="280" text-anchor="middle" font-size="13" fill="#b45309">저장점: sp1 (남아 있다)</text>
+
+  <rect x="240" y="212" width="190" height="80" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="335" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑥ INSERT '넷째'</text>
+  <text x="335" y="260" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 첫째, 넷째</text>
+  <text x="335" y="280" text-anchor="middle" font-size="13" fill="#495057">저장점: sp1</text>
+
+  <rect x="450" y="212" width="190" height="80" rx="6" fill="#e7f1ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="545" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑦ RELEASE sp1</text>
+  <text x="545" y="260" text-anchor="middle" font-size="13" fill="#1b1b1b">보이는 행: 첫째, 넷째</text>
+  <text x="545" y="280" text-anchor="middle" font-size="13" fill="#495057">저장점: 없음 (파일엔 아직)</text>
+
+  <rect x="660" y="212" width="190" height="80" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="755" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑧ COMMIT</text>
+  <text x="755" y="260" text-anchor="middle" font-size="13" fill="#1b1b1b">파일에 기록된다</text>
+  <text x="755" y="280" text-anchor="middle" font-size="13" fill="#2d6a4f">세션 B 에 첫째, 넷째</text>
+
+  <line x1="220" y1="252" x2="232" y2="252" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="232,247 240,252 232,257" fill="#495057"/>
+  <line x1="430" y1="252" x2="442" y2="252" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="442,247 450,252 442,257" fill="#495057"/>
+  <line x1="640" y1="252" x2="652" y2="252" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="652,247 660,252 652,257" fill="#495057"/>
+
+  <!-- ⑤ 가 ③ 직후 상태로 되돌린다 -->
+  <line x1="200" y1="212" x2="506" y2="150" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <polygon points="503,145 513,148 505,155" fill="#b45309"/>
+  <text x="420" y="200" font-size="13" fill="#b45309">③ 직후 상태로 되돌린다</text>
+
+  <text x="30" y="332" font-size="13" fill="#495057">RELEASE 는 저장점을 스택에서 지울 뿐이다. 바깥에 BEGIN 이 있으면 파일에 쓰는 것은 COMMIT 때다.</text>
+  <text x="30" y="354" font-size="13" fill="#495057">BEGIN 없이 SAVEPOINT 로 시작했다면 가장 바깥 저장점의 RELEASE 가 곧 COMMIT 이다 (실습 6장).</text>
+  <text x="30" y="376" font-size="13" fill="#495057">실습 5장에서 '셋째'를 넣고 한 번 더 ⑤로 되돌린 단계는 그림에서 뺐다.</text>
+</svg>
