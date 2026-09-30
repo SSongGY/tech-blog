@@ -16,6 +16,11 @@ verified: true
 topic_id: tb-008
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`explain-plan`)
+> - [실행계획의 비용(cost)은 무엇을 세는 숫자인가](../../2026-09-30-optimizer-cost-stale-statistics/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+<!-- related:end -->
+
 > **실행 검증 없음.** 이 글은 **Tibero 7.2.6 공개 매뉴얼**의 설명만 근거로 정리했다.
 > 글을 쓴 시점에 검증용 Tibero 인스턴스에 접속할 수 없었다(`TBR-2131`).
 > 실행 계획이나 출력은 싣지 않았다. 돌려 볼 스크립트는 [`code/explain_plan.sql`](code/explain_plan.sql)에 두었다.
