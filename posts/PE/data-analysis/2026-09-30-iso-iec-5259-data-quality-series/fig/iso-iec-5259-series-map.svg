@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="510" viewBox="0 0 880 510" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="510" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">ISO/IEC 5259 시리즈 — 6개 문서의 역할 분담</text>
+
+  <!-- 거버넌스 -->
+  <rect x="200" y="54" width="480" height="58" rx="6" fill="#e7f5ff" stroke="#1c4f82" stroke-width="1.5"/>
+  <text x="440" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">5259-5 거버넌스 프레임워크 (2025)</text>
+  <text x="440" y="99" text-anchor="middle" font-size="13" fill="#495057">누가 지휘·감독하는가 — 경영진이 측정·관리·프로세스를 통제</text>
+
+  <!-- 지휘 화살표 -->
+  <line x1="440" y1="112" x2="440" y2="138" stroke="#1c4f82" stroke-width="1.8"/>
+  <polygon points="434,132 446,132 440,142" fill="#1c4f82"/>
+  <text x="452" y="131" font-size="13" fill="#1c4f82">지휘·감독</text>
+
+  <!-- 가운데 세 칸 -->
+  <rect x="40" y="146" width="250" height="84" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="165" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">5259-3 관리 요구사항</text>
+  <text x="165" y="194" text-anchor="middle" font-size="13" fill="#495057">조직이 갖출 것 (shall)</text>
+  <text x="165" y="214" text-anchor="middle" font-size="13" fill="#495057">품질관리 생애주기 8단계</text>
+
+  <rect x="315" y="146" width="250" height="84" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">5259-4 프로세스 프레임워크</text>
+  <text x="440" y="194" text-anchor="middle" font-size="13" fill="#495057">어떻게 수행하는가</text>
+  <text x="440" y="214" text-anchor="middle" font-size="13" fill="#495057">계획·평가·개선·검증 + 라벨링</text>
+
+  <rect x="590" y="146" width="250" height="84" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="715" y="172" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">5259-2 품질 측정</text>
+  <text x="715" y="194" text-anchor="middle" font-size="13" fill="#495057">무엇을 재는가</text>
+  <text x="715" y="214" text-anchor="middle" font-size="13" fill="#495057">품질 모델 · 특성 23개 · 보고</text>
+
+  <!-- 측정 → 시각화 -->
+  <line x1="715" y1="230" x2="715" y2="262" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="709,256 721,256 715,266" fill="#495057"/>
+  <text x="727" y="252" font-size="13" fill="#495057">측정 결과</text>
+
+  <rect x="590" y="268" width="250" height="58" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="715" y="292" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">TR 5259-6 시각화 (2026)</text>
+  <text x="715" y="313" text-anchor="middle" font-size="13" fill="#495057">측정 결과를 이해관계자에게 보인다</text>
+
+  <!-- 기존 표준 -->
+  <rect x="315" y="268" width="250" height="58" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="292" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">ISO/IEC 25012 · 25024 · ISO 8000</text>
+  <text x="440" y="313" text-anchor="middle" font-size="13" fill="#b45309">기존 데이터 품질 모델·측정</text>
+  <line x1="565" y1="268" x2="620" y2="232" stroke="#b45309" stroke-width="1.5"/>
+  <polygon points="612,230 624,229 618,240" fill="#b45309"/>
+  <text x="520" y="256" font-size="13" fill="#b45309">확장</text>
+
+  <!-- 기반 -->
+  <rect x="40" y="360" width="800" height="62" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="386" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">5259-1 개요·용어·예시 (2024) — 시리즈 전체의 기반</text>
+  <text x="440" y="408" text-anchor="middle" font-size="13" fill="#495057">데이터 품질 정의 · 개념 틀(관리·거버넌스·출처) · 데이터 생애주기(DLC) 모델</text>
+
+  <line x1="165" y1="230" x2="165" y2="360" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="440" y1="326" x2="440" y2="360" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <text x="177" y="300" font-size="13" fill="#868e96">인용</text>
+
+  <!-- 범례 -->
+  <text x="40" y="450" font-size="13" fill="#495057">초록 칸은 25012를 확장한 측정 표준이다 — 특성 23개 중 9개가 새로 더해진 추가 특성이다.</text>
+  <text x="40" y="470" font-size="13" fill="#495057">점선 칸은 기술보고서(TR)라 요구사항이 없다. 괄호는 발행 연도.</text>
+  <text x="40" y="490" font-size="13" fill="#495057">5259-2·3·4는 5259-1을 인용 표준으로 두고, 5259-5는 DLC 모델 전 구간을 통제 범위로 삼는다.</text>
+</svg>
