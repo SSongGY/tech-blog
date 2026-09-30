@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">세 갈래 현금흐름의 부호 조합 8가지와 다섯 단계 (Dickinson 2011)</text>
+
+  <!-- 단계 머리: 열 폭 90, 첫 열 x=140 -->
+  <rect x="140" y="50" width="90" height="34" fill="#f1f3f5" stroke="#495057"/>
+  <text x="185" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">도입기</text>
+  <rect x="230" y="50" width="90" height="34" fill="#f1f3f5" stroke="#495057"/>
+  <text x="275" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">성장기</text>
+  <rect x="320" y="50" width="90" height="34" fill="#f1f3f5" stroke="#495057"/>
+  <text x="365" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">성숙기</text>
+  <rect x="410" y="50" width="270" height="34" fill="#f1f3f5" stroke="#495057"/>
+  <text x="545" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">정체기 (shake-out)</text>
+  <rect x="680" y="50" width="180" height="34" fill="#f1f3f5" stroke="#495057"/>
+  <text x="770" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">쇠퇴기</text>
+
+  <!-- 행 이름 -->
+  <text x="20" y="116" font-size="14" font-weight="bold" fill="#1b1b1b">영업활동</text>
+  <text x="20" y="156" font-size="14" font-weight="bold" fill="#1b1b1b">투자활동</text>
+  <text x="20" y="196" font-size="14" font-weight="bold" fill="#1b1b1b">재무활동</text>
+
+  <!-- 값 칸 격자 -->
+  <g fill="none" stroke="#adb5bd">
+    <rect x="140" y="90" width="720" height="120"/>
+    <line x1="140" y1="130" x2="860" y2="130"/>
+    <line x1="140" y1="170" x2="860" y2="170"/>
+    <line x1="230" y1="90" x2="230" y2="210"/>
+    <line x1="320" y1="90" x2="320" y2="210"/>
+    <line x1="410" y1="90" x2="410" y2="210"/>
+    <line x1="500" y1="90" x2="500" y2="210"/>
+    <line x1="590" y1="90" x2="590" y2="210"/>
+    <line x1="680" y1="90" x2="680" y2="210"/>
+    <line x1="770" y1="90" x2="770" y2="210"/>
+  </g>
+
+  <!-- 부호: 유입 + 초록, 유출 − 빨강 -->
+  <g font-size="20" font-weight="bold" text-anchor="middle">
+    <!-- 도입 − − + -->
+    <text x="185" y="118" fill="#9d0208">−</text><text x="185" y="158" fill="#9d0208">−</text><text x="185" y="198" fill="#2d6a4f">+</text>
+    <!-- 성장 + − + -->
+    <text x="275" y="118" fill="#2d6a4f">+</text><text x="275" y="158" fill="#9d0208">−</text><text x="275" y="198" fill="#2d6a4f">+</text>
+    <!-- 성숙 + − − -->
+    <text x="365" y="118" fill="#2d6a4f">+</text><text x="365" y="158" fill="#9d0208">−</text><text x="365" y="198" fill="#9d0208">−</text>
+    <!-- 정체 − − − / + + + / + + − -->
+    <text x="455" y="118" fill="#9d0208">−</text><text x="455" y="158" fill="#9d0208">−</text><text x="455" y="198" fill="#9d0208">−</text>
+    <text x="545" y="118" fill="#2d6a4f">+</text><text x="545" y="158" fill="#2d6a4f">+</text><text x="545" y="198" fill="#2d6a4f">+</text>
+    <text x="635" y="118" fill="#2d6a4f">+</text><text x="635" y="158" fill="#2d6a4f">+</text><text x="635" y="198" fill="#9d0208">−</text>
+    <!-- 쇠퇴 − + + / − + − -->
+    <text x="725" y="118" fill="#9d0208">−</text><text x="725" y="158" fill="#2d6a4f">+</text><text x="725" y="198" fill="#2d6a4f">+</text>
+    <text x="815" y="118" fill="#9d0208">−</text><text x="815" y="158" fill="#2d6a4f">+</text><text x="815" y="198" fill="#9d0208">−</text>
+  </g>
+
+  <!-- 예제 회사 표시 -->
+  <text x="20" y="236" font-size="13" fill="#495057">예제 (가상)</text>
+  <text x="275" y="236" text-anchor="middle" font-size="13" fill="#1b1b1b">자차전자</text>
+  <text x="365" y="236" text-anchor="middle" font-size="13" fill="#1b1b1b">카타산업</text>
+  <text x="635" y="236" text-anchor="middle" font-size="13" fill="#b45309">카타산업 이듬해</text>
+  <text x="815" y="236" text-anchor="middle" font-size="13" fill="#1b1b1b">파하물산</text>
+  <path d="M 380 244 Q 500 290 620 244" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="500" y="296" text-anchor="middle" font-size="13" fill="#b45309">창고 처분 한 줄로 투자활동 부호가 바뀐다</text>
+
+  <!-- 읽는 법 -->
+  <text x="20" y="336" font-size="13" fill="#1b1b1b"><tspan fill="#2d6a4f" font-weight="bold">+</tspan> 그 활동에서 현금이 순유입 · <tspan fill="#9d0208" font-weight="bold">−</tspan> 순유출</text>
+  <text x="20" y="360" font-size="13" fill="#495057">투자활동 −는 설비를 사는 중, +는 자산을 파는 중이다. 재무활동 +는 돈을 빌리거나 주식을 발행했고,</text>
+  <text x="20" y="380" font-size="13" fill="#495057">−는 빚을 갚거나 배당·자사주로 주주에게 돌려줬다는 뜻이다. 활동 구분은 K-IFRS 제1007호를 따른다.</text>
+</svg>

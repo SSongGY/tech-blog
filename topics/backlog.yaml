@@ -3289,7 +3289,7 @@ topics:
     angle: "세 부호의 조합(+/-/-)이 회사의 단계를 말해 준다. 성장기·성숙기·쇠퇴기 패턴을 가상 회사 셋으로"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-008
     title: "감가상각 — 현금이 나가지 않는 비용"
     category: Finance

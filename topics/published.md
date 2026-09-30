@@ -101,3 +101,4 @@
 | 2026-09-30 | bas-022 | Database | 트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT |
 | 2026-09-30 | pe-030 | PE | 블록체인 합의 알고리즘 — PoW, PoS, PBFT |
 | 2026-09-30 | db-006 | Database | 실행계획의 비용(cost)은 무엇을 세는 숫자인가 |
+| 2026-09-30 | fin-007 | Finance | 영업·투자·재무 활동 — 현금흐름 세 갈래 읽기 |
