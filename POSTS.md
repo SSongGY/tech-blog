@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **117편** · 갱신 2026-09-30
+총 **120편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 22편
+## DB문법 (basics) — 23편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-30 | [트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT](posts/Database/sql-basics/2026-09-30-transaction-commit-rollback-savepoint/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [VIEW — 만들고 쓰는 법, 그리고 한계](posts/Database/sql-basics/2026-09-30-sqlite-view-updatable/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-09-30 | [문자열 함수 기본 — 자르기, 붙이기, 바꾸기](posts/Database/sql-basics/2026-09-30-sql-string-functions-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [ALTER TABLE — 컬럼을 바꿀 때의 제약](posts/Database/sql-basics/2026-09-30-alter-table-sqlite-limits/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [UPDATE — 조건 없는 UPDATE를 막는 습관](posts/Database/sql-basics/2026-09-29-update-where-count-first/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [INSERT — 단건, 다건, SELECT로 넣기](posts/Database/sql-basics/2026-09-29-insert-single-multi-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -31,10 +32,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 8편
+## DB기능 (product) — 9편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](posts/Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-30 | [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](posts/Database/tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-29 | [Tibero 7 옵티마이저 힌트 — 문법과 적용 확인](posts/Database/tibero/2026-09-29-tibero7-optimizer-hints/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-28 | [Tibero 7 인덱스 종류 — B-Tree 말고 무엇이 있는가](posts/Database/tibero/2026-09-28-tibero7-index-types/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -44,11 +46,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 45편
+## 기술사 (pe) — 46편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
+| 2026-09-30 | [머신러닝 모델 평가 지표 — 혼동행렬에서 정밀도와 재현율이 갈리는 곳](posts/PE/emerging-tech/2026-09-30-ml-evaluation-metrics-confusion-matrix/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 문서, Google Machine Learning Crash Course (2026-09-30 열람) | 실행 검증 |
 | 2026-09-30 | [LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬](posts/PE/system/2026-09-30-llm-parallelism-data-tensor-pipeline/index.md) | 중급 | Narayanan et al., Megatron-LM, SC21 (arXiv 2104.04473), Rajbhandari et al., ZeRO, SC20 (arXiv 1910.02054) | 문서 근거 |
 | 2026-09-30 | [ISO/IEC 5259 — 분석·머신러닝용 데이터 품질 표준 시리즈](posts/PE/data-analysis/2026-09-30-iso-iec-5259-data-quality-series/index.md) | 중급 | ISO/IEC 5259-1:2024, ISO/IEC 5259-2:2024, ISO/IEC 5259-3:2024, ISO/IEC 5259-4:2024, ISO/IEC 5259-5:2025 | 문서 근거 |
 | 2026-09-30 | [컨테이너와 가상머신 — 격리 수준의 차이](posts/PE/emerging-tech/2026-09-30-container-vs-vm-isolation/index.md) | 중급 | NIST SP 800-125 (2011-01), NIST SP 800-190 (2017-09), Linux man-pages 6.19 (2026-02-08) | 문서 근거 |
@@ -171,5 +174,6 @@
 **`transaction-isolation`**
 
 - [트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가](posts/Database/sqlite/2026-09-21-isolation-level-anomalies/index.md) — SQLite 3.49.1, Python 3.13.5
+- [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](posts/Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) — Tibero 7
 - [트랜잭션 ACID와 격리 수준 — 이상현상으로 수준을 정의하는 방식](posts/PE/database/2026-09-23-acid-and-isolation-levels/index.md) — PostgreSQL 16 문서, Berenson et al., SIGMOD 1995
 
