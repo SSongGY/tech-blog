@@ -1,0 +1,244 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-10-01-bash-startup-files-env-vars
+# 명령      : bash bash_startup_env.sh
+# 수행 시각 : 2026-10-01 07:18 (대한민국 표준시)
+# 소요      : 5.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+== 0. 버전 ==
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+env (GNU coreutils) 8.32
+
+== 1. 띄우는 방식별로 읽는 파일 ==
+
+[1-A 비로그인·비대화형]
+  $ bash -c CMD
+  [상태] login=아니오 interactive=아니오 /etc/profile= /etc/bash.bashrc=
+
+[1-B 로그인·비대화형]
+  $ bash -l -c CMD
+  [읽음] ~/.bash_profile
+  [상태] login=예 interactive=아니오 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[1-C 로그인·비대화형, 끝에 exit]
+  $ bash -l -c 'CMD; exit'
+  [읽음] ~/.bash_profile
+  [상태] login=예 interactive=아니오 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+  [읽음] ~/.bash_logout
+
+[1-D 비로그인·대화형]
+  $ bash -i -c CMD
+  [읽음] ~/.bashrc
+  [상태] login=아니오 interactive=예 /etc/profile= /etc/bash.bashrc=읽음
+
+[1-E 로그인·대화형]
+  $ bash -l -i -c CMD
+  [읽음] ~/.bash_profile
+  [상태] login=예 interactive=예 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[1-F 스크립트 파일 실행]
+  $ bash script.sh
+  [상태] login=아니오 interactive=아니오 /etc/profile= /etc/bash.bashrc=
+
+[1-G 스크립트 + BASH_ENV]
+  $ BASH_ENV=~/.bash_env bash script.sh
+  [읽음] ~/.bash_env
+  [상태] login=아니오 interactive=아니오 /etc/profile= /etc/bash.bashrc=
+
+== 2. 로그인 셸은 셋 중 처음 것 하나만 읽는다 ==
+
+[2-A 셋 다 있을 때]
+  $ bash -l -c CMD
+  [읽음] ~/.bash_profile
+  [상태] login=예 interactive=아니오 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[2-B ~/.bash_profile 을 지우면]
+  $ bash -l -c CMD
+  [읽음] ~/.bash_login
+  [상태] login=예 interactive=아니오 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[2-C ~/.bash_login 도 지우면]
+  $ bash -l -c CMD
+  [읽음] ~/.profile
+  [상태] login=예 interactive=아니오 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[2-D 흔한 해법 — .bash_profile 에서 .bashrc 를 읽는다]
+  $ bash -l -i -c CMD
+  [읽음] ~/.bash_profile
+  [읽음] ~/.bashrc
+  [상태] login=예 interactive=예 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+== 3. 초기화를 바꾸는 옵션 ==
+
+[3-A --noprofile]
+  $ bash --noprofile -l -c CMD
+  [상태] login=예 interactive=아니오 /etc/profile= /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[3-B --norc]
+  $ bash --norc -i -c CMD
+  [상태] login=아니오 interactive=예 /etc/profile= /etc/bash.bashrc=
+
+[3-C --rcfile 파일]
+  $ bash --rcfile ~/.alt_rc -i -c CMD
+  [읽음] ~/.alt_rc
+  [상태] login=아니오 interactive=예 /etc/profile= /etc/bash.bashrc=읽음
+
+[3-D --init-file 은 --rcfile 과 같다]
+  $ bash --init-file ~/.alt_rc -i -c CMD
+  [읽음] ~/.alt_rc
+  [상태] login=아니오 interactive=예 /etc/profile= /etc/bash.bashrc=읽음
+
+[3-E --rcfile 을 로그인 셸에 주면]
+  $ bash --rcfile ~/.alt_rc -l -i -c CMD
+  [읽음] ~/.bash_profile
+  [상태] login=예 interactive=예 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+== 4. sh 로 띄우면 (POSIX 흉내) ==
+
+[4-A sh -l]
+  $ sh -l -c CMD
+  [읽음] ~/.profile
+  [상태] login=예 interactive=아니오 /etc/profile=읽음 /etc/bash.bashrc=(로그인 셸은 표식으로 못 가림)
+
+[4-B sh -i — ~/.bashrc 대신 $ENV]
+  $ ENV=~/.posix_env sh -i -c CMD
+  [읽음] ~/.posix_env
+  [상태] login=아니오 interactive=예 /etc/profile= /etc/bash.bashrc=
+
+[4-C bash --posix -i 도 같다]
+  $ ENV=~/.posix_env bash --posix -i -c CMD
+  [읽음] ~/.posix_env
+  [상태] login=아니오 interactive=예 /etc/profile= /etc/bash.bashrc=
+
+== 5. 셸 변수와 환경변수 ==
+
+[5-A export 하지 않은 변수는 자식에게 안 간다]
+  $ APP_MODE=dev; bash -c 'echo ${APP_MODE-없음}'
+  자식: 없음
+  export 뒤 자식: dev
+
+[5-B declare -p 로 속성 보기, export -n 으로 내보내기 끄기]
+  $ declare -p APP_MODE; export -n APP_MODE
+  declare -x APP_MODE="dev"
+  declare -- APP_MODE="dev"
+  export -n 뒤 자식: 없음
+
+[5-C 한 명령에만 주기]
+  $ APP_MODE=prod bash -c ...; echo $APP_MODE
+  자식: prod
+  부모: dev
+
+[5-D 자식이 바꾼 값은 부모로 돌아오지 않는다]
+  $ bash -c 'export CHILD_SET=1'
+  부모의 CHILD_SET: 없음
+  source 뒤 CHILD_SET: sourced
+
+[5-E set -a — 이후 대입을 전부 export]
+  $ set -a; AUTO_A=1; set +a; AUTO_B=2
+  자식: AUTO_A=1 AUTO_B=없음
+
+[5-F 함수 내보내기]
+  $ export -f greet; bash -c greet
+  bash: line 1: greet: command not found
+  함수 greet 실행
+
+[5-G export -p 는 declare -x 형식으로 찍는다]
+  $ export -p | grep APP_\|AUTO_
+  declare -x AUTO_A="1"
+  declare -x CHILD_SET="sourced"
+
+== 6. env 와 printenv ==
+
+[6-A 인자 없이 — 환경 목록]
+  $ env | grep ^DEMO_
+  DEMO_A=1
+  DEMO_B=2
+
+[6-B -i — 빈 환경에서 시작. PATH 도 비므로 명령 이름만 주면]
+  $ env -i DEMO_C=3 env
+  env: 'env': No such file or directory
+  종료 코드 127
+
+[6-C 절대경로로 주면]
+  $ env -i DEMO_C=3 /usr/bin/env
+  DEMO_C=3
+  MSYSTEM=MINGW64
+  SYSTEMROOT=C:\WINDOWS
+  WINDIR=C:\WINDOWS
+
+[6-D - 는 -i 와 같다]
+  $ env - DEMO_C=3 /usr/bin/env
+  DEMO_C=3
+  MSYSTEM=MINGW64
+  SYSTEMROOT=C:\WINDOWS
+  WINDIR=C:\WINDOWS
+
+[6-E -u — 하나만 뺀다]
+  $ env -u DEMO_A env | grep ^DEMO_
+  DEMO_B=2
+
+[6-F -C — 작업 폴더를 바꿔 실행]
+  $ env -C /tmp pwd
+  /tmp
+
+[6-G -0 — 줄 끝을 NUL 로 (값에 줄바꿈이 있어도 경계가 보인다)]
+  $ env -i 'MULTI=a<줄바꿈>b' X=1 /usr/bin/env [-0]
+  -- -0 없이 (줄 수: 값의 줄바꿈과 경계가 섞인다)
+  | MULTI=a
+  | b
+  | X=1
+  | MSYSTEM=MINGW64
+  | SYSTEMROOT=C:\WINDOWS
+  | WINDIR=C:\WINDOWS
+  -- -0 으로, NUL 을 '|' 로 바꿔 찍음
+  MULTI=a
+  b|X=1|MSYSTEM=MINGW64|SYSTEMROOT=C:\WINDOWS|WINDIR=C:\WINDOWS|
+
+[6-H -S — 한 덩어리 문자열을 인자로 쪼갠다 (#! 줄용)]
+  $ env -S 'bash -c "echo 두 인자"'
+  쪼개진 뒤 실행: bash
+  -S 로 옵션을 붙인 #! 줄: ehB
+  /usr/bin/env: 'bash -e': No such file or directory
+  /usr/bin/env: use -[v]S to pass options in shebang lines
+  종료 코드 127
+
+[6-I -v — 처리 과정을 찍는다]
+  $ env -v -i DEMO_C=3 /usr/bin/true
+  cleaning environ
+  setenv:   DEMO_C=3
+  executing: /usr/bin/true
+     arg[0]= '/usr/bin/true'
+
+[6-J 시그널 처리 — --ignore-signal / --list-signal-handling]
+  $ env --ignore-signal=INT --list-signal-handling true
+  INT        ( 2): IGNORE
+
+[6-K printenv — 이름을 주면 값만, 없으면 종료 코드 1]
+  $ printenv DEMO_A NO_SUCH
+  1
+  종료 코드 1
+
+[6-L 셸 변수는 printenv 에 안 보인다]
+  $ LOCAL_ONLY=1; printenv LOCAL_ONLY
+  종료 코드 1
+  셸에서는: 1
+
+== 7. 초기화 파일에서 PATH 를 늘리면 ==
+
+[7-A .bashrc 에 PATH 추가, 대화형 셸을 세 겹 띄우면]
+  $ bash -i -c 'bash -i -c "bash -i -c ..."'
+  PATH=/usr/bin:/bin:/opt/demo/bin:/opt/demo/bin:/opt/demo/bin
+
+[7-B 이미 있으면 건너뛰게 고친 뒤]
+  $ 같은 명령
+  PATH=/usr/bin:/bin:/opt/demo/bin
+
+[7-C PATH 가 아예 없는 빈 환경에서 bash 가 쓰는 PATH]
+  $ env -i /usr/bin/bash -c 'echo $PATH'
+  PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:.
+  HOME=없음
+  export 됐나: declare -- PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:."
