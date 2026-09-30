@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">옵티마이저는 표가 아니라 통계를 보고 비용을 계산한다 (SQLite)</text>
+
+  <!-- 윗줄: 통계가 만들어지는 길 -->
+  <rect x="30" y="66" width="170" height="70" rx="6" fill="#e7f1ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="115" y="94" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">표 orders</text>
+  <text x="115" y="116" text-anchor="middle" font-size="13" fill="#1b1b1b">실제 데이터</text>
+
+  <rect x="250" y="66" width="150" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="325" y="94" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">ANALYZE</text>
+  <text x="325" y="116" text-anchor="middle" font-size="13" fill="#1b1b1b">돌릴 때 한 번 센다</text>
+
+  <rect x="450" y="66" width="180" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="540" y="94" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">sqlite_stat1</text>
+  <text x="540" y="116" text-anchor="middle" font-size="13" fill="#1b1b1b">행 수 · 값당 평균 행 수</text>
+
+  <rect x="680" y="66" width="170" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="765" y="94" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">옵티마이저</text>
+  <text x="765" y="116" text-anchor="middle" font-size="13" fill="#1b1b1b">후보마다 비용 추정</text>
+
+  <line x1="200" y1="101" x2="242" y2="101" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="242,96 250,101 242,106" fill="#495057"/>
+  <line x1="400" y1="101" x2="442" y2="101" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="442,96 450,101 442,106" fill="#495057"/>
+  <line x1="630" y1="101" x2="672" y2="101" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="672,96 680,101 672,106" fill="#495057"/>
+
+  <text x="250" y="164" font-size="13" fill="#9d0208">데이터가 바뀌어도 통계는 다음 ANALYZE 까지 옛 숫자 그대로다</text>
+
+  <!-- 아랫줄: 계획과 실행 -->
+  <line x1="765" y1="136" x2="765" y2="212" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="760,212 765,220 770,212" fill="#495057"/>
+
+  <rect x="560" y="220" width="290" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="705" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">계획 — 추정 비용이 가장 낮은 것</text>
+  <text x="705" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">EXPLAIN QUERY PLAN 에 보이는 것</text>
+
+  <rect x="200" y="220" width="300" height="70" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="350" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">실행 — 실제로 든 일</text>
+  <text x="350" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">VDBE 명령 수 · 시간 (예제에서 잰 것)</text>
+
+  <line x1="560" y1="255" x2="508" y2="255" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="508,250 500,255 508,260" fill="#495057"/>
+
+  <polyline points="200,255 115,255 115,144" fill="none" stroke="#495057" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="110,144 115,136 120,144" fill="#495057"/>
+  <text x="124" y="200" font-size="13" fill="#495057">지금의 표를 읽는다</text>
+
+  <!-- 어긋남 -->
+  <rect x="30" y="322" width="400" height="84" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="230" y="348" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">옵티마이저가 믿는 것 (실습 2장)</text>
+  <text x="230" y="370" text-anchor="middle" font-size="13" fill="#1b1b1b">stat '100000 100' → status 한 값 ≈ 100행</text>
+  <text x="230" y="392" text-anchor="middle" font-size="13" fill="#1b1b1b">그래서 ix_orders_status 가 싸다고 본다</text>
+
+  <rect x="450" y="322" width="400" height="84" rx="6" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="650" y="348" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">실제 데이터 (실습 2장)</text>
+  <text x="650" y="370" text-anchor="middle" font-size="13" fill="#1b1b1b">status = 'DONE' → 99,000행</text>
+  <text x="650" y="392" text-anchor="middle" font-size="13" fill="#1b1b1b">VDBE 명령 498,016 (다른 인덱스는 8,014)</text>
+</svg>
