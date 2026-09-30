@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">컬럼에 함수를 씌우면 인덱스를 처음부터 끝까지 읽는다</text>
+  <text x="30" y="56" font-size="13" fill="#555">인덱스 ix_member_product_code 의 항목은 product_code 값 순서(BINARY)로 늘어서 있다 — 2,005건</text>
+
+  <!-- 인덱스 항목 (값 칸) -->
+  <text x="440" y="84" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">인덱스 항목 (정렬됨)</text>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="360" y="96" width="160" height="30" fill="#ffffff" stroke="#8a8a84"/>
+    <text x="440" y="116">FRA-3001</text>
+    <rect x="360" y="126" width="160" height="30" fill="#ffffff" stroke="#8a8a84"/>
+    <text x="440" y="146">JPN-0000</text>
+    <rect x="360" y="156" width="160" height="30" fill="#ffffff" stroke="#8a8a84"/>
+    <text x="440" y="176">JPN-0001</text>
+    <rect x="360" y="186" width="160" height="30" fill="#f2f2ee" stroke="#8a8a84"/>
+    <text x="440" y="206" fill="#555">… JPN 1,997건 …</text>
+    <rect x="360" y="216" width="160" height="30" fill="#ffffff" stroke="#8a8a84"/>
+    <text x="440" y="236">JPN-1999</text>
+    <rect x="360" y="246" width="160" height="30" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="440" y="266">KOR-1001</text>
+    <rect x="360" y="276" width="160" height="30" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="440" y="296">KOR-1002</text>
+    <rect x="360" y="306" width="160" height="30" fill="#ffffff" stroke="#8a8a84"/>
+    <text x="440" y="326">USA-2001</text>
+    <rect x="360" y="336" width="160" height="30" fill="#ffffff" stroke="#8a8a84"/>
+    <text x="440" y="356">kor-1003</text>
+  </g>
+
+  <!-- 왼쪽: 범위 탐색 -->
+  <rect x="30" y="96" width="290" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="175" y="120" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">SEARCH — 구간만 읽는다</text>
+  <text x="175" y="143" font-size="13" fill="#333" text-anchor="middle">product_code &gt;= 'KOR' AND &lt; 'KOS'</text>
+  <text x="175" y="163" font-size="13" fill="#333" text-anchor="middle">product_code GLOB 'KOR*'</text>
+  <text x="175" y="186" font-size="13" fill="#2d6a4f" text-anchor="middle">VM 명령 23~24개</text>
+
+  <path d="M 175 200 L 175 261 L 354 261" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arg)"/>
+  <text x="185" y="238" font-size="13" fill="#2d6a4f">'KOR' 자리로 바로 들어간다</text>
+  <path d="M 348 250 L 340 250 L 340 302 L 348 302" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="332" y="330" font-size="13" fill="#2d6a4f" text-anchor="end">'KOS' 이상이 나오면 멈춘다</text>
+  <line x1="336" y1="321" x2="356" y2="321" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+  <!-- 오른쪽: 전체 스캔 -->
+  <path d="M 532 100 L 542 100 L 542 362 L 532 362" fill="none" stroke="#9d0208" stroke-width="2"/>
+  <line x1="552" y1="110" x2="552" y2="352" stroke="#9d0208" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <rect x="570" y="96" width="290" height="126" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="715" y="120" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">SCAN — 전부 읽는다</text>
+  <text x="715" y="143" font-size="13" fill="#333" text-anchor="middle">SUBSTR(product_code, 1, 3) = 'KOR'</text>
+  <text x="715" y="163" font-size="13" fill="#333" text-anchor="middle">product_code LIKE 'KOR%'</text>
+  <text x="715" y="185" font-size="13" fill="#333" text-anchor="middle">항목마다 값을 꺼내 함수를 계산한다</text>
+  <text x="715" y="208" font-size="13" fill="#9d0208" text-anchor="middle">VM 명령 8,035개</text>
+
+  <rect x="570" y="246" width="290" height="90" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="715" y="270" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">LIKE 는 대소문자를 가리지 않는다</text>
+  <text x="715" y="293" font-size="13" fill="#333" text-anchor="middle">맨 끝의 kor-1003 까지 맞으므로</text>
+  <text x="715" y="314" font-size="13" fill="#333" text-anchor="middle">대소문자 구분 정렬의 구간으로 못 바꾼다</text>
+
+  <line x1="30" y1="392" x2="850" y2="392" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="420" font-size="13" fill="#333">BINARY 정렬에서는 대문자(0x41~0x5A)가 소문자(0x61~0x7A)보다 앞선다. 그래서 kor-1003 이 USA-2001 뒤에 온다.</text>
+  <text x="30" y="444" font-size="13" fill="#333">인덱스가 값의 순서를 알고 있어도 SUBSTR(...) 의 결과 순서는 모른다 — 함수를 씌운 조건은 구간으로 바뀌지 않는다.</text>
+  <text x="30" y="468" font-size="13" fill="#555">함수 결과로 찾아야 하면 그 식 자체에 인덱스를 만든다 (식 인덱스, 4-F).</text>
+
+  <defs>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
