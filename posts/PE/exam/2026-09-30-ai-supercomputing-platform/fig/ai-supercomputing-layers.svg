@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="n" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">AI 슈퍼컴퓨팅 플랫폼의 7가지 구성요소</text>
+
+  <!-- ⑥ software stack -->
+  <rect x="20" y="48" width="840" height="56" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="440" y="71" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">⑥ AI 소프트웨어 스택</text>
+  <text x="440" y="93" text-anchor="middle" font-size="13" fill="#4a5568">프레임워크 · 분산 학습 라이브러리(데이터·텐서·파이프라인 병렬) · 집합 통신 · 추론 서빙</text>
+
+  <!-- ⑤ orchestration -->
+  <rect x="20" y="118" width="840" height="56" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="440" y="141" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">⑤ 자원 관리 · 작업 스케줄링</text>
+  <text x="440" y="163" text-anchor="middle" font-size="13" fill="#4a5568">배치 스케줄러(Slurm) · 컨테이너 오케스트레이션(Kubernetes) · 장애 감지 · 텔레메트리</text>
+
+  <line x1="440" y1="174" x2="440" y2="200" stroke="#4a5568" stroke-width="1.4" marker-end="url(#n)"/>
+
+  <!-- ① compute node -->
+  <rect x="20" y="204" width="470" height="150" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="255" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 가속 컴퓨팅 노드 (× N)</text>
+  <text x="255" y="250" text-anchor="middle" font-size="13" fill="#4a5568">GPU · AI ASIC(TPU 등) + HBM 메모리 · 호스트 CPU</text>
+
+  <!-- ② scale-up inside node -->
+  <rect x="44" y="266" width="422" height="72" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4" rx="4"/>
+  <text x="255" y="290" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 스케일업 연결</text>
+  <text x="255" y="312" text-anchor="middle" font-size="13" fill="#2d6a4f">가속기끼리 직접 연결 — NVLink · TPU ICI</text>
+  <text x="255" y="330" text-anchor="middle" font-size="13" fill="#4a5568">노드·랙 안의 고대역 · 저지연 경로</text>
+
+  <!-- ④ storage -->
+  <rect x="530" y="204" width="330" height="150" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="695" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">④ 스토리지 계층</text>
+  <text x="695" y="256" text-anchor="middle" font-size="13" fill="#4a5568">RAM 캐시</text>
+  <text x="695" y="278" text-anchor="middle" font-size="13" fill="#4a5568">노드 로컬 NVMe</text>
+  <text x="695" y="300" text-anchor="middle" font-size="13" fill="#4a5568">공유 고속 스토리지(병렬 파일 시스템)</text>
+  <text x="695" y="330" text-anchor="middle" font-size="13" fill="#2d6a4f">학습 데이터 반복 읽기 · 체크포인트 쓰기</text>
+
+  <!-- ③ scale-out fabric -->
+  <rect x="20" y="382" width="840" height="72" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="440" y="406" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 스케일아웃 네트워크 패브릭</text>
+  <text x="440" y="428" text-anchor="middle" font-size="13" fill="#4a5568">컴퓨트 패브릭(노드 간, InfiniBand · RoCE, fat-tree) · 스토리지 패브릭 · 관리망(인밴드 · 아웃오브밴드)</text>
+  <text x="440" y="446" text-anchor="middle" font-size="13" fill="#2d6a4f">RDMA로 가속기 메모리 간 직접 전송</text>
+
+  <line x1="255" y1="354" x2="255" y2="378" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="695" y1="354" x2="695" y2="378" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- ⑦ facility -->
+  <rect x="20" y="480" width="840" height="56" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="440" y="503" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">⑦ 전력 · 냉각 · 랙 설비</text>
+  <text x="440" y="525" text-anchor="middle" font-size="13" fill="#b45309">랙당 전력 밀도가 높아 전력 공급 · 액체 냉각이 설계 제약이 된다</text>
+</svg>

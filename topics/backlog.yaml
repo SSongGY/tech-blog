@@ -3554,3 +3554,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-125
+    title: "LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "Megatron-LM 논문 기준 3가지 병렬화가 각각 무엇을 쪼개고 어떤 통신을 요구하는지, 왜 텐서 병렬은 노드 안에 두는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-126
+    title: "GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "노드 내 스케일업과 노드 간 스케일아웃 네트워크를 나누는 이유, RDMA와 fat-tree·레일 최적화 구성을 공식 참조 아키텍처 기준으로"
+    code: none
+    origin: exam
+    status: todo
