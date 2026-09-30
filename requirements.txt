@@ -13,3 +13,7 @@ pypdf==6.19.0
 
 # 네이버용 마크다운 -> HTML 변환. blog.py naver 에서만 쓴다.
 markdown==3.9
+
+# check-links 가 인증서를 운영체제 저장소로 확인하게 한다.
+# 사내망이 TLS 를 중계하는 곳에서 멀쩡한 주소가 끊긴 링크로 잡히는 것을 막는다.
+truststore==0.10.4

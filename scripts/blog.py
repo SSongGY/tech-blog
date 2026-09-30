@@ -2116,6 +2116,21 @@ LINK_TIMEOUT = 20
 USER_AGENT = "tech-blog-link-check/1.0 (+https://github.com/SSongGY/tech-blog)"
 
 
+def use_os_trust_store() -> None:
+    """인증서를 운영체제 저장소로 확인하게 한다.
+
+    파이썬은 자체 인증서 목록만 본다. 사내망이 TLS 를 중계하면 그 CA 를
+    윈도우는 신뢰하는데 파이썬은 모르므로 멀쩡한 주소가 전부
+    CERTIFICATE_VERIFY_FAILED 로 떨어진다. 실제로 arxiv.org 14건이 그렇게
+    끊긴 링크로 잡혔고, 회차가 그걸 고치려 들었다.
+    """
+    try:
+        import truststore
+    except ImportError:
+        return  # 없으면 기본 목록으로 간다. 이 PC 밖에서는 대개 문제없다
+    truststore.inject_into_ssl()
+
+
 def request_url(url: str, method: str) -> tuple[int | None, str, bytes]:
     """(상태 코드, content-type, 본문). 실패하면 코드가 None 이다."""
     request = urllib.request.Request(
@@ -2138,6 +2153,7 @@ def anchor_present(body: bytes, anchor: str) -> bool:
 
 
 def cmd_check_links(args: argparse.Namespace) -> int:
+    use_os_trust_store()
     if args.post:
         # 상대경로로 줘도 되게 절대경로로 맞춘다
         posts = [Path(args.post).resolve() / "index.md"]
