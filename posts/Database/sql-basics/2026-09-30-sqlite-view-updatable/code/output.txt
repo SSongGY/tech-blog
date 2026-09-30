@@ -1,0 +1,139 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-09-30-sqlite-view-updatable
+# 명령      : python view_basics.py
+# 수행 시각 : 2026-09-30 12:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+-------------------
+  member_id | INTEGER | PK
+  name      | TEXT    | NOT NULL
+  phone     | TEXT    |
+  active    | INTEGER | NOT NULL DEFAULT 1
+
+  member_id | name   | phone    | active
+  ----------+--------+----------+-------
+          1 | 김하나 | 010-1111 |      1
+          2 | 이두리 | NULL     |      0
+          3 | 박세찬 | 010-3333 |      1
+
+[orders]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  order_id  | INTEGER | PK
+  member_id | INTEGER | NOT NULL
+  amount    | INTEGER | NOT NULL
+
+  order_id | member_id | amount
+  ---------+-----------+-------
+        10 |         1 |   5000
+        11 |         3 |   7000
+        12 |         1 |   2000
+
+-- 1. 뷰를 만들고 표처럼 조회한다
+   SELECT * FROM v_active_member
+   member_id | member_name | phone
+   1 | 김하나 | 010-1111
+   3 | 박세찬 | 010-3333
+
+   SELECT * FROM v_member_total
+   member_id | name | order_count | total_amount
+   1 | 김하나 | 2 | 7000
+   2 | 이두리 | 0 | 0
+   3 | 박세찬 | 1 | 7000
+
+-- 2. 뷰는 데이터를 따로 갖지 않는다 — sqlite_schema 에 남는 것은 SELECT 문뿐
+   SELECT type, name, rootpage FROM sqlite_schema ORDER BY type, name
+   type | name | rootpage
+   table | member | 2
+   table | orders | 3
+   view | v_active_member | 0
+   view | v_member_total | 0
+
+   원본 표에서 member 2 를 active = 1 로 바꾼 뒤
+   SELECT * FROM v_active_member
+   member_id | member_name | phone
+   1 | 김하나 | 010-1111
+   2 | 이두리 | NULL
+   3 | 박세찬 | 010-3333
+
+-- 3. 뷰에 직접 INSERT·UPDATE·DELETE
+   [실패] UPDATE v_active_member SET phone = '010-2222' WHERE member_id = 2
+          → OperationalError: cannot modify v_active_member because it is a view
+   [실패] INSERT INTO v_active_member VALUES (4, '최네모', NULL)
+          → OperationalError: cannot modify v_active_member because it is a view
+   [실패] DELETE FROM v_active_member WHERE member_id = 3
+          → OperationalError: cannot modify v_active_member because it is a view
+
+-- 4. INSTEAD OF 트리거를 달면 받는다
+   [성공] UPDATE v_active_member SET phone = '010-2222' WHERE member_id = 2
+          → rowcount = 0
+   [실패] UPDATE v_active_member SET member_name = '이둘' WHERE member_id = 2
+          → OperationalError: cannot modify v_active_member because it is a view
+   SELECT member_id, name, phone FROM member WHERE member_id = 2
+   member_id | name | phone
+   2 | 이두리 | 010-2222
+
+-- 5. 트리거가 넣은 행이 뷰 조건에 안 맞으면 — 넣었는데 뷰에 안 보인다
+   [성공] INSERT INTO v_active_member VALUES (4, '최네모', NULL)
+          → rowcount = 0
+   SELECT * FROM v_active_member
+   member_id | member_name | phone
+   1 | 김하나 | 010-1111
+   2 | 이두리 | 010-2222
+   3 | 박세찬 | 010-3333
+
+   SELECT member_id, name, active FROM member WHERE member_id = 4
+   member_id | name | active
+   4 | 최네모 | 0
+
+   [실패] CREATE VIEW v_checked AS SELECT * FROM member WHERE active = 1
+                     WITH CHECK OPTION
+          → OperationalError: near "WITH": syntax error
+
+-- 6. 뷰를 조회해도 원본 표의 인덱스를 쓴다
+   QUERY PLAN
+   `--SEARCH member USING INTEGER PRIMARY KEY (rowid=?)
+
+   QUERY PLAN
+   |--CO-ROUTINE v_member_total
+   |  |--SEARCH m USING INTEGER PRIMARY KEY (rowid=?)
+   |  `--SCAN o LEFT-JOIN
+   `--SCAN v_member_total
+
+-- 7. SELECT * 로 만든 뷰와 원본 표의 컬럼 추가
+   SELECT * FROM v_member_all WHERE member_id = 1
+   member_id | name | phone | active | email
+   1 | 김하나 | 010-1111 | 1 | NULL
+
+   SELECT * FROM v_active_member WHERE member_id = 1
+   member_id | member_name | phone
+   1 | 김하나 | 010-1111
+
+-- 8. 원본 표를 지우면 뷰는 남고, 조회할 때 실패한다
+   [성공] DROP TABLE orders
+          → rowcount = -1
+   SELECT name FROM sqlite_schema WHERE type = 'view' ORDER BY name
+   name
+   v_active_member
+   v_member_all
+   v_member_total
+
+   [실패] SELECT * FROM v_member_total
+          → OperationalError: no such table: main.orders

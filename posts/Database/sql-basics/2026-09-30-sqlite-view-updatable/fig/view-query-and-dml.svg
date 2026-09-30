@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">SQLite 가 뷰를 만났을 때 — 조회와 변경의 두 갈래</text>
+
+  <!-- 조회 갈래 -->
+  <text x="30" y="66" font-size="14" font-weight="bold" fill="#495057">조회</text>
+
+  <rect x="30" y="78" width="200" height="66" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="130" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">SELECT … FROM 뷰</text>
+  <text x="130" y="127" text-anchor="middle" font-size="13" fill="#1b1b1b">WHERE member_id = 3</text>
+
+  <rect x="270" y="78" width="230" height="66" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="385" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">저장된 SELECT 로 바꿔 끼움</text>
+  <text x="385" y="127" text-anchor="middle" font-size="13" fill="#1b1b1b">FROM 절의 서브쿼리가 된다</text>
+
+  <line x1="230" y1="111" x2="262" y2="111" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="262,106 270,111 262,116" fill="#495057"/>
+
+  <rect x="560" y="60" width="290" height="58" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="705" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">단순 뷰 → 평탄화</text>
+  <text x="705" y="105" text-anchor="middle" font-size="13" fill="#1b1b1b">원본 표를 기본 키로 바로 찾는다</text>
+
+  <rect x="560" y="130" width="290" height="58" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="705" y="154" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">집계 뷰 → 코루틴</text>
+  <text x="705" y="175" text-anchor="middle" font-size="13" fill="#1b1b1b">바깥 조건을 안으로 밀어 넣는다</text>
+
+  <line x1="500" y1="104" x2="552" y2="92" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="551,87 560,90 553,97" fill="#2d6a4f"/>
+  <line x1="500" y1="120" x2="552" y2="152" stroke="#b45309" stroke-width="1.5"/>
+  <polygon points="549,156 560,158 555,148" fill="#b45309"/>
+
+  <!-- 원본 표 -->
+  <rect x="270" y="222" width="340" height="56" rx="6" fill="#e7f1ff" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="440" y="246" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">원본 표 member · orders</text>
+  <text x="440" y="267" text-anchor="middle" font-size="13" fill="#1b1b1b">데이터는 여기에만 있다 (뷰의 rootpage = 0)</text>
+
+  <line x1="705" y1="188" x2="705" y2="250" stroke="#495057" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="705" y1="250" x2="618" y2="250" stroke="#495057" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="618,245 610,250 618,255" fill="#495057"/>
+
+  <!-- 변경 갈래 -->
+  <text x="30" y="324" font-size="14" font-weight="bold" fill="#495057">변경</text>
+
+  <rect x="30" y="336" width="200" height="66" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="130" y="363" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">INSERT·UPDATE·DELETE</text>
+  <text x="130" y="385" text-anchor="middle" font-size="13" fill="#1b1b1b">대상이 뷰</text>
+
+  <rect x="270" y="336" width="230" height="66" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="385" y="363" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">맞는 INSTEAD OF</text>
+  <text x="385" y="385" text-anchor="middle" font-size="13" fill="#1b1b1b">트리거가 있는가</text>
+
+  <line x1="230" y1="369" x2="262" y2="369" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="262,364 270,369 262,374" fill="#495057"/>
+
+  <rect x="560" y="316" width="290" height="58" rx="6" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="705" y="340" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">없음 → 문장 전체가 실패</text>
+  <text x="705" y="361" text-anchor="middle" font-size="13" fill="#1b1b1b">cannot modify … because it is a view</text>
+
+  <rect x="560" y="388" width="290" height="58" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="705" y="412" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">있음 → 트리거 본문을 실행</text>
+  <text x="705" y="433" text-anchor="middle" font-size="13" fill="#1b1b1b">뷰에는 아무것도 쓰지 않는다</text>
+
+  <line x1="500" y1="360" x2="552" y2="348" stroke="#9d0208" stroke-width="1.5"/>
+  <polygon points="551,343 560,346 553,353" fill="#9d0208"/>
+  <line x1="500" y1="378" x2="552" y2="410" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="549,414 560,416 555,406" fill="#2d6a4f"/>
+
+  <!-- 트리거 → 원본 표 -->
+  <line x1="600" y1="388" x2="520" y2="286" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <polygon points="515,291 516,280 524,284" fill="#2d6a4f"/>
+  <text x="588" y="300" font-size="13" fill="#2d6a4f">본문이 원본 표를 바꾼다</text>
+
+  <text x="30" y="478" font-size="13" fill="#495057">트리거 본문이 바꾼 행은 문장의 변경 건수(rowcount)에 들어가지 않는다. 실습 4·5장에서 0 이 나온다.</text>
+</svg>
