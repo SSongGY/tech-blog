@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+
+  <!-- FIFO -->
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#222">① FIFO — 큐 1개, 도착 순서대로 전송</text>
+  <rect x="24" y="56" width="140" height="64" rx="6" fill="#f1f3f5" stroke="#555"/>
+  <text x="94" y="84" font-size="14" text-anchor="middle" fill="#222">모든 흐름의</text>
+  <text x="94" y="104" font-size="14" text-anchor="middle" fill="#222">도착 패킷</text>
+  <line x1="164" y1="88" x2="236" y2="88" stroke="#333" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <rect x="240" y="56" width="400" height="64" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="440" y="50" font-size="13" text-anchor="middle" fill="#9d0208">단일 FIFO 큐 (가득 차면 꼬리 폐기)</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="256" y="72" width="44" height="32" fill="#e9a3a3" stroke="#9d0208"/><text x="278" y="93">A</text>
+    <rect x="304" y="72" width="44" height="32" fill="#e9a3a3" stroke="#9d0208"/><text x="326" y="93">A</text>
+    <rect x="352" y="72" width="44" height="32" fill="#e9a3a3" stroke="#9d0208"/><text x="374" y="93">A</text>
+    <rect x="400" y="72" width="44" height="32" fill="#e9a3a3" stroke="#9d0208"/><text x="422" y="93">A</text>
+    <rect x="448" y="72" width="44" height="32" fill="#e9a3a3" stroke="#9d0208"/><text x="470" y="93">A</text>
+    <rect x="496" y="72" width="44" height="32" fill="#ffffff" stroke="#555"/><text x="518" y="93">B</text>
+    <rect x="544" y="72" width="44" height="32" fill="#e9a3a3" stroke="#9d0208"/><text x="566" y="93">A</text>
+  </g>
+  <line x1="640" y1="88" x2="712" y2="88" stroke="#333" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="716" y="56" width="140" height="64" rx="6" fill="#f1f3f5" stroke="#555"/>
+  <text x="786" y="84" font-size="14" text-anchor="middle" fill="#222">출력 링크</text>
+  <text x="786" y="104" font-size="14" text-anchor="middle" fill="#222">속도 r</text>
+  <text x="240" y="144" font-size="13" fill="#9d0208">폭주 흐름 A 가 큐를 차지하면 B 는 A 의 버스트가 다 나갈 때까지 기다린다 (흐름 간 격리 없음)</text>
+
+  <line x1="24" y1="170" x2="856" y2="170" stroke="#bbb" stroke-dasharray="5,4"/>
+
+  <!-- WFQ -->
+  <text x="24" y="202" font-size="16" font-weight="bold" fill="#222">② WFQ — 흐름별 큐, 가상 종료 태그가 가장 작은 패킷부터 전송</text>
+  <rect x="24" y="266" width="140" height="80" rx="6" fill="#f1f3f5" stroke="#555"/>
+  <text x="94" y="296" font-size="14" text-anchor="middle" fill="#222">분류기</text>
+  <text x="94" y="316" font-size="13" text-anchor="middle" fill="#444">주소·포트·</text>
+  <text x="94" y="334" font-size="13" text-anchor="middle" fill="#444">프로토콜로 흐름 구분</text>
+
+  <rect x="220" y="222" width="300" height="170" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="370" y="410" font-size="13" text-anchor="middle" fill="#2d6a4f">흐름별 큐 (흐름마다 가중치 φ)</text>
+  <g font-size="13">
+    <text x="232" y="256" fill="#222">흐름 A  φ=1</text>
+    <rect x="336" y="238" width="36" height="28" fill="#e9a3a3" stroke="#9d0208"/>
+    <rect x="376" y="238" width="36" height="28" fill="#e9a3a3" stroke="#9d0208"/>
+    <rect x="416" y="238" width="36" height="28" fill="#e9a3a3" stroke="#9d0208"/>
+    <rect x="456" y="238" width="36" height="28" fill="#e9a3a3" stroke="#9d0208"/>
+    <text x="232" y="312" fill="#222">흐름 B  φ=1</text>
+    <rect x="456" y="294" width="36" height="28" fill="#ffffff" stroke="#555"/>
+    <text x="232" y="368" fill="#222">흐름 C  φ=3</text>
+    <rect x="416" y="350" width="36" height="28" fill="#cfe5d8" stroke="#2d6a4f"/>
+    <rect x="456" y="350" width="36" height="28" fill="#cfe5d8" stroke="#2d6a4f"/>
+  </g>
+  <line x1="164" y1="300" x2="216" y2="252" stroke="#333" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="164" y1="306" x2="216" y2="306" stroke="#333" stroke-width="1.4" marker-end="url(#arr)"/>
+  <line x1="164" y1="312" x2="216" y2="362" stroke="#333" stroke-width="1.4" marker-end="url(#arr)"/>
+
+  <line x1="520" y1="252" x2="556" y2="292" stroke="#333" stroke-width="1.4"/>
+  <line x1="520" y1="308" x2="556" y2="308" stroke="#333" stroke-width="1.4"/>
+  <line x1="520" y1="364" x2="556" y2="324" stroke="#333" stroke-width="1.4"/>
+  <rect x="560" y="262" width="150" height="92" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="635" y="290" font-size="14" text-anchor="middle" fill="#222">스케줄러</text>
+  <text x="635" y="312" font-size="13" text-anchor="middle" fill="#2d6a4f">F = max(F이전, V(a))</text>
+  <text x="635" y="330" font-size="13" text-anchor="middle" fill="#2d6a4f">+ L / φ</text>
+  <text x="635" y="347" font-size="13" text-anchor="middle" fill="#444">최소 F 선택</text>
+  <line x1="710" y1="308" x2="744" y2="308" stroke="#333" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="748" y="276" width="108" height="64" rx="6" fill="#f1f3f5" stroke="#555"/>
+  <text x="802" y="304" font-size="14" text-anchor="middle" fill="#222">출력 링크</text>
+  <text x="802" y="324" font-size="14" text-anchor="middle" fill="#222">속도 r</text>
+  <text x="560" y="384" font-size="13" fill="#2d6a4f">백로그 흐름 i 의 보장 속도</text>
+  <text x="560" y="402" font-size="13" fill="#2d6a4f">gᵢ = φᵢ / Σφⱼ × r</text>
+  <text x="24" y="436" font-size="13" fill="#444">V(a): 도착 시각의 가상 시간 · L: 패킷 길이 · 흐름 A 가 폭주해도 B·C 의 몫은 줄지 않는다</text>
+</svg>

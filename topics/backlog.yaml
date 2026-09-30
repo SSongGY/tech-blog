@@ -3576,3 +3576,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-127
+    title: "패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "흐름 간 격리·지연 상한·구현 복잡도 세 축으로 네 기법을 비교하고, 가변 길이 패킷에서 WRR이 불공정해지는 이유와 DRR의 적자 카운터를 계산으로 보인다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-128
+    title: "능동 큐 관리(AQM) — RED와 CoDel"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "꼬리 폐기의 잠김·가득 찬 큐 문제에서 출발해 RED의 평균 큐 길이 기반 확률 폐기와 CoDel의 체류 시간 기반 폐기를 RFC 7567·RFC 8289 근거로 비교한다"
+    code: none
+    origin: exam
+    status: todo
