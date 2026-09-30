@@ -3553,7 +3553,7 @@ topics:
     angle: "5개 파트의 역할 분담과 ISO/IEC 25012 대비 추가된 품질 특성, ISO/IEC 8183 데이터 생애주기와의 연결"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-125
     title: "LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬"
     category: PE
@@ -3564,7 +3564,7 @@ topics:
     angle: "Megatron-LM 논문 기준 3가지 병렬화가 각각 무엇을 쪼개고 어떤 통신을 요구하는지, 왜 텐서 병렬은 노드 안에 두는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-126
     title: "GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE"
     category: PE
