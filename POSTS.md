@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **123편** · 갱신 2026-10-01
+총 **126편** · 갱신 2026-10-01
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 23편
+## DB문법 (basics) — 24편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [날짜와 시간 다루기 — 저장과 연산](posts/Database/sql-basics/2026-10-01-sql-date-time-storage-arithmetic/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT](posts/Database/sql-basics/2026-09-30-transaction-commit-rollback-savepoint/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [VIEW — 만들고 쓰는 법, 그리고 한계](posts/Database/sql-basics/2026-09-30-sqlite-view-updatable/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [문자열 함수 기본 — 자르기, 붙이기, 바꾸기](posts/Database/sql-basics/2026-09-30-sql-string-functions-basics/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -46,10 +47,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 48편
+## 기술사 (pe) — 49편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [PMBOK 지식 영역과 프로세스 그룹](posts/PE/it-management/2026-10-01-pmbok-knowledge-areas-process-groups/index.md) | 중급 | PMBOK Guide 6th Edition (2017), PMBOK Guide 7th Edition (2021), PMBOK Guide 8th Edition (2025), PMI Process Groups: A Practice Guide (2022) | 문서 근거 |
 | 2026-10-01 | [패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ](posts/PE/network/2026-10-01-packet-scheduling-pq-wrr-drr-wfq/index.md) | 중급 | Shreedhar & Varghese, DRR, ACM SIGCOMM 1995, Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Katevenis et al., WRR, IEEE JSAC 1991, Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
 | 2026-10-01 | [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](posts/PE/network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md) | 심화 | NVIDIA DGX SuperPOD Reference Architecture H100 · GB200 (2025-11 갱신), IBTA RoCEv2 Annex A17 (2014), Guo et al., RDMA over Commodity Ethernet at Scale, SIGCOMM 2016, Narayanan et al., Megatron-LM, SC21 | 문서 근거 |
 | 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
@@ -99,10 +101,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 8편
+## 리눅스 (linux) — 9편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [환경변수와 셸 초기화 순서](posts/Linux/command/2026-10-01-bash-startup-files-env-vars/index.md) | 중급 | GNU bash 5.3.9 (Git Bash), GNU coreutils env 8.32, Windows 11 | 실행 검증 |
 | 2026-09-30 | [tar와 gzip — 압축과 해제, 그리고 옵션 순서](posts/Linux/command/2026-09-30-tar-gzip-options-absolute-path/index.md) | 입문 | GNU tar 1.35, gzip 1.14, GNU bash 5.3.9 (Git Bash), Windows 11 | 실행 검증 |
 | 2026-09-29 | [cut, paste, tr — 텍스트를 칼럼으로 다루기](posts/Infra/linux/2026-09-29-cut-paste-tr-columns/index.md) | 중급 | GNU coreutils 8.32 (cut, paste, tr), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-28 | [xargs — 파이프로 인자를 넘기는 법](posts/Linux/command/2026-09-28-xargs-args-parallel-null/index.md) | 중급 | GNU findutils 4.10.0 (xargs), GNU bash 5.3.9 (Git Bash), Windows 11 | 실행 검증 |

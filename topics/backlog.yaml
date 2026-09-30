@@ -959,7 +959,7 @@ topics:
     difficulty: 입문
     angle: "문자열로 저장한 날짜가 정렬·비교에서 어떻게 깨지는지"
     code: python
-    status: todo
+    status: done
   - id: bas-025
     title: "숫자 타입과 반올림 — 돈을 다룰 때"
     category: Database
@@ -1224,7 +1224,7 @@ topics:
     difficulty: 중급
     angle: "매트릭스로 보고 실제 프로젝트 흐름에 대응"
     code: none
-    status: todo
+    status: done
   - id: or-001
     title: "Oracle 19c 시퀀스 — 생성, 캐시, 그리고 값이 튀는 순간"
     category: Database
@@ -1770,7 +1770,7 @@ topics:
     difficulty: 중급
     angle: "로그인 셸과 비로그인 셸에서 읽는 파일이 다른 것을 실측"
     code: shell
-    status: todo
+    status: done
   - id: lx-029
     title: "watch와 반복 실행 — 변화만 눈에 띄게"
     category: Linux
