@@ -16,6 +16,7 @@ topic_id: db-003
 
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`transaction-isolation`)
+> - [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](../../tibero/2026-09-30-tibero7-transaction-isolation/index.md) — Tibero 7
 > - [트랜잭션 ACID와 격리 수준 — 이상현상으로 수준을 정의하는 방식](../../../PE/database/2026-09-23-acid-and-isolation-levels/index.md) — PostgreSQL 16 문서, Berenson et al., SIGMOD 1995
 <!-- related:end -->
 

@@ -17,6 +17,7 @@ topic_id: pe-010
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`transaction-isolation`)
 > - [트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가](../../../Database/sqlite/2026-09-21-isolation-level-anomalies/index.md) — SQLite 3.49.1, Python 3.13.5
+> - [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](../../../Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) — Tibero 7
 <!-- related:end -->
 
 ## 들어가며
