@@ -21,6 +21,8 @@ description: 이번 회차의 기술 블로그 글 3편을 작성하고 커밋�
 - **`python -c`로 즉석 코드를 짜지 않는다.** 임의 코드는 규칙으로 허용할 수 없는 종류다.
   자주 하는 일은 `blog.py`에 명령이 있다 (`env`·`recent`·`check-svg`·`check-links`·`pdf-text`).
   없으면 그때 `blog.py`에 명령을 추가하고, 그 사실을 보고에 적는다
+- **파일 내용은 Edit 도구로 고친다.** `sed -i`·`[IO.File]::WriteAllText`·
+  `Set-Content`·`>` 리다이렉션은 Write·Edit 의 경로 제한을 우회하므로 쓰지 않는다
 - **복합 명령을 피한다.** `for`·`while` 루프, `sleep`으로 버티는 대기,
   `find -exec`, 서브셸 `( ... &)`, `xargs`, 명령 치환 `$(...)`은
   규칙으로 맞출 수 없다

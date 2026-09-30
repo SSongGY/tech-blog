@@ -46,6 +46,8 @@ description: 주식 용어와 재무제표 읽는 법을 회차당 2편 정리�
 - **명령 앞에 환경변수나 변수 할당을 붙이지 않는다.** 규칙이 맨 앞부분으로 맞춰 본다
 - **`python -c` 로 즉석 코드를 짜지 않는다.** 필요한 일은 `blog.py` 에 명령이 있다
 - **`rm`·`mv` 를 쓰지 않는다.** 버릴 파일은 이름을 `probe` 로 시작하면 gitignore 된다
+- **파일 내용은 Edit 도구로 고친다.** `sed -i`·`[IO.File]::WriteAllText`·
+  `Set-Content`·`>` 리다이렉션은 Write·Edit 의 경로 제한을 우회하므로 쓰지 않는다
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다
 

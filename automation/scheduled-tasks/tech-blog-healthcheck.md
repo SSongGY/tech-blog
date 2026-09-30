@@ -183,6 +183,8 @@ git rev-parse HEAD origin/main
 - **명령 앞에 환경변수나 변수 할당을 붙이지 않는다.** 규칙이 맨 앞부분으로 맞춰 본다.
   `blog.py`는 인코딩을 스스로 맞추므로 `PYTHONUTF8=1`도 붙이지 않는다
 - **`python -c`로 즉석 코드를 짜지 않는다.** 필요한 일은 `blog.py`에 명령이 있다
+- **파일 내용은 Edit 도구로 고친다.** `sed -i`·`[IO.File]::WriteAllText`·
+  `Set-Content`·`>` 리다이렉션은 Write·Edit 의 경로 제한을 우회하므로 쓰지 않는다
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다. 다른 회차를 기다려야 하면
   `mcp__scheduled-tasks__list_task_runs` 를 다시 부른다

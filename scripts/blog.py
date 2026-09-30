@@ -2161,7 +2161,12 @@ def cmd_check_links(args: argparse.Namespace) -> int:
             key = f"{method} {base}"
             if key not in pages:
                 status, content_type, body = request_url(base, method)
-                if status == 405 and method == "HEAD":  # HEAD 를 막는 서버가 있다
+                # HEAD 가 실패했다고 링크가 죽은 것은 아니다. HEAD 를 제대로
+                # 구현하지 않은 서버가 많다 — NIST nvlpubs 는 살아 있는 PDF 에
+                # HEAD 로 404 를 준다. 405 만 보고 넘어가면 멀쩡한 링크를
+                # 끊겼다고 신고하고, 회차가 고칠 필요 없는 것을 고치려 든다.
+                # 판정은 GET 으로만 내린다.
+                if method == "HEAD" and (status is None or status >= 400):
                     status, content_type, body = request_url(base, "GET")
                 pages[key] = (status, content_type, body)
             status, content_type, body = pages[key]
