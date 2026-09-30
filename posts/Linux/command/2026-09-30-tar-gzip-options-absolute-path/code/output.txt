@@ -1,0 +1,380 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-09-30-tar-gzip-options-absolute-path
+# 명령      : bash tar_gzip_options.sh
+# 수행 시각 : 2026-09-30 12:17 (대한민국 표준시)
+# 소요      : 13.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+== 0. 버전과 압축 프로그램 ==
+$ tar --version | head -n 1
+tar (GNU tar) 1.35
+$ gzip --version | head -n 1
+gzip 1.14
+  gzip 있음
+  bzip2 있음
+  xz 있음
+  zstd 없음
+  lzip 없음
+  lzop 없음
+  compress 없음
+$ tar --show-defaults
+--format=gnu -f- -b20 --quoting-style=escape --rmt-command=/usr/lib/tar/rmt.exe --rsh-command=/usr/bin/rsh
+
+== 1. 동작 모드 — 하나만 고른다 ==
+$ tar -cf app.tar app
+$ tar -tf app.tar
+app/
+app/.git/
+app/.git/HEAD
+app/conf/
+app/conf/app.conf
+app/data.txt
+app/logs/
+app/logs/a.log
+$ tar --numeric-owner -tvf app.tar app/conf/app.conf
+-rw-r--r-- 4096/4096        10 2026-01-01 00:00 app/conf/app.conf
+$ tar -rf m.tar extra.txt && tar -tf m.tar | tail -n 1
+extra.txt
+$ tar -uf m.tar extra.txt && tar -tf m.tar | grep extra.txt | wc -l
+1
+$ tar -uf m.tar extra.txt && tar -tf m.tar | grep extra.txt | wc -l
+2
+$ tar --delete -f m.tar extra.txt && tar -tf m.tar | grep extra.txt | wc -l
+0
+$ tar -cf other.tar extra.txt && tar -Af m.tar other.tar && tar -tf m.tar | tail -n 1
+extra.txt
+$ tar -cx -f m.tar
+tar: You may not specify more than one '-Acdtrux', '--delete' or  '--test-label' option
+Try 'tar --help' or 'tar --usage' for more information.
+[종료 코드 2]
+
+== 2. 옵션 쓰는 법 세 가지와 -f 의 자리 ==
+$ tar cvf style1.tar app/conf
+app/conf/
+app/conf/app.conf
+$ tar -cvf style2.tar app/conf
+app/conf/
+app/conf/app.conf
+$ tar --create --verbose --file=style3.tar app/conf
+app/conf/
+app/conf/app.conf
+$ tar -cfv style4.tar app/conf
+tar: style4.tar: Cannot stat: No such file or directory
+tar: Exiting with failure status due to previous errors
+[종료 코드 2]
+$ ls v style4.tar
+ls: cannot access 'style4.tar': No such file or directory
+v
+[종료 코드 2]
+$ tar -tf v
+app/conf/
+app/conf/app.conf
+$ tar -cf style5.tar -v app/conf
+app/conf/
+app/conf/app.conf
+
+== 3. 압축 — 만들 때 고르고, 읽을 때는 알아서 ==
+$ tar -czf app.tar.gz app
+$ tar -cjf app.tar.bz2 app
+$ tar -cJf app.tar.xz app
+$ tar --zstd -cf app.tar.zst app
+/bin/sh: line 1: zstd: command not found
+tar: app.tar.zst: Cannot write: Broken pipe
+tar: Child returned status 127
+tar: Error is not recoverable: exiting now
+[종료 코드 2]
+$ tar -caf auto.tar.gz app && gzip -l auto.tar.gz
+         compressed        uncompressed  ratio uncompressed_name
+              45579              122880  62.9% auto.tar
+$ tar -caf auto.tar.xz app && tar -tf auto.tar.xz | head -n 1
+app/
+$ tar -cf fake.tar.gz app && gzip -t fake.tar.gz
+
+gzip: fake.tar.gz: not in gzip format
+[종료 코드 1]
+$ tar -tf app.tar.gz | head -n 2
+app/
+app/.git/
+$ tar -tzf app.tar
+
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+[종료 코드 2]
+$ tar -I "gzip -9" -cf best.tar.gz app
+$ wc -c app.tar app.tar.gz best.tar.gz app.tar.bz2 app.tar.xz | head -n 5
+122880 app.tar
+ 45579 app.tar.gz
+ 45540 best.tar.gz
+ 25624 app.tar.bz2
+  5760 app.tar.xz
+$ cat app.tar.gz | tar -tzf - | head -n 1
+app/
+
+== 4. 절대경로 — 만들 때 / 를 떼고, -P 는 붙인 채 둔다 ==
+$ tar -cf abs.tar /tmp/tardemo/etc-sample/app.conf
+tar: Removing leading `/' from member names
+$ tar -tf abs.tar
+tmp/tardemo/etc-sample/app.conf
+$ tar -cPf abs-p.tar /tmp/tardemo/etc-sample/app.conf
+$ tar -tf abs-p.tar
+tar: Removing leading `/' from member names
+/tmp/tardemo/etc-sample/app.conf
+$ tar -xf ../abs-p.tar
+tar: Removing leading `/' from member names
+$ cat /tmp/tardemo/etc-sample/app.conf
+secret=CHANGED
+$ find . -type f
+./tmp/tardemo/etc-sample/app.conf
+$ tar -xPf ../abs-p.tar
+$ cat /tmp/tardemo/etc-sample/app.conf
+secret=old
+
+== 5. 위로 올라가는 이름(../) — 풀 때 막는다 ==
+$ tar -cPf ../dotdot.tar ../outside.txt
+$ tar -tf dotdot.tar
+tar: Removing leading `../' from member names
+../outside.txt
+$ tar -xf ../dotdot.tar
+tar: Removing leading `../' from member names
+tar: ../outside.txt: Member name contains '..'
+tar: Exiting with failure status due to previous errors
+[종료 코드 2]
+$ ls ../outside.txt
+ls: cannot access '../outside.txt': No such file or directory
+[종료 코드 2]
+$ tar -xPf ../dotdot.tar && cat ../outside.txt
+escaped
+
+== 6. 풀기 전에 목록부터 — 절대경로와 ../ 를 찾는다 ==
+$ tar -tf abs-p.tar | grep -E '^/|(^|/)\.\.(/|$)'
+tar: Removing leading `/' from member names
+/tmp/tardemo/etc-sample/app.conf
+$ tar -tf dotdot.tar | grep -E '^/|(^|/)\.\.(/|$)'
+tar: Removing leading `../' from member names
+../outside.txt
+$ tar -tf app.tar | grep -E '^/|(^|/)\.\.(/|$)' || echo '(해당 없음)'
+(해당 없음)
+
+== 7. 풀 위치와 이름 바꾸기 ==
+$ mkdir -p out && tar -xf app.tar -C out && find out -name app.conf
+out/app/conf/app.conf
+$ mkdir -p strip && tar -xf app.tar -C strip --strip-components=1 && ls strip
+conf
+data.txt
+logs
+$ mkdir -p xform && tar -xf app.tar -C xform --transform="s,^app/,myapp/," && ls xform
+app
+myapp
+$ tar -tf app.tar --transform="s,^app/,myapp/," --show-transformed-names | head -n 3
+app/
+myapp/.git/
+myapp/.git/HEAD
+$ mkdir -p xform2 && tar -xf app.tar -C xform2 --transform="s,^app\(/\|$\),myapp\1," && ls xform2
+myapp
+$ mkdir -p one && tar -xf style2.tar -C one --one-top-level=bundle && find one -type f
+one/bundle/app/conf/app.conf
+$ mkdir -p pick && tar -xf app.tar -C pick app/conf/app.conf && find pick -type f
+pick/app/conf/app.conf
+$ tar -xf app.tar -C pick "app/logs/*.log"
+tar: Pattern matching characters used in file names
+tar: Use --wildcards to enable pattern matching, or --no-wildcards to suppress this warning
+tar: app/logs/*.log: Not found in archive
+tar: Exiting with failure status due to previous errors
+[종료 코드 2]
+$ tar -xf app.tar -C pick --wildcards "app/logs/*.log" && find pick -name "*.log"
+pick/app/logs/a.log
+$ tar -xOf app.tar app/conf/app.conf
+port=8080
+$ tar -xf app.tar --to-command="wc -l" app/logs/a.log
+2
+
+== 8. 덮어쓰기 — 기본은 덮는다 ==
+$ tar -xf app.tar -C ow && cat ow/app/conf/app.conf
+port=8080
+$ tar -xkf app.tar -C ow
+tar: app/.git/HEAD: Cannot open: File exists
+tar: app/conf/app.conf: Cannot open: File exists
+tar: app/data.txt: Cannot open: File exists
+tar: app/logs/a.log: Cannot open: File exists
+tar: Exiting with failure status due to previous errors
+[종료 코드 2]
+$ cat ow/app/conf/app.conf
+port=9090
+$ tar -xf app.tar -C ow --skip-old-files && cat ow/app/conf/app.conf
+port=9090
+$ tar -xf app.tar -C ow --keep-newer-files && cat ow/app/conf/app.conf
+tar: app: Unexpected inconsistency when making directory
+tar: app/.git: Unexpected inconsistency when making directory
+tar: Current 'app/.git/HEAD' is newer or same age
+tar: app/conf: Unexpected inconsistency when making directory
+tar: Current 'app/conf/app.conf' is newer or same age
+tar: Current 'app/data.txt' is newer or same age
+tar: app/logs: Unexpected inconsistency when making directory
+tar: Current 'app/logs/a.log' is newer or same age
+tar: Exiting with failure status due to previous errors
+[종료 코드 2]
+$ tar -xf app.tar -C ow --backup=numbered && ls ow/app/conf
+app.conf
+app.conf.~1~
+
+== 9. 담을 파일 고르기 ==
+$ tar -cf ex1.tar --exclude="*.log" app && tar -tf ex1.tar
+app/
+app/.git/
+app/.git/HEAD
+app/conf/
+app/conf/app.conf
+app/data.txt
+app/logs/
+$ tar -cf ex2.tar --exclude-vcs app && tar -tf ex2.tar
+app/
+app/conf/
+app/conf/app.conf
+app/data.txt
+app/logs/
+app/logs/a.log
+$ tar -cf fromlist.tar -T list.txt && tar -tf fromlist.tar
+app/conf/app.conf
+app/data.txt
+$ find app -name "*.conf" -print0 | tar -cf null.tar --null -T - && tar -tf null.tar
+app/conf/app.conf
+$ tar -cf norec.tar --no-recursion app app/conf && tar -tf norec.tar
+app/
+app/conf/
+$ tar -cf newer.tar -N "2026-03-01" app 2>/dev/null; tar -tf newer.tar | grep -v "/$"
+app/.git/HEAD
+app/conf/app.conf
+app/data.txt
+app/logs/a.log
+$ tar -cf newer2.tar --newer-mtime="2026-03-01" app 2>/dev/null; tar -tf newer2.tar | grep -v "/$"
+app/logs/a.log
+$ stat -c "%n  mtime=%y  ctime=%z" app/conf/app.conf | cut -c1-90
+app/conf/app.conf  mtime=2026-01-01 00:00:00.000000000 +0900  ctime=2026-09-30 12:17:27.93
+$ tar -cf rm.tar --remove-files extra.txt && ls extra.txt
+ls: cannot access 'extra.txt': No such file or directory
+[종료 코드 2]
+
+== 10. 같은 내용이면 같은 아카이브 — 재현 가능한 묶음 ==
+$ tar -cf r1.tar app && sleep 1 && touch app && tar -cf r2.tar app && cmp -s r1.tar r2.tar && echo same || echo differ
+differ
+$ tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner -cf r3.tar app && sleep 1 && touch app && tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner -cf r4.tar app && cmp -s r3.tar r4.tar && echo same || echo differ
+same
+$ tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner -czf g1.tar.gz app && sleep 1 && tar --sort=name --mtime=@0 --owner=0 --group=0 --numeric-owner -czf g2.tar.gz app && cmp -s g1.tar.gz g2.tar.gz && echo same || echo differ
+same
+$ tar -tvf r3.tar app/data.txt
+-rw-r--r-- 0/0          108894 1970-01-01 09:00 app/data.txt
+$ tar --numeric-owner -tvf app.tar app/data.txt
+-rw-r--r-- 4096/4096    108894 2026-01-01 00:00 app/data.txt
+$ tar --utc -tvf r3.tar app/data.txt
+-rw-r--r-- 0/0          108894 1970-01-01 00:00 app/data.txt
+
+== 11. 검사 — 비교, 검증, 증분 ==
+$ tar -df app.tar
+$ tar -df app.tar
+app/conf/app.conf: Mod time differs
+app/conf/app.conf: Size differs
+[종료 코드 1]
+$ tar -cWf verify.tar app/logs && echo verified
+verified
+$ tar -cf lvl0.tar -g snap.db app && tar -tf lvl0.tar | wc -l
+8
+$ tar -cf lvl1.tar -g snap.db app && tar -tf lvl1.tar | grep -v "/$"
+app/logs/b.log
+
+== 12. 진행 상황과 합계 ==
+$ tar -cf big.tar --totals app
+Total bytes written: 122880 (120KiB, 33MiB/s)
+$ tar -cf big.tar --checkpoint=4 --checkpoint-action=echo="checkpoint #%u" app
+tar: checkpoint #4
+tar: checkpoint #8
+tar: checkpoint #12
+$ tar -tRf app.tar app/conf/app.conf
+block 5: app/conf/app.conf
+block 224: ** Block of NULs **
+$ tar --numeric-owner --full-time -tvf app.tar app/conf/app.conf
+-rw-r--r-- 4096/4096        10 2026-01-01 00:00:00 app/conf/app.conf
+$ tar -cf idx.tar -v --index-file=idx.txt app/conf && cat idx.txt
+app/conf/
+app/conf/app.conf
+$ tar -tf nosuch.tar
+tar: nosuch.tar: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+[종료 코드 2]
+$ tar -xf app.tar no/such/member
+tar: no/such/member: Not found in archive
+tar: Exiting with failure status due to previous errors
+[종료 코드 2]
+
+== 13. gzip 단독 — 기본은 원본을 지운다 ==
+$ gzip g.txt && ls g.txt*
+g.txt.gz
+$ gzip -d g.txt.gz && ls g.txt*
+g.txt
+$ gzip -k g.txt && ls g.txt*
+g.txt
+g.txt.gz
+$ gzip g.txt
+gzip: g.txt.gz already exists;	not overwritten
+[종료 코드 2]
+$ gzip -f g.txt && ls g.txt*
+g.txt.gz
+$ gzip -l g.txt.gz
+         compressed        uncompressed  ratio uncompressed_name
+             109150              288894  62.2% g.txt
+$ gzip -t g.txt.gz && echo ok
+ok
+$ gzip -cd g.txt.gz | tail -n 1
+50000
+$ gzip -dc g.txt.gz | gzip -1 > seq1.gz && gzip -dc g.txt.gz | gzip -9 > seq9.gz && wc -c seq1.gz seq9.gz
+105341 seq1.gz
+109144 seq9.gz
+214485 total
+$ gzip -1 -c help.txt > help1.gz && gzip -6 -c help.txt > help6.gz && gzip -9 -c help.txt > help9.gz && wc -c help.txt help1.gz help6.gz help9.gz
+16672 help.txt
+ 5816 help1.gz
+ 5150 help6.gz
+ 5133 help9.gz
+32771 total
+$ gzip -dk g.txt.gz && ls g.txt*
+g.txt
+g.txt.gz
+$ rm g.txt.gz && gzip -S .z g.txt && ls g.txt*
+g.txt.z
+$ gzip -dv -S .z g.txt.z && ls g.txt*
+g.txt.z:	 62.2% -- replaced with g.txt
+g.txt
+$ gzip -c orig.txt > renamed.gz && gzip -lN renamed.gz
+         compressed        uncompressed  ratio uncompressed_name
+             109153              288894  62.2% orig.txt
+$ gzip -dN renamed.gz && ls orig.txt renamed* 2>&1
+ls: cannot access 'renamed*': No such file or directory
+orig.txt
+[종료 코드 2]
+$ gzip -n -c g.txt > noname.gz && gzip -lN noname.gz
+         compressed        uncompressed  ratio uncompressed_name
+             109144              288894  62.2% noname
+$ gzip -c g.txt > a.gz && sleep 1 && touch g.txt && gzip -c g.txt > b.gz && cmp -s a.gz b.gz && echo same || echo differ
+differ
+$ gzip -nc g.txt > a.gz && sleep 1 && touch g.txt && gzip -nc g.txt > b.gz && cmp -s a.gz b.gz && echo same || echo differ
+same
+$ gzip -r tree && find tree -type f | sort
+tree/a.txt.gz
+tree/sub/b.txt.gz
+$ gzip -dr tree && find tree -type f | sort
+tree/a.txt
+tree/sub/b.txt
+$ gzip -t bad.gz
+
+gzip: bad.gz: not in gzip format
+[종료 코드 1]
+$ gzip -tq bad.gz
+
+gzip: bad.gz: not in gzip format
+[종료 코드 1]
+$ gzip -dc app.tar.gz | tar -tf - | head -n 1
+app/

@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">tar 가 묶고 풀 때 이름과 데이터가 거치는 단계</text>
+
+  <!-- 만들 때 -->
+  <text x="20" y="66" font-size="14" font-weight="bold" fill="#495057">만들 때 (-c)</text>
+
+  <rect x="20" y="78" width="150" height="76" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="95" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">담을 파일</text>
+  <text x="95" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">인자 · -T · --null</text>
+  <text x="95" y="142" text-anchor="middle" font-size="13" fill="#1b1b1b">--exclude · -N</text>
+
+  <rect x="192" y="78" width="160" height="76" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="272" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">이름 처리</text>
+  <text x="272" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">앞의 / 를 뗀다</text>
+  <text x="272" y="142" text-anchor="middle" font-size="13" fill="#9d0208">-P 면 그대로 둔다</text>
+
+  <rect x="374" y="78" width="160" height="76" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="454" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">tar 스트림</text>
+  <text x="454" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">512바이트 블록</text>
+  <text x="454" y="142" text-anchor="middle" font-size="13" fill="#1b1b1b">레코드 = 20블록</text>
+
+  <rect x="556" y="78" width="160" height="76" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="636" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">압축 필터</text>
+  <text x="636" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">-z · -j · -J · -I · -a</text>
+  <text x="636" y="142" text-anchor="middle" font-size="13" fill="#1b1b1b">별도 프로그램을 띄운다</text>
+
+  <rect x="738" y="78" width="122" height="76" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="799" y="112" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">-f 아카이브</text>
+  <text x="799" y="132" text-anchor="middle" font-size="13" fill="#1b1b1b">파일 · stdin(-)</text>
+
+  <line x1="170" y1="116" x2="184" y2="116" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="184,111 192,116 184,121" fill="#495057"/>
+  <line x1="352" y1="116" x2="366" y2="116" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="366,111 374,116 366,121" fill="#495057"/>
+  <line x1="534" y1="116" x2="548" y2="116" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="548,111 556,116 548,121" fill="#495057"/>
+  <line x1="716" y1="116" x2="730" y2="116" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="730,111 738,116 730,121" fill="#495057"/>
+
+  <!-- 꺾임 -->
+  <line x1="799" y1="154" x2="799" y2="214" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="794,214 799,224 804,214" fill="#495057"/>
+
+  <!-- 풀 때 -->
+  <text x="20" y="206" font-size="14" font-weight="bold" fill="#495057">풀 때 (-x) — 오른쪽에서 왼쪽으로</text>
+
+  <rect x="738" y="224" width="122" height="76" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="799" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">-f 아카이브</text>
+  <text x="799" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">-t 로 먼저 본다</text>
+
+  <rect x="556" y="224" width="160" height="76" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="636" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">압축 판별</text>
+  <text x="636" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">-z 없이도 읽는다</text>
+  <text x="636" y="288" text-anchor="middle" font-size="13" fill="#1b1b1b">-z 를 잘못 주면 실패</text>
+
+  <rect x="374" y="224" width="160" height="76" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="454" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">이름 검사</text>
+  <text x="454" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">앞 / 뗌 · '..' 거부</text>
+  <text x="454" y="288" text-anchor="middle" font-size="13" fill="#9d0208">-P 면 둘 다 끈다</text>
+
+  <rect x="192" y="224" width="160" height="76" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="272" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">위치·이름 바꾸기</text>
+  <text x="272" y="270" text-anchor="middle" font-size="13" fill="#1b1b1b">-C · --strip-components</text>
+  <text x="272" y="288" text-anchor="middle" font-size="13" fill="#1b1b1b">--transform</text>
+
+  <rect x="20" y="224" width="150" height="76" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="95" y="250" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">덮어쓰기</text>
+  <text x="95" y="270" text-anchor="middle" font-size="13" fill="#9d0208">기본은 덮는다</text>
+  <text x="95" y="288" text-anchor="middle" font-size="13" fill="#1b1b1b">-k · --skip-old-files</text>
+
+  <line x1="738" y1="262" x2="724" y2="262" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="724,257 716,262 724,267" fill="#495057"/>
+  <line x1="556" y1="262" x2="542" y2="262" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="542,257 534,262 542,267" fill="#495057"/>
+  <line x1="374" y1="262" x2="360" y2="262" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="360,257 352,262 360,267" fill="#495057"/>
+  <line x1="192" y1="262" x2="178" y2="262" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="178,257 170,262 178,267" fill="#495057"/>
+
+  <!-- -P 로 만든 것을 -P 로 풀면 -->
+  <rect x="192" y="330" width="524" height="50" rx="6" fill="#f8d7da" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="454" y="352" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">-P 로 만들고 -P 로 풀면 이름 그대로의 자리에 쓴다</text>
+  <text x="454" y="371" text-anchor="middle" font-size="13" fill="#1b1b1b">/… 는 그 절대경로의 파일을, ../… 는 푸는 폴더 바깥의 파일을 덮는다 (실습 4·5장)</text>
+  <line x1="454" y1="300" x2="454" y2="330" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <text x="20" y="412" font-size="13" fill="#495057">블록·레코드 크기는 설치판 --help 와 --show-defaults(-b20), 이름 처리는 매뉴얼의 --absolute-names 설명.</text>
+</svg>
