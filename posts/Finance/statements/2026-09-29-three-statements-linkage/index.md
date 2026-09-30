@@ -135,8 +135,9 @@ K-IFRS 제1001호 '재무제표 표시'의 전체 재무제표 조항(문단 10)
 
 ## 참고 자료
 
-- [K-IFRS 제1001호 재무제표 표시 — 문단 10 전체 재무제표, 문단 106 자본변동표](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1001) (기준서 원문 게재)
-- [K-IFRS 제1007호 현금흐름표 — 문단 7 현금성자산, 문단 10 활동 구분, 문단 18 직접법·간접법, 문단 33·34 이자·배당, 문단 45 조정](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1007) (기준서 원문 게재)
+- [한국회계기준원 — 시행 중인 K-IFRS 기준서 목록](https://www.kasb.or.kr/front/board/ingAccountingList.do) — 기준서 원문(PDF·HWP) 발행처. 아래 전재 사이트는 문단을 바로 열기 위한 편의 링크다
+- [K-IFRS 제1001호 재무제표 표시 — 문단 10 전체 재무제표, 문단 106 자본변동표](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1001) (제3자 전재)
+- [K-IFRS 제1007호 현금흐름표 — 문단 7 현금성자산, 문단 10 활동 구분, 문단 18 직접법·간접법, 문단 33·34 이자·배당, 문단 45 조정](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1007) (제3자 전재)
 - [IFRS Foundation — IAS 1 Presentation of Financial Statements](https://www.ifrs.org/issued-standards/list-of-standards/ias-1-presentation-of-financial-statements/)
 - [IFRS Foundation — IAS 7 Statement of Cash Flows](https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/)
 - [금융위원회 보도자료 — 27년부터 K-IFRS 손익계산서가 변경 (2025-12-18)](https://www.fsc.go.kr/no010101/85886)

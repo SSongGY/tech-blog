@@ -113,9 +113,10 @@ topic_id: fin-006
 
 ## 참고 자료
 
-- [K-IFRS 제1001호 재무제표 표시 — 문단 27 발생기준, 68 정상영업주기](https://accountingwiki.co.kr/standards/1001) (기준서 원문 게재)
-- [K-IFRS 제1007호 현금흐름표 — 문단 10 활동 구분, 20 간접법 조정 항목, 33·34 이자·배당 분류](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1007) (기준서 원문 게재)
-- [K-IFRS 제1115호 고객과의 계약에서 생기는 수익 — 문단 31 통제 이전 시 수익 인식](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1115) (기준서 원문 게재)
+- [한국회계기준원 — 시행 중인 K-IFRS 기준서 목록](https://www.kasb.or.kr/front/board/ingAccountingList.do) — 기준서 원문(PDF·HWP) 발행처. 아래 전재 사이트는 문단을 바로 열기 위한 편의 링크다
+- [K-IFRS 제1001호 재무제표 표시 — 문단 27 발생기준, 68 정상영업주기](https://accountingwiki.co.kr/standards/1001) (제3자 전재)
+- [K-IFRS 제1007호 현금흐름표 — 문단 10 활동 구분, 20 간접법 조정 항목, 33·34 이자·배당 분류](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1007) (제3자 전재)
+- [K-IFRS 제1115호 고객과의 계약에서 생기는 수익 — 문단 31 통제 이전 시 수익 인식](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1115) (제3자 전재)
 - [금융위원회 보도자료 — 27년부터 K-IFRS 손익계산서가 변경 (2025-12-18)](https://www.fsc.go.kr/no010101/85886)
 - [IFRS Foundation — IAS 7 Statement of Cash Flows](https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/)
 - [IFRS Foundation — IFRS 15 Revenue from Contracts with Customers](https://www.ifrs.org/issued-standards/list-of-standards/ifrs-15-revenue-from-contracts-with-customers/)

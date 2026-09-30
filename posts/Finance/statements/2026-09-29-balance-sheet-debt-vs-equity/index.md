@@ -119,7 +119,8 @@ topic_id: fin-002
 
 ## 참고 자료
 
-- [재무보고를 위한 개념체계 — 문단 4.3 자산, 4.26 부채, 4.63 자본의 정의](https://www.samili.com/acc/Kijun/Kijunjomun.asp?code=316-1) (기준 원문 게재)
-- [K-IFRS 제1032호 금융상품: 표시 — 문단 35 이자·배당·손익의 회계처리](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1032) (기준서 원문 게재)
+- [한국회계기준원 — 시행 중인 K-IFRS 기준서 목록](https://www.kasb.or.kr/front/board/ingAccountingList.do) — 기준서 원문(PDF·HWP) 발행처. 아래 전재 사이트는 문단을 바로 열기 위한 편의 링크다
+- [재무보고를 위한 개념체계 — 문단 4.3 자산, 4.26 부채, 4.63 자본의 정의](https://www.samili.com/acc/Kijun/Kijunjomun.asp?code=316-1) (기준 원문 게재) (제3자 전재)
+- [K-IFRS 제1032호 금융상품: 표시 — 문단 35 이자·배당·손익의 회계처리](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1032) (제3자 전재)
 - [IFRS Foundation — Conceptual Framework for Financial Reporting](https://www.ifrs.org/issued-standards/list-of-standards/conceptual-framework/)
 - [IFRS Foundation — IAS 32 Financial Instruments: Presentation](https://www.ifrs.org/issued-standards/list-of-standards/ias-32-financial-instruments-presentation/)

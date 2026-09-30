@@ -122,9 +122,10 @@ topic_id: fin-005
 
 ## 참고 자료
 
-- [K-IFRS 제1001호 재무제표 표시 — 문단 82 당기손익 표시 항목, 97·98 중요한 항목의 별도 공시, 한138.2 영업이익](https://accountingwiki.co.kr/standards/1001) (기준서 원문 게재)
-- [K-IFRS 제1021호 환율변동효과 — 문단 23 후속 보고기간말 환산, 28 외환차이 인식](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1021) (기준서 원문 게재)
-- [K-IFRS 제1036호 자산손상 — 문단 58~64 손상차손 인식, 124 영업권 손상차손 환입 금지](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1036) (기준서 원문 게재)
+- [한국회계기준원 — 시행 중인 K-IFRS 기준서 목록](https://www.kasb.or.kr/front/board/ingAccountingList.do) — 기준서 원문(PDF·HWP) 발행처. 아래 전재 사이트는 문단을 바로 열기 위한 편의 링크다
+- [K-IFRS 제1001호 재무제표 표시 — 문단 82 당기손익 표시 항목, 97·98 중요한 항목의 별도 공시, 한138.2 영업이익](https://accountingwiki.co.kr/standards/1001) (제3자 전재)
+- [K-IFRS 제1021호 환율변동효과 — 문단 23 후속 보고기간말 환산, 28 외환차이 인식](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1021) (제3자 전재)
+- [K-IFRS 제1036호 자산손상 — 문단 58~64 손상차손 인식, 124 영업권 손상차손 환입 금지](https://www.samili.com/acc/IfrsKijun.asp?bCode=1978-1036) (제3자 전재)
 - [금융위원회 보도자료 — 27년부터 K-IFRS 손익계산서가 변경 (2025-12-18)](https://www.fsc.go.kr/no010101/85886)
 - [IFRS Foundation — IAS 1 Presentation of Financial Statements](https://www.ifrs.org/issued-standards/list-of-standards/ias-1-presentation-of-financial-statements/)
 - [IFRS Foundation — IAS 21 The Effects of Changes in Foreign Exchange Rates](https://www.ifrs.org/issued-standards/list-of-standards/ias-21-the-effects-of-changes-in-foreign-exchange-rates/)

@@ -22,7 +22,7 @@ verified: true
 > 부호화·복호해 검산했다. 계산 기록은 [code/output.txt](code/output.txt)에 있다. (§7)
 >
 > IEEE 802.5 원문은 유료라 직접 열람하지 못했다. 802.5 규약은 그 표준을 근거로 인용한
-> 미국 특허(US4675884A, 1987)와 2차 자료 2건(Held 2003, Teledyne LeCroy 2021)을 교차 확인했다.
+> 미국 특허(US4675884A, 1987)와 2차 자료 2건(Held 단행본, Teledyne LeCroy 2021)을 교차 확인했다.
 
 ---
 
@@ -117,6 +117,6 @@ verified: true
 - [IEEE 802.3cg Task Force, Draft D0.3 — Clause 147 10BASE-T1S PCS/PMA (2017-11)](https://www.ieee802.org/3/cg/public/Nov2017/8023cg_D0p3_T1S_revB.PDF) — 초안이며 최종 표준에서 절 번호가 달라졌을 수 있다
 - [US4675884A, Decoding circuit, Hitachi (1987-06-23 공개)](https://patents.google.com/patent/US4675884A/en) — IEEE 802.5 초안을 인용해 0·1·J·K를 정의
 - 2차 자료 (802.5 규약 교차 확인)
-  - Gilbert Held, [Enhancing LAN Performance §2.2 Token Ring Frame Formats](https://flylib.com/books/en/1.180.1.20/1/) (2003) — 시작·끝 구분자 패턴
+  - Gilbert Held, [Enhancing LAN Performance](https://www.routledge.com/Enhancing-LAN-Performance/Held/p/book/9780849319426) (CRC Press, ISBN 9780849319426) 중 Token Ring Frame Formats 절 — 시작·끝 구분자 패턴
   - [Teledyne LeCroy, "What Is Differential Manchester Encoding?"](https://blog.teledynelecroy.com/2021/11/what-is-differential-manchester-encoding.html) (2021-11-22)
   - [Wikipedia, Differential Manchester encoding](https://en.wikipedia.org/wiki/Differential_Manchester_encoding) — 별칭(Biphase Mark Code)과 사용처
