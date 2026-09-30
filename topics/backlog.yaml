@@ -3267,7 +3267,7 @@ topics:
     angle: "본업은 멀쩡한데 순이익이 적자인 회사. 영업외손익·금융비용·일회성 손실이 끼어드는 자리"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-006
     title: "현금흐름표 — 이익이 나는데 돈이 없는 이유"
     category: Finance
@@ -3278,7 +3278,7 @@ topics:
     angle: "발생주의와 현금주의의 차이. 매출채권과 재고가 늘면 이익과 현금이 어떻게 갈리는지 직접 계산해서"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-007
     title: "영업·투자·재무 활동 — 현금흐름 세 갈래 읽기"
     category: Finance

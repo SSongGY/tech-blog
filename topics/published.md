@@ -91,3 +91,5 @@
 | 2026-09-30 | bas-020 | Database | ALTER TABLE — 컬럼을 바꿀 때의 제약 |
 | 2026-09-30 | tb-008 | Database | Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN |
 | 2026-09-30 | pe-028 | PE | 클라우드 서비스 모델과 책임 공유 |
+| 2026-09-30 | fin-005 | Finance | 영업이익과 당기순이익이 크게 벌어질 때 |
+| 2026-09-30 | fin-006 | Finance | 현금흐름표 — 이익이 나는데 돈이 없는 이유 |
