@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">영업이익 40에서 당기순이익까지 — 가나전자 (가상, 억원)</text>
+  <line x1="540" y1="52" x2="540" y2="430" stroke="#495057" stroke-width="1"/>
+  <text x="540" y="48" text-anchor="middle" font-size="13" fill="#495057">0</text>
+
+  <text x="20" y="81" font-size="13" font-weight="bold" fill="#1b1b1b">영업이익</text>
+  <text x="250" y="81" text-anchor="end" font-size="13" fill="#1b1b1b">40</text>
+  <rect x="540" y="64" width="260" height="24" fill="#2d6a4f"/>
+
+  <text x="20" y="121" font-size="13" fill="#1b1b1b">+ 금융수익</text>
+  <text x="250" y="121" text-anchor="end" font-size="13" fill="#1b1b1b">+2</text>
+  <rect x="800" y="104" width="13" height="24" fill="#d8f3dc" stroke="#2d6a4f"/>
+
+  <text x="20" y="161" font-size="13" fill="#1b1b1b">− 이자비용</text>
+  <text x="250" y="161" text-anchor="end" font-size="13" fill="#9d0208">−18</text>
+  <rect x="696" y="144" width="117" height="24" fill="#fde2e4" stroke="#9d0208"/>
+  <text x="688" y="161" text-anchor="end" font-size="13" fill="#9d0208">반복·현금 유출</text>
+
+  <text x="20" y="201" font-size="13" fill="#1b1b1b">− 외화환산손실</text>
+  <text x="250" y="201" text-anchor="end" font-size="13" fill="#b45309">−30</text>
+  <rect x="501" y="184" width="195" height="24" fill="#fff3cd" stroke="#b45309"/>
+  <text x="598.5" y="201" text-anchor="middle" font-size="13" fill="#b45309">환율 1,300 → 1,420원</text>
+
+  <text x="20" y="241" font-size="13" fill="#1b1b1b">− 영업권 손상차손</text>
+  <text x="250" y="241" text-anchor="end" font-size="13" fill="#b45309">−25</text>
+  <rect x="338.5" y="224" width="162.5" height="24" fill="#fff3cd" stroke="#b45309"/>
+  <text x="419.75" y="241" text-anchor="middle" font-size="13" fill="#b45309">인수한 자회사</text>
+
+  <text x="20" y="281" font-size="13" fill="#1b1b1b">− 지분법손실</text>
+  <text x="250" y="281" text-anchor="end" font-size="13" fill="#b45309">−5</text>
+  <rect x="306" y="264" width="32.5" height="24" fill="#fff3cd" stroke="#b45309"/>
+  <text x="346" y="281" font-size="13" fill="#b45309">관계기업</text>
+
+  <text x="20" y="321" font-size="13" font-weight="bold" fill="#1b1b1b">법인세비용차감전순이익</text>
+  <text x="250" y="321" text-anchor="end" font-size="13" fill="#9d0208">−36</text>
+  <rect x="306" y="304" width="234" height="24" fill="#9d0208"/>
+
+  <text x="20" y="361" font-size="13" fill="#1b1b1b">+ 법인세 효과 (20% 가정)</text>
+  <text x="250" y="361" text-anchor="end" font-size="13" fill="#1b1b1b">+7.2</text>
+  <rect x="306" y="344" width="46.8" height="24" fill="#e9ecef" stroke="#495057"/>
+
+  <text x="20" y="401" font-size="13" font-weight="bold" fill="#1b1b1b">당기순이익</text>
+  <text x="250" y="401" text-anchor="end" font-size="13" font-weight="bold" fill="#9d0208">−28.8</text>
+  <rect x="352.8" y="384" width="187.2" height="24" fill="#9d0208"/>
+
+  <line x1="20" y1="440" x2="860" y2="440" stroke="#ced4da" stroke-width="1"/>
+  <text x="20" y="471" font-size="13" font-weight="bold" fill="#1b1b1b">비교: 다라물산 당기순이익</text>
+  <text x="250" y="471" text-anchor="end" font-size="13" font-weight="bold" fill="#1b1b1b">31.2</text>
+  <rect x="540" y="454" width="202.8" height="24" fill="#2d6a4f"/>
+  <text x="532" y="471" text-anchor="end" font-size="13" fill="#495057">영업이익 40, 이자 3, 그 밖 없음</text>
+
+  <rect x="20" y="506" width="16" height="14" fill="#fde2e4" stroke="#9d0208"/>
+  <text x="42" y="518" font-size="13" fill="#495057">해마다 반복되고 현금이 나가는 항목</text>
+  <rect x="300" y="506" width="16" height="14" fill="#fff3cd" stroke="#b45309"/>
+  <text x="322" y="518" font-size="13" fill="#495057">현금이 나가지 않았고 해마다 크기·부호가 바뀌는 항목</text>
+  <text x="20" y="544" font-size="13" fill="#495057">막대 길이는 금액에 비례한다. 영업이익이 같은 두 회사가 영업이익 아래에서 60억 차이로 갈린다.</text>
+</svg>
