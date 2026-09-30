@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **106편** · 갱신 2026-09-30
+총 **109편** · 갱신 2026-09-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 20편
+## DB문법 (basics) — 21편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [VIEW — 만들고 쓰는 법, 그리고 한계](posts/Database/sql-basics/2026-09-30-sqlite-view-updatable/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [ALTER TABLE — 컬럼을 바꿀 때의 제약](posts/Database/sql-basics/2026-09-30-alter-table-sqlite-limits/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [UPDATE — 조건 없는 UPDATE를 막는 습관](posts/Database/sql-basics/2026-09-29-update-where-count-first/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [INSERT — 단건, 다건, SELECT로 넣기](posts/Database/sql-basics/2026-09-29-insert-single-multi-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -42,11 +43,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 41편
+## 기술사 (pe) — 42편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
+| 2026-09-30 | [컨테이너와 가상머신 — 격리 수준의 차이](posts/PE/emerging-tech/2026-09-30-container-vs-vm-isolation/index.md) | 중급 | NIST SP 800-125 (2011-01), NIST SP 800-190 (2017-09), Linux man-pages 6.19 (2026-02-08) | 문서 근거 |
 | 2026-09-30 | [클라우드 서비스 모델과 책임 공유](posts/PE/emerging-tech/2026-09-30-cloud-service-models-shared-responsibility/index.md) | 입문 | NIST SP 800-145 (2011-09), NIST SP 800-146 (2012-05), Microsoft Learn Shared responsibility in the cloud (2026-08-24), AWS Shared Responsibility Model (2026-09 확인) | 문서 근거 |
 | 2026-09-30 | [AI-BOM — SPDX 3.0 AI 프로필과 CycloneDX ML-BOM](posts/PE/software-engineering/2026-09-30-ai-bom-spdx-cyclonedx/index.md) | 중급 | SPDX 3.0.1 (2024), CycloneDX 1.6 = ECMA-424 1판 (2024-06), NTIA SBOM Minimum Elements (2021-07) | 문서 근거 |
 | 2026-09-29 | [WBS와 범위 기준선 — 100% 규칙, 작업 패키지, 통제 계정](posts/PE/it-management/2026-09-29-wbs-scope-baseline-control-account/index.md) | 중급 | ISO 21511:2018, NASA/SP-2016-3404/REV1 (2018-01), DoD EVMSIG (2019-03-14), PMI Lexicon of Project Management Terms 4.0 (2024) | 문서 근거 |
@@ -88,10 +90,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 7편
+## 리눅스 (linux) — 8편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-09-30 | [tar와 gzip — 압축과 해제, 그리고 옵션 순서](posts/Linux/command/2026-09-30-tar-gzip-options-absolute-path/index.md) | 입문 | GNU tar 1.35, gzip 1.14, GNU bash 5.3.9 (Git Bash), Windows 11 | 실행 검증 |
 | 2026-09-29 | [cut, paste, tr — 텍스트를 칼럼으로 다루기](posts/Infra/linux/2026-09-29-cut-paste-tr-columns/index.md) | 중급 | GNU coreutils 8.32 (cut, paste, tr), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-28 | [xargs — 파이프로 인자를 넘기는 법](posts/Linux/command/2026-09-28-xargs-args-parallel-null/index.md) | 중급 | GNU findutils 4.10.0 (xargs), GNU bash 5.3.9 (Git Bash), Windows 11 | 실행 검증 |
 | 2026-09-28 | [sort, uniq, wc — 텍스트 집계 조합](posts/Linux/command/2026-09-28-sort-uniq-wc-aggregation/index.md) | 입문 | GNU coreutils 8.32 (sort, uniq, wc), bash 5.3.9, Windows 11 | 실행 검증 |

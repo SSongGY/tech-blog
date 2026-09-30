@@ -927,7 +927,7 @@ topics:
     difficulty: 입문
     angle: "뷰를 통한 갱신이 되는 조건과 안 되는 조건"
     code: python
-    status: todo
+    status: done
   - id: bas-022
     title: "트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT"
     category: Database
@@ -1194,7 +1194,7 @@ topics:
     difficulty: 중급
     angle: "하이퍼바이저와 컨테이너 런타임의 위치를 도식으로"
     code: none
-    status: todo
+    status: done
   - id: pe-030
     title: "블록체인 합의 알고리즘 — PoW, PoS, PBFT"
     category: PE
@@ -1640,7 +1640,7 @@ topics:
     difficulty: 입문
     angle: "절대경로가 들어간 아카이브를 푸는 위험"
     code: shell
-    status: todo
+    status: done
   - id: lx-016
     title: "rsync — 증분 전송과 --delete의 위험"
     category: Linux
