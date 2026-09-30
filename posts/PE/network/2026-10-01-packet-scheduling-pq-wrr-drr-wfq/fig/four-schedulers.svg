@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">패킷 스케줄링 — 같은 큐 구조, 다른 선택 규칙</text>
+
+  <!-- 공통 구조 -->
+  <text x="30" y="70" font-size="14" font-weight="bold" fill="#333">가. 공통 구조</text>
+
+  <text x="42" y="152" font-size="13" fill="#333">도착 패킷</text>
+  <line x1="112" y1="147" x2="146" y2="147" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="150" y="112" width="120" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="210" y="142" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">분류기</text>
+  <text x="210" y="164" font-size="13" fill="#555" text-anchor="middle">흐름·클래스 식별</text>
+
+  <line x1="270" y1="147" x2="316" y2="104" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="270" y1="147" x2="316" y2="147" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="270" y1="147" x2="316" y2="190" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="320" y="88" width="200" height="32" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="420" y="109" font-size="13" fill="#1b1b1b" text-anchor="middle">큐 1</text>
+  <rect x="320" y="131" width="200" height="32" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="420" y="152" font-size="13" fill="#1b1b1b" text-anchor="middle">큐 2</text>
+  <rect x="320" y="174" width="200" height="32" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="420" y="195" font-size="13" fill="#1b1b1b" text-anchor="middle">큐 n</text>
+
+  <line x1="520" y1="104" x2="576" y2="140" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="520" y1="147" x2="576" y2="147" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="520" y1="190" x2="576" y2="154" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <rect x="580" y="112" width="130" height="70" rx="6" fill="#eef1f7" stroke="#3b3b3b" stroke-width="1.8"/>
+  <text x="645" y="142" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">스케줄러</text>
+  <text x="645" y="164" font-size="13" fill="#555" text-anchor="middle">다음 큐 선택</text>
+
+  <line x1="710" y1="147" x2="744" y2="147" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="750" y="152" font-size="13" fill="#333">출력 링크 r</text>
+
+  <line x1="645" y1="182" x2="645" y2="236" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="655" y="226" font-size="13" fill="#555">선택 규칙이 기법을 가른다 ↓</text>
+
+  <!-- 네 가지 규칙 -->
+  <text x="30" y="264" font-size="14" font-weight="bold" fill="#333">나. 스케줄러의 선택 규칙 4가지</text>
+
+  <rect x="30" y="282" width="400" height="92" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="308" font-size="14" font-weight="bold" fill="#b45309">① PQ — 엄격 우선순위</text>
+  <text x="46" y="332" font-size="13" fill="#333">가장 높은 순위의 비어 있지 않은 큐를 먼저</text>
+  <text x="46" y="354" font-size="13" fill="#333">상태: 없음 · 약점: 낮은 순위 큐의 기아</text>
+
+  <rect x="450" y="282" width="400" height="92" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="466" y="308" font-size="14" font-weight="bold" fill="#b45309">② WRR — 패킷 수 가중 순환</text>
+  <text x="466" y="332" font-size="13" fill="#333">라운드마다 큐 i 에서 wᵢ 개의 패킷</text>
+  <text x="466" y="354" font-size="13" fill="#333">상태: 가중치 · 약점: 패킷 길이를 보지 않음</text>
+
+  <rect x="30" y="390" width="400" height="92" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="46" y="416" font-size="14" font-weight="bold" fill="#2d6a4f">③ DRR — 바이트 수 가중 순환</text>
+  <text x="46" y="440" font-size="13" fill="#333">카운터 += Quantumᵢ, 머리 패킷 ≤ 카운터면 전송</text>
+  <text x="46" y="462" font-size="13" fill="#333">상태: Quantum·DeficitCounter · 패킷당 O(1)</text>
+
+  <rect x="450" y="390" width="400" height="92" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="466" y="416" font-size="14" font-weight="bold" fill="#2d6a4f">④ WFQ — GPS 가상 종료 태그</text>
+  <text x="466" y="440" font-size="13" fill="#333">F = max(F이전, V(a)) + L/φ 가 가장 작은 패킷</text>
+  <text x="466" y="462" font-size="13" fill="#333">상태: 가상 시간·태그 · 패킷당 O(log n)</text>
+
+  <text x="30" y="506" font-size="13" fill="#555">주황: 흐름 간 공정성이 깨질 수 있는 규칙 / 초록: 가변 길이 패킷에서도 바이트 몫을 가중치대로 맞추는 규칙</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>
