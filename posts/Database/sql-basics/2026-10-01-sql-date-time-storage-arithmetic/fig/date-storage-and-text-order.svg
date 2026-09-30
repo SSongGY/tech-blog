@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">날짜를 저장하는 세 형태와, 글자 순서로 비교할 때 생기는 일</text>
+
+  <!-- 위: 세 형태 -->
+  <text x="20" y="64" font-size="14" font-weight="bold" fill="#495057">같은 순간(UTC 2026-10-01 08:00:00)을 담는 세 형태</text>
+
+  <rect x="20" y="78" width="250" height="78" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="145" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">TEXT — ISO 8601</text>
+  <text x="145" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">'2026-10-01 08:00:00'</text>
+  <text x="145" y="144" text-anchor="middle" font-size="13" fill="#495057">형식이 같아야 글자 순서가 맞다</text>
+
+  <rect x="315" y="78" width="250" height="78" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">REAL — 율리우스 일</text>
+  <text x="440" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">2461314.8333333335</text>
+  <text x="440" y="144" text-anchor="middle" font-size="13" fill="#495057">빼면 일 수</text>
+
+  <rect x="610" y="78" width="250" height="78" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="735" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">INTEGER — 유닉스 시각</text>
+  <text x="735" y="124" text-anchor="middle" font-size="13" fill="#1b1b1b">1790841600</text>
+  <text x="735" y="144" text-anchor="middle" font-size="13" fill="#495057">빼면 초 수</text>
+
+  <line x1="270" y1="117" x2="307" y2="117" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="307,112 315,117 307,122" fill="#495057"/>
+  <line x1="565" y1="117" x2="602" y2="117" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="602,112 610,117 602,122" fill="#495057"/>
+  <text x="292" y="176" text-anchor="middle" font-size="13" fill="#1b1b1b">julianday()</text>
+  <text x="588" y="176" text-anchor="middle" font-size="13" fill="#1b1b1b">unixepoch()</text>
+  <text x="440" y="198" text-anchor="middle" font-size="13" fill="#495057">숫자에서 글자로는 datetime(값) · datetime(값, 'unixepoch') — 수식어 없이 넘긴 숫자는 율리우스 일로 읽는다</text>
+
+  <!-- 아래: 글자 순서 축 -->
+  <text x="20" y="240" font-size="14" font-weight="bold" fill="#495057">TEXT 로 저장한 값이 ORDER BY · BETWEEN 에서 놓이는 자리 (글자 순서)</text>
+
+  <line x1="40" y1="300" x2="850" y2="300" stroke="#495057" stroke-width="2"/>
+  <polygon points="850,295 860,300 850,305" fill="#495057"/>
+
+  <circle cx="90" cy="300" r="5" fill="#1b1b1b"/>
+  <text x="90" y="324" text-anchor="middle" font-size="13" fill="#1b1b1b">'2026-09-01'</text>
+
+  <circle cx="300" cy="300" r="6" fill="#9d0208"/>
+  <text x="300" y="282" text-anchor="middle" font-size="13" fill="#9d0208">'2026-09-30'</text>
+
+  <circle cx="400" cy="300" r="5" fill="#1b1b1b"/>
+  <text x="400" y="324" text-anchor="middle" font-size="13" fill="#1b1b1b">'2026-09-30 00:00:00'</text>
+
+  <circle cx="560" cy="300" r="5" fill="#1b1b1b"/>
+  <text x="560" y="346" text-anchor="middle" font-size="13" fill="#1b1b1b">'2026-09-30 23:59:59'</text>
+
+  <circle cx="690" cy="300" r="6" fill="#2d6a4f"/>
+  <text x="690" y="282" text-anchor="middle" font-size="13" fill="#2d6a4f">'2026-10-01'</text>
+
+  <circle cx="800" cy="300" r="5" fill="#b45309"/>
+  <text x="800" y="324" text-anchor="middle" font-size="13" fill="#b45309">'2026-9-5 …'</text>
+
+  <!-- BETWEEN 구간 -->
+  <line x1="90" y1="372" x2="300" y2="372" stroke="#9d0208" stroke-width="3"/>
+  <line x1="90" y1="364" x2="90" y2="380" stroke="#9d0208" stroke-width="2"/>
+  <line x1="300" y1="364" x2="300" y2="380" stroke="#9d0208" stroke-width="2"/>
+  <text x="310" y="377" font-size="13" fill="#9d0208">BETWEEN '2026-09-01' AND '2026-09-30' — 30일 자정 이후는 전부 빠진다</text>
+
+  <!-- 반열림 구간 -->
+  <line x1="90" y1="404" x2="686" y2="404" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="90" y1="396" x2="90" y2="412" stroke="#2d6a4f" stroke-width="2"/>
+  <circle cx="690" cy="404" r="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="700" y="409" font-size="13" fill="#2d6a4f">&gt;= 09-01</text>
+  <text x="700" y="425" font-size="13" fill="#2d6a4f">AND &lt; 10-01</text>
+
+  <text x="20" y="444" font-size="13" fill="#b45309">'2026-9-5' 는 여섯째 글자 '9' 가 '1' 보다 커서 10월보다 뒤로 간다. 날짜 함수는 이 형식을 읽지 못해 NULL 을 낸다.</text>
+</svg>
