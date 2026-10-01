@@ -29,7 +29,9 @@ description: 주식 용어와 재무제표 읽는 법을 회차당 2편 정리�
 1. 겹침 확인 — `mcp__scheduled-tasks__list_task_runs` 로 `tech-blog-daily`·
    `tech-blog-exam`·`tech-blog-concept` 를 본다. `running` 인데 `started_at` 이
    3시간을 넘었으면 돌고 있는 게 아니라 멈춘 것이다. `PushNotification` 으로
-   알리고 오늘은 건너뛴다. 저장소는 건드리지 않는다.
+   알리되 터미널이 켜져 있으면 전송되지 않으므로 **보고 맨 앞에도 같은 내용을
+   적는다.** 그리고 **오늘 회차는 그대로 쓴다** — `git add -A` 를 쓰지 않으므로
+   그 세션이 쓰다 만 폴더가 내 커밋에 섞이지 않는다.
 2. `python scripts/blog.py pick-finance` — 백로그 순서가 곧 학습 순서다.
    재무제표 세 장 → 비율 → 밸류에이션. 앞질러 고르지 않는다.
 3. 조사 — 회계 기준은 K-IFRS 기준서·금융감독원 회계포털·한국거래소 규정을

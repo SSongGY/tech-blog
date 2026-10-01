@@ -1105,16 +1105,35 @@ VERIFICATION_LABEL = {
 }
 
 
+def tracked_posts() -> set[str] | None:
+    """git 이 추적 중인 index.md 경로들. git 을 못 부르면 None 이다."""
+    try:
+        done = subprocess.run(["git", "ls-files", "posts/**/index.md"], cwd=ROOT,
+                              capture_output=True, text=True, check=True,
+                              encoding="utf-8", errors="replace")
+    except (OSError, subprocess.SubprocessError):
+        return None  # git 이 없으면 예전처럼 전부 넣는다
+    return {line.strip() for line in done.stdout.splitlines() if line.strip()}
+
+
 def cmd_index(args: argparse.Namespace) -> int:
     """글 목록 페이지를 다시 만든다.
 
     글이 카테고리 폴더 여러 단계 아래에 흩어져 있어 폴더를 헤집지 않고는 볼 수가 없다.
     GitHub에서 바로 눌러 들어갈 수 있는 목록을 한 장으로 만든다.
     """
+    tracked = tracked_posts()
     entries: list[dict] = []
+    skipped = []
     for path in POSTS_DIR.glob("**/index.md"):
         meta = read_meta(path)
         if not meta:
+            continue
+        # 커밋되지 않은 글은 아직 발행된 것이 아니다. 목록에 넣으면 다른 회차가
+        # 쓰다 만 글까지 올라가고, 그 회차가 멈추면 "(미완)" 줄이 남는다.
+        # 멈춘 회차가 그 줄을 손으로 지우려다 권한 앞에서 선 적이 있다.
+        if tracked is not None and path.relative_to(ROOT).as_posix() not in tracked:
+            skipped.append(path.parent.relative_to(POSTS_DIR))
             continue
         entries.append({"meta": meta, "path": path})
 
@@ -1170,6 +1189,10 @@ def cmd_index(args: argparse.Namespace) -> int:
 
     INDEX_PATH.write_text("".join(lines), encoding="utf-8")
     print(f"생성: {INDEX_PATH.relative_to(ROOT)} ({len(entries)}편)")
+    if skipped:
+        print(f"  커밋 안 된 글 {len(skipped)}편은 넣지 않았다 — 커밋한 뒤 다시 돌린다")
+        for folder in skipped:
+            print(f"    {folder}")
     return 0
 
 

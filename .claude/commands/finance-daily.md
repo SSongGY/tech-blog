@@ -98,7 +98,10 @@ python scripts/blog.py done fin-001
 글 하나를 한 커밋으로 나눈다.
 
 ```bash
-git add -A
+# 이번 회차가 만든 폴더만 이름을 대고, 나머지는 추적 중인 파일의 수정만 집는다.
+# git add -A 를 쓰면 다른 회차가 쓰다 만 폴더까지 올라간다.
+git add posts/<카테고리>/<...>/
+git add -u
 git commit -F - <<'MSG'
 post: <제목>
 
