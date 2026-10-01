@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">재고를 사서 현금으로 돌려받기까지 — 2년차 영업순환 일수 (가상)</text>
+
+  <!-- 축: 0일 = x200, 1일 = 4.5px -->
+  <line x1="200" y1="290" x2="790" y2="290" stroke="#495057"/>
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <line x1="200" y1="290" x2="200" y2="296" stroke="#495057"/><text x="200" y="312">0일</text>
+    <line x1="425" y1="290" x2="425" y2="296" stroke="#495057"/><text x="425" y="312">50일</text>
+    <line x1="650" y1="290" x2="650" y2="296" stroke="#495057"/><text x="650" y="312">100일</text>
+  </g>
+
+  <!-- 단계 이름 -->
+  <g font-size="13" fill="#1b1b1b" text-anchor="middle">
+    <text x="200" y="70">재고 취득</text>
+    <text x="200" y="86" fill="#495057">(현금이 나간다)</text>
+  </g>
+
+  <!-- 고노상사: 재고 36.5일, 채권 56.3일 -->
+  <text x="188" y="135" text-anchor="end" font-size="14" font-weight="bold" fill="#1b1b1b">고노상사</text>
+  <rect x="200" y="110" width="164.3" height="40" fill="#e9ecef" stroke="#495057"/>
+  <text x="282" y="135" text-anchor="middle" font-size="13" fill="#1b1b1b">재고 36.5일</text>
+  <rect x="364.3" y="110" width="253.4" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="491" y="135" text-anchor="middle" font-size="13" fill="#2d6a4f">매출채권 56.3일</text>
+  <text x="626" y="135" font-size="13" font-weight="bold" fill="#2d6a4f">92.8일</text>
+
+  <!-- 도로상사: 재고 50.2일, 채권 76.0일 -->
+  <text x="188" y="215" text-anchor="end" font-size="14" font-weight="bold" fill="#1b1b1b">도로상사</text>
+  <rect x="200" y="190" width="225.9" height="40" fill="#e9ecef" stroke="#495057"/>
+  <text x="313" y="215" text-anchor="middle" font-size="13" fill="#1b1b1b">재고 50.2일</text>
+  <rect x="425.9" y="190" width="342" height="40" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="597" y="215" text-anchor="middle" font-size="13" fill="#9d0208">매출채권 76.0일</text>
+  <text x="776" y="215" font-size="13" font-weight="bold" fill="#9d0208">126.2일</text>
+
+  <!-- 판매·회수 시점 표시 -->
+  <line x1="364.3" y1="100" x2="364.3" y2="160" stroke="#495057" stroke-dasharray="4 3"/>
+  <text x="364.3" y="96" text-anchor="middle" font-size="13" fill="#495057">판매</text>
+  <line x1="425.9" y1="180" x2="425.9" y2="240" stroke="#495057" stroke-dasharray="4 3"/>
+  <text x="425.9" y="256" text-anchor="middle" font-size="13" fill="#495057">판매</text>
+  <text x="617.7" y="96" text-anchor="middle" font-size="13" fill="#495057">현금 회수</text>
+  <text x="767.9" y="256" text-anchor="middle" font-size="13" fill="#495057">현금 회수</text>
+
+  <!-- 설명 -->
+  <text x="200" y="342" font-size="13" fill="#1b1b1b">매출·이익은 두 회사가 같다. 도로상사는 같은 매출을 내는 데 현금이 33.4일 더 묶인다.</text>
+  <text x="200" y="362" font-size="13" fill="#495057">재고일수 = 365 ÷ (매출액 ÷ 평균재고자산), 회수일수 = 365 ÷ (매출액 ÷ 평균매출채권)</text>
+</svg>
