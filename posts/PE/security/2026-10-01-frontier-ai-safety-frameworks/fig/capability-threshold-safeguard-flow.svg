@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#fbfbf8"/>
+
+  <text x="30" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">프런티어 AI 안전 프레임워크 — 역량이 안전장치를 정하는 흐름</text>
+
+  <!-- ① 위험 영역 -->
+  <rect x="30" y="70" width="170" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="115" y="98" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 위험 영역·임계치</text>
+  <text x="115" y="122" font-size="13" fill="#555" text-anchor="middle">위협 모델로 미리 정함</text>
+
+  <line x1="200" y1="105" x2="226" y2="105" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- ② 역량 평가 -->
+  <rect x="230" y="70" width="170" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="315" y="98" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">② 역량 평가</text>
+  <text x="315" y="122" font-size="13" fill="#555" text-anchor="middle">자동 평가 + 심층 평가</text>
+
+  <line x1="400" y1="105" x2="436" y2="105" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 판정 -->
+  <polygon points="520,62 600,105 520,148 440,105" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="520" y="101" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">임계치</text>
+  <text x="520" y="119" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">도달?</text>
+
+  <line x1="600" y1="105" x2="676" y2="105" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arG)"/>
+  <text x="638" y="96" font-size="13" fill="#2d6a4f" text-anchor="middle">아니오</text>
+  <rect x="680" y="76" width="170" height="58" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="765" y="102" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">개발·배포 진행</text>
+  <text x="765" y="122" font-size="13" fill="#555" text-anchor="middle">다음 평가 주기까지</text>
+
+  <line x1="520" y1="148" x2="520" y2="196" stroke="#b45309" stroke-width="1.5" marker-end="url(#arO)"/>
+  <text x="530" y="178" font-size="13" fill="#b45309">예</text>
+
+  <!-- ③ 안전장치 -->
+  <rect x="400" y="200" width="240" height="78" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="520" y="228" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">③ 안전장치와 충분성 논증</text>
+  <text x="520" y="252" font-size="13" fill="#555" text-anchor="middle">오용 대비 · 오정렬 대비 · 보안 통제</text>
+  <text x="520" y="270" font-size="13" fill="#555" text-anchor="middle">잔여 위험을 문서로 평가</text>
+
+  <line x1="400" y1="239" x2="364" y2="239" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- ④ 거버넌스 결정 -->
+  <rect x="130" y="200" width="230" height="78" rx="6" fill="#eef1f7" stroke="#3b3b3b" stroke-width="1.8"/>
+  <text x="245" y="228" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">④ 거버넌스 결정</text>
+  <text x="245" y="252" font-size="13" fill="#555" text-anchor="middle">검토 기구 권고 → 경영진 결정</text>
+  <text x="245" y="270" font-size="13" fill="#555" text-anchor="middle">→ 이사회 감독</text>
+
+  <!-- 결정 결과 -->
+  <line x1="200" y1="278" x2="120" y2="326" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arG)"/>
+  <line x1="245" y1="278" x2="270" y2="326" stroke="#b45309" stroke-width="1.5" marker-end="url(#arO)"/>
+  <line x1="300" y1="278" x2="420" y2="326" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arR)"/>
+
+  <text x="40" y="350" font-size="13" font-weight="bold" fill="#2d6a4f">배포 승인</text>
+  <text x="200" y="350" font-size="13" font-weight="bold" fill="#b45309">조건 변경·안전장치 보강</text>
+  <text x="400" y="350" font-size="13" font-weight="bold" fill="#9d0208">배포 보류 / 개발 중단</text>
+
+  <!-- 되먹임 -->
+  <path d="M 765 76 L 765 54 L 315 54 L 315 66" fill="none" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="5 3" marker-end="url(#ar)"/>
+  <text x="620" y="49" font-size="13" fill="#555" text-anchor="middle">배포 후 모니터링 · 성능이 크게 오른 새 버전 → 다시 평가</text>
+
+  <!-- 용어 대응 -->
+  <text x="30" y="420" font-size="14" font-weight="bold" fill="#333">세 프레임워크의 용어</text>
+  <text x="30" y="446" font-size="13" fill="#333">OpenAI 준비성 v2: 추적 범주 · High/Critical · 역량 보고서 → 안전장치 보고서 → SAG 권고 → 경영진</text>
+  <text x="30" y="470" font-size="13" fill="#333">DeepMind FSF 3.1: 위험 영역 · TCL/CCL · 조기 경보 평가 → 잔여 위험 평가(CCL이면 안전성 논증) → 거버넌스 기능</text>
+  <text x="30" y="494" font-size="13" fill="#333">Anthropic RSP 3.4: 위협 모델 · 업계 권고 임계치 · 위험 보고서(3~6개월) → CEO·RSO 승인 → 이사회·LTBT</text>
+  <text x="30" y="522" font-size="13" fill="#9d0208">빨강: OpenAI는 Critical에 이르면 안전장치 기준을 정하기 전까지 추가 개발을 멈춘다</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+    <marker id="arO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>

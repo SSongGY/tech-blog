@@ -278,6 +278,8 @@ AI 활용이 대응의 두 축이다. 통제 상실은 **모델 자체가 감독
 
 > 관련 글: [하네스 엔지니어링 — 가이드·센서·세션 밖 상태로 에이전트를 통제하는 구조](../../emerging-tech/2026-09-28-harness-engineering-guides-sensors/index.md)
 
+> 개념 정리: [프런티어 AI 안전 프레임워크 — 역량 임계치와 안전장치로 배포를 정하는 구조](../../security/2026-10-01-frontier-ai-safety-frameworks/index.md)
+
 끝
 
 ## 답안 작성 메모
