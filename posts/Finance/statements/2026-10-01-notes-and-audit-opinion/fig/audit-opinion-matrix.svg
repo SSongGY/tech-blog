@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">감사의견 네 가지는 두 질문으로 갈린다</text>
+
+  <!-- 적정: 중요한 왜곡표시가 없다 -->
+  <rect x="230" y="52" width="620" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="540" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">적정의견</text>
+  <text x="540" y="92" text-anchor="middle" font-size="13" fill="#2d6a4f">중요한 왜곡표시가 없다고 판단 — 충분하고 적합한 감사증거를 얻었을 때</text>
+
+  <!-- 열 머리: 영향의 크기 -->
+  <text x="540" y="128" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">질문 2. 그 영향이 재무제표 전반에 미치는가</text>
+  <rect x="230" y="140" width="300" height="40" fill="#f1f3f5" stroke="#495057"/>
+  <text x="380" y="165" text-anchor="middle" font-size="13" fill="#1b1b1b">중요하지만 전반적이지 않다</text>
+  <rect x="550" y="140" width="300" height="40" fill="#f1f3f5" stroke="#495057"/>
+  <text x="700" y="165" text-anchor="middle" font-size="13" fill="#1b1b1b">중요하고 전반적이다</text>
+
+  <!-- 행 머리: 원인 -->
+  <text x="120" y="128" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">질문 1. 원인은</text>
+  <rect x="30" y="192" width="180" height="80" fill="#f1f3f5" stroke="#495057"/>
+  <text x="120" y="226" text-anchor="middle" font-size="13" fill="#1b1b1b">감사증거를 얻었고</text>
+  <text x="120" y="244" text-anchor="middle" font-size="13" fill="#1b1b1b">왜곡표시를 확인했다</text>
+  <rect x="30" y="284" width="180" height="80" fill="#f1f3f5" stroke="#495057"/>
+  <text x="120" y="318" text-anchor="middle" font-size="13" fill="#1b1b1b">감사증거를 충분히</text>
+  <text x="120" y="336" text-anchor="middle" font-size="13" fill="#1b1b1b">얻지 못했다 (범위 제한)</text>
+
+  <!-- 칸 -->
+  <rect x="230" y="192" width="300" height="80" fill="#fff3bf" stroke="#b45309" stroke-width="1.5"/>
+  <text x="380" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">한정의견</text>
+  <text x="380" y="250" text-anchor="middle" font-size="13" fill="#b45309">그 항목을 빼면 적정 (문단 7(a))</text>
+
+  <rect x="550" y="192" width="300" height="80" fill="#fde2e1" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="700" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">부적정의견</text>
+  <text x="700" y="250" text-anchor="middle" font-size="13" fill="#9d0208">재무제표가 공정하지 않다 (문단 8)</text>
+
+  <rect x="230" y="284" width="300" height="80" fill="#fff3bf" stroke="#b45309" stroke-width="1.5"/>
+  <text x="380" y="320" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">한정의견</text>
+  <text x="380" y="342" text-anchor="middle" font-size="13" fill="#b45309">못 본 부분을 빼면 적정 (문단 7(b))</text>
+
+  <rect x="550" y="284" width="300" height="80" fill="#fde2e1" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="700" y="320" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">의견거절</text>
+  <text x="700" y="342" text-anchor="middle" font-size="13" fill="#9d0208">의견을 낼 근거가 없다 (문단 9)</text>
+
+  <!-- 범례 -->
+  <text x="30" y="396" font-size="13" fill="#1b1b1b">전반적 = 특정 계정에 국한되지 않거나, 국한되더라도 재무제표의 상당 부분이거나, 공시라면 이해에 근본적인 경우 (문단 5(a))</text>
+  <text x="30" y="418" font-size="13" fill="#495057">문단 번호는 ISA 705(개정) 기준. 계속기업 불확실성은 공시가 적절하면 의견을 바꾸지 않고 별도 문단으로 적는다 (ISA 570 문단 22)</text>
+</svg>
