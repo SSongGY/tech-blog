@@ -1,0 +1,73 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\network\2026-10-01-active-queue-management-red-codel
+# 명령      : python aqm_calc.py
+# 수행 시각 : 2026-10-01 17:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+== 1. RED 초기 표시 확률 p_b (min_th 5, max_th 15, max_p 0.02) ==
+  평균 큐     4  p_b = 0.0000
+  평균 큐     5  p_b = 0.0000
+  평균 큐   7.5  p_b = 0.0050
+  평균 큐    10  p_b = 0.0100
+  평균 큐  12.5  p_b = 0.0150
+  평균 큐  14.9  p_b = 0.0198
+  평균 큐    15  p_b = 1.0000
+  평균 큐    20  p_b = 1.0000
+
+== 2. 최종 확률 p_a — 평균 큐 10, p_b 0.01 에서 count 가 늘 때 ==
+  count   0  p_a = 0.0100
+  count  25  p_a = 0.0133
+  count  50  p_a = 0.0200
+  count  75  p_a = 0.0400
+  count  90  p_a = 0.1000
+  count  99  p_a = 1.0000
+  count 100  p_a = 1.0000
+
+== 3. 표시 간격 분포 — p_b 0.01, 표시 10,000번 ==
+  Method 1  평균   99.7  최대 1050  5개 이내 연속 표시  487번
+  Method 2  평균   50.4  최대  100  5개 이내 연속 표시  485번
+  이론값  Method 1 평균 1/p_b = 100,  Method 2 평균 (1/p_b + 1)/2 = 50.5, 최대 100
+
+== 4. EWMA 가중치 w_q 와 반응 속도 (§6.2: 1000 / 500 / 333) ==
+  w_q 0.001  평균이 0.63 에 닿기까지 1000개 도착
+  w_q 0.002  평균이 0.63 에 닿기까지 500개 도착
+  w_q 0.003  평균이 0.63 에 닿기까지 333개 도착
+
+== 5. 같은 큐 길이 50패킷(1500B)이 링크 속도별로 뜻하는 지연 ==
+      1 Mbps  50패킷 =   600.0 ms   CoDel TARGET 5 ms =    0.42 패킷
+     10 Mbps  50패킷 =    60.0 ms   CoDel TARGET 5 ms =    4.17 패킷
+    100 Mbps  50패킷 =     6.0 ms   CoDel TARGET 5 ms =   41.67 패킷
+   1000 Mbps  50패킷 =     0.6 ms   CoDel TARGET 5 ms =  416.67 패킷
+
+== 6. CoDel 제어 법칙 — 드롭 진입 후 다음 드롭까지의 간격 ==
+  count  1  간격  100.0 ms  누적   100.0 ms
+  count  2  간격   70.7 ms  누적   170.7 ms
+  count  3  간격   57.7 ms  누적   228.4 ms
+  count  4  간격   50.0 ms  누적   278.4 ms
+  count  5  간격   44.7 ms  누적   323.2 ms
+  count  6  간격   40.8 ms  누적   364.0 ms
+  count  7  간격   37.8 ms  누적   401.8 ms
+  count  8  간격   35.4 ms  누적   437.1 ms
+  count  9  간격   33.3 ms  누적   470.5 ms
+  count 10  간격   31.6 ms  누적   502.1 ms
+
+== 7. 체류 시간 흐름에 CoDel 상태 기계를 돌린 결과 ==
+
+  [좋은 큐: 80 ms 안에 빠지는 버스트] 드롭 0회
+
+  [나쁜 큐: 20 ms 체류가 서 있음, 450 ms 에 재진입] 드롭 10회
+       101 ms  count  1  (진입)
+       201 ms  count  2  (제어 법칙)
+       272 ms  count  3  (제어 법칙)
+       330 ms  count  4  (제어 법칙)
+       380 ms  count  5  (제어 법칙)
+       551 ms  count  4  (진입)
+       601 ms  count  5  (제어 법칙)
+       646 ms  count  6  (제어 법칙)
+       687 ms  count  7  (제어 법칙)
+       725 ms  count  8  (제어 법칙)

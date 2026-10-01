@@ -224,6 +224,7 @@ FIFO와 AQM으로, 혼잡이 생기는 저속 병목 구간은 클래스 기반 
 배치하고 QoS 정책(트래픽 분류·가중치)을 조직의 서비스 수준 목표와 맞춰 관리해야 한다.
 
 > 개념 정리: [패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ](../../network/2026-10-01-packet-scheduling-pq-wrr-drr-wfq/index.md)
+> · [능동 큐 관리(AQM) — RED와 CoDel](../../network/2026-10-01-active-queue-management-red-codel/index.md)
 
 끝
 
