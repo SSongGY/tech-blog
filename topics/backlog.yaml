@@ -575,7 +575,7 @@ topics:
     difficulty: 입문
     angle: "선언부·예외부 구조와 파라미터 모드(IN/OUT/INOUT)"
     code: sql
-    status: todo
+    status: done
   - id: tb-011
     title: "Tibero 7 외부 테이블 — 파일을 테이블처럼 읽기"
     category: Database
@@ -1804,7 +1804,8 @@ topics:
     angle: "재사용 단위가 커질수록 무엇을 얻고 무엇을 잃는지"
     code: none
     origin: manual
-    status: todo
+    status: blocked
+    blocked_note: 19시 개념 회차가 뼈대만 만들고 끊겼다. 다음에 처음부터 쓴다
   - id: pe-038
     title: "GoF 디자인 패턴 23개의 3분류"
     category: PE
@@ -2305,18 +2306,19 @@ topics:
     category: Database
     subcategory: sql-basics
     track: basics
-    tags: [sql, join, null, basics]
+    tags: [sql, join, "null", basics]
     difficulty: 입문
     angle: "바깥 조인으로 남긴 NULL 행을 WHERE가 다시 걸러내는 흔한 실수"
     code: python
     origin: manual
-    status: todo
+    status: blocked
+    blocked_note: bas-009(LEFT JOIN — 없는 쪽을 남기는 조인)가 ON/WHERE 자리, OR IS NULL 함정, 실행계획의 LEFT JOIN 강등까지 이미 다뤘다. 재탕이라 2026-10-01 19시에 보류 — 지울지 사람이 판단
   - id: db-018
     title: "COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유"
     category: Database
     subcategory: sql-basics
     track: basics
-    tags: [sql, aggregate, null, basics]
+    tags: [sql, aggregate, "null", basics]
     difficulty: 입문
     angle: "NULL을 세느냐 마느냐. COUNT(DISTINCT)까지 셋을 나란히"
     code: python
@@ -2327,7 +2329,7 @@ topics:
     category: Database
     subcategory: sql-basics
     track: basics
-    tags: [sql, null, three-valued-logic, basics]
+    tags: [sql, "null", three-valued-logic, basics]
     difficulty: 입문
     angle: "삼값 논리를 진리표로 보이고 IS NULL·COALESCE·IFNULL로 다루는 법"
     code: python
@@ -2354,7 +2356,7 @@ topics:
     angle: "SQLite는 기본이 꺼져 있다. 켜고 끄고를 비교해 무엇이 막히는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-026
     title: "NOT NULL과 DEFAULT — 값이 없을 때"
     category: Database
@@ -3333,7 +3335,7 @@ topics:
     angle: "계산식과 업종별로 기준이 달라지는 이유. 같은 200%가 제조업과 금융업에서 다르게 읽히는 것"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-012
     title: "수익성 비율 — ROE와 ROA는 무엇이 다른가"
     category: Finance
@@ -3344,7 +3346,7 @@ topics:
     angle: "분모가 자본이냐 자산이냐가 만드는 차이. 부채를 늘려 ROE를 올린 회사를 ROA가 어떻게 드러내는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-013
     title: "듀폰 분석 — ROE를 세 조각으로 쪼개기"
     category: Finance

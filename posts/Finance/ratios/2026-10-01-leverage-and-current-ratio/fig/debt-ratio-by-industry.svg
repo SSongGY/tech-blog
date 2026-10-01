@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">부채비율 200%를 업종 집계 옆에 놓으면</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">막대: 한국은행 2024년 1/4분기 외감기업 업종별 부채비율(합산 집계) · 점선: 가상 회사의 200%</text>
+
+  <!-- 축: 0% = x220, 1%p = 1.4px -->
+  <line x1="220" y1="290" x2="790" y2="290" stroke="#495057"/>
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <line x1="220" y1="290" x2="220" y2="296" stroke="#495057"/><text x="220" y="312">0%</text>
+    <line x1="360" y1="290" x2="360" y2="296" stroke="#495057"/><text x="360" y="312">100%</text>
+    <line x1="500" y1="290" x2="500" y2="296" stroke="#495057"/><text x="500" y="312">200%</text>
+    <line x1="640" y1="290" x2="640" y2="296" stroke="#495057"/><text x="640" y="312">300%</text>
+    <line x1="780" y1="290" x2="780" y2="296" stroke="#495057"/><text x="780" y="312">400%</text>
+  </g>
+
+  <g font-size="14" fill="#1b1b1b" text-anchor="end">
+    <text x="208" y="94">금속제품</text>
+    <text x="208" y="134">제조업 전체</text>
+    <text x="208" y="174">정보통신</text>
+    <text x="208" y="214">건설</text>
+    <text x="208" y="254">전기가스</text>
+  </g>
+  <rect x="220" y="76" width="75.5" height="26" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <rect x="220" y="116" width="98.4" height="26" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <rect x="220" y="156" width="110.7" height="26" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <rect x="220" y="196" width="223.9" height="26" fill="#e9ecef" stroke="#495057"/>
+  <rect x="220" y="236" width="492.1" height="26" fill="#fde2e1" stroke="#9d0208"/>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="303" y="94">53.9%</text>
+    <text x="326" y="134">70.3%</text>
+    <text x="339" y="174">79.1%</text>
+    <text x="452" y="214">159.9%</text>
+    <text x="720" y="254">351.5%</text>
+  </g>
+
+  <!-- 200% 기준선 -->
+  <line x1="500" y1="66" x2="500" y2="290" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="508" y="80" font-size="13" font-weight="bold" fill="#b45309">마바제조·사자제조·아자전력 200%</text>
+
+  <!-- 은행 -->
+  <rect x="220" y="336" width="570" height="72" fill="#f8f9fa" stroke="#495057" stroke-dasharray="4 3"/>
+  <text x="236" y="360" font-size="14" font-weight="bold" fill="#1b1b1b">차카은행(가상) 부채비율 1,150% — 축 밖</text>
+  <text x="236" y="381" font-size="13" fill="#495057">금융·보험업은 기업경영분석 집계 대상이 아니고, 재무상태표에 유동·비유동 구분도 없다.</text>
+  <text x="236" y="399" font-size="13" fill="#495057">감독 잣대는 부채비율이 아니라 자본 ÷ 위험가중자산(최저 총자본비율 8.0%)이다.</text>
+</svg>

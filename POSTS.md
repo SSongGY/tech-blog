@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **134편** · 갱신 2026-10-01
+총 **138편** · 갱신 2026-10-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 25편
+## DB문법 (basics) — 26편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [외래 키 — 참조 무결성과 ON DELETE](posts/Database/sql-basics/2026-10-01-sqlite-foreign-key-on-delete/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [숫자 타입과 반올림 — 돈을 다룰 때](posts/Database/sql-basics/2026-10-01-sql-numeric-types-rounding-money/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [날짜와 시간 다루기 — 저장과 연산](posts/Database/sql-basics/2026-10-01-sql-date-time-storage-arithmetic/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT](posts/Database/sql-basics/2026-09-30-transaction-commit-rollback-savepoint/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -34,10 +35,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 9편
+## DB기능 (product) — 10편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [Tibero 7 PSM — 저장 프로시저 기본 문법](posts/Database/tibero/2026-10-01-tibero7-psm-stored-procedure/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-30 | [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](posts/Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-30 | [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](posts/Database/tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-29 | [Tibero 7 옵티마이저 힌트 — 문법과 적용 확인](posts/Database/tibero/2026-09-29-tibero7-optimizer-hints/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -158,12 +160,14 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 10편
+## 주식·재무 (finance) — 12편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [수익성 비율 — ROE와 ROA는 무엇이 다른가](posts/Finance/ratios/2026-10-01-roe-vs-roa/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 지표 해설(2019.12) | 실행 검증 |
 | 2026-10-01 | [매출채권과 재고자산 — 자산인데 위험한 자산](posts/Finance/statements/2026-10-01-receivables-inventory-turnover/index.md) | 입문 | Python 3.13.5, K-IFRS 제1001호·제1002호·제1109호 | 실행 검증 |
 | 2026-10-01 | [주석과 감사보고서 — 본문보다 중요한 자리](posts/Finance/statements/2026-10-01-notes-and-audit-opinion/index.md) | 입문 | K-IFRS 제1001호·제1024호·제1037호, ISA 700·705(2016 개정)·570, 유가증권시장 상장규정(2025.7 개정) | 문서 근거 |
+| 2026-10-01 | [안정성 비율 — 부채비율과 유동비율](posts/Finance/ratios/2026-10-01-leverage-and-current-ratio/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호, 한국은행 기업경영분석 2024년 1/4분기 | 실행 검증 |
 | 2026-09-30 | [영업이익과 당기순이익이 크게 벌어질 때](posts/Finance/statements/2026-09-30-operating-vs-net-income-gap/index.md) | 입문 | Python 3.13.5, K-IFRS 제1001호·제1021호·제1036호 | 실행 검증 |
 | 2026-09-30 | [감가상각 — 현금이 나가지 않는 비용](posts/Finance/statements/2026-09-30-depreciation-non-cash-expense/index.md) | 입문 | Python 3.13.5, K-IFRS 제1016호·제1007호 | 실행 검증 |
 | 2026-09-30 | [영업·투자·재무 활동 — 현금흐름 세 갈래 읽기](posts/Finance/statements/2026-09-30-cash-flow-three-activities/index.md) | 입문 | Python 3.13.5, K-IFRS 제1007호 | 실행 검증 |

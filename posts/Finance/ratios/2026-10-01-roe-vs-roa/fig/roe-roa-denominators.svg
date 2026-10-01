@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 순이익을 어디로 나누는가 — ROA는 자산 전체, ROE는 자본만</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">두 가상 회사 모두 자산 1,000 · 영업이익 100 · 이자율 5% · 세율 20%. 기둥 높이는 금액에 비례</text>
+
+  <!-- 타파기계: 부채 200, 자본 800 (1단위 = 0.25px) -->
+  <text x="200" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">타파기계</text>
+  <rect x="140" y="90" width="120" height="50" fill="#e9ecef" stroke="#495057"/>
+  <text x="200" y="120" text-anchor="middle" font-size="13" fill="#1b1b1b">부채 200</text>
+  <rect x="140" y="140" width="120" height="200" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="200" y="245" text-anchor="middle" font-size="13" fill="#2d6a4f">자본 800</text>
+
+  <!-- 브래킷: ROA = 자산 전체, ROE = 자본 -->
+  <path d="M 270 90 h 10 v 250 h -10" fill="none" stroke="#495057"/>
+  <text x="290" y="200" font-size="13" fill="#1b1b1b">ROA 분모 1,000</text>
+  <text x="290" y="218" font-size="14" font-weight="bold" fill="#1b1b1b">ROA 7.2%</text>
+  <path d="M 130 140 h -10 v 200 h 10" fill="none" stroke="#2d6a4f"/>
+  <text x="112" y="235" text-anchor="end" font-size="13" fill="#2d6a4f">ROE 분모 800</text>
+  <text x="112" y="253" text-anchor="end" font-size="14" font-weight="bold" fill="#2d6a4f">ROE 9.0%</text>
+
+  <!-- 하나기계: 부채 700, 자본 300 -->
+  <text x="620" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">하나기계</text>
+  <rect x="560" y="90" width="120" height="175" fill="#e9ecef" stroke="#495057"/>
+  <text x="620" y="182" text-anchor="middle" font-size="13" fill="#1b1b1b">부채 700</text>
+  <rect x="560" y="265" width="120" height="75" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="620" y="307" text-anchor="middle" font-size="13" fill="#2d6a4f">자본 300</text>
+
+  <path d="M 690 90 h 10 v 250 h -10" fill="none" stroke="#495057"/>
+  <text x="710" y="200" font-size="13" fill="#1b1b1b">ROA 분모 1,000</text>
+  <text x="710" y="218" font-size="14" font-weight="bold" fill="#9d0208">ROA 5.2%</text>
+  <path d="M 550 265 h -10 v 75 h 10" fill="none" stroke="#2d6a4f"/>
+  <text x="532" y="298" text-anchor="end" font-size="13" fill="#2d6a4f">ROE 분모 300</text>
+  <text x="532" y="316" text-anchor="end" font-size="14" font-weight="bold" fill="#b45309">ROE 17.3%</text>
+
+  <!-- 분자: 영업이익에서 순이익까지 -->
+  <g font-size="13" fill="#1b1b1b">
+    <text x="60" y="380">타파기계 분자: 영업이익 100 − 이자 10 − 법인세 18 = 순이익 72</text>
+    <text x="60" y="402">하나기계 분자: 영업이익 100 − 이자 35 − 법인세 13 = 순이익 52</text>
+  </g>
+  <text x="60" y="426" font-size="13" fill="#495057">부채를 늘리면 순이익(분자)은 줄지만 자본(ROE 분모)이 더 빨리 줄어 ROE가 오른다. ROA 분모는 그대로다.</text>
+</svg>
