@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **128편** · 갱신 2026-10-01
+총 **131편** · 갱신 2026-10-01
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 24편
+## DB문법 (basics) — 25편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [숫자 타입과 반올림 — 돈을 다룰 때](posts/Database/sql-basics/2026-10-01-sql-numeric-types-rounding-money/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [날짜와 시간 다루기 — 저장과 연산](posts/Database/sql-basics/2026-10-01-sql-date-time-storage-arithmetic/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [트랜잭션 기본 — COMMIT, ROLLBACK, SAVEPOINT](posts/Database/sql-basics/2026-09-30-transaction-commit-rollback-savepoint/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [VIEW — 만들고 쓰는 법, 그리고 한계](posts/Database/sql-basics/2026-09-30-sqlite-view-updatable/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -47,13 +48,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 49편
+## 기술사 (pe) — 50편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-01 | [PMBOK 지식 영역과 프로세스 그룹](posts/PE/it-management/2026-10-01-pmbok-knowledge-areas-process-groups/index.md) | 중급 | PMBOK Guide 6th Edition (2017), PMBOK Guide 7th Edition (2021), PMBOK Guide 8th Edition (2025), PMI Process Groups: A Practice Guide (2022) | 문서 근거 |
 | 2026-10-01 | [패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ](posts/PE/network/2026-10-01-packet-scheduling-pq-wrr-drr-wfq/index.md) | 중급 | Shreedhar & Varghese, DRR, ACM SIGCOMM 1995, Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Katevenis et al., WRR, IEEE JSAC 1991, Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
 | 2026-10-01 | [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](posts/PE/network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md) | 심화 | NVIDIA DGX SuperPOD Reference Architecture H100 · GB200 (2025-11 갱신), IBTA RoCEv2 Annex A17 (2014), Guo et al., RDMA over Commodity Ethernet at Scale, SIGCOMM 2016, Narayanan et al., Megatron-LM, SC21 | 문서 근거 |
+| 2026-10-01 | [애자일과 폭포수 — 무엇을 기준으로 고르는가](posts/PE/software-engineering/2026-10-01-agile-vs-waterfall-selection-criteria/index.md) | 중급 | IEEE Std 610.12-1990, Royce (1970) WESCON, Boehm·Turner (2003) IEEE Computer 36(6), 애자일 선언문 (2001), 소프트웨어 진흥법 (2020-12-10 시행) | 문서 근거 |
 | 2026-09-30 | [오픈웨이트 모델과 오픈소스 AI 정의(OSAID 1.0)](posts/PE/emerging-tech/2026-09-30-open-weight-vs-osaid/index.md) | 중급 | OSI Open Source AI Definition 1.0 (2024-10-28), OSI Open Source Definition 1.9, EU AI Act (Regulation (EU) 2024/1689), Llama 3.1 Community License (2024-07-23), Model Openness Framework v6 (2024-10) | 문서 근거 |
 | 2026-09-30 | [머신러닝 모델 평가 지표 — 혼동행렬에서 정밀도와 재현율이 갈리는 곳](posts/PE/emerging-tech/2026-09-30-ml-evaluation-metrics-confusion-matrix/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 문서, Google Machine Learning Crash Course (2026-09-30 열람) | 실행 검증 |
 | 2026-09-30 | [LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬](posts/PE/system/2026-09-30-llm-parallelism-data-tensor-pipeline/index.md) | 중급 | Narayanan et al., Megatron-LM, SC21 (arXiv 2104.04473), Rajbhandari et al., ZeRO, SC20 (arXiv 1910.02054) | 문서 근거 |
@@ -115,10 +117,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 8편
+## 일반 (general) — 9편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-01 | [N+1 쿼리는 왜 반복해서 생기고 어떻게 잡아내는가](posts/Database/2026-10-01-n-plus-one-query-detection/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [데드락은 어떻게 만들어지고 SQLite는 누구에게 BUSY를 돌려주는가](posts/Database/2026-09-29-sqlite-deadlock-busy-victim/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [커서 기반 페이지네이션이 OFFSET을 이기는 지점 — SQLite 3.49.1로 잰 깊이별 비용](posts/Database/sqlite/2026-09-29-keyset-vs-offset-crossover/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |

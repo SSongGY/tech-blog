@@ -89,7 +89,7 @@ topics:
     difficulty: 입문
     angle: "쿼리 로그 카운터를 붙여 N+1을 자동 탐지하는 테스트를 작성"
     code: python
-    status: todo
+    status: done
   - id: db-008
     title: "커서 기반 페이지네이션이 OFFSET을 이기는 지점"
     category: Database
@@ -969,7 +969,7 @@ topics:
     difficulty: 입문
     angle: "부동소수점으로 금액을 더하면 틀어지는 것을 실제 값으로"
     code: python
-    status: todo
+    status: done
 
   # ========== 정보관리기술사 시험 과목 (track: pe) ==========
   # 기술사 답안 형태로 쓴다: 정의 → 등장 배경 → 구성요소 → 도식 → 비교 → 고려사항.
@@ -1793,7 +1793,7 @@ topics:
     angle: "규모·요구 변동성·계약 형태 세 축으로 갈리는 판단 기준"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-037
     title: "컴포넌트 기반 개발(CBD)과 소프트웨어 재사용 수준"
     category: PE
