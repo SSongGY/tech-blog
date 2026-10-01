@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">위험 기반 방법 선택 5단계 — 5요인으로 위험을 매기고, 더 큰 위험을 피하는 쪽을 고른다</text>
+
+  <!-- 5요인 -->
+  <rect x="20" y="60" width="200" height="190" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="120" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">5요인</text>
+  <text x="40" y="114" font-size="13" fill="#1b1b1b">1 규모 (Size)</text>
+  <text x="40" y="140" font-size="13" fill="#1b1b1b">2 중요도 (Criticality)</text>
+  <text x="40" y="166" font-size="13" fill="#1b1b1b">3 동적성 (Dynamism)</text>
+  <text x="40" y="192" font-size="13" fill="#1b1b1b">4 인력 (Personnel)</text>
+  <text x="40" y="218" font-size="13" fill="#1b1b1b">5 문화 (Culture)</text>
+
+  <line x1="220" y1="155" x2="262" y2="155" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="262,150 270,155 262,160" fill="#495057"/>
+
+  <!-- 1단계 -->
+  <rect x="270" y="110" width="190" height="90" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="365" y="138" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 위험 평가</text>
+  <text x="365" y="162" text-anchor="middle" font-size="13" fill="#1b1b1b">환경 · 애자일 · 계획 주도</text>
+  <text x="365" y="184" text-anchor="middle" font-size="13" fill="#495057">불확실하면 시제품으로 확인</text>
+
+  <line x1="460" y1="155" x2="502" y2="155" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="502,150 510,155 502,160" fill="#495057"/>
+
+  <!-- 2단계 -->
+  <polygon points="600,95 690,155 600,215 510,155" fill="#fff4e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="600" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 위험 비교</text>
+  <text x="600" y="172" text-anchor="middle" font-size="13" fill="#b45309">어느 쪽이 큰가</text>
+
+  <!-- 세 갈래 -->
+  <rect x="700" y="60" width="165" height="66" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="782" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">위험 기반 계획 주도</text>
+  <text x="782" y="108" text-anchor="middle" font-size="13" fill="#495057">애자일 위험이 클 때</text>
+
+  <rect x="700" y="184" width="165" height="66" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="782" y="210" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">위험 기반 애자일</text>
+  <text x="782" y="232" text-anchor="middle" font-size="13" fill="#495057">계획 주도 위험이 클 때</text>
+
+  <line x1="660" y1="135" x2="694" y2="100" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="690,96 700,93 696,103" fill="#495057"/>
+  <line x1="660" y1="175" x2="694" y2="210" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="696,207 700,217 690,214" fill="#495057"/>
+
+  <!-- 3단계 -->
+  <line x1="600" y1="215" x2="600" y2="292" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="595,292 600,300 605,292" fill="#495057"/>
+  <text x="590" y="254" text-anchor="end" font-size="13" fill="#495057">어느 쪽도 우세하지 않을 때</text>
+  <text x="590" y="274" text-anchor="end" font-size="13" fill="#495057">(부분마다 갈릴 때)</text>
+
+  <rect x="470" y="300" width="260" height="84" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="600" y="328" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 아키텍처 분석</text>
+  <text x="600" y="352" text-anchor="middle" font-size="13" fill="#1b1b1b">애자일로 할 부분을 구조로 격리</text>
+  <text x="600" y="372" text-anchor="middle" font-size="13" fill="#2d6a4f">격리한 곳은 애자일, 나머지는 계획 주도</text>
+
+  <!-- 4단계 -->
+  <line x1="600" y1="384" x2="600" y2="412" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="595,412 600,420 605,412" fill="#495057"/>
+  <path d="M 782 250 L 782 445 L 738 445" fill="none" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="738,440 730,445 738,450" fill="#495057"/>
+  <path d="M 865 93 L 872 93 L 872 475 L 738 475" fill="none" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="738,470 730,475 738,480" fill="#495057"/>
+
+  <rect x="470" y="420" width="260" height="84" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="600" y="448" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 생명주기 맞춤</text>
+  <text x="600" y="472" text-anchor="middle" font-size="13" fill="#1b1b1b">위험 완화 계획을 묶어</text>
+  <text x="600" y="492" text-anchor="middle" font-size="13" fill="#1b1b1b">전체 전략과 마일스톤을 정한다</text>
+
+  <!-- 5단계 -->
+  <line x1="470" y1="462" x2="408" y2="462" stroke="#495057" stroke-width="1.5"/>
+  <polygon points="408,457 400,462 408,467" fill="#495057"/>
+
+  <rect x="150" y="420" width="250" height="84" rx="6" fill="#f1f3f5" stroke="#495057" stroke-width="1.5"/>
+  <text x="275" y="448" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑤ 수행과 감시</text>
+  <text x="275" y="472" text-anchor="middle" font-size="13" fill="#1b1b1b">진척 · 위험을 보며</text>
+  <text x="275" y="492" text-anchor="middle" font-size="13" fill="#1b1b1b">균형과 프로세스를 재조정</text>
+
+  <!-- 되돌림 -->
+  <path d="M 150 462 L 60 462 L 60 258" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="55,258 60,250 65,258" fill="#b45309"/>
+  <text x="72" y="330" font-size="13" fill="#b45309">요인이 바뀌면</text>
+  <text x="72" y="348" font-size="13" fill="#b45309">다시 평가</text>
+
+  <text x="440" y="530" text-anchor="middle" font-size="13" fill="#495057">갈래 이름은 원문의 risk-based plan-driven / risk-based agile 을 옮긴 것이다. 점선 되돌림은 ⑤의 재조정을 그린 것이다</text>
+</svg>
