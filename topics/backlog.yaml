@@ -3311,7 +3311,7 @@ topics:
     angle: "회전율과 회전일수 계산. 자산이 늘었는데 왜 나쁜 신호일 수 있는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-010
     title: "주석과 감사보고서 — 본문보다 중요한 자리"
     category: Finance
@@ -3322,7 +3322,7 @@ topics:
     angle: "적정·한정·부적정·의견거절이 뜻하는 것. 우발부채·특수관계자 거래처럼 본문에 안 나오는 것들"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-011
     title: "안정성 비율 — 부채비율과 유동비율"
     category: Finance
