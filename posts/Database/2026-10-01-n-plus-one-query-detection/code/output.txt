@@ -1,0 +1,105 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\2026-10-01-n-plus-one-query-detection
+# 명령      : python n_plus_one.py
+# 수행 시각 : 2026-10-01 12:17 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[author]  4행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+---------
+   1 | 저자0001
+   2 | 저자0002
+   3 | 저자0003
+   4 | 저자0004
+
+[post]  12행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  id        | INTEGER | PK
+  author_id | INTEGER | NOT NULL
+  title     | TEXT    | NOT NULL
+
+  id | author_id | title
+  ---+-----------+---------
+   1 |         1 | 글0001-1
+   2 |         1 | 글0001-2
+   3 |         1 | 글0001-3
+   4 |         2 | 글0002-1
+   5 |         2 | 글0002-2
+   6 |         2 | 글0002-3
+   7 |         3 | 글0003-1
+   8 |         3 | 글0003-2
+   9 |         3 | 글0003-3
+  10 |         4 | 글0004-1
+  11 |         4 | 글0004-2
+  12 |         4 | 글0004-3
+
+[인덱스]
+  이름           | 대상 표 | 정의
+  ---------------+---------+-----------------------------------------------
+  post_author_id | post    | CREATE INDEX post_author_id ON post(author_id)
+
+
+== 1. 같은 화면, 세 방식 — 실행된 문장 수 ==
+
+[지연 로딩] 화면 12줄 · 문장 5개
+  SELECT id, author_id, title FROM post
+  SELECT name FROM author WHERE id = 1
+  SELECT name FROM author WHERE id = 2
+  SELECT name FROM author WHERE id = 3
+  … 1개 더
+
+[JOIN] 화면 12줄 · 문장 1개
+  SELECT p.title, a.name FROM post p JOIN author a ON a.id = p.author_id
+
+[IN 묶음] 화면 12줄 · 문장 2개
+  SELECT id, author_id, title FROM post
+  SELECT id, name FROM author WHERE id IN (1,2,3,4)
+
+== 2. 지문으로 묶기 ==
+    4회  SELECT name FROM author WHERE id = ?
+    1회  SELECT id, author_id, title FROM post
+
+== 3. 테스트에 거는 탐지기 ==
+  [지연 로딩] 실패 — 같은 모양의 문장이 4번 실행됐다 (허용 2): SELECT name FROM author WHERE id = ?
+  [JOIN] 통과
+  [IN 묶음] 통과
+
+== 4. 저자 수를 늘리면 ==
+  저자 |      방식 | 문장 수 | VDBE 명령 수 | 경과(ms)
+    10 |     지연 로딩 |      11 |          246 |     0.03
+    10 |      JOIN |       1 |          187 |     0.02
+    10 |     IN 묶음 |       2 |          267 |     0.03
+   100 |     지연 로딩 |     101 |        2,406 |     0.32
+   100 |      JOIN |       1 |        1,807 |     0.16
+   100 |     IN 묶음 |       2 |        2,517 |     0.21
+  1000 |     지연 로딩 |    1001 |       24,006 |     3.36
+  1000 |      JOIN |       1 |       18,007 |     1.55
+  1000 |     IN 묶음 |       2 |       25,017 |     2.15
+
+== 5. unittest 로 돌리면 ==
+  test_lazy_loading ... FAIL
+    AssertionError: 같은 모양의 문장이 20번 실행됐다 (허용 2): SELECT name FROM author WHERE id = ?
+  test_join ... ok
+  test_in_batch ... ok
+  3개 중 실패 1개
