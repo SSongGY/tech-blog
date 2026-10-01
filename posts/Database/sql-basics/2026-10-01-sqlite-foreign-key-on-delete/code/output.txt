@@ -1,0 +1,156 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-01-sqlite-foreign-key-on-delete
+# 명령      : python foreign_key_basics.py
+# 수행 시각 : 2026-10-01 19:09 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer]  3행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  customer_id | INTEGER | PK
+  name        | TEXT    | NOT NULL
+
+  customer_id | name
+  ------------+-------
+            1 | 김서준
+            2 | 이하윤
+            3 | 박도윤
+
+[sale_order]  3행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  order_id    | INTEGER | PK
+  customer_id | INTEGER |
+  amount      | INTEGER | NOT NULL
+
+  order_id | customer_id | amount
+  ---------+-------------+-------
+       101 |           1 |    120
+       102 |           1 |     80
+       103 |           2 |    150
+
+
+-- 1. 기본값 — 외래 키 검사가 꺼져 있다
+   PRAGMA foreign_keys
+   0
+   INSERT INTO sale_order VALUES (104, 99, 70)
+   성공 · 바뀐 행 1
+   DELETE FROM customer WHERE customer_id = 2
+   성공 · 바뀐 행 1
+   SELECT * FROM sale_order ORDER BY order_id
+   101 | 1 | 120
+   102 | 1 | 80
+   103 | 2 | 150
+   104 | 99 | 70
+
+-- 2. 켜도 이미 들어간 행은 검사하지 않는다
+   PRAGMA foreign_keys = ON
+   성공 · 바뀐 행 -1
+   PRAGMA foreign_keys
+   1
+   PRAGMA foreign_key_check
+   sale_order | 103 | customer | 0
+   sale_order | 104 | customer | 0
+   -- 표·rowid·부모 표·몇 번째 외래 키인지
+
+-- 3. 트랜잭션 안에서는 켜고 끌 수 없다
+   BEGIN
+   성공 · 바뀐 행 -1
+   PRAGMA foreign_keys = OFF
+   성공 · 바뀐 행 -1
+   PRAGMA foreign_keys
+   1
+   ROLLBACK
+   성공 · 바뀐 행 -1
+
+-- 4. 켠 뒤 — 없는 부모를 가리키는 행을 막는다
+   [customer_id INTEGER REFERENCES customer (customer_id)]
+   INSERT INTO sale_order VALUES (104, 99, 70)
+   에러: FOREIGN KEY constraint failed
+   INSERT INTO sale_order VALUES (104, NULL, 70)
+   성공 · 바뀐 행 1
+   UPDATE sale_order SET customer_id = 98 WHERE order_id = 101
+   에러: FOREIGN KEY constraint failed
+
+-- 5. 켠 뒤 — 자식이 있는 부모를 못 지운다 (기본 동작 NO ACTION)
+   DELETE FROM customer WHERE customer_id = 1
+   에러: FOREIGN KEY constraint failed
+   DELETE FROM customer WHERE customer_id = 3
+   성공 · 바뀐 행 1
+   UPDATE customer SET customer_id = 10 WHERE customer_id = 2
+   에러: FOREIGN KEY constraint failed
+
+-- 6. ON DELETE CASCADE
+   [customer_id INTEGER REFERENCES customer (customer_id) ON DELETE CASCADE]
+   DELETE FROM customer WHERE customer_id = 1
+   성공 · 바뀐 행 1
+   SELECT * FROM sale_order ORDER BY order_id
+   103 | 2 | 150
+
+-- 6. ON DELETE SET NULL
+   [customer_id INTEGER REFERENCES customer (customer_id) ON DELETE SET NULL]
+   DELETE FROM customer WHERE customer_id = 1
+   성공 · 바뀐 행 1
+   SELECT * FROM sale_order ORDER BY order_id
+   101 | NULL | 120
+   102 | NULL | 80
+   103 | 2 | 150
+
+-- 7. ON DELETE SET DEFAULT — 기본값도 부모에 있어야 한다
+   [customer_id INTEGER DEFAULT 3 REFERENCES customer (customer_id) ON DELETE SET DEFAULT]
+   DELETE FROM customer WHERE customer_id = 1
+   성공 · 바뀐 행 1
+   SELECT * FROM sale_order ORDER BY order_id
+   101 | 3 | 120
+   102 | 3 | 80
+   103 | 2 | 150
+   [customer_id INTEGER DEFAULT 0 REFERENCES customer (customer_id) ON DELETE SET DEFAULT]
+   DELETE FROM customer WHERE customer_id = 1
+   에러: FOREIGN KEY constraint failed
+
+-- 8. NO ACTION 과 RESTRICT — 지연 제약에서 갈린다
+   [customer_id INTEGER REFERENCES customer (customer_id) ON DELETE NO ACTION DEFERRABLE INITIALLY DEFERRED]
+   BEGIN
+   성공 · 바뀐 행 -1
+   DELETE FROM customer WHERE customer_id = 1
+   성공 · 바뀐 행 1
+   INSERT INTO customer VALUES (1, '김서준(재등록)')
+   성공 · 바뀐 행 1
+   COMMIT
+   성공 · 바뀐 행 -1
+   [customer_id INTEGER REFERENCES customer (customer_id) ON DELETE RESTRICT DEFERRABLE INITIALLY DEFERRED]
+   BEGIN
+   성공 · 바뀐 행 -1
+   DELETE FROM customer WHERE customer_id = 1
+   에러: FOREIGN KEY constraint failed
+   INSERT INTO customer VALUES (1, '김서준(재등록)')
+   에러: UNIQUE constraint failed: customer.customer_id
+   COMMIT
+   성공 · 바뀐 행 -1
+
+-- 9. 부모 키는 PRIMARY KEY 나 UNIQUE 여야 한다
+   INSERT INTO customer VALUES (1, 'a@example.com')
+   성공 · 바뀐 행 1
+   INSERT INTO sale_order VALUES (101, 'a@example.com')
+   에러: foreign key mismatch - "sale_order" referencing "customer"
+
+-- 10. 자식 키 인덱스 — 부모 한 행을 지울 때 엔진이 돈 명령 수
+   [customer_id INTEGER REFERENCES customer (customer_id)]
+   자식 20003행 · 인덱스 없음: 60023
+   [customer_id INTEGER REFERENCES customer (customer_id)]
+   자식 20003행 · 인덱스 있음: 17
