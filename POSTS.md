@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **131편** · 갱신 2026-10-01
+총 **132편** · 갱신 2026-10-01
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -131,11 +131,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 19편
+## 기출문제 (exam) — 20편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-01 | [기출문제 — FIFO와 WFQ(Weighted Fair Queuing) 비교](posts/PE/exam/2026-10-01-fifo-vs-weighted-fair-queuing/index.md) | 중급 | Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Demers·Keshav·Shenker, Fair Queueing, SIGCOMM 1989, RFC 7567 (2015-07), Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
+| 2026-10-01 | [기출문제 — AI 보안: 사이버 공격 지원 위협과 자율성에 따른 통제 상실](posts/PE/exam/2026-10-01-ai-security-cyber-offense-loss-of-control/index.md) | 심화 | International AI Safety Report 2026 (2026-02-03), OpenAI Preparedness Framework v2 (2025-04-15), Google DeepMind Frontier Safety Framework v3 (2025-09-22), OWASP Top 10 for LLM Applications 2025, 인공지능 기본법 법률 제20676호 (2026-01-22 시행) | 문서 근거 |
 | 2026-09-30 | [기출문제 — 인공지능 학습용 데이터 품질관리](posts/PE/exam/2026-09-30-ai-training-data-quality-management/index.md) | 중급 | NIA 인공지능 학습용 데이터 품질관리 가이드라인 v3.1 제2권 (2024-01), ISO/IEC 5259-4:2024, ISO/IEC 5259-1:2024, ISO/IEC 8183:2023 | 문서 근거 |
 | 2026-09-30 | [기출문제 — AI 슈퍼컴퓨팅 플랫폼](posts/PE/exam/2026-09-30-ai-supercomputing-platform/index.md) | 심화 | Gartner Top Strategic Technology Trends for 2026 (2025-10), Jouppi et al., TPU v4, ISCA 2023, NVIDIA DGX SuperPOD Reference Architecture GB200 (2025-11), NIST SP 800-145 (2011-09) | 문서 근거 |
 | 2026-09-29 | [기출문제 — 서버리스 컴퓨팅](posts/PE/exam/2026-09-29-serverless-computing/index.md) | 중급 | CNCF Serverless Whitepaper v1.0 (2018-02), UC Berkeley EECS-2019-3 (2019-02), AWS Lambda Developer Guide (2026-09 확인) | 문서 근거 |

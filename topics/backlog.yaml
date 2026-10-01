@@ -3598,3 +3598,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-129
+    title: "프런티어 AI 안전 프레임워크 — 역량 임계치와 안전장치로 배포를 정하는 구조"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "OpenAI 준비성 프레임워크·DeepMind FSF·Anthropic RSP를 역량 평가→임계치→안전장치→배포 결정 흐름으로 비교하고 인공지능 기본법 제32조와 잇는다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-130
+    title: "AI 통제(AI Control) — 오정렬을 전제로 에이전트를 감독하는 설계"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "모델을 믿지 않는 전제에서 감독 모니터·사람 승인·권한 제한·변조 불가 로그로 피해를 막는 구조와 정렬(alignment) 접근과의 차이"
+    code: none
+    origin: exam
+    status: todo

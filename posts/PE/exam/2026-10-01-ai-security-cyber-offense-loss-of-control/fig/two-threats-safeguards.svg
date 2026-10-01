@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">AI 보안 위협의 두 경로와 안전장치 위치</text>
+
+  <!-- (가) 경로 라벨 -->
+  <text x="20" y="66" font-size="14" font-weight="bold" fill="#9d0208">(가) 사이버 공격 지원 — 사람이 모델을 악용</text>
+
+  <!-- 악의적 사용자 -->
+  <rect x="20" y="80" width="170" height="80" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="105" y="117" text-anchor="middle" font-size="14" fill="#1e293b">악의적 사용자</text>
+  <text x="105" y="138" text-anchor="middle" font-size="13" fill="#475569">범죄 조직·국가 연계</text>
+
+  <!-- 오용 방지 안전장치 -->
+  <rect x="230" y="80" width="220" height="80" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="340" y="107" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">오용 방지 안전장치</text>
+  <text x="340" y="128" text-anchor="middle" font-size="13" fill="#1e293b">견고성 · 사용 모니터링</text>
+  <text x="340" y="147" text-anchor="middle" font-size="13" fill="#1e293b">신뢰 기반 접근</text>
+
+  <!-- 프런티어 AI 모델 (두 경로 공유) -->
+  <rect x="490" y="80" width="170" height="220" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="2"/>
+  <text x="575" y="180" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">프런티어 AI</text>
+  <text x="575" y="200" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e293b">모델·에이전트</text>
+  <text x="575" y="280" text-anchor="middle" font-size="13" fill="#9d0208">오정렬 가능성</text>
+
+  <!-- (나) 오정렬 대응 안전장치 -->
+  <rect x="230" y="220" width="220" height="80" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="340" y="247" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">오정렬 대응 안전장치</text>
+  <text x="340" y="268" text-anchor="middle" font-size="13" fill="#1e293b">감독 모니터 · 사람 승인</text>
+  <text x="340" y="287" text-anchor="middle" font-size="13" fill="#1e293b">변경 불가 로그</text>
+
+  <!-- 실행 환경 -->
+  <rect x="20" y="220" width="170" height="80" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="105" y="252" text-anchor="middle" font-size="14" fill="#1e293b">실행 환경</text>
+  <text x="105" y="273" text-anchor="middle" font-size="13" fill="#475569">도구·권한·네트워크</text>
+
+  <!-- 역량 평가 -->
+  <rect x="700" y="80" width="160" height="220" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="780" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">역량 평가</text>
+  <text x="780" y="180" text-anchor="middle" font-size="13" fill="#1e293b">임계치 판정</text>
+  <text x="780" y="200" text-anchor="middle" font-size="13" fill="#1e293b">(High · Critical)</text>
+  <text x="780" y="230" text-anchor="middle" font-size="13" fill="#1e293b">→ 배포·개발 결정</text>
+
+  <!-- 화살표 -->
+  <line x1="190" y1="120" x2="228" y2="120" stroke="#9d0208" stroke-width="2" marker-end="url(#arrr)"/>
+  <line x1="450" y1="120" x2="488" y2="120" stroke="#9d0208" stroke-width="2" marker-end="url(#arrr)"/>
+  <line x1="490" y1="260" x2="452" y2="260" stroke="#9d0208" stroke-width="2" marker-end="url(#arrr)"/>
+  <line x1="230" y1="260" x2="192" y2="260" stroke="#9d0208" stroke-width="2" marker-end="url(#arrr)"/>
+  <line x1="700" y1="190" x2="662" y2="190" stroke="#334155" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arr)"/>
+
+  <!-- (나) 경로 라벨 -->
+  <text x="20" y="328" font-size="14" font-weight="bold" fill="#9d0208">(나) 통제 상실 — 모델이 스스로 감독을 벗어남</text>
+  <text x="20" y="360" font-size="13" fill="#475569">빨간 화살표: 피해가 흘러가는 경로. 녹색 상자: 그 경로를 끊는 안전장치. 점선: 평가 결과가 모델의 배포 여부를 정한다.</text>
+  <text x="20" y="382" font-size="13" fill="#475569">실행 환경의 권한·접근 범위가 통제 상실 피해의 크기를 정한다 (중요도·접근·권한 3요인).</text>
+</svg>

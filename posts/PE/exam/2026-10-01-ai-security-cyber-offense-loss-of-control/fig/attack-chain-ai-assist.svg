@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="300" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">사이버 공격 체인 6단계와 사람·AI의 분담</text>
+
+  <!-- 사람 띠 -->
+  <rect x="16" y="46" width="848" height="44" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="440" y="74" text-anchor="middle" font-size="14" fill="#1e293b">사람 — 표적 선정, 작업 분해, 핵심 결정 지점에서 개입</text>
+
+  <!-- 6단계 -->
+  <g font-size="14" text-anchor="middle" fill="#1e293b">
+    <rect x="16" y="120" width="128" height="60" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="80" y="155">정찰</text>
+
+    <rect x="160" y="120" width="128" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2.5"/>
+    <text x="224" y="155">취약점 식별</text>
+
+    <rect x="304" y="120" width="128" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2.5"/>
+    <text x="368" y="155">공격 개발</text>
+
+    <rect x="448" y="120" width="128" height="60" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="512" y="155">공격 실행</text>
+
+    <rect x="592" y="120" width="128" height="60" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="656" y="155">통제 유지</text>
+
+    <rect x="736" y="120" width="128" height="60" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="800" y="155">목적 달성</text>
+  </g>
+  <g stroke="#334155" stroke-width="1.5" marker-end="url(#arr)">
+    <line x1="144" y1="150" x2="158" y2="150"/>
+    <line x1="288" y1="150" x2="302" y2="150"/>
+    <line x1="432" y1="150" x2="446" y2="150"/>
+    <line x1="576" y1="150" x2="590" y2="150"/>
+    <line x1="720" y1="150" x2="734" y2="150"/>
+  </g>
+
+  <!-- AI 띠 -->
+  <rect x="16" y="210" width="848" height="44" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="440" y="238" text-anchor="middle" font-size="14" fill="#1e293b">AI — 코드 생성, 표적 식별 같은 하위 작업을 자동화 (종단 간 자율 공격은 보고되지 않음)</text>
+
+  <rect x="230" y="268" width="16" height="16" fill="#fff7ed" stroke="#b45309" stroke-width="2.5"/>
+  <text x="254" y="281" font-size="13" fill="#1e293b">AI 지원 근거가 특히 강한 단계 (취약점 발견, 악성 코드 작성)</text>
+</svg>
