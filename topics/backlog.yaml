@@ -3597,7 +3597,7 @@ topics:
     angle: "꼬리 폐기의 잠김·가득 찬 큐 문제에서 출발해 RED의 평균 큐 길이 기반 확률 폐기와 CoDel의 체류 시간 기반 폐기를 RFC 7567·RFC 8289 근거로 비교한다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-129
     title: "프런티어 AI 안전 프레임워크 — 역량 임계치와 안전장치로 배포를 정하는 구조"
     category: PE
@@ -3608,7 +3608,7 @@ topics:
     angle: "OpenAI 준비성 프레임워크·DeepMind FSF·Anthropic RSP를 역량 평가→임계치→안전장치→배포 결정 흐름으로 비교하고 인공지능 기본법 제32조와 잇는다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-130
     title: "AI 통제(AI Control) — 오정렬을 전제로 에이전트를 감독하는 설계"
     category: PE
