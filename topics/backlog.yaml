@@ -1760,7 +1760,7 @@ topics:
     difficulty: 중급
     angle: "체인이 끊겼을 때 출력에서 무엇이 달라지는지"
     code: shell
-    status: todo
+    status: done
   - id: lx-028
     title: "환경변수와 셸 초기화 순서"
     category: Linux
@@ -1816,7 +1816,7 @@ topics:
     angle: "생성·구조·행위로 나누는 기준과 시험에 나오는 대표 패턴"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-039
     title: "클린 아키텍처와 헥사고날 아키텍처"
     category: PE
@@ -2323,7 +2323,7 @@ topics:
     angle: "NULL을 세느냐 마느냐. COUNT(DISTINCT)까지 셋을 나란히"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-019
     title: "NULL 비교 — = NULL이 안 되는 이유"
     category: Database
