@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#fbfbf8"/>
+
+  <text x="30" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">재해 시점을 기준으로 본 RPO · RTO · MTD</text>
+
+  <!-- 시간축 -->
+  <line x1="40" y1="170" x2="850" y2="170" stroke="#3b3b3b" stroke-width="1.8" marker-end="url(#ar)"/>
+  <text x="845" y="194" font-size="13" fill="#555" text-anchor="end">시간</text>
+
+  <!-- 마지막 백업 -->
+  <line x1="150" y1="150" x2="150" y2="190" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="150" y="214" font-size="13" fill="#2d6a4f" text-anchor="middle">마지막 백업·복제 지점</text>
+
+  <!-- 재해 -->
+  <line x1="330" y1="60" x2="330" y2="290" stroke="#9d0208" stroke-width="2.2"/>
+  <text x="330" y="310" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">재해 발생</text>
+
+  <!-- RPO -->
+  <rect x="150" y="120" width="180" height="34" rx="4" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="240" y="142" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">RPO — 잃는 데이터</text>
+
+  <!-- RTO -->
+  <rect x="330" y="120" width="260" height="34" rx="4" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="460" y="142" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">RTO — 시스템 복구</text>
+
+  <!-- 재처리 -->
+  <rect x="590" y="120" width="170" height="34" rx="4" fill="#eef1f7" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="675" y="142" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">데이터 재처리</text>
+
+  <!-- MTD 괄호 -->
+  <path d="M 330 100 L 330 84 L 790 84 L 790 100" fill="none" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="560" y="74" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">MTD — 업무가 견디는 전체 중단 시간</text>
+  <line x1="790" y1="84" x2="790" y2="190" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="790" y="214" font-size="13" fill="#2d6a4f" text-anchor="middle">업무 정상화 한계</text>
+
+  <!-- 설명 -->
+  <text x="40" y="250" font-size="13" fill="#333">RPO는 재해 이전으로, MTD 괄호 밖에 있다</text>
+  <text x="40" y="270" font-size="13" fill="#333">— 시간이 아니라 데이터 손실량의 문제</text>
+  <text x="450" y="250" font-size="13" fill="#333">RTO + 재처리 시간 ≤ MTD</text>
+  <text x="450" y="270" font-size="13" fill="#333">→ RTO는 보통 MTD보다 짧다</text>
+
+  <text x="40" y="340" font-size="13" fill="#555">NIST BIA 서식 예시: 업체 대금 지급 — MTD 72시간 · RTO 48시간 · RPO 12시간(마지막 백업)</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+</svg>

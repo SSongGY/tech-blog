@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <text x="30" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">복구 사이트에 무엇을 미리 갖추는가 — 두 분류의 준비 수준</text>
+
+  <!-- 행 라벨 -->
+  <text x="30" y="98" font-size="14" font-weight="bold" fill="#333">NIST</text>
+  <text x="30" y="116" font-size="13" fill="#555">대체 사이트</text>
+  <text x="30" y="228" font-size="14" font-weight="bold" fill="#333">AWS</text>
+  <text x="30" y="246" font-size="13" fill="#555">복구 방식</text>
+
+  <!-- NIST 4 -->
+  <rect x="120" y="76" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="205" y="102" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">콜드 사이트</text>
+  <text x="205" y="124" font-size="13" fill="#555" text-anchor="middle">공간·전력·회선만</text>
+
+  <rect x="310" y="76" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="395" y="102" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">웜 사이트</text>
+  <text x="395" y="124" font-size="13" fill="#555" text-anchor="middle">장비 일부</text>
+
+  <rect x="500" y="76" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="585" y="102" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">핫 사이트</text>
+  <text x="585" y="124" font-size="13" fill="#555" text-anchor="middle">장비·인력 전부</text>
+
+  <rect x="690" y="76" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="775" y="102" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">미러드 사이트</text>
+  <text x="775" y="124" font-size="13" fill="#555" text-anchor="middle">실시간 미러링</text>
+
+  <!-- AWS 4 -->
+  <rect x="120" y="206" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="205" y="232" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">백업·복원</text>
+  <text x="205" y="254" font-size="13" fill="#555" text-anchor="middle">백업 사본만</text>
+
+  <rect x="310" y="206" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="395" y="232" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">파일럿 라이트</text>
+  <text x="395" y="254" font-size="13" fill="#555" text-anchor="middle">DB 가동 · 앱 꺼 둠</text>
+
+  <rect x="500" y="206" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="585" y="232" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">웜 스탠바이</text>
+  <text x="585" y="254" font-size="13" fill="#555" text-anchor="middle">축소 규모로 처리 가능</text>
+
+  <rect x="690" y="206" width="170" height="60" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="775" y="232" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">액티브/액티브</text>
+  <text x="775" y="254" font-size="13" fill="#555" text-anchor="middle">여러 리전 동시 운영</text>
+
+  <!-- 대응 점선 -->
+  <line x1="205" y1="136" x2="205" y2="206" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="205" y1="136" x2="395" y2="206" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="395" y1="136" x2="395" y2="206" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="395" y1="136" x2="585" y2="206" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="585" y1="136" x2="775" y2="206" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="775" y1="136" x2="775" y2="206" stroke="#8a8a84" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- 액티브/패시브 묶음 -->
+  <path d="M 120 280 L 120 290 L 670 290 L 670 280" fill="none" stroke="#b45309" stroke-width="1.5"/>
+  <text x="395" y="310" font-size="13" fill="#b45309" text-anchor="middle">액티브/패시브 — 대기 사이트는 전환 전까지 트래픽을 받지 않는다</text>
+
+  <!-- 축 -->
+  <line x1="120" y1="345" x2="860" y2="345" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arG)"/>
+  <text x="120" y="370" font-size="13" fill="#333">미리 갖춘 것이 많아질수록</text>
+  <text x="490" y="370" font-size="13" fill="#2d6a4f" text-anchor="middle">RTO·RPO 짧아짐</text>
+  <text x="860" y="370" font-size="13" fill="#9d0208" text-anchor="end">상시 비용 커짐</text>
+
+  <text x="30" y="404" font-size="13" fill="#555">점선은 준비 수준이 겹치는 대략의 대응이다. NIST와 AWS가 서로를 인용하지는 않는다.</text>
+
+  <defs>
+    <marker id="arG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

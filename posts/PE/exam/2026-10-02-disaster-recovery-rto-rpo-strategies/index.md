@@ -255,6 +255,8 @@ Active-Passive 안에서 대기 사이트의 준비 수준으로 나뉜다. 대�
 섞어 쓰고, 어느 전략이든 시점 백업과 정기 훈련을 함께 갖추는 것**이 클라우드 네이티브
 환경의 재해복구 설계다.
 
+> 개념 정리: [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](../../system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md)
+
 끝
 
 ## 답안 작성 메모
