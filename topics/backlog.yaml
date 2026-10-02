@@ -1750,7 +1750,7 @@ topics:
     difficulty: 입문
     angle: "-v, -w로 응답 시간 구간을 나눠 측정"
     code: shell
-    status: todo
+    status: done
   - id: lx-027
     title: "openssl s_client — 인증서 확인과 만료 점검"
     category: Linux
@@ -1860,7 +1860,7 @@ topics:
     angle: "의도한 부채와 방치된 부채를 가르는 기준"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-043
     title: "DevOps 파이프라인 구성요소와 DORA 4지표"
     category: PE
@@ -2389,7 +2389,7 @@ topics:
     angle: "언제 만들고 언제 만들지 않는가. 쓰기 비용과 저장 공간을 실제로 재서"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: pe-088
     title: "SQuaRE 표준군 구조와 품질 모델의 분화"
     category: PE

@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **157편** · 갱신 2026-10-03
+총 **160편** · 갱신 2026-10-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 29편
+## DB문법 (basics) — 30편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [인덱스 만들기 — CREATE INDEX 기본](posts/Database/sql-basics/2026-10-03-create-index-write-cost-storage/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [기본 키와 UNIQUE 제약](posts/Database/sql-basics/2026-10-02-primary-key-vs-unique/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](posts/Database/sql-basics/2026-10-02-count-star-vs-column-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -54,10 +55,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 59편
+## 기술사 (pe) — 60편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [기술부채 — 측정 방법과 상환 전략](posts/PE/software-engineering/2026-10-03-technical-debt-measurement-repayment/index.md) | 중급 | Dagstuhl Seminar 16162 Report (2016), Kruchten·Nord·Ozkaya, IEEE Software 29(6) (2012-11), SonarQube Server 문서 (2026-10 열람) | 문서 근거 |
 | 2026-10-03 | [리팩토링 — 코드 스멜 분류와 적용 시점](posts/PE/software-engineering/2026-10-03-refactoring-code-smells-when-to-apply/index.md) | 중급 | Fowler, Refactoring 2nd ed. (2018), Mäntylä & Lassenius, Empirical Software Engineering 11(3) (2006), Chikofsky & Cross, IEEE Software 7(1) (1990-01) | 문서 근거 |
 | 2026-10-03 | [메타모픽 테스트와 테스트 오라클 문제](posts/PE/software-engineering/2026-10-03-metamorphic-testing-test-oracle-problem/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, Barr et al., IEEE TSE 41(5) (2015-05), Chen et al., ACM Computing Surveys 51(1) (2018-01), ISTQB CT-AI Syllabus v1.0 (2021-10-01) | 문서 근거 |
 | 2026-10-02 | [사가(Saga) 패턴 — 분산 트랜잭션 대신 보상 트랜잭션](posts/PE/software-engineering/2026-10-02-saga-pattern-compensating-transaction/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Garcia-Molina & Salem, Sagas (SIGMOD 1987), Microsoft Azure Architecture Center, Saga design pattern (2025-02-25) | 실행 검증 |
@@ -118,10 +120,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 10편
+## 리눅스 (linux) — 11편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [curl — API 디버깅에 필요한 옵션](posts/Linux/command/2026-10-03-curl-api-debugging-options-timing/index.md) | 입문 | curl 8.19.0 (Schannel), Python 3.13.5, OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-02 | [openssl s_client — 인증서 확인과 만료 점검](posts/Linux/command/2026-10-02-openssl-s-client-cert-chain-expiry/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-01 | [환경변수와 셸 초기화 순서](posts/Linux/command/2026-10-01-bash-startup-files-env-vars/index.md) | 중급 | GNU bash 5.3.9 (Git Bash), GNU coreutils env 8.32, Windows 11 | 실행 검증 |
 | 2026-09-30 | [tar와 gzip — 압축과 해제, 그리고 옵션 순서](posts/Linux/command/2026-09-30-tar-gzip-options-absolute-path/index.md) | 입문 | GNU tar 1.35, gzip 1.14, GNU bash 5.3.9 (Git Bash), Windows 11 | 실행 검증 |
