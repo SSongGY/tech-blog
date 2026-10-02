@@ -280,6 +280,8 @@ AI 활용이 대응의 두 축이다. 통제 상실은 **모델 자체가 감독
 
 > 개념 정리: [프런티어 AI 안전 프레임워크 — 역량 임계치와 안전장치로 배포를 정하는 구조](../../security/2026-10-01-frontier-ai-safety-frameworks/index.md)
 
+> 개념 정리: [AI 통제(AI Control) — 오정렬을 전제로 에이전트를 감독하는 설계](../../security/2026-10-02-ai-control-untrusted-model-oversight/index.md)
+
 끝
 
 ## 답안 작성 메모
