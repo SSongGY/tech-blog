@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">같은 다섯 행을 세 가지 COUNT가 다르게 센다</text>
+  <text x="30" y="56" font-size="13" fill="#555">member.city 컬럼 (SQLite 3.49.1 실행 결과)</text>
+
+  <!-- 입력 컬럼 -->
+  <text x="100" y="92" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">city</text>
+  <rect x="50" y="102" width="100" height="40" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="100" y="127" font-size="14" fill="#1b1b1b" text-anchor="middle">서울</text>
+  <rect x="50" y="142" width="100" height="40" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="100" y="167" font-size="14" fill="#1b1b1b" text-anchor="middle">부산</text>
+  <rect x="50" y="182" width="100" height="40" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="100" y="207" font-size="14" fill="#1b1b1b" text-anchor="middle">서울</text>
+  <rect x="50" y="222" width="100" height="40" fill="#f1f1ee" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="100" y="247" font-size="14" fill="#9d0208" text-anchor="middle">NULL</text>
+  <rect x="50" y="262" width="100" height="40" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="100" y="287" font-size="14" fill="#1b1b1b" text-anchor="middle">서울</text>
+
+  <!-- 세 규칙 -->
+  <rect x="230" y="96" width="330" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="395" y="121" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">COUNT(*)</text>
+  <text x="395" y="144" font-size="13" fill="#333" text-anchor="middle">행이 있으면 센다 — 값은 보지 않는다</text>
+
+  <rect x="230" y="172" width="330" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="395" y="197" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">COUNT(city)</text>
+  <text x="395" y="220" font-size="13" fill="#333" text-anchor="middle">NULL이 아닌 값만 센다</text>
+
+  <rect x="230" y="248" width="330" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="395" y="273" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">COUNT(DISTINCT city)</text>
+  <text x="395" y="296" font-size="13" fill="#333" text-anchor="middle">중복을 걷어낸 뒤 NULL이 아닌 값만 센다</text>
+
+  <line x1="150" y1="200" x2="226" y2="128" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="150" y1="202" x2="226" y2="202" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="150" y1="204" x2="226" y2="278" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 결과 -->
+  <rect x="640" y="96" width="210" height="62" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="745" y="124" font-size="16" font-weight="bold" fill="#2d6a4f" text-anchor="middle">5</text>
+  <text x="745" y="146" font-size="13" fill="#333" text-anchor="middle">NULL 행도 포함</text>
+
+  <rect x="640" y="172" width="210" height="62" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="745" y="200" font-size="16" font-weight="bold" fill="#b45309" text-anchor="middle">4</text>
+  <text x="745" y="222" font-size="13" fill="#333" text-anchor="middle">NULL 1개 빠짐</text>
+
+  <rect x="640" y="248" width="210" height="62" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="745" y="276" font-size="16" font-weight="bold" fill="#b45309" text-anchor="middle">2</text>
+  <text x="745" y="298" font-size="13" fill="#333" text-anchor="middle">서울·부산</text>
+
+  <line x1="560" y1="127" x2="636" y2="127" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="560" y1="203" x2="636" y2="203" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="560" y1="279" x2="636" y2="279" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 대비 -->
+  <line x1="30" y1="336" x2="850" y2="336" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="364" font-size="14" font-weight="bold" fill="#9d0208">함정 — NULL을 하나의 값으로 묶는 곳도 있다</text>
+  <text x="30" y="390" font-size="13" fill="#333">SELECT DISTINCT city 와 GROUP BY city 는 NULL을 한 줄로 남긴다 → 서울·부산·NULL 3줄</text>
+  <text x="30" y="412" font-size="13" fill="#333">COUNT(DISTINCT city) 는 그 NULL을 세지 않는다 → 2</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>
