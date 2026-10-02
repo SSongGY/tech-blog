@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">기술부채 사분면 — 알고 졌는가 × 신중했는가 (Fowler, 2009)</text>
+  <text x="30" y="56" font-size="13" fill="#555">가로: 의도 여부 · 세로: 신중함 여부 · 칸 안의 따옴표는 그 칸의 팀이 하는 말을 옮긴 것</text>
+
+  <!-- 축 이름 -->
+  <text x="330" y="88" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">의도함 (Deliberate)</text>
+  <text x="640" y="88" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">모르고 짐 (Inadvertent)</text>
+  <text x="96" y="168" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">무모함</text>
+  <text x="96" y="188" font-size="13" fill="#555" text-anchor="middle">(Reckless)</text>
+  <text x="96" y="308" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">신중함</text>
+  <text x="96" y="328" font-size="13" fill="#555" text-anchor="middle">(Prudent)</text>
+
+  <!-- 무모·의도 -->
+  <rect x="180" y="104" width="300" height="130" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="330" y="138" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">① 무모 · 의도</text>
+  <text x="330" y="166" font-size="13" fill="#1b1b1b" text-anchor="middle">"설계할 시간이 없다"</text>
+  <text x="330" y="194" font-size="13" fill="#555" text-anchor="middle">대가를 알면서 따져 보지 않았다</text>
+
+  <!-- 무모·모르고 -->
+  <rect x="490" y="104" width="300" height="130" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="640" y="138" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">② 무모 · 모르고</text>
+  <text x="640" y="166" font-size="13" fill="#1b1b1b" text-anchor="middle">"계층 분리가 뭔가?"</text>
+  <text x="640" y="194" font-size="13" fill="#555" text-anchor="middle">좋은 설계를 몰라 부채인 줄도 모른다</text>
+
+  <!-- 신중·의도 -->
+  <rect x="180" y="244" width="300" height="130" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="330" y="278" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">③ 신중 · 의도</text>
+  <text x="330" y="306" font-size="13" fill="#1b1b1b" text-anchor="middle">"지금 출시하고 결과를 감당한다"</text>
+  <text x="330" y="334" font-size="13" fill="#555" text-anchor="middle">비용과 이득을 따져 고른 부채</text>
+
+  <!-- 신중·모르고 -->
+  <rect x="490" y="244" width="300" height="130" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="640" y="278" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">④ 신중 · 모르고</text>
+  <text x="640" y="306" font-size="13" fill="#1b1b1b" text-anchor="middle">"이제야 어떻게 했어야 했는지 안다"</text>
+  <text x="640" y="334" font-size="13" fill="#555" text-anchor="middle">배우면서 생긴다. 좋은 팀에도 생긴다</text>
+
+  <line x1="30" y1="398" x2="850" y2="398" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="424" font-size="13" fill="#333">①·③은 질 때 알았고, ②·④는 생긴 뒤에야 발견된다. 비용과 이득을 따져 고른 것은 ③뿐이다.</text>
+  <text x="30" y="446" font-size="13" fill="#333">나머지 셋은 발견한 순간 기록하고 원금·이자를 추정해야 관리 대상이 된다.</text>
+</svg>
