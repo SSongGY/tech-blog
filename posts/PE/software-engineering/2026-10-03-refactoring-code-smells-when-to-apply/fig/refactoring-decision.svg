@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">코드 스멜을 발견했을 때 — 리팩토링할지 판단하는 순서</text>
+
+  <!-- start -->
+  <rect x="40" y="56" width="200" height="50" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="140" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">코드 스멜 발견</text>
+  <text x="140" y="97" text-anchor="middle" font-size="13" fill="#4a5568">표면에 드러난 징후</text>
+
+  <!-- Q1 -->
+  <rect x="40" y="140" width="200" height="56" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="140" y="164" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 이 코드를 곧</text>
+  <text x="140" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">고치거나 읽어야 하나?</text>
+  <line x1="140" y1="106" x2="140" y2="138" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- Q2 -->
+  <rect x="40" y="232" width="200" height="56" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="140" y="256" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 지금 제대로 동작하고</text>
+  <text x="140" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">테스트가 통과하나?</text>
+  <line x1="140" y1="196" x2="140" y2="230" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="150" y="219" font-size="13" fill="#2d6a4f">예</text>
+
+  <!-- Q3 -->
+  <rect x="40" y="324" width="200" height="56" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="140" y="348" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 새로 쓰는 편이</text>
+  <text x="140" y="368" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">더 쉬운가?</text>
+  <line x1="140" y1="288" x2="140" y2="322" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="150" y="311" font-size="13" fill="#2d6a4f">예</text>
+
+  <!-- no branches (right side) -->
+  <rect x="330" y="140" width="240" height="56" fill="#ffffff" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="450" y="164" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">하지 않는다</text>
+  <text x="450" y="184" text-anchor="middle" font-size="13" fill="#4a5568">들인 비용을 회수할 일이 없다</text>
+  <line x1="240" y1="168" x2="328" y2="168" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="284" y="160" text-anchor="middle" font-size="13" fill="#9d0208">아니오</text>
+
+  <rect x="330" y="232" width="240" height="56" fill="#ffffff" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="450" y="256" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">먼저 동작시키고 테스트를 갖춘다</text>
+  <text x="450" y="276" text-anchor="middle" font-size="13" fill="#4a5568">동작 보존을 확인할 수단이 없다</text>
+  <line x1="240" y1="260" x2="328" y2="260" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="284" y="252" text-anchor="middle" font-size="13" fill="#9d0208">아니오</text>
+
+  <rect x="330" y="324" width="240" height="56" fill="#ffffff" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="450" y="348" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">재작성한다</text>
+  <text x="450" y="368" text-anchor="middle" font-size="13" fill="#4a5568">리팩토링이 아니라 다른 결정</text>
+  <line x1="240" y1="352" x2="328" y2="352" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="284" y="344" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+
+  <!-- do refactor -->
+  <rect x="40" y="410" width="530" height="44" fill="#f1f8f4" stroke="#2d6a4f" stroke-width="1.8" rx="4"/>
+  <text x="305" y="437" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">리팩토링한다 — 작은 단계 하나 → 테스트 → 다음 단계</text>
+  <line x1="140" y1="380" x2="140" y2="408" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="150" y="400" font-size="13" fill="#9d0208">아니오</text>
+
+  <!-- side note: two hats -->
+  <rect x="620" y="140" width="230" height="240" fill="#f8f9fb" stroke="#c4c9d2" stroke-width="1.2" rx="6"/>
+  <text x="735" y="166" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">두 개의 모자</text>
+  <text x="735" y="194" text-anchor="middle" font-size="13" fill="#1b1b1b">기능 추가 모자</text>
+  <text x="735" y="212" text-anchor="middle" font-size="13" fill="#4a5568">테스트를 추가하고</text>
+  <text x="735" y="230" text-anchor="middle" font-size="13" fill="#4a5568">동작을 바꾼다</text>
+  <line x1="650" y1="248" x2="820" y2="248" stroke="#c4c9d2" stroke-width="1.2"/>
+  <text x="735" y="272" text-anchor="middle" font-size="13" fill="#1b1b1b">리팩토링 모자</text>
+  <text x="735" y="290" text-anchor="middle" font-size="13" fill="#4a5568">테스트를 그대로 두고</text>
+  <text x="735" y="308" text-anchor="middle" font-size="13" fill="#4a5568">구조만 바꾼다</text>
+  <text x="735" y="342" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">한 번에 하나만 쓴다</text>
+  <text x="735" y="362" text-anchor="middle" font-size="13" fill="#4a5568">섞으면 동작 보존이 깨진다</text>
+</svg>
