@@ -3379,7 +3379,7 @@ topics:
     angle: "영업이익 ÷ 이자비용. 1배 미만이 연속되면 무엇을 뜻하는지, 금리가 오를 때 어떻게 움직이는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-016
     title: "PER — 이익 대비 주가를 재는 법"
     category: Finance
@@ -3390,7 +3390,7 @@ topics:
     angle: "계산식과 분모에 무엇을 넣느냐(후행·선행)에 따라 값이 달라지는 것. 적자 회사에서 PER이 무의미해지는 이유"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-017
     title: "PBR과 청산가치 — 1배 아래가 뜻하는 것"
     category: Finance
