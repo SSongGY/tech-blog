@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">복구 사이트에 무엇을 미리 띄워 두는가 — 전략 5단계</text>
+
+  <!-- Active-Passive bracket -->
+  <path d="M188,72 L188,62 L692,62 L692,72" fill="none" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="440" y="54" text-anchor="middle" font-size="14" font-weight="bold" fill="#4a5568">Active-Passive — 평시 트래픽은 주 사이트만 받는다</text>
+
+  <!-- 1. backup & restore -->
+  <rect x="16" y="80" width="160" height="190" fill="#f4f5f7" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="96" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">백업·복원</text>
+  <text x="30" y="138" font-size="13" fill="#4a5568">데이터: 백업 사본</text>
+  <text x="30" y="162" font-size="13" fill="#4a5568">DB: 없음</text>
+  <text x="30" y="186" font-size="13" fill="#4a5568">앱 서버: 없음</text>
+  <text x="30" y="210" font-size="13" fill="#4a5568">평시 트래픽: 없음</text>
+  <text x="96" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">전환: 배포 + 복원</text>
+
+  <!-- 2. pilot light -->
+  <rect x="188" y="80" width="160" height="190" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="268" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Pilot Light</text>
+  <text x="202" y="138" font-size="13" fill="#4a5568">데이터: 지속 복제</text>
+  <text x="202" y="162" font-size="13" fill="#2d6a4f">DB: 상시 가동</text>
+  <text x="202" y="186" font-size="13" fill="#4a5568">앱 서버: 꺼짐</text>
+  <text x="202" y="210" font-size="13" fill="#4a5568">평시 트래픽: 없음</text>
+  <text x="268" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">전환: 기동 + 확장</text>
+
+  <!-- 3. warm standby -->
+  <rect x="360" y="80" width="160" height="190" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="440" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Warm Standby</text>
+  <text x="374" y="138" font-size="13" fill="#4a5568">데이터: 지속 복제</text>
+  <text x="374" y="162" font-size="13" fill="#2d6a4f">DB: 상시 가동</text>
+  <text x="374" y="186" font-size="13" fill="#b45309">앱 서버: 축소 가동</text>
+  <text x="374" y="210" font-size="13" fill="#4a5568">평시 트래픽: 없음</text>
+  <text x="440" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">전환: 확장 + 전환</text>
+
+  <!-- 4. hot standby -->
+  <rect x="532" y="80" width="160" height="190" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="612" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Hot Standby</text>
+  <text x="546" y="138" font-size="13" fill="#4a5568">데이터: 지속 복제</text>
+  <text x="546" y="162" font-size="13" fill="#2d6a4f">DB: 상시 가동</text>
+  <text x="546" y="186" font-size="13" fill="#2d6a4f">앱 서버: 전체 가동</text>
+  <text x="546" y="210" font-size="13" fill="#4a5568">평시 트래픽: 없음</text>
+  <text x="612" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">전환: 트래픽만</text>
+
+  <!-- 5. active-active -->
+  <rect x="704" y="80" width="160" height="190" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2.2" rx="4"/>
+  <text x="784" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">Active-Active</text>
+  <text x="718" y="138" font-size="13" fill="#4a5568">데이터: 양쪽 쓰기</text>
+  <text x="718" y="162" font-size="13" fill="#2d6a4f">DB: 상시 가동</text>
+  <text x="718" y="186" font-size="13" fill="#2d6a4f">앱 서버: 전체 가동</text>
+  <text x="718" y="210" font-size="13" fill="#2d6a4f">평시 트래픽: 나눔</text>
+  <text x="784" y="248" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">장애 쪽만 제외</text>
+
+  <!-- bottom arrows -->
+  <line x1="20" y1="312" x2="858" y2="312" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#ag)"/>
+  <text x="440" y="304" text-anchor="middle" font-size="13" fill="#2d6a4f">RTO · RPO 짧아짐</text>
+  <line x1="20" y1="346" x2="858" y2="346" stroke="#b45309" stroke-width="1.8" marker-end="url(#ao)"/>
+  <text x="440" y="338" text-anchor="middle" font-size="13" fill="#b45309">상시 비용 · 운영 복잡도 커짐</text>
+  <text x="440" y="382" text-anchor="middle" font-size="13" fill="#4a5568">테두리 색: 회색 = 대기 자원 없음 · 주황 = 일부 가동 · 녹색 = 전체 가동</text>
+</svg>

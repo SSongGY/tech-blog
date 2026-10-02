@@ -3622,3 +3622,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-131
+    title: "재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "NIST SP 800-34의 MTD·RTO·RPO 관계와 BIA, AWS 백서의 백업·복원/파일럿 라이트/웜 스탠바이/멀티사이트 4단계를 콜드·웜·핫 사이트와 대응시키고, 동기·비동기 복제가 RPO를 정하는 원리"
+    code: none
+    origin: exam
+    status: todo

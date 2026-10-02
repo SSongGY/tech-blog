@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">재해 시점을 기준으로 본 RPO · RTO · MTD</text>
+
+  <!-- event boxes -->
+  <rect x="130" y="56" width="180" height="50" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="220" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">마지막 복구 시점</text>
+  <text x="220" y="97" text-anchor="middle" font-size="13" fill="#4a5568">최근 백업 · 복제 완료분</text>
+
+  <rect x="320" y="56" width="160" height="50" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="400" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">재해 발생</text>
+  <text x="400" y="97" text-anchor="middle" font-size="13" fill="#9d0208">서비스 중단</text>
+
+  <rect x="610" y="56" width="180" height="50" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="700" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">시스템 복구</text>
+  <text x="700" y="97" text-anchor="middle" font-size="13" fill="#4a5568">서비스 재개</text>
+
+  <!-- time axis -->
+  <line x1="40" y1="170" x2="850" y2="170" stroke="#1b1b1b" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="850" y="194" text-anchor="end" font-size="13" fill="#4a5568">시간</text>
+  <line x1="220" y1="106" x2="220" y2="178" stroke="#2d6a4f" stroke-width="1.4" stroke-dasharray="4,3"/>
+  <line x1="400" y1="106" x2="400" y2="290" stroke="#9d0208" stroke-width="1.4" stroke-dasharray="4,3"/>
+  <line x1="700" y1="106" x2="700" y2="178" stroke="#2d6a4f" stroke-width="1.4" stroke-dasharray="4,3"/>
+  <line x1="790" y1="160" x2="790" y2="290" stroke="#b45309" stroke-width="1.4" stroke-dasharray="4,3"/>
+
+  <!-- RPO -->
+  <rect x="220" y="140" width="180" height="22" fill="#9d0208" fill-opacity="0.15" stroke="#9d0208" stroke-width="1.2"/>
+  <text x="310" y="156" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">RPO</text>
+  <text x="310" y="212" text-anchor="middle" font-size="13" fill="#9d0208">잃어도 되는 데이터의 양</text>
+  <text x="310" y="230" text-anchor="middle" font-size="13" fill="#9d0208">(시간으로 잰다)</text>
+
+  <!-- RTO -->
+  <rect x="400" y="140" width="300" height="22" fill="#b45309" fill-opacity="0.15" stroke="#b45309" stroke-width="1.2"/>
+  <text x="550" y="156" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">RTO</text>
+  <text x="550" y="212" text-anchor="middle" font-size="13" fill="#b45309">시스템이 멈춰 있어도 되는 최대 시간</text>
+
+  <!-- reprocess -->
+  <rect x="700" y="140" width="90" height="22" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="745" y="212" text-anchor="middle" font-size="13" fill="#4a5568">데이터</text>
+  <text x="745" y="230" text-anchor="middle" font-size="13" fill="#4a5568">재처리</text>
+
+  <!-- MTD -->
+  <line x1="404" y1="276" x2="786" y2="276" stroke="#b45309" stroke-width="1.8" marker-end="url(#ar)"/>
+  <text x="595" y="266" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">MTD — 업무가 견딜 수 있는 최대 중단 시간</text>
+  <text x="595" y="304" text-anchor="middle" font-size="13" fill="#4a5568">RTO + 재처리 시간 ≤ MTD  →  RTO는 보통 MTD보다 짧게 잡는다</text>
+  <text x="310" y="252" text-anchor="middle" font-size="13" fill="#4a5568">MTD에는 들지 않는다</text>
+  <text x="440" y="346" text-anchor="middle" font-size="13" fill="#4a5568">RPO는 백업 주기 · 복제 방식이, RTO는 대기 사이트의 준비 수준이 정한다</text>
+</svg>
