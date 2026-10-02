@@ -1849,7 +1849,7 @@ topics:
     angle: "언제 하지 말아야 하는지까지 포함해서"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-042
     title: "기술부채 — 측정 방법과 상환 전략"
     category: PE
@@ -3643,4 +3643,4 @@ topics:
     angle: "ISO/IEC/IEEE 29119-4:2021 정의와 Chen 등의 MR 정의로 원천·후속 케이스·메타모픽 그룹을 세우고, 오라클 4분류 속 위치와 백투백·A/B·단언과의 차이를 정리"
     code: none
     origin: exam
-    status: todo
+    status: done

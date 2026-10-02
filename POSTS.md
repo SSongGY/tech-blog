@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **155편** · 갱신 2026-10-03
+총 **157편** · 갱신 2026-10-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -54,10 +54,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 57편
+## 기술사 (pe) — 59편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [리팩토링 — 코드 스멜 분류와 적용 시점](posts/PE/software-engineering/2026-10-03-refactoring-code-smells-when-to-apply/index.md) | 중급 | Fowler, Refactoring 2nd ed. (2018), Mäntylä & Lassenius, Empirical Software Engineering 11(3) (2006), Chikofsky & Cross, IEEE Software 7(1) (1990-01) | 문서 근거 |
+| 2026-10-03 | [메타모픽 테스트와 테스트 오라클 문제](posts/PE/software-engineering/2026-10-03-metamorphic-testing-test-oracle-problem/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, Barr et al., IEEE TSE 41(5) (2015-05), Chen et al., ACM Computing Surveys 51(1) (2018-01), ISTQB CT-AI Syllabus v1.0 (2021-10-01) | 문서 근거 |
 | 2026-10-02 | [사가(Saga) 패턴 — 분산 트랜잭션 대신 보상 트랜잭션](posts/PE/software-engineering/2026-10-02-saga-pattern-compensating-transaction/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Garcia-Molina & Salem, Sagas (SIGMOD 1987), Microsoft Azure Architecture Center, Saga design pattern (2025-02-25) | 실행 검증 |
 | 2026-10-02 | [GoF 디자인 패턴 23개의 3분류](posts/PE/software-engineering/2026-10-02-gof-design-patterns-three-purposes/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994) | 문서 근거 |
 | 2026-10-02 | [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](posts/PE/system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
