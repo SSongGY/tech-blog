@@ -1,0 +1,31 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\software-engineering\2026-10-02-clean-vs-hexagonal-architecture
+# 명령      : python check_dependencies.py
+# 수행 시각 : 2026-10-02 19:18 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5
+
+[1-A 계층형 (before)]
+  order_service  -> sqlite3    바깥으로 (규칙 위반)
+  바깥을 향한 의존: 1개
+
+[1-B 포트와 어댑터 (after)]
+  adapters       -> sqlite3    같은 층
+  adapters       -> domain     안쪽으로
+  main           -> adapters   안쪽으로
+  main           -> domain     안쪽으로
+  바깥을 향한 의존: 0개
+
+[2 실행 중 호출 방향]
+  domain -> __main__.RecordingRepository.next_id
+  domain -> __main__.RecordingRepository.save
+
+[3 어댑터만 바꿔 끼운다 — PlaceOrder 는 그대로]
+  InMemoryOrderRepository  -> [Order(order_id=1, amount=12000), Order(order_id=2, amount=30000)]
+  SqliteOrderRepository    -> [Order(order_id=1, amount=12000), Order(order_id=2, amount=30000)]
