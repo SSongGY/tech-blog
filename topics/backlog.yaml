@@ -127,7 +127,7 @@ topics:
     difficulty: 심화
     angle: "SQLite WAL 파일을 직접 열어 프레임이 쌓이는 걸 바이트로 확인"
     code: python
-    status: todo
+    status: done
   - id: db-012
     title: "옵티마이저 힌트를 쓰기 전에 확인해야 할 3가지"
     category: Database
@@ -1827,7 +1827,7 @@ topics:
     angle: "의존성 방향을 뒤집는다는 말이 코드에서 실제로 무엇인지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-040
     title: "마이크로서비스 분해 전략과 사가(Saga) 패턴"
     category: PE
@@ -2334,7 +2334,7 @@ topics:
     angle: "삼값 논리를 진리표로 보이고 IS NULL·COALESCE·IFNULL로 다루는 법"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-024
     title: "기본 키와 UNIQUE 제약"
     category: Database

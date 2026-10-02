@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **146편** · 갱신 2026-10-02
+총 **149편** · 갱신 2026-10-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 27편
+## DB문법 (basics) — 28편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-02 | [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](posts/Database/sql-basics/2026-10-02-count-star-vs-column-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [외래 키 — 참조 무결성과 ON DELETE](posts/Database/sql-basics/2026-10-01-sqlite-foreign-key-on-delete/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [숫자 타입과 반올림 — 돈을 다룰 때](posts/Database/sql-basics/2026-10-01-sql-numeric-types-rounding-money/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -51,12 +52,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 55편
+## 기술사 (pe) — 56편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-02 | [GoF 디자인 패턴 23개의 3분류](posts/PE/software-engineering/2026-10-02-gof-design-patterns-three-purposes/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994) | 문서 근거 |
 | 2026-10-02 | [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](posts/PE/system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
+| 2026-10-02 | [클린 아키텍처와 헥사고날 아키텍처](posts/PE/software-engineering/2026-10-02-clean-vs-hexagonal-architecture/index.md) | 중급 | Python 3.13.5, Cockburn, Hexagonal Architecture (2005), Martin, The Clean Architecture (2012) | 실행 검증 |
 | 2026-10-02 | [AI 통제(AI Control) — 오정렬을 전제로 에이전트를 감독하는 설계](posts/PE/security/2026-10-02-ai-control-untrusted-model-oversight/index.md) | 중급 | Greenblatt et al., AI Control (ICML 2024, arXiv 2312.06942v5), Korbak et al., A sketch of an AI control safety case (arXiv 2501.17315, 2025-01), OpenAI Preparedness Framework v2 (2025-04-15), International AI Safety Report 2026 (2026-02-03) | 문서 근거 |
 | 2026-10-01 | [PMBOK 지식 영역과 프로세스 그룹](posts/PE/it-management/2026-10-01-pmbok-knowledge-areas-process-groups/index.md) | 중급 | PMBOK Guide 6th Edition (2017), PMBOK Guide 7th Edition (2021), PMBOK Guide 8th Edition (2025), PMI Process Groups: A Practice Guide (2022) | 문서 근거 |
 | 2026-10-01 | [패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ](posts/PE/network/2026-10-01-packet-scheduling-pq-wrr-drr-wfq/index.md) | 중급 | Shreedhar & Varghese, DRR, ACM SIGCOMM 1995, Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Katevenis et al., WRR, IEEE JSAC 1991, Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
@@ -126,10 +128,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 9편
+## 일반 (general) — 10편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-02 | [WAL은 왜 데이터 파일보다 먼저 쓰이는가](posts/Database/sqlite/2026-10-02-sqlite-wal-frames-before-data-file/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [N+1 쿼리는 왜 반복해서 생기고 어떻게 잡아내는가](posts/Database/2026-10-01-n-plus-one-query-detection/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-29 | [데드락은 어떻게 만들어지고 SQLite는 누구에게 BUSY를 돌려주는가](posts/Database/2026-09-29-sqlite-deadlock-busy-victim/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -196,6 +199,7 @@
 
 - [COALESCE와 NULLIF — NULL을 다루는 두 함수](posts/Database/sql-basics/2026-09-28-coalesce-nullif-null-handling/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](posts/Database/sql-basics/2026-10-02-count-star-vs-column-null/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 
 **`row-limiting`**
 
