@@ -17,6 +17,7 @@ topic_id: bas-015
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`null-semantics`)
 > - [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](../2026-10-02-count-star-vs-column-null/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+> - [NULL 비교 — = NULL이 안 되는 이유](../2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 <!-- related:end -->
 
 ## 들어가며

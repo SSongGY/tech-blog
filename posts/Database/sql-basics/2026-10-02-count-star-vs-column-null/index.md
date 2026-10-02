@@ -17,6 +17,7 @@ topic_id: db-018
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`null-semantics`)
 > - [COALESCE와 NULLIF — NULL을 다루는 두 함수](../2026-09-28-coalesce-nullif-null-handling/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+> - [NULL 비교 — = NULL이 안 되는 이유](../2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 <!-- related:end -->
 
 ## 들어가며
