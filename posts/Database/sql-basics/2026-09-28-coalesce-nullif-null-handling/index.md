@@ -14,6 +14,11 @@ verified: true
 topic_id: bas-015
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`null-semantics`)
+> - [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](../2026-10-02-count-star-vs-column-null/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+<!-- related:end -->
+
 ## 들어가며
 
 쇼핑몰 주문 표에서 결제액을 뽑으려고 `정가 - 할인액`을 계산했는데, 몇 줄의 결제액이 비어 있다.
