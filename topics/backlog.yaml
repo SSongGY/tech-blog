@@ -3633,3 +3633,14 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-132
+    title: "메타모픽 테스트와 테스트 오라클 문제"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "ISO/IEC/IEEE 29119-4:2021 정의와 Chen 등의 MR 정의로 원천·후속 케이스·메타모픽 그룹을 세우고, 오라클 4분류 속 위치와 백투백·A/B·단언과의 차이를 정리"
+    code: none
+    origin: exam
+    status: todo
