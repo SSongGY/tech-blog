@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">같은 값과 NULL을 넣었을 때 — 제약마다 결과</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 실행 결과 · 'M001' 행이 있는 표에 같은 값을 한 번 더, NULL을 두 번 넣는다</text>
+
+  <!-- 열 머리 -->
+  <rect x="190" y="74" width="160" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="270" y="100" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">UNIQUE</text>
+  <text x="270" y="122" font-size="13" fill="#555" text-anchor="middle">email</text>
+
+  <rect x="365" y="74" width="160" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="445" y="96" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">PRIMARY KEY</text>
+  <text x="445" y="116" font-size="13" fill="#555" text-anchor="middle">NOT NULL · STRICT</text>
+  <text x="445" y="132" font-size="13" fill="#555" text-anchor="middle">· WITHOUT ROWID</text>
+
+  <rect x="540" y="74" width="160" height="62" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="620" y="100" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">PRIMARY KEY</text>
+  <text x="620" y="122" font-size="13" fill="#555" text-anchor="middle">보통 표 · TEXT 컬럼</text>
+
+  <rect x="715" y="74" width="140" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="785" y="96" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">INTEGER</text>
+  <text x="785" y="116" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">PRIMARY KEY</text>
+  <text x="785" y="132" font-size="13" fill="#555" text-anchor="middle">행 번호와 같다</text>
+
+  <!-- 행 머리 -->
+  <text x="30" y="180" font-size="14" font-weight="bold" fill="#1b1b1b">같은 값</text>
+  <text x="30" y="200" font-size="13" fill="#555">'M001' 한 번 더</text>
+  <text x="30" y="250" font-size="14" font-weight="bold" fill="#1b1b1b">NULL</text>
+  <text x="30" y="270" font-size="13" fill="#555">두 번 넣는다</text>
+  <text x="30" y="320" font-size="14" font-weight="bold" fill="#1b1b1b">표에 몇 개</text>
+  <text x="30" y="340" font-size="13" fill="#555">이 제약을 걸 수 있나</text>
+
+  <!-- 같은 값 -->
+  <rect x="190" y="160" width="160" height="50" fill="#fbeaea" stroke="#9d0208" stroke-width="1.2"/>
+  <text x="270" y="190" font-size="14" fill="#9d0208" text-anchor="middle">거부</text>
+  <rect x="365" y="160" width="160" height="50" fill="#fbeaea" stroke="#9d0208" stroke-width="1.2"/>
+  <text x="445" y="190" font-size="14" fill="#9d0208" text-anchor="middle">거부</text>
+  <rect x="540" y="160" width="160" height="50" fill="#fbeaea" stroke="#9d0208" stroke-width="1.2"/>
+  <text x="620" y="190" font-size="14" fill="#9d0208" text-anchor="middle">거부</text>
+  <rect x="715" y="160" width="140" height="50" fill="#fbeaea" stroke="#9d0208" stroke-width="1.2"/>
+  <text x="785" y="190" font-size="14" fill="#9d0208" text-anchor="middle">거부</text>
+
+  <!-- NULL -->
+  <rect x="190" y="230" width="160" height="50" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="270" y="260" font-size="14" fill="#2d6a4f" text-anchor="middle">들어간다</text>
+  <rect x="365" y="230" width="160" height="50" fill="#fbeaea" stroke="#9d0208" stroke-width="1.2"/>
+  <text x="445" y="260" font-size="14" fill="#9d0208" text-anchor="middle">거부 (NOT NULL)</text>
+  <rect x="540" y="230" width="160" height="50" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="620" y="252" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">들어간다</text>
+  <text x="620" y="270" font-size="13" fill="#b45309" text-anchor="middle">SQL 표준과 다르다</text>
+  <rect x="715" y="230" width="140" height="50" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="785" y="252" font-size="14" fill="#2d6a4f" text-anchor="middle">번호를 매긴다</text>
+  <text x="785" y="270" font-size="13" fill="#2d6a4f" text-anchor="middle">최댓값 + 1</text>
+
+  <!-- 개수 -->
+  <rect x="190" y="300" width="160" height="50" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="270" y="330" font-size="14" fill="#1b1b1b" text-anchor="middle">여러 개</text>
+  <rect x="365" y="300" width="490" height="50" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="610" y="330" font-size="14" fill="#1b1b1b" text-anchor="middle">표마다 하나 (컬럼 여럿을 묶은 것도 하나로 센다)</text>
+
+  <line x1="30" y1="376" x2="850" y2="376" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="402" font-size="13" fill="#333">중복을 막는 방법은 넷 다 같다 — 고유 인덱스를 만들고, 위반하면 "UNIQUE constraint failed"를 낸다.</text>
+  <text x="30" y="424" font-size="13" fill="#333">갈리는 곳은 NULL과 개수다. 주황 칸은 SQLite만의 호환 동작이다.</text>
+</svg>

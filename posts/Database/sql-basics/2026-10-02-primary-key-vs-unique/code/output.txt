@@ -1,0 +1,103 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-02-primary-key-vs-unique
+# 명령      : python pk_vs_unique.py
+# 수행 시각 : 2026-10-02 23:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  3행
+  컬럼        | 타입 | 제약
+  ------------+------+---------
+  member_code | TEXT | PK
+  email       | TEXT |
+  name        | TEXT | NOT NULL
+
+  member_code | email           | name
+  ------------+-----------------+-------
+  M001        | kim@example.com | 김도윤
+  M002        | lee@example.com | 이서준
+  M003        | NULL            | 박하은
+
+
+-- 1. 같은 값 — 둘 다 막는다
+   INSERT INTO member VALUES ('M001', 'new@example.com', '최유나')
+   에러: UNIQUE constraint failed: member.member_code
+   INSERT INTO member VALUES ('M004', 'kim@example.com', '최유나')
+   에러: UNIQUE constraint failed: member.email
+
+-- 2. NULL — UNIQUE 는 여러 개 받는다
+   INSERT INTO member VALUES ('M004', NULL, '최유나')
+   성공 · 바뀐 행 1
+   SELECT COUNT(*) FROM member WHERE email IS NULL
+   2
+
+-- 3. NULL — 정수가 아닌 기본 키도 받아 준다 (SQLite 호환 동작)
+   INSERT INTO member VALUES (NULL, 'jung@example.com', '정민호')
+   성공 · 바뀐 행 1
+   INSERT INTO member VALUES (NULL, 'han@example.com', '한지우')
+   성공 · 바뀐 행 1
+   SELECT member_code, name FROM member WHERE member_code IS NULL
+   NULL | 정민호
+   NULL | 한지우
+   SELECT COUNT(*) FROM member WHERE member_code = NULL
+   0
+
+-- 4. 기본 키의 NULL 을 막는 세 가지 방법
+   INSERT INTO member_nn VALUES (NULL, '정민호')
+   에러: NOT NULL constraint failed: member_nn.member_code
+   INSERT INTO member_strict VALUES (NULL, '정민호')
+   에러: NOT NULL constraint failed: member_strict.member_code
+   INSERT INTO member_wr VALUES (NULL, '정민호')
+   에러: NOT NULL constraint failed: member_wr.member_code
+
+-- 5. INTEGER PRIMARY KEY 에 NULL 을 넣으면 번호를 매긴다
+   INSERT INTO board VALUES (NULL, '첫 글')
+   성공 · 바뀐 행 1
+   INSERT INTO board VALUES (10, '열 번째 글')
+   성공 · 바뀐 행 1
+   INSERT INTO board VALUES (NULL, '그다음 글')
+   성공 · 바뀐 행 1
+   SELECT post_id, title FROM board
+   1 | 첫 글
+   10 | 열 번째 글
+   11 | 그다음 글
+
+-- 6. 개수 — 기본 키는 표에 하나, UNIQUE 는 여럿
+   CREATE TABLE t_two_pk (a TEXT PRIMARY KEY, b TEXT PRIMARY KEY)
+   에러: table "t_two_pk" has more than one primary key
+   CREATE TABLE t_two_uq (a TEXT UNIQUE, b TEXT UNIQUE, c TEXT)
+   성공 · 바뀐 행 -1
+   - 컬럼 둘을 묶은 기본 키 하나는 된다
+   CREATE TABLE enrollment ( student_id TEXT, course_id TEXT, PRIMARY KEY (student_id, course_id))
+   성공 · 바뀐 행 -1
+   INSERT INTO enrollment VALUES ('S1', 'DB101')
+   성공 · 바뀐 행 1
+   INSERT INTO enrollment VALUES ('S1', 'OS201')
+   성공 · 바뀐 행 1
+   INSERT INTO enrollment VALUES ('S1', 'DB101')
+   에러: UNIQUE constraint failed: enrollment.student_id, enrollment.course_id
+
+-- 7. 둘 다 고유 인덱스를 만든다 (origin: pk = 기본 키, u = UNIQUE)
+   SELECT name, "unique", origin FROM pragma_index_list('member') ORDER BY name
+   sqlite_autoindex_member_1 | 1 | pk
+   sqlite_autoindex_member_2 | 1 | u
+   SELECT name, origin FROM pragma_index_list('t_two_uq') ORDER BY name
+   sqlite_autoindex_t_two_uq_1 | u
+   sqlite_autoindex_t_two_uq_2 | u
+   - INTEGER PRIMARY KEY 는 따로 인덱스가 없다 (행 번호 자체가 키)
+   SELECT COUNT(*) FROM pragma_index_list('board')
+   0

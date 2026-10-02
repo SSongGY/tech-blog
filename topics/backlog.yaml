@@ -588,7 +588,7 @@ topics:
     difficulty: 중급
     angle: "DIRECTORY 객체부터 ACCESS PARAMETERS까지 한 줄씩"
     code: sql
-    status: todo
+    status: writing
   - id: tb-012
     title: "Tibero 7 딕셔너리 뷰 — 무엇을 어디서 찾는가"
     category: Database
@@ -1838,7 +1838,7 @@ topics:
     angle: "분산 트랜잭션을 포기하고 보상으로 푸는 대가"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-041
     title: "리팩토링 — 코드 스멜 분류와 적용 시점"
     category: PE
@@ -2345,7 +2345,7 @@ topics:
     angle: "둘 다 중복을 막는데 무엇이 다른지. NULL 허용 여부와 개수 제한"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-025
     title: "외래 키 — 참조 무결성과 ON DELETE"
     category: Database
