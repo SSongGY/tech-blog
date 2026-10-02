@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">마루식품 3개년 — 영업주기에서 지급일수를 뺀 현금전환주기</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">왼쪽 끝 = 재고가 들어온 날. 회색 = 재고·매출채권으로 묶인 기간, 주황 = 대금 지급을 미룬 기간</text>
+
+  <!-- 1년차: A 38.3, B 57.5, C 34.7, CCC 61.1 -->
+  <text x="150" y="110" text-anchor="end" font-size="15" font-weight="bold" fill="#1b1b1b">1년차</text>
+  <rect x="170" y="90" width="229.8" height="28" fill="#e9ecef" stroke="#495057"/>
+  <text x="284.9" y="109" text-anchor="middle" font-size="13" fill="#1b1b1b">재고 38.3일</text>
+  <rect x="399.8" y="90" width="345" height="28" fill="#f8f9fa" stroke="#495057"/>
+  <text x="572.3" y="109" text-anchor="middle" font-size="13" fill="#1b1b1b">매출채권 57.5일</text>
+  <rect x="170" y="126" width="208.2" height="20" fill="#fde8cc" stroke="#b45309"/>
+  <text x="274.1" y="141" text-anchor="middle" font-size="13" fill="#b45309">매입채무 34.7일</text>
+  <path d="M 378.2 152 v 8 H 744.8 v -8" fill="none" stroke="#1b1b1b"/>
+  <text x="561.5" y="176" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">현금전환주기 61.1일</text>
+
+  <!-- 2년차: A 38.1, B 55.5, C 33.3, CCC 60.3 -->
+  <text x="150" y="220" text-anchor="end" font-size="15" font-weight="bold" fill="#1b1b1b">2년차</text>
+  <rect x="170" y="200" width="228.6" height="28" fill="#e9ecef" stroke="#495057"/>
+  <text x="284.3" y="219" text-anchor="middle" font-size="13" fill="#1b1b1b">재고 38.1일</text>
+  <rect x="398.6" y="200" width="333" height="28" fill="#f8f9fa" stroke="#495057"/>
+  <text x="565.1" y="219" text-anchor="middle" font-size="13" fill="#1b1b1b">매출채권 55.5일</text>
+  <rect x="170" y="236" width="199.8" height="20" fill="#fde8cc" stroke="#b45309"/>
+  <text x="269.9" y="251" text-anchor="middle" font-size="13" fill="#b45309">매입채무 33.3일</text>
+  <path d="M 369.8 262 v 8 H 731.6 v -8" fill="none" stroke="#1b1b1b"/>
+  <text x="550.7" y="286" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">현금전환주기 60.3일</text>
+
+  <!-- 3년차: A 47.7, B 55.5, C 28.8, CCC 74.4 -->
+  <text x="150" y="330" text-anchor="end" font-size="15" font-weight="bold" fill="#1b1b1b">3년차</text>
+  <rect x="170" y="310" width="286.2" height="28" fill="#e9ecef" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="313.1" y="329" text-anchor="middle" font-size="13" fill="#9d0208">재고 47.7일</text>
+  <rect x="456.2" y="310" width="333" height="28" fill="#f8f9fa" stroke="#495057"/>
+  <text x="622.7" y="329" text-anchor="middle" font-size="13" fill="#1b1b1b">매출채권 55.5일</text>
+  <rect x="170" y="346" width="172.8" height="20" fill="#fde8cc" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="256.4" y="361" text-anchor="middle" font-size="13" fill="#9d0208">매입채무 28.8일</text>
+  <path d="M 342.8 372 v 8 H 789.2 v -8" fill="none" stroke="#9d0208"/>
+  <text x="566" y="396" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">현금전환주기 74.4일 (+13.3일)</text>
+
+  <line x1="40" y1="418" x2="840" y2="418" stroke="#ced4da"/>
+  <text x="40" y="440" font-size="13" fill="#495057">영업주기 = 재고일수 + 매출채권 회수일수. 현금전환주기 = 영업주기 − 매입채무 지급일수.</text>
+  <text x="40" y="460" font-size="13" fill="#495057">3년차는 재고일수가 늘고 지급일수가 줄어 양쪽에서 길어졌다. 분자는 모두 매출액(한국은행 산식).</text>
+</svg>

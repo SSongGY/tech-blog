@@ -3368,7 +3368,7 @@ topics:
     angle: "총자산회전율·재고회전율·매출채권회전율을 한 회사의 3개년으로 계산해 추세를 본다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-015
     title: "이자보상배율 — 빚을 감당하는가"
     category: Finance
