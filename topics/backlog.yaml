@@ -3357,7 +3357,7 @@ topics:
     angle: "순이익률 × 자산회전율 × 재무레버리지. 같은 ROE 15%가 셋 중 무엇에서 왔는지에 따라 평가가 갈린다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-014
     title: "활동성 비율 — 자산을 얼마나 굴리는가"
     category: Finance
@@ -3368,7 +3368,7 @@ topics:
     angle: "총자산회전율·재고회전율·매출채권회전율을 한 회사의 3개년으로 계산해 추세를 본다"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-015
     title: "이자보상배율 — 빚을 감당하는가"
     category: Finance

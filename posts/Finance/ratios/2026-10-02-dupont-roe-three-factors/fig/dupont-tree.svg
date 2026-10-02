@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">ROE를 세 조각으로 — 분모와 분자가 차례로 지워지는 곱</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">초록 칸은 손익계산서 값, 회색 칸은 재무상태표 값(기초·기말 평균)</text>
+
+  <!-- 맨 위: ROE -->
+  <rect x="330" y="70" width="220" height="56" rx="6" fill="#fff7e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">ROE</text>
+  <text x="440" y="115" text-anchor="middle" font-size="13" fill="#1b1b1b">당기순이익 ÷ 자기자본</text>
+
+  <line x1="440" y1="126" x2="300" y2="160" stroke="#495057"/>
+  <line x1="440" y1="126" x2="700" y2="160" stroke="#495057"/>
+
+  <!-- 둘째 줄: ROA × 재무레버리지 -->
+  <rect x="150" y="160" width="300" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="300" y="184" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">ROA (총자산순이익률)</text>
+  <text x="300" y="205" text-anchor="middle" font-size="13" fill="#1b1b1b">당기순이익 ÷ 총자산</text>
+
+  <text x="510" y="194" text-anchor="middle" font-size="22" fill="#1b1b1b">×</text>
+
+  <rect x="580" y="160" width="240" height="56" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="700" y="184" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 재무레버리지</text>
+  <text x="700" y="205" text-anchor="middle" font-size="13" fill="#1b1b1b">총자산 ÷ 자기자본 = 1 + 부채비율</text>
+
+  <line x1="300" y1="216" x2="170" y2="260" stroke="#495057"/>
+  <line x1="300" y1="216" x2="430" y2="260" stroke="#495057"/>
+
+  <!-- 셋째 줄: 순이익률 × 총자산회전율 -->
+  <rect x="50" y="260" width="240" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="170" y="284" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 순이익률</text>
+  <text x="170" y="305" text-anchor="middle" font-size="13" fill="#1b1b1b">당기순이익 ÷ 매출액</text>
+
+  <text x="360" y="294" text-anchor="middle" font-size="22" fill="#1b1b1b">×</text>
+
+  <rect x="430" y="260" width="240" height="56" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="550" y="284" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 총자산회전율</text>
+  <text x="550" y="305" text-anchor="middle" font-size="13" fill="#1b1b1b">매출액 ÷ 총자산</text>
+
+  <!-- 각 요인이 묻는 질문 -->
+  <g font-size="13" fill="#1b1b1b">
+    <text x="50" y="352">① 매출 1원에서 이익이 얼마 남는가</text>
+    <text x="50" y="374">② 자산 1원으로 매출을 얼마 내는가</text>
+    <text x="50" y="396">③ 자본 1원 위에 자산을 얼마나 얹었는가</text>
+  </g>
+  <g font-size="13" fill="#495057">
+    <text x="470" y="352">①×②: 매출액이 분모·분자에서 지워져 ROA</text>
+    <text x="470" y="374">ROA×③: 총자산이 지워져 ROE</text>
+    <text x="470" y="396">세 조각의 곱은 항상 ROE와 같다(항등식)</text>
+  </g>
+
+  <line x1="50" y1="418" x2="830" y2="418" stroke="#ced4da"/>
+  <text x="50" y="446" font-size="13" fill="#495057">한국은행 지표 해설은 세전이익 기준으로 ①×② 분해를 적는다: 총자산세전순이익률 = 매출액세전순이익률 × 총자산회전율</text>
+</svg>
