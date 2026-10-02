@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **144편** · 갱신 2026-10-02
+총 **146편** · 갱신 2026-10-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -51,11 +51,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 53편
+## 기술사 (pe) — 55편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-02 | [GoF 디자인 패턴 23개의 3분류](posts/PE/software-engineering/2026-10-02-gof-design-patterns-three-purposes/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994) | 문서 근거 |
+| 2026-10-02 | [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](posts/PE/system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
+| 2026-10-02 | [AI 통제(AI Control) — 오정렬을 전제로 에이전트를 감독하는 설계](posts/PE/security/2026-10-02-ai-control-untrusted-model-oversight/index.md) | 중급 | Greenblatt et al., AI Control (ICML 2024, arXiv 2312.06942v5), Korbak et al., A sketch of an AI control safety case (arXiv 2501.17315, 2025-01), OpenAI Preparedness Framework v2 (2025-04-15), International AI Safety Report 2026 (2026-02-03) | 문서 근거 |
 | 2026-10-01 | [PMBOK 지식 영역과 프로세스 그룹](posts/PE/it-management/2026-10-01-pmbok-knowledge-areas-process-groups/index.md) | 중급 | PMBOK Guide 6th Edition (2017), PMBOK Guide 7th Edition (2021), PMBOK Guide 8th Edition (2025), PMI Process Groups: A Practice Guide (2022) | 문서 근거 |
 | 2026-10-01 | [패킷 스케줄링 기법 — PQ·WRR·DRR·WFQ](posts/PE/network/2026-10-01-packet-scheduling-pq-wrr-drr-wfq/index.md) | 중급 | Shreedhar & Varghese, DRR, ACM SIGCOMM 1995, Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Katevenis et al., WRR, IEEE JSAC 1991, Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
 | 2026-10-01 | [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](posts/PE/network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md) | 심화 | NVIDIA DGX SuperPOD Reference Architecture H100 · GB200 (2025-11 갱신), IBTA RoCEv2 Annex A17 (2014), Guo et al., RDMA over Commodity Ethernet at Scale, SIGCOMM 2016, Narayanan et al., Megatron-LM, SC21 | 문서 근거 |

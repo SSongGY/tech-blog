@@ -3621,7 +3621,7 @@ topics:
     angle: "모델을 믿지 않는 전제에서 감독 모니터·사람 승인·권한 제한·변조 불가 로그로 피해를 막는 구조와 정렬(alignment) 접근과의 차이"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-131
     title: "재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식"
     category: PE
@@ -3632,4 +3632,4 @@ topics:
     angle: "NIST SP 800-34의 MTD·RTO·RPO 관계와 BIA, AWS 백서의 백업·복원/파일럿 라이트/웜 스탠바이/멀티사이트 4단계를 콜드·웜·핫 사이트와 대응시키고, 동기·비동기 복제가 RPO를 정하는 원리"
     code: none
     origin: exam
-    status: todo
+    status: done
