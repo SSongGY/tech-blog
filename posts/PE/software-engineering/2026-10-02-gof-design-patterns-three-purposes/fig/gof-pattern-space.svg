@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">GoF 패턴 공간 — 목적(3) × 범위(2)</text>
+  <text x="30" y="56" font-size="13" fill="#555">23개 패턴, Adapter만 두 칸에 걸쳐 24칸</text>
+
+  <!-- 열 머리 -->
+  <rect x="170" y="74" width="210" height="52" rx="4" fill="#eef1f6" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="275" y="97" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">생성 Creational (5)</text>
+  <text x="275" y="116" font-size="13" fill="#444" text-anchor="middle">객체를 만드는 과정</text>
+
+  <rect x="390" y="74" width="210" height="52" rx="4" fill="#eef1f6" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="495" y="97" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">구조 Structural (7)</text>
+  <text x="495" y="116" font-size="13" fill="#444" text-anchor="middle">클래스·객체의 조합</text>
+
+  <rect x="610" y="74" width="240" height="52" rx="4" fill="#eef1f6" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="730" y="97" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">행위 Behavioral (11)</text>
+  <text x="730" y="116" font-size="13" fill="#444" text-anchor="middle">상호작용과 책임 분배</text>
+
+  <!-- 행 머리 -->
+  <rect x="30" y="136" width="130" height="70" rx="4" fill="#fdf3e7" stroke="#b45309" stroke-width="1.2"/>
+  <text x="95" y="164" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">클래스 범위</text>
+  <text x="95" y="186" font-size="13" fill="#444" text-anchor="middle">상속 · 컴파일 시 고정</text>
+
+  <rect x="30" y="216" width="130" height="250" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="95" y="330" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">객체 범위</text>
+  <text x="95" y="352" font-size="13" fill="#444" text-anchor="middle">합성 · 실행 중 변경</text>
+
+  <!-- 클래스 범위 칸 -->
+  <rect x="170" y="136" width="210" height="70" fill="#ffffff" stroke="#8a8a84" stroke-width="1"/>
+  <text x="185" y="176" font-size="13" fill="#1b1b1b">Factory Method</text>
+
+  <rect x="390" y="136" width="210" height="70" fill="#ffffff" stroke="#8a8a84" stroke-width="1"/>
+  <text x="405" y="176" font-size="13" fill="#1b1b1b">Adapter (클래스)</text>
+
+  <rect x="610" y="136" width="240" height="70" fill="#ffffff" stroke="#8a8a84" stroke-width="1"/>
+  <text x="625" y="165" font-size="13" fill="#1b1b1b">Interpreter</text>
+  <text x="625" y="187" font-size="13" fill="#1b1b1b">Template Method</text>
+
+  <!-- 객체 범위 칸 -->
+  <rect x="170" y="216" width="210" height="250" fill="#ffffff" stroke="#8a8a84" stroke-width="1"/>
+  <text x="185" y="244" font-size="13" fill="#1b1b1b">Abstract Factory</text>
+  <text x="185" y="266" font-size="13" fill="#1b1b1b">Builder</text>
+  <text x="185" y="288" font-size="13" fill="#1b1b1b">Prototype</text>
+  <text x="185" y="310" font-size="13" fill="#1b1b1b">Singleton</text>
+
+  <rect x="390" y="216" width="210" height="250" fill="#ffffff" stroke="#8a8a84" stroke-width="1"/>
+  <text x="405" y="244" font-size="13" fill="#1b1b1b">Adapter (객체)</text>
+  <text x="405" y="266" font-size="13" fill="#1b1b1b">Bridge</text>
+  <text x="405" y="288" font-size="13" fill="#1b1b1b">Composite</text>
+  <text x="405" y="310" font-size="13" fill="#1b1b1b">Decorator</text>
+  <text x="405" y="332" font-size="13" fill="#1b1b1b">Facade</text>
+  <text x="405" y="354" font-size="13" fill="#1b1b1b">Flyweight</text>
+  <text x="405" y="376" font-size="13" fill="#1b1b1b">Proxy</text>
+
+  <rect x="610" y="216" width="240" height="250" fill="#ffffff" stroke="#8a8a84" stroke-width="1"/>
+  <text x="625" y="244" font-size="13" fill="#1b1b1b">Chain of Responsibility</text>
+  <text x="625" y="266" font-size="13" fill="#1b1b1b">Command</text>
+  <text x="625" y="288" font-size="13" fill="#1b1b1b">Iterator</text>
+  <text x="625" y="310" font-size="13" fill="#1b1b1b">Mediator</text>
+  <text x="625" y="332" font-size="13" fill="#1b1b1b">Memento</text>
+  <text x="625" y="354" font-size="13" fill="#1b1b1b">Observer</text>
+  <text x="625" y="376" font-size="13" fill="#1b1b1b">State</text>
+  <text x="625" y="398" font-size="13" fill="#1b1b1b">Strategy</text>
+  <text x="625" y="420" font-size="13" fill="#1b1b1b">Visitor</text>
+
+  <text x="30" y="488" font-size="13" fill="#555">클래스 범위 4칸 · 객체 범위 20칸 — 대부분이 객체 범위다</text>
+</svg>
