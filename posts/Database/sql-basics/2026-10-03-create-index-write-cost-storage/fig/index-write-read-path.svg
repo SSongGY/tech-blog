@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+  <defs>
+    <marker id="arr-red" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">인덱스는 표와 따로 저장되는 B-tree다 — 쓰기는 전부에, 읽기는 둘에</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · orders 표에 인덱스 3개를 건 경우</text>
+
+  <!-- INSERT -->
+  <rect x="30" y="170" width="150" height="70" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="105" y="200" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">INSERT 1행</text>
+  <text x="105" y="222" font-size="13" fill="#9d0208" text-anchor="middle">쓰기 경로</text>
+
+  <!-- 표 B-tree -->
+  <rect x="300" y="80" width="280" height="62" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="106" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">표 B-tree — orders</text>
+  <text x="440" y="128" font-size="13" fill="#555" text-anchor="middle">rowid 순 · 행 전체를 담는다</text>
+
+  <!-- 인덱스 B-tree 3개 -->
+  <rect x="300" y="170" width="280" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="194" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">ix_orders_customer_id</text>
+  <text x="440" y="214" font-size="13" fill="#555" text-anchor="middle">(customer_id, rowid) 순</text>
+
+  <rect x="300" y="240" width="280" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="264" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">ix_orders_status</text>
+  <text x="440" y="284" font-size="13" fill="#555" text-anchor="middle">(status, rowid) 순</text>
+
+  <rect x="300" y="310" width="280" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="334" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">ix_orders_ordered_on</text>
+  <text x="440" y="354" font-size="13" fill="#555" text-anchor="middle">(ordered_on, rowid) 순</text>
+
+  <!-- 쓰기 화살표 -->
+  <line x1="180" y1="190" x2="296" y2="115" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <line x1="180" y1="200" x2="296" y2="198" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <line x1="180" y1="212" x2="296" y2="266" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <line x1="180" y1="224" x2="296" y2="334" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr-red)"/>
+  <text x="30" y="270" font-size="13" fill="#9d0208">Insert 1번</text>
+  <text x="30" y="290" font-size="13" fill="#9d0208">+ IdxInsert 3번</text>
+  <text x="30" y="310" font-size="13" fill="#9d0208">(인덱스 수만큼)</text>
+
+  <!-- SELECT -->
+  <rect x="680" y="170" width="170" height="70" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="765" y="196" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">SELECT</text>
+  <text x="765" y="218" font-size="13" fill="#2d6a4f" text-anchor="middle">customer_id = 777</text>
+
+  <!-- 읽기 화살표: ① 인덱스 탐색 → ② rowid 로 표 탐색 -->
+  <line x1="680" y1="198" x2="584" y2="198" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arr-green)"/>
+  <text x="632" y="190" font-size="13" fill="#2d6a4f" text-anchor="middle">① 탐색</text>
+  <path d="M 580 178 C 640 160, 640 130, 584 118" fill="none" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arr-green)"/>
+  <text x="650" y="132" font-size="13" fill="#2d6a4f">② 찾은 rowid로</text>
+  <text x="650" y="150" font-size="13" fill="#2d6a4f">표를 다시 탐색</text>
+
+  <line x1="30" y1="392" x2="850" y2="392" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="418" font-size="13" fill="#333">인덱스 B-tree 한 칸은 인덱스 컬럼 값 뒤에 그 행의 rowid를 붙인 것이다. 표의 나머지 컬럼은 없다.</text>
+  <text x="30" y="440" font-size="13" fill="#333">인덱스가 늘면 읽기 경로는 그대로 둘이고, 쓰기 경로만 하나씩 늘어난다.</text>
+</svg>

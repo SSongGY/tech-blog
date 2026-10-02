@@ -1,0 +1,130 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-03-create-index-write-cost-storage
+# 명령      : python create_index_basics.py
+# 수행 시각 : 2026-10-03 07:08 (대한민국 표준시)
+# 소요      : 1.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[orders]  20000행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  order_id    | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  status      | TEXT    | NOT NULL
+  ordered_on  | TEXT    | NOT NULL
+  amount      | INTEGER | NOT NULL
+
+  order_id | customer_id | status    | ordered_on | amount
+  ---------+-------------+-----------+------------+-------
+         1 |        1310 | paid      | 2026-09-01 |  38000
+         2 |         564 | paid      | 2026-09-08 |   7200
+         3 |        1509 | paid      | 2026-09-22 |  38000
+         4 |        1828 | cancelled | 2026-09-03 |  30300
+         5 |         865 | paid      | 2026-09-01 |   4800
+  … 19995행 더 있음
+
+
+-- 1. 인덱스가 없을 때 — 고객 777의 주문
+   QUERY PLAN
+   `--SCAN orders
+   결과 10행 · VM 명령 60,038개
+
+-- 2. CREATE INDEX 로 만든 뒤
+   CREATE INDEX ix_orders_customer_id ON orders (customer_id)
+   성공
+   QUERY PLAN
+   `--SEARCH orders USING INDEX ix_orders_customer_id (customer_id=?)
+   결과 10행 · VM 명령 71개
+
+-- 3. 만든 인덱스 확인과 같은 이름으로 한 번 더
+   SELECT name, "unique", origin FROM pragma_index_list('orders')
+   ix_orders_customer_id | 0 | c
+   SELECT seqno, name FROM pragma_index_info('ix_orders_customer_id')
+   0 | customer_id
+   CREATE INDEX ix_orders_customer_id ON orders (customer_id)
+   에러: index ix_orders_customer_id already exists
+   CREATE INDEX IF NOT EXISTS ix_orders_customer_id ON orders (customer_id)
+   성공
+
+-- 4. UNIQUE INDEX — 이미 겹치는 값이 있으면 만들어지지 않는다
+   CREATE UNIQUE INDEX ux_orders_customer_id ON orders (customer_id)
+   에러: UNIQUE constraint failed: orders.customer_id
+   SELECT COUNT(*) FROM pragma_index_list('orders')
+   1
+
+-- 5. 값이 3가지뿐인 컬럼 — status
+   SELECT status, COUNT(*) FROM orders GROUP BY status
+   cancelled | 6603
+   paid | 6586
+   shipped | 6811
+   CREATE INDEX ix_orders_status ON orders (status)
+   성공
+   QUERY PLAN
+   `--SEARCH orders USING INDEX ix_orders_status (status=?)
+   인덱스 사용 · 결과 (6586, 165356700) · VM 명령 39,530개 · 0.67 ms
+   NOT INDEXED · 결과 (6586, 165356700) · VM 명령 79,771개 · 0.72 ms
+
+-- 6. ANALYZE 로 통계를 만든 뒤
+   ANALYZE
+   성공
+   SELECT idx, stat FROM sqlite_stat1 ORDER BY idx
+   ix_orders_customer_id | 20000 10
+   ix_orders_status | 20000 6667
+   QUERY PLAN
+   `--SEARCH orders USING INDEX ix_orders_status (status=?)
+   QUERY PLAN
+   `--SEARCH orders USING INDEX ix_orders_customer_id (customer_id=?)
+
+-- 7. DROP INDEX
+   DROP INDEX ix_orders_customer_id
+   성공
+   DROP INDEX ix_orders_customer_id
+   에러: no such index: ix_orders_customer_id
+   DROP INDEX IF EXISTS ix_orders_customer_id
+   성공
+   - 지운 뒤 같은 연결에서 1번과 같은 EXPLAIN QUERY PLAN 을 다시 돌리면
+   QUERY PLAN
+   `--SEARCH orders USING INDEX ix_orders_customer_id (customer_id=?)
+   - 문장 캐시를 끈 연결(cached_statements=0)에서 만들고 지운 뒤 돌리면
+   QUERY PLAN
+   `--SCAN orders
+
+-- 8. 저장 공간 — 인덱스를 하나씩 더할 때 늘어나는 페이지
+   page_size 4096 바이트
+   표만: 160 페이지
+   + ix_orders_customer_id        210 페이지 (+50)
+   + ix_orders_status             283 페이지 (+73)
+   + ix_orders_ordered_on         372 페이지 (+89)
+   + ix_orders_customer_ordered   476 페이지 (+104)
+
+-- 9. 쓰기 비용 — 같은 20,000행을 인덱스 수만 바꿔 INSERT
+   인덱스 0개: VM 명령   400,013개 ·  160 페이지 ·   10.8 ms
+   인덱스 1개: VM 명령   520,013개 ·  214 페이지 ·   18.5 ms
+   인덱스 3개: VM 명령   720,013개 ·  399 페이지 ·   35.8 ms
+   0개로 넣고 3개를 나중에: VM 명령   940,175개 ·  372 페이지 ·   22.8 ms
+   - INSERT 한 행을 컴파일한 프로그램에서 Insert(표)·IdxInsert(인덱스) 명령
+     인덱스 0개: Insert 1개 · IdxInsert 0개
+     인덱스 1개: Insert 1개 · IdxInsert 1개
+     인덱스 3개: Insert 1개 · IdxInsert 3개
+   - 이미 행이 있는 표에 CREATE INDEX 를 컴파일한 프로그램의 정렬 명령
+     SorterOpen · SorterInsert · SorterSort · SorterData · SorterNext
+
+-- 10. UPDATE — 인덱스에 없는 컬럼을 바꿀 때와 있는 컬럼을 바꿀 때
+   UPDATE orders SET amount = amount + 100 WHERE order_id <= 1000
+   VM 명령 14,016개
+   UPDATE orders SET customer_id = customer_id + 1 WHERE order_id <= 1000
+   VM 명령 23,014개
