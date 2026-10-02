@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **138편** · 갱신 2026-10-02
+총 **140편** · 갱신 2026-10-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -160,10 +160,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 12편
+## 주식·재무 (finance) — 14편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-02 | [듀폰 분석 — ROE를 세 조각으로 쪼개기](posts/Finance/ratios/2026-10-02-dupont-roe-three-factors/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 지표 해설(2019.12), CFA Institute 2026 Curriculum | 실행 검증 |
+| 2026-10-02 | [활동성 비율 — 자산을 얼마나 굴리는가](posts/Finance/ratios/2026-10-02-activity-ratios-three-years/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 지표 해설(2019.12), CFA Institute 2026 Curriculum | 실행 검증 |
 | 2026-10-01 | [수익성 비율 — ROE와 ROA는 무엇이 다른가](posts/Finance/ratios/2026-10-01-roe-vs-roa/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 지표 해설(2019.12) | 실행 검증 |
 | 2026-10-01 | [매출채권과 재고자산 — 자산인데 위험한 자산](posts/Finance/statements/2026-10-01-receivables-inventory-turnover/index.md) | 입문 | Python 3.13.5, K-IFRS 제1001호·제1002호·제1109호 | 실행 검증 |
 | 2026-10-01 | [주석과 감사보고서 — 본문보다 중요한 자리](posts/Finance/statements/2026-10-01-notes-and-audit-opinion/index.md) | 입문 | K-IFRS 제1001호·제1024호·제1037호, ISA 700·705(2016 개정)·570, 유가증권시장 상장규정(2025.7 개정) | 문서 근거 |
