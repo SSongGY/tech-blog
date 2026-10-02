@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 주가, 세 가지 분모 — 어느 12개월의 이익으로 나누는가</text>
+
+  <!-- 분자 -->
+  <rect x="330" y="48" width="220" height="40" rx="6" fill="#f8f9fa" stroke="#495057"/>
+  <text x="440" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">오늘 주가 30,000원</text>
+  <text x="440" y="110" text-anchor="middle" font-size="15" fill="#495057">÷ 주당순이익(EPS) — 아래 세 구간 중 하나</text>
+
+  <!-- 분모 구간 -->
+  <rect x="80" y="130" width="240" height="34" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="200" y="152" text-anchor="middle" font-size="13" fill="#1b1b1b">후행: 직전 사업연도 확정 → 10.00배</text>
+
+  <rect x="200" y="174" width="240" height="34" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="320" y="196" text-anchor="middle" font-size="13" fill="#1b1b1b">후행: 최근 4분기 합산(TTM) → 12.50배</text>
+
+  <rect x="440" y="218" width="240" height="34" fill="#fff3e0" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="560" y="240" text-anchor="middle" font-size="13" fill="#1b1b1b">선행: 향후 12개월 예상 → 6.67배</text>
+
+  <!-- 분기 칸: 1칸 60px, x80 부터 -->
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="80" y="280" width="60" height="30" fill="#e9ecef" stroke="#495057"/><text x="110" y="300">1Q</text>
+    <rect x="140" y="280" width="60" height="30" fill="#e9ecef" stroke="#495057"/><text x="170" y="300">2Q</text>
+    <rect x="200" y="280" width="60" height="30" fill="#e9ecef" stroke="#495057"/><text x="230" y="300">3Q</text>
+    <rect x="260" y="280" width="60" height="30" fill="#e9ecef" stroke="#495057"/><text x="290" y="300">4Q</text>
+    <rect x="320" y="280" width="60" height="30" fill="#e9ecef" stroke="#495057"/><text x="350" y="300">1Q</text>
+    <rect x="380" y="280" width="60" height="30" fill="#e9ecef" stroke="#495057"/><text x="410" y="300">2Q</text>
+    <rect x="440" y="280" width="60" height="30" fill="#ffffff" stroke="#adb5bd" stroke-dasharray="4 3"/><text x="470" y="300" fill="#868e96">3Q</text>
+    <rect x="500" y="280" width="60" height="30" fill="#ffffff" stroke="#adb5bd" stroke-dasharray="4 3"/><text x="530" y="300" fill="#868e96">4Q</text>
+    <rect x="560" y="280" width="60" height="30" fill="#ffffff" stroke="#adb5bd" stroke-dasharray="4 3"/><text x="590" y="300" fill="#868e96">1Q</text>
+    <rect x="620" y="280" width="60" height="30" fill="#ffffff" stroke="#adb5bd" stroke-dasharray="4 3"/><text x="650" y="300" fill="#868e96">2Q</text>
+  </g>
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <text x="200" y="332">작년 (확정·감사 완료)</text>
+    <text x="380" y="332">올해 (분기 공시)</text>
+    <text x="620" y="332">아직 오지 않은 분기</text>
+  </g>
+
+  <!-- 오늘 -->
+  <line x1="440" y1="262" x2="440" y2="345" stroke="#9d0208" stroke-width="2"/>
+  <text x="440" y="362" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">오늘 (2분기 공시 직후)</text>
+
+  <text x="80" y="398" font-size="13" fill="#495057">실선 칸은 공시된 실적, 점선 칸은 예상치다. 배수는 가상 회사 가나전자의 code/output.txt [2] 값이다.</text>
+</svg>
