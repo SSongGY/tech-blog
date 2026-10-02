@@ -1,0 +1,33 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\software-engineering\2026-10-02-saga-pattern-compensating-transaction
+# 명령      : python saga_demo.py
+# 수행 시각 : 2026-10-02 23:11 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5 / SQLite 3.49.1
+주문 금액 30000, 시작 잔액 100000
+
+== A-1. 재고 1개 — 끝까지 간다 ==
+  순서: T1 → T2 → T3 → T4
+  끝  : 주문=CONFIRMED 잔액=70000 재고=0
+
+== A-2. 재고 0개 — T3 가 CHECK 에 걸린다 ==
+  순서: T1 → T2 → T3✗(CHECK constraint failed: qty >= 0) → C2 → C1
+  끝  : 주문=CANCELLED 잔액=100000 재고=0
+
+== B. T2 직후 다른 조회가 끼어든다 (격리 없음) ==
+  끼어든 조회가 본 값: 주문=PENDING 잔액=70000 재고=0
+  사가가 끝난 뒤   : 주문=CANCELLED 잔액=100000 재고=0
+
+== C. T2 직후 5000원 입금이 커밋된 뒤 사가가 실패한다 ==
+  [C-1 보상 = 금액만큼 더한다]
+    순서: T1 → T2 → T3✗(CHECK constraint failed: qty >= 0) → C2 → C1
+    끝  : 주문=CANCELLED 잔액=105000 재고=0 (기대 잔액 105000)
+  [C-2 보상 = 이전 잔액으로 덮어쓴다]
+    순서: T1 → T2 → T3✗(CHECK constraint failed: qty >= 0) → C2 → C1
+    끝  : 주문=CANCELLED 잔액=100000 재고=0 (기대 잔액 105000)

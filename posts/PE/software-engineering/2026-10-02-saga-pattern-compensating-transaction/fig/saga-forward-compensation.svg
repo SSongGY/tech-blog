@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+  <defs>
+    <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ng" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">사가 — 지역 트랜잭션은 앞으로, 보상 트랜잭션은 거꾸로</text>
+  <text x="30" y="56" font-size="13" fill="#555">각 Ti 는 자기 서비스 DB 안에서 커밋된다. 서비스를 가로지르는 잠금·롤백은 없다</text>
+
+  <!-- 구간 라벨 -->
+  <rect x="40" y="76" width="370" height="26" fill="#eef5f0"/>
+  <text x="225" y="94" font-size="13" fill="#2d6a4f" text-anchor="middle">보상 가능 트랜잭션 — 실패하면 Ci 로 되돌린다</text>
+  <rect x="440" y="76" width="170" height="26" fill="#fdf3e7"/>
+  <text x="525" y="94" font-size="13" fill="#b45309" text-anchor="middle">피벗 — 되돌림의 끝</text>
+  <rect x="640" y="76" width="200" height="26" fill="#f1f1ee"/>
+  <text x="740" y="94" font-size="13" fill="#333" text-anchor="middle">재시도 트랜잭션 — 끝까지 간다</text>
+
+  <!-- 정방향 -->
+  <rect x="60" y="120" width="140" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="130" y="148" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">T1</text>
+  <text x="130" y="170" font-size="13" fill="#333" text-anchor="middle">주문 생성 (주문 DB)</text>
+
+  <rect x="250" y="120" width="140" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="320" y="148" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">T2</text>
+  <text x="320" y="170" font-size="13" fill="#333" text-anchor="middle">결제 (결제 DB)</text>
+
+  <rect x="455" y="120" width="140" height="64" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="525" y="148" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">T3</text>
+  <text x="525" y="170" font-size="13" fill="#333" text-anchor="middle">재고 차감 (재고 DB)</text>
+
+  <rect x="670" y="120" width="140" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="740" y="148" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">T4</text>
+  <text x="740" y="170" font-size="13" fill="#333" text-anchor="middle">주문 확정 (주문 DB)</text>
+
+  <line x1="200" y1="152" x2="246" y2="152" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#ok)"/>
+  <line x1="390" y1="152" x2="451" y2="152" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#ok)"/>
+  <line x1="595" y1="152" x2="666" y2="152" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#ok)"/>
+
+  <!-- 실패와 보상 -->
+  <line x1="525" y1="184" x2="525" y2="246" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="5 4"/>
+  <text x="535" y="222" font-size="13" fill="#9d0208">T3 실패 → T3 는 지역 롤백</text>
+  <line x1="525" y1="270" x2="394" y2="270" stroke="#9d0208" stroke-width="1.8" marker-end="url(#ng)"/>
+
+  <rect x="250" y="240" width="140" height="60" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="320" y="266" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">C2</text>
+  <text x="320" y="287" font-size="13" fill="#333" text-anchor="middle">환불</text>
+
+  <rect x="60" y="240" width="140" height="60" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="130" y="266" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">C1</text>
+  <text x="130" y="287" font-size="13" fill="#333" text-anchor="middle">주문 취소 표시</text>
+
+  <line x1="250" y1="270" x2="204" y2="270" stroke="#9d0208" stroke-width="1.8" marker-end="url(#ng)"/>
+
+  <line x1="30" y1="330" x2="850" y2="330" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="356" font-size="13" fill="#333">보장되는 실행 순서는 둘 중 하나다:  T1 → T2 → … → Tn   또는   T1 → … → Tj → Cj → … → C1</text>
+  <text x="30" y="380" font-size="13" fill="#333">Ci 는 Ti 를 의미상 취소한다. 실행 전 상태로 덮어쓰지 않는다 — 그사이 다른 트랜잭션이 바꾼 값이 있다</text>
+  <text x="30" y="404" font-size="13" fill="#9d0208">T2 커밋 후 C2 전까지 다른 트랜잭션은 결제된 주문을 본다 — 사가 단위의 격리는 없다</text>
+</svg>

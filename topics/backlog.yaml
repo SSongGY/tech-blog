@@ -1838,7 +1838,7 @@ topics:
     angle: "분산 트랜잭션을 포기하고 보상으로 푸는 대가"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-041
     title: "리팩토링 — 코드 스멜 분류와 적용 시점"
     category: PE
