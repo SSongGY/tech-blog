@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">-w 시간 변수는 전부 요청 시작부터 잰 누적값이다</text>
+  <text x="30" y="56" font-size="13" fill="#555">구간 = 뒤 변수 − 앞 변수 · curl 8.19.0 · HTTP면 appconnect는 0으로 찍힌다</text>
+
+  <!-- 시간 축 -->
+  <line x1="40" y1="190" x2="850" y2="190" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="40" y="214" font-size="13" fill="#555" text-anchor="middle">0</text>
+
+  <!-- 구간 7개 -->
+  <rect x="40"  y="120" width="90"  height="56" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="85"  y="145" font-size="13" fill="#1b1b1b" text-anchor="middle">이름 풀이</text>
+  <text x="85"  y="164" font-size="13" fill="#555" text-anchor="middle">DNS</text>
+
+  <rect x="130" y="120" width="90"  height="56" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="175" y="145" font-size="13" fill="#1b1b1b" text-anchor="middle">TCP 연결</text>
+
+  <rect x="220" y="120" width="100" height="56" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="270" y="145" font-size="13" fill="#1b1b1b" text-anchor="middle">TLS</text>
+  <text x="270" y="164" font-size="13" fill="#555" text-anchor="middle">핸드셰이크</text>
+
+  <rect x="320" y="120" width="80"  height="56" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="360" y="145" font-size="13" fill="#1b1b1b" text-anchor="middle">전송</text>
+  <text x="360" y="164" font-size="13" fill="#555" text-anchor="middle">준비</text>
+
+  <rect x="400" y="120" width="90"  height="56" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="445" y="145" font-size="13" fill="#1b1b1b" text-anchor="middle">요청</text>
+  <text x="445" y="164" font-size="13" fill="#555" text-anchor="middle">보내기</text>
+
+  <rect x="490" y="120" width="180" height="56" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="580" y="145" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">서버 처리</text>
+  <text x="580" y="164" font-size="13" fill="#b45309" text-anchor="middle">첫 바이트를 기다린다</text>
+
+  <rect x="670" y="120" width="180" height="56" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="760" y="145" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">본문 받기</text>
+  <text x="760" y="164" font-size="13" fill="#b45309" text-anchor="middle">마지막 바이트까지</text>
+
+  <!-- 변수 눈금 -->
+  <line x1="130" y1="182" x2="130" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+  <line x1="220" y1="182" x2="220" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+  <line x1="320" y1="182" x2="320" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+  <line x1="400" y1="182" x2="400" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+  <line x1="490" y1="182" x2="490" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+  <line x1="670" y1="182" x2="670" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+  <line x1="850" y1="182" x2="850" y2="198" stroke="#3b3b3b" stroke-width="1.5"/>
+
+  <text x="130" y="232" font-size="13" fill="#1b1b1b" text-anchor="middle">namelookup</text>
+  <text x="220" y="252" font-size="13" fill="#1b1b1b" text-anchor="middle">connect</text>
+  <text x="320" y="232" font-size="13" fill="#1b1b1b" text-anchor="middle">appconnect</text>
+  <text x="400" y="252" font-size="13" fill="#1b1b1b" text-anchor="middle">pretransfer</text>
+  <text x="490" y="232" font-size="13" fill="#1b1b1b" text-anchor="middle">posttransfer</text>
+  <text x="670" y="232" font-size="13" fill="#1b1b1b" text-anchor="middle">starttransfer</text>
+  <text x="850" y="252" font-size="13" fill="#1b1b1b" text-anchor="end">total</text>
+
+  <line x1="30" y1="282" x2="850" y2="282" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="308" font-size="14" font-weight="bold" fill="#1b1b1b">실습에서 잰 두 응답 (같은 서버, 둘 다 느리다)</text>
+  <text x="30" y="334" font-size="13" fill="#333">/slow-first-byte — starttransfer 0.402초 · total 0.402초 → 서버 처리 구간이 0.40초</text>
+  <text x="30" y="358" font-size="13" fill="#333">/slow-body — starttransfer 0.002초 · total 0.605초 → 본문 받기 구간이 0.60초</text>
+  <text x="30" y="392" font-size="13" fill="#555">time_total 하나만 보면 둘 다 "느리다"로 같다. 주황 구간 중 어디가 긴지 보면 서버 쪽 처리인지</text>
+  <text x="30" y="412" font-size="13" fill="#555">전송 쪽인지가 갈린다.</text>
+</svg>
