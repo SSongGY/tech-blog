@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">WAL 파일은 헤더 하나와 프레임의 나열이다</text>
+  <text x="30" y="56" font-size="13" fill="#555">실습 4단계 직후의 app.db-wal (페이지 4096바이트, SQLite 3.49.1)</text>
+
+  <!-- WAL 파일 한 줄 -->
+  <text x="30" y="92" font-size="14" font-weight="bold" fill="#1b1b1b">app.db-wal</text>
+  <rect x="30" y="102" width="130" height="72" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="95" y="128" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">WAL 헤더</text>
+  <text x="95" y="148" font-size="13" fill="#333" text-anchor="middle">32바이트</text>
+  <text x="95" y="166" font-size="13" fill="#333" text-anchor="middle">salt1 = N+1</text>
+
+  <rect x="175" y="102" width="160" height="72" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="255" y="128" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">프레임 0 · 커밋</text>
+  <text x="255" y="148" font-size="13" fill="#333" text-anchor="middle">page 2, salt 새 값</text>
+  <text x="255" y="166" font-size="13" fill="#2d6a4f" text-anchor="middle">유효</text>
+
+  <rect x="345" y="102" width="160" height="72" rx="4" fill="#f1f1ee" stroke="#9d0208" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="425" y="128" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">프레임 1</text>
+  <text x="425" y="148" font-size="13" fill="#555" text-anchor="middle">salt 옛 값 (N)</text>
+  <text x="425" y="166" font-size="13" fill="#9d0208" text-anchor="middle">무효</text>
+
+  <rect x="515" y="102" width="160" height="72" rx="4" fill="#f1f1ee" stroke="#9d0208" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="595" y="128" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">프레임 2</text>
+  <text x="595" y="148" font-size="13" fill="#555" text-anchor="middle">salt 옛 값 (N)</text>
+  <text x="595" y="166" font-size="13" fill="#9d0208" text-anchor="middle">무효</text>
+
+  <rect x="685" y="102" width="160" height="72" rx="4" fill="#f1f1ee" stroke="#9d0208" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="765" y="128" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">프레임 3</text>
+  <text x="765" y="148" font-size="13" fill="#555" text-anchor="middle">salt 옛 값 (N)</text>
+  <text x="765" y="166" font-size="13" fill="#9d0208" text-anchor="middle">무효</text>
+
+  <!-- 누적 체크섬 -->
+  <path d="M 95 180 C 95 200, 255 200, 255 182" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#arw)"/>
+  <path d="M 255 180 C 255 200, 425 200, 425 182" fill="none" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arw)"/>
+  <text x="450" y="206" font-size="13" fill="#b45309">누적 체크섬 — 앞 결과에 이어 계산한다</text>
+  <text x="450" y="224" font-size="13" fill="#b45309">한 곳이 끊기면 그 뒤 프레임은 전부 무효</text>
+
+  <!-- 프레임 헤더 확대 -->
+  <text x="30" y="250" font-size="14" font-weight="bold" fill="#1b1b1b">프레임 = 프레임 헤더 24바이트 + 페이지 4096바이트</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="30" y="262" width="100" height="44" fill="#ffffff" stroke="#3b3b3b"/>
+    <text x="80" y="289" fill="#1b1b1b">page 번호</text>
+    <rect x="130" y="262" width="110" height="44" fill="#ffffff" stroke="#3b3b3b"/>
+    <text x="185" y="281" fill="#1b1b1b">commit_size</text>
+    <text x="185" y="299" fill="#555">0이면 커밋 아님</text>
+    <rect x="240" y="262" width="80" height="44" fill="#ffffff" stroke="#3b3b3b"/>
+    <text x="280" y="289" fill="#1b1b1b">salt1</text>
+    <rect x="320" y="262" width="80" height="44" fill="#ffffff" stroke="#3b3b3b"/>
+    <text x="360" y="289" fill="#1b1b1b">salt2</text>
+    <rect x="400" y="262" width="90" height="44" fill="#ffffff" stroke="#3b3b3b"/>
+    <text x="445" y="289" fill="#1b1b1b">체크섬1</text>
+    <rect x="490" y="262" width="90" height="44" fill="#ffffff" stroke="#3b3b3b"/>
+    <text x="535" y="289" fill="#1b1b1b">체크섬2</text>
+    <rect x="580" y="262" width="265" height="44" fill="#f4f4f0" stroke="#3b3b3b"/>
+    <text x="712" y="289" fill="#1b1b1b" text-anchor="middle">페이지 내용 (4096바이트 통째로)</text>
+  </g>
+  <g font-size="13" fill="#555" text-anchor="middle">
+    <text x="30" y="322" text-anchor="start">0</text>
+    <text x="130" y="322" text-anchor="start">4</text>
+    <text x="240" y="322" text-anchor="start">8</text>
+    <text x="320" y="322" text-anchor="start">12</text>
+    <text x="400" y="322" text-anchor="start">16</text>
+    <text x="490" y="322" text-anchor="start">20</text>
+    <text x="580" y="322" text-anchor="start">24</text>
+  </g>
+
+  <!-- DB 파일 -->
+  <text x="30" y="372" font-size="14" font-weight="bold" fill="#1b1b1b">app.db</text>
+  <rect x="30" y="382" width="130" height="50" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="95" y="412" font-size="13" fill="#1b1b1b" text-anchor="middle">페이지 1</text>
+  <rect x="160" y="382" width="130" height="50" rx="4" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="225" y="412" font-size="13" fill="#1b1b1b" text-anchor="middle">페이지 2</text>
+  <text x="320" y="404" font-size="13" fill="#333">커밋은 WAL에 커밋 프레임이 붙는 순간 끝난다.</text>
+  <text x="320" y="426" font-size="13" fill="#333">app.db에는 체크포인트가 유효한 커밋 프레임까지만 옮겨 적는다.</text>
+
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,74 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sqlite\2026-10-02-sqlite-wal-frames-before-data-file
+# 명령      : python wal_frames.py
+# 수행 시각 : 2026-10-02 19:13 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+SQLite 3.49.1
+journal_mode = wal
+synchronous  = 2
+
+[1 CREATE·INSERT 커밋 직후]
+  db  파일   4096 바이트   wal 파일  12392 바이트
+  MARK-A  db에 없음   wal에 있음
+  MARK-B  db에 없음   wal에 없음
+  MARK-C  db에 없음   wal에 없음
+
+[1 WAL 프레임]
+  헤더: magic=0x377f0682 version=3007000 page_size=4096 ckpt_seq=0 salt1=1046811536 헤더체크섬=일치
+  frame | page | commit_size | salt | 유효 | 들어 있는 표식
+      0 |    1 |           0 | 같음 | 예    | -
+      1 |    2 |           2 | 같음 | 예    | -
+      2 |    2 |           2 | 같음 | 예    | MARK-A
+
+[2 같은 행을 UPDATE — 페이지 2가 프레임으로 한 번 더 붙는다]
+  헤더: magic=0x377f0682 version=3007000 page_size=4096 ckpt_seq=0 salt1=1046811536 헤더체크섬=일치
+  frame | page | commit_size | salt | 유효 | 들어 있는 표식
+      0 |    1 |           0 | 같음 | 예    | -
+      1 |    2 |           2 | 같음 | 예    | -
+      2 |    2 |           2 | 같음 | 예    | MARK-A
+      3 |    2 |           2 | 같음 | 예    | MARK-B
+
+[3 체크포인트] busy=0 log=4 checkpointed=4
+
+[3 체크포인트 직후]
+  db  파일   8192 바이트   wal 파일  16512 바이트
+  MARK-A  db에 없음   wal에 있음
+  MARK-B  db에 있음   wal에 있음
+  MARK-C  db에 없음   wal에 없음
+
+[4 다음 커밋 — WAL이 처음부터 다시 쓰인다]
+  db  파일   8192 바이트   wal 파일  16512 바이트
+  MARK-A  db에 없음   wal에 있음
+  MARK-B  db에 있음   wal에 있음
+  MARK-C  db에 없음   wal에 있음
+
+[4 WAL 프레임]
+  헤더: magic=0x377f0682 version=3007000 page_size=4096 ckpt_seq=1 salt1=1046811537 헤더체크섬=일치
+  frame | page | commit_size | salt | 유효 | 들어 있는 표식
+      0 |    2 |           2 | 같음 | 예    | MARK-B,MARK-C
+      1 |    2 |           2 | 다름 | 아니오  | -
+      2 |    2 |           2 | 다름 | 아니오  | MARK-A
+      3 |    2 |           2 | 다름 | 아니오  | MARK-B
+
+마지막 유효 커밋 프레임 = 0, 뒤집을 바이트 오프셋 = 132
+
+[5-A db 파일만 복사해 열면]
+  [(1, 'MARK-B')]
+
+[5-B db + wal 을 복사해 열면]
+  [(1, 'MARK-B'), (2, 'MARK-C')]
+
+[5-C 마지막 커밋 프레임의 1바이트를 뒤집으면]
+  [(1, 'MARK-B')]
+
+[6 TRUNCATE 체크포인트 후]
+  db  파일   8192 바이트   wal 파일      0 바이트
+  MARK-A  db에 없음   wal에 없음
+  MARK-B  db에 있음   wal에 없음
+  MARK-C  db에 있음   wal에 없음
