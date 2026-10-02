@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">판정할 때 무엇과 무엇을 맞대는가 — 오라클 4가지</text>
+
+  <!-- panel 1: expected result -->
+  <rect x="20" y="50" width="410" height="180" fill="#f8f9fb" stroke="#c4c9d2" stroke-width="1.2" rx="6"/>
+  <text x="36" y="76" font-size="15" font-weight="bold" fill="#1b1b1b">① 기대 결과 비교 (명세 오라클)</text>
+  <text x="40" y="128" font-size="14" fill="#1b1b1b">x</text>
+  <line x1="54" y1="124" x2="96" y2="124" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="98" y="102" width="70" height="44" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="133" y="129" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">P</text>
+  <line x1="168" y1="124" x2="206" y2="124" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="236" y="129" text-anchor="middle" font-size="14" fill="#1b1b1b">P(x)</text>
+  <text x="290" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">=</text>
+  <rect x="312" y="102" width="104" height="44" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="364" y="129" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">기대 결과</text>
+  <text x="36" y="182" font-size="13" fill="#4a5568">입력 1개 · 실행 1회 · 정답값이 미리 있어야 한다</text>
+  <text x="36" y="204" font-size="13" fill="#9d0208">AI 모델처럼 정답을 계산할 수 없으면 성립하지 않는다</text>
+
+  <!-- panel 2: back-to-back -->
+  <rect x="450" y="50" width="410" height="180" fill="#f8f9fb" stroke="#c4c9d2" stroke-width="1.2" rx="6"/>
+  <text x="466" y="76" font-size="15" font-weight="bold" fill="#1b1b1b">② 다른 구현과 비교 (유사 오라클 · 백투백)</text>
+  <text x="470" y="132" font-size="14" fill="#1b1b1b">x</text>
+  <line x1="484" y1="124" x2="526" y2="104" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="484" y1="130" x2="526" y2="150" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="528" y="86" width="70" height="36" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="563" y="109" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">P₁</text>
+  <rect x="528" y="134" width="70" height="36" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="563" y="157" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">P₂</text>
+  <line x1="598" y1="104" x2="636" y2="104" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="598" y1="152" x2="636" y2="152" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="670" y="109" text-anchor="middle" font-size="14" fill="#1b1b1b">P₁(x)</text>
+  <text x="670" y="157" text-anchor="middle" font-size="14" fill="#1b1b1b">P₂(x)</text>
+  <text x="736" y="135" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">=</text>
+  <text x="466" y="196" font-size="13" fill="#4a5568">같은 입력 · 서로 다른 구현 · 출력이 일치해야 한다</text>
+  <text x="466" y="216" font-size="13" fill="#b45309">독립 구현이 없거나, 같은 결함을 공유하면 놓친다</text>
+
+  <!-- panel 3: metamorphic -->
+  <rect x="20" y="250" width="410" height="190" fill="#f1f8f4" stroke="#2d6a4f" stroke-width="1.6" rx="6"/>
+  <text x="36" y="276" font-size="15" font-weight="bold" fill="#1b1b1b">③ 같은 구현의 여러 출력 비교 (메타모픽)</text>
+  <text x="38" y="309" font-size="14" fill="#1b1b1b">x₁</text>
+  <text x="38" y="361" font-size="14" fill="#1b1b1b">x₂</text>
+  <text x="54" y="335" font-size="13" fill="#2d6a4f">변환</text>
+  <line x1="46" y1="316" x2="46" y2="344" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="62" y1="304" x2="96" y2="304" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="62" y1="356" x2="96" y2="356" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="98" y="290" width="70" height="80" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="133" y="335" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">P</text>
+  <line x1="168" y1="304" x2="206" y2="304" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="168" y1="356" x2="206" y2="356" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="238" y="309" text-anchor="middle" font-size="14" fill="#1b1b1b">P(x₁)</text>
+  <text x="238" y="361" text-anchor="middle" font-size="14" fill="#1b1b1b">P(x₂)</text>
+  <rect x="290" y="306" width="126" height="48" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="353" y="327" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">메타모픽 관계</text>
+  <text x="353" y="345" text-anchor="middle" font-size="13" fill="#4a5568">를 지키는가</text>
+  <text x="36" y="398" font-size="13" fill="#4a5568">입력 2개 이상 · 같은 구현 · 출력 사이 관계만 본다</text>
+  <text x="36" y="420" font-size="13" fill="#2d6a4f">정답값 없이 판정한다. 대신 관계를 사람이 찾아야 한다</text>
+
+  <!-- panel 4: implicit / assertion -->
+  <rect x="450" y="250" width="410" height="190" fill="#f8f9fb" stroke="#c4c9d2" stroke-width="1.2" rx="6"/>
+  <text x="466" y="276" font-size="15" font-weight="bold" fill="#1b1b1b">④ 출력 하나의 성질 검사 (단언 · 암묵 오라클)</text>
+  <text x="470" y="335" font-size="14" fill="#1b1b1b">x</text>
+  <line x1="484" y1="330" x2="526" y2="330" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="528" y="308" width="70" height="44" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="563" y="335" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">P</text>
+  <line x1="598" y1="330" x2="636" y2="330" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="666" y="335" text-anchor="middle" font-size="14" fill="#1b1b1b">P(x)</text>
+  <text x="710" y="336" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">∈</text>
+  <rect x="728" y="308" width="118" height="44" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="787" y="328" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">허용 범위</text>
+  <text x="787" y="344" text-anchor="middle" font-size="13" fill="#4a5568">비정상 종료 없음</text>
+  <text x="466" y="398" font-size="13" fill="#4a5568">입력 1개 · 실행 1회 · 누구나 아는 실패만 잡는다</text>
+  <text x="466" y="420" font-size="13" fill="#b45309">범위 안의 "틀린 값"은 통과한다</text>
+
+  <text x="440" y="462" text-anchor="middle" font-size="13" fill="#4a5568">맞대는 대상이 다르므로 서로를 대체하지 않는다. 오라클이 없는 부분에서만 ③이 ①의 자리를 메운다</text>
+</svg>
