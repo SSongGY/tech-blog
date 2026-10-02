@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">체인은 "서버가 보낸 것"과 "클라이언트가 믿는 것"이 이어져야 완성된다</text>
+  <text x="30" y="56" font-size="13" fill="#555">서버는 자기 인증서부터 순서대로 보내고, 신뢰 앵커(루트)는 클라이언트가 이미 갖고 있다</text>
+
+  <!-- 열 머리 -->
+  <text x="190" y="92" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">서버가 보내는 목록 (-showcerts)</text>
+  <text x="690" y="92" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">클라이언트 신뢰 저장소 (-CAfile)</text>
+
+  <!-- 정상 -->
+  <text x="30" y="128" font-size="14" font-weight="bold" fill="#2d6a4f">정상 — 1절</text>
+  <rect x="40" y="140" width="140" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="110" y="164" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">0 서버</text>
+  <text x="110" y="184" font-size="13" fill="#333" text-anchor="middle">CN=localhost</text>
+  <rect x="220" y="140" width="140" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="290" y="164" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">1 중간 CA</text>
+  <text x="290" y="184" font-size="13" fill="#333" text-anchor="middle">Intermediate</text>
+  <rect x="620" y="140" width="140" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="690" y="164" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">루트 CA</text>
+  <text x="690" y="184" font-size="13" fill="#333" text-anchor="middle">신뢰 앵커</text>
+  <line x1="180" y1="168" x2="216" y2="168" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ok)"/>
+  <line x1="360" y1="168" x2="616" y2="168" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ok)"/>
+  <text x="488" y="160" font-size="13" fill="#2d6a4f" text-anchor="middle">발급자를 따라 이어짐</text>
+  <text x="488" y="218" font-size="13" fill="#2d6a4f" text-anchor="middle">Verification: OK · 종료 코드 0</text>
+
+  <line x1="30" y1="240" x2="850" y2="240" stroke="#d0d0c8" stroke-width="1"/>
+
+  <!-- 중간 누락 -->
+  <text x="30" y="272" font-size="14" font-weight="bold" fill="#9d0208">중간 인증서 누락 — 2절</text>
+  <rect x="40" y="284" width="140" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="110" y="308" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">0 서버</text>
+  <text x="110" y="328" font-size="13" fill="#333" text-anchor="middle">CN=localhost</text>
+  <rect x="220" y="284" width="140" height="56" rx="6" fill="#f1f1ee" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="290" y="308" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">보내지 않음</text>
+  <text x="290" y="328" font-size="13" fill="#333" text-anchor="middle">Intermediate</text>
+  <rect x="620" y="284" width="140" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="690" y="308" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">루트 CA</text>
+  <text x="690" y="328" font-size="13" fill="#333" text-anchor="middle">신뢰 앵커</text>
+  <line x1="180" y1="312" x2="216" y2="312" stroke="#9d0208" stroke-width="2" marker-end="url(#ng)"/>
+  <text x="488" y="306" font-size="13" fill="#9d0208" text-anchor="middle">발급자를 찾지 못함</text>
+
+  <rect x="40" y="366" width="810" height="84" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="60" y="392" font-size="13" fill="#1b1b1b">verify error:num=20 unable to get local issuer certificate</text>
+  <text x="60" y="414" font-size="13" fill="#1b1b1b">verify error:num=21 unable to verify the first certificate</text>
+  <text x="60" y="436" font-size="13" font-weight="bold" fill="#b45309">그래도 CONNECTION ESTABLISHED · 종료 코드 0 — -verify_return_error 를 붙여야 1로 끊긴다</text>
+
+  <defs>
+    <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ng" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
