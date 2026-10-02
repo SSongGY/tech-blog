@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="450" viewBox="0 0 880 450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">영업이익은 그대로, 변동금리만 오를 때 이자보상배율</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">이자보상배율 = 영업이익 ÷ 이자비용 · 가상 회사 두 곳 · code/output.txt [2]</text>
+
+  <!-- 축: 0배 = y360, 1배 = 75px / 0%p = x200, 1%p = 180px -->
+  <line x1="200" y1="360" x2="760" y2="360" stroke="#495057"/>
+  <line x1="200" y1="70" x2="200" y2="360" stroke="#495057"/>
+  <g font-size="13" fill="#495057" text-anchor="end">
+    <text x="190" y="365">0배</text>
+    <text x="190" y="290">1배</text>
+    <text x="190" y="215">2배</text>
+    <text x="190" y="140">3배</text>
+    <text x="190" y="65">4배</text>
+  </g>
+  <g stroke="#dee2e6">
+    <line x1="200" y1="210" x2="760" y2="210"/>
+    <line x1="200" y1="135" x2="760" y2="135"/>
+    <line x1="200" y1="60" x2="760" y2="60"/>
+  </g>
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <text x="200" y="382">+0%p</text>
+    <text x="380" y="382">+1%p</text>
+    <text x="560" y="382">+2%p</text>
+    <text x="740" y="382">+3%p</text>
+    <text x="470" y="404">변동금리 상승폭</text>
+  </g>
+
+  <!-- 배율 1 -->
+  <line x1="200" y1="285" x2="760" y2="285" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="768" y="281" font-size="13" font-weight="bold" fill="#b45309">1배</text>
+  <text x="768" y="298" font-size="13" fill="#b45309">이익 = 이자</text>
+
+  <!-- 가나기계: 고정금리 75% -->
+  <polyline points="200,78.8 380,95.3 560,110.3 740,123" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+  <g fill="#2d6a4f">
+    <circle cx="200" cy="78.8" r="4"/><circle cx="380" cy="95.3" r="4"/><circle cx="560" cy="110.3" r="4"/><circle cx="740" cy="123" r="4"/>
+  </g>
+  <text x="210" y="73" font-size="13" fill="#2d6a4f">3.75</text>
+  <text x="730" y="117" font-size="13" fill="#2d6a4f" text-anchor="end">3.16</text>
+  <text x="400" y="84" font-size="14" font-weight="bold" fill="#2d6a4f">가나기계 — 영업이익 120, 차입금 800, 고정금리 75%</text>
+
+  <!-- 다라유통: 전액 변동금리 -->
+  <polyline points="200,270 380,285 560,295.5 740,303.8" fill="none" stroke="#9d0208" stroke-width="3"/>
+  <g fill="#9d0208">
+    <circle cx="200" cy="270" r="4"/><circle cx="380" cy="285" r="4"/><circle cx="560" cy="295.5" r="4"/><circle cx="740" cy="303.8" r="4"/>
+  </g>
+  <text x="210" y="262" font-size="13" fill="#9d0208">1.20</text>
+  <text x="560" y="318" font-size="13" fill="#9d0208" text-anchor="middle">0.86</text>
+  <text x="740" y="326" font-size="13" fill="#9d0208" text-anchor="middle">0.75</text>
+  <text x="300" y="248" font-size="14" font-weight="bold" fill="#9d0208">다라유통 — 영업이익 60, 차입금 1,000, 전액 변동금리</text>
+
+  <text x="200" y="432" font-size="13" fill="#495057">배율 1이 되는 차입금평균이자율 = 영업이익 ÷ 차입금 → 가나기계 15.0%, 다라유통 6.0%</text>
+</svg>
