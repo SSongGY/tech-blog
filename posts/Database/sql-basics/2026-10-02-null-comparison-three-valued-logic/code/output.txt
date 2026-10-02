@@ -1,0 +1,137 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-02-null-comparison-three-valued-logic
+# 명령      : python null_comparison.py
+# 수행 시각 : 2026-10-02 19:10 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  5행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  id          | INTEGER | PK
+  name        | TEXT    | NOT NULL
+  referrer_id | INTEGER |
+  grade       | TEXT    |
+
+  id | name   | referrer_id | grade
+  ---+--------+-------------+-------
+   1 | 김도윤 |        NULL | gold
+   2 | 이서준 |           1 | silver
+   3 | 박하은 |           1 | NULL
+   4 | 최유나 |        NULL | silver
+   5 | 정민호 |           3 | gold
+
+
+== 1. 진리표를 SQLite가 직접 계산한다 ==
+
+[1-A AND · OR]
+  WITH v(x) AS (VALUES (1), (0), (NULL)) SELECT a.x AS p, b.x AS q, a.x AND b.x AS p_and_q, a.x OR b.x AS p_or_q FROM v a, v b
+  ('p', 'q', 'p_and_q', 'p_or_q')
+  (1, 1, 1, 1)
+  (1, 0, 0, 1)
+  (1, None, None, 1)
+  (0, 1, 0, 1)
+  (0, 0, 0, 0)
+  (0, None, 0, None)
+  (None, 1, None, 1)
+  (None, 0, 0, None)
+  (None, None, None, None)
+
+[1-B NOT]
+  WITH v(x) AS (VALUES (1), (0), (NULL)) SELECT x AS p, NOT x AS not_p FROM v
+  ('p', 'not_p')
+  (1, 0)
+  (0, 1)
+  (None, None)
+
+[1-C NULL과의 비교는 전부 NULL]
+  SELECT NULL = NULL, NULL <> NULL, NULL = 1, NULL > 1, 1 IN (NULL), 1 IN (1, NULL)
+  ('NULL = NULL', 'NULL <> NULL', 'NULL = 1', 'NULL > 1', '1 IN (NULL)', '1 IN (1, NULL)')
+  (None, None, None, None, None, 1)
+
+== 2. WHERE 는 참인 행만 남긴다 ==
+
+[2-A = NULL]
+  SELECT id, name FROM member WHERE referrer_id = NULL
+  ('id', 'name')
+
+[2-B IS NULL]
+  SELECT id, name FROM member WHERE referrer_id IS NULL
+  ('id', 'name')
+  (1, '김도윤')
+  (4, '최유나')
+
+[2-C <> 1 은 NULL 행을 빼고 돌려준다]
+  SELECT id, name, referrer_id FROM member WHERE referrer_id <> 1
+  ('id', 'name', 'referrer_id')
+  (5, '정민호', 3)
+
+[2-D NOT (referrer_id = 1) 도 마찬가지다]
+  SELECT id, name FROM member WHERE NOT (referrer_id = 1)
+  ('id', 'name')
+  (5, '정민호')
+
+[2-E IS NOT 1 은 NULL 행을 포함한다]
+  SELECT id, name, referrer_id FROM member WHERE referrer_id IS NOT 1
+  ('id', 'name', 'referrer_id')
+  (1, '김도윤', None)
+  (4, '최유나', None)
+  (5, '정민호', 3)
+
+[2-F IS DISTINCT FROM]
+  SELECT id, name FROM member WHERE grade IS DISTINCT FROM 'gold'
+  ('id', 'name')
+  (2, '이서준')
+  (3, '박하은')
+  (4, '최유나')
+
+[2-G 바인딩 변수에 None 을 넘기면]
+  SELECT id FROM member WHERE referrer_id = ?   값=None  -> []
+  SELECT id FROM member WHERE referrer_id = ?   값=1     -> [2, 3]
+  SELECT id FROM member WHERE referrer_id IS ?  값=None  -> [1, 4]
+  SELECT id FROM member WHERE referrer_id IS ?  값=1     -> [2, 3]
+
+== 3. CHECK 와 UNIQUE 는 NULL 을 통과시킨다 ==
+  INSERT ('A10', 10) -> 성공
+  INSERT ('B99', 99) -> 에러: CHECK constraint failed: rate BETWEEN 1 AND 50
+  INSERT (None, None) -> 성공
+  INSERT (None, 30) -> 성공
+
+[3-A 들어간 행]
+  SELECT code, rate FROM coupon
+  ('code', 'rate')
+  ('A10', 10)
+  (None, None)
+  (None, 30)
+
+[3-B WHERE 로 같은 조건을 걸면]
+  SELECT code, rate FROM coupon WHERE rate BETWEEN 1 AND 50
+  ('code', 'rate')
+  ('A10', 10)
+  (None, 30)
+
+== 4. CASE 안의 비교 ==
+
+[4-A CASE x WHEN NULL 은 NULL 을 못 잡는다]
+  SELECT id, grade, CASE grade WHEN NULL THEN '미지정' ELSE '지정' END AS by_value, CASE WHEN grade IS NULL THEN '미지정' ELSE '지정' END AS by_is_null FROM member
+  ('id', 'grade', 'by_value', 'by_is_null')
+  (1, 'gold', '지정', '지정')
+  (2, 'silver', '지정', '지정')
+  (3, None, '지정', '미지정')
+  (4, 'silver', '지정', '지정')
+  (5, 'gold', '지정', '지정')
