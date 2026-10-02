@@ -2172,7 +2172,9 @@ def request_url(url: str, method: str) -> tuple[int | None, str, bytes]:
 def anchor_present(body: bytes, anchor: str) -> bool:
     text = body.decode("utf-8", errors="replace")
     quoted = re.escape(anchor)
-    return bool(re.search(rf'(?:id|name)\s*=\s*["\']{quoted}["\']', text))
+    # 압축된 HTML(docs.openssl.org 등)은 따옴표 없이 id=options 로 쓴다
+    return bool(re.search(
+        rf'(?:id|name)\s*=\s*(?:["\']{quoted}["\']|{quoted}(?=[\s>/]))', text))
 
 
 def cmd_check_links(args: argparse.Namespace) -> int:
