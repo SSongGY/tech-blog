@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">GROUP BY는 행을 접고, 윈도우 함수는 행을 두고 값을 붙인다</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · employee 9행(부서 3개) · 질문: 부서별 최고 연봉자는 누구인가</text>
+
+  <!-- 원본 표 -->
+  <rect x="30" y="200" width="150" height="90" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="105" y="230" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">employee</text>
+  <text x="105" y="252" font-size="13" fill="#555" text-anchor="middle">9행</text>
+  <text x="105" y="272" font-size="13" fill="#555" text-anchor="middle">부서마다 3명</text>
+
+  <!-- 위: GROUP BY -->
+  <line x1="180" y1="225" x2="266" y2="128" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <rect x="270" y="86" width="250" height="84" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="395" y="112" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">GROUP BY dept_name</text>
+  <text x="395" y="134" font-size="13" fill="#b45309" text-anchor="middle">부서마다 한 행으로 접는다</text>
+  <text x="395" y="154" font-size="13" fill="#b45309" text-anchor="middle">→ 3행</text>
+
+  <line x1="520" y1="128" x2="596" y2="128" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <rect x="600" y="86" width="250" height="84" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="725" y="112" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">dept_name · MAX(salary)</text>
+  <text x="725" y="134" font-size="13" fill="#555" text-anchor="middle">누가 받는지는 남지 않는다</text>
+  <text x="725" y="154" font-size="13" fill="#555" text-anchor="middle">이름은 원래 표에 다시 붙여 찾는다</text>
+
+  <!-- 아래: ROW_NUMBER -->
+  <line x1="180" y1="265" x2="266" y2="340" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arr-green)"/>
+  <rect x="270" y="296" width="250" height="84" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="395" y="322" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">ROW_NUMBER() OVER</text>
+  <text x="395" y="344" font-size="13" fill="#2d6a4f" text-anchor="middle">PARTITION BY dept_name</text>
+  <text x="395" y="364" font-size="13" fill="#2d6a4f" text-anchor="middle">ORDER BY salary DESC</text>
+
+  <line x1="520" y1="338" x2="596" y2="338" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arr-green)"/>
+  <rect x="600" y="276" width="250" height="124" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="725" y="300" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">9행 그대로 + rn 컬럼</text>
+  <text x="620" y="324" font-size="13" fill="#555">개발 김하늘 7200 · rn 1</text>
+  <text x="620" y="344" font-size="13" fill="#555">영업 최유나 6100 · rn 1</text>
+  <text x="620" y="364" font-size="13" fill="#b45309">영업 정민호 6100 · rn 2 (동점)</text>
+  <text x="620" y="384" font-size="13" fill="#555">… 부서 안에서 1부터 매긴다</text>
+
+  <!-- 바깥 질의 -->
+  <line x1="725" y1="400" x2="725" y2="426" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="520" y="430" width="330" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="685" y="452" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">바깥 질의 WHERE rn = 1</text>
+  <text x="685" y="472" font-size="13" fill="#555" text-anchor="middle">부서마다 1행, 이름까지 → 3행</text>
+
+  <text x="30" y="440" font-size="13" fill="#333">윈도우 함수는 결과 컬럼과 ORDER BY에만 올 수 있다.</text>
+  <text x="30" y="460" font-size="13" fill="#333">그래서 rn으로 거르려면 서브쿼리로 한 번 감싼다.</text>
+</svg>

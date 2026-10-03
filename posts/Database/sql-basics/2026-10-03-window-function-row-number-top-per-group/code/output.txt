@@ -1,0 +1,191 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-03-window-function-row-number-top-per-group
+# 명령      : python row_number_top_per_group.py
+# 수행 시각 : 2026-10-03 19:09 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  9행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  employee_id | INTEGER | PK
+  name        | TEXT    | NOT NULL
+  dept_name   | TEXT    | NOT NULL
+  salary      | INTEGER | NOT NULL
+
+  employee_id | name   | dept_name | salary
+  ------------+--------+-----------+-------
+            1 | 김하늘 | 개발      |   7200
+            2 | 이도윤 | 개발      |   6800
+            3 | 박서준 | 개발      |   5400
+            4 | 최유나 | 영업      |   6100
+            5 | 정민호 | 영업      |   6100
+            6 | 한지우 | 영업      |   4800
+            7 | 윤채원 | 인사      |   5200
+            8 | 장태오 | 인사      |   4600
+            9 | 오세린 | 인사      |   4100
+
+
+-- 1. GROUP BY — 부서별 최고 연봉
+   SELECT dept_name, MAX(salary) AS top_salary
+   FROM employee
+   GROUP BY dept_name
+   => dept_name | top_salary
+      개발 | 7200
+      영업 | 6100
+      인사 | 5200
+   (3행)
+
+-- 2. GROUP BY 에 이름을 같이 달라고 하면 (SQLite 전용 동작)
+   SELECT dept_name, name, MAX(salary) AS top_salary
+   FROM employee
+   GROUP BY dept_name
+   => dept_name | name | top_salary
+      개발 | 김하늘 | 7200
+      영업 | 최유나 | 6100
+      인사 | 윤채원 | 5200
+   (3행)
+
+-- 3. GROUP BY 결과를 원래 표에 다시 붙이기
+   SELECT e.dept_name, e.name, e.salary
+   FROM employee AS e
+   JOIN (SELECT dept_name, MAX(salary) AS top_salary
+         FROM employee GROUP BY dept_name) AS m
+     ON m.dept_name = e.dept_name AND m.top_salary = e.salary
+   ORDER BY e.dept_name
+   => dept_name | name | salary
+      개발 | 김하늘 | 7200
+      영업 | 최유나 | 6100
+      영업 | 정민호 | 6100
+      인사 | 윤채원 | 5200
+   (4행)
+
+-- 4. ROW_NUMBER — 행은 그대로, 옆에 순번이 붙는다
+   SELECT dept_name, name, salary,
+          ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY salary DESC) AS rn
+   FROM employee
+   => dept_name | name | salary | rn
+      개발 | 김하늘 | 7200 | 1
+      개발 | 이도윤 | 6800 | 2
+      개발 | 박서준 | 5400 | 3
+      영업 | 최유나 | 6100 | 1
+      영업 | 정민호 | 6100 | 2
+      영업 | 한지우 | 4800 | 3
+      인사 | 윤채원 | 5200 | 1
+      인사 | 장태오 | 4600 | 2
+      인사 | 오세린 | 4100 | 3
+   (9행)
+
+-- 5. WHERE 에서 바로 거르면
+   SELECT dept_name, name, salary
+   FROM employee
+   WHERE ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY salary DESC) = 1
+   에러: misuse of window function ROW_NUMBER()
+
+-- 6. 별칭 rn 을 WHERE 에서 쓰면
+   SELECT dept_name, name, salary,
+          ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY salary DESC) AS rn
+   FROM employee
+   WHERE rn = 1
+   에러: misuse of aliased window function rn
+
+-- 7. 서브쿼리로 한 번 감싼 뒤 rn = 1
+   SELECT dept_name, name, salary
+   FROM (SELECT dept_name, name, salary,
+                ROW_NUMBER() OVER (PARTITION BY dept_name
+                                   ORDER BY salary DESC) AS rn
+         FROM employee)
+   WHERE rn = 1
+   => dept_name | name | salary
+      개발 | 김하늘 | 7200
+      영업 | 최유나 | 6100
+      인사 | 윤채원 | 5200
+   (3행)
+
+-- 8. 부서별 상위 2명 — rn <= 2
+   SELECT dept_name, name, salary, rn
+   FROM (SELECT dept_name, name, salary,
+                ROW_NUMBER() OVER (PARTITION BY dept_name
+                                   ORDER BY salary DESC) AS rn
+         FROM employee)
+   WHERE rn <= 2
+   => dept_name | name | salary | rn
+      개발 | 김하늘 | 7200 | 1
+      개발 | 이도윤 | 6800 | 2
+      영업 | 최유나 | 6100 | 1
+      영업 | 정민호 | 6100 | 2
+      인사 | 윤채원 | 5200 | 1
+      인사 | 장태오 | 4600 | 2
+   (6행)
+
+-- 9. 같은 데이터, employee_id 만 거꾸로 매긴 표에서 7번과 같은 질의
+   SELECT dept_name, name, salary
+   FROM (SELECT dept_name, name, salary,
+                ROW_NUMBER() OVER (PARTITION BY dept_name
+                                   ORDER BY salary DESC) AS rn
+         FROM employee_reversed)
+   WHERE rn = 1
+   => dept_name | name | salary
+      개발 | 김하늘 | 7200
+      영업 | 정민호 | 6100
+      인사 | 윤채원 | 5200
+   (3행)
+
+-- 10. 동점 순서를 정해 주기 — ORDER BY salary DESC, employee_id
+   SELECT dept_name, name, salary
+   FROM (SELECT dept_name, name, salary,
+                ROW_NUMBER() OVER (PARTITION BY dept_name
+                                   ORDER BY salary DESC, employee_id) AS rn
+         FROM employee_reversed)
+   WHERE rn = 1
+   => dept_name | name | salary
+      개발 | 김하늘 | 7200
+      영업 | 정민호 | 6100
+      인사 | 윤채원 | 5200
+   (3행)
+
+-- 11. 7번 질의의 실행계획
+   QUERY PLAN
+   |--CO-ROUTINE (subquery-1)
+   |  |--CO-ROUTINE (subquery-3)
+   |  |  |--SCAN employee
+   |  |  `--USE TEMP B-TREE FOR ORDER BY
+   |  `--SCAN (subquery-3)
+   `--SCAN (subquery-1)
+
+-- 12. ROW_NUMBER 에 윈도우 절을 붙이면
+   SELECT dept_name, name,
+          ROW_NUMBER() OVER (PARTITION BY dept_name ORDER BY salary DESC
+                             ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS rn
+   FROM employee
+   WHERE dept_name = '개발'
+   => dept_name | name | rn
+      개발 | 김하늘 | 1
+      개발 | 이도윤 | 2
+      개발 | 박서준 | 3
+   (3행)
+
+-- 13. WHERE 로 거른 뒤 COUNT(*) OVER ()
+   SELECT name, COUNT(*) OVER () AS rows_in_window
+   FROM employee
+   WHERE dept_name = '개발'
+   => name | rows_in_window
+      김하늘 | 3
+      이도윤 | 3
+      박서준 | 3
+   (3행)
