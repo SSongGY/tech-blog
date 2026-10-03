@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 배당금을 무엇으로 나누는가 — 다라통신</text>
+
+  <!-- 가운데: 주당배당금 -->
+  <rect x="340" y="56" width="200" height="50" rx="6" fill="#e9ecef" stroke="#495057"/>
+  <text x="440" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">주당배당금</text>
+  <text x="440" y="97" text-anchor="middle" font-size="13" fill="#1b1b1b">1,500원</text>
+
+  <!-- 왼쪽: 주주 쪽 -->
+  <line x1="380" y1="106" x2="200" y2="150" stroke="#495057" stroke-width="1.5"/>
+  <rect x="30" y="150" width="340" height="80" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="200" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">÷ 주가 30,000원</text>
+  <text x="200" y="196" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">배당수익률 5.00%</text>
+  <text x="200" y="218" text-anchor="middle" font-size="13" fill="#495057">산 값 대비 받는 돈 — 주가가 움직이면 바뀐다</text>
+
+  <!-- 오른쪽: 회사 쪽 -->
+  <line x1="500" y1="106" x2="680" y2="150" stroke="#495057" stroke-width="1.5"/>
+  <rect x="510" y="150" width="340" height="80" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="680" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">÷ 주당순이익 2,000원</text>
+  <text x="680" y="196" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">배당성향 75.0%</text>
+  <text x="680" y="218" text-anchor="middle" font-size="13" fill="#495057">번 돈 중 나눠 준 몫 — 이익이 움직이면 바뀐다</text>
+
+  <!-- 잇는 식 -->
+  <text x="440" y="262" text-anchor="middle" font-size="13" fill="#1b1b1b">두 지표를 잇는 식: 배당수익률 = 배당성향 ÷ PER  →  75.0% ÷ 15배 = 5.00%</text>
+
+  <line x1="30" y1="285" x2="850" y2="285" stroke="#ced4da"/>
+
+  <!-- 아래: 배당성향 100% 초과 -->
+  <text x="440" y="312" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">배당성향이 100%를 넘으면 — 사아화학 2년차 (억원, 1억 = 5px)</text>
+
+  <text x="40" y="355" font-size="14" fill="#1b1b1b">순이익</text>
+  <rect x="140" y="337" width="200" height="28" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="150" y="356" font-size="13" fill="#1b1b1b">40</text>
+
+  <text x="40" y="405" font-size="14" fill="#1b1b1b">배당</text>
+  <rect x="140" y="387" width="200" height="28" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="150" y="406" font-size="13" fill="#1b1b1b">올해 이익 40</text>
+  <rect x="340" y="387" width="300" height="28" fill="#ffe3e3" stroke="#9d0208"/>
+  <text x="350" y="406" font-size="13" fill="#9d0208">과거 이익잉여금에서 60</text>
+  <text x="652" y="406" font-size="13" font-weight="bold" fill="#9d0208">= 100 (성향 250%)</text>
+
+  <text x="40" y="446" font-size="13" fill="#495057">과거 잉여금에서 꺼낼 수 있는 한도는 상법 제462조 배당가능이익이다.</text>
+  <text x="40" y="466" font-size="13" fill="#495057">순자산 − 자본금 − 자본·이익준비금 − 이번에 적립할 이익준비금 − 미실현이익</text>
+  <text x="40" y="488" font-size="13" fill="#495057">금액은 가상 회사의 code/output.txt [1]·[3]에서 옮겼다.</text>
+</svg>

@@ -3423,7 +3423,7 @@ topics:
     angle: "두 지표가 각각 무엇을 보는지. 배당성향이 100%를 넘는 회사가 뜻하는 것"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-020
     title: "현금흐름할인(DCF) — 미래의 돈을 오늘 값으로"
     category: Finance
