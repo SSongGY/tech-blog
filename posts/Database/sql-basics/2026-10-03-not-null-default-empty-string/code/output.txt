@@ -1,0 +1,100 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-03-not-null-default-empty-string
+# 명령      : python not_null_default.py
+# 수행 시각 : 2026-10-03 12:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  3행
+  컬럼     | 타입    | 제약
+  ---------+---------+--------------------------
+  id       | INTEGER | PK
+  email    | TEXT    | NOT NULL
+  nickname | TEXT    | NOT NULL DEFAULT '손님'
+  status   | TEXT    | NOT NULL DEFAULT 'active'
+  phone    | TEXT    |
+
+  id | email         | nickname | status  | phone
+  ---+---------------+----------+---------+--------------
+   1 | a@example.com | 도윤     | active  | 010-1111-2222
+   2 | b@example.com | 서준     | active  |
+   3 | c@example.com | 하은     | dormant | NULL
+
+
+== 1. DEFAULT 는 컬럼을 빼먹었을 때만 들어간다 ==
+  성공  INSERT INTO member (id, email) VALUES (4, 'd@example.com')
+  에러  INSERT INTO member (id, email, nickname) VALUES (5, 'e@example.com', NULL)
+        -> IntegrityError: NOT NULL constraint failed: member.nickname
+  에러  INSERT INTO member (id, email, nickname) VALUES (?, ?, ?)   값=(6, 'f@example.com', None)
+        -> IntegrityError: NOT NULL constraint failed: member.nickname
+  에러  INSERT INTO member (id, email, nickname) VALUES (7, 'g@example.com', DEFAULT)
+        -> OperationalError: near "DEFAULT": syntax error
+
+[1-A 들어간 행]
+  SELECT id, nickname, status FROM member WHERE id >= 4
+  ('id', 'nickname', 'status')
+  (4, '손님', 'active')
+
+== 2. 빈 문자열은 NOT NULL 을 통과한다 ==
+  성공  INSERT INTO member (id, email, nickname) VALUES (8, '', '')
+
+[2-A 빈 문자열과 NULL 은 다른 값이다]
+  SELECT id, quote(phone) AS phone, phone IS NULL AS is_null, phone = '' AS is_empty, length(phone) AS len FROM member WHERE id <= 3
+  ('id', 'phone', 'is_null', 'is_empty', 'len')
+  (1, "'010-1111-2222'", 0, 0, 13)
+  (2, "''", 0, 1, 0)
+  (3, 'NULL', 1, None, None)
+
+[2-B 세는 방법에 따라 '전화번호 없는 회원' 수가 갈린다]
+  SELECT COUNT(*) AS total, COUNT(phone) AS count_col, SUM(phone IS NULL) AS null_cnt, SUM(phone = '') AS empty_cnt, SUM(COALESCE(phone, '') = '') AS null_or_empty FROM member WHERE id <= 3
+  ('total', 'count_col', 'null_cnt', 'empty_cnt', 'null_or_empty')
+  (3, 2, 1, 1, 2)
+
+== 3. CHECK 로 빈 문자열까지 막는다 ==
+  성공  INSERT INTO member_strict VALUES (1, 'a@example.com')
+  에러  INSERT INTO member_strict VALUES (2, '')
+        -> IntegrityError: CHECK constraint failed: trim(email) <> ''
+  에러  INSERT INTO member_strict VALUES (?, ?)   값=(3, '   ')
+        -> IntegrityError: CHECK constraint failed: trim(email) <> ''
+  에러  INSERT INTO member_strict VALUES (4, NULL)
+        -> IntegrityError: NOT NULL constraint failed: member_strict.email
+
+== 4. 그냥 UPDATE 는 막히고, OR REPLACE 는 기본값으로 바꾼다 ==
+  에러  UPDATE member SET nickname = NULL WHERE id = 1
+        -> IntegrityError: NOT NULL constraint failed: member.nickname
+  성공  UPDATE OR REPLACE member SET nickname = NULL WHERE id = 1
+  성공  INSERT OR REPLACE INTO member (id, email, nickname) VALUES (9, 'i@example.com', NULL)
+
+[4-A OR REPLACE 뒤의 값]
+  SELECT id, nickname FROM member WHERE id IN (1, 9)
+  ('id', 'nickname')
+  (1, '손님')
+  (9, '손님')
+
+== 5. 이미 행이 있는 표에 NOT NULL 컬럼을 더할 때 ==
+  에러  ALTER TABLE member ADD COLUMN grade TEXT NOT NULL
+        -> OperationalError: Cannot add a NOT NULL column with default value NULL
+  성공  ALTER TABLE member ADD COLUMN grade TEXT NOT NULL DEFAULT 'basic'
+  에러  ALTER TABLE member ADD COLUMN joined TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+        -> OperationalError: Cannot add a column with non-constant default
+
+[5-A 기존 행에도 기본값이 보인다]
+  SELECT id, grade FROM member WHERE id <= 3
+  ('id', 'grade')
+  (1, 'basic')
+  (2, 'basic')
+  (3, 'basic')

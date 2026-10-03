@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="530" viewBox="0 0 880 530" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="530" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">INSERT 한 줄에서 컬럼 값이 정해지는 순서</text>
+  <text x="30" y="56" font-size="13" fill="#555">DEFAULT는 앞 단계, NOT NULL은 뒤 단계에서 작동한다 (SQLite 3.49.1)</text>
+
+  <!-- 1단계: 컬럼 목록 -->
+  <rect x="340" y="80" width="200" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="440" y="104" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">컬럼 목록에</text>
+  <text x="440" y="124" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">이 컬럼이 있는가?</text>
+
+  <rect x="150" y="180" width="240" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="270" y="204" font-size="14" fill="#1b1b1b" text-anchor="middle">DEFAULT 값을 넣는다</text>
+  <text x="270" y="224" font-size="13" fill="#555" text-anchor="middle">DEFAULT가 없으면 NULL</text>
+
+  <rect x="490" y="180" width="240" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="610" y="204" font-size="14" fill="#1b1b1b" text-anchor="middle">넘긴 값을 그대로 쓴다</text>
+  <text x="610" y="224" font-size="13" fill="#555" text-anchor="middle">NULL도, 빈 문자열('')도</text>
+
+  <line x1="410" y1="136" x2="304" y2="176" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="318" y="152" font-size="13" fill="#2d6a4f">없다</text>
+  <line x1="470" y1="136" x2="576" y2="176" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="536" y="152" font-size="13" fill="#1b1b1b">있다</text>
+
+  <!-- 2단계: NOT NULL -->
+  <rect x="340" y="280" width="200" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="304" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">NOT NULL 검사</text>
+  <text x="440" y="324" font-size="13" fill="#555" text-anchor="middle">값이 NULL인가만 본다</text>
+
+  <line x1="270" y1="236" x2="400" y2="276" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="610" y1="236" x2="480" y2="276" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 결과 -->
+  <rect x="110" y="390" width="200" height="50" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="210" y="420" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">저장</text>
+
+  <rect x="340" y="390" width="200" height="50" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="440" y="411" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">에러, 문장 취소</text>
+  <text x="440" y="430" font-size="13" fill="#9d0208" text-anchor="middle">기본 (ABORT)</text>
+
+  <rect x="570" y="390" width="220" height="50" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="680" y="411" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">DEFAULT로 바꿔 저장</text>
+  <text x="680" y="430" font-size="13" fill="#b45309" text-anchor="middle">OR REPLACE를 붙였을 때</text>
+
+  <line x1="400" y1="336" x2="224" y2="386" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="196" y="364" font-size="13" fill="#2d6a4f">값 있음 ('' 포함)</text>
+  <line x1="440" y1="336" x2="440" y2="386" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="448" y="366" font-size="13" fill="#9d0208">NULL</text>
+  <line x1="480" y1="336" x2="664" y2="386" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="590" y="356" font-size="13" fill="#9d0208">NULL</text>
+
+  <!-- 요약 -->
+  <line x1="30" y1="466" x2="850" y2="466" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="494" font-size="13" fill="#333">NULL을 직접 넘기면 1단계에서 DEFAULT를 건너뛴다. UPDATE ... SET 컬럼 = NULL 도 바로 2단계로 간다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>
