@@ -3401,7 +3401,7 @@ topics:
     angle: "장부가와 시장가의 괴리. PBR 0.5배가 저평가일 수도, 자산이 부실할 수도 있는 이유"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-018
     title: "EV/EBITDA — 빚까지 포함해 회사를 사는 값"
     category: Finance
@@ -3412,7 +3412,7 @@ topics:
     angle: "시가총액만 보면 놓치는 것. 부채가 다른 두 회사를 PER과 EV/EBITDA로 각각 비교"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-019
     title: "배당수익률과 배당성향 — 얼마를 나눠 주는가"
     category: Finance
