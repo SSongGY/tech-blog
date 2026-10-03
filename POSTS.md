@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **168편** · 갱신 2026-10-03
+총 **171편** · 갱신 2026-10-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 31편
+## DB문법 (basics) — 32편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기](posts/Database/sql-basics/2026-10-03-window-function-row-number-top-per-group/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-03 | [NOT NULL과 DEFAULT — 값이 없을 때](posts/Database/sql-basics/2026-10-03-not-null-default-empty-string/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-03 | [인덱스 만들기 — CREATE INDEX 기본](posts/Database/sql-basics/2026-10-03-create-index-write-cost-storage/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [기본 키와 UNIQUE 제약](posts/Database/sql-basics/2026-10-02-primary-key-vs-unique/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -40,10 +41,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 11편
+## DB기능 (product) — 12편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [Tibero 7 딕셔너리 뷰 — 무엇을 어디서 찾는가](posts/Database/tibero/2026-10-03-tibero7-dictionary-views/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-02 | [Tibero 7 외부 테이블 — 파일을 테이블처럼 읽기](posts/Database/tibero/2026-10-02-tibero7-external-table/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-01 | [Tibero 7 PSM — 저장 프로시저 기본 문법](posts/Database/tibero/2026-10-01-tibero7-psm-stored-procedure/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-09-30 | [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](posts/Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -56,7 +58,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 63편
+## 기술사 (pe) — 64편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -66,6 +68,7 @@
 | 2026-10-03 | [메타모픽 테스트와 테스트 오라클 문제](posts/PE/software-engineering/2026-10-03-metamorphic-testing-test-oracle-problem/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, Barr et al., IEEE TSE 41(5) (2015-05), Chen et al., ACM Computing Surveys 51(1) (2018-01), ISTQB CT-AI Syllabus v1.0 (2021-10-01) | 문서 근거 |
 | 2026-10-03 | [차분 프라이버시(Differential Privacy) — 프라이버시 손실 매개변수 ε과 누적 손실](posts/PE/security/2026-10-03-differential-privacy-epsilon-composition/index.md) | 중급 | NIST SP 800-226 (2025-03), Python 3.13.5 | 실행 검증 |
 | 2026-10-03 | [DevOps 파이프라인 구성요소와 DORA 지표 — 지표마다 재는 구간](posts/PE/software-engineering/2026-10-03-devops-pipeline-dora-metrics/index.md) | 중급 | DORA software delivery metrics 가이드 (2026-01-05 갱신), Fowler, Continuous Integration (2024-01-18 갱신), Humble, continuousdelivery.com (2026-10 열람) | 문서 근거 |
+| 2026-10-03 | [소프트웨어 품질 비용(COQ)과 결함 제거 효율](posts/PE/software-engineering/2026-10-03-cost-of-quality-defect-removal-efficiency/index.md) | 중급 | Python 3.13.5, SWEBOK V3.0 (2014), Capers Jones, Software Defect Removal Efficiency (2011) | 실행 검증 |
 | 2026-10-02 | [사가(Saga) 패턴 — 분산 트랜잭션 대신 보상 트랜잭션](posts/PE/software-engineering/2026-10-02-saga-pattern-compensating-transaction/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Garcia-Molina & Salem, Sagas (SIGMOD 1987), Microsoft Azure Architecture Center, Saga design pattern (2025-02-25) | 실행 검증 |
 | 2026-10-02 | [GoF 디자인 패턴 23개의 3분류](posts/PE/software-engineering/2026-10-02-gof-design-patterns-three-purposes/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994) | 문서 근거 |
 | 2026-10-02 | [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](posts/PE/system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
@@ -231,4 +234,9 @@
 - [트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가](posts/Database/sqlite/2026-09-21-isolation-level-anomalies/index.md) — SQLite 3.49.1, Python 3.13.5
 - [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](posts/Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) — Tibero 7
 - [트랜잭션 ACID와 격리 수준 — 이상현상으로 수준을 정의하는 방식](posts/PE/database/2026-09-23-acid-and-isolation-levels/index.md) — PostgreSQL 16 문서, Berenson et al., SIGMOD 1995
+
+**`window-function`**
+
+- [윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기](posts/Database/sql-basics/2026-10-03-window-function-row-number-top-per-group/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) — Tibero 7
 
