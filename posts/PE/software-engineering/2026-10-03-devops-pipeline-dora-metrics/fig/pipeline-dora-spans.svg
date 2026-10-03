@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">배포 파이프라인 6단계와 DORA 지표 5개가 재는 구간</text>
+  <text x="30" y="56" font-size="13" fill="#555">초록: 처리량(throughput) 지표 · 빨강: 불안정성(instability) 지표 — DORA 2024년 분류</text>
+
+  <!-- 파이프라인 단계 -->
+  <rect x="30" y="80" width="120" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="90" y="104" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">메인라인</text>
+  <text x="90" y="123" font-size="13" fill="#555" text-anchor="middle">버전 관리·커밋</text>
+
+  <rect x="168" y="80" width="120" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="228" y="104" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">커밋 단계</text>
+  <text x="228" y="123" font-size="13" fill="#555" text-anchor="middle">빌드·단위 테스트</text>
+
+  <rect x="306" y="80" width="120" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="366" y="104" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">산출물</text>
+  <text x="366" y="123" font-size="13" fill="#555" text-anchor="middle">한 번만 빌드</text>
+
+  <rect x="444" y="80" width="120" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="504" y="104" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">인수 테스트</text>
+  <text x="504" y="123" font-size="13" fill="#555" text-anchor="middle">자동화</text>
+
+  <rect x="582" y="80" width="120" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="642" y="104" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">추가 검증</text>
+  <text x="642" y="123" font-size="13" fill="#555" text-anchor="middle">성능·스테이징</text>
+
+  <rect x="720" y="80" width="120" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="780" y="104" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">운영 배포</text>
+  <text x="780" y="123" font-size="13" fill="#555" text-anchor="middle">같은 산출물</text>
+
+  <line x1="150" y1="108" x2="164" y2="108" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="288" y1="108" x2="302" y2="108" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="426" y1="108" x2="440" y2="108" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="564" y1="108" x2="578" y2="108" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="702" y1="108" x2="716" y2="108" stroke="#8a8a84" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- ① 변경 리드 타임 -->
+  <line x1="40" y1="176" x2="836" y2="176" stroke="#2d6a4f" stroke-width="2.5" marker-start="url(#gs)" marker-end="url(#ge)"/>
+  <text x="440" y="168" font-size="14" fill="#2d6a4f" text-anchor="middle">① 변경 리드 타임 — 커밋부터 운영 배포까지 걸린 시간</text>
+
+  <!-- ② 배포 빈도 -->
+  <line x1="780" y1="136" x2="780" y2="256" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="768" y="216" font-size="14" fill="#2d6a4f" text-anchor="end">② 배포 빈도 — 이 지점을 지난 횟수</text>
+
+  <!-- 운영 -->
+  <rect x="600" y="256" width="240" height="56" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="720" y="280" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">배포가 실패한다</text>
+  <text x="720" y="299" font-size="13" fill="#555" text-anchor="middle">즉시 개입이 필요한 상태</text>
+
+  <!-- ⑤ 재작업 되돌림 -->
+  <path d="M 600 284 L 90 284 L 90 140" fill="none" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#re)"/>
+  <text x="110" y="274" font-size="13" fill="#9d0208">사고 때문에 생긴 계획 밖 배포가 다시 파이프라인을 탄다</text>
+
+  <!-- 지표 설명 -->
+  <line x1="30" y1="336" x2="850" y2="336" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="362" font-size="14" fill="#2d6a4f">③ 실패 배포 복구 시간 — 실패한 배포에서 서비스를 되살리기까지 걸린 시간</text>
+  <text x="30" y="390" font-size="14" fill="#9d0208">④ 변경 실패율 = 즉시 개입이 필요했던 배포 ÷ 전체 배포</text>
+  <text x="30" y="418" font-size="14" fill="#9d0208">⑤ 배포 재작업률 = 운영 사고 때문에 생긴 계획 밖 배포 ÷ 전체 배포</text>
+  <text x="30" y="450" font-size="13" fill="#555">①②③은 단위 시간에 얼마나 많은 변경이 지나가는가, ④⑤는 배포가 얼마나 잘 되는가를 잰다</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+    <marker id="gs" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ge" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="re" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
