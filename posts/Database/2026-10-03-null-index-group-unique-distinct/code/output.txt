@@ -1,0 +1,157 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\2026-10-03-null-index-group-unique-distinct
+# 명령      : python null_four_rules.py
+# 수행 시각 : 2026-10-03 12:13 (대한민국 표준시)
+# 소요      : 0.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[coupon_use]  0행
+  컬럼        | 타입 | 제약
+  ------------+------+-----
+  coupon_code | TEXT |
+  note        | TEXT |
+
+  (행 없음)
+
+[orders]  6행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  id          | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  coupon_code | TEXT    |
+  amount      | INTEGER |
+
+  id | customer_id | coupon_code | amount
+  ---+-------------+-------------+-------
+   1 |          10 | WELCOME     |  12000
+   2 |          11 | NULL        |   8000
+   3 |          10 | NULL        |  15000
+   4 |          12 | WELCOME     |   9000
+   5 |          13 | VIP         |  30000
+   6 |          11 | NULL        |   NULL
+
+
+== 1. 비교: NULL 끼리도 같은지 모른다 ==
+
+[1-A = 로 찾으면 0행]
+  SELECT id FROM orders WHERE coupon_code = NULL
+  ('id',)
+
+[1-B IS 로 찾으면 3행]
+  SELECT id FROM orders WHERE coupon_code IS NULL
+  ('id',)
+  (2,)
+  (3,)
+  (6,)
+
+[1-C 자기 자신과 조인해도 NULL 행끼리는 짝이 안 된다]
+  SELECT a.coupon_code, COUNT(*) AS pairs FROM orders a JOIN orders b ON a.coupon_code = b.coupon_code GROUP BY a.coupon_code ORDER BY a.coupon_code
+  ('coupon_code', 'pairs')
+  ('VIP', 1)
+  ('WELCOME', 4)
+
+== 2. 묶기: GROUP BY·DISTINCT·UNION 은 NULL 을 한 덩어리로 본다 ==
+
+[2-A GROUP BY]
+  SELECT coupon_code, COUNT(*) AS cnt FROM orders GROUP BY coupon_code
+  ('coupon_code', 'cnt')
+  (None, 3)
+  ('VIP', 1)
+  ('WELCOME', 2)
+
+[2-B DISTINCT]
+  SELECT DISTINCT coupon_code FROM orders
+  ('coupon_code',)
+  ('WELCOME',)
+  (None,)
+  ('VIP',)
+
+[2-C UNION 은 중복을 지운다]
+  SELECT coupon_code FROM orders WHERE id = 2 UNION SELECT coupon_code FROM orders WHERE id = 3
+  ('coupon_code',)
+  (None,)
+
+[2-D ORDER BY: NULL 은 맨 앞, NULLS LAST 로 뒤로 보낸다]
+  SELECT group_concat(quote(coupon_code), ' ') AS asc_default FROM (SELECT coupon_code FROM orders ORDER BY coupon_code)
+  ('asc_default',)
+  ("NULL NULL NULL 'VIP' 'WELCOME' 'WELCOME'",)
+
+[2-E]
+  SELECT group_concat(quote(coupon_code), ' ') AS asc_nulls_last FROM (SELECT coupon_code FROM orders ORDER BY coupon_code NULLS LAST)
+  ('asc_nulls_last',)
+  ("'VIP' 'WELCOME' 'WELCOME' NULL NULL NULL",)
+
+== 3. UNIQUE: NULL 은 서로 다른 값이다 ==
+  INSERT 'WELCOME'  -> 성공
+  INSERT 'WELCOME'  -> 에러: UNIQUE constraint failed: coupon_use.coupon_code
+  INSERT None       -> 성공
+  INSERT None       -> 성공
+  INSERT None       -> 성공
+
+[3-A 같은 표를 DISTINCT 로 보면 NULL 은 하나]
+  SELECT COUNT(*) AS total_rows, COUNT(DISTINCT coupon_code) AS distinct_non_null, (SELECT COUNT(*) FROM (SELECT DISTINCT coupon_code FROM coupon_use)) AS distinct_rows FROM coupon_use
+  ('total_rows', 'distinct_non_null', 'distinct_rows')
+  (4, 1, 2)
+
+== 4. 집계: NULL 을 건너뛴다 ==
+
+[4-A 6번 주문의 금액이 NULL]
+  SELECT COUNT(*) AS cnt_star, COUNT(amount) AS cnt_amount, SUM(amount) AS sum_amount, AVG(amount) AS avg_amount, MIN(amount) AS min_amount FROM orders
+  ('cnt_star', 'cnt_amount', 'sum_amount', 'avg_amount', 'min_amount')
+  (6, 5, 74000, 14800.0, 8000)
+
+[4-B 모든 값이 NULL 이면 SUM 은 NULL, total 은 0.0]
+  SELECT SUM(amount) AS sum_amount, total(amount) AS total_amount, COUNT(amount) AS cnt FROM orders WHERE id = 6
+  ('sum_amount', 'total_amount', 'cnt')
+  (None, 0.0, 0)
+
+== 5. 인덱스: NULL 도 인덱스에 들어가고, IS NULL 로 찾을 수 있다 ==
+  행 200,000개 중 coupon_code 가 NULL 인 행: 179,981
+
+[5-A 일반 인덱스 · IS NULL]
+  SELECT id FROM orders WHERE coupon_code IS NULL
+  QUERY PLAN
+  `--SEARCH orders USING COVERING INDEX ix_coupon (coupon_code=?)
+
+[5-B 일반 인덱스 · = 값]
+  SELECT id FROM orders WHERE coupon_code = 'C0042'
+  QUERY PLAN
+  `--SEARCH orders USING COVERING INDEX ix_coupon (coupon_code=?)
+
+[5-C 일반 인덱스 · MIN]
+  SELECT MIN(coupon_code) FROM orders
+  QUERY PLAN
+  `--SEARCH orders USING COVERING INDEX ix_coupon
+
+[5-D 부분 인덱스 · = 값]
+  SELECT id FROM orders WHERE coupon_code = 'C0042'
+  QUERY PLAN
+  `--SEARCH orders USING COVERING INDEX ix_coupon (coupon_code=?)
+
+[5-E 부분 인덱스 · IS NULL]
+  SELECT id FROM orders WHERE coupon_code IS NULL
+  QUERY PLAN
+  `--SCAN orders
+
+[5-G 부분 인덱스를 강제하면]
+  SELECT id FROM orders INDEXED BY ix_coupon WHERE coupon_code IS NULL
+  -> OperationalError: no query solution
+
+[5-F 파일 크기 — VACUUM 뒤 page_count, 페이지 4096바이트]
+  인덱스 없음                     466 페이지   인덱스 몫    0 페이지 (0 KiB)
+  일반 인덱스                     925 페이지   인덱스 몫  459 페이지 (1,836 KiB)
+  부분 인덱스 (IS NOT NULL)       535 페이지   인덱스 몫   69 페이지 (276 KiB)

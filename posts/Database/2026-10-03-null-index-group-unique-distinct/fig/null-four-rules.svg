@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">NULL 두 개를 만났을 때, 쓰이는 자리에 따라 네 가지로 다룬다</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 실행 결과 기준. 괄호 안은 이 글 실습의 항목 번호</text>
+
+  <!-- 1. 알 수 없음 -->
+  <rect x="30" y="80" width="195" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="127" y="104" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">알 수 없음</text>
+  <text x="127" y="124" font-size="13" fill="#555" text-anchor="middle">NULL = NULL → NULL</text>
+  <rect x="30" y="148" width="195" height="170" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="46" y="176" font-size="14" fill="#1b1b1b">=  &lt;&gt;  &lt;  &gt;  IN</text>
+  <text x="46" y="202" font-size="14" fill="#1b1b1b">JOIN ... ON a = b</text>
+  <text x="46" y="246" font-size="13" fill="#555">WHERE에서 빠진다</text>
+  <text x="46" y="268" font-size="13" fill="#555">조인 짝이 안 된다</text>
+  <text x="46" y="300" font-size="13" fill="#555">(1-A, 1-C)</text>
+
+  <!-- 2. 같은 값 -->
+  <rect x="245" y="80" width="195" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="342" y="104" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">같은 값</text>
+  <text x="342" y="124" font-size="13" fill="#555" text-anchor="middle">NULL 끼리 한 덩어리</text>
+  <rect x="245" y="148" width="195" height="170" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="261" y="176" font-size="14" fill="#1b1b1b">GROUP BY</text>
+  <text x="261" y="202" font-size="14" fill="#1b1b1b">DISTINCT · UNION</text>
+  <text x="261" y="228" font-size="14" fill="#1b1b1b">IS · ORDER BY</text>
+  <text x="261" y="268" font-size="13" fill="#555">그룹 하나, 행 하나</text>
+  <text x="261" y="300" font-size="13" fill="#555">(1-B, 2-A ~ 2-E)</text>
+
+  <!-- 3. 서로 다른 값 -->
+  <rect x="460" y="80" width="195" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="557" y="104" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">서로 다른 값</text>
+  <text x="557" y="124" font-size="13" fill="#555" text-anchor="middle">NULL 끼리도 겹치지 않음</text>
+  <rect x="460" y="148" width="195" height="170" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="476" y="176" font-size="14" fill="#1b1b1b">UNIQUE 제약</text>
+  <text x="476" y="202" font-size="14" fill="#1b1b1b">UNIQUE 인덱스</text>
+  <text x="476" y="268" font-size="13" fill="#555">NULL은 몇 개든 들어간다</text>
+  <text x="476" y="300" font-size="13" fill="#555">(3, 3-A)</text>
+
+  <!-- 4. 건너뜀 -->
+  <rect x="675" y="80" width="175" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="762" y="104" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">건너뜀</text>
+  <text x="762" y="124" font-size="13" fill="#555" text-anchor="middle">없는 셈 친다</text>
+  <rect x="675" y="148" width="175" height="170" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="691" y="176" font-size="14" fill="#1b1b1b">COUNT(컬럼)</text>
+  <text x="691" y="202" font-size="14" fill="#1b1b1b">SUM · AVG</text>
+  <text x="691" y="228" font-size="14" fill="#1b1b1b">MIN · MAX</text>
+  <text x="691" y="268" font-size="13" fill="#555">분모에서 빠진다</text>
+  <text x="691" y="300" font-size="13" fill="#555">(4-A, 4-B)</text>
+
+  <!-- 인덱스 -->
+  <rect x="30" y="346" width="820" height="70" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="46" y="374" font-size="14" font-weight="bold" fill="#2d6a4f">인덱스 (SQLite): NULL도 키로 저장한다 → IS NULL 조건이 인덱스로 찾아간다 (5-A)</text>
+  <text x="46" y="400" font-size="13" fill="#1b1b1b">부분 인덱스 WHERE ... IS NOT NULL 은 NULL을 빼고 저장한다 → = 값 조건만 쓰고, IS NULL 은 표를 훑는다 (5-D, 5-E)</text>
+
+  <line x1="30" y1="440" x2="850" y2="440" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="464" font-size="13" fill="#333">UNIQUE가 "다른 값", DISTINCT가 "같은 값"으로 보는 조합은 SQLite·PostgreSQL·Oracle이 같다 (SQLite NULL 처리 비교표)</text>
+</svg>
