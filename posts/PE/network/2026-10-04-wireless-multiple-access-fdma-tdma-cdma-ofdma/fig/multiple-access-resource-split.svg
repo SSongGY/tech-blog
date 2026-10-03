@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 무선 자원을 네 가지 축으로 나눈다 — 사용자 A·B·C·D</text>
+
+  <!-- 공통 축 설명 -->
+  <text x="440" y="54" text-anchor="middle" font-size="13" fill="#4a5568">각 칸: 가로 = 시간, 세로 = 주파수 · 주황 = 나누는 대가로 비워 두는 자원</text>
+
+  <!-- ===== FDMA ===== -->
+  <text x="115" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">FDMA</text>
+  <g font-size="14" text-anchor="middle" font-weight="bold" fill="#1b1b1b">
+    <rect x="35" y="96" width="160" height="34" fill="#e2e8f0" stroke="#4a5568"/><text x="115" y="118">A</text>
+    <rect x="35" y="136" width="160" height="34" fill="#cbd5e0" stroke="#4a5568"/><text x="115" y="158">B</text>
+    <rect x="35" y="176" width="160" height="34" fill="#e2e8f0" stroke="#4a5568"/><text x="115" y="198">C</text>
+    <rect x="35" y="216" width="160" height="34" fill="#cbd5e0" stroke="#4a5568"/><text x="115" y="238">D</text>
+  </g>
+  <rect x="35" y="130" width="160" height="6" fill="#b45309"/>
+  <rect x="35" y="170" width="160" height="6" fill="#b45309"/>
+  <rect x="35" y="210" width="160" height="6" fill="#b45309"/>
+  <text x="115" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">구분 단위: 반송파</text>
+  <text x="115" y="298" text-anchor="middle" font-size="13" fill="#b45309">대가: 보호 대역</text>
+
+  <!-- ===== TDMA ===== -->
+  <text x="330" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">TDMA</text>
+  <g font-size="14" text-anchor="middle" font-weight="bold" fill="#1b1b1b">
+    <rect x="250" y="96" width="34" height="154" fill="#e2e8f0" stroke="#4a5568"/><text x="267" y="178">A</text>
+    <rect x="290" y="96" width="34" height="154" fill="#cbd5e0" stroke="#4a5568"/><text x="307" y="178">B</text>
+    <rect x="330" y="96" width="34" height="154" fill="#e2e8f0" stroke="#4a5568"/><text x="347" y="178">C</text>
+    <rect x="370" y="96" width="34" height="154" fill="#cbd5e0" stroke="#4a5568"/><text x="387" y="178">D</text>
+  </g>
+  <rect x="284" y="96" width="6" height="154" fill="#b45309"/>
+  <rect x="324" y="96" width="6" height="154" fill="#b45309"/>
+  <rect x="364" y="96" width="6" height="154" fill="#b45309"/>
+  <text x="330" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">구분 단위: 타임슬롯</text>
+  <text x="330" y="298" text-anchor="middle" font-size="13" fill="#b45309">대가: 보호 구간·시간 동기</text>
+
+  <!-- ===== CDMA ===== -->
+  <text x="545" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">CDMA</text>
+  <rect x="465" y="96" width="160" height="154" fill="#e2e8f0" stroke="#4a5568"/>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <text x="545" y="128" font-weight="bold">A · B · C · D 동시</text>
+    <text x="545" y="156">A × 코드 C₁</text>
+    <text x="545" y="176">B × 코드 C₂</text>
+    <text x="545" y="196">C × 코드 C₃</text>
+    <text x="545" y="216">D × 코드 C₄</text>
+    <text x="545" y="240" fill="#4a5568">전 대역 · 전 시간</text>
+  </g>
+  <text x="545" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">구분 단위: 확산 코드</text>
+  <text x="545" y="298" text-anchor="middle" font-size="13" fill="#b45309">대가: 전력 제어·코드 관리</text>
+
+  <!-- ===== OFDMA ===== -->
+  <text x="760" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">OFDMA</text>
+  <g font-size="14" text-anchor="middle" font-weight="bold" fill="#1b1b1b">
+    <rect x="684" y="96" width="34" height="74" fill="#e2e8f0" stroke="#4a5568"/><text x="701" y="138">A</text>
+    <rect x="684" y="176" width="34" height="74" fill="#cbd5e0" stroke="#4a5568"/><text x="701" y="218">B</text>
+    <rect x="724" y="96" width="34" height="114" fill="#cbd5e0" stroke="#4a5568"/><text x="741" y="158">C</text>
+    <rect x="724" y="216" width="34" height="34" fill="#e2e8f0" stroke="#4a5568"/><text x="741" y="238">A</text>
+    <rect x="764" y="96" width="34" height="34" fill="#e2e8f0" stroke="#4a5568"/><text x="781" y="118">D</text>
+    <rect x="764" y="136" width="34" height="114" fill="#cbd5e0" stroke="#4a5568"/><text x="781" y="198">B</text>
+    <rect x="804" y="96" width="34" height="154" fill="#e2e8f0" stroke="#4a5568"/><text x="821" y="178">D</text>
+  </g>
+  <rect x="680" y="96" width="4" height="154" fill="#b45309"/>
+  <rect x="720" y="96" width="4" height="154" fill="#b45309"/>
+  <rect x="760" y="96" width="4" height="154" fill="#b45309"/>
+  <rect x="800" y="96" width="4" height="154" fill="#b45309"/>
+  <text x="760" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">구분 단위: 자원 블록</text>
+  <text x="760" y="298" text-anchor="middle" font-size="13" fill="#b45309">대가: 순환 전치(CP)</text>
+
+  <!-- 하단 요약 -->
+  <line x1="30" y1="322" x2="850" y2="322" stroke="#cbd5e0" stroke-width="1.2"/>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="40" y="350">대표 규격: GSM 200 kHz 반송파(FDMA) + 8 타임슬롯(TDMA) · W-CDMA 3.84 Mcps · LTE 하향 OFDMA</text>
+    <text x="40" y="374">OFDMA 자원 블록 = 부반송파 12개(180 kHz) × 0.5 ms 슬롯. 칸마다 다른 사용자를 배정할 수 있다</text>
+    <text x="40" y="398" fill="#4a5568">CDMA 칸에는 비우는 자원이 없다 — 대신 다른 사용자의 신호가 곧 간섭이 된다</text>
+  </g>
+</svg>

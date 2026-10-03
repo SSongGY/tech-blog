@@ -242,6 +242,9 @@ GSM 다중화 규격(TS 45.002)의 정의를 근거로 정리한다.
 남아 있다. 정보시스템 설계에서는 트래픽이 일정한가 간헐적인가, 지연 상한이 필요한가,
 중앙 제어자를 둘 수 있는가로 맞는 방식을 고른다.
 
+> 개념 정리: [무선 다중 접속 방식 — FDMA·TDMA·CDMA·OFDMA](../../network/2026-10-04-wireless-multiple-access-fdma-tdma-cdma-ofdma/index.md)
+> · [IEEE 802.11 DCF와 CSMA/CA — IFS·백오프·RTS/CTS](../../network/2026-10-04-ieee-802-11-dcf-csma-ca/index.md)
+
 끝
 
 ## 답안 작성 메모
