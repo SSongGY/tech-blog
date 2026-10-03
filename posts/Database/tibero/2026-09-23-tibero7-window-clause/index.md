@@ -16,6 +16,11 @@ verified: true
 topic_id: tb-003
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`window-function`)
+> - [윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기](../../sql-basics/2026-10-03-window-function-row-number-top-per-group/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+<!-- related:end -->
+
 > **실행 검증 완료.** 이 글의 출력은 **Tibero 7.2** 인스턴스에서 실제로 돌려 받은 것이다.
 > 버전은 `SELECT * FROM v$version`으로 확인했고 `PRODUCT_MAJOR 7`, `PRODUCT_MINOR 2`다.
 > 인용한 매뉴얼은 **7.2.6판**이라 인스턴스 버전과 다르니 섞어 읽지 않도록 주의한다.
