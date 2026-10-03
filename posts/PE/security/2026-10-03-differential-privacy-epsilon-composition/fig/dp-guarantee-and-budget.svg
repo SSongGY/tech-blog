@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+    <marker id="arA" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">차분 프라이버시 — 한 번의 보장(ε)과 여러 번의 누적(Σε)</text>
+
+  <!-- 상단: 한 번의 보장 -->
+  <text x="30" y="68" font-size="14" font-weight="bold" fill="#1d3557">한 번의 분석</text>
+
+  <rect x="30" y="82" width="180" height="56" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="120" y="106" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">D1 (X 포함)</text>
+  <text x="120" y="126" text-anchor="middle" font-size="13" fill="#4a5568">현실 세계</text>
+
+  <rect x="30" y="162" width="180" height="56" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="120" y="186" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">D2 (X 제외)</text>
+  <text x="120" y="206" text-anchor="middle" font-size="13" fill="#4a5568">이웃 데이터셋</text>
+
+  <text x="120" y="152" text-anchor="middle" font-size="13" fill="#b45309">한 사람만 다르다</text>
+
+  <rect x="290" y="110" width="250" height="80" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="415" y="138" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">메커니즘 M</text>
+  <text x="415" y="160" text-anchor="middle" font-size="13" fill="#1b1b1b">f(D) + Lap(Δ/ε)</text>
+  <text x="415" y="179" text-anchor="middle" font-size="13" fill="#4a5568">Δ = 한 사람이 바꿀 수 있는 최대 폭</text>
+
+  <line x1="210" y1="110" x2="287" y2="135" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="210" y1="190" x2="287" y2="165" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="620" y="110" width="230" height="80" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="735" y="138" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">출력 o</text>
+  <text x="735" y="160" text-anchor="middle" font-size="13" fill="#1b1b1b">Pr[o | D1] ≤ e^ε · Pr[o | D2]</text>
+  <text x="735" y="179" text-anchor="middle" font-size="13" fill="#4a5568">모든 출력, 모든 이웃 쌍에 대해</text>
+
+  <line x1="540" y1="150" x2="617" y2="150" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <line x1="30" y1="248" x2="850" y2="248" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,4"/>
+
+  <!-- 하단: 누적 -->
+  <text x="30" y="282" font-size="14" font-weight="bold" fill="#1d3557">같은 데이터에 여러 번 — 순차 합성</text>
+
+  <rect x="30" y="300" width="150" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="105" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">분석 1</text>
+  <text x="105" y="344" text-anchor="middle" font-size="13" fill="#4a5568">ε₁</text>
+
+  <rect x="210" y="300" width="150" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="285" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">분석 2</text>
+  <text x="285" y="344" text-anchor="middle" font-size="13" fill="#4a5568">ε₂</text>
+
+  <rect x="390" y="300" width="150" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="465" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">분석 k</text>
+  <text x="465" y="344" text-anchor="middle" font-size="13" fill="#4a5568">εₖ</text>
+
+  <text x="195" y="333" text-anchor="middle" font-size="15" fill="#1b1b1b">+</text>
+  <text x="375" y="333" text-anchor="middle" font-size="15" fill="#1b1b1b">+</text>
+
+  <rect x="620" y="294" width="230" height="68" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="735" y="320" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">프라이버시 예산</text>
+  <text x="735" y="343" text-anchor="middle" font-size="13" fill="#1b1b1b">총 ε ≤ ε₁ + ε₂ + … + εₖ</text>
+
+  <line x1="540" y1="328" x2="617" y2="328" stroke="#b45309" stroke-width="1.6" marker-end="url(#arA)"/>
+
+  <text x="440" y="400" text-anchor="middle" font-size="13" fill="#4a5568">ε이 작을수록 두 세계가 비슷해야 하므로 잡음이 커진다 — 보호는 강해지고 정확도는 떨어진다</text>
+  <text x="440" y="422" text-anchor="middle" font-size="13" fill="#4a5568">예산이 다 차면 그 데이터에 대한 공개를 멈춰야 한다</text>
+</svg>
