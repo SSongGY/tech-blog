@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 PBR 0.50배 — 주가가 장부가와 청산가치 사이 어디에 있는가</text>
+
+  <!-- 축: 0원 x=230, 10,000원 x=730 (1원 = 0.05px) -->
+  <line x1="230" y1="60" x2="230" y2="370" stroke="#495057"/>
+  <!-- 주가 5,000원 기준선 -->
+  <line x1="480" y1="60" x2="480" y2="370" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="480" y="390" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">주가 5,000원 (두 회사 같음)</text>
+
+  <!-- 사아유통 -->
+  <text x="40" y="92" font-size="15" font-weight="bold" fill="#1b1b1b">사아유통</text>
+  <text x="40" y="112" font-size="13" fill="#495057">현금·토지 비중 큼</text>
+  <rect x="230" y="78" width="500" height="28" fill="#e9ecef" stroke="#495057"/>
+  <text x="240" y="97" font-size="13" fill="#1b1b1b">주당순자산(BPS) 10,000원</text>
+  <rect x="230" y="114" width="380" height="28" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="240" y="133" font-size="13" fill="#1b1b1b">주당 청산가치 7,600원</text>
+  <text x="620" y="133" font-size="13" fill="#2d6a4f">주가보다 높다</text>
+
+  <!-- 자차섬유 -->
+  <text x="40" y="212" font-size="15" font-weight="bold" fill="#1b1b1b">자차섬유</text>
+  <text x="40" y="232" font-size="13" fill="#495057">채권·재고·전용설비</text>
+  <rect x="230" y="198" width="500" height="28" fill="#e9ecef" stroke="#495057"/>
+  <text x="240" y="217" font-size="13" fill="#1b1b1b">주당순자산(BPS) 10,000원</text>
+  <rect x="230" y="234" width="33" height="28" fill="#ffe3e3" stroke="#9d0208"/>
+  <text x="272" y="253" font-size="13" fill="#9d0208">주당 청산가치 650원</text>
+  <text x="490" y="253" font-size="13" fill="#9d0208">주가보다 낮다</text>
+
+  <!-- 손상 반영 후 -->
+  <text x="40" y="312" font-size="15" font-weight="bold" fill="#1b1b1b">자차섬유</text>
+  <text x="40" y="332" font-size="13" fill="#495057">손상·평가손실 반영 후</text>
+  <rect x="230" y="300" width="250" height="28" fill="#fff3e0" stroke="#b45309"/>
+  <text x="240" y="319" font-size="13" fill="#1b1b1b">BPS 5,000원 → PBR 1.00배</text>
+  <text x="490" y="319" font-size="13" fill="#b45309">장부가가 주가 쪽으로 내려온다</text>
+
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <text x="230" y="360">0</text>
+    <text x="730" y="360">10,000원</text>
+  </g>
+
+  <text x="40" y="420" font-size="13" fill="#495057">막대 길이는 원 단위 비례. 회수율·손상 금액은 가정값이고 숫자는 code/output.txt [1]·[3]에서 옮겼다.</text>
+</svg>
