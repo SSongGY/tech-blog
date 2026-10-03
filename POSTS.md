@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **165편** · 갱신 2026-10-03
+총 **166편** · 갱신 2026-10-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -154,10 +154,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 22편
+## 기출문제 (exam) — 23편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [기출문제 — 합성데이터의 개념과 생성 기법, 품질 평가 지표](posts/PE/exam/2026-10-03-synthetic-data-generation-quality-metrics/index.md) | 중급 | 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12), NIST SP 800-188 (2023-09), Alaa et al., ICML 2022 | 문서 근거 |
 | 2026-10-03 | [기출문제 — AI 시스템 신뢰성과 메타모픽 테스트 (테스트 오라클 문제, 메타모픽 관계, 전통적 테스트와의 차이)](posts/PE/exam/2026-10-03-metamorphic-testing-ai-systems/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, ISTQB CT-AI Syllabus v1.0 (2021-10-01), Chen et al., ACM Computing Surveys 51(1) (2018) | 문서 근거 |
 | 2026-10-02 | [기출문제 — 클라우드 네이티브 환경의 재해복구 전략 (RTO·RPO, Active-Active·Active-Passive·Pilot Light)](posts/PE/exam/2026-10-02-disaster-recovery-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
 | 2026-10-01 | [기출문제 — FIFO와 WFQ(Weighted Fair Queuing) 비교](posts/PE/exam/2026-10-01-fifo-vs-weighted-fair-queuing/index.md) | 중급 | Parekh & Gallager, GPS, IEEE/ACM ToN 1993, Demers·Keshav·Shenker, Fair Queueing, SIGCOMM 1989, RFC 7567 (2015-07), Cisco IOS 12.2SR QoS Configuration Guide, Python 3.13.5 | 실행 검증 |
