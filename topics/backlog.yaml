@@ -3666,3 +3666,25 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-135
+    title: "무선 다중 접속 방식 — FDMA·TDMA·CDMA·OFDMA"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "자원을 주파수·시간·코드·부반송파로 나누는 기준과 각 방식이 관리해야 하는 비용(보호 대역·시간 동기·전력 제어·순환 전치)을 3GPP 규격 근거로 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-136
+    title: "IEEE 802.11 DCF와 CSMA/CA — IFS·백오프·RTS/CTS"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "DIFS·SIFS 순서가 만드는 우선순위, 이진 지수 백오프와 동결, 숨은 단말과 NAV, EDCA로의 확장까지 동작 원리 중심으로"
+    code: none
+    origin: exam
+    status: todo
