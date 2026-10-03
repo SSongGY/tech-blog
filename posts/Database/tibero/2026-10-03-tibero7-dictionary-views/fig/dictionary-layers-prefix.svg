@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">Tibero 7 데이터 사전 — 세 층과 접두사 세 가지</text>
+  <text x="30" y="56" font-size="13" fill="#555">Tibero 7.2.6 관리자 안내서 · 참조 안내서 기준</text>
+
+  <!-- DDL -->
+  <rect x="30" y="380" width="170" height="70" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="115" y="408" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">DDL</text>
+  <text x="115" y="430" font-size="13" fill="#b45309" text-anchor="middle">CREATE · ALTER · DROP …</text>
+
+  <!-- 기본 테이블 -->
+  <rect x="260" y="380" width="250" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="385" y="406" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">기본 테이블 (SYS 소유)</text>
+  <text x="385" y="428" font-size="13" fill="#555" text-anchor="middle">정규화된 원본 메타데이터</text>
+  <line x1="200" y1="415" x2="256" y2="415" stroke="#b45309" stroke-width="1.6" marker-end="url(#arr-amber)"/>
+  <text x="228" y="400" font-size="13" fill="#b45309" text-anchor="middle">갱신</text>
+
+  <!-- 동적 뷰 -->
+  <rect x="580" y="380" width="270" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="715" y="406" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">동적 뷰 V$… (SYS 소유)</text>
+  <text x="715" y="428" font-size="13" fill="#555" text-anchor="middle">내부 운영 상태 · 대부분 DBA 권한</text>
+
+  <!-- 정적 뷰 -->
+  <rect x="200" y="86" width="500" height="250" rx="8" fill="#f4f7fb" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="220" y="110" font-size="14" font-weight="bold" fill="#1b1b1b">정적 뷰 — 같은 컬럼, 다른 접두사</text>
+
+  <rect x="220" y="124" width="460" height="196" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.4"/>
+  <text x="236" y="146" font-size="14" font-weight="bold" fill="#9d0208">DBA_ — 데이터베이스의 모든 객체</text>
+
+  <rect x="240" y="160" width="420" height="146" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+  <text x="256" y="182" font-size="14" font-weight="bold" fill="#b45309">ALL_ — 현재 사용자가 접근할 수 있는 객체</text>
+
+  <rect x="260" y="196" width="380" height="96" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="276" y="220" font-size="14" font-weight="bold" fill="#2d6a4f">USER_ — 현재 사용자가 소유한 객체</text>
+  <text x="276" y="244" font-size="13" fill="#333">USER_TABLES · USER_TBL_COLUMNS</text>
+  <text x="276" y="264" font-size="13" fill="#333">USER_INDEXES · USER_IDX_COLUMNS</text>
+  <text x="276" y="284" font-size="13" fill="#333">USER_CONSTRAINTS · USER_OBJECTS …</text>
+
+  <!-- 기본 테이블·동적 뷰 → 정적 뷰 -->
+  <line x1="385" y1="378" x2="385" y2="340" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="680" y1="378" x2="640" y2="340" stroke="#3b3b3b" stroke-width="1.6" stroke-dasharray="5 3" marker-end="url(#arr)"/>
+  <text x="400" y="364" font-size="13" fill="#333">조인해 만든다</text>
+
+  <!-- DICTIONARY -->
+  <rect x="720" y="120" width="140" height="80" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="790" y="148" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">DICTIONARY</text>
+  <text x="790" y="170" font-size="13" fill="#555" text-anchor="middle">사전 테이블·뷰의</text>
+  <text x="790" y="188" font-size="13" fill="#555" text-anchor="middle">목록과 주석</text>
+
+  <text x="30" y="482" font-size="13" fill="#333">사용자는 정적 뷰를 직접 고칠 수 없다. DDL을 실행하면 기본 테이블이 갱신되고, 뷰는 그것을 보여 준다.</text>
+</svg>
