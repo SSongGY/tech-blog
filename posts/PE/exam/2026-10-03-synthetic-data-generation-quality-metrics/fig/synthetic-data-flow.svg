@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="450" viewBox="0 0 880 450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+    <marker id="arR" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+    </marker>
+    <marker id="arG" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">합성데이터 생성·검증 흐름 — 유용성과 안전성을 같은 데이터에서 함께 잰다</text>
+
+  <!-- row 1 -->
+  <rect x="30" y="60" width="140" height="60" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="100" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">원본데이터</text>
+  <text x="100" y="105" text-anchor="middle" font-size="13" fill="#4a5568">개인정보 포함</text>
+
+  <rect x="210" y="60" width="150" height="60" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="285" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 전처리</text>
+  <text x="285" y="105" text-anchor="middle" font-size="13" fill="#4a5568">식별자 삭제 · 일반화</text>
+
+  <rect x="400" y="60" width="190" height="60" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="495" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 생성 모델 학습</text>
+  <text x="495" y="105" text-anchor="middle" font-size="13" fill="#4a5568">통계 모형 · AI 모형</text>
+
+  <rect x="630" y="60" width="160" height="60" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="710" y="85" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">합성데이터</text>
+  <text x="710" y="105" text-anchor="middle" font-size="13" fill="#4a5568">완전 · 부분 합성</text>
+
+  <line x1="170" y1="90" x2="208" y2="90" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="360" y1="90" x2="398" y2="90" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="590" y1="90" x2="628" y2="90" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- row 2 -->
+  <rect x="440" y="170" width="200" height="70" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="540" y="198" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③-1 유용성 검증</text>
+  <text x="540" y="220" text-anchor="middle" font-size="13" fill="#4a5568">분포 · 상관 · 구별 · 모형 성능</text>
+
+  <rect x="670" y="170" width="190" height="70" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="765" y="198" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③-2 안전성 검증</text>
+  <text x="765" y="220" text-anchor="middle" font-size="13" fill="#4a5568">구별 · 연결 · 추론 위험도</text>
+
+  <line x1="690" y1="120" x2="565" y2="167" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="730" y1="120" x2="760" y2="167" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <text x="40" y="190" font-size="13" fill="#4a5568">두 검증은 병렬로, 같은 내부 단계를 밟는다</text>
+  <text x="40" y="210" font-size="13" fill="#4a5568">지표 결정 → 임계값 산출 → 측정 → 검토</text>
+  <text x="40" y="230" font-size="13" fill="#4a5568">측정에 쓰는 원본은 전처리를 마친 원본이다</text>
+
+  <!-- row 3 -->
+  <rect x="560" y="290" width="220" height="64" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="670" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 임계값 대비 검토</text>
+  <text x="670" y="338" text-anchor="middle" font-size="13" fill="#4a5568">심의위원회 평가 포함</text>
+
+  <line x1="540" y1="240" x2="640" y2="287" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="765" y1="240" x2="700" y2="287" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="170" y="290" width="220" height="64" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="280" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑤ 활용 · 안전한 관리</text>
+  <text x="280" y="338" text-anchor="middle" font-size="13" fill="#4a5568">익명정보 또는 가명정보로</text>
+
+  <line x1="560" y1="322" x2="393" y2="322" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arG)"/>
+  <text x="495" y="312" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">충족</text>
+
+  <path d="M620,354 V388 H420 V123" fill="none" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#arR)"/>
+  <text x="520" y="406" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">미충족 → 레코드 삭제 · 매개변수 조정 · 재생성</text>
+
+  <text x="440" y="434" text-anchor="middle" font-size="13" fill="#4a5568">유용성만 높이면 원본과 닮아 위험해지고, 안전성만 높이면 쓸모가 없어진다 — 그래서 한 번에 함께 잰다</text>
+</svg>
