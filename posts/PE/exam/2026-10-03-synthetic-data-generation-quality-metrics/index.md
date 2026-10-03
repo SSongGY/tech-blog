@@ -254,6 +254,10 @@ pMSE는 Snoke 등(2018)이 합성데이터의 **일반 유용성** 지표로 정
 활용 목적에 맞춘 안전기준과 지표·임계값을 정보시스템의 데이터 품질 관리 절차 안에 고정해 두는
 것이 합성데이터 도입의 핵심이다.
 
+> 개념 정리: [합성데이터 — 유용성과 안전성의 상충, 구별·연결·추론 위험도](../../data-analysis/2026-10-03-synthetic-data-utility-privacy-tradeoff/index.md)
+>
+> 개념 정리: [차분 프라이버시(Differential Privacy) — 프라이버시 손실 매개변수 ε과 누적 손실](../../security/2026-10-03-differential-privacy-epsilon-composition/index.md)
+
 끝
 
 ## 답안 작성 메모

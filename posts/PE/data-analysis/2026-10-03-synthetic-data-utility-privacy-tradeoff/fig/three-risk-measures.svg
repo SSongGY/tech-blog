@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+    <marker id="arA" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+    <marker id="arR" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">안전성 지표 3가지 — 원본(R)과 합성(S)에서 무엇을 맞대어 보는가</text>
+
+  <!-- 원본 / 합성 기둥 -->
+  <rect x="30" y="60" width="170" height="370" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="115" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">원본데이터 R</text>
+  <text x="115" y="106" text-anchor="middle" font-size="13" fill="#4a5568">개인 레코드 r</text>
+
+  <rect x="680" y="60" width="170" height="370" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="765" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">합성데이터 S</text>
+  <text x="765" y="106" text-anchor="middle" font-size="13" fill="#4a5568">생성 레코드 s</text>
+
+  <!-- ① 구별 -->
+  <rect x="235" y="125" width="410" height="80" fill="#ffffff" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="440" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">① 구별 위험도 — 같은가</text>
+  <text x="440" y="172" text-anchor="middle" font-size="13" fill="#1b1b1b">s 와 똑같은 r 이 R 에 있으면 1, 없으면 0</text>
+  <text x="440" y="192" text-anchor="middle" font-size="13" fill="#4a5568">S 의 모든 s 에 대해 평균 (S 기준)</text>
+  <line x1="678" y1="165" x2="648" y2="165" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+  <line x1="233" y1="165" x2="203" y2="165" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+
+  <!-- ② 연결 -->
+  <rect x="235" y="230" width="410" height="80" fill="#ffffff" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="440" y="255" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">② 연결 위험도(CAP) — 맞히는가</text>
+  <text x="440" y="277" text-anchor="middle" font-size="13" fill="#1b1b1b">r 과 준식별자 K 가 같은 s 중 민감정보 T 도 같은 비율</text>
+  <text x="440" y="297" text-anchor="middle" font-size="13" fill="#4a5568">R 의 레코드마다 계산 (R 기준) · 임계값 0.7 이하 권고</text>
+  <line x1="202" y1="270" x2="232" y2="270" stroke="#b45309" stroke-width="1.6" marker-end="url(#arA)"/>
+  <line x1="647" y1="270" x2="677" y2="270" stroke="#b45309" stroke-width="1.6" marker-end="url(#arA)"/>
+
+  <!-- ③ 추론 -->
+  <rect x="235" y="335" width="410" height="80" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6" rx="4"/>
+  <text x="440" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 추론 위험도 — 가까운가</text>
+  <text x="440" y="382" text-anchor="middle" font-size="13" fill="#1b1b1b">dS(s→최근접 r) &lt; dO(그 r→최근접 다른 r) 인 비율</text>
+  <text x="440" y="402" text-anchor="middle" font-size="13" fill="#4a5568">dS = 0 인 s 는 빼고 센다 · 1 위험 · 0.5 균형 · 0 유용성 없음</text>
+  <line x1="678" y1="375" x2="648" y2="375" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="233" y1="375" x2="203" y2="375" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <text x="440" y="455" text-anchor="middle" font-size="13" fill="#4a5568">①이 0이어도 ③은 높을 수 있다 — 원본을 살짝 바꾼 레코드는 ①에 잡히지 않는다</text>
+</svg>
