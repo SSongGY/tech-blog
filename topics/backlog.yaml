@@ -108,7 +108,7 @@ topics:
     difficulty: 입문
     angle: "3값 논리 진리표를 실제 쿼리 결과와 대조"
     code: sql
-    status: todo
+    status: done
   - id: db-010
     title: "파티셔닝이 항상 빨라지지 않는 이유"
     category: Database
@@ -1862,7 +1862,7 @@ topics:
     origin: manual
     status: done
   - id: pe-043
-    title: "DevOps 파이프라인 구성요소와 DORA 4지표"
+    title: "DevOps 파이프라인 구성요소와 DORA 지표 — 지표마다 재는 구간"
     category: PE
     subcategory: software-engineering
     track: pe
@@ -1871,7 +1871,7 @@ topics:
     angle: "지표 4개가 각각 무엇의 대리 측정인지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-044
     title: "소프트웨어 품질 비용(COQ)과 결함 제거 효율"
     category: PE
@@ -2367,7 +2367,7 @@ topics:
     angle: "빈 문자열과 NULL을 구분하고, DEFAULT가 적용되는 시점"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-027
     title: "자료형 — SQLite의 동적 타입"
     category: Database

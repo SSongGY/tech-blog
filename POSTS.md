@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **162편** · 갱신 2026-10-03
+총 **165편** · 갱신 2026-10-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 30편
+## DB문법 (basics) — 31편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [NOT NULL과 DEFAULT — 값이 없을 때](posts/Database/sql-basics/2026-10-03-not-null-default-empty-string/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-03 | [인덱스 만들기 — CREATE INDEX 기본](posts/Database/sql-basics/2026-10-03-create-index-write-cost-storage/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [기본 키와 UNIQUE 제약](posts/Database/sql-basics/2026-10-02-primary-key-vs-unique/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -55,13 +56,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 60편
+## 기술사 (pe) — 61편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-03 | [기술부채 — 측정 방법과 상환 전략](posts/PE/software-engineering/2026-10-03-technical-debt-measurement-repayment/index.md) | 중급 | Dagstuhl Seminar 16162 Report (2016), Kruchten·Nord·Ozkaya, IEEE Software 29(6) (2012-11), SonarQube Server 문서 (2026-10 열람) | 문서 근거 |
 | 2026-10-03 | [리팩토링 — 코드 스멜 분류와 적용 시점](posts/PE/software-engineering/2026-10-03-refactoring-code-smells-when-to-apply/index.md) | 중급 | Fowler, Refactoring 2nd ed. (2018), Mäntylä & Lassenius, Empirical Software Engineering 11(3) (2006), Chikofsky & Cross, IEEE Software 7(1) (1990-01) | 문서 근거 |
 | 2026-10-03 | [메타모픽 테스트와 테스트 오라클 문제](posts/PE/software-engineering/2026-10-03-metamorphic-testing-test-oracle-problem/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, Barr et al., IEEE TSE 41(5) (2015-05), Chen et al., ACM Computing Surveys 51(1) (2018-01), ISTQB CT-AI Syllabus v1.0 (2021-10-01) | 문서 근거 |
+| 2026-10-03 | [DevOps 파이프라인 구성요소와 DORA 지표 — 지표마다 재는 구간](posts/PE/software-engineering/2026-10-03-devops-pipeline-dora-metrics/index.md) | 중급 | DORA software delivery metrics 가이드 (2026-01-05 갱신), Fowler, Continuous Integration (2024-01-18 갱신), Humble, continuousdelivery.com (2026-10 열람) | 문서 근거 |
 | 2026-10-02 | [사가(Saga) 패턴 — 분산 트랜잭션 대신 보상 트랜잭션](posts/PE/software-engineering/2026-10-02-saga-pattern-compensating-transaction/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Garcia-Molina & Salem, Sagas (SIGMOD 1987), Microsoft Azure Architecture Center, Saga design pattern (2025-02-25) | 실행 검증 |
 | 2026-10-02 | [GoF 디자인 패턴 23개의 3분류](posts/PE/software-engineering/2026-10-02-gof-design-patterns-three-purposes/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994) | 문서 근거 |
 | 2026-10-02 | [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](posts/PE/system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
@@ -136,10 +138,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 10편
+## 일반 (general) — 11편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-03 | [NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유](posts/Database/2026-10-03-null-index-group-unique-distinct/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-02 | [WAL은 왜 데이터 파일보다 먼저 쓰이는가](posts/Database/sqlite/2026-10-02-sqlite-wal-frames-before-data-file/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-01 | [N+1 쿼리는 왜 반복해서 생기고 어떻게 잡아내는가](posts/Database/2026-10-01-n-plus-one-query-detection/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-09-30 | [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -210,6 +213,7 @@
 
 **`null-semantics`**
 
+- [NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유](posts/Database/2026-10-03-null-index-group-unique-distinct/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [COALESCE와 NULLIF — NULL을 다루는 두 함수](posts/Database/sql-basics/2026-09-28-coalesce-nullif-null-handling/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](posts/Database/sql-basics/2026-10-02-count-star-vs-column-null/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11

@@ -146,3 +146,6 @@
 | 2026-10-03 | lx-026 | Linux | curl — API 디버깅에 필요한 옵션 |
 | 2026-10-03 | fin-017 | Finance | PBR과 청산가치 — 1배 아래가 뜻하는 것 |
 | 2026-10-03 | fin-018 | Finance | EV/EBITDA — 빚까지 포함해 회사를 사는 값 |
+| 2026-10-03 | db-026 | Database | NOT NULL과 DEFAULT — 값이 없을 때 |
+| 2026-10-03 | db-009 | Database | NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유 |
+| 2026-10-03 | pe-043 | PE | DevOps 파이프라인 구성요소와 DORA 지표 — 지표마다 재는 구간 |
