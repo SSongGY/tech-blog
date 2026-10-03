@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">PER은 둘 다 10배 — 시가총액에 빚을 더하고 현금을 빼면</text>
+
+  <!-- 축척: 1억원 = 0.3px, 시작 x=200 -->
+  <line x1="200" y1="60" x2="200" y2="300" stroke="#495057"/>
+
+  <!-- 하카기계 -->
+  <text x="30" y="92" font-size="15" font-weight="bold" fill="#1b1b1b">하카기계</text>
+  <text x="30" y="112" font-size="13" fill="#495057">차입금 100 · 현금 400</text>
+  <rect x="200" y="74" width="339" height="28" fill="#e9ecef" stroke="#495057"/>
+  <text x="210" y="93" font-size="13" fill="#1b1b1b">시가총액 1,131</text>
+  <rect x="539" y="74" width="30" height="28" fill="#ffe3e3" stroke="#9d0208"/>
+  <text x="580" y="93" font-size="13" fill="#9d0208">+ 차입금 100</text>
+  <rect x="200" y="112" width="249" height="28" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="210" y="131" font-size="13" font-weight="bold" fill="#1b1b1b">EV 831</text>
+  <rect x="449" y="112" width="120" height="28" fill="#ffffff" stroke="#2d6a4f" stroke-dasharray="5 3"/>
+  <text x="509" y="131" text-anchor="middle" font-size="13" fill="#2d6a4f">− 현금 400</text>
+  <text x="580" y="131" font-size="13" font-weight="bold" fill="#2d6a4f">÷ EBITDA 200 = 4.16배</text>
+
+  <!-- 타파중공업 -->
+  <text x="30" y="202" font-size="15" font-weight="bold" fill="#1b1b1b">타파중공업</text>
+  <text x="30" y="222" font-size="13" fill="#495057">차입금 900 · 현금 100</text>
+  <rect x="200" y="184" width="246" height="28" fill="#e9ecef" stroke="#495057"/>
+  <text x="210" y="203" font-size="13" fill="#1b1b1b">시가총액 819</text>
+  <rect x="446" y="184" width="270" height="28" fill="#ffe3e3" stroke="#9d0208"/>
+  <text x="456" y="203" font-size="13" fill="#9d0208">+ 차입금 900</text>
+  <rect x="200" y="222" width="486" height="28" fill="#fff3e0" stroke="#b45309"/>
+  <text x="210" y="241" font-size="13" font-weight="bold" fill="#1b1b1b">EV 1,619</text>
+  <rect x="686" y="222" width="30" height="28" fill="#ffffff" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="726" y="241" font-size="13" fill="#b45309">− 현금 100</text>
+  <text x="210" y="275" font-size="13" font-weight="bold" fill="#b45309">÷ EBITDA 200 = 8.10배</text>
+
+  <text x="30" y="330" font-size="13" fill="#495057">막대 길이는 억원 단위 비례(1억 = 0.3px). 두 회사 영업이익 150, 감가상각비 50으로 EBITDA가 같다.</text>
+  <text x="30" y="352" font-size="13" fill="#495057">금액은 가상 회사의 code/output.txt [1]·[2]에서 옮겼다.</text>
+</svg>
