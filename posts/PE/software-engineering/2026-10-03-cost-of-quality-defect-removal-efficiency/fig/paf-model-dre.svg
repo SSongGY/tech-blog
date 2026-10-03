@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">품질 비용(PAF 모델) 4범주와 결함 제거 효율(DRE)이 재는 경계</text>
+  <text x="30" y="56" font-size="13" fill="#555">SWEBOK V3 10장 · Wagner(2006) 그림 1 · Jones(2011)</text>
+
+  <!-- 최상위 -->
+  <rect x="360" y="74" width="160" height="44" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="102" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">품질 비용 (CoQ)</text>
+
+  <!-- 중간 -->
+  <rect x="140" y="150" width="240" height="44" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="260" y="178" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">적합 비용 (통제 비용)</text>
+  <rect x="500" y="150" width="240" height="44" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="620" y="178" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">부적합 비용 (통제 실패 비용)</text>
+
+  <line x1="420" y1="118" x2="290" y2="150" stroke="#3b3b3b" stroke-width="1.4"/>
+  <line x1="460" y1="118" x2="590" y2="150" stroke="#3b3b3b" stroke-width="1.4"/>
+
+  <!-- 4범주 -->
+  <rect x="40" y="230" width="190" height="80" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="135" y="256" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">① 예방</text>
+  <text x="135" y="278" font-size="13" fill="#333" text-anchor="middle">교육 · 도구 · 프로세스 개선</text>
+  <text x="135" y="296" font-size="13" fill="#333" text-anchor="middle">감사 (조직 단위)</text>
+
+  <rect x="250" y="230" width="190" height="80" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="345" y="256" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">② 평가</text>
+  <text x="345" y="278" font-size="13" fill="#333" text-anchor="middle">리뷰 · 인스펙션</text>
+  <text x="345" y="296" font-size="13" fill="#333" text-anchor="middle">단위~인수 테스트</text>
+
+  <rect x="460" y="230" width="190" height="80" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="555" y="256" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">③ 내부 실패</text>
+  <text x="555" y="278" font-size="13" fill="#333" text-anchor="middle">평가에서 찾은 결함을</text>
+  <text x="555" y="296" font-size="13" fill="#333" text-anchor="middle">출시 전에 고치는 비용</text>
+
+  <rect x="670" y="230" width="190" height="80" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="765" y="256" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">④ 외부 실패</text>
+  <text x="765" y="278" font-size="13" fill="#333" text-anchor="middle">출시 후 발견된 문제에</text>
+  <text x="765" y="296" font-size="13" fill="#333" text-anchor="middle">대응하는 비용</text>
+
+  <line x1="230" y1="194" x2="135" y2="230" stroke="#2d6a4f" stroke-width="1.4"/>
+  <line x1="290" y1="194" x2="345" y2="230" stroke="#2d6a4f" stroke-width="1.4"/>
+  <line x1="590" y1="194" x2="555" y2="230" stroke="#9d0208" stroke-width="1.4"/>
+  <line x1="650" y1="194" x2="765" y2="230" stroke="#9d0208" stroke-width="1.4"/>
+
+  <!-- 출시 경계 -->
+  <line x1="660" y1="214" x2="660" y2="372" stroke="#1b1b1b" stroke-width="2" stroke-dasharray="7 4"/>
+  <text x="660" y="390" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">출시</text>
+
+  <!-- DRE 범위 -->
+  <line x1="250" y1="340" x2="652" y2="340" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="450" y="362" font-size="13" fill="#2d6a4f" text-anchor="middle">E: 출시 전에 찾아 없앤 결함</text>
+  <line x1="668" y1="340" x2="860" y2="340" stroke="#9d0208" stroke-width="3"/>
+  <text x="764" y="362" font-size="13" fill="#9d0208" text-anchor="middle">D: 출시 후 90일간 고객 보고</text>
+
+  <text x="30" y="420" font-size="14" font-weight="bold" fill="#1b1b1b">DRE = E / (E + D)</text>
+  <text x="230" y="420" font-size="13" fill="#333">예: 개발 중 90건, 고객 보고 10건 → 90%  (ISBSG는 출시 후 30일을 쓴다)</text>
+  <text x="30" y="446" font-size="13" fill="#333">DRE가 오르면 결함이 ④에서 ③으로 옮겨 간다. ①②는 그 결함을 덜 만들고 일찍 찾는 데 쓰는 돈이다.</text>
+</svg>
