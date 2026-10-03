@@ -16,6 +16,7 @@ topic_id: db-018
 
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`null-semantics`)
+> - [NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유](../../2026-10-03-null-index-group-unique-distinct/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 > - [COALESCE와 NULLIF — NULL을 다루는 두 함수](../2026-09-28-coalesce-nullif-null-handling/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 > - [NULL 비교 — = NULL이 안 되는 이유](../2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 <!-- related:end -->
