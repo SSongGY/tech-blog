@@ -3434,7 +3434,7 @@ topics:
     angle: "할인율 1%p 차이가 기업가치를 얼마나 바꾸는지 직접 계산해 민감도로 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-021
     title: "시가총액과 주가 — 비싼 주식과 비싼 회사"
     category: Finance
