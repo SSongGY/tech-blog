@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **166편** · 갱신 2026-10-03
+총 **168편** · 갱신 2026-10-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -56,13 +56,15 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 61편
+## 기술사 (pe) — 63편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-03 | [기술부채 — 측정 방법과 상환 전략](posts/PE/software-engineering/2026-10-03-technical-debt-measurement-repayment/index.md) | 중급 | Dagstuhl Seminar 16162 Report (2016), Kruchten·Nord·Ozkaya, IEEE Software 29(6) (2012-11), SonarQube Server 문서 (2026-10 열람) | 문서 근거 |
+| 2026-10-03 | [합성데이터 — 유용성과 안전성의 상충, 구별·연결·추론 위험도](posts/PE/data-analysis/2026-10-03-synthetic-data-utility-privacy-tradeoff/index.md) | 중급 | 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12), NIST SP 800-188 (2023-09), NIST SP 800-226 (2025-03), Python 3.13.5 | 실행 검증 |
 | 2026-10-03 | [리팩토링 — 코드 스멜 분류와 적용 시점](posts/PE/software-engineering/2026-10-03-refactoring-code-smells-when-to-apply/index.md) | 중급 | Fowler, Refactoring 2nd ed. (2018), Mäntylä & Lassenius, Empirical Software Engineering 11(3) (2006), Chikofsky & Cross, IEEE Software 7(1) (1990-01) | 문서 근거 |
 | 2026-10-03 | [메타모픽 테스트와 테스트 오라클 문제](posts/PE/software-engineering/2026-10-03-metamorphic-testing-test-oracle-problem/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, Barr et al., IEEE TSE 41(5) (2015-05), Chen et al., ACM Computing Surveys 51(1) (2018-01), ISTQB CT-AI Syllabus v1.0 (2021-10-01) | 문서 근거 |
+| 2026-10-03 | [차분 프라이버시(Differential Privacy) — 프라이버시 손실 매개변수 ε과 누적 손실](posts/PE/security/2026-10-03-differential-privacy-epsilon-composition/index.md) | 중급 | NIST SP 800-226 (2025-03), Python 3.13.5 | 실행 검증 |
 | 2026-10-03 | [DevOps 파이프라인 구성요소와 DORA 지표 — 지표마다 재는 구간](posts/PE/software-engineering/2026-10-03-devops-pipeline-dora-metrics/index.md) | 중급 | DORA software delivery metrics 가이드 (2026-01-05 갱신), Fowler, Continuous Integration (2024-01-18 갱신), Humble, continuousdelivery.com (2026-10 열람) | 문서 근거 |
 | 2026-10-02 | [사가(Saga) 패턴 — 분산 트랜잭션 대신 보상 트랜잭션](posts/PE/software-engineering/2026-10-02-saga-pattern-compensating-transaction/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Garcia-Molina & Salem, Sagas (SIGMOD 1987), Microsoft Azure Architecture Center, Saga design pattern (2025-02-25) | 실행 검증 |
 | 2026-10-02 | [GoF 디자인 패턴 23개의 3분류](posts/PE/software-engineering/2026-10-02-gof-design-patterns-three-purposes/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994) | 문서 근거 |

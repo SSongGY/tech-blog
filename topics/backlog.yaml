@@ -3647,14 +3647,14 @@ topics:
   - id: pe-133
     title: "합성데이터 — 유용성과 안전성의 상충, 구별·연결·추론 위험도"
     category: PE
-    subcategory: data
+    subcategory: data-analysis
     track: pe
     tags: [정보관리기술사, data, 개념정리]
     difficulty: 중급
     angle: "개인정보보호위원회 합성데이터 생성·활용 안내서(2024-12)와 NIST SP 800-188 기준으로 완전·부분 합성 구분, 생성 기법 계열, 유용성·안전성 지표와 임계값 설정을 개념 글로 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-134
     title: "차분 프라이버시(Differential Privacy) — 프라이버시 손실 매개변수 ε과 누적 손실"
     category: PE
@@ -3665,4 +3665,4 @@ topics:
     angle: "Dwork 정의와 NIST SP 800-226 기준으로 ε의 의미, 라플라스·가우시안 메커니즘, 합성데이터 생성에 적용할 때의 유용성 손실을 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
