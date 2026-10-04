@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **178편** · 갱신 2026-10-04
+총 **179편** · 갱신 2026-10-04
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -161,11 +161,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 24편
+## 기출문제 (exam) — 25편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-04 | [기출문제 — 무선 매체를 나눠 쓰는 세 방식 (CSMA/CA·CDMA·TDMA)](posts/PE/exam/2026-10-04-wireless-multiple-access-csma-ca-cdma-tdma/index.md) | 중급 | 3GPP TS 45.002 V13.2.0 (2016-08), 3GPP TS 25.213 V4.0.0 (2001-03), 3GPP TS 25.214 V5.3.0 (2002-12), Bianchi, IEEE JSAC Vol.18 No.3 (2000-03) | 문서 근거 |
+| 2026-10-04 | [기출문제 — 블록·파일·오브젝트 스토리지 비교와 AI 학습 데이터·서비스 인프라 활용](posts/PE/exam/2026-10-04-block-file-object-storage-ai/index.md) | 중급 | NIST SP 800-209 (2020-10), Amazon S3 User Guide (2026-10 확인), Amazon FSx for Lustre User Guide (2026-10 확인), Google Cloud AI Hypercomputer 스토리지 가이드 (2026-10-02 갱신) | 문서 근거 |
 | 2026-10-03 | [기출문제 — 합성데이터의 개념과 생성 기법, 품질 평가 지표](posts/PE/exam/2026-10-03-synthetic-data-generation-quality-metrics/index.md) | 중급 | 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12), NIST SP 800-188 (2023-09), Alaa et al., ICML 2022 | 문서 근거 |
 | 2026-10-03 | [기출문제 — AI 시스템 신뢰성과 메타모픽 테스트 (테스트 오라클 문제, 메타모픽 관계, 전통적 테스트와의 차이)](posts/PE/exam/2026-10-03-metamorphic-testing-ai-systems/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021, ISTQB CT-AI Syllabus v1.0 (2021-10-01), Chen et al., ACM Computing Surveys 51(1) (2018) | 문서 근거 |
 | 2026-10-02 | [기출문제 — 클라우드 네이티브 환경의 재해복구 전략 (RTO·RPO, Active-Active·Active-Passive·Pilot Light)](posts/PE/exam/2026-10-02-disaster-recovery-rto-rpo-strategies/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), AWS Disaster Recovery of Workloads on AWS (2021-02), Azure Well-Architected Framework RE:09 (2026-08 갱신) | 문서 근거 |
