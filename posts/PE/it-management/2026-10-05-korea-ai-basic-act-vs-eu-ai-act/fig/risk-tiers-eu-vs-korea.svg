@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfbf8"/>
+
+  <text x="30" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">위험 기반 규제의 두 구조 — 계층(EU)과 갈래(국내)</text>
+
+  <!-- 왼쪽 제목 -->
+  <text x="190" y="70" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">EU AI법 — 위험 수준 4계층</text>
+  <text x="190" y="90" font-size="13" fill="#555" text-anchor="middle">Regulation (EU) 2024/1689</text>
+
+  <!-- 금지 -->
+  <rect x="40" y="104" width="300" height="56" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="190" y="128" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">① 금지 (제5조)</text>
+  <text x="190" y="148" font-size="13" fill="#555" text-anchor="middle">사회적 점수, 무차별 얼굴 수집 등</text>
+
+  <!-- 고위험 -->
+  <rect x="40" y="172" width="300" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="190" y="196" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">② 고위험 (제6조)</text>
+  <text x="190" y="216" font-size="13" fill="#555" text-anchor="middle">부속서 III 8개 영역 + 제품 안전 구성요소</text>
+
+  <!-- 투명성 -->
+  <rect x="40" y="240" width="300" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="190" y="264" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">③ 투명성 의무 (제50조)</text>
+  <text x="190" y="284" font-size="13" fill="#555" text-anchor="middle">대화형 AI 고지, 생성물 표시</text>
+
+  <!-- 최소 -->
+  <rect x="40" y="308" width="300" height="56" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="190" y="332" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">④ 최소 위험</text>
+  <text x="190" y="352" font-size="13" fill="#555" text-anchor="middle">법적 의무 없음, 자율 행동강령</text>
+
+  <!-- GPAI 별도 축 -->
+  <rect x="40" y="384" width="300" height="56" rx="6" fill="#eef1f7" stroke="#3b3b3b" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="190" y="408" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">별도 축: 범용 AI 모델 (제5장)</text>
+  <text x="190" y="428" font-size="13" fill="#555" text-anchor="middle">학습 연산량 10^25 초과 → 체계적 위험 추정</text>
+
+  <!-- 오른쪽 제목 -->
+  <text x="690" y="70" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">인공지능 기본법 — 규제 대상 3갈래</text>
+  <text x="690" y="90" font-size="13" fill="#555" text-anchor="middle">법률 제20676호 (2026-01-22 시행)</text>
+
+  <rect x="540" y="104" width="300" height="56" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.4" stroke-dasharray="5 3"/>
+  <text x="690" y="128" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">금지 계층 없음</text>
+  <text x="690" y="148" font-size="13" fill="#555" text-anchor="middle">법에 금지 AI 조항을 두지 않음</text>
+
+  <rect x="540" y="172" width="300" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="690" y="196" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">고영향 AI (제33~35조)</text>
+  <text x="690" y="216" font-size="13" fill="#555" text-anchor="middle">10개 영역 + 대통령령, 중대한 영향</text>
+
+  <rect x="540" y="240" width="300" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="690" y="264" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">생성형 AI (제31조)</text>
+  <text x="690" y="284" font-size="13" fill="#555" text-anchor="middle">사전 고지, 생성 사실 표시</text>
+
+  <rect x="540" y="384" width="300" height="56" rx="6" fill="#eef1f7" stroke="#3b3b3b" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="690" y="408" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">일정 연산량 이상 AI (제32조)</text>
+  <text x="690" y="428" font-size="13" fill="#555" text-anchor="middle">시행령: 누적 연산량 10^26 이상 등</text>
+
+  <!-- 대응 화살표 -->
+  <line x1="344" y1="200" x2="536" y2="200" stroke="#8a8a84" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="440" y="192" font-size="13" fill="#555" text-anchor="middle">용도·영역 기준</text>
+  <line x1="344" y1="268" x2="536" y2="268" stroke="#8a8a84" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="440" y="260" font-size="13" fill="#555" text-anchor="middle">고지·표시</text>
+  <line x1="344" y1="412" x2="536" y2="412" stroke="#8a8a84" stroke-width="1.4" stroke-dasharray="4 3" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="440" y="404" font-size="13" fill="#555" text-anchor="middle">학습 규모 기준</text>
+
+  <!-- 의무 주체 -->
+  <line x1="30" y1="462" x2="850" y2="462" stroke="#cfcfc8" stroke-width="1"/>
+  <text x="30" y="488" font-size="14" font-weight="bold" fill="#333">의무 주체</text>
+  <text x="40" y="514" font-size="13" fill="#333">EU: 제공자(provider)와 배포자(deployer)를 나눠 의무 배분</text>
+  <text x="40" y="536" font-size="13" fill="#b45309">배포자가 용도를 바꾸거나 상표를 붙이면 제공자로 전환 (제25조)</text>
+  <text x="540" y="514" font-size="13" fill="#333">국내: 인공지능사업자 일괄</text>
+  <text x="540" y="536" font-size="13" fill="#555">= 개발사업자 + 이용사업자 (제2조 제7호)</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+  </defs>
+</svg>

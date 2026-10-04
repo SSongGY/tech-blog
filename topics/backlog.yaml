@@ -3720,7 +3720,7 @@ topics:
     angle: "고영향·생성형·일정 연산량 이상 3갈래(국내)와 금지·고위험·투명성 계층(EU)을 대비하고, 의무 주체(사업자 일괄 대 제공자·배포자 분리)가 정보시스템 도입 계약에 미치는 영향까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-140
     title: "AI 시스템 영향평가 — ISO/IEC 42005와 기본권 영향평가"
     category: PE
@@ -3731,4 +3731,4 @@ topics:
     angle: "ISO/IEC 42005:2025 절차와 인공지능 기본법 시행령의 영향평가 7가지 포함 사항, EU AI법 기본권 영향평가(FRIA)를 대비하고, 공정성 지표를 운영 중 계속 측정하는 구조까지"
     code: none
     origin: exam
-    status: todo
+    status: done
