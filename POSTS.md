@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **179편** · 갱신 2026-10-04
+총 **181편** · 갱신 2026-10-04
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -58,11 +58,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 66편
+## 기술사 (pe) — 68편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-04 | [무선 다중 접속 방식 — FDMA·TDMA·CDMA·OFDMA](posts/PE/network/2026-10-04-wireless-multiple-access-fdma-tdma-cdma-ofdma/index.md) | 중급 | 3GPP TS 45.005 V13.4.0 (2017-04), 3GPP TS 45.002 V13.2.0 (2016-08), 3GPP TS 25.213 V4.0.0 (2001-03), 3GPP TS 36.211 V8.9.0 (2010-01), 3GPP TS 36.300 V8.12.0 (2010-04), Python 3.13.5 | 실행 검증 |
+| 2026-10-04 | [블록·파일·오브젝트 스토리지 — 접근 모델 3가지와 SAN·NAS·DAS](posts/PE/system/2026-10-04-storage-access-models-das-san-nas/index.md) | 중급 | NIST SP 800-209 (2020-10), Amazon S3 User Guide (2026-10 확인), Amazon EBS User Guide (2026-10 확인), Ceph Documentation latest (2026-10 확인) | 문서 근거 |
+| 2026-10-04 | [병렬 파일 시스템 — Lustre의 MDS·OSS 분리와 스트라이핑](posts/PE/system/2026-10-04-parallel-file-system-lustre-pnfs/index.md) | 심화 | Lustre Software Release 2.x Operations Manual (2026-10 확인), RFC 8881 (2020-08), RFC 8434 (2018-08), NIST SP 800-209 (2020-10) | 문서 근거 |
 | 2026-10-04 | [IEEE 802.11 DCF와 CSMA/CA — IFS·백오프·RTS/CTS](posts/PE/network/2026-10-04-ieee-802-11-dcf-csma-ca/index.md) | 중급 | RFC 8325 (2018-02), Bianchi, IEEE JSAC Vol.18 No.3 (2000-03), Inan·Keceli·Ayanoglu, arXiv:0704.1838 (2007-04), Python 3.13.5 | 실행 검증 |
 | 2026-10-03 | [기술부채 — 측정 방법과 상환 전략](posts/PE/software-engineering/2026-10-03-technical-debt-measurement-repayment/index.md) | 중급 | Dagstuhl Seminar 16162 Report (2016), Kruchten·Nord·Ozkaya, IEEE Software 29(6) (2012-11), SonarQube Server 문서 (2026-10 열람) | 문서 근거 |
 | 2026-10-03 | [합성데이터 — 유용성과 안전성의 상충, 구별·연결·추론 위험도](posts/PE/data-analysis/2026-10-03-synthetic-data-utility-privacy-tradeoff/index.md) | 중급 | 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12), NIST SP 800-188 (2023-09), NIST SP 800-226 (2025-03), Python 3.13.5 | 실행 검증 |
