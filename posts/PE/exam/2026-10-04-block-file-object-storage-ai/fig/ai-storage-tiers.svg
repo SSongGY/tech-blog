@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">AI 학습·서비스 인프라의 스토리지 배치 — 역할로 나눈다</text>
+
+  <!-- 1. sources -->
+  <rect x="16" y="70" width="140" height="110" fill="#f4f5f7" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="86" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">수집 원천</text>
+  <text x="30" y="126" font-size="13" fill="#4a5568">로그 · 센서</text>
+  <text x="30" y="148" font-size="13" fill="#4a5568">문서 · 이미지</text>
+  <text x="30" y="170" font-size="13" fill="#4a5568">라벨링 결과</text>
+
+  <!-- 2. object: data lake -->
+  <rect x="206" y="70" width="186" height="110" fill="#f4f5f7" stroke="#4a5568" stroke-width="2.2" rx="4"/>
+  <text x="299" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">오브젝트</text>
+  <text x="220" y="126" font-size="13" fill="#4a5568">데이터 레이크</text>
+  <text x="220" y="148" font-size="13" fill="#4a5568">원천 · 정제 · 버전</text>
+  <text x="220" y="170" font-size="13" fill="#4a5568">모델 · 체크포인트 보관</text>
+
+  <!-- 3. parallel file system -->
+  <rect x="470" y="70" width="170" height="110" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="555" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">병렬 파일 시스템</text>
+  <text x="484" y="126" font-size="13" fill="#4a5568">학습 작업 공간</text>
+  <text x="484" y="148" font-size="13" fill="#4a5568">POSIX · 공유 접근</text>
+  <text x="484" y="170" font-size="13" fill="#4a5568">체크포인트 수신</text>
+
+  <!-- 4. GPU training -->
+  <rect x="700" y="70" width="164" height="110" fill="#f4f5f7" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="782" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">GPU 학습</text>
+  <text x="714" y="126" font-size="13" fill="#4a5568">에폭마다 재읽기</text>
+  <text x="714" y="148" font-size="13" fill="#4a5568">여러 노드 동시 접근</text>
+  <text x="714" y="170" font-size="13" fill="#4a5568">주기적 상태 저장</text>
+
+  <!-- top arrows -->
+  <line x1="156" y1="125" x2="204" y2="125" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="181" y="116" text-anchor="middle" font-size="13" fill="#4a5568">적재</text>
+
+  <line x1="392" y1="108" x2="468" y2="108" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <text x="431" y="99" text-anchor="middle" font-size="13" fill="#2d6a4f">가져오기</text>
+  <line x1="470" y1="150" x2="394" y2="150" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="431" y="170" text-anchor="middle" font-size="13" fill="#4a5568">내보내기</text>
+
+  <line x1="640" y1="108" x2="698" y2="108" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <text x="670" y="99" text-anchor="middle" font-size="13" fill="#2d6a4f">읽기</text>
+  <line x1="700" y1="150" x2="642" y2="150" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="670" y="170" text-anchor="middle" font-size="13" fill="#4a5568">저장</text>
+
+  <!-- lake to serving -->
+  <path d="M299,180 L299,232 L782,232 L782,278" fill="none" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="540" y="224" text-anchor="middle" font-size="13" fill="#4a5568">배포할 모델 가중치 로드</text>
+
+  <!-- 5. block: DB -->
+  <rect x="206" y="280" width="434" height="110" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="423" y="308" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">블록</text>
+  <text x="220" y="336" font-size="13" fill="#4a5568">데이터 카탈로그 · 라벨링 도구 DB · 벡터 DB</text>
+  <text x="220" y="358" font-size="13" fill="#4a5568">작은 단위의 임의 읽기·쓰기, 짧은 지연</text>
+  <text x="220" y="380" font-size="13" fill="#4a5568">노드 1대에 붙는 볼륨 — 공유는 DB가 맡는다</text>
+
+  <!-- 6. serving -->
+  <rect x="700" y="280" width="164" height="110" fill="#f4f5f7" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="782" y="308" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">추론 서빙</text>
+  <text x="714" y="336" font-size="13" fill="#4a5568">기동 시 가중치 적재</text>
+  <text x="714" y="358" font-size="13" fill="#4a5568">요청마다 DB 조회</text>
+  <text x="714" y="380" font-size="13" fill="#4a5568">부트 볼륨 = 블록</text>
+
+  <!-- serving <-> block -->
+  <line x1="642" y1="335" x2="698" y2="335" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="698" y1="355" x2="642" y2="355" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+</svg>

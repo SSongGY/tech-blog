@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">무엇을 단위로 주고받는가 — 세 스토리지의 접근 모델</text>
+
+  <!-- 1. application -->
+  <rect x="40" y="48" width="800" height="50" fill="#f4f5f7" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="440" y="79" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">애플리케이션 · 학습 코드 · DB 엔진</text>
+
+  <!-- arrows -->
+  <line x1="166" y1="98" x2="166" y2="128" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="440" y1="98" x2="440" y2="128" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="714" y1="98" x2="714" y2="128" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- column headers -->
+  <text x="176" y="119" font-size="13" fill="#4a5568">read/write(LBA, n)</text>
+  <text x="450" y="119" font-size="13" fill="#4a5568">open/read/write(path)</text>
+  <text x="724" y="119" font-size="13" fill="#4a5568">PUT/GET(버킷, 키)</text>
+
+  <!-- 2. block interface -->
+  <rect x="40" y="132" width="252" height="120" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="166" y="158" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">블록 스토리지</text>
+  <text x="54" y="184" font-size="13" fill="#4a5568">단위: 고정 크기 블록</text>
+  <text x="54" y="206" font-size="13" fill="#4a5568">주소: 논리 블록 주소(LBA)</text>
+  <text x="54" y="228" font-size="13" fill="#4a5568">경로: FC · iSCSI · NVMe-oF</text>
+
+  <!-- 3. file interface -->
+  <rect x="314" y="132" width="252" height="120" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="440" y="158" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">파일 스토리지</text>
+  <text x="328" y="184" font-size="13" fill="#4a5568">단위: 파일 (바이트 범위)</text>
+  <text x="328" y="206" font-size="13" fill="#4a5568">주소: 디렉터리 트리 경로</text>
+  <text x="328" y="228" font-size="13" fill="#4a5568">경로: NFS · SMB · pNFS</text>
+
+  <!-- 4. object interface -->
+  <rect x="588" y="132" width="252" height="120" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="714" y="158" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">오브젝트 스토리지</text>
+  <text x="602" y="184" font-size="13" fill="#4a5568">단위: 객체(데이터+메타데이터)</text>
+  <text x="602" y="206" font-size="13" fill="#4a5568">주소: 평면 인덱스의 고유 ID</text>
+  <text x="602" y="228" font-size="13" fill="#4a5568">경로: HTTP REST API</text>
+
+  <!-- arrows down -->
+  <line x1="166" y1="252" x2="166" y2="282" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="440" y1="252" x2="440" y2="282" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="714" y1="252" x2="714" y2="282" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- 5. block backend -->
+  <rect x="40" y="286" width="252" height="110" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="166" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">볼륨 · LUN</text>
+  <text x="54" y="338" font-size="13" fill="#4a5568">파일 시스템은 호스트 OS가 얹는다</text>
+  <text x="54" y="360" font-size="13" fill="#4a5568">보통 호스트 1대에 연결</text>
+  <text x="54" y="382" font-size="13" fill="#4a5568">(공유하려면 클러스터 FS)</text>
+
+  <!-- 6. file backend -->
+  <rect x="314" y="286" width="252" height="110" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="440" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">NAS · 병렬 파일 시스템</text>
+  <text x="328" y="338" font-size="13" fill="#4a5568">파일 시스템은 스토리지가 관리</text>
+  <text x="328" y="360" font-size="13" fill="#4a5568">여러 호스트가 같은 트리를 공유</text>
+  <text x="328" y="382" font-size="13" fill="#4a5568">잠금 · 권한(POSIX) 제공</text>
+
+  <!-- 7. object backend -->
+  <rect x="588" y="286" width="252" height="110" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.6" rx="4"/>
+  <text x="714" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">버킷 · 평면 이름공간</text>
+  <text x="602" y="338" font-size="13" fill="#4a5568">디렉터리 트리 탐색이 없다</text>
+  <text x="602" y="360" font-size="13" fill="#4a5568">갱신은 키 단위 원자적 교체</text>
+  <text x="602" y="382" font-size="13" fill="#4a5568">사용자 정의 메타데이터</text>
+
+  <!-- bottom axis -->
+  <line x1="60" y1="430" x2="820" y2="430" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="60" y="456" font-size="13" fill="#2d6a4f">지연 짧음 · 갱신 단위 작음</text>
+  <text x="820" y="456" text-anchor="end" font-size="13" fill="#4a5568">확장성 큼 · 메타데이터 풍부</text>
+</svg>
