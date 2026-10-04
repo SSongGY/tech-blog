@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="30" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">네트워크가 I/O 경로의 어디를 자르는가</text>
+
+  <!-- 범례 -->
+  <rect x="560" y="18" width="16" height="16" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="582" y="31" font-size="13" fill="#333">호스트 쪽</text>
+  <rect x="660" y="18" width="16" height="16" fill="#f3efe6" stroke="#6b7280"/>
+  <text x="682" y="31" font-size="13" fill="#333">스토리지 쪽</text>
+
+  <!-- 열 머리 -->
+  <text x="117" y="68" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">DAS</text>
+  <text x="332" y="68" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">SAN</text>
+  <text x="547" y="68" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">NAS</text>
+  <text x="762" y="68" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">오브젝트 스토리지</text>
+
+  <!-- DAS: 전부 호스트 -->
+  <rect x="30" y="80" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="117" y="107" font-size="14" fill="#1b1b1b" text-anchor="middle">애플리케이션</text>
+  <rect x="30" y="170" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="117" y="197" font-size="14" fill="#1b1b1b" text-anchor="middle">파일 시스템</text>
+  <rect x="30" y="260" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="117" y="287" font-size="14" fill="#1b1b1b" text-anchor="middle">블록 장치</text>
+  <line x1="117" y1="124" x2="117" y2="170" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="117" y1="214" x2="117" y2="260" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="117" y="242" font-size="13" fill="#555" text-anchor="middle" dx="52">버스·포트</text>
+
+  <!-- SAN: 파일 시스템까지 호스트, 블록은 스토리지 -->
+  <rect x="245" y="80" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="332" y="107" font-size="14" fill="#1b1b1b" text-anchor="middle">애플리케이션</text>
+  <rect x="245" y="170" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="332" y="197" font-size="14" fill="#1b1b1b" text-anchor="middle">파일 시스템</text>
+  <rect x="245" y="260" width="175" height="44" rx="4" fill="#f3efe6" stroke="#6b7280"/>
+  <text x="332" y="287" font-size="14" fill="#1b1b1b" text-anchor="middle">블록 장치(LUN)</text>
+  <line x1="332" y1="124" x2="332" y2="170" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="332" y1="214" x2="332" y2="260" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="235" y1="237" x2="430" y2="237" stroke="#1b1b1b" stroke-width="2.2" stroke-dasharray="7 4"/>
+  <text x="425" y="231" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="end">네트워크</text>
+
+  <!-- NAS: 애플리케이션만 호스트 -->
+  <rect x="460" y="80" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="547" y="107" font-size="14" fill="#1b1b1b" text-anchor="middle">애플리케이션</text>
+  <rect x="460" y="170" width="175" height="44" rx="4" fill="#f3efe6" stroke="#6b7280"/>
+  <text x="547" y="197" font-size="14" fill="#1b1b1b" text-anchor="middle">파일 시스템</text>
+  <rect x="460" y="260" width="175" height="44" rx="4" fill="#f3efe6" stroke="#6b7280"/>
+  <text x="547" y="287" font-size="14" fill="#1b1b1b" text-anchor="middle">블록 장치</text>
+  <line x1="547" y1="124" x2="547" y2="170" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="547" y1="214" x2="547" y2="260" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="450" y1="147" x2="645" y2="147" stroke="#1b1b1b" stroke-width="2.2" stroke-dasharray="7 4"/>
+  <text x="640" y="141" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="end">네트워크</text>
+
+  <!-- 오브젝트: 파일 시스템 대신 객체 서비스 -->
+  <rect x="675" y="80" width="175" height="44" rx="4" fill="#eef1f7" stroke="#6b7280"/>
+  <text x="762" y="107" font-size="14" fill="#1b1b1b" text-anchor="middle">애플리케이션</text>
+  <rect x="675" y="170" width="175" height="44" rx="4" fill="#f3efe6" stroke="#6b7280"/>
+  <text x="762" y="188" font-size="14" fill="#1b1b1b" text-anchor="middle">객체 서비스</text>
+  <text x="762" y="206" font-size="13" fill="#555" text-anchor="middle">버킷 + OID 평면 인덱스</text>
+  <rect x="675" y="260" width="175" height="44" rx="4" fill="#f3efe6" stroke="#6b7280"/>
+  <text x="762" y="287" font-size="14" fill="#1b1b1b" text-anchor="middle">저장 매체</text>
+  <line x1="762" y1="124" x2="762" y2="170" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="762" y1="214" x2="762" y2="260" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="665" y1="147" x2="860" y2="147" stroke="#1b1b1b" stroke-width="2.2" stroke-dasharray="7 4"/>
+  <text x="855" y="141" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="end">네트워크</text>
+
+  <!-- 주고받는 단위 -->
+  <text x="30" y="334" font-size="13" fill="#555">주고받는 단위</text>
+  <text x="332" y="334" font-size="13" fill="#1b1b1b" text-anchor="middle">블록 — FC · iSCSI · FCoE · NVMe-oF</text>
+  <text x="547" y="334" font-size="13" fill="#1b1b1b" text-anchor="middle">파일 — NFS · SMB</text>
+  <text x="762" y="334" font-size="13" fill="#1b1b1b" text-anchor="middle">객체 — HTTP API</text>
+
+  <!-- 파일 시스템 위치 -->
+  <text x="30" y="368" font-size="13" fill="#555">파일 시스템 위치</text>
+  <text x="117" y="386" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">호스트</text>
+  <text x="332" y="386" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">호스트</text>
+  <text x="547" y="386" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">스토리지</text>
+  <text x="762" y="386" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">없음</text>
+</svg>

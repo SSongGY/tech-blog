@@ -3698,7 +3698,7 @@ topics:
     angle: "NIST SP 800-209의 두 분류 축(위치·접근 유형)으로 DAS·SAN·NAS와 블록·파일·오브젝트를 정리하고, 메타데이터를 누가 관리하는지로 셋을 가른다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-138
     title: "병렬 파일 시스템 — Lustre의 MDS·OSS 분리와 스트라이핑"
     category: PE
@@ -3709,4 +3709,4 @@ topics:
     angle: "메타데이터 서버와 데이터 서버를 나눠 여러 클라이언트가 동시에 읽고 쓰게 하는 구조. pNFS와 비교하고 AI 학습·HPC에서 쓰이는 이유"
     code: none
     origin: exam
-    status: todo
+    status: done

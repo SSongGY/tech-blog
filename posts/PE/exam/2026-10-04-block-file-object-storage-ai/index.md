@@ -243,6 +243,10 @@ NIST SP 800-209(저장 인프라 보안 지침)는 데이터 저장 기술을 **
 블록을 DB와 노드 로컬 볼륨으로** 역할을 나눠 배치하고, 셋 사이의 데이터 흐름 방향과 정본의
 위치를 먼저 정하는 것이 구성의 핵심이다.
 
+> 개념 정리: [블록·파일·오브젝트 스토리지 — 접근 모델 3가지와 SAN·NAS·DAS](../../system/2026-10-04-storage-access-models-das-san-nas/index.md)
+
+> 개념 정리: [병렬 파일 시스템 — Lustre의 MDS·OSS 분리와 스트라이핑](../../system/2026-10-04-parallel-file-system-lustre-pnfs/index.md)
+
 끝
 
 ## 답안 작성 메모
