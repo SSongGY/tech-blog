@@ -3445,7 +3445,7 @@ topics:
     angle: "주가 5만원이 10만원보다 싸다고 할 수 없는 이유. 발행주식수가 끼어드는 자리"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-022
     title: "액면분할과 무상증자 — 주식 수가 늘 때"
     category: Finance
@@ -3456,7 +3456,7 @@ topics:
     angle: "회사 가치는 그대로인데 주식 수만 바뀌는 경우들. 주주 지분율이 어떻게 유지되는지 계산으로"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-023
     title: "유상증자 — 지분이 희석된다는 말의 뜻"
     category: Finance

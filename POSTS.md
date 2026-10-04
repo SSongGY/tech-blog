@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **176편** · 갱신 2026-10-04
+총 **178편** · 갱신 2026-10-04
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -190,10 +190,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 20편
+## 주식·재무 (finance) — 22편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-04 | [액면분할과 무상증자 — 주식 수가 늘 때](posts/Finance/market/2026-10-04-stock-split-and-bonus-issue/index.md) | 입문 | Python 3.13.5, 상법 제329조의2(2014-05-20 시행), 상법 제461조(2020-12-29 개정), K-IFRS 제1033호 주당이익 | 실행 검증 |
+| 2026-10-04 | [시가총액과 주가 — 비싼 주식과 비싼 회사](posts/Finance/market/2026-10-04-market-cap-vs-share-price/index.md) | 입문 | Python 3.13.5, K-IFRS 제1033호 주당이익, 상법 제329조(2012-04-15 시행) | 실행 검증 |
 | 2026-10-03 | [PBR과 청산가치 — 1배 아래가 뜻하는 것](posts/Finance/valuation/2026-10-03-pbr-below-book-value/index.md) | 중급 | Python 3.13.5, K-IFRS 제1036호 자산손상, K-IFRS 제1002호 재고자산 | 실행 검증 |
 | 2026-10-03 | [EV/EBITDA — 빚까지 포함해 회사를 사는 값](posts/Finance/valuation/2026-10-03-ev-ebitda-debt-included/index.md) | 중급 | Python 3.13.5, K-IFRS 제1116호 리스, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
 | 2026-10-03 | [배당수익률과 배당성향 — 얼마를 나눠 주는가](posts/Finance/valuation/2026-10-03-dividend-yield-vs-payout/index.md) | 중급 | Python 3.13.5, 상법 제462조(2012-04-15 시행), 상법 제458조(2012-04-15 시행) | 실행 검증 |
