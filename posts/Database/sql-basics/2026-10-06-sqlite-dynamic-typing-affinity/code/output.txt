@@ -1,0 +1,134 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-06-sqlite-dynamic-typing-affinity
+# 명령      : python dynamic_typing.py
+# 수행 시각 : 2026-10-06 08:35 (대한민국 표준시)
+# 소요      : 0.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer]  3행
+  컬럼     | 타입        | 제약
+  ---------+-------------+-----
+  id       | INTEGER     | PK
+  name     | VARCHAR(20) |
+  zip_code | STRING      |
+  phone    | TEXT        |
+  point    | INTEGER     |
+  memo     | (타입 없음) |
+
+  id | name   | zip_code | phone       | point | memo
+  ---+--------+----------+-------------+-------+-----
+   1 | 김도윤 |     6236 | 01012345678 | 1500  | VIP
+   2 | 이서준 |     4524 | 01098765432 | 800   | 10
+   3 | 박하은 |    13529 | 0215881234  | 1,200 | 10
+
+
+== 0. customer 에 실제로 저장된 종류 ==
+
+[0-A typeof]
+  SELECT id, quote(zip_code), typeof(zip_code), quote(phone), typeof(phone), quote(point), typeof(point), quote(memo), typeof(memo) FROM customer
+  ('id', 'quote(zip_code)', 'typeof(zip_code)', 'quote(phone)', 'typeof(phone)', 'quote(point)', 'typeof(point)', 'quote(memo)', 'typeof(memo)')
+  (1, '6236', 'integer', "'01012345678'", 'text', '1500', 'integer', "'VIP'", 'text')
+  (2, '4524', 'integer', "'01098765432'", 'text', '800', 'integer', '10', 'integer')
+  (3, '13529', 'integer', "'0215881234'", 'text', "'1,200'", 'text', "'10'", 'text')
+
+== 1. 값은 컬럼 친화성에 따라 바뀐다 ==
+
+[1-A 같은 값을 다섯 친화성 컬럼에 넣은 결과 — 값|typeof]
+  SELECT input, quote(t_col) || '|' || typeof(t_col) AS "TEXT", quote(n_col) || '|' || typeof(n_col) AS "NUMERIC", quote(i_col) || '|' || typeof(i_col) AS "INTEGER", quote(r_col) || '|' || typeof(r_col) AS "REAL", quote(b_col) || '|' || typeof(b_col) AS "BLOB" FROM probe_value
+  ('input', 'TEXT', 'NUMERIC', 'INTEGER', 'REAL', 'BLOB')
+  ("'42'", "'42'|text", '42|integer', '42|integer', '42.0|real', "'42'|text")
+  ("'007'", "'007'|text", '7|integer', '7|integer', '7.0|real', "'007'|text")
+  ("'3.0e+5'", "'3.0e+5'|text", '300000|integer', '300000|integer', '300000.0|real', "'3.0e+5'|text")
+  ("'4.50'", "'4.50'|text", '4.5|real', '4.5|real', '4.5|real', "'4.50'|text")
+  ("'0x1F'", "'0x1F'|text", "'0x1F'|text", "'0x1F'|text", "'0x1F'|text", "'0x1F'|text")
+  ("'1,200'", "'1,200'|text", "'1,200'|text", "'1,200'|text", "'1,200'|text", "'1,200'|text")
+  ("'abc'", "'abc'|text", "'abc'|text", "'abc'|text", "'abc'|text", "'abc'|text")
+  ('12', "'12'|text", '12|integer', '12|integer', '12.0|real', '12|integer')
+  ('12.0', "'12.0'|text", '12|integer', '12|integer', '12.0|real', '12.0|real')
+  ('4.5', "'4.5'|text", '4.5|real', '4.5|real', '4.5|real', '4.5|real')
+
+== 2. 친화성은 선언 이름의 글자로 정해진다 ==
+
+[2-A 선언 이름별로 '0123'을 넣은 결과]
+  선언               저장된 값      typeof
+  VARCHAR(10)      '0123'     text
+  CHARINT          123        integer
+  STRING           123        integer
+  FLOATING POINT   123        integer
+  DOUBLE           123.0      real
+  DATETIME         123        integer
+  BOOLEAN          123        integer
+  DECIMAL(10,2)    123        integer
+  BLOB             '0123'     text
+  (없음)             '0123'     text
+
+== 3. 비교와 정렬 ==
+
+[3-A 우편번호를 숫자로 찾으면]
+  SELECT id, zip_code, typeof(zip_code) FROM customer WHERE zip_code = 6236
+  ('id', 'zip_code', 'typeof(zip_code)')
+  (1, 6236, 'integer')
+
+[3-B 글자로 찾으면]
+  SELECT id, zip_code FROM customer WHERE zip_code = '06236'
+  ('id', 'zip_code')
+  (1, 6236)
+
+[3-C 친화성 없는 memo 컬럼은 10 과 '10' 을 다르게 본다]
+  SELECT id, quote(memo) AS memo, typeof(memo), memo = 10 AS eq_int, memo = '10' AS eq_text FROM customer
+  ('id', 'memo', 'typeof(memo)', 'eq_int', 'eq_text')
+  (1, "'VIP'", 'text', 0, 0)
+  (2, '10', 'integer', 1, 0)
+  (3, "'10'", 'text', 0, 1)
+
+[3-D phone(TEXT)과 숫자를 비교하면 숫자 쪽이 글자로 바뀐다]
+  SELECT id, phone FROM customer WHERE phone = 01012345678
+  ('id', 'phone')
+
+[3-D2 숫자로 적은 01012345678 은 이미 앞자리 0이 없다]
+  SELECT 01012345678 AS literal, typeof(01012345678), CAST(01012345678 AS TEXT)
+  ('literal', 'typeof(01012345678)', 'CAST(01012345678 AS TEXT)')
+  (1012345678, 'integer', '1012345678')
+
+[3-E 정수와 글자가 섞인 point 를 큰 값부터 정렬하면]
+  SELECT id, quote(point) AS point_shown, typeof(point) FROM customer ORDER BY point DESC
+  ('id', 'point_shown', 'typeof(point)')
+  (3, "'1,200'", 'text')
+  (1, '1500', 'integer')
+  (2, '800', 'integer')
+
+[3-F 합계에서 글자 '1,200'은 앞의 숫자 부분만 더해진다]
+  SELECT sum(point) AS total, typeof(sum(point)) AS total_type, CAST('1,200' AS INTEGER) AS cast_int FROM customer
+  ('total', 'total_type', 'cast_int')
+  (2301.0, 'real', 1)
+
+== 4. STRICT 표 ==
+  에러  CREATE TABLE probe_strict_bad (zip_code VARCHAR(5)) STRICT
+        -> OperationalError: unknown datatype for probe_strict_bad.zip_code: "VARCHAR(5)"
+  성공  CREATE TABLE customer_strict ( id INTEGER PRIMARY KEY, zip_code TEXT, point INTEGER, memo ANY ) STRICT
+  성공  INSERT INTO customer_strict VALUES (1, '06236', '1500', '10')
+  성공  INSERT INTO customer_strict VALUES (2, 6236, 800, 10)
+  에러  INSERT INTO customer_strict VALUES (3, '13529', '1,200', 10)
+        -> IntegrityError: cannot store TEXT value in INTEGER column customer_strict.point
+  에러  INSERT INTO customer_strict VALUES (4, '04524', 3.5, 10)
+        -> IntegrityError: cannot store REAL value in INTEGER column customer_strict.point
+
+[4-A STRICT 표에 들어간 값]
+  SELECT id, quote(zip_code), typeof(zip_code), quote(point), typeof(point), quote(memo), typeof(memo) FROM customer_strict
+  ('id', 'quote(zip_code)', 'typeof(zip_code)', 'quote(point)', 'typeof(point)', 'quote(memo)', 'typeof(memo)')
+  (1, "'06236'", 'text', '1500', 'integer', "'10'", 'text')
+  (2, "'6236'", 'text', '800', 'integer', '10', 'integer')

@@ -2378,7 +2378,7 @@ topics:
     angle: "선언한 타입과 실제 저장되는 타입이 다를 수 있다는 것을 typeof()로 확인"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-032
     title: "인덱스 만들기 — CREATE INDEX 기본"
     category: Database
