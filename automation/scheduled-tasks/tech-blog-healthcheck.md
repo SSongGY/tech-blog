@@ -185,6 +185,9 @@ git rev-parse HEAD origin/main
 - **`python -c`로 즉석 코드를 짜지 않는다.** 필요한 일은 `blog.py`에 명령이 있다
 - **파일 내용은 Edit 도구로 고친다.** `sed -i`·`[IO.File]::WriteAllText`·
   `Set-Content`·`>` 리다이렉션은 Write·Edit 의 경로 제한을 우회하므로 쓰지 않는다
+- **heredoc 뒤에 `&&`·`;` 를 붙이지 않는다.** `git commit -F - <<'MSG' && git push`
+  처럼 쓰면 heredoc 본문이 두 번째 토막에 섞여 들어가 규칙과 안 맞는다.
+  커밋과 푸시는 따로 부른다
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다. 다른 회차를 기다려야 하면
   `mcp__scheduled-tasks__list_task_runs` 를 다시 부른다

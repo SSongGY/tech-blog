@@ -1842,7 +1842,8 @@ LINUX_TOOLS = ("ps", "top", "df", "du", "free", "vmstat", "iostat",
 
 # 리눅스 글은 이 도구들의 버전을 environment 에 숫자까지 적어야 한다 (§5).
 # 회차가 bash --version 을 직접 부르면 허용 규칙에 없어 멈추므로 여기서 같이 준다.
-SHELL_TOOLS = ("bash", "sed", "grep", "awk", "sort", "find", "tar", "curl", "jq")
+SHELL_TOOLS = ("bash", "sed", "grep", "awk", "sort", "find", "tar", "curl", "jq",
+               "diff", "patch", "split", "csplit", "cut", "tr", "xargs", "openssl")
 
 
 def tool_version(name: str) -> str:

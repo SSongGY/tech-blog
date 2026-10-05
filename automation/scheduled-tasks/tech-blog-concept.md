@@ -67,6 +67,9 @@ Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>
   PDF 본문은 `python scripts/blog.py pdf-text <경로> --find <검색어>`
 - **파일 내용은 Edit 도구로 고친다.** `sed -i`·`[IO.File]::WriteAllText`·
   `Set-Content`·`>` 리다이렉션은 Write·Edit 의 경로 제한을 우회하므로 쓰지 않는다
+- **heredoc 뒤에 `&&`·`;` 를 붙이지 않는다.** `git commit -F - <<'MSG' && git push`
+  처럼 쓰면 heredoc 본문이 두 번째 토막에 섞여 들어가 규칙과 안 맞는다.
+  커밋과 푸시는 따로 부른다
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다. 다른 회차를 기다려야 하면
   `mcp__scheduled-tasks__list_task_runs` 를 다시 부른다

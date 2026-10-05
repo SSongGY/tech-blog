@@ -50,6 +50,9 @@ description: 주식 용어와 재무제표 읽는 법을 회차당 2편 정리�
 - **`rm`·`mv` 를 쓰지 않는다.** 버릴 파일은 이름을 `probe` 로 시작하면 gitignore 된다
 - **파일 내용은 Edit 도구로 고친다.** `sed -i`·`[IO.File]::WriteAllText`·
   `Set-Content`·`>` 리다이렉션은 Write·Edit 의 경로 제한을 우회하므로 쓰지 않는다
+- **heredoc 뒤에 `&&`·`;` 를 붙이지 않는다.** `git commit -F - <<'MSG' && git push`
+  처럼 쓰면 heredoc 본문이 두 번째 토막에 섞여 들어가 규칙과 안 맞는다.
+  커밋과 푸시는 따로 부른다
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다
 
