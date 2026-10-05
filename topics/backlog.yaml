@@ -3743,3 +3743,25 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-142
+    title: "표본추출 — 확률·비확률 표본설계와 포함확률·가중치"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "포함확률이 계산 가능해야 표본오차와 추론이 성립하는 이유, 층화·집락·PPS 설계 비교, 할당추출과 층화추출의 차이"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-143
+    title: "데이터 누수 — 학습·평가 분할에서 묶음·시간 단위를 지키는 이유"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "행 단위 무작위 분할이 같은 환자·사용자·미래 정보를 평가로 흘려 성능을 부풀리는 경로, 층화·그룹·시계열 분할 비교"
+    code: none
+    origin: exam
+    status: todo
