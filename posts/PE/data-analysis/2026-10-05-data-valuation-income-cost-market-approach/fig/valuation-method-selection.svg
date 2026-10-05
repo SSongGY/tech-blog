@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">평가 기법 선택 — 안내서의 적용 조건 2가지와 세부 방법</text>
+
+  <!-- start -->
+  <rect x="24" y="52" width="220" height="56" fill="#f4f5f7" stroke="#1b1b1b" stroke-width="2" rx="4"/>
+  <text x="134" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">평가 요인 분석 결과</text>
+  <text x="134" y="97" text-anchor="middle" font-size="13" fill="#4a5568">데이터·법적 특성, 시장성, 사업성</text>
+
+  <line x1="134" y1="108" x2="134" y2="140" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- Q1 -->
+  <rect x="24" y="144" width="220" height="64" fill="#fff8eb" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="134" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">판단 ① 사업 완성도가</text>
+  <text x="134" y="192" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">일정 수준 이상인가</text>
+
+  <!-- Q1 yes -> income -->
+  <line x1="244" y1="176" x2="326" y2="176" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="285" y="168" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+
+  <rect x="330" y="134" width="230" height="84" fill="#f4f5f7" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="445" y="160" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">수익접근법</text>
+  <text x="342" y="184" font-size="13" fill="#4a5568">경제적 수명 동안의 미래 효익</text>
+  <text x="342" y="205" font-size="13" fill="#4a5568">적정 할인율로 현재가치</text>
+
+  <line x1="560" y1="160" x2="616" y2="102" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="560" y1="192" x2="616" y2="236" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="620" y="52" width="240" height="84" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="740" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">로열티공제법</text>
+  <text x="632" y="100" font-size="13" fill="#4a5568">소유로 아끼는 가상 사용료</text>
+  <text x="632" y="122" font-size="13" fill="#2d6a4f">유사 거래 로열티율이 있을 때</text>
+
+  <rect x="620" y="200" width="240" height="84" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="740" y="224" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">유무 비교법 · 초과이익법</text>
+  <text x="632" y="248" font-size="13" fill="#4a5568">쓸 때와 안 쓸 때의 이익 차이</text>
+  <text x="632" y="270" font-size="13" fill="#4a5568">다른 자산 몫을 뺀 잔여 이익</text>
+
+  <!-- Q1 no -> Q2 -->
+  <line x1="134" y1="208" x2="134" y2="302" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="150" y="262" font-size="13" fill="#9d0208">아니오</text>
+
+  <rect x="24" y="306" width="220" height="64" fill="#fff8eb" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="134" y="332" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">판단 ② 같거나 유사한</text>
+  <text x="134" y="354" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">데이터 거래가 있는가</text>
+
+  <line x1="244" y1="338" x2="326" y2="338" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="285" y="330" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+
+  <rect x="330" y="300" width="230" height="76" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="445" y="326" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">시장접근법</text>
+  <text x="342" y="350" font-size="13" fill="#4a5568">유사 거래 가치를 비교·조정</text>
+  <text x="342" y="368" font-size="13" fill="#4a5568">(거래 사례 비교법)</text>
+
+  <line x1="134" y1="370" x2="134" y2="410" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="150" y="396" font-size="13" fill="#9d0208">아니오</text>
+
+  <rect x="24" y="414" width="536" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="292" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">원가접근법 — 재생산 원가 · 대체 원가</text>
+  <text x="292" y="462" text-anchor="middle" font-size="13" fill="#b45309">투입 비용이나 재생산 비용을 파악할 수 있어야 한다</text>
+
+  <text x="740" y="330" text-anchor="middle" font-size="13" fill="#4a5568">기법은 하나 또는 둘 이상을</text>
+  <text x="740" y="350" text-anchor="middle" font-size="13" fill="#4a5568">함께 쓸 수 있고, 고른 배경을</text>
+  <text x="740" y="370" text-anchor="middle" font-size="13" fill="#4a5568">평가 결과에 명시한다</text>
+</svg>

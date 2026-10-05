@@ -216,6 +216,8 @@ OECD는 수익 기반 평가가 데이터의 재사용성 때문에 미래 수�
 
 > 개념 정리: [ISO/IEC 5259 — 분석·머신러닝용 데이터 품질 표준 시리즈](../../data-analysis/2026-09-30-iso-iec-5259-data-quality-series/index.md)
 
+> 개념 정리: [데이터 가치평가 — 수익·원가·시장접근법과 데이터산업법 가치평가 제도](../../data-analysis/2026-10-05-data-valuation-income-cost-market-approach/index.md)
+
 > 개념 정리: [현금흐름할인(DCF) — 미래의 돈을 오늘 값으로](../../../Finance/valuation/2026-10-03-dcf-discount-rate-sensitivity/index.md)
 
 끝
