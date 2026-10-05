@@ -215,6 +215,10 @@ Datasheets for Datasets는 데이터셋이 **더 큰 집합의 표본인지, 그
 
 > 개념 정리: [부트스트랩 재표집 — 복원추출로 추정량의 분포를 세우는 절차](../../data-analysis/2026-09-22-bootstrap-resampling/index.md)
 
+> 개념 정리: [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](../../data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md)
+
+> 개념 정리: [데이터 누수 — 학습·평가 분할에서 묶음·시간 단위를 지키는 이유](../../data-analysis/2026-10-06-data-leakage-group-time-split/index.md)
+
 끝
 
 ## 답안 작성 메모
