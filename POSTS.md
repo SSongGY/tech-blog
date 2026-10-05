@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **185편** · 갱신 2026-10-05
+총 **187편** · 갱신 2026-10-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -58,11 +58,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 70편
+## 기술사 (pe) — 72편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-05 | [인공지능 기본법과 EU AI법 — 위험 기반 규제 구조 비교](posts/PE/it-management/2026-10-05-korea-ai-basic-act-vs-eu-ai-act/index.md) | 중급 | 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정), 인공지능 기본법 시행령 대통령령 제36580호, Regulation (EU) 2024/1689 (AI Act), Regulation (EU) 2026/1744 (Digital Omnibus on AI, 2026-07-27 발효) | 문서 근거 |
+| 2026-10-05 | [데이터 가치평가 — 수익·원가·시장접근법과 데이터산업법 가치평가 제도](posts/PE/data-analysis/2026-10-05-data-valuation-income-cost-market-approach/index.md) | 중급 | 데이터 산업진흥 및 이용촉진에 관한 기본법 제14조 (2022-04-20 시행), 과기정통부 데이터 가치평가 안내서 (2024-07-04), IVS 210 Intangible Assets 공개초안 (IVS 2017 개정용), OECD Digital Economy Papers No. 345 (2022-12) | 문서 근거 |
+| 2026-10-05 | [프로젝트 일정 관리 — CPM과 PERT](posts/PE/software-engineering/2026-10-05-cpm-pert-critical-path-float/index.md) | 중급 | Python 3.13.5, NASA/SP-2010-3403 Schedule Management Handbook (2010-01), GAO-16-89G Schedule Assessment Guide (2015-12) | 실행 검증 |
 | 2026-10-05 | [AI 시스템 영향평가 — ISO/IEC 42005와 기본권 영향평가](posts/PE/it-management/2026-10-05-ai-system-impact-assessment-iso-42005/index.md) | 중급 | ISO/IEC 42005:2025 (제1판, 2025-05), ISO/IEC 42001:2023, 인공지능 기본법 시행령 대통령령 제36580호, Regulation (EU) 2024/1689 (AI Act), Regulation (EU) 2026/1744 개정 반영 | 문서 근거 |
 | 2026-10-04 | [무선 다중 접속 방식 — FDMA·TDMA·CDMA·OFDMA](posts/PE/network/2026-10-04-wireless-multiple-access-fdma-tdma-cdma-ofdma/index.md) | 중급 | 3GPP TS 45.005 V13.4.0 (2017-04), 3GPP TS 45.002 V13.2.0 (2016-08), 3GPP TS 25.213 V4.0.0 (2001-03), 3GPP TS 36.211 V8.9.0 (2010-01), 3GPP TS 36.300 V8.12.0 (2010-04), Python 3.13.5 | 실행 검증 |
 | 2026-10-04 | [블록·파일·오브젝트 스토리지 — 접근 모델 3가지와 SAN·NAS·DAS](posts/PE/system/2026-10-04-storage-access-models-das-san-nas/index.md) | 중급 | NIST SP 800-209 (2020-10), Amazon S3 User Guide (2026-10 확인), Amazon EBS User Guide (2026-10 확인), Ceph Documentation latest (2026-10 확인) | 문서 근거 |
