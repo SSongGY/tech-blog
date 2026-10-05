@@ -3732,3 +3732,14 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-141
+    title: "데이터 가치평가 — 수익·원가·시장접근법과 데이터산업법 가치평가 제도"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "사용가치와 교환가치 구분, 4가지 평가 요인과 3가지 기법의 관계, 로열티공제법·유무 비교법 같은 세부 방법과 기여도·할인율·경제적 수명 추정"
+    code: none
+    origin: exam
+    status: todo

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">데이터 가치평가 체계 — 4가지 평가 요인이 3가지 기법의 변수를 정한다</text>
+
+  <!-- row 1: 평가 요인 -->
+  <text x="16" y="56" font-size="13" font-weight="bold" fill="#4a5568">① 평가 요인 분석</text>
+
+  <rect x="16" y="66" width="196" height="96" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="114" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">데이터 특성</text>
+  <text x="28" y="118" font-size="13" fill="#4a5568">우수성 · 모방 난이도</text>
+  <text x="28" y="140" font-size="13" fill="#4a5568">지속가능성 · 경쟁 강도</text>
+
+  <rect x="232" y="66" width="196" height="96" fill="#f4f5f7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="330" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">법적 특성</text>
+  <text x="244" y="118" font-size="13" fill="#4a5568">법적 안정성 · 권리 범위</text>
+  <text x="244" y="140" font-size="13" fill="#4a5568">동의 요건 · 보호조치</text>
+
+  <rect x="448" y="66" width="196" height="96" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="546" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">시장성</text>
+  <text x="460" y="118" font-size="13" fill="#4a5568">진입 가능성 · 성장성</text>
+  <text x="460" y="140" font-size="13" fill="#4a5568">경쟁 강도 · 수요 민감도</text>
+
+  <rect x="664" y="66" width="200" height="96" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="764" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">사업성</text>
+  <text x="676" y="118" font-size="13" fill="#4a5568">제품 경쟁력 · 점유율</text>
+  <text x="676" y="140" font-size="13" fill="#4a5568">사업화 환경 · 영업이익성</text>
+
+  <!-- bus -->
+  <line x1="114" y1="162" x2="114" y2="190" stroke="#4a5568" stroke-width="1.6"/>
+  <line x1="330" y1="162" x2="330" y2="190" stroke="#4a5568" stroke-width="1.6"/>
+  <line x1="546" y1="162" x2="546" y2="190" stroke="#4a5568" stroke-width="1.6"/>
+  <line x1="764" y1="162" x2="764" y2="190" stroke="#4a5568" stroke-width="1.6"/>
+  <line x1="114" y1="190" x2="764" y2="190" stroke="#4a5568" stroke-width="1.6"/>
+  <text x="440" y="210" text-anchor="middle" font-size="13" fill="#4a5568">매출 추정 · 경제적 수명 · 기여도 · 할인율 등 변수 결정</text>
+  <line x1="146" y1="190" x2="146" y2="242" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="440" y1="216" x2="440" y2="242" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="734" y1="190" x2="734" y2="242" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- row 2: 평가 기법 -->
+  <text x="16" y="238" font-size="13" font-weight="bold" fill="#4a5568">② 기법 선택</text>
+
+  <rect x="16" y="246" width="260" height="118" fill="#f4f5f7" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="146" y="272" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">수익접근법</text>
+  <text x="28" y="298" font-size="13" fill="#4a5568">미래 현금흐름 × 데이터 기여도</text>
+  <text x="28" y="320" font-size="13" fill="#4a5568">경제적 수명 동안, 할인율로 현재가치</text>
+  <text x="28" y="344" font-size="13" fill="#2d6a4f">사업 완성도가 일정 수준 이상일 때</text>
+
+  <rect x="310" y="246" width="260" height="118" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="440" y="272" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">원가접근법</text>
+  <text x="322" y="298" font-size="13" fill="#4a5568">생산에 지출한 원가, 또는</text>
+  <text x="322" y="320" font-size="13" fill="#4a5568">같은 효익의 데이터 재생산·구입 원가</text>
+  <text x="322" y="344" font-size="13" fill="#b45309">거래 사례 없고 완성도 낮을 때</text>
+
+  <rect x="604" y="246" width="260" height="118" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="734" y="272" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">시장접근법</text>
+  <text x="616" y="298" font-size="13" fill="#4a5568">같거나 유사한 데이터의 거래 가치</text>
+  <text x="616" y="320" font-size="13" fill="#4a5568">대상과의 차이를 비교·조정</text>
+  <text x="616" y="344" font-size="13" fill="#4a5568">유사 거래 사례가 있을 때</text>
+
+  <!-- to value -->
+  <line x1="146" y1="364" x2="300" y2="402" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="440" y1="364" x2="440" y2="400" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="734" y1="364" x2="580" y2="402" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- row 3 -->
+  <text x="16" y="424" font-size="13" font-weight="bold" fill="#4a5568">③ 가치 산정</text>
+  <rect x="230" y="404" width="420" height="52" fill="#f4f5f7" stroke="#1b1b1b" stroke-width="2" rx="4"/>
+  <text x="440" y="426" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">데이터 가치 — 가액 · 등급 · 점수</text>
+  <text x="440" y="447" text-anchor="middle" font-size="13" fill="#4a5568">기법을 둘 이상 쓰면 결과를 비교해 근거를 밝힌다</text>
+</svg>
