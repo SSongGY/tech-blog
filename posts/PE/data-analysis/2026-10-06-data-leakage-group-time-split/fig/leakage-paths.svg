@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">누수 경로 — 평가 정보가 학습으로 넘어가는 세 갈래</text>
+
+  <!-- source -->
+  <rect x="300" y="50" width="280" height="56" fill="#f4f5f7" stroke="#1b1b1b" stroke-width="2" rx="4"/>
+  <text x="440" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">원천 데이터</text>
+  <text x="440" y="95" text-anchor="middle" font-size="13" fill="#4a5568">환자·사용자·문서 묶음, 시각이 붙은 기록</text>
+
+  <line x1="440" y1="106" x2="440" y2="130" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- split -->
+  <rect x="300" y="134" width="280" height="50" fill="#eef7f1" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="440" y="157" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">분할을 가장 먼저</text>
+  <text x="440" y="176" text-anchor="middle" font-size="13" fill="#2d6a4f">단위: 묶음 · 시간 순서 · 층</text>
+
+  <line x1="380" y1="184" x2="200" y2="224" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="500" y1="184" x2="680" y2="224" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- train / test -->
+  <rect x="60" y="228" width="280" height="56" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="200" y="252" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">학습 집합</text>
+  <text x="200" y="273" text-anchor="middle" font-size="13" fill="#4a5568">과거 시점, 학습용 묶음</text>
+
+  <rect x="540" y="228" width="280" height="56" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="680" y="252" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">평가 집합</text>
+  <text x="680" y="273" text-anchor="middle" font-size="13" fill="#4a5568">미래 시점, 처음 보는 묶음</text>
+
+  <!-- L3 leak between sets -->
+  <line x1="350" y1="256" x2="530" y2="256" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <line x1="530" y1="256" x2="350" y2="256" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <text x="440" y="240" text-anchor="middle" font-size="13" fill="#9d0208">L3 같은 묶음·미래 시점이</text>
+  <text x="440" y="280" text-anchor="middle" font-size="13" fill="#9d0208">양쪽에 들어간다</text>
+
+  <line x1="200" y1="284" x2="200" y2="340" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- fit -->
+  <rect x="60" y="344" width="280" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="200" y="368" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">적합(fit)</text>
+  <text x="200" y="390" text-anchor="middle" font-size="13" fill="#4a5568">대체·정규화·특징 선택·학습</text>
+
+  <!-- L1 leak from test to fit -->
+  <path d="M600,284 C600,330 420,330 344,364" fill="none" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#arr)"/>
+  <text x="440" y="398" text-anchor="middle" font-size="13" fill="#9d0208">L1 분할 전에 전체로 fit</text>
+
+  <!-- L2 illegitimate feature -->
+  <rect x="60" y="424" width="280" height="44" fill="#fdf0f0" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="200" y="451" text-anchor="middle" font-size="13" fill="#9d0208">L2 예측 시점에 없는 특징(결과의 대리 변수)</text>
+  <line x1="200" y1="424" x2="200" y2="412" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- score -->
+  <line x1="680" y1="284" x2="680" y2="340" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="340" y1="376" x2="536" y2="376" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <rect x="540" y="344" width="280" height="64" fill="#f4f5f7" stroke="#1b1b1b" stroke-width="2" rx="4"/>
+  <text x="680" y="368" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">평가 점수</text>
+  <text x="680" y="390" text-anchor="middle" font-size="13" fill="#b45309">누수가 있으면 운영보다 높게 나온다</text>
+</svg>
