@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **184편** · 갱신 2026-10-05
+총 **185편** · 갱신 2026-10-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -165,11 +165,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 26편
+## 기출문제 (exam) — 27편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-05 | [기출문제 — 인공지능 기본법의 고영향 인공지능: 정의, 활용 영역, 사업자의 안전성·신뢰성 확보 활동](posts/PE/exam/2026-10-05-high-impact-ai-basic-act/index.md) | 심화 | 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정), 인공지능 기본법 시행령 대통령령 제36580호 (2026-08-20 시행), Regulation (EU) 2024/1689 (AI Act), ISO/IEC 42001:2023, ISO/IEC 23894:2023, ISO/IEC 42005:2025 | 문서 근거 |
+| 2026-10-05 | [기출문제 — 데이터 가치평가의 평가 요인, 방법론, 객관성을 정하는 핵심변수](posts/PE/exam/2026-10-05-data-valuation-factors-methods/index.md) | 중급 | 데이터 산업진흥 및 이용촉진에 관한 기본법 제14조 (2022-04-20 시행), 과기정통부 데이터 가치평가 안내서 (2024-07), OECD Digital Economy Papers No. 345 (2022-12), IVS 210 Intangible Assets (IVS 2022), ISO/IEC 25012:2008 | 문서 근거 |
 | 2026-10-04 | [기출문제 — 무선 매체를 나눠 쓰는 세 방식 (CSMA/CA·CDMA·TDMA)](posts/PE/exam/2026-10-04-wireless-multiple-access-csma-ca-cdma-tdma/index.md) | 중급 | 3GPP TS 45.002 V13.2.0 (2016-08), 3GPP TS 25.213 V4.0.0 (2001-03), 3GPP TS 25.214 V5.3.0 (2002-12), Bianchi, IEEE JSAC Vol.18 No.3 (2000-03) | 문서 근거 |
 | 2026-10-04 | [기출문제 — 블록·파일·오브젝트 스토리지 비교와 AI 학습 데이터·서비스 인프라 활용](posts/PE/exam/2026-10-04-block-file-object-storage-ai/index.md) | 중급 | NIST SP 800-209 (2020-10), Amazon S3 User Guide (2026-10 확인), Amazon FSx for Lustre User Guide (2026-10 확인), Google Cloud AI Hypercomputer 스토리지 가이드 (2026-10-02 갱신) | 문서 근거 |
 | 2026-10-03 | [기출문제 — 합성데이터의 개념과 생성 기법, 품질 평가 지표](posts/PE/exam/2026-10-03-synthetic-data-generation-quality-metrics/index.md) | 중급 | 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12), NIST SP 800-188 (2023-09), Alaa et al., ICML 2022 | 문서 근거 |
