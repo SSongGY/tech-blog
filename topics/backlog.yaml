@@ -1893,7 +1893,7 @@ topics:
     angle: "주공정 계산을 직접 해보고 여유시간이 뜻하는 것"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-047
     title: "트랜잭션 ACID와 2단계 커밋(2PC)"
     category: PE
