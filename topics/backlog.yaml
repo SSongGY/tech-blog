@@ -154,7 +154,7 @@ topics:
     difficulty: 중급
     angle: "재시도·동시요청·부분실패 3가지 경우를 모두 통과하는 구현"
     code: python
-    status: todo
+    status: done
   - id: be-003
     title: "HTTP Keep-Alive를 껐다 켰을 때 실제로 달라지는 것"
     category: Backend

@@ -1,0 +1,39 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Backend\2026-10-06-idempotency-key-duplicate-payment
+# 명령      : python idempotency_key.py
+# 수행 시각 : 2026-10-06 09:24 (대한민국 표준시)
+# 소요      : 0.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python sqlite3 / SQLite 3.49.1
+선점 유효 시간 LEASE_TICKS = 30
+
+==== A. 응답 유실 후 재시도 ====
+  naive           첫 요청 (201, {'charge_id': 'ch_1'})  재시도 (201, {'charge_id': 'ch_2'})  → 승인 2건
+  check_then_act  첫 요청 (201, {'charge_id': 'ch_1'})  재시도 (201, {'charge_id': 'ch_1'})  → 승인 1건
+  claim_first     첫 요청 (201, {'charge_id': 'ch_1'})  재시도 (201, {'charge_id': 'ch_1'})  → 승인 1건
+
+==== B. 같은 키, 다른 금액 ====
+  check_then_act  두 번째(50000원) 요청 응답 (201, {'charge_id': 'ch_1'})  → 승인 [('ch_1', 30000)]
+  claim_first     두 번째(50000원) 요청 응답 (422, {'error': '이 키는 다른 요청 본문에 이미 쓰였다'})  → 승인 [('ch_1', 30000)]
+
+==== C. 첫 요청이 결제사 응답을 기다리는 동안 같은 키 요청이 또 온다 ====
+  check_then_act  첫 요청 (201, {'charge_id': 'ch_2'})  두 번째 요청 (201, {'charge_id': 'ch_1'})  → 승인 2건
+  claim_first     첫 요청 (201, {'charge_id': 'ch_1'})  두 번째 요청 (409, {'error': '같은 키의 요청이 아직 처리 중이다'})  → 승인 1건
+
+==== D. 외부 결제 후, 응답 저장 전에 서버가 죽음 ====
+  check_then_act (결제사에 키를 넘기지 않음)
+    t=5   재시도 (201, {'charge_id': 'ch_2'})
+    → 승인 2건 [('ch_1', 30000), ('ch_2', 30000)]
+  claim_first (결제사가 키를 인식)
+    t=5   재시도 (409, {'error': '같은 키의 요청이 아직 처리 중이다'})
+    t=40  재시도 (201, {'charge_id': 'ch_1'})
+    → 승인 1건 [('ch_1', 30000)]
+  claim_first (결제사가 키를 무시)
+    t=5   재시도 (409, {'error': '같은 키의 요청이 아직 처리 중이다'})
+    t=40  재시도 (201, {'charge_id': 'ch_2'})
+    → 승인 2건 [('ch_1', 30000), ('ch_2', 30000)]

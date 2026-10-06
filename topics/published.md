@@ -175,3 +175,4 @@
 | 2026-10-06 | infra-022 | Infra | diff와 patch — 설정 변경을 추적하기 |
 | 2026-10-06 | db-033 | Database | LIKE와 와일드카드 — % 와 _ 가 걸리는 자리 |
 | 2026-10-06 | pe-048 | PE | 분산 데이터베이스 — CAP 정리와 BASE |
+| 2026-10-06 | be-002 | Backend | 멱등키(Idempotency Key)로 중복 결제를 막는 설계 |
