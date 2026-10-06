@@ -3765,3 +3765,14 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-144
+    title: "브랜치·병합 전략 — 트렁크 기반 개발과 기능 브랜치"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "형상관리 계획에서 브랜치 전략을 먼저 정해야 하는 이유, 전략별로 개발 기준선과 통합 빈도가 어떻게 달라지는지"
+    code: none
+    origin: exam
+    status: todo

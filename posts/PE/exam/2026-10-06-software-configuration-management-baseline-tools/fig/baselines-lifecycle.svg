@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">생명주기를 따라 설정되는 기준선 4종</text>
+
+  <!-- time axis -->
+  <line x1="30" y1="200" x2="855" y2="200" stroke="#1b1b1b" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="855" y="222" text-anchor="end" font-size="13" fill="#4a5568">생명주기</text>
+
+  <!-- trigger labels -->
+  <text x="130" y="186" text-anchor="middle" font-size="13" fill="#4a5568">시스템 요구사항 검토</text>
+  <text x="335" y="186" text-anchor="middle" font-size="13" fill="#4a5568">SRS · 인터페이스 명세 검토</text>
+  <text x="545" y="186" text-anchor="middle" font-size="13" fill="#4a5568">설계·구현·시험 중 선택 시점</text>
+  <text x="750" y="186" text-anchor="middle" font-size="13" fill="#4a5568">FCA · PCA 완료</text>
+  <circle cx="130" cy="200" r="5" fill="#2d6a4f"/>
+  <circle cx="335" cy="200" r="5" fill="#2d6a4f"/>
+  <circle cx="545" cy="200" r="5" fill="#b45309"/>
+  <circle cx="750" cy="200" r="5" fill="#2d6a4f"/>
+
+  <!-- baseline boxes -->
+  <rect x="40" y="62" width="180" height="96" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="130" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">기능 기준선</text>
+  <text x="130" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Functional</text>
+  <text x="130" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">무엇을 할 것인가</text>
+  <text x="130" y="148" text-anchor="middle" font-size="13" fill="#4a5568">시스템 요구사항</text>
+
+  <rect x="245" y="62" width="180" height="96" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="335" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">할당 기준선</text>
+  <text x="335" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Allocated</text>
+  <text x="335" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">소프트웨어가 맡을 몫</text>
+  <text x="335" y="148" text-anchor="middle" font-size="13" fill="#4a5568">SRS · 인터페이스 명세</text>
+
+  <rect x="455" y="62" width="180" height="96" fill="#fff4e5" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="545" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">개발 기준선</text>
+  <text x="545" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Developmental</text>
+  <text x="545" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">진화 중인 형상</text>
+  <text x="545" y="148" text-anchor="middle" font-size="13" fill="#4a5568">변경 권한: 주로 개발 조직</text>
+
+  <rect x="660" y="62" width="180" height="96" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="750" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">제품 기준선</text>
+  <text x="750" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Product</text>
+  <text x="750" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">인도된 완성 제품</text>
+  <text x="750" y="148" text-anchor="middle" font-size="13" fill="#4a5568">시스템 통합용</text>
+
+  <!-- accumulating baselined items -->
+  <text x="30" y="252" font-size="13" font-weight="bold" fill="#1b1b1b">기준선에 편입된 항목</text>
+  <rect x="80" y="262" width="100" height="22" fill="#2d6a4f" fill-opacity="0.25" stroke="#2d6a4f"/>
+  <text x="130" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">요구사항</text>
+
+  <rect x="285" y="262" width="100" height="46" fill="#2d6a4f" fill-opacity="0.25" stroke="#2d6a4f"/>
+  <text x="335" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">요구사항</text>
+  <text x="335" y="302" text-anchor="middle" font-size="13" fill="#1b1b1b">SRS</text>
+
+  <rect x="495" y="262" width="100" height="70" fill="#2d6a4f" fill-opacity="0.25" stroke="#2d6a4f"/>
+  <text x="545" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">요구사항</text>
+  <text x="545" y="302" text-anchor="middle" font-size="13" fill="#1b1b1b">SRS</text>
+  <text x="545" y="326" text-anchor="middle" font-size="13" fill="#1b1b1b">설계 · 코드</text>
+
+  <rect x="700" y="262" width="100" height="94" fill="#2d6a4f" fill-opacity="0.25" stroke="#2d6a4f"/>
+  <text x="750" y="278" text-anchor="middle" font-size="13" fill="#1b1b1b">요구사항</text>
+  <text x="750" y="302" text-anchor="middle" font-size="13" fill="#1b1b1b">SRS</text>
+  <text x="750" y="326" text-anchor="middle" font-size="13" fill="#1b1b1b">설계 · 코드</text>
+  <text x="750" y="350" text-anchor="middle" font-size="13" fill="#1b1b1b">실행 파일</text>
+
+  <text x="440" y="374" text-anchor="middle" font-size="13" fill="#4a5568">편입 계기: 공식 검토 등 수용 작업 완료 · 편입 뒤 변경은 SCR과 승인을 거친다 (폭포수 기준 예시)</text>
+</svg>
