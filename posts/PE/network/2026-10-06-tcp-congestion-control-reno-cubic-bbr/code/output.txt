@@ -1,0 +1,54 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\network\2026-10-06-tcp-congestion-control-reno-cubic-bbr
+# 명령      : python congestion_signals.py
+# 수행 시각 : 2026-10-06 23:10 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+== 상수 ==
+  CUBIC C = 0.4, beta = 0.7, alpha = 3(1-b)/(1+b) = 0.5294
+  Reno: 혼잡 회피에서 RTT 마다 +1, 손실 시 절반 (RFC 5681)
+
+== 1. 손실 뒤 W_max 로 돌아오는 시간 — Reno ==
+  W_max | RTT    | 걸린 RTT 수 | 시간(초)
+    100 |   10ms |          50 |     0.50
+    100 |  100ms |          50 |     5.00
+   1000 |   10ms |         500 |     5.00
+   1000 |  100ms |         500 |    50.00
+
+== 2. CUBIC 의 K — RTT 가 식에 없다 ==
+  W_max | K(초)
+    100 |  4.217
+   1000 |  9.086
+
+== 3. CUBIC 이 실제로 W_max 에 닿는 시간 — max(W_cubic, W_est) ==
+  W_max | RTT    | 시간(초) | 먼저 닿은 쪽
+    100 |   10ms |     0.57 | W_est (Reno 친화)
+    100 |  100ms |     4.30 | W_cubic
+    100 |  300ms |     4.50 | W_cubic
+   1000 |   10ms |     5.67 | W_est (Reno 친화)
+   1000 |  100ms |     9.10 | W_cubic
+   1000 |  300ms |     9.30 | W_cubic
+
+== 4. BBR 의 모델 — BDP = 대역폭 x 최소 RTT ==
+  대역폭   | min_rtt | BDP(세그먼트) | cwnd 상한 2 x BDP
+    100Mbps |    40ms |         342.5 |      684.9
+   1000Mbps |    40ms |        3424.7 |     6849.3
+    100Mbps |   200ms |        1712.3 |     3424.7
+
+== 5. 기내 데이터(inflight)가 BDP 를 넘으면 RTT 가 는다 ==
+  병목 100Mbps, RTprop 40ms, 버퍼 = 1 BDP 인 경로
+  BDP = 342.5 세그먼트, 버퍼 = 342.5 세그먼트
+  inflight 배수 | 큐(세그먼트) | RTT(ms) | 비고
+           0.90 |          0.0 |    40.0 | BBR ProbeBW_DOWN pacing_gain
+           1.00 |          0.0 |    40.0 | BBR CRUISE 목표 (큐 없음)
+           1.25 |         85.6 |    50.0 | BBR ProbeBW_UP pacing_gain
+           2.00 |        342.5 |    80.0 | 손실 기반이 버퍼를 다 채운 순간
+
+== 6. 손실 기반이 버퍼를 채우고 비우는 한 주기 (Reno, 같은 경로) ==
+  한 주기 = 343 RTT, 평균 RTT = 60.0ms (RTprop 40ms)
+  주기 시간 = 20.57초 — 이 동안 큐는 0 에서 버퍼 끝까지 쌓인다

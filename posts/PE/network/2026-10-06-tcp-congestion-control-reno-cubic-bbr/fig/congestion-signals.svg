@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">무엇을 신호로 창을 줄이는가 — 손실 기반 2개와 모델 기반 1개</text>
+  <text x="30" y="56" font-size="13" fill="#555">RFC 5681 (Reno) · RFC 9438 (CUBIC) · draft-ietf-ccwg-bbr-06 (BBR)</text>
+
+  <!-- 세 알고리즘 -->
+  <rect x="30" y="76" width="260" height="150" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="102" font-size="15" font-weight="bold" fill="#b45309">Reno (손실 기반)</text>
+  <text x="46" y="128" font-size="13" fill="#1b1b1b">신호: 패킷 손실</text>
+  <text x="46" y="150" font-size="13" fill="#1b1b1b">증가: RTT마다 +1 세그먼트</text>
+  <text x="46" y="172" font-size="13" fill="#1b1b1b">감소: 손실 시 ½</text>
+  <text x="46" y="200" font-size="13" fill="#555">증가 속도가 RTT에 묶인다</text>
+
+  <rect x="310" y="76" width="260" height="150" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="326" y="102" font-size="15" font-weight="bold" fill="#b45309">CUBIC (손실 기반)</text>
+  <text x="326" y="128" font-size="13" fill="#1b1b1b">신호: 손실 · ECN 표시</text>
+  <text x="326" y="150" font-size="13" fill="#1b1b1b">증가: 경과 시간 t의 3차 함수</text>
+  <text x="326" y="172" font-size="13" fill="#1b1b1b">감소: 손실 시 ×0.7</text>
+  <text x="326" y="200" font-size="13" fill="#555">RTT가 짧으면 Reno 친화 구간</text>
+
+  <rect x="590" y="76" width="260" height="150" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="606" y="102" font-size="15" font-weight="bold" fill="#2d6a4f">BBR (모델 기반)</text>
+  <text x="606" y="128" font-size="13" fill="#1b1b1b">신호: 전달률 · 최소 RTT 측정</text>
+  <text x="606" y="150" font-size="13" fill="#1b1b1b">모델: BDP = max_bw × min_rtt</text>
+  <text x="606" y="172" font-size="13" fill="#1b1b1b">제어: 페이싱 속도 + cwnd</text>
+  <text x="606" y="200" font-size="13" fill="#555">손실·ECN은 상한 보정에 쓴다</text>
+
+  <!-- 기내 데이터 축 -->
+  <text x="30" y="268" font-size="14" font-weight="bold" fill="#1b1b1b">기내 데이터(inflight)를 늘리면 — 병목 100Mbps · RTprop 40ms · 버퍼 1 BDP (실습 5번)</text>
+  <line x1="60" y1="380" x2="830" y2="380" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="830,375 842,380 830,385" fill="#3b3b3b"/>
+  <text x="842" y="404" font-size="13" fill="#555" text-anchor="end">inflight</text>
+
+  <!-- 파이프 구간 / 큐 구간 -->
+  <rect x="60" y="300" width="380" height="60" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="250" y="326" font-size="13" text-anchor="middle" fill="#2d6a4f">파이프만 찬다 — 큐 0</text>
+  <text x="250" y="346" font-size="13" text-anchor="middle" fill="#2d6a4f">RTT 40ms 그대로</text>
+  <rect x="440" y="300" width="380" height="60" fill="#fdf3e7" stroke="#b45309" stroke-width="1"/>
+  <text x="630" y="326" font-size="13" text-anchor="middle" fill="#b45309">넘친 만큼 큐에 쌓인다</text>
+  <text x="630" y="346" font-size="13" text-anchor="middle" fill="#b45309">RTT 40 → 80ms</text>
+
+  <!-- 눈금 -->
+  <line x1="440" y1="372" x2="440" y2="388" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="406" font-size="13" text-anchor="middle" fill="#2d6a4f">1 BDP (342.5 세그먼트)</text>
+  <line x1="820" y1="372" x2="820" y2="388" stroke="#9d0208" stroke-width="2"/>
+  <text x="790" y="424" font-size="13" text-anchor="end" fill="#9d0208">2 BDP — 버퍼가 차서 손실</text>
+
+  <!-- 동작점 -->
+  <text x="440" y="446" font-size="13" text-anchor="middle" fill="#2d6a4f">BBR 목표 지점</text>
+  <text x="630" y="446" font-size="13" text-anchor="middle" fill="#b45309">→ 손실 기반은 여기까지 올라간다</text>
+
+  <rect x="30" y="462" width="820" height="42" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1"/>
+  <text x="46" y="488" font-size="13" fill="#1b1b1b">손실 기반은 손실이 나야 줄이므로 큐가 찬 오른쪽 끝을 신호로 삼고, BBR은 RTT가 늘기 시작하는 1 BDP 지점을 목표로 삼는다</text>
+</svg>
