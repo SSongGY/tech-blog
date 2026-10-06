@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **204편** · 갱신 2026-10-06
+총 **206편** · 갱신 2026-10-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -62,7 +62,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 77편
+## 기술사 (pe) — 79편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -70,7 +70,9 @@
 | 2026-10-06 | [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](posts/PE/data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md) | 중급 | Python 3.13.5, Statistics Canada, Survey Methods and Practices 12-587-X (2003), Horvitz & Thompson, JASA 47(260) (1952) | 실행 검증 |
 | 2026-10-06 | [데이터 웨어하우스·데이터 레이크·레이크하우스](posts/PE/database/2026-10-06-dw-lake-lakehouse-schema-timing/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Chaudhuri·Dayal, SIGMOD Record 1997, Armbrust 외, CIDR 2021, Delta Transaction Log Protocol (master, 2026-10-06 열람) | 실행 검증 |
 | 2026-10-06 | [데이터 누수 — 학습·평가 분할에서 묶음·시간 단위를 지키는 이유](posts/PE/data-analysis/2026-10-06-data-leakage-group-time-split/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 User Guide, Kaufman et al., ACM TKDD 6(4) (2012), Kapoor & Narayanan, arXiv:2207.07048 (2022) | 실행 검증 |
+| 2026-10-06 | [데이터 거버넌스와 데이터 품질 관리 체계](posts/PE/database/2026-10-06-data-governance-quality-dimensions-roles/index.md) | 중급 | DAMA-DMBOK2 (2017), DAMA UK DQ Dimensions White Paper (2013-10), UK Government Data Quality Framework (2020-12-03), Federal Data Strategy Data Governance Playbook (2020-07), ISO/IEC 25012:2008, CNSSI 4009-2022 | 문서 근거 |
 | 2026-10-06 | [분산 데이터베이스 — CAP 정리와 BASE](posts/PE/database/2026-10-06-cap-theorem-base-pacelc/index.md) | 중급 | Python 3.13.5, Brewer, PODC 2000 기조연설, Gilbert·Lynch, IEEE Computer 2012, Brewer, IEEE Computer 2012, Abadi, IEEE Computer 2012 | 실행 검증 |
+| 2026-10-06 | [브랜치·병합 전략 — 트렁크 기반 개발과 기능 브랜치](posts/PE/software-engineering/2026-10-06-branching-merging-strategy-trunk-feature/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), DORA Capabilities (2026-10 확인), Pro Git 2판 (2014) | 문서 근거 |
 | 2026-10-05 | [인공지능 기본법과 EU AI법 — 위험 기반 규제 구조 비교](posts/PE/it-management/2026-10-05-korea-ai-basic-act-vs-eu-ai-act/index.md) | 중급 | 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정), 인공지능 기본법 시행령 대통령령 제36580호, Regulation (EU) 2024/1689 (AI Act), Regulation (EU) 2026/1744 (Digital Omnibus on AI, 2026-07-27 발효) | 문서 근거 |
 | 2026-10-05 | [데이터 가치평가 — 수익·원가·시장접근법과 데이터산업법 가치평가 제도](posts/PE/data-analysis/2026-10-05-data-valuation-income-cost-market-approach/index.md) | 중급 | 데이터 산업진흥 및 이용촉진에 관한 기본법 제14조 (2022-04-20 시행), 과기정통부 데이터 가치평가 안내서 (2024-07-04), IVS 210 Intangible Assets 공개초안 (IVS 2017 개정용), OECD Digital Economy Papers No. 345 (2022-12) | 문서 근거 |
 | 2026-10-05 | [프로젝트 일정 관리 — CPM과 PERT](posts/PE/software-engineering/2026-10-05-cpm-pert-critical-path-float/index.md) | 중급 | Python 3.13.5, NASA/SP-2010-3403 Schedule Management Handbook (2010-01), GAO-16-89G Schedule Assessment Guide (2015-12) | 실행 검증 |
