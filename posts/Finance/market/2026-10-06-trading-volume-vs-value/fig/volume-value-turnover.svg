@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 하루, 세 가지 잣대 — 무엇으로 재느냐에 따라 순서가 바뀐다</text>
+
+  <!-- 범례 -->
+  <rect x="300" y="46" width="16" height="16" fill="#2d6a4f"/>
+  <text x="322" y="59" font-size="13" fill="#1b1b1b">가나전자 (종가 1,990원)</text>
+  <rect x="490" y="46" width="16" height="16" fill="#b45309"/>
+  <text x="512" y="59" font-size="13" fill="#1b1b1b">다라물산 (종가 200,000원)</text>
+
+  <!-- 패널 1: 거래량 -->
+  <text x="150" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 거래량 (주)</text>
+  <text x="150" y="118" text-anchor="middle" font-size="13" fill="#495057">체결된 주식 수</text>
+  <line x1="40" y1="350" x2="260" y2="350" stroke="#495057"/>
+  <rect x="70" y="150" width="60" height="200" fill="#2d6a4f"/>
+  <text x="100" y="142" text-anchor="middle" font-size="13" fill="#1b1b1b">1,500,000</text>
+  <rect x="170" y="347" width="60" height="3" fill="#b45309"/>
+  <text x="200" y="339" text-anchor="middle" font-size="13" fill="#1b1b1b">20,000</text>
+  <text x="150" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">가나전자가 75배</text>
+
+  <!-- 패널 2: 거래대금 -->
+  <text x="440" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 거래대금 (억 원)</text>
+  <text x="440" y="118" text-anchor="middle" font-size="13" fill="#495057">체결마다 가격×수량의 합</text>
+  <line x1="330" y1="350" x2="550" y2="350" stroke="#495057"/>
+  <rect x="360" y="200" width="60" height="150" fill="#2d6a4f"/>
+  <text x="390" y="192" text-anchor="middle" font-size="13" fill="#1b1b1b">30.1</text>
+  <rect x="460" y="150" width="60" height="200" fill="#b45309"/>
+  <text x="490" y="142" text-anchor="middle" font-size="13" fill="#1b1b1b">40.1</text>
+  <text x="440" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">다라물산이 1.33배</text>
+
+  <!-- 패널 3: 회전율 -->
+  <text x="730" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 회전율</text>
+  <text x="730" y="118" text-anchor="middle" font-size="13" fill="#495057">거래량 ÷ 상장주식수</text>
+  <line x1="620" y1="350" x2="840" y2="350" stroke="#495057"/>
+  <rect x="650" y="150" width="60" height="200" fill="#2d6a4f"/>
+  <text x="680" y="142" text-anchor="middle" font-size="13" fill="#1b1b1b">3.00%</text>
+  <rect x="750" y="283" width="60" height="67" fill="#b45309"/>
+  <text x="780" y="275" text-anchor="middle" font-size="13" fill="#1b1b1b">1.00%</text>
+  <text x="730" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">가나전자가 3배</text>
+
+  <line x1="30" y1="400" x2="850" y2="400" stroke="#ced4da"/>
+  <text x="40" y="424" font-size="13" fill="#1b1b1b">①은 주가가 100배 다른 두 종목을 같은 단위로 세지 않는다. ②는 돈의 크기를, ③은 회사 크기 대비 손바뀜을 잰다.</text>
+  <text x="40" y="452" font-size="13" fill="#495057">가상 종목 · 막대 길이는 패널 안에서만 비교한다. 숫자는 code/output.txt [2]에서 옮겼다.</text>
+</svg>
