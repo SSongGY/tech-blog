@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **206편** · 갱신 2026-10-06
+총 **209편** · 갱신 2026-10-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 35편
+## DB문법 (basics) — 36편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-06 | [누적합과 이동평균 — SUM OVER의 프레임](posts/Database/sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [자료형 — SQLite의 동적 타입](posts/Database/sql-basics/2026-10-06-sqlite-dynamic-typing-affinity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [LIKE와 와일드카드 — % 와 _ 가 걸리는 자리](posts/Database/sql-basics/2026-10-06-sql-like-wildcard-escape/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [RANK와 DENSE_RANK — 동점을 어떻게 셀까](posts/Database/sql-basics/2026-10-06-rank-dense-rank-ties/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -62,12 +63,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 79편
+## 기술사 (pe) — 80편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-06 | [트랜잭션 ACID와 2단계 커밋(2PC)](posts/PE/database/2026-10-06-two-phase-commit-blocking-window/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Bernstein·Hadzilacos·Goodman, Concurrency Control and Recovery in Database Systems 7장 (1987), X/Open XA Specification (1991) | 실행 검증 |
 | 2026-10-06 | [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](posts/PE/data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md) | 중급 | Python 3.13.5, Statistics Canada, Survey Methods and Practices 12-587-X (2003), Horvitz & Thompson, JASA 47(260) (1952) | 실행 검증 |
+| 2026-10-06 | [NoSQL 4가지 유형과 선택 기준](posts/PE/database/2026-10-06-nosql-four-types-access-pattern/index.md) | 중급 | NIST SP 1500-1r2 (2019-10), DeCandia 외, Dynamo, SOSP 2007, Chang 외, Bigtable, OSDI 2006, MongoDB Manual 9.0, ISO/IEC 39075:2024 (GQL), Microsoft Azure Architecture Center (2025-08-21) | 문서 근거 |
 | 2026-10-06 | [데이터 웨어하우스·데이터 레이크·레이크하우스](posts/PE/database/2026-10-06-dw-lake-lakehouse-schema-timing/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Chaudhuri·Dayal, SIGMOD Record 1997, Armbrust 외, CIDR 2021, Delta Transaction Log Protocol (master, 2026-10-06 열람) | 실행 검증 |
 | 2026-10-06 | [데이터 누수 — 학습·평가 분할에서 묶음·시간 단위를 지키는 이유](posts/PE/data-analysis/2026-10-06-data-leakage-group-time-split/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 User Guide, Kaufman et al., ACM TKDD 6(4) (2012), Kapoor & Narayanan, arXiv:2207.07048 (2022) | 실행 검증 |
 | 2026-10-06 | [데이터 거버넌스와 데이터 품질 관리 체계](posts/PE/database/2026-10-06-data-governance-quality-dimensions-roles/index.md) | 중급 | DAMA-DMBOK2 (2017), DAMA UK DQ Dimensions White Paper (2013-10), UK Government Data Quality Framework (2020-12-03), Federal Data Strategy Data Governance Playbook (2020-07), ISO/IEC 25012:2008, CNSSI 4009-2022 | 문서 근거 |
@@ -146,10 +148,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 12편
+## 리눅스 (linux) — 13편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-06 | [kill과 시그널 — TERM, KILL, HUP의 차이](posts/Linux/command/2026-10-06-kill-signals-term-kill-hup/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (timeout), Cygwin runtime 3.6.7 | 실행 검증 |
 | 2026-10-06 | [diff와 patch — 설정 변경을 추적하기](posts/Infra/linux/2026-10-06-diff-patch-config-change-tracking/index.md) | 중급 | GNU diffutils 3.12, GNU patch 2.7.6, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-10-03 | [curl — API 디버깅에 필요한 옵션](posts/Linux/command/2026-10-03-curl-api-debugging-options-timing/index.md) | 입문 | curl 8.19.0 (Schannel), Python 3.13.5, OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-02 | [openssl s_client — 인증서 확인과 만료 점검](posts/Linux/command/2026-10-02-openssl-s-client-cert-chain-expiry/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
@@ -274,5 +277,6 @@
 
 - [윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기](posts/Database/sql-basics/2026-10-03-window-function-row-number-top-per-group/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [RANK와 DENSE_RANK — 동점을 어떻게 셀까](posts/Database/sql-basics/2026-10-06-rank-dense-rank-ties/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [누적합과 이동평균 — SUM OVER의 프레임](posts/Database/sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) — Tibero 7
 

@@ -1660,7 +1660,7 @@ topics:
     difficulty: 중급
     angle: "9번을 먼저 쓰면 안 되는 이유와 프로세스가 안 죽는 경우"
     code: shell
-    status: todo
+    status: done
   - id: lx-018
     title: "nohup, screen, tmux — 세션이 끊겨도 살아남기"
     category: Linux
@@ -1948,7 +1948,7 @@ topics:
     angle: "접근 패턴이 모델을 정한다는 원칙"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-053
     title: "TCP 혼잡 제어 알고리즘 비교"
     category: PE
@@ -2521,7 +2521,7 @@ topics:
     angle: "ROWS와 RANGE가 다른 값을 내는 지점을 동점 데이터로 재현"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-040
     title: "CTE — WITH 절로 질의에 이름 붙이기"
     category: Database
