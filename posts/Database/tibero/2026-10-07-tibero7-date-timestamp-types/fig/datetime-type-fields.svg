@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">Tibero 7 날짜형 5가지 — 어느 필드까지 담는가</text>
+  <text x="30" y="56" font-size="13" fill="#555">Tibero 7.2.6 SQL 참조 안내서 데이터 타입 절 기준 · 소수 초 정밀도 0~9, 기본값 6</text>
+
+  <!-- 열 머리: 시작 x=300, 칸 폭 70 -->
+  <g font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">
+    <text x="335" y="92">연</text><text x="405" y="92">월</text><text x="475" y="92">일</text>
+    <text x="545" y="92">시</text><text x="615" y="92">분</text><text x="685" y="92">초</text>
+    <text x="755" y="92">소수 초</text><text x="825" y="92">시간대</text>
+  </g>
+  <line x1="30" y1="102" x2="860" y2="102" stroke="#3b3b3b" stroke-width="1"/>
+
+  <!-- DATE -->
+  <text x="40" y="132" font-size="14" font-weight="bold" fill="#1b1b1b">DATE</text>
+  <rect x="304" y="116" width="412" height="24" rx="4" fill="#e8e8e8" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="510" y="133" font-size="13" text-anchor="middle" fill="#1b1b1b">연~초 · BC 9,999 ~ AD 9,999</text>
+
+  <!-- TIME -->
+  <text x="40" y="176" font-size="14" font-weight="bold" fill="#1b1b1b">TIME(p)</text>
+  <rect x="514" y="160" width="272" height="24" rx="4" fill="#e8e8e8" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="650" y="177" font-size="13" text-anchor="middle" fill="#1b1b1b">시~소수 초 · 날짜 없음</text>
+
+  <!-- TIMESTAMP -->
+  <text x="40" y="220" font-size="14" font-weight="bold" fill="#2d6a4f">TIMESTAMP(p)</text>
+  <rect x="304" y="204" width="482" height="24" rx="4" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="545" y="221" font-size="13" text-anchor="middle" fill="#2d6a4f">연~소수 초 · BC 9,999 ~ AD 9,999</text>
+
+  <!-- TSTZ -->
+  <text x="40" y="264" font-size="14" font-weight="bold" fill="#b45309">… WITH TIME ZONE</text>
+  <rect x="304" y="248" width="482" height="24" rx="4" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="545" y="265" font-size="13" text-anchor="middle" fill="#b45309">UTC로 정규화해 저장</text>
+  <rect x="794" y="248" width="62" height="24" rx="4" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="825" y="265" font-size="13" text-anchor="middle" fill="#b45309">저장</text>
+
+  <!-- TSLTZ -->
+  <text x="40" y="308" font-size="14" font-weight="bold" fill="#b45309">… WITH LOCAL TIME ZONE</text>
+  <rect x="304" y="292" width="482" height="24" rx="4" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="545" y="309" font-size="13" text-anchor="middle" fill="#b45309">UTC로 정규화해 저장</text>
+  <rect x="794" y="292" width="62" height="24" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="825" y="309" font-size="13" text-anchor="middle" fill="#b45309">안 함</text>
+
+  <line x1="30" y1="336" x2="860" y2="336" stroke="#3b3b3b" stroke-width="1"/>
+
+  <rect x="30" y="350" width="820" height="104" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="374" font-size="13" fill="#1b1b1b">조회할 때: WITH TIME ZONE 은 저장한 지역 이름·오프셋을 그대로 붙여 보여 준다.</text>
+  <text x="46" y="396" font-size="13" fill="#1b1b1b">WITH LOCAL TIME ZONE 은 시간대를 저장하지 않으므로 조회하는 세션의 시간대로 바꿔 돌려준다.</text>
+  <text x="46" y="422" font-size="13" fill="#555">간격형은 따로 두 가지다: INTERVAL YEAR TO MONTH(연·월), INTERVAL DAY TO SECOND(일~소수 초).</text>
+  <text x="46" y="442" font-size="13" fill="#555">p 는 소수 초 자릿수(fractional_seconds_precision)다.</text>
+</svg>
