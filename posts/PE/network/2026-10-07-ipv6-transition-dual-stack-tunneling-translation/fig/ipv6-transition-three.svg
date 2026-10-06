@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">IPv6 전환 기술 3가지 — 무엇이 두 프로토콜을 잇는가</text>
+  <text x="30" y="56" font-size="13" fill="#555">RFC 4213(듀얼스택·구성 터널), RFC 6144·6146·6147(변환) 기준</text>
+
+  <!-- 1. 듀얼스택 -->
+  <text x="30" y="98" font-size="15" font-weight="bold" fill="#2d6a4f">① 듀얼스택</text>
+  <text x="30" y="118" font-size="13" fill="#555">노드가 둘 다 구현</text>
+  <rect x="200" y="78" width="170" height="64" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="285" y="102" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv6/IPv4 노드</text>
+  <text x="285" y="124" font-size="13" text-anchor="middle" fill="#2d6a4f">IPv4 스택 + IPv6 스택</text>
+  <line x1="370" y1="98" x2="560" y2="98" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="370" y1="124" x2="560" y2="124" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="465" y="92" font-size="13" text-anchor="middle" fill="#1b1b1b">A 레코드 → IPv4</text>
+  <text x="465" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">AAAA 레코드 → IPv6</text>
+  <rect x="566" y="78" width="280" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="706" y="102" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv4 상대 · IPv6 상대</text>
+  <text x="706" y="124" font-size="13" text-anchor="middle" fill="#555">각자 자기 프로토콜로 직접</text>
+
+  <line x1="30" y1="166" x2="850" y2="166" stroke="#d6d6d0" stroke-width="1"/>
+
+  <!-- 2. 터널링 -->
+  <text x="30" y="208" font-size="15" font-weight="bold" fill="#b45309">② 터널링</text>
+  <text x="30" y="228" font-size="13" fill="#555">IPv6를 IPv4에 싼다</text>
+  <rect x="200" y="188" width="130" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="265" y="212" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv6 망</text>
+  <text x="265" y="232" font-size="13" text-anchor="middle" fill="#555">터널 끝점</text>
+  <rect x="350" y="188" width="300" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="500" y="210" font-size="13" text-anchor="middle" fill="#b45309">IPv4 망 — [IPv4 헤더 | IPv6 패킷]</text>
+  <text x="500" y="232" font-size="13" text-anchor="middle" fill="#1b1b1b">프로토콜 번호 41 · MTU 20바이트 감소</text>
+  <rect x="670" y="188" width="130" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="735" y="212" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv6 망</text>
+  <text x="735" y="232" font-size="13" text-anchor="middle" fill="#555">터널 끝점</text>
+
+  <line x1="30" y1="268" x2="850" y2="268" stroke="#d6d6d0" stroke-width="1"/>
+
+  <!-- 3. 변환 -->
+  <text x="30" y="310" font-size="15" font-weight="bold" fill="#9d0208">③ 변환</text>
+  <text x="30" y="330" font-size="13" fill="#555">헤더를 바꿔 쓴다</text>
+  <rect x="200" y="290" width="150" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="275" y="314" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv6 전용 클라이언트</text>
+  <text x="275" y="334" font-size="13" text-anchor="middle" fill="#555">IPv6만 안다</text>
+  <rect x="400" y="290" width="200" height="56" rx="6" fill="#fbecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="500" y="314" font-size="13" text-anchor="middle" fill="#9d0208">NAT64 (상태 저장)</text>
+  <text x="500" y="334" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv6 ↔ IPv4 헤더 변환</text>
+  <rect x="650" y="290" width="150" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="725" y="314" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv4 전용 서버</text>
+  <text x="725" y="334" font-size="13" text-anchor="middle" fill="#555">IPv4만 안다</text>
+  <line x1="350" y1="318" x2="398" y2="318" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="600" y1="318" x2="648" y2="318" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="200" y="372" width="400" height="44" rx="6" fill="#fbecec" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="400" y="392" font-size="13" text-anchor="middle" fill="#9d0208">DNS64 — A 레코드로 AAAA 를 합성</text>
+  <text x="400" y="408" font-size="13" text-anchor="middle" fill="#1b1b1b">IPv4 주소를 프리픽스(예: 64:ff9b::/96) 뒤에 넣는다</text>
+  <line x1="275" y1="370" x2="275" y2="348" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="436" width="820" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1"/>
+  <text x="46" y="458" font-size="13" fill="#1b1b1b">듀얼스택은 양쪽을 다 구현하고, 터널링은 한쪽 패킷을 다른 쪽 패킷 안에 넣고, 변환은 헤더를 바꿔 쓴다.</text>
+  <text x="46" y="476" font-size="13" fill="#555">터널링은 양 끝이 같은 프로토콜일 때, 변환은 양 끝이 서로 다른 프로토콜만 알 때 쓴다.</text>
+</svg>
