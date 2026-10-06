@@ -3522,7 +3522,7 @@ topics:
     angle: "순자산가치(NAV)와 시장가격이 벌어지는 이유, 추적오차와 보수가 수익률을 깎는 정도"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-029
     title: "공시 체계 — 정기·수시·공정공시"
     category: Finance
