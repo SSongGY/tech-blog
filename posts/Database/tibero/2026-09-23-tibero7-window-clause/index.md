@@ -20,6 +20,7 @@ topic_id: tb-003
 > **같은 기능을 다른 환경에서 다룬 글** (`window-function`)
 > - [윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기](../../sql-basics/2026-10-03-window-function-row-number-top-per-group/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 > - [RANK와 DENSE_RANK — 동점을 어떻게 셀까](../../sql-basics/2026-10-06-rank-dense-rank-ties/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+> - [누적합과 이동평균 — SUM OVER의 프레임](../../sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 <!-- related:end -->
 
 > **실행 검증 완료.** 이 글의 출력은 **Tibero 7.2** 인스턴스에서 실제로 돌려 받은 것이다.
