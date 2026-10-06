@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="arg" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">실시간 시계열 이상치 탐지 — 점수 산출과 임계값 판정의 흐름</text>
+
+  <!-- 6 stages -->
+  <rect x="10" y="70" width="132" height="92" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="76" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">스트림 수집</text>
+  <text x="76" y="122" text-anchor="middle" font-size="13" fill="#4a5568">센서 · 메트릭</text>
+  <text x="76" y="144" text-anchor="middle" font-size="13" fill="#4a5568">로그 · 트래픽</text>
+
+  <rect x="152" y="70" width="132" height="92" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="218" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">전처리 · 윈도</text>
+  <text x="218" y="122" text-anchor="middle" font-size="13" fill="#4a5568">정규화 · 보간</text>
+  <text x="218" y="144" text-anchor="middle" font-size="13" fill="#4a5568">길이 w 창</text>
+
+  <rect x="294" y="70" width="132" height="92" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="360" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">탐지 모델</text>
+  <text x="360" y="122" text-anchor="middle" font-size="13" fill="#4a5568">예측 · 재구성</text>
+  <text x="360" y="144" text-anchor="middle" font-size="13" fill="#4a5568">표현 · 혼합</text>
+
+  <rect x="436" y="70" width="132" height="92" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="502" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">이상 점수</text>
+  <text x="502" y="122" text-anchor="middle" font-size="13" fill="#4a5568">|x_t − x̂_t|</text>
+  <text x="502" y="144" text-anchor="middle" font-size="13" fill="#4a5568">재구성 오차 · 확률</text>
+
+  <rect x="578" y="70" width="132" height="92" fill="#f4f5f7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="644" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">임계값 판정</text>
+  <text x="644" y="122" text-anchor="middle" font-size="13" fill="#4a5568">점수 &gt; τ ?</text>
+  <text x="644" y="144" text-anchor="middle" font-size="13" fill="#4a5568">정적 · NDT · POT</text>
+
+  <rect x="720" y="70" width="150" height="92" fill="#f4f5f7" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="795" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">경보 · 조치</text>
+  <text x="795" y="122" text-anchor="middle" font-size="13" fill="#4a5568">관제 · 티켓 발행</text>
+  <text x="795" y="144" text-anchor="middle" font-size="13" fill="#4a5568">차단 · 설비 정지</text>
+
+  <line x1="142" y1="116" x2="150" y2="116" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="284" y1="116" x2="292" y2="116" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="426" y1="116" x2="434" y2="116" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="568" y1="116" x2="576" y2="116" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="710" y1="116" x2="718" y2="116" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- feedback -->
+  <rect x="294" y="230" width="416" height="70" fill="#f4f5f7" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="502" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">피드백 · 재학습</text>
+  <text x="502" y="282" text-anchor="middle" font-size="13" fill="#4a5568">운영자 판정(오탐 · 미탐) 기록 · 분포 변화(드리프트) 반영</text>
+
+  <polyline points="795,162 795,265 712,265" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arg)"/>
+  <line x1="360" y1="230" x2="360" y2="164" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arg)"/>
+  <line x1="644" y1="230" x2="644" y2="164" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arg)"/>
+  <text x="368" y="204" font-size="13" fill="#2d6a4f">모델 갱신</text>
+  <text x="652" y="204" font-size="13" fill="#2d6a4f">τ 갱신</text>
+
+  <!-- real-time constraint -->
+  <line x1="10" y1="328" x2="870" y2="328" stroke="#cbd5e0" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="16" y="356" font-size="13" font-weight="bold" fill="#b45309">실시간 제약</text>
+  <text x="110" y="356" font-size="13" fill="#4a5568">추정 모델: x_(t−k1) … x_(t+k2) 로 x̂_t 를 구한다 → 미래 값(k2 &gt; 0)을 기다려야 해 판정이 늦다</text>
+  <text x="110" y="382" font-size="13" fill="#4a5568">예측 모델: x_(t−k) … x_(t−1) 로 x̂_t 를 구한다 → x_t 가 도착하는 즉시 판정할 수 있다</text>
+</svg>
