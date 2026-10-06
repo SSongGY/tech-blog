@@ -1,0 +1,685 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Infra\linux\2026-10-06-diff-patch-config-change-tracking
+# 명령      : bash diff_patch_options.sh
+# 수행 시각 : 2026-10-06 09:07 (대한민국 표준시)
+# 소요      : 5.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+===== 0. 버전
+$ diff --version | head -1
+diff (GNU diffutils) 3.12
+(종료 코드 0)
+$ patch --version | head -1
+GNU patch 2.7.6
+(종료 코드 0)
+$ bash --version | head -1
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+(종료 코드 0)
+
+===== 1. 바꾸기 전과 후
+$ cat -n app.conf.orig
+     1	# app server config
+     2	listen_port=8080
+     3	worker_count=4
+     4	db.host=10.0.0.1
+     5	db.port=5432
+     6	db.pool_size=20
+     7	cache.enabled=true
+     8	cache.ttl_sec=300
+     9	log.level=info
+    10	log.dir=/var/log/app
+(종료 코드 0)
+$ cat -n app.conf
+     1	# app server config
+     2	listen_port=8080
+     3	worker_count=8
+     4	db.host=10.0.0.1
+     5	db.port=5432
+     6	db.pool_size=40
+     7	cache.enabled=true
+     8	cache.ttl_sec=300
+     9	log.level=debug
+    10	log.dir=/var/log/app
+(종료 코드 0)
+
+===== 2. 출력 형식 — 기본(normal)
+$ diff app.conf.orig app.conf
+3c3
+< worker_count=4
+---
+> worker_count=8
+6c6
+< db.pool_size=20
+---
+> db.pool_size=40
+9c9
+< log.level=info
+---
+> log.level=debug
+(종료 코드 1)
+
+===== 3. 통합 형식 -u, 문맥 줄 수 -U
+$ diff -u app.conf.orig app.conf
+--- app.conf.orig	2026-10-06 09:00:00.000000000 +0900
++++ app.conf	2026-10-06 09:30:00.000000000 +0900
+@@ -1,10 +1,10 @@
+ # app server config
+ listen_port=8080
+-worker_count=4
++worker_count=8
+ db.host=10.0.0.1
+ db.port=5432
+-db.pool_size=20
++db.pool_size=40
+ cache.enabled=true
+ cache.ttl_sec=300
+-log.level=info
++log.level=debug
+ log.dir=/var/log/app
+(종료 코드 1)
+$ diff -U1 app.conf.orig app.conf
+--- app.conf.orig	2026-10-06 09:00:00.000000000 +0900
++++ app.conf	2026-10-06 09:30:00.000000000 +0900
+@@ -2,9 +2,9 @@
+ listen_port=8080
+-worker_count=4
++worker_count=8
+ db.host=10.0.0.1
+ db.port=5432
+-db.pool_size=20
++db.pool_size=40
+ cache.enabled=true
+ cache.ttl_sec=300
+-log.level=info
++log.level=debug
+ log.dir=/var/log/app
+(종료 코드 1)
+$ diff -U0 app.conf.orig app.conf
+--- app.conf.orig	2026-10-06 09:00:00.000000000 +0900
++++ app.conf	2026-10-06 09:30:00.000000000 +0900
+@@ -3 +3 @@
+-worker_count=4
++worker_count=8
+@@ -6 +6 @@
+-db.pool_size=20
++db.pool_size=40
+@@ -9 +9 @@
+-log.level=info
++log.level=debug
+(종료 코드 1)
+
+===== 4. 문맥 형식 -c
+$ diff -c app.conf.orig app.conf
+*** app.conf.orig	Tue Oct  6 09:00:00 2026
+--- app.conf	Tue Oct  6 09:30:00 2026
+***************
+*** 1,10 ****
+  # app server config
+  listen_port=8080
+! worker_count=4
+  db.host=10.0.0.1
+  db.port=5432
+! db.pool_size=20
+  cache.enabled=true
+  cache.ttl_sec=300
+! log.level=info
+  log.dir=/var/log/app
+--- 1,10 ----
+  # app server config
+  listen_port=8080
+! worker_count=8
+  db.host=10.0.0.1
+  db.port=5432
+! db.pool_size=40
+  cache.enabled=true
+  cache.ttl_sec=300
+! log.level=debug
+  log.dir=/var/log/app
+(종료 코드 1)
+
+===== 5. 나란히 -y, 폭 -W, 같은 줄 숨기기
+$ diff -y -W 60 app.conf.orig app.conf
+# app server config		# app server config
+listen_port=8080		listen_port=8080
+worker_count=4		     |	worker_count=8
+db.host=10.0.0.1		db.host=10.0.0.1
+db.port=5432			db.port=5432
+db.pool_size=20		     |	db.pool_size=40
+cache.enabled=true		cache.enabled=true
+cache.ttl_sec=300		cache.ttl_sec=300
+log.level=info		     |	log.level=debug
+log.dir=/var/log/app		log.dir=/var/log/app
+(종료 코드 1)
+$ diff -y -W 60 --suppress-common-lines app.conf.orig app.conf
+worker_count=4		     |	worker_count=8
+db.pool_size=20		     |	db.pool_size=40
+log.level=info		     |	log.level=debug
+(종료 코드 1)
+$ diff -y -W 60 --left-column app.conf.orig app.conf
+# app server config	     (
+listen_port=8080	     (
+worker_count=4		     |	worker_count=8
+db.host=10.0.0.1	     (
+db.port=5432		     (
+db.pool_size=20		     |	db.pool_size=40
+cache.enabled=true	     (
+cache.ttl_sec=300	     (
+log.level=info		     |	log.level=debug
+log.dir=/var/log/app	     (
+(종료 코드 1)
+
+===== 6. 다른지만 -q, 같을 때도 알리기 -s, 종료 코드
+$ diff -q app.conf.orig app.conf
+Files app.conf.orig and app.conf differ
+(종료 코드 1)
+$ diff -s app.conf.orig same.conf
+Files app.conf.orig and same.conf are identical
+(종료 코드 0)
+$ diff app.conf.orig same.conf
+(종료 코드 0)
+$ diff app.conf.orig no_such.conf
+diff: no_such.conf: No such file or directory
+(종료 코드 2)
+
+===== 7. 머리줄 이름 바꾸기 --label
+$ diff -u --label a/app.conf --label b/app.conf app.conf.orig app.conf
+--- a/app.conf
++++ b/app.conf
+@@ -1,10 +1,10 @@
+ # app server config
+ listen_port=8080
+-worker_count=4
++worker_count=8
+ db.host=10.0.0.1
+ db.port=5432
+-db.pool_size=20
++db.pool_size=40
+ cache.enabled=true
+ cache.ttl_sec=300
+-log.level=info
++log.level=debug
+ log.dir=/var/log/app
+(종료 코드 1)
+
+===== 8. 공백·대소문자·빈 줄·특정 줄 무시
+$ cat -A ws_old.conf
+listen_port=8080$
+worker_count = 4$
+db.host=10.0.0.1$
+log.level=info$
+# edited 2026-10-01$
+(종료 코드 0)
+$ cat -A ws_new.conf
+listen_port = 8080$
+worker_count   =   4$
+$
+db.host=10.0.0.1   $
+LOG.LEVEL=info$
+# edited 2026-10-06$
+(종료 코드 0)
+$ diff ws_old.conf ws_new.conf
+1,5c1,6
+< listen_port=8080
+< worker_count = 4
+< db.host=10.0.0.1
+< log.level=info
+< # edited 2026-10-01
+---
+> listen_port = 8080
+> worker_count   =   4
+> 
+> db.host=10.0.0.1   
+> LOG.LEVEL=info
+> # edited 2026-10-06
+(종료 코드 1)
+$ diff -Z ws_old.conf ws_new.conf
+1,2c1,3
+< listen_port=8080
+< worker_count = 4
+---
+> listen_port = 8080
+> worker_count   =   4
+> 
+4,5c5,6
+< log.level=info
+< # edited 2026-10-01
+---
+> LOG.LEVEL=info
+> # edited 2026-10-06
+(종료 코드 1)
+$ diff -b ws_old.conf ws_new.conf
+1c1
+< listen_port=8080
+---
+> listen_port = 8080
+2a3
+> 
+4,5c5,6
+< log.level=info
+< # edited 2026-10-01
+---
+> LOG.LEVEL=info
+> # edited 2026-10-06
+(종료 코드 1)
+$ diff -w ws_old.conf ws_new.conf
+2a3
+> 
+4,5c5,6
+< log.level=info
+< # edited 2026-10-01
+---
+> LOG.LEVEL=info
+> # edited 2026-10-06
+(종료 코드 1)
+$ diff -w -B ws_old.conf ws_new.conf
+4,5c5,6
+< log.level=info
+< # edited 2026-10-01
+---
+> LOG.LEVEL=info
+> # edited 2026-10-06
+(종료 코드 1)
+$ diff -w -B -i ws_old.conf ws_new.conf
+5c6
+< # edited 2026-10-01
+---
+> # edited 2026-10-06
+(종료 코드 1)
+$ diff -w -B -i -I '^# edited' ws_old.conf ws_new.conf
+(종료 코드 0)
+$ diff tab_old.txt tab_new.txt
+1c1
+< a	b
+---
+> a       b
+(종료 코드 1)
+$ diff -E tab_old.txt tab_new.txt
+(종료 코드 0)
+
+===== 9. 윈도에서 저장한 CRLF 파일
+$ diff -q app.conf.orig app_crlf.conf
+Files app.conf.orig and app_crlf.conf differ
+(종료 코드 1)
+$ diff app.conf.orig app_crlf.conf | head -4 | cat -A
+1,10c1,10$
+< # app server config$
+< listen_port=8080$
+< worker_count=4$
+(종료 코드 1)
+$ diff --strip-trailing-cr app.conf.orig app_crlf.conf
+(종료 코드 0)
+
+===== 10. 바뀐 곳이 속한 절을 머리줄에 -F
+$ diff -U1 ini_old.conf ini_new.conf | tail -n +3
+@@ -9,3 +9,3 @@
+ port=5432
+-pool_size=20
++pool_size=40
+ timeout_sec=5
+(종료 코드 1)
+$ diff -U1 -F '^\[' ini_old.conf ini_new.conf | tail -n +3
+@@ -9,3 +9,3 @@ [db]
+ port=5432
+-pool_size=20
++pool_size=40
+ timeout_sec=5
+(종료 코드 1)
+
+===== 11. 디렉터리 비교 -r, 없는 파일 -N, 제외 -x
+$ diff -rq conf_old conf_new
+Files conf_old/app.conf and conf_new/app.conf differ
+Only in conf_new: app.conf.bak
+Only in conf_new: limits.conf
+(종료 코드 1)
+$ diff -rq -x '*.bak' conf_old conf_new
+Files conf_old/app.conf and conf_new/app.conf differ
+Only in conf_new: limits.conf
+(종료 코드 1)
+$ diff -ruN -x '*.bak' conf_old conf_new | grep -E '^(diff|---|\+\+\+|@@)'
+diff -ruN -x '*.bak' conf_old/app.conf conf_new/app.conf
+--- conf_old/app.conf	2026-10-06 09:00:00.000000000 +0900
++++ conf_new/app.conf	2026-10-06 09:30:00.000000000 +0900
+@@ -1,10 +1,10 @@
+diff -ruN -x '*.bak' conf_old/limits.conf conf_new/limits.conf
+--- conf_old/limits.conf	1970-01-01 09:00:00.000000000 +0900
++++ conf_new/limits.conf	2026-10-06 09:30:00.000000000 +0900
+@@ -0,0 +1 @@
+(종료 코드 1)
+$ diff -q --from-file=app.conf.orig app.conf same.conf
+Files app.conf.orig and app.conf differ
+(종료 코드 1)
+
+===== 12. 기계가 읽는 형식 -e, -n
+$ diff -e app.conf.orig app.conf
+9c
+log.level=debug
+.
+6c
+db.pool_size=40
+.
+3c
+worker_count=8
+.
+(종료 코드 1)
+$ diff -n app.conf.orig app.conf
+d3 1
+a3 1
+worker_count=8
+d6 1
+a6 1
+db.pool_size=40
+d9 1
+a9 1
+log.level=debug
+(종료 코드 1)
+
+===== 13. 줄 서식 지정 --LTYPE-line-format, -D
+$ diff --unchanged-line-format= --old-line-format='- %L' --new-line-format='+ %L' app.conf.orig app.conf
+- worker_count=4
++ worker_count=8
+- db.pool_size=20
++ db.pool_size=40
+- log.level=info
++ log.level=debug
+(종료 코드 1)
+$ diff --unchanged-line-format= --old-line-format= --new-line-format='%dn: %L' app.conf.orig app.conf
+3: worker_count=8
+6: db.pool_size=40
+9: log.level=debug
+(종료 코드 1)
+$ diff -D NEW_CONF app.conf.orig app.conf | head -8
+# app server config
+listen_port=8080
+#ifndef NEW_CONF
+worker_count=4
+#else /* NEW_CONF */
+worker_count=8
+#endif /* NEW_CONF */
+db.host=10.0.0.1
+(종료 코드 1)
+
+===== 14. 바이너리 판정 -a
+$ diff bin_old.dat bin_new.dat
+Binary files bin_old.dat and bin_new.dat differ
+(종료 코드 1)
+$ diff -a bin_old.dat bin_new.dat | cat -v
+1c1
+< key=1
+---
+> key=2
+(종료 코드 1)
+
+===== 15. 탭 표시 -t, -T, --tabsize, 계산 방법 -d
+$ diff -T tab_old.txt tab_new.txt | cat -A
+1c1$
+<^Ia^Ib$
+---$
+>^Ia       b$
+(종료 코드 1)
+$ diff -t --tabsize=4 tab_old.txt tab_new.txt | cat -A
+1c1$
+< a   b$
+---$
+> a       b$
+(종료 코드 1)
+$ diff -d -u app.conf.orig app.conf | tail -n +3
+@@ -1,10 +1,10 @@
+ # app server config
+ listen_port=8080
+-worker_count=4
++worker_count=8
+ db.host=10.0.0.1
+ db.port=5432
+-db.pool_size=20
++db.pool_size=40
+ cache.enabled=true
+ cache.ttl_sec=300
+-log.level=info
++log.level=debug
+ log.dir=/var/log/app
+(종료 코드 1)
+
+===== 16. patch — 만들고, 미리 보고, 적용하고, 되돌린다
+$ patch --dry-run target.conf app.conf.patch
+checking file target.conf
+(종료 코드 0)
+$ cmp target.conf app.conf.orig && echo '미리보기 뒤에도 원본 그대로'
+미리보기 뒤에도 원본 그대로
+(종료 코드 0)
+$ patch target.conf app.conf.patch
+patching file target.conf
+(종료 코드 0)
+$ cmp target.conf app.conf && echo '적용 결과가 app.conf 와 같다'
+적용 결과가 app.conf 와 같다
+(종료 코드 0)
+$ patch -R target.conf app.conf.patch
+patching file target.conf
+(종료 코드 0)
+$ cmp target.conf app.conf.orig && echo '되돌린 결과가 원본과 같다'
+되돌린 결과가 원본과 같다
+(종료 코드 0)
+
+===== 17. 이미 적용된 패치를 또 적용하면 — -N, -t, -f
+$ patch target.conf app.conf.patch < /dev/null
+patching file target.conf
+Reversed (or previously applied) patch detected!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file target.conf.rej
+(종료 코드 1)
+$ cat target.conf.rej 2>/dev/null | head -3; rm -f target.conf.rej target.conf.orig
+--- app.conf.orig	2026-10-06 09:00:00.000000000 +0900
++++ app.conf	2026-10-06 09:30:00.000000000 +0900
+@@ -1,10 +1,10 @@
+(종료 코드 0)
+$ patch -N target.conf app.conf.patch
+patching file target.conf
+Reversed (or previously applied) patch detected!  Skipping patch.
+1 out of 1 hunk ignored -- saving rejects to file target.conf.rej
+(종료 코드 1)
+$ rm -f target.conf.rej; patch -t target.conf app.conf.patch
+patching file target.conf
+Reversed (or previously applied) patch detected!  Assuming -R.
+(종료 코드 0)
+$ cmp target.conf app.conf.orig && echo '-t 는 뒤집어 적용했다 → 원본으로 돌아감'
+-t 는 뒤집어 적용했다 → 원본으로 돌아감
+(종료 코드 0)
+$ patch -f target.conf app.conf.patch
+patching file target.conf
+Hunk #1 FAILED at 1.
+1 out of 1 hunk FAILED -- saving rejects to file target.conf.rej
+(종료 코드 1)
+$ ls target.conf*; rm -f target.conf.rej target.conf.orig
+target.conf
+target.conf.orig
+target.conf.rej
+(종료 코드 0)
+
+===== 18. 대상이 조금 달라졌을 때 — offset, fuzz, -F, .rej, --merge
+$ patch shifted.conf app.conf.patch
+patching file shifted.conf
+Hunk #1 succeeded at 3 (offset 2 lines).
+(종료 코드 0)
+$ ls shifted.conf*
+shifted.conf
+shifted.conf.orig
+(종료 코드 0)
+$ patch fuzzy.conf app.conf.patch
+patching file fuzzy.conf
+Hunk #1 succeeded at 1 with fuzz 1.
+(종료 코드 0)
+$ ls fuzzy.conf*
+fuzzy.conf
+fuzzy.conf.orig
+(종료 코드 0)
+$ patch -F0 fuzzy2.conf app.conf.patch
+patching file fuzzy2.conf
+Hunk #1 FAILED at 1.
+1 out of 1 hunk FAILED -- saving rejects to file fuzzy2.conf.rej
+(종료 코드 1)
+$ ls fuzzy2.conf*
+fuzzy2.conf
+fuzzy2.conf.orig
+fuzzy2.conf.rej
+(종료 코드 0)
+$ patch inner.conf app.conf.patch
+patching file inner.conf
+Hunk #1 FAILED at 1.
+1 out of 1 hunk FAILED -- saving rejects to file inner.conf.rej
+(종료 코드 1)
+$ patch --merge inner2.conf app.conf.patch
+patching file inner2.conf
+Hunk #1 merged at 3, NOT MERGED at 6-12,15.
+(종료 코드 1)
+$ cat inner2.conf
+# app server config
+listen_port=8080
+worker_count=8
+db.host=10.0.0.1
+<<<<<<<
+db.port=6432
+db.pool_size=20
+=======
+db.port=5432
+db.pool_size=40
+>>>>>>>
+cache.enabled=true
+cache.ttl_sec=300
+log.level=debug
+log.dir=/var/log/app
+(종료 코드 0)
+$ patch -r conflict.rej --reject-format=context conflict.conf app.conf.patch
+patching file conflict.conf
+Hunk #1 FAILED at 1.
+1 out of 1 hunk FAILED -- saving rejects to file conflict.rej
+(종료 코드 1)
+$ cat conflict.rej
+*** app.conf.orig	2026-10-06 09:00:00.000000000 +0900
+--- app.conf	2026-10-06 09:30:00.000000000 +0900
+***************
+*** 1,10 ****
+  # app server config
+  listen_port=8080
+! worker_count=4
+  db.host=10.0.0.1
+  db.port=5432
+! db.pool_size=20
+  cache.enabled=true
+  cache.ttl_sec=300
+! log.level=info
+  log.dir=/var/log/app
+--- 1,10 ----
+  # app server config
+  listen_port=8080
+! worker_count=8
+  db.host=10.0.0.1
+  db.port=5432
+! db.pool_size=40
+  cache.enabled=true
+  cache.ttl_sec=300
+! log.level=debug
+  log.dir=/var/log/app
+(종료 코드 0)
+
+===== 19. 결과를 다른 파일로 -o, 백업 -b -z -V
+$ patch -o out.conf app.conf.orig app.conf.patch && cmp out.conf app.conf && echo '원본은 그대로, 결과는 out.conf'
+patching file out.conf (read from app.conf.orig)
+원본은 그대로, 결과는 out.conf
+(종료 코드 0)
+$ patch -b -z .before backup.conf app.conf.patch
+patching file backup.conf
+(종료 코드 0)
+$ patch -R -b -V numbered backup.conf app.conf.patch
+patching file backup.conf
+(종료 코드 0)
+$ ls backup.conf*
+backup.conf
+backup.conf.before
+backup.conf.~1~
+(종료 코드 0)
+
+===== 20. 디렉터리 패치 -p, -d, -i, -E
+$ head -3 dir.patch
+diff -ruN conf_old/app.conf conf_new/app.conf
+--- conf_old/app.conf	2026-10-06 09:00:00.000000000 +0900
++++ conf_new/app.conf	2026-10-06 09:30:00.000000000 +0900
+(종료 코드 0)
+$ patch -d live -p0 -i ../dir.patch --dry-run
+can't find file to patch at input line 4
+Perhaps you used the wrong -p or --strip option?
+The text leading up to this was:
+--------------------------
+|diff -ruN conf_old/app.conf conf_new/app.conf
+|--- conf_old/app.conf	2026-10-06 09:00:00.000000000 +0900
+|+++ conf_new/app.conf	2026-10-06 09:30:00.000000000 +0900
+--------------------------
+File to patch: 
+Skip this patch? [y] 
+Skipping patch.
+1 out of 1 hunk ignored
+checking file conf_old/limits.conf
+The next patch would delete the file conf_new/log.conf,
+which does not exist!  Assume -R? [n] 
+Apply anyway? [n] 
+Skipping patch.
+1 out of 1 hunk ignored
+(종료 코드 1)
+$ patch -d live -p1 -i ../dir.patch
+patching file app.conf
+patching file limits.conf
+patching file log.conf
+(종료 코드 0)
+$ ls live
+app.conf
+limits.conf
+log.conf
+(종료 코드 0)
+$ patch -d live2 -p1 -E -s -i ../dir.patch
+(종료 코드 0)
+$ ls live2
+app.conf
+limits.conf
+(종료 코드 0)
+$ patch -d live2 -p1 -R --verbose -i ../dir.patch | grep -v '^|'
+Hmm...  Looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+--------------------------
+patching file app.conf
+Using Plan A...
+Hunk #1 succeeded at 1.
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+--------------------------
+patching file limits.conf
+Using Plan A...
+Hunk #1 succeeded at 1.
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+--------------------------
+patching file log.conf
+Using Plan A...
+Hunk #1 succeeded at 1.
+done
+Removing file limits.conf
+(종료 코드 0)
+$ ls live2
+app.conf
+log.conf
+(종료 코드 0)
+
+===== 21. 공백만 다른 대상 -l
+$ patch -F0 spaced.conf app.conf.patch
+patching file spaced.conf
+Hunk #1 FAILED at 1.
+1 out of 1 hunk FAILED -- saving rejects to file spaced.conf.rej
+(종료 코드 1)
+$ patch -F0 -l spaced2.conf app.conf.patch
+patching file spaced2.conf
+(종료 코드 0)

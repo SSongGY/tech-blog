@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="580" viewBox="0 0 880 580" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="580" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">통합 형식(diff -u) 덩어리 하나와 patch가 맞춰 보는 범위</text>
+  <text x="30" y="56" font-size="13" fill="#555">실습 3장의 출력 그대로다. 왼쪽 첫 글자가 줄의 종류를 정한다 (GNU diffutils 3.12, GNU patch 2.7.6)</text>
+
+  <!-- 코드 영역 -->
+  <rect x="30" y="76" width="410" height="376" rx="6" fill="#ffffff" stroke="#c8c8c0" stroke-width="1"/>
+  <!-- 첫 글자 칸(x=42)과 내용 칸(x=54)을 나눠 그린다. 공백으로 시작하는 줄도 칸이 맞는다 -->
+  <g font-family="Consolas, 'D2Coding', monospace" font-size="13">
+    <text x="42" y="100" fill="#555">--- app.conf.orig  2026-10-06 09:00:00…</text>
+    <text x="42" y="122" fill="#555">+++ app.conf       2026-10-06 09:30:00…</text>
+    <text x="42" y="144" fill="#1b4f8a" font-weight="bold">@@ -1,10 +1,10 @@</text>
+    <text x="54" y="166" fill="#333"># app server config</text>
+    <text x="54" y="188" fill="#333">listen_port=8080</text>
+    <text x="42" y="210" fill="#9d0208">-</text><text x="54" y="210" fill="#9d0208">worker_count=4</text>
+    <text x="42" y="232" fill="#2d6a4f">+</text><text x="54" y="232" fill="#2d6a4f">worker_count=8</text>
+    <text x="54" y="254" fill="#333">db.host=10.0.0.1</text>
+    <text x="54" y="276" fill="#333">db.port=5432</text>
+    <text x="42" y="298" fill="#9d0208">-</text><text x="54" y="298" fill="#9d0208">db.pool_size=20</text>
+    <text x="42" y="320" fill="#2d6a4f">+</text><text x="54" y="320" fill="#2d6a4f">db.pool_size=40</text>
+    <text x="54" y="342" fill="#333">cache.enabled=true</text>
+    <text x="54" y="364" fill="#333">cache.ttl_sec=300</text>
+    <text x="42" y="386" fill="#9d0208">-</text><text x="54" y="386" fill="#9d0208">log.level=info</text>
+    <text x="42" y="408" fill="#2d6a4f">+</text><text x="54" y="408" fill="#2d6a4f">log.level=debug</text>
+    <text x="54" y="430" fill="#333">log.dir=/var/log/app</text>
+  </g>
+
+  <!-- 머리줄 -->
+  <path d="M 450 88 L 458 88 L 458 128 L 450 128" fill="none" stroke="#8a8a84" stroke-width="1.5"/>
+  <text x="470" y="104" font-size="13" fill="#1b1b1b">파일 머리줄 — 원본(---)과 새 파일(+++)의</text>
+  <text x="470" y="122" font-size="13" fill="#1b1b1b">이름과 수정 시각</text>
+
+  <!-- @@ -->
+  <line x1="450" y1="140" x2="462" y2="140" stroke="#1b4f8a" stroke-width="1.5"/>
+  <text x="470" y="146" font-size="13" fill="#1b4f8a">원본 1행부터 10줄 → 새 파일 1행부터 10줄</text>
+
+  <!-- 앞 문맥 -->
+  <rect x="470" y="158" width="380" height="40" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <path d="M 450 154 L 458 154 L 458 194 L 450 194" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="482" y="175" font-size="13" font-weight="bold" fill="#2d6a4f">앞 문맥 2줄</text>
+  <text x="482" y="192" font-size="13" fill="#1b1b1b">fuzz 1이면 맨 앞 1줄을 빼고 맞춘다 (18장 fuzzy)</text>
+
+  <!-- 안쪽 문맥 -->
+  <rect x="470" y="264" width="380" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <path d="M 450 242 L 458 242 L 458 370 L 450 370" fill="none" stroke="#b45309" stroke-width="1.5"/>
+  <text x="482" y="284" font-size="13" font-weight="bold" fill="#b45309">바뀐 줄 사이의 문맥</text>
+  <text x="482" y="302" font-size="13" fill="#1b1b1b">fuzz로 건너뛰지 못한다. 한 줄만 달라도</text>
+  <text x="482" y="318" font-size="13" fill="#1b1b1b">덩어리 전체가 거부된다 (18장 inner)</text>
+
+  <!-- 뒤 문맥 -->
+  <rect x="470" y="410" width="380" height="40" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <path d="M 450 418 L 458 418 L 458 436 L 450 436" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="482" y="427" font-size="13" font-weight="bold" fill="#2d6a4f">뒤 문맥 1줄</text>
+  <text x="482" y="444" font-size="13" fill="#1b1b1b">fuzz 1이면 이 줄도 뺀다</text>
+
+  <!-- 범례 -->
+  <text x="30" y="482" font-size="13" fill="#333">첫 글자:</text>
+  <text x="96" y="482" font-size="13" fill="#333">공백 = 두 파일에 같은 줄</text>
+  <text x="270" y="482" font-size="13" fill="#9d0208">- = 원본에서 지운 줄</text>
+  <text x="420" y="482" font-size="13" fill="#2d6a4f">+ = 새 파일에 넣은 줄</text>
+
+  <line x1="30" y1="500" x2="850" y2="500" stroke="#d0d0c8" stroke-width="1"/>
+  <text x="30" y="524" font-size="13" fill="#333">patch는 먼저 @@의 줄 번호 자리에서 문맥 전체가 맞는 곳을 찾고, 없으면 앞뒤로 훑는다(offset).</text>
+  <text x="30" y="546" font-size="13" fill="#333">그래도 없으면 앞뒤 문맥을 한 줄씩 빼고 다시 찾는다(fuzz, 기본 최대 2). 정확히 맞지 않았으면 .orig 백업을 남긴다.</text>
+</svg>

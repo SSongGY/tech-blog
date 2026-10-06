@@ -2840,7 +2840,7 @@ topics:
     angle: "통합 형식 읽는 법과 되돌리기. 운영 설정을 고치기 전에 남기는 습관"
     code: bash
     origin: manual
-    status: writing
+    status: done
   - id: infra-023
     title: "split과 csplit — 큰 파일 쪼개기"
     category: Infra
