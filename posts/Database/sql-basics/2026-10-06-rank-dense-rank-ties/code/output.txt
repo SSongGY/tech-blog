@@ -1,0 +1,217 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-06-rank-dense-rank-ties
+# 명령      : python rank_dense_rank_ties.py
+# 수행 시각 : 2026-10-06 12:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[exam_score]  10행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  student_id | INTEGER | PK
+  name       | TEXT    | NOT NULL
+  class_name | TEXT    | NOT NULL
+  score      | INTEGER |
+
+  student_id | name   | class_name | score
+  -----------+--------+------------+------
+           1 | 김하늘 | 1반        |    95
+           2 | 이도윤 | 1반        |    88
+           3 | 박서준 | 1반        |    88
+           4 | 최유나 | 1반        |    80
+           5 | 정민호 | 1반        |    75
+           6 | 한지우 | 2반        |    75
+           7 | 윤채원 | 2반        |    75
+           8 | 장태오 | 2반        |    70
+           9 | 오세린 | 2반        |  NULL
+          10 | 서지안 | 2반        |  NULL
+
+
+-- 1. 세 함수를 한 결과에 나란히 (전체, 점수 내림차순)
+   SELECT name, score,
+          ROW_NUMBER() OVER (ORDER BY score DESC) AS row_num,
+          RANK()       OVER (ORDER BY score DESC) AS rnk,
+          DENSE_RANK() OVER (ORDER BY score DESC) AS dense_rnk
+   FROM exam_score
+   ORDER BY score DESC, student_id
+   => name | score | row_num | rnk | dense_rnk
+      김하늘 | 95 | 1 | 1 | 1
+      이도윤 | 88 | 2 | 2 | 2
+      박서준 | 88 | 3 | 2 | 2
+      최유나 | 80 | 4 | 4 | 3
+      정민호 | 75 | 5 | 5 | 4
+      한지우 | 75 | 6 | 5 | 4
+      윤채원 | 75 | 7 | 5 | 4
+      장태오 | 70 | 8 | 8 | 5
+      오세린 | None | 9 | 9 | 6
+      서지안 | None | 10 | 9 | 6
+   (10행)
+
+-- 2. 상위 3등까지 — ROW_NUMBER() <= 3
+   SELECT name, score, pos
+   FROM (SELECT name, score,
+                ROW_NUMBER() OVER (ORDER BY score DESC) AS pos
+         FROM exam_score)
+   WHERE pos <= 3
+   => name | score | pos
+      김하늘 | 95 | 1
+      이도윤 | 88 | 2
+      박서준 | 88 | 3
+   (3행)
+
+-- 2. 상위 3등까지 — RANK() <= 3
+   SELECT name, score, pos
+   FROM (SELECT name, score,
+                RANK() OVER (ORDER BY score DESC) AS pos
+         FROM exam_score)
+   WHERE pos <= 3
+   => name | score | pos
+      김하늘 | 95 | 1
+      이도윤 | 88 | 2
+      박서준 | 88 | 2
+   (3행)
+
+-- 2. 상위 3등까지 — DENSE_RANK() <= 3
+   SELECT name, score, pos
+   FROM (SELECT name, score,
+                DENSE_RANK() OVER (ORDER BY score DESC) AS pos
+         FROM exam_score)
+   WHERE pos <= 3
+   => name | score | pos
+      김하늘 | 95 | 1
+      이도윤 | 88 | 2
+      박서준 | 88 | 2
+      최유나 | 80 | 3
+   (4행)
+
+-- 3. 반별로 따로 매기기 — PARTITION BY class_name
+   SELECT class_name, name, score,
+          RANK()       OVER (PARTITION BY class_name ORDER BY score DESC) AS rnk,
+          DENSE_RANK() OVER (PARTITION BY class_name ORDER BY score DESC) AS dense_rnk
+   FROM exam_score
+   ORDER BY class_name, score DESC, student_id
+   => class_name | name | score | rnk | dense_rnk
+      1반 | 김하늘 | 95 | 1 | 1
+      1반 | 이도윤 | 88 | 2 | 2
+      1반 | 박서준 | 88 | 2 | 2
+      1반 | 최유나 | 80 | 4 | 3
+      1반 | 정민호 | 75 | 5 | 4
+      2반 | 한지우 | 75 | 1 | 1
+      2반 | 윤채원 | 75 | 1 | 1
+      2반 | 장태오 | 70 | 3 | 2
+      2반 | 오세린 | None | 4 | 3
+      2반 | 서지안 | None | 4 | 3
+   (10행)
+
+-- 4. 마지막 등수와 개수 비교 (NULL 제외)
+   SELECT MAX(rnk)               AS max_rank,
+          MAX(dense_rnk)         AS max_dense_rank,
+          COUNT(*)               AS students,
+          COUNT(DISTINCT score)  AS distinct_scores
+   FROM (SELECT score,
+                RANK()       OVER (ORDER BY score DESC) AS rnk,
+                DENSE_RANK() OVER (ORDER BY score DESC) AS dense_rnk
+         FROM exam_score
+         WHERE score IS NOT NULL)
+   => max_rank | max_dense_rank | students | distinct_scores
+      8 | 5 | 8 | 5
+   (1행)
+
+-- 5. 오름차순이면 NULL 은 어디로 가는가
+   SELECT name, score,
+          RANK() OVER (ORDER BY score) AS rnk
+   FROM exam_score
+   ORDER BY score, student_id
+   => name | score | rnk
+      오세린 | None | 1
+      서지안 | None | 1
+      장태오 | 70 | 3
+      정민호 | 75 | 4
+      한지우 | 75 | 4
+      윤채원 | 75 | 4
+      최유나 | 80 | 7
+      이도윤 | 88 | 8
+      박서준 | 88 | 8
+      김하늘 | 95 | 10
+   (10행)
+
+-- 6. NULLS LAST 로 결시자를 맨 뒤로
+   SELECT name, score,
+          RANK() OVER (ORDER BY score DESC NULLS LAST) AS rnk
+   FROM exam_score
+   WHERE class_name = '2반'
+   ORDER BY score DESC NULLS LAST, student_id
+   => name | score | rnk
+      한지우 | 75 | 1
+      윤채원 | 75 | 1
+      장태오 | 70 | 3
+      오세린 | None | 4
+      서지안 | None | 4
+   (5행)
+
+-- 7. OVER 안에 ORDER BY 가 없으면
+   SELECT name, score,
+          RANK()       OVER () AS rnk,
+          DENSE_RANK() OVER () AS dense_rnk
+   FROM exam_score
+   WHERE class_name = '1반'
+   => name | score | rnk | dense_rnk
+      김하늘 | 95 | 1 | 1
+      이도윤 | 88 | 1 | 1
+      박서준 | 88 | 1 | 1
+      최유나 | 80 | 1 | 1
+      정민호 | 75 | 1 | 1
+   (5행)
+
+-- 8. 동점 처리 기준을 하나 더 주면 — ORDER BY score DESC, name
+   SELECT name, score,
+          RANK()       OVER (ORDER BY score DESC, name) AS rnk,
+          DENSE_RANK() OVER (ORDER BY score DESC, name) AS dense_rnk
+   FROM exam_score
+   WHERE score IN (88, 75)
+   ORDER BY score DESC, name
+   => name | score | rnk | dense_rnk
+      박서준 | 88 | 1 | 1
+      이도윤 | 88 | 2 | 2
+      윤채원 | 75 | 3 | 3
+      정민호 | 75 | 4 | 4
+      한지우 | 75 | 5 | 5
+   (5행)
+
+-- 9. 괄호 안에 인자를 주면
+   SELECT name, RANK(score) OVER (ORDER BY score DESC) AS rnk
+   FROM exam_score
+   에러: wrong number of arguments to function RANK()
+
+-- 10. 같은 창을 WINDOW 절로 한 번만 정의
+   SELECT name, score,
+          RANK()       OVER w AS rnk,
+          DENSE_RANK() OVER w AS dense_rnk
+   FROM exam_score
+   WHERE score IS NOT NULL
+   WINDOW w AS (ORDER BY score DESC)
+   ORDER BY score DESC, student_id
+   => name | score | rnk | dense_rnk
+      김하늘 | 95 | 1 | 1
+      이도윤 | 88 | 2 | 2
+      박서준 | 88 | 2 | 2
+      최유나 | 80 | 4 | 3
+      정민호 | 75 | 5 | 4
+      한지우 | 75 | 5 | 4
+      윤채원 | 75 | 5 | 4
+      장태오 | 70 | 8 | 5
+   (8행)
