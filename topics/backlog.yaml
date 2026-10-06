@@ -3786,7 +3786,7 @@ topics:
     angle: "정상만 학습한 인코더-디코더가 이상을 잘 복원하지 못하는 이유, 재구성 오차·재구성 확률(VAE), 학습 데이터 오염 문제, 예측 기반과의 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-146
     title: "Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리"
     category: PE
@@ -3797,7 +3797,7 @@ topics:
     angle: "무작위 분할 트리에서 이상치가 얕은 깊이에 고립되는 이유, 이상 점수 식, 거리·밀도 기반(LOF)과의 비교, 시계열 적용 시 창 구성"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-147
     title: "시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유"
     category: PE

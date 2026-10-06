@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="arg" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">오토인코더 기반 이상 탐지 — 학습 단계와 탐지 단계</text>
+
+  <!-- 학습 단계 -->
+  <text x="30" y="66" font-size="14" font-weight="bold" fill="#2d6a4f">① 학습 단계 — 정상 데이터만</text>
+
+  <rect x="30" y="80" width="130" height="64" fill="#eef7f1" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="95" y="107" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">정상 데이터</text>
+  <text x="95" y="128" text-anchor="middle" font-size="13" fill="#2d6a4f">x (d차원)</text>
+
+  <line x1="160" y1="112" x2="196" y2="112" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- encoder trapezoid -->
+  <polygon points="200,80 330,96 330,128 200,144" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6"/>
+  <text x="262" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">인코더</text>
+  <text x="262" y="128" text-anchor="middle" font-size="13" fill="#4a5568">z = f(x)</text>
+
+  <rect x="340" y="88" width="110" height="48" fill="#fff7ed" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="395" y="107" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">병목 z</text>
+  <text x="395" y="127" text-anchor="middle" font-size="13" fill="#b45309">k차원, k &lt; d</text>
+
+  <!-- decoder trapezoid -->
+  <polygon points="460,96 590,80 590,144 460,128" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6"/>
+  <text x="528" y="108" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">디코더</text>
+  <text x="528" y="128" text-anchor="middle" font-size="13" fill="#4a5568">x̂ = g(z)</text>
+
+  <line x1="590" y1="112" x2="626" y2="112" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="630" y="80" width="220" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="740" y="107" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">손실 L(x, x̂) 최소화</text>
+  <text x="740" y="128" text-anchor="middle" font-size="13" fill="#4a5568">예: ‖x − x̂‖² → 가중치 갱신</text>
+
+  <path d="M740,144 L740,170 L262,170 L262,148" fill="none" stroke="#4a5568" stroke-width="1.4" stroke-dasharray="5,4" marker-end="url(#ar)"/>
+  <text x="500" y="188" text-anchor="middle" font-size="13" fill="#4a5568">역전파 — 정상 패턴만 잘 복원하도록 맞춰진다</text>
+
+  <!-- 구분선 -->
+  <line x1="30" y1="212" x2="850" y2="212" stroke="#cbd5e0" stroke-width="1"/>
+
+  <!-- 탐지 단계 -->
+  <text x="30" y="242" font-size="14" font-weight="bold" fill="#1b1b1b">② 탐지 단계 — 새 관측</text>
+
+  <rect x="30" y="256" width="130" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="95" y="283" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">새 관측 x</text>
+  <text x="95" y="304" text-anchor="middle" font-size="13" fill="#4a5568">레이블 없음</text>
+
+  <line x1="160" y1="288" x2="196" y2="288" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="200" y="256" width="250" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="325" y="283" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">학습된 f · g 로 복원</text>
+  <text x="325" y="304" text-anchor="middle" font-size="13" fill="#4a5568">x̂ = g(f(x))</text>
+
+  <line x1="450" y1="288" x2="486" y2="288" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="490" y="256" width="170" height="64" fill="#fff7ed" stroke="#b45309" stroke-width="2" rx="4"/>
+  <text x="575" y="276" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">이상 점수</text>
+  <text x="575" y="296" text-anchor="middle" font-size="13" fill="#b45309">재구성 오차 ‖x − x̂‖²</text>
+  <text x="575" y="315" text-anchor="middle" font-size="13" fill="#b45309">또는 재구성 확률(VAE)</text>
+
+  <line x1="660" y1="288" x2="696" y2="288" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="700" y="256" width="150" height="64" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="775" y="283" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">임계값 τ 비교</text>
+  <text x="775" y="304" text-anchor="middle" font-size="13" fill="#4a5568">정상 검증 오차로 정함</text>
+
+  <line x1="745" y1="320" x2="680" y2="356" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arg)"/>
+  <line x1="805" y1="320" x2="810" y2="356" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="680" y="378" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">오차 ≤ τ : 정상</text>
+  <text x="850" y="378" text-anchor="end" font-size="14" font-weight="bold" fill="#9d0208">오차 &gt; τ : 이상</text>
+
+  <text x="30" y="372" font-size="13" fill="#4a5568">정상만 배운 병목은 정상의 구조만 담는다.</text>
+  <text x="30" y="392" font-size="13" fill="#4a5568">그 구조를 벗어난 입력은 복원이 어긋나 오차가 커진다.</text>
+  <text x="30" y="412" font-size="13" fill="#9d0208">학습 데이터에 이상이 섞이면 그 이상도 '정상 구조'로 배운다.</text>
+</svg>

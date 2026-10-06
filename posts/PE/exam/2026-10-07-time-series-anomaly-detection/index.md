@@ -212,6 +212,10 @@ Isolation Forest가 앞섰다. 딥러닝은 다변량·패턴 단위 이상처�
 성능은 모델보다 **임계값 설계, 조정 없는 평가, 분포 변화에 맞춘 재학습**에서 갈리므로,
 탐지를 모델이 아니라 수집부터 피드백까지 이어지는 파이프라인으로 설계해야 한다.
 
+> 개념 정리: [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](../../data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md)
+>
+> 개념 정리: [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](../../data-analysis/2026-10-07-isolation-forest-path-length/index.md)
+
 끝
 
 ## 답안 작성 메모
