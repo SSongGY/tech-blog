@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **190편** · 갱신 2026-10-06
+총 **194편** · 갱신 2026-10-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 32편
+## DB문법 (basics) — 33편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-06 | [자료형 — SQLite의 동적 타입](posts/Database/sql-basics/2026-10-06-sqlite-dynamic-typing-affinity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-03 | [윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기](posts/Database/sql-basics/2026-10-03-window-function-row-number-top-per-group/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-03 | [NOT NULL과 DEFAULT — 값이 없을 때](posts/Database/sql-basics/2026-10-03-not-null-default-empty-string/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-03 | [인덱스 만들기 — CREATE INDEX 기본](posts/Database/sql-basics/2026-10-03-create-index-write-cost-storage/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -58,10 +59,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 74편
+## 기술사 (pe) — 75편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-06 | [트랜잭션 ACID와 2단계 커밋(2PC)](posts/PE/database/2026-10-06-two-phase-commit-blocking-window/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Bernstein·Hadzilacos·Goodman, Concurrency Control and Recovery in Database Systems 7장 (1987), X/Open XA Specification (1991) | 실행 검증 |
 | 2026-10-06 | [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](posts/PE/data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md) | 중급 | Python 3.13.5, Statistics Canada, Survey Methods and Practices 12-587-X (2003), Horvitz & Thompson, JASA 47(260) (1952) | 실행 검증 |
 | 2026-10-06 | [데이터 누수 — 학습·평가 분할에서 묶음·시간 단위를 지키는 이유](posts/PE/data-analysis/2026-10-06-data-leakage-group-time-split/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 User Guide, Kaufman et al., ACM TKDD 6(4) (2012), Kapoor & Narayanan, arXiv:2207.07048 (2022) | 실행 검증 |
 | 2026-10-05 | [인공지능 기본법과 EU AI법 — 위험 기반 규제 구조 비교](posts/PE/it-management/2026-10-05-korea-ai-basic-act-vs-eu-ai-act/index.md) | 중급 | 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정), 인공지능 기본법 시행령 대통령령 제36580호, Regulation (EU) 2024/1689 (AI Act), Regulation (EU) 2026/1744 (Digital Omnibus on AI, 2026-07-27 발효) | 문서 근거 |
@@ -202,10 +204,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 22편
+## 주식·재무 (finance) — 24편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-06 | [유상증자 — 지분이 희석된다는 말의 뜻](posts/Finance/market/2026-10-06-rights-issue-dilution/index.md) | 입문 | Python 3.13.5, 상법 제418조(2012-04-15 시행), 자본시장법 제165조의6(2013-08-29 시행), 증권의 발행 및 공시 등에 관한 규정 제5-18조, K-IFRS 제1033호 주당이익 | 실행 검증 |
+| 2026-10-06 | [호가와 체결 — 주문이 실제로 어떻게 맺어지는가](posts/Finance/market/2026-10-06-order-book-matching/index.md) | 입문 | Python 3.13.5, 유가증권시장 업무규정 제22조, 유가증권시장 업무규정 제21조 호가가격단위 | 실행 검증 |
 | 2026-10-04 | [액면분할과 무상증자 — 주식 수가 늘 때](posts/Finance/market/2026-10-04-stock-split-and-bonus-issue/index.md) | 입문 | Python 3.13.5, 상법 제329조의2(2014-05-20 시행), 상법 제461조(2020-12-29 개정), K-IFRS 제1033호 주당이익 | 실행 검증 |
 | 2026-10-04 | [시가총액과 주가 — 비싼 주식과 비싼 회사](posts/Finance/market/2026-10-04-market-cap-vs-share-price/index.md) | 입문 | Python 3.13.5, K-IFRS 제1033호 주당이익, 상법 제329조(2012-04-15 시행) | 실행 검증 |
 | 2026-10-03 | [PBR과 청산가치 — 1배 아래가 뜻하는 것](posts/Finance/valuation/2026-10-03-pbr-below-book-value/index.md) | 중급 | Python 3.13.5, K-IFRS 제1036호 자산손상, K-IFRS 제1002호 재고자산 | 실행 검증 |

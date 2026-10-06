@@ -1904,7 +1904,7 @@ topics:
     angle: "2PC가 막지 못하는 블로킹 구간이 어디인지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-048
     title: "분산 데이터베이스 — CAP 정리와 BASE"
     category: PE
@@ -2840,7 +2840,7 @@ topics:
     angle: "통합 형식 읽는 법과 되돌리기. 운영 설정을 고치기 전에 남기는 습관"
     code: bash
     origin: manual
-    status: todo
+    status: writing
   - id: infra-023
     title: "split과 csplit — 큰 파일 쪼개기"
     category: Infra
