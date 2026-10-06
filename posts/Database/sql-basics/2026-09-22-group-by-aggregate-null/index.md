@@ -14,6 +14,11 @@ verified: true
 topic_id: bas-006
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`group-by`)
+> - [GROUP BY 여러 컬럼 — 묶는 단위가 달라질 때](../2026-10-06-group-by-multiple-columns/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+<!-- related:end -->
+
 ## 들어가며
 
 월말에 팀별 인원수와 성과급 평균을 표로 정리해 달라는 요청이 온다. 직원 목록을 엑셀로
