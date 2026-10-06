@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <!-- 위: ESCAPE 없음 -->
+  <text x="30" y="36" font-size="16" font-weight="bold" fill="#1f2937">패턴 'a_b%' — 밑줄은 아무 글자 1개</text>
+
+  <text x="30" y="82" fill="#374151">패턴</text>
+  <rect x="120" y="60" width="90" height="36" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="165" y="83" text-anchor="middle" font-family="Consolas,monospace" font-size="16">a</text>
+  <rect x="220" y="60" width="90" height="36" rx="4" fill="#fef3c7" stroke="#b45309"/>
+  <text x="265" y="83" text-anchor="middle" font-family="Consolas,monospace" font-size="16">_</text>
+  <rect x="320" y="60" width="90" height="36" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="365" y="83" text-anchor="middle" font-family="Consolas,monospace" font-size="16">b</text>
+  <rect x="420" y="60" width="200" height="36" rx="4" fill="#fef3c7" stroke="#b45309"/>
+  <text x="520" y="83" text-anchor="middle" font-family="Consolas,monospace" font-size="16">%</text>
+
+  <text x="165" y="116" text-anchor="middle" font-size="13" fill="#4b5563">a 또는 A</text>
+  <text x="265" y="116" text-anchor="middle" font-size="13" fill="#b45309">아무 글자 1개</text>
+  <text x="365" y="116" text-anchor="middle" font-size="13" fill="#4b5563">b 또는 B</text>
+  <text x="520" y="116" text-anchor="middle" font-size="13" fill="#b45309">0글자 이상 아무거나</text>
+
+  <text x="30" y="160" fill="#374151">A_B 케이블</text>
+  <text x="165" y="160" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">A</text>
+  <text x="265" y="160" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">_</text>
+  <text x="365" y="160" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">B</text>
+  <text x="520" y="160" text-anchor="middle" fill="#2d6a4f">" 케이블"</text>
+  <text x="700" y="160" font-weight="bold" fill="#2d6a4f">일치</text>
+
+  <text x="30" y="194" fill="#374151">AxB 어댑터</text>
+  <text x="165" y="194" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">A</text>
+  <text x="265" y="194" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#b45309">x</text>
+  <text x="365" y="194" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">B</text>
+  <text x="520" y="194" text-anchor="middle" fill="#2d6a4f">" 어댑터"</text>
+  <text x="700" y="194" font-weight="bold" fill="#b45309">일치 (원치 않음)</text>
+
+  <line x1="30" y1="232" x2="850" y2="232" stroke="#d1d5db"/>
+
+  <!-- 아래: ESCAPE '!' -->
+  <text x="30" y="270" font-size="16" font-weight="bold" fill="#1f2937">패턴 'a!_b%' ESCAPE '!' — 밑줄을 글자로</text>
+
+  <text x="30" y="316" fill="#374151">패턴</text>
+  <rect x="120" y="294" width="90" height="36" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="165" y="317" text-anchor="middle" font-family="Consolas,monospace" font-size="16">a</text>
+  <rect x="220" y="294" width="90" height="36" rx="4" fill="#e8f5ee" stroke="#2d6a4f"/>
+  <text x="265" y="317" text-anchor="middle" font-family="Consolas,monospace" font-size="16">!_</text>
+  <rect x="320" y="294" width="90" height="36" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="365" y="317" text-anchor="middle" font-family="Consolas,monospace" font-size="16">b</text>
+  <rect x="420" y="294" width="200" height="36" rx="4" fill="#fef3c7" stroke="#b45309"/>
+  <text x="520" y="317" text-anchor="middle" font-family="Consolas,monospace" font-size="16">%</text>
+
+  <text x="165" y="350" text-anchor="middle" font-size="13" fill="#4b5563">a 또는 A</text>
+  <text x="265" y="350" text-anchor="middle" font-size="13" fill="#2d6a4f">글자 _ 하나만</text>
+  <text x="365" y="350" text-anchor="middle" font-size="13" fill="#4b5563">b 또는 B</text>
+  <text x="520" y="350" text-anchor="middle" font-size="13" fill="#b45309">0글자 이상 아무거나</text>
+
+  <text x="30" y="394" fill="#374151">A_B 케이블</text>
+  <text x="165" y="394" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">A</text>
+  <text x="265" y="394" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">_</text>
+  <text x="365" y="394" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">B</text>
+  <text x="520" y="394" text-anchor="middle" fill="#2d6a4f">" 케이블"</text>
+  <text x="700" y="394" font-weight="bold" fill="#2d6a4f">일치</text>
+
+  <text x="30" y="428" fill="#374151">AxB 어댑터</text>
+  <text x="165" y="428" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#2d6a4f">A</text>
+  <text x="265" y="428" text-anchor="middle" font-family="Consolas,monospace" font-size="16" fill="#9d0208">x</text>
+  <text x="365" y="428" text-anchor="middle" fill="#9d0208">여기서 멈춤</text>
+  <text x="700" y="428" font-weight="bold" fill="#9d0208">불일치</text>
+
+  <text x="30" y="480" font-size="13" fill="#4b5563">이스케이프 문자 뒤의 %, _, 이스케이프 문자 자신은 그 글자 하나와만 맞는다.</text>
+  <text x="30" y="502" font-size="13" fill="#4b5563">이스케이프 문자는 정확히 한 글자여야 한다 — 두 글자면 에러 (실습 13번).</text>
+</svg>

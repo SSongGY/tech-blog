@@ -1,0 +1,193 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-06-sql-like-wildcard-escape
+# 명령      : python like_wildcards.py
+# 수행 시각 : 2026-10-06 09:15 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  14행
+  컬럼         | 타입    | 제약
+  -------------+---------+---------
+  product_id   | INTEGER | PK
+  product_name | TEXT    |
+  sku          | INTEGER | NOT NULL
+
+  product_id | product_name   | sku
+  -----------+----------------+-----
+           1 | Apple          | 1001
+           2 | apple pie      | 1002
+           3 | ABC 노트       | 1003
+           4 | ab             | 2001
+           5 | A_B 케이블     | 2002
+           6 | 사과           | 2003
+           7 | 사과즙 1L      | 3001
+           8 | 100% 면 티셔츠 | 3002
+           9 | 1000원 균일    | 3003
+          10 | 50_off 쿠폰    | 4001
+          11 | coffee 원두    | 4002
+          12 | AxB 어댑터     | 4003
+  … 2행 더 있음
+
+[인덱스]
+  이름            | 대상 표 | 정의
+  ----------------+---------+-------------------------------------------------------
+  ix_product_name | product | CREATE INDEX ix_product_name ON product (product_name)
+
+
+==== 1부. % 와 _ 의 뜻 ====
+
+-- 1. 'a%' — a 로 시작
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'a%'
+      3 | ABC 노트
+      5 | A_B 케이블
+      1 | Apple
+      12 | AxB 어댑터
+      4 | ab
+      2 | apple pie
+   (6행)
+
+-- 2. '%pie' — pie 로 끝남
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '%pie'
+      2 | apple pie
+   (1행)
+
+-- 3. '%과%' — 과 가 어디든 들어 있음
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '%과%'
+      6 | 사과
+      7 | 사과즙 1L
+   (2행)
+
+-- 4. 'ab' — 와일드카드 없음 = 같은 글자인지 비교
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'ab'
+      4 | ab
+   (1행)
+
+-- 5. 'a_' — a 다음에 정확히 한 글자
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'a_'
+      4 | ab
+   (1행)
+
+-- 6. '사_' — 한글도 한 글자로 센다
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '사_'
+      6 | 사과
+   (1행)
+
+-- 7. '사__' — 밑줄 둘은 정확히 두 글자
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '사__'
+   (0행)
+
+==== 2부. 글자 그대로의 % 와 _ ====
+
+-- 8. '100%' 를 찾으려고 '%100%%'
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '%100%%'
+      8 | 100% 면 티셔츠
+      9 | 1000원 균일
+   (2행)
+
+-- 9. ESCAPE '!' 로 % 를 글자로
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '%100!%%' ESCAPE '!'
+      8 | 100% 면 티셔츠
+   (1행)
+
+-- 10. '_off' 를 찾으려고 '%_off%'
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '%_off%'
+      10 | 50_off 쿠폰
+      11 | coffee 원두
+   (2행)
+
+-- 10-1. ESCAPE 로 _ 를 글자로
+   SELECT product_id, product_name FROM product WHERE product_name LIKE '%!_off%' ESCAPE '!'
+      10 | 50_off 쿠폰
+   (1행)
+
+-- 11. 'A_B' 를 찾으려고 'a_b%' (밑줄이 아무 글자와 맞는지)
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'a_b%'
+      5 | A_B 케이블
+      12 | AxB 어댑터
+   (2행)
+
+-- 12. ESCAPE 로 _ 를 글자로
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'a!_b%' ESCAPE '!'
+      5 | A_B 케이블
+   (1행)
+
+-- 13. ESCAPE 문자를 두 글자로 주면
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'a!_b%' ESCAPE '!!'
+   에러: ESCAPE expression must be a single character
+
+==== 3부. 대소문자·NULL·숫자 ====
+
+-- 14. 대소문자 — ASCII 와 비 ASCII
+   SELECT 'a' LIKE 'A', 'Æ' LIKE 'æ', '가' LIKE '가'
+      1 | 0 | 1
+   (1행)
+
+-- 15. 'æ%' 로 Æble 을 찾으면
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'æ%'
+   (0행)
+
+-- 16. NULL 과 빈 문자열에 '%'
+   SELECT NULL LIKE '%', '' LIKE '%', 'x' LIKE NULL
+      None | 1 | None
+   (1행)
+
+-- 17. '%' 는 모든 행인가 — 14행 중 몇 행?
+   SELECT COUNT(*) FROM product WHERE product_name LIKE '%'
+      13
+   (1행)
+
+-- 18. 뒤 공백은 그대로 비교된다
+   SELECT 'Apple ' LIKE 'Apple', 'Apple ' LIKE 'Apple%'
+      0 | 1
+   (1행)
+
+-- 19. INTEGER 컬럼 sku 에 LIKE '100%'
+   SELECT product_id, sku, typeof(sku) FROM product WHERE sku LIKE '100%'
+      1 | 1001 | integer
+      2 | 1002 | integer
+      3 | 1003 | integer
+   (3행)
+
+-- 20. NOT LIKE 와 NULL 행
+   SELECT COUNT(*) FROM product WHERE product_name NOT LIKE 'a%'
+      7
+   (1행)
+
+==== 4부. 와일드카드 위치와 실행계획 ====
+
+-- 21. LIKE 'a%' (기본 설정)
+   SELECT product_id, product_name FROM product WHERE product_name LIKE 'a%'
+   QUERY PLAN
+   `--SCAN product USING COVERING INDEX ix_product_name
+
+-- 22. GLOB 'A*' — 대소문자를 가리는 앞자리 고정
+   SELECT product_id, product_name FROM product WHERE product_name GLOB 'A*'
+   QUERY PLAN
+   `--SEARCH product USING COVERING INDEX ix_product_name (product_name>? AND product_name<?)
+
+-- 23. GLOB '*e' — 앞자리가 와일드카드
+   SELECT product_id, product_name FROM product WHERE product_name GLOB '*e'
+   QUERY PLAN
+   `--SCAN product USING COVERING INDEX ix_product_name
+
+-- 24. GLOB 'A*' 결과 — 대소문자를 가린다
+   SELECT product_id, product_name FROM product WHERE product_name GLOB 'A*'
+      3 | ABC 노트
+      5 | A_B 케이블
+      1 | Apple
+      12 | AxB 어댑터
+   (4행)

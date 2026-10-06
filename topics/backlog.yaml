@@ -2455,7 +2455,7 @@ topics:
     angle: "앞에 %를 붙이면 인덱스를 못 탄다는 것을 EXPLAIN QUERY PLAN으로 확인하고, 이스케이프가 필요한 경우까지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-034
     title: "BETWEEN과 IN — 범위와 목록을 쓰는 법"
     category: Database
