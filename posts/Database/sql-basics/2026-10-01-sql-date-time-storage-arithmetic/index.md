@@ -14,6 +14,11 @@ verified: true
 topic_id: bas-024
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`datetime-types`)
+> - [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](../../tibero/2026-10-07-tibero7-date-timestamp-types/index.md) — Tibero 7
+<!-- related:end -->
+
 ## 들어가며
 
 쇼핑몰 주문 표에 주문 시각 컬럼을 만들면서 타입을 고민하다가, 화면에서 받은 글자를 그대로 넣으면 되겠다 싶어 `TEXT`로 만든다.
