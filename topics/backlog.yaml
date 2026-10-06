@@ -3467,7 +3467,7 @@ topics:
     angle: "기존 주주의 지분율과 주당가치가 얼마나 줄어드는지. 할인율과 발행 규모를 바꿔 가며"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-024
     title: "호가와 체결 — 주문이 실제로 어떻게 맺어지는가"
     category: Finance
