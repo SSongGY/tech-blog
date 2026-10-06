@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">되사는 가격별 손익 — 1,000주, 10,000원 기준 (공매도는 30일 수수료 포함)</text>
+
+  <!-- 격자: x 0~30,000원 → 80~800px, y 0원 → 240px, 100만 원 = 9px -->
+  <line x1="80" y1="60" x2="80" y2="420" stroke="#495057"/>
+  <line x1="80" y1="240" x2="800" y2="240" stroke="#495057"/>
+  <line x1="80" y1="150" x2="800" y2="150" stroke="#e9ecef"/>
+  <line x1="80" y1="330" x2="800" y2="330" stroke="#e9ecef"/>
+  <line x1="80" y1="420" x2="800" y2="420" stroke="#e9ecef"/>
+  <line x1="80" y1="60" x2="800" y2="60" stroke="#e9ecef"/>
+  <text x="72" y="64" text-anchor="end" font-size="13" fill="#495057">+2천만</text>
+  <text x="72" y="154" text-anchor="end" font-size="13" fill="#495057">+1천만</text>
+  <text x="72" y="244" text-anchor="end" font-size="13" fill="#495057">0</text>
+  <text x="72" y="334" text-anchor="end" font-size="13" fill="#495057">−1천만</text>
+  <text x="72" y="424" text-anchor="end" font-size="13" fill="#495057">−2천만</text>
+
+  <text x="80" y="440" text-anchor="middle" font-size="13" fill="#495057">0원</text>
+  <text x="320" y="440" text-anchor="middle" font-size="13" fill="#495057">10,000원</text>
+  <text x="560" y="440" text-anchor="middle" font-size="13" fill="#495057">20,000원</text>
+  <text x="800" y="440" text-anchor="middle" font-size="13" fill="#495057">30,000원</text>
+  <text x="440" y="462" text-anchor="middle" font-size="13" fill="#1b1b1b">되사는(파는) 가격</text>
+  <line x1="320" y1="60" x2="320" y2="420" stroke="#ced4da" stroke-dasharray="4,4"/>
+
+  <!-- 같은 수량 매수: (0,-1천만) → (30,000,+2천만) -->
+  <line x1="80" y1="330" x2="800" y2="60" stroke="#2d6a4f" stroke-width="3"/>
+  <!-- 공매도: (0,+9,967,123) → (30,000,-20,032,877) -->
+  <line x1="80" y1="150.3" x2="800" y2="420.3" stroke="#9d0208" stroke-width="3"/>
+  <circle cx="80" cy="150.3" r="5" fill="#9d0208"/>
+  <circle cx="80" cy="330" r="5" fill="#2d6a4f"/>
+
+  <text x="92" y="140" font-size="13" fill="#9d0208">공매도 최대 이익 +9,967,123원 (주가 0원)</text>
+  <text x="92" y="352" font-size="13" fill="#2d6a4f">매수 최대 손실 −10,000,000원 (주가 0원)</text>
+  <text x="650" y="160" font-size="14" font-weight="bold" fill="#2d6a4f">같은 수량 매수</text>
+  <text x="620" y="398" font-size="14" font-weight="bold" fill="#9d0208">공매도</text>
+  <text x="808" y="404" font-size="14" fill="#9d0208">↓</text>
+  <text x="808" y="72" font-size="14" fill="#2d6a4f">↑</text>
+
+  <text x="40" y="488" font-size="13" fill="#495057">오른쪽 끝에서도 선은 멈추지 않는다. 가격에 상한이 없으므로 공매도 손실에 하한이 없다. 숫자는 code/output.txt [2]에서 옮겼다.</text>
+</svg>
