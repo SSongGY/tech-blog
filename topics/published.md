@@ -178,3 +178,6 @@
 | 2026-10-06 | be-002 | Backend | 멱등키(Idempotency Key)로 중복 결제를 막는 설계 |
 | 2026-10-06 | fin-025 | Finance | 거래량과 거래대금 — 어느 쪽을 봐야 하는가 |
 | 2026-10-06 | fin-026 | Finance | 공매도 — 없는 주식을 파는 구조 |
+| 2026-10-06 | db-038 | Database | RANK와 DENSE_RANK — 동점을 어떻게 셀까 |
+| 2026-10-06 | tb-013 | Database | Tibero 7 LOB — CLOB/BLOB 저장과 조회 |
+| 2026-10-06 | pe-049 | PE | 데이터 웨어하우스·데이터 레이크·레이크하우스 |
