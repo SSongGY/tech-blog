@@ -1,0 +1,214 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-06-group-by-multiple-columns
+# 명령      : python group_by_multiple_columns.py
+# 수행 시각 : 2026-10-06 23:05 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[sale]  12행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  sale_id | INTEGER | PK
+  region  | TEXT    | NOT NULL
+  product | TEXT    | NOT NULL
+  channel | TEXT    |
+  amount  | INTEGER | NOT NULL
+
+  sale_id | region | product | channel | amount
+  --------+--------+---------+---------+-------
+        1 | 서울   | 노트북  | 온라인  |   1200
+        2 | 서울   | 노트북  | 매장    |   1100
+        3 | 서울   | 모니터  | 온라인  |    300
+        4 | 서울   | 키보드  | 온라인  |     50
+        5 | 부산   | 노트북  | 매장    |   1150
+        6 | 부산   | 모니터  | 매장    |    280
+        7 | 부산   | 모니터  | 온라인  |    310
+        8 | 대구   | 노트북  | 온라인  |   1250
+        9 | 대구   | 모니터  | 매장    |    290
+       10 | 대구   | 키보드  | 매장    |     45
+       11 | 대구   | 키보드  | NULL    |     40
+       12 | 서울   | 노트북  | 온라인  |   1180
+
+
+-- 1. 한 컬럼으로 묶기 — region
+   SELECT region, COUNT(*) AS cnt, SUM(amount) AS total
+   FROM sale
+   GROUP BY region
+   ORDER BY region
+   => region | cnt | total
+      대구 | 4 | 1625
+      부산 | 3 | 1740
+      서울 | 5 | 3830
+   (3행)
+
+-- 2. 두 컬럼으로 묶기 — region, product
+   SELECT region, product, COUNT(*) AS cnt, SUM(amount) AS total
+   FROM sale
+   GROUP BY region, product
+   ORDER BY region, product
+   => region | product | cnt | total
+      대구 | 노트북 | 1 | 1250
+      대구 | 모니터 | 1 | 290
+      대구 | 키보드 | 2 | 85
+      부산 | 노트북 | 1 | 1150
+      부산 | 모니터 | 2 | 590
+      서울 | 노트북 | 3 | 3480
+      서울 | 모니터 | 1 | 300
+      서울 | 키보드 | 1 | 50
+   (8행)
+
+-- 3. 순서만 바꾸기 — product, region
+   SELECT product, region, COUNT(*) AS cnt, SUM(amount) AS total
+   FROM sale
+   GROUP BY product, region
+   ORDER BY product, region
+   => product | region | cnt | total
+      노트북 | 대구 | 1 | 1250
+      노트북 | 부산 | 1 | 1150
+      노트북 | 서울 | 3 | 3480
+      모니터 | 대구 | 1 | 290
+      모니터 | 부산 | 2 | 590
+      모니터 | 서울 | 1 | 300
+      키보드 | 대구 | 2 | 85
+      키보드 | 서울 | 1 | 50
+   (8행)
+
+-- 4. 그룹 수와 고유값 개수 비교
+   SELECT COUNT(DISTINCT region)  AS regions,
+          COUNT(DISTINCT product) AS products,
+          (SELECT COUNT(*) FROM (SELECT 1 FROM sale GROUP BY region, product))
+                                  AS region_product_groups,
+          (SELECT COUNT(*) FROM (SELECT 1 FROM sale GROUP BY product, region))
+                                  AS product_region_groups
+   FROM sale
+   => regions | products | region_product_groups | product_region_groups
+      3 | 3 | 8 | 8
+   (1행)
+
+-- 5. 세 컬럼 — region, product, channel
+   SELECT region, product, channel, COUNT(*) AS cnt, SUM(amount) AS total
+   FROM sale
+   GROUP BY region, product, channel
+   ORDER BY region, product, channel
+   => region | product | channel | cnt | total
+      대구 | 노트북 | 온라인 | 1 | 1250
+      대구 | 모니터 | 매장 | 1 | 290
+      대구 | 키보드 | None | 1 | 40
+      대구 | 키보드 | 매장 | 1 | 45
+      부산 | 노트북 | 매장 | 1 | 1150
+      부산 | 모니터 | 매장 | 1 | 280
+      부산 | 모니터 | 온라인 | 1 | 310
+      서울 | 노트북 | 매장 | 1 | 1100
+      서울 | 노트북 | 온라인 | 2 | 2380
+      서울 | 모니터 | 온라인 | 1 | 300
+      서울 | 키보드 | 온라인 | 1 | 50
+   (11행)
+
+-- 6. 묶는 컬럼별 그룹 수
+   SELECT 'region'                   AS group_columns, COUNT(*) AS groups
+     FROM (SELECT 1 FROM sale GROUP BY region)
+   UNION ALL
+   SELECT 'region, product',          COUNT(*)
+     FROM (SELECT 1 FROM sale GROUP BY region, product)
+   UNION ALL
+   SELECT 'region, product, channel', COUNT(*)
+     FROM (SELECT 1 FROM sale GROUP BY region, product, channel)
+   UNION ALL
+   SELECT 'sale_id',                  COUNT(*)
+     FROM (SELECT 1 FROM sale GROUP BY sale_id)
+   => group_columns | groups
+      region | 3
+      region, product | 8
+      region, product, channel | 11
+      sale_id | 12
+   (4행)
+
+-- 7. 두 단계 집계 — region, product 합계를 region 으로 다시 묶기
+   SELECT region, SUM(total) AS total, COUNT(*) AS product_groups
+   FROM (SELECT region, product, SUM(amount) AS total
+         FROM sale
+         GROUP BY region, product)
+   GROUP BY region
+   ORDER BY region
+   => region | total | product_groups
+      대구 | 1625 | 3
+      부산 | 1740 | 2
+      서울 | 3830 | 3
+   (3행)
+
+-- 8. 묶지 않은 컬럼을 SELECT 에 두면 — product 를 빼고 묶었는데 product 를 찍는다
+   SELECT region, product, SUM(amount) AS total
+   FROM sale
+   GROUP BY region
+   ORDER BY region
+   => region | product | total
+      대구 | 노트북 | 1625
+      부산 | 노트북 | 1740
+      서울 | 노트북 | 3830
+   (3행)
+
+-- 9. ORDER BY 없이 순서를 바꿔 묶으면 결과 순서는
+   SELECT product, region, COUNT(*) AS cnt
+   FROM sale
+   GROUP BY product, region
+   => product | region | cnt
+      노트북 | 대구 | 1
+      노트북 | 부산 | 1
+      노트북 | 서울 | 3
+      모니터 | 대구 | 1
+      모니터 | 부산 | 2
+      모니터 | 서울 | 1
+      키보드 | 대구 | 2
+      키보드 | 서울 | 1
+   (8행)
+
+-- 10. 인덱스 없을 때 계획
+   SQL : SELECT region, product, COUNT(*) FROM sale GROUP BY region, product
+   QUERY PLAN
+   |--SCAN sale
+   `--USE TEMP B-TREE FOR GROUP BY
+
+-- 11. 인덱스 (region, product) 를 만든 뒤 — 같은 순서
+   SQL : SELECT region, product, COUNT(*) FROM sale GROUP BY region, product
+   QUERY PLAN
+   `--SCAN sale USING COVERING INDEX ix_sale_region_product
+
+-- 12. 인덱스 (region, product) 를 만든 뒤 — 순서를 바꿔서
+   SQL : SELECT product, region, COUNT(*) FROM sale GROUP BY product, region
+   QUERY PLAN
+   `--SCAN sale USING COVERING INDEX ix_sale_region_product
+
+-- 13. 인덱스 (region, product) 를 만든 뒤 — product 하나로
+   SQL : SELECT product, COUNT(*) FROM sale GROUP BY product
+   QUERY PLAN
+   |--SCAN sale USING COVERING INDEX ix_sale_region_product
+   `--USE TEMP B-TREE FOR GROUP BY
+
+-- 14. 순서를 바꿔 묶고 인덱스가 있을 때 ORDER BY 없이 나온 순서
+   SELECT product, region, COUNT(*) AS cnt
+   FROM sale
+   GROUP BY product, region
+   => product | region | cnt
+      노트북 | 대구 | 1
+      모니터 | 대구 | 1
+      키보드 | 대구 | 2
+      노트북 | 부산 | 1
+      모니터 | 부산 | 2
+      노트북 | 서울 | 3
+      모니터 | 서울 | 1
+      키보드 | 서울 | 1
+   (8행)

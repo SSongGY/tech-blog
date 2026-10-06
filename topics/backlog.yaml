@@ -170,7 +170,7 @@ topics:
     difficulty: 중급
     angle: "지터 없는 백오프가 만드는 재시도 폭풍을 시뮬레이션으로 재현"
     code: python
-    status: todo
+    status: done
   - id: be-005
     title: "서킷 브레이커의 3상태는 각각 어떤 장애를 막는가"
     category: Backend
@@ -1959,7 +1959,7 @@ topics:
     angle: "Reno·CUBIC·BBR이 무엇을 신호로 삼는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-055
     title: "IPv6 전환 기술 3가지"
     category: PE
@@ -2488,7 +2488,7 @@ topics:
     angle: "컬럼 순서를 바꾸면 결과 행 수가 어떻게 달라지는지 같은 데이터로 나란히"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-037
     title: "윈도우 함수 입문 — ROW_NUMBER로 그룹별 1등 뽑기"
     category: Database

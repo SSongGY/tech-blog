@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">그룹 = 실제로 있는 값의 조합 — 컬럼 순서는 조합을 바꾸지 않는다</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · sale 12행 · 칸 안의 숫자는 그 조합의 행 수(COUNT(*)) · 실습 2·3·4번 결과</text>
+
+  <!-- 왼쪽: region x product 격자 -->
+  <text x="30" y="92" font-size="14" font-weight="bold" fill="#1b1b1b">GROUP BY region, product</text>
+  <g font-size="14" text-anchor="middle" fill="#1b1b1b">
+    <text x="175" y="122" font-weight="bold">노트북</text>
+    <text x="265" y="122" font-weight="bold">모니터</text>
+    <text x="355" y="122" font-weight="bold">키보드</text>
+    <text x="80" y="160" font-weight="bold">서울</text>
+    <text x="80" y="214" font-weight="bold">부산</text>
+    <text x="80" y="268" font-weight="bold">대구</text>
+  </g>
+  <g stroke="#2d6a4f" stroke-width="1.5" fill="#eef5f0">
+    <rect x="135" y="134" width="80" height="44"/>
+    <rect x="225" y="134" width="80" height="44"/>
+    <rect x="315" y="134" width="80" height="44"/>
+    <rect x="135" y="188" width="80" height="44"/>
+    <rect x="225" y="188" width="80" height="44"/>
+    <rect x="135" y="242" width="80" height="44"/>
+    <rect x="225" y="242" width="80" height="44"/>
+    <rect x="315" y="242" width="80" height="44"/>
+  </g>
+  <rect x="315" y="188" width="80" height="44" fill="#ffffff" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <g font-size="15" text-anchor="middle" fill="#1b1b1b">
+    <text x="175" y="161">3</text><text x="265" y="161">1</text><text x="355" y="161">1</text>
+    <text x="175" y="215">1</text><text x="265" y="215">2</text>
+    <text x="175" y="269">1</text><text x="265" y="269">1</text><text x="355" y="269">2</text>
+  </g>
+  <text x="355" y="215" font-size="13" text-anchor="middle" fill="#9d0208">판매 없음</text>
+
+  <text x="30" y="320" font-size="13" fill="#2d6a4f">초록 칸 8개 = 그룹 8개 (결과 8행)</text>
+  <text x="30" y="342" font-size="13" fill="#9d0208">점선 칸은 행이 없어 그룹도 생기지 않는다 → 3 × 3 = 9가 아니다</text>
+
+  <!-- 오른쪽: 순서 바꾸기 -->
+  <rect x="450" y="76" width="400" height="118" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="466" y="100" font-size="14" font-weight="bold" fill="#1b1b1b">GROUP BY product, region 으로 바꾸면</text>
+  <text x="466" y="124" font-size="13" fill="#555">같은 격자를 세로 방향으로 읽을 뿐이다</text>
+  <text x="466" y="146" font-size="13" fill="#555">(노트북, 서울)과 (서울, 노트북)은 같은 칸</text>
+  <text x="466" y="174" font-size="13" font-weight="bold" fill="#2d6a4f">그룹 수 8 · 각 칸의 COUNT·SUM도 같다</text>
+
+  <!-- 오른쪽 아래: 컬럼을 더하면 -->
+  <rect x="450" y="212" width="400" height="130" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="466" y="236" font-size="14" font-weight="bold" fill="#b45309">컬럼을 더하면 칸이 쪼개진다 (실습 6번)</text>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="466" y="262">region</text><text x="830" y="262" text-anchor="end">3그룹</text>
+    <text x="466" y="284">region, product</text><text x="830" y="284" text-anchor="end">8그룹</text>
+    <text x="466" y="306">region, product, channel</text><text x="830" y="306" text-anchor="end">11그룹</text>
+    <text x="466" y="328">sale_id (행마다 다른 값)</text><text x="830" y="328" text-anchor="end">12그룹 = 행 수</text>
+  </g>
+
+  <!-- 아래: 바뀌는 것 -->
+  <rect x="30" y="370" width="820" height="106" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="396" font-size="14" font-weight="bold" fill="#b45309">순서를 바꿔서 달라지는 것은 행 수가 아니라 ORDER BY 없이 나오는 순서뿐이다</text>
+  <text x="46" y="422" font-size="13" fill="#1b1b1b">인덱스 없음 (실습 9번): 노트북·노트북·노트북·모니터… — 적은 순서(product 먼저)대로 나왔다</text>
+  <text x="46" y="444" font-size="13" fill="#1b1b1b">인덱스 (region, product) (실습 14번): 노트북·모니터·키보드·노트북… — 인덱스 순서(region 먼저)</text>
+  <text x="46" y="466" font-size="13" fill="#555">문장은 똑같다. 순서가 필요하면 ORDER BY를 적는다</text>
+</svg>
