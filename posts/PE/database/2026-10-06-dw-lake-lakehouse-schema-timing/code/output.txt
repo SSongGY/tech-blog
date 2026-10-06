@@ -1,0 +1,41 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\database\2026-10-06-dw-lake-lakehouse-schema-timing
+# 명령      : python schema_timing.py
+# 수행 시각 : 2026-10-06 12:17 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+원천 이벤트 6건
+   {"order_id": 1, "amount": 12000, "ordered_at": "2026-10-01"}
+   {"order_id": 2, "amount": "15,000", "ordered_at": "2026-10-01"}
+   {"order_id": 3, "amount": 8000, "ordered_at": "2026-10-02"}
+   {"order_id": 4, "ordered_at": "2026-10-02"}
+   {"order_id": 5, "amount": 30000, "ordered_at": "2026-10-03", "coupon": "WELCOME"}
+   {"order_id": 6, "amount": 5000, "ordered_at": "2026-10-03"}
+
+== 1. 웨어하우스 — 적재할 때 검사 ==
+   적재 거부 order_id=2: cannot store TEXT value in INTEGER column orders.amount
+   적재 거부 order_id=4: NOT NULL constraint failed: orders.amount
+   적재 4건 · SUM(amount) = 55000
+   coupon 컬럼은 표에 없으므로 5번의 coupon 값은 적재 단계에서 버려졌다
+
+== 2. 레이크 — 그대로 쓰고, 읽는 쪽이 정한다 ==
+   쓰기: 6개 파일 전부 받아들였다
+   읽기 팀 A(정수만 인정): 4건 집계 · 2건 건너뜀 · 합계 55000
+   읽기 팀 B(쉼표 제거, 없으면 0): 6건 집계 · 0건 건너뜀 · 합계 70000
+   10-03 파일을 지우고 새 파일을 쓰기 전에 읽으면: 4건 · 합계 35000
+
+== 3. 레이크하우스 — 로그가 스키마와 파일 목록을 든다 ==
+   쓰기 거부 order_id=2: 스키마 {'order_id': 'int', 'amount': 'int', 'ordered_at': 'str'} 와 다르다
+   쓰기 거부 order_id=4: 스키마 {'order_id': 'int', 'amount': 'int', 'ordered_at': 'str'} 와 다르다
+   쓰기 거부 order_id=5: 스키마 {'order_id': 'int', 'amount': 'int', 'ordered_at': 'str'} 와 다르다
+   버전 1 커밋 · 읽기: 3건 · 합계 25000
+   새 파일을 썼지만 커밋 전에 읽으면: 3건 · 합계 25000
+   버전 2 커밋 · 읽기: 5건 · 합계 49000
+   버전 1 을 다시 읽으면(시간 여행): 3건 · 합계 25000
+   같은 버전 2 를 다른 작성자가 또 만들려 하면: FileExistsError — 한쪽만 커밋된다
+   로그 파일: 00000.json, 00001.json, 00002.json

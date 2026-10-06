@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">스키마를 언제 강제하는가 — 세 세대의 분석 저장소</text>
+  <text x="30" y="56" font-size="13" fill="#555">주황 굵은 테두리 = 스키마를 강제하는 지점 · Armbrust 외(CIDR 2021) 1·3절의 구분을 따랐다</text>
+
+  <!-- 행 라벨 -->
+  <text x="30" y="118" font-size="14" font-weight="bold" fill="#1b1b1b">1세대</text>
+  <text x="30" y="138" font-size="13" fill="#555">웨어하우스</text>
+  <text x="30" y="248" font-size="14" font-weight="bold" fill="#1b1b1b">2세대</text>
+  <text x="30" y="268" font-size="13" fill="#555">데이터 레이크</text>
+  <text x="30" y="388" font-size="14" font-weight="bold" fill="#1b1b1b">레이크하우스</text>
+
+  <!-- 1세대 -->
+  <rect x="130" y="96" width="150" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="205" y="129" font-size="14" fill="#1b1b1b" text-anchor="middle">운영 DB</text>
+  <line x1="280" y1="124" x2="336" y2="124" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="340" y="96" width="200" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="120" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">ETL · 적재 시 검사</text>
+  <text x="440" y="140" font-size="13" fill="#b45309" text-anchor="middle">schema-on-write</text>
+  <line x1="540" y1="124" x2="596" y2="124" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="600" y="96" width="250" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="725" y="120" font-size="14" fill="#1b1b1b" text-anchor="middle">웨어하우스 (저장+연산 일체)</text>
+  <text x="725" y="140" font-size="13" fill="#555" text-anchor="middle">BI · 보고서</text>
+
+  <!-- 2세대 -->
+  <rect x="130" y="226" width="150" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="205" y="250" font-size="14" fill="#1b1b1b" text-anchor="middle">모든 원천</text>
+  <text x="205" y="270" font-size="13" fill="#555" text-anchor="middle">비정형 포함</text>
+  <line x1="280" y1="254" x2="336" y2="254" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="340" y="226" width="200" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="250" font-size="14" fill="#1b1b1b" text-anchor="middle">저가 저장소 · 파일 API</text>
+  <text x="440" y="270" font-size="13" fill="#555" text-anchor="middle">원본 그대로, 검사 없음</text>
+  <line x1="540" y1="254" x2="596" y2="254" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="600" y="226" width="250" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="725" y="250" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">읽는 엔진마다 해석</text>
+  <text x="725" y="270" font-size="13" fill="#b45309" text-anchor="middle">schema-on-read</text>
+  <text x="440" y="306" font-size="13" fill="#555" text-anchor="middle">일부를 다시 ETL → 하류 웨어하우스 (2계층)</text>
+
+  <!-- 레이크하우스 -->
+  <rect x="130" y="366" width="150" height="56" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="205" y="399" font-size="14" fill="#1b1b1b" text-anchor="middle">모든 원천</text>
+  <line x1="280" y1="394" x2="336" y2="394" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="340" y="356" width="200" height="76" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="380" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">메타데이터 계층</text>
+  <text x="440" y="400" font-size="13" fill="#b45309" text-anchor="middle">트랜잭션 로그 · 스키마</text>
+  <text x="440" y="420" font-size="13" fill="#b45309" text-anchor="middle">쓸 때 검사, 버전별 파일 목록</text>
+  <line x1="540" y1="394" x2="596" y2="394" stroke="#3b3b3b" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="600" y="356" width="250" height="76" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="725" y="380" font-size="14" fill="#2d6a4f" text-anchor="middle">오픈 포맷 파일 (예: Parquet)</text>
+  <text x="725" y="400" font-size="13" fill="#2d6a4f" text-anchor="middle">SQL · DataFrame · ML이</text>
+  <text x="725" y="420" font-size="13" fill="#2d6a4f" text-anchor="middle">같은 파일을 직접 읽는다</text>
+
+  <text x="30" y="474" font-size="13" fill="#333">레이크하우스 = 저가·직접 접근 저장소 위에 ACID·버전·인덱스·캐시 같은 DBMS 기능을 얹은 것 (논문 3절 정의)</text>
+</svg>
