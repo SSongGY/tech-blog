@@ -53,6 +53,12 @@ description: 주식 용어와 재무제표 읽는 법을 회차당 2편 정리�
 - **heredoc 뒤에 `&&`·`;` 를 붙이지 않는다.** `git commit -F - <<'MSG' && git push`
   처럼 쓰면 heredoc 본문이 두 번째 토막에 섞여 들어가 규칙과 안 맞는다.
   커밋과 푸시는 따로 부른다
+- **공유 파일은 골라 담지 않는다.** `POSTS.md`·`topics/backlog.yaml`·
+  `topics/published.md` 에 다른 회차의 수정이 섞여 올라가도 괜찮다 — 전부
+  사실인 기록이다. 패치 파일을 만들어 `git apply` 하거나 줄 단위로 고르지
+  않는다. 위험한 것은 **추적되지 않은 새 폴더**뿐이고 그건 `git add -u` 가 막는다
+- **백로그와 발행 이력은 손으로 고치지 않는다.** `blog.py done`·`exam-done` 이
+  두 파일을 같이 고친다
 - `for`·`while` 루프, `sleep` 대기, `find -exec`, 서브셸, `xargs`,
   명령 치환 `$(...)` 을 쓰지 않는다
 
