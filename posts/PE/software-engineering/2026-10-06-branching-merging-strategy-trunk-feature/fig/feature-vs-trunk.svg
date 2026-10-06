@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <!-- 위: 기능 브랜치 -->
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#222222">(가) 기능 브랜치 — 기능이 끝나면 통합한다</text>
+
+  <path d="M110,190 C130,190 130,130 160,130 L520,130 C550,130 550,190 570,190" fill="none" stroke="#9d0208" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="300" y="122" font-size="13" fill="#9d0208">feature/a — 수 주</text>
+  <path d="M200,190 C220,190 220,80 250,80 L560,80 C600,80 600,190 620,190" fill="none" stroke="#9d0208" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="300" y="72" font-size="13" fill="#9d0208">feature/b — 수 주</text>
+
+  <line x1="40" y1="190" x2="800" y2="190" stroke="#333333" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="40" y="214" font-size="13" fill="#333333">main(develop)</text>
+  <circle cx="570" cy="190" r="7" fill="#9d0208"/>
+  <circle cx="620" cy="190" r="7" fill="#9d0208"/>
+  <rect x="520" y="222" width="250" height="26" rx="4" fill="#fde8e8" stroke="#9d0208"/>
+  <text x="645" y="240" font-size="13" text-anchor="middle" fill="#9d0208">큰 병합 — 충돌이 마지막에 드러남</text>
+
+  <line x1="20" y1="268" x2="860" y2="268" stroke="#cccccc" stroke-dasharray="4 4"/>
+
+  <!-- 아래: 트렁크 기반 -->
+  <text x="24" y="296" font-size="16" font-weight="bold" fill="#222222">(나) 트렁크 기반 — 하루 한 번 이상 통합한다</text>
+
+  <path d="M90,370 C100,335 140,335 150,370" fill="none" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <path d="M190,370 C200,335 240,335 250,370" fill="none" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <path d="M290,370 C300,335 340,335 350,370" fill="none" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <path d="M390,370 C400,335 440,335 450,370" fill="none" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#arrG)"/>
+  <text x="90" y="326" font-size="13" fill="#2d6a4f">짧은 브랜치 — 수 시간 이내</text>
+
+  <line x1="40" y1="370" x2="800" y2="370" stroke="#333333" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="40" y="394" font-size="13" fill="#333333">trunk</text>
+  <circle cx="150" cy="370" r="6" fill="#2d6a4f"/>
+  <circle cx="250" cy="370" r="6" fill="#2d6a4f"/>
+  <circle cx="350" cy="370" r="6" fill="#2d6a4f"/>
+  <circle cx="450" cy="370" r="6" fill="#2d6a4f"/>
+
+  <path d="M540,370 C560,370 560,425 590,425 L790,425" fill="none" stroke="#b45309" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="600" y="447" font-size="13" fill="#b45309">release/1.0 — 안정화 커밋만</text>
+  <path d="M680,425 L700,374" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arr)"/>
+  <text x="710" y="400" font-size="13" fill="#b45309">수정은 트렁크로 즉시</text>
+</svg>

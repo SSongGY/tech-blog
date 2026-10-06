@@ -1937,7 +1937,7 @@ topics:
     angle: "품질 지표 6개와 조직 역할 정의"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-051
     title: "NoSQL 4가지 유형과 선택 기준"
     category: PE
@@ -3775,4 +3775,4 @@ topics:
     angle: "형상관리 계획에서 브랜치 전략을 먼저 정해야 하는 이유, 전략별로 개발 기준선과 통합 빈도가 어떻게 달라지는지"
     code: none
     origin: exam
-    status: todo
+    status: done

@@ -223,6 +223,8 @@ SWEBOK V3.0은 도구 선정 시 따질 질문을 12개 든다. 정보시스템 
 정보시스템 관점의 형상관리다.
 
 > 개념 정리: [형상관리 — 4대 활동과 베이스라인](../../software-engineering/2026-09-22-configuration-management-baseline/index.md)
+>
+> 개념 정리: [브랜치·병합 전략 — 트렁크 기반 개발과 기능 브랜치](../../software-engineering/2026-10-06-branching-merging-strategy-trunk-feature/index.md)
 
 끝
 
