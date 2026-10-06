@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 596" width="880" height="596" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="596" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="16" font-weight="bold" fill="#1f2937">① 분할 중 — 증명 장면 (서버 2대, 사이 메시지 유실)</text>
+
+  <!-- 클라이언트와 서버 -->
+  <rect x="30" y="60" width="130" height="44" rx="6" fill="#f3f4f6" stroke="#4b5563"/>
+  <text x="95" y="87" text-anchor="middle">클라이언트 A</text>
+  <rect x="230" y="60" width="150" height="44" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="305" y="80" text-anchor="middle">서버 p1</text>
+  <text x="305" y="97" text-anchor="middle" font-size="13" fill="#4b5563">값 v1 (방금 씀)</text>
+  <rect x="500" y="60" width="150" height="44" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="575" y="80" text-anchor="middle">서버 p2</text>
+  <text x="575" y="97" text-anchor="middle" font-size="13" fill="#4b5563">값 v0 (옛 값)</text>
+  <rect x="720" y="60" width="130" height="44" rx="6" fill="#f3f4f6" stroke="#4b5563"/>
+  <text x="785" y="87" text-anchor="middle">클라이언트 B</text>
+
+  <line x1="160" y1="82" x2="226" y2="82" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="193" y="74" text-anchor="middle" font-size="13" fill="#4b5563">쓰기 v1</text>
+  <line x1="720" y1="82" x2="654" y2="82" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="687" y="74" text-anchor="middle" font-size="13" fill="#4b5563">읽기</text>
+
+  <!-- 끊긴 링크 -->
+  <line x1="380" y1="82" x2="425" y2="82" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="455" y1="82" x2="500" y2="82" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="440" y="88" text-anchor="middle" font-size="18" font-weight="bold" fill="#9d0208">✕</text>
+  <text x="440" y="124" text-anchor="middle" font-size="13" fill="#9d0208">복제 메시지 유실</text>
+
+  <!-- p2 의 두 선택 -->
+  <line x1="560" y1="104" x2="420" y2="170" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="600" y1="104" x2="700" y2="170" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="172" width="300" height="64" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="400" y="196" text-anchor="middle" font-weight="bold" fill="#b45309">CP — 답하지 않는다(오류)</text>
+  <text x="400" y="220" text-anchor="middle" font-size="13" fill="#374151">일관성 유지 · 가용성 포기</text>
+
+  <rect x="570" y="172" width="280" height="64" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="710" y="196" text-anchor="middle" font-weight="bold" fill="#b45309">AP — 가진 값 v0 을 답한다</text>
+  <text x="710" y="220" text-anchor="middle" font-size="13" fill="#374151">가용성 유지 · 일관성 포기</text>
+
+  <text x="30" y="270" font-size="13" fill="#4b5563">p2 는 "v1 이 쓰였는지"를 알 방법이 없다. 늦은 메시지와 사라진 메시지도 시간 제한 안에서는 구별되지 않는다.</text>
+  <text x="30" y="290" font-size="13" fill="#4b5563">P 는 고르는 성질이 아니라 네트워크가 주는 조건이다 — 그래서 실제 선택지는 분할이 났을 때 C 냐 A 냐이다.</text>
+
+  <line x1="30" y1="314" x2="850" y2="314" stroke="#d1d5db"/>
+
+  <text x="30" y="346" font-size="16" font-weight="bold" fill="#1f2937">② PACELC — 분할이 없을 때의 선택까지</text>
+
+  <g transform="translate(0,32)">
+  <rect x="30" y="380" width="200" height="56" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="130" y="404" text-anchor="middle">분할(P)이</text>
+  <text x="130" y="424" text-anchor="middle">났는가?</text>
+
+  <line x1="230" y1="396" x2="296" y2="372" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="262" y="372" text-anchor="middle" font-size="13" fill="#4b5563">예</text>
+  <line x1="230" y1="420" x2="296" y2="474" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="250" y="470" text-anchor="middle" font-size="13" fill="#4b5563">아니오(E)</text>
+
+  <rect x="300" y="340" width="290" height="56" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="445" y="364" text-anchor="middle" font-weight="bold" fill="#b45309">가용성(A) ↔ 일관성(C)</text>
+  <text x="445" y="384" text-anchor="middle" font-size="13" fill="#374151">드물게, 장애 때만 생기는 선택</text>
+
+  <rect x="300" y="452" width="290" height="56" rx="6" fill="#e8f5ee" stroke="#2d6a4f"/>
+  <text x="445" y="476" text-anchor="middle" font-weight="bold" fill="#2d6a4f">지연(L) ↔ 일관성(C)</text>
+  <text x="445" y="496" text-anchor="middle" font-size="13" fill="#374151">복제하는 한 평상시 내내 생기는 선택</text>
+
+  <text x="610" y="364" font-size="13" fill="#374151">PA/EL: Dynamo·Cassandra·Riak</text>
+  <text x="610" y="384" font-size="13" fill="#374151">PC/EC: VoltDB·Megastore·HBase</text>
+  <text x="610" y="476" font-size="13" fill="#374151">PC/EL: PNUTS</text>
+  <text x="610" y="496" font-size="13" fill="#374151">PA/EC: MongoDB (2012 기준)</text>
+  </g>
+
+  <text x="30" y="578" font-size="13" fill="#4b5563">분류는 Abadi(2012)가 각 시스템의 기본 설정을 두고 매긴 것이다. 설정을 바꾸면 자리가 옮겨 간다.</text>
+</svg>
