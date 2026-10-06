@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">같은 질의, 두 가지 모양 — "평균 지역 합계보다 많이 판 지역"</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · 실습 2번(중첩)과 3번(CTE)의 결과는 같고, 계획은 실습 12번·13번이다</text>
+
+  <!-- 왼쪽: 중첩 서브쿼리 -->
+  <text x="40" y="92" font-size="15" font-weight="bold" fill="#9d0208">중첩 서브쿼리</text>
+  <rect x="40" y="104" width="380" height="230" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="56" y="128" font-size="13" fill="#1b1b1b">바깥 SELECT … WHERE total &gt; (…)</text>
+
+  <rect x="60" y="142" width="340" height="56" rx="4" fill="#fbecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="76" y="164" font-size="13" fill="#9d0208">FROM 서브쿼리</text>
+  <text x="76" y="186" font-size="13" fill="#1b1b1b">지역별 SUM(amount) 집계 ①</text>
+
+  <rect x="60" y="214" width="340" height="104" rx="4" fill="#f6f6f6" stroke="#3b3b3b" stroke-width="1"/>
+  <text x="76" y="236" font-size="13" fill="#1b1b1b">WHERE 안 스칼라 서브쿼리 — AVG(total)</text>
+  <rect x="80" y="250" width="300" height="52" rx="4" fill="#fbecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="96" y="272" font-size="13" fill="#9d0208">FROM 서브쿼리</text>
+  <text x="96" y="292" font-size="13" fill="#1b1b1b">같은 집계를 한 번 더 적는다 ②</text>
+
+  <text x="40" y="360" font-size="13" fill="#9d0208">계획: sales 를 읽는 줄 3개 · VDBE 명령 528개</text>
+
+  <!-- 오른쪽: CTE -->
+  <text x="470" y="92" font-size="15" font-weight="bold" fill="#2d6a4f">CTE (WITH 절)</text>
+  <rect x="470" y="104" width="380" height="74" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="486" y="128" font-size="13" fill="#2d6a4f">WITH region_total AS (…)</text>
+  <text x="486" y="152" font-size="13" fill="#1b1b1b">지역별 SUM(amount) 집계 — 한 번만 적는다</text>
+
+  <rect x="470" y="214" width="380" height="104" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="486" y="238" font-size="13" fill="#1b1b1b">SELECT … FROM region_total</text>
+  <text x="486" y="262" font-size="13" fill="#1b1b1b">WHERE total &gt;</text>
+  <text x="486" y="286" font-size="13" fill="#1b1b1b">  (SELECT AVG(total) FROM region_total)</text>
+
+  <line x1="560" y1="178" x2="560" y2="212" stroke="#2d6a4f" stroke-width="1.8"/>
+  <polygon points="560,214 555,204 565,204" fill="#2d6a4f"/>
+  <line x1="760" y1="178" x2="760" y2="212" stroke="#2d6a4f" stroke-width="1.8"/>
+  <polygon points="760,214 755,204 765,204" fill="#2d6a4f"/>
+  <text x="572" y="200" font-size="13" fill="#2d6a4f">이름으로 두 번 참조</text>
+
+  <text x="470" y="360" font-size="13" fill="#2d6a4f">계획: MATERIALIZE 1번 · VDBE 명령 216개</text>
+
+  <rect x="30" y="378" width="820" height="48" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1"/>
+  <text x="46" y="400" font-size="13" fill="#1b1b1b">CTE 는 그 문장 하나 동안만 있는 이름 붙은 결과다. 문장이 끝나면 사라진다(실습 7번).</text>
+  <text x="46" y="418" font-size="13" fill="#555">명령 수는 이 8행 데이터에서 센 값이라 크기 비교로만 읽는다.</text>
+</svg>

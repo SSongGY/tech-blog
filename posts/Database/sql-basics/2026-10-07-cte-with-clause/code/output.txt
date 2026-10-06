@@ -1,0 +1,194 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-07-cte-with-clause
+# 명령      : python cte_basics.py
+# 수행 시각 : 2026-10-07 07:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[sales]  8행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  sale_id | INTEGER | PK
+  seller  | TEXT    | NOT NULL
+  region  | TEXT    | NOT NULL
+  amount  | INTEGER | NOT NULL
+
+  sale_id | seller | region | amount
+  --------+--------+--------+-------
+        1 | 김하나 | 서울   |    300
+        2 | 이두리 | 서울   |    250
+        3 | 박세나 | 서울   |    150
+        4 | 최네오 | 부산   |    400
+        5 | 정다섯 | 부산   |    100
+        6 | 한여섯 | 대구   |    120
+        7 | 윤일곱 | 대구   |     80
+        8 | 조여덟 | 광주   |    500
+
+[인덱스]
+  이름             | 대상 표 | 정의
+  -----------------+---------+------------------------------------------------
+  idx_sales_region | sales   | CREATE INDEX idx_sales_region ON sales (region)
+
+
+-- 1. 지역별 합계 — 모든 질의의 재료
+   SELECT region, SUM(amount) AS total FROM sales GROUP BY region ORDER BY region
+   => region | total
+      광주 | 500
+      대구 | 200
+      부산 | 500
+      서울 | 700
+   (4행)
+
+-- 2. 중첩 서브쿼리 — 평균 지역 합계보다 많이 판 지역
+   SELECT region, total
+   FROM (SELECT region, SUM(amount) AS total FROM sales GROUP BY region)
+   WHERE total > (SELECT AVG(total)
+                  FROM (SELECT region, SUM(amount) AS total FROM sales GROUP BY region))
+   ORDER BY total DESC
+   => region | total
+      서울 | 700
+      광주 | 500
+      부산 | 500
+   (3행)
+
+-- 3. 같은 질의를 CTE 로 — 집계는 한 번만 적는다
+   WITH region_total AS (
+       SELECT region, SUM(amount) AS total FROM sales GROUP BY region
+   )
+   SELECT region, total
+   FROM region_total
+   WHERE total > (SELECT AVG(total) FROM region_total)
+   ORDER BY total DESC
+   => region | total
+      서울 | 700
+      광주 | 500
+      부산 | 500
+   (3행)
+
+-- 4. CTE 를 이어 쓰기 — 뒤의 CTE 가 앞의 CTE 를 읽는다
+   WITH region_total AS (
+       SELECT region, SUM(amount) AS total FROM sales GROUP BY region
+   ),
+   avg_total AS (
+       SELECT AVG(total) AS avg_value FROM region_total
+   )
+   SELECT r.region, r.total, a.avg_value
+   FROM region_total AS r, avg_total AS a
+   WHERE r.total > a.avg_value
+   ORDER BY r.total DESC
+   => region | total | avg_value
+      서울 | 700 | 475.0
+      광주 | 500 | 475.0
+      부산 | 500 | 475.0
+   (3행)
+
+-- 5. 컬럼 이름 목록 — CTE 이름 뒤에 괄호로 붙인다
+   WITH region_total (region_name, sum_amount, seller_count) AS (
+       SELECT region, SUM(amount), COUNT(*) FROM sales GROUP BY region
+   )
+   SELECT region_name, sum_amount, seller_count
+   FROM region_total
+   ORDER BY sum_amount DESC
+   => region_name | sum_amount | seller_count
+      서울 | 700 | 3
+      광주 | 500 | 1
+      부산 | 500 | 2
+      대구 | 200 | 2
+   (4행)
+
+-- 6. 중간 단계만 떼어 보기 — 마지막 SELECT 만 바꾼다
+   WITH region_total AS (
+       SELECT region, SUM(amount) AS total FROM sales GROUP BY region
+   ),
+   avg_total AS (
+       SELECT AVG(total) AS avg_value FROM region_total
+   )
+   SELECT avg_value FROM avg_total
+   => avg_value
+      475.0
+   (1행)
+
+-- 7. CTE 는 그 문장 안에서만 산다 — 다음 문장에서 부르면
+   SELECT * FROM region_total
+   에러: no such table: region_total
+
+-- 8. 테이블과 같은 이름의 CTE
+   WITH sales AS (
+       SELECT 99 AS sale_id, '가짜' AS seller, '서울' AS region, 1 AS amount
+   )
+   SELECT COUNT(*) AS row_count, SUM(amount) AS total FROM sales
+   => row_count | total
+      1 | 1
+   (1행)
+
+-- 9. 선언한 컬럼 수와 SELECT 컬럼 수가 다르면
+   WITH region_total (region_name, sum_amount) AS (
+       SELECT region, SUM(amount), COUNT(*) FROM sales GROUP BY region
+   )
+   SELECT * FROM region_total
+   에러: table region_total has 3 values for 2 columns
+
+-- 10. 힌트 없음 — 바깥 WHERE 가 안으로 들어가는지
+   WITH all_sales AS (
+       SELECT seller, region, amount FROM sales
+   )
+   SELECT SUM(amount) FROM all_sales WHERE region = '서울'
+   QUERY PLAN
+   `--SEARCH sales USING INDEX idx_sales_region (region=?)
+   결과 [(700,)] / VDBE 명령 27개
+
+-- 11. MATERIALIZED — CTE 를 먼저 통째로 만든다
+   WITH all_sales AS MATERIALIZED (
+       SELECT seller, region, amount FROM sales
+   )
+   SELECT SUM(amount) FROM all_sales WHERE region = '서울'
+   QUERY PLAN
+   |--MATERIALIZE all_sales
+   |  `--SCAN sales
+   `--SCAN all_sales
+   결과 [(700,)] / VDBE 명령 105개
+
+-- 12. 두 번 쓰는 CTE — 힌트 없음
+   WITH region_total AS (
+       SELECT region, SUM(amount) AS total FROM sales GROUP BY region
+   )
+   SELECT COUNT(*) FROM region_total
+   WHERE total > (SELECT AVG(total) FROM region_total)
+   QUERY PLAN
+   |--MATERIALIZE region_total
+   |  `--SCAN sales USING INDEX idx_sales_region
+   |--SCAN region_total
+   `--SCALAR SUBQUERY 2
+      `--SCAN region_total
+   결과 [(3,)] / VDBE 명령 216개
+
+-- 13. 중첩 서브쿼리 — 2번과 같은 질의의 계획
+   SELECT COUNT(*) FROM (SELECT region, SUM(amount) AS total FROM sales GROUP BY region)
+   WHERE total > (SELECT AVG(total) FROM (SELECT region, SUM(amount) AS total FROM sales GROUP BY region))
+   QUERY PLAN
+   |--CO-ROUTINE (subquery-1)
+   |  |--SCAN sales USING INDEX idx_sales_region
+   |  `--SCALAR SUBQUERY 3
+   |     |--CO-ROUTINE (subquery-2)
+   |     |  `--SCAN sales USING INDEX idx_sales_region
+   |     `--SCAN (subquery-2)
+   |--SCAN (subquery-1)
+   `--SCALAR SUBQUERY 3
+      |--CO-ROUTINE (subquery-2)
+      |  `--SCAN sales USING INDEX idx_sales_region
+      `--SCAN (subquery-2)
+   결과 [(3,)] / VDBE 명령 528개
