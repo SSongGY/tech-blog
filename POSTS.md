@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **194편** · 갱신 2026-10-06
+총 **195편** · 갱신 2026-10-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -139,10 +139,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 11편
+## 리눅스 (linux) — 12편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-06 | [diff와 patch — 설정 변경을 추적하기](posts/Infra/linux/2026-10-06-diff-patch-config-change-tracking/index.md) | 중급 | GNU diffutils 3.12, GNU patch 2.7.6, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-10-03 | [curl — API 디버깅에 필요한 옵션](posts/Linux/command/2026-10-03-curl-api-debugging-options-timing/index.md) | 입문 | curl 8.19.0 (Schannel), Python 3.13.5, OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-02 | [openssl s_client — 인증서 확인과 만료 점검](posts/Linux/command/2026-10-02-openssl-s-client-cert-chain-expiry/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-01 | [환경변수와 셸 초기화 순서](posts/Linux/command/2026-10-01-bash-startup-files-env-vars/index.md) | 중급 | GNU bash 5.3.9 (Git Bash), GNU coreutils env 8.32, Windows 11 | 실행 검증 |
