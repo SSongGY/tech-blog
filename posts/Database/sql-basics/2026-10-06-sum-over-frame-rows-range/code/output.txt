@@ -1,0 +1,222 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-06-sum-over-frame-rows-range
+# 명령      : python sum_over_frame.py
+# 수행 시각 : 2026-10-06 19:09 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[daily_order]  7행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  order_id   | INTEGER | PK
+  order_date | TEXT    | NOT NULL
+  day_no     | INTEGER | NOT NULL
+  amount     | INTEGER | NOT NULL
+
+  order_id | order_date | day_no | amount
+  ---------+------------+--------+-------
+         1 | 2026-10-01 |      1 |    100
+         2 | 2026-10-02 |      2 |    200
+         3 | 2026-10-03 |      3 |    300
+         4 | 2026-10-03 |      3 |     50
+         5 | 2026-10-05 |      5 |    400
+         6 | 2026-10-05 |      5 |     10
+         7 | 2026-10-06 |      6 |    500
+
+
+-- 1. 누적합 — 프레임을 안 적으면
+   SELECT order_id, order_date, amount,
+          SUM(amount) OVER (ORDER BY order_date) AS running_total
+   FROM daily_order
+   ORDER BY order_date, order_id
+   => order_id | order_date | amount | running_total
+      1 | 2026-10-01 | 100 | 100
+      2 | 2026-10-02 | 200 | 300
+      3 | 2026-10-03 | 300 | 650
+      4 | 2026-10-03 | 50 | 650
+      5 | 2026-10-05 | 400 | 1060
+      6 | 2026-10-05 | 10 | 1060
+      7 | 2026-10-06 | 500 | 1560
+   (7행)
+
+-- 2. 기본 프레임을 풀어 쓴 것과 ROWS 로 바꾼 것을 나란히
+   SELECT order_id, order_date, amount,
+          SUM(amount) OVER (ORDER BY order_date
+                            RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS range_total,
+          SUM(amount) OVER (ORDER BY order_date
+                            ROWS  BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS rows_total
+   FROM daily_order
+   ORDER BY order_date, order_id
+   => order_id | order_date | amount | range_total | rows_total
+      1 | 2026-10-01 | 100 | 100 | 100
+      2 | 2026-10-02 | 200 | 300 | 300
+      3 | 2026-10-03 | 300 | 650 | 600
+      4 | 2026-10-03 | 50 | 650 | 650
+      5 | 2026-10-05 | 400 | 1060 | 1050
+      6 | 2026-10-05 | 10 | 1060 | 1060
+      7 | 2026-10-06 | 500 | 1560 | 1560
+   (7행)
+
+-- 3. ROWS 누적합에 동점 처리 기준(order_id)을 더하면
+   SELECT order_id, order_date, amount,
+          SUM(amount) OVER (ORDER BY order_date, order_id
+                            ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS rows_total
+   FROM daily_order
+   ORDER BY order_date, order_id
+   => order_id | order_date | amount | rows_total
+      1 | 2026-10-01 | 100 | 100
+      2 | 2026-10-02 | 200 | 300
+      3 | 2026-10-03 | 300 | 600
+      4 | 2026-10-03 | 50 | 650
+      5 | 2026-10-05 | 400 | 1050
+      6 | 2026-10-05 | 10 | 1060
+      7 | 2026-10-06 | 500 | 1560
+   (7행)
+
+-- 4. OVER () — ORDER BY 가 없으면 프레임이 파티션 전체
+   SELECT order_id, amount,
+          SUM(amount) OVER () AS grand_total,
+          ROUND(100.0 * amount / SUM(amount) OVER (), 1) AS pct
+   FROM daily_order
+   ORDER BY order_id
+   => order_id | amount | grand_total | pct
+      1 | 100 | 1560 | 6.4
+      2 | 200 | 1560 | 12.8
+      3 | 300 | 1560 | 19.2
+      4 | 50 | 1560 | 3.2
+      5 | 400 | 1560 | 25.6
+      6 | 10 | 1560 | 0.6
+      7 | 500 | 1560 | 32.1
+   (7행)
+
+-- 5. 최근 3일 이동평균 — 행 3개(ROWS) / 날짜 3일(RANGE) / 날짜 묶음 3개(GROUPS)
+   SELECT order_id, day_no, amount,
+          SUM(amount) OVER (ORDER BY day_no, order_id
+                            ROWS   BETWEEN 2 PRECEDING AND CURRENT ROW) AS rows_3,
+          SUM(amount) OVER (ORDER BY day_no
+                            RANGE  BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_3,
+          SUM(amount) OVER (ORDER BY day_no
+                            GROUPS BETWEEN 2 PRECEDING AND CURRENT ROW) AS groups_3
+   FROM daily_order
+   ORDER BY day_no, order_id
+   => order_id | day_no | amount | rows_3 | range_3 | groups_3
+      1 | 1 | 100 | 100 | 100 | 100
+      2 | 2 | 200 | 300 | 300 | 300
+      3 | 3 | 300 | 600 | 650 | 650
+      4 | 3 | 50 | 550 | 650 | 650
+      5 | 5 | 400 | 750 | 760 | 960
+      6 | 5 | 10 | 460 | 760 | 960
+      7 | 6 | 500 | 910 | 910 | 1260
+   (7행)
+
+-- 6. 프레임에 들어간 행 수를 COUNT(*) 로 확인
+   SELECT order_id, day_no,
+          COUNT(*) OVER (ORDER BY day_no, order_id
+                         ROWS   BETWEEN 2 PRECEDING AND CURRENT ROW) AS rows_n,
+          COUNT(*) OVER (ORDER BY day_no
+                         RANGE  BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_n,
+          COUNT(*) OVER (ORDER BY day_no
+                         GROUPS BETWEEN 2 PRECEDING AND CURRENT ROW) AS groups_n
+   FROM daily_order
+   ORDER BY day_no, order_id
+   => order_id | day_no | rows_n | range_n | groups_n
+      1 | 1 | 1 | 1 | 1
+      2 | 2 | 2 | 2 | 2
+      3 | 3 | 3 | 4 | 4
+      4 | 3 | 3 | 4 | 4
+      5 | 5 | 3 | 4 | 5
+      6 | 5 | 3 | 4 | 5
+      7 | 6 | 3 | 3 | 5
+   (7행)
+
+-- 7. 이동평균은 AVG — 행이 모자란 첫 줄도 평균을 낸다
+   SELECT order_id, day_no, amount,
+          ROUND(AVG(amount) OVER (ORDER BY day_no, order_id
+                                  ROWS BETWEEN 2 PRECEDING AND CURRENT ROW), 1) AS moving_avg_3
+   FROM daily_order
+   ORDER BY day_no, order_id
+   => order_id | day_no | amount | moving_avg_3
+      1 | 1 | 100 | 100.0
+      2 | 2 | 200 | 150.0
+      3 | 3 | 300 | 200.0
+      4 | 3 | 50 | 183.3
+      5 | 5 | 400 | 250.0
+      6 | 5 | 10 | 153.3
+      7 | 6 | 500 | 303.3
+   (7행)
+
+-- 8. RANGE n PRECEDING 에 ORDER BY 키가 둘이면
+   SELECT order_id,
+          SUM(amount) OVER (ORDER BY day_no, order_id
+                            RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_3
+   FROM daily_order
+   에러: RANGE with offset PRECEDING/FOLLOWING requires one ORDER BY expression
+
+-- 9. RANGE n PRECEDING 에 문자열 날짜를 쓰면
+   SELECT order_id, order_date,
+          SUM(amount) OVER (ORDER BY order_date
+                            RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_3
+   FROM daily_order
+   ORDER BY order_date, order_id
+   => order_id | order_date | range_3
+      1 | 2026-10-01 | 100
+      2 | 2026-10-02 | 200
+      3 | 2026-10-03 | 350
+      4 | 2026-10-03 | 350
+      5 | 2026-10-05 | 410
+      6 | 2026-10-05 | 410
+      7 | 2026-10-06 | 500
+   (7행)
+
+-- 10. 프레임 끝을 앞쪽에 두면 — CURRENT ROW AND 1 PRECEDING
+   SELECT order_id,
+          SUM(amount) OVER (ORDER BY order_id
+                            ROWS BETWEEN CURRENT ROW AND 1 PRECEDING) AS bad_frame
+   FROM daily_order
+   에러: unsupported frame specification
+
+-- 11. 파티션마다 누적 — 같은 날 안에서만 누적
+   SELECT order_id, order_date, amount,
+          SUM(amount) OVER (PARTITION BY order_date ORDER BY order_id) AS day_running
+   FROM daily_order
+   ORDER BY order_date, order_id
+   => order_id | order_date | amount | day_running
+      1 | 2026-10-01 | 100 | 100
+      2 | 2026-10-02 | 200 | 200
+      3 | 2026-10-03 | 300 | 300
+      4 | 2026-10-03 | 50 | 350
+      5 | 2026-10-05 | 400 | 400
+      6 | 2026-10-05 | 10 | 410
+      7 | 2026-10-06 | 500 | 500
+   (7행)
+
+-- 12. 문자열 날짜를 julianday() 로 숫자로 바꿔 RANGE 를 걸면
+   SELECT order_id, order_date,
+          SUM(amount) OVER (ORDER BY julianday(order_date)
+                            RANGE BETWEEN 2 PRECEDING AND CURRENT ROW) AS range_3
+   FROM daily_order
+   ORDER BY order_date, order_id
+   => order_id | order_date | range_3
+      1 | 2026-10-01 | 100
+      2 | 2026-10-02 | 300
+      3 | 2026-10-03 | 650
+      4 | 2026-10-03 | 650
+      5 | 2026-10-05 | 760
+      6 | 2026-10-05 | 760
+      7 | 2026-10-06 | 910
+   (7행)
