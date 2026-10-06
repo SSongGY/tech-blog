@@ -1,0 +1,101 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-10-06-kill-signals-term-kill-hup
+# 명령      : bash kill_signals.sh
+# 수행 시각 : 2026-10-06 19:17 (대한민국 표준시)
+# 소요      : 22.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+== 환경
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+timeout (GNU coreutils) 8.32
+
+== 1. 이름과 번호 — kill -l
+$ kill -l 15 9 1
+TERM
+KILL
+HUP
+$ kill -l TERM
+15
+$ kill -l 143
+TERM
+   HUP   1
+   INT   2
+   QUIT  3
+   KILL  9
+   TERM  15
+   USR1  30
+   STOP  17
+   CONT  19
+   CHLD  20
+
+== 2. 아무 시그널도 안 적으면 TERM
+   wait 종료 코드 143 (128+15)
+
+== 3. 같은 시그널을 쓰는 세 가지 형식
+   kill -s TERM  → 143
+   kill -n 15    → 143
+   kill -SIGTERM → 143
+
+== 4. TERM 은 정리할 기회를 주고, KILL 은 주지 않는다
+   [작업] TERM 받음 — 락 파일 지우고 종료
+   TERM: 종료 코드 0, 락 파일 없음
+   KILL: 종료 코드 137, 락 파일 app.lock
+
+== 5. TERM 을 무시하는 프로세스
+   TERM 보낸 뒤: 살아 있음 (kill -0 → 0)
+   KILL 보낸 뒤: 종료 코드 137, 없음 (kill -0 → 1)
+
+== 6. KILL 에 trap 을 걸면
+   trap KILL 종료 코드 0
+   trap -p: trap -- 'echo "   [작업] KILL 잡았다"' SIGKILL
+   KILL 보낸 뒤: 종료 코드 137 (trap 은 실행되지 않았다)
+
+== 7. HUP — 설정 다시 읽기에 쓰는 관례
+   [작업] 설정 읽음: level=info
+   [작업] 설정 읽음: level=debug
+   HUP 보낸 뒤: 살아 있음 (kill -0 → 0)
+   trap 없는 sleep 에 HUP: 종료 코드 129 (128+1)
+
+== 8. 포그라운드 명령이 도는 동안 trap 은 미뤄진다
+   [작업] TERM 처리
+   sleep 3 (포그라운드)  : kill 부터 끝날 때까지 2511ms
+   [작업] TERM 처리
+   sleep 3 & wait $!    : kill 부터 끝날 때까지 30ms
+
+== 9. 부모만 죽이면 자식은 남는다 — 프로세스 그룹으로 보내기
+   부모 PID 에만 TERM → 부모 없음 (kill -0 → 1) / 자식 살아 있음 (kill -0 → 0)
+   -PGID 로 그룹에 TERM → 부모 없음 (kill -0 → 1) / 자식 없음 (kill -0 → 1)
+
+== 10. STOP 과 CONT — 멈췄다 이어 가기
+   STOP 뒤 1초 동안 카운터: 4 → 4 (살아 있음 (kill -0 → 0))
+   CONT 뒤 1초 동안 카운터: 4 → 13
+
+== 11. 없는 PID 에 보내면
+   kill: (999999) - No such process
+   종료 코드 1
+
+== 12. timeout — 시간이 지나면 보내기
+   timeout 0.5 sleep 5                   → 124
+   timeout -s KILL 0.5 sleep 5           → 137
+   timeout --preserve-status 0.5 sleep 5 → 143
+   timeout: sending signal TERM to command 'sleep'
+   TERM 무시 작업, -k 없음 → 124 (3115ms)
+   TERM 무시 작업, -k 1    → 137 (1591ms)
+
+== 13. 작업 번호로 보내기 — kill %1
+   jobs: [1]+  Running                    sleep 30 &
+   kill %1 → 종료 코드 143
+
+== 14. trap 을 보고 되돌리기 — trap -p, -P, -
+   trap -p TERM: trap -- 'echo cleanup' SIGTERM
+   trap -P TERM: echo cleanup
+   trap - TERM 뒤 trap -p TERM: []
+
+--- stderr ---
+kill_signals.sh: line 67:  1748 Hangup                     sleep 30
+kill_signals.sh: line 101:  1799 Killed                     timeout -s KILL 0.5 sleep 5 2> /dev/null
+kill_signals.sh: line 108:  1811 Killed                     timeout -k 1 0.5 bash -c 'trap "" TERM; sleep 3' 2> /dev/null
