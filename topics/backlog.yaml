@@ -3478,7 +3478,7 @@ topics:
     angle: "시장가와 지정가, 우선순위 규칙(가격·시간). 호가창 한 장면으로 체결 순서를 따라간다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-025
     title: "거래량과 거래대금 — 어느 쪽을 봐야 하는가"
     category: Finance
