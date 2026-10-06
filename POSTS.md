@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **213편** · 갱신 2026-10-07
+총 **215편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -64,10 +64,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 81편
+## 기술사 (pe) — 83편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
+| 2026-10-07 | [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](posts/PE/data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md) | 중급 | Python 3.13.5, An & Cho, SNU DM TR 2015, Zhou & Paffenroth, KDD 2017, Goodfellow et al., Deep Learning (2016) ch.14 | 실행 검증 |
 | 2026-10-06 | [트랜잭션 ACID와 2단계 커밋(2PC)](posts/PE/database/2026-10-06-two-phase-commit-blocking-window/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Bernstein·Hadzilacos·Goodman, Concurrency Control and Recovery in Database Systems 7장 (1987), X/Open XA Specification (1991) | 실행 검증 |
 | 2026-10-06 | [TCP 혼잡 제어 알고리즘 비교 — Reno·CUBIC·BBR은 무엇을 신호로 삼는가](posts/PE/network/2026-10-06-tcp-congestion-control-reno-cubic-bbr/index.md) | 중급 | RFC 5681 (2009-09), RFC 9438 (2023-08), draft-ietf-ccwg-bbr-06 (2026-07), Python 3.13.5 | 실행 검증 |
 | 2026-10-06 | [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](posts/PE/data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md) | 중급 | Python 3.13.5, Statistics Canada, Survey Methods and Practices 12-587-X (2003), Horvitz & Thompson, JASA 47(260) (1952) | 실행 검증 |
