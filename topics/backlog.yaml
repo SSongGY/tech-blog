@@ -627,7 +627,7 @@ topics:
     difficulty: 입문
     angle: "WITH TIME ZONE 계열까지 포함해 정밀도와 연산 규칙"
     code: sql
-    status: todo
+    status: done
   - id: tb-015
     title: "Tibero 7 WITH 절 — CTE와 재귀 질의"
     category: Database
@@ -1970,7 +1970,7 @@ topics:
     angle: "듀얼스택·터널링·변환을 언제 쓰는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-056
     title: "5G 네트워크 슬라이싱"
     category: PE
@@ -2532,7 +2532,7 @@ topics:
     angle: "중첩 서브쿼리를 CTE로 펴면 무엇이 읽기 쉬워지고 무엇을 잃는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-041
     title: "재귀 CTE — 계층 구조를 펴는 법"
     category: Database

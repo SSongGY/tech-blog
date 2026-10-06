@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **215편** · 갱신 2026-10-07
+총 **218편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 37편
+## DB문법 (basics) — 38편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [누적합과 이동평균 — SUM OVER의 프레임](posts/Database/sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [자료형 — SQLite의 동적 타입](posts/Database/sql-basics/2026-10-06-sqlite-dynamic-typing-affinity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [LIKE와 와일드카드 — % 와 _ 가 걸리는 자리](posts/Database/sql-basics/2026-10-06-sql-like-wildcard-escape/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -46,10 +47,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 13편
+## DB기능 (product) — 14편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](posts/Database/tibero/2026-10-07-tibero7-date-timestamp-types/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-06 | [Tibero 7 LOB — CLOB/BLOB 저장과 조회](posts/Database/tibero/2026-10-06-tibero7-lob-clob-blob/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-03 | [Tibero 7 딕셔너리 뷰 — 무엇을 어디서 찾는가](posts/Database/tibero/2026-10-03-tibero7-dictionary-views/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-02 | [Tibero 7 외부 테이블 — 파일을 테이블처럼 읽기](posts/Database/tibero/2026-10-02-tibero7-external-table/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -64,11 +66,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 83편
+## 기술사 (pe) — 84편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
+| 2026-10-07 | [IPv6 전환 기술 3가지 — 듀얼스택·터널링·변환은 언제 쓰는가](posts/PE/network/2026-10-07-ipv6-transition-dual-stack-tunneling-translation/index.md) | 중급 | RFC 4213 (2005-10), RFC 6144 (2011-04), RFC 6052 (2010-10), RFC 6146 (2011-04), RFC 3056 (2001-02), Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](posts/PE/data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md) | 중급 | Python 3.13.5, An & Cho, SNU DM TR 2015, Zhou & Paffenroth, KDD 2017, Goodfellow et al., Deep Learning (2016) ch.14 | 실행 검증 |
 | 2026-10-06 | [트랜잭션 ACID와 2단계 커밋(2PC)](posts/PE/database/2026-10-06-two-phase-commit-blocking-window/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Bernstein·Hadzilacos·Goodman, Concurrency Control and Recovery in Database Systems 7장 (1987), X/Open XA Specification (1991) | 실행 검증 |
 | 2026-10-06 | [TCP 혼잡 제어 알고리즘 비교 — Reno·CUBIC·BBR은 무엇을 신호로 삼는가](posts/PE/network/2026-10-06-tcp-congestion-control-reno-cubic-bbr/index.md) | 중급 | RFC 5681 (2009-09), RFC 9438 (2023-08), draft-ietf-ccwg-bbr-06 (2026-07), Python 3.13.5 | 실행 검증 |
@@ -255,6 +258,11 @@
 | 2026-09-29 | [재무상태표 — 자산은 어디서 왔는가](posts/Finance/statements/2026-09-29-balance-sheet-debt-vs-equity/index.md) | 입문 | Python 3.13.5, 재무보고를 위한 개념체계(2018), K-IFRS 제1032호 | 실행 검증 |
 
 ## 같은 기능을 여러 환경에서 다룬 글
+
+**`datetime-types`**
+
+- [날짜와 시간 다루기 — 저장과 연산](posts/Database/sql-basics/2026-10-01-sql-date-time-storage-arithmetic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](posts/Database/tibero/2026-10-07-tibero7-date-timestamp-types/index.md) — Tibero 7
 
 **`explain-plan`**
 
