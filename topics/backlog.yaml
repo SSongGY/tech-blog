@@ -3489,7 +3489,7 @@ topics:
     angle: "주가가 다른 두 종목을 거래량만으로 비교하면 틀리는 이유"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-026
     title: "공매도 — 없는 주식을 파는 구조"
     category: Finance
@@ -3500,7 +3500,7 @@ topics:
     angle: "빌려서 팔고 되사서 갚는 흐름과 손익 계산. 손실이 이론상 무한인 이유를 숫자로"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-027
     title: "주가지수는 어떻게 계산되는가"
     category: Finance
