@@ -3511,7 +3511,7 @@ topics:
     angle: "시가총액 가중과 주가 가중의 차이. 같은 종목 구성으로 두 방식을 계산해 결과가 갈리는 것을 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-028
     title: "ETF — 바구니를 주식처럼 사고파는 구조"
     category: Finance

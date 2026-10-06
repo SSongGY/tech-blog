@@ -194,3 +194,4 @@
 | 2026-10-07 | db-040 | Database | CTE — WITH 절로 질의에 이름 붙이기 |
 | 2026-10-07 | tb-014 | Database | Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이 |
 | 2026-10-07 | pe-055 | PE | IPv6 전환 기술 3가지 |
+| 2026-10-07 | fin-027 | Finance | 주가지수는 어떻게 계산되는가 |

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="445" viewBox="0 0 880 445" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="445" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 세 종목, 무엇으로 가중하느냐에 따라 비중이 뒤바뀐다</text>
+
+  <!-- 범례 -->
+  <rect x="60" y="50" width="16" height="16" fill="#cfe2ff" stroke="#495057"/>
+  <text x="82" y="63" font-size="13" fill="#1b1b1b">가나정밀 (주가 500,000원 · 200만 주)</text>
+  <rect x="350" y="50" width="16" height="16" fill="#d8f3dc" stroke="#495057"/>
+  <text x="372" y="63" font-size="13" fill="#1b1b1b">다라통신 (50,000원 · 1억 주)</text>
+  <rect x="600" y="50" width="16" height="16" fill="#fff3e0" stroke="#495057"/>
+  <text x="622" y="63" font-size="13" fill="#1b1b1b">마바유통 (10,000원 · 2억 주)</text>
+
+  <!-- 주가 가중: 막대 폭 600 = 100% -->
+  <text x="40" y="110" font-size="15" font-weight="bold" fill="#1b1b1b">주가 가중</text>
+  <text x="40" y="130" font-size="13" fill="#495057">Σ 주가 ÷ 제수</text>
+  <rect x="180" y="92" width="536" height="40" fill="#cfe2ff" stroke="#495057"/>
+  <text x="448" y="117" text-anchor="middle" font-size="14" fill="#1b1b1b">가나정밀 89.3%</text>
+  <rect x="716" y="92" width="53" height="40" fill="#d8f3dc" stroke="#495057"/>
+  <text x="742" y="117" text-anchor="middle" font-size="13" fill="#1b1b1b">8.9%</text>
+  <rect x="769" y="92" width="11" height="40" fill="#fff3e0" stroke="#495057"/>
+  <text x="790" y="117" font-size="13" fill="#1b1b1b">1.8%</text>
+
+  <!-- 시가총액 가중 -->
+  <text x="40" y="190" font-size="15" font-weight="bold" fill="#1b1b1b">시가총액 가중</text>
+  <text x="40" y="210" font-size="13" fill="#495057">Σ 주가 × 주식수</text>
+  <rect x="180" y="172" width="75" height="40" fill="#cfe2ff" stroke="#495057"/>
+  <text x="217" y="197" text-anchor="middle" font-size="13" fill="#1b1b1b">12.5%</text>
+  <rect x="255" y="172" width="375" height="40" fill="#d8f3dc" stroke="#495057"/>
+  <text x="442" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">다라통신 62.5%</text>
+  <rect x="630" y="172" width="150" height="40" fill="#fff3e0" stroke="#495057"/>
+  <text x="705" y="197" text-anchor="middle" font-size="14" fill="#1b1b1b">마바유통 25.0%</text>
+
+  <line x1="30" y1="240" x2="850" y2="240" stroke="#ced4da"/>
+
+  <!-- 다음 날 -->
+  <text x="40" y="272" font-size="15" font-weight="bold" fill="#1b1b1b">다음 날: 가나정밀 +10%, 다라통신 −5%, 마바유통 보합</text>
+
+  <rect x="80" y="292" width="330" height="70" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="245" y="320" text-anchor="middle" font-size="14" fill="#1b1b1b">주가 가중 지수</text>
+  <text x="245" y="346" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">100.00 → 108.48 (+8.48%)</text>
+
+  <rect x="470" y="292" width="330" height="70" rx="6" fill="#fde2e4" stroke="#9d0208"/>
+  <text x="635" y="320" text-anchor="middle" font-size="14" fill="#1b1b1b">시가총액 가중 지수</text>
+  <text x="635" y="346" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">100.00 → 98.12 (−1.88%)</text>
+
+  <text x="40" y="390" font-size="13" fill="#495057">기여도 = 비중 × 등락률. 주가 가중에서는 주가가 높은 가나정밀의 등락이,</text>
+  <text x="40" y="408" font-size="13" fill="#495057">시가총액 가중에서는 회사 값이 큰 다라통신의 등락이 지수를 가장 크게 움직인다.</text>
+  <text x="40" y="426" font-size="13" fill="#495057">숫자는 가상 종목의 code/output.txt [1]·[2]에서 옮겼다.</text>
+</svg>
