@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **212편** · 갱신 2026-10-06
+총 **213편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -186,10 +186,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 29편
+## 기출문제 (exam) — 30편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [기출문제 — 시계열 데이터의 이상치 유형, 탐지 방식, 딥러닝 기반 탐지 기법](posts/PE/exam/2026-10-07-time-series-anomaly-detection/index.md) | 중급 | Chandola et al., Anomaly Detection: A Survey, ACM CSUR 41(3), 2009, Blázquez-García et al., A Review on Outlier/Anomaly Detection in Time Series Data, ACM CSUR 54(3), 2021, Lai et al., Revisiting Time Series Outlier Detection, NeurIPS 2021 Datasets and Benchmarks, Darban et al., Deep Learning for Time Series Anomaly Detection: A Survey, arXiv:2211.05244v3 (2024), Hundman et al., KDD 2018, Kim et al., AAAI 2022 | 문서 근거 |
 | 2026-10-06 | [기출문제 — 소프트웨어 형상관리의 절차, 기준선, 도구](posts/PE/exam/2026-10-06-software-configuration-management-baseline-tools/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), ISO/IEC/IEEE 24765:2017, IEEE 828-2012, SEBoK v2.14 (2026-05), Pro Git 2판 (2014) | 문서 근거 |
 | 2026-10-06 | [기출문제 — 표본추출의 절차, 확률·비확률 기법 비교, AI 학습데이터 구축에의 적용](posts/PE/exam/2026-10-06-sampling-ai-training-data/index.md) | 중급 | Statistics Canada, Survey Methods and Practices, Catalogue 12-587-X (2003), NIST/SEMATECH e-Handbook of Statistical Methods §3.3.3.3 (2012), AAPOR Task Force Report on Non-Probability Sampling (2013-06), Regulation (EU) 2024/1689 Art. 10, Gebru et al., Datasheets for Datasets, CACM 64(12), 2021, scikit-learn 1.9.1 User Guide §3.1 | 문서 근거 |
 | 2026-10-05 | [기출문제 — 인공지능 기본법의 고영향 인공지능: 정의, 활용 영역, 사업자의 안전성·신뢰성 확보 활동](posts/PE/exam/2026-10-05-high-impact-ai-basic-act/index.md) | 심화 | 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정), 인공지능 기본법 시행령 대통령령 제36580호 (2026-08-20 시행), Regulation (EU) 2024/1689 (AI Act), ISO/IEC 42001:2023, ISO/IEC 23894:2023, ISO/IEC 42005:2025 | 문서 근거 |
