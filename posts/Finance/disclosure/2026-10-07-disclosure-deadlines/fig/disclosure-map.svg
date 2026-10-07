@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">상장법인 공시의 두 갈래 — 누가 정하고, 언제까지인가</text>
+
+  <!-- 왼쪽: 공적규제 -->
+  <rect x="30" y="55" width="400" height="58" rx="6" fill="#cfe2ff" stroke="#495057"/>
+  <text x="230" y="80" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">공적규제 — 자본시장법</text>
+  <text x="230" y="100" text-anchor="middle" font-size="13" fill="#495057">금융위원회 · 금융감독원 DART 로 제출</text>
+
+  <rect x="30" y="130" width="400" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="45" y="154" font-size="14" font-weight="bold" fill="#1b1b1b">정기공시</text>
+  <text x="45" y="175" font-size="13" fill="#495057">사업보고서 90일 · 분기·반기보고서 45일 (역으로 셈)</text>
+
+  <rect x="30" y="200" width="400" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="45" y="224" font-size="14" font-weight="bold" fill="#1b1b1b">주요사항보고서</text>
+  <text x="45" y="245" font-size="13" fill="#495057">부도·영업정지·합병·자기주식 등 — 사실 발생 다음 날까지</text>
+
+  <rect x="30" y="270" width="400" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="45" y="294" font-size="14" font-weight="bold" fill="#1b1b1b">발행공시 · 지분공시</text>
+  <text x="45" y="315" font-size="13" fill="#495057">증권신고서 · 대량보유·임원 소유상황 보고</text>
+
+  <!-- 오른쪽: 자율규제 -->
+  <rect x="450" y="55" width="400" height="58" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="650" y="80" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">자율규제 — 거래소 공시규정</text>
+  <text x="650" y="100" text-anchor="middle" font-size="13" fill="#495057">한국거래소 KIND 로 제출 · 매매거래일로 셈</text>
+
+  <rect x="450" y="130" width="400" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="465" y="154" font-size="14" font-weight="bold" fill="#1b1b1b">수시공시 (주요경영사항)</text>
+  <text x="465" y="175" font-size="13" fill="#495057">항목별 당일 18:00 또는 익일 18:00</text>
+
+  <rect x="450" y="200" width="400" height="58" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="465" y="224" font-size="14" font-weight="bold" fill="#1b1b1b">공정공시</text>
+  <text x="465" y="245" font-size="13" fill="#495057">특정인에게 알리기 전 — 날짜가 아니라 행위가 기준</text>
+
+  <rect x="450" y="270" width="400" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="465" y="294" font-size="14" font-weight="bold" fill="#1b1b1b">조회공시</text>
+  <text x="465" y="315" font-size="13" fill="#495057">거래소가 묻는다 — 오전 요구 당일 18:00, 오후 요구 익일 12:00</text>
+
+  <rect x="450" y="340" width="400" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="465" y="364" font-size="14" font-weight="bold" fill="#1b1b1b">자율공시</text>
+  <text x="465" y="385" font-size="13" fill="#495057">의무는 아니나 하기로 했으면 사유 발생 다음 날까지</text>
+
+  <!-- 두 갈래가 겹치는 자리 -->
+  <line x1="430" y1="229" x2="450" y2="159" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="420" text-anchor="middle" font-size="13" fill="#2d6a4f">합병·자기주식 같은 공통 항목은 DART 한 번 제출로 주요사항보고와 수시공시를 함께 이행한다</text>
+
+  <line x1="30" y1="440" x2="850" y2="440" stroke="#ced4da"/>
+  <text x="40" y="465" font-size="13" fill="#495057">왼쪽 시한은 법률이 정하고 민법 방식으로 센다. 오른쪽 시한은 거래소 규정이 정하고 매매거래일로 센다.</text>
+  <text x="40" y="485" font-size="13" fill="#495057">거래소 쪽 시한은 코스닥시장 공시·상장관리 해설(2025.9) 기준이다.</text>
+</svg>
