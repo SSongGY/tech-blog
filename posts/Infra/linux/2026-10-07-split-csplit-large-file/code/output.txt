@@ -1,0 +1,211 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Infra\linux\2026-10-07-split-csplit-large-file
+# 명령      : bash split_csplit.sh
+# 수행 시각 : 2026-10-07 12:09 (대한민국 표준시)
+# 소요      : 11.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+===== 0. 입력 파일
+app.log         2500줄  162500바이트
+days.log          14줄     287바이트
+2026-10-01T00:00:01 INFO req=0001 path=/api/items/42/reviews status=200
+2026-10-01T00:00:02 INFO req=0002 path=/health status=200
+# 서버 로그 — 머리말 두 줄
+# 생성: 2026-10-04
+=== 2026-10-01 ===
+INFO start day 01
+WARN slow query day 01
+INFO end day 01
+=== 2026-10-02 ===
+INFO start day 02
+WARN slow query day 02
+INFO end day 02
+=== 2026-10-03 ===
+INFO start day 03
+WARN slow query day 03
+INFO end day 03
+
+===== 1. 기본값 — 1000줄씩, 접두어 x, 접미사 aa
+xaa             1000줄   65000바이트
+xab             1000줄   65000바이트
+xac              500줄   32500바이트
+
+===== 2. -l, 접두어, -d, -a, --additional-suffix, --numeric-suffixes=FROM, -x
+part_000.log
+part_001.log
+part_002.log
+part_07
+part_08
+part_09
+part_00 part_01 part_02 part_03 part_04 part_05 part_06 part_07 part_08 part_09 part_0a part_0b part_0c 
+
+===== 3. -b 는 줄 가운데를 자르고, -C 는 줄을 지킨다
+part_aa         1008줄   65536바이트
+part_ab         1008줄   65536바이트
+part_ac          484줄   31428바이트
+part_aa 마지막 줄 : h=/api/items status=200
+2026-10-01T00:16|
+part_ab 첫 줄     : :49 INFO req=1009 path=/api/items/42/reviews status=200
+part_aa         1008줄   65520바이트
+part_ab         1008줄   65520바이트
+part_ac          484줄   31460바이트
+part_aa 마지막 줄 : 2026-10-01T00:16:48 INFO req=1008 path=/api/items status=200
+part_ab 첫 줄     : 2026-10-01T00:16:49 INFO req=1009 path=/api/items/42/reviews status=200
+
+===== 4. 한 줄이 -C 크기보다 길면
+part_aa            0줄     100바이트
+part_ab            0줄     100바이트
+part_ac            0줄     100바이트
+part_ad            2줄       7바이트
+
+===== 5. -n — 개수로 나누기 (N, l/N, r/N, K/N)
+part_aa          833줄   54166바이트
+part_ab          833줄   54166바이트
+part_ac          834줄   54168바이트
+part_ab 첫 줄 : 13:54 INFO req=0834 path=/health status=200
+part_aa          834줄   54210바이트
+part_ab          833줄   54149바이트
+part_ac          833줄   54141바이트
+part_ab 첫 줄 : 2026-10-01T00:13:55 INFO req=0835 path=/api/orders?page=3 status=200
+rr_aa            834줄   54213바이트
+rr_ab            833줄   54138바이트
+rr_ac            833줄   54149바이트
+2026-10-01T00:00:02 INFO req=0002 path=/health status=200
+2026-10-01T00:00:05 INFO req=0005 path=/api/items/42/reviews status=200
+l/2/3 를 표준 출력으로 받은 줄 수 : 833
+
+===== 6. 조각이 입력보다 많으면 빈 파일 — -e
+part_aa            1줄       2바이트
+part_ab            0줄       0바이트
+part_ac            1줄       2바이트
+part_ad            0줄       0바이트
+part_aa
+part_ab
+
+===== 7. 접미사가 모자라면
+종료 코드 0
+part_a part_b part_c part_d part_e part_f part_g part_h part_i part_j part_k part_l part_m part_n part_o part_p part_q part_r part_s part_t part_u part_v part_w part_x part_y 
+종료 코드 1
+26
+
+===== 8. -a 를 안 주면 접미사 길이가 늘어난다
+xaa
+xzaay
+xzaaz
+xzaba
+xzabb
+xzabx
+700개 / 조각을 glob 순서로 이은 첫 줄과 마지막 줄 : 1 700 
+cmp: 원본과 같다
+
+===== 9. --filter — 조각마다 명령에 넘기기
+part_aa.gz
+part_ab.gz
+part_ac.gz
+cmp: 원본과 같다
+
+===== 10. -t — 줄 대신 다른 구분자
+part_aa: r1;r2;
+part_ab: r3;r4;
+part_ac: r5;
+
+===== 11. 표준 입력과 --verbose
+creating file 'part_aa'
+creating file 'part_ab'
+creating file 'part_ac'
+
+===== 12. 다시 합치고 검사하기
+5c2d11f155ee5202 *app.log
+5c2d11f155ee5202 *joined.log
+
+===== 13. csplit — 줄 번호와 정규식
+59
+76
+152
+xx00               2줄      59바이트
+xx01               4줄      76바이트
+xx02               8줄     152바이트
+59
+76
+76
+76
+xx00               2줄      59바이트
+xx01               4줄      76바이트
+xx02               4줄      76바이트
+xx03               4줄      76바이트
+xx00 :
+# 서버 로그 — 머리말 두 줄
+# 생성: 2026-10-04
+
+===== 14. -s, -f, -n, -b
+day_000
+day_001
+day_002
+day_003
+day_00.log
+day_01.log
+day_02.log
+day_03.log
+
+===== 15. %REGEXP% 로 앞을 버리기, --suppress-matched
+sec_00             4줄      76바이트
+sec_01             4줄      76바이트
+sec_02             4줄      76바이트
+=== 2026-10-01 ===
+sec_00             2줄      59바이트
+sec_01             3줄      57바이트
+sec_02             3줄      57바이트
+sec_03             3줄      57바이트
+INFO start day 01
+
+===== 16. OFFSET
+sec_00             5줄     119바이트
+sec_01             4줄      76바이트
+sec_02             4줄      76바이트
+sec_03             1줄      16바이트
+sec_00             5줄     119바이트
+sec_01             9줄     168바이트
+WARN slow query day 01
+
+===== 17. 처음부터 맞는 줄이면 빈 조각 — -z
+0
+76
+76
+76
+76
+76
+76
+
+===== 18. 못 찾으면 지운다 — -k
+59
+76
+76
+76
+종료 코드 1
+ls: cannot access 'sec_*': No such file or directory
+59
+76
+76
+76
+종료 코드 1
+sec_00
+sec_01
+sec_02
+sec_03
+287
+종료 코드 1
+
+===== 19. 경계값 — 딱 맞으면
+26조각, -a 1 : 종료 코드 0
+650조각, -a 없음 : 마지막 이름 xyz
+'{2}' : 종료 코드 0, 조각 4개
+
+--- stderr ---
+split: output file suffixes exhausted
+csplit: '/^=== /': match not found on repetition 3
+csplit: '/^=== /': match not found on repetition 3
+csplit: '/^ERROR/': match not found

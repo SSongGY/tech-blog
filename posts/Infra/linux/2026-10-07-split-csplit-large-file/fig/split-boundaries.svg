@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">어디서 자르는가 — 크기 기준 두 가지와 내용 기준 한 가지</text>
+
+  <!-- 행 1: split -b 64K -->
+  <text x="20" y="84" font-size="14" font-weight="bold" fill="#9d0208">split -b 64K</text>
+  <text x="20" y="104" font-size="13" fill="#495057">바이트 수만 센다</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="170" y="66" width="200" height="48" fill="#f8d7da" stroke="#9d0208"/>
+    <text x="270" y="86" fill="#1b1b1b">part_aa</text><text x="270" y="104" fill="#495057">65536바이트</text>
+    <rect x="370" y="66" width="200" height="48" fill="#f8d7da" stroke="#9d0208"/>
+    <text x="470" y="86" fill="#1b1b1b">part_ab</text><text x="470" y="104" fill="#495057">65536바이트</text>
+    <rect x="570" y="66" width="100" height="48" fill="#f8d7da" stroke="#9d0208"/>
+    <text x="620" y="86" fill="#1b1b1b">part_ac</text><text x="620" y="104" fill="#495057">31428</text>
+  </g>
+  <text x="690" y="86" font-size="13" fill="#9d0208">경계가 줄 가운데</text>
+  <text x="690" y="104" font-size="13" fill="#9d0208">한 줄이 두 조각에</text>
+
+  <!-- 행 2: split -C 64K -->
+  <text x="20" y="164" font-size="14" font-weight="bold" fill="#2d6a4f">split -C 64K</text>
+  <text x="20" y="184" font-size="13" fill="#495057">크기 안에서 줄 끝</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="170" y="146" width="200" height="48" fill="#d8f3dc" stroke="#2d6a4f"/>
+    <text x="270" y="166" fill="#1b1b1b">part_aa</text><text x="270" y="184" fill="#495057">65520바이트</text>
+    <rect x="370" y="146" width="200" height="48" fill="#d8f3dc" stroke="#2d6a4f"/>
+    <text x="470" y="166" fill="#1b1b1b">part_ab</text><text x="470" y="184" fill="#495057">65520바이트</text>
+    <rect x="570" y="146" width="100" height="48" fill="#d8f3dc" stroke="#2d6a4f"/>
+    <text x="620" y="166" fill="#1b1b1b">part_ac</text><text x="620" y="184" fill="#495057">31460</text>
+  </g>
+  <text x="690" y="166" font-size="13" fill="#2d6a4f">16바이트 덜 담고</text>
+  <text x="690" y="184" font-size="13" fill="#2d6a4f">줄 끝에서 끊는다</text>
+
+  <!-- 행 3: csplit -->
+  <text x="20" y="244" font-size="14" font-weight="bold" fill="#1b1b1b">csplit</text>
+  <text x="20" y="264" font-size="13" fill="#495057">'/^=== /' '{*}'</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="170" y="226" width="110" height="48" fill="#f1f3f5" stroke="#495057"/>
+    <text x="225" y="246" fill="#1b1b1b">xx00</text><text x="225" y="264" fill="#495057">머리말 2줄</text>
+    <rect x="280" y="226" width="130" height="48" fill="#f1f3f5" stroke="#495057"/>
+    <text x="345" y="246" fill="#1b1b1b">xx01</text><text x="345" y="264" fill="#495057">=== 10-01 부터</text>
+    <rect x="410" y="226" width="130" height="48" fill="#f1f3f5" stroke="#495057"/>
+    <text x="475" y="246" fill="#1b1b1b">xx02</text><text x="475" y="264" fill="#495057">=== 10-02 부터</text>
+    <rect x="540" y="226" width="130" height="48" fill="#f1f3f5" stroke="#495057"/>
+    <text x="605" y="246" fill="#1b1b1b">xx03</text><text x="605" y="264" fill="#495057">=== 10-03 부터</text>
+  </g>
+  <text x="690" y="246" font-size="13" fill="#495057">맞은 줄은 다음</text>
+  <text x="690" y="264" font-size="13" fill="#495057">조각의 첫 줄이 된다</text>
+
+  <line x1="20" y1="306" x2="860" y2="306" stroke="#ced4da"/>
+  <text x="20" y="334" font-size="13" fill="#495057">위 두 줄은 같은 2,500줄 로그(162,500바이트)를 자른 결과다. 상자 폭은 크기를 대강 비례로 나타낸다.</text>
+  <text x="20" y="358" font-size="13" fill="#495057">split 은 "얼마나"로, csplit 은 "어디서"로 자른다. 줄 수 기준 -l 은 -C 처럼 언제나 줄 끝에서 끊는다.</text>
+  <text x="20" y="382" font-size="13" fill="#495057">csplit 의 첫 조각은 처음 맞은 줄 앞부분이다. 파일이 맞는 줄로 시작하면 이 조각이 0바이트가 된다(-z 로 뺀다).</text>
+</svg>
