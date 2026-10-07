@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **233편** · 갱신 2026-10-08
+총 **234편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -199,10 +199,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 31편
+## 기출문제 (exam) — 32편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [기출문제 — AI 데이터센터, 기존 데이터센터와 무엇이 다른가](posts/PE/exam/2026-10-08-ai-data-center-vs-traditional/index.md) | 심화 | ISO/IEC 22237-1:2021, ISO/IEC 30134-2:2026, IEA Energy and AI (2025-04), Uptime Institute Global Data Center Survey 2024, ASHRAE TC 9.9 Liquid Cooling White Paper (2021-05), NVIDIA DGX SuperPOD Reference Architecture GB200 (2025-11), OCP Open Rack Base Frame V3 Specification (2022-08) | 문서 근거 |
 | 2026-10-07 | [기출문제 — 시계열 데이터의 이상치 유형, 탐지 방식, 딥러닝 기반 탐지 기법](posts/PE/exam/2026-10-07-time-series-anomaly-detection/index.md) | 중급 | Chandola et al., Anomaly Detection: A Survey, ACM CSUR 41(3), 2009, Blázquez-García et al., A Review on Outlier/Anomaly Detection in Time Series Data, ACM CSUR 54(3), 2021, Lai et al., Revisiting Time Series Outlier Detection, NeurIPS 2021 Datasets and Benchmarks, Darban et al., Deep Learning for Time Series Anomaly Detection: A Survey, arXiv:2211.05244v3 (2024), Hundman et al., KDD 2018, Kim et al., AAAI 2022 | 문서 근거 |
 | 2026-10-07 | [기출문제 — 국내 규제에 따른 정보보호 컴플라이언스의 개념, 필요성, 대응 방안](posts/PE/exam/2026-10-07-information-security-compliance-korea/index.md) | 중급 | ISO 37301:2021, ISO/IEC 27001:2022, NIST CSWP 29 CSF 2.0 (2024-02-26), 정보통신망법 법률 제21500호 (2026-10-01 시행), 개인정보 보호법 (2023-09-15 시행 개정), ISMS-P 인증기준 101개 항목 | 문서 근거 |
 | 2026-10-06 | [기출문제 — 소프트웨어 형상관리의 절차, 기준선, 도구](posts/PE/exam/2026-10-06-software-configuration-management-baseline-tools/index.md) | 중급 | ISO/IEC TR 19759:2016 (SWEBOK V3.0), ISO/IEC/IEEE 24765:2017, IEEE 828-2012, SEBoK v2.14 (2026-05), Pro Git 2판 (2014) | 문서 근거 |
