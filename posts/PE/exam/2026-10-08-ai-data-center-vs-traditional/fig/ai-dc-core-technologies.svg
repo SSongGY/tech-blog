@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" font-family="'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfaf7"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="34" text-anchor="middle" font-size="18" font-weight="700" fill="#1f2937">AI 데이터센터 구현을 위한 핵심 기술 — 6가지와 외부 제약 2가지</text>
+
+  <!-- ⑥ 운영·효율 관리 (가로로 걸침) -->
+  <rect x="60" y="56" width="760" height="58" rx="8" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="80" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">⑥ 운영·효율 관리 계층</text>
+  <text x="440" y="102" text-anchor="middle" font-size="13" fill="#374151">DCIM · 작업 스케줄러(Slurm·Kubernetes) · PUE/WUE 측정(ISO/IEC 30134-2 · 30134-9)</text>
+
+  <!-- 중간 줄: IT 계층 3개 -->
+  <rect x="60" y="160" width="230" height="112" rx="8" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="175" y="186" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">① 가속 컴퓨팅 랙</text>
+  <text x="175" y="210" text-anchor="middle" font-size="13" fill="#374151">GPU 72개를 NVLink 단일 도메인으로</text>
+  <text x="175" y="230" text-anchor="middle" font-size="13" fill="#374151">GPU·CPU는 콜드플레이트 액체 냉각</text>
+  <text x="175" y="250" text-anchor="middle" font-size="13" fill="#374151">랙 전원 선반 8개 × 최대 33kW</text>
+
+  <rect x="325" y="160" width="230" height="112" rx="8" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="186" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">② 스케일아웃 패브릭</text>
+  <text x="440" y="210" text-anchor="middle" font-size="13" fill="#374151">InfiniBand NDR 400Gb/s · RoCE</text>
+  <text x="440" y="230" text-anchor="middle" font-size="13" fill="#374151">컴퓨트·스토리지·관리망을</text>
+  <text x="440" y="250" text-anchor="middle" font-size="13" fill="#374151">물리적으로 분리</text>
+
+  <rect x="590" y="160" width="230" height="112" rx="8" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="705" y="186" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">③ 고성능 스토리지</text>
+  <text x="705" y="210" text-anchor="middle" font-size="13" fill="#374151">로컬 NVMe 캐시 + 공유 병렬 저장소</text>
+  <text x="705" y="230" text-anchor="middle" font-size="13" fill="#374151">반복 읽기는 캐시에서,</text>
+  <text x="705" y="250" text-anchor="middle" font-size="13" fill="#374151">체크포인트 쓰기 폭주를 흡수</text>
+
+  <!-- 아래 줄: 설비 계층 2개 -->
+  <rect x="60" y="318" width="350" height="104" rx="8" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="235" y="344" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">④ 고밀도 전력 분배</text>
+  <text x="235" y="368" text-anchor="middle" font-size="13" fill="#374151">랙 내 48V DC 버스바(OCP Open Rack V3)</text>
+  <text x="235" y="388" text-anchor="middle" font-size="13" fill="#374151">선로 전압 208V → 480V 승압</text>
+  <text x="235" y="408" text-anchor="middle" font-size="13" fill="#374151">전원 선반·배터리 백업을 랙 단위로</text>
+
+  <rect x="470" y="318" width="350" height="104" rx="8" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="645" y="344" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2937">⑤ 액체 냉각 설비</text>
+  <text x="645" y="368" text-anchor="middle" font-size="13" fill="#374151">CDU가 시설수와 IT 냉각수 회로를 분리</text>
+  <text x="645" y="388" text-anchor="middle" font-size="13" fill="#374151">시설수 온도 등급 W27·W32·W45(ASHRAE)</text>
+  <text x="645" y="408" text-anchor="middle" font-size="13" fill="#374151">콜드플레이트 또는 액침</text>
+
+  <!-- 외부 제약 2개 (점선) -->
+  <rect x="60" y="468" width="350" height="56" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="235" y="491" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">전력 계통 (외부 제약)</text>
+  <text x="235" y="512" text-anchor="middle" font-size="13" fill="#4b5563">계통 연계 심사 · 직접 전력구매 · 입지</text>
+
+  <rect x="470" y="468" width="350" height="56" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="645" y="491" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">열 배출·용수 (외부 제약)</text>
+  <text x="645" y="512" text-anchor="middle" font-size="13" fill="#4b5563">고온 시설수 → 열 재사용 · WUE</text>
+
+  <!-- 화살표: 운영 계층이 IT 계층을 관리 -->
+  <line x1="175" y1="114" x2="175" y2="158" stroke="#4b5563" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="440" y1="114" x2="440" y2="158" stroke="#4b5563" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="705" y1="114" x2="705" y2="158" stroke="#4b5563" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+  <!-- 가로 화살표: 랙 ↔ 패브릭 ↔ 스토리지 -->
+  <line x1="292" y1="216" x2="323" y2="216" stroke="#4b5563" stroke-width="1.8" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <line x1="557" y1="216" x2="588" y2="216" stroke="#4b5563" stroke-width="1.8" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+
+  <!-- 설비 계층이 IT 계층에 공급 -->
+  <line x1="235" y1="316" x2="235" y2="274" stroke="#b45309" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="246" y="300" font-size="13" fill="#b45309">전력 공급</text>
+  <line x1="645" y1="316" x2="645" y2="274" stroke="#b45309" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <text x="656" y="300" font-size="13" fill="#b45309">열 제거</text>
+
+  <!-- 외부 제약이 설비 계층을 한정 -->
+  <line x1="235" y1="466" x2="235" y2="424" stroke="#6b7280" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <line x1="645" y1="466" x2="645" y2="424" stroke="#6b7280" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <!-- 범례 -->
+  <rect x="60" y="540" width="14" height="12" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="80" y="551" font-size="13" fill="#374151">IT 계층(정보시스템 설계 대상)</text>
+  <rect x="300" y="540" width="14" height="12" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="320" y="551" font-size="13" fill="#374151">설비 계층(IT 밀도가 요구를 정한다)</text>
+  <rect x="610" y="540" width="14" height="12" fill="#ffffff" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="630" y="551" font-size="13" fill="#374151">외부 제약(설계 입력 조건)</text>
+</svg>

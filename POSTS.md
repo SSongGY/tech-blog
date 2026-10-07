@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **233편** · 갱신 2026-10-07
+총 **233편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -273,6 +273,11 @@
 | 2026-09-29 | [재무상태표 — 자산은 어디서 왔는가](posts/Finance/statements/2026-09-29-balance-sheet-debt-vs-equity/index.md) | 입문 | Python 3.13.5, 재무보고를 위한 개념체계(2018), K-IFRS 제1032호 | 실행 검증 |
 
 ## 같은 기능을 여러 환경에서 다룬 글
+
+**`cte`**
+
+- [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 WITH 절 — CTE와 재귀 질의](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) — Tibero 7
 
 **`datetime-types`**
 
