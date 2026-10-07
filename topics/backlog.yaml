@@ -1981,7 +1981,7 @@ topics:
     angle: "슬라이스별 SLA를 물리 자원으로 어떻게 보장하는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-057
     title: "QUIC와 HTTP/3"
     category: PE
@@ -2554,7 +2554,7 @@ topics:
     angle: "있으면 갱신 없으면 삽입. 충돌 대상을 무엇으로 잡느냐가 결과를 가른다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-043
     title: "RETURNING — 넣은 값을 그 자리에서 돌려받기"
     category: Database
@@ -2851,7 +2851,7 @@ topics:
     angle: "크기·줄 수·패턴 기준으로 나누고 다시 합치기. 대용량 로그를 옮길 때"
     code: bash
     origin: manual
-    status: todo
+    status: done
   - id: infra-024
     title: "time으로 재는 세 가지 — real, user, sys"
     category: Infra

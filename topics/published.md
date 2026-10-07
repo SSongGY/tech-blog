@@ -198,3 +198,6 @@
 | 2026-10-07 | fin-028 | Finance | ETF — 바구니를 주식처럼 사고파는 구조 |
 | 2026-10-07 | fin-029 | Finance | 공시 체계 — 정기·수시·공정공시 |
 | 2026-10-07 | fin-030 | Finance | K-IFRS 연결과 별도 — 어느 쪽을 봐야 하는가 |
+| 2026-10-07 | infra-023 | Infra | split과 csplit — 큰 파일 쪼개기 |
+| 2026-10-07 | db-042 | Database | UPSERT — INSERT ... ON CONFLICT |
+| 2026-10-07 | pe-056 | PE | 5G 네트워크 슬라이싱 |
