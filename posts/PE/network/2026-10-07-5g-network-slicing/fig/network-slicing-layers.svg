@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">SLA가 자원까지 내려가는 경로</text>
+
+  <!-- 1층: 통신 서비스 -->
+  <rect x="30" y="52" width="560" height="50" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="310" y="74" text-anchor="middle" font-size="14" fill="#1b1b1b">통신 서비스 · 고객과 맺은 SLA</text>
+  <text x="310" y="93" text-anchor="middle" font-size="13" fill="#495057">지연·신뢰성·대역폭·격리 수준 등 요구사항</text>
+  <line x1="310" y1="102" x2="310" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2층: 서비스 프로파일 + 네트워크 슬라이스 -->
+  <rect x="30" y="126" width="230" height="56" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="145" y="149" text-anchor="middle" font-size="14" fill="#1b1b1b">서비스 프로파일</text>
+  <text x="145" y="169" text-anchor="middle" font-size="13" fill="#495057">SLS를 담는다</text>
+  <line x1="260" y1="154" x2="298" y2="154" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="300" y="126" width="290" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="445" y="149" text-anchor="middle" font-size="14" fill="#1b1b1b">네트워크 슬라이스</text>
+  <text x="445" y="169" text-anchor="middle" font-size="13" fill="#495057">S-NSSAI = SST (+ SD)</text>
+  <line x1="310" y1="182" x2="310" y2="208" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 3층: 서브넷 -->
+  <rect x="30" y="210" width="170" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="115" y="235" text-anchor="middle" font-size="14" fill="#1b1b1b">RAN 서브넷</text>
+  <text x="115" y="256" text-anchor="middle" font-size="13" fill="#495057">슬라이스 프로파일</text>
+  <rect x="225" y="210" width="170" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="310" y="235" text-anchor="middle" font-size="14" fill="#1b1b1b">TN 연결</text>
+  <text x="310" y="256" text-anchor="middle" font-size="13" fill="#495057">링크 QoS 요구사항</text>
+  <rect x="420" y="210" width="170" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="505" y="235" text-anchor="middle" font-size="14" fill="#1b1b1b">CN 서브넷</text>
+  <text x="505" y="256" text-anchor="middle" font-size="13" fill="#495057">슬라이스 프로파일</text>
+  <line x1="310" y1="274" x2="310" y2="300" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4층: 자원 -->
+  <rect x="30" y="302" width="560" height="50" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="310" y="324" text-anchor="middle" font-size="14" fill="#1b1b1b">자원 — 컴퓨팅·스토리지·네트워킹</text>
+  <text x="310" y="343" text-anchor="middle" font-size="13" fill="#495057">가상화 자원은 MANO 와 조율해 할당</text>
+
+  <!-- 시행 지점 -->
+  <text x="30" y="384" font-size="14" font-weight="bold" fill="#2d6a4f">실행 중에 SLA 를 지키는 장치 (5GC·NG-RAN)</text>
+  <text x="30" y="408" font-size="13" fill="#1b1b1b">· NSSF — 단말에 쓸 슬라이스 인스턴스와 Allowed NSSAI(최대 8개)를 정한다</text>
+  <text x="30" y="430" font-size="13" fill="#1b1b1b">· NSAC — 슬라이스당 등록 단말 수와 PDU 세션 수를 제한한다</text>
+  <text x="30" y="452" font-size="13" fill="#1b1b1b">· UE-Slice-MBR — NG-RAN 수락 제어가 단말·슬라이스별 합산 속도를 묶는다</text>
+
+  <!-- 오른쪽: 수명주기 4단계 -->
+  <text x="740" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">수명주기 4단계</text>
+  <rect x="650" y="80" width="180" height="50" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="740" y="102" text-anchor="middle" font-size="14" fill="#1b1b1b">① 준비</text>
+  <text x="740" y="120" text-anchor="middle" font-size="13" fill="#495057">설계·용량 계획</text>
+  <line x1="740" y1="130" x2="740" y2="152" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="650" y="154" width="180" height="50" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="740" y="176" text-anchor="middle" font-size="14" fill="#1b1b1b">② 커미셔닝</text>
+  <text x="740" y="194" text-anchor="middle" font-size="13" fill="#495057">생성·자원 할당</text>
+  <line x1="740" y1="204" x2="740" y2="226" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="650" y="228" width="180" height="50" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="740" y="250" text-anchor="middle" font-size="14" fill="#1b1b1b">③ 운영</text>
+  <text x="740" y="268" text-anchor="middle" font-size="13" fill="#495057">활성화·감시·변경</text>
+  <line x1="740" y1="278" x2="740" y2="300" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="650" y="302" width="180" height="50" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="740" y="324" text-anchor="middle" font-size="14" fill="#1b1b1b">④ 디커미셔닝</text>
+  <text x="740" y="342" text-anchor="middle" font-size="13" fill="#495057">비공유 구성 해제</text>
+</svg>
