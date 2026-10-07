@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **222편** · 갱신 2026-10-07
+총 **225편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 38편
+## DB문법 (basics) — 39편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [UPSERT — INSERT ... ON CONFLICT](posts/Database/sql-basics/2026-10-07-sqlite-upsert-on-conflict/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [누적합과 이동평균 — SUM OVER의 프레임](posts/Database/sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [자료형 — SQLite의 동적 타입](posts/Database/sql-basics/2026-10-06-sqlite-dynamic-typing-affinity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -66,13 +67,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 84편
+## 기술사 (pe) — 85편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
 | 2026-10-07 | [IPv6 전환 기술 3가지 — 듀얼스택·터널링·변환은 언제 쓰는가](posts/PE/network/2026-10-07-ipv6-transition-dual-stack-tunneling-translation/index.md) | 중급 | RFC 4213 (2005-10), RFC 6144 (2011-04), RFC 6052 (2010-10), RFC 6146 (2011-04), RFC 3056 (2001-02), Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](posts/PE/data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md) | 중급 | Python 3.13.5, An & Cho, SNU DM TR 2015, Zhou & Paffenroth, KDD 2017, Goodfellow et al., Deep Learning (2016) ch.14 | 실행 검증 |
+| 2026-10-07 | [5G 네트워크 슬라이싱](posts/PE/network/2026-10-07-5g-network-slicing/index.md) | 중급 | 3GPP TS 23.501 V17.15.0 (ETSI TS 123 501, 2026-01), 3GPP TS 28.530 V17.3.0 (ETSI TS 128 530, 2022-10) | 문서 근거 |
 | 2026-10-06 | [트랜잭션 ACID와 2단계 커밋(2PC)](posts/PE/database/2026-10-06-two-phase-commit-blocking-window/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Bernstein·Hadzilacos·Goodman, Concurrency Control and Recovery in Database Systems 7장 (1987), X/Open XA Specification (1991) | 실행 검증 |
 | 2026-10-06 | [TCP 혼잡 제어 알고리즘 비교 — Reno·CUBIC·BBR은 무엇을 신호로 삼는가](posts/PE/network/2026-10-06-tcp-congestion-control-reno-cubic-bbr/index.md) | 중급 | RFC 5681 (2009-09), RFC 9438 (2023-08), draft-ietf-ccwg-bbr-06 (2026-07), Python 3.13.5 | 실행 검증 |
 | 2026-10-06 | [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](posts/PE/data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md) | 중급 | Python 3.13.5, Statistics Canada, Survey Methods and Practices 12-587-X (2003), Horvitz & Thompson, JASA 47(260) (1952) | 실행 검증 |
@@ -155,10 +157,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 13편
+## 리눅스 (linux) — 14편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [split과 csplit — 큰 파일 쪼개기](posts/Infra/linux/2026-10-07-split-csplit-large-file/index.md) | 중급 | GNU coreutils 8.32 (split, csplit), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-10-06 | [kill과 시그널 — TERM, KILL, HUP의 차이](posts/Linux/command/2026-10-06-kill-signals-term-kill-hup/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (timeout), Cygwin runtime 3.6.7 | 실행 검증 |
 | 2026-10-06 | [diff와 patch — 설정 변경을 추적하기](posts/Infra/linux/2026-10-06-diff-patch-config-change-tracking/index.md) | 중급 | GNU diffutils 3.12, GNU patch 2.7.6, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-10-03 | [curl — API 디버깅에 필요한 옵션](posts/Linux/command/2026-10-03-curl-api-debugging-options-timing/index.md) | 입문 | curl 8.19.0 (Schannel), Python 3.13.5, OpenSSL 3.5.6 (2026-04-07), GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
