@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">재귀 CTE 가 돌아가는 순서 — 큐에서 한 행씩 꺼낸다</text>
+
+  <!-- 1. initial-select -->
+  <rect x="30" y="70" width="170" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="115" y="97" text-anchor="middle" font-size="14" fill="#1b1b1b">① 시작 SELECT</text>
+  <text x="115" y="118" text-anchor="middle" font-size="13" fill="#495057">한 번만 실행</text>
+
+  <!-- 2. queue -->
+  <rect x="270" y="70" width="170" height="64" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="355" y="97" text-anchor="middle" font-size="14" fill="#1b1b1b">② 큐</text>
+  <text x="355" y="118" text-anchor="middle" font-size="13" fill="#495057">아직 처리 안 한 행</text>
+  <line x1="200" y1="102" x2="268" y2="102" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="234" y="92" text-anchor="middle" font-size="13" fill="#495057">결과 전부</text>
+
+  <!-- 3. extract one row -->
+  <rect x="510" y="70" width="170" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="595" y="97" text-anchor="middle" font-size="14" fill="#1b1b1b">③ 행 하나 꺼냄</text>
+  <text x="595" y="118" text-anchor="middle" font-size="13" fill="#495057">ORDER BY 가 순서를 정함</text>
+  <line x1="440" y1="102" x2="508" y2="102" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4. insert into recursive table -->
+  <rect x="510" y="190" width="170" height="64" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="595" y="217" text-anchor="middle" font-size="14" fill="#1b1b1b">④ 재귀 표에 넣음</text>
+  <text x="595" y="238" text-anchor="middle" font-size="13" fill="#495057">본 질의가 읽는 결과</text>
+  <line x1="595" y1="134" x2="595" y2="188" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 5. recursive-select -->
+  <rect x="270" y="190" width="170" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="355" y="217" text-anchor="middle" font-size="14" fill="#1b1b1b">⑤ 재귀 SELECT</text>
+  <text x="355" y="238" text-anchor="middle" font-size="13" fill="#495057">입력은 그 한 행뿐</text>
+  <line x1="508" y1="222" x2="442" y2="222" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="475" y="212" text-anchor="middle" font-size="13" fill="#495057">그 행으로</text>
+
+  <!-- back to queue -->
+  <line x1="355" y1="190" x2="355" y2="136" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="168" font-size="13" fill="#b45309">결과를 큐에 추가</text>
+
+  <!-- 6. end -->
+  <rect x="710" y="190" width="150" height="64" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="785" y="217" text-anchor="middle" font-size="14" fill="#1b1b1b">⑥ 큐가 비면 끝</text>
+  <text x="785" y="238" text-anchor="middle" font-size="13" fill="#495057">본 질의 실행</text>
+  <line x1="680" y1="102" x2="785" y2="102" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="785" y1="102" x2="785" y2="188" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="732" y="92" text-anchor="middle" font-size="13" fill="#2d6a4f">꺼낼 행 없음</text>
+
+  <!-- notes -->
+  <line x1="20" y1="290" x2="860" y2="290" stroke="#ced4da"/>
+  <text x="30" y="318" font-size="14" font-weight="bold" fill="#1b1b1b">멈추게 하는 것 세 가지</text>
+  <rect x="30" y="334" width="260" height="72" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="46" y="358" font-size="13" fill="#1b1b1b">재귀 SELECT 의 조인·WHERE</text>
+  <text x="46" y="378" font-size="13" fill="#495057">더 이상 맞는 행이 없으면 큐에</text>
+  <text x="46" y="396" font-size="13" fill="#495057">아무것도 안 들어가 ⑥ 으로 간다</text>
+  <rect x="310" y="334" width="260" height="72" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="326" y="358" font-size="13" fill="#1b1b1b">UNION (ALL 없이)</text>
+  <text x="326" y="378" font-size="13" fill="#495057">전에 큐에 넣었던 것과 똑같은 행은</text>
+  <text x="326" y="396" font-size="13" fill="#495057">버린다. 한 칸이라도 다르면 넣는다</text>
+  <rect x="590" y="334" width="270" height="72" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="606" y="358" font-size="13" fill="#1b1b1b">LIMIT n (재귀 SELECT 에)</text>
+  <text x="606" y="378" font-size="13" fill="#495057">④ 에 들어간 행이 n 개가 되면</text>
+  <text x="606" y="396" font-size="13" fill="#495057">큐에 무엇이 남았든 멈춘다</text>
+</svg>

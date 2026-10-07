@@ -136,7 +136,7 @@ topics:
     difficulty: 심화
     angle: "힌트로 덮은 문제가 나중에 어떻게 되돌아오는지 사례로 정리"
     code: sql
-    status: todo
+    status: done
 
   # ---------- Backend ----------
   - id: be-001
@@ -1992,7 +1992,7 @@ topics:
     angle: "TCP 위에서 못 풀던 문제를 UDP로 내려가 푼 이유"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-058
     title: "로드 밸런싱 — L4와 L7, 분배 알고리즘"
     category: PE
@@ -2543,7 +2543,7 @@ topics:
     angle: "조직도나 카테고리 트리를 한 질의로 훑는다. 종료 조건을 빠뜨리면 무슨 일이 나는지까지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-042
     title: "UPSERT — INSERT ... ON CONFLICT"
     category: Database

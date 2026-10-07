@@ -284,12 +284,22 @@
 - [GROUP BY와 집계 함수 — 묶는 기준 정하기](posts/Database/sql-basics/2026-09-22-group-by-aggregate-null/index.md) — SQLite 3.49.1, Python 3.13.5
 - [GROUP BY 여러 컬럼 — 묶는 단위가 달라질 때](posts/Database/sql-basics/2026-10-06-group-by-multiple-columns/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 
+**`hierarchical-query`**
+
+- [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) — Tibero 7
+
 **`null-semantics`**
 
 - [NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유](posts/Database/2026-10-03-null-index-group-unique-distinct/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [COALESCE와 NULLIF — NULL을 다루는 두 함수](posts/Database/sql-basics/2026-09-28-coalesce-nullif-null-handling/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](posts/Database/sql-basics/2026-10-02-count-star-vs-column-null/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+
+**`optimizer-hint`**
+
+- [옵티마이저 힌트를 쓰기 전에 확인할 3가지 — 통계·데이터·스키마](posts/Database/2026-10-07-optimizer-hint-three-checks/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 옵티마이저 힌트 — 문법과 적용 확인](posts/Database/tibero/2026-09-29-tibero7-optimizer-hints/index.md) — Tibero 7
 
 **`row-limiting`**
 
