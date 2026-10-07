@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **234편** · 갱신 2026-10-08
+총 **236편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -68,10 +68,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 88편
+## 기술사 (pe) — 90편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가](posts/PE/it-management/2026-10-08-iso-37301-compliance-management-system/index.md) | 중급 | ISO 37301:2021 (2021-04-13 발행), ISO 19600:2014 (철회), ISO/IEC 27001:2022, OCEG GRC Capability Model 3.5 (2023) | 문서 근거 |
+| 2026-10-08 | [데이터센터 액체 냉각 — 콜드플레이트·액침과 ASHRAE 시설수 온도 등급](posts/PE/system/2026-10-08-data-center-liquid-cooling-ashrae-w-classes/index.md) | 중급 | ASHRAE TC 9.9 Liquid Cooling White Paper (2021-05-07), ASHRAE Thermal Guidelines for Data Processing Environments 5th ed. (2021-03), Uptime Institute Cooling Systems Survey 2024 (2024-05), NVIDIA DGX SuperPOD GB200 Reference Architecture (2025-11) | 문서 근거 |
 | 2026-10-07 | [QUIC와 HTTP/3 — TCP 위에서 못 풀던 세 가지를 UDP로 내려가 푼 이유](posts/PE/network/2026-10-07-quic-http3-udp-transport/index.md) | 중급 | RFC 9000 (2021-05), RFC 9001 (2021-05), RFC 9002 (2021-05), RFC 9114 (2022-06), RFC 8446 (2018-08), Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유](posts/PE/data-analysis/2026-10-07-point-adjust-evaluation-inflation/index.md) | 중급 | Python 3.13.5, Kim et al., AAAI 2022, Xu et al., WWW 2018, Ren et al., KDD 2019, Tatbul et al., NeurIPS 2018 | 실행 검증 |
 | 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
