@@ -206,6 +206,8 @@ ISO 37301의 의무 식별(4.5)·위험 평가(4.6)·운영(8)·성과 평가(9)
 일**이고, 그래야 규제가 바뀌어도 어느 통제를 고쳐야 하는지 바로 찾을 수 있다.
 
 > 개념 정리: [ISMS-P 인증 — 3개 영역 인증기준과 의무 대상](../../security/2026-10-07-isms-p-certification-three-domains/index.md)
+>
+> 개념 정리: [컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가](../../it-management/2026-10-08-iso-37301-compliance-management-system/index.md)
 
 끝
 

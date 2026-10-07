@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#111">ISO 37301 컴플라이언스 경영시스템 — 의무 식별에서 개선까지</text>
+
+  <!-- 리더십 -->
+  <rect x="40" y="48" width="800" height="54" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">리더십 (5) — 지배기구·최고경영진 (5.1.1) · 컴플라이언스 문화 (5.1.2) · 컴플라이언스 정책 (5.2)</text>
+  <text x="440" y="91" text-anchor="middle" font-size="13" fill="#333">경영시스템을 승인하고 자원을 배정하며 결과를 보고받는다</text>
+
+  <!-- 1행: 식별 → 평가 → 기획 -->
+  <rect x="40" y="130" width="230" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="155" y="156" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">① 컴플라이언스 의무 식별 (4.5)</text>
+  <text x="155" y="177" text-anchor="middle" font-size="13" fill="#333">요구사항(강제) + 공약(자발)</text>
+  <text x="155" y="196" text-anchor="middle" font-size="13" fill="#333">문서화 · 변경 추적</text>
+
+  <path d="M270 169 L325 169" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="325" y="130" width="230" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="156" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">② 컴플라이언스 리스크 평가 (4.6)</text>
+  <text x="440" y="177" text-anchor="middle" font-size="13" fill="#333">미준수 발생 가능성 × 결과</text>
+  <text x="440" y="196" text-anchor="middle" font-size="13" fill="#333">우선순위 결정</text>
+
+  <path d="M555 169 L610 169" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="610" y="130" width="230" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="725" y="156" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">③ 목표·기획 (6)</text>
+  <text x="725" y="177" text-anchor="middle" font-size="13" fill="#333">리스크 대응 조치 (6.1)</text>
+  <text x="725" y="196" text-anchor="middle" font-size="13" fill="#333">목표 (6.2) · 변경 기획 (6.3)</text>
+
+  <!-- 우측 하강 -->
+  <path d="M725 208 L725 260" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 2행: 운용 ← 성과평가 ← 개선 (오른쪽에서 왼쪽으로) -->
+  <rect x="610" y="260" width="230" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="725" y="286" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">④ 운용 (8)</text>
+  <text x="725" y="307" text-anchor="middle" font-size="13" fill="#333">통제·절차 (8.2)</text>
+  <text x="725" y="326" text-anchor="middle" font-size="13" fill="#333">우려 제기 (8.3) · 조사 (8.4)</text>
+
+  <path d="M610 299 L555 299" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="325" y="260" width="230" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="286" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑤ 성과 평가 (9)</text>
+  <text x="440" y="307" text-anchor="middle" font-size="13" fill="#333">모니터링·지표·보고 (9.1)</text>
+  <text x="440" y="326" text-anchor="middle" font-size="13" fill="#333">내부심사 (9.2) · 경영검토 (9.3)</text>
+
+  <path d="M325 299 L270 299" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="40" y="260" width="230" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="155" y="286" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑥ 개선 (10)</text>
+  <text x="155" y="307" text-anchor="middle" font-size="13" fill="#333">부적합·시정조치 (10.2)</text>
+  <text x="155" y="326" text-anchor="middle" font-size="13" fill="#333">지속적 개선 (10.1)</text>
+
+  <!-- 좌측 상승: 개선 → 식별 -->
+  <path d="M155 260 L155 208" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arr-red)"/>
+  <text x="165" y="238" font-size="13" fill="#9d0208">의무 변경 · 미준수 발견 시 다시 식별</text>
+
+  <!-- 지원 -->
+  <rect x="40" y="366" width="800" height="54" rx="6" fill="#f4f4f4" stroke="#555" stroke-width="1.5"/>
+  <text x="440" y="388" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">지원 (7) — 자원 (7.1) · 역량: 채용 프로세스 (7.2.2)·교육 (7.2.3) · 인식 (7.3) · 소통 (7.4) · 문서화된 정보 (7.5)</text>
+  <text x="440" y="409" text-anchor="middle" font-size="13" fill="#333">①~⑥ 전 단계가 공통으로 쓴다</text>
+
+  <!-- 컴플라이언스 기능 -->
+  <rect x="40" y="440" width="800" height="54" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="462" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">컴플라이언스 기능 (5.3.2) — 순환을 운영하는 조직 단위</text>
+  <text x="440" y="483" text-anchor="middle" font-size="13" fill="#333">독립성을 보장받고 지배기구·최고경영진에 직접 접근·보고한다</text>
+</svg>

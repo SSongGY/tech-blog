@@ -3830,7 +3830,7 @@ topics:
     angle: "컴플라이언스·컴플라이언스 의무의 표준 정의, 의무 식별에서 개선까지 경영시스템 구조, ISO/IEC 27001과 출발점(위험 대 의무)의 차이, GRC와의 관계"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: fin-031
     title: "자본변동표 — 자본은 무엇으로 늘고 무엇으로 줄었는가"
     category: Finance
@@ -3907,7 +3907,7 @@ topics:
     angle: "공랭의 한계(풍량·팬 전력)에서 출발해 direct-to-chip 콜드플레이트·단상/2상 액침·CDU 구조를 ASHRAE TC 9.9 백서와 Thermal Guidelines 5판의 W17~W45 등급으로 정리. 정보시스템 설계자가 설비에 넘길 입력 조건 관점"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-151
     title: "데이터센터 효율 지표 — PUE·WUE와 ISO/IEC 30134 시리즈"
     category: PE
