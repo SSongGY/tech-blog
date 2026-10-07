@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">별도재무제표 셋이 연결재무제표 하나가 되는 순서</text>
+
+  <!-- 윗줄: 각 회사의 재무제표 -->
+  <rect x="40" y="55" width="220" height="70" rx="6" fill="#cfe2ff" stroke="#495057"/>
+  <text x="150" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">가나홀딩스 별도</text>
+  <text x="150" y="104" text-anchor="middle" font-size="13" fill="#495057">종속·관계기업 투자 = 원가</text>
+
+  <rect x="330" y="55" width="220" height="70" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="440" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">가나소재 (100%)</text>
+  <text x="440" y="104" text-anchor="middle" font-size="13" fill="#495057">종속기업 — 지배력 있음</text>
+
+  <rect x="620" y="55" width="220" height="70" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="730" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">가나물류 (60%)</text>
+  <text x="730" y="104" text-anchor="middle" font-size="13" fill="#495057">종속기업 — 지배력 있음</text>
+
+  <line x1="150" y1="125" x2="380" y2="168" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="125" x2="440" y2="166" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="730" y1="125" x2="500" y2="168" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 절차 세 단계 -->
+  <rect x="250" y="170" width="380" height="54" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="440" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 같은 항목을 줄 단위로 합산</text>
+  <text x="440" y="214" text-anchor="middle" font-size="13" fill="#495057">지분율과 무관하게 자산·부채·수익·비용 100%</text>
+
+  <line x1="440" y1="224" x2="440" y2="246" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="248" width="380" height="54" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="440" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 투자주식 ↔ 종속기업 자본 상계</text>
+  <text x="440" y="292" text-anchor="middle" font-size="13" fill="#495057">남은 자본의 비지배 몫은 비지배지분으로 분리</text>
+
+  <line x1="440" y1="302" x2="440" y2="324" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="250" y="326" width="380" height="54" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="440" y="350" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 그룹 안의 거래를 전부 제거</text>
+  <text x="440" y="370" text-anchor="middle" font-size="13" fill="#495057">내부 매출·매입, 채권·채무, 배당</text>
+
+  <line x1="440" y1="380" x2="440" y2="402" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 결과 -->
+  <rect x="250" y="404" width="380" height="64" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="440" y="430" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">연결재무제표</text>
+  <text x="440" y="452" text-anchor="middle" font-size="13" fill="#495057">자본 = 지배기업 소유주지분 + 비지배지분</text>
+
+  <!-- 관계기업 -->
+  <rect x="670" y="404" width="180" height="64" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="760" y="430" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">라마바이오 (30%)</text>
+  <text x="760" y="452" text-anchor="middle" font-size="13" fill="#495057">관계기업 — 합산 안 함</text>
+  <line x1="670" y1="436" x2="632" y2="436" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="651" y="492" text-anchor="middle" font-size="13" fill="#2d6a4f">지분법: 순이익 × 30% 한 줄</text>
+
+  <line x1="30" y1="508" x2="850" y2="508" stroke="#ced4da"/>
+  <text x="40" y="532" font-size="13" fill="#495057">①~③은 연결 절차(K-IFRS 제1110호 B86), 비지배지분 표시는 같은 기준서 문단 22, 지분법은 제1028호 문단 10을 따랐다.</text>
+  <text x="40" y="550" font-size="13" fill="#495057">회사 이름과 지분율은 가상이며, 숫자는 code/output.txt [1]에 있다.</text>
+</svg>
