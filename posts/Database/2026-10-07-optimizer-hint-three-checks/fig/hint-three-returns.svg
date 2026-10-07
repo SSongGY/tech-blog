@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">힌트는 적은 날의 세 가지 전제 위에 서 있다 — 하나가 바뀌면 되돌아온다</text>
+
+  <!-- the day the hint was written -->
+  <rect x="30" y="110" width="230" height="150" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="145" y="138" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">힌트를 적은 날</text>
+  <text x="145" y="160" text-anchor="middle" font-size="13" fill="#495057">INDEXED BY ix_orders_status</text>
+  <text x="50" y="192" font-size="13" fill="#1b1b1b">전제 1 · 통계가 데이터와 맞다</text>
+  <text x="50" y="216" font-size="13" fill="#1b1b1b">전제 2 · 데이터 분포가 지금 같다</text>
+  <text x="50" y="240" font-size="13" fill="#1b1b1b">전제 3 · 인덱스와 조건이 그대로다</text>
+
+  <!-- three outcomes -->
+  <line x1="260" y1="150" x2="338" y2="96" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="340" y="60" width="520" height="70" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="356" y="84" font-size="14" fill="#1b1b1b">① 통계가 낡았을 뿐이었다 → ANALYZE 로 풀린다</text>
+  <text x="356" y="106" font-size="13" fill="#495057">힌트 8,017 명령 · ANALYZE 뒤 힌트 없이 8,018 명령. 힌트는 증상만 가렸다</text>
+
+  <line x1="260" y1="185" x2="338" y2="200" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <rect x="340" y="165" width="520" height="70" rx="6" fill="#f8d7da" stroke="#9d0208"/>
+  <text x="356" y="189" font-size="14" fill="#1b1b1b">② 분포가 뒤집혔다 → 힌트가 느린 쪽에 남는다</text>
+  <text x="356" y="211" font-size="13" fill="#495057">힌트 없는 질의 8,018 명령 · 못 박은 힌트 498,019 명령 (62배)</text>
+
+  <line x1="260" y1="225" x2="338" y2="300" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <rect x="340" y="270" width="520" height="70" rx="6" fill="#f8d7da" stroke="#9d0208"/>
+  <text x="356" y="294" font-size="14" fill="#1b1b1b">③ 인덱스 이름이 바뀌었다 → 질의 자체가 실패한다</text>
+  <text x="356" y="316" font-size="13" fill="#495057">no such index · 부분 인덱스 힌트는 조건 값만 바뀌어도 no query solution</text>
+
+  <!-- the no-hint path -->
+  <rect x="340" y="360" width="520" height="44" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="356" y="387" font-size="14" fill="#1b1b1b">힌트 없는 질의 — 통계가 바뀌면 계획을 바꾸고 새 인덱스도 쓴다</text>
+  <line x1="145" y1="260" x2="145" y2="382" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="145" y1="382" x2="338" y2="382" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="155" y="330" font-size="13" fill="#2d6a4f">힌트를 안 적었다면</text>
+</svg>
