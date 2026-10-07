@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **236편** · 갱신 2026-10-08
+총 **239편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 40편
+## DB문법 (basics) — 41편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-07 | [UPSERT — INSERT ... ON CONFLICT](posts/Database/sql-basics/2026-10-07-sqlite-upsert-on-conflict/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-07 | [GROUP_CONCAT — 여러 행을 한 줄로 합치는 법](posts/Database/sql-basics/2026-10-07-group-concat-rows-to-one-line/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [누적합과 이동평균 — SUM OVER의 프레임](posts/Database/sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [자료형 — SQLite의 동적 타입](posts/Database/sql-basics/2026-10-06-sqlite-dynamic-typing-affinity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -49,10 +50,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 14편
+## DB기능 (product) — 15편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [Tibero 7 WITH 절 — 이름 붙인 부질의와 재귀 질의, SEARCH·CYCLE 절](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-07 | [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](posts/Database/tibero/2026-10-07-tibero7-date-timestamp-types/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-06 | [Tibero 7 LOB — CLOB/BLOB 저장과 조회](posts/Database/tibero/2026-10-06-tibero7-lob-clob-blob/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-03 | [Tibero 7 딕셔너리 뷰 — 무엇을 어디서 찾는가](posts/Database/tibero/2026-10-03-tibero7-dictionary-views/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -68,7 +70,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 90편
+## 기술사 (pe) — 91편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -76,6 +78,7 @@
 | 2026-10-08 | [데이터센터 액체 냉각 — 콜드플레이트·액침과 ASHRAE 시설수 온도 등급](posts/PE/system/2026-10-08-data-center-liquid-cooling-ashrae-w-classes/index.md) | 중급 | ASHRAE TC 9.9 Liquid Cooling White Paper (2021-05-07), ASHRAE Thermal Guidelines for Data Processing Environments 5th ed. (2021-03), Uptime Institute Cooling Systems Survey 2024 (2024-05), NVIDIA DGX SuperPOD GB200 Reference Architecture (2025-11) | 문서 근거 |
 | 2026-10-07 | [QUIC와 HTTP/3 — TCP 위에서 못 풀던 세 가지를 UDP로 내려가 푼 이유](posts/PE/network/2026-10-07-quic-http3-udp-transport/index.md) | 중급 | RFC 9000 (2021-05), RFC 9001 (2021-05), RFC 9002 (2021-05), RFC 9114 (2022-06), RFC 8446 (2018-08), Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유](posts/PE/data-analysis/2026-10-07-point-adjust-evaluation-inflation/index.md) | 중급 | Python 3.13.5, Kim et al., AAAI 2022, Xu et al., WWW 2018, Ren et al., KDD 2019, Tatbul et al., NeurIPS 2018 | 실행 검증 |
+| 2026-10-07 | [로드 밸런싱 — L4와 L7, 분배 알고리즘, 그리고 세션 고정의 비용](posts/PE/network/2026-10-07-load-balancing-l4-l7-algorithms/index.md) | 중급 | RFC 2391 (1998-08), RFC 9110 (2022-06), Karger et al. STOC 1997, Eisenbud et al. NSDI 2016, Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
 | 2026-10-07 | [ISMS-P 인증 — 3개 영역 인증기준과 의무 대상](posts/PE/security/2026-10-07-isms-p-certification-three-domains/index.md) | 중급 | 정보통신망법 법률 제21988호 (2026-10-02 시행), 정보통신망법 시행령 대통령령 제36728호 (2026-10-02 시행), 개인정보 보호법 법률 제21445호 (2026-09-11 시행), 정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시 (2024-07-24 시행), ISMS-P 인증기준 안내서 2023.11, ISO/IEC 27001:2022 | 문서 근거 |
 | 2026-10-07 | [IPv6 전환 기술 3가지 — 듀얼스택·터널링·변환은 언제 쓰는가](posts/PE/network/2026-10-07-ipv6-transition-dual-stack-tunneling-translation/index.md) | 중급 | RFC 4213 (2005-10), RFC 6144 (2011-04), RFC 6052 (2010-10), RFC 6146 (2011-04), RFC 3056 (2001-02), Python 3.13.5 | 실행 검증 |
@@ -280,7 +283,7 @@
 **`cte`**
 
 - [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
-- [Tibero 7 WITH 절 — CTE와 재귀 질의](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) — Tibero 7
+- [Tibero 7 WITH 절 — 이름 붙인 부질의와 재귀 질의, SEARCH·CYCLE 절](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) — Tibero 7
 
 **`datetime-types`**
 
