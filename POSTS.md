@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **228편** · 갱신 2026-10-07
+총 **231편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 39편
+## DB문법 (basics) — 40편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-07 | [UPSERT — INSERT ... ON CONFLICT](posts/Database/sql-basics/2026-10-07-sqlite-upsert-on-conflict/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-07 | [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [누적합과 이동평균 — SUM OVER의 프레임](posts/Database/sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [자료형 — SQLite의 동적 타입](posts/Database/sql-basics/2026-10-06-sqlite-dynamic-typing-affinity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -67,10 +68,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 87편
+## 기술사 (pe) — 88편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [QUIC와 HTTP/3 — TCP 위에서 못 풀던 세 가지를 UDP로 내려가 푼 이유](posts/PE/network/2026-10-07-quic-http3-udp-transport/index.md) | 중급 | RFC 9000 (2021-05), RFC 9001 (2021-05), RFC 9002 (2021-05), RFC 9114 (2022-06), RFC 8446 (2018-08), Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유](posts/PE/data-analysis/2026-10-07-point-adjust-evaluation-inflation/index.md) | 중급 | Python 3.13.5, Kim et al., AAAI 2022, Xu et al., WWW 2018, Ren et al., KDD 2019, Tatbul et al., NeurIPS 2018 | 실행 검증 |
 | 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
 | 2026-10-07 | [ISMS-P 인증 — 3개 영역 인증기준과 의무 대상](posts/PE/security/2026-10-07-isms-p-certification-three-domains/index.md) | 중급 | 정보통신망법 법률 제21988호 (2026-10-02 시행), 정보통신망법 시행령 대통령령 제36728호 (2026-10-02 시행), 개인정보 보호법 법률 제21445호 (2026-09-11 시행), 정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시 (2024-07-24 시행), ISMS-P 인증기준 안내서 2023.11, ISO/IEC 27001:2022 | 문서 근거 |
@@ -178,10 +180,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 13편
+## 일반 (general) — 14편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [옵티마이저 힌트를 쓰기 전에 확인할 3가지 — 통계·데이터·스키마](posts/Database/2026-10-07-optimizer-hint-three-checks/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [재시도에 지수 백오프와 지터가 둘 다 필요한 이유](posts/Backend/2026-10-06-retry-backoff-jitter/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [멱등키(Idempotency Key)로 중복 결제를 막는 설계](posts/Backend/2026-10-06-idempotency-key-duplicate-payment/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Windows 11 | 실행 검증 |
 | 2026-10-03 | [NULL이 인덱스, 집계, 비교에서 각각 다르게 동작하는 이유](posts/Database/2026-10-03-null-index-group-unique-distinct/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
