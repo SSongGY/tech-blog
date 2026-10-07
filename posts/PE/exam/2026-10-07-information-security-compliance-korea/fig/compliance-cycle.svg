@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+    <marker id="ary" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+    <marker id="arg" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">정보보호 컴플라이언스 관리 체계 — 6단계 순환</text>
+
+  <!-- external obligations -->
+  <rect x="20" y="52" width="400" height="54" fill="#fff4e5" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="220" y="75" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">외부 요구사항 (의무)</text>
+  <text x="220" y="95" text-anchor="middle" font-size="13" fill="#4a5568">법령 · 고시 · 인증기준 · 계약 — 개정되면 다시 ①로</text>
+  <line x1="80" y1="106" x2="80" y2="146" stroke="#b45309" stroke-width="1.6" marker-end="url(#ary)"/>
+
+  <!-- six steps -->
+  <rect x="20" y="148" width="120" height="66" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="80" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 의무 식별</text>
+  <text x="80" y="196" text-anchor="middle" font-size="13" fill="#4a5568">규제 레지스터</text>
+
+  <rect x="165" y="148" width="120" height="66" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="225" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 위험 평가</text>
+  <text x="225" y="196" text-anchor="middle" font-size="13" fill="#4a5568">위반 가능성·영향</text>
+
+  <rect x="310" y="148" width="120" height="66" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="370" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 통제 매핑</text>
+  <text x="370" y="196" text-anchor="middle" font-size="13" fill="#4a5568">공통 통제 목록</text>
+
+  <rect x="455" y="148" width="120" height="66" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="515" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 이행·증적</text>
+  <text x="515" y="196" text-anchor="middle" font-size="13" fill="#4a5568">로그·설정 수집</text>
+
+  <rect x="600" y="148" width="120" height="66" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="660" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑤ 점검·감사</text>
+  <text x="660" y="196" text-anchor="middle" font-size="13" fill="#4a5568">내부감사·인증심사</text>
+
+  <rect x="745" y="148" width="120" height="66" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="805" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑥ 보고·개선</text>
+  <text x="805" y="196" text-anchor="middle" font-size="13" fill="#4a5568">경영진 검토·시정</text>
+
+  <line x1="140" y1="181" x2="163" y2="181" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="285" y1="181" x2="308" y2="181" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="430" y1="181" x2="453" y2="181" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="575" y1="181" x2="598" y2="181" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="720" y1="181" x2="743" y2="181" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- improvement loop -->
+  <path d="M805,214 L805,256 L80,256 L80,216" fill="none" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#arg)"/>
+  <text x="442" y="274" text-anchor="middle" font-size="13" fill="#2d6a4f">미준수 원인 분석 → 레지스터·통제 갱신</text>
+
+  <!-- governance bar -->
+  <rect x="20" y="296" width="845" height="50" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="442" y="317" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">거버넌스 — CISO · 개인정보 보호책임자 · 정보보호위원회 · 이사회 보고</text>
+  <text x="442" y="336" text-anchor="middle" font-size="13" fill="#4a5568">책임과 자원(인력·예산)을 배정하고 ⑥의 보고를 받는다</text>
+
+  <text x="442" y="374" text-anchor="middle" font-size="13" fill="#4a5568">①② = ISO 37301 의무 식별·위험 평가, ③④ = 운영, ⑤ = 성과 평가, ⑥ = 개선</text>
+  <text x="442" y="392" text-anchor="middle" font-size="13" fill="#4a5568">③에서 여러 법령의 같은 요구를 하나의 통제로 묶는 것이 대응 방안의 핵심</text>
+</svg>

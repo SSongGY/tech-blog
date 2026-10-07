@@ -3809,3 +3809,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-148
+    title: "ISMS-P 인증 — 3개 영역 인증기준과 의무 대상"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "ISMS와 ISMS-P의 법적 근거·의무 대상 기준, 인증기준 3개 영역의 구성과 ISO/IEC 27001 부속서 A와의 대응, 2026년 등급제 개편 방안의 방향"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-149
+    title: "컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "컴플라이언스·컴플라이언스 의무의 표준 정의, 의무 식별에서 개선까지 경영시스템 구조, ISO/IEC 27001과 출발점(위험 대 의무)의 차이, GRC와의 관계"
+    code: none
+    origin: exam
+    status: todo
