@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">HTTP/2 와 HTTP/3 의 계층 — 스트림·흐름 제어·손실 복구가 전송 계층으로 내려갔다</text>
+
+  <!-- left column: HTTP/2 over TCP -->
+  <text x="220" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">HTTP/2 over TCP (RFC 9113)</text>
+  <rect x="60" y="80" width="320" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="220" y="107" text-anchor="middle" font-size="14" fill="#1b1b1b">HTTP 의미 (RFC 9110) — 메서드·상태·필드</text>
+
+  <rect x="60" y="134" width="320" height="70" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="220" y="158" text-anchor="middle" font-size="14" fill="#1b1b1b">HTTP/2 프레이밍</text>
+  <text x="220" y="178" text-anchor="middle" font-size="13" fill="#495057">스트림 다중화 · 스트림별 흐름 제어</text>
+  <text x="220" y="196" text-anchor="middle" font-size="13" fill="#495057">HPACK 필드 압축</text>
+
+  <rect x="60" y="214" width="320" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="220" y="241" text-anchor="middle" font-size="14" fill="#1b1b1b">TLS 1.3 — 핸드셰이크 + 레코드 계층</text>
+
+  <rect x="60" y="268" width="320" height="70" rx="6" fill="#f8d7da" stroke="#9d0208"/>
+  <text x="220" y="292" text-anchor="middle" font-size="14" fill="#1b1b1b">TCP — 바이트열 하나</text>
+  <text x="220" y="312" text-anchor="middle" font-size="13" fill="#495057">손실 복구 · 혼잡 제어 · 순서 보장</text>
+  <text x="220" y="330" text-anchor="middle" font-size="13" fill="#9d0208">패킷 하나를 잃으면 모든 스트림이 기다린다</text>
+
+  <rect x="60" y="348" width="320" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="220" y="375" text-anchor="middle" font-size="14" fill="#1b1b1b">IP</text>
+
+  <!-- right column: HTTP/3 over QUIC -->
+  <text x="660" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">HTTP/3 over QUIC (RFC 9114 / 9000)</text>
+  <rect x="500" y="80" width="320" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="660" y="107" text-anchor="middle" font-size="14" fill="#1b1b1b">HTTP 의미 (RFC 9110) — 그대로</text>
+
+  <rect x="500" y="134" width="320" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="660" y="153" text-anchor="middle" font-size="14" fill="#1b1b1b">HTTP/3 프레이밍 — 스트림마다 프레임</text>
+  <text x="660" y="171" text-anchor="middle" font-size="13" fill="#495057">QPACK 필드 압축 (RFC 9204)</text>
+
+  <rect x="500" y="188" width="320" height="150" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="660" y="212" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">QUIC (RFC 9000 · 9001 · 9002)</text>
+  <text x="660" y="236" text-anchor="middle" font-size="13" fill="#1b1b1b">스트림 다중화 · 스트림별 흐름 제어</text>
+  <text x="660" y="256" text-anchor="middle" font-size="13" fill="#1b1b1b">스트림 단위 손실 복구 · 연결 단위 혼잡 제어</text>
+  <text x="660" y="276" text-anchor="middle" font-size="13" fill="#1b1b1b">TLS 1.3 핸드셰이크 통합 · 패킷 보호가 레코드 계층을 대신</text>
+  <text x="660" y="296" text-anchor="middle" font-size="13" fill="#1b1b1b">연결 ID — 주소가 바뀌어도 연결 유지</text>
+  <text x="660" y="322" text-anchor="middle" font-size="13" fill="#2d6a4f">잃은 패킷이 실은 스트림만 기다린다</text>
+
+  <rect x="500" y="348" width="320" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="660" y="375" text-anchor="middle" font-size="14" fill="#1b1b1b">UDP (데이터그램) → IP</text>
+
+  <!-- moved responsibilities arrow -->
+  <line x1="380" y1="169" x2="498" y2="250" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arrow)"/>
+  <text x="440" y="200" text-anchor="middle" font-size="13" fill="#b45309">아래로 이동</text>
+
+  <text x="30" y="430" font-size="13" fill="#495057">HTTP/2 에서 응용 계층 프레이밍이 하던 다중화·흐름 제어가 QUIC 으로 내려가고, TCP 가 하던 손실 복구·혼잡 제어도 QUIC 이 맡는다.</text>
+  <text x="30" y="452" font-size="13" fill="#495057">UDP 는 데이터그램을 나르기만 한다. 커널을 바꾸지 않고 사용자 공간 구현으로 배포할 수 있게 한 선택이다.</text>
+</svg>
