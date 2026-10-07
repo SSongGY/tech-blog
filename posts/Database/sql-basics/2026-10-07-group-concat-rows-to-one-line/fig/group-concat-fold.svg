@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">group_concat(X, Y ORDER BY …) — 한 그룹의 행이 한 문자열이 되기까지</text>
+  <text x="30" y="56" font-size="13" fill="#555">GROUP BY employee_id 로 묶인 김하나(1)의 행 5개 · SQLite 3.49.1</text>
+
+  <!-- 입력 행 -->
+  <rect x="30" y="80" width="230" height="200" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="145" y="102" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">입력 — employee_id = 1 인 행</text>
+  <g font-size="13" fill="#1b1b1b">
+    <rect x="50" y="114" width="190" height="26" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+    <text x="60" y="132">skill = 'SQL'      level 3</text>
+    <rect x="50" y="146" width="190" height="26" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+    <text x="60" y="164">skill = 'Python'   level 2</text>
+    <rect x="50" y="178" width="190" height="26" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+    <text x="60" y="196">skill = 'Go'       level 1</text>
+    <rect x="50" y="210" width="190" height="26" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+    <text x="60" y="228">skill = 'SQL'      level 2</text>
+    <rect x="50" y="242" width="190" height="26" rx="4" fill="#fbe9e7" stroke="#9d0208" stroke-dasharray="4 3"/>
+    <text x="60" y="260" fill="#9d0208">skill = NULL       level 1</text>
+  </g>
+
+  <!-- 화살표 1 -->
+  <line x1="260" y1="180" x2="306" y2="180" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="306,175 316,180 306,185" fill="#3b3b3b"/>
+
+  <!-- 함수 상자 -->
+  <rect x="320" y="90" width="270" height="180" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="455" y="114" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">group_concat(skill, ', ' ORDER BY skill)</text>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="340" y="146">① NULL 인 X 는 건너뛴다</text>
+    <text x="340" y="176">② ORDER BY 가 있으면 그 순서로 받는다</text>
+    <text x="340" y="196" fill="#555">   없으면 읽히는 순서 — 보장되지 않는다</text>
+    <text x="340" y="226">③ 사이사이에 Y 를 넣어 잇는다</text>
+    <text x="340" y="246" fill="#555">   Y 를 생략하면 ','  · 결과 타입은 TEXT</text>
+  </g>
+
+  <!-- 화살표 2 -->
+  <line x1="590" y1="180" x2="636" y2="180" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="636,175 646,180 636,185" fill="#2d6a4f"/>
+
+  <!-- 출력 -->
+  <rect x="650" y="140" width="200" height="80" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="750" y="164" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">출력 — 그룹당 1행</text>
+  <rect x="664" y="176" width="172" height="28" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="750" y="195" font-size="13" text-anchor="middle" fill="#1b1b1b">'Go, Python, SQL, SQL'</text>
+
+  <text x="30" y="308" font-size="13" fill="#555">X 가 전부 NULL 이거나 그룹에 행이 없으면 결과는 NULL · DISTINCT 를 붙이면 인자는 X 하나만 허용된다</text>
+</svg>

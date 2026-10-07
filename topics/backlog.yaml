@@ -640,7 +640,7 @@ topics:
     difficulty: 중급
     angle: "재귀 CTE와 CONNECT BY 중 언제 무엇을 쓰는가"
     code: sql
-    status: writing
+    status: done
   - id: tb-016
     title: "Tibero 7 페이징 — ROWNUM과 그 함정"
     category: Database
@@ -2003,7 +2003,7 @@ topics:
     angle: "세션 고정이 필요한 순간과 그 비용"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-059
     title: "제로 트러스트 아키텍처 — NIST SP 800-207"
     category: PE
@@ -2576,7 +2576,7 @@ topics:
     angle: "구분자 지정과 정렬, 그리고 길이 제한에 걸릴 때"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-045
     title: "COLLATE — 대소문자와 정렬 규칙"
     category: Database

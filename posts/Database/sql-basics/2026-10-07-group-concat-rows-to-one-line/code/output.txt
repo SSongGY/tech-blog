@@ -1,0 +1,243 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-07-group-concat-rows-to-one-line
+# 명령      : python group_concat_basics.py
+# 수행 시각 : 2026-10-08 08:41 (대한민국 표준시)
+# 소요      : 0.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  5행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  employee_id | INTEGER | PK
+  name        | TEXT    | NOT NULL
+  team        | TEXT    | NOT NULL
+
+  employee_id | name   | team
+  ------------+--------+-------
+            1 | 김하나 | 백엔드
+            2 | 이두리 | 백엔드
+            3 | 박세나 | 데이터
+            4 | 최네오 | 프런트
+            5 | 정다섯 | 데이터
+
+[employee_skill]  11행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  employee_id | INTEGER | NOT NULL
+  skill       | TEXT    |
+  level       | INTEGER | NOT NULL
+
+  employee_id | skill  | level
+  ------------+--------+------
+            1 | SQL    |     3
+            1 | Python |     2
+            1 | Go     |     1
+            1 | SQL    |     2
+            2 | Java   |     3
+            2 | SQL    |     2
+            3 | Python |     3
+            3 | Spark  |     2
+            3 | SQL    |     3
+            4 | React  |     2
+            4 | NULL   |     1
+
+
+-- 1. 직원마다 질의를 한 번씩 — 흔히 먼저 짜는 방법
+   김하나: Go, Python, SQL, SQL
+   이두리: Java, SQL
+   박세나: Python, SQL, Spark
+   최네오: React
+   정다섯: 
+   (질의 6번 — 직원 5명 + 목록 1번)
+
+-- 2. group_concat 기본 — 구분자를 안 주면 쉼표
+   SELECT e.name, group_concat(s.skill) AS skills
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   GROUP BY e.employee_id
+   ORDER BY e.employee_id
+   => name | skills
+      김하나 | SQL,Python,Go,SQL
+      이두리 | Java,SQL
+      박세나 | Python,Spark,SQL
+      최네오 | React
+   (4행)
+
+-- 3. 두 번째 인자가 구분자
+   SELECT e.name, group_concat(s.skill, ' / ') AS skills
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   GROUP BY e.employee_id
+   ORDER BY e.employee_id
+   => name | skills
+      김하나 | SQL / Python / Go / SQL
+      이두리 | Java / SQL
+      박세나 | Python / Spark / SQL
+      최네오 | React
+   (4행)
+
+-- 4. 바깥 ORDER BY 는 행의 순서만 정한다 — 문자열 안은 그대로
+   SELECT e.name, group_concat(s.skill, ', ') AS skills
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   GROUP BY e.employee_id
+   ORDER BY s.skill
+   => name | skills
+      이두리 | Java, SQL
+      박세나 | Python, Spark, SQL
+      최네오 | React
+      김하나 | SQL, Python, Go, SQL
+   (4행)
+
+-- 5. 함수 안의 ORDER BY 가 문자열 안의 순서를 정한다 (SQLite 3.44.0+)
+   SELECT e.name,
+          group_concat(s.skill, ', ' ORDER BY s.skill)                    AS by_name,
+          group_concat(s.skill, ', ' ORDER BY s.level DESC, s.skill)      AS by_level
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   GROUP BY e.employee_id
+   ORDER BY e.employee_id
+   => name | by_name | by_level
+      김하나 | Go, Python, SQL, SQL | SQL, Python, SQL, Go
+      이두리 | Java, SQL | Java, SQL
+      박세나 | Python, SQL, Spark | Python, SQL, Spark
+      최네오 | React | React
+   (4행)
+
+-- 6. string_agg 는 같은 함수의 다른 이름
+   SELECT e.name, string_agg(s.skill, '; ' ORDER BY s.skill) AS skills
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   GROUP BY e.employee_id
+   ORDER BY e.employee_id
+   => name | skills
+      김하나 | Go; Python; SQL; SQL
+      이두리 | Java; SQL
+      박세나 | Python; SQL; Spark
+      최네오 | React
+   (4행)
+
+-- 7. NULL 은 건너뛴다. 전부 NULL 이거나 행이 없으면 결과가 NULL
+   SELECT e.name,
+          COUNT(s.employee_id)                                      AS skill_rows,
+          group_concat(s.skill, ', ' ORDER BY s.skill)              AS skills,
+          COALESCE(group_concat(s.skill, ', ' ORDER BY s.skill), '(없음)') AS shown
+   FROM employee AS e
+   LEFT JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   GROUP BY e.employee_id
+   ORDER BY e.employee_id
+   => name | skill_rows | skills | shown
+      김하나 | 4 | Go, Python, SQL, SQL | Go, Python, SQL, SQL
+      이두리 | 2 | Java, SQL | Java, SQL
+      박세나 | 3 | Python, SQL, Spark | Python, SQL, Spark
+      최네오 | 2 | React | React
+      정다섯 | 0 | NULL | (없음)
+   (5행)
+
+-- 8-A. DISTINCT 로 중복을 걷어 낸다
+   SELECT e.name, group_concat(DISTINCT s.skill) AS skills
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   WHERE e.employee_id = 1
+   GROUP BY e.employee_id
+   => name | skills
+      김하나 | SQL,Python,Go
+   (1행)
+
+-- 8-B. DISTINCT 와 구분자를 같이 쓰면
+   SELECT e.name, group_concat(DISTINCT s.skill, ' / ') AS skills
+   FROM employee AS e
+   JOIN employee_skill AS s ON s.employee_id = e.employee_id
+   WHERE e.employee_id = 1
+   GROUP BY e.employee_id
+   에러: DISTINCT aggregates must have exactly one argument
+
+-- 8-C. 중복을 서브쿼리에서 먼저 지우면 구분자도 정렬도 된다
+   SELECT name, group_concat(skill, ' / ' ORDER BY skill) AS skills
+   FROM (SELECT DISTINCT e.name, s.skill
+         FROM employee AS e
+         JOIN employee_skill AS s ON s.employee_id = e.employee_id
+         WHERE e.employee_id = 1)
+   GROUP BY name
+   => name | skills
+      김하나 | Go / Python / SQL
+   (1행)
+
+-- 9-A. ORDER BY 없이 — 인덱스가 없을 때
+   SELECT employee_id, group_concat(skill) AS skills
+   FROM employee_skill
+   WHERE employee_id = 3
+   GROUP BY employee_id
+   => employee_id | skills
+      3 | Python,Spark,SQL
+   (1행)
+
+-- 9-B. 같은 질의 — (employee_id, skill DESC) 인덱스를 만든 뒤
+   SELECT employee_id, group_concat(skill) AS skills
+   FROM employee_skill
+   WHERE employee_id = 3
+   GROUP BY employee_id
+   => employee_id | skills
+      3 | Spark,SQL,Python
+   (1행)
+
+-- 9-C. 계획 — 인덱스를 타면 읽는 순서가 인덱스 순서다
+   QUERY PLAN
+   `--SEARCH employee_skill USING COVERING INDEX idx_skill_employee_skill_desc (employee_id=?)
+
+-- 10. 숫자를 합치면 결과는 TEXT
+   SELECT employee_id,
+          group_concat(level ORDER BY level DESC) AS levels,
+          typeof(group_concat(level))             AS result_type
+   FROM employee_skill
+   WHERE employee_id = 1
+   GROUP BY employee_id
+   => employee_id | levels | result_type
+      1 | 3,2,2,1 | text
+   (1행)
+
+-- 11. 길이 제한 — SQLITE_LIMIT_LENGTH 를 60바이트로 낮춘 상태
+   기본 상한: 1,000,000,000 바이트
+
+-- 11-A. 상한 안에 드는 길이
+   SELECT length(group_concat(skill, ', ')) AS total_length
+   FROM employee_skill
+   => total_length
+      58
+   (1행)
+
+-- 11-B. 행마다 50글자를 붙여 상한을 넘기면
+   SELECT length(group_concat(skill || ' 설명 ' || printf('%50s', ''), ', ')) AS total_length
+   FROM employee_skill
+   에러: string or blob too big
+
+-- 12-A. 값 안에 구분자가 있으면 — 쉼표로 되나누면 세 개가 된다
+   SELECT group_concat(skill, ', ' ORDER BY skill) AS skills
+   FROM employee_skill
+   WHERE employee_id = 2
+   => skills
+      C, C++, Java, SQL
+   (1행)
+
+-- 12-B. 나눠 쓸 것이면 json_group_array — json_each 로 되돌아간다
+   SELECT json_group_array(skill ORDER BY skill) AS skills_json,
+          (SELECT COUNT(*) FROM json_each(json_group_array(skill))) AS element_count
+   FROM employee_skill
+   WHERE employee_id = 2
+   => skills_json | element_count
+      ["C, C++","Java","SQL"] | 3
+   (1행)
