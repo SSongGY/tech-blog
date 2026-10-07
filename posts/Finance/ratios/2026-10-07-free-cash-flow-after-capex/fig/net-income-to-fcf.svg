@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">순이익에서 FCF까지 — 같은 120에서 출발해 갈리는 두 자리</text>
+
+  <!-- 단계 머리글 -->
+  <text x="165" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">당기순이익</text>
+  <text x="330" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">비현금 비용·운전자본</text>
+  <text x="550" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">영업활동현금흐름</text>
+  <text x="760" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">FCF</text>
+
+  <!-- 가나전자 줄 -->
+  <text x="40" y="128" font-size="14" font-weight="bold" fill="#1b1b1b">가나전자</text>
+  <rect x="120" y="100" width="90" height="48" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="165" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">120</text>
+
+  <line x1="210" y1="124" x2="246" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="250" y="92" width="160" height="64" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="330" y="114" text-anchor="middle" font-size="13" fill="#1b1b1b">+ 감가상각 60  + 이자 15</text>
+  <text x="330" y="134" text-anchor="middle" font-size="13" fill="#1b1b1b">− 운전자본 증가 20</text>
+  <text x="330" y="151" text-anchor="middle" font-size="13" fill="#2d6a4f">외상·재고가 조금 늘었다</text>
+
+  <line x1="410" y1="124" x2="486" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="490" y="100" width="120" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="550" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">175</text>
+
+  <line x1="610" y1="124" x2="686" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="648" y="112" text-anchor="middle" font-size="13" fill="#2d6a4f">− 설비 70</text>
+  <rect x="690" y="100" width="140" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="760" y="130" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">+105</text>
+
+  <!-- 다라물산 줄 -->
+  <text x="40" y="238" font-size="14" font-weight="bold" fill="#1b1b1b">다라물산</text>
+  <rect x="120" y="210" width="90" height="48" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="165" y="240" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">120</text>
+
+  <line x1="210" y1="234" x2="246" y2="234" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="250" y="202" width="160" height="64" rx="6" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="330" y="224" text-anchor="middle" font-size="13" fill="#1b1b1b">+ 감가상각 60</text>
+  <text x="330" y="244" text-anchor="middle" font-size="13" fill="#1b1b1b">− 운전자본 증가 90</text>
+  <text x="330" y="261" text-anchor="middle" font-size="13" fill="#9d0208">외상·재고가 크게 늘었다</text>
+
+  <line x1="410" y1="234" x2="486" y2="234" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="490" y="210" width="120" height="48" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="550" y="240" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">90</text>
+
+  <line x1="610" y1="234" x2="686" y2="234" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="648" y="222" text-anchor="middle" font-size="13" fill="#9d0208">− 설비 150</text>
+  <rect x="690" y="210" width="140" height="48" rx="6" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="760" y="240" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">−60</text>
+
+  <!-- 갈리는 자리 표시 -->
+  <rect x="250" y="300" width="160" height="40" rx="6" fill="#ffffff" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="330" y="325" text-anchor="middle" font-size="13" fill="#b45309">갈리는 자리 ① 운전자본</text>
+  <rect x="580" y="300" width="140" height="40" rx="6" fill="#ffffff" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="650" y="325" text-anchor="middle" font-size="13" fill="#b45309">갈리는 자리 ② 설비 투자</text>
+
+  <text x="440" y="378" text-anchor="middle" font-size="13" fill="#495057">다라물산의 설비 150 = 유지 60(감가상각만큼) + 확장 90. 유지분만 빼면 90 − 60 = +30 이다 (output.txt [3]).</text>
+
+  <line x1="30" y1="400" x2="850" y2="400" stroke="#ced4da"/>
+  <text x="40" y="422" font-size="13" fill="#495057">간접법 조정은 K-IFRS 제1007호 문단 18·20, 설비 취득은 투자활동 예시(문단 16), 이자 지급의 영업·재무 분류 선택은</text>
+  <text x="40" y="442" font-size="13" fill="#495057">문단 31·33을 따랐다. FCF = 영업활동현금흐름 − 자본적 지출은 기준서가 아니라 SEC C&amp;DI 102.07(2016.5.17)의 서술이다.</text>
+  <text x="40" y="462" font-size="13" fill="#495057">가나전자는 이자를 재무활동에, 다라물산은 영업활동에 분류했다.</text>
+  <text x="40" y="482" font-size="13" fill="#495057">회사와 숫자는 가상이며 code/output.txt [1]에 있다.</text>
+</svg>

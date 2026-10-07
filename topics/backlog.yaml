@@ -3852,7 +3852,7 @@ topics:
     angle: "FCF는 기준서에 정의가 없는 대체성과지표다. 순이익은 같은데 FCF가 갈리는 두 회사, 영업현금흐름÷순이익으로 이익의 질을 보는 법, 회사마다 정의가 달라 비교가 어긋나는 자리"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-033
     title: "기본 EPS와 희석 EPS — 전환사채가 있을 때 주당이익"
     category: Finance
