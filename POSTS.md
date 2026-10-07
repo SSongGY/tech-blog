@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **226편** · 갱신 2026-10-07
+총 **228편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -67,11 +67,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 85편
+## 기술사 (pe) — 87편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-07 | [시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유](posts/PE/data-analysis/2026-10-07-point-adjust-evaluation-inflation/index.md) | 중급 | Python 3.13.5, Kim et al., AAAI 2022, Xu et al., WWW 2018, Ren et al., KDD 2019, Tatbul et al., NeurIPS 2018 | 실행 검증 |
 | 2026-10-07 | [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](posts/PE/data-analysis/2026-10-07-isolation-forest-path-length/index.md) | 중급 | Python 3.13.5, Liu, Ting & Zhou, ICDM 2008, scikit-learn 1.9.1 User Guide | 실행 검증 |
+| 2026-10-07 | [ISMS-P 인증 — 3개 영역 인증기준과 의무 대상](posts/PE/security/2026-10-07-isms-p-certification-three-domains/index.md) | 중급 | 정보통신망법 법률 제21988호 (2026-10-02 시행), 정보통신망법 시행령 대통령령 제36728호 (2026-10-02 시행), 개인정보 보호법 법률 제21445호 (2026-09-11 시행), 정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시 (2024-07-24 시행), ISMS-P 인증기준 안내서 2023.11, ISO/IEC 27001:2022 | 문서 근거 |
 | 2026-10-07 | [IPv6 전환 기술 3가지 — 듀얼스택·터널링·변환은 언제 쓰는가](posts/PE/network/2026-10-07-ipv6-transition-dual-stack-tunneling-translation/index.md) | 중급 | RFC 4213 (2005-10), RFC 6144 (2011-04), RFC 6052 (2010-10), RFC 6146 (2011-04), RFC 3056 (2001-02), Python 3.13.5 | 실행 검증 |
 | 2026-10-07 | [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](posts/PE/data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md) | 중급 | Python 3.13.5, An & Cho, SNU DM TR 2015, Zhou & Paffenroth, KDD 2017, Goodfellow et al., Deep Learning (2016) ch.14 | 실행 검증 |
 | 2026-10-07 | [5G 네트워크 슬라이싱](posts/PE/network/2026-10-07-5g-network-slicing/index.md) | 중급 | 3GPP TS 23.501 V17.15.0 (ETSI TS 123 501, 2026-01), 3GPP TS 28.530 V17.3.0 (ETSI TS 128 530, 2022-10) | 문서 근거 |
