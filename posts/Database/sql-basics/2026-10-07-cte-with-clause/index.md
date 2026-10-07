@@ -14,6 +14,11 @@ verified: true
 topic_id: db-040
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`cte`)
+> - [Tibero 7 WITH 절 — 이름 붙인 부질의와 재귀 질의, SEARCH·CYCLE 절](../../tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) — Tibero 7
+<!-- related:end -->
+
 ## 들어가며
 
 사내 대시보드에 "평균보다 많이 판 지역" 표를 붙이려고 질의를 짜다 보면, 지역별 합계를 내는 `SELECT`를
