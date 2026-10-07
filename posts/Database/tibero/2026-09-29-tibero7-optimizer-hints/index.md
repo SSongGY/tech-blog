@@ -16,6 +16,11 @@ verified: true
 topic_id: tb-007
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`optimizer-hint`)
+> - [옵티마이저 힌트를 쓰기 전에 확인할 3가지 — 통계·데이터·스키마](../../2026-10-07-optimizer-hint-three-checks/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+<!-- related:end -->
+
 > **실행 검증 없음.** 이 글은 **Tibero 7.2.6 공개 매뉴얼**의 설명만 근거로 정리했다.
 > 글을 쓴 시점에 검증용 Tibero 인스턴스에 접속할 수 없었다(`TBR-2131`).
 > 실행 계획이나 출력은 싣지 않았다. 돌려 볼 스크립트는 [`code/optimizer_hints.sql`](code/optimizer_hints.sql)에 두었다.
