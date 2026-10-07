@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **220편** · 갱신 2026-10-07
+총 **222편** · 갱신 2026-10-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -226,12 +226,14 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 28편
+## 주식·재무 (finance) — 30편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-07 | [주가지수는 어떻게 계산되는가 — 주가 가중과 시가총액 가중](posts/Finance/market/2026-10-07-index-weighting-methods/index.md) | 입문 | Python 3.13.5, Nikkei 225 Index Guidebook(2025-07-24판), S&P DJI Index Mathematics Methodology(2014-11판) | 실행 검증 |
 | 2026-10-07 | [ETF — 바구니를 주식처럼 사고파는 구조](posts/Finance/market/2026-10-07-etf-nav-premium-tracking/index.md) | 입문 | Python 3.13.5, 자본시장법 제234조, ESMA Guidelines on ETFs and other UCITS issues(ESMA/2014/937), SEC Rule 6c-11(2019-12-23 시행) | 실행 검증 |
+| 2026-10-07 | [공시 체계 — 정기·수시·공정공시, 그리고 시한을 세는 두 달력](posts/Finance/disclosure/2026-10-07-disclosure-deadlines/index.md) | 중급 | Python 3.13.5, 자본시장법 제159조(2018-03-30 시행)·제160조·제161조(2025-07-22 시행), 민법 제157조·제161조(2008-03-22 시행), 코스닥시장 공시·상장관리 해설(2025.9), 유가증권시장 12월 결산법인 정기결산 유의사항(2026.2) | 실행 검증 |
+| 2026-10-07 | [K-IFRS 연결과 별도 — 같은 회사의 두 숫자, 어느 쪽을 봐야 하는가](posts/Finance/disclosure/2026-10-07-consolidated-vs-separate/index.md) | 중급 | Python 3.13.5, K-IFRS 제1110호·제1027호·제1028호·제1033호, 코스닥시장 공시·상장관리 해설(2025.9), 유가증권시장 12월 결산법인 정기결산 유의사항(2026.2) | 실행 검증 |
 | 2026-10-06 | [거래량과 거래대금 — 어느 쪽을 봐야 하는가](posts/Finance/market/2026-10-06-trading-volume-vs-value/index.md) | 입문 | Python 3.13.5, 유가증권시장 상장규정 제47조·제48조 (생활법령 기준일 2026-09-15) | 실행 검증 |
 | 2026-10-06 | [공매도 — 없는 주식을 파는 구조](posts/Finance/market/2026-10-06-short-selling-mechanics/index.md) | 입문 | Python 3.13.5, 자본시장법 제180조 (2026-10-02 시행본), 자본시장법 시행령 공매도 제도개선 (2025-03-31 시행) | 실행 검증 |
 | 2026-10-06 | [유상증자 — 지분이 희석된다는 말의 뜻](posts/Finance/market/2026-10-06-rights-issue-dilution/index.md) | 입문 | Python 3.13.5, 상법 제418조(2012-04-15 시행), 자본시장법 제165조의6(2013-08-29 시행), 증권의 발행 및 공시 등에 관한 규정 제5-18조, K-IFRS 제1033호 주당이익 | 실행 검증 |
