@@ -201,3 +201,5 @@
 | 2026-10-07 | infra-023 | Infra | split과 csplit — 큰 파일 쪼개기 |
 | 2026-10-07 | db-042 | Database | UPSERT — INSERT ... ON CONFLICT |
 | 2026-10-07 | pe-056 | PE | 5G 네트워크 슬라이싱 |
+| 2026-10-07 | pe-147 | PE | 시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유 |
+| 2026-10-07 | pe-148 | PE | ISMS-P 인증 — 3개 영역 인증기준과 의무 대상 |

@@ -3808,7 +3808,7 @@ topics:
     angle: "점 단위·구간 단위 정밀도·재현율, 점 조정 프로토콜의 정의와 무작위 점수가 높은 F1을 얻는 원리, 탐지 지연을 포함한 대안 지표"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-148
     title: "ISMS-P 인증 — 3개 영역 인증기준과 의무 대상"
     category: PE
@@ -3819,7 +3819,7 @@ topics:
     angle: "ISMS와 ISMS-P의 법적 근거·의무 대상 기준, 인증기준 3개 영역의 구성과 ISO/IEC 27001 부속서 A와의 대응, 2026년 등급제 개편 방안의 방향"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-149
     title: "컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가"
     category: PE

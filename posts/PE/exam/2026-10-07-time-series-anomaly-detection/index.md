@@ -215,6 +215,8 @@ Isolation Forest가 앞섰다. 딥러닝은 다변량·패턴 단위 이상처�
 > 개념 정리: [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](../../data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md)
 >
 > 개념 정리: [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](../../data-analysis/2026-10-07-isolation-forest-path-length/index.md)
+>
+> 개념 정리: [시계열 이상 탐지 평가 — 점 조정(point-adjust)이 성능을 부풀리는 이유](../../data-analysis/2026-10-07-point-adjust-evaluation-inflation/index.md)
 
 끝
 
