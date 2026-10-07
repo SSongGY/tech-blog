@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">L4 분배와 L7 분배 — 무엇을 보고, 무엇 단위로 나누는가</text>
+  <text x="30" y="56" font-size="13" fill="#555">위: 전송 계층 분배(흐름 해시 · 연결 단위) · 아래: 응용 계층 분배(요청 내용 · 요청 단위, 연결을 종단한다)</text>
+
+  <!-- ===== L4 행 ===== -->
+  <text x="30" y="96" font-size="14" font-weight="bold" fill="#1b1b1b">L4</text>
+  <rect x="60" y="80" width="130" height="60" rx="6" fill="#e8e8e8" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="125" y="105" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">클라이언트</text>
+  <text x="125" y="124" font-size="13" text-anchor="middle" fill="#555">TCP 연결 1개</text>
+
+  <line x1="190" y1="110" x2="246" y2="110" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="246,105 256,110 246,115" fill="#3b3b3b"/>
+  <text x="223" y="100" font-size="13" text-anchor="middle" fill="#555">SYN</text>
+
+  <rect x="260" y="72" width="300" height="76" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="410" y="94" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">L4 분배기 — IP·포트까지만 본다</text>
+  <text x="410" y="114" font-size="13" text-anchor="middle" fill="#1b1b1b">5-튜플(프로토콜, 출발 IP·포트, 목적 IP·포트) 해시</text>
+  <text x="410" y="134" font-size="13" text-anchor="middle" fill="#1b1b1b">한 연결의 패킷은 끝날 때까지 같은 서버로</text>
+
+  <line x1="560" y1="96" x2="676" y2="96" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="676,91 686,96 676,101" fill="#2d6a4f"/>
+  <line x1="560" y1="124" x2="676" y2="124" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="618" y="86" font-size="13" text-anchor="middle" fill="#555">연결 통째로</text>
+
+  <rect x="690" y="72" width="160" height="34" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="770" y="94" font-size="13" text-anchor="middle" fill="#1b1b1b">서버 A</text>
+  <rect x="690" y="114" width="160" height="34" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="770" y="136" font-size="13" text-anchor="middle" fill="#1b1b1b">서버 B</text>
+
+  <text x="60" y="172" font-size="13" fill="#555">HTTP 헤더·URL·쿠키는 보지 못한다 → 요청별로 다른 서버에 보낼 수 없고, 고정은 출발지 IP 로만 한다</text>
+
+  <!-- 구분선 -->
+  <line x1="30" y1="194" x2="850" y2="194" stroke="#bbb" stroke-width="1"/>
+
+  <!-- ===== L7 행 ===== -->
+  <text x="30" y="236" font-size="14" font-weight="bold" fill="#1b1b1b">L7</text>
+  <rect x="60" y="220" width="130" height="60" rx="6" fill="#e8e8e8" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="125" y="245" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">클라이언트</text>
+  <text x="125" y="264" font-size="13" text-anchor="middle" fill="#555">TCP 연결 1개</text>
+
+  <line x1="190" y1="250" x2="246" y2="250" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="246,245 256,250 246,255" fill="#3b3b3b"/>
+  <text x="223" y="240" font-size="13" text-anchor="middle" fill="#555">요청 1·2</text>
+
+  <rect x="260" y="212" width="300" height="76" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="410" y="234" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">L7 분배기 — 연결을 종단하고 요청을 읽는다</text>
+  <text x="410" y="254" font-size="13" text-anchor="middle" fill="#1b1b1b">Host · 경로 · 헤더 · 쿠키로 규칙 평가</text>
+  <text x="410" y="274" font-size="13" text-anchor="middle" fill="#1b1b1b">서버 쪽은 별도 연결 · 요청마다 다른 서버 가능</text>
+
+  <line x1="560" y1="236" x2="676" y2="236" stroke="#b45309" stroke-width="1.5"/>
+  <polygon points="676,231 686,236 676,241" fill="#b45309"/>
+  <text x="618" y="226" font-size="13" text-anchor="middle" fill="#555">요청 1 (/api)</text>
+  <line x1="560" y1="264" x2="676" y2="264" stroke="#b45309" stroke-width="1.5"/>
+  <polygon points="676,259 686,264 676,269" fill="#b45309"/>
+  <text x="618" y="284" font-size="13" text-anchor="middle" fill="#555">요청 2 (/static)</text>
+
+  <rect x="690" y="212" width="160" height="34" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="770" y="234" font-size="13" text-anchor="middle" fill="#1b1b1b">서버 A (API)</text>
+  <rect x="690" y="254" width="160" height="34" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="770" y="276" font-size="13" text-anchor="middle" fill="#1b1b1b">서버 B (정적 파일)</text>
+
+  <text x="60" y="312" font-size="13" fill="#555">요청 내용으로 나누고 쿠키로 고정할 수 있다 → 대신 분배기가 TLS 를 풀고 HTTP 를 해석하므로 처리 비용이 든다</text>
+
+  <!-- 하단: 분배 알고리즘 공통 -->
+  <rect x="30" y="336" width="820" height="74" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="358" font-size="13" font-weight="bold" fill="#1b1b1b">서버를 고르는 규칙은 두 계층이 같은 것을 쓴다</text>
+  <text x="46" y="378" font-size="13" fill="#1b1b1b">정적: 라운드 로빈 · 가중 라운드 로빈 · 해시(mod N, 일관된 해시, Maglev)     동적: 최소 연결 · 최소 응답 시간 · 무작위 2택 1</text>
+  <text x="46" y="398" font-size="13" fill="#555">L4 는 연결이 열릴 때 한 번, L7 은 요청마다 한 번 이 규칙을 돌린다</text>
+</svg>
