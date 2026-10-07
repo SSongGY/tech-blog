@@ -167,6 +167,8 @@ AI 데이터센터는 ISO/IEC 22237-1의 데이터센터 정의를 그대로 만
 **설계 단위와 IT·설비의 결합도**에 있고, 구현의 핵심은 여섯 계층을 따로 조달하는 것이
 아니라 전력 계통과 열 배출이라는 외부 제약 안에서 **한 시스템으로 설계**하는 데 있다.
 
+> 개념 정리: [데이터센터 액체 냉각 — 콜드플레이트·액침과 ASHRAE 시설수 온도 등급](../../system/2026-10-08-data-center-liquid-cooling-ashrae-w-classes/index.md)
+>
 > 개념 정리: [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](../../network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md)
 >
 > 개념 정리: [LLM 분산 학습 병렬화 — 데이터·텐서·파이프라인 병렬](../../system/2026-09-30-llm-parallelism-data-tensor-pipeline/index.md)
