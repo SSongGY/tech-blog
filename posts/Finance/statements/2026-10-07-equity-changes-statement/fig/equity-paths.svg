@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-in" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrow-out" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arrow-move" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">자본변동표 — 거래마다 자본의 어느 구성요소가 움직이는가</text>
+
+  <!-- 왼쪽: 거래 -->
+  <text x="150" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">행 — 한 해의 거래</text>
+
+  <rect x="40" y="84" width="220" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="150" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">당기순이익</text>
+  <text x="150" y="123" text-anchor="middle" font-size="13" fill="#495057">영업에서 번 것 (손익계산서 경유)</text>
+
+  <rect x="40" y="148" width="220" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="150" y="168" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">유상증자</text>
+  <text x="150" y="187" text-anchor="middle" font-size="13" fill="#495057">주주가 넣은 것</text>
+
+  <rect x="40" y="212" width="220" height="48" rx="6" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="150" y="232" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">배당 지급</text>
+  <text x="150" y="251" text-anchor="middle" font-size="13" fill="#495057">주주에게 돌려준 것</text>
+
+  <rect x="40" y="276" width="220" height="48" rx="6" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="150" y="296" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자기주식 취득</text>
+  <text x="150" y="315" text-anchor="middle" font-size="13" fill="#495057">주주에게 돌려준 것 (손익 없음)</text>
+
+  <rect x="40" y="340" width="220" height="48" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="150" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">이익준비금 적립</text>
+  <text x="150" y="379" text-anchor="middle" font-size="13" fill="#495057">자본 안에서 자리만 이동</text>
+
+  <!-- 오른쪽: 구성요소 -->
+  <text x="690" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">열 — 자본의 구성요소</text>
+
+  <rect x="540" y="84" width="300" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="690" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자본금</text>
+  <text x="690" y="120" text-anchor="middle" font-size="13" fill="#495057">발행주식 × 액면</text>
+
+  <rect x="540" y="148" width="300" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="690" y="166" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">주식발행초과금 (자본준비금)</text>
+  <text x="690" y="184" text-anchor="middle" font-size="13" fill="#495057">발행가 − 액면, 자기주식 처분 차익</text>
+
+  <rect x="540" y="212" width="300" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="690" y="230" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">이익준비금</text>
+  <text x="690" y="248" text-anchor="middle" font-size="13" fill="#495057">배당액의 1/10 이상, 자본금의 1/2까지</text>
+
+  <rect x="540" y="276" width="300" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="690" y="294" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">미처분이익잉여금</text>
+  <text x="690" y="312" text-anchor="middle" font-size="13" fill="#495057">누적 순이익 − 배당 − 적립</text>
+
+  <rect x="540" y="340" width="300" height="44" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="690" y="358" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자기주식 (차감 항목)</text>
+  <text x="690" y="376" text-anchor="middle" font-size="13" fill="#495057">취득 대가만큼 음수</text>
+
+  <!-- 화살표: 당기순이익 → 미처분이익잉여금 -->
+  <line x1="260" y1="108" x2="536" y2="296" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrow-in)"/>
+  <!-- 유상증자 → 자본금, 주식발행초과금 -->
+  <line x1="260" y1="166" x2="536" y2="108" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrow-in)"/>
+  <line x1="260" y1="174" x2="536" y2="170" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrow-in)"/>
+  <!-- 배당 → 미처분이익잉여금 -->
+  <line x1="260" y1="240" x2="536" y2="300" stroke="#9d0208" stroke-width="1.8" marker-end="url(#arrow-out)"/>
+  <!-- 자기주식 취득 → 자기주식 -->
+  <line x1="260" y1="304" x2="536" y2="360" stroke="#9d0208" stroke-width="1.8" marker-end="url(#arrow-out)"/>
+  <!-- 이익준비금 적립: 미처분 → 이익준비금 -->
+  <line x1="260" y1="364" x2="536" y2="238" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrow-move)"/>
+
+  <!-- 범례 -->
+  <line x1="300" y1="416" x2="340" y2="416" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="348" y="421" font-size="13" fill="#1b1b1b">자본총계 증가</text>
+  <line x1="460" y1="416" x2="500" y2="416" stroke="#9d0208" stroke-width="2"/>
+  <text x="508" y="421" font-size="13" fill="#1b1b1b">자본총계 감소</text>
+  <line x1="620" y1="416" x2="660" y2="416" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="668" y="421" font-size="13" fill="#1b1b1b">합계 변동 없음</text>
+
+  <line x1="30" y1="446" x2="850" y2="446" stroke="#ced4da"/>
+  <text x="40" y="470" font-size="13" fill="#495057">행·열 구성은 K-IFRS 제1001호 문단 106(구성요소별 기초→기말 조정내역)·108(구성요소), 자기주식의 자본 차감은 제1032호 문단 33,</text>
+  <text x="40" y="490" font-size="13" fill="#495057">이익준비금 적립 요건은 상법 제458조를 따랐다. 기타포괄손익 열은 예제에 없어 생략했다. 숫자는 code/output.txt [1]에 있다.</text>
+</svg>

@@ -3831,3 +3831,69 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: fin-031
+    title: "자본변동표 — 자본은 무엇으로 늘고 무엇으로 줄었는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 자본변동표, 자기주식, 배당]
+    difficulty: 입문
+    angle: "당기순이익·배당·유상증자·자기주식 취득이 자본 항목 중 어디를 움직이는지. 자본총계가 같아도 구성이 다른 두 회사를 한 해 변동으로 잇는다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-032
+    title: "잉여현금흐름(FCF) — 영업현금흐름에서 설비 투자를 뺀 뒤 남는 돈"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 잉여현금흐름, FCF, 이익의질]
+    difficulty: 중급
+    angle: "FCF는 기준서에 정의가 없는 대체성과지표다. 순이익은 같은데 FCF가 갈리는 두 회사, 영업현금흐름÷순이익으로 이익의 질을 보는 법, 회사마다 정의가 달라 비교가 어긋나는 자리"
+    code: python
+    origin: manual
+    status: writing
+  - id: fin-033
+    title: "기본 EPS와 희석 EPS — 전환사채가 있을 때 주당이익"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, EPS, 희석, 전환사채]
+    difficulty: 중급
+    angle: "K-IFRS 제1033호의 가중평균유통주식수 계산과 전환사채·스톡옵션의 희석 효과(자기주식법). 순이익은 같은데 희석 EPS가 다른 두 회사"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-034
+    title: "자사주 매입과 소각 — 주식 수가 줄 때 지표가 움직이는 이유"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 자사주, 소각, EPS]
+    difficulty: 중급
+    angle: "상법 제341조의 배당가능이익 한도와 취득 방법. 자사주 취득 후 EPS·PBR·지분율이 어떻게 바뀌는지, 소각 전과 후가 무엇이 다른지를 가상 회사로 계산"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-035
+    title: "사업보고서 읽는 순서 — 어디부터 펴는가"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 사업보고서, 공시, DART]
+    difficulty: 입문
+    angle: "자본시장법과 기업공시서식 작성기준이 정한 사업보고서 목차 가운데 먼저 볼 곳. 재무제표 본문보다 앞에 있는 사업의 내용·주주 현황·주석을 어떤 순서로 읽는지"
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-036
+    title: "배당락과 권리락 — 기준일 다음 날 주가가 내려가는 이유"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 배당락, 권리락, 기준일]
+    difficulty: 입문
+    angle: "배당기준일·배당락일·결제일(T+2)의 관계와 권리락 기준가격 계산식(한국거래소 업무규정). 가상 회사의 기준가를 직접 계산해 보인다"
+    code: python
+    origin: manual
+    status: todo
