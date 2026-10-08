@@ -1,0 +1,175 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\security\2026-10-08-pki-certificate-path-validation-revocation
+# 명령      : bash pki_lab.sh
+# 수행 시각 : 2026-10-08 12:12 (대한민국 표준시)
+# 소요      : 2.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+OpenSSL 3.5.6 7 Apr 2026 (Library: OpenSSL 3.5.6 7 Apr 2026)
+
+==== 0. 체인 만들기 ====
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'Lab Issuing CA'
+Certificate is to be certified until Oct  8 03:12:02 2027 GMT (365 days)
+
+Write out database with 1 new entries
+Database updated
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'shop.example'
+Certificate is to be certified until Oct  8 03:12:02 2027 GMT (365 days)
+
+Write out database with 1 new entries
+Database updated
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'api.example'
+Certificate is to be certified until Oct  8 03:12:03 2027 GMT (365 days)
+
+Write out database with 1 new entries
+Database updated
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+commonName            :ASN.1 12:'Lab OCSP Responder'
+Certificate is to be certified until Oct  8 03:12:03 2027 GMT (365 days)
+
+Write out database with 1 new entries
+Database updated
+
+-- 체인 확인 — 발급자와 주체
+subject=CN=Lab Root CA
+issuer=CN=Lab Root CA
+serial=16F8E938F435D1DEB4A22697AA5E2F0AE419507C
+subject=CN=Lab Issuing CA
+issuer=CN=Lab Root CA
+serial=1000
+subject=CN=shop.example
+issuer=CN=Lab Issuing CA
+serial=2000
+
+==== 1. 검증 경로 ====
+
+-- 1-1. 루트를 신뢰하고 중간 CA 를 함께 넘김
+probe_pki/leaf.crt: OK
+종료 코드 0
+
+-- 1-2. 중간 CA 를 빼고 넘김 (서버가 체인을 안 보낸 경우)
+CN=shop.example
+error 20 at 0 depth lookup: unable to get local issuer certificate
+error probe_pki/leaf.crt: verification failed
+종료 코드 2
+
+-- 1-3. 중간 CA 만 신뢰 앵커로 (루트 없이)
+CN=Lab Issuing CA
+error 2 at 1 depth lookup: unable to get issuer certificate
+error probe_pki/leaf.crt: verification failed
+종료 코드 2
+
+-- 1-4. 1-3 에 -partial_chain — 중간 CA 를 앵커로 인정
+probe_pki/leaf.crt: OK
+종료 코드 0
+
+==== 2. CRL ====
+Revoking Certificate 2000.
+Database updated
+
+-- 2-1. 중간 CA 가 낸 CRL 내용
+Issuer: CN=Lab Issuing CA
+Last Update: Oct  8 03:12:03 2026 GMT
+Next Update: Oct  9 03:12:03 2026 GMT
+X509v3 CRL Number: 
+Serial Number: 2000
+Revocation Date: Oct  8 03:12:03 2026 GMT
+Key Compromise
+
+-- 2-2. 폐기 확인을 켜지 않으면 (-crl_check 없음)
+probe_pki/leaf.crt: OK
+종료 코드 0
+
+-- 2-3. -crl_check 를 켰는데 CRL 을 못 구했으면
+CN=shop.example
+error 3 at 0 depth lookup: unable to get certificate CRL
+error probe_pki/leaf.crt: verification failed
+종료 코드 2
+
+-- 2-4. -crl_check + CRL 제공
+CN=shop.example
+error 23 at 0 depth lookup: certificate revoked
+error probe_pki/leaf.crt: verification failed
+종료 코드 2
+
+-- 2-5. 폐기되지 않은 leaf2 는
+probe_pki/leaf2.crt: OK
+종료 코드 0
+
+-- 2-6. CRL 의 nextUpdate 가 지난 시각(이틀 뒤)으로 검증
+CN=api.example
+error 12 at 0 depth lookup: CRL has expired
+error probe_pki/leaf2.crt: verification failed
+종료 코드 2
+
+==== 3. 중간 CA 가 폐기되면 ====
+Revoking Certificate 1000.
+Database updated
+
+-- 3-1. -crl_check (말단 인증서만 확인) — leaf2
+probe_pki/leaf2.crt: OK
+종료 코드 0
+
+-- 3-2. -crl_check_all (경로 전체 확인) — leaf2
+CN=Lab Issuing CA
+error 23 at 1 depth lookup: certificate revoked
+error probe_pki/leaf2.crt: verification failed
+종료 코드 2
+
+==== 4. OCSP ====
+
+-- 4-1. 폐기된 leaf — OCSP 전용 인증서로 서명한 응답
+Response verify OK
+probe_pki/leaf.crt: revoked
+	This Update: Oct  8 03:12:04 2026 GMT
+	Next Update: Oct  9 03:12:04 2026 GMT
+	Reason: keyCompromise
+	Revocation Time: Oct  8 03:12:03 2026 GMT
+종료 코드 0
+
+-- 4-2. 폐기되지 않은 leaf2
+Response verify OK
+probe_pki/leaf2.crt: good
+	This Update: Oct  8 03:12:04 2026 GMT
+	Next Update: Oct  9 03:12:04 2026 GMT
+종료 코드 0
+
+-- 4-3. OCSPSigning 용도가 없는 인증서(leaf2)로 서명한 응답
+Response Verify Failure
+282E0000:error:13800067:OCSP routines:ocsp_check_delegated:missing ocspsigning usage:../openssl-3.5.6/crypto/ocsp/ocsp_vfy.c:374:
+282E0000:error:13800070:OCSP routines:OCSP_basic_verify:root ca not trusted:../openssl-3.5.6/crypto/ocsp/ocsp_vfy.c:149:
+282E0000:error:13800067:OCSP routines:ocsp_check_delegated:missing ocspsigning usage:../openssl-3.5.6/crypto/ocsp/ocsp_vfy.c:374:
+282E0000:error:13800070:OCSP routines:OCSP_basic_verify:root ca not trusted:../openssl-3.5.6/crypto/ocsp/ocsp_vfy.c:149:
+probe_pki/leaf.crt: revoked
+	This Update: Oct  8 03:12:04 2026 GMT
+	Next Update: Oct  9 03:12:04 2026 GMT
+	Reason: keyCompromise
+	Revocation Time: Oct  8 03:12:03 2026 GMT
+종료 코드 1
+
+-- 4-4. CA 에 기록이 없는 일련번호
+Response verify OK
+0x9999: unknown
+	This Update: Oct  8 03:12:04 2026 GMT
+	Next Update: Oct  9 03:12:04 2026 GMT
+종료 코드 0
+
+-- 4-5. 응답의 시각 필드 (4-4 응답)
+Produced At: Oct  8 03:12:04 2026 GMT
+Cert Status: unknown
+This Update: Oct  8 03:12:04 2026 GMT
+Next Update: Oct  9 03:12:04 2026 GMT
