@@ -3918,7 +3918,7 @@ topics:
     angle: "ISO/IEC 30134-2(PUE, 2026 2판)·30134-9(WUE) 정의와 측정 범주, 계산식, 해석 시 함정(액체 냉각·열 재사용이 PUE에 미치는 영향). 수치는 표준 정의만 쓰고 업계 평균은 Uptime 설문 출처를 밝힌다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-052
     title: "LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기"
     category: Database
@@ -3984,7 +3984,7 @@ topics:
     angle: "표본평균의 수렴 위치와 흩어짐 모양을 구분하고, 독립·유한분산 전제가 깨지는 운영 데이터에서 무엇이 틀어지는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-153
     title: "Modular RAG — 모듈·연산자 3계층과 흐름 패턴"
     category: PE

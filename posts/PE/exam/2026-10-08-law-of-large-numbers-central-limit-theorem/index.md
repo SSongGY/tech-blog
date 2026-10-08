@@ -120,6 +120,8 @@ n = 100,000에서 0.5564, n = 1,000,000에서 −0.3989로 표본평균이 수�
 - **평균 외의 통계량** — 두 정리는 표본평균(합)에 대한 것이다. 최댓값, 백분위수
   같은 통계량은 다른 극한 이론을 따르므로 정규근사를 그대로 쓰지 않는다.
 
+> 개념 정리: [대수의 법칙과 중심극한정리 — 전제가 깨지는 운영 데이터에서 무엇이 틀어지는가](../../data-analysis/2026-10-08-lln-clt-assumptions-in-operational-data/index.md)
+>
 > 개념 정리: [표본추출 — 확률·비확률 표본설계와 포함확률·가중치](../../data-analysis/2026-10-06-sampling-design-inclusion-probability-weights/index.md)
 
 끝

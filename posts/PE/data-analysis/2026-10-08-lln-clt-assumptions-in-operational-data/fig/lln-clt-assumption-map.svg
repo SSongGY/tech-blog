@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+    <marker id="arr-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#111">표본평균의 두 극한 정리 — 전제 3가지와 깨질 때 무너지는 것</text>
+
+  <!-- 왼쪽: 전제 -->
+  <text x="130" y="64" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">전제 3가지</text>
+  <rect x="30" y="78" width="200" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="130" y="101" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">① 독립</text>
+  <text x="130" y="122" text-anchor="middle" font-size="13" fill="#333">관측끼리 상관 없음</text>
+
+  <rect x="30" y="148" width="200" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="130" y="171" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">② 동일분포</text>
+  <text x="130" y="192" text-anchor="middle" font-size="13" fill="#333">같은 모집단에서 나옴</text>
+
+  <rect x="30" y="218" width="200" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="130" y="241" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">③ 유한 적률</text>
+  <text x="130" y="262" text-anchor="middle" font-size="13" fill="#333">평균 μ · 분산 σ² · 3차 β₃</text>
+
+  <!-- 가운데: 결론 -->
+  <text x="440" y="64" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">결론 2가지 + 속도 1가지</text>
+  <rect x="320" y="78" width="240" height="56" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="101" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">대수의 법칙 — 어디로</text>
+  <text x="440" y="122" text-anchor="middle" font-size="13" fill="#333">X̄ₙ → μ   (평균만 유한하면)</text>
+
+  <rect x="320" y="148" width="240" height="56" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="171" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">중심극한정리 — 어떤 모양</text>
+  <text x="440" y="192" text-anchor="middle" font-size="13" fill="#333">(X̄ₙ − μ)/(σ/√n) → N(0,1)</text>
+
+  <rect x="320" y="218" width="240" height="56" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="241" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">베리-에센 — 얼마나 빨리</text>
+  <text x="440" y="262" text-anchor="middle" font-size="13" fill="#333">sup|Fₙ − Φ| ≤ C·β₃ / √n</text>
+
+  <path d="M230 106 L318 106" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M230 176 L318 176" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M230 246 L318 246" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 오른쪽: 운영 데이터 -->
+  <text x="745" y="64" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">운영 데이터의 예</text>
+  <text x="745" y="106" text-anchor="middle" font-size="13" fill="#333">요청 응답시간 평균</text>
+  <text x="745" y="176" text-anchor="middle" font-size="13" fill="#333">A/B 전환율 · 불량률</text>
+  <text x="745" y="246" text-anchor="middle" font-size="13" fill="#333">p99 대신 평균을 쓸 때</text>
+  <path d="M562 106 L652 106" stroke="#999" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M562 176 L652 176" stroke="#999" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <path d="M562 246 L652 246" stroke="#999" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- 아래: 깨질 때 -->
+  <line x1="30" y1="300" x2="850" y2="300" stroke="#ccc" stroke-width="1"/>
+  <text x="440" y="326" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">전제가 깨질 때 — 무엇이 남고 무엇이 무너지는가</text>
+
+  <rect x="30" y="342" width="260" height="120" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="160" y="366" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">① 깨짐: 자기상관 ρ</text>
+  <text x="160" y="390" text-anchor="middle" font-size="13" fill="#333">X̄ₙ → μ 는 남는다</text>
+  <text x="160" y="412" text-anchor="middle" font-size="13" fill="#333">분산이 σ²/n × (1+ρ)/(1−ρ)</text>
+  <text x="160" y="434" text-anchor="middle" font-size="13" fill="#9d0208">σ/√n 구간이 좁게 나온다</text>
+  <text x="160" y="452" text-anchor="middle" font-size="13" fill="#2d6a4f">→ 배치 평균으로 묶는다</text>
+
+  <rect x="310" y="342" width="260" height="120" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="366" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">③ 깨짐: 분산 무한 (1&lt;α≤2)</text>
+  <text x="440" y="390" text-anchor="middle" font-size="13" fill="#333">X̄ₙ → μ 는 남는다 (느리다)</text>
+  <text x="440" y="412" text-anchor="middle" font-size="13" fill="#9d0208">정규근사가 성립하지 않는다</text>
+  <text x="440" y="434" text-anchor="middle" font-size="13" fill="#9d0208">평균이 참값보다 작게 나오기 쉽다</text>
+  <text x="440" y="452" text-anchor="middle" font-size="13" fill="#2d6a4f">→ 백분위수 지표로 바꾼다</text>
+
+  <rect x="590" y="342" width="260" height="120" rx="6" fill="#fff5f5" stroke="#9d0208" stroke-width="2"/>
+  <text x="720" y="366" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">③ 깨짐: 평균 없음 (코시)</text>
+  <text x="720" y="390" text-anchor="middle" font-size="13" fill="#9d0208">X̄ₙ 이 수렴하지 않는다</text>
+  <text x="720" y="412" text-anchor="middle" font-size="13" fill="#9d0208">두 정리 모두 무너진다</text>
+  <text x="720" y="434" text-anchor="middle" font-size="13" fill="#333">표본을 늘려도 안정되지 않음</text>
+  <text x="720" y="452" text-anchor="middle" font-size="13" fill="#2d6a4f">→ 중앙값·분위수로 요약한다</text>
+
+  <text x="440" y="496" text-anchor="middle" font-size="13" fill="#555">② 가 깨져도 린데베리 조건을 만족하면 중심극한정리는 남는다</text>
+</svg>
