@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **254편** · 갱신 2026-10-09
+총 **256편** · 갱신 2026-10-09
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -215,10 +215,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 34편
+## 기출문제 (exam) — 36편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-09 | [기출문제 — 소프트웨어 무중단 배포 방식: 롤링·블루그린·카나리](posts/PE/exam/2026-10-09-zero-downtime-deployment-strategies/index.md) | 중급 | Kubernetes v1.37 문서 (apps/v1 Deployment), Google SRE Workbook (2018), Fowler, BlueGreenDeployment (2010-03-01) | 문서 근거 |
+| 2026-10-09 | [기출문제 — IT 프로젝트의 부정적 위험과 대응 전략 5가지](posts/PE/exam/2026-10-09-negative-risk-response-strategies/index.md) | 중급 | PMBOK Guide 6th ed. (PMI, 2017), ISO 31000:2018, NIST SP 800-39 (2011-03) | 문서 근거 |
 | 2026-10-08 | [기출문제 — 대수의 법칙과 중심극한정리](posts/PE/exam/2026-10-08-law-of-large-numbers-central-limit-theorem/index.md) | 중급 | Python 3.13.5, Grinstead & Snell, Introduction to Probability 2nd ed. (AMS, 2003), NIST/SEMATECH e-Handbook §6.3.2.1 (2012) | 실행 검증 |
 | 2026-10-08 | [기출문제 — AI 데이터센터, 기존 데이터센터와 무엇이 다른가](posts/PE/exam/2026-10-08-ai-data-center-vs-traditional/index.md) | 심화 | ISO/IEC 22237-1:2021, ISO/IEC 30134-2:2026, IEA Energy and AI (2025-04), Uptime Institute Global Data Center Survey 2024, ASHRAE TC 9.9 Liquid Cooling White Paper (2021-05), NVIDIA DGX SuperPOD Reference Architecture GB200 (2025-11), OCP Open Rack Base Frame V3 Specification (2022-08) | 문서 근거 |
 | 2026-10-08 | [기출문제 — Advanced RAG와 Modular RAG 비교](posts/PE/exam/2026-10-08-advanced-rag-vs-modular-rag/index.md) | 중급 | Lewis et al., NeurIPS 2020, Gao et al., arXiv:2312.10997v5 (2024-03), Gao et al., arXiv:2407.21059v1 (2024-07) | 문서 근거 |
