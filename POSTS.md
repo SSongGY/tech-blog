@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **244편** · 갱신 2026-10-08
+총 **247편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 42편
+## DB문법 (basics) — 43편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [COLLATE — 대소문자와 정렬 규칙](posts/Database/sql-basics/2026-10-08-sql-collate-case-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [생성 컬럼 — 계산 결과를 컬럼처럼, VIRTUAL과 STORED](posts/Database/sql-basics/2026-10-08-generated-column-virtual-stored/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [UPSERT — INSERT ... ON CONFLICT](posts/Database/sql-basics/2026-10-07-sqlite-upsert-on-conflict/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -71,11 +72,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 92편
+## 기술사 (pe) — 93편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-08 | [제로 트러스트 아키텍처 — NIST SP 800-207의 7원칙과 3구성요소](posts/PE/security/2026-10-08-zero-trust-architecture-nist-sp-800-207/index.md) | 중급 | NIST SP 800-207 Zero Trust Architecture (2020-08), CISA Zero Trust Maturity Model Version 2.0 (2023-04), 제로트러스트 가이드라인 2.0 (과학기술정보통신부·KISA, 2024-12) | 문서 근거 |
+| 2026-10-08 | [공개키 기반구조(PKI)와 인증서 검증 경로](posts/PE/security/2026-10-08-pki-certificate-path-validation-revocation/index.md) | 중급 | RFC 5280 (2008-05), RFC 6960 (2013-06), RFC 6066 (2011-01), CA/B Forum BR 2.0.1 (2024-03-15), OpenSSL 3.5.6 | 실행 검증 |
 | 2026-10-08 | [컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가](posts/PE/it-management/2026-10-08-iso-37301-compliance-management-system/index.md) | 중급 | ISO 37301:2021 (2021-04-13 발행), ISO 19600:2014 (철회), ISO/IEC 27001:2022, OCEG GRC Capability Model 3.5 (2023) | 문서 근거 |
 | 2026-10-08 | [데이터센터 액체 냉각 — 콜드플레이트·액침과 ASHRAE 시설수 온도 등급](posts/PE/system/2026-10-08-data-center-liquid-cooling-ashrae-w-classes/index.md) | 중급 | ASHRAE TC 9.9 Liquid Cooling White Paper (2021-05-07), ASHRAE Thermal Guidelines for Data Processing Environments 5th ed. (2021-03), Uptime Institute Cooling Systems Survey 2024 (2024-05), NVIDIA DGX SuperPOD GB200 Reference Architecture (2025-11) | 문서 근거 |
 | 2026-10-07 | [QUIC와 HTTP/3 — TCP 위에서 못 풀던 세 가지를 UDP로 내려가 푼 이유](posts/PE/network/2026-10-07-quic-http3-udp-transport/index.md) | 중급 | RFC 9000 (2021-05), RFC 9001 (2021-05), RFC 9002 (2021-05), RFC 9114 (2022-06), RFC 8446 (2018-08), Python 3.13.5 | 실행 검증 |
@@ -188,10 +190,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 14편
+## 일반 (general) — 15편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [서킷 브레이커의 3상태는 각각 어떤 장애를 막는가](posts/Backend/2026-10-08-circuit-breaker-three-states/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [옵티마이저 힌트를 쓰기 전에 확인할 3가지 — 통계·데이터·스키마](posts/Database/2026-10-07-optimizer-hint-three-checks/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [재시도에 지수 백오프와 지터가 둘 다 필요한 이유](posts/Backend/2026-10-06-retry-backoff-jitter/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-06 | [멱등키(Idempotency Key)로 중복 결제를 막는 설계](posts/Backend/2026-10-06-idempotency-key-duplicate-payment/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Windows 11 | 실행 검증 |
