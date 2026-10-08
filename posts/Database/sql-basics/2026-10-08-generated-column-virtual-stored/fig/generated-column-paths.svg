@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">생성 컬럼 — 같은 식 unit_price * quantity 가 계산되는 시점이 다르다</text>
+  <text x="30" y="56" font-size="13" fill="#555">STORED 는 쓸 때 계산해 행에 저장하고, VIRTUAL 은 읽을 때마다 계산한다 · SQLite 3.49.1</text>
+
+  <!-- 쓰기 경로 -->
+  <text x="30" y="88" font-size="13" font-weight="bold" fill="#2d6a4f">쓰기 경로 — INSERT / UPDATE</text>
+  <rect x="30" y="100" width="210" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="135" y="124" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">원본 컬럼 값</text>
+  <text x="135" y="146" font-size="13" text-anchor="middle" fill="#1b1b1b">unit_price=45000, quantity=2</text>
+
+  <line x1="240" y1="132" x2="286" y2="132" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="286,127 296,132 286,137" fill="#2d6a4f"/>
+
+  <rect x="300" y="96" width="260" height="72" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="430" y="120" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">STORED — 쓰는 시점에 계산</text>
+  <text x="430" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">45000 * 2 = 90000</text>
+  <text x="430" y="158" font-size="13" text-anchor="middle" fill="#555">CHECK 도 이때 검사된다</text>
+
+  <line x1="560" y1="132" x2="606" y2="132" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="606,127 616,132 606,137" fill="#2d6a4f"/>
+
+  <rect x="620" y="96" width="230" height="112" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="735" y="120" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">디스크의 행 레코드</text>
+  <rect x="636" y="132" width="198" height="26" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+  <text x="735" y="150" font-size="13" text-anchor="middle" fill="#1b1b1b">45000 | 2 | '2026-09-03 …'</text>
+  <rect x="636" y="164" width="198" height="26" rx="4" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="735" y="182" font-size="13" text-anchor="middle" fill="#2d6a4f">STORED 값 90000 이 같이 저장</text>
+  <text x="735" y="203" font-size="13" text-anchor="middle" fill="#555">VIRTUAL 값의 자리는 없다</text>
+
+  <!-- 읽기 경로 -->
+  <text x="30" y="250" font-size="13" font-weight="bold" fill="#b45309">읽기 경로 — SELECT line_total</text>
+  <rect x="620" y="262" width="230" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="735" y="286" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">행을 읽는다</text>
+  <text x="735" y="308" font-size="13" text-anchor="middle" fill="#1b1b1b">원본 값 + STORED 값</text>
+
+  <line x1="620" y1="294" x2="574" y2="294" stroke="#b45309" stroke-width="1.5"/>
+  <polygon points="574,289 564,294 574,299" fill="#b45309"/>
+
+  <rect x="300" y="258" width="260" height="72" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="1.5"/>
+  <text x="430" y="282" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">VIRTUAL — 읽는 시점에 계산</text>
+  <text x="430" y="302" font-size="13" text-anchor="middle" fill="#1b1b1b">45000 * 2 = 90000 (매 조회)</text>
+  <text x="430" y="320" font-size="13" text-anchor="middle" fill="#555">STORED 는 이 단계가 없다</text>
+
+  <line x1="300" y1="294" x2="254" y2="294" stroke="#b45309" stroke-width="1.5"/>
+  <polygon points="254,289 244,294 254,299" fill="#b45309"/>
+
+  <rect x="30" y="262" width="210" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="135" y="286" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">결과 행</text>
+  <text x="135" y="308" font-size="13" text-anchor="middle" fill="#1b1b1b">line_total = 90000</text>
+
+  <text x="30" y="358" font-size="13" fill="#555">인덱스를 걸면 STORED 컬럼은 보통 인덱스, VIRTUAL 컬럼은 식 인덱스가 된다 · 10만 행 실측: STORED 파일이 VIRTUAL 의 2.1배</text>
+</svg>

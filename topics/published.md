@@ -213,3 +213,6 @@
 | 2026-10-08 | db-044 | Database | GROUP_CONCAT — 여러 행을 한 줄로 |
 | 2026-10-08 | tb-015 | Database | Tibero 7 WITH 절 — CTE와 재귀 질의 |
 | 2026-10-08 | pe-058 | PE | 로드 밸런싱 — L4와 L7, 분배 알고리즘 |
+| 2026-10-08 | db-047 | Database | 생성 컬럼 — 계산 결과를 컬럼처럼 |
+| 2026-10-08 | pe-059 | PE | 제로 트러스트 아키텍처 — NIST SP 800-207 |
+| 2026-10-08 | infra-024 | Infra | time으로 재는 세 가지 — real, user, sys |

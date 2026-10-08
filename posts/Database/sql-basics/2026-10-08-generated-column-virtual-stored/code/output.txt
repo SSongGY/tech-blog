@@ -1,0 +1,230 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-08-generated-column-virtual-stored
+# 명령      : python generated_columns.py
+# 수행 시각 : 2026-10-08 09:04 (대한민국 표준시)
+# 소요      : 0.8초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[order_item]  5행
+  컬럼          | 타입    | 제약
+  --------------+---------+---------
+  order_item_id | INTEGER | PK
+  product       | TEXT    | NOT NULL
+  unit_price    | INTEGER | NOT NULL
+  quantity      | INTEGER | NOT NULL
+  ordered_at    | TEXT    | NOT NULL
+
+  order_item_id | product | unit_price | quantity | ordered_at
+  --------------+---------+------------+----------+--------------------
+              1 | 키보드  |      45000 |        2 | 2026-09-03 10:20:00
+              2 | 마우스  |      25000 |        1 | 2026-09-03 10:20:00
+              3 | 모니터  |     320000 |        1 | 2026-09-18 15:02:00
+              4 | 케이블  |       8000 |        5 | 2026-10-01 09:11:00
+              5 | 허브    |      39000 |        3 | 2026-10-02 18:40:00
+
+[order_item 의 생성 컬럼]  (PRAGMA table_xinfo 의 hidden: 2=VIRTUAL, 3=STORED)
+  line_total    INTEGER GENERATED ALWAYS AS (unit_price * quantity) VIRTUAL,
+  order_month   TEXT    GENERATED ALWAYS AS (substr(ordered_at, 1, 7)) STORED
+
+
+-- 1. 생성 컬럼을 모르면 — 식을 질의마다 되풀이해 쓴다
+   SELECT product, unit_price * quantity AS line_total
+   FROM order_item
+   WHERE unit_price * quantity >= 50000
+   ORDER BY unit_price * quantity DESC
+   => product | line_total
+      모니터 | 320000
+      허브 | 117000
+      키보드 | 90000
+   (3행)
+
+-- 2. 생성 컬럼은 보통 컬럼처럼 읽는다 — SELECT * 에도 나온다
+   SELECT * FROM order_item ORDER BY order_item_id
+   => order_item_id | product | unit_price | quantity | ordered_at | line_total | order_month
+      1 | 키보드 | 45000 | 2 | 2026-09-03 10:20:00 | 90000 | 2026-09
+      2 | 마우스 | 25000 | 1 | 2026-09-03 10:20:00 | 25000 | 2026-09
+      3 | 모니터 | 320000 | 1 | 2026-09-18 15:02:00 | 320000 | 2026-09
+      4 | 케이블 | 8000 | 5 | 2026-10-01 09:11:00 | 40000 | 2026-10
+      5 | 허브 | 39000 | 3 | 2026-10-02 18:40:00 | 117000 | 2026-10
+   (5행)
+
+-- 3. 원본 컬럼을 고치면 두 생성 컬럼이 따라 바뀐다
+   UPDATE order_item SET quantity = 4, ordered_at = '2026-11-05 11:00:00'
+   WHERE order_item_id = 1
+   (결과 없음)
+
+-- 3-A. 고친 뒤
+   SELECT order_item_id, quantity, line_total, ordered_at, order_month
+   FROM order_item WHERE order_item_id = 1
+   => order_item_id | quantity | line_total | ordered_at | order_month
+      1 | 4 | 180000 | 2026-11-05 11:00:00 | 2026-11
+   (1행)
+
+-- 4-A. 생성 컬럼에 값을 직접 넣으면
+   INSERT INTO order_item (product, unit_price, quantity, ordered_at, line_total)
+   VALUES ('독', 1000, 1, '2026-10-03 00:00:00', 999)
+   에러: cannot INSERT into generated column "line_total"
+
+-- 4-B. UPDATE 로 바꾸려 해도
+   UPDATE order_item SET line_total = 0 WHERE order_item_id = 2
+   에러: cannot UPDATE generated column "line_total"
+
+-- 4-C. 컬럼 목록을 생략한 INSERT 는 생성 컬럼을 세지 않는다 (값 5개)
+   INSERT INTO order_item VALUES (6, '거치대', 15000, 2, '2026-10-03 12:00:00')
+   (결과 없음)
+
+-- 5-A. ALTER TABLE 로 VIRTUAL 생성 컬럼은 더할 수 있다
+   ALTER TABLE order_item
+   ADD COLUMN unit_price_with_vat INTEGER GENERATED ALWAYS AS (unit_price * 11 / 10) VIRTUAL
+   (결과 없음)
+
+-- 5-B. STORED 는 더할 수 없다
+   ALTER TABLE order_item
+   ADD COLUMN line_total_stored INTEGER GENERATED ALWAYS AS (unit_price * quantity) STORED
+   에러: cannot add a STORED column
+
+-- 6-A. PRAGMA table_info — 생성 컬럼이 빠진다
+   SELECT cid, name, type FROM pragma_table_info('order_item')
+   => cid | name | type
+      0 | order_item_id | INTEGER
+      1 | product | TEXT
+      2 | unit_price | INTEGER
+      3 | quantity | INTEGER
+      4 | ordered_at | TEXT
+   (5행)
+
+-- 6-B. PRAGMA table_xinfo — hidden 이 2(VIRTUAL)·3(STORED)
+   SELECT cid, name, type, hidden FROM pragma_table_xinfo('order_item')
+   => cid | name | type | hidden
+      0 | order_item_id | INTEGER | 0
+      1 | product | TEXT | 0
+      2 | unit_price | INTEGER | 0
+      3 | quantity | INTEGER | 0
+      4 | ordered_at | TEXT | 0
+      5 | line_total | INTEGER | 2
+      6 | order_month | TEXT | 3
+      7 | unit_price_with_vat | INTEGER | 2
+   (8행)
+
+-- 7. 생성 컬럼이 다른 생성 컬럼을 참조할 수 있다 (순환만 아니면)
+   SELECT product, line_total, line_total * 11 / 10 AS with_vat
+   FROM order_item WHERE order_item_id IN (1, 3)
+   => product | line_total | with_vat
+      키보드 | 180000 | 198000
+      모니터 | 320000 | 352000
+   (2행)
+
+-- 7-A. 참조 사슬 — tax 가 line_total 을 쓴다
+   CREATE TABLE probe (
+       unit_price INTEGER, quantity INTEGER,
+       line_total INTEGER AS (unit_price * quantity),
+       tax        INTEGER AS (line_total / 10)
+   )
+   => 만들어짐
+
+-- 7-B. 순환 참조
+   CREATE TABLE probe (
+       a INTEGER AS (b + 1),
+       b INTEGER AS (a + 1),
+       c INTEGER
+   )
+   에러: generated column loop on "b"
+
+-- 8-A. 쓸 수 없는 것 — DEFAULT
+   CREATE TABLE probe (x INTEGER, y INTEGER AS (x * 2) DEFAULT 0)
+   에러: cannot use DEFAULT on a generated column
+
+-- 8-B. 쓸 수 없는 것 — PRIMARY KEY
+   CREATE TABLE probe (x INTEGER, y INTEGER AS (x * 2) PRIMARY KEY)
+   에러: generated columns cannot be part of the PRIMARY KEY
+
+-- 8-C. 쓸 수 없는 것 — 결정적이지 않은 함수
+   CREATE TABLE probe (x INTEGER, y INTEGER AS (x + random()))
+   에러: non-deterministic functions prohibited in generated columns
+
+-- 8-D. 쓸 수 없는 것 — 서브쿼리
+   CREATE TABLE probe (x INTEGER, y INTEGER AS ((SELECT MAX(order_item_id) FROM order_item)))
+   에러: subqueries prohibited in generated columns
+
+-- 8-E. 쓸 수 없는 것 — 생성 컬럼만 있는 표
+   CREATE TABLE probe (y INTEGER AS (1 + 1))
+   에러: must have at least one non-generated column
+
+-- 8-F. 되는 것 — CHECK 와 NOT NULL 은 생성 컬럼에도 붙는다
+   CREATE TABLE probe (
+       unit_price INTEGER, quantity INTEGER,
+       line_total INTEGER AS (unit_price * quantity) STORED CHECK (line_total >= 0)
+   )
+   => 만들어짐
+
+-- 8-G. 그 CHECK 는 원본 컬럼을 넣을 때 검사된다
+   INSERT INTO probe (unit_price, quantity) VALUES (1000, -1)
+   에러: CHECK constraint failed: line_total >= 0
+
+-- 9-A. 생성 컬럼 위의 인덱스 — STORED(order_month) 는 보통 인덱스
+   CREATE INDEX ix_order_item_order_month ON order_item (order_month)
+   (결과 없음)
+
+-- 9-B. VIRTUAL(line_total) 위의 인덱스는 식 인덱스로 저장된다
+   CREATE INDEX ix_order_item_line_total ON order_item (line_total)
+   (결과 없음)
+
+-- 9-C. sqlite_master 에 남는 정의
+   SELECT name, sql FROM sqlite_master WHERE type = 'index' AND tbl_name = 'order_item'
+   => name | sql
+      ix_order_item_order_month | CREATE INDEX ix_order_item_order_month ON order_item (order_month)
+
+      ix_order_item_line_total | CREATE INDEX ix_order_item_line_total ON order_item (line_total)
+
+   (2행)
+
+-- 10-A. STORED 컬럼 조건 — 인덱스를 탄다
+   SELECT product FROM order_item WHERE order_month = '2026-09'
+   QUERY PLAN
+   `--SEARCH order_item USING INDEX ix_order_item_order_month (order_month=?)
+
+-- 10-B. VIRTUAL 컬럼 조건 — 식 인덱스를 탄다
+   SELECT product FROM order_item WHERE line_total >= 50000
+   QUERY PLAN
+   `--SEARCH order_item USING INDEX ix_order_item_line_total (line_total>?)
+
+-- 10-C. 컬럼 이름 대신 같은 식을 직접 쓰면
+   SELECT product FROM order_item WHERE unit_price * quantity >= 50000
+   QUERY PLAN
+   `--SCAN order_item
+
+-- 10-D. 식의 순서를 바꾸면
+   SELECT product FROM order_item WHERE quantity * unit_price >= 50000
+   QUERY PLAN
+   `--SCAN order_item
+
+-- 12-A. 생성 컬럼을 지우는 것은 된다 (SQLite 3.35.0+)
+   ALTER TABLE order_item DROP COLUMN unit_price_with_vat
+   (결과 없음)
+
+-- 12-B. 생성 컬럼이 참조하는 원본 컬럼은 지울 수 없다
+   ALTER TABLE order_item DROP COLUMN quantity
+   에러: error in table order_item after drop column: no such column: quantity
+
+-- 12-C. 인덱스가 걸린 생성 컬럼도 지울 수 없다
+   ALTER TABLE order_item DROP COLUMN order_month
+   에러: error in index ix_order_item_order_month after drop column: no such column: order_month
+
+-- 11. 10만 행 — 저장 공간과 조회 시간 (VIRTUAL vs STORED)
+   VIRTUAL: 파일  2,340 KB (585 페이지) · SUM(line_total)     4.7 ms · WHERE sold_month     7.7 ms · WHERE label LIKE    12.7 ms · SUM(식 직접)     4.5 ms
+   STORED : 파일  5,012 KB (1,253 페이지) · SUM(line_total)     5.2 ms · WHERE sold_month     5.9 ms · WHERE label LIKE     7.2 ms · SUM(식 직접)     5.8 ms
+   (각 시간은 5회 중 가장 짧은 값. 절대값은 환경마다 다르고 비율만 본다)

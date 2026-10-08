@@ -2014,7 +2014,7 @@ topics:
     angle: "경계 방어와 무엇이 근본적으로 다른지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-060
     title: "공개키 기반구조(PKI)와 인증서 검증 경로"
     category: PE
@@ -2609,7 +2609,7 @@ topics:
     angle: "VIRTUAL과 STORED의 차이를 저장 공간과 조회 속도로 재서"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-048
     title: "EXPLAIN QUERY PLAN 읽는 법"
     category: Database
@@ -2862,7 +2862,7 @@ topics:
     angle: "세 값의 관계로 CPU 바운드인지 I/O 대기인지 가르는 법"
     code: bash
     origin: manual
-    status: todo
+    status: done
   - id: infra-025
     title: "locale과 iconv — 한글이 깨질 때"
     category: Infra
