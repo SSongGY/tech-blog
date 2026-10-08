@@ -3995,7 +3995,7 @@ topics:
     angle: "직선 파이프라인이 못 푸는 질의를 라우팅·스케줄링·융합으로 어떻게 푸는가, Naive·Advanced와의 포함 관계"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-154
     title: "무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경"
     category: PE
@@ -4006,4 +4006,4 @@ topics:
     angle: "트래픽 전환 단위·추가 자원·롤백 경로로 세 방식을 대비하고, 구·신버전이 같은 DB를 쓰는 기간의 하위 호환(확장-이전-축소)과 카나리 자동 판정까지"
     code: none
     origin: exam
-    status: todo
+    status: done

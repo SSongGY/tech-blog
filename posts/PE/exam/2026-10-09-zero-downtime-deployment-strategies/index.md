@@ -111,6 +111,8 @@ AWS 백서가 적듯 블루그린도 Green에 소량의 운영 트래픽을 먼�
 
 > 개념 정리: [DevOps 파이프라인 구성요소와 DORA 지표 — 지표마다 재는 구간](../../software-engineering/2026-10-03-devops-pipeline-dora-metrics/index.md)
 
+> 개념 정리: [무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경](../../software-engineering/2026-10-09-zero-downtime-deployment-expand-contract/index.md)
+
 끝
 
 ## 답안 작성 메모

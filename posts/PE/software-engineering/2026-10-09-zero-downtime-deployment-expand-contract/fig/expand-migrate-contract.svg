@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">스키마 변경을 배포에서 떼어 내는 3단계 — 확장 · 이전 · 축소</text>
+
+  <!-- 행 라벨 -->
+  <text x="70" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">스키마</text>
+  <text x="70" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">애플리케이션</text>
+  <text x="70" y="284" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">롤백 가능</text>
+
+  <!-- 단계 헤더 -->
+  <text x="260" y="62" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">① 확장 (Expand)</text>
+  <text x="490" y="62" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">② 이전 (Migrate)</text>
+  <text x="720" y="62" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">③ 축소 (Contract)</text>
+
+  <!-- 스키마 행 -->
+  <rect x="160" y="76" width="200" height="56" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="260" y="100" text-anchor="middle" font-size="13" fill="#0f172a">옛 구조 유지 + 새 구조 추가</text>
+  <text x="260" y="120" text-anchor="middle" font-size="13" fill="#334155">두 접근 방식 모두 지원</text>
+
+  <rect x="390" y="76" width="200" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="490" y="100" text-anchor="middle" font-size="13" fill="#0f172a">옛 + 새 구조 공존</text>
+  <text x="490" y="120" text-anchor="middle" font-size="13" fill="#334155">데이터를 새 구조로 옮김</text>
+
+  <rect x="620" y="76" width="200" height="56" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="720" y="100" text-anchor="middle" font-size="13" fill="#0f172a">옛 구조 삭제</text>
+  <text x="720" y="120" text-anchor="middle" font-size="13" fill="#334155">새 구조만 남음</text>
+
+  <!-- 애플리케이션 행 -->
+  <rect x="160" y="166" width="200" height="56" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="260" y="190" text-anchor="middle" font-size="13" fill="#0f172a">v1만 운영</text>
+  <text x="260" y="210" text-anchor="middle" font-size="13" fill="#334155">스키마만 먼저 배포</text>
+
+  <rect x="390" y="166" width="200" height="56" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="490" y="190" text-anchor="middle" font-size="13" fill="#0f172a">v1 → v2 교체</text>
+  <text x="490" y="210" text-anchor="middle" font-size="13" fill="#334155">롤링·블루그린·카나리</text>
+
+  <rect x="620" y="166" width="200" height="56" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="720" y="190" text-anchor="middle" font-size="13" fill="#0f172a">v2만 운영</text>
+  <text x="720" y="210" text-anchor="middle" font-size="13" fill="#334155">안정 확인 뒤 진행</text>
+
+  <!-- 롤백 행 -->
+  <path d="M 160 284 L 590 284" stroke="#2d6a4f" stroke-width="6" fill="none"/>
+  <text x="375" y="310" text-anchor="middle" font-size="13" fill="#2d6a4f">v1으로 되돌려도 데이터를 읽는다 — 라우터·롤아웃 되돌리기로 충분</text>
+  <path d="M 620 284 L 820 284" stroke="#9d0208" stroke-width="6" stroke-dasharray="10 6" fill="none"/>
+  <text x="720" y="310" text-anchor="middle" font-size="13" fill="#9d0208">v1 롤백 불가 지점</text>
+
+  <!-- 시간 축 -->
+  <path d="M 160 352 L 830 352" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <text x="840" y="357" text-anchor="start" font-size="13" fill="#334155">시간</text>
+  <text x="490" y="380" text-anchor="middle" font-size="13" fill="#334155">②의 길이 = 구·신버전이 같은 DB를 함께 쓰는 기간 (전이 기간)</text>
+  <text x="490" y="404" text-anchor="middle" font-size="13" fill="#334155">배포 방식은 ②의 안에서만 고른다. ①과 ③은 앱 배포와 따로 나간다</text>
+</svg>
