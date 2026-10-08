@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="32" font-size="16" font-weight="bold" fill="#222222">가. 2016 비식별 조치 가이드라인 — 4단계 (관계부처 합동)</text>
+
+  <rect x="20" y="52" width="180" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="110" y="76" text-anchor="middle" font-size="14" fill="#222222">① 사전 검토</text>
+  <text x="110" y="96" text-anchor="middle" font-size="13" fill="#555555">개인정보 해당 여부</text>
+
+  <rect x="240" y="52" width="180" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="330" y="76" text-anchor="middle" font-size="14" fill="#222222">② 비식별 조치</text>
+  <text x="330" y="96" text-anchor="middle" font-size="13" fill="#555555">식별 요소 삭제·대체</text>
+
+  <rect x="460" y="52" width="180" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="550" y="76" text-anchor="middle" font-size="14" fill="#222222">③ 적정성 평가</text>
+  <text x="550" y="96" text-anchor="middle" font-size="13" fill="#b45309">k-익명성 기본, ℓ·t 추가</text>
+
+  <rect x="680" y="52" width="180" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="770" y="76" text-anchor="middle" font-size="14" fill="#222222">④ 사후 관리</text>
+  <text x="770" y="96" text-anchor="middle" font-size="13" fill="#555555">재식별 모니터링</text>
+
+  <line x1="200" y1="80" x2="236" y2="80" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="420" y1="80" x2="456" y2="80" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="640" y1="80" x2="676" y2="80" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="658" y="70" text-anchor="middle" font-size="13" fill="#2d6a4f">적정</text>
+  <polyline points="550,108 550,134 330,134 330,112" fill="none" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <text x="440" y="152" text-anchor="middle" font-size="13" fill="#9d0208">부적정 → 비식별 조치 다시</text>
+
+  <text x="20" y="200" font-size="16" font-weight="bold" fill="#222222">나. 가명정보 처리 가이드라인 — 5단계 (개인정보보호위원회, 2022.4판)</text>
+
+  <rect x="20" y="222" width="152" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="96" y="246" text-anchor="middle" font-size="14" fill="#222222">1 사전 준비</text>
+  <text x="96" y="266" text-anchor="middle" font-size="13" fill="#555555">목적 설정·서류</text>
+
+  <rect x="192" y="222" width="152" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="268" y="246" text-anchor="middle" font-size="14" fill="#222222">2 위험성 검토</text>
+  <text x="268" y="266" text-anchor="middle" font-size="13" fill="#555555">데이터·처리 환경</text>
+
+  <rect x="364" y="222" width="152" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="440" y="246" text-anchor="middle" font-size="14" fill="#222222">3 가명처리</text>
+  <text x="440" y="266" text-anchor="middle" font-size="13" fill="#555555">항목별 방법·수준</text>
+
+  <rect x="536" y="222" width="152" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="612" y="246" text-anchor="middle" font-size="14" fill="#222222">4 적정성 검토</text>
+  <text x="612" y="266" text-anchor="middle" font-size="13" fill="#b45309">6개 항목 검토</text>
+
+  <rect x="708" y="222" width="152" height="56" rx="6" fill="#f5f5f5" stroke="#888888" stroke-width="1.5"/>
+  <text x="784" y="246" text-anchor="middle" font-size="14" fill="#222222">5 안전한 관리</text>
+  <text x="784" y="266" text-anchor="middle" font-size="13" fill="#555555">분리 보관·재식별 금지</text>
+
+  <line x1="172" y1="250" x2="188" y2="250" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="344" y1="250" x2="360" y2="250" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="516" y1="250" x2="532" y2="250" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="688" y1="250" x2="704" y2="250" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <polyline points="612,278 612,306 96,306 96,282" fill="none" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <text x="354" y="324" text-anchor="middle" font-size="13" fill="#9d0208">재식별 가능성 있음 → 1~3단계 재수행 또는 추가 가명처리</text>
+
+  <text x="20" y="366" font-size="13" fill="#555555">적정성 검토 6개 항목: ① 필요서류 ② 목적 적합성 ③ 식별 위험성 검토 결과 ④ 항목별 가명처리 계획</text>
+  <text x="20" y="388" font-size="13" fill="#555555">⑤ 가명처리 결과 ⑥ 처리 목적 달성 가능성 — 계량 모델(k·ℓ·t)은 가.의 ③에서 평가 기준으로 명시됐다.</text>
+</svg>
