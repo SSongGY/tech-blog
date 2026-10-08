@@ -3874,7 +3874,7 @@ topics:
     angle: "상법 제341조의 배당가능이익 한도와 취득 방법. 자사주 취득 후 EPS·PBR·지분율이 어떻게 바뀌는지, 소각 전과 후가 무엇이 다른지를 가상 회사로 계산"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-035
     title: "사업보고서 읽는 순서 — 어디부터 펴는가"
     category: Finance

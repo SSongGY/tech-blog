@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">자기주식의 경로 — 단계마다 움직이는 숫자</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <!-- 1 매입 -->
+  <rect x="40" y="60" width="230" height="74" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="155" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 매입</text>
+  <text x="155" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">배당가능이익 한도 안에서</text>
+  <text x="155" y="126" text-anchor="middle" font-size="13" fill="#1b1b1b">거래소 매수 또는 균등 조건</text>
+
+  <line x1="270" y1="97" x2="318" y2="97" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2 보유 -->
+  <rect x="320" y="60" width="240" height="74" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="440" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">② 보유 — 자기주식</text>
+  <text x="440" y="110" text-anchor="middle" font-size="13" fill="#1b1b1b">자본에서 차감 · 의결권·배당 없음</text>
+  <text x="440" y="126" text-anchor="middle" font-size="13" fill="#1b1b1b">취득일부터 1년 안에 소각이 원칙</text>
+
+  <!-- 3 소각 -->
+  <line x1="560" y1="85" x2="618" y2="85" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="620" y="52" width="220" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="730" y="76" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">③ 소각</text>
+  <text x="730" y="97" text-anchor="middle" font-size="13" fill="#1b1b1b">이사회 결의 · 주식이 없어진다</text>
+
+  <!-- 3' 예외 보유·처분 -->
+  <line x1="560" y1="118" x2="618" y2="148" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="620" y="122" width="220" height="56" rx="6" fill="#ffccd5" stroke="#9d0208"/>
+  <text x="730" y="146" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">③' 계속 보유·처분</text>
+  <text x="730" y="167" text-anchor="middle" font-size="13" fill="#1b1b1b">보유처분계획 · 매년 주총 승인</text>
+
+  <!-- 아래: 바뀌는 숫자 -->
+  <text x="40" y="220" font-size="14" font-weight="bold" fill="#1b1b1b">가나전자 10% 매입(주가 15,000원) — 이 글의 예제 숫자</text>
+
+  <rect x="40" y="236" width="250" height="210" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="165" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① → ② 매입하면 바뀐다</text>
+  <text x="56" y="290" font-size="13" fill="#1b1b1b">현금 150억 유출 · 자본 1,000 → 850억</text>
+  <text x="56" y="314" font-size="13" fill="#1b1b1b">유통주식수 1,000만 → 900만</text>
+  <text x="56" y="338" font-size="13" fill="#1b1b1b">EPS 1,500 → 1,633원</text>
+  <text x="56" y="362" font-size="13" fill="#9d0208">BPS 10,000 → 9,444원</text>
+  <text x="56" y="386" font-size="13" fill="#1b1b1b">ROE 15.0 → 17.3%</text>
+  <text x="56" y="420" font-size="13" fill="#495057">상장주식수는 1,000만 그대로</text>
+
+  <rect x="310" y="236" width="250" height="210" rx="6" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="435" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">② → ③ 소각하면 바뀐다</text>
+  <text x="326" y="290" font-size="13" fill="#1b1b1b">상장주식수 1,000만 → 900만</text>
+  <text x="326" y="314" font-size="13" fill="#1b1b1b">상장 기준 시총 1,500 → 1,350억</text>
+  <text x="326" y="338" font-size="13" fill="#1b1b1b">10% 주주 지분율 10.00 → 11.11%</text>
+  <text x="326" y="378" font-size="13" fill="#495057">자본총계·EPS·BPS 그대로</text>
+  <text x="326" y="402" font-size="13" fill="#495057">(이미 매입 때 빠졌다)</text>
+
+  <rect x="580" y="236" width="260" height="210" rx="6" fill="#ffffff" stroke="#9d0208"/>
+  <text x="710" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">② → ③' 처분하면</text>
+  <text x="596" y="290" font-size="13" fill="#1b1b1b">유통주식수가 다시 늘어난다</text>
+  <text x="596" y="314" font-size="13" fill="#1b1b1b">받은 대가만큼 자본총계가 는다</text>
+  <text x="596" y="338" font-size="13" fill="#1b1b1b">처분 손익은 당기손익이 아니다</text>
+  <text x="596" y="378" font-size="13" fill="#495057">매입 때 생긴 EPS 증가가</text>
+  <text x="596" y="402" font-size="13" fill="#495057">되돌아갈 수 있다</text>
+
+  <text x="40" y="478" font-size="13" fill="#495057">EPS·ROE는 매입 현금이 벌던 세후 2%를 뺀 값. 주가는 매입 전후 그대로라고 두었다.</text>
+</svg>
