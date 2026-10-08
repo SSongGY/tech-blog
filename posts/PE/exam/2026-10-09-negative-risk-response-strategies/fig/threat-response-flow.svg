@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 1. 식별·분석 -->
+  <rect x="60" y="24" width="330" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="225" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">위협 식별·분석</text>
+  <text x="225" y="76" text-anchor="middle" font-size="14" fill="#334155">발생 확률 × 영향 → 우선순위</text>
+
+  <path d="M 390 59 L 486 59" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 2. 판단 -->
+  <rect x="490" y="24" width="330" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="655" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">대응 전략 선택</text>
+  <text x="655" y="76" text-anchor="middle" font-size="14" fill="#334155">권한 범위 · 위험 허용 수준 · 비용</text>
+
+  <!-- 분기선 -->
+  <path d="M 655 94 L 655 118" stroke="#334155" stroke-width="1.6" fill="none"/>
+  <path d="M 96 118 L 784 118" stroke="#334155" stroke-width="1.6" fill="none"/>
+  <path d="M 96 118 L 96 144" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 268 118 L 268 144" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 440 118 L 440 144" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 612 118 L 612 144" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 784 118 L 784 144" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 5 전략 -->
+  <rect x="20" y="146" width="152" height="130" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="96" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">① 상부 보고</text>
+  <text x="96" y="194" text-anchor="middle" font-size="13" fill="#334155">Escalate</text>
+  <text x="96" y="222" text-anchor="middle" font-size="13" fill="#0f172a">PM 권한 밖 위협을</text>
+  <text x="96" y="242" text-anchor="middle" font-size="13" fill="#0f172a">프로그램·포트폴리오</text>
+  <text x="96" y="262" text-anchor="middle" font-size="13" fill="#0f172a">수준으로 넘김</text>
+
+  <rect x="192" y="146" width="152" height="130" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="268" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">② 회피</text>
+  <text x="268" y="194" text-anchor="middle" font-size="13" fill="#2d6a4f">Avoid</text>
+  <text x="268" y="222" text-anchor="middle" font-size="13" fill="#0f172a">계획·범위를 바꿔</text>
+  <text x="268" y="242" text-anchor="middle" font-size="13" fill="#0f172a">위협 원인 제거</text>
+  <text x="268" y="262" text-anchor="middle" font-size="13" fill="#0f172a">(확률 → 0)</text>
+
+  <rect x="364" y="146" width="152" height="130" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="440" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">③ 전가</text>
+  <text x="440" y="194" text-anchor="middle" font-size="13" fill="#b45309">Transfer</text>
+  <text x="440" y="222" text-anchor="middle" font-size="13" fill="#0f172a">계약·보험으로</text>
+  <text x="440" y="242" text-anchor="middle" font-size="13" fill="#0f172a">책임·손실을 이동</text>
+  <text x="440" y="262" text-anchor="middle" font-size="13" fill="#0f172a">(위협 자체는 남음)</text>
+
+  <rect x="536" y="146" width="152" height="130" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="612" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">④ 완화</text>
+  <text x="612" y="194" text-anchor="middle" font-size="13" fill="#2d6a4f">Mitigate</text>
+  <text x="612" y="222" text-anchor="middle" font-size="13" fill="#0f172a">확률 또는 영향을</text>
+  <text x="612" y="242" text-anchor="middle" font-size="13" fill="#0f172a">허용 수준까지</text>
+  <text x="612" y="262" text-anchor="middle" font-size="13" fill="#0f172a">낮춤</text>
+
+  <rect x="708" y="146" width="152" height="130" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="784" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">⑤ 수용</text>
+  <text x="784" y="194" text-anchor="middle" font-size="13" fill="#b45309">Accept</text>
+  <text x="784" y="222" text-anchor="middle" font-size="13" fill="#0f172a">능동: 예비비 확보</text>
+  <text x="784" y="242" text-anchor="middle" font-size="13" fill="#0f172a">수동: 기록만,</text>
+  <text x="784" y="262" text-anchor="middle" font-size="13" fill="#0f172a">발생 시 대응</text>
+
+  <!-- 하단 -->
+  <path d="M 440 276 L 440 330" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <text x="452" y="308" font-size="13" fill="#334155">②~⑤ 결과</text>
+
+  <rect x="140" y="332" width="600" height="86" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="360" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">잔존 위험 · 2차 위험 → 위험 등록부 갱신 · 감시</text>
+  <text x="440" y="384" text-anchor="middle" font-size="14" fill="#334155">잔존 위험: 대응 후에도 남는 위험</text>
+  <text x="440" y="406" text-anchor="middle" font-size="14" fill="#334155">2차 위험: 대응을 실행해서 새로 생기는 위험</text>
+</svg>
