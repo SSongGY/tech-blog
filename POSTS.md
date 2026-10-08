@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **242편** · 갱신 2026-10-08
+총 **244편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -244,10 +244,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 32편
+## 주식·재무 (finance) — 34편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [자사주 매입과 소각 — 주식 수가 줄 때 지표가 움직이는 이유](posts/Finance/market/2026-10-08-share-buyback-cancellation/index.md) | 입문 | Python 3.13.5, 상법 제341조·제462조(2012-04-15 시행), 개정 상법 제341조의4·제343조(2026-03-06 시행), K-IFRS 제1032호 금융상품: 표시, K-IFRS 제1033호 주당이익 | 실행 검증 |
+| 2026-10-08 | [기본 EPS와 희석 EPS — 전환사채가 있을 때 주당이익](posts/Finance/valuation/2026-10-08-diluted-eps-convertible-bonds/index.md) | 중급 | Python 3.13.5, K-IFRS 제1033호 주당이익 | 실행 검증 |
 | 2026-10-07 | [주가지수는 어떻게 계산되는가 — 주가 가중과 시가총액 가중](posts/Finance/market/2026-10-07-index-weighting-methods/index.md) | 입문 | Python 3.13.5, Nikkei 225 Index Guidebook(2025-07-24판), S&P DJI Index Mathematics Methodology(2014-11판) | 실행 검증 |
 | 2026-10-07 | [잉여현금흐름(FCF) — 영업현금흐름에서 설비 투자를 뺀 뒤 남는 돈](posts/Finance/ratios/2026-10-07-free-cash-flow-after-capex/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호·제1116호, ESMA APM 가이드라인 ESMA/2015/1415 (2016.7.3 적용), SEC C&DI 102.07 (2016.5.17) | 실행 검증 |
 | 2026-10-07 | [ETF — 바구니를 주식처럼 사고파는 구조](posts/Finance/market/2026-10-07-etf-nav-premium-tracking/index.md) | 입문 | Python 3.13.5, 자본시장법 제234조, ESMA Guidelines on ETFs and other UCITS issues(ESMA/2014/937), SEC Rule 6c-11(2019-12-23 시행) | 실행 검증 |
