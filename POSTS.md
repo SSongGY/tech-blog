@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **251편** · 갱신 2026-10-08
+총 **254편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 43편
+## DB문법 (basics) — 44편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-08 | [COLLATE — 대소문자와 정렬 규칙](posts/Database/sql-basics/2026-10-08-sql-collate-case-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [생성 컬럼 — 계산 결과를 컬럼처럼, VIRTUAL과 STORED](posts/Database/sql-basics/2026-10-08-generated-column-virtual-stored/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-08 | [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](posts/Database/sql-basics/2026-10-08-explain-query-plan-reading/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [UPSERT — INSERT ... ON CONFLICT](posts/Database/sql-basics/2026-10-07-sqlite-upsert-on-conflict/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [GROUP_CONCAT — 여러 행을 한 줄로 합치는 법](posts/Database/sql-basics/2026-10-07-group-concat-rows-to-one-line/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -52,10 +53,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 15편
+## DB기능 (product) — 16편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](posts/Database/tibero/2026-10-08-tibero7-rownum-paging/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-07 | [Tibero 7 WITH 절 — 이름 붙인 부질의와 재귀 질의, SEARCH·CYCLE 절](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-07 | [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](posts/Database/tibero/2026-10-07-tibero7-date-timestamp-types/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-06 | [Tibero 7 LOB — CLOB/BLOB 저장과 조회](posts/Database/tibero/2026-10-06-tibero7-lob-clob-blob/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -72,11 +74,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 95편
+## 기술사 (pe) — 96편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-08 | [제로 트러스트 아키텍처 — NIST SP 800-207의 7원칙과 3구성요소](posts/PE/security/2026-10-08-zero-trust-architecture-nist-sp-800-207/index.md) | 중급 | NIST SP 800-207 Zero Trust Architecture (2020-08), CISA Zero Trust Maturity Model Version 2.0 (2023-04), 제로트러스트 가이드라인 2.0 (과학기술정보통신부·KISA, 2024-12) | 문서 근거 |
+| 2026-10-08 | [개인정보 비식별·가명처리 절차와 적정성 평가 — k-익명성·ℓ-다양성·t-근접성이 막는 공격과 못 막는 공격](posts/PE/security/2026-10-08-pseudonymization-steps-k-anonymity-limits/index.md) | 중급 | 개인정보 비식별 조치 가이드라인 2016.6, 가명정보 처리 가이드라인 2022.4, Python 3.13.5 | 실행 검증 |
 | 2026-10-08 | [공개키 기반구조(PKI)와 인증서 검증 경로](posts/PE/security/2026-10-08-pki-certificate-path-validation-revocation/index.md) | 중급 | RFC 5280 (2008-05), RFC 6960 (2013-06), RFC 6066 (2011-01), CA/B Forum BR 2.0.1 (2024-03-15), OpenSSL 3.5.6 | 실행 검증 |
 | 2026-10-08 | [대수의 법칙과 중심극한정리 — 전제가 깨지는 운영 데이터에서 무엇이 틀어지는가](posts/PE/data-analysis/2026-10-08-lln-clt-assumptions-in-operational-data/index.md) | 중급 | Python 3.13.5, Grinstead & Snell, Introduction to Probability 2nd ed. (AMS, 2003), Shevtsova, arXiv:1111.6554 (2011) | 실행 검증 |
 | 2026-10-08 | [컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가](posts/PE/it-management/2026-10-08-iso-37301-compliance-management-system/index.md) | 중급 | ISO 37301:2021 (2021-04-13 발행), ISO 19600:2014 (철회), ISO/IEC 27001:2022, OCEG GRC Capability Model 3.5 (2023) | 문서 근거 |
@@ -305,6 +308,7 @@
 **`explain-plan`**
 
 - [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](posts/Database/sql-basics/2026-10-08-explain-query-plan-reading/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](posts/Database/tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) — Tibero 7
 
 **`group-by`**
@@ -333,6 +337,7 @@
 
 - [LIMIT과 OFFSET — 결과를 잘라내는 문법](posts/Database/sql-basics/2026-09-22-limit-offset-pagination/index.md) — SQLite 3.49.1, Python 3.13.5
 - [커서 기반 페이지네이션이 OFFSET을 이기는 지점 — SQLite 3.49.1로 잰 깊이별 비용](posts/Database/sqlite/2026-09-29-keyset-vs-offset-crossover/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](posts/Database/tibero/2026-10-08-tibero7-rownum-paging/index.md) — Tibero 7
 
 **`transaction-isolation`**
 

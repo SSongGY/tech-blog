@@ -653,7 +653,7 @@ topics:
     difficulty: 중급
     angle: "ROWNUM이 정렬 전에 붙는 이유와 올바른 페이징 문법"
     code: sql
-    status: todo
+    status: done
   - id: tb-017
     title: "Tibero 7 제약조건 — 종류와 검증 시점"
     category: Database
@@ -2036,7 +2036,7 @@ topics:
     angle: "k-익명성·l-다양성이 막는 공격과 못 막는 공격"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-062
     title: "ISMS-P 인증 체계와 통제 항목 구조"
     category: PE
@@ -2620,7 +2620,7 @@ topics:
     angle: "SCAN과 SEARCH가 무엇을 뜻하는지, USE TEMP B-TREE가 나오면 무엇을 고쳐야 하는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-049
     title: "인덱스가 여럿일 때 무엇이 쓰이는가"
     category: Database
