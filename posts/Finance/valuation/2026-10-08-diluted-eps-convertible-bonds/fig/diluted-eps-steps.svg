@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">희석 EPS 계산 순서 — 오른쪽은 마바화학의 숫자</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <!-- 1 기본 EPS -->
+  <rect x="40" y="52" width="440" height="58" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="60" y="76" font-size="14" font-weight="bold" fill="#1b1b1b">① 기본 EPS</text>
+  <text x="60" y="98" font-size="13" fill="#1b1b1b">보통주 귀속 순이익 ÷ 가중평균유통보통주식수</text>
+  <text x="510" y="86" font-size="13" fill="#1b1b1b">120억 ÷ 10,000,000주 = 1,200.00원</text>
+
+  <line x1="260" y1="110" x2="260" y2="132" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2 증분주식당 이익 -->
+  <rect x="40" y="134" width="440" height="80" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="60" y="158" font-size="14" font-weight="bold" fill="#1b1b1b">② 잠재적보통주마다 증분주식당 이익</text>
+  <text x="60" y="180" font-size="13" fill="#1b1b1b">전환사채: 세후 이자비용 ÷ 전환 시 주식 수</text>
+  <text x="60" y="201" font-size="13" fill="#1b1b1b">주식선택권: 0 ÷ 자기주식법 증분주식</text>
+  <text x="510" y="170" font-size="13" fill="#1b1b1b">선택권 0 ÷ 500,000주 = 0.00원</text>
+  <text x="510" y="192" font-size="13" fill="#1b1b1b">전환사채 11.6억 ÷ 1,000,000주 = 1,160.00원</text>
+
+  <line x1="260" y1="214" x2="260" y2="236" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 3 정렬 -->
+  <rect x="40" y="238" width="440" height="50" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="60" y="268" font-size="14" font-weight="bold" fill="#1b1b1b">③ 증분주식당 이익이 작은 것부터 줄 세운다</text>
+  <text x="510" y="268" font-size="13" fill="#1b1b1b">선택권 → 전환사채</text>
+
+  <line x1="260" y1="288" x2="260" y2="310" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4 하나씩 넣는다 -->
+  <rect x="40" y="312" width="440" height="58" rx="6" fill="#fff3e0" stroke="#b45309"/>
+  <text x="60" y="336" font-size="14" font-weight="bold" fill="#b45309">④ 하나 넣었을 때 직전 EPS보다 낮아지는가</text>
+  <text x="60" y="358" font-size="13" fill="#1b1b1b">비교 기준은 기본 EPS가 아니라 바로 앞 단계의 값</text>
+
+  <!-- 포함 -->
+  <line x1="150" y1="370" x2="150" y2="404" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="160" y="392" font-size="13" fill="#2d6a4f">낮아짐</text>
+  <rect x="40" y="406" width="210" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="145" y="436" text-anchor="middle" font-size="14" fill="#2d6a4f">희석 — 포함하고 다음으로</text>
+
+  <!-- 제외 -->
+  <line x1="370" y1="370" x2="370" y2="404" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="380" y="392" font-size="13" fill="#9d0208">같거나 높아짐</text>
+  <rect x="270" y="406" width="210" height="48" rx="6" fill="#ffccd5" stroke="#9d0208"/>
+  <text x="375" y="436" text-anchor="middle" font-size="14" fill="#9d0208">반희석 — 빼고 다음으로</text>
+
+  <text x="510" y="330" font-size="13" fill="#2d6a4f">선택권: 1,200.00 → 1,142.86 포함</text>
+  <text x="510" y="352" font-size="13" fill="#9d0208">전환사채: 1,142.86 → 1,144.35 제외</text>
+
+  <!-- 결과 -->
+  <rect x="510" y="406" width="330" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="675" y="436" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑤ 희석 EPS = 1,142.86원</text>
+
+  <text x="40" y="490" font-size="13" fill="#495057">전환사채만 기본 EPS와 비교하면 1,160 &lt; 1,200 이라 희석으로 보이지만, 순서대로 넣으면 EPS를 올리므로 빠진다.</text>
+</svg>

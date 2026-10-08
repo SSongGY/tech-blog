@@ -3863,7 +3863,7 @@ topics:
     angle: "K-IFRS 제1033호의 가중평균유통주식수 계산과 전환사채·스톡옵션의 희석 효과(자기주식법). 순이익은 같은데 희석 EPS가 다른 두 회사"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-034
     title: "자사주 매입과 소각 — 주식 수가 줄 때 지표가 움직이는 이유"
     category: Finance
@@ -3874,7 +3874,7 @@ topics:
     angle: "상법 제341조의 배당가능이익 한도와 취득 방법. 자사주 취득 후 EPS·PBR·지분율이 어떻게 바뀌는지, 소각 전과 후가 무엇이 다른지를 가상 회사로 계산"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-035
     title: "사업보고서 읽는 순서 — 어디부터 펴는가"
     category: Finance
