@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 범례 -->
+  <rect x="560" y="14" width="18" height="18" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <text x="584" y="28" font-size="13" fill="#334155">구버전 v1</text>
+  <rect x="680" y="14" width="18" height="18" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <text x="704" y="28" font-size="13" fill="#334155">신버전 v2</text>
+
+  <!-- ① 롤링 -->
+  <rect x="20" y="44" width="270" height="290" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="155" y="70" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">① 롤링 (Rolling)</text>
+  <text x="155" y="92" text-anchor="middle" font-size="13" fill="#334155">같은 풀에서 인스턴스를 차례로 교체</text>
+
+  <text x="36" y="128" font-size="13" fill="#334155">시작</text>
+  <rect x="90" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="132" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="174" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="216" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+
+  <text x="36" y="178" font-size="13" fill="#334155">진행</text>
+  <rect x="90" y="162" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="132" y="162" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="174" y="162" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="216" y="162" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+
+  <text x="36" y="228" font-size="13" fill="#334155">완료</text>
+  <rect x="90" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="132" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="174" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="216" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+
+  <text x="155" y="272" text-anchor="middle" font-size="13" fill="#0f172a">추가 자원 적음 (maxSurge)</text>
+  <text x="155" y="294" text-anchor="middle" font-size="13" fill="#0f172a">교체 중 v1·v2 공존</text>
+  <text x="155" y="316" text-anchor="middle" font-size="13" fill="#9d0208">롤백 = 역방향 롤링</text>
+
+  <!-- ② 블루그린 -->
+  <rect x="305" y="44" width="270" height="290" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="70" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">② 블루그린 (Blue/Green)</text>
+  <text x="440" y="92" text-anchor="middle" font-size="13" fill="#334155">동일한 환경 2벌, 라우터로 한 번에 전환</text>
+
+  <text x="322" y="128" font-size="13" fill="#334155">Blue</text>
+  <rect x="375" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="417" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="459" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="501" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+
+  <path d="M 440 142 L 440 206" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <text x="450" y="180" font-size="13" fill="#334155">트래픽 100% 전환</text>
+
+  <text x="322" y="228" font-size="13" fill="#334155">Green</text>
+  <rect x="375" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="417" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="459" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="501" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+
+  <text x="440" y="272" text-anchor="middle" font-size="13" fill="#0f172a">자원 2배 (전환 기간)</text>
+  <text x="440" y="294" text-anchor="middle" font-size="13" fill="#0f172a">전환 전에 Green을 따로 검증</text>
+  <text x="440" y="316" text-anchor="middle" font-size="13" fill="#2d6a4f">롤백 = 라우터 되돌리기</text>
+
+  <!-- ③ 카나리 -->
+  <rect x="590" y="44" width="270" height="290" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="725" y="70" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">③ 카나리 (Canary)</text>
+  <text x="725" y="92" text-anchor="middle" font-size="13" fill="#334155">일부 트래픽만 v2로, 지표 보고 확대</text>
+
+  <text x="606" y="128" font-size="13" fill="#334155">1단계</text>
+  <rect x="660" y="112" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="702" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="744" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="786" y="112" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+
+  <text x="725" y="168" text-anchor="middle" font-size="13" fill="#b45309">오류율·지연 비교 (v2 대 v1)</text>
+  <path d="M 725 176 L 725 206" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="606" y="228" font-size="13" fill="#334155">확대</text>
+  <rect x="660" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="702" y="212" width="34" height="26" rx="3" fill="#cfe8da" stroke="#2d6a4f"/>
+  <rect x="744" y="212" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+  <rect x="786" y="212" width="34" height="26" rx="3" fill="#dbe4f0" stroke="#334155"/>
+
+  <text x="725" y="272" text-anchor="middle" font-size="13" fill="#0f172a">영향 범위 가장 작음</text>
+  <text x="725" y="294" text-anchor="middle" font-size="13" fill="#0f172a">판정 지표·자동화 필요</text>
+  <text x="725" y="316" text-anchor="middle" font-size="13" fill="#2d6a4f">롤백 = 카나리 트래픽 회수</text>
+
+  <!-- 공통 전제 -->
+  <rect x="20" y="354" width="840" height="96" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="440" y="380" text-anchor="middle" font-size="15" font-weight="bold" fill="#7c2d12">세 방식의 공통 전제</text>
+  <text x="440" y="406" text-anchor="middle" font-size="14" fill="#7c2d12">상태 점검(readiness)으로 준비된 인스턴스에만 트래픽 · 연결 드레이닝</text>
+  <text x="440" y="430" text-anchor="middle" font-size="14" fill="#7c2d12">v1·v2가 같은 DB를 읽고 쓰므로 스키마는 확장 → 이전 → 축소 순서로 바꾼다</text>
+</svg>

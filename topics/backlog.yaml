@@ -3996,3 +3996,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-154
+    title: "무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리, deployment]
+    difficulty: 중급
+    angle: "트래픽 전환 단위·추가 자원·롤백 경로로 세 방식을 대비하고, 구·신버전이 같은 DB를 쓰는 기간의 하위 호환(확장-이전-축소)과 카나리 자동 판정까지"
+    code: none
+    origin: exam
+    status: todo
