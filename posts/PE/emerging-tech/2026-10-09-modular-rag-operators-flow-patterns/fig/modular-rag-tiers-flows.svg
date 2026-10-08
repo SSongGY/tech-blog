@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 위: 3계층 -->
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">① 구성 단위 — 3계층</text>
+
+  <rect x="40" y="48" width="240" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="160" y="74" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">L1 모듈 (6가지)</text>
+  <text x="160" y="98" text-anchor="middle" font-size="13" fill="#334155">예: 검색 전 (Pre-retrieval)</text>
+
+  <path d="M 280 83 L 316 83" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="48" width="240" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="74" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">L2 하위 모듈</text>
+  <text x="440" y="98" text-anchor="middle" font-size="13" fill="#334155">예: 질의 변환</text>
+
+  <path d="M 560 83 L 596 83" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="600" y="48" width="240" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="720" y="74" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">L3 연산자</text>
+  <text x="720" y="98" text-anchor="middle" font-size="13" fill="#334155">예: 재작성 · HyDE · Step-back</text>
+
+  <!-- 가운데: 오케스트레이션 -->
+  <rect x="160" y="146" width="560" height="62" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="440" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">오케스트레이션 모듈 — 연산자를 엮어 흐름을 만든다</text>
+  <text x="440" y="194" text-anchor="middle" font-size="13" fill="#0f172a">라우팅(어느 흐름으로) · 스케줄링(언제 다시·언제 끝) · 융합(갈래 합치기)</text>
+
+  <path d="M 440 118 L 440 142" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <text x="440" y="246" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">② 흐름 패턴 — 4가지</text>
+
+  <!-- 선형 -->
+  <rect x="24" y="262" width="196" height="232" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="122" y="288" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">선형</text>
+  <text x="122" y="330" text-anchor="middle" font-size="13" fill="#334155">질의 변환</text>
+  <path d="M 122 338 L 122 362" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="122" y="380" text-anchor="middle" font-size="13" fill="#334155">검색</text>
+  <path d="M 122 388 L 122 412" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="122" y="430" text-anchor="middle" font-size="13" fill="#334155">생성</text>
+  <text x="122" y="476" text-anchor="middle" font-size="13" fill="#2d6a4f">Advanced RAG 모양</text>
+
+  <!-- 조건 -->
+  <rect x="236" y="262" width="196" height="232" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="334" y="288" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">조건</text>
+  <text x="334" y="330" text-anchor="middle" font-size="13" fill="#2d6a4f">라우터</text>
+  <path d="M 320 338 L 282 368" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 348 338 L 386 368" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="276" y="386" text-anchor="middle" font-size="13" fill="#334155">흐름 A</text>
+  <text x="392" y="386" text-anchor="middle" font-size="13" fill="#334155">흐름 B</text>
+  <text x="334" y="430" text-anchor="middle" font-size="13" fill="#334155">하나만 실행</text>
+  <text x="334" y="476" text-anchor="middle" font-size="13" fill="#334155">질의 의도별 경로</text>
+
+  <!-- 분기 -->
+  <rect x="448" y="262" width="196" height="232" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.4"/>
+  <text x="546" y="288" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">분기</text>
+  <text x="546" y="330" text-anchor="middle" font-size="13" fill="#334155">질의 펼침</text>
+  <path d="M 530 338 L 494 368" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 562 338 L 598 368" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="488" y="386" text-anchor="middle" font-size="13" fill="#334155">검색 1</text>
+  <text x="604" y="386" text-anchor="middle" font-size="13" fill="#334155">검색 2</text>
+  <path d="M 494 394 L 530 418" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 598 394 L 562 418" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="546" y="436" text-anchor="middle" font-size="13" fill="#2d6a4f">융합</text>
+  <text x="546" y="476" text-anchor="middle" font-size="13" fill="#334155">모두 실행 후 합침</text>
+
+  <!-- 반복 -->
+  <rect x="660" y="262" width="196" height="232" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.4"/>
+  <text x="758" y="288" text-anchor="middle" font-size="14" font-weight="bold" fill="#7c2d12">반복</text>
+  <text x="758" y="330" text-anchor="middle" font-size="13" fill="#334155">검색</text>
+  <path d="M 758 338 L 758 362" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="758" y="380" text-anchor="middle" font-size="13" fill="#334155">생성</text>
+  <path d="M 758 388 L 758 412" stroke="#334155" stroke-width="1.4" fill="none" marker-end="url(#arrow)"/>
+  <text x="758" y="430" text-anchor="middle" font-size="13" fill="#b45309">판정</text>
+  <path d="M 784 426 C 830 410, 830 340, 784 326" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5 4" fill="none" marker-end="url(#arrow)"/>
+  <text x="758" y="462" text-anchor="middle" font-size="13" fill="#7c2d12">반복 · 재귀 · 적응형</text>
+  <text x="758" y="482" text-anchor="middle" font-size="13" fill="#9d0208">멈춤 조건 필수</text>
+</svg>

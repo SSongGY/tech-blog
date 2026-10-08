@@ -102,6 +102,8 @@ LLM 판단이 섞인 흐름 제어. 단계를 아무리 개선해도 **흐름이
 
 > 관련 답안: [기출문제 — 어휘 검색과 의미 검색을 결합한 하이브리드 검색](../2026-09-22-hybrid-search-lexical-vector/index.md)
 
+> 개념 정리: [Modular RAG — 모듈·연산자 3계층과 흐름 패턴](../../emerging-tech/2026-10-09-modular-rag-operators-flow-patterns/index.md)
+
 끝
 
 ## 답안 작성 메모
