@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">제로 트러스트 아키텍처의 핵심 논리 구성요소 — NIST SP 800-207 그림 2</text>
+  <text x="30" y="56" font-size="13" fill="#555">정책 결정(PE·PA)은 제어 평면에서, 실제 통신은 PEP 를 거쳐 데이터 평면에서 일어난다</text>
+
+  <!-- 제어 평면 -->
+  <rect x="30" y="72" width="820" height="170" rx="8" fill="#f1f1ee" stroke="#9a9a9a" stroke-dasharray="6 4"/>
+  <text x="44" y="92" font-size="13" font-weight="bold" fill="#555">제어 평면 (Control Plane)</text>
+
+  <!-- 왼쪽 입력 -->
+  <rect x="44" y="104" width="226" height="124" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="157" y="126" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">입력 — 자산 상태·위협</text>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="60" y="150">· CDM 시스템 (자산 상태·패치)</text>
+    <text x="60" y="170">· 산업 규제 준수 시스템</text>
+    <text x="60" y="190">· 위협 인텔리전스 피드</text>
+    <text x="60" y="210">· 네트워크·시스템 활동 로그</text>
+  </g>
+
+  <!-- PDP -->
+  <rect x="300" y="100" width="280" height="132" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="122" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">정책 결정 지점 (PDP)</text>
+  <rect x="320" y="130" width="240" height="46" rx="4" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="440" y="148" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">정책 엔진 (PE)</text>
+  <text x="440" y="168" font-size="13" text-anchor="middle" fill="#555">신뢰 알고리즘으로 허용·거부·취소 결정</text>
+  <rect x="320" y="182" width="240" height="46" rx="4" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="440" y="200" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">정책 관리자 (PA)</text>
+  <text x="440" y="220" font-size="13" text-anchor="middle" fill="#555">경로 수립·차단 명령 · 세션 토큰 발급</text>
+
+  <!-- 오른쪽 입력 -->
+  <rect x="610" y="104" width="226" height="124" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="723" y="126" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">입력 — 정책·신원</text>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="626" y="150">· 데이터 접근 정책</text>
+    <text x="626" y="170">· 기업 PKI (인증서)</text>
+    <text x="626" y="190">· ID 관리 시스템 (계정·속성)</text>
+    <text x="626" y="210">· SIEM</text>
+  </g>
+
+  <!-- 입력 화살표 -->
+  <line x1="270" y1="166" x2="290" y2="166" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="290,161 300,166 290,171" fill="#3b3b3b"/>
+  <line x1="610" y1="166" x2="590" y2="166" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="590,161 580,166 590,171" fill="#3b3b3b"/>
+
+  <!-- PA ↔ PEP 제어 -->
+  <line x1="440" y1="232" x2="440" y2="298" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <polygon points="435,298 440,308 445,298" fill="#2d6a4f"/>
+  <text x="452" y="272" font-size="13" fill="#2d6a4f">제어 평면으로 명령·보고</text>
+
+  <!-- 데이터 평면 -->
+  <rect x="30" y="256" width="820" height="124" rx="8" fill="#ffffff" stroke="#9a9a9a" stroke-dasharray="6 4"/>
+  <text x="44" y="276" font-size="13" font-weight="bold" fill="#555">데이터 평면 (Data Plane)</text>
+
+  <rect x="60" y="308" width="200" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="160" y="330" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">주체 · 시스템</text>
+  <text x="160" y="349" font-size="13" text-anchor="middle" fill="#555">사용자·앱·기기 — 신뢰 없음</text>
+
+  <line x1="260" y1="334" x2="330" y2="334" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="330,329 340,334 330,339" fill="#3b3b3b"/>
+  <text x="300" y="326" font-size="13" text-anchor="middle" fill="#555">요청</text>
+
+  <rect x="340" y="308" width="200" height="52" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="330" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">정책 집행 지점 (PEP)</text>
+  <text x="440" y="349" font-size="13" text-anchor="middle" fill="#555">연결 개시·감시·종료</text>
+
+  <line x1="540" y1="334" x2="610" y2="334" stroke="#3b3b3b" stroke-width="1.5"/>
+  <polygon points="610,329 620,334 610,339" fill="#3b3b3b"/>
+  <text x="580" y="326" font-size="13" text-anchor="middle" fill="#555">허용된 경로</text>
+
+  <rect x="620" y="308" width="200" height="52" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="720" y="330" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">기업 자원</text>
+  <text x="720" y="349" font-size="13" text-anchor="middle" fill="#555">PEP 뒤의 암묵적 신뢰 구역</text>
+
+  <text x="30" y="404" font-size="13" fill="#555">PE 가 결정하고 기록하면 PA 가 집행한다 · 자원은 PEP 를 거치지 않고는 닿을 수 없어야 한다 (3.4.1 네트워크 요구사항 4)</text>
+</svg>
