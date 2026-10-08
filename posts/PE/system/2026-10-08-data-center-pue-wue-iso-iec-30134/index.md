@@ -177,7 +177,7 @@ EWIF는 전력 1kWh 생산에 드는 물로, 백서가 든 미국 평균은 1.8L
 
 ## 참고 자료
 
-- [ISO/IEC 30134-2:2026, Information technology — Data centres key performance indicators — Part 2: Power usage effectiveness (PUE), 2nd ed. (2026-01)](https://www.iso.org/standard/85172.html) — 적용 범위, 범주 3가지, 파생 지표 4가지, 2판 주요 변경. 본문은 [VDE Verlag 미리보기](https://www.vde-verlag.de/iec-normen/preview-pdf/info_isoiec30134-2{ed2.0}en.pdf)로 목차·머리말만 확인 (1차)
+- [ISO/IEC 30134-2:2026, Information technology — Data centres key performance indicators — Part 2: Power usage effectiveness (PUE), 2nd ed. (2026-01)](https://www.iso.org/standard/30134-2) — 적용 범위, 범주 3가지, 파생 지표 4가지, 2판 주요 변경. 본문은 [VDE Verlag 미리보기](https://www.vde-verlag.de/iec-normen/preview-pdf/info_isoiec30134-2{ed2.0}en.pdf)로 목차·머리말만 확인 (1차)
 - [ISO/IEC 30134-9:2022, Part 9: Water usage effectiveness (WUE) (2022-03)](https://www.iso.org/standard/77692.html) — 적용 범위, WUE 파생 지표, WRF. 목차는 [VDE Verlag 미리보기](https://www.vde-verlag.de/iec-normen/preview-pdf/info_isoiec30134-9{ed1.0}en.pdf)로 확인 (1차)
 - [The Green Grid, WP#49 PUE: A Comprehensive Examination of the Metric (2012)](https://datacenters.lbl.gov/sites/default/files/WP49-PUE%20A%20Comprehensive%20Examination%20of%20the%20Metric_v6.pdf) — 측정 수준 3단계(§4.2), pPUE 예(§7), PUE 1.0 미만 불가와 재사용 미반영(§6.6.3), 데이터센터 간 비교 주의 (1차, LBNL 게시본)
 - [The Green Grid, WP#35 Water Usage Effectiveness (WUE): A Green Grid Data Center Sustainability Metric (2011-03)](https://www.thegreengrid.org/system/files/store/WUE_v1.pdf) — WUE·WUEsource 식, 용수 범위, DX 냉각과 증발식의 상충, EWIF (1차)
