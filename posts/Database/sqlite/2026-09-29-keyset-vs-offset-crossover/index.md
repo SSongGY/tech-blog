@@ -17,6 +17,7 @@ topic_id: db-008
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`row-limiting`)
 > - [LIMIT과 OFFSET — 결과를 잘라내는 문법](../../sql-basics/2026-09-22-limit-offset-pagination/index.md) — SQLite 3.49.1, Python 3.13.5
+> - [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](../../tibero/2026-10-08-tibero7-rownum-paging/index.md) — Tibero 7
 <!-- related:end -->
 
 ## 들어가며

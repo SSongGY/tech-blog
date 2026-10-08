@@ -17,6 +17,7 @@ topic_id: bas-004
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`row-limiting`)
 > - [커서 기반 페이지네이션이 OFFSET을 이기는 지점 — SQLite 3.49.1로 잰 깊이별 비용](../../sqlite/2026-09-29-keyset-vs-offset-crossover/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+> - [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](../../tibero/2026-10-08-tibero7-rownum-paging/index.md) — Tibero 7
 <!-- related:end -->
 
 ## 들어가며

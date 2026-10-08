@@ -19,6 +19,7 @@ topic_id: tb-008
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`explain-plan`)
 > - [실행계획의 비용(cost)은 무엇을 세는 숫자인가](../../2026-09-30-optimizer-cost-stale-statistics/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+> - [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](../../sql-basics/2026-10-08-explain-query-plan-reading/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 <!-- related:end -->
 
 > **실행 검증 없음.** 이 글은 **Tibero 7.2.6 공개 매뉴얼**의 설명만 근거로 정리했다.

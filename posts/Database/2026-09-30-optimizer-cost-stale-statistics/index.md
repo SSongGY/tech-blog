@@ -114,6 +114,7 @@ ANALYZE 문서는 통계 표를 손으로 고칠 수는 있지만 `ANALYZE` 말�
 
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`explain-plan`)
+> - [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](../sql-basics/2026-10-08-explain-query-plan-reading/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 > - [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](../tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) — Tibero 7
 <!-- related:end -->
 
