@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **256편** · 갱신 2026-10-09
+총 **258편** · 갱신 2026-10-09
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -74,10 +74,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 96편
+## 기술사 (pe) — 98편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-09 | [무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경](posts/PE/software-engineering/2026-10-09-zero-downtime-deployment-expand-contract/index.md) | 중급 | Kubernetes v1.37 문서 (apps/v1 Deployment), Google SRE Workbook (2018), Sadalage·Fowler, Evolutionary Database Design (2016-05 갱신) | 문서 근거 |
+| 2026-10-09 | [Modular RAG — 모듈·연산자 3계층과 흐름 패턴](posts/PE/emerging-tech/2026-10-09-modular-rag-operators-flow-patterns/index.md) | 중급 | Gao et al., arXiv:2407.21059v1 (2024-07-26), Gao et al., arXiv:2312.10997v5 (2024-03-27), Lewis et al., NeurIPS 2020 | 문서 근거 |
 | 2026-10-08 | [제로 트러스트 아키텍처 — NIST SP 800-207의 7원칙과 3구성요소](posts/PE/security/2026-10-08-zero-trust-architecture-nist-sp-800-207/index.md) | 중급 | NIST SP 800-207 Zero Trust Architecture (2020-08), CISA Zero Trust Maturity Model Version 2.0 (2023-04), 제로트러스트 가이드라인 2.0 (과학기술정보통신부·KISA, 2024-12) | 문서 근거 |
 | 2026-10-08 | [개인정보 비식별·가명처리 절차와 적정성 평가 — k-익명성·ℓ-다양성·t-근접성이 막는 공격과 못 막는 공격](posts/PE/security/2026-10-08-pseudonymization-steps-k-anonymity-limits/index.md) | 중급 | 개인정보 비식별 조치 가이드라인 2016.6, 가명정보 처리 가이드라인 2022.4, Python 3.13.5 | 실행 검증 |
 | 2026-10-08 | [공개키 기반구조(PKI)와 인증서 검증 경로](posts/PE/security/2026-10-08-pki-certificate-path-validation-revocation/index.md) | 중급 | RFC 5280 (2008-05), RFC 6960 (2013-06), RFC 6066 (2011-01), CA/B Forum BR 2.0.1 (2024-03-15), OpenSSL 3.5.6 | 실행 검증 |
