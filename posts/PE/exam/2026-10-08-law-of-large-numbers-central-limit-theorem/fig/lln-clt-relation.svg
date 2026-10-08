@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 1. 모집단 -->
+  <rect x="40" y="24" width="240" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="160" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">모집단 (분포 모양 무관)</text>
+  <text x="160" y="76" text-anchor="middle" font-size="14" fill="#334155">평균 μ, 분산 σ²</text>
+
+  <path d="M 280 59 L 318 59" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 2. 표본 -->
+  <rect x="320" y="24" width="240" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">독립·동일분포 표본</text>
+  <text x="440" y="76" text-anchor="middle" font-size="14" fill="#334155">X1, X2, …, Xn</text>
+
+  <path d="M 560 59 L 598 59" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 3. 표본평균 -->
+  <rect x="600" y="24" width="240" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="720" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">표본평균</text>
+  <text x="720" y="76" text-anchor="middle" font-size="14" fill="#334155">X̄n = (X1 + … + Xn) / n</text>
+
+  <!-- 표본평균 → 두 정리 -->
+  <path d="M 720 94 L 720 120" stroke="#334155" stroke-width="1.6" fill="none"/>
+  <path d="M 220 120 L 720 120" stroke="#334155" stroke-width="1.6" fill="none"/>
+  <path d="M 220 120 L 220 146" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 660 120 L 660 146" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <text x="440" y="113" text-anchor="middle" font-size="13" fill="#334155">n → ∞</text>
+
+  <!-- 4. 대수의 법칙 -->
+  <rect x="20" y="148" width="400" height="118" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="220" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">대수의 법칙 — 어디로 가는가</text>
+  <text x="220" y="200" text-anchor="middle" font-size="14" fill="#0f172a">X̄n → μ</text>
+  <text x="220" y="224" text-anchor="middle" font-size="14" fill="#0f172a">약한 법칙: P(|X̄n − μ| ≥ ε) → 0</text>
+  <text x="220" y="248" text-anchor="middle" font-size="14" fill="#0f172a">강한 법칙: P(X̄n → μ) = 1</text>
+
+  <!-- 5. 중심극한정리 -->
+  <rect x="460" y="148" width="400" height="118" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="660" y="174" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">중심극한정리 — 어떻게 흩어지는가</text>
+  <text x="660" y="200" text-anchor="middle" font-size="14" fill="#0f172a">(X̄n − μ) / (σ / √n) → N(0, 1)</text>
+  <text x="660" y="224" text-anchor="middle" font-size="14" fill="#0f172a">오차 폭은 1/√n 로 줄어든다</text>
+  <text x="660" y="248" text-anchor="middle" font-size="14" fill="#0f172a">모집단이 정규분포가 아니어도 성립</text>
+
+  <!-- 전제 -->
+  <rect x="20" y="292" width="840" height="58" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="440" y="315" text-anchor="middle" font-size="14" fill="#7c2d12">전제: 독립·동일분포, 유한 평균 μ (대수의 법칙), 유한 분산 σ² (중심극한정리)</text>
+  <text x="440" y="338" text-anchor="middle" font-size="14" fill="#7c2d12">전제가 깨지면 두 정리 모두 성립하지 않는다 (예: 코시 분포)</text>
+
+  <!-- 활용 -->
+  <rect x="20" y="362" width="840" height="46" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="390" text-anchor="middle" font-size="14" fill="#0f172a">활용: 표본 크기 · 신뢰구간 · X̄ 관리도 · A/B 테스트 · 몬테카를로 · 미니배치</text>
+</svg>
