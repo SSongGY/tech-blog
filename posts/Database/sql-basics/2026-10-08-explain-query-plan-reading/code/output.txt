@@ -1,0 +1,237 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-08-explain-query-plan-reading
+# 명령      : python explain_query_plan.py
+# 수행 시각 : 2026-10-08 19:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[department]  10행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  dept_id   | INTEGER | PK
+  dept_name | TEXT    | NOT NULL
+
+  dept_id | dept_name
+  --------+----------
+        1 | 영업
+        2 | 개발
+        3 | 인사
+        4 | 재무
+        5 | 물류
+        6 | 법무
+        7 | 구매
+        8 | 품질
+        9 | 디자인
+       10 | 고객지원
+
+[employee]  5000행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  employee_id | INTEGER | PK
+  name        | TEXT    | NOT NULL
+  dept_id     | INTEGER | NOT NULL
+  salary      | INTEGER | NOT NULL
+  hired_at    | TEXT    | NOT NULL
+
+  employee_id | name     | dept_id | salary | hired_at
+  ------------+----------+---------+--------+-----------
+            1 | 사원0001 |       2 |   3037 | 2011-02-02
+            2 | 사원0002 |       3 |   3074 | 2012-03-03
+            3 | 사원0003 |       4 |   3111 | 2013-04-04
+            4 | 사원0004 |       5 |   3148 | 2014-05-05
+            5 | 사원0005 |       6 |   3185 | 2015-06-06
+            6 | 사원0006 |       7 |   3222 | 2016-07-07
+            7 | 사원0007 |       8 |   3259 | 2017-08-08
+            8 | 사원0008 |       9 |   3296 | 2018-09-09
+            9 | 사원0009 |      10 |   3333 | 2019-10-10
+           10 | 사원0010 |       1 |   3370 | 2020-11-11
+           11 | 사원0011 |       2 |   3407 | 2021-12-12
+           12 | 사원0012 |       3 |   3444 | 2022-01-13
+  … 4988행 더 있음
+
+
+== 1. 계획은 표다 — 날것의 네 컬럼 ==
+   SELECT name FROM employee WHERE dept_id = 3 ORDER BY salary
+   (id, parent, notused, detail)
+   (3, 0, 216, 'SCAN employee')
+   (12, 0, 0, 'USE TEMP B-TREE FOR ORDER BY')
+   같은 행을 parent 로 이어 그리면:
+   QUERY PLAN
+   |--SCAN employee
+   `--USE TEMP B-TREE FOR ORDER BY
+
+== 2. SCAN 과 SEARCH ==
+
+-- 2-A. 인덱스가 없다
+   SELECT name FROM employee WHERE dept_id = 3
+   QUERY PLAN
+   `--SCAN employee
+   => 결과 500행, VDBE 명령 16,008개
+
+-- 2-B. dept_id 인덱스를 만든 뒤
+   SELECT name FROM employee WHERE dept_id = 3
+   QUERY PLAN
+   `--SEARCH employee USING INDEX ix_employee_dept (dept_id=?)
+   => 결과 500행, VDBE 명령 2,509개
+
+-- 2-C. 기본 키로 한 행
+   SELECT name FROM employee WHERE employee_id = 3
+   QUERY PLAN
+   `--SEARCH employee USING INTEGER PRIMARY KEY (rowid=?)
+   => 결과 1행, VDBE 명령 9개
+
+-- 2-D. 인덱스 컬럼만 고른다
+   SELECT dept_id FROM employee WHERE dept_id = 3
+   QUERY PLAN
+   `--SEARCH employee USING COVERING INDEX ix_employee_dept (dept_id=?)
+   => 결과 500행, VDBE 명령 2,009개
+
+-- 2-E. 조건 없이 인덱스 순서로 다 읽는다
+   SELECT dept_id, COUNT(*) FROM employee GROUP BY dept_id
+   QUERY PLAN
+   `--SCAN employee USING COVERING INDEX ix_employee_dept
+   => 결과 10행, VDBE 명령 35,147개
+
+-- 2-F. 범위 조건
+   SELECT name FROM employee WHERE dept_id BETWEEN 3 AND 4
+   QUERY PLAN
+   `--SEARCH employee USING INDEX ix_employee_dept (dept_id>? AND dept_id<?)
+   => 결과 1000행, VDBE 명령 5,011개
+
+== 3. 인덱스가 있어도 SCAN 이 나오는 조건 ==
+
+-- 3-A. 컬럼에 연산을 씌운다
+   SELECT name FROM employee WHERE dept_id + 0 = 3
+   QUERY PLAN
+   `--SCAN employee
+   => 결과 500행, VDBE 명령 21,009개
+
+-- 3-B. 인덱스 없는 컬럼과 OR
+   SELECT name FROM employee WHERE dept_id = 3 OR salary = 4000
+   QUERY PLAN
+   `--SCAN employee
+   => 결과 501행, VDBE 명령 25,013개
+
+-- 3-C. 양쪽에 인덱스가 생기면
+   SELECT name FROM employee WHERE dept_id = 3 OR salary = 4000
+   QUERY PLAN
+   `--MULTI-INDEX OR
+      |--INDEX 1
+      |  `--SEARCH employee USING INDEX ix_employee_dept (dept_id=?)
+      `--INDEX 2
+         `--SEARCH employee USING INDEX ix_employee_salary (salary=?)
+   => 결과 501행, VDBE 명령 4,528개
+
+== 4. USE TEMP B-TREE — 정렬을 따로 한다 ==
+
+-- 4-A. 인덱스 없는 컬럼으로 정렬
+   SELECT name, salary FROM employee ORDER BY salary
+   QUERY PLAN
+   |--SCAN employee
+   `--USE TEMP B-TREE FOR ORDER BY
+   => 결과 5000행, VDBE 명령 50,009개
+
+-- 4-B. 조건은 인덱스, 정렬은 다른 컬럼
+   SELECT name, salary FROM employee WHERE dept_id = 3 ORDER BY salary
+   QUERY PLAN
+   |--SEARCH employee USING INDEX ix_employee_dept (dept_id=?)
+   `--USE TEMP B-TREE FOR ORDER BY
+   => 결과 500행, VDBE 명령 6,012개
+
+-- 4-C. (dept_id, salary) 복합 인덱스를 만든 뒤
+   SELECT name, salary FROM employee WHERE dept_id = 3 ORDER BY salary
+   QUERY PLAN
+   `--SEARCH employee USING INDEX ix_employee_dept_salary (dept_id=?)
+   => 결과 500행, VDBE 명령 3,011개
+
+-- 4-D. 정렬 앞 컬럼만 인덱스 순서와 맞는다
+   SELECT name, salary FROM employee ORDER BY dept_id, hired_at
+   QUERY PLAN
+   |--SCAN employee USING INDEX ix_employee_dept
+   `--USE TEMP B-TREE FOR LAST TERM OF ORDER BY
+   => 결과 5000행, VDBE 명령 80,067개
+
+-- 4-E. DISTINCT
+   SELECT DISTINCT hired_at FROM employee
+   QUERY PLAN
+   |--SCAN employee
+   `--USE TEMP B-TREE FOR DISTINCT
+   => 결과 336행, VDBE 명령 16,015개
+
+-- 4-F. GROUP BY
+   SELECT hired_at, COUNT(*) FROM employee GROUP BY hired_at
+   QUERY PLAN
+   |--SCAN employee
+   `--USE TEMP B-TREE FOR GROUP BY
+   => 결과 336행, VDBE 명령 64,387개
+
+-- 4-G. LIMIT 이 붙은 정렬
+   SELECT name, hired_at FROM employee ORDER BY hired_at LIMIT 5
+   QUERY PLAN
+   |--SCAN employee
+   `--USE TEMP B-TREE FOR ORDER BY
+   => 결과 5행, VDBE 명령 30,130개
+
+== 5. 조인 — 위에 있는 줄이 바깥 반복 ==
+
+-- 5-A. 조인 컬럼에 인덱스가 있다
+   SELECT d.dept_name, e.name FROM department d JOIN employee e ON e.dept_id = d.dept_id WHERE d.dept_name = '인사'
+   QUERY PLAN
+   |--SCAN d
+   `--SEARCH e USING INDEX ix_employee_dept_salary (dept_id=?)
+   => 결과 500행, VDBE 명령 3,043개
+
+-- 5-B. FROM 에 적은 순서와 계획의 순서
+   SELECT e.name, v.grade FROM employee e JOIN evaluation v ON v.employee_id = e.employee_id WHERE e.dept_id = 3
+   QUERY PLAN
+   |--SCAN v
+   `--SEARCH e USING INTEGER PRIMARY KEY (rowid=?)
+   => 결과 72행, VDBE 명령 3,801개
+
+-- 5-C. 양쪽 다 조인 컬럼에 인덱스가 없다
+   SELECT v.grade, b.amount FROM evaluation v JOIN bonus b ON b.employee_id = v.employee_id
+   QUERY PLAN
+   |--SCAN v
+   |--BLOOM FILTER ON b (employee_id=?)
+   `--SEARCH b USING AUTOMATIC COVERING INDEX (employee_id=?)
+   => 결과 239행, VDBE 명령 17,642개
+
+== 6. 서브쿼리 ==
+
+-- 6-A. 바깥 행마다 다시 도는 서브쿼리
+   SELECT name, (SELECT dept_name FROM department d WHERE d.dept_id = e.dept_id) FROM employee e WHERE e.dept_id = 3
+   QUERY PLAN
+   |--SEARCH e USING INDEX ix_employee_dept_salary (dept_id=?)
+   `--CORRELATED SCALAR SUBQUERY 1
+      `--SEARCH d USING INTEGER PRIMARY KEY (rowid=?)
+   => 결과 500행, VDBE 명령 7,509개
+
+-- 6-B. 한 번만 도는 서브쿼리
+   SELECT name FROM employee WHERE salary > (SELECT AVG(salary) FROM employee)
+   QUERY PLAN
+   |--SCAN employee
+   `--SCALAR SUBQUERY 1
+      `--SCAN employee USING COVERING INDEX ix_employee_dept_salary
+   => 결과 2500행, VDBE 명령 50,015개
+
+-- 6-C. FROM 절의 서브쿼리
+   SELECT dept_id, top_salary FROM (SELECT dept_id, MAX(salary) AS top_salary FROM employee GROUP BY dept_id) WHERE top_salary > 7000
+   QUERY PLAN
+   |--CO-ROUTINE (subquery-1)
+   |  `--SCAN employee USING COVERING INDEX ix_employee_dept_salary
+   `--SCAN (subquery-1)
+   => 결과 10행, VDBE 명령 50,233개
