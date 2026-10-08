@@ -178,7 +178,7 @@ topics:
     difficulty: 중급
     angle: "상태 전이 다이어그램대로 동작하는 최소 구현을 직접 작성"
     code: python
-    status: todo
+    status: done
   - id: be-006
     title: "분산 락을 Redis로 만들 때 빠지는 함정"
     category: Backend
@@ -2025,7 +2025,7 @@ topics:
     angle: "폐기 확인(CRL·OCSP)이 실제로 어디서 깨지는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-061
     title: "개인정보 비식별 조치 5단계와 적정성 평가"
     category: PE
@@ -2587,7 +2587,7 @@ topics:
     angle: "같은 데이터가 정렬 규칙에 따라 다른 순서로 나오는 것을 직접 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-046
     title: "CHECK 제약 — 값의 범위를 DB가 지키게"
     category: Database

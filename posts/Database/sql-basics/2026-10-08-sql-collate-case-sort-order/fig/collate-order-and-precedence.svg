@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <!-- 위: 같은 다섯 행, 두 가지 정렬 -->
+  <text x="30" y="34" font-size="16" font-weight="bold" fill="#1f2937">같은 다섯 행을 두 규칙으로 정렬 (실습 1·2번에서 발췌)</text>
+
+  <text x="140" y="70" text-anchor="middle" font-weight="bold" fill="#1f2937">BINARY (기본값)</text>
+  <text x="140" y="90" text-anchor="middle" font-size="13" fill="#4b5563">바이트 값 그대로 비교</text>
+  <rect x="60" y="102" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="140" y="123" text-anchor="middle" font-family="Consolas,monospace">APPLE   (A=65)</text>
+  <rect x="60" y="140" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="140" y="161" text-anchor="middle" font-family="Consolas,monospace">Banana  (B=66)</text>
+  <rect x="60" y="178" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="140" y="199" text-anchor="middle" font-family="Consolas,monospace">_admin  (_=95)</text>
+  <rect x="60" y="216" width="160" height="32" rx="4" fill="#fef3c7" stroke="#b45309"/>
+  <text x="140" y="237" text-anchor="middle" font-family="Consolas,monospace">apple   (a=97)</text>
+  <rect x="60" y="254" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="140" y="275" text-anchor="middle" font-family="Consolas,monospace">cherry  (c=99)</text>
+
+  <text x="340" y="70" text-anchor="middle" font-weight="bold" fill="#1f2937">NOCASE</text>
+  <text x="340" y="90" text-anchor="middle" font-size="13" fill="#4b5563">ASCII 대문자를 소문자로 바꿔 비교</text>
+  <rect x="260" y="102" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="340" y="123" text-anchor="middle" font-family="Consolas,monospace">_admin</text>
+  <rect x="260" y="140" width="160" height="32" rx="4" fill="#e8f5ee" stroke="#2d6a4f"/>
+  <text x="340" y="161" text-anchor="middle" font-family="Consolas,monospace">apple</text>
+  <rect x="260" y="178" width="160" height="32" rx="4" fill="#e8f5ee" stroke="#2d6a4f"/>
+  <text x="340" y="199" text-anchor="middle" font-family="Consolas,monospace">APPLE</text>
+  <rect x="260" y="216" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="340" y="237" text-anchor="middle" font-family="Consolas,monospace">Banana</text>
+  <rect x="260" y="254" width="160" height="32" rx="4" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="340" y="275" text-anchor="middle" font-family="Consolas,monospace">cherry</text>
+
+  <text x="460" y="128" font-size="13" fill="#b45309">대문자 전부 → 밑줄 → 소문자 순.</text>
+  <text x="460" y="148" font-size="13" fill="#b45309">BINARY에서는 apple이 Banana 뒤로 밀린다.</text>
+  <text x="460" y="180" font-size="13" fill="#2d6a4f">NOCASE에서 apple과 APPLE은 같은 값이다.</text>
+  <text x="460" y="200" font-size="13" fill="#2d6a4f">둘의 앞뒤는 규칙이 정하지 않는다 —</text>
+  <text x="460" y="220" font-size="13" fill="#2d6a4f">실습은 ORDER BY에 member_id를 더 붙였다.</text>
+  <text x="460" y="252" font-size="13" fill="#4b5563">밑줄(95)은 소문자로 바꾼 a(97)보다 작아</text>
+  <text x="460" y="272" font-size="13" fill="#4b5563">NOCASE에서는 맨 앞으로 온다.</text>
+
+  <line x1="30" y1="312" x2="850" y2="312" stroke="#d1d5db"/>
+
+  <!-- 아래: 비교 연산자의 규칙이 정해지는 순서 -->
+  <text x="30" y="346" font-size="16" font-weight="bold" fill="#1f2937">비교(=, &lt;, IS …)에 어느 규칙을 쓰는가 — 위에서부터 먼저 맞는 것</text>
+
+  <rect x="30" y="366" width="250" height="84" rx="6" fill="#e8f5ee" stroke="#2d6a4f"/>
+  <text x="155" y="392" text-anchor="middle" font-weight="bold" fill="#2d6a4f">① COLLATE 연산자</text>
+  <text x="155" y="414" text-anchor="middle" font-size="13" fill="#1f2937">식 어딘가에 붙어 있으면</text>
+  <text x="155" y="434" text-anchor="middle" font-size="13" fill="#1f2937">그것. 둘이면 왼쪽 것</text>
+
+  <rect x="315" y="366" width="250" height="84" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="440" y="392" text-anchor="middle" font-weight="bold" fill="#1f2937">② 컬럼에 붙은 규칙</text>
+  <text x="440" y="414" text-anchor="middle" font-size="13" fill="#1f2937">한쪽이 컬럼이면 그 컬럼의 규칙.</text>
+  <text x="440" y="434" text-anchor="middle" font-size="13" fill="#1f2937">둘 다 컬럼이면 왼쪽 컬럼</text>
+
+  <rect x="600" y="366" width="250" height="84" rx="6" fill="#f3f4f6" stroke="#4b5563"/>
+  <text x="725" y="392" text-anchor="middle" font-weight="bold" fill="#1f2937">③ BINARY</text>
+  <text x="725" y="414" text-anchor="middle" font-size="13" fill="#1f2937">둘 다 아니면 기본값</text>
+
+  <line x1="280" y1="408" x2="309" y2="408" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="315,408 305,403 305,413" fill="#4b5563"/>
+  <line x1="565" y1="408" x2="594" y2="408" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="600,408 590,403 590,413" fill="#4b5563"/>
+  <text x="297" y="398" text-anchor="middle" font-size="13" fill="#4b5563">없음</text>
+  <text x="582" y="398" text-anchor="middle" font-size="13" fill="#4b5563">없음</text>
+
+  <text x="30" y="486" font-size="13" fill="#374151">실습 8번: name_nc(NOCASE) = 'apple' COLLATE BINARY → ①이 이겨 1행.</text>
+  <text x="30" y="508" font-size="13" fill="#374151">실습 12·13번: a.name = b.name_nc는 2행, b.name_nc = a.name은 4행 → ②의 왼쪽 우선.</text>
+  <text x="30" y="530" font-size="13" fill="#374151">ORDER BY는 COLLATE가 있으면 그것, 정렬 대상이 컬럼이면 그 컬럼 규칙, 아니면 BINARY.</text>
+</svg>

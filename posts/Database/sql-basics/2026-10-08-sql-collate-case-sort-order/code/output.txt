@@ -1,0 +1,212 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-08-sql-collate-case-sort-order
+# 명령      : python collate_basics.py
+# 수행 시각 : 2026-10-08 12:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  12행
+  컬럼      | 타입    | 제약
+  ----------+---------+-----
+  member_id | INTEGER | PK
+  name      | TEXT    |
+  name_nc   | TEXT    |
+
+  member_id | name   | name_nc
+  ----------+--------+--------
+          1 | apple  | apple
+          2 | Banana | Banana
+          3 | APPLE  | APPLE
+          4 | cherry | cherry
+          5 | _admin | _admin
+          6 | kim    | kim
+          7 | kim    | kim
+          8 | 나래   | 나래
+          9 | 가람   | 가람
+         10 | file10 | file10
+         11 | file2  | file2
+         12 | Éclair | Éclair
+
+
+[표 정의 원문]
+CREATE TABLE member (
+    member_id  INTEGER PRIMARY KEY,
+    name       TEXT,
+    name_nc    TEXT COLLATE NOCASE
+)
+
+==== 1부. 같은 데이터, 세 가지 정렬 ====
+
+-- 1. BINARY (기본값) — 바이트 값 순서
+   SELECT name FROM member ORDER BY name
+      'APPLE', 'Banana', '_admin', 'apple', 'cherry', 'file10', 'file2', 'kim', 'kim ', 'Éclair', '가람', '나래'
+
+-- 2. COLLATE NOCASE — ASCII 대소문자 무시
+   SELECT name FROM member ORDER BY name COLLATE NOCASE, member_id
+      '_admin', 'apple', 'APPLE', 'Banana', 'cherry', 'file10', 'file2', 'kim', 'kim ', 'Éclair', '가람', '나래'
+
+-- 3. 컬럼에 NOCASE 를 붙인 name_nc — COLLATE 없이 정렬
+   SELECT name_nc FROM member ORDER BY name_nc, member_id
+      '_admin', 'apple', 'APPLE', 'Banana', 'cherry', 'file10', 'file2', 'kim', 'kim ', 'Éclair', '가람', '나래'
+
+-- 4. 첫 글자의 코드 값 — 왜 그 순서인가
+   SELECT DISTINCT substr(name, 1, 1), unicode(substr(name, 1, 1)) FROM member WHERE member_id IN (1, 2, 5, 9, 8, 12) ORDER BY 2
+      'B' | 66
+      '_' | 95
+      'a' | 97
+      'É' | 201
+      '가' | 44032
+      '나' | 45208
+   (6행)
+
+==== 2부. 비교(=)도 규칙을 따른다 ====
+
+-- 5. name = 'apple' (BINARY)
+   SELECT member_id, name FROM member WHERE name = 'apple'
+      1 | 'apple'
+   (1행)
+
+-- 6. name_nc = 'apple' (컬럼 규칙 NOCASE)
+   SELECT member_id, name_nc FROM member WHERE name_nc = 'apple'
+      1 | 'apple'
+      3 | 'APPLE'
+   (2행)
+
+-- 7. name = 'apple' COLLATE NOCASE (식에 붙인 규칙)
+   SELECT member_id, name FROM member WHERE name = 'apple' COLLATE NOCASE
+      1 | 'apple'
+      3 | 'APPLE'
+   (2행)
+
+-- 8. name_nc = 'apple' COLLATE BINARY (식이 컬럼을 이긴다)
+   SELECT member_id, name_nc FROM member WHERE name_nc = 'apple' COLLATE BINARY
+      1 | 'apple'
+   (1행)
+
+-- 9. 'kim' 을 RTRIM 으로 — 뒤 공백 무시
+   SELECT member_id, name FROM member WHERE name = 'kim' COLLATE RTRIM
+      6 | 'kim '
+      7 | 'kim'
+   (2행)
+
+-- 10. NOCASE 는 ASCII 만 — 'éclair' 로 Éclair 를 찾으면
+   SELECT member_id, name FROM member WHERE name = 'éclair' COLLATE NOCASE
+   (0행)
+
+-- 11. lower() 도 ASCII 만 바꾼다
+   SELECT lower('APPLE'), lower('Éclair'), upper('éclair')
+      'apple' | 'Éclair' | 'éCLAIR'
+   (1행)
+
+==== 3부. 규칙이 정해지는 순서 ====
+
+-- 12. 컬럼끼리 비교: name = name_nc (왼쪽 컬럼 BINARY)
+   SELECT a.member_id, b.member_id FROM member a JOIN member b ON a.name = b.name_nc WHERE a.member_id IN (1, 3)
+      1 | 1
+      3 | 3
+   (2행)
+
+-- 13. 순서만 바꿔서: name_nc = name (왼쪽 컬럼 NOCASE)
+   SELECT a.member_id, b.member_id FROM member a JOIN member b ON b.name_nc = a.name WHERE a.member_id IN (1, 3)
+      1 | 1
+      1 | 3
+      3 | 1
+      3 | 3
+   (4행)
+
+-- 14. IN 목록은 왼쪽 값의 규칙을 쓴다
+   SELECT member_id, name_nc FROM member WHERE name_nc IN ('APPLE', 'banana')
+      1 | 'apple'
+      2 | 'Banana'
+      3 | 'APPLE'
+   (3행)
+
+-- 15. GROUP BY 도 규칙을 따른다
+   SELECT name_nc, COUNT(*) FROM member GROUP BY name_nc HAVING COUNT(*) > 1
+      'apple' | 2
+   (1행)
+
+-- 16. DISTINCT 도 — name 과 name_nc 의 개수
+   SELECT (SELECT COUNT(DISTINCT name) FROM member), (SELECT COUNT(DISTINCT name_nc) FROM member)
+      12 | 11
+   (1행)
+
+==== 4부. 인덱스와 UNIQUE ====
+
+-- 17. BINARY 인덱스, BINARY 비교
+   SELECT member_id FROM member WHERE name = 'apple'
+   QUERY PLAN
+   `--SEARCH member USING COVERING INDEX ix_member_name (name=?)
+
+-- 18. BINARY 인덱스, NOCASE 비교
+   SELECT member_id FROM member WHERE name = 'apple' COLLATE NOCASE
+   QUERY PLAN
+   `--SCAN member USING COVERING INDEX ix_member_name
+
+-- 19. NOCASE 인덱스를 하나 더 만든 뒤 같은 질의
+   SELECT member_id FROM member WHERE name = 'apple' COLLATE NOCASE
+   QUERY PLAN
+   `--SEARCH member USING COVERING INDEX ix_member_name_nc (name=?)
+
+-- 20. ORDER BY name COLLATE NOCASE
+   SELECT name FROM member ORDER BY name COLLATE NOCASE
+   QUERY PLAN
+   `--SCAN member USING COVERING INDEX ix_member_name_nc
+
+-- 21. NOCASE + UNIQUE 컬럼에 'ADMIN' 을 넣으면
+   INSERT INTO login_id VALUES ('ADMIN') RETURNING user_id
+   에러: UNIQUE constraint failed: login_id.user_id
+
+-- 22. BINARY + UNIQUE 컬럼에 'ADMIN' 을 넣으면
+   INSERT INTO login_id_bin VALUES ('ADMIN') RETURNING user_id
+      'ADMIN'
+   (1행)
+
+==== 5부. 직접 만든 정렬 규칙 ====
+
+-- 23. file2 와 file10 — BINARY
+   SELECT name FROM member WHERE name LIKE 'file%' ORDER BY name
+      'file10', 'file2'
+
+-- 24. 규칙 이름을 natural 로 지으면
+   SELECT name FROM member WHERE name LIKE 'file%' ORDER BY name COLLATE natural
+   에러: near "natural": syntax error
+
+-- 24-1. 큰따옴표로 감싸면
+   SELECT name FROM member WHERE name LIKE 'file%' ORDER BY name COLLATE "natural"
+      'file2'
+      'file10'
+   (2행)
+
+-- 24-2. 키워드가 아닌 이름 natsort 로 등록
+   SELECT name FROM member WHERE name LIKE 'file%' ORDER BY name COLLATE natsort
+      'file2', 'file10'
+
+-- 25. 규칙을 등록한 연결에서 ORDER BY title
+   SELECT title FROM doc ORDER BY title
+      'v1', 'v2', 'v10'
+
+-- 26. 규칙을 등록하지 않은 새 연결에서 같은 질의
+   SELECT title FROM doc ORDER BY title
+   에러: no such collation sequence: natsort
+
+-- 27. 같은 연결에서 정렬 없이 읽기
+   SELECT title FROM doc
+      'v10'
+      'v2'
+      'v1'
+   (3행)
