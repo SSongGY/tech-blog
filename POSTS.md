@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **239편** · 갱신 2026-10-08
+총 **242편** · 갱신 2026-10-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 41편
+## DB문법 (basics) — 42편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [생성 컬럼 — 계산 결과를 컬럼처럼, VIRTUAL과 STORED](posts/Database/sql-basics/2026-10-08-generated-column-virtual-stored/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [UPSERT — INSERT ... ON CONFLICT](posts/Database/sql-basics/2026-10-07-sqlite-upsert-on-conflict/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [GROUP_CONCAT — 여러 행을 한 줄로 합치는 법](posts/Database/sql-basics/2026-10-07-group-concat-rows-to-one-line/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -70,10 +71,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 91편
+## 기술사 (pe) — 92편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [제로 트러스트 아키텍처 — NIST SP 800-207의 7원칙과 3구성요소](posts/PE/security/2026-10-08-zero-trust-architecture-nist-sp-800-207/index.md) | 중급 | NIST SP 800-207 Zero Trust Architecture (2020-08), CISA Zero Trust Maturity Model Version 2.0 (2023-04), 제로트러스트 가이드라인 2.0 (과학기술정보통신부·KISA, 2024-12) | 문서 근거 |
 | 2026-10-08 | [컴플라이언스 경영시스템 ISO 37301 — 의무 식별과 위험 평가](posts/PE/it-management/2026-10-08-iso-37301-compliance-management-system/index.md) | 중급 | ISO 37301:2021 (2021-04-13 발행), ISO 19600:2014 (철회), ISO/IEC 27001:2022, OCEG GRC Capability Model 3.5 (2023) | 문서 근거 |
 | 2026-10-08 | [데이터센터 액체 냉각 — 콜드플레이트·액침과 ASHRAE 시설수 온도 등급](posts/PE/system/2026-10-08-data-center-liquid-cooling-ashrae-w-classes/index.md) | 중급 | ASHRAE TC 9.9 Liquid Cooling White Paper (2021-05-07), ASHRAE Thermal Guidelines for Data Processing Environments 5th ed. (2021-03), Uptime Institute Cooling Systems Survey 2024 (2024-05), NVIDIA DGX SuperPOD GB200 Reference Architecture (2025-11) | 문서 근거 |
 | 2026-10-07 | [QUIC와 HTTP/3 — TCP 위에서 못 풀던 세 가지를 UDP로 내려가 푼 이유](posts/PE/network/2026-10-07-quic-http3-udp-transport/index.md) | 중급 | RFC 9000 (2021-05), RFC 9001 (2021-05), RFC 9002 (2021-05), RFC 9114 (2022-06), RFC 8446 (2018-08), Python 3.13.5 | 실행 검증 |
@@ -166,10 +168,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 14편
+## 리눅스 (linux) — 15편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-08 | [time으로 재는 세 가지 — real, user, sys](posts/Infra/linux/2026-10-08-time-real-user-sys/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (sha256sum, dd, sleep), Cygwin runtime 3.6.7 | 실행 검증 |
 | 2026-10-07 | [split과 csplit — 큰 파일 쪼개기](posts/Infra/linux/2026-10-07-split-csplit-large-file/index.md) | 중급 | GNU coreutils 8.32 (split, csplit), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-10-06 | [kill과 시그널 — TERM, KILL, HUP의 차이](posts/Linux/command/2026-10-06-kill-signals-term-kill-hup/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (timeout), Cygwin runtime 3.6.7 | 실행 검증 |
 | 2026-10-06 | [diff와 patch — 설정 변경을 추적하기](posts/Infra/linux/2026-10-06-diff-patch-config-change-tracking/index.md) | 중급 | GNU diffutils 3.12, GNU patch 2.7.6, bash 5.3.9, Windows 11 | 실행 검증 |
