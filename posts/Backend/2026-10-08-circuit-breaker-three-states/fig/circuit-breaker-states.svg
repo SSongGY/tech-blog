@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="540" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+    <marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="16" font-weight="bold" fill="#1f2937">서킷 브레이커의 세 상태와 전이 조건</text>
+
+  <!-- 상태 -->
+  <rect x="40" y="110" width="220" height="90" rx="10" fill="#e8f5ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="150" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#2d6a4f">Closed</text>
+  <text x="150" y="164" text-anchor="middle" font-size="13" fill="#1f2937">요청을 그대로 보낸다</text>
+  <text x="150" y="184" text-anchor="middle" font-size="13" fill="#1f2937">실패 수를 센다</text>
+
+  <rect x="620" y="110" width="220" height="90" rx="10" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/>
+  <text x="730" y="140" text-anchor="middle" font-size="16" font-weight="bold" fill="#9d0208">Open</text>
+  <text x="730" y="164" text-anchor="middle" font-size="13" fill="#1f2937">요청을 바로 거절한다</text>
+  <text x="730" y="184" text-anchor="middle" font-size="13" fill="#1f2937">타임아웃 타이머 시작</text>
+
+  <rect x="330" y="300" width="220" height="90" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="330" text-anchor="middle" font-size="16" font-weight="bold" fill="#b45309">Half-Open</text>
+  <text x="440" y="354" text-anchor="middle" font-size="13" fill="#1f2937">시험 요청만 제한된 수로</text>
+  <text x="440" y="374" text-anchor="middle" font-size="13" fill="#1f2937">보내고 성공 수를 센다</text>
+
+  <!-- 전이 -->
+  <line x1="262" y1="140" x2="614" y2="140" stroke="#9d0208" stroke-width="2" marker-end="url(#arr-red)"/>
+  <text x="438" y="128" text-anchor="middle" font-size="13" fill="#9d0208">정해진 시간 안의 실패가 임계값에 닿음</text>
+
+  <line x1="700" y1="202" x2="552" y2="318" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="682" y="270" font-size="13" fill="#4b5563">타이머 만료</text>
+
+  <line x1="560" y1="300" x2="690" y2="208" stroke="#9d0208" stroke-width="2" marker-end="url(#arr-red)"/>
+  <text x="612" y="230" text-anchor="end" font-size="13" fill="#9d0208">시험 요청 실패 1건</text>
+  <text x="612" y="248" text-anchor="end" font-size="13" fill="#9d0208">(타이머 다시 시작)</text>
+
+  <line x1="328" y1="330" x2="190" y2="206" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="120" y="262" font-size="13" fill="#2d6a4f">연속 성공이</text>
+  <text x="120" y="280" font-size="13" fill="#2d6a4f">임계값에 닿음</text>
+  <text x="120" y="298" font-size="13" fill="#2d6a4f">(실패 카운터 초기화)</text>
+
+  <!-- 막는 장애 -->
+  <line x1="30" y1="420" x2="850" y2="420" stroke="#d1d5db"/>
+  <text x="30" y="448" font-size="15" font-weight="bold" fill="#1f2937">각 상태가 막는 것 (실습 결과)</text>
+  <text x="30" y="474" font-size="13" fill="#2d6a4f">Closed의 주기적 카운터 초기화 — 드문 실패로 열리는 것. 초기화가 없으면 정상 서비스에서 3번 열려 150건 거절(1-2)</text>
+  <text x="30" y="498" font-size="13" fill="#9d0208">Open — 장애 중 호출이 스레드를 붙잡는 것. 붙잡은 시간 합 600.9초 → 56.0초(2-1 → 2-2)</text>
+  <text x="30" y="522" font-size="13" fill="#b45309">Half-Open — 회복 확인을 전체 요청으로 하는 것. 장애 구간 하류 호출 98건 → 28건(3-1 → 2-2)</text>
+</svg>
