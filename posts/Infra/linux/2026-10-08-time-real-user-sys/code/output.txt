@@ -1,0 +1,119 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Infra\linux\2026-10-08-time-real-user-sys
+# 명령      : bash time_demo.sh
+# 수행 시각 : 2026-10-08 09:03 (대한민국 표준시)
+# 소요      : 10.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+==== 0. 환경 — bash 와 time 의 정체 ====
+GNU bash, version 5.3.9(1)-release (x86_64-pc-cygwin)
+sha256sum (GNU coreutils) 8.32
+type time  : time is a shell keyword
+type times : times is a shell builtin
+외부 /usr/bin/time: 없음
+TIMEFORMAT 기본값(미설정이면 비어 있음): []
+작업 파일: probe_work/big.bin (200 MB)
+
+==== 1. CPU 계산 — sha256sum: user 가 real 을 거의 채운다 ====
+72abf2ca8f36943ebe2e49ca3a51d409ca5f0bfcffab6c9d25643c17c32889da *probe_work/big.bin
+
+real	0m0.580s
+user	0m0.453s
+sys	0m0.109s
+
+==== 2. 잠들기 — sleep: real 만 흐르고 user·sys 는 거의 0 ====
+
+real	0m1.546s
+user	0m0.015s
+sys	0m0.015s
+
+==== 3-A. 시스템 콜 반복 — dd bs=512: 같은 200MB 를 작은 블록으로 읽고 쓴다 ====
+
+real	0m0.496s
+user	0m0.046s
+sys	0m0.437s
+
+==== 3-B. 같은 200MB 를 bs=4M 으로 — 시스템 콜 수가 1/8192 ====
+
+real	0m0.072s
+user	0m0.030s
+sys	0m0.031s
+
+==== 4. 병렬 두 프로세스 — user 합이 real 보다 크다 ====
+72abf2ca8f36943ebe2e49ca3a51d409ca5f0bfcffab6c9d25643c17c32889da *probe_work/big.bin
+72abf2ca8f36943ebe2e49ca3a51d409ca5f0bfcffab6c9d25643c17c32889da *probe_work/big.bin
+
+real	0m0.598s
+user	0m0.983s
+sys	0m0.217s
+
+==== 5. 기다리지 않은 백그라운드 자식은 집계에 없다 ====
+
+real	0m0.016s
+user	0m0.000s
+sys	0m0.000s
+(wait 로 뒤처리한 뒤의 줄 — 위 time 블록은 자식을 기다리지 않았다)
+
+==== 6-A. -p — POSIX 형식 (real/user/sys 를 초 단위 소수로) ====
+real 0.33
+user 0.02
+sys 0.02
+
+==== 6-B. TIMEFORMAT — 자릿수·형식·CPU 점유율 ====
+real 0.534  user 0.483  sys 0.046  cpu 99.00%
+소수 0자리: 0 | 1자리: 0.3 | 3자리: 0.282 | 긴 형식: 0m0.282s | 긴 형식 3자리: 0m0.282s
+%R 는 퍼센트 기호를 그대로: %R -> 0.133
+(TIMEFORMAT 을 빈 문자열로 두면 줄 바꿈만 찍힌다 — 아래 빈 줄)
+
+==== 7. 파이프라인 전체를 잰다 — 긴 쪽이 끝날 때까지 ====
+
+real	0m1.248s
+user	0m0.015s
+sys	0m0.015s
+
+==== 8. 셸 함수·내장 명령·for 루프도 잴 수 있다 (외부 time 명령은 못 한다) ====
+real 0.602  user 0.578  sys 0.016
+
+==== 9. 종료 코드는 잰 명령의 것이다 ====
+
+real	0m0.000s
+user	0m0.000s
+sys	0m0.000s
+false 의 종료 코드: 1
+
+real	0m0.132s
+user	0m0.015s
+sys	0m0.015s
+sleep 의 종료 코드: 0
+
+==== 10. 출력은 셸의 stderr 로 간다 — 묶어서 리다이렉트 ====
+파일에 들어간 내용:
+
+real	0m0.233s
+user	0m0.000s
+sys	0m0.015s
+
+==== 11. times 내장 — 셸 자신과 자식들의 누적 CPU 시간 (1행 셸, 2행 자식) ====
+0m0.625s 0m0.187s
+0m2.613s 0m1.112s
+
+==== 12. POSIX 모드에서 time -p 와 time ====
+bash: line 1: time: command not found
+rc=127
+
+real	0m0.136s
+user	0m0.015s
+sys	0m0.015s
+rc=0
+
+==== 13. 이 환경의 함정 — 네이티브 윈도우 프로그램(python.exe)의 CPU 시간은 0으로 보인다 ====
+Python 3.13.5
+sum 199999990000000
+
+real	0m1.429s
+user	0m0.016s
+sys	0m0.015s
