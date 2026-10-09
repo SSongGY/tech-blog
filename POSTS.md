@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **265편** · 갱신 2026-10-10
+총 **267편** · 갱신 2026-10-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -218,10 +218,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 38편
+## 기출문제 (exam) — 40편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-10 | [기출문제 — 과적합과 과소적합의 발생 원인과 해결 방안](posts/PE/exam/2026-10-10-overfitting-underfitting-causes-remedies/index.md) | 중급 | Python 3.13.5, Goodfellow·Bengio·Courville, Deep Learning §5.2 (MIT Press, 2016), Google ML Crash Course Overfitting (2025) | 실행 검증 |
+| 2026-10-10 | [기출문제 — 맥케이브 순환복잡도](posts/PE/exam/2026-10-10-mccabe-cyclomatic-complexity/index.md) | 중급 | Python 3.13.5, NIST SP 500-235 (1996), McCabe, IEEE TSE SE-2(4) (1976) | 실행 검증 |
 | 2026-10-09 | [기출문제 — 소프트웨어 무중단 배포 방식: 롤링·블루그린·카나리](posts/PE/exam/2026-10-09-zero-downtime-deployment-strategies/index.md) | 중급 | Kubernetes v1.37 문서 (apps/v1 Deployment), Google SRE Workbook (2018), Fowler, BlueGreenDeployment (2010-03-01) | 문서 근거 |
 | 2026-10-09 | [기출문제 — IT 프로젝트의 부정적 위험과 대응 전략 5가지](posts/PE/exam/2026-10-09-negative-risk-response-strategies/index.md) | 중급 | PMBOK Guide 6th ed. (PMI, 2017), ISO 31000:2018, NIST SP 800-39 (2011-03) | 문서 근거 |
 | 2026-10-09 | [기출문제 — 엣지 컴퓨팅과 클라우드 컴퓨팅의 차이](posts/PE/exam/2026-10-09-edge-vs-cloud-computing/index.md) | 중급 | NIST SP 800-145 (2011-09), NIST SP 500-325 (2018-03), ETSI GS MEC 003 V2.2.1 (2020-12) | 문서 근거 |
