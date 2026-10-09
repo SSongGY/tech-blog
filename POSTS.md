@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **267편** · 갱신 2026-10-10
+총 **269편** · 갱신 2026-10-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -74,10 +74,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 99편
+## 기술사 (pe) — 101편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-10 | [편향-분산 트레이드오프와 규제 — 모형 용량을 고르는 방법](posts/PE/data-analysis/2026-10-10-bias-variance-tradeoff-regularization/index.md) | 중급 | Python 3.13.5, Geman·Bienenstock·Doursat, Neural Computation 4(1) (1992), Srivastava et al., JMLR 15 (2014) | 실행 검증 |
+| 2026-10-10 | [기본 경로 테스트 — 순환복잡도로 테스트 경로를 고르는 절차](posts/PE/software-engineering/2026-10-10-basis-path-testing-baseline-method/index.md) | 중급 | Python 3.13.5, NIST SP 500-235 (1996) | 실행 검증 |
 | 2026-10-09 | [무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경](posts/PE/software-engineering/2026-10-09-zero-downtime-deployment-expand-contract/index.md) | 중급 | Kubernetes v1.37 문서 (apps/v1 Deployment), Google SRE Workbook (2018), Sadalage·Fowler, Evolutionary Database Design (2016-05 갱신) | 문서 근거 |
 | 2026-10-09 | [Modular RAG — 모듈·연산자 3계층과 흐름 패턴](posts/PE/emerging-tech/2026-10-09-modular-rag-operators-flow-patterns/index.md) | 중급 | Gao et al., arXiv:2407.21059v1 (2024-07-26), Gao et al., arXiv:2312.10997v5 (2024-03-27), Lewis et al., NeurIPS 2020 | 문서 근거 |
 | 2026-10-09 | [엣지·포그·MEC 컴퓨팅 — NIST 포그 모델과 ETSI MEC 참조 구조](posts/PE/cloud/2026-10-09-edge-fog-mec-computing/index.md) | 중급 | NIST SP 500-325 (2018-03), ETSI GS MEC 003 V3.1.1 (2022-03), ISO/IEC TR 23188:2020 | 문서 근거 |
