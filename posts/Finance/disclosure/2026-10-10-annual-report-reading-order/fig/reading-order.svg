@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+
+  <text x="40" y="34" font-size="15" font-weight="bold" fill="#222">목차에 실린 순서</text>
+  <text x="440" y="34" font-size="15" font-weight="bold" fill="#222">읽는 순서</text>
+  <text x="500" y="34" font-size="15" font-weight="bold" fill="#222">그 장에서 답을 찾는 질문</text>
+
+  <!-- 1 회사의 개요 -->
+  <rect x="40" y="54" width="360" height="38" rx="6" fill="#f3f3f3" stroke="#999" stroke-width="1.5"/>
+  <text x="56" y="78" font-size="14" fill="#555">회사의 개요</text>
+  <text x="456" y="78" font-size="14" text-anchor="middle" fill="#777">–</text>
+  <text x="500" y="78" font-size="13" fill="#777">필요할 때 — 주식 총수·자기주식</text>
+
+  <!-- 2 사업의 내용 -->
+  <rect x="40" y="102" width="360" height="38" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="126" font-size="14" fill="#222">사업의 내용</text>
+  <circle cx="456" cy="121" r="14" fill="#2d6a4f"/>
+  <text x="456" y="126" font-size="14" text-anchor="middle" fill="#ffffff">2</text>
+  <text x="500" y="126" font-size="13" fill="#222">무엇을 팔아 어디서 매출이 나는가</text>
+
+  <!-- 3 재무에 관한 사항 -->
+  <rect x="40" y="150" width="360" height="38" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="174" font-size="14" fill="#222">재무에 관한 사항 (재무제표·주석)</text>
+  <circle cx="456" cy="169" r="14" fill="#2d6a4f"/>
+  <text x="456" y="174" font-size="14" text-anchor="middle" fill="#ffffff">3</text>
+  <text x="500" y="174" font-size="13" fill="#222">그 사업이 숫자로 어떻게 나타났는가</text>
+
+  <!-- 4 이사의 경영진단 -->
+  <rect x="40" y="198" width="360" height="38" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="222" font-size="14" fill="#222">이사의 경영진단 및 분석의견</text>
+  <circle cx="456" cy="217" r="14" fill="#2d6a4f"/>
+  <text x="456" y="222" font-size="14" text-anchor="middle" fill="#ffffff">4</text>
+  <text x="500" y="222" font-size="13" fill="#222">경영진의 설명이 숫자와 맞는가</text>
+
+  <!-- 5 감사의견 -->
+  <rect x="40" y="246" width="360" height="38" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="2"/>
+  <text x="56" y="270" font-size="14" fill="#222">감사인의 감사의견 등</text>
+  <circle cx="456" cy="265" r="14" fill="#b45309"/>
+  <text x="456" y="270" font-size="14" text-anchor="middle" fill="#ffffff">1</text>
+  <text x="500" y="270" font-size="13" fill="#b45309">뒤의 숫자를 믿어도 되는가</text>
+
+  <!-- 6 이사회 등 -->
+  <rect x="40" y="294" width="360" height="38" rx="6" fill="#f3f3f3" stroke="#999" stroke-width="1.5"/>
+  <text x="56" y="318" font-size="14" fill="#555">이사회 등 회사의 기관</text>
+  <text x="456" y="318" font-size="14" text-anchor="middle" fill="#777">–</text>
+  <text x="500" y="318" font-size="13" fill="#777">필요할 때 — 사외이사 구성·변동</text>
+
+  <!-- 7 주주 -->
+  <rect x="40" y="342" width="360" height="38" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="366" font-size="14" fill="#222">주주에 관한 사항</text>
+  <circle cx="456" cy="361" r="14" fill="#2d6a4f"/>
+  <text x="456" y="366" font-size="14" text-anchor="middle" fill="#ffffff">5</text>
+  <text x="500" y="366" font-size="13" fill="#222">누가 회사를 지배하고 바뀌었는가</text>
+
+  <!-- 8 임원·직원 -->
+  <rect x="40" y="390" width="360" height="38" rx="6" fill="#f3f3f3" stroke="#999" stroke-width="1.5"/>
+  <text x="56" y="414" font-size="14" fill="#555">임원 및 직원 등</text>
+  <text x="456" y="414" font-size="14" text-anchor="middle" fill="#777">–</text>
+  <text x="500" y="414" font-size="13" fill="#777">필요할 때 — 임원 보수·직원 수</text>
+
+  <!-- 9 계열회사 -->
+  <rect x="40" y="438" width="360" height="38" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="462" font-size="14" fill="#222">계열회사 등</text>
+  <circle cx="456" cy="457" r="14" fill="#2d6a4f"/>
+  <text x="456" y="462" font-size="14" text-anchor="middle" fill="#ffffff">6</text>
+  <text x="500" y="462" font-size="13" fill="#222">돈이 어느 회사와 오가는가</text>
+
+  <!-- 10 이해관계자 거래 -->
+  <rect x="40" y="486" width="360" height="38" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="56" y="510" font-size="14" fill="#222">대주주 등 이해관계자와의 거래</text>
+  <circle cx="456" cy="505" r="14" fill="#2d6a4f"/>
+  <text x="456" y="510" font-size="14" text-anchor="middle" fill="#ffffff">6</text>
+  <text x="500" y="510" font-size="13" fill="#222">그 거래의 금액과 조건은 무엇인가</text>
+
+  <text x="40" y="548" font-size="13" fill="#777">회색 장은 순서 없이 필요할 때 펴 본다. 6번은 두 장을 함께 읽는다.</text>
+</svg>
