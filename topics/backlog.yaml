@@ -3885,7 +3885,7 @@ topics:
     angle: "자본시장법과 기업공시서식 작성기준이 정한 사업보고서 목차 가운데 먼저 볼 곳. 재무제표 본문보다 앞에 있는 사업의 내용·주주 현황·주석을 어떤 순서로 읽는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-036
     title: "배당락과 권리락 — 기준일 다음 날 주가가 내려가는 이유"
     category: Finance
@@ -3896,7 +3896,7 @@ topics:
     angle: "배당기준일·배당락일·결제일(T+2)의 관계와 권리락 기준가격 계산식(한국거래소 업무규정). 가상 회사의 기준가를 직접 계산해 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: pe-150
     title: "데이터센터 액체 냉각 — 콜드플레이트·액침과 ASHRAE 시설수 온도 등급"
     category: PE

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/></marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/></marker>
+    <marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333333"/></marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#222">① 기준일 2026-11-16(월) — T+2 결제로 거꾸로 센다</text>
+
+  <!-- 결제 화살표(위) : 마지막 매수일 → 기준일 -->
+  <path d="M125,108 C125,62 545,62 545,106" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <text x="335" y="62" font-size="13" text-anchor="middle" fill="#2d6a4f">11-12 매수 → 11-16 결제 · 기준일에 명부에 오른다</text>
+
+  <!-- 매매거래일 상자 -->
+  <rect x="40" y="110" width="170" height="56" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="125" y="134" font-size="14" text-anchor="middle" fill="#222">11-12(목)</text>
+  <text x="125" y="154" font-size="13" text-anchor="middle" fill="#2d6a4f">마지막 매수일</text>
+
+  <rect x="250" y="110" width="170" height="56" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="335" y="134" font-size="14" text-anchor="middle" fill="#222">11-13(금)</text>
+  <text x="335" y="154" font-size="13" text-anchor="middle" fill="#9d0208">락일</text>
+
+  <rect x="460" y="110" width="170" height="56" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="1.5"/>
+  <text x="545" y="134" font-size="14" text-anchor="middle" fill="#222">11-16(월)</text>
+  <text x="545" y="154" font-size="13" text-anchor="middle" fill="#b45309">기준일 · 주주명부 확정</text>
+
+  <rect x="670" y="110" width="170" height="56" rx="6" fill="#f3f3f3" stroke="#777" stroke-width="1.5"/>
+  <text x="755" y="134" font-size="14" text-anchor="middle" fill="#222">11-17(화)</text>
+  <text x="755" y="154" font-size="13" text-anchor="middle" fill="#555">기준일 다음 날</text>
+
+  <!-- 결제 화살표(아래) : 락일 → 기준일 다음 날 -->
+  <path d="M335,168 C335,264 755,264 755,170" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+  <text x="545" y="270" font-size="13" text-anchor="middle" fill="#9d0208">11-13 매수 → 11-17 결제 · 기준일을 넘겨 권리 없음</text>
+
+  <text x="440" y="306" font-size="13" text-anchor="middle" fill="#777">사이의 11-14(토)·11-15(일)은 매매거래일이 아니어서 결제일 계산에서 빠진다</text>
+
+  <line x1="24" y1="330" x2="856" y2="330" stroke="#ddd" stroke-width="1"/>
+
+  <text x="24" y="362" font-size="16" font-weight="bold" fill="#222">② 결산배당 절차의 순서 — 종전 관행과 2023년 개선안</text>
+
+  <text x="40" y="404" font-size="13" fill="#555">종전</text>
+  <rect x="100" y="382" width="200" height="36" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="1.5"/>
+  <text x="200" y="405" font-size="13" text-anchor="middle" fill="#222">기준일 (결산일 말)</text>
+  <line x1="302" y1="400" x2="356" y2="400" stroke="#333" stroke-width="1.5" marker-end="url(#k)"/>
+  <rect x="360" y="382" width="240" height="36" rx="6" fill="#f3f3f3" stroke="#777" stroke-width="1.5"/>
+  <text x="480" y="405" font-size="13" text-anchor="middle" fill="#222">주주총회에서 배당액 결정</text>
+
+  <text x="40" y="452" font-size="13" fill="#555">개선</text>
+  <rect x="100" y="430" width="200" height="36" rx="6" fill="#f3f3f3" stroke="#777" stroke-width="1.5"/>
+  <text x="200" y="453" font-size="13" text-anchor="middle" fill="#222">배당액 결정</text>
+  <line x1="302" y1="448" x2="356" y2="448" stroke="#333" stroke-width="1.5" marker-end="url(#k)"/>
+  <rect x="360" y="430" width="240" height="36" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="480" y="453" font-size="13" text-anchor="middle" fill="#222">기준일 공고 (2주 전)</text>
+  <line x1="602" y1="448" x2="656" y2="448" stroke="#333" stroke-width="1.5" marker-end="url(#k)"/>
+  <rect x="660" y="430" width="180" height="36" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="1.5"/>
+  <text x="750" y="453" font-size="13" text-anchor="middle" fill="#222">기준일</text>
+</svg>
