@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 임차료 100 × 5년 — 비용 합계는 같고 시점이 다르다</text>
+
+  <!-- 범례 -->
+  <rect x="150" y="50" width="16" height="16" fill="#ced4da" stroke="#495057"/>
+  <text x="172" y="63" font-size="13" fill="#1b1b1b">사용권자산 감가상각 (가나유통)</text>
+  <rect x="380" y="50" width="16" height="16" fill="#fde68a" stroke="#b45309"/>
+  <text x="402" y="63" font-size="13" fill="#1b1b1b">리스부채 이자 (가나유통)</text>
+  <rect x="580" y="50" width="16" height="16" fill="#ffffff" stroke="#495057" stroke-dasharray="4 2"/>
+  <text x="602" y="63" font-size="13" fill="#1b1b1b">임차료 (다라마트)</text>
+
+  <!-- 기준선: 임차료 100 -->
+  <line x1="100" y1="130" x2="820" y2="130" stroke="#868e96" stroke-dasharray="3 3"/>
+  <text x="96" y="134" text-anchor="end" font-size="13" fill="#495057">100</text>
+  <line x1="100" y1="380" x2="820" y2="380" stroke="#495057"/>
+  <text x="96" y="384" text-anchor="end" font-size="13" fill="#495057">0</text>
+
+  <!-- 1년차 (gx=110) -->
+  <rect x="125" y="163.5" width="50" height="216.5" fill="#ced4da" stroke="#495057"/>
+  <rect x="125" y="109.4" width="50" height="54.1" fill="#fde68a" stroke="#b45309"/>
+  <text x="150" y="102" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">108.24</text>
+  <rect x="182" y="130" width="50" height="250" fill="#ffffff" stroke="#495057" stroke-dasharray="4 2"/>
+  <text x="207" y="122" text-anchor="middle" font-size="13" fill="#495057">100</text>
+  <text x="178" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">1년차</text>
+
+  <!-- 2년차 (gx=250) -->
+  <rect x="265" y="163.5" width="50" height="216.5" fill="#ced4da" stroke="#495057"/>
+  <rect x="265" y="119.2" width="50" height="44.3" fill="#fde68a" stroke="#b45309"/>
+  <text x="290" y="102"text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">104.32</text>
+  <rect x="322" y="130" width="50" height="250" fill="#ffffff" stroke="#495057" stroke-dasharray="4 2"/>
+  <text x="347" y="122" text-anchor="middle" font-size="13" fill="#495057">100</text>
+  <text x="318" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">2년차</text>
+
+  <!-- 3년차 (gx=390) -->
+  <rect x="405" y="163.5" width="50" height="216.5" fill="#ced4da" stroke="#495057"/>
+  <rect x="405" y="129.4" width="50" height="34.1" fill="#fde68a" stroke="#b45309"/>
+  <text x="430" y="102"text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">100.21</text>
+  <rect x="462" y="130" width="50" height="250" fill="#ffffff" stroke="#495057" stroke-dasharray="4 2"/>
+  <text x="487" y="122" text-anchor="middle" font-size="13" fill="#495057">100</text>
+  <text x="458" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">3년차</text>
+
+  <!-- 4년차 (gx=530) -->
+  <rect x="545" y="163.5" width="50" height="216.5" fill="#ced4da" stroke="#495057"/>
+  <rect x="545" y="140.2" width="50" height="23.3" fill="#fde68a" stroke="#b45309"/>
+  <text x="570" y="102"text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">95.89</text>
+  <rect x="602" y="130" width="50" height="250" fill="#ffffff" stroke="#495057" stroke-dasharray="4 2"/>
+  <text x="627" y="122" text-anchor="middle" font-size="13" fill="#495057">100</text>
+  <text x="598" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">4년차</text>
+
+  <!-- 5년차 (gx=670) -->
+  <rect x="685" y="163.5" width="50" height="216.5" fill="#ced4da" stroke="#495057"/>
+  <rect x="685" y="151.6" width="50" height="11.9" fill="#fde68a" stroke="#b45309"/>
+  <text x="710" y="102"text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">91.35</text>
+  <rect x="742" y="130" width="50" height="250" fill="#ffffff" stroke="#495057" stroke-dasharray="4 2"/>
+  <text x="767" y="122" text-anchor="middle" font-size="13" fill="#495057">100</text>
+  <text x="738" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">5년차</text>
+
+  <text x="150" y="280" text-anchor="middle" font-size="13" fill="#1b1b1b">86.59</text>
+
+  <line x1="30" y1="420" x2="850" y2="420" stroke="#ced4da"/>
+  <text x="40" y="442" font-size="13" fill="#495057">감가상각은 매년 같고(사용권자산 432.95 ÷ 5) 이자는 남은 리스부채에 붙어 해마다 준다. 5년 합계는 둘 다 500이다.</text>
+  <text x="40" y="462" font-size="13" fill="#495057">리스부채 측정은 K-IFRS 제1116호 문단 26, 후속 측정은 문단 36, 다라마트의 단기리스 면제는 문단 5·6을 따랐다.</text>
+  <text x="40" y="482" font-size="13" fill="#495057">회사와 숫자는 가상이며 할인율 5%, 매년 말 후급으로 계산했다. 숫자는 code/output.txt [3]에 있다.</text>
+</svg>

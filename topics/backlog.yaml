@@ -4018,3 +4018,47 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: fin-037
+    title: "리스 회계 — 임차료가 부채로 올라가면 부채비율과 이익이 어떻게 움직이는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 리스, 사용권자산, 리스부채]
+    difficulty: 중급
+    angle: "K-IFRS 제1116호의 사용권자산·리스부채 최초 측정(리스료 현재가치)과 후속 측정. 같은 건물을 빌린 가상 회사를 기준서 전후로 놓고 부채비율·EBITDA·영업이익·연도별 비용 합계가 어떻게 바뀌는지, 단기·소액 면제가 어디서 차이를 만드는지 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-038
+    title: "영업권 — 인수 대가가 순자산보다 클 때 남는 숫자와 손상검사"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 영업권, 사업결합, 손상]
+    difficulty: 중급
+    angle: "K-IFRS 제1103호 문단 32의 영업권 계산(이전대가+비지배지분−공정가치 순자산)과 염가매수, 제1036호의 현금창출단위 손상검사와 손상차손 배분 순서·환입 금지. 같은 회사를 다른 값에 인수한 두 가상 회사"
+    code: python
+    origin: manual
+    status: writing
+  - id: fin-039
+    title: "손익분기점과 영업레버리지 — 고정비 비중이 이익 변동 폭을 키우는 이유"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 손익분기점, 영업레버리지, 고정비]
+    difficulty: 중급
+    angle: "매출과 영업이익이 같은데 고정비 비중이 다른 두 가상 회사로 매출이 10% 움직일 때 영업이익 변동 폭을 계산. 손익계산서의 기능별·성격별 분류(K-IFRS 제1001호)로는 고정비를 바로 알 수 없다는 한계"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-040
+    title: "이연법인세 — 회계이익과 과세소득이 다를 때 생기는 자산과 부채"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 이연법인세, 법인세, 일시적차이]
+    difficulty: 심화
+    angle: "K-IFRS 제1012호의 일시적차이와 이연법인세자산·부채. 감가상각 방법이 세무와 회계에서 다른 가상 회사로 연도별 차이가 쌓이고 풀리는 과정, 유효세율이 법정세율과 다른 이유"
+    code: python
+    origin: manual
+    status: todo
