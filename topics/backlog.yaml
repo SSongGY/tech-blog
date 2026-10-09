@@ -4007,3 +4007,14 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-155
+    title: "엣지·포그·MEC 컴퓨팅"
+    category: PE
+    subcategory: cloud
+    track: pe
+    tags: [정보관리기술사, cloud, 개념정리]
+    difficulty: 중급
+    angle: "NIST SP 500-325의 포그 필수 특성 6가지·노드 속성 5가지와 ETSI MEC 참조 구조를 축으로, 클라우드와의 처리 분담과 엣지·포그 구분을 정리"
+    code: none
+    origin: exam
+    status: todo

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">클라우드·포그·엣지 — 어디서 처리하는가</text>
+  <text x="30" y="56" font-size="13" fill="#555">아래로 갈수록 데이터가 생기는 곳에 가깝고, 노드 수는 많고, 노드당 자원은 작다</text>
+
+  <!-- tier labels -->
+  <text x="30" y="108" font-size="14" font-weight="bold" fill="#1b1b1b">클라우드</text>
+  <text x="30" y="126" font-size="13" fill="#555">중앙 집중</text>
+  <text x="30" y="238" font-size="14" font-weight="bold" fill="#1b1b1b">포그 / MEC</text>
+  <text x="30" y="256" font-size="13" fill="#555">접속망·현장</text>
+  <text x="30" y="368" font-size="14" font-weight="bold" fill="#1b1b1b">엣지</text>
+  <text x="30" y="386" font-size="13" fill="#555">말단 장치</text>
+
+  <!-- cloud -->
+  <rect x="200" y="80" width="420" height="62" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="410" y="106" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">클라우드 데이터센터</text>
+  <text x="410" y="128" font-size="13" text-anchor="middle" fill="#333">여러 현장 통합 분석 · 장기 저장 · 모델 학습</text>
+
+  <!-- fog -->
+  <rect x="200" y="210" width="200" height="62" rx="8" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="300" y="236" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">기지국 MEC 호스트</text>
+  <text x="300" y="258" font-size="13" text-anchor="middle" fill="#333">가상화 인프라 위 앱</text>
+
+  <rect x="420" y="210" width="200" height="62" rx="8" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="520" y="236" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">현장 게이트웨이</text>
+  <text x="520" y="258" font-size="13" text-anchor="middle" fill="#333">국지 판단 · 데이터 축약</text>
+
+  <!-- edge devices -->
+  <rect x="200" y="340" width="130" height="56" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="265" y="364" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">차량</text>
+  <text x="265" y="384" font-size="13" text-anchor="middle" fill="#333">이동 단말</text>
+
+  <rect x="345" y="340" width="130" height="56" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="410" y="364" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">카메라</text>
+  <text x="410" y="384" font-size="13" text-anchor="middle" fill="#333">영상 원본</text>
+
+  <rect x="490" y="340" width="130" height="56" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="555" y="364" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">설비 센서</text>
+  <text x="555" y="384" font-size="13" text-anchor="middle" fill="#333">계측값</text>
+
+  <!-- links device -> fog -->
+  <path d="M 265 340 L 290 274" stroke="#3b3b3b" stroke-width="1.3" fill="none" marker-end="url(#ar)"/>
+  <path d="M 410 340 L 330 274" stroke="#3b3b3b" stroke-width="1.3" fill="none" marker-end="url(#ar)"/>
+  <path d="M 555 340 L 530 274" stroke="#3b3b3b" stroke-width="1.3" fill="none" marker-end="url(#ar)"/>
+  <!-- fog -> cloud -->
+  <path d="M 300 210 L 360 144" stroke="#3b3b3b" stroke-width="1.3" fill="none" marker-end="url(#ar)"/>
+  <path d="M 520 210 L 460 144" stroke="#3b3b3b" stroke-width="1.3" fill="none" marker-end="url(#ar)"/>
+  <text x="410" y="182" font-size="13" text-anchor="middle" fill="#555">축약된 결과만</text>
+
+  <!-- right axis: latency -->
+  <path d="M 700 390 L 700 92" stroke="#b45309" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+  <text x="716" y="104" font-size="13" fill="#b45309">지연 큼</text>
+  <text x="716" y="122" font-size="13" fill="#b45309">자원 풀 큼</text>
+  <text x="716" y="368" font-size="13" fill="#2d6a4f">지연 작음</text>
+  <text x="716" y="386" font-size="13" fill="#2d6a4f">노드 수 많음</text>
+
+  <line x1="30" y1="420" x2="850" y2="420" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="446" font-size="13" fill="#333">NIST는 말단 장치 계층만 엣지로, 그 위 중간 계층을 포그로 나눈다. ETSI MEC는 접속망 서버를 엣지로 본다.</text>
+  <text x="30" y="464" font-size="13" fill="#555">시험의 "엣지"는 보통 아래 두 줄을 합친 범위다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
