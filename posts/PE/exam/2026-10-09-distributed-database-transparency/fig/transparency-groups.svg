@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">분산 DBMS가 숨기는 것 — 3묶음 6가지</text>
+  <text x="30" y="56" font-size="13" fill="#555">응용은 맨 위 상자만 보고, 가운데 세 묶음이 아래 사이트의 사실을 가린다</text>
+
+  <!-- application -->
+  <rect x="250" y="74" width="380" height="50" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="96" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">응용 프로그램</text>
+  <text x="440" y="115" font-size="13" text-anchor="middle" fill="#444">하나의 논리 DB로 질의한다</text>
+
+  <path d="M 440 124 L 440 148" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- three groups -->
+  <rect x="30" y="152" width="300" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="180" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">배치 — 3가지</text>
+  <text x="180" y="200" font-size="13" text-anchor="middle" fill="#333">① 분할  ② 위치  ③ 중복</text>
+  <text x="180" y="222" font-size="13" text-anchor="middle" fill="#555">데이터 독립성의 분산 확장</text>
+  <text x="180" y="242" font-size="13" text-anchor="middle" fill="#555">질의 처리기 · 동의어 · 복제</text>
+
+  <rect x="345" y="152" width="190" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="440" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">이기종 — 1가지</text>
+  <text x="440" y="200" font-size="13" text-anchor="middle" fill="#333">④ 지역사상</text>
+  <text x="440" y="222" font-size="13" text-anchor="middle" fill="#555">DBMS·표현 차이</text>
+  <text x="440" y="242" font-size="13" text-anchor="middle" fill="#555">게이트웨이 변환</text>
+
+  <rect x="550" y="152" width="300" height="104" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.5"/>
+  <text x="700" y="176" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">트랜잭션 — 2가지</text>
+  <text x="700" y="200" font-size="13" text-anchor="middle" fill="#333">⑤ 병행  ⑥ 장애</text>
+  <text x="700" y="222" font-size="13" text-anchor="middle" fill="#555">동시 실행 · 사이트 고장</text>
+  <text x="700" y="242" font-size="13" text-anchor="middle" fill="#555">2PL 변형 · 2PC · 복구</text>
+
+  <path d="M 440 256 L 440 282" stroke="#3b3b3b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <!-- sites -->
+  <rect x="80" y="286" width="220" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="190" y="310" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">사이트 A</text>
+  <text x="190" y="332" font-size="13" text-anchor="middle" fill="#333">emp 조각1 · dept 사본</text>
+
+  <rect x="330" y="286" width="220" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="310" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">사이트 B</text>
+  <text x="440" y="332" font-size="13" text-anchor="middle" fill="#333">emp 조각2 · dept 사본</text>
+
+  <rect x="580" y="286" width="220" height="64" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="690" y="310" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">사이트 C</text>
+  <text x="690" y="332" font-size="13" text-anchor="middle" fill="#333">다른 DBMS · 다른 타입</text>
+
+  <line x1="30" y1="376" x2="850" y2="376" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="402" font-size="13" fill="#333">답안지에는 상자 일곱 개면 된다 — 응용 1, 묶음 3, 사이트 3.</text>
+  <text x="30" y="422" font-size="13" fill="#555">묶음 하나가 깨지면 그 묶음이 숨기던 사실을 응용 코드가 직접 다룬다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+  </defs>
+</svg>
