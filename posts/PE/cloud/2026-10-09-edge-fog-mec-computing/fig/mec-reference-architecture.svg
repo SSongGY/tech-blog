@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="570" viewBox="0 0 880 570" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="570" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">ETSI MEC 참조 구조 — 관리 2층과 호스트 1층</text>
+  <text x="30" y="56" font-size="13" fill="#555">선 위의 이름이 참조점이다. Mp는 플랫폼 기능, Mm은 관리를 가리킨다</text>
+
+  <!-- left labels -->
+  <text x="30" y="122" font-size="14" font-weight="bold" fill="#1b1b1b">시스템 수준 관리</text>
+  <text x="30" y="140" font-size="13" fill="#555">MEC 시스템 전체</text>
+  <text x="30" y="242" font-size="14" font-weight="bold" fill="#1b1b1b">호스트 수준 관리</text>
+  <text x="30" y="260" font-size="13" fill="#555">호스트 하나</text>
+  <text x="30" y="402" font-size="14" font-weight="bold" fill="#2d6a4f">MEC 호스트</text>
+  <text x="30" y="420" font-size="13" fill="#555">접속망 가까이</text>
+
+  <!-- system level -->
+  <rect x="220" y="100" width="180" height="50" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="310" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">OSS</text>
+  <text x="310" y="141" font-size="13" text-anchor="middle" fill="#333">요청 승인</text>
+  <rect x="500" y="100" width="200" height="50" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="600" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">MEC 오케스트레이터</text>
+  <text x="600" y="141" font-size="13" text-anchor="middle" fill="#333">호스트 선택 · 앱 등록</text>
+  <line x1="400" y1="125" x2="500" y2="125" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="450" y="117" font-size="13" text-anchor="middle" fill="#b45309">Mm1</text>
+
+  <!-- host level -->
+  <rect x="220" y="220" width="180" height="50" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="310" y="242" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">MEC 플랫폼 관리자</text>
+  <text x="310" y="261" font-size="13" text-anchor="middle" fill="#333">앱 수명주기 · 규칙</text>
+  <rect x="500" y="220" width="200" height="50" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="600" y="242" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">가상화 인프라 관리자</text>
+  <text x="600" y="261" font-size="13" text-anchor="middle" fill="#333">가상 자원 할당 · 회수</text>
+  <line x1="400" y1="245" x2="500" y2="245" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="450" y="237" font-size="13" text-anchor="middle" fill="#b45309">Mm6</text>
+
+  <!-- system to host -->
+  <line x1="260" y1="150" x2="260" y2="220" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="268" y="190" font-size="13" fill="#b45309">Mm2</text>
+  <line x1="520" y1="150" x2="380" y2="220" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="410" y="182" font-size="13" fill="#b45309">Mm3</text>
+  <line x1="660" y1="150" x2="660" y2="220" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="668" y="190" font-size="13" fill="#b45309">Mm4</text>
+
+  <!-- MEC host container -->
+  <rect x="200" y="318" width="520" height="180" rx="10" fill="#f3f8f4" stroke="#2d6a4f" stroke-width="1.3" stroke-dasharray="6 4"/>
+
+  <rect x="220" y="350" width="160" height="50" rx="8" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="300" y="372" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">MEC 플랫폼</text>
+  <text x="300" y="391" font-size="13" text-anchor="middle" fill="#333">서비스 등록 · 탐색</text>
+
+  <rect x="440" y="350" width="100" height="50" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="490" y="372" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">MEC 앱</text>
+  <text x="490" y="391" font-size="13" text-anchor="middle" fill="#333">VM</text>
+  <rect x="560" y="350" width="100" height="50" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="610" y="372" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">MEC 앱</text>
+  <text x="610" y="391" font-size="13" text-anchor="middle" fill="#333">컨테이너</text>
+
+  <line x1="380" y1="375" x2="440" y2="375" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="410" y="367" font-size="13" text-anchor="middle" fill="#b45309">Mp1</text>
+
+  <rect x="220" y="436" width="480" height="46" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="460" y="457" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">가상화 인프라</text>
+  <text x="460" y="475" font-size="13" text-anchor="middle" fill="#333">연산 · 저장 · 네트워크, 트래픽 규칙을 실행하는 데이터 플레인</text>
+
+  <line x1="300" y1="400" x2="300" y2="436" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="308" y="423" font-size="13" fill="#b45309">Mp2</text>
+
+  <!-- host level to host -->
+  <line x1="300" y1="270" x2="300" y2="350" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="308" y="300" font-size="13" fill="#b45309">Mm5</text>
+  <line x1="685" y1="270" x2="685" y2="436" stroke="#3b3b3b" stroke-width="1.3"/>
+  <text x="693" y="300" font-size="13" fill="#b45309">Mm7</text>
+
+  <!-- right legend -->
+  <text x="745" y="122" font-size="13" fill="#555">Mm8 · Mm9 ·</text>
+  <text x="745" y="140" font-size="13" fill="#555">Mx1 · Mx2 는</text>
+  <text x="745" y="158" font-size="13" fill="#555">외부 포털·단말</text>
+  <text x="745" y="176" font-size="13" fill="#555">연결이라 생략</text>
+
+  <line x1="30" y1="512" x2="850" y2="512" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="534" font-size="13" fill="#333">MEC 호스트도 가상화 인프라 위에 앱을 올리는 작은 클라우드다.</text>
+  <text x="30" y="553" font-size="13" fill="#555">클라우드와 다른 점은 이런 호스트가 접속망을 따라 여러 곳에 흩어져 있다는 것이다.</text>
+</svg>
