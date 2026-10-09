@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 하나소재, 다른 인수 대가 — 영업권은 대가에서 공정가치 순자산을 뺀 나머지</text>
+
+  <!-- 범례 -->
+  <rect x="120" y="44" width="16" height="16" fill="#ced4da" stroke="#495057"/>
+  <text x="142" y="57" font-size="13" fill="#1b1b1b">장부 순자산</text>
+  <rect x="240" y="44" width="16" height="16" fill="#f1f3f5" stroke="#495057"/>
+  <text x="262" y="57" font-size="13" fill="#1b1b1b">공정가치 평가 증가</text>
+  <rect x="400" y="44" width="16" height="16" fill="#fde68a" stroke="#b45309"/>
+  <text x="422" y="57" font-size="13" fill="#1b1b1b">영업권</text>
+  <rect x="500" y="44" width="16" height="16" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="522" y="57" font-size="13" fill="#1b1b1b">1년 뒤 손상차손 (950 초과분)</text>
+
+  <!-- 회수가능액 950 기준선: x = 160 + 950 × 0.45 = 587.5 -->
+  <line x1="587.5" y1="90" x2="587.5" y2="218" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="587.5" y="84" text-anchor="middle" font-size="13" fill="#9d0208">회수가능액 950</text>
+
+  <!-- 가나전자: 650 + 150 + 영업권 200 = 1,000 -->
+  <text x="30" y="125" font-size="14" font-weight="bold" fill="#1b1b1b">가나전자 1,000</text>
+  <rect x="160" y="100" width="292.5" height="40" fill="#ced4da" stroke="#495057"/>
+  <text x="306" y="125" text-anchor="middle" font-size="13" fill="#1b1b1b">장부 순자산 650</text>
+  <rect x="452.5" y="100" width="67.5" height="40" fill="#f1f3f5" stroke="#495057"/>
+  <text x="486" y="125" text-anchor="middle" font-size="13" fill="#1b1b1b">+150</text>
+  <rect x="520" y="100" width="67.5" height="40" fill="#fde68a" stroke="#b45309"/>
+  <text x="554" y="125" text-anchor="middle" font-size="13" fill="#1b1b1b">150</text>
+  <rect x="587.5" y="100" width="22.5" height="40" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="618" y="125" font-size="13" fill="#9d0208">영업권 200 중 손상 50</text>
+
+  <!-- 다라화학: 650 + 150 + 영업권 500 = 1,300 -->
+  <text x="30" y="195" font-size="14" font-weight="bold" fill="#1b1b1b">다라화학 1,300</text>
+  <rect x="160" y="170" width="292.5" height="40" fill="#ced4da" stroke="#495057"/>
+  <text x="306" y="195" text-anchor="middle" font-size="13" fill="#1b1b1b">장부 순자산 650</text>
+  <rect x="452.5" y="170" width="67.5" height="40" fill="#f1f3f5" stroke="#495057"/>
+  <text x="486" y="195" text-anchor="middle" font-size="13" fill="#1b1b1b">+150</text>
+  <rect x="520" y="170" width="67.5" height="40" fill="#fde68a" stroke="#b45309"/>
+  <text x="554" y="195" text-anchor="middle" font-size="13" fill="#1b1b1b">150</text>
+  <rect x="587.5" y="170" width="157.5" height="40" fill="#fde2e1" stroke="#9d0208"/>
+  <text x="666" y="195" text-anchor="middle" font-size="13" fill="#9d0208">손상 350</text>
+  <text x="753" y="195" font-size="13" fill="#9d0208">(영업권 500 중)</text>
+
+  <!-- 마바산업: 공정가치 순자산 800 > 대가 700 -->
+  <text x="30" y="265" font-size="14" font-weight="bold" fill="#1b1b1b">마바산업 700</text>
+  <rect x="160" y="240" width="292.5" height="40" fill="#ced4da" stroke="#495057"/>
+  <text x="306" y="265" text-anchor="middle" font-size="13" fill="#1b1b1b">장부 순자산 650</text>
+  <rect x="452.5" y="240" width="67.5" height="40" fill="#f1f3f5" stroke="#495057"/>
+  <text x="497" y="265" text-anchor="middle" font-size="13" fill="#1b1b1b">+150</text>
+  <line x1="475" y1="232" x2="475" y2="290" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="475" y="308" text-anchor="middle" font-size="13" fill="#2d6a4f">대가 700 — 공정가치 순자산 800보다 100 작다 → 염가매수차익 100 (취득일 당기손익)</text>
+
+  <line x1="30" y1="330" x2="850" y2="330" stroke="#ced4da"/>
+  <text x="40" y="352" font-size="13" fill="#495057">영업권 = 이전대가 − 식별 가능한 순자산의 공정가치 (K-IFRS 제1103호 문단 32)</text>
+  <text x="40" y="372" font-size="13" fill="#495057">대가가 더 작으면 재검토 후 염가매수차익 (문단 34·36). 손상차손은 영업권부터 감액 (제1036호 문단 104)</text>
+  <text x="40" y="392" font-size="13" fill="#495057">사업이 같아 회수가능액도 950으로 같고, 손상 후 영업권은 두 회사 모두 150이 된다.</text>
+  <text x="40" y="412" font-size="13" fill="#495057">막대 길이는 금액에 비례한다. 회사와 숫자는 가상이며 code/output.txt [2]·[4]에 있다.</text>
+</svg>

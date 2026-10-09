@@ -4039,7 +4039,7 @@ topics:
     angle: "K-IFRS 제1103호 문단 32의 영업권 계산(이전대가+비지배지분−공정가치 순자산)과 염가매수, 제1036호의 현금창출단위 손상검사와 손상차손 배분 순서·환입 금지. 같은 회사를 다른 값에 인수한 두 가상 회사"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-039
     title: "손익분기점과 영업레버리지 — 고정비 비중이 이익 변동 폭을 키우는 이유"
     category: Finance
