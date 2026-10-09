@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#111">기본 경로 테스트 4단계와 커버리지 포함 관계</text>
+
+  <!-- 4단계 -->
+  <rect x="20" y="56" width="190" height="112" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="115" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">① 흐름 그래프 작성</text>
+  <text x="115" y="108" text-anchor="middle" font-size="13" fill="#333">판단·문장 → 노드</text>
+  <text x="115" y="128" text-anchor="middle" font-size="13" fill="#333">제어 이동 → 간선</text>
+  <text x="115" y="150" text-anchor="middle" font-size="13" fill="#555">count: N=11, E=14</text>
+
+  <rect x="240" y="56" width="190" height="112" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="335" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">② V(G) 계산</text>
+  <text x="335" y="108" text-anchor="middle" font-size="13" fill="#333">E − N + 2 = 판단 수 + 1</text>
+  <text x="335" y="128" text-anchor="middle" font-size="13" fill="#333">= 필요한 경로 수</text>
+  <text x="335" y="150" text-anchor="middle" font-size="13" fill="#555">count: 14 − 11 + 2 = 5</text>
+
+  <rect x="460" y="56" width="190" height="112" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="555" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">③ 기본 경로 선택</text>
+  <text x="555" y="108" text-anchor="middle" font-size="13" fill="#333">기준 경로를 정하고</text>
+  <text x="555" y="128" text-anchor="middle" font-size="13" fill="#333">판단을 하나씩 뒤집기</text>
+  <text x="555" y="150" text-anchor="middle" font-size="13" fill="#555">경로 행렬 랭크 = V(G)</text>
+
+  <rect x="680" y="56" width="180" height="112" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="770" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">④ 테스트 케이스</text>
+  <text x="770" y="108" text-anchor="middle" font-size="13" fill="#333">경로마다 입력과</text>
+  <text x="770" y="128" text-anchor="middle" font-size="13" fill="#333">기대 출력을 정해 실행</text>
+  <text x="770" y="150" text-anchor="middle" font-size="13" fill="#b45309">실행 불가 경로 확인</text>
+
+  <path d="M210 112 L236 112" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M430 112 L456 112" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M650 112 L676 112" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 포함 관계 -->
+  <line x1="20" y1="200" x2="860" y2="200" stroke="#ccc" stroke-width="1"/>
+  <text x="440" y="228" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">포함 관계 — 왼쪽을 만족하면 오른쪽도 만족한다</text>
+
+  <rect x="20" y="248" width="150" height="70" rx="6" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+  <text x="95" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">전체 경로</text>
+  <text x="95" y="298" text-anchor="middle" font-size="13" fill="#9d0208">반복이 있으면 무한</text>
+
+  <rect x="200" y="248" width="150" height="70" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="275" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">구조적 테스트</text>
+  <text x="275" y="298" text-anchor="middle" font-size="13" fill="#333">독립 경로 V(G)개</text>
+
+  <rect x="380" y="248" width="150" height="70" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="455" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">약한 구조적</text>
+  <text x="455" y="298" text-anchor="middle" font-size="13" fill="#333">경로 V(G)개 + 분기</text>
+
+  <rect x="560" y="248" width="140" height="70" rx="6" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <text x="630" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">분기</text>
+  <text x="630" y="298" text-anchor="middle" font-size="13" fill="#333">모든 판단 결과</text>
+
+  <rect x="730" y="248" width="130" height="70" rx="6" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <text x="795" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#111">문장</text>
+  <text x="795" y="298" text-anchor="middle" font-size="13" fill="#333">모든 노드</text>
+
+  <text x="185" y="290" text-anchor="middle" font-size="18" fill="#555">⊃</text>
+  <text x="365" y="290" text-anchor="middle" font-size="18" fill="#555">⊃</text>
+  <text x="545" y="290" text-anchor="middle" font-size="18" fill="#555">⊃</text>
+  <text x="715" y="290" text-anchor="middle" font-size="18" fill="#555">⊃</text>
+
+  <text x="440" y="358" text-anchor="middle" font-size="13" fill="#555">구조적 테스트는 경로들이 선형 독립이어야 한다 — 판단 결과를 서로 독립적으로 시험한다</text>
+  <text x="440" y="382" text-anchor="middle" font-size="13" fill="#555">약한 구조적 테스트는 V(G)개 경로만 요구하고 독립성은 묻지 않는다</text>
+  <text x="440" y="406" text-anchor="middle" font-size="13" fill="#9d0208">count 모듈: 분기 100% 쌍의 55.6% 가 결함을 놓쳤고, 기본 경로 집합은 141개 모두 잡았다</text>
+</svg>

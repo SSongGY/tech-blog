@@ -93,6 +93,8 @@ T. J. McCabe가 1976년에 제안했고, NIST 문서는 이를 간선 수 e와 �
   복잡한 모듈이 상한 아래로 숨는다. NIST 문서는 복잡도 90짜리 모듈이 빈 10갈래
   분기 하나로 10이 되는 예를 든다.
 
+> 개념 정리: [기본 경로 테스트 — 순환복잡도로 테스트 경로를 고르는 절차](../../software-engineering/2026-10-10-basis-path-testing-baseline-method/index.md)
+
 끝
 
 ## 답안 작성 메모

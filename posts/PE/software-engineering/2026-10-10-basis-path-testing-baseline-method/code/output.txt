@@ -1,0 +1,67 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\software-engineering\2026-10-10-basis-path-testing-baseline-method
+# 명령      : python basis_path.py
+# 수행 시각 : 2026-10-10 04:13 (대한민국 표준시)
+# 소요      : 0.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5 / Windows
+후보 입력: 'A','B','C','X' 로 만든 길이 0~4 문자열 341개
+
+[1] 1단계 — 제어 흐름 그래프 (count)
+  entry    → dA
+  dA       판단 =A     T→inc      F→ret_neg
+  inc      → dB
+  dB       판단 =B     T→b_body   F→dC
+  b_body   → inc
+  dC       판단 =C     T→c_body   F→dNul
+  c_body   → inc
+  dNul     판단 !=NUL  T→inc      F→ret_cnt
+  ret_cnt  → exit
+  ret_neg  → exit
+
+[2] 2단계 — V(G) 계산
+  E − N + 2 = 14 − 11 + 2 = 5
+  판단 수 + 1 = 4 + 1 = 5
+  후보 341개가 만든 서로 다른 경로 21개, 그 경로 행렬의 랭크 5
+
+[3] 3단계 — 기준 경로 방법 (기준 입력 'AB')
+  경로 1: 입력 'AB'    기준 경로              =AT =BT =BF =CF !=NULF
+  경로 2: 입력 ''      =A 를 F 로 뒤집음       =AF
+  경로 3: 입력 'A'     =B 를 F 로 뒤집음       =AT =BF =CF !=NULF
+  경로 4: 입력 'ABC'   =C 를 T 로 뒤집음       =AT =BT =BF =CT =BF =CF !=NULF
+  경로 5: 입력 'ABA'   !=NUL 를 T 로 뒤집음    =AT =BT =BF =CF !=NULT =BF =CF !=NULF
+  경로 5개의 랭크 5  (V(G) 와 같으면 기본 경로 집합)
+
+[4] 4단계 — 입력·기대 출력을 정해 실행
+  입력         기대   실제  판정
+  'AB'        0    1  결함 발견
+  ''         -1   -1  통과
+  'A'         0    0  통과
+  'ABC'       1    1  통과
+  'ABA'       0    1  결함 발견
+
+[5] 비교 — 분기 커버리지를 채우는 테스트 2개 (NIST 그림 5-4 의 입력)
+  판단 결과 8/8 · 노드 11/11 를 지난다
+  'X'      기대  -1  실제  -1
+  'ABCX'   기대   1  실제   1
+  경로 랭크 2 — 기본 경로 기준까지 3개 모자란다
+
+[6] 기능 테스트를 기본 경로로 채우기 (NIST 6.5절)
+  추가한 입력 ['AB', 'A', 'ABC'] → 랭크 5
+  추가분 중 결함을 드러낸 입력: ['AB']
+
+[7] 분기 커버리지 100% 인 2개짜리 집합 중 결함을 놓치는 것
+  길이 0~5 입력 1365개로 만든 쌍 중 분기 커버리지 100% 쌍 110592개, 그중 결함을 놓치는 쌍 61440개 (55.6%)
+  길이 0~3 입력의 서로 다른 경로 11개로 만들 수 있는 기본 경로 집합 141개 중 결함을 놓치는 집합 0개
+
+[8] 실행 불가능한 경로 — 같은 값을 세 번 묻는 classify
+  classify   V(G)=4  입력 -5~5 의 서로 다른 경로 3개  실현 가능한 랭크 3
+  classify2  V(G)=3  입력 -5~5 의 서로 다른 경로 3개  실현 가능한 랭크 3
+    classify(-1): n<0T n==0F n>0F
+    classify( 0): n<0F n==0T n>0F
+    classify( 1): n<0F n==0F n>0T

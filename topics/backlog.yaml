@@ -4072,7 +4072,7 @@ topics:
     angle: "기대 시험 오차를 편향²·분산·잡음으로 분해하고, L1·L2·드롭아웃·조기 종료·교차검증이 각각 어느 항을 줄이는지 계산으로 보인다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-157
     title: "기본 경로 테스트 — 순환복잡도로 테스트 경로를 고르는 절차"
     category: PE
@@ -4083,4 +4083,4 @@ topics:
     angle: "제어 흐름 그래프 작성, V(G) 계산, 기준 경로에서 판단을 하나씩 뒤집는 기본 경로 선택, 테스트 케이스 도출의 4단계와 분기 커버리지와의 포함 관계"
     code: none
     origin: exam
-    status: todo
+    status: done
