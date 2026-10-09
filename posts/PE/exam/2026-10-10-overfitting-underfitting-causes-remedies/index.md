@@ -102,6 +102,8 @@ L2 규제는 양쪽으로 넘칠 수 있다. λ를 100까지 올리면 학습 MS
   일반화 오차가 커진다. 운영 지표로 예측 오차를 계속 추적한다.
 
 > 개념 정리: [데이터 누수 — 학습·평가 분할에서 묶음·시간 단위를 지키는 이유](../../data-analysis/2026-10-06-data-leakage-group-time-split/index.md)
+>
+> 개념 정리: [편향-분산 트레이드오프와 규제 — 모형 용량을 고르는 방법](../../data-analysis/2026-10-10-bias-variance-tradeoff-regularization/index.md)
 
 끝
 
