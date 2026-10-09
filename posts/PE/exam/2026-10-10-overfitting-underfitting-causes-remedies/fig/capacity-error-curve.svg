@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 구간 배경 -->
+  <rect x="90" y="30" width="220" height="230" fill="#fdf3e7"/>
+  <rect x="310" y="30" width="170" height="230" fill="#e7f2ec"/>
+  <rect x="480" y="30" width="340" height="230" fill="#fbeaea"/>
+  <text x="200" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">과소적합</text>
+  <text x="395" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">적정 용량</text>
+  <text x="650" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">과적합</text>
+  <text x="200" y="72" text-anchor="middle" font-size="13" fill="#7c2d12">학습 오차부터 크다 (높은 편향)</text>
+  <text x="650" y="72" text-anchor="middle" font-size="13" fill="#7f1d1d">학습·시험 오차 격차가 크다 (높은 분산)</text>
+
+  <!-- 축 -->
+  <path d="M 90 260 L 90 24" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 90 260 L 830 260" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <text x="40" y="150" text-anchor="middle" font-size="14" fill="#0f172a" transform="rotate(-90 40 150)">오차</text>
+  <text x="820" y="284" text-anchor="end" font-size="14" fill="#0f172a">모형 용량 (차수·파라미터 수·학습 반복)</text>
+
+  <!-- 학습 오차: 단조 감소 -->
+  <path d="M 100 100 C 220 200, 380 236, 810 248" stroke="#2d6a4f" stroke-width="2.4" fill="none"/>
+  <text x="760" y="238" text-anchor="end" font-size="14" fill="#2d6a4f">학습 오차</text>
+
+  <!-- 시험 오차: U자 -->
+  <path d="M 100 90 C 230 210, 330 220, 395 205 C 480 190, 640 140, 810 80" stroke="#9d0208" stroke-width="2.4" fill="none"/>
+  <text x="760" y="104" text-anchor="end" font-size="14" fill="#9d0208">시험(일반화) 오차</text>
+
+  <!-- 격차 표시 -->
+  <path d="M 700 116 L 700 240" stroke="#334155" stroke-width="1.2" stroke-dasharray="4 3" fill="none"/>
+  <text x="708" y="180" font-size="13" fill="#334155">일반화 격차</text>
+
+  <!-- 원인 → 해결 -->
+  <rect x="20" y="304" width="410" height="150" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="225" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#7c2d12">과소적합 — 원인 → 해결</text>
+  <text x="36" y="358" font-size="14" fill="#0f172a">모형이 너무 단순 → 용량 확대(차수·층·특징)</text>
+  <text x="36" y="384" font-size="14" fill="#0f172a">특징이 정보를 못 담음 → 특징 공학</text>
+  <text x="36" y="410" font-size="14" fill="#0f172a">규제가 과함 → λ 축소</text>
+  <text x="36" y="436" font-size="14" fill="#0f172a">학습이 덜 됨 → 반복 늘리기·학습률 조정</text>
+
+  <rect x="450" y="304" width="410" height="150" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="655" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#7f1d1d">과적합 — 원인 → 해결</text>
+  <text x="466" y="358" font-size="14" fill="#0f172a">용량 대비 데이터 부족 → 데이터 확보·증강</text>
+  <text x="466" y="384" font-size="14" fill="#0f172a">모형이 잡음까지 학습 → L1/L2 규제·드롭아웃</text>
+  <text x="466" y="410" font-size="14" fill="#0f172a">학습을 너무 오래 함 → 조기 종료</text>
+  <text x="466" y="436" font-size="14" fill="#0f172a">검증 없는 선택 → 교차검증으로 용량 선택</text>
+</svg>
