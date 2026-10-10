@@ -4084,3 +4084,25 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-158
+    title: "Wi-Fi 7 다중 링크 동작(MLO) — 동기·비동기 다중 링크와 링크 간 간섭"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "IEEE 802.11be의 다중 링크 장치 구조, 링크별 채널 접근, 동시 송수신 가능 여부에 따른 동기·비동기 전송 차이를 Wi-Fi 6 단일 링크와 대비"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-159
+    title: "CTEM과 노출 관리 — 취약점 관리에서 검증·동원 단계를 더한 이유"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "Gartner CTEM 5단계를 기존 취약점 관리·공격 표면 관리(ASM)·침해 공격 시뮬레이션(BAS)과 대비하고, 패치 불가 노출과 자산 목록·데이터 통합 요구를 정리"
+    code: none
+    origin: exam
+    status: todo
