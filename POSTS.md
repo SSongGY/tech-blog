@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **275편** · 갱신 2026-10-10
+총 **277편** · 갱신 2026-10-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -269,10 +269,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 40편
+## 주식·재무 (finance) — 42편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-10 | [수익 인식 5단계 — 묶어 판 상품의 매출은 언제 얼마씩 잡히는가](posts/Finance/statements/2026-10-10-revenue-recognition-five-steps/index.md) | 중급 | Python 3.13.5, K-IFRS 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-10-10 | [충당부채와 우발부채 — 아직 나가지 않은 돈을 부채로 잡는 기준](posts/Finance/statements/2026-10-10-provisions-and-contingent-liabilities/index.md) | 중급 | Python 3.13.5, K-IFRS 제1037호 충당부채, 우발부채, 우발자산 | 실행 검증 |
 | 2026-10-10 | [리스 회계 — 임차료가 부채로 올라가면 부채비율과 이익이 어떻게 움직이는가](posts/Finance/statements/2026-10-10-lease-liability-right-of-use/index.md) | 중급 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용), K-IFRS 제1007호 현금흐름표 | 실행 검증 |
 | 2026-10-10 | [영업권 — 인수 대가가 순자산보다 클 때 남는 숫자와 손상검사](posts/Finance/statements/2026-10-10-goodwill-impairment-test/index.md) | 중급 | Python 3.13.5, K-IFRS 제1103호 사업결합, K-IFRS 제1036호 자산손상, K-IFRS 제1038호 무형자산 | 실행 검증 |
 | 2026-10-10 | [배당락과 권리락 — 기준일보다 하루 먼저 주가가 내려가는 이유](posts/Finance/market/2026-10-10-ex-dividend-ex-rights/index.md) | 입문 | Python 3.13.5, 상법 제354조(1984-09-01 시행)·제464조의2(2012-04-15 시행), 소득세법 제129조(2026-07-01 시행), 한국거래소 결제 주기 T+2(2026-10 기준) | 실행 검증 |
