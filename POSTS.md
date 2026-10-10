@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **269편** · 갱신 2026-10-10
+총 **271편** · 갱신 2026-10-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -265,13 +265,15 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 38편
+## 주식·재무 (finance) — 40편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-10 | [리스 회계 — 임차료가 부채로 올라가면 부채비율과 이익이 어떻게 움직이는가](posts/Finance/statements/2026-10-10-lease-liability-right-of-use/index.md) | 중급 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용), K-IFRS 제1007호 현금흐름표 | 실행 검증 |
 | 2026-10-10 | [영업권 — 인수 대가가 순자산보다 클 때 남는 숫자와 손상검사](posts/Finance/statements/2026-10-10-goodwill-impairment-test/index.md) | 중급 | Python 3.13.5, K-IFRS 제1103호 사업결합, K-IFRS 제1036호 자산손상, K-IFRS 제1038호 무형자산 | 실행 검증 |
 | 2026-10-10 | [배당락과 권리락 — 기준일보다 하루 먼저 주가가 내려가는 이유](posts/Finance/market/2026-10-10-ex-dividend-ex-rights/index.md) | 입문 | Python 3.13.5, 상법 제354조(1984-09-01 시행)·제464조의2(2012-04-15 시행), 소득세법 제129조(2026-07-01 시행), 한국거래소 결제 주기 T+2(2026-10 기준) | 실행 검증 |
+| 2026-10-10 | [이연법인세 — 회계이익과 과세소득이 다를 때 생기는 자산과 부채](posts/Finance/statements/2026-10-10-deferred-tax-temporary-difference/index.md) | 심화 | Python 3.13.5, K-IFRS 제1012호 법인세 | 실행 검증 |
+| 2026-10-10 | [손익분기점과 영업레버리지 — 고정비 비중이 이익 변동 폭을 키우는 이유](posts/Finance/ratios/2026-10-10-break-even-operating-leverage/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시 | 실행 검증 |
 | 2026-10-10 | [사업보고서 읽는 순서 — 어디부터 펴는가](posts/Finance/disclosure/2026-10-10-annual-report-reading-order/index.md) | 입문 | 자본시장법 제159조(2018-03-30 시행), 자본시장법 시행령 제168조·제170조, 금융감독원 DART 기업공시 길라잡이(2026-10 열람), 기업공시서식 작성기준(2026-09-30 시행) | 문서 근거 |
 | 2026-10-08 | [자사주 매입과 소각 — 주식 수가 줄 때 지표가 움직이는 이유](posts/Finance/market/2026-10-08-share-buyback-cancellation/index.md) | 입문 | Python 3.13.5, 상법 제341조·제462조(2012-04-15 시행), 개정 상법 제341조의4·제343조(2026-03-06 시행), K-IFRS 제1032호 금융상품: 표시, K-IFRS 제1033호 주당이익 | 실행 검증 |
 | 2026-10-08 | [기본 EPS와 희석 EPS — 전환사채가 있을 때 주당이익](posts/Finance/valuation/2026-10-08-diluted-eps-convertible-bonds/index.md) | 중급 | Python 3.13.5, K-IFRS 제1033호 주당이익 | 실행 검증 |
