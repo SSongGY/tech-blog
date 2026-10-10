@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 영역 -->
+  <rect x="190" y="30" width="500" height="150" rx="8" fill="#eef4fb" stroke="#1e3a8a" stroke-dasharray="6 4"/>
+  <text x="440" y="52" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e3a8a">양자 처리장치 (NISQ)</text>
+  <rect x="40" y="220" width="800" height="150" rx="8" fill="#f4f4f0" stroke="#64748b" stroke-dasharray="6 4"/>
+  <text x="440" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#334155">고전 컴퓨터</text>
+
+  <!-- 1 데이터 -->
+  <rect x="60" y="250" width="150" height="70" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.6"/>
+  <text x="135" y="280" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">① 학습 데이터</text>
+  <text x="135" y="302" text-anchor="middle" font-size="13" fill="#334155">x (고전 값)</text>
+
+  <!-- 2 인코딩 -->
+  <rect x="210" y="70" width="140" height="90" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="280" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">② 인코딩</text>
+  <text x="280" y="122" text-anchor="middle" font-size="13" fill="#0f172a">특징 사상 U(x)</text>
+  <text x="280" y="142" text-anchor="middle" font-size="13" fill="#475569">기저·각도·진폭</text>
+
+  <!-- 3 PQC -->
+  <rect x="370" y="70" width="140" height="90" rx="6" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8"/>
+  <text x="440" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">③ 매개변수 회로</text>
+  <text x="440" y="122" text-anchor="middle" font-size="13" fill="#0f172a">안사츠 W(θ)</text>
+  <text x="440" y="142" text-anchor="middle" font-size="13" fill="#475569">회전·얽힘 게이트</text>
+
+  <!-- 4 측정 -->
+  <rect x="530" y="70" width="140" height="90" rx="6" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.8"/>
+  <text x="600" y="100" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">④ 측정</text>
+  <text x="600" y="122" text-anchor="middle" font-size="13" fill="#0f172a">기댓값 추정</text>
+  <text x="600" y="142" text-anchor="middle" font-size="13" fill="#475569">반복 샘플링</text>
+
+  <!-- 5 비용 -->
+  <rect x="660" y="250" width="160" height="70" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.6"/>
+  <text x="740" y="280" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">⑤ 비용 함수</text>
+  <text x="740" y="302" text-anchor="middle" font-size="13" fill="#334155">C(θ) = 예측 vs 정답</text>
+
+  <!-- 6 최적화 -->
+  <rect x="370" y="250" width="180" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="460" y="280" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">⑥ 고전 최적화기</text>
+  <text x="460" y="302" text-anchor="middle" font-size="13" fill="#334155">θ ← θ − η∇C</text>
+
+  <!-- 화살표 -->
+  <path d="M 150 250 L 240 162" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 350 115 L 368 115" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 510 115 L 528 115" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 640 162 L 720 248" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 660 285 L 552 285" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+  <path d="M 440 250 L 440 162" stroke="#2d6a4f" stroke-width="1.8" fill="none" marker-end="url(#arrow)"/>
+  <text x="448" y="212" font-size="13" fill="#2d6a4f">θ 갱신 — 수렴할 때까지 반복</text>
+
+  <!-- 병목 주석 -->
+  <text x="180" y="200" text-anchor="end" font-size="13" fill="#9d0208">적재 병목</text>
+  <text x="680" y="200" font-size="13" fill="#9d0208">샘플링 오차·잡음</text>
+  <text x="300" y="196" font-size="13" fill="#9d0208">기울기 소실</text>
+</svg>
