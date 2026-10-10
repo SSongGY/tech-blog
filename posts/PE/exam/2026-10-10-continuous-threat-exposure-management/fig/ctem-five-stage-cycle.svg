@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">CTEM 5단계 순환 — 범위를 정하고, 찾고, 고르고, 확인하고, 고친다</text>
+  <text x="30" y="56" font-size="13" fill="#555">한 바퀴가 끝나면 다음 범위로 다시 돈다. 단계마다 산출물이 다음 단계의 입력이 된다</text>
+
+  <!-- stage 1 -->
+  <rect x="40" y="96" width="150" height="86" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="115" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">① 범위 설정</text>
+  <text x="115" y="142" font-size="13" text-anchor="middle" fill="#555">Scoping</text>
+  <text x="115" y="166" font-size="13" text-anchor="middle" fill="#333">핵심 업무·자산</text>
+
+  <!-- stage 2 -->
+  <rect x="210" y="96" width="150" height="86" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="285" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">② 발견</text>
+  <text x="285" y="142" font-size="13" text-anchor="middle" fill="#555">Discovery</text>
+  <text x="285" y="166" font-size="13" text-anchor="middle" fill="#333">자산·노출 목록</text>
+
+  <!-- stage 3 -->
+  <rect x="380" y="96" width="150" height="86" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="455" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">③ 우선순위</text>
+  <text x="455" y="142" font-size="13" text-anchor="middle" fill="#555">Prioritization</text>
+  <text x="455" y="166" font-size="13" text-anchor="middle" fill="#333">위협·영향 순 정렬</text>
+
+  <!-- stage 4 -->
+  <rect x="550" y="96" width="150" height="86" rx="8" fill="#fff6ea" stroke="#b45309" stroke-width="1.5"/>
+  <text x="625" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">④ 검증</text>
+  <text x="625" y="142" font-size="13" text-anchor="middle" fill="#555">Validation</text>
+  <text x="625" y="166" font-size="13" text-anchor="middle" fill="#333">공격자 시각 확인</text>
+
+  <!-- stage 5 -->
+  <rect x="720" y="96" width="130" height="86" rx="8" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="785" y="122" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">⑤ 동원</text>
+  <text x="785" y="142" font-size="13" text-anchor="middle" fill="#555">Mobilization</text>
+  <text x="785" y="166" font-size="13" text-anchor="middle" fill="#333">부서 간 조치</text>
+
+  <!-- arrows -->
+  <line x1="190" y1="139" x2="208" y2="139" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="360" y1="139" x2="378" y2="139" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="530" y1="139" x2="548" y2="139" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="700" y1="139" x2="718" y2="139" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- loop back -->
+  <path d="M 785 182 L 785 222 L 115 222 L 115 184" stroke="#2d6a4f" stroke-width="1.8" fill="none" marker-end="url(#ar3)"/>
+  <text x="450" y="242" font-size="13" text-anchor="middle" fill="#2d6a4f">조치 결과를 반영해 다음 범위로 다시 순환</text>
+
+  <!-- brackets -->
+  <path d="M 40 270 L 40 282 L 700 282 L 700 270" stroke="#555" stroke-width="1.3" fill="none"/>
+  <text x="370" y="304" font-size="13" text-anchor="middle" fill="#1b1b1b">진단 — 무엇이 실제로 위험한가</text>
+  <path d="M 720 270 L 720 282 L 850 282 L 850 270" stroke="#555" stroke-width="1.3" fill="none"/>
+  <text x="785" y="304" font-size="13" text-anchor="middle" fill="#1b1b1b">조치</text>
+
+  <!-- contrast with VM -->
+  <line x1="30" y1="330" x2="850" y2="330" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="358" font-size="14" font-weight="bold" fill="#9d0208">기존 취약점 관리</text>
+  <text x="180" y="358" font-size="13" fill="#333">정기 스캔 → 점수순 목록 → 패치. 패치 불가 노출(설정·SaaS)은 빠지기 쉽다</text>
+  <text x="30" y="390" font-size="14" font-weight="bold" fill="#2d6a4f">CTEM</text>
+  <text x="180" y="390" font-size="13" fill="#333">업무 범위 → 패치 불가 노출까지 발견 → 실제로 뚫리는지 확인 → 조치</text>
+
+  <text x="30" y="430" font-size="13" fill="#555">④ 검증에는 침해·공격 시뮬레이션(BAS), 자동 모의해킹, 레드팀이 쓰인다</text>
+  <text x="30" y="450" font-size="13" fill="#555">진단·조치 구분은 해설 자료의 분류다</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>
