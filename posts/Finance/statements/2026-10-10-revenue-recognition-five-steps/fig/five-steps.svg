@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">수익 인식 5단계와 묶음 계약 960의 배분</text>
+
+  <!-- 1~3단계 -->
+  <rect x="30" y="55" width="250" height="62" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="155" y="81" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">1단계 계약 식별</text>
+  <text x="155" y="102" text-anchor="middle" font-size="13" fill="#495057">다섯 요건 (문단 9)</text>
+
+  <rect x="315" y="55" width="250" height="62" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="440" y="81" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">2단계 수행의무 식별</text>
+  <text x="440" y="102" text-anchor="middle" font-size="13" fill="#495057">구별되는가 (문단 22·27)</text>
+
+  <rect x="600" y="55" width="250" height="62" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="725" y="81" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">3단계 거래가격 산정</text>
+  <text x="725" y="102" text-anchor="middle" font-size="13" fill="#495057">받을 것으로 예상하는 대가 960</text>
+
+  <g stroke="#495057" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <line x1="280" y1="86" x2="313" y2="86"/>
+    <line x1="565" y1="86" x2="598" y2="86"/>
+    <line x1="725" y1="117" x2="725" y2="150"/>
+    <line x1="600" y1="182" x2="472" y2="182"/>
+    <line x1="230" y1="214" x2="160" y2="262"/>
+    <line x1="350" y1="214" x2="560" y2="262"/>
+    <line x1="160" y1="322" x2="160" y2="358"/>
+    <line x1="560" y1="322" x2="560" y2="358"/>
+  </g>
+
+  <!-- 4단계 -->
+  <rect x="600" y="152" width="250" height="62" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="725" y="178" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">4단계 배분</text>
+  <text x="725" y="199" text-anchor="middle" font-size="13" fill="#b45309">개별 판매가격 비율 (문단 74)</text>
+
+  <rect x="140" y="152" width="330" height="62" rx="6" fill="#ffffff" stroke="#b45309"/>
+  <text x="305" y="178" text-anchor="middle" font-size="13" fill="#1b1b1b">개별 판매가격 900 : 300 = 75% : 25%</text>
+  <text x="305" y="199" text-anchor="middle" font-size="13" fill="#b45309">할인 240도 같은 비율로 나뉜다 (문단 81)</text>
+
+  <!-- 수행의무 두 개 -->
+  <rect x="30" y="264" width="260" height="58" rx="6" fill="#e9f5ee" stroke="#2d6a4f"/>
+  <text x="160" y="289" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">장비 720</text>
+  <text x="160" y="310" text-anchor="middle" font-size="13" fill="#2d6a4f">수행의무 ①</text>
+
+  <rect x="430" y="264" width="260" height="58" rx="6" fill="#e9f5ee" stroke="#2d6a4f"/>
+  <text x="560" y="289" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">유지보수 240</text>
+  <text x="560" y="310" text-anchor="middle" font-size="13" fill="#2d6a4f">수행의무 ②</text>
+
+  <!-- 5단계 -->
+  <rect x="30" y="360" width="260" height="62" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="160" y="386" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">5단계 한 시점에 인식</text>
+  <text x="160" y="407" text-anchor="middle" font-size="13" fill="#495057">인도한 1년차에 720 (문단 38)</text>
+
+  <rect x="430" y="360" width="260" height="62" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="560" y="386" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">5단계 기간에 걸쳐 인식</text>
+  <text x="560" y="407" text-anchor="middle" font-size="13" fill="#495057">해마다 80씩 3년 (문단 35)</text>
+
+  <line x1="30" y1="444" x2="850" y2="444" stroke="#ced4da"/>
+  <text x="40" y="466" font-size="13" fill="#495057">1년차 매출 800 = 720 + 80. 1년차 초에 960을 받았으므로 기말 계약부채는 160이다.</text>
+  <text x="40" y="486" font-size="13" fill="#495057">단위 백만원. 가나전자와 숫자는 가상이며 code/output.txt [1]·[2]에 있다.</text>
+</svg>

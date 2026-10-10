@@ -4106,3 +4106,25 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: fin-041
+    title: "수익 인식 5단계 — 묶어 판 상품의 매출은 언제 얼마씩 잡히는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 수익인식, 수행의무, 계약부채]
+    difficulty: 중급
+    angle: "K-IFRS 제1115호의 5단계(계약 식별·수행의무 식별·거래가격 산정·배분·인식). 기기와 3년 유지보수를 묶어 판 가상 회사로 개별 판매가격 비율 배분과 연도별 매출·계약부채를 계산하고, 일시 인식과 기간 인식이 손익에 만드는 차이를 보인다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-042
+    title: "충당부채와 우발부채 — 아직 나가지 않은 돈을 부채로 잡는 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 충당부채, 우발부채, 판매보증]
+    difficulty: 중급
+    angle: "K-IFRS 제1037호의 충당부채 인식 3요건과 우발부채·우발자산 구분, 최선의 추정치(기댓값·가장 가능성 높은 금액)와 현재가치 할인. 판매보증 비율 추정만 다른 두 가상 회사로 연도별 비용·부채 잔액을 계산한다"
+    code: python
+    origin: manual
+    status: writing
