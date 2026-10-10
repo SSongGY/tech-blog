@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="570" viewBox="0 0 880 570" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="570" fill="#ffffff"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">매출과 영업이익이 같은 두 회사 — 원가선의 높이와 기울기가 다르다</text>
+
+  <!-- 좌표: x = 90 + 매출 × 0.47, y = 440 − 금액 × 0.25 (억원) -->
+  <!-- 눈금선 -->
+  <g stroke="#e9ecef" stroke-width="1">
+    <line x1="90" y1="390" x2="748" y2="390"/>
+    <line x1="90" y1="340" x2="748" y2="340"/>
+    <line x1="90" y1="290" x2="748" y2="290"/>
+    <line x1="90" y1="240" x2="748" y2="240"/>
+    <line x1="90" y1="190" x2="748" y2="190"/>
+    <line x1="90" y1="140" x2="748" y2="140"/>
+    <line x1="90" y1="90" x2="748" y2="90"/>
+  </g>
+  <!-- 축 -->
+  <line x1="90" y1="440" x2="748" y2="440" stroke="#495057" stroke-width="1.5"/>
+  <line x1="90" y1="440" x2="90" y2="80" stroke="#495057" stroke-width="1.5"/>
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <text x="90" y="458">0</text>
+    <text x="184" y="458">200</text>
+    <text x="278" y="458">400</text>
+    <text x="372" y="458">600</text>
+    <text x="466" y="458">800</text>
+    <text x="560" y="458">1,000</text>
+    <text x="654" y="458">1,200</text>
+    <text x="748" y="458">1,400</text>
+    <text x="419" y="478">매출 (억원)</text>
+  </g>
+  <g font-size="13" fill="#495057" text-anchor="end">
+    <text x="82" y="394">200</text>
+    <text x="82" y="344">400</text>
+    <text x="82" y="294">600</text>
+    <text x="82" y="244">800</text>
+    <text x="82" y="194">1,000</text>
+    <text x="82" y="144">1,200</text>
+    <text x="82" y="94">1,400</text>
+  </g>
+
+  <!-- 매출선 -->
+  <line x1="90" y1="440" x2="748" y2="90" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="756" y="94" font-size="13" fill="#1b1b1b">매출</text>
+
+  <!-- 가나전자 총원가 = 600 + 0.3 × 매출 -->
+  <line x1="90" y1="290" x2="748" y2="185" stroke="#b45309" stroke-width="2.5"/>
+  <text x="756" y="189" font-size="13" fill="#b45309">가나 총원가</text>
+  <text x="100" y="308" font-size="13" fill="#b45309">가나 고정비 600</text>
+
+  <!-- 다라물산 총원가 = 200 + 0.7 × 매출 -->
+  <line x1="90" y1="390" x2="748" y2="145" stroke="#495057" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <text x="756" y="149" font-size="13" fill="#495057">다라 총원가</text>
+  <line x1="92" y1="390" x2="222" y2="420" stroke="#495057" stroke-width="1"/>
+  <text x="226" y="424" font-size="13" fill="#495057">다라 고정비 200</text>
+
+  <!-- 손익분기점 -->
+  <circle cx="492.9" cy="225.7" r="5" fill="#b45309"/>
+  <text x="500" y="264" font-size="13" fill="#b45309">가나 손익분기 857</text>
+  <circle cx="403.3" cy="273.3" r="5" fill="#495057"/>
+  <text x="400" y="306" font-size="13" fill="#495057">다라 손익분기 667</text>
+
+  <!-- 매출 1,000 -->
+  <line x1="560" y1="190" x2="560" y2="440" stroke="#2d6a4f" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="560" cy="215" r="4" fill="#2d6a4f"/>
+  <line x1="566" y1="219" x2="600" y2="320" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="604" y="330" font-size="13" fill="#2d6a4f">매출 1,000에서 두 원가선이 만난다</text>
+  <text x="604" y="348" font-size="13" fill="#2d6a4f">원가 900, 영업이익 100으로 같다</text>
+
+  <line x1="30" y1="494" x2="850" y2="494" stroke="#ced4da"/>
+  <text x="40" y="514" font-size="13" fill="#495057">원가선의 세로축 높이가 고정비, 기울기가 변동비율(가나 0.3, 다라 0.7)이다. 매출선과 만나는 점이 손익분기점.</text>
+  <text x="40" y="534" font-size="13" fill="#495057">손익분기점을 지나면 매출 1이 늘 때 영업이익이 가나 0.7, 다라 0.3씩 는다.</text>
+  <text x="40" y="554" font-size="13" fill="#495057">회사와 숫자는 가상이며 code/output.txt [1]에 있다.</text>
+</svg>
