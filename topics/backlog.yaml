@@ -4127,4 +4127,4 @@ topics:
     angle: "K-IFRS 제1037호의 충당부채 인식 3요건과 우발부채·우발자산 구분, 최선의 추정치(기댓값·가장 가능성 높은 금액)와 현재가치 할인. 판매보증 비율 추정만 다른 두 가상 회사로 연도별 비용·부채 잔액을 계산한다"
     code: python
     origin: manual
-    status: writing
+    status: done

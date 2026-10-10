@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">충당부채·우발부채·공시하지 않음을 가르는 순서</text>
+
+  <!-- 질문 1 -->
+  <rect x="40" y="55" width="330" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="205" y="79" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 과거사건으로 생긴 현재의무인가</text>
+  <text x="205" y="99" text-anchor="middle" font-size="13" fill="#495057">이행 말고 현실적 대안이 없는가 (문단 17)</text>
+
+  <!-- 질문 2 -->
+  <rect x="40" y="170" width="330" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="205" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 자원이 유출될 가능성이 높은가</text>
+  <text x="205" y="214" text-anchor="middle" font-size="13" fill="#495057">일어날 가능성 &gt; 안 일어날 가능성 (문단 23)</text>
+
+  <!-- 질문 3 -->
+  <rect x="40" y="285" width="330" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="205" y="309" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 금액을 신뢰성 있게 추정할 수 있는가</text>
+  <text x="205" y="329" text-anchor="middle" font-size="13" fill="#495057">극히 드문 경우 외에는 가능 (문단 25)</text>
+
+  <!-- 충당부채 -->
+  <rect x="40" y="400" width="330" height="56" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="205" y="424" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">충당부채 — 재무상태표에 인식</text>
+  <text x="205" y="444" text-anchor="middle" font-size="13" fill="#2d6a4f">최선의 추정치로 측정 (문단 14·36)</text>
+
+  <!-- 가능성 희박? -->
+  <rect x="500" y="170" width="340" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="670" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">유출 가능성이 희박한가</text>
+  <text x="670" y="214" text-anchor="middle" font-size="13" fill="#b45309">수치 기준은 기준서에 없다 (문단 28·86)</text>
+
+  <!-- 우발부채 -->
+  <rect x="500" y="285" width="340" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="670" y="309" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">우발부채 — 인식하지 않고 주석 공시</text>
+  <text x="670" y="329" text-anchor="middle" font-size="13" fill="#b45309">성격·재무적 영향 추정액 (문단 27·86)</text>
+
+  <!-- 아무것도 -->
+  <rect x="500" y="55" width="340" height="56" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="670" y="79" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">인식도 공시도 하지 않음</text>
+  <text x="670" y="99" text-anchor="middle" font-size="13" fill="#495057">현재의무가 아니고 가능성도 희박</text>
+
+  <g stroke="#495057" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <line x1="205" y1="111" x2="205" y2="168"/>
+    <line x1="205" y1="226" x2="205" y2="283"/>
+    <line x1="205" y1="341" x2="205" y2="398"/>
+    <line x1="370" y1="198" x2="498" y2="198"/>
+    <line x1="370" y1="313" x2="498" y2="313"/>
+    <line x1="370" y1="90" x2="498" y2="190"/>
+    <line x1="670" y1="170" x2="670" y2="113"/>
+    <line x1="670" y1="226" x2="670" y2="283"/>
+  </g>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="215" y="145">예</text>
+    <text x="215" y="260">예</text>
+    <text x="215" y="375">예</text>
+    <text x="440" y="128">아니오 (가능한 의무)</text>
+    <text x="420" y="190">아니오</text>
+    <text x="420" y="305">아니오</text>
+    <text x="680" y="145">예</text>
+    <text x="680" y="260">아니오</text>
+  </g>
+
+  <line x1="30" y1="476" x2="850" y2="476" stroke="#ced4da"/>
+  <text x="40" y="500" font-size="13" fill="#495057">패소 확률 49%인 소송은 우발부채로 부채 0, 51%면 충당부채 100이 된다. 숫자는 가상이며 code/output.txt [1]에 있다.</text>
+</svg>
