@@ -4128,3 +4128,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-160
+    title: "변분 양자 알고리즘(VQA)과 양자머신러닝 — 하이브리드 루프와 기울기 소실 고원"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "VQA 구성요소 4가지(비용 함수·안사츠·기울기·최적화기), 인코딩 3방식의 큐비트·회로 깊이 맞교환, HHL 가속의 전제 4가지와 탈양자화를 원 논문으로 정리"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-161
+    title: "가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "가명정보 처리 가이드라인의 암호화 6종을 분석 요구(비교·스키마 유지·암호문 연산·결합 차단)별로 나누고, 순서보존 암호가 순서 정보를 노출하는 한계를 원 논문으로 확인"
+    code: none
+    origin: exam
+    status: todo

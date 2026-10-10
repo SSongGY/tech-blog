@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **277편** · 갱신 2026-10-10
+총 **279편** · 갱신 2026-10-11
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -222,10 +222,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 42편
+## 기출문제 (exam) — 44편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-11 | [기출문제 — 양자머신러닝(QML)](posts/PE/exam/2026-10-11-quantum-machine-learning/index.md) | 심화 | Biamonte et al., Nature 549 (2017), Cerezo et al., Nature Reviews Physics 3 (2021), PennyLane 0.45.1 문서 | 문서 근거 |
+| 2026-10-11 | [기출문제 — 개인정보보호를 위한 가명처리 기법](posts/PE/exam/2026-10-11-pseudonymization-techniques/index.md) | 중급 | 가명정보 처리 가이드라인 2022.4, ENISA Pseudonymisation techniques and best practices 2019.12, Python 3.13.5 | 실행 검증 |
 | 2026-10-10 | [기출문제 — Wi-Fi 7(IEEE 802.11be)](posts/PE/exam/2026-10-10-wi-fi-7-ieee-802-11be/index.md) | 중급 | IEEE 802.11be-2024 (2024-09 승인, 2025-07 발행), Wi-Fi CERTIFIED 7 (Wi-Fi Alliance, 2024-01), Deng et al., arXiv:2007.13401v3 (2020-08) | 문서 근거 |
 | 2026-10-10 | [기출문제 — 과적합과 과소적합의 발생 원인과 해결 방안](posts/PE/exam/2026-10-10-overfitting-underfitting-causes-remedies/index.md) | 중급 | Python 3.13.5, Goodfellow·Bengio·Courville, Deep Learning §5.2 (MIT Press, 2016), Google ML Crash Course Overfitting (2025) | 실행 검증 |
 | 2026-10-10 | [기출문제 — 맥케이브 순환복잡도](posts/PE/exam/2026-10-10-mccabe-cyclomatic-complexity/index.md) | 중급 | Python 3.13.5, NIST SP 500-235 (1996), McCabe, IEEE TSE SE-2(4) (1976) | 실행 검증 |
