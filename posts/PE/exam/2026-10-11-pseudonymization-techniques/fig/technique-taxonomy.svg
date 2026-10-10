@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fdfdfb"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">가명처리 기법 — 처리 방식 2분류 + 기타, 기술군 6개</text>
+
+  <!-- 삭제 -->
+  <rect x="20" y="52" width="190" height="230" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="115" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#7f1d1d">① 개인정보 삭제</text>
+  <text x="115" y="100" text-anchor="middle" font-size="13" fill="#7f1d1d">삭제기술</text>
+  <text x="36" y="132" font-size="14" fill="#0f172a">· 삭제</text>
+  <text x="36" y="158" font-size="14" fill="#0f172a">· 부분삭제</text>
+  <text x="36" y="184" font-size="14" fill="#0f172a">· 행 항목 삭제</text>
+  <text x="36" y="210" font-size="14" fill="#0f172a">· 로컬 삭제</text>
+  <text x="36" y="252" font-size="13" fill="#7f1d1d">값 자체를 없앤다</text>
+  <text x="36" y="270" font-size="13" fill="#7f1d1d">→ 되돌릴 수 없다</text>
+
+  <!-- 대체 -->
+  <rect x="226" y="52" width="634" height="230" rx="6" fill="#eef4fb" stroke="#1e3a8a" stroke-width="1.6"/>
+  <text x="543" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e3a8a">② 개인정보 일부 또는 전부 대체</text>
+
+  <rect x="240" y="92" width="146" height="176" rx="5" fill="#ffffff" stroke="#64748b"/>
+  <text x="313" y="114" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">통계도구</text>
+  <text x="252" y="140" font-size="13" fill="#0f172a">· 총계처리</text>
+  <text x="252" y="162" font-size="13" fill="#0f172a">· 부분총계</text>
+  <text x="252" y="196" font-size="13" fill="#0f172a">+ 마스킹</text>
+  <text x="252" y="214" font-size="13" fill="#475569">(삭제기술이지만</text>
+  <text x="252" y="232" font-size="13" fill="#475569">대체로 분류)</text>
+
+  <rect x="396" y="92" width="146" height="176" rx="5" fill="#ffffff" stroke="#64748b"/>
+  <text x="469" y="114" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">일반화(범주화)</text>
+  <text x="408" y="140" font-size="13" fill="#0f172a">· 라운딩 3종</text>
+  <text x="408" y="162" font-size="13" fill="#0f172a">· 상하단코딩</text>
+  <text x="408" y="184" font-size="13" fill="#0f172a">· 로컬 일반화</text>
+  <text x="408" y="206" font-size="13" fill="#0f172a">· 범위 방법</text>
+  <text x="408" y="228" font-size="13" fill="#0f172a">· 문자 범주화</text>
+
+  <rect x="552" y="92" width="146" height="176" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="625" y="114" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">암호화</text>
+  <text x="564" y="140" font-size="13" fill="#0f172a">· 양방향</text>
+  <text x="564" y="162" font-size="13" fill="#0f172a">· 일방향(해시)</text>
+  <text x="564" y="184" font-size="13" fill="#0f172a">· 순서보존</text>
+  <text x="564" y="206" font-size="13" fill="#0f172a">· 형태보존</text>
+  <text x="564" y="228" font-size="13" fill="#0f172a">· 동형</text>
+  <text x="564" y="250" font-size="13" fill="#0f172a">· 다형성</text>
+
+  <rect x="708" y="92" width="140" height="176" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="778" y="114" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">무작위화</text>
+  <text x="720" y="140" font-size="13" fill="#0f172a">· 잡음 추가</text>
+  <text x="720" y="162" font-size="13" fill="#0f172a">· 순열(치환)</text>
+  <text x="720" y="184" font-size="13" fill="#0f172a">· 토큰화</text>
+  <text x="720" y="206" font-size="13" fill="#0f172a">· (의사)난수</text>
+  <text x="720" y="224" font-size="13" fill="#0f172a">  생성기</text>
+
+  <!-- 기타 -->
+  <rect x="20" y="300" width="840" height="64" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="36" y="326" font-size="15" font-weight="bold" fill="#2d6a4f">③ 기타 — 가명·익명처리를 위한 다양한 기술</text>
+  <text x="36" y="350" font-size="14" fill="#0f172a">표본추출 · 해부화 · 재현데이터 · 동형비밀분산 · 차분 프라이버시</text>
+
+  <!-- 범례 -->
+  <rect x="20" y="384" width="16" height="16" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="44" y="397" font-size="13" fill="#0f172a">키·매핑표 같은 추가정보가 생길 수 있는 기술군 — 그 추가정보는 분리해 보관한다</text>
+  <text x="20" y="424" font-size="13" fill="#475569">가이드라인은 이 분류가 이해를 돕기 위한 것이고 표준이 아니라고 밝힌다 (ISO/IEC 20889, ENISA 보고서 참고)</text>
+</svg>
