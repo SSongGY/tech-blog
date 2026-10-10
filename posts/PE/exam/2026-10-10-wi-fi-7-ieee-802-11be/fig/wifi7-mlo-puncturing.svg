@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">Wi-Fi 7 — 링크를 여러 개 묶고, 막힌 칸은 비워 둔다</text>
+  <text x="30" y="56" font-size="13" fill="#555">위: 다중 링크 동작(MLO) · 아래: 320 MHz 채널과 프리앰블 펑처링</text>
+
+  <!-- AP side -->
+  <rect x="40" y="80" width="240" height="210" rx="10" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="160" y="104" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">다중 링크 AP</text>
+  <text x="160" y="122" font-size="13" text-anchor="middle" fill="#555">링크 3개를 한 장치가 관리</text>
+
+  <rect x="70" y="136" width="180" height="40" rx="6" fill="#f3f3ef" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="160" y="161" font-size="13" text-anchor="middle" fill="#1b1b1b">AP · 2.4 GHz</text>
+  <rect x="70" y="186" width="180" height="40" rx="6" fill="#f3f3ef" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="160" y="211" font-size="13" text-anchor="middle" fill="#1b1b1b">AP · 5 GHz</text>
+  <rect x="70" y="236" width="180" height="40" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="160" y="261" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">AP · 6 GHz (320 MHz)</text>
+
+  <!-- STA side -->
+  <rect x="600" y="80" width="240" height="210" rx="10" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="720" y="104" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">다중 링크 단말</text>
+  <text x="720" y="122" font-size="13" text-anchor="middle" fill="#555">다중 링크 설정을 한 번에 맺음</text>
+
+  <rect x="630" y="136" width="180" height="40" rx="6" fill="#f3f3ef" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="720" y="161" font-size="13" text-anchor="middle" fill="#1b1b1b">STA · 2.4 GHz</text>
+  <rect x="630" y="186" width="180" height="40" rx="6" fill="#f3f3ef" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="720" y="211" font-size="13" text-anchor="middle" fill="#1b1b1b">STA · 5 GHz</text>
+  <rect x="630" y="236" width="180" height="40" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="720" y="261" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">STA · 6 GHz (320 MHz)</text>
+
+  <!-- links -->
+  <line x1="252" y1="156" x2="628" y2="156" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="440" y="148" font-size="13" text-anchor="middle" fill="#333">링크 1</text>
+  <line x1="252" y1="206" x2="628" y2="206" stroke="#3b3b3b" stroke-width="1.5" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <text x="440" y="198" font-size="13" text-anchor="middle" fill="#333">링크 2</text>
+  <line x1="252" y1="256" x2="628" y2="256" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ar3)" marker-start="url(#ar3)"/>
+  <text x="440" y="248" font-size="13" text-anchor="middle" fill="#2d6a4f">링크 3</text>
+  <text x="440" y="312" font-size="13" text-anchor="middle" fill="#b45309">링크별로 채널 접근 · 부하 분산 · 한쪽이 막히면 다른 링크로</text>
+
+  <!-- channel bar -->
+  <text x="40" y="340" font-size="14" font-weight="bold" fill="#1b1b1b">320 MHz 채널 = 20 MHz 칸 16개</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="40"  y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="90"  y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="140" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="190" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="240" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="290" y="350" width="50" height="40" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="315" y="375" fill="#9d0208">간섭</text>
+    <rect x="340" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="390" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="440" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="490" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="540" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="590" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="640" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="690" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="740" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+    <rect x="790" y="350" width="50" height="40" fill="#eef5f0" stroke="#2d6a4f"/>
+  </g>
+  <path d="M 315 400 L 315 418" stroke="#9d0208" stroke-width="1.5" fill="none"/>
+  <text x="40" y="438" font-size="13" fill="#9d0208">펑처링: 간섭 받는 20 MHz 한 칸만 비우고 나머지 15칸으로 보낸다</text>
+  <text x="40" y="458" font-size="13" fill="#555">펑처링이 없으면 간섭 칸을 피해 더 좁은 연속 채널로 줄여야 한다</text>
+
+  <line x1="30" y1="474" x2="850" y2="474" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="492" font-size="13" fill="#555">한 단말에 여러 RU를 묶어 주는 Multi-RU, 4096-QAM은 그림에서 뺐다</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b3b3b"/>
+    </marker>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>
