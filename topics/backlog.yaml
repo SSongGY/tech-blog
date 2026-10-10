@@ -4094,7 +4094,7 @@ topics:
     angle: "IEEE 802.11be의 다중 링크 장치 구조, 링크별 채널 접근, 동시 송수신 가능 여부에 따른 동기·비동기 전송 차이를 Wi-Fi 6 단일 링크와 대비"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-159
     title: "CTEM과 노출 관리 — 취약점 관리에서 검증·동원 단계를 더한 이유"
     category: PE
@@ -4105,4 +4105,4 @@ topics:
     angle: "Gartner CTEM 5단계를 기존 취약점 관리·공격 표면 관리(ASM)·침해 공격 시뮬레이션(BAS)과 대비하고, 패치 불가 노출과 자산 목록·데이터 통합 요구를 정리"
     code: none
     origin: exam
-    status: todo
+    status: done

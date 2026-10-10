@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **273편** · 갱신 2026-10-10
+총 **275편** · 갱신 2026-10-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -74,10 +74,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 101편
+## 기술사 (pe) — 103편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-10 | [Wi-Fi 7 다중 링크 동작(MLO) — 동기·비동기 다중 링크와 링크 간 간섭](posts/PE/network/2026-10-10-wi-fi-7-multi-link-operation-str-nstr/index.md) | 중급 | IEEE 802.11be-2024 (2024-09 승인), Deng et al., arXiv:2007.13401v3 (2020-08), López-Raventós·Bellalta, arXiv:2201.07499 (2022-01), Carrascosa-Zamacois et al., arXiv:2210.07695 (2022-10) | 문서 근거 |
+| 2026-10-10 | [CTEM과 노출 관리 — 취약점 관리에서 검증·동원 단계를 더한 이유](posts/PE/security/2026-10-10-ctem-exposure-management-vs-vm-asm-bas/index.md) | 중급 | Gartner G00796532 (2023-10-16), NIST SP 800-40r4 (2022-04), FIRST EPSS (2026-10-10 조회), CISA KEV (BOD 22-01, BOD 26-04 2026-06-10), IBM Think CTEM (2026-06-05), HackerOne CTEM Guide (2026-07-02), Infosecurity Europe CTEM (2026-08-14) | 문서 근거 |
 | 2026-10-10 | [편향-분산 트레이드오프와 규제 — 모형 용량을 고르는 방법](posts/PE/data-analysis/2026-10-10-bias-variance-tradeoff-regularization/index.md) | 중급 | Python 3.13.5, Geman·Bienenstock·Doursat, Neural Computation 4(1) (1992), Srivastava et al., JMLR 15 (2014) | 실행 검증 |
 | 2026-10-10 | [기본 경로 테스트 — 순환복잡도로 테스트 경로를 고르는 절차](posts/PE/software-engineering/2026-10-10-basis-path-testing-baseline-method/index.md) | 중급 | Python 3.13.5, NIST SP 500-235 (1996) | 실행 검증 |
 | 2026-10-09 | [무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경](posts/PE/software-engineering/2026-10-09-zero-downtime-deployment-expand-contract/index.md) | 중급 | Kubernetes v1.37 문서 (apps/v1 Deployment), Google SRE Workbook (2018), Sadalage·Fowler, Evolutionary Database Design (2016-05 갱신) | 문서 근거 |
