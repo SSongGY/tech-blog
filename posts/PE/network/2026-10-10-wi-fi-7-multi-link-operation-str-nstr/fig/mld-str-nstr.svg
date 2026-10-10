@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">다중 링크 장치(MLD)의 구조와 두 가지 전송 방식</text>
+  <text x="30" y="56" font-size="13" fill="#555">왼쪽: MAC을 링크 공통부와 링크별 부분으로 나눈다 · 오른쪽: 동시 송수신 가능 여부가 전송 방식을 가른다</text>
+
+  <!-- MLD architecture -->
+  <rect x="30" y="76" width="370" height="330" rx="10" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="215" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">다중 링크 장치 (AP MLD · 단말 MLD)</text>
+
+  <rect x="55" y="114" width="320" height="70" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="215" y="137" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">상위 MAC — 링크 공통</text>
+  <text x="215" y="157" font-size="13" text-anchor="middle" fill="#1b1b1b">순번 부여 · MSDU 집성 · 암호화</text>
+  <text x="215" y="175" font-size="13" text-anchor="middle" fill="#1b1b1b">연결 설정 · 인증 (한 번만)</text>
+
+  <rect x="55" y="214" width="150" height="70" rx="6" fill="#f3f3ef" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="130" y="237" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">하위 MAC · 링크 1</text>
+  <text x="130" y="257" font-size="13" text-anchor="middle" fill="#1b1b1b">채널 접근(EDCA)</text>
+  <text x="130" y="275" font-size="13" text-anchor="middle" fill="#1b1b1b">헤더·CRC 생성</text>
+
+  <rect x="225" y="214" width="150" height="70" rx="6" fill="#f3f3ef" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="300" y="237" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">하위 MAC · 링크 2</text>
+  <text x="300" y="257" font-size="13" text-anchor="middle" fill="#1b1b1b">채널 접근(EDCA)</text>
+  <text x="300" y="275" font-size="13" text-anchor="middle" fill="#1b1b1b">헤더·CRC 생성</text>
+
+  <rect x="55" y="310" width="150" height="40" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="130" y="335" font-size="13" text-anchor="middle" fill="#1b1b1b">PHY · 5 GHz</text>
+  <rect x="225" y="310" width="150" height="40" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <text x="300" y="335" font-size="13" text-anchor="middle" fill="#1b1b1b">PHY · 6 GHz</text>
+
+  <line x1="130" y1="184" x2="130" y2="212" stroke="#3b3b3b" stroke-width="1.3"/>
+  <line x1="300" y1="184" x2="300" y2="212" stroke="#3b3b3b" stroke-width="1.3"/>
+  <line x1="130" y1="284" x2="130" y2="308" stroke="#3b3b3b" stroke-width="1.3"/>
+  <line x1="300" y1="284" x2="300" y2="308" stroke="#3b3b3b" stroke-width="1.3"/>
+
+  <text x="215" y="378" font-size="13" text-anchor="middle" fill="#555">상위 계층에는 MAC 주소 하나로 보인다</text>
+  <text x="215" y="396" font-size="13" text-anchor="middle" fill="#555">→ 트래픽을 링크 사이로 옮겨도 위에서 모른다</text>
+
+  <!-- STR timeline -->
+  <text x="430" y="96" font-size="14" font-weight="bold" fill="#2d6a4f">비동기 전송 (STR 장치)</text>
+  <text x="430" y="132" font-size="13" fill="#333">링크 1</text>
+  <text x="430" y="170" font-size="13" fill="#333">링크 2</text>
+  <line x1="485" y1="128" x2="850" y2="128" stroke="#d8d8d2"/>
+  <line x1="485" y1="166" x2="850" y2="166" stroke="#d8d8d2"/>
+  <rect x="490" y="114" width="150" height="26" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="565" y="132" font-size="13" text-anchor="middle" fill="#2d6a4f">데이터 송신</text>
+  <rect x="646" y="114" width="44" height="26" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="668" y="132" font-size="13" text-anchor="middle" fill="#1b1b1b">ACK</text>
+  <rect x="490" y="152" width="70" height="26" fill="#ffffff" stroke="#b45309" stroke-dasharray="4 3"/>
+  <text x="525" y="170" font-size="13" text-anchor="middle" fill="#b45309">백오프</text>
+  <rect x="560" y="152" width="170" height="26" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="645" y="170" font-size="13" text-anchor="middle" fill="#2d6a4f">데이터 송신</text>
+  <rect x="736" y="152" width="44" height="26" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="758" y="170" font-size="13" text-anchor="middle" fill="#1b1b1b">ACK</text>
+  <text x="430" y="200" font-size="13" fill="#555">링크마다 백오프가 따로 돈다 · 시작과 끝이 어긋나도 된다</text>
+  <text x="430" y="218" font-size="13" fill="#555">링크 1로 ACK를 받는 동안 링크 2로 송신한다</text>
+
+  <!-- NSTR timeline -->
+  <text x="430" y="262" font-size="14" font-weight="bold" fill="#b45309">동기 전송 (NSTR 장치)</text>
+  <text x="430" y="298" font-size="13" fill="#333">링크 1</text>
+  <text x="430" y="336" font-size="13" fill="#333">링크 2</text>
+  <line x1="485" y1="294" x2="850" y2="294" stroke="#d8d8d2"/>
+  <line x1="485" y1="332" x2="850" y2="332" stroke="#d8d8d2"/>
+  <rect x="490" y="280" width="40" height="26" fill="#ffffff" stroke="#b45309" stroke-dasharray="4 3"/>
+  <rect x="530" y="280" width="60" height="26" fill="#fbe9e9" stroke="#9d0208"/>
+  <text x="560" y="298" font-size="13" text-anchor="middle" fill="#9d0208">대기</text>
+  <rect x="590" y="280" width="150" height="26" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="665" y="298" font-size="13" text-anchor="middle" fill="#2d6a4f">데이터 송신</text>
+  <rect x="746" y="280" width="44" height="26" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="768" y="298" font-size="13" text-anchor="middle" fill="#1b1b1b">ACK</text>
+  <rect x="490" y="318" width="100" height="26" fill="#ffffff" stroke="#b45309" stroke-dasharray="4 3"/>
+  <text x="540" y="336" font-size="13" text-anchor="middle" fill="#b45309">백오프</text>
+  <rect x="590" y="318" width="150" height="26" fill="#eef5f0" stroke="#2d6a4f"/>
+  <text x="665" y="336" font-size="13" text-anchor="middle" fill="#2d6a4f">데이터 송신</text>
+  <rect x="746" y="318" width="44" height="26" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="768" y="336" font-size="13" text-anchor="middle" fill="#1b1b1b">ACK</text>
+  <line x1="740" y1="272" x2="740" y2="352" stroke="#b45309" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="430" y="368" font-size="13" fill="#555">먼저 백오프가 끝난 링크가 다른 링크를 기다린다</text>
+  <text x="430" y="386" font-size="13" fill="#555">끝 시각을 맞춰 ACK 수신이 다른 링크 송신과 겹치지 않게 한다</text>
+
+  <!-- bottom notes -->
+  <line x1="30" y1="424" x2="850" y2="424" stroke="#d8d8d2" stroke-width="1"/>
+  <text x="30" y="448" font-size="13" fill="#9d0208">링크 간 간섭(IDC): 한 링크의 송신 전력이 옆 링크로 새어 같은 장치의 수신을 깨뜨린다</text>
+  <text x="30" y="468" font-size="13" fill="#1b1b1b">STR은 주파수 간격이나 간섭 제거로 이를 견디고, NSTR은 송신과 수신을 겹치지 않게 맞춰 피한다</text>
+  <text x="30" y="492" font-size="13" fill="#555">EMLSR: 무선부 하나로 여러 링크를 듣기만 하다가, 초기 제어 프레임을 받은 링크로 전환해 한 링크로 송수신한다</text>
+  <text x="30" y="516" font-size="13" fill="#555">같은 링크의 레거시 단말·이웃 BSS와의 경쟁은 그림에서 뺐다</text>
+</svg>

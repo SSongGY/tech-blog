@@ -101,7 +101,7 @@ IEEE 802.11be의 범위는 두 가지 목표로 적혀 있다.
 실제 처리량은 채널 폭, 공간 스트림 수, 신호 품질, 경쟁 단말 수에 따라 갈린다. 도입 효과는
 현장에서 측정한 처리량과 지연 분포로 판단한다.
 
-> 개념 정리: [IEEE 802.11 DCF와 CSMA/CA — IFS·백오프·RTS/CTS](../../network/2026-10-04-ieee-802-11-dcf-csma-ca/index.md) · [무선 다중 접속 방식 — FDMA·TDMA·CDMA·OFDMA](../../network/2026-10-04-wireless-multiple-access-fdma-tdma-cdma-ofdma/index.md)
+> 개념 정리: [IEEE 802.11 DCF와 CSMA/CA — IFS·백오프·RTS/CTS](../../network/2026-10-04-ieee-802-11-dcf-csma-ca/index.md) · [무선 다중 접속 방식 — FDMA·TDMA·CDMA·OFDMA](../../network/2026-10-04-wireless-multiple-access-fdma-tdma-cdma-ofdma/index.md) · [Wi-Fi 7 다중 링크 동작(MLO) — 동기·비동기 다중 링크와 링크 간 간섭](../../network/2026-10-10-wi-fi-7-multi-link-operation-str-nstr/index.md)
 
 끝
 
