@@ -1,0 +1,163 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-12-sqlite-returning-clause
+# 명령      : python returning_basics.py
+# 수행 시각 : 2026-10-12 08:29 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[daily_total]  1행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  customer | TEXT    | PK
+  total    | INTEGER | NOT NULL
+
+  customer | total
+  ---------+------
+  김하늘   | 12000
+
+[order_item]  2행
+  컬럼     | 타입    | 제약
+  ---------+---------+------------------------
+  order_id | INTEGER | PK
+  customer | TEXT    | NOT NULL
+  amount   | INTEGER | NOT NULL
+  status   | TEXT    | NOT NULL DEFAULT '접수'
+
+  order_id | customer | amount | status
+  ---------+----------+--------+-------
+         1 | 김하늘   |  12000 | 접수
+         2 | 이바다   |   8000 | 배송
+
+[order_log]  0행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  log_id   | INTEGER | PK
+  order_id | INTEGER | NOT NULL
+  note     | TEXT    | NOT NULL
+
+  (행 없음)
+
+================================================================
+질의
+================================================================
+
+-- 1. RETURNING 없이 — 넣고 나서 lastrowid 로 키를 얻고 다시 조회
+   cursor.lastrowid = 3
+   SELECT order_id, status FROM order_item WHERE order_id = 3
+      3 | '접수'
+   (1행)
+
+-- 2. RETURNING — 키와 기본값을 한 문장으로
+   INSERT INTO order_item (customer, amount) VALUES ('최노을', 9000) RETURNING order_id, status
+      4 | '접수'
+   (1행)
+
+-- 3. 여러 행을 한 번에 넣으면 — lastrowid 는 마지막 하나뿐
+   cursor.lastrowid = 7
+   INSERT INTO order_item (customer, amount) VALUES ('한별', 1000), ('한별', 2000), ('한별', 3000) RETURNING order_id
+      8
+      9
+      10
+   (3행)
+
+-- 4. 식과 별칭, * 도 쓸 수 있다
+   INSERT INTO order_item (customer, amount) VALUES ('윤솔', 22000) RETURNING order_id AS new_id, amount / 11 AS vat, upper('ok') AS mark
+      11 | 2000 | 'OK'
+   (1행)
+   INSERT INTO order_item (customer, amount) VALUES ('윤솔', 1500) RETURNING *
+      12 | '윤솔' | 1500 | '접수'
+   (1행)
+
+-- 5. UPDATE 는 바뀐 뒤 값, DELETE 는 지우기 전 값을 돌려준다
+   UPDATE order_item SET amount = amount + 500 WHERE customer = '정새벽' RETURNING order_id, amount
+      5 | 3500
+      6 | 4500
+      7 | 5500
+   (3행)
+   DELETE FROM order_item WHERE customer = '한별' RETURNING order_id, amount
+      8 | 1000
+      9 | 2000
+      10 | 3000
+   (3행)
+   UPDATE order_item SET status = '취소' WHERE customer = '없는사람' RETURNING order_id
+   (0행)
+
+-- 6. 트리거가 바꾼 값은 RETURNING 에 나오지 않는다
+   INSERT INTO order_item (customer, amount) VALUES ('강바람', 150000) RETURNING order_id, status
+      13 | '접수'
+   (1행)
+   SELECT order_id, status FROM order_item WHERE customer = '강바람'
+      13 | '검토'
+   (1행)
+   SELECT log_id, order_id, note FROM order_log
+      1 | 13 | '고액 주문 검토'
+   (1행)
+
+-- 7. 결과를 한 행만 읽어도 변경은 이미 전부 끝나 있다
+   읽은 첫 행 = (14,), 넣기 전 10행 -> 한 행만 읽은 뒤 13행
+   남은 결과 = [(15,), (16,)]
+
+-- 8. UPSERT 는 새로 넣은 행과 갱신한 행을 함께 돌려준다
+   INSERT INTO daily_total (customer, total) VALUES ('김하늘', 3000), ('윤솔', 22000) ON CONFLICT (customer) DO UPDATE SET total = total + excluded.total RETURNING customer, total
+      '김하늘' | 15000
+      '윤솔' | 22000
+   (2행)
+
+-- 9. 안 되는 것 — 집계 함수, 하위 질의로 쓰기, 다른 표 참조
+   UPDATE order_item SET status = '배송' WHERE customer = '정새벽' RETURNING count(*)
+   에러: OperationalError: misuse of aggregate function count()
+   SELECT * FROM (INSERT INTO order_item (customer, amount) VALUES ('오류', 1) RETURNING order_id)
+   에러: OperationalError: near "INSERT": syntax error
+   UPDATE order_item SET status = '배송' FROM daily_total d WHERE order_item.customer = d.customer RETURNING d.total
+   에러: OperationalError: no such column: d.total
+
+-- 10. 파이썬 executemany 에는 RETURNING 을 쓸 수 없다
+   에러: InterfaceError: bad parameter or other API misuse
+   SELECT order_id, customer, amount FROM order_item WHERE customer = '문가람'
+      17 | '문가람' | 10
+   (1행)
+
+-- 10-2. 기본 트랜잭션 모드에서 같은 executemany — 에러 뒤 트랜잭션 상태
+   에러: InterfaceError: bad parameter or other API misuse
+   in_transaction = True, 표의 행 수 = 1
+   rollback() 뒤 행 수 = 0
+
+-- 11. rowcount 는 결과를 다 읽어야 바뀐다
+   읽기 전 rowcount = 0
+   fetchall() 3행 읽은 뒤 rowcount = 3
+
+-- 최종 상태
+   SELECT * FROM order_item ORDER BY order_id
+      1 | '김하늘' | 12000 | '접수'
+      2 | '이바다' | 8000 | '배송'
+      3 | '박구름' | 15000 | '접수'
+      4 | '최노을' | 9000 | '접수'
+      5 | '정새벽' | 3500 | '접수'
+      6 | '정새벽' | 4500 | '접수'
+      7 | '정새벽' | 5500 | '접수'
+      11 | '윤솔' | 22000 | '접수'
+      12 | '윤솔' | 1500 | '접수'
+      13 | '강바람' | 150000 | '검토'
+      14 | '서이슬' | 101 | '접수'
+      15 | '서이슬' | 201 | '접수'
+      16 | '서이슬' | 301 | '접수'
+      17 | '문가람' | 10 | '접수'
+   (14행)
+   SELECT * FROM daily_total ORDER BY customer
+      '김하늘' | 15000
+      '윤솔' | 22000
+   (2행)
