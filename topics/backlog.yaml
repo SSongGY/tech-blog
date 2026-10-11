@@ -1590,7 +1590,7 @@ topics:
     difficulty: 입문
     angle: "로테이션이 일어나면 tail -f가 멈추는 이유와 -F"
     code: shell
-    status: todo
+    status: done
   - id: lx-011
     title: "systemctl — 서비스 기동, 중지, 자동시작"
     category: Linux
@@ -2080,7 +2080,7 @@ topics:
     angle: "FCFS·SJF·RR을 직접 계산해 비교"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-067
     title: "페이지 교체 알고리즘과 벨레이디의 이상현상"
     category: PE
@@ -2565,7 +2565,7 @@ topics:
     angle: "자동 생성된 키를 다시 조회하지 않고 받는 법. 어느 버전부터 되는지"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-044
     title: "GROUP_CONCAT — 여러 행을 한 줄로"
     category: Database
@@ -4500,5 +4500,302 @@ topics:
     difficulty: 입문
     angle: "서술형 공시를 읽을 때 비교 가능한 항목만 골라내는 법. 의무화 일정"
     code: none
+    origin: manual
+    status: todo
+  - id: db-057
+    title: "부분 인덱스 — WHERE가 붙은 인덱스"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, partial-index, basics]
+    difficulty: 입문
+    angle: "전체 행 중 일부만 색인한다. 같은 질의를 전체 인덱스와 부분 인덱스로 각각 재서 크기와 속도를 비교"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-058
+    title: "표현식 인덱스 — 함수를 씌운 컬럼도 인덱스를 타게"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, expression-index, basics]
+    difficulty: 입문
+    angle: "lower(email) 로 조회하면 일반 인덱스를 못 탄다. 표현식 인덱스를 만들어 실행계획이 바뀌는 것을 보인다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-059
+    title: "커버링 인덱스 — 테이블을 안 보고 끝내기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, covering-index, basics]
+    difficulty: 입문
+    angle: "인덱스만으로 답이 나올 때 EXPLAIN QUERY PLAN 에 뜨는 표시와 실제 속도 차이"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-060
+    title: "인덱스와 NULL — 색인은 NULL을 어떻게 다루는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, null, basics]
+    difficulty: 입문
+    angle: "IS NULL 조회가 인덱스를 타는지, UNIQUE 인덱스에 NULL 이 여럿 들어가는지 직접 확인"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-061
+    title: "ANALYZE와 통계 — 옵티마이저가 보는 숫자"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, analyze, statistics, optimizer, basics]
+    difficulty: 입문
+    angle: "통계가 없을 때와 있을 때 같은 질의의 계획이 달라지는 것. sqlite_stat1 에 무엇이 쌓이는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-062
+    title: "FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, first-value, basics]
+    difficulty: 입문
+    angle: "LAST_VALUE 가 기대와 다른 값을 내는 이유가 기본 프레임에 있다는 것을 프레임을 바꿔 가며"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-063
+    title: "NTILE — 데이터를 n등분하는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, ntile, basics]
+    difficulty: 입문
+    angle: "분위수를 나눌 때 나머지가 어느 묶음으로 가는지. 행 수가 딱 나뉘지 않을 때의 규칙"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-064
+    title: "집계 함수의 FILTER 절 — CASE WHEN보다 읽기 쉬운 조건부 집계"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, aggregate, filter, basics]
+    difficulty: 입문
+    angle: "같은 결과를 CASE WHEN 과 FILTER 로 각각 쓰고 어느 쪽이 의도를 드러내는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-065
+    title: "ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, constraint, on-conflict, basics]
+    difficulty: 입문
+    angle: "제약을 어겼을 때 어디까지 되돌아가는지가 다섯 가지로 갈린다. 다건 INSERT 로 각각 확인"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-066
+    title: "복합 기본키와 대리키 — 어느 쪽을 쓸까"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, key, surrogate-key, basics]
+    difficulty: 입문
+    angle: "자연키를 그대로 쓸 때와 번호를 따로 둘 때. 외래키가 길어지는 것과 값이 바뀔 때의 비용"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-067
+    title: "자기참조 외래키 — 계층 데이터를 한 표에 담기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, foreign-key, hierarchy, basics]
+    difficulty: 입문
+    angle: "부모를 같은 표에서 가리킨다. 재귀 CTE 로 펴는 글과 이어서 읽는다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-068
+    title: "WITHOUT ROWID 테이블 — 기본키가 곧 저장 순서"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, without-rowid, storage, basics]
+    difficulty: 입문
+    angle: "일반 표와 저장 구조가 어떻게 다른지, 어떤 표에서 이득인지 크기를 재서"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-069
+    title: "AUTOINCREMENT와 rowid — 번호가 재사용되는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, rowid, autoincrement, basics]
+    difficulty: 입문
+    angle: "지우고 다시 넣으면 번호가 어떻게 되는지 둘을 나란히 두고 확인. 언제 AUTOINCREMENT 가 필요한지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-070
+    title: "스키마 조회 — sqlite_master와 PRAGMA table_info"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, schema, pragma, introspection, basics]
+    difficulty: 입문
+    angle: "표·인덱스·트리거 정의를 질의로 꺼내는 법. 컬럼 목록과 제약을 코드로 읽을 때"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-071
+    title: "PRAGMA — 동작을 바꾸는 설정들"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, pragma, configuration, basics]
+    difficulty: 입문
+    angle: "foreign_keys·synchronous·cache_size 처럼 자주 건드리는 것들이 무엇을 바꾸는지. 연결마다 다시 켜야 하는 것"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-072
+    title: "ATTACH — 여러 데이터베이스 파일을 한 연결에서"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, attach, multi-database, basics]
+    difficulty: 입문
+    angle: "파일을 붙여 한 질의로 조인한다. 백업·이관에 쓰는 법과 트랜잭션이 걸치는 범위"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-073
+    title: "JSON 함수 — 문서를 컬럼처럼 다루기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, json, json-extract, basics]
+    difficulty: 입문
+    angle: "json_extract 로 값을 꺼내고 json_each 로 배열을 행으로 편다. 언제 컬럼으로 쪼개야 하는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-074
+    title: "전문검색 FTS5 — LIKE로는 안 되는 검색"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, fts5, full-text-search, basics]
+    difficulty: 입문
+    angle: "LIKE '%단어%' 가 인덱스를 못 타는 것과 비교해, 가상 테이블로 바꾸면 무엇이 달라지는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-075
+    title: "generate_series와 가상 테이블 — 없는 행을 만들어 쓰기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, virtual-table, generate-series, basics]
+    difficulty: 입문
+    angle: "날짜 빈칸 채우기처럼 기준 행이 필요한 경우. 재귀 CTE 로 같은 일을 하는 방법과 비교"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-076
+    title: "BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, transaction, locking, basics]
+    difficulty: 입문
+    angle: "기본 BEGIN 과 무엇이 다른지. 두 연결이 동시에 쓸 때 어느 쪽이 SQLITE_BUSY 를 만나는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-077
+    title: "배치 삽입 — 한 건씩 넣을 때와 묶을 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, insert, batch, performance, basics]
+    difficulty: 입문
+    angle: "1만 건을 건별 커밋과 트랜잭션 묶음으로 각각 넣어 시간을 잰다. 왜 그렇게 갈리는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-078
+    title: "VACUUM — 지웠는데 파일이 안 줄어들 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, vacuum, storage, basics]
+    difficulty: 입문
+    angle: "빈 페이지가 재사용되는 구조. VACUUM 전후 파일 크기와 auto_vacuum 설정"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-079
+    title: "파라미터 바인딩 — 문자열을 붙이면 안 되는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, binding, sql-injection, basics]
+    difficulty: 입문
+    angle: "따옴표가 든 값으로 질의가 깨지는 것을 직접 재현하고, 바인딩이 그것을 어떻게 막는지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-080
+    title: "피벗과 언피벗 — 행을 열로, 열을 행으로"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, pivot, case, basics]
+    difficulty: 입문
+    angle: "CASE WHEN 집계로 가로로 펴고, UNION ALL 로 세로로 되돌린다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-081
+    title: "문자열을 구분자로 나누기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, string, split, recursive-cte, basics]
+    difficulty: 입문
+    angle: "SQLite 에 split 함수가 없다. 재귀 CTE 로 만드는 법과 애초에 쪼개 저장해야 하는 경우"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-082
+    title: "날짜 함수 심화 — strftime으로 주차·분기 뽑기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, datetime, strftime, basics]
+    difficulty: 입문
+    angle: "포맷 문자와 요일 기준. 월초·월말과 주 단위 집계를 만들 때 걸리는 자리"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-083
+    title: "집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, set-operation, order-by, basics]
+    difficulty: 입문
+    angle: "UNION 양쪽에 각각 거는 것과 전체에 거는 것이 다르다. 괄호로 묶어 확인"
+    code: python
     origin: manual
     status: todo
