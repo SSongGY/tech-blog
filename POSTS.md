@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **279편** · 갱신 2026-10-12
+총 **282편** · 갱신 2026-10-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 44편
+## DB문법 (basics) — 45편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-12 | [RETURNING — 넣은 값을 그 자리에서 돌려받기](posts/Database/sql-basics/2026-10-12-sqlite-returning-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [COLLATE — 대소문자와 정렬 규칙](posts/Database/sql-basics/2026-10-08-sql-collate-case-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [생성 컬럼 — 계산 결과를 컬럼처럼, VIRTUAL과 STORED](posts/Database/sql-basics/2026-10-08-generated-column-virtual-stored/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](posts/Database/sql-basics/2026-10-08-explain-query-plan-reading/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -74,10 +75,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 103편
+## 기술사 (pe) — 104편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-12 | [프로세스 스케줄링 알고리즘과 평균 대기시간 계산](posts/PE/system/2026-10-12-cpu-scheduling-waiting-time/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.5 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.7 | 실행 검증 |
 | 2026-10-10 | [Wi-Fi 7 다중 링크 동작(MLO) — 동기·비동기 다중 링크와 링크 간 간섭](posts/PE/network/2026-10-10-wi-fi-7-multi-link-operation-str-nstr/index.md) | 중급 | IEEE 802.11be-2024 (2024-09 승인), Deng et al., arXiv:2007.13401v3 (2020-08), López-Raventós·Bellalta, arXiv:2201.07499 (2022-01), Carrascosa-Zamacois et al., arXiv:2210.07695 (2022-10) | 문서 근거 |
 | 2026-10-10 | [CTEM과 노출 관리 — 취약점 관리에서 검증·동원 단계를 더한 이유](posts/PE/security/2026-10-10-ctem-exposure-management-vs-vm-asm-bas/index.md) | 중급 | Gartner G00796532 (2023-10-16), NIST SP 800-40r4 (2022-04), FIRST EPSS (2026-10-10 조회), CISA KEV (BOD 22-01, BOD 26-04 2026-06-10), IBM Think CTEM (2026-06-05), HackerOne CTEM Guide (2026-07-02), Infosecurity Europe CTEM (2026-08-14) | 문서 근거 |
 | 2026-10-10 | [편향-분산 트레이드오프와 규제 — 모형 용량을 고르는 방법](posts/PE/data-analysis/2026-10-10-bias-variance-tradeoff-regularization/index.md) | 중급 | Python 3.13.5, Geman·Bienenstock·Doursat, Neural Computation 4(1) (1992), Srivastava et al., JMLR 15 (2014) | 실행 검증 |
@@ -182,10 +184,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 15편
+## 리눅스 (linux) — 16편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-12 | [tail -f와 -F — 로테이션 뒤에도 로그를 놓치지 않기](posts/Linux/command/2026-10-12-tail-follow-log-rotation/index.md) | 입문 | GNU coreutils tail 8.32, GNU grep 3.0, GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-08 | [time으로 재는 세 가지 — real, user, sys](posts/Infra/linux/2026-10-08-time-real-user-sys/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (sha256sum, dd, sleep), Cygwin runtime 3.6.7 | 실행 검증 |
 | 2026-10-07 | [split과 csplit — 큰 파일 쪼개기](posts/Infra/linux/2026-10-07-split-csplit-large-file/index.md) | 중급 | GNU coreutils 8.32 (split, csplit), bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-10-06 | [kill과 시그널 — TERM, KILL, HUP의 차이](posts/Linux/command/2026-10-06-kill-signals-term-kill-hup/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (timeout), Cygwin runtime 3.6.7 | 실행 검증 |
