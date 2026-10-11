@@ -4160,7 +4160,7 @@ topics:
     angle: "같은 매입 내역에 두 방법을 적용해 매출원가와 기말재고가 갈리는 것을 연도별로. 물가가 오를 때 어느 쪽이 이익을 크게 잡는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-044
     title: "외화환산 — 환율이 바뀌면 재무제표 어디가 움직이는가"
     category: Finance
@@ -4171,7 +4171,7 @@ topics:
     angle: "화폐성·비화폐성 항목의 구분과 환산손익이 손익계산서로 가는 경우와 자본으로 가는 경우"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-045
     title: "지분법 — 관계기업 투자가 한 줄로만 보이는 이유"
     category: Finance
