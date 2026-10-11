@@ -1,0 +1,188 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Linux\command\2026-10-12-tail-follow-log-rotation
+# 명령      : bash tail_follow.sh
+# 수행 시각 : 2026-10-12 08:43 (대한민국 표준시)
+# 소요      : 47.0초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 선언 환경 : GNU coreutils tail 8.32, GNU grep 3.0, GNU bash 5.3.9 (Git Bash on Windows 11)
+# 종료 코드 : 0
+
+tail: tail (GNU coreutils) 8.32
+grep: grep (GNU grep) 3.0
+
+== 0. 이 환경 tail 의 옵션 목록 (온라인 매뉴얼과 판이 다를 수 있다) ==
+Usage: tail [OPTION]... [FILE]...
+Print the last 10 lines of each FILE to standard output.
+With more than one FILE, precede each with a header giving the file name.
+
+With no FILE, or when FILE is -, read standard input.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -c, --bytes=[+]NUM       output the last NUM bytes; or use -c +NUM to
+                             output starting with byte NUM of each file
+  -f, --follow[={name|descriptor}]
+                           output appended data as the file grows;
+                             an absent option argument means 'descriptor'
+  -F                       same as --follow=name --retry
+  -n, --lines=[+]NUM       output the last NUM lines, instead of the last 10;
+                             or use -n +NUM to output starting with line NUM
+      --max-unchanged-stats=N
+                           with --follow=name, reopen a FILE which has not
+                             changed size after N (default 5) iterations
+                             to see if it has been unlinked or renamed
+                             (this is the usual case of rotated log files);
+                             with inotify, this option is rarely useful
+      --pid=PID            with -f, terminate after process ID, PID dies
+  -q, --quiet, --silent    never output headers giving file names
+      --retry              keep trying to open a file if it is inaccessible
+  -s, --sleep-interval=N   with -f, sleep for approximately N seconds
+                             (default 1.0) between iterations;
+                             with inotify and --pid=P, check process P at
+                             least once every N seconds
+  -v, --verbose            always output headers giving file names
+  -z, --zero-terminated    line delimiter is NUL, not newline
+      --help     display this help and exit
+      --version  output version information and exit
+
+NUM may have a multiplier suffix:
+b 512, kB 1000, K 1024, MB 1000*1000, M 1024*1024,
+GB 1000*1000*1000, G 1024*1024*1024, and so on for T, P, E, Z, Y.
+Binary prefixes can be used, too: KiB=K, MiB=M, and so on.
+
+With --follow (-f), tail defaults to following the file descriptor, which
+means that even if a tail'ed file is renamed, tail will continue to track
+its end.  This default behavior is not desirable when you really want to
+track the actual name of the file, not the file descriptor (e.g., log
+rotation).  Use --follow=name in that case.  That causes tail to track the
+named file in a way that accommodates renaming, removal and creation.
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Report any translation bugs to <https://translationproject.org/team/>
+Full documentation <https://www.gnu.org/software/coreutils/tail>
+or available locally via: info '(coreutils) tail invocation'
+
+== 1. 줄 수와 바이트 수 — -n, -n +N, -c, -c +N ==
+$ tail app.log
+line 6
+line 7
+line 8
+line 9
+line 10
+line 11
+line 12
+line 13
+line 14
+line 15
+(종료 코드 0)
+$ tail -n 3 app.log
+line 13
+line 14
+line 15
+(종료 코드 0)
+$ tail -n +13 app.log
+line 13
+line 14
+line 15
+(종료 코드 0)
+$ tail -c 8 app.log
+line 15
+(종료 코드 0)
+$ tail -c +80 app.log
+line 12
+line 13
+line 14
+line 15
+(종료 코드 0)
+
+== 2. 파일 여러 개 — 머리말과 -q, -v ==
+$ tail -n 1 a.log b.log
+==> a.log <==
+a-2
+
+==> b.log <==
+b-2
+(종료 코드 0)
+$ tail -q -n 1 a.log b.log
+a-2
+b-2
+(종료 코드 0)
+$ tail -v -n 1 a.log
+==> a.log <==
+a-2
+(종료 코드 0)
+
+== 3. -z — 줄 구분자를 NUL 로 ==
+$ tail -z -n 2 nul.dat | tr '\0' '\n'
+two
+three
+
+== 4. -f — 늘어나는 내용을 이어서 찍는다 ==
+[tail -f -n 0 app.log 이 찍은 것]
+appended 16
+appended 17
+
+== 5. 이름 바꾸기 로테이션 — -f(descriptor) 대 -F(name) ==
+  로테이션 1초 뒤: -F 출력에 'after rotate 1' 안 보임
+  로테이션 2초 뒤: -F 출력에 'after rotate 1' 안 보임
+  로테이션 3초 뒤: -F 출력에 'after rotate 1' 안 보임
+  로테이션 4초 뒤: -F 출력에 'after rotate 1' 안 보임
+  로테이션 5초 뒤: -F 출력에 'after rotate 1' 안 보임
+  로테이션 6초 뒤: -F 출력에 'after rotate 1' 안 보임
+  로테이션 7초 뒤: -F 출력에 'after rotate 1' 보임
+  로테이션 8초 뒤: -F 출력에 'after rotate 1' 보임
+[tail -f 최종 출력]
+before rotate
+late write to old file
+[tail -F 최종 출력]
+before rotate
+late write to old file
+tail: 'svc.log' has been replaced;  following new file
+after rotate 1
+after rotate 2
+
+== 6. --max-unchanged-stats=1 — 이름 확인을 더 자주 한다 ==
+  로테이션 1초 뒤: 'after rotate 1' 안 보임
+  로테이션 2초 뒤: 'after rotate 1' 안 보임
+  로테이션 3초 뒤: 'after rotate 1' 보임
+  로테이션 4초 뒤: 'after rotate 1' 보임
+[최종 출력]
+tail: 'fast.log' has been replaced;  following new file
+after rotate 1
+
+== 7. copytruncate — 파일을 비우면 -f 는 처음부터 다시 읽는다 ==
+[비운 뒤 짧게 쓴 경우]
+appended before truncate
+tail: trunc.log: file truncated
+after truncate
+[비운 직후 더 길게 쓴 경우까지 포함한 최종 출력]
+appended before truncate
+tail: trunc.log: file truncated
+after truncate
+BBBBBBBB-2
+CCCCCCCCCC-3
+DDDDDDDDDD-4
+EEEEEEEEEE-5
+
+== 8. 없는 파일 — -f 는 바로 끝나고, -F(--retry) 는 기다린다 ==
+$ tail -f missing.log
+tail: cannot open 'missing.log' for reading: No such file or directory
+tail: no files remaining
+(종료 코드 1)
+[tail -F missing.log 출력]
+tail: cannot open 'missing.log' for reading: No such file or directory
+tail: 'missing.log' has appeared;  following new file
+created later
+
+== 9. --pid — 지정한 프로세스가 끝나면 tail 도 끝난다 ==
+tail 종료 코드 0, 걸린 시간 약 3초 (sleep 3 이 끝난 뒤)
+
+== 10. -s — 확인 간격 ==
+[쓴 지 1초 뒤] 
+[쓴 지 4초 뒤] written at 1s
+
+== 11. 파이프 뒤 grep 의 버퍼 — 파일로 받으면 줄이 바로 안 나온다 ==
+[3초 시점 grep ERROR > 파일]                 0바이트
+[3초 시점 grep --line-buffered ERROR > 파일] 16바이트: ERROR disk full
+[tail 이 끝난 뒤 grep ERROR > 파일]          16바이트: ERROR disk full
