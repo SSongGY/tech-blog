@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 530" width="880" height="530" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="530" fill="#ffffff"/>
+
+  <!-- 위: 분류 -->
+  <rect x="230" y="20" width="420" height="44" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="440" y="47" text-anchor="middle" font-weight="bold" fill="#1f2937">CPU 스케줄링 — 준비 큐에서 다음 프로세스 선택</text>
+
+  <line x1="440" y1="64" x2="440" y2="84" stroke="#4b5563" stroke-width="2"/>
+  <line x1="230" y1="84" x2="650" y2="84" stroke="#4b5563" stroke-width="2"/>
+  <line x1="230" y1="84" x2="230" y2="100" stroke="#4b5563" stroke-width="2"/>
+  <line x1="650" y1="84" x2="650" y2="100" stroke="#4b5563" stroke-width="2"/>
+
+  <rect x="40" y="100" width="380" height="50" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="230" y="121" text-anchor="middle" font-weight="bold" fill="#1f2937">비선점</text>
+  <text x="230" y="140" text-anchor="middle" font-size="13" fill="#374151">실행 → 대기, 종료 때만 다시 고른다</text>
+
+  <rect x="460" y="100" width="380" height="50" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="650" y="121" text-anchor="middle" font-weight="bold" fill="#1f2937">선점</text>
+  <text x="650" y="140" text-anchor="middle" font-size="13" fill="#374151">도착·인터럽트·입출력 완료 때도 고른다</text>
+
+  <line x1="230" y1="150" x2="230" y2="168" stroke="#4b5563" stroke-width="2"/>
+  <line x1="650" y1="150" x2="650" y2="168" stroke="#4b5563" stroke-width="2"/>
+
+  <rect x="40" y="168" width="120" height="50" rx="6" fill="#ffffff" stroke="#4b5563"/>
+  <text x="100" y="189" text-anchor="middle" font-weight="bold" fill="#1f2937">FCFS</text>
+  <text x="100" y="208" text-anchor="middle" font-size="13" fill="#374151">도착 순</text>
+  <rect x="170" y="168" width="120" height="50" rx="6" fill="#ffffff" stroke="#4b5563"/>
+  <text x="230" y="189" text-anchor="middle" font-weight="bold" fill="#1f2937">SJF</text>
+  <text x="230" y="208" text-anchor="middle" font-size="13" fill="#374151">실행 시간 짧은 순</text>
+  <rect x="300" y="168" width="120" height="50" rx="6" fill="#ffffff" stroke="#4b5563"/>
+  <text x="360" y="189" text-anchor="middle" font-weight="bold" fill="#1f2937">우선순위</text>
+  <text x="360" y="208" text-anchor="middle" font-size="13" fill="#374151">숫자 작은 순</text>
+
+  <rect x="460" y="168" width="120" height="50" rx="6" fill="#ffffff" stroke="#4b5563"/>
+  <text x="520" y="189" text-anchor="middle" font-weight="bold" fill="#1f2937">SRTF</text>
+  <text x="520" y="208" text-anchor="middle" font-size="13" fill="#374151">남은 시간 짧은 순</text>
+  <rect x="590" y="168" width="120" height="50" rx="6" fill="#ffffff" stroke="#4b5563"/>
+  <text x="650" y="189" text-anchor="middle" font-weight="bold" fill="#1f2937">RR</text>
+  <text x="650" y="208" text-anchor="middle" font-size="13" fill="#374151">할당량 q씩 차례로</text>
+  <rect x="720" y="168" width="120" height="50" rx="6" fill="#ffffff" stroke="#4b5563"/>
+  <text x="780" y="189" text-anchor="middle" font-weight="bold" fill="#1f2937">우선순위</text>
+  <text x="780" y="208" text-anchor="middle" font-size="13" fill="#374151">높은 쪽이 선점</text>
+
+  <!-- 아래: 간트 차트 (x = 150 + t*26) -->
+  <text x="40" y="262" font-weight="bold" fill="#1f2937">같은 네 프로세스의 간트 차트와 평균 대기 (도착/실행: P1 0/8 · P2 1/4 · P3 2/9 · P4 3/5)</text>
+
+  <g font-size="13" text-anchor="middle" fill="#1f2937">
+    <!-- FCFS -->
+    <text x="40" y="299" text-anchor="start">FCFS 8.75</text>
+    <rect x="150" y="280" width="208" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="254" y="299">P1</text>
+    <rect x="358" y="280" width="104" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="410" y="299">P2</text>
+    <rect x="462" y="280" width="234" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="579" y="299">P3</text>
+    <rect x="696" y="280" width="130" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="761" y="299">P4</text>
+
+    <!-- SJF -->
+    <text x="40" y="341" text-anchor="start">SJF 7.75</text>
+    <rect x="150" y="322" width="208" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="254" y="341">P1</text>
+    <rect x="358" y="322" width="104" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="410" y="341">P2</text>
+    <rect x="462" y="322" width="130" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="527" y="341">P4</text>
+    <rect x="592" y="322" width="234" height="28" fill="#eef2ff" stroke="#4b5563"/><text x="709" y="341">P3</text>
+
+    <!-- SRTF -->
+    <text x="40" y="383" text-anchor="start" fill="#2d6a4f" font-weight="bold">SRTF 6.50</text>
+    <rect x="150" y="364" width="26" height="28" fill="#e8f5ee" stroke="#2d6a4f"/><text x="163" y="383">P1</text>
+    <rect x="176" y="364" width="104" height="28" fill="#e8f5ee" stroke="#2d6a4f"/><text x="228" y="383">P2</text>
+    <rect x="280" y="364" width="130" height="28" fill="#e8f5ee" stroke="#2d6a4f"/><text x="345" y="383">P4</text>
+    <rect x="410" y="364" width="182" height="28" fill="#e8f5ee" stroke="#2d6a4f"/><text x="501" y="383">P1</text>
+    <rect x="592" y="364" width="234" height="28" fill="#e8f5ee" stroke="#2d6a4f"/><text x="709" y="383">P3</text>
+
+    <!-- RR q=4 -->
+    <text x="40" y="425" text-anchor="start" fill="#9d0208" font-weight="bold">RR(4) 11.75</text>
+    <rect x="150" y="406" width="104" height="28" fill="#fdecec" stroke="#9d0208"/><text x="202" y="425">P1</text>
+    <rect x="254" y="406" width="104" height="28" fill="#fdecec" stroke="#9d0208"/><text x="306" y="425">P2</text>
+    <rect x="358" y="406" width="104" height="28" fill="#fdecec" stroke="#9d0208"/><text x="410" y="425">P3</text>
+    <rect x="462" y="406" width="104" height="28" fill="#fdecec" stroke="#9d0208"/><text x="514" y="425">P4</text>
+    <rect x="566" y="406" width="104" height="28" fill="#fdecec" stroke="#9d0208"/><text x="618" y="425">P1</text>
+    <rect x="670" y="406" width="104" height="28" fill="#fdecec" stroke="#9d0208"/><text x="722" y="425">P3</text>
+    <rect x="774" y="406" width="26" height="28" fill="#fdecec" stroke="#9d0208"/><text x="787" y="425">P4</text>
+    <rect x="800" y="406" width="26" height="28" fill="#fdecec" stroke="#9d0208"/><text x="813" y="425">P3</text>
+
+    <!-- 시간 축 -->
+    <line x1="150" y1="446" x2="826" y2="446" stroke="#4b5563"/>
+    <text x="150" y="464">0</text>
+    <text x="280" y="464">5</text>
+    <text x="410" y="464">10</text>
+    <text x="540" y="464">15</text>
+    <text x="670" y="464">20</text>
+    <text x="826" y="464">26</text>
+  </g>
+
+  <text x="40" y="496" font-size="13" fill="#374151">평균 대기: SRTF가 가장 짧고 RR(q=4)가 가장 길다. 평균 응답은 SRTF 4.25, RR 4.50, FCFS 8.75로</text>
+  <text x="40" y="516" font-size="13" fill="#374151">RR이 비선점 셋보다 짧다. 문맥 교환은 RR 7회, SRTF 4회, 비선점 셋은 3회다 (실습 3절).</text>
+</svg>
