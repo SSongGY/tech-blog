@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">보고기간말 환율이 바뀌면 차이는 어디로 가는가</text>
+
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <text x="140" y="60">항목</text>
+    <text x="440" y="60">환산에 쓰는 환율</text>
+    <text x="740" y="60">차이가 가는 곳</text>
+  </g>
+
+  <!-- 행 1: 화폐성 -->
+  <rect x="40" y="75" width="200" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="140" y="99" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">화폐성 항목</text>
+  <text x="140" y="119" text-anchor="middle" font-size="13" fill="#495057">매출채권·차입금·예금</text>
+  <rect x="330" y="75" width="220" height="56" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="440" y="108" text-anchor="middle" font-size="14" fill="#1b1b1b">마감환율 (문단 23)</text>
+  <rect x="640" y="75" width="200" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="740" y="99" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">당기손익</text>
+  <text x="740" y="119" text-anchor="middle" font-size="13" fill="#b45309">외환차이 (문단 28)</text>
+
+  <!-- 행 2: 비화폐성 역사적원가 -->
+  <rect x="40" y="165" width="200" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="140" y="189" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">비화폐성 (원가)</text>
+  <text x="140" y="209" text-anchor="middle" font-size="13" fill="#495057">선급금·재고·설비</text>
+  <rect x="330" y="165" width="220" height="56" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="440" y="198" text-anchor="middle" font-size="14" fill="#1b1b1b">거래일 환율 그대로 (문단 23)</text>
+  <rect x="640" y="165" width="200" height="56" rx="6" fill="#e9f5ee" stroke="#2d6a4f"/>
+  <text x="740" y="198" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">차이가 생기지 않음</text>
+
+  <!-- 행 3: 비화폐성 공정가치 -->
+  <rect x="40" y="255" width="200" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="140" y="279" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">비화폐성 (공정가치)</text>
+  <text x="140" y="299" text-anchor="middle" font-size="13" fill="#495057">재평가 자산 등</text>
+  <rect x="330" y="255" width="220" height="56" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="440" y="288" text-anchor="middle" font-size="14" fill="#1b1b1b">공정가치 측정일 환율</text>
+  <rect x="640" y="255" width="200" height="56" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="740" y="279" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">평가손익을 따라간다</text>
+  <text x="740" y="299" text-anchor="middle" font-size="13" fill="#495057">당기손익 또는 OCI (문단 30)</text>
+
+  <!-- 행 4: 해외사업장 -->
+  <rect x="40" y="345" width="200" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="140" y="369" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">해외사업장 전체</text>
+  <text x="140" y="389" text-anchor="middle" font-size="13" fill="#495057">기능통화가 다른 자회사</text>
+  <rect x="330" y="345" width="220" height="56" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="440" y="369" text-anchor="middle" font-size="14" fill="#1b1b1b">자산·부채: 마감환율</text>
+  <text x="440" y="389" text-anchor="middle" font-size="13" fill="#495057">수익·비용: 거래일 환율 (문단 39)</text>
+  <rect x="640" y="345" width="200" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="740" y="369" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">기타포괄손익 → 자본</text>
+  <text x="740" y="389" text-anchor="middle" font-size="13" fill="#b45309">처분 시 당기손익 (문단 41·48)</text>
+
+  <g stroke="#495057" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <line x1="240" y1="103" x2="327" y2="103"/>
+    <line x1="550" y1="103" x2="637" y2="103"/>
+    <line x1="240" y1="193" x2="327" y2="193"/>
+    <line x1="550" y1="193" x2="637" y2="193"/>
+    <line x1="240" y1="283" x2="327" y2="283"/>
+    <line x1="550" y1="283" x2="637" y2="283"/>
+    <line x1="240" y1="373" x2="327" y2="373"/>
+    <line x1="550" y1="373" x2="637" y2="373"/>
+  </g>
+
+  <line x1="30" y1="430" x2="850" y2="430" stroke="#ced4da"/>
+  <text x="40" y="456" font-size="13" fill="#495057">위 세 줄은 회사 자신의 외화 거래(기능통화로 환산), 마지막 줄은 다른 기능통화의 재무제표를 표시통화로 바꾸는 경우다.</text>
+  <text x="40" y="478" font-size="13" fill="#495057">예제 숫자는 가상이며 code/output.txt [2]·[4]에 있다.</text>
+</svg>
