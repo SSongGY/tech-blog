@@ -162,7 +162,7 @@ topics:
     difficulty: 중급
     angle: "TCP 핸드셰이크 횟수를 소켓 수준에서 세어 비교"
     code: python
-    status: todo
+    status: done
   - id: be-004
     title: "재시도에 지수 백오프와 지터가 둘 다 필요한 이유"
     category: Backend
@@ -2091,7 +2091,7 @@ topics:
     angle: "FIFO·LRU·Optimal을 같은 참조열로 계산"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-068
     title: "교착상태 4조건과 해결 기법"
     category: PE
@@ -3929,7 +3929,7 @@ topics:
     angle: "전월 대비 증감을 자기 조인 없이 구하는 법, 첫 행의 NULL과 기본값 인자, PARTITION BY 경계에서 값이 끊기는 것"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-053
     title: "INTERSECT와 EXCEPT — 두 결과의 교집합과 차집합"
     category: Database
