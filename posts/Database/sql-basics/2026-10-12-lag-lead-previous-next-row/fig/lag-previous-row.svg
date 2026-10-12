@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">LAG(amount) OVER (PARTITION BY store ORDER BY sales_month)</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · 화살표 = 값을 가져오는 앞 행 · 실습 3번·6번 결과</text>
+
+  <!-- 강남점 파티션 -->
+  <rect x="30" y="72" width="380" height="250" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="94" font-size="14" font-weight="bold" fill="#1b1b1b">파티션 강남점</text>
+  <g font-size="13" fill="#555">
+    <text x="60" y="118">sales_month</text><text x="180" y="118">amount</text><text x="290" y="118">LAG</text>
+  </g>
+  <g font-size="14" fill="#1b1b1b">
+    <text x="60" y="152">2026-01</text><text x="200" y="152">120</text>
+    <text x="60" y="190">2026-02</text><text x="200" y="190">150</text>
+    <text x="60" y="228">2026-03</text><text x="200" y="228">135</text>
+    <text x="60" y="266">2026-04</text><text x="196" y="266" fill="#b45309">NULL</text>
+    <text x="60" y="304">2026-05</text><text x="200" y="304">160</text>
+  </g>
+  <g font-size="14">
+    <text x="290" y="152" fill="#9d0208">NULL ①</text>
+    <text x="290" y="190" fill="#2d6a4f">120</text>
+    <text x="290" y="228" fill="#2d6a4f">150</text>
+    <text x="290" y="266" fill="#2d6a4f">135</text>
+    <text x="290" y="304" fill="#b45309">NULL ②</text>
+  </g>
+  <g stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arrowGreen)">
+    <path d="M232 148 L282 184"/>
+    <path d="M232 186 L282 222"/>
+    <path d="M232 224 L282 260"/>
+  </g>
+  <path d="M236 262 L282 298" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#arrowAmber)"/>
+
+  <!-- 판교점 파티션 -->
+  <rect x="470" y="72" width="380" height="250" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="486" y="94" font-size="14" font-weight="bold" fill="#1b1b1b">파티션 판교점</text>
+  <g font-size="13" fill="#555">
+    <text x="500" y="118">sales_month</text><text x="620" y="118">amount</text><text x="730" y="118">LAG</text>
+  </g>
+  <g font-size="14" fill="#1b1b1b">
+    <text x="500" y="152">2026-01</text><text x="644" y="152">80</text>
+    <text x="500" y="190">2026-02</text><text x="644" y="190">95</text>
+    <text x="500" y="266">2026-04</text><text x="640" y="266">110</text>
+    <text x="500" y="304">2026-05</text><text x="640" y="304">105</text>
+  </g>
+  <rect x="490" y="208" width="200" height="28" rx="4" fill="#fdf3e7" stroke="#b45309" stroke-width="1" stroke-dasharray="5 4"/>
+  <text x="500" y="227" font-size="13" fill="#b45309">2026-03 행 없음</text>
+  <g font-size="14">
+    <text x="730" y="152" fill="#9d0208">NULL ①</text>
+    <text x="730" y="190" fill="#2d6a4f">80</text>
+    <text x="730" y="266" fill="#b45309">95 ③</text>
+    <text x="730" y="304" fill="#2d6a4f">110</text>
+  </g>
+  <g stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arrowGreen)">
+    <path d="M668 148 L722 184"/>
+    <path d="M672 262 L722 298"/>
+  </g>
+  <path d="M668 186 Q710 230 722 260" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#arrowAmber)"/>
+
+  <defs>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- 설명 -->
+  <rect x="30" y="344" width="820" height="62" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="46" y="368" font-size="14" font-weight="bold" fill="#9d0208">① 파티션의 첫 행 — 앞 행이 없다</text>
+  <text x="46" y="392" font-size="13" fill="#9d0208">NULL을 돌려준다. 세 번째 인자(기본값)를 주면 이때만 그 값이 대신 들어간다</text>
+
+  <rect x="30" y="416" width="820" height="62" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="440" font-size="14" font-weight="bold" fill="#b45309">② 앞 행은 있는데 그 값이 NULL — 기본값으로 바뀌지 않는다</text>
+  <text x="46" y="464" font-size="13" fill="#b45309">앞 행이 "없는" 것과 앞 행의 값이 "비어 있는" 것은 다르다. 기본값은 앞쪽만 채운다</text>
+
+  <rect x="30" y="488" width="820" height="62" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="512" font-size="14" font-weight="bold" fill="#b45309">③ 빠진 달 — LAG는 앞 "달"이 아니라 앞 "행"을 본다</text>
+  <text x="46" y="536" font-size="13" fill="#b45309">판교점 4월의 앞 행은 2월이다. 3월이 비었다는 사실은 결과에 드러나지 않는다</text>
+</svg>

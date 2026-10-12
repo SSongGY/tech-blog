@@ -1,0 +1,227 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-12-lag-lead-previous-next-row
+# 명령      : python lag_lead_month_over_month.py
+# 수행 시각 : 2026-10-12 12:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[monthly_sales]  9행
+  컬럼        | 타입    | 제약
+  ------------+---------+------------
+  store       | TEXT    | PK NOT NULL
+  sales_month | TEXT    | PK NOT NULL
+  amount      | INTEGER |
+
+  store  | sales_month | amount
+  -------+-------------+-------
+  강남점 | 2026-01     |    120
+  강남점 | 2026-02     |    150
+  강남점 | 2026-03     |    135
+  강남점 | 2026-04     |   NULL
+  강남점 | 2026-05     |    160
+  판교점 | 2026-01     |     80
+  판교점 | 2026-02     |     95
+  판교점 | 2026-04     |    110
+  판교점 | 2026-05     |    105
+
+
+-- 1. 한 매장 안에서 앞 행과 뒤 행
+   SELECT sales_month, amount,
+          LAG(amount)  OVER (ORDER BY sales_month) AS prev_amount,
+          LEAD(amount) OVER (ORDER BY sales_month) AS next_amount
+   FROM monthly_sales
+   WHERE store = '판교점'
+   ORDER BY sales_month
+   => sales_month | amount | prev_amount | next_amount
+      2026-01 | 80 | None | 95
+      2026-02 | 95 | 80 | 110
+      2026-04 | 110 | 95 | 105
+      2026-05 | 105 | 110 | None
+   (4행)
+
+-- 2. PARTITION BY 없이 두 매장을 한꺼번에
+   SELECT store, sales_month, amount,
+          LAG(amount) OVER (ORDER BY store, sales_month) AS prev_amount
+   FROM monthly_sales
+   ORDER BY store, sales_month
+   => store | sales_month | amount | prev_amount
+      강남점 | 2026-01 | 120 | None
+      강남점 | 2026-02 | 150 | 120
+      강남점 | 2026-03 | 135 | 150
+      강남점 | 2026-04 | None | 135
+      강남점 | 2026-05 | 160 | None
+      판교점 | 2026-01 | 80 | 160
+      판교점 | 2026-02 | 95 | 80
+      판교점 | 2026-04 | 110 | 95
+      판교점 | 2026-05 | 105 | 110
+   (9행)
+
+-- 3. PARTITION BY store — 매장이 바뀌면 첫 행은 NULL
+   SELECT store, sales_month, amount,
+          LAG(amount) OVER (PARTITION BY store ORDER BY sales_month) AS prev_amount,
+          amount - LAG(amount) OVER (PARTITION BY store ORDER BY sales_month) AS diff
+   FROM monthly_sales
+   ORDER BY store, sales_month
+   => store | sales_month | amount | prev_amount | diff
+      강남점 | 2026-01 | 120 | None | None
+      강남점 | 2026-02 | 150 | 120 | 30
+      강남점 | 2026-03 | 135 | 150 | -15
+      강남점 | 2026-04 | None | 135 | None
+      강남점 | 2026-05 | 160 | None | None
+      판교점 | 2026-01 | 80 | None | None
+      판교점 | 2026-02 | 95 | 80 | 15
+      판교점 | 2026-04 | 110 | 95 | 15
+      판교점 | 2026-05 | 105 | 110 | -5
+   (9행)
+
+-- 4. 기본값 인자 LAG(amount, 1, 0)
+   SELECT store, sales_month, amount,
+          LAG(amount, 1, 0) OVER (PARTITION BY store ORDER BY sales_month) AS prev_or_zero,
+          amount - LAG(amount, 1, 0) OVER (PARTITION BY store ORDER BY sales_month) AS diff
+   FROM monthly_sales
+   WHERE store = '강남점'
+   ORDER BY sales_month
+   => store | sales_month | amount | prev_or_zero | diff
+      강남점 | 2026-01 | 120 | 0 | 120
+      강남점 | 2026-02 | 150 | 120 | 30
+      강남점 | 2026-03 | 135 | 150 | -15
+      강남점 | 2026-04 | None | 135 | None
+      강남점 | 2026-05 | 160 | None | None
+   (5행)
+
+-- 5. offset 을 바꾸면 — 0, 1, 2
+   SELECT sales_month, amount,
+          LAG(amount, 0) OVER w AS lag0,
+          LAG(amount, 1) OVER w AS lag1,
+          LAG(amount, 2) OVER w AS lag2
+   FROM monthly_sales
+   WHERE store = '판교점'
+   WINDOW w AS (ORDER BY sales_month)
+   ORDER BY sales_month
+   => sales_month | amount | lag0 | lag1 | lag2
+      2026-01 | 80 | 80 | None | None
+      2026-02 | 95 | 95 | 80 | None
+      2026-04 | 110 | 110 | 95 | 80
+      2026-05 | 105 | 105 | 110 | 95
+   (4행)
+
+-- 6. 빠진 달 — 앞 행의 달도 같이 꺼내 본다
+   SELECT store, sales_month, amount,
+          LAG(sales_month) OVER (PARTITION BY store ORDER BY sales_month) AS prev_month,
+          LAG(amount)      OVER (PARTITION BY store ORDER BY sales_month) AS prev_amount
+   FROM monthly_sales
+   WHERE store = '판교점'
+   ORDER BY sales_month
+   => store | sales_month | amount | prev_month | prev_amount
+      판교점 | 2026-01 | 80 | None | None
+      판교점 | 2026-02 | 95 | 2026-01 | 80
+      판교점 | 2026-04 | 110 | 2026-02 | 95
+      판교점 | 2026-05 | 105 | 2026-04 | 110
+   (4행)
+
+-- 7. 달력을 먼저 깔고 LAG
+   WITH RECURSIVE calendar(sales_month) AS (
+       SELECT '2026-01'
+       UNION ALL
+       SELECT strftime('%Y-%m', sales_month || '-01', '+1 month')
+       FROM calendar
+       WHERE sales_month < '2026-05'
+   )
+   SELECT c.sales_month, s.amount,
+          LAG(s.amount) OVER (ORDER BY c.sales_month) AS prev_amount
+   FROM calendar AS c
+   LEFT JOIN monthly_sales AS s
+          ON s.sales_month = c.sales_month AND s.store = '판교점'
+   ORDER BY c.sales_month
+   => sales_month | amount | prev_amount
+      2026-01 | 80 | None
+      2026-02 | 95 | 80
+      2026-03 | None | 95
+      2026-04 | 110 | None
+      2026-05 | 105 | 110
+   (5행)
+
+-- 8. WHERE 에 LAG 를 바로 쓰면
+   SELECT store, sales_month, amount
+   FROM monthly_sales
+   WHERE amount > LAG(amount) OVER (PARTITION BY store ORDER BY sales_month)
+   에러: misuse of window function LAG()
+
+-- 9. 서브쿼리로 감싸서 거른다 — 전월보다 늘어난 달
+   SELECT store, sales_month, amount, prev_amount
+   FROM (SELECT store, sales_month, amount,
+                LAG(amount) OVER (PARTITION BY store ORDER BY sales_month) AS prev_amount
+         FROM monthly_sales)
+   WHERE amount > prev_amount
+   ORDER BY store, sales_month
+   => store | sales_month | amount | prev_amount
+      강남점 | 2026-02 | 150 | 120
+      판교점 | 2026-02 | 95 | 80
+      판교점 | 2026-04 | 110 | 95
+   (3행)
+
+-- 10. offset 에 음수를 주면
+   SELECT sales_month, LAG(amount, -1) OVER (ORDER BY sales_month) AS prev_amount
+   FROM monthly_sales
+   WHERE store = '판교점'
+   => sales_month | prev_amount
+      2026-01 | 95
+      2026-02 | 110
+      2026-04 | 105
+      2026-05 | None
+   (4행)
+
+-- 11. 프레임을 현재 행 하나로 좁혀도
+   SELECT sales_month, amount,
+          LAG(amount) OVER (ORDER BY sales_month
+                            ROWS BETWEEN CURRENT ROW AND CURRENT ROW) AS prev_amount,
+          FIRST_VALUE(amount) OVER (ORDER BY sales_month
+                            ROWS BETWEEN CURRENT ROW AND CURRENT ROW) AS first_in_frame
+   FROM monthly_sales
+   WHERE store = '판교점'
+   ORDER BY sales_month
+   => sales_month | amount | prev_amount | first_in_frame
+      2026-01 | 80 | None | 80
+      2026-02 | 95 | 80 | 95
+      2026-04 | 110 | 95 | 110
+      2026-05 | 105 | 110 | 105
+   (4행)
+
+-- 12. 자기 조인으로 같은 값을 구하면
+   SELECT cur.store, cur.sales_month, cur.amount,
+          prev.amount AS prev_amount
+   FROM monthly_sales AS cur
+   LEFT JOIN monthly_sales AS prev
+          ON prev.store = cur.store
+         AND prev.sales_month = (SELECT MAX(p.sales_month)
+                                 FROM monthly_sales AS p
+                                 WHERE p.store = cur.store
+                                   AND p.sales_month < cur.sales_month)
+   ORDER BY cur.store, cur.sales_month
+   => store | sales_month | amount | prev_amount
+      강남점 | 2026-01 | 120 | None
+      강남점 | 2026-02 | 150 | 120
+      강남점 | 2026-03 | 135 | 150
+      강남점 | 2026-04 | None | 135
+      강남점 | 2026-05 | 160 | None
+      판교점 | 2026-01 | 80 | None
+      판교점 | 2026-02 | 95 | 80
+      판교점 | 2026-04 | 110 | 95
+      판교점 | 2026-05 | 105 | 110
+   (9행)
+
+   자기 조인 결과와 LAG 결과가 같은가: True
