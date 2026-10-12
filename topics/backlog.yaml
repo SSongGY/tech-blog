@@ -4799,3 +4799,25 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: pe-162
+    title: "적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "NIST AI 100-2 E2025의 공격 목표 4가지와 공격자 능력(학습 데이터·모델·질의·자원 통제)으로 예측형·생성형 공격을 한 표로 정리하고 간접 프롬프트 인젝션이 왜 새 진입로인지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-163
+    title: "멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "데이터 재구성·멤버십 추론·속성 추론·모델 추출 4가지를 NIST AI 100-2 근거로 구분하고 개인정보위 AI 프라이버시 리스크 관리 모델의 생애주기별 유형·안전조치와 연결"
+    code: none
+    origin: exam
+    status: todo
