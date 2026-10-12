@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">사채 장부금액은 만기에 액면으로 모인다</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">액면 1,000 · 표면이자율 5% · 3년 만기 · 연 1회 이자 (가상 숫자, 단위 억원)</text>
+
+  <!-- 축 -->
+  <line x1="90" y1="380" x2="680" y2="380" stroke="#1b1b1b" stroke-width="1.2"/>
+  <line x1="90" y1="90" x2="90" y2="380" stroke="#1b1b1b" stroke-width="1.2"/>
+  <text x="130" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">발행</text>
+  <text x="300" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">1년차 말</text>
+  <text x="470" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">2년차 말</text>
+  <text x="640" y="402" text-anchor="middle" font-size="13" fill="#1b1b1b">만기</text>
+  <text x="82" y="244" text-anchor="end" font-size="13" fill="#495057">1,000</text>
+
+  <!-- 액면발행 -->
+  <polyline points="130,240 300,240 470,240 640,240" fill="none" stroke="#495057" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="700" y="244" font-size="13" fill="#495057">액면발행 (5%)</text>
+
+  <!-- 할증발행 -->
+  <polyline points="130,142.7 300,173.9 470,206.4 640,240" fill="none" stroke="#b45309" stroke-width="2.5"/>
+  <g fill="#b45309"><circle cx="130" cy="142.7" r="4"/><circle cx="300" cy="173.9" r="4"/><circle cx="470" cy="206.4" r="4"/></g>
+  <text x="130" y="130" text-anchor="middle" font-size="13" fill="#b45309">1,027.8</text>
+  <text x="300" y="161" text-anchor="middle" font-size="13" fill="#b45309">1,018.9</text>
+  <text x="470" y="194" text-anchor="middle" font-size="13" fill="#b45309">1,009.6</text>
+  <text x="700" y="150" font-size="13" font-weight="bold" fill="#b45309">할증발행</text>
+  <text x="700" y="168" font-size="13" fill="#b45309">시장 4%</text>
+  <text x="700" y="186" font-size="13" fill="#b45309">이자비용 &lt; 표면이자</text>
+
+  <!-- 할인발행 -->
+  <polyline points="130,333.4 300,304 470,272.9 640,240" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <g fill="#2d6a4f"><circle cx="130" cy="333.4" r="4"/><circle cx="300" cy="304" r="4"/><circle cx="470" cy="272.9" r="4"/></g>
+  <text x="130" y="356" text-anchor="middle" font-size="13" fill="#2d6a4f">973.3</text>
+  <text x="300" y="326" text-anchor="middle" font-size="13" fill="#2d6a4f">981.7</text>
+  <text x="470" y="295" text-anchor="middle" font-size="13" fill="#2d6a4f">990.6</text>
+  <text x="700" y="300" font-size="13" font-weight="bold" fill="#2d6a4f">할인발행</text>
+  <text x="700" y="318" font-size="13" fill="#2d6a4f">시장 6%</text>
+  <text x="700" y="336" font-size="13" fill="#2d6a4f">이자비용 &gt; 표면이자</text>
+
+  <circle cx="640" cy="240" r="5" fill="#1b1b1b"/>
+
+  <line x1="30" y1="424" x2="850" y2="424" stroke="#ced4da"/>
+  <text x="40" y="448" font-size="13" fill="#495057">이자비용 = 기초 장부금액 × 유효이자율.  상각액 = 이자비용 − 표면이자(현금 지급액).</text>
+  <text x="40" y="470" font-size="13" fill="#495057">기말 장부금액 = 기초 장부금액 + 상각액. 할인발행은 상각액이 양수, 할증발행은 음수다.</text>
+  <text x="40" y="492" font-size="13" fill="#495057">발행비를 낸 경우도 할인발행과 같은 모양이 된다 — 최초 장부금액이 액면보다 작다</text>
+  <text x="40" y="514" font-size="13" fill="#495057">(K-IFRS 제1109호 문단 5.1.1 거래원가, 문단 4.2.1 상각후원가 측정).</text>
+</svg>
