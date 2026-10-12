@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">로케일은 범주마다 정해지고, iconv는 두 자리에서 실패한다</text>
+  <text x="30" y="56" font-size="13" fill="#555">Git Bash(Cygwin locale 3.6.7, GNU libiconv 1.19) 실행 결과 기준 · 괄호 안은 실습 번호</text>
+
+  <defs>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- ① 로케일 결정 -->
+  <text x="30" y="88" font-size="14" font-weight="bold" fill="#1b1b1b">① 범주마다 왼쪽부터 보고, 처음 값이 있는 것을 쓴다 (1번)</text>
+  <g font-size="14" fill="#1b1b1b">
+    <rect x="30" y="100" width="170" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="48" y="132" font-weight="bold">LC_ALL</text>
+    <rect x="230" y="100" width="200" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="246" y="132" font-weight="bold">LC_COLLATE 등 LC_*</text>
+    <rect x="460" y="100" width="150" height="52" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="478" y="132" font-weight="bold">LANG</text>
+    <rect x="640" y="100" width="210" height="52" rx="6" fill="#ffffff" stroke="#999" stroke-width="1.2"/>
+    <text x="656" y="132">구현 기본값 (C.UTF-8)</text>
+  </g>
+  <g stroke="#555" stroke-width="1.4" fill="none" marker-end="url(#arrowGray)">
+    <path d="M202 126 L228 126"/>
+    <path d="M432 126 L458 126"/>
+    <path d="M612 126 L638 126"/>
+  </g>
+
+  <!-- 범주별 영향 -->
+  <g font-size="13" fill="#1b1b1b">
+    <rect x="30" y="176" width="260" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="46" y="200" font-size="14" font-weight="bold" fill="#2d6a4f">LC_COLLATE — 정렬 (5번)</text>
+    <text x="46" y="222">C: 바이트 순, 대문자가 먼저</text>
+    <text x="46" y="242">en_US·ko_KR: apple Apple 이웃</text>
+
+    <rect x="310" y="176" width="260" height="78" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="326" y="200" font-size="14" font-weight="bold" fill="#2d6a4f">LC_CTYPE — 글자 경계 (8번)</text>
+    <text x="326" y="222">'한글abc' wc -m</text>
+    <text x="326" y="242">UTF-8 로케일 6 · POSIX 10</text>
+
+    <rect x="590" y="176" width="260" height="78" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+    <text x="606" y="200" font-size="14" font-weight="bold" fill="#b45309">LC_NUMERIC — 숫자 (6·7번)</text>
+    <text x="606" y="222">sort -n 이 '1,5'를 읽는 값</text>
+    <text x="606" y="242">C 1 · en_US 15 · de_DE 1.5</text>
+  </g>
+
+  <!-- ② iconv -->
+  <text x="30" y="294" font-size="14" font-weight="bold" fill="#1b1b1b">② iconv -f 원본 -t 대상 — 읽을 때와 써 낼 때, 실패 자리가 둘이다</text>
+  <g font-size="13" fill="#1b1b1b">
+    <rect x="30" y="306" width="390" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="46" y="330" font-size="14" font-weight="bold">-f 원본 인코딩으로 입력을 읽는다</text>
+    <text x="46" y="354" fill="#9d0208">원본에 맞지 않는 바이트 → 멈춤 (11번)</text>
+
+    <rect x="460" y="306" width="390" height="70" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="476" y="330" font-size="14" font-weight="bold">-t 대상 인코딩으로 써 낸다</text>
+    <text x="476" y="354" fill="#9d0208">대상에 없는 글자 → 멈춤 (10·12번)</text>
+  </g>
+  <path d="M422 341 L458 341" stroke="#555" stroke-width="1.4" fill="none" marker-end="url(#arrowGray)"/>
+
+  <g font-size="13" fill="#1b1b1b">
+    <rect x="30" y="396" width="390" height="118" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="46" y="420" font-size="14" font-weight="bold" fill="#b45309">읽기 실패를 다루는 옵션</text>
+    <text x="46" y="444">--byte-subst='&lt;0x%02x&gt;'</text>
+    <text x="46" y="466">잘못된 바이트를 문자열로 바꿔 계속 (13번)</text>
+    <text x="46" y="490" fill="#9d0208">-c · //IGNORE 는 그 바이트를 조용히 버린다</text>
+    <text x="46" y="508" fill="#9d0208">'가똠'이 'c' 한 글자로 남았다 (11번)</text>
+
+    <rect x="460" y="396" width="390" height="118" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="476" y="420" font-size="14" font-weight="bold" fill="#b45309">쓰기 실패를 다루는 옵션 (12·13번)</text>
+    <text x="476" y="444">-c: 버린다, 종료 코드 1 · //IGNORE: 버린다, 0</text>
+    <text x="476" y="466">//TRANSLIT: 비슷한 글자로 (é → 'e, € → EUR)</text>
+    <text x="476" y="488">--unicode-subst='&lt;U+%04X&gt;': 코드 포인트로</text>
+  </g>
+
+  <text x="30" y="542" font-size="13" fill="#555">리눅스 배포판의 glibc판 iconv에는 -o가 있고 --byte-subst·--unicode-subst가 없다 (man-pages 6.19 iconv(1))</text>
+</svg>
