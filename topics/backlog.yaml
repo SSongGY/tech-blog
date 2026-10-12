@@ -2114,7 +2114,7 @@ topics:
     angle: "쓰기 페널티를 숫자로 비교"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-070
     title: "메모리 계층과 캐시 일관성 프로토콜"
     category: PE
