@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">변분 양자 알고리즘 — 4요소와 하이브리드 루프</text>
+
+  <!-- 영역 -->
+  <rect x="20" y="48" width="400" height="290" fill="#f3f6fb" stroke="#1d3557" stroke-width="1.2" stroke-dasharray="6,4" rx="6"/>
+  <text x="36" y="70" font-size="14" font-weight="bold" fill="#1d3557">양자 장치 — 추정만 한다</text>
+  <rect x="460" y="48" width="400" height="290" fill="#f6f6f4" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="6,4" rx="6"/>
+  <text x="476" y="70" font-size="14" font-weight="bold" fill="#4a5568">고전 컴퓨터 — 학습한다</text>
+
+  <!-- 양자 쪽 -->
+  <rect x="70" y="86" width="300" height="48" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="220" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">입력 상태 |0…0⟩</text>
+  <text x="220" y="126" text-anchor="middle" font-size="13" fill="#4a5568">(QML이면 데이터 인코딩)</text>
+
+  <rect x="70" y="166" width="300" height="48" fill="#eef2f8" stroke="#1d3557" stroke-width="1.8" rx="4"/>
+  <text x="220" y="188" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 안사츠 U(θ)</text>
+  <text x="220" y="206" text-anchor="middle" font-size="13" fill="#4a5568">회전 각 θ를 가진 게이트열</text>
+
+  <rect x="70" y="246" width="300" height="48" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="220" y="268" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">측정</text>
+  <text x="220" y="286" text-anchor="middle" font-size="13" fill="#4a5568">관측량 기댓값을 반복 측정으로 추정</text>
+
+  <line x1="220" y1="134" x2="220" y2="163" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="220" y1="214" x2="220" y2="243" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- 고전 쪽 -->
+  <rect x="510" y="246" width="300" height="48" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="660" y="268" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 비용 함수 C(θ)</text>
+  <text x="660" y="286" text-anchor="middle" font-size="13" fill="#4a5568">최소가 곧 문제의 해</text>
+
+  <rect x="510" y="166" width="300" height="48" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="660" y="188" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 기울기 ∂C/∂θ</text>
+  <text x="660" y="206" text-anchor="middle" font-size="13" fill="#4a5568">이동 규칙: θ±π/2로 두 번 실행</text>
+
+  <rect x="510" y="86" width="300" height="48" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="660" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 최적화기</text>
+  <text x="660" y="126" text-anchor="middle" font-size="13" fill="#4a5568">θ 갱신 — SGD·Adam, 기울기 없이 SPSA</text>
+
+  <line x1="370" y1="270" x2="507" y2="270" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="660" y1="246" x2="660" y2="217" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="660" y1="166" x2="660" y2="137" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M510,110 L440,110 L440,190 L373,190" fill="none" stroke="#1d3557" stroke-width="1.8" marker-end="url(#ar)"/>
+  <text x="466" y="103" font-size="13" fill="#1d3557">새 θ</text>
+
+  <!-- 학습 가능성 -->
+  <rect x="20" y="364" width="410" height="58" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="225" y="388" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">국소 비용 + 얕은 회로(O(log n))</text>
+  <text x="225" y="408" text-anchor="middle" font-size="13" fill="#1b1b1b">기울기가 최악에도 다항식으로 줄어든다</text>
+
+  <rect x="450" y="364" width="410" height="58" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="655" y="388" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">전역 비용, 무작위 초기화한 깊은 회로</text>
+  <text x="655" y="408" text-anchor="middle" font-size="13" fill="#1b1b1b">기울기가 큐비트 수에 지수적으로 준다 — 고원</text>
+
+  <text x="440" y="456" text-anchor="middle" font-size="13" fill="#4a5568">①~④ 번호는 Cerezo 등 리뷰가 드는 VQA 공통 요소 4가지다</text>
+</svg>
