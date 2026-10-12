@@ -4193,7 +4193,7 @@ topics:
     angle: "사업모형과 현금흐름 특성으로 갈리는 분류. 평가손익이 당기손익에 닿는지 자본에 머무는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-047
     title: "자본잠식 — 자본총계가 자본금보다 작아진다는 말"
     category: Finance
