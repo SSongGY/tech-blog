@@ -2114,7 +2114,7 @@ topics:
     angle: "쓰기 페널티를 숫자로 비교"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-070
     title: "메모리 계층과 캐시 일관성 프로토콜"
     category: PE
@@ -2875,7 +2875,7 @@ topics:
     angle: "정렬 결과가 환경마다 달라지는 것과 인코딩을 바꿔 저장하는 법"
     code: bash
     origin: manual
-    status: todo
+    status: writing
   - id: pe-093
     title: "소프트웨어 개발 보안 — 시큐어 코딩과 SDL"
     category: PE
@@ -3964,7 +3964,7 @@ topics:
     angle: "같은 이메일이 두 번 들어간 행을 HAVING COUNT(*) > 1로 찾고, 어느 행을 남길지 MIN(rowid)로 정해 지운 뒤 UNIQUE 인덱스로 재발을 막는 절차"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-056
     title: "UPDATE … FROM — 다른 표의 값으로 갱신하기"
     category: Database

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">중복 행 정리의 네 단계와 NULL·대소문자 함정</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · member 표 10행 · 행 번호는 실습 1번에서 본 rowid</text>
+
+  <defs>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- 네 단계 -->
+  <g font-size="13" fill="#1b1b1b">
+    <rect x="30" y="76" width="190" height="84" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="44" y="100" font-size="14" font-weight="bold">① 찾는다</text>
+    <text x="44" y="124">GROUP BY email</text>
+    <text x="44" y="146">HAVING COUNT(*) &gt; 1</text>
+
+    <rect x="240" y="76" width="190" height="84" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="254" y="100" font-size="14" font-weight="bold">② 남길 행을 정한다</text>
+    <text x="254" y="124">묶음마다 MIN(rowid)</text>
+    <text x="254" y="146">나머지가 지울 행</text>
+
+    <rect x="450" y="76" width="190" height="84" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+    <text x="464" y="100" font-size="14" font-weight="bold" fill="#b45309">③ 미리 본다</text>
+    <text x="464" y="124">같은 조건으로 SELECT</text>
+    <text x="464" y="146">지울 행 수를 확인</text>
+
+    <rect x="660" y="76" width="190" height="84" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="674" y="100" font-size="14" font-weight="bold" fill="#2d6a4f">④ 지우고 막는다</text>
+    <text x="674" y="124">트랜잭션 안에서 DELETE</text>
+    <text x="674" y="146">CREATE UNIQUE INDEX</text>
+  </g>
+  <g stroke="#555" stroke-width="1.4" fill="none" marker-end="url(#arrowGray)">
+    <path d="M222 118 L238 118"/>
+    <path d="M432 118 L448 118"/>
+    <path d="M642 118 L658 118"/>
+  </g>
+
+  <!-- 행 표 -->
+  <rect x="30" y="186" width="520" height="226" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.2"/>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="46" y="210" font-weight="bold">rowid</text>
+    <text x="110" y="210" font-weight="bold">email</text>
+    <text x="300" y="210" font-weight="bold">MIN(rowid) 기준 처리</text>
+    <line x1="40" y1="218" x2="540" y2="218" stroke="#999" stroke-width="1"/>
+
+    <text x="56" y="242">2</text><text x="110" y="242">doyun@example.com</text>
+    <text x="300" y="242" fill="#2d6a4f">남긴다</text>
+    <text x="56" y="266">3</text><text x="110" y="266">doyun@example.com</text>
+    <text x="300" y="266" fill="#9d0208">지운다</text>
+    <text x="56" y="290">6</text><text x="110" y="290">minjae@example.com</text>
+    <text x="300" y="290" fill="#2d6a4f">남긴다</text>
+    <text x="56" y="314">7</text><text x="110" y="314">minjae@example.com</text>
+    <text x="300" y="314" fill="#9d0208">지운다</text>
+    <text x="56" y="338">8</text><text x="110" y="338">minjae@example.com</text>
+    <text x="300" y="338" fill="#9d0208">지운다</text>
+    <line x1="40" y1="348" x2="540" y2="348" stroke="#ddd" stroke-width="1"/>
+    <text x="56" y="370">5</text><text x="110" y="370">NULL (박서준)</text>
+    <text x="300" y="370" fill="#2d6a4f">남긴다</text>
+    <text x="56" y="394">9</text><text x="110" y="394">NULL (한유나)</text>
+    <text x="300" y="394" fill="#b45309">NULL 조건이 없으면 지워진다</text>
+  </g>
+
+  <!-- NULL 규칙 -->
+  <rect x="570" y="186" width="280" height="226" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="586" y="210" font-size="14" font-weight="bold" fill="#b45309">NULL을 보는 규칙이 둘이다</text>
+    <text x="586" y="240" font-weight="bold">GROUP BY</text>
+    <text x="586" y="262">NULL끼리 한 묶음으로 센다</text>
+    <text x="586" y="284">→ 서로 다른 두 회원이</text>
+    <text x="586" y="306">  중복으로 잡힌다 (실습 2·6번)</text>
+    <text x="586" y="340" font-weight="bold">UNIQUE 인덱스</text>
+    <text x="586" y="362">NULL은 서로 다른 값으로 본다</text>
+    <text x="586" y="384">→ NULL은 몇 개라도 들어간다</text>
+    <text x="586" y="404">  (실습 14번)</text>
+  </g>
+
+  <!-- 대소문자 -->
+  <rect x="30" y="432" width="820" height="90" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="46" y="456" font-size="14" font-weight="bold" fill="#9d0208">① 단계가 못 찾는 중복 — 대소문자만 다른 값</text>
+    <text x="46" y="480">jia@example.com(4)과 Jia@Example.com(10)은 GROUP BY email에서 다른 묶음이다 (실습 15번)</text>
+    <text x="46" y="504">lower(email)로 다시 묶어 지우고, lower(email) 표현식 UNIQUE 인덱스로 막는다 (실습 16~19번)</text>
+  </g>
+</svg>
