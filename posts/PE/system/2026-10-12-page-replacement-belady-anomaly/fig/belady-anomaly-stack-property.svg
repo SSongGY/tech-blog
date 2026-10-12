@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">벨레이디의 이상현상 — 프레임을 늘렸는데 부재가 늘었다 (FIFO)</text>
+  <text x="30" y="56" font-size="13" fill="#555">F = 페이지 부재 · 계산 검산 4번 결과</text>
+
+  <!-- 참조열 -->
+  <text x="30" y="96" font-size="14" font-weight="bold" fill="#1b1b1b">참조</text>
+  <text x="30" y="136" font-size="14" font-weight="bold" fill="#1b1b1b">프레임 3개</text>
+  <text x="30" y="176" font-size="14" font-weight="bold" fill="#1b1b1b">프레임 4개</text>
+  <text x="786" y="96" font-size="13" fill="#555">부재</text>
+
+  <!-- 7번째·8번째 칸 강조 -->
+  <rect x="466" y="74" width="46" height="116" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="5 3"/>
+  <rect x="516" y="74" width="46" height="116" fill="#fdf3e7" stroke="#9d0208" stroke-width="2"/>
+
+  <g font-size="14" text-anchor="middle" fill="#1b1b1b">
+    <text x="189" y="96">1</text><text x="239" y="96">2</text><text x="289" y="96">3</text><text x="339" y="96">4</text>
+    <text x="389" y="96">1</text><text x="439" y="96">2</text><text x="489" y="96">5</text><text x="539" y="96">1</text>
+    <text x="589" y="96">2</text><text x="639" y="96">3</text><text x="689" y="96">4</text><text x="739" y="96">5</text>
+  </g>
+  <g font-size="14" text-anchor="middle" fill="#9d0208">
+    <text x="189" y="136">F</text><text x="239" y="136">F</text><text x="289" y="136">F</text><text x="339" y="136">F</text>
+    <text x="389" y="136">F</text><text x="439" y="136">F</text><text x="489" y="136">F</text><text x="539" y="136" fill="#2d6a4f">·</text>
+    <text x="589" y="136" fill="#2d6a4f">·</text><text x="639" y="136">F</text><text x="689" y="136">F</text><text x="739" y="136" fill="#2d6a4f">·</text>
+  </g>
+  <g font-size="14" text-anchor="middle" fill="#9d0208">
+    <text x="189" y="176">F</text><text x="239" y="176">F</text><text x="289" y="176">F</text><text x="339" y="176">F</text>
+    <text x="389" y="176" fill="#2d6a4f">·</text><text x="439" y="176" fill="#2d6a4f">·</text><text x="489" y="176">F</text><text x="539" y="176" font-weight="bold">F</text>
+    <text x="589" y="176">F</text><text x="639" y="176">F</text><text x="689" y="176">F</text><text x="739" y="176">F</text>
+  </g>
+  <text x="800" y="136" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">9</text>
+  <text x="800" y="176" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">10</text>
+  <line x1="160" y1="110" x2="830" y2="110" stroke="#cfcfc8" stroke-width="1"/>
+  <line x1="160" y1="150" x2="830" y2="150" stroke="#cfcfc8" stroke-width="1"/>
+
+  <text x="30" y="218" font-size="13" fill="#b45309">점선 칸(7번째 참조) 뒤 메모리 — 3개: {1, 2, 5} · 4개: {2, 3, 4, 5}. 1이 4개 쪽에만 없다</text>
+  <text x="30" y="240" font-size="13" fill="#9d0208">빨간 칸(8번째 참조 1) — 3개는 적중, 4개는 부재. 8~12번째에서 4개는 5번 모두, 3개는 2번 부재</text>
+
+  <!-- 분류 -->
+  <rect x="320" y="272" width="240" height="40" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="440" y="297" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">페이지 교체 알고리즘</text>
+  <path d="M440 312 L230 346" stroke="#3b3b3b" stroke-width="1.5" fill="none"/>
+  <path d="M440 312 L650 346" stroke="#3b3b3b" stroke-width="1.5" fill="none"/>
+
+  <rect x="40" y="346" width="380" height="150" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="58" y="372" font-size="15" font-weight="bold" fill="#2d6a4f">스택 알고리즘 — OPT · LRU</text>
+  <text x="58" y="400" font-size="13" fill="#2d6a4f">프레임 N개의 내용 ⊆ 프레임 N+1개의 내용</text>
+  <text x="58" y="422" font-size="13" fill="#2d6a4f">(매 참조 시점마다 성립)</text>
+  <text x="58" y="452" font-size="13" fill="#2d6a4f">N개에서 적중이면 N+1개에서도 적중</text>
+  <text x="58" y="476" font-size="13" font-weight="bold" fill="#2d6a4f">→ 프레임을 늘려도 부재가 늘지 않는다</text>
+
+  <rect x="460" y="346" width="380" height="150" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="478" y="372" font-size="15" font-weight="bold" fill="#9d0208">포함 관계 보장 없음 — FIFO · Clock</text>
+  <text x="478" y="400" font-size="13" fill="#9d0208">들어온 순서·사용 비트로 고르므로</text>
+  <text x="478" y="422" font-size="13" fill="#9d0208">프레임 수가 다르면 다른 페이지를 내보낸다</text>
+  <text x="478" y="452" font-size="13" fill="#9d0208">위 7번째 참조 뒤처럼 포함 관계가 깨진다</text>
+  <text x="478" y="476" font-size="13" font-weight="bold" fill="#9d0208">→ 벨레이디의 이상현상이 생길 수 있다</text>
+</svg>
