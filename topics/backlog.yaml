@@ -4182,7 +4182,7 @@ topics:
     angle: "20% 기준과 유의적 영향력. 연결과 무엇이 다른지 같은 자회사를 두 방식으로 계산해 비교"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-046
     title: "금융자산 세 분류 — 상각후원가·FVOCI·FVPL"
     category: Finance
