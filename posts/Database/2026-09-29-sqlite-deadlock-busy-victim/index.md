@@ -14,6 +14,11 @@ verified: true
 topic_id: db-005
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`deadlock`)
+> - [교착상태 4조건과 해결 기법](../../PE/system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) — Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.8 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.20 Ch.32
+<!-- related:end -->
+
 ## 들어가며
 
 작은 서비스에서 SQLite 파일 하나를 워커 두 개가 같이 쓰다 보면 가끔 `database is locked`가 찍힌다.

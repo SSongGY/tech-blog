@@ -14,6 +14,11 @@ verified: true
 topic_id: bas-019
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`constraints`)
+> - [Tibero 7 제약조건 — 종류와 검증 시점](../../tibero/2026-10-12-tibero7-constraints-state-deferrable/index.md) — Tibero 7
+<!-- related:end -->
+
 ## 들어가며
 
 상품 목록을 담을 표를 처음 만들 때, 가격 칸에 `CHECK (price > 0)`을 걸어 두면 0원이나 마이너스 가격은
