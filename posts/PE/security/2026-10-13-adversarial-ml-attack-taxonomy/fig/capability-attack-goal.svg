@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#222">공격자 능력 → 공격 유형 → 공격 목표</text>
+
+  <!-- column headers -->
+  <text x="185" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">공격자 능력 (Capability)</text>
+  <text x="450" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">공격 유형</text>
+  <text x="725" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">공격 목표 (Goal)</text>
+
+  <!-- stage bands -->
+  <rect x="20" y="80" width="840" height="190" fill="#f3f6f4" stroke="none"/>
+  <rect x="20" y="280" width="840" height="190" fill="#f6f4f1" stroke="none"/>
+  <text x="34" y="176" font-size="14" font-weight="bold" fill="#2d6a4f" transform="rotate(-90 34 176)" text-anchor="middle">학습 단계</text>
+  <text x="34" y="376" font-size="14" font-weight="bold" fill="#b45309" transform="rotate(-90 34 376)" text-anchor="middle">배포 단계</text>
+
+  <!-- row 1 -->
+  <rect x="60" y="95" width="250" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="185" y="125" text-anchor="middle" font-size="15" fill="#222">① 학습 데이터 통제</text>
+  <text x="185" y="148" text-anchor="middle" font-size="13" fill="#555">학습 표본을 넣거나 고친다</text>
+  <rect x="345" y="95" width="210" height="70" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="450" y="125" text-anchor="middle" font-size="15" fill="#222">데이터 오염</text>
+  <text x="450" y="148" text-anchor="middle" font-size="13" fill="#555">가용성·표적·백도어 오염</text>
+  <rect x="590" y="95" width="270" height="70" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="725" y="136" text-anchor="middle" font-size="15" fill="#222">가용성 · 무결성</text>
+  <line x1="310" y1="130" x2="343" y2="130" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="555" y1="130" x2="588" y2="130" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- row 2 -->
+  <rect x="60" y="185" width="250" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="185" y="215" text-anchor="middle" font-size="15" fill="#222">② 모델 통제</text>
+  <text x="185" y="238" text-anchor="middle" font-size="13" fill="#555">공개 가중치·미세조정 API</text>
+  <rect x="345" y="185" width="210" height="70" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="450" y="215" text-anchor="middle" font-size="15" fill="#222">모델 오염</text>
+  <text x="450" y="238" text-anchor="middle" font-size="13" fill="#555">미세조정으로 거절 제거</text>
+  <rect x="590" y="185" width="270" height="70" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="725" y="226" text-anchor="middle" font-size="15" fill="#222">무결성 · 오용 허용</text>
+  <line x1="310" y1="220" x2="343" y2="220" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="555" y1="220" x2="588" y2="220" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- row 3 -->
+  <rect x="60" y="295" width="250" height="70" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="185" y="325" text-anchor="middle" font-size="15" fill="#222">③ 질의 접근</text>
+  <text x="185" y="348" text-anchor="middle" font-size="13" fill="#555">일반 사용자와 같은 입구</text>
+  <rect x="345" y="295" width="210" height="70" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="450" y="320" text-anchor="middle" font-size="14" fill="#222">회피 · 직접 프롬프트</text>
+  <text x="450" y="344" text-anchor="middle" font-size="14" fill="#222">프라이버시 공격</text>
+  <rect x="590" y="295" width="270" height="70" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="725" y="336" text-anchor="middle" font-size="15" fill="#222">4가지 목표 모두</text>
+  <line x1="310" y1="330" x2="343" y2="330" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="555" y1="330" x2="588" y2="330" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- row 4 -->
+  <rect x="60" y="385" width="250" height="70" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="185" y="415" text-anchor="middle" font-size="15" fill="#222">④ 자원 통제</text>
+  <text x="185" y="438" text-anchor="middle" font-size="13" fill="#555">모델이 읽을 문서·웹 수정</text>
+  <rect x="345" y="385" width="210" height="70" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="450" y="415" text-anchor="middle" font-size="15" fill="#222">간접 프롬프트</text>
+  <text x="450" y="438" text-anchor="middle" font-size="15" fill="#222">인젝션</text>
+  <rect x="590" y="385" width="270" height="70" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="725" y="426" text-anchor="middle" font-size="15" fill="#222">가용성 · 무결성 · 프라이버시</text>
+  <line x1="310" y1="420" x2="343" y2="420" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="555" y1="420" x2="588" y2="420" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="440" y="500" text-anchor="middle" font-size="13" fill="#555">①~③은 예측형·생성형 공통, ④와 오용 허용 목표는 생성형에서 추가된다</text>
+</svg>
