@@ -2058,7 +2058,7 @@ topics:
     angle: "SBOM이 있어도 못 막는 것"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-065
     title: "랜섬웨어 대응 체계 — 예방·탐지·복구"
     category: PE
