@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **302편** · 갱신 2026-10-13
+총 **305편** · 갱신 2026-10-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 48편
+## DB문법 (basics) — 49편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [중복 행 찾아 지우기 — GROUP BY HAVING과 rowid](posts/Database/sql-basics/2026-10-13-sql-find-delete-duplicate-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [트리거 기본 — 행이 바뀔 때 자동으로 도는 SQL](posts/Database/sql-basics/2026-10-12-trigger-before-after-audit/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [RETURNING — 넣은 값을 그 자리에서 돌려받기](posts/Database/sql-basics/2026-10-12-sqlite-returning-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기](posts/Database/sql-basics/2026-10-12-lag-lead-previous-next-row/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -79,10 +80,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 111편
+## 기술사 (pe) — 112편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [RAID 레벨별 특성과 선택 기준 — 쓰기 페널티를 I/O 수로 세기](posts/PE/system/2026-10-13-raid-levels-write-penalty/index.md) | 중급 | Python 3.13.5, Patterson·Gibson·Katz, A Case for RAID (SIGMOD 1988), Arpaci-Dusseau, OSTEP v1.10 Ch.38, Anvin, The mathematics of RAID-6 (2011-12-20판) | 실행 검증 |
 | 2026-10-13 | [멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크](posts/PE/security/2026-10-13-membership-inference-memorization/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03), 개인정보보호위원회 AI 프라이버시 리스크 관리 모델 (2024-12-19 공개) | 문서 근거 |
 | 2026-10-13 | [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](posts/PE/security/2026-10-13-adversarial-ml-attack-taxonomy/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03) | 문서 근거 |
 | 2026-10-12 | [변분 양자 알고리즘(VQA)과 양자머신러닝 — 하이브리드 루프와 기울기 소실 고원](posts/PE/ai/2026-10-12-vqa-hybrid-loop-barren-plateau/index.md) | 중급 | Cerezo et al., Nature Reviews Physics 3 (2021), Python 3.13.5 | 실행 검증 |
@@ -195,10 +197,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 16편
+## 리눅스 (linux) — 17편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [locale과 iconv — 한글이 깨질 때](posts/Infra/linux/2026-10-13-locale-iconv-sort-encoding/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), Cygwin locale 3.6.7, GNU libiconv 1.19, GNU coreutils 8.32 (sort, wc, cut, od) | 실행 검증 |
 | 2026-10-12 | [tail -f와 -F — 로테이션 뒤에도 로그를 놓치지 않기](posts/Linux/command/2026-10-12-tail-follow-log-rotation/index.md) | 입문 | GNU coreutils tail 8.32, GNU grep 3.0, GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-08 | [time으로 재는 세 가지 — real, user, sys](posts/Infra/linux/2026-10-08-time-real-user-sys/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (sha256sum, dd, sleep), Cygwin runtime 3.6.7 | 실행 검증 |
 | 2026-10-07 | [split과 csplit — 큰 파일 쪼개기](posts/Infra/linux/2026-10-07-split-csplit-large-file/index.md) | 중급 | GNU coreutils 8.32 (split, csplit), bash 5.3.9, Windows 11 | 실행 검증 |
