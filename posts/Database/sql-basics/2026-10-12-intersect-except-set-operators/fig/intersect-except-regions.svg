@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">두 명단을 (employee_id, name) 쌍으로 비교한다</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · 실습 1~4번 결과 · 결과에서 중복 행은 하나로 합쳐진다</text>
+
+  <!-- 집합 두 개 -->
+  <ellipse cx="300" cy="200" rx="200" ry="110" fill="#eef4f0" stroke="#3b3b3b" stroke-width="1.5" fill-opacity="0.8"/>
+  <ellipse cx="560" cy="200" rx="200" ry="110" fill="#f3f0f8" stroke="#3b3b3b" stroke-width="1.5" fill-opacity="0.6"/>
+  <text x="110" y="84" font-size="14" font-weight="bold" fill="#1b1b1b">signup (5행)</text>
+  <text x="640" y="84" font-size="14" font-weight="bold" fill="#1b1b1b">attendance (3행)</text>
+
+  <!-- signup 만 -->
+  <g font-size="14" fill="#1b1b1b">
+    <text x="150" y="176">102 이도윤</text>
+    <text x="150" y="198">102 이도윤</text>
+    <text x="150" y="236">104 최지아</text>
+  </g>
+  <text x="246" y="187" font-size="13" fill="#b45309">← 같은 행 2개</text>
+
+  <!-- 교집합 -->
+  <g font-size="14" fill="#1b1b1b">
+    <text x="392" y="186">101 김하늘</text>
+    <text x="392" y="220">103 박서준</text>
+  </g>
+
+  <!-- attendance 만 -->
+  <text x="610" y="206" font-size="14" fill="#1b1b1b">105 정민재</text>
+
+  <!-- 결과 상자 -->
+  <rect x="30" y="336" width="260" height="104" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="360" font-size="14" font-weight="bold" fill="#b45309">signup EXCEPT attendance</text>
+  <text x="46" y="386" font-size="14" fill="#1b1b1b">102 이도윤</text>
+  <text x="46" y="408" font-size="14" fill="#1b1b1b">104 최지아</text>
+  <text x="46" y="430" font-size="13" fill="#555">입력 3행 → 결과 2행</text>
+
+  <rect x="310" y="336" width="260" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="326" y="360" font-size="14" font-weight="bold" fill="#2d6a4f">signup INTERSECT attendance</text>
+  <text x="326" y="386" font-size="14" fill="#1b1b1b">101 김하늘</text>
+  <text x="326" y="408" font-size="14" fill="#1b1b1b">103 박서준</text>
+  <text x="326" y="430" font-size="13" fill="#555">양쪽에 있는 행</text>
+
+  <rect x="590" y="336" width="260" height="104" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="606" y="360" font-size="14" font-weight="bold" fill="#b45309">attendance EXCEPT signup</text>
+  <text x="606" y="386" font-size="14" fill="#1b1b1b">105 정민재</text>
+  <text x="606" y="430" font-size="13" fill="#555">순서를 뒤집으면 다른 답</text>
+
+  <!-- 화살표: 영역 → 결과 -->
+  <g stroke="#555" stroke-width="1.2" fill="none" marker-end="url(#arrowGray)">
+    <path d="M180 250 L160 330"/>
+    <path d="M430 300 L440 330"/>
+    <path d="M660 250 L720 330"/>
+  </g>
+  <defs>
+    <marker id="arrowGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- 비교 규칙 -->
+  <rect x="30" y="460" width="820" height="88" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="484" font-size="14" font-weight="bold" fill="#b45309">행을 "같다"고 보는 기준은 = 연산자와 다르다</text>
+  <text x="46" y="508" font-size="13" fill="#1b1b1b">NULL과 NULL을 같은 값으로 본다 — 박서준의 email이 둘 다 NULL이어도 교집합에 남는다(실습 6번)</text>
+  <text x="46" y="530" font-size="13" fill="#1b1b1b">타입 변환을 하지 않는다 — INTEGER 101과 TEXT '101'은 다른 값이다(실습 12번, JOIN = 은 같다고 봤다)</text>
+</svg>

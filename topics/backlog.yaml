@@ -666,7 +666,7 @@ topics:
     difficulty: 입문
     angle: "DEFERRABLE과 NOVALIDATE가 실제로 바꾸는 것"
     code: sql
-    status: todo
+    status: done
   - id: tb-018
     title: "Tibero 7 머티리얼라이즈드 뷰 — 갱신 방식 고르기"
     category: Database
@@ -2102,7 +2102,7 @@ topics:
     angle: "은행원 알고리즘을 직접 돌려 안전 상태 판정"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-069
     title: "RAID 레벨별 특성과 선택 기준"
     category: PE
@@ -3940,7 +3940,7 @@ topics:
     angle: "두 명단에서 겹치는 사람과 한쪽에만 있는 사람을 JOIN 없이 구하는 법, 중복 행이 있을 때 결과가 몇 행인지, 컬럼 수·타입이 다르면 어떤 에러인지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-054
     title: "트리거 기본 — 행이 바뀔 때 자동으로 도는 SQL"
     category: Database
