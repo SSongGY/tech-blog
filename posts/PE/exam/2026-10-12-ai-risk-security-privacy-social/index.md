@@ -256,6 +256,10 @@ AI 리스크는 발생 가능성과 피해 크기의 결합이라는 점에서 �
 
 > 개념 정리: [AI 시스템 영향평가 — ISO/IEC 42005와 기본권 영향평가](../../it-management/2026-10-05-ai-system-impact-assessment-iso-42005/index.md)
 
+> 개념 정리: [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](../../security/2026-10-13-adversarial-ml-attack-taxonomy/index.md)
+
+> 개념 정리: [멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크](../../security/2026-10-13-membership-inference-memorization/index.md)
+
 끝
 
 ## 답안 작성 메모
