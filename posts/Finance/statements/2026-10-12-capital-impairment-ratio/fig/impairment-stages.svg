@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">자본총계와 자본금 — 세 가지 상태</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">자본금 100억원인 회사에 결손이 쌓일 때 (높이 = 금액, 가상 숫자)</text>
+
+  <!-- 자본금 수준선 -->
+  <line x1="40" y1="200" x2="840" y2="200" stroke="#495057" stroke-width="1" stroke-dasharray="6 4"/>
+  <text x="836" y="192" text-anchor="end" font-size="13" fill="#495057">자본금 100</text>
+  <!-- 0 기준선 -->
+  <line x1="40" y1="360" x2="840" y2="360" stroke="#1b1b1b" stroke-width="1.5"/>
+  <text x="836" y="352" text-anchor="end" font-size="13" fill="#495057">0</text>
+
+  <!-- 1. 정상 -->
+  <text x="190" y="90" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">① 잠식 없음</text>
+  <rect x="110" y="152" width="160" height="48" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="190" y="181" text-anchor="middle" font-size="13" fill="#1b1b1b">이익잉여금 +30</text>
+  <rect x="110" y="200" width="160" height="160" fill="#b7e4c7" stroke="#2d6a4f"/>
+  <text x="190" y="285" text-anchor="middle" font-size="14" fill="#1b1b1b">자본금 100</text>
+  <text x="190" y="120" text-anchor="middle" font-size="13" fill="#2d6a4f">자본총계 130 ≥ 자본금</text>
+
+  <!-- 2. 부분잠식 -->
+  <text x="440" y="90" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">② 부분잠식</text>
+  <rect x="360" y="200" width="160" height="96" fill="#fde2e4" stroke="#9d0208" stroke-dasharray="4 3"/>
+  <text x="440" y="244" text-anchor="middle" font-size="13" fill="#9d0208">결손금 −60</text>
+  <text x="440" y="264" text-anchor="middle" font-size="13" fill="#9d0208">(잠식된 자본금)</text>
+  <rect x="360" y="296" width="160" height="64" fill="#b7e4c7" stroke="#2d6a4f"/>
+  <text x="440" y="333" text-anchor="middle" font-size="13" fill="#1b1b1b">자본총계 40</text>
+  <text x="440" y="120" text-anchor="middle" font-size="13" fill="#b45309">0 &lt; 자본총계 &lt; 자본금</text>
+
+  <!-- 3. 완전잠식 -->
+  <text x="690" y="90" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">③ 완전잠식</text>
+  <rect x="610" y="200" width="160" height="160" fill="#fde2e4" stroke="#9d0208" stroke-dasharray="4 3"/>
+  <text x="690" y="276" text-anchor="middle" font-size="13" fill="#9d0208">결손금 −110</text>
+  <text x="690" y="296" text-anchor="middle" font-size="13" fill="#9d0208">(자본금 전부 잠식)</text>
+  <rect x="610" y="360" width="160" height="16" fill="#9d0208"/>
+  <text x="690" y="396" text-anchor="middle" font-size="13" fill="#9d0208">자본총계 −10</text>
+  <text x="690" y="120" text-anchor="middle" font-size="13" fill="#9d0208">자본총계 ≤ 0</text>
+
+  <!-- 잠식률 -->
+  <text x="190" y="420" text-anchor="middle" font-size="14" fill="#1b1b1b">잠식률 0%</text>
+  <text x="440" y="420" text-anchor="middle" font-size="14" fill="#1b1b1b">(100 − 40) / 100 = 60%</text>
+  <text x="690" y="420" text-anchor="middle" font-size="14" fill="#1b1b1b">(100 + 10) / 100 = 110%</text>
+
+  <line x1="30" y1="444" x2="850" y2="444" stroke="#ced4da"/>
+  <text x="40" y="468" font-size="13" fill="#495057">자본잠식률 = (자본금 − 자본총계) / 자본금 × 100. 연결 기준이면 자본총계에서 비지배지분을 뺀다.</text>
+  <text x="40" y="490" font-size="13" fill="#495057">유가증권시장: 50% 이상이면 관리종목, 2년 연속이면 실질심사, 전액잠식이면 상장폐지 절차 (거래소 안내 자료 요약).</text>
+</svg>

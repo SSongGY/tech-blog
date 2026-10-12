@@ -4204,7 +4204,7 @@ topics:
     angle: "부분잠식과 완전잠식의 계산, 결손금이 쌓이는 경로, 상장 규정이 보는 지점"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-048
     title: "차입금과 사채 — 조달 수단이 재무제표에 남기는 자국"
     category: Finance
@@ -4215,7 +4215,7 @@ topics:
     angle: "액면발행·할인발행·할증발행에서 이자비용이 달라지는 것을 유효이자율로 계산해"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-049
     title: "어디까지가 현금인가 — 현금성자산과 단기금융상품"
     category: Finance
