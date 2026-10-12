@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **300편** · 갱신 2026-10-13
+총 **302편** · 갱신 2026-10-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -79,10 +79,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 109편
+## 기술사 (pe) — 111편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크](posts/PE/security/2026-10-13-membership-inference-memorization/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03), 개인정보보호위원회 AI 프라이버시 리스크 관리 모델 (2024-12-19 공개) | 문서 근거 |
+| 2026-10-13 | [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](posts/PE/security/2026-10-13-adversarial-ml-attack-taxonomy/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03) | 문서 근거 |
 | 2026-10-12 | [변분 양자 알고리즘(VQA)과 양자머신러닝 — 하이브리드 루프와 기울기 소실 고원](posts/PE/ai/2026-10-12-vqa-hybrid-loop-barren-plateau/index.md) | 중급 | Cerezo et al., Nature Reviews Physics 3 (2021), Python 3.13.5 | 실행 검증 |
 | 2026-10-12 | [공급망 보안과 SBOM — 목록이 막는 것과 못 막는 것](posts/PE/security/2026-10-12-sbom-supply-chain-limits/index.md) | 중급 | NTIA SBOM Minimum Elements (2021-07-12), CISA SBOM Types (2023-04-21), CISA 2025 SBOM Minimum Elements 공개 의견 수렴 초안 (2025-08-22), SLSA v1.2 | 문서 근거 |
 | 2026-10-12 | [가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것](posts/PE/security/2026-10-12-pseudonymization-ope-fpe-he-leakage/index.md) | 중급 | 가명정보 처리 가이드라인 2022.4, NIST SP 800-38G Rev.1 2nd Public Draft 2025.2, Python 3.13.5 | 실행 검증 |
