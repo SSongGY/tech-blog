@@ -1630,7 +1630,8 @@ topics:
     difficulty: 입문
     angle: "inode 관점에서 둘의 차이와 원본을 지웠을 때의 결과"
     code: shell
-    status: todo
+    status: blocked
+    blocked_note: Git Bash 의 ln -s 는 일반 파일 복사본을 만들고, 네이티브 심볼릭 링크는 개발자 모드가 없어 Operation not permitted. 심볼릭 링크 절반을 검증할 수 없다 — WSL 이나 개발자 모드가 생기면 다시
   - id: lx-015
     title: "tar와 gzip — 압축과 해제, 그리고 옵션 순서"
     category: Linux
@@ -2829,7 +2830,8 @@ topics:
     angle: "세 가지 시각(atime·mtime·ctime)이 각각 언제 바뀌는지 직접 만들어 확인"
     code: bash
     origin: manual
-    status: todo
+    status: blocked
+    blocked_note: Git Bash(NTFS, noacl) 에서 chmod 가 모드도 ctime 도 바꾸지 않고, 디렉터리 링크 수가 1, df 아이노드 총계가 무의미해 stat 의 리눅스 의미를 검증할 수 없다 — WSL 이 생기면 다시
   - id: infra-022
     title: "diff와 patch — 설정 변경을 추적하기"
     category: Infra

@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **297편** · 갱신 2026-10-12
+총 **299편** · 갱신 2026-10-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 47편
+## DB문법 (basics) — 48편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-12 | [트리거 기본 — 행이 바뀔 때 자동으로 도는 SQL](posts/Database/sql-basics/2026-10-12-trigger-before-after-audit/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [RETURNING — 넣은 값을 그 자리에서 돌려받기](posts/Database/sql-basics/2026-10-12-sqlite-returning-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기](posts/Database/sql-basics/2026-10-12-lag-lead-previous-next-row/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [INTERSECT와 EXCEPT — 두 결과의 교집합과 차집합](posts/Database/sql-basics/2026-10-12-intersect-except-set-operators/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -78,11 +79,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 108편
+## 기술사 (pe) — 109편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-12 | [변분 양자 알고리즘(VQA)과 양자머신러닝 — 하이브리드 루프와 기울기 소실 고원](posts/PE/ai/2026-10-12-vqa-hybrid-loop-barren-plateau/index.md) | 중급 | Cerezo et al., Nature Reviews Physics 3 (2021), Python 3.13.5 | 실행 검증 |
+| 2026-10-12 | [공급망 보안과 SBOM — 목록이 막는 것과 못 막는 것](posts/PE/security/2026-10-12-sbom-supply-chain-limits/index.md) | 중급 | NTIA SBOM Minimum Elements (2021-07-12), CISA SBOM Types (2023-04-21), CISA 2025 SBOM Minimum Elements 공개 의견 수렴 초안 (2025-08-22), SLSA v1.2 | 문서 근거 |
 | 2026-10-12 | [가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것](posts/PE/security/2026-10-12-pseudonymization-ope-fpe-he-leakage/index.md) | 중급 | 가명정보 처리 가이드라인 2022.4, NIST SP 800-38G Rev.1 2nd Public Draft 2025.2, Python 3.13.5 | 실행 검증 |
 | 2026-10-12 | [페이지 교체 알고리즘과 벨레이디의 이상현상](posts/PE/system/2026-10-12-page-replacement-belady-anomaly/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.10 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.22 | 실행 검증 |
 | 2026-10-12 | [교착상태 4조건과 해결 기법](posts/PE/system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.8 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.20 Ch.32 | 실행 검증 |
