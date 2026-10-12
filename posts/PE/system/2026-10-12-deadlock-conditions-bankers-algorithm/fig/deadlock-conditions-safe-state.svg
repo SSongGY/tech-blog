@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="560" viewBox="0 0 880 560" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">가. 필요조건 4가지 — 하나라도 깨면 교착은 생기지 않는다 (예방)</text>
+
+  <g font-size="13">
+    <rect x="30" y="52" width="400" height="74" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="46" y="76" font-size="14" font-weight="bold" fill="#1b1b1b">① 상호 배제</text>
+    <text x="46" y="98" fill="#1b1b1b">한 번에 한 프로세스만 자원을 쓴다</text>
+    <text x="46" y="118" fill="#b45309">예방: 공유 자원은 필요 없음 — 락은 못 없앤다</text>
+
+    <rect x="450" y="52" width="400" height="74" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="466" y="76" font-size="14" font-weight="bold" fill="#1b1b1b">② 점유와 대기</text>
+    <text x="466" y="98" fill="#1b1b1b">자원을 쥔 채 다른 자원을 기다린다</text>
+    <text x="466" y="118" fill="#b45309">예방: 시작 전에 전부 받거나, 빈손일 때만 요청</text>
+
+    <rect x="30" y="138" width="400" height="74" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+    <text x="46" y="162" font-size="14" font-weight="bold" fill="#1b1b1b">③ 비선점</text>
+    <text x="46" y="184" fill="#1b1b1b">쥔 프로세스가 스스로 놓을 때만 풀린다</text>
+    <text x="46" y="204" fill="#b45309">예방: 못 받으면 쥔 것을 모두 내놓는다</text>
+
+    <rect x="450" y="138" width="400" height="74" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="466" y="162" font-size="14" font-weight="bold" fill="#1b1b1b">④ 순환 대기</text>
+    <text x="466" y="184" fill="#1b1b1b">P0 → P1 → … → Pn → P0 으로 기다린다</text>
+    <text x="466" y="204" fill="#2d6a4f">예방: 자원에 번호를 매겨 오름차순으로만 요청</text>
+  </g>
+
+  <text x="30" y="258" font-size="17" font-weight="bold" fill="#1b1b1b">나. 상태 공간 — 회피는 불안전 상태에 들어가지 않는다</text>
+
+  <rect x="30" y="274" width="820" height="200" rx="8" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="46" y="298" font-size="14" fill="#555">자원 할당 상태 전체</text>
+
+  <rect x="60" y="312" width="300" height="146" rx="8" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="80" y="340" font-size="15" font-weight="bold" fill="#2d6a4f">안전 상태</text>
+  <text x="80" y="366" font-size="13" fill="#1b1b1b">모두 끝낼 수 있는 순서가 하나 이상</text>
+  <text x="80" y="388" font-size="13" fill="#1b1b1b">→ 교착이 아니다</text>
+  <text x="80" y="420" font-size="13" fill="#555">은행원 알고리즘은 요청을 받은 뒤</text>
+  <text x="80" y="440" font-size="13" fill="#555">여기에 남을 때만 할당한다</text>
+
+  <rect x="400" y="312" width="430" height="146" rx="8" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="420" y="340" font-size="15" font-weight="bold" fill="#b45309">불안전 상태</text>
+  <text x="420" y="366" font-size="13" fill="#1b1b1b">그런 순서가 없다 → 교착 "가능"</text>
+
+  <rect x="630" y="376" width="180" height="74" rx="8" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="648" y="398" font-size="15" font-weight="bold" fill="#9d0208">교착 상태</text>
+  <text x="648" y="420" font-size="13" fill="#1b1b1b">탐지 알고리즘이</text>
+  <text x="648" y="440" font-size="13" fill="#1b1b1b">찾고 복구한다</text>
+
+  <text x="420" y="404" font-size="13" fill="#555">요청이 최대치보다</text>
+  <text x="420" y="424" font-size="13" fill="#555">작으면 교착 없이</text>
+  <text x="420" y="444" font-size="13" fill="#555">끝날 수도 있다</text>
+
+  <text x="30" y="506" font-size="13" fill="#555">처리 방법: 예방(가.) · 회피(나.의 안전 상태 유지) · 탐지와 복구(교착 상태를 찾아 종료·선점) · 무시</text>
+  <text x="30" y="530" font-size="13" fill="#555">Silberschatz 10판 8장 · OSTEP v1.20 32.3 기준</text>
+</svg>
