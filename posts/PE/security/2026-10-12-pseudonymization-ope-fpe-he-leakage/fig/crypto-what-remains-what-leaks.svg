@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">가명처리용 암호화 6종 — 분석 요구가 기법을 고르고, 남긴 성질이 곧 새는 정보다</text>
+
+  <text x="95" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d3557">분석 요구</text>
+  <text x="300" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d3557">기법</text>
+  <text x="530" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d3557">암호문에 남는 성질</text>
+  <text x="760" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1d3557">그래서 새는 것</text>
+  <line x1="20" y1="80" x2="860" y2="80" stroke="#cbd5e0" stroke-width="1.2"/>
+
+  <!-- 1 양방향 -->
+  <text x="95" y="118" text-anchor="middle" font-size="13" fill="#1b1b1b">원래 값 복원</text>
+  <rect x="200" y="94" width="200" height="44" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="300" y="121" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">양방향 암호화</text>
+  <line x1="160" y1="116" x2="197" y2="116" stroke="#1b1b1b" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="530" y="121" text-anchor="middle" font-size="13" fill="#1b1b1b">키로 복호 가능</text>
+  <text x="760" y="121" text-anchor="middle" font-size="13" fill="#b45309">키가 새면 전부</text>
+
+  <!-- 2 일방향 -->
+  <text x="95" y="182" text-anchor="middle" font-size="13" fill="#1b1b1b">동일인 연결만</text>
+  <rect x="200" y="158" width="200" height="44" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="300" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">일방향(해시)</text>
+  <line x1="160" y1="180" x2="197" y2="180" stroke="#1b1b1b" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="530" y="185" text-anchor="middle" font-size="13" fill="#1b1b1b">같은 값 → 같은 해시</text>
+  <text x="760" y="185" text-anchor="middle" font-size="13" fill="#9d0208">키 없으면 후보 열거</text>
+
+  <!-- 3 순서보존 -->
+  <text x="95" y="246" text-anchor="middle" font-size="13" fill="#1b1b1b">크기 비교·범위</text>
+  <rect x="200" y="222" width="200" height="44" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="300" y="249" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">순서보존(OPE)</text>
+  <line x1="160" y1="244" x2="197" y2="244" stroke="#1b1b1b" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="530" y="241" text-anchor="middle" font-size="13" fill="#1b1b1b">순서 + 같은 값 여부</text>
+  <text x="530" y="259" text-anchor="middle" font-size="13" fill="#1b1b1b">+ 대략적 위치</text>
+  <text x="760" y="241" text-anchor="middle" font-size="13" fill="#9d0208">조밀한 열은 정렬만으로</text>
+  <text x="760" y="259" text-anchor="middle" font-size="13" fill="#9d0208">전부 복원</text>
+
+  <!-- 4 형태보존 -->
+  <text x="95" y="310" text-anchor="middle" font-size="13" fill="#1b1b1b">스키마 유지</text>
+  <rect x="200" y="286" width="200" height="44" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="300" y="313" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">형태보존(FPE)</text>
+  <line x1="160" y1="308" x2="197" y2="308" stroke="#1b1b1b" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="530" y="305" text-anchor="middle" font-size="13" fill="#1b1b1b">길이·문자 종류</text>
+  <text x="530" y="323" text-anchor="middle" font-size="13" fill="#1b1b1b">+ 같은 값 여부</text>
+  <text x="760" y="305" text-anchor="middle" font-size="13" fill="#9d0208">빈도, 정의역이 작으면</text>
+  <text x="760" y="323" text-anchor="middle" font-size="13" fill="#9d0208">대응표로 복원</text>
+
+  <!-- 5 동형 -->
+  <text x="95" y="374" text-anchor="middle" font-size="13" fill="#1b1b1b">암호문 상태 연산</text>
+  <rect x="200" y="350" width="200" height="44" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="300" y="377" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">동형(HE)</text>
+  <line x1="160" y1="372" x2="197" y2="372" stroke="#1b1b1b" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="530" y="369" text-anchor="middle" font-size="13" fill="#1b1b1b">연산 구조만</text>
+  <text x="530" y="387" text-anchor="middle" font-size="13" fill="#1b1b1b">(같은 값도 다른 암호문)</text>
+  <text x="760" y="369" text-anchor="middle" font-size="13" fill="#2d6a4f">암호문만으로는 없음</text>
+  <text x="760" y="387" text-anchor="middle" font-size="13" fill="#b45309">대가: 비교 불가·크기 팽창</text>
+
+  <!-- 6 다형성 -->
+  <text x="95" y="438" text-anchor="middle" font-size="13" fill="#1b1b1b">제공처 간 결합 차단</text>
+  <rect x="200" y="414" width="200" height="44" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="300" y="441" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">다형성</text>
+  <line x1="168" y1="436" x2="197" y2="436" stroke="#1b1b1b" stroke-width="1.4" marker-end="url(#ar)"/>
+  <text x="530" y="441" text-anchor="middle" font-size="13" fill="#1b1b1b">제공처마다 다른 가명</text>
+  <text x="760" y="441" text-anchor="middle" font-size="13" fill="#b45309">한 제공처 안에서는 연결</text>
+
+  <text x="440" y="486" text-anchor="middle" font-size="13" fill="#4a5568">위 넷(양방향·일방향·순서보존·형태보존)은 결정적으로 쓰면 같은 값이 같은 암호문이 되어 빈도가 남는다</text>
+</svg>

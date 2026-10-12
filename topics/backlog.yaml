@@ -4138,7 +4138,7 @@ topics:
     angle: "VQA 구성요소 4가지(비용 함수·안사츠·기울기·최적화기), 인코딩 3방식의 큐비트·회로 깊이 맞교환, HHL 가속의 전제 4가지와 탈양자화를 원 논문으로 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-161
     title: "가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것"
     category: PE
@@ -4149,7 +4149,7 @@ topics:
     angle: "가명정보 처리 가이드라인의 암호화 6종을 분석 요구(비교·스키마 유지·암호문 연산·결합 차단)별로 나누고, 순서보존 암호가 순서 정보를 노출하는 한계를 원 논문으로 확인"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: fin-043
     title: "재고자산 평가 — 선입선출과 가중평균이 이익을 가르는 자리"
     category: Finance

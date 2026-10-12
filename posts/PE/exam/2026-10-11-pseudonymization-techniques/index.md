@@ -101,6 +101,8 @@ verified: true
 거치고, 처리 후에도 재식별 가능성을 계속 모니터링한다(가이드라인 5단계 사후관리).
 
 > 개념 정리: [개인정보 비식별·가명처리 절차와 적정성 평가 — k-익명성·ℓ-다양성·t-근접성이 막는 공격과 못 막는 공격](../../security/2026-10-08-pseudonymization-steps-k-anonymity-limits/index.md)
+>
+> 개념 정리: [가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것](../../security/2026-10-12-pseudonymization-ope-fpe-he-leakage/index.md)
 
 끝
 
