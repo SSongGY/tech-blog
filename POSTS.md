@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **295편** · 갱신 2026-10-12
+총 **297편** · 갱신 2026-10-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -283,7 +283,7 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 46편
+## 주식·재무 (finance) — 48편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -291,6 +291,8 @@
 | 2026-10-12 | [외화환산 — 환율이 바뀌면 재무제표 어디가 움직이는가](posts/Finance/statements/2026-10-12-foreign-currency-translation/index.md) | 중급 | Python 3.13.5, K-IFRS 제1021호 환율변동효과 | 실행 검증 |
 | 2026-10-12 | [금융자산 세 분류 — 상각후원가·FVOCI·FVPL](posts/Finance/statements/2026-10-12-financial-assets-three-classes/index.md) | 중급 | Python 3.13.5, K-IFRS 제1109호 금융상품 | 실행 검증 |
 | 2026-10-12 | [지분법 — 관계기업 투자가 한 줄로만 보이는 이유](posts/Finance/statements/2026-10-12-equity-method-associates/index.md) | 중급 | Python 3.13.5, K-IFRS 제1028호 관계기업과 공동기업에 대한 투자 | 실행 검증 |
+| 2026-10-12 | [자본잠식 — 자본총계가 자본금보다 작아진다는 말](posts/Finance/statements/2026-10-12-capital-impairment-ratio/index.md) | 입문 | Python 3.13.5, 상법 제438조·제451조·제460조, 한국거래소 유가증권시장 정기결산 유의사항(2026-02) | 실행 검증 |
+| 2026-10-12 | [차입금과 사채 — 조달 수단이 재무제표에 남기는 자국](posts/Finance/statements/2026-10-12-bonds-effective-interest/index.md) | 중급 | Python 3.13.5, K-IFRS 제1109호 금융상품, K-IFRS 제1001호 재무제표 표시 | 실행 검증 |
 | 2026-10-10 | [수익 인식 5단계 — 묶어 판 상품의 매출은 언제 얼마씩 잡히는가](posts/Finance/statements/2026-10-10-revenue-recognition-five-steps/index.md) | 중급 | Python 3.13.5, K-IFRS 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-10-10 | [충당부채와 우발부채 — 아직 나가지 않은 돈을 부채로 잡는 기준](posts/Finance/statements/2026-10-10-provisions-and-contingent-liabilities/index.md) | 중급 | Python 3.13.5, K-IFRS 제1037호 충당부채, 우발부채, 우발자산 | 실행 검증 |
 | 2026-10-10 | [리스 회계 — 임차료가 부채로 올라가면 부채비율과 이익이 어떻게 움직이는가](posts/Finance/statements/2026-10-10-lease-liability-right-of-use/index.md) | 중급 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용), K-IFRS 제1007호 현금흐름표 | 실행 검증 |
