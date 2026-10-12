@@ -1,0 +1,184 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-12-trigger-before-after-audit
+# 명령      : python trigger_basics.py
+# 수행 시각 : 2026-10-12 23:09 (대한민국 표준시)
+# 소요      : 0.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  3행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  account_id | INTEGER | PK
+  owner      | TEXT    | NOT NULL
+  balance    | INTEGER | NOT NULL
+
+  account_id | owner  | balance
+  -----------+--------+--------
+           1 | 김하나 |   50000
+           2 | 이두리 |  120000
+           3 | 박세미 |    8000
+
+[account_history]  0행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  history_id  | INTEGER | PK
+  account_id  | INTEGER | NOT NULL
+  action      | TEXT    | NOT NULL
+  old_balance | INTEGER |
+  new_balance | INTEGER |
+
+  (행 없음)
+
+
+=== 1. AFTER 트리거로 변경 이력 채우기 ===
+
+-- 1-A. 새 계좌
+   INSERT INTO account VALUES (4, '최네모', 30000)
+   (rowcount=1)
+
+-- 1-B. 한 행 출금
+   UPDATE account SET balance = balance - 10000 WHERE account_id = 1
+   (rowcount=1)
+
+-- 1-C. 세 행에 이자
+   UPDATE account SET balance = balance + 100 WHERE account_id IN (1, 2, 3)
+   (rowcount=3)
+
+-- 1-D. 잔액이 그대로인 UPDATE (WHEN 조건)
+   UPDATE account SET balance = balance WHERE account_id = 2
+   (rowcount=1)
+
+-- 1-E. 이름만 바꾸는 UPDATE (UPDATE OF balance)
+   UPDATE account SET owner = '김하나나' WHERE account_id = 1
+   (rowcount=1)
+
+-- 1-F. 계좌 해지
+   DELETE FROM account WHERE account_id = 4
+   (rowcount=1)
+   [이력 표]
+      history_id | account_id | action | old_balance | new_balance
+      1 | 4 | INSERT | NULL | 30000
+      2 | 1 | UPDATE | 50000 | 40000
+      3 | 1 | UPDATE | 40000 | 40100
+      4 | 2 | UPDATE | 120000 | 120100
+      5 | 3 | UPDATE | 8000 | 8100
+      6 | 4 | DELETE | 30000 | NULL
+   [total_changes] 17  (트리거가 넣은 이력 행까지 센다)
+
+=== 2. BEFORE 트리거로 막기 — RAISE(ABORT) ===
+
+-- 2-A. 잔액보다 많이 출금
+   UPDATE account SET balance = balance - 9000 WHERE account_id = 3
+   에러: 잔액이 음수가 된다
+
+-- 2-B. 세 행 중 한 행만 음수가 되는 UPDATE
+   UPDATE account SET balance = balance - 9000 WHERE account_id IN (1, 2, 3)
+   에러: 잔액이 음수가 된다
+   [계좌 — 2-B 뒤]
+      account_id | balance
+      1 | 40100
+      2 | 120100
+      3 | 8100
+   [이력 행 수] 전 6 → 후 6
+
+=== 3. AFTER 트리거가 실패하면 원래 문장도 실패한다 ===
+   [계좌 — 실행 전]
+      account_id | balance
+      1 | 40100
+      2 | 120100
+      3 | 8100
+
+-- 3-A. 세 행 UPDATE — 트리거가 3번 행에서 PK 충돌
+   UPDATE account SET balance = balance + 1 WHERE account_id IN (1, 2, 3)
+   에러: UNIQUE constraint failed: audit_lock.account_id
+   [계좌 — 실행 뒤]
+      account_id | balance
+      1 | 40100
+      2 | 120100
+      3 | 8100
+   [이력 행 수] 전 6 → 후 6
+
+=== 4. RAISE(IGNORE) — 에러 없이 행을 버린다 ===
+
+-- 4-A. 이름이 빈 계좌
+   INSERT INTO account VALUES (5, '  ', 1000)
+   (rowcount=0)
+
+-- 4-B. 정상 계좌
+   INSERT INTO account VALUES (6, '정여섯', 1000)
+   (rowcount=1)
+   [계좌]
+      account_id | owner
+      6 | 정여섯
+
+=== 5. UPDATE OF 에 없는 컬럼 이름 ===
+
+-- 5-A. balanse (오타) 로 트리거 만들기
+   CREATE TRIGGER tr_account_typo AFTER UPDATE OF balanse ON account
+   BEGIN
+       INSERT INTO account_history (account_id, action) VALUES (NEW.account_id, 'TYPO');
+   END
+   (rowcount=-1)
+
+-- 5-B. balance 를 바꾸는 UPDATE
+   UPDATE account SET balance = balance + 5 WHERE account_id = 6
+   (rowcount=1)
+
+-- 5-C. TYPO 이력이 생겼는가
+   SELECT count(*) AS typo_rows FROM account_history WHERE action = 'TYPO'
+   => typo_rows
+      0
+   (1행)
+
+=== 6. rowcount 는 트리거의 변경을 세지 않는다 ===
+   UPDATE ... WHERE account_id IN (1, 2)
+   rowcount=2, total_changes 증가분=4
+
+=== 7. 표에 걸린 트리거 찾기 ===
+
+-- 7-A. sqlite_master
+   SELECT name, tbl_name FROM sqlite_master
+   WHERE type = 'trigger' ORDER BY name
+   => name | tbl_name
+      tr_account_delete | account
+      tr_account_insert | account
+      tr_account_no_overdraft | account
+      tr_account_skip_blank | account
+      tr_account_update | account
+   (5행)
+
+-- 7-B. PRAGMA recursive_triggers (기본값)
+   PRAGMA recursive_triggers
+   => recursive_triggers
+      0
+   (1행)
+
+=== 8. 숨은 비용 — 100,000행 UPDATE ===
+   트리거 없음       6.2 ms
+   트리거 있음      36.3 ms   (5.9배)
+   (각 5회 중 최솟값, 매번 ROLLBACK)
+
+=== 9. 여러 행 UPDATE 에서 BEFORE·AFTER 가 도는 순서 ===
+   UPDATE item SET qty = qty + 1   (qty 합계 60 에서 시작)
+   [fire_log — qty_sum 은 트리거가 돈 순간의 표 합계]
+      seq | step | item_id | qty_sum
+      1 | BEFORE | 1 | 60
+      2 | AFTER | 1 | 61
+      3 | BEFORE | 2 | 61
+      4 | AFTER | 2 | 62
+      5 | BEFORE | 3 | 62
+      6 | AFTER | 3 | 63

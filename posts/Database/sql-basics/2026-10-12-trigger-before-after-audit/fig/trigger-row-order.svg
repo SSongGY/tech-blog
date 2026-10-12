@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">행 단위 트리거 — 세 행 UPDATE 한 문장에서 일어나는 순서</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 는 FOR EACH ROW 트리거만 지원한다 · BEFORE → 행 쓰기 → AFTER 가 행마다 번갈아 돈다 · SQLite 3.49.1</text>
+
+  <!-- 문장 -->
+  <rect x="30" y="86" width="150" height="104" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.5"/>
+  <text x="105" y="112" font-size="13" font-weight="bold" text-anchor="middle" fill="#1b1b1b">UPDATE 문장</text>
+  <text x="105" y="134" font-size="13" text-anchor="middle" fill="#1b1b1b">대상 행 3개</text>
+  <text x="105" y="156" font-size="13" text-anchor="middle" fill="#555">WHEN 이 거짓인</text>
+  <text x="105" y="174" font-size="13" text-anchor="middle" fill="#555">트리거는 건너뛴다</text>
+  <line x1="180" y1="138" x2="192" y2="138" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="192,133 200,138 192,143" fill="#2d6a4f"/>
+
+  <!-- 행 1 -->
+  <rect x="200" y="86" width="200" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="300" y="108" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">행 1</text>
+  <rect x="208" y="120" width="58" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="237" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">BEFORE</text>
+  <rect x="271" y="120" width="58" height="30" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+  <text x="300" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">행 쓰기</text>
+  <rect x="334" y="120" width="58" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="363" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">AFTER</text>
+  <text x="300" y="176" font-size="13" text-anchor="middle" fill="#555">표 합계 60 → 61</text>
+  <line x1="400" y1="138" x2="417" y2="138" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="417,133 425,138 417,143" fill="#2d6a4f"/>
+
+  <!-- 행 2 -->
+  <rect x="425" y="86" width="200" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="525" y="108" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">행 2</text>
+  <rect x="433" y="120" width="58" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="462" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">BEFORE</text>
+  <rect x="496" y="120" width="58" height="30" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+  <text x="525" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">행 쓰기</text>
+  <rect x="559" y="120" width="58" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="588" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">AFTER</text>
+  <text x="525" y="176" font-size="13" text-anchor="middle" fill="#555">표 합계 61 → 62</text>
+  <line x1="625" y1="138" x2="642" y2="138" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="642,133 650,138 642,143" fill="#2d6a4f"/>
+
+  <!-- 행 3 -->
+  <rect x="650" y="86" width="200" height="104" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="750" y="108" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">행 3</text>
+  <rect x="658" y="120" width="58" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="687" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">BEFORE</text>
+  <rect x="721" y="120" width="58" height="30" rx="4" fill="#e8e8e8" stroke="#3b3b3b"/>
+  <text x="750" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">행 쓰기</text>
+  <rect x="784" y="120" width="58" height="30" rx="4" fill="#ffffff" stroke="#3b3b3b"/>
+  <text x="813" y="140" font-size="13" text-anchor="middle" fill="#1b1b1b">AFTER</text>
+  <text x="750" y="176" font-size="13" text-anchor="middle" fill="#555">표 합계 62 → 63</text>
+
+  <!-- 성공 -->
+  <line x1="780" y1="190" x2="780" y2="226" stroke="#2d6a4f" stroke-width="1.5"/>
+  <polygon points="775,226 780,234 785,226" fill="#2d6a4f"/>
+  <rect x="650" y="234" width="200" height="64" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="750" y="260" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">문장 성공</text>
+  <text x="750" y="282" font-size="13" text-anchor="middle" fill="#1b1b1b">세 행과 트리거의 변경이 남는다</text>
+
+  <!-- 실패 -->
+  <path d="M 700 190 L 700 212 L 520 212 L 520 226" fill="none" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <polygon points="515,226 520,234 525,226" fill="#9d0208"/>
+  <rect x="200" y="234" width="425" height="64" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="412" y="258" font-size="13" font-weight="bold" text-anchor="middle" fill="#9d0208">어느 행의 트리거든 실패하면 (RAISE(ABORT) · 제약 위반)</text>
+  <text x="412" y="282" font-size="13" text-anchor="middle" fill="#1b1b1b">문장 전체를 되돌린다 — 앞 행의 변경과 그 이력까지 취소</text>
+
+  <!-- 참고 -->
+  <rect x="30" y="318" width="820" height="64" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="1.2"/>
+  <text x="46" y="342" font-size="13" fill="#b45309" font-weight="bold">주의</text>
+  <text x="90" y="342" font-size="13" fill="#1b1b1b">행 1 의 AFTER 는 행 2·3 이 아직 안 바뀐 표를 본다 (실습 9번: 합계 61). 문장 전체가 끝난 상태가 아니다.</text>
+  <text x="90" y="366" font-size="13" fill="#1b1b1b">RAISE(IGNORE) 는 실패가 아니다 — 그 행만 버리고 에러 없이 다음으로 간다 (실습 4번: rowcount 0).</text>
+</svg>

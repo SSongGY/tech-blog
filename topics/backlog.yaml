@@ -3951,7 +3951,7 @@ topics:
     angle: "BEFORE·AFTER와 NEW·OLD로 변경 이력 표를 채우는 예제, 트리거가 실패하면 원래 문장도 실패하는 것, 트리거가 숨어 있어 느려지는 함정"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-055
     title: "중복 행 찾아 지우기 — GROUP BY HAVING과 rowid"
     category: Database
