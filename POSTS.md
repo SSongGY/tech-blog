@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **292편** · 갱신 2026-10-12
+총 **295편** · 갱신 2026-10-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 46편
+## DB문법 (basics) — 47편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-12 | [RETURNING — 넣은 값을 그 자리에서 돌려받기](posts/Database/sql-basics/2026-10-12-sqlite-returning-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기](posts/Database/sql-basics/2026-10-12-lag-lead-previous-next-row/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-12 | [INTERSECT와 EXCEPT — 두 결과의 교집합과 차집합](posts/Database/sql-basics/2026-10-12-intersect-except-set-operators/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [COLLATE — 대소문자와 정렬 규칙](posts/Database/sql-basics/2026-10-08-sql-collate-case-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [생성 컬럼 — 계산 결과를 컬럼처럼, VIRTUAL과 STORED](posts/Database/sql-basics/2026-10-08-generated-column-virtual-stored/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](posts/Database/sql-basics/2026-10-08-explain-query-plan-reading/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -55,10 +56,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 16편
+## DB기능 (product) — 17편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-12 | [Tibero 7 제약조건 — 종류와 검증 시점](posts/Database/tibero/2026-10-12-tibero7-constraints-state-deferrable/index.md) | 입문 | Tibero 7.2.6 매뉴얼, SQLite 3.49.1 (비교 절) | 문서 근거 |
 | 2026-10-08 | [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](posts/Database/tibero/2026-10-08-tibero7-rownum-paging/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-07 | [Tibero 7 WITH 절 — 이름 붙인 부질의와 재귀 질의, SEARCH·CYCLE 절](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-07 | [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](posts/Database/tibero/2026-10-07-tibero7-date-timestamp-types/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -76,13 +78,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 107편
+## 기술사 (pe) — 108편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-12 | [변분 양자 알고리즘(VQA)과 양자머신러닝 — 하이브리드 루프와 기울기 소실 고원](posts/PE/ai/2026-10-12-vqa-hybrid-loop-barren-plateau/index.md) | 중급 | Cerezo et al., Nature Reviews Physics 3 (2021), Python 3.13.5 | 실행 검증 |
 | 2026-10-12 | [가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것](posts/PE/security/2026-10-12-pseudonymization-ope-fpe-he-leakage/index.md) | 중급 | 가명정보 처리 가이드라인 2022.4, NIST SP 800-38G Rev.1 2nd Public Draft 2025.2, Python 3.13.5 | 실행 검증 |
 | 2026-10-12 | [페이지 교체 알고리즘과 벨레이디의 이상현상](posts/PE/system/2026-10-12-page-replacement-belady-anomaly/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.10 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.22 | 실행 검증 |
+| 2026-10-12 | [교착상태 4조건과 해결 기법](posts/PE/system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.8 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.20 Ch.32 | 실행 검증 |
 | 2026-10-12 | [프로세스 스케줄링 알고리즘과 평균 대기시간 계산](posts/PE/system/2026-10-12-cpu-scheduling-waiting-time/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.5 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.7 | 실행 검증 |
 | 2026-10-10 | [Wi-Fi 7 다중 링크 동작(MLO) — 동기·비동기 다중 링크와 링크 간 간섭](posts/PE/network/2026-10-10-wi-fi-7-multi-link-operation-str-nstr/index.md) | 중급 | IEEE 802.11be-2024 (2024-09 승인), Deng et al., arXiv:2007.13401v3 (2020-08), López-Raventós·Bellalta, arXiv:2201.07499 (2022-01), Carrascosa-Zamacois et al., arXiv:2210.07695 (2022-10) | 문서 근거 |
 | 2026-10-10 | [CTEM과 노출 관리 — 취약점 관리에서 검증·동원 단계를 더한 이유](posts/PE/security/2026-10-10-ctem-exposure-management-vs-vm-asm-bas/index.md) | 중급 | Gartner G00796532 (2023-10-16), NIST SP 800-40r4 (2022-04), FIRST EPSS (2026-10-10 조회), CISA KEV (BOD 22-01, BOD 26-04 2026-06-10), IBM Think CTEM (2026-06-05), HackerOne CTEM Guide (2026-07-02), Infosecurity Europe CTEM (2026-08-14) | 문서 근거 |
@@ -333,6 +336,11 @@
 
 ## 같은 기능을 여러 환경에서 다룬 글
 
+**`constraints`**
+
+- [CREATE TABLE — 타입과 기본 제약조건](posts/Database/sql-basics/2026-09-29-create-table-constraints-when-checked/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 제약조건 — 종류와 검증 시점](posts/Database/tibero/2026-10-12-tibero7-constraints-state-deferrable/index.md) — Tibero 7
+
 **`cte`**
 
 - [CTE — WITH 절로 질의에 이름 붙이기](posts/Database/sql-basics/2026-10-07-cte-with-clause/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
@@ -342,6 +350,11 @@
 
 - [날짜와 시간 다루기 — 저장과 연산](posts/Database/sql-basics/2026-10-01-sql-date-time-storage-arithmetic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [Tibero 7 날짜·시간 타입 — DATE와 TIMESTAMP의 차이](posts/Database/tibero/2026-10-07-tibero7-date-timestamp-types/index.md) — Tibero 7
+
+**`deadlock`**
+
+- [데드락은 어떻게 만들어지고 SQLite는 누구에게 BUSY를 돌려주는가](posts/Database/2026-09-29-sqlite-deadlock-busy-victim/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [교착상태 4조건과 해결 기법](posts/PE/system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) — Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.8 슬라이드 (S. Weiss 2020 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.20 Ch.32
 
 **`explain-plan`**
 
