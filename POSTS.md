@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **289편** · 갱신 2026-10-12
+총 **290편** · 갱신 2026-10-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -228,10 +228,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 44편
+## 기출문제 (exam) — 45편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-12 | [기출문제 — AI 리스크: 개념, 보안·프라이버시·사회적 리스크](posts/PE/exam/2026-10-12-ai-risk-security-privacy-social/index.md) | 중급 | NIST AI 100-1 AI RMF 1.0 (2023-01), NIST AI 100-2 E2025 (2025-03), NIST AI 600-1 (2024-07), 개인정보보호위원회 AI 프라이버시 리스크 관리 모델 (2024-12-19 공개), International AI Safety Report 2026 (2026-02-03), 인공지능 기본법 법률 제21311호 | 문서 근거 |
 | 2026-10-11 | [기출문제 — 양자머신러닝(QML)](posts/PE/exam/2026-10-11-quantum-machine-learning/index.md) | 심화 | Biamonte et al., Nature 549 (2017), Cerezo et al., Nature Reviews Physics 3 (2021), PennyLane 0.45.1 문서 | 문서 근거 |
 | 2026-10-11 | [기출문제 — 개인정보보호를 위한 가명처리 기법](posts/PE/exam/2026-10-11-pseudonymization-techniques/index.md) | 중급 | 가명정보 처리 가이드라인 2022.4, ENISA Pseudonymisation techniques and best practices 2019.12, Python 3.13.5 | 실행 검증 |
 | 2026-10-10 | [기출문제 — Wi-Fi 7(IEEE 802.11be)](posts/PE/exam/2026-10-10-wi-fi-7-ieee-802-11be/index.md) | 중급 | IEEE 802.11be-2024 (2024-09 승인, 2025-07 발행), Wi-Fi CERTIFIED 7 (Wi-Fi Alliance, 2024-01), Deng et al., arXiv:2007.13401v3 (2020-08) | 문서 근거 |
