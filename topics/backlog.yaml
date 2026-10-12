@@ -4823,3 +4823,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-164
+    title: "RLHF — 사람 피드백 강화학습의 SFT·보상 모델·PPO 3단계"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "보상 모델 학습(순위→쌍 비교 손실)과 KL 벌점이 왜 필요한지, DPO 등 보상 모델 없는 대안과의 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-165
+    title: "매개변수 효율적 미세조정(PEFT) — LoRA·어댑터·프롬프트 튜닝"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "전체 미세조정 대비 무엇을 고정하고 무엇을 학습하는지, 저랭크 분해와 추론 지연, 기업 다중 과업 운영 관점"
+    code: none
+    origin: exam
+    status: todo

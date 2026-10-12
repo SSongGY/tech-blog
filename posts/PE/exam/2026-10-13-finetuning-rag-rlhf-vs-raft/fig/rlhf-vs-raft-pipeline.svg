@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 왼쪽: RLHF -->
+  <text x="210" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">RLHF — 사람 선호에 맞춘다</text>
+
+  <rect x="40" y="52" width="340" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="210" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">① 지도 미세조정 (SFT)</text>
+  <text x="210" y="98" text-anchor="middle" font-size="13" fill="#334155">라벨러가 쓴 시범 답변으로 학습</text>
+  <text x="210" y="116" text-anchor="middle" font-size="13" fill="#334155">데이터: 프롬프트 + 모범 답</text>
+
+  <path d="M 210 122 L 210 148" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="150" width="340" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="210" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">② 보상 모델 (RM) 학습</text>
+  <text x="210" y="196" text-anchor="middle" font-size="13" fill="#334155">응답 K개(4~9)를 사람이 순위 매김</text>
+  <text x="210" y="214" text-anchor="middle" font-size="13" fill="#334155">쌍 비교 → 스칼라 보상 출력</text>
+
+  <path d="M 210 220 L 210 246" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="248" width="340" height="70" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="210" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">③ 강화학습 (PPO)</text>
+  <text x="210" y="294" text-anchor="middle" font-size="13" fill="#0f172a">RM 보상 최대화</text>
+  <text x="210" y="312" text-anchor="middle" font-size="13" fill="#0f172a">− SFT 모델과의 KL 벌점 (토큰마다)</text>
+
+  <rect x="40" y="340" width="340" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="210" y="363" text-anchor="middle" font-size="13" fill="#7c2d12">주의: RM 과최적화 (보상 해킹)</text>
+  <text x="210" y="384" text-anchor="middle" font-size="13" fill="#7c2d12">공개 벤치마크 성능 저하 (정렬 비용)</text>
+
+  <text x="210" y="428" text-anchor="middle" font-size="13" fill="#334155">학습 단계: 지도학습 → 보상 학습 → 강화학습</text>
+
+  <!-- 구분선 -->
+  <path d="M 440 40 L 440 450" stroke="#cbd5e1" stroke-width="1.4" stroke-dasharray="6 5" fill="none"/>
+
+  <!-- 오른쪽: RAFT -->
+  <text x="660" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">RAFT — 검색 결과를 읽게 한다</text>
+
+  <rect x="490" y="52" width="340" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="660" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">① 학습 문맥 구성</text>
+  <text x="660" y="98" text-anchor="middle" font-size="13" fill="#334155">비율 P: 질문 + 정답 문서 D* + 방해 문서</text>
+  <text x="660" y="116" text-anchor="middle" font-size="13" fill="#334155">비율 1−P: 질문 + 방해 문서만</text>
+
+  <path d="M 660 122 L 660 148" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="490" y="150" width="340" height="70" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="660" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">② 근거 인용 CoT 답안 생성</text>
+  <text x="660" y="196" text-anchor="middle" font-size="13" fill="#334155">D* 원문 인용 → 추론 → 답</text>
+  <text x="660" y="214" text-anchor="middle" font-size="13" fill="#334155">(##Reason / ##Answer 형식)</text>
+
+  <path d="M 660 220 L 660 246" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="490" y="248" width="340" height="70" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="660" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">③ 지도 미세조정 (SFT)</text>
+  <text x="660" y="294" text-anchor="middle" font-size="13" fill="#0f172a">입력: 질문 + 문서 묶음</text>
+  <text x="660" y="312" text-anchor="middle" font-size="13" fill="#0f172a">정답: 인용 CoT 답안</text>
+
+  <rect x="490" y="340" width="340" height="56" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="660" y="363" text-anchor="middle" font-size="13" fill="#7c2d12">추론 시: 같은 도메인 RAG에 붙여 쓴다</text>
+  <text x="660" y="384" text-anchor="middle" font-size="13" fill="#7c2d12">검색기와 독립 — 검색기는 바꿔도 된다</text>
+
+  <text x="660" y="428" text-anchor="middle" font-size="13" fill="#334155">학습 단계: 지도학습 1회 · 보상 모델 없음</text>
+</svg>
