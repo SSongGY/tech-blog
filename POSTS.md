@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **307편** · 갱신 2026-10-13
+총 **310편** · 갱신 2026-10-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 49편
+## DB문법 (basics) — 50편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-13 | [중복 행 찾아 지우기 — GROUP BY HAVING과 rowid](posts/Database/sql-basics/2026-10-13-sql-find-delete-duplicate-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-13 | [BETWEEN과 IN — 범위와 목록을 쓰는 법](posts/Database/sql-basics/2026-10-13-between-in-range-list/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [트리거 기본 — 행이 바뀔 때 자동으로 도는 SQL](posts/Database/sql-basics/2026-10-12-trigger-before-after-audit/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [RETURNING — 넣은 값을 그 자리에서 돌려받기](posts/Database/sql-basics/2026-10-12-sqlite-returning-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기](posts/Database/sql-basics/2026-10-12-lag-lead-previous-next-row/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -80,12 +81,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 112편
+## 기술사 (pe) — 113편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-13 | [RAID 레벨별 특성과 선택 기준 — 쓰기 페널티를 I/O 수로 세기](posts/PE/system/2026-10-13-raid-levels-write-penalty/index.md) | 중급 | Python 3.13.5, Patterson·Gibson·Katz, A Case for RAID (SIGMOD 1988), Arpaci-Dusseau, OSTEP v1.10 Ch.38, Anvin, The mathematics of RAID-6 (2011-12-20판) | 실행 검증 |
 | 2026-10-13 | [멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크](posts/PE/security/2026-10-13-membership-inference-memorization/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03), 개인정보보호위원회 AI 프라이버시 리스크 관리 모델 (2024-12-19 공개) | 문서 근거 |
+| 2026-10-13 | [ISMS-P 인증 체계와 통제 항목 구조](posts/PE/security/2026-10-13-isms-p-certification-control-structure/index.md) | 중급 | ISMS-P 인증기준 안내서 (2023.11, 개인정보보호위원회·과학기술정보통신부), ISO/IEC 27001:2022 | 문서 근거 |
 | 2026-10-13 | [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](posts/PE/security/2026-10-13-adversarial-ml-attack-taxonomy/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03) | 문서 근거 |
 | 2026-10-12 | [변분 양자 알고리즘(VQA)과 양자머신러닝 — 하이브리드 루프와 기울기 소실 고원](posts/PE/ai/2026-10-12-vqa-hybrid-loop-barren-plateau/index.md) | 중급 | Cerezo et al., Nature Reviews Physics 3 (2021), Python 3.13.5 | 실행 검증 |
 | 2026-10-12 | [공급망 보안과 SBOM — 목록이 막는 것과 못 막는 것](posts/PE/security/2026-10-12-sbom-supply-chain-limits/index.md) | 중급 | NTIA SBOM Minimum Elements (2021-07-12), CISA SBOM Types (2023-04-21), CISA 2025 SBOM Minimum Elements 공개 의견 수렴 초안 (2025-08-22), SLSA v1.2 | 문서 근거 |
@@ -219,10 +221,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 16편
+## 일반 (general) — 17편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [파티셔닝이 항상 빨라지지 않는 이유 — 프루닝이 깨진 뒤에 남는 비용](posts/Database/2026-10-13-partition-pruning-global-index-cost/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [HTTP Keep-Alive를 껐다 켰을 때 실제로 달라지는 것](posts/Backend/2026-10-12-http-keep-alive-connection-count/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-08 | [서킷 브레이커의 3상태는 각각 어떤 장애를 막는가](posts/Backend/2026-10-08-circuit-breaker-three-states/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-07 | [옵티마이저 힌트를 쓰기 전에 확인할 3가지 — 통계·데이터·스키마](posts/Database/2026-10-07-optimizer-hint-three-checks/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
