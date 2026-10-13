@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="880" height="370" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="370" fill="#fbfbf9"/>
+
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#1b1b1b">REFRESH FAST가 성립하려면 — 매뉴얼이 에러 코드로 적어 둔 전제</text>
+  <text x="20" y="48" font-size="13" fill="#555">왼쪽 넷은 마스터 표에 건 물리화 뷰 로그가 갖춰야 하는 것, 오른쪽 하나는 물리화 뷰의 정의 질의 쪽 조건이다.</text>
+
+  <g stroke="#555" stroke-width="1.2" fill="#ffffff">
+    <rect x="20"  y="62" width="160" height="92" rx="4"/>
+    <rect x="190" y="62" width="160" height="92" rx="4"/>
+    <rect x="360" y="62" width="160" height="92" rx="4"/>
+    <rect x="530" y="62" width="160" height="92" rx="4"/>
+  </g>
+  <rect x="700" y="62" width="160" height="92" rx="4" fill="#fdf0dc" stroke="#b45309" stroke-width="1.4"/>
+
+  <g font-size="13" fill="#1b1b1b" text-anchor="middle">
+    <text x="100" y="88">마스터 표에</text>
+    <text x="100" y="107">물리화 뷰 로그</text>
+    <text x="270" y="88">로그에 기본 키</text>
+    <text x="270" y="107">또는 rowid</text>
+    <text x="440" y="88">로그에 신규 값</text>
+    <text x="440" y="107">NEW VALUES</text>
+    <text x="610" y="88">로그에 질의의</text>
+    <text x="610" y="107">필터 컬럼</text>
+    <text x="780" y="88">정의 질의가</text>
+    <text x="780" y="107">제약 충족</text>
+  </g>
+  <g font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">
+    <text x="100" y="137">TBR-7315</text>
+    <text x="270" y="137">TBR-7316·7317</text>
+    <text x="440" y="137">TBR-7319</text>
+    <text x="610" y="137">TBR-7320</text>
+    <text x="780" y="137">TBR-7318</text>
+  </g>
+
+  <defs>
+    <marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+  <g stroke="#555" stroke-width="1.4" marker-end="url(#ar2)">
+    <line x1="100" y1="154" x2="100" y2="178"/>
+    <line x1="270" y1="154" x2="270" y2="178"/>
+    <line x1="440" y1="154" x2="440" y2="178"/>
+    <line x1="610" y1="154" x2="610" y2="178"/>
+    <line x1="780" y1="154" x2="780" y2="178"/>
+  </g>
+
+  <rect x="20" y="182" width="840" height="46" rx="4" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="440" y="211" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">REFRESH FAST — 마스터 표의 변경분만 물리화 뷰에 반영한다</text>
+
+  <text x="20" y="256" font-size="14" font-weight="bold" fill="#1b1b1b">하나라도 어긋나면 — 적어 둔 방법에 따라 결과가 갈린다</text>
+
+  <rect x="20"  y="268" width="410" height="78" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <rect x="450" y="268" width="410" height="78" rx="4" fill="#fdf0dc" stroke="#b45309" stroke-width="1.5"/>
+
+  <text x="36" y="292" font-size="14" font-weight="bold" fill="#9d0208">REFRESH FAST 로 적었을 때</text>
+  <text x="36" y="314" font-size="13" fill="#1b1b1b">그 자리에서 위 코드 중 하나로 실패한다.</text>
+  <text x="36" y="333" font-size="13" fill="#1b1b1b">무엇이 모자란지가 코드에 드러난다.</text>
+
+  <text x="466" y="292" font-size="14" font-weight="bold" fill="#b45309">REFRESH FORCE 로 적었을 때</text>
+  <text x="466" y="314" font-size="13" fill="#1b1b1b">말없이 전체 새로고침으로 바뀐다.</text>
+  <text x="466" y="333" font-size="13" fill="#1b1b1b">에러는 없고 시간만 길어진다.</text>
+</svg>
