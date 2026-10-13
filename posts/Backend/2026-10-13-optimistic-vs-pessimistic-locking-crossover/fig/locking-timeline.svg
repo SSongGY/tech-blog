@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="tarr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52525b"/>
+    </marker>
+    <pattern id="waitfill" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#fff7ed"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#b45309" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <text x="30" y="30" font-size="18" font-weight="bold" fill="#1f2937">
+    같은 행을 동시에 고칠 때 T2 가 하는 일
+  </text>
+  <text x="30" y="52" font-size="13" fill="#52525b">
+    T1 과 T2 가 버전 3 인 같은 행을 1 올리려 한다. 둘 다 결과는 맞지만 T2 가 보낸 시간의 내용이 다르다.
+  </text>
+
+  <!-- 낙관적 -->
+  <text x="30" y="90" font-size="15" font-weight="bold" fill="#1f2937">낙관적 잠금</text>
+  <text x="140" y="90" font-size="13" fill="#52525b">잠그지 않고 읽고, 쓸 때 버전이 그대로인지 본다</text>
+
+  <text x="56" y="129" font-size="14" font-weight="bold" fill="#3f3f46">T1</text>
+  <rect x="140" y="104" width="240" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="156" y="131" font-size="13" fill="#1f2937">읽기 v=3 · 작업 · 쓰기 성공 → v=4</text>
+
+  <text x="56" y="185" font-size="14" font-weight="bold" fill="#3f3f46">T2</text>
+  <rect x="140" y="160" width="240" height="44" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="156" y="187" font-size="13" fill="#9d0208">읽기 v=3 · 작업 · 쓰기 실패 (0행)</text>
+
+  <rect x="392" y="160" width="240" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="408" y="187" font-size="13" fill="#1f2937">다시 읽기 v=4 · 작업 · 쓰기 성공</text>
+
+  <text x="142" y="224" font-size="13" font-weight="bold" fill="#9d0208">↑ 버린 작업</text>
+  <text x="240" y="224" font-size="13" fill="#52525b">— 왕복도 처리도 다시 한다</text>
+
+  <!-- 비관적 -->
+  <text x="30" y="272" font-size="15" font-weight="bold" fill="#1f2937">비관적 잠금</text>
+  <text x="140" y="272" font-size="13" fill="#52525b">읽기 전에 그 행을 잠그고 끝날 때까지 쥐고 있는다</text>
+
+  <text x="56" y="311" font-size="14" font-weight="bold" fill="#3f3f46">T1</text>
+  <rect x="140" y="286" width="240" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="156" y="313" font-size="13" fill="#1f2937">잠금 · 읽기 · 작업 · 쓰기 · 해제</text>
+
+  <text x="56" y="367" font-size="14" font-weight="bold" fill="#3f3f46">T2</text>
+  <rect x="140" y="342" width="240" height="44" rx="5" fill="url(#waitfill)" stroke="#b45309" stroke-width="2"/>
+  <text x="186" y="369" font-size="13" font-weight="bold" fill="#b45309">대기 — 아무 일도 안 한다</text>
+
+  <rect x="392" y="342" width="240" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="408" y="369" font-size="13" fill="#1f2937">잠금 · 읽기 · 작업 · 쓰기</text>
+
+  <!-- 시간축 -->
+  <line x1="140" y1="406" x2="800" y2="406" stroke="#52525b" stroke-width="1.4" marker-end="url(#tarr)"/>
+  <text x="806" y="411" font-size="13" fill="#52525b">시간</text>
+
+  <text x="30" y="440" font-size="13" fill="#1f2937">
+    두 방식 모두 그 행에서는 차례로 처리된다. 갈리는 것은 T2 가 기다리는 동안 무엇을 했는가다.
+  </text>
+  <text x="30" y="459" font-size="13" fill="#1f2937">
+    낙관적은 버릴 일을 하고, 비관적은 아무 일도 하지 않는다. 충돌이 잦을수록 이 차이가 커진다.
+  </text>
+</svg>

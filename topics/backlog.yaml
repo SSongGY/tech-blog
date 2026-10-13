@@ -195,7 +195,7 @@ topics:
     difficulty: 중급
     angle: "충돌률을 0%부터 올려가며 두 방식의 처리량 역전 지점을 측정"
     code: python
-    status: writing
+    status: done
   - id: be-008
     title: "캐시 스탬피드를 막는 세 가지 방법 비교"
     category: Backend
