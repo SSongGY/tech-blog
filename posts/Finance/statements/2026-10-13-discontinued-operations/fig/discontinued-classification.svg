@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="26" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">매각예정으로 분류한 날 일어나는 세 가지와 그 결과</text>
+
+  <rect x="290" y="48" width="300" height="48" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="440" y="70" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">매각예정 분류 (문단 6~8 요건 충족)</text>
+  <text x="440" y="88" text-anchor="middle" font-size="13" fill="#495057">구분단위가 문단 32 에 들면 중단영업이 된다</text>
+
+  <rect x="40" y="124" width="250" height="76" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="165" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 다시 측정한다</text>
+  <text x="165" y="172" text-anchor="middle" font-size="13" fill="#b45309">장부금액과 순공정가치 중</text>
+  <text x="165" y="190" text-anchor="middle" font-size="13" fill="#b45309">작은 금액 (문단 15)</text>
+
+  <rect x="315" y="124" width="250" height="76" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="440" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 감가상각을 멈춘다</text>
+  <text x="440" y="172" text-anchor="middle" font-size="13" fill="#b45309">분류 시점부터 계상하지 않는다</text>
+  <text x="440" y="190" text-anchor="middle" font-size="13" fill="#b45309">(문단 25)</text>
+
+  <rect x="590" y="124" width="250" height="76" rx="6" fill="#e9f5ee" stroke="#2d6a4f"/>
+  <text x="715" y="150" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 손익을 떼어 낸다</text>
+  <text x="715" y="172" text-anchor="middle" font-size="13" fill="#2d6a4f">계속영업과 구분해 표시한다</text>
+  <text x="715" y="190" text-anchor="middle" font-size="13" fill="#2d6a4f">(문단 32·33)</text>
+
+  <rect x="40" y="256" width="250" height="112" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="165" y="282" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">재무상태표</text>
+  <text x="165" y="306" text-anchor="middle" font-size="13" fill="#495057">매각예정 처분자산집단을</text>
+  <text x="165" y="326" text-anchor="middle" font-size="13" fill="#495057">별도 항목으로 표시한다</text>
+  <text x="165" y="350" text-anchor="middle" font-size="13" fill="#9d0208">전기는 재작성하지 않는다 (문단 40)</text>
+
+  <rect x="315" y="256" width="250" height="112" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="440" y="282" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">중단영업의 영업손익</text>
+  <text x="440" y="306" text-anchor="middle" font-size="13" fill="#495057">멈춘 감가상각만큼</text>
+  <text x="440" y="326" text-anchor="middle" font-size="13" fill="#495057">손실이 작게 잡힌다</text>
+  <text x="440" y="350" text-anchor="middle" font-size="13" fill="#b45309">대신 ① 의 손상차손이 한 번에 난다</text>
+
+  <rect x="590" y="256" width="250" height="112" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="715" y="282" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">포괄손익계산서</text>
+  <text x="715" y="306" text-anchor="middle" font-size="13" fill="#495057">세후 중단영업손익을</text>
+  <text x="715" y="326" text-anchor="middle" font-size="13" fill="#495057">단일금액 한 줄로 표시한다</text>
+  <text x="715" y="350" text-anchor="middle" font-size="13" fill="#2d6a4f">전기도 다시 쓴다 (문단 34)</text>
+
+  <g stroke="#495057" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M380,96 H165 V120"/>
+    <path d="M440,96 V120"/>
+    <path d="M500,96 H715 V120"/>
+    <path d="M165,200 V252"/>
+    <path d="M440,200 V252"/>
+    <path d="M715,200 V252"/>
+  </g>
+
+  <line x1="30" y1="390" x2="850" y2="390" stroke="#ced4da"/>
+  <text x="40" y="414" font-size="13" fill="#495057">중단영업의 영업·투자·재무활동별 순현금흐름도 주석이나 재무제표 본문에 표시한다 (문단 33).</text>
+  <text x="40" y="436" font-size="13" fill="#495057">매각계획이 깨져 분류 요건을 잃으면, 비교표시되는 모든 기간의 중단영업손익을 계속영업손익으로 되돌린다 (문단 36).</text>
+  <text x="40" y="458" font-size="13" fill="#495057">예제 숫자는 가상 회사의 것이며 code/output.txt [3]~[8] 에 있다.</text>
+</svg>
