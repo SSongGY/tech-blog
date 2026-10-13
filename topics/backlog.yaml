@@ -679,7 +679,7 @@ topics:
     difficulty: 심화
     angle: "COMPLETE·FAST·ON COMMIT 갱신의 전제 조건"
     code: sql
-    status: todo
+    status: done
   - id: tb-019
     title: "Tibero 7 시노님 — 공용과 전용의 차이"
     category: Database
@@ -2070,7 +2070,7 @@ topics:
     angle: "백업만으로 부족한 이유와 3-2-1 규칙"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-066
     title: "프로세스 스케줄링 알고리즘과 평균 대기시간 계산"
     category: PE
@@ -2478,7 +2478,7 @@ topics:
     angle: "SELECT에서 만든 별칭을 ORDER BY가 쓸 수 있고 WHERE는 못 쓰는 이유 — 절의 평가 순서"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-036
     title: "GROUP BY 여러 컬럼 — 묶는 단위가 달라질 때"
     category: Database

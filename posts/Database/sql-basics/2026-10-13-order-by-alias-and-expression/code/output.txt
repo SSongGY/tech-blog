@@ -1,0 +1,223 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-13-order-by-alias-and-expression
+# 명령      : python order_by_alias.py
+# 수행 시각 : 2026-10-13 19:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  5행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  emp_id      | INTEGER | PK
+  emp_name    | TEXT    | NOT NULL
+  dept        | TEXT    | NOT NULL
+  base_salary | INTEGER | NOT NULL
+  bonus_rate  | REAL    | NOT NULL
+
+  emp_id | emp_name | dept | base_salary | bonus_rate
+  -------+----------+------+-------------+-----------
+       1 | 김하늘   | 개발 |     4200000 |       0.15
+       2 | 이도윤   | 개발 |     3800000 |        0.2
+       3 | 박서준   | 영업 |     3500000 |        0.3
+       4 | 최지아   | 영업 |     4500000 |        0.1
+       5 | 정민재   | 운영 |     3200000 |       0.25
+
+================================================================
+1부 — ORDER BY는 별칭을 읽는다
+================================================================
+-- 1. 별칭을 ORDER BY에서 쓴다
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee ORDER BY annual_pay DESC
+   ('최지아', 54000000)
+   ('김하늘', 50400000)
+   ('이도윤', 45600000)
+   ('박서준', 42000000)
+   ('정민재', 38400000)
+
+-- 2. 같은 표현식을 ORDER BY에 다시 적는다 (결과 동일)
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee ORDER BY base_salary * 12 DESC
+   ('최지아', 54000000)
+   ('김하늘', 50400000)
+   ('이도윤', 45600000)
+   ('박서준', 42000000)
+   ('정민재', 38400000)
+
+-- 3. 정수 2는 두 번째 결과 컬럼을 뜻한다
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee ORDER BY 2 DESC
+   ('최지아', 54000000)
+   ('김하늘', 50400000)
+   ('이도윤', 45600000)
+   ('박서준', 42000000)
+   ('정민재', 38400000)
+
+-- 4. 범위를 벗어난 정수
+   SELECT emp_name, base_salary FROM employee ORDER BY 3
+   [OperationalError] 1st ORDER BY term out of range - should be between 1 and 2
+
+-- 5. 정수를 식으로 감싸면 자리 번호가 아니라 상수다
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee ORDER BY 2 + 0 DESC
+   ('김하늘', 50400000)
+   ('이도윤', 45600000)
+   ('박서준', 42000000)
+   ('최지아', 54000000)
+   ('정민재', 38400000)
+
+================================================================
+2부 — WHERE는 별칭을 읽는가
+================================================================
+-- 6. WHERE에서 별칭을 쓴다
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee WHERE annual_pay > 48000000
+   ('김하늘', 50400000)
+   ('최지아', 54000000)
+
+-- 7. 별칭이 가리키는 식을 WHERE에 직접 적는다
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee WHERE base_salary * 12 > 48000000
+   ('김하늘', 50400000)
+   ('최지아', 54000000)
+
+-- 8. 별칭을 쓰려고 만든 하위 질의 — 어느 엔진에서나 통한다
+   SELECT emp_name, annual_pay FROM (SELECT emp_name, base_salary * 12 AS annual_pay FROM employee) WHERE annual_pay > 48000000
+   ('김하늘', 50400000)
+   ('최지아', 54000000)
+
+-- 9. GROUP BY에서 별칭을 쓴다
+   SELECT dept AS team, COUNT(*) AS head_count FROM employee GROUP BY team ORDER BY head_count DESC, team
+   ('개발', 2)
+   ('영업', 2)
+   ('운영', 1)
+
+-- 10. HAVING에서 집계 별칭을 쓴다
+   SELECT dept, COUNT(*) AS head_count FROM employee GROUP BY dept HAVING head_count >= 2
+   ('개발', 2)
+   ('영업', 2)
+
+================================================================
+3부 — 별칭이 실제 컬럼 이름과 겹치면
+================================================================
+-- 11. bonus_rate 라는 이름의 별칭을 다른 식에 붙인다
+   SELECT emp_name, base_salary * 2 AS bonus_rate FROM employee ORDER BY bonus_rate
+   ('정민재', 6400000)
+   ('박서준', 7000000)
+   ('이도윤', 7600000)
+   ('김하늘', 8400000)
+   ('최지아', 9000000)
+
+-- 12. 같은 별칭을 WHERE에 쓴다
+   SELECT emp_name, base_salary * 2 AS bonus_rate FROM employee WHERE bonus_rate < 1
+   ('김하늘', 8400000)
+   ('이도윤', 7600000)
+   ('박서준', 7000000)
+   ('최지아', 9000000)
+   ('정민재', 6400000)
+
+-- 13. 결과에 없는 컬럼으로 정렬한다
+   SELECT emp_name FROM employee ORDER BY bonus_rate DESC
+   ('박서준',)
+   ('정민재',)
+   ('이도윤',)
+   ('김하늘',)
+   ('최지아',)
+
+-- 14. 별칭을 식 안에 넣어 정렬한다
+   SELECT emp_name, base_salary * 12 AS annual_pay FROM employee ORDER BY annual_pay / 1000000
+   ('정민재', 38400000)
+   ('박서준', 42000000)
+   ('이도윤', 45600000)
+   ('김하늘', 50400000)
+   ('최지아', 54000000)
+
+-- 14b. 같은 이름을 GROUP BY가 읽으면 — 별칭인가 원래 컬럼인가
+   SELECT dept AS bonus_rate, COUNT(*) AS n FROM employee GROUP BY bonus_rate
+   ('영업', 1)
+   ('개발', 1)
+   ('개발', 1)
+   ('운영', 1)
+   ('영업', 1)
+
+================================================================
+4부 — DISTINCT와 UNION이 붙으면 막히는 것
+================================================================
+-- 15. DISTINCT + 결과에 없는 컬럼으로 정렬
+   SELECT DISTINCT dept FROM employee ORDER BY base_salary
+   ('운영',)
+   ('영업',)
+   ('개발',)
+
+-- 15b. 그 정렬 키가 부서마다 하나로 정해지는지 확인
+   SELECT dept, MIN(base_salary) AS lo, MAX(base_salary) AS hi FROM employee GROUP BY dept ORDER BY dept
+   ('개발', 3800000, 4200000)
+   ('영업', 3500000, 4500000)
+   ('운영', 3200000, 3200000)
+
+-- 16. DISTINCT + 결과 컬럼의 식으로 정렬
+   SELECT DISTINCT dept FROM employee ORDER BY length(dept), dept
+   ('개발',)
+   ('영업',)
+   ('운영',)
+
+-- 17. UNION ALL + 별칭으로 정렬
+   SELECT emp_name AS who, base_salary AS amount FROM employee WHERE dept = '개발' UNION ALL SELECT emp_name, base_salary FROM employee WHERE dept = '영업' ORDER BY amount DESC
+   ('최지아', 4500000)
+   ('김하늘', 4200000)
+   ('이도윤', 3800000)
+   ('박서준', 3500000)
+
+-- 18. UNION ALL + 식으로 정렬
+   SELECT emp_name AS who, base_salary AS amount FROM employee WHERE dept = '개발' UNION ALL SELECT emp_name, base_salary FROM employee WHERE dept = '영업' ORDER BY amount * -1
+   [OperationalError] 1st ORDER BY term does not match any column in the result set
+
+-- 19. UNION ALL + 자리 번호로 정렬
+   SELECT emp_name AS who, base_salary AS amount FROM employee WHERE dept = '개발' UNION ALL SELECT emp_name, base_salary FROM employee WHERE dept = '영업' ORDER BY 2 DESC
+   ('최지아', 4500000)
+   ('김하늘', 4200000)
+   ('이도윤', 3800000)
+   ('박서준', 3500000)
+
+================================================================
+5부 — 별칭 두 번째 쓰임: 정렬 키를 결과에서 감추기
+================================================================
+-- 20. 정렬 키를 결과에 넣지 않는다
+   SELECT emp_name FROM employee ORDER BY base_salary * (1 + bonus_rate) DESC
+   ('최지아',)
+   ('김하늘',)
+   ('이도윤',)
+   ('박서준',)
+   ('정민재',)
+
+-- 21. 같은 정렬을 별칭으로 적되 키도 함께 보여 준다
+   SELECT emp_name, CAST(base_salary * (1 + bonus_rate) AS INTEGER) AS total_pay FROM employee ORDER BY total_pay DESC
+   ('최지아', 4950000)
+   ('김하늘', 4830000)
+   ('이도윤', 4560000)
+   ('박서준', 4550000)
+   ('정민재', 4000000)
+
+================================================================
+6부 — 실행계획 (EXPLAIN QUERY PLAN의 detail 원문)
+================================================================
+-- 22. ORDER BY base_salary
+   SELECT emp_id FROM employee ORDER BY base_salary
+   SCAN employee USING COVERING INDEX ix_employee_salary
+
+-- 23. ORDER BY 별칭(= 그냥 컬럼)
+   SELECT base_salary AS pay FROM employee ORDER BY pay
+   SCAN employee USING COVERING INDEX ix_employee_salary
+
+-- 24. ORDER BY 별칭(= 계산식)
+   SELECT base_salary * 12 AS pay FROM employee ORDER BY pay
+   SCAN employee USING COVERING INDEX ix_employee_salary
+   USE TEMP B-TREE FOR ORDER BY
+
