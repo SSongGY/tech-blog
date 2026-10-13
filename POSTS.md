@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **322편** · 갱신 2026-10-14
+총 **324편** · 갱신 2026-10-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -84,10 +84,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 117편
+## 기술사 (pe) — 119편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [람다 아키텍처와 카파 아키텍처](posts/PE/database/2026-10-14-lambda-vs-kappa-architecture/index.md) | 중급 | Nathan Marz, How to beat the CAP theorem (2011-10-13), Marz·Warren, Big Data (Manning, 2015), Jay Kreps, Questioning the Lambda Architecture (2014-07-02), Apache Kafka 공식 문서 (2026-10-14 확인) | 문서 근거 |
+| 2026-10-14 | [데이터 계보(Data Lineage)와 메타데이터 카탈로그](posts/PE/database/2026-10-14-data-lineage-metadata-catalog/index.md) | 중급 | W3C PROV-DM (REC 2013-04-30), W3C DCAT 3 (REC 2024-08-22), ISO/IEC 11179-1:2023 (4판), BCBS 239 (2013-01-09, Basel Framework SRP36 2019-12-15판), Apache Atlas 2.0.0, OpenLineage 스펙 (2026-10-14 확인), DataHub 문서 (2026-10-14 확인), dbt 문서 (2026-10-14 확인) | 문서 근거 |
 | 2026-10-13 | [RLHF — 사람 피드백 강화학습의 SFT·보상 모델·PPO 3단계](posts/PE/emerging-tech/2026-10-13-rlhf-sft-reward-model-ppo/index.md) | 중급 | Christiano et al., arXiv:1706.03741 (2017-06), Ouyang et al., arXiv:2203.02155 (2022-03), Rafailov et al., arXiv:2305.18290 (2023-05), Bai et al., arXiv:2212.08073 (2022-12) | 문서 근거 |
 | 2026-10-13 | [랜섬웨어 대응 체계 — 예방·탐지·복구](posts/PE/security/2026-10-13-ransomware-defense-prevention-detection-recovery/index.md) | 중급 | NIST CSF 2.0 (2024-02-26), NIST IR 8374r1 (2026-06), CISA #StopRansomware Guide (2023-09), US-CERT Data Backup Options (2012) | 문서 근거 |
 | 2026-10-13 | [RAID 레벨별 특성과 선택 기준 — 쓰기 페널티를 I/O 수로 세기](posts/PE/system/2026-10-13-raid-levels-write-penalty/index.md) | 중급 | Python 3.13.5, Patterson·Gibson·Katz, A Case for RAID (SIGMOD 1988), Arpaci-Dusseau, OSTEP v1.10 Ch.38, Anvin, The mathematics of RAID-6 (2011-12-20판) | 실행 검증 |
