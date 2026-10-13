@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Segoe UI', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf9"/>
+
+  <text x="24" y="28" font-size="14" fill="#1f2933">풀 크기 64에서 잰 응답시간 분포 — 평균은 같고 분포는 다르다</text>
+  <text x="24" y="50" font-size="13" fill="#52606d">백엔드 동시 한도 4건 · 한 건 15ms · 300건 측정. 대기 방식만 다르다.</text>
+
+  <!-- 범례 -->
+  <rect x="604" y="18" width="16" height="12" fill="#9d0208"/>
+  <text x="628" y="29" font-size="13" fill="#52606d">세마포어</text>
+  <rect x="712" y="18" width="16" height="12" fill="#2d6a4f"/>
+  <text x="736" y="29" font-size="13" fill="#52606d">FIFO 대기열</text>
+
+  <!-- y축 눈금 -->
+  <line x1="104" y1="80" x2="104" y2="330" stroke="#8c9196" stroke-width="1"/>
+  <line x1="104" y1="330" x2="856" y2="330" stroke="#8c9196" stroke-width="1"/>
+
+  <line x1="104" y1="80" x2="856" y2="80" stroke="#e4e7eb" stroke-width="1"/>
+  <text x="46" y="85" font-size="13" fill="#52606d">1200</text>
+  <line x1="104" y1="142.5" x2="856" y2="142.5" stroke="#e4e7eb" stroke-width="1"/>
+  <text x="58" y="147" font-size="13" fill="#52606d">900</text>
+  <line x1="104" y1="205" x2="856" y2="205" stroke="#e4e7eb" stroke-width="1"/>
+  <text x="58" y="210" font-size="13" fill="#52606d">600</text>
+  <line x1="104" y1="267.5" x2="856" y2="267.5" stroke="#e4e7eb" stroke-width="1"/>
+  <text x="58" y="272" font-size="13" fill="#52606d">300</text>
+  <text x="76" y="335" font-size="13" fill="#52606d">0</text>
+  <text x="110" y="74" font-size="13" fill="#52606d">ms</text>
+
+  <!-- 중앙값 -->
+  <rect x="180" y="326.7" width="70" height="3.3" fill="#9d0208"/>
+  <text x="178" y="320" font-size="13" fill="#9d0208">15.7</text>
+  <rect x="258" y="277.7" width="70" height="52.3" fill="#2d6a4f"/>
+  <text x="264" y="271" font-size="13" fill="#2d6a4f">250.9</text>
+  <text x="208" y="356" font-size="13" fill="#1f2933">중앙값</text>
+
+  <!-- p95 -->
+  <rect x="412" y="97.5" width="70" height="232.5" fill="#9d0208"/>
+  <text x="412" y="91" font-size="13" fill="#9d0208">1115.8</text>
+  <rect x="490" y="276.8" width="70" height="53.2" fill="#2d6a4f"/>
+  <text x="496" y="270" font-size="13" fill="#2d6a4f">255.5</text>
+  <text x="456" y="356" font-size="13" fill="#1f2933">p95</text>
+
+  <!-- 최대 -->
+  <rect x="644" y="87.2" width="70" height="242.8" fill="#9d0208"/>
+  <text x="644" y="81" font-size="13" fill="#9d0208">1165.4</text>
+  <rect x="722" y="276.1" width="70" height="53.9" fill="#2d6a4f"/>
+  <text x="728" y="269" font-size="13" fill="#2d6a4f">258.9</text>
+  <text x="694" y="356" font-size="13" fill="#1f2933">최대</text>
+
+  <!-- 평균선 -->
+  <line x1="104" y1="283.3" x2="856" y2="283.3" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="112" y="300" font-size="13" fill="#b45309">두 방식의 평균 — 세마포어 223.9ms · FIFO 225.5ms (차이 1.5ms)</text>
+
+  <text x="24" y="390" font-size="13" fill="#1f2933">세마포어 쪽은 대부분이 15.7ms 에 끝나고 일부가 1초 넘게 밀린다. 평균은 그 둘을 섞은 값이라 누구의 경험도 아니다.</text>
+  <text x="24" y="414" font-size="13" fill="#1f2933">FIFO 쪽은 모두가 250ms 안팎을 겪는다. 처리량은 둘 다 초당 253건으로 같다.</text>
+
+</svg>

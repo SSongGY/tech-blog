@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Segoe UI', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf9"/>
+
+  <text x="24" y="30" font-size="14" fill="#1f2933">닫힌 계에서 풀 크기 L, 처리량 λ, 응답시간 W 가 맞물리는 방식</text>
+
+  <rect x="24" y="60" width="184" height="86" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.5"/>
+  <text x="40" y="88" font-size="13" fill="#1f2933">요청</text>
+  <text x="40" y="110" font-size="13" fill="#52606d">끝나면 곧바로 다음</text>
+  <text x="40" y="131" font-size="13" fill="#52606d">요청을 낸다</text>
+
+  <rect x="240" y="60" width="184" height="86" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.5"/>
+  <text x="256" y="88" font-size="13" fill="#1f2933">커넥션 풀 — 연결 L개</text>
+  <text x="256" y="110" font-size="13" fill="#52606d">계 안에 머무는 요청은</text>
+  <text x="256" y="131" font-size="13" fill="#52606d">항상 L개다</text>
+
+  <rect x="456" y="60" width="184" height="86" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="472" y="88" font-size="13" fill="#b45309">자리 대기</text>
+  <text x="472" y="110" font-size="13" fill="#52606d">동시 C건만 통과한다</text>
+  <text x="472" y="131" font-size="13" fill="#52606d">나머지는 기다린다</text>
+
+  <rect x="672" y="60" width="184" height="86" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.5"/>
+  <text x="688" y="88" font-size="13" fill="#1f2933">백엔드</text>
+  <text x="688" y="110" font-size="13" fill="#52606d">한 건에 S초</text>
+  <text x="688" y="131" font-size="13" fill="#52606d">늘릴 수 없는 자원</text>
+
+  <path d="M208 103 L238 103" stroke="#52606d" stroke-width="1.5" marker-end="url(#tip)"/>
+  <path d="M424 103 L454 103" stroke="#52606d" stroke-width="1.5" marker-end="url(#tip)"/>
+  <path d="M640 103 L670 103" stroke="#52606d" stroke-width="1.5" marker-end="url(#tip)"/>
+  <path d="M764 146 L764 172 L116 172 L116 148" fill="none" stroke="#52606d" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#tip)"/>
+  <text x="300" y="192" font-size="13" fill="#52606d">완료되면 같은 연결로 다음 요청이 들어간다 — 그래서 L 이 고정된다</text>
+
+  <rect x="24" y="214" width="400" height="124" rx="6" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="44" y="242" font-size="13" fill="#2d6a4f">L ≤ C — 자리가 남는다</text>
+  <text x="44" y="266" font-size="13" fill="#52606d">기다리는 요청이 없다</text>
+  <text x="44" y="290" font-size="13" fill="#52606d">처리량 λ = L / S   — 풀을 키우면 같이 는다</text>
+  <text x="44" y="314" font-size="13" fill="#52606d">응답시간 W = S     — 풀과 무관하게 일정하다</text>
+
+  <rect x="456" y="214" width="400" height="124" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="476" y="242" font-size="13" fill="#b45309">L &gt; C — 자리가 모자란다</text>
+  <text x="476" y="266" font-size="13" fill="#52606d">L − C 개가 늘 기다린다</text>
+  <text x="476" y="290" font-size="13" fill="#52606d">처리량 λ = C / S   — 풀을 키워도 그대로다</text>
+  <text x="476" y="314" font-size="13" fill="#52606d">응답시간 W = L·S / C — 풀에 비례해 늘어난다</text>
+
+  <text x="24" y="368" font-size="13" fill="#1f2933">두 구간 모두에서 L = λW 가 성립한다. 항등식이므로 λ 가 멈추면 늘어난 L 은 전부 W 로 간다.</text>
+  <text x="24" y="392" font-size="13" fill="#1f2933">풀을 키워 이득을 보는 구간은 L = C 까지다. 그 지점이 포화점이다.</text>
+  <text x="24" y="416" font-size="13" fill="#52606d">L = 계 안의 평균 요청 수 · λ = 처리량 · W = 평균 응답시간 · C = 백엔드 동시 처리 한도 · S = 한 건 처리 시간</text>
+
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+</svg>
