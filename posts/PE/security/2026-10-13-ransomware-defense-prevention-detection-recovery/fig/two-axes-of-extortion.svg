@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf9"/>
+
+  <text x="20" y="26" font-size="15" font-weight="bold" fill="#1b1b1b">이중 갈취의 두 축과 각 축을 막는 통제</text>
+  <text x="20" y="48" font-size="13" fill="#555">백업은 왼쪽 축만 되돌린다. 오른쪽 축은 이미 나간 데이터라 복구로 되돌릴 수 없다.</text>
+
+  <!-- 공격 -->
+  <rect x="340" y="66" width="200" height="48" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="440" y="96" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">랜섬웨어 침투</text>
+
+  <defs>
+    <marker id="ar3" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+    <marker id="ar3r" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <g stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#ar3)">
+    <path d="M400,114 L400,134 L230,134 L230,154"/>
+    <path d="M480,114 L480,134 L650,134 L650,154"/>
+  </g>
+
+  <!-- 두 축 -->
+  <rect x="80" y="158" width="300" height="56" rx="4" fill="#ffffff" stroke="#555" stroke-width="1.3"/>
+  <text x="230" y="182" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">데이터 암호화</text>
+  <text x="230" y="203" font-size="13" fill="#444" text-anchor="middle">가용성이 깨진다</text>
+
+  <rect x="500" y="158" width="300" height="56" rx="4" fill="#ffffff" stroke="#555" stroke-width="1.3"/>
+  <text x="650" y="182" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">데이터 탈취와 공개 위협</text>
+  <text x="650" y="203" font-size="13" fill="#444" text-anchor="middle">기밀성이 깨진다</text>
+
+  <g stroke="#555" stroke-width="1.5" marker-end="url(#ar3)">
+    <line x1="230" y1="214" x2="230" y2="246"/>
+    <line x1="650" y1="214" x2="650" y2="246"/>
+  </g>
+
+  <!-- 대응 -->
+  <rect x="80" y="250" width="300" height="96" rx="4" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="96" y="274" font-size="14" font-weight="bold" fill="#2d6a4f">복구 통제로 되돌린다</text>
+  <text x="96" y="296" font-size="13" fill="#1b1b1b">3-2-1 규칙에 맞춘 백업</text>
+  <text x="96" y="315" font-size="13" fill="#1b1b1b">오프라인·암호화 보관</text>
+  <text x="96" y="334" font-size="13" fill="#1b1b1b">정기 복원 시험</text>
+
+  <rect x="500" y="250" width="300" height="96" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="516" y="274" font-size="14" font-weight="bold" fill="#b45309">예방·탐지로만 막는다</text>
+  <text x="516" y="296" font-size="13" fill="#1b1b1b">초기 침투 경로 차단</text>
+  <text x="516" y="315" font-size="13" fill="#1b1b1b">반출 트래픽 탐지</text>
+  <text x="516" y="334" font-size="13" fill="#1b1b1b">저장·전송 구간 암호화</text>
+
+  <!-- 백업이 닿지 않는 축 -->
+  <path d="M390,298 L490,298" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#ar3r)"/>
+  <line x1="428" y1="286" x2="452" y2="310" stroke="#9d0208" stroke-width="2.4"/>
+  <line x1="452" y1="286" x2="428" y2="310" stroke="#9d0208" stroke-width="2.4"/>
+  <text x="440" y="334" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">백업 불가</text>
+
+  <text x="20" y="376" font-size="13" fill="#555">그래서 "백업이 있으니 괜찮다"는 판단은 가용성만 본 것이다. 유출 사실은 신고·통지 의무로 이어진다.</text>
+</svg>
