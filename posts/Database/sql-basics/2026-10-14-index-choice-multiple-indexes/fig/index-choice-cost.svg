@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Segoe UI', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#fbfbf9"/>
+
+  <text x="24" y="30" font-size="14" fill="#1f2933">
+    같은 질의에서 두 인덱스 중 하나를 고르는 근거
+  </text>
+  <text x="24" y="52" font-size="13" fill="#52606d" font-family="Consolas, monospace">
+    SELECT name FROM employee WHERE status = '재직' AND emp_no = 'E01234'
+  </text>
+
+  <line x1="440" y1="72" x2="440" y2="440" stroke="#cbd2d9" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 왼쪽: 통계 없음 -->
+  <text x="24" y="96" font-size="14" fill="#b45309">통계 없음 — sqlite_stat1 이 비어 있다</text>
+
+  <rect x="24" y="110" width="384" height="62" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="40" y="134" font-size="13" fill="#1f2933" font-family="Consolas, monospace">idx_emp_status</text>
+  <text x="40" y="157" font-size="13" fill="#52606d">값 하나당 10행이라고 가정한다</text>
+
+  <rect x="24" y="184" width="384" height="62" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="40" y="208" font-size="13" fill="#1f2933" font-family="Consolas, monospace">idx_emp_emp_no</text>
+  <text x="40" y="231" font-size="13" fill="#52606d">값 하나당 10행이라고 가정한다</text>
+
+  <path d="M216 246 L216 282" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow-warn)"/>
+
+  <rect x="24" y="288" width="384" height="86" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="40" y="313" font-size="13" fill="#b45309">견적이 같아 우열이 가려지지 않는다</text>
+  <text x="40" y="336" font-size="13" fill="#52606d">선택의 근거가 데이터에 없다</text>
+  <text x="40" y="359" font-size="13" fill="#52606d">예제에서는 나중에 만든 인덱스가 쓰였다</text>
+
+  <!-- 오른쪽: ANALYZE 후 -->
+  <text x="464" y="96" font-size="14" fill="#2d6a4f">ANALYZE 실행 후 — sqlite_stat1 을 읽는다</text>
+
+  <rect x="464" y="110" width="384" height="62" rx="6" fill="#ffffff" stroke="#8c9196" stroke-width="1.5"/>
+  <text x="480" y="134" font-size="13" fill="#1f2933" font-family="Consolas, monospace">idx_emp_status   2000 1000</text>
+  <text x="480" y="157" font-size="13" fill="#52606d">같은 값이 평균 1,000행 — 거의 안 좁힌다</text>
+
+  <rect x="464" y="184" width="384" height="62" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="480" y="208" font-size="13" fill="#1f2933" font-family="Consolas, monospace">idx_emp_emp_no   2000 1</text>
+  <text x="480" y="231" font-size="13" fill="#52606d">같은 값이 평균 1행 — 한 행으로 좁힌다</text>
+
+  <path d="M656 246 L656 282" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+
+  <rect x="464" y="288" width="384" height="86" rx="6" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="480" y="313" font-size="13" fill="#2d6a4f">읽을 양이 적은 쪽을 고른다</text>
+  <text x="480" y="336" font-size="13" fill="#52606d">idx_emp_emp_no 가 선택된다</text>
+  <text x="480" y="359" font-size="13" fill="#52606d">만든 순서를 바꿔도 결과가 같다</text>
+
+  <text x="24" y="404" font-size="13" fill="#52606d">
+    stat1 의 두 번째 정수는 첫 컬럼 값이 같은 행의 평균 개수다. 1 에 가까울수록 좁히는 힘이 크다.
+  </text>
+  <text x="24" y="427" font-size="13" fill="#52606d">
+    통계는 자동으로 갱신되지 않는다. 데이터가 크게 바뀌면 ANALYZE 를 다시 돌려야 한다.
+  </text>
+
+  <defs>
+    <marker id="arrow-warn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <marker id="arrow-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

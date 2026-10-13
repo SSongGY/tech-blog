@@ -146,7 +146,7 @@ topics:
     difficulty: 중급
     angle: "리틀의 법칙으로 적정 크기를 계산하고 실측 그래프로 검증"
     code: python
-    status: todo
+    status: done
   - id: be-002
     title: "멱등키(Idempotency Key)로 중복 결제를 막는 설계"
     category: Backend
@@ -2136,7 +2136,7 @@ topics:
     angle: "트랜스포머 구조에서 비용과 환각이 나오는 지점"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-072
     title: "RAG 구성요소와 검색 품질 지표"
     category: PE
@@ -2632,7 +2632,7 @@ topics:
     angle: "옵티마이저가 하나를 고르는 기준과 ANALYZE가 그 판단을 바꾸는 순간"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-050
     title: "키셋 페이지네이션 — OFFSET을 버리는 이유"
     category: Database
