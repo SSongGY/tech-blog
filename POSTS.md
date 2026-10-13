@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **313편** · 갱신 2026-10-13
+총 **316편** · 갱신 2026-10-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 50편
+## DB문법 (basics) — 51편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-13 | [중복 행 찾아 지우기 — GROUP BY HAVING과 rowid](posts/Database/sql-basics/2026-10-13-sql-find-delete-duplicate-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-13 | [ORDER BY에 별칭과 표현식 쓰기](posts/Database/sql-basics/2026-10-13-order-by-alias-and-expression/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [BETWEEN과 IN — 범위와 목록을 쓰는 법](posts/Database/sql-basics/2026-10-13-between-in-range-list/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [트리거 기본 — 행이 바뀔 때 자동으로 도는 SQL](posts/Database/sql-basics/2026-10-12-trigger-before-after-audit/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [RETURNING — 넣은 값을 그 자리에서 돌려받기](posts/Database/sql-basics/2026-10-12-sqlite-returning-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -59,10 +60,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 17편
+## DB기능 (product) — 18편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [Tibero 7 머티리얼라이즈드 뷰 — 갱신 방식 고르기](posts/Database/tibero/2026-10-13-materialized-view-refresh-modes/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-12 | [Tibero 7 제약조건 — 종류와 검증 시점](posts/Database/tibero/2026-10-12-tibero7-constraints-state-deferrable/index.md) | 입문 | Tibero 7.2.6 매뉴얼, SQLite 3.49.1 (비교 절) | 문서 근거 |
 | 2026-10-08 | [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](posts/Database/tibero/2026-10-08-tibero7-rownum-paging/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-07 | [Tibero 7 WITH 절 — 이름 붙인 부질의와 재귀 질의, SEARCH·CYCLE 절](posts/Database/tibero/2026-10-07-tibero7-with-clause-recursive-cte/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -81,11 +83,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 115편
+## 기술사 (pe) — 116편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-13 | [RLHF — 사람 피드백 강화학습의 SFT·보상 모델·PPO 3단계](posts/PE/emerging-tech/2026-10-13-rlhf-sft-reward-model-ppo/index.md) | 중급 | Christiano et al., arXiv:1706.03741 (2017-06), Ouyang et al., arXiv:2203.02155 (2022-03), Rafailov et al., arXiv:2305.18290 (2023-05), Bai et al., arXiv:2212.08073 (2022-12) | 문서 근거 |
+| 2026-10-13 | [랜섬웨어 대응 체계 — 예방·탐지·복구](posts/PE/security/2026-10-13-ransomware-defense-prevention-detection-recovery/index.md) | 중급 | NIST CSF 2.0 (2024-02-26), NIST IR 8374r1 (2026-06), CISA #StopRansomware Guide (2023-09), US-CERT Data Backup Options (2012) | 문서 근거 |
 | 2026-10-13 | [RAID 레벨별 특성과 선택 기준 — 쓰기 페널티를 I/O 수로 세기](posts/PE/system/2026-10-13-raid-levels-write-penalty/index.md) | 중급 | Python 3.13.5, Patterson·Gibson·Katz, A Case for RAID (SIGMOD 1988), Arpaci-Dusseau, OSTEP v1.10 Ch.38, Anvin, The mathematics of RAID-6 (2011-12-20판) | 실행 검증 |
 | 2026-10-13 | [매개변수 효율적 미세조정(PEFT) — LoRA·어댑터·프롬프트 튜닝](posts/PE/emerging-tech/2026-10-13-peft-lora-adapter-prompt-tuning/index.md) | 중급 | Houlsby et al., ICML 2019 (arXiv:1902.00751), Li & Liang, ACL 2021 (arXiv:2101.00190), Lester et al., EMNLP 2021 (arXiv:2104.08691), Hu et al., arXiv:2106.09685v2 (2021-10), Lialin et al., arXiv:2303.15647 (2024) | 문서 근거 |
 | 2026-10-13 | [멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크](posts/PE/security/2026-10-13-membership-inference-memorization/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03), 개인정보보호위원회 AI 프라이버시 리스크 관리 모델 (2024-12-19 공개) | 문서 근거 |
