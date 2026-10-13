@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **316편** · 갱신 2026-10-13
+총 **318편** · 갱신 2026-10-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -300,12 +300,14 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 50편
+## 주식·재무 (finance) — 52편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-13 | [중단영업 — 접기로 한 사업은 어떻게 표시되는가](posts/Finance/statements/2026-10-13-discontinued-operations/index.md) | 중급 | Python 3.13.5, K-IFRS 제1105호 매각예정비유동자산과 중단영업 | 실행 검증 |
+| 2026-10-13 | [유동비율과 당좌비율 — 재고를 빼고 보는 이유](posts/Finance/ratios/2026-10-13-current-ratio-vs-quick-ratio/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 통계정보보고서(2019.12), K-IFRS 제1002호 | 실행 검증 |
 | 2026-10-13 | [어디까지가 현금인가 — 현금성자산과 단기금융상품](posts/Finance/statements/2026-10-13-cash-equivalents-and-short-term-deposits/index.md) | 입문 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, K-IFRS 제1001호 재무제표 표시 | 실행 검증 |
+| 2026-10-13 | [현금전환주기 — 돈이 묶여 있는 날수, 그리고 음수가 되는 구조](posts/Finance/ratios/2026-10-13-cash-conversion-cycle-negative/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 통계정보보고서(2019.12), K-IFRS 제1115호 | 실행 검증 |
 | 2026-10-12 | [재고자산 평가 — 선입선출과 가중평균이 이익을 가르는 자리](posts/Finance/statements/2026-10-12-inventory-cost-formula-fifo-average/index.md) | 중급 | Python 3.13.5, K-IFRS 제1002호 재고자산 | 실행 검증 |
 | 2026-10-12 | [외화환산 — 환율이 바뀌면 재무제표 어디가 움직이는가](posts/Finance/statements/2026-10-12-foreign-currency-translation/index.md) | 중급 | Python 3.13.5, K-IFRS 제1021호 환율변동효과 | 실행 검증 |
 | 2026-10-12 | [금융자산 세 분류 — 상각후원가·FVOCI·FVPL](posts/Finance/statements/2026-10-12-financial-assets-three-classes/index.md) | 중급 | Python 3.13.5, K-IFRS 제1109호 금융상품 | 실행 검증 |
