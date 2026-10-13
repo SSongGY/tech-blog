@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **311편** · 갱신 2026-10-13
+총 **313편** · 갱신 2026-10-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -81,11 +81,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 113편
+## 기술사 (pe) — 115편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-13 | [RLHF — 사람 피드백 강화학습의 SFT·보상 모델·PPO 3단계](posts/PE/emerging-tech/2026-10-13-rlhf-sft-reward-model-ppo/index.md) | 중급 | Christiano et al., arXiv:1706.03741 (2017-06), Ouyang et al., arXiv:2203.02155 (2022-03), Rafailov et al., arXiv:2305.18290 (2023-05), Bai et al., arXiv:2212.08073 (2022-12) | 문서 근거 |
 | 2026-10-13 | [RAID 레벨별 특성과 선택 기준 — 쓰기 페널티를 I/O 수로 세기](posts/PE/system/2026-10-13-raid-levels-write-penalty/index.md) | 중급 | Python 3.13.5, Patterson·Gibson·Katz, A Case for RAID (SIGMOD 1988), Arpaci-Dusseau, OSTEP v1.10 Ch.38, Anvin, The mathematics of RAID-6 (2011-12-20판) | 실행 검증 |
+| 2026-10-13 | [매개변수 효율적 미세조정(PEFT) — LoRA·어댑터·프롬프트 튜닝](posts/PE/emerging-tech/2026-10-13-peft-lora-adapter-prompt-tuning/index.md) | 중급 | Houlsby et al., ICML 2019 (arXiv:1902.00751), Li & Liang, ACL 2021 (arXiv:2101.00190), Lester et al., EMNLP 2021 (arXiv:2104.08691), Hu et al., arXiv:2106.09685v2 (2021-10), Lialin et al., arXiv:2303.15647 (2024) | 문서 근거 |
 | 2026-10-13 | [멤버십 추론 공격과 학습 데이터 암기 — 모델 질의만으로 생기는 프라이버시 리스크](posts/PE/security/2026-10-13-membership-inference-memorization/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03), 개인정보보호위원회 AI 프라이버시 리스크 관리 모델 (2024-12-19 공개) | 문서 근거 |
 | 2026-10-13 | [ISMS-P 인증 체계와 통제 항목 구조](posts/PE/security/2026-10-13-isms-p-certification-control-structure/index.md) | 중급 | ISMS-P 인증기준 안내서 (2023.11, 개인정보보호위원회·과학기술정보통신부), ISO/IEC 27001:2022 | 문서 근거 |
 | 2026-10-13 | [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](posts/PE/security/2026-10-13-adversarial-ml-attack-taxonomy/index.md) | 중급 | NIST AI 100-2 E2025 (2025-03) | 문서 근거 |
