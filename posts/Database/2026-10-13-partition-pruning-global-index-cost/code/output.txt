@@ -1,0 +1,86 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\2026-10-13-partition-pruning-global-index-cost
+# 명령      : python partition_pruning_cost.py
+# 수행 시각 : 2026-10-13 13:32 (대한민국 표준시)
+# 소요      : 0.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+데이터 — 같은 행을 세 가지 모양으로 넣었다
+================================================================
+  order_flat   30,000행 · 표 1개 · 인덱스 ordered_on, customer_id
+  order_y      30,000행 · 표 3개를 UNION ALL 로 묶은 뷰 · 표마다 같은 인덱스 2개
+  order_m      30,000행 · 표 36개를 UNION ALL 로 묶은 뷰 · 표마다 같은 인덱스 2개
+  고객 수 500명 · 난수 시드 42
+
+### 1. CHECK 제약으로 조각을 걸러 주는가
+   order_y 의 각 표에는 연도를 못 박는 CHECK 가 걸려 있다.
+   2026년만 묻는 질의의 실행계획에 order_y2024 가 나오는지 본다.
+   CO-ROUTINE order_y
+   COMPOUND QUERY
+   LEFT-MOST SUBQUERY
+   SEARCH order_y2024 USING INDEX ix_order_y2024_ordered_on (ordered_on>? AND ordered_on<?)
+   UNION ALL
+   SEARCH order_y2025 USING INDEX ix_order_y2025_ordered_on (ordered_on>? AND ordered_on<?)
+   UNION ALL
+   SEARCH order_y2026 USING INDEX ix_order_y2026_ordered_on (ordered_on>? AND ordered_on<?)
+   SCAN order_y
+
+### 2. 파티션 키로 범위 조회
+-- 2. 2025년 주문 건수
+   SELECT COUNT(*) FROM <표> WHERE ordered_on >= '2025-01-01' AND ordered_on < '2026-01-01'
+   [통짜  1조각] 결과 (10000,) · VDBE    30,019회 · 통짜의    1.00배 · 계획 SEARCH 1 / SCAN 0
+   [연  단위 3조각] 결과 (10000,) · VDBE   150,043회 · 통짜의    5.00배 · 계획 SEARCH 3 / SCAN 1
+   [월 단위 36조각] 결과 (10000,) · VDBE   150,341회 · 통짜의    5.01배 · 계획 SEARCH 36 / SCAN 1
+
+-- 3. 2025년 3월 한 달 — 조각 하나에만 들어 있다
+   SELECT COUNT(*) FROM <표> WHERE ordered_on >= '2025-03-01' AND ordered_on < '2025-04-01'
+   [통짜  1조각] 결과 (810,) · VDBE     2,449회 · 통짜의    1.00배 · 계획 SEARCH 1 / SCAN 0
+   [연  단위 3조각] 결과 (810,) · VDBE    12,194회 · 통짜의    4.98배 · 계획 SEARCH 3 / SCAN 1
+   [월 단위 36조각] 결과 (810,) · VDBE    12,498회 · 통짜의    5.10배 · 계획 SEARCH 36 / SCAN 1
+
+-- 4. 같은 3월을 substr() 로 — 키를 함수로 감쌌다
+   SELECT COUNT(*) FROM <표> WHERE substr(ordered_on, 1, 7) = '2025-03'
+   [통짜  1조각] 결과 (810,) · VDBE   120,825회 · 통짜의    1.00배 · 계획 SEARCH 0 / SCAN 1
+   [연  단위 3조각] 결과 (810,) · VDBE   128,941회 · 통짜의    1.07배 · 계획 SEARCH 0 / SCAN 4
+   [월 단위 36조각] 결과 (810,) · VDBE   129,107회 · 통짜의    1.07배 · 계획 SEARCH 0 / SCAN 37
+
+### 3. 파티션 키가 없는 조회 — 전역 인덱스 대 로컬 인덱스
+-- 5. 고객 137번의 주문 건수 (연도 조건 없음)
+   SELECT COUNT(*) FROM <표> WHERE customer_id = 137
+   [통짜  1조각] 결과 (58,) · VDBE       187회 · 통짜의    1.00배 · 계획 SEARCH 1 / SCAN 0
+   [연  단위 3조각] 결과 (58,) · VDBE       783회 · 통짜의    4.19배 · 계획 SEARCH 3 / SCAN 1
+   [월 단위 36조각] 결과 (58,) · VDBE       949회 · 통짜의    5.07배 · 계획 SEARCH 36 / SCAN 1
+
+-- 6. 고객 137번 + 2025년 3월로 좁히면
+   SELECT COUNT(*) FROM <표> WHERE customer_id = 137 AND ordered_on >= '2025-03-01' AND ordered_on < '2025-04-01'
+   [통짜  1조각] 결과 (0,) · VDBE       386회 · 통짜의    1.00배 · 계획 SEARCH 1 / SCAN 0
+   [연  단위 3조각] 결과 (0,) · VDBE       394회 · 통짜의    1.02배 · 계획 SEARCH 3 / SCAN 1
+   [월 단위 36조각] 결과 (0,) · VDBE       857회 · 통짜의    2.22배 · 계획 SEARCH 36 / SCAN 1
+
+### 4. 전 구간 집계와 정렬
+-- 7. 전체 주문 금액 합계
+   SELECT SUM(amount) FROM <표>
+   [통짜  1조각] 결과 (7558233900,) · VDBE    90,010회 · 통짜의    1.00배 · 계획 SEARCH 0 / SCAN 1
+   [연  단위 3조각] 결과 (7558233900,) · VDBE   300,018회 · 통짜의    3.33배 · 계획 SEARCH 0 / SCAN 4
+   [월 단위 36조각] 결과 (7558233900,) · VDBE   300,085회 · 통짜의    3.33배 · 계획 SEARCH 0 / SCAN 37
+
+-- 8. 가장 최근 주문 1건
+   SELECT order_id FROM <표> ORDER BY ordered_on DESC, order_id DESC LIMIT 1
+   [통짜  1조각] 결과 (29859,) · VDBE        11회 · 통짜의    1.00배 · 계획 SEARCH 0 / SCAN 1
+       통짜 계획: SCAN order_flat USING COVERING INDEX ix_order_flat_ordered_on
+   [연  단위 3조각] 결과 (29859,) · VDBE   420,407회 · 통짜의 38218.82배 · 계획 SEARCH 0 / SCAN 4
+   [월 단위 36조각] 결과 (29859,) · VDBE   423,771회 · 통짜의 38524.64배 · 계획 SEARCH 0 / SCAN 37
+

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">파티션 키가 없는 조회는 조각마다 한 번씩 탐색한다</text>
+  <text x="30" y="56" font-size="13" fill="#555">SQLite 3.49.1 · 같은 30,000행 · 실습 5번 `WHERE customer_id = 137` 의 실행계획과 VDBE 명령 수</text>
+
+  <!-- 왼쪽: 통짜 -->
+  <text x="40" y="94" font-size="14" font-weight="bold" fill="#2d6a4f">표 1개 + 전역 인덱스 1개</text>
+  <rect x="40" y="106" width="300" height="52" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="138" font-size="14" fill="#1b1b1b">order_flat — 30,000행</text>
+  <rect x="40" y="174" width="300" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="202" font-size="13" fill="#1b1b1b">ix_order_flat_customer_id</text>
+  <path d="M190 158 L190 172" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arrowGreen)"/>
+  <text x="40" y="248" font-size="14" font-weight="bold" fill="#2d6a4f">탐색 1회 · VDBE 187회</text>
+
+  <!-- 오른쪽: 36조각 -->
+  <text x="420" y="94" font-size="14" font-weight="bold" fill="#9d0208">표 36개 + 로컬 인덱스 36개</text>
+  <g>
+    <rect x="420" y="106" width="76" height="52" rx="5" fill="#f7eceb" stroke="#9d0208" stroke-width="1.4"/>
+    <text x="434" y="138" font-size="13" fill="#1b1b1b">2024-01</text>
+    <rect x="506" y="106" width="76" height="52" rx="5" fill="#f7eceb" stroke="#9d0208" stroke-width="1.4"/>
+    <text x="520" y="138" font-size="13" fill="#1b1b1b">2024-02</text>
+    <rect x="592" y="106" width="76" height="52" rx="5" fill="#f7eceb" stroke="#9d0208" stroke-width="1.4"/>
+    <text x="606" y="138" font-size="13" fill="#1b1b1b">2024-03</text>
+    <text x="684" y="138" font-size="15" fill="#555">· · ·</text>
+    <rect x="730" y="106" width="76" height="52" rx="5" fill="#f7eceb" stroke="#9d0208" stroke-width="1.4"/>
+    <text x="744" y="138" font-size="13" fill="#1b1b1b">2026-12</text>
+  </g>
+  <rect x="420" y="174" width="386" height="44" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="436" y="202" font-size="13" fill="#1b1b1b">조각마다 자기 행만 가리키는 customer_id 인덱스</text>
+  <g stroke="#9d0208" stroke-width="1.4" marker-end="url(#arrowRed)">
+    <path d="M458 158 L458 172"/>
+    <path d="M544 158 L544 172"/>
+    <path d="M630 158 L630 172"/>
+    <path d="M768 158 L768 172"/>
+  </g>
+  <text x="420" y="248" font-size="14" font-weight="bold" fill="#9d0208">탐색 36회 · VDBE 949회 — 통짜의 5.07배</text>
+
+  <defs>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <!-- 프루닝이 되는 조건 / 안 되는 조건 -->
+  <line x1="30" y1="276" x2="850" y2="276" stroke="#ccc" stroke-width="1"/>
+  <text x="30" y="306" font-size="15" font-weight="bold" fill="#1b1b1b">조각을 지울 수 있는 조건과 지울 수 없는 조건</text>
+
+  <rect x="30" y="322" width="400" height="140" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="46" y="346" font-size="14" font-weight="bold" fill="#2d6a4f">지울 수 있다 — 파티션 키를 그대로 비교</text>
+  <text x="46" y="372" font-size="13" fill="#1b1b1b">ordered_on &gt;= '2025-03-01'</text>
+  <text x="46" y="394" font-size="13" fill="#1b1b1b">ordered_on = '2025-03-14'</text>
+  <text x="46" y="416" font-size="13" fill="#1b1b1b">ordered_on IN ('2025-03-01', '2025-03-02')</text>
+  <text x="46" y="444" font-size="13" fill="#555">키 정의만 보고 판단한다 — 인덱스 유무와 무관</text>
+
+  <rect x="450" y="322" width="400" height="140" rx="6" fill="#f7eceb" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="466" y="346" font-size="14" font-weight="bold" fill="#9d0208">지울 수 없다 — 조각 수만큼 비용이 붙는다</text>
+  <text x="466" y="372" font-size="13" fill="#1b1b1b">customer_id = 137 — 키가 조건에 없다</text>
+  <text x="466" y="394" font-size="13" fill="#1b1b1b">substr(ordered_on, 1, 7) = '2025-03' — 키를 감쌌다</text>
+  <text x="466" y="416" font-size="13" fill="#1b1b1b">ORDER BY ordered_on DESC LIMIT 1 — 전 구간 정렬</text>
+  <text x="466" y="444" font-size="13" fill="#555">실습 4·5·8번이 이 세 가지다</text>
+
+  <rect x="30" y="476" width="820" height="46" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="46" y="505" font-size="13" fill="#1b1b1b">조각을 늘리면 "지울 수 있는 조건"은 더 싸지고 "지울 수 없는 조건"은 조각 수에 비례해 비싸진다</text>
+</svg>
