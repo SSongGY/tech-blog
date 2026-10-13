@@ -4855,7 +4855,7 @@ topics:
     angle: "데이터 계보의 정의와 수집 방식(파싱·훅·로그), 메타데이터 3계층 분류, 카탈로그가 품질·영향도 분석·규제 대응에서 하는 역할"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-167
     title: "람다 아키텍처와 카파 아키텍처"
     category: PE
@@ -4866,7 +4866,7 @@ topics:
     angle: "배치 계층·속도 계층·서빙 계층 구성과 두 경로를 함께 유지하는 비용, 카파 아키텍처가 스트림 하나로 합치는 방식과 각각이 맞는 상황"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-168
     title: "KV 캐시 — 트랜스포머 추론의 메모리 병목"
     category: PE

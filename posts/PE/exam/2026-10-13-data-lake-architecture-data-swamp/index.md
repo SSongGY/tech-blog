@@ -276,6 +276,10 @@ AI 분석용 통합 플랫폼이라는 조건에서는 두 가지가 특히 무�
 > 개념 정리: [데이터 웨어하우스·데이터 레이크·레이크하우스](../../database/2026-10-06-dw-lake-lakehouse-schema-timing/index.md)
 >
 > 개념 정리: [데이터 거버넌스와 데이터 품질 관리 체계](../../database/2026-10-06-data-governance-quality-dimensions-roles/index.md)
+>
+> 개념 정리: [데이터 계보(Data Lineage)와 메타데이터 카탈로그](../../database/2026-10-14-data-lineage-metadata-catalog/index.md)
+>
+> 개념 정리: [람다 아키텍처와 카파 아키텍처](../../database/2026-10-14-lambda-vs-kappa-architecture/index.md)
 
 끝
 
