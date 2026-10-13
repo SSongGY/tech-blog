@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **324편** · 갱신 2026-10-14
+총 **327편** · 갱신 2026-10-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 52편
+## DB문법 (basics) — 53편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [인덱스가 여럿일 때 무엇이 쓰이는가](posts/Database/sql-basics/2026-10-14-index-choice-multiple-indexes/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-13 | [중복 행 찾아 지우기 — GROUP BY HAVING과 rowid](posts/Database/sql-basics/2026-10-13-sql-find-delete-duplicate-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [ORDER BY에 별칭과 표현식 쓰기](posts/Database/sql-basics/2026-10-13-order-by-alias-and-expression/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [CHECK 제약 — 값의 범위를 DB가 지키게](posts/Database/sql-basics/2026-10-13-check-constraint-value-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -84,10 +85,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 119편
+## 기술사 (pe) — 120편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [대규모 언어 모델(LLM)의 구조와 한계](posts/PE/emerging-tech/2026-10-14-llm-architecture-limits/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-14 | [람다 아키텍처와 카파 아키텍처](posts/PE/database/2026-10-14-lambda-vs-kappa-architecture/index.md) | 중급 | Nathan Marz, How to beat the CAP theorem (2011-10-13), Marz·Warren, Big Data (Manning, 2015), Jay Kreps, Questioning the Lambda Architecture (2014-07-02), Apache Kafka 공식 문서 (2026-10-14 확인) | 문서 근거 |
 | 2026-10-14 | [데이터 계보(Data Lineage)와 메타데이터 카탈로그](posts/PE/database/2026-10-14-data-lineage-metadata-catalog/index.md) | 중급 | W3C PROV-DM (REC 2013-04-30), W3C DCAT 3 (REC 2024-08-22), ISO/IEC 11179-1:2023 (4판), BCBS 239 (2013-01-09, Basel Framework SRP36 2019-12-15판), Apache Atlas 2.0.0, OpenLineage 스펙 (2026-10-14 확인), DataHub 문서 (2026-10-14 확인), dbt 문서 (2026-10-14 확인) | 문서 근거 |
 | 2026-10-13 | [RLHF — 사람 피드백 강화학습의 SFT·보상 모델·PPO 3단계](posts/PE/emerging-tech/2026-10-13-rlhf-sft-reward-model-ppo/index.md) | 중급 | Christiano et al., arXiv:1706.03741 (2017-06), Ouyang et al., arXiv:2203.02155 (2022-03), Rafailov et al., arXiv:2305.18290 (2023-05), Bai et al., arXiv:2212.08073 (2022-12) | 문서 근거 |
@@ -230,10 +232,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 18편
+## 일반 (general) — 19편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [커넥션 풀은 왜 크게 잡을수록 느려지는가](posts/Backend/2026-10-14-connection-pool-size-littles-law/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [파티셔닝이 항상 빨라지지 않는 이유 — 프루닝이 깨진 뒤에 남는 비용](posts/Database/2026-10-13-partition-pruning-global-index-cost/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [낙관적 잠금과 비관적 잠금 — 벽시계로는 안 갈리고, 버린 일로 갈린다](posts/Backend/2026-10-13-optimistic-vs-pessimistic-locking-crossover/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-12 | [HTTP Keep-Alive를 껐다 켰을 때 실제로 달라지는 것](posts/Backend/2026-10-12-http-keep-alive-connection-count/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
