@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="pa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="pg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="pgs" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 10 0 L 0 5 L 10 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" fill="#1f2933" text-anchor="middle">PEFT 기법이 Transformer 블록의 어디에 붙는가</text>
+
+  <!-- 중앙 스파인: 고정된 사전학습 블록 -->
+  <rect x="300" y="80" width="200" height="46" rx="6" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="400" y="109" font-size="14" fill="#1f2933" text-anchor="middle">입력 임베딩</text>
+  <line x1="400" y1="126" x2="400" y2="152" stroke="#333333" stroke-width="1.8" marker-end="url(#pa)"/>
+
+  <rect x="300" y="156" width="200" height="50" rx="6" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="400" y="180" font-size="14" fill="#1f2933" text-anchor="middle">자기어텐션</text>
+  <text x="400" y="197" font-size="13" fill="#52606d" text-anchor="middle">가중치 W</text>
+  <line x1="400" y1="206" x2="400" y2="220" stroke="#333333" stroke-width="1.8" marker-end="url(#pa)"/>
+
+  <rect x="330" y="224" width="140" height="34" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="400" y="246" font-size="13" font-weight="bold" fill="#1b4332" text-anchor="middle">어댑터</text>
+  <line x1="400" y1="258" x2="400" y2="272" stroke="#333333" stroke-width="1.8" marker-end="url(#pa)"/>
+
+  <rect x="300" y="276" width="200" height="50" rx="6" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="400" y="300" font-size="14" fill="#1f2933" text-anchor="middle">피드포워드</text>
+  <text x="400" y="317" font-size="13" fill="#52606d" text-anchor="middle">가중치 W, 편향 b</text>
+  <line x1="400" y1="326" x2="400" y2="340" stroke="#333333" stroke-width="1.8" marker-end="url(#pa)"/>
+
+  <rect x="330" y="344" width="140" height="34" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="400" y="366" font-size="13" font-weight="bold" fill="#1b4332" text-anchor="middle">어댑터</text>
+  <line x1="400" y1="378" x2="400" y2="396" stroke="#333333" stroke-width="1.8" marker-end="url(#pa)"/>
+
+  <rect x="300" y="400" width="200" height="34" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="400" y="422" font-size="13" fill="#1f2933" text-anchor="middle">다음 블록으로</text>
+
+  <!-- 왼쪽 위: 소프트 프롬프트 -->
+  <rect x="40" y="80" width="220" height="46" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="150" y="101" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">소프트 프롬프트</text>
+  <text x="150" y="118" font-size="13" fill="#1f2933" text-anchor="middle">프롬프트·프리픽스 튜닝</text>
+  <line x1="260" y1="103" x2="296" y2="103" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#pg)"/>
+
+  <!-- 왼쪽 아래: 어댑터 설명 -->
+  <rect x="40" y="268" width="220" height="66" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="150" y="290" font-size="13" fill="#1b4332" text-anchor="middle">하위 층 뒤에 직렬로 끼운다</text>
+  <text x="150" y="309" font-size="13" fill="#1f2933" text-anchor="middle">과업당 3.6% 매개변수</text>
+  <text x="150" y="328" font-size="13" fill="#1f2933" text-anchor="middle">연산이 더해져 지연 증가</text>
+  <path d="M 260 286 L 284 286 L 284 241 L 326 241" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#pg)"/>
+  <path d="M 260 316 L 272 316 L 272 361 L 326 361" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#pg)"/>
+
+  <!-- 오른쪽 위: LoRA -->
+  <rect x="560" y="148" width="280" height="70" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="700" y="170" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">LoRA — 저랭크 행렬 B·A</text>
+  <text x="700" y="190" font-size="13" fill="#1f2933" text-anchor="middle">가중치 W에 병렬로 더한다</text>
+  <text x="700" y="209" font-size="13" fill="#1f2933" text-anchor="middle">학습 후 W에 합치면 지연 없음</text>
+  <line x1="504" y1="181" x2="556" y2="181" stroke="#2d6a4f" stroke-width="1.8" marker-start="url(#pgs)" marker-end="url(#pg)"/>
+
+  <!-- 오른쪽 아래: BitFit -->
+  <rect x="560" y="276" width="280" height="50" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="700" y="298" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">BitFit — 편향 항 b만 학습</text>
+  <text x="700" y="316" font-size="13" fill="#1f2933" text-anchor="middle">기존 매개변수를 골라 쓰는 선택 분류</text>
+  <line x1="556" y1="301" x2="504" y2="301" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#pg)"/>
+
+  <!-- 범례 -->
+  <rect x="268" y="446" width="18" height="14" rx="3" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="294" y="458" font-size="13" fill="#1f2933" text-anchor="start">고정 — 사전학습 가중치</text>
+  <rect x="500" y="446" width="18" height="14" rx="3" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="526" y="458" font-size="13" fill="#1b4332" text-anchor="start">학습 대상</text>
+</svg>
