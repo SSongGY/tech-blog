@@ -148,6 +148,10 @@ SFT·RAFT·LoRA 같은 지도학습 기반 적응을 우선 검토한다.
 
 > 개념 정리: [Modular RAG — 모듈·연산자 3계층과 흐름 패턴](../../emerging-tech/2026-10-09-modular-rag-operators-flow-patterns/index.md)
 
+> 개념 정리: [RLHF — 사람 피드백 강화학습의 SFT·보상 모델·PPO 3단계](../../emerging-tech/2026-10-13-rlhf-sft-reward-model-ppo/index.md)
+
+> 개념 정리: [매개변수 효율적 미세조정(PEFT) — LoRA·어댑터·프롬프트 튜닝](../../emerging-tech/2026-10-13-peft-lora-adapter-prompt-tuning/index.md)
+
 끝
 
 ## 답안 작성 메모

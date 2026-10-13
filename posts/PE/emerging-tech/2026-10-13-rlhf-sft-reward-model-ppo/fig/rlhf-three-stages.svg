@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="ahw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" font-size="17" font-weight="bold" fill="#1f2933" text-anchor="middle">RLHF 3단계 — 데이터, 학습, 산출물</text>
+
+  <!-- 1단계 -->
+  <rect x="30" y="48" width="235" height="48" rx="6" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="147" y="70" font-size="13" fill="#1f2933" text-anchor="middle">라벨러가 직접 쓴</text>
+  <text x="147" y="87" font-size="13" fill="#1f2933" text-anchor="middle">시범 답변</text>
+  <line x1="147" y1="96" x2="147" y2="126" stroke="#333333" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <rect x="30" y="130" width="235" height="72" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="147" y="156" font-size="15" font-weight="bold" fill="#1b4332" text-anchor="middle">① 지도 미세조정(SFT)</text>
+  <text x="147" y="178" font-size="13" fill="#1f2933" text-anchor="middle">사람이 쓴 답을 정답으로</text>
+  <text x="147" y="195" font-size="13" fill="#1f2933" text-anchor="middle">지도학습한다</text>
+  <line x1="147" y1="202" x2="147" y2="232" stroke="#333333" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <rect x="30" y="236" width="235" height="48" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="147" y="266" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">SFT 모델</text>
+
+  <!-- 2단계 -->
+  <rect x="322" y="48" width="235" height="48" rx="6" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="439" y="70" font-size="13" fill="#1f2933" text-anchor="middle">응답 K개(4~9)에</text>
+  <text x="439" y="87" font-size="13" fill="#1f2933" text-anchor="middle">라벨러가 매긴 순위</text>
+  <line x1="439" y1="96" x2="439" y2="126" stroke="#333333" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <rect x="322" y="130" width="235" height="72" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="439" y="156" font-size="15" font-weight="bold" fill="#1b4332" text-anchor="middle">② 보상 모델 학습</text>
+  <text x="439" y="178" font-size="13" fill="#1f2933" text-anchor="middle">SFT 모델의 출력층을 교체</text>
+  <text x="439" y="195" font-size="13" fill="#1f2933" text-anchor="middle">쌍 비교 손실로 학습</text>
+  <line x1="439" y1="202" x2="439" y2="232" stroke="#333333" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <rect x="322" y="236" width="235" height="48" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="439" y="257" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">보상 모델 RM</text>
+  <text x="439" y="274" font-size="13" fill="#52606d" text-anchor="middle">응답 하나당 스칼라 보상</text>
+
+  <!-- 3단계 -->
+  <rect x="614" y="48" width="235" height="48" rx="6" fill="#eef2f7" stroke="#64748b" stroke-width="1.5"/>
+  <text x="731" y="70" font-size="13" fill="#1f2933" text-anchor="middle">프롬프트</text>
+  <text x="731" y="87" font-size="13" fill="#52606d" text-anchor="middle">정답 없이 질문만</text>
+  <line x1="731" y1="96" x2="731" y2="126" stroke="#333333" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <rect x="614" y="130" width="235" height="72" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="731" y="156" font-size="15" font-weight="bold" fill="#1b4332" text-anchor="middle">③ 강화학습(PPO)</text>
+  <text x="731" y="178" font-size="13" fill="#1f2933" text-anchor="middle">보상을 키우는 방향으로</text>
+  <text x="731" y="195" font-size="13" fill="#1f2933" text-anchor="middle">정책을 갱신한다</text>
+  <line x1="731" y1="202" x2="731" y2="232" stroke="#333333" stroke-width="1.8" marker-end="url(#ah)"/>
+
+  <rect x="614" y="236" width="235" height="48" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.5"/>
+  <text x="731" y="266" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">정렬된 정책 모델</text>
+
+  <!-- 보상 모델 → PPO -->
+  <path d="M 557 260 L 592 260 L 592 152 L 610 152" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#ah)"/>
+  <text x="575" y="308" font-size="13" fill="#2d6a4f" text-anchor="middle">보상 신호</text>
+
+  <!-- SFT 모델 → PPO (KL 기준) -->
+  <path d="M 147 284 L 147 352 L 869 352 L 869 166 L 853 166" fill="none" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#ahw)"/>
+  <text x="200" y="344" font-size="13" fill="#b45309" text-anchor="start">KL 벌점의 기준 모델 — 정책이 여기서 멀어질수록 보상에서 뺀다</text>
+</svg>
