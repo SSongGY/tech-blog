@@ -195,7 +195,7 @@ topics:
     difficulty: 중급
     angle: "충돌률을 0%부터 올려가며 두 방식의 처리량 역전 지점을 측정"
     code: python
-    status: todo
+    status: writing
   - id: be-008
     title: "캐시 스탬피드를 막는 세 가지 방법 비교"
     category: Backend
@@ -1508,7 +1508,7 @@ topics:
     difficulty: 입문
     angle: "df와 du 합계가 어긋나는 대표 원인 세 가지"
     code: shell
-    status: todo
+    status: writing
     blocked_note: df/du 예제를 bash 로 직접 돌리다 권한에 막혔다. 허용 규칙을 넣었으니 unblock 하면 된다
   - id: lx-003
     title: "free와 vmstat — 메모리 부족을 판단하는 기준"
@@ -2125,7 +2125,7 @@ topics:
     angle: "MESI 상태 전이를 표로"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-071
     title: "대규모 언어 모델(LLM)의 구조와 한계"
     category: PE
@@ -2599,7 +2599,7 @@ topics:
     angle: "응용에서 막는 것과 무엇이 다른지. 제약을 어긴 데이터가 이미 있을 때"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-047
     title: "생성 컬럼 — 계산 결과를 컬럼처럼"
     category: Database

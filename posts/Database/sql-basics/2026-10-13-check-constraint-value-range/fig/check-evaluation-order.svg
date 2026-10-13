@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="452" viewBox="0 0 880 452" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="452" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f3f46"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="18" font-weight="bold" fill="#1f2937">
+    한 값이 CHECK 를 지나가는 순서
+  </text>
+  <text x="30" y="56" font-size="13" fill="#52525b">
+    INTEGER 컬럼에 문자열 'abc' 를 넣었을 때
+  </text>
+
+  <!-- 1행: 평가 순서 -->
+  <g>
+    <rect x="30" y="78" width="186" height="74" rx="6" fill="#ffffff" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="123" y="104" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">입력 값</text>
+    <text x="123" y="127" font-size="15" text-anchor="middle" fill="#1f2937" font-family="Consolas,monospace">'abc'</text>
+    <text x="123" y="145" font-size="13" text-anchor="middle" fill="#52525b">TEXT</text>
+
+    <line x1="216" y1="115" x2="246" y2="115" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="250" y="78" width="186" height="74" rx="6" fill="#ffffff" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="343" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">① 친화성 변환</text>
+    <text x="343" y="121" font-size="13" text-anchor="middle" fill="#52525b">숫자로 읽히면 숫자로</text>
+    <text x="343" y="141" font-size="13" text-anchor="middle" fill="#b45309">못 읽음 → TEXT 유지</text>
+
+    <line x1="436" y1="115" x2="466" y2="115" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="470" y="78" width="186" height="74" rx="6" fill="#ffffff" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="563" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">② CHECK 식 평가</text>
+    <text x="563" y="124" font-size="15" text-anchor="middle" fill="#1f2937" font-family="Consolas,monospace">'abc' &gt;= 0</text>
+    <text x="563" y="143" font-size="13" text-anchor="middle" fill="#52525b">아래 비교 순서를 따름</text>
+
+    <line x1="656" y1="115" x2="686" y2="115" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <rect x="690" y="78" width="160" height="74" rx="6" fill="#ffffff" stroke="#3f3f46" stroke-width="1.5"/>
+    <text x="770" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">③ NUMERIC 캐스트</text>
+    <text x="770" y="124" font-size="13" text-anchor="middle" fill="#52525b">CAST 와 같은 방식</text>
+    <text x="770" y="143" font-size="13" text-anchor="middle" fill="#52525b">으로 수로 바꾼다</text>
+  </g>
+
+  <!-- 2행: 판정 -->
+  <line x1="770" y1="152" x2="770" y2="178" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="300" y1="178" x2="770" y2="178" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="300" y1="178" x2="300" y2="200" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="610" y1="178" x2="610" y2="200" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="150" y="204" width="300" height="62" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="300" y="228" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">결과가 0 (또는 0.0)</text>
+  <text x="300" y="252" font-size="13" text-anchor="middle" fill="#1f2937">제약 위반 → 그 문장을 되돌린다 (ABORT)</text>
+
+  <rect x="460" y="204" width="300" height="62" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="610" y="228" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">결과가 NULL 이거나 0 이 아님</text>
+  <text x="610" y="252" font-size="13" text-anchor="middle" fill="#1f2937">위반이 아니다 → 저장한다</text>
+
+  <!-- 3행: 비교 순서 -->
+  <text x="30" y="306" font-size="15" font-weight="bold" fill="#1f2937">
+    ②에서 쓰는 비교 순서 — 저장 클래스가 다르면 값이 아니라 클래스로 가른다
+  </text>
+
+  <line x1="60" y1="386" x2="830" y2="386" stroke="#3f3f46" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="60" y="406" font-size="13" fill="#52525b">작다</text>
+  <text x="830" y="406" font-size="13" text-anchor="end" fill="#52525b">크다</text>
+
+  <rect x="62" y="326" width="150" height="44" rx="4" fill="#ffffff" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="137" y="353" font-size="14" text-anchor="middle" fill="#1f2937">NULL</text>
+
+  <rect x="222" y="326" width="200" height="44" rx="4" fill="#ffffff" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="322" y="353" font-size="14" text-anchor="middle" fill="#1f2937">INTEGER · REAL</text>
+
+  <rect x="432" y="326" width="200" height="44" rx="4" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="532" y="353" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">TEXT  ← 'abc'</text>
+
+  <rect x="642" y="326" width="150" height="44" rx="4" fill="#ffffff" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="717" y="353" font-size="14" text-anchor="middle" fill="#1f2937">BLOB</text>
+
+  <text x="30" y="432" font-size="13" fill="#1f2937">
+    TEXT 는 모든 숫자보다 크다. 그래서 'abc' &gt;= 0 은 참, 'abc' &lt;= 100 은 거짓이 된다.
+  </text>
+</svg>

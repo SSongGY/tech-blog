@@ -1,0 +1,122 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-13-check-constraint-value-range
+# 명령      : python check_constraint.py
+# 수행 시각 : 2026-10-13 23:10 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  3행
+  컬럼     | 타입    | 제약
+  ---------+---------+-------------------
+  id       | INTEGER | PK
+  name     | TEXT    | NOT NULL
+  price    | INTEGER | NOT NULL
+  discount | INTEGER | NOT NULL DEFAULT 0
+
+  id | name          | price  | discount
+  ---+---------------+--------+---------
+   1 | 기계식 키보드 |  89000 |     9000
+   2 | 무선 마우스   |  32000 |        0
+   3 | 모니터 암     | 145000 |    20000
+
+
+================================================================
+1. 범위를 벗어난 값은 INSERT 도 UPDATE 도 막힌다
+================================================================
+  [통과] 정상 삽입
+  [거부] 가격이 음수
+         IntegrityError: CHECK constraint failed: price >= 0
+  [거부] 할인이 가격보다 큼
+         IntegrityError: CHECK constraint failed: discount_within_price
+  [거부] UPDATE 로 음수를 만들기
+         IntegrityError: CHECK constraint failed: price >= 0
+
+================================================================
+2. NULL 은 위반이 아니다
+================================================================
+  [통과] NULL 삽입
+  [거부] 101 삽입
+         IntegrityError: CHECK constraint failed: score BETWEEN 0 AND 100
+  memo 에 남은 행: [(None,)]
+
+================================================================
+3. 한쪽만 막은 CHECK 는 문자열을 통과시킨다
+================================================================
+  [통과] one_sided 에 'abc'
+  [거부] two_sided 에 'abc'
+         IntegrityError: CHECK constraint failed: v BETWEEN 0 AND 100
+  one_sided 에 저장된 것: [('abc', 'text')]
+
+  왜 통과하나 — 비교 결과를 직접 본다
+    'abc' >= 0               -> 1
+    'abc' <= 100             -> 0
+    'abc' BETWEEN 0 AND 100  -> 0
+
+  숫자로 읽히는 문자열은 컬럼 친화성이 먼저 바꿔 놓는다
+    [(50, 'integer'), (7.5, 'real'), (1000, 'integer'), ('abc', 'text')]
+
+================================================================
+4. 타입까지 막는 두 가지 방법
+================================================================
+  typeof() 를 넣은 CHECK
+  [통과]   50
+  [거부]   'abc'
+         IntegrityError: CHECK constraint failed: typeof(v) = 'integer' AND v BETWEEN 0 AND 100
+  [거부]   NULL
+         IntegrityError: CHECK constraint failed: typeof(v) = 'integer' AND v BETWEEN 0 AND 100
+  STRICT 표
+  [통과]   50
+  [거부]   'abc'
+         IntegrityError: cannot store TEXT value in INTEGER column strict_table.v
+  [통과]   NULL
+
+================================================================
+5. OR IGNORE 와 PRAGMA 는 CHECK 를 조용히 건너뛴다
+================================================================
+  [거부] 3행 중 2번째가 위반 (그냥 INSERT)
+         IntegrityError: CHECK constraint failed: v > 0
+  batch 내용: []
+  [통과] 같은 3행을 INSERT OR IGNORE 로
+  batch 내용: [(1,), (3,)]
+  [통과] PRAGMA 를 켠 채 -99 삽입
+  PRAGMA 를 끈 뒤 batch 내용: [(1,), (3,), (-99,)]
+
+  표 수준 CHECK 에 붙인 ON CONFLICT 는 받아들여지지만 효과가 없다
+  [통과] CREATE (표 수준 + ON CONFLICT IGNORE)
+  [거부] legacy 에 -1 삽입
+         IntegrityError: CHECK constraint failed: v > 0
+  [거부] CREATE (컬럼 수준 + ON CONFLICT IGNORE)
+         OperationalError: near "ON": syntax error
+
+================================================================
+6. 이미 제약을 어긴 데이터가 있는 표
+================================================================
+  [거부] ALTER TABLE ... ADD CONSTRAINT
+         OperationalError: near "CONSTRAINT": syntax error
+
+  붙이기 전에 어긴 행부터 센다
+    NOT (v BETWEEN 0 AND 100) 만: [(2,), (3,)]
+    IS NULL 을 더하면: [(2,), (3,), (4,)]
+
+  표를 새로 만들어 옮기면 한 행만 어겨도 문장 전체가 멈춘다
+  [거부] 통째로 INSERT SELECT
+         IntegrityError: CHECK constraint failed: v BETWEEN 0 AND 100
+  score_new 행수: 0
+
+  값을 먼저 고친 뒤 옮긴다
+  [통과] 범위로 자르고 NULL 은 0 으로
+  score_new 내용: [(1, '김', 80), (2, '이', 100), (3, '박', 0), (4, '최', 0)]
