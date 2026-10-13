@@ -1508,8 +1508,8 @@ topics:
     difficulty: 입문
     angle: "df와 du 합계가 어긋나는 대표 원인 세 가지"
     code: shell
-    status: writing
-    blocked_note: df/du 예제를 bash 로 직접 돌리다 권한에 막혔다. 허용 규칙을 넣었으니 unblock 하면 된다
+    status: blocked
+    blocked_note: Git Bash(Cygwin/NTFS)에서 df/du 어긋남의 주요 원인을 재현할 수 없다 — truncate가 희소 파일을 안 만들고, rm한 열린 파일의 공간이 즉시 회수되며, chmod 000이 du를 막지 못한다. 하드링크와 블록 반올림만 재현된다. WSL이 생기면 다시
   - id: lx-003
     title: "free와 vmstat — 메모리 부족을 판단하는 기준"
     category: Linux
