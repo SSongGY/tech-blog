@@ -402,6 +402,11 @@
 - [커서 기반 페이지네이션이 OFFSET을 이기는 지점 — SQLite 3.49.1로 잰 깊이별 비용](posts/Database/sqlite/2026-09-29-keyset-vs-offset-crossover/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](posts/Database/tibero/2026-10-08-tibero7-rownum-paging/index.md) — Tibero 7
 
+**`table-partitioning`**
+
+- [파티셔닝이 항상 빨라지지 않는 이유 — 프루닝이 깨진 뒤에 남는 비용](posts/Database/2026-10-13-partition-pruning-global-index-cost/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [Tibero 7 파티션 테이블 — 종류별로 언제 쓰는가](posts/Database/tibero/2026-09-23-tibero7-partition-table-types/index.md) — Tibero 7
+
 **`transaction-isolation`**
 
 - [트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가](posts/Database/sqlite/2026-09-21-isolation-level-anomalies/index.md) — SQLite 3.49.1, Python 3.13.5

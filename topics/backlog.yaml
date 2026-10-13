@@ -117,7 +117,7 @@ topics:
     difficulty: 심화
     angle: "파티션 프루닝이 깨지는 조건과 글로벌 인덱스 비용을 정리"
     code: sql
-    status: todo
+    status: done
   - id: db-011
     title: "WAL은 왜 데이터 파일보다 먼저 쓰이는가"
     category: Database
@@ -2048,7 +2048,7 @@ topics:
     angle: "관리체계와 보호대책을 나눈 이유"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-063
     title: "공급망 보안과 SBOM"
     category: PE
@@ -2467,7 +2467,7 @@ topics:
     angle: "경계값이 포함되는지, 날짜에 BETWEEN을 쓸 때 시분초가 잘리는 함정"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-035
     title: "ORDER BY에 별칭과 표현식 쓰기"
     category: Database
