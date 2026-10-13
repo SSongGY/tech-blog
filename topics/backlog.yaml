@@ -4845,3 +4845,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-166
+    title: "데이터 계보(Data Lineage)와 메타데이터 카탈로그"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "데이터 계보의 정의와 수집 방식(파싱·훅·로그), 메타데이터 3계층 분류, 카탈로그가 품질·영향도 분석·규제 대응에서 하는 역할"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-167
+    title: "람다 아키텍처와 카파 아키텍처"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "배치 계층·속도 계층·서빙 계층 구성과 두 경로를 함께 유지하는 비용, 카파 아키텍처가 스트림 하나로 합치는 방식과 각각이 맞는 상황"
+    code: none
+    origin: exam
+    status: todo

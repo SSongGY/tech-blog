@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2430">데이터 스웜프를 막는 메타데이터 3계층</text>
+  <text x="440" y="54" text-anchor="middle" font-size="13" fill="#53606e">객체 하나를 설명하는 층 · 객체 사이를 잇는 층 · 레이크 전체를 덮는 층</text>
+
+  <!-- 데이터 객체 -->
+  <rect x="290" y="72" width="300" height="46" rx="6" fill="#eef1f4" stroke="#53606e" stroke-width="1.5"/>
+  <text x="440" y="101" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b2430">데이터 레이크의 데이터 객체</text>
+
+  <line x1="440" y1="118" x2="440" y2="136" stroke="#53606e" stroke-width="1.5"/>
+  <line x1="165" y1="136" x2="715" y2="136" stroke="#53606e" stroke-width="1.5"/>
+  <line x1="165" y1="136" x2="165" y2="152" stroke="#53606e" stroke-width="1.5"/>
+  <line x1="440" y1="136" x2="440" y2="152" stroke="#53606e" stroke-width="1.5"/>
+  <line x1="715" y1="136" x2="715" y2="152" stroke="#53606e" stroke-width="1.5"/>
+
+  <!-- 객체내 -->
+  <rect x="40" y="152" width="250" height="170" rx="6" fill="#eaf2ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="165" y="180" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b4332">객체내 메타데이터 4종</text>
+  <line x1="58" y1="192" x2="272" y2="192" stroke="#9db5a7" stroke-width="1"/>
+  <text x="62" y="216" font-size="13" fill="#1b2430">① 속성 — 이름 · 크기 · 위치</text>
+  <text x="62" y="240" font-size="13" fill="#1b2430">② 미리보기 · 요약 — 스키마</text>
+  <text x="62" y="264" font-size="13" fill="#1b2430">③ 버전 · 표현 — 변환본</text>
+  <text x="62" y="288" font-size="13" fill="#1b2430">④ 시맨틱 — 제목 · 태그</text>
+  <text x="62" y="306" font-size="13" fill="#2d6a4f">이 객체가 무엇인지 알린다</text>
+
+  <!-- 객체간 -->
+  <rect x="315" y="152" width="250" height="170" rx="6" fill="#eaf2ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="180" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b4332">객체간 메타데이터 3종</text>
+  <line x1="333" y1="192" x2="547" y2="192" stroke="#9db5a7" stroke-width="1"/>
+  <text x="337" y="216" font-size="13" fill="#1b2430">① 객체 그룹 — 묶음</text>
+  <text x="337" y="240" font-size="13" fill="#1b2430">② 유사도 링크 — 닮은 정도</text>
+  <text x="337" y="264" font-size="13" fill="#1b2430">③ 부모·자식 링크 — 계보</text>
+  <text x="337" y="288" font-size="13" fill="#2d6a4f">어느 데이터에서 나왔는지</text>
+  <text x="337" y="308" font-size="13" fill="#2d6a4f">되짚게 한다</text>
+
+  <!-- 전역 -->
+  <rect x="590" y="152" width="250" height="170" rx="6" fill="#eaf2ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="715" y="180" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b4332">전역 메타데이터 3종</text>
+  <line x1="608" y1="192" x2="822" y2="192" stroke="#9db5a7" stroke-width="1"/>
+  <text x="612" y="216" font-size="13" fill="#1b2430">① 시맨틱 자원 — 온톨로지</text>
+  <text x="612" y="240" font-size="13" fill="#1b2430">② 색인 — 검색 자료구조</text>
+  <text x="612" y="264" font-size="13" fill="#1b2430">③ 로그 — 사용 이력</text>
+  <text x="612" y="288" font-size="13" fill="#2d6a4f">레이크 전체를 찾고</text>
+  <text x="612" y="308" font-size="13" fill="#2d6a4f">감사하게 한다</text>
+
+  <!-- 결과 -->
+  <line x1="165" y1="322" x2="165" y2="340" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="440" y1="322" x2="440" y2="340" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="715" y1="322" x2="715" y2="340" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="165" y1="340" x2="715" y2="340" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="440" y1="340" x2="440" y2="354" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar2)"/>
+  <defs>
+    <marker id="ar2" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <rect x="240" y="356" width="400" height="46" rx="6" fill="#dff0e4" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="385" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b4332">검색 가능 · 이해 가능 · 재현 가능 = 스웜프 방지</text>
+</svg>
