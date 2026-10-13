@@ -4250,7 +4250,7 @@ topics:
     angle: "재고일수 + 매출채권일수 − 매입채무일수. 음수가 나오는 사업 구조가 무엇을 뜻하는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-052
     title: "유동비율과 당좌비율 — 재고를 빼고 보는 이유"
     category: Finance
@@ -4261,7 +4261,7 @@ topics:
     angle: "재고가 많은 회사와 적은 회사를 같은 유동비율로 맞춰 놓고 당좌비율로 갈라 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-053
     title: "세 가지 마진 — 매출총이익률·영업이익률·순이익률"
     category: Finance

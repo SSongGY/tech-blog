@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#fdfdfb"/>
+
+  <text x="24" y="26" font-size="16" font-weight="bold" fill="#1f2933">유동자산 300·유동부채 200이 같은 세 회사 — 분자를 어디까지 쓰느냐로 갈린다</text>
+
+  <!-- 범례 -->
+  <rect x="24" y="42" width="13" height="13" fill="#2d6a4f"/>
+  <text x="43" y="53" font-size="13" fill="#1f2933">현금및현금성자산</text>
+  <rect x="160" y="42" width="13" height="13" fill="#40916c"/>
+  <text x="179" y="53" font-size="13" fill="#1f2933">단기금융상품</text>
+  <rect x="270" y="42" width="13" height="13" fill="#74c69d"/>
+  <text x="289" y="53" font-size="13" fill="#1f2933">매출채권</text>
+  <rect x="355" y="42" width="13" height="13" fill="#b45309"/>
+  <text x="374" y="53" font-size="13" fill="#1f2933">선급비용</text>
+  <rect x="440" y="42" width="13" height="13" fill="#9d0208"/>
+  <text x="459" y="53" font-size="13" fill="#1f2933">재고자산</text>
+
+  <!-- 유동부채 기준선 -->
+  <line x1="180" y1="200" x2="712" y2="200" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="24" y="196" font-size="13" fill="#4b5563">유동부채 200</text>
+  <text x="24" y="214" font-size="13" fill="#4b5563">— 비율 100% 선</text>
+
+  <!-- 가온전기 -->
+  <rect x="200" y="296" width="110" height="64" fill="#2d6a4f"/>
+  <rect x="200" y="264" width="110" height="32" fill="#40916c"/>
+  <rect x="200" y="168" width="110" height="96" fill="#74c69d"/>
+  <rect x="200" y="152" width="110" height="16" fill="#b45309"/>
+  <rect x="200" y="120" width="110" height="32" fill="#9d0208"/>
+  <text x="255" y="382" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">가온전기</text>
+  <text x="255" y="402" font-size="13" fill="#1f2933" text-anchor="middle">유동비율 150.0%</text>
+  <text x="255" y="420" font-size="13" fill="#1f2933" text-anchor="middle">당좌비율 130.0%</text>
+  <text x="255" y="438" font-size="13" fill="#1f2933" text-anchor="middle">현금비율 40.0%</text>
+
+  <!-- 두레물산 -->
+  <rect x="400" y="344" width="110" height="16" fill="#2d6a4f"/>
+  <rect x="400" y="336" width="110" height="8" fill="#40916c"/>
+  <rect x="400" y="288" width="110" height="48" fill="#74c69d"/>
+  <rect x="400" y="272" width="110" height="16" fill="#b45309"/>
+  <rect x="400" y="120" width="110" height="152" fill="#9d0208"/>
+  <text x="455" y="382" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">두레물산</text>
+  <text x="455" y="402" font-size="13" fill="#1f2933" text-anchor="middle">유동비율 150.0%</text>
+  <text x="455" y="420" font-size="13" fill="#1f2933" text-anchor="middle">당좌비율 55.0%</text>
+  <text x="455" y="438" font-size="13" fill="#1f2933" text-anchor="middle">현금비율 10.0%</text>
+
+  <!-- 세움유통 -->
+  <rect x="600" y="328" width="110" height="32" fill="#2d6a4f"/>
+  <rect x="600" y="304" width="110" height="24" fill="#40916c"/>
+  <rect x="600" y="224" width="110" height="80" fill="#74c69d"/>
+  <rect x="600" y="208" width="110" height="16" fill="#b45309"/>
+  <rect x="600" y="120" width="110" height="88" fill="#9d0208"/>
+  <text x="655" y="382" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">세움유통</text>
+  <text x="655" y="402" font-size="13" fill="#1f2933" text-anchor="middle">유동비율 150.0%</text>
+  <text x="655" y="420" font-size="13" fill="#1f2933" text-anchor="middle">당좌비율 95.0%</text>
+  <text x="655" y="438" font-size="13" fill="#1f2933" text-anchor="middle">현금비율 20.0%</text>
+
+  <!-- 세움유통 옆: 각 비율의 분자가 덮는 범위 -->
+  <line x1="722" y1="328" x2="722" y2="360" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="736" y1="208" x2="736" y2="360" stroke="#40916c" stroke-width="3"/>
+  <line x1="750" y1="120" x2="750" y2="360" stroke="#4b5563" stroke-width="3"/>
+  <text x="760" y="334" font-size="13" fill="#2d6a4f">현금비율</text>
+  <text x="760" y="214" font-size="13" fill="#40916c">당좌비율</text>
+  <text x="760" y="126" font-size="13" fill="#4b5563">유동비율</text>
+
+  <!-- 바닥선 -->
+  <line x1="180" y1="360" x2="760" y2="360" stroke="#4b5563" stroke-width="1.5"/>
+</svg>
