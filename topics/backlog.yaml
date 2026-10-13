@@ -4867,3 +4867,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-168
+    title: "KV 캐시 — 트랜스포머 추론의 메모리 병목"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "자기회귀 추론에서 키·값을 왜 캐싱하는지, 캐시 크기가 문맥 길이·배치·헤드 수에 어떻게 비례하는지, 양자화·선별 삭제·공유 어텐션 등 완화 수단을 비교한다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-169
+    title: "벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "스칼라 양자화와 벡터 양자화를 가르고, 맥스-로이드 알고리즘과 율-왜곡 함수로 비트폭과 왜곡의 관계를 설명한다. 곱 양자화가 왜 부분공간으로 쪼개는지까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-170
+    title: "존슨-린덴스트라우스 보조정리와 랜덤 투영"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "고차원 점들의 거리를 보존하며 차원을 줄일 수 있다는 보조정리의 진술과 필요 차원 수, 랜덤 투영이 차원 축소·스케치·양자화에 쓰이는 방식"
+    code: none
+    origin: exam
+    status: todo

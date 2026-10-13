@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="34" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">터보퀀트 2단계 양자화 — 1단계로 줄이고, 잔차 1비트로 편향을 없앤다</text>
+
+  <!-- Row A -->
+  <rect x="30" y="56" width="240" height="84" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="150" y="81" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">입력 벡터</text>
+  <text x="150" y="104" text-anchor="middle" font-size="13" fill="#334155">x (d차원, 단위 노름)</text>
+  <text x="150" y="125" text-anchor="middle" font-size="13" fill="#334155">분포 가정 없음</text>
+
+  <path d="M 272 98 L 318 98" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="56" width="240" height="84" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="81" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">① 무작위 회전</text>
+  <text x="440" y="104" text-anchor="middle" font-size="13" fill="#334155">y = Π x</text>
+  <text x="440" y="125" text-anchor="middle" font-size="13" fill="#334155">좌표 분포가 집중된다</text>
+
+  <path d="M 562 98 L 608 98" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="610" y="56" width="240" height="84" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="730" y="81" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">② 스칼라 양자화</text>
+  <text x="730" y="104" text-anchor="middle" font-size="13" fill="#334155">좌표별 최적 코드북</text>
+  <text x="730" y="125" text-anchor="middle" font-size="13" fill="#334155">b−1 비트</text>
+
+  <path d="M 730 142 L 730 184" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Row B : 오른쪽에서 왼쪽으로 -->
+  <rect x="610" y="186" width="240" height="84" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6"/>
+  <text x="730" y="211" text-anchor="middle" font-size="14" font-weight="bold" fill="#7c2d12">1단계 복원값</text>
+  <text x="730" y="234" text-anchor="middle" font-size="13" fill="#7c2d12">MSE 왜곡은 최적에 근접</text>
+  <text x="730" y="255" text-anchor="middle" font-size="13" fill="#7c2d12">내적에는 편향이 남는다</text>
+
+  <path d="M 608 228 L 562 228" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="320" y="186" width="240" height="84" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="440" y="211" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">③ 잔차 추출</text>
+  <text x="440" y="234" text-anchor="middle" font-size="13" fill="#334155">r = x − (1단계 복원값)</text>
+  <text x="440" y="255" text-anchor="middle" font-size="13" fill="#334155">잔차 노름만 따로 저장</text>
+
+  <path d="M 318 228 L 272 228" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="186" width="240" height="84" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="1.6"/>
+  <text x="150" y="211" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">④ 1비트 QJL</text>
+  <text x="150" y="234" text-anchor="middle" font-size="13" fill="#334155">부호 비트만 남긴다</text>
+  <text x="150" y="255" text-anchor="middle" font-size="13" fill="#334155">좌표당 1비트</text>
+
+  <path d="M 150 272 L 150 314" stroke="#334155" stroke-width="1.6" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Row C -->
+  <rect x="30" y="316" width="820" height="86" rx="6" fill="#e7f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="440" y="341" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑤ 복원 = 1단계 복원값 + 잔차 보정항</text>
+  <text x="440" y="364" text-anchor="middle" font-size="13" fill="#0f172a">내적 추정의 편향이 0이 된다 — 어텐션 점수와 유사도 순위가 체계적으로 밀리지 않는다</text>
+  <text x="440" y="385" text-anchor="middle" font-size="13" fill="#0f172a">저장물: 좌표별 코드북 인덱스 + 잔차 부호 비트 + 잔차 노름 1개</text>
+
+  <text x="440" y="434" text-anchor="middle" font-size="13" fill="#334155">코드북은 비트폭마다 미리 계산해 두므로 데이터셋을 보지 않는다 — 블록별 스케일·영점을 저장하지 않는다</text>
+</svg>
