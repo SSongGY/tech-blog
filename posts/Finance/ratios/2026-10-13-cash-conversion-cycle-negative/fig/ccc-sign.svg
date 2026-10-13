@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 448" width="880" height="448" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="448" fill="#fdfdfb"/>
+
+  <text x="24" y="26" font-size="16" font-weight="bold" fill="#1f2933">현금전환주기의 부호 — 영업주기와 지급일수 중 어느 쪽이 긴가</text>
+
+  <!-- 범례 -->
+  <rect x="24" y="42" width="13" height="13" fill="#6b7280"/>
+  <text x="43" y="53" font-size="13" fill="#1f2933">재고일수</text>
+  <rect x="118" y="42" width="13" height="13" fill="#9ca3af"/>
+  <text x="137" y="53" font-size="13" fill="#1f2933">매출채권 회수일수</text>
+  <rect x="268" y="42" width="13" height="13" fill="#b45309"/>
+  <text x="287" y="53" font-size="13" fill="#1f2933">매입채무 지급일수</text>
+  <rect x="418" y="42" width="13" height="13" fill="#d97706"/>
+  <text x="437" y="53" font-size="13" fill="#1f2933">계약부채일수</text>
+  <line x1="545" y1="49" x2="585" y2="49" stroke="#9d0208" stroke-width="3"/>
+  <text x="591" y="53" font-size="13" fill="#9d0208">자기 돈으로 메우는 기간</text>
+  <line x1="545" y1="66" x2="585" y2="66" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="591" y="70" font-size="13" fill="#2d6a4f">남의 돈으로 도는 기간</text>
+
+  <!-- 기준선: 재고를 들여온 날 -->
+  <line x1="180" y1="78" x2="180" y2="390" stroke="#9aa0a6" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- 바다중공업 -->
+  <text x="24" y="98" font-size="14" font-weight="bold" fill="#1f2933">바다중공업</text>
+  <text x="24" y="116" font-size="13" fill="#9d0208">CCC +121.7일</text>
+  <rect x="180" y="82" width="334.5" height="18" fill="#6b7280"/>
+  <rect x="514.5" y="82" width="278.8" height="18" fill="#9ca3af"/>
+  <rect x="180" y="106" width="167.3" height="18" fill="#b45309"/>
+  <line x1="347.3" y1="130" x2="793.3" y2="130" stroke="#9d0208" stroke-width="3"/>
+  <line x1="347.3" y1="124" x2="347.3" y2="136" stroke="#9d0208" stroke-width="3"/>
+  <line x1="793.3" y1="124" x2="793.3" y2="136" stroke="#9d0208" stroke-width="3"/>
+
+  <!-- 하늘식자재 -->
+  <text x="24" y="173" font-size="14" font-weight="bold" fill="#1f2933">하늘식자재</text>
+  <text x="24" y="191" font-size="13" fill="#9d0208">CCC +9.1일</text>
+  <rect x="180" y="157" width="80.3" height="18" fill="#6b7280"/>
+  <rect x="260.3" y="157" width="120.5" height="18" fill="#9ca3af"/>
+  <rect x="180" y="181" width="167.3" height="18" fill="#b45309"/>
+  <line x1="347.3" y1="205" x2="380.8" y2="205" stroke="#9d0208" stroke-width="3"/>
+  <line x1="347.3" y1="199" x2="347.3" y2="211" stroke="#9d0208" stroke-width="3"/>
+  <line x1="380.8" y1="199" x2="380.8" y2="211" stroke="#9d0208" stroke-width="3"/>
+
+  <!-- 나래마트 -->
+  <text x="24" y="248" font-size="14" font-weight="bold" fill="#1f2933">나래마트</text>
+  <text x="24" y="266" font-size="13" fill="#2d6a4f">CCC −18.3일</text>
+  <rect x="180" y="232" width="111.5" height="18" fill="#6b7280"/>
+  <rect x="291.5" y="232" width="8.9" height="18" fill="#9ca3af"/>
+  <rect x="180" y="256" width="187.4" height="18" fill="#b45309"/>
+  <line x1="300.4" y1="280" x2="367.4" y2="280" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="300.4" y1="274" x2="300.4" y2="286" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="367.4" y1="274" x2="367.4" y2="286" stroke="#2d6a4f" stroke-width="3"/>
+
+  <!-- 마루소프트 -->
+  <text x="24" y="323" font-size="14" font-weight="bold" fill="#1f2933">마루소프트</text>
+  <text x="24" y="341" font-size="13" fill="#2d6a4f">확장 CCC −103.4일</text>
+  <rect x="180" y="307" width="111.5" height="18" fill="#9ca3af"/>
+  <rect x="180" y="331" width="44.6" height="18" fill="#b45309"/>
+  <rect x="224.6" y="331" width="446.1" height="18" fill="#d97706"/>
+  <line x1="291.5" y1="355" x2="670.7" y2="355" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="291.5" y1="349" x2="291.5" y2="361" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="670.7" y1="349" x2="670.7" y2="361" stroke="#2d6a4f" stroke-width="3"/>
+
+  <!-- 날짜 축 -->
+  <line x1="180" y1="390" x2="845" y2="390" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="180" y1="390" x2="180" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="290" y1="390" x2="290" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="400" y1="390" x2="400" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="510" y1="390" x2="510" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="620" y1="390" x2="620" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="730" y1="390" x2="730" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="840" y1="390" x2="840" y2="396" stroke="#4b5563" stroke-width="1.5"/>
+  <text x="180" y="412" font-size="13" fill="#4b5563" text-anchor="middle">0</text>
+  <text x="290" y="412" font-size="13" fill="#4b5563" text-anchor="middle">30</text>
+  <text x="400" y="412" font-size="13" fill="#4b5563" text-anchor="middle">60</text>
+  <text x="510" y="412" font-size="13" fill="#4b5563" text-anchor="middle">90</text>
+  <text x="620" y="412" font-size="13" fill="#4b5563" text-anchor="middle">120</text>
+  <text x="730" y="412" font-size="13" fill="#4b5563" text-anchor="middle">150</text>
+  <text x="840" y="412" font-size="13" fill="#4b5563" text-anchor="middle">180</text>
+  <text x="180" y="436" font-size="13" fill="#4b5563">재고를 들여온 날부터 지난 날수</text>
+</svg>
