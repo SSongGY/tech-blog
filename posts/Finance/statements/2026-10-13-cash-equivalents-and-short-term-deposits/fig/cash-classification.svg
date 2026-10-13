@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="540" viewBox="0 0 880 540" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="24" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">들고 있는 자금이 어느 줄에 적히는가 — 묻는 순서</text>
+
+  <!-- 질문 -->
+  <rect x="40" y="76" width="270" height="48" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="175" y="98" text-anchor="middle" font-size="14" fill="#1b1b1b">① 요구불예금 또는 보유 현금인가</text>
+  <text x="175" y="116" text-anchor="middle" font-size="13" fill="#495057">문단 6 — 현금의 정의</text>
+
+  <rect x="40" y="152" width="270" height="48" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="175" y="174" text-anchor="middle" font-size="14" fill="#1b1b1b">② 상환일 없는 지분상품인가</text>
+  <text x="175" y="192" text-anchor="middle" font-size="13" fill="#495057">문단 7 — 가치변동 위험</text>
+
+  <rect x="40" y="228" width="270" height="48" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="175" y="250" text-anchor="middle" font-size="14" fill="#1b1b1b">③ 취득일로부터 만기 3개월 이내인가</text>
+  <text x="175" y="268" text-anchor="middle" font-size="13" fill="#495057">문단 7 — 단기 현금수요 충족 목적</text>
+
+  <rect x="40" y="304" width="270" height="48" rx="6" fill="#ffffff" stroke="#495057"/>
+  <text x="175" y="326" text-anchor="middle" font-size="14" fill="#1b1b1b">④ 보고기간 후 12개월 이내 만기인가</text>
+  <text x="175" y="344" text-anchor="middle" font-size="13" fill="#495057">문단 66 — 유동·비유동 구분</text>
+
+  <!-- 결과 -->
+  <rect x="560" y="76" width="290" height="60" rx="6" fill="#e9f5ee" stroke="#2d6a4f"/>
+  <text x="705" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">현금및현금성자산</text>
+  <text x="705" y="121" text-anchor="middle" font-size="13" fill="#2d6a4f">현금흐름표의 기초·기말 잔액이 되는 금액</text>
+
+  <rect x="560" y="152" width="290" height="60" rx="6" fill="#fde2e4" stroke="#9d0208"/>
+  <text x="705" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">현금및현금성자산 아님</text>
+  <text x="705" y="197" text-anchor="middle" font-size="13" fill="#9d0208">단기 상환우선주는 문단 7 의 예외</text>
+
+  <rect x="560" y="304" width="290" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="705" y="328" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">단기금융상품 (유동자산)</text>
+  <text x="705" y="348" text-anchor="middle" font-size="13" fill="#b45309">문단 55 의 세분화 표시</text>
+
+  <rect x="560" y="380" width="290" height="56" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="705" y="404" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">장기금융상품 (비유동자산)</text>
+  <text x="705" y="424" text-anchor="middle" font-size="13" fill="#b45309">문단 66 의 나머지</text>
+
+  <g stroke="#495057" stroke-width="1.5" fill="none" marker-end="url(#arrow)">
+    <path d="M310,100 H552"/>
+    <path d="M310,176 H552"/>
+    <path d="M40,252 H22 V48 H705 V70"/>
+    <path d="M310,328 H552"/>
+    <path d="M175,352 V408 H552"/>
+    <path d="M175,124 V146"/>
+    <path d="M175,200 V222"/>
+    <path d="M175,276 V298"/>
+  </g>
+
+  <g font-size="13">
+    <text x="430" y="92" text-anchor="middle" fill="#2d6a4f">예</text>
+    <text x="430" y="168" text-anchor="middle" fill="#9d0208">예</text>
+    <text x="360" y="42" text-anchor="middle" fill="#2d6a4f">예 — ③ 도 같은 줄로 간다</text>
+    <text x="430" y="320" text-anchor="middle" fill="#b45309">예</text>
+    <text x="300" y="402" text-anchor="middle" fill="#b45309">아니오</text>
+    <text x="186" y="141" fill="#495057">아니오</text>
+    <text x="186" y="217" fill="#495057">아니오</text>
+    <text x="186" y="293" fill="#495057">아니오</text>
+  </g>
+
+  <line x1="30" y1="452" x2="850" y2="452" stroke="#ced4da"/>
+  <text x="40" y="478" font-size="13" fill="#495057">판단 기준은 취득일이다. 취득 시 만기 1년이던 예금은 잔존 만기가 두 달로 줄어도 현금성자산이 되지 않는다.</text>
+  <text x="40" y="500" font-size="13" fill="#495057">즉시 상환 의무가 붙은 당좌차월이 현금관리의 일부이면 음수로 현금및현금성자산에 든다 (문단 8).</text>
+  <text x="40" y="522" font-size="13" fill="#495057">사용이 제한된 요구불예금은 성격이 바뀌지 않는 한 현금에 남고, 금액을 공시한다 (문단 48). 예제 숫자는 가상이다.</text>
+</svg>

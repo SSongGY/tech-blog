@@ -4228,7 +4228,7 @@ topics:
     angle: "3개월 기준과 사용이 제한된 예금. 현금흐름표의 기말 현금과 재무상태표 숫자가 다를 때"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-050
     title: "중단영업 — 접기로 한 사업은 어떻게 표시되는가"
     category: Finance
@@ -4239,7 +4239,7 @@ topics:
     angle: "계속영업과 분리 표시하는 이유. 전기 숫자까지 다시 나누므로 성장률이 달라 보이는 것"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-051
     title: "현금전환주기(CCC) — 돈이 묶여 있는 날수"
     category: Finance
