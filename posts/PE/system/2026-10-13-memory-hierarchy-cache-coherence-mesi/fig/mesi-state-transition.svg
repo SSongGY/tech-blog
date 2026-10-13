@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3f3f46"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="30" font-size="18" font-weight="bold" fill="#1f2937">MESI 상태 전이</text>
+  <text x="30" y="52" font-size="13" fill="#52525b">
+    실선 = 자기 프로세서의 읽기·쓰기 · 점선 = 다른 캐시의 요청을 스누프
+  </text>
+
+  <!-- 상태 박스 -->
+  <rect x="36" y="215" width="150" height="78" rx="8" fill="#ffffff" stroke="#3f3f46" stroke-width="1.8"/>
+  <text x="111" y="246" font-size="19" font-weight="bold" text-anchor="middle" fill="#1f2937">I</text>
+  <text x="111" y="268" font-size="13" text-anchor="middle" fill="#52525b">Invalid</text>
+  <text x="111" y="285" font-size="13" text-anchor="middle" fill="#52525b">유효한 값 없음</text>
+
+  <rect x="320" y="86" width="180" height="78" rx="8" fill="#ffffff" stroke="#3f3f46" stroke-width="1.8"/>
+  <text x="410" y="117" font-size="19" font-weight="bold" text-anchor="middle" fill="#1f2937">E</text>
+  <text x="410" y="139" font-size="13" text-anchor="middle" fill="#52525b">Exclusive</text>
+  <text x="410" y="156" font-size="13" text-anchor="middle" fill="#52525b">나만 보유 · 메모리와 같음</text>
+
+  <rect x="320" y="350" width="180" height="78" rx="8" fill="#ffffff" stroke="#3f3f46" stroke-width="1.8"/>
+  <text x="410" y="381" font-size="19" font-weight="bold" text-anchor="middle" fill="#1f2937">S</text>
+  <text x="410" y="403" font-size="13" text-anchor="middle" fill="#52525b">Shared</text>
+  <text x="410" y="420" font-size="13" text-anchor="middle" fill="#52525b">사본 있을 수 있음 · 깨끗</text>
+
+  <rect x="676" y="215" width="168" height="78" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.4"/>
+  <text x="760" y="246" font-size="19" font-weight="bold" text-anchor="middle" fill="#2d6a4f">M</text>
+  <text x="760" y="268" font-size="13" text-anchor="middle" fill="#52525b">Modified</text>
+  <text x="760" y="285" font-size="13" text-anchor="middle" fill="#52525b">나만 보유 · 더러움</text>
+
+  <!-- I -> E -->
+  <line x1="186" y1="232" x2="312" y2="152" stroke="#3f3f46" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="198" y="172" font-size="13" fill="#1f2937">읽기 미스</text>
+  <text x="198" y="189" font-size="13" fill="#1f2937">사본 없음</text>
+
+  <!-- I -> S -->
+  <line x1="186" y1="276" x2="312" y2="356" stroke="#3f3f46" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="198" y="318" font-size="13" fill="#1f2937">읽기 미스</text>
+  <text x="198" y="335" font-size="13" fill="#1f2937">사본 있음</text>
+
+  <!-- E -> M -->
+  <line x1="500" y1="150" x2="670" y2="226" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#arg)"/>
+  <text x="514" y="172" font-size="13" font-weight="bold" fill="#2d6a4f">쓰기</text>
+  <text x="514" y="189" font-size="13" fill="#2d6a4f">버스 트래픽 없음</text>
+
+  <!-- S -> M -->
+  <line x1="500" y1="358" x2="670" y2="282" stroke="#3f3f46" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="514" y="318" font-size="13" fill="#1f2937">쓰기</text>
+  <text x="514" y="335" font-size="13" fill="#9d0208">무효화 브로드캐스트</text>
+
+  <!-- E -> S (snoop read) -->
+  <line x1="410" y1="164" x2="410" y2="344" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#aro)"/>
+  <text x="422" y="248" font-size="13" fill="#b45309">다른 캐시가 읽음</text>
+  <text x="422" y="265" font-size="13" fill="#b45309">(M 이면 쓰기저장 후 S)</text>
+
+  <!-- -> I (invalidate) -->
+  <line x1="111" y1="396" x2="111" y2="299" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="36" y="420" font-size="13" font-weight="bold" fill="#9d0208">다른 캐시가 씀</text>
+  <text x="36" y="438" font-size="13" fill="#9d0208">M·E·S 어디서든 I 로</text>
+
+  <text x="330" y="458" font-size="13" fill="#52525b">
+    상태는 캐시 라인마다 2비트로 들고, 메모리에는 상태 비트를 두지 않는다.
+  </text>
+</svg>

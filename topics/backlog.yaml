@@ -2125,7 +2125,7 @@ topics:
     angle: "MESI 상태 전이를 표로"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-071
     title: "대규모 언어 모델(LLM)의 구조와 한계"
     category: PE
