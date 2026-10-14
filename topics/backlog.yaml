@@ -2643,7 +2643,7 @@ topics:
     angle: "OFFSET이 뒤 페이지로 갈수록 느려지는 것을 행 수를 늘려 가며 재고, 마지막 키로 이어 받는 방식과 비교"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-051
     title: "임시 테이블과 CTE — 어느 쪽을 쓸까"
     category: Database

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 인덱스를 두 가지 방법으로 읽는다 — 3페이지(20행)를 가져올 때</text>
+
+  <!-- ===== OFFSET ===== -->
+  <text x="40" y="76" font-size="15" font-weight="bold" fill="#9d0208">OFFSET 40 LIMIT 20</text>
+  <text x="40" y="97" font-size="13" fill="#495057">엔진은 LIMIT 60 으로 읽은 뒤 앞의 40행을 버린다</text>
+
+  <rect x="40" y="112" width="800" height="52" rx="6" fill="#f8f9fa" stroke="#adb5bd"/>
+  <text x="560" y="97" font-size="13" fill="#868e96">인덱스 idx_article_posted — 정렬된 순서</text>
+
+  <rect x="48" y="120" width="300" height="36" rx="4" fill="#ffe3e3" stroke="#9d0208"/>
+  <text x="198" y="143" text-anchor="middle" font-size="13" fill="#1b1b1b">1~40행 — 읽고 버린다</text>
+
+  <rect x="352" y="120" width="150" height="36" rx="4" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="427" y="143" text-anchor="middle" font-size="13" fill="#1b1b1b">41~60행 — 돌려준다</text>
+
+  <rect x="506" y="120" width="326" height="36" rx="4" fill="#f1f3f5" stroke="#adb5bd"/>
+  <text x="669" y="143" text-anchor="middle" font-size="13" fill="#868e96">61행 이후 — 읽지 않는다</text>
+
+  <line x1="48" y1="180" x2="348" y2="180" stroke="#9d0208" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="198" y="200" text-anchor="middle" font-size="13" fill="#9d0208">페이지가 깊어질수록 이 구간이 길어진다</text>
+
+  <!-- ===== KEYSET ===== -->
+  <text x="40" y="258" font-size="15" font-weight="bold" fill="#2d6a4f">WHERE (posted_at, id) &lt; (커서) LIMIT 20</text>
+  <text x="40" y="279" font-size="13" fill="#495057">커서 값으로 인덱스를 바로 찾아 들어가 20행만 읽는다</text>
+
+  <rect x="40" y="294" width="800" height="52" rx="6" fill="#f8f9fa" stroke="#adb5bd"/>
+
+  <rect x="48" y="302" width="300" height="36" rx="4" fill="#f1f3f5" stroke="#adb5bd"/>
+  <text x="198" y="325" text-anchor="middle" font-size="13" fill="#868e96">1~40행 — 건드리지 않는다</text>
+
+  <rect x="352" y="302" width="150" height="36" rx="4" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="427" y="325" text-anchor="middle" font-size="13" fill="#1b1b1b">41~60행 — 돌려준다</text>
+
+  <rect x="506" y="302" width="326" height="36" rx="4" fill="#f1f3f5" stroke="#adb5bd"/>
+  <text x="669" y="325" text-anchor="middle" font-size="13" fill="#868e96">61행 이후 — 읽지 않는다</text>
+
+  <line x1="430" y1="382" x2="382" y2="344" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="442" y="376" font-size="13" fill="#2d6a4f">직전 페이지 마지막 행의 (posted_at, id) 를</text>
+  <text x="442" y="396" font-size="13" fill="#2d6a4f">커서로 써서 이 자리를 바로 찾는다</text>
+</svg>
