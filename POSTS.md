@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **336편** · 갱신 2026-10-15
+총 **339편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 55편
+## DB문법 (basics) — 56편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [임시 테이블과 CTE — 어느 쪽을 쓸까](posts/Database/sql-basics/2026-10-14-temp-table-vs-cte/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [키셋 페이지네이션 — OFFSET을 버리는 이유](posts/Database/sql-basics/2026-10-14-keyset-pagination-vs-offset/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [인덱스가 여럿일 때 무엇이 쓰이는가](posts/Database/sql-basics/2026-10-14-index-choice-multiple-indexes/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-14 | [커버링 인덱스 — 테이블을 안 보고 끝내기](posts/Database/sql-basics/2026-10-14-covering-index-no-table-lookup/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -88,10 +89,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 121편
+## 기술사 (pe) — 122편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [MLOps 파이프라인과 모델 드리프트 대응](posts/PE/emerging-tech/2026-10-15-mlops-pipeline-model-drift/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [RAG 구성요소와 검색 품질 지표](posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [대규모 언어 모델(LLM)의 구조와 한계](posts/PE/emerging-tech/2026-10-14-llm-architecture-limits/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-14 | [람다 아키텍처와 카파 아키텍처](posts/PE/database/2026-10-14-lambda-vs-kappa-architecture/index.md) | 중급 | Nathan Marz, How to beat the CAP theorem (2011-10-13), Marz·Warren, Big Data (Manning, 2015), Jay Kreps, Questioning the Lambda Architecture (2014-07-02), Apache Kafka 공식 문서 (2026-10-14 확인) | 문서 근거 |
@@ -236,10 +238,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 19편
+## 일반 (general) — 20편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [캐시 스탬피드를 막는 세 가지 방법 비교](posts/Backend/2026-10-15-cache-stampede-three-strategies/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [커넥션 풀은 왜 크게 잡을수록 느려지는가](posts/Backend/2026-10-14-connection-pool-size-littles-law/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [파티셔닝이 항상 빨라지지 않는 이유 — 프루닝이 깨진 뒤에 남는 비용](posts/Database/2026-10-13-partition-pruning-global-index-cost/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [낙관적 잠금과 비관적 잠금 — 벽시계로는 안 갈리고, 버린 일로 갈린다](posts/Backend/2026-10-13-optimistic-vs-pessimistic-locking-crossover/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
