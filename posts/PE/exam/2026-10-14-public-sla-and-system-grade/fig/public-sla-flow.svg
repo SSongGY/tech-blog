@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b2a24">공공 정보시스템 등급제와 서비스수준협약의 적용 흐름</text>
+
+  <!-- 1행: 등급 결정 -->
+  <rect x="30" y="58" width="240" height="62" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="150" y="82" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">① 등급 분류</text>
+  <text x="150" y="103" font-size="13" fill="#33403a" text-anchor="middle">기관장이 A1~A4로 분류</text>
+
+  <rect x="325" y="58" width="240" height="62" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="445" y="82" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">② 등급심의위원회 심의</text>
+  <text x="445" y="103" font-size="13" fill="#33403a" text-anchor="middle">분류 결과의 적정성 검토</text>
+
+  <rect x="620" y="58" width="240" height="62" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="740" y="82" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">③ 등급 확정·통보</text>
+  <text x="740" y="103" font-size="13" fill="#33403a" text-anchor="middle">행정안전부장관이 확정</text>
+
+  <line x1="270" y1="89" x2="318" y2="89" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="565" y1="89" x2="613" y2="89" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 1행 -> 2행 연결 -->
+  <path d="M 740 120 L 740 145 L 150 145 L 150 172" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 2행: SLA 운영 -->
+  <rect x="30" y="178" width="240" height="62" rx="6" fill="#eef3f7" stroke="#2f5d7c" stroke-width="1.6"/>
+  <text x="150" y="202" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">④ 서비스수준협약 체결</text>
+  <text x="150" y="223" font-size="13" fill="#33403a" text-anchor="middle">등급별 목표수준 설정</text>
+
+  <rect x="325" y="178" width="240" height="62" rx="6" fill="#eef3f7" stroke="#2f5d7c" stroke-width="1.6"/>
+  <text x="445" y="202" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑤ 서비스 수준 측정</text>
+  <text x="445" y="223" font-size="13" fill="#33403a" text-anchor="middle">가용률·장애조치시간 수집</text>
+
+  <rect x="620" y="178" width="240" height="62" rx="6" fill="#eef3f7" stroke="#2f5d7c" stroke-width="1.6"/>
+  <text x="740" y="202" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑥ 월간 평가</text>
+  <text x="740" y="223" font-size="13" fill="#33403a" text-anchor="middle">목표 미달 시 위약금 산정</text>
+
+  <line x1="270" y1="209" x2="318" y2="209" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="565" y1="209" x2="613" y2="209" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 2행 -> 3행 -->
+  <path d="M 740 240 L 740 268 L 445 268 L 445 294" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 3행 -->
+  <rect x="325" y="300" width="240" height="62" rx="6" fill="#fdf2e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="445" y="324" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑦ 연간 종합평가</text>
+  <text x="445" y="345" font-size="13" fill="#33403a" text-anchor="middle">누적 위약금 정산·감면</text>
+
+  <rect x="620" y="300" width="240" height="62" rx="6" fill="#fdf2e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="740" y="324" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑧ 자체점검·결과 등록</text>
+  <text x="740" y="345" font-size="13" fill="#33403a" text-anchor="middle">정보자원관리시스템(IRM)</text>
+
+  <line x1="565" y1="331" x2="613" y2="331" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 되먹임 -->
+  <path d="M 325 331 L 150 331 L 150 246" fill="none" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+  <text x="158" y="290" font-size="13" fill="#2d6a4f">차기 협약에 반영</text>
+
+  <text x="30" y="400" font-size="13" fill="#9d0208">A4 등급은 ④·⑦을 기관장 판단으로 적용하지 않을 수 있다(고시 제11조 단서).</text>
+  <text x="30" y="422" font-size="13" fill="#33403a">장애상황 통보 대상은 A1·A2·A3 등급이다(고시 제15조 제1항).</text>
+</svg>
