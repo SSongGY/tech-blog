@@ -203,7 +203,7 @@ topics:
     difficulty: 심화
     angle: "락/조기만료/백그라운드 갱신을 같은 부하로 돌려 히트율 비교"
     code: python
-    status: todo
+    status: done
   - id: be-009
     title: "아웃박스 패턴 없이 이벤트가 유실되는 경로"
     category: Backend
@@ -2158,7 +2158,7 @@ topics:
     angle: "데이터 드리프트와 개념 드리프트를 나누는 이유"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-074
     title: "디지털 트윈 — ISO 23247 프레임워크"
     category: PE
@@ -2654,7 +2654,7 @@ topics:
     angle: "같은 중간 결과를 두 번 쓸 때 무엇이 다시 계산되는지"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: infra-006
     title: "cut, paste, tr — 텍스트를 칼럼으로 다루기"
     category: Infra

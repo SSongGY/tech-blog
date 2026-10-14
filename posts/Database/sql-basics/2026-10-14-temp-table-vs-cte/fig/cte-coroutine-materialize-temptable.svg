@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <!-- 패널 A -->
+  <rect x="16" y="16" width="268" height="368" rx="8" fill="#ffffff" stroke="#cbd5d1" stroke-width="1.5"/>
+  <text x="34" y="44" font-size="15" font-weight="bold" fill="#1b2a27">① CTE 를 한 번만 참조</text>
+  <text x="34" y="66" font-size="13" fill="#4a5a56">CO-ROUTINE — 저장 없이 넘긴다</text>
+
+  <rect x="56" y="88" width="188" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="150" y="114" font-size="14" fill="#1b2a27" text-anchor="middle">sale 240행</text>
+
+  <path d="M150 130 L150 164" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+
+  <rect x="56" y="164" width="188" height="58" rx="5" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="150" y="188" font-size="14" fill="#1b2a27" text-anchor="middle">region_total 몸체</text>
+  <text x="150" y="208" font-size="13" fill="#2d6a4f" text-anchor="middle">집계 자리 통과 240회</text>
+
+  <path d="M150 222 L150 256" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+
+  <rect x="56" y="256" width="188" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="150" y="282" font-size="14" fill="#1b2a27" text-anchor="middle">바깥 질의 (참조 1곳)</text>
+
+  <text x="150" y="330" font-size="13" fill="#4a5a56" text-anchor="middle">중간 결과가 어디에도</text>
+  <text x="150" y="350" font-size="13" fill="#4a5a56" text-anchor="middle">남지 않는다</text>
+
+  <!-- 패널 B -->
+  <rect x="300" y="16" width="268" height="368" rx="8" fill="#ffffff" stroke="#cbd5d1" stroke-width="1.5"/>
+  <text x="318" y="44" font-size="15" font-weight="bold" fill="#1b2a27">② CTE 를 두 번 참조</text>
+  <text x="318" y="66" font-size="13" fill="#4a5a56">MATERIALIZE — 한 번 만들어 쓴다</text>
+
+  <rect x="340" y="88" width="188" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="434" y="114" font-size="14" fill="#1b2a27" text-anchor="middle">sale 240행</text>
+
+  <path d="M434 130 L434 164" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+
+  <rect x="340" y="164" width="188" height="58" rx="5" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="434" y="188" font-size="14" fill="#1b2a27" text-anchor="middle">임시 결과 4행</text>
+  <text x="434" y="208" font-size="13" fill="#2d6a4f" text-anchor="middle">집계 자리 통과 240회</text>
+
+  <path d="M400 222 L372 256" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+  <path d="M468 222 L496 256" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+
+  <rect x="320" y="256" width="104" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="372" y="282" font-size="14" fill="#1b2a27" text-anchor="middle">참조 a</text>
+
+  <rect x="444" y="256" width="104" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="496" y="282" font-size="14" fill="#1b2a27" text-anchor="middle">참조 b</text>
+
+  <text x="434" y="330" font-size="13" fill="#4a5a56" text-anchor="middle">참조가 둘이어도 몸체는</text>
+  <text x="434" y="350" font-size="13" fill="#4a5a56" text-anchor="middle">한 번만 돈다</text>
+
+  <!-- 패널 C -->
+  <rect x="584" y="16" width="280" height="368" rx="8" fill="#ffffff" stroke="#cbd5d1" stroke-width="1.5"/>
+  <text x="602" y="44" font-size="15" font-weight="bold" fill="#1b2a27">③ CREATE TEMP TABLE</text>
+  <text x="602" y="66" font-size="13" fill="#4a5a56">temp 데이터베이스에 남는다</text>
+
+  <rect x="630" y="88" width="188" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="724" y="114" font-size="14" fill="#1b2a27" text-anchor="middle">sale 240행</text>
+
+  <path d="M724 130 L724 164" stroke="#b45309" stroke-width="2" marker-end="url(#arrow-o)"/>
+
+  <rect x="610" y="164" width="228" height="58" rx="5" fill="#fdf0dd" stroke="#b45309" stroke-width="1.8"/>
+  <text x="724" y="188" font-size="14" fill="#1b2a27" text-anchor="middle">temp.region_total 4행</text>
+  <text x="724" y="208" font-size="13" fill="#b45309" text-anchor="middle">연결이 닫힐 때까지 남는다</text>
+
+  <path d="M690 222 L662 256" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+  <path d="M758 222 L786 256" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+
+  <rect x="606" y="256" width="112" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="662" y="282" font-size="14" fill="#1b2a27" text-anchor="middle">질의 1</text>
+
+  <rect x="730" y="256" width="112" height="42" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="786" y="282" font-size="14" fill="#1b2a27" text-anchor="middle">질의 2</text>
+
+  <text x="724" y="330" font-size="13" fill="#4a5a56" text-anchor="middle">다른 문장에서도 읽히고,</text>
+  <text x="724" y="350" font-size="13" fill="#4a5a56" text-anchor="middle">집계 자리 통과는 0회</text>
+
+  <defs>
+    <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrow-o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>

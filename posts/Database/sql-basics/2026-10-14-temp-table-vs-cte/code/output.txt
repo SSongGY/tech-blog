@@ -1,0 +1,143 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-14-temp-table-vs-cte
+# 명령      : python temp_table_vs_cte.py
+# 수행 시각 : 2026-10-15 08:29 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[sale]  240행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  sale_id | INTEGER | PK
+  region  | TEXT    | NOT NULL
+  sold_on | TEXT    | NOT NULL
+  amount  | INTEGER | NOT NULL
+
+  sale_id | region | sold_on    | amount
+  --------+--------+------------+-------
+        1 | 부산   | 2026-02-10 |   1037
+        2 | 대구   | 2026-03-10 |   1074
+        3 | 광주   | 2026-04-10 |   1111
+        4 | 서울   | 2026-05-10 |   1148
+        5 | 부산   | 2026-06-10 |   1185
+        6 | 대구   | 2026-01-10 |   1222
+        7 | 광주   | 2026-02-10 |   1259
+        8 | 서울   | 2026-03-10 |   1296
+        9 | 부산   | 2026-04-10 |   1333
+       10 | 대구   | 2026-05-10 |   1370
+       11 | 광주   | 2026-06-10 |   1407
+       12 | 서울   | 2026-01-10 |   1444
+  … 228행 더 있음
+
+
+[CTE 를 한 번만 참조]
+  tally() 호출 240회 · 결과 4행
+  QUERY PLAN
+  |--CO-ROUTINE region_total
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN region_total
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[CTE 를 두 번 참조 (힌트 없음)]
+  tally() 호출 240회 · 결과 4행
+  QUERY PLAN
+  |--MATERIALIZE region_total
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN a
+  |--SEARCH b USING AUTOMATIC PARTIAL COVERING INDEX (region=?)
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[CTE 를 두 번 참조 (NOT MATERIALIZED)]
+  tally() 호출 240회 · 결과 4행
+  QUERY PLAN
+  |--MATERIALIZE region_total
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN a
+  |--SEARCH b USING AUTOMATIC PARTIAL COVERING INDEX (region=?)
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[CTE 를 두 번 참조 (MATERIALIZED)]
+  tally() 호출 240회 · 결과 4행
+  QUERY PLAN
+  |--MATERIALIZE region_total
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN a
+  |--SEARCH b USING AUTOMATIC PARTIAL COVERING INDEX (region=?)
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[같은 서브쿼리를 두 번 적음]
+  tally() 호출 300회 · 결과 4행
+  QUERY PLAN
+  |--CO-ROUTINE a
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--MATERIALIZE b
+  |--SCAN sale
+  |--SCAN a
+  |--SEARCH b USING AUTOMATIC PARTIAL COVERING INDEX (region=?)
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[같은 서브쿼리를 두 번 적음 (상수 조건 없음)]
+  tally() 호출 480회 · 결과 4행
+  QUERY PLAN
+  |--CO-ROUTINE a
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--MATERIALIZE b
+  |--SCAN sale
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN a
+  |--SEARCH b USING AUTOMATIC COVERING INDEX (region=?)
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[집계 없는 CTE 를 두 번 참조 (힌트 없음)]
+  tally() 호출 131회 · 결과 1행
+  QUERY PLAN
+  |--SCAN CONSTANT ROW
+  |--SCALAR SUBQUERY 2
+  |--SCAN sale
+  |--SCALAR SUBQUERY 3
+  |--SEARCH sale
+
+[집계 없는 CTE 를 두 번 참조 (NOT MATERIALIZED)]
+  tally() 호출 131회 · 결과 1행
+  QUERY PLAN
+  |--SCAN CONSTANT ROW
+  |--SCALAR SUBQUERY 2
+  |--SCAN sale
+  |--SCALAR SUBQUERY 3
+  |--SEARCH sale
+
+[TEMP TABLE 생성] tally() 호출 240회
+
+[TEMP TABLE 을 두 번 참조]
+  tally() 호출 0회 · 결과 4행
+  QUERY PLAN
+  |--SCAN a
+  |--SEARCH b USING AUTOMATIC PARTIAL COVERING INDEX (region=?)
+  |--USE TEMP B-TREE FOR ORDER BY
+
+[TEMP TABLE 을 다음 질의에서 또 참조]
+  tally() 호출 0회 · 결과 4행
+  QUERY PLAN
+  |--SCAN region_total
+  |--USE TEMP B-TREE FOR ORDER BY
+
