@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **333편** · 갱신 2026-10-14
+총 **335편** · 갱신 2026-10-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -313,11 +313,13 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 54편
+## 주식·재무 (finance) — 56편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-14 | [세 가지 마진 — 매출총이익률·영업이익률·순이익률](posts/Finance/ratios/2026-10-14-three-margins-step-by-step/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 통계정보보고서(2019.12), K-IFRS 제1001호, IFRS 18 | 실행 검증 |
+| 2026-10-14 | [비율 분석이 틀리는 세 가지 경우 — 업종, 회계정책, 시점](posts/Finance/ratios/2026-10-14-ratio-distortions-industry-policy-timing/index.md) | 중급 | Python 3.13.5, K-IFRS 제1002호, K-IFRS 제1016호, K-IFRS 제1116호(2019-01-01 시행), K-IFRS 제1008호, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
+| 2026-10-14 | [PSR과 PCR — 이익이 적자일 때 분모를 어디서 가져오는가](posts/Finance/valuation/2026-10-14-psr-pcr-when-earnings-negative/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호, K-IFRS 제1115호, CFA Program Curriculum 2026 Level II | 실행 검증 |
 | 2026-10-14 | [자기자본비율과 차입금의존도 — 안정성을 보는 다른 각도](posts/Finance/ratios/2026-10-14-equity-ratio-and-borrowing-dependency/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 통계정보보고서(2019.12), 한국은행 기업경영분석 2024년 1/4분기 | 실행 검증 |
 | 2026-10-13 | [중단영업 — 접기로 한 사업은 어떻게 표시되는가](posts/Finance/statements/2026-10-13-discontinued-operations/index.md) | 중급 | Python 3.13.5, K-IFRS 제1105호 매각예정비유동자산과 중단영업 | 실행 검증 |
 | 2026-10-13 | [유동비율과 당좌비율 — 재고를 빼고 보는 이유](posts/Finance/ratios/2026-10-13-current-ratio-vs-quick-ratio/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 통계정보보고서(2019.12), K-IFRS 제1002호 | 실행 검증 |
