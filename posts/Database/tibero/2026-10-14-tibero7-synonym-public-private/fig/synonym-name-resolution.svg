@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">스키마를 안 붙인 이름 하나를 찾아가는 순서</text>
+  <text x="440" y="54" text-anchor="middle" font-size="13" fill="#495057">SELECT * FROM employees;  —  employees 가 무엇인지 정하는 과정</text>
+
+  <!-- step 1 -->
+  <rect x="40" y="78" width="330" height="92" rx="6" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="205" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 현재 사용자 스키마의 네임스페이스</text>
+  <text x="205" y="126" text-anchor="middle" font-size="13" fill="#495057">표 · 뷰 · 실체화 뷰 · 시퀀스 · 패키지</text>
+  <text x="205" y="146" text-anchor="middle" font-size="13" fill="#1864ab">전용 시노님도 여기에 같이 들어 있다</text>
+  <text x="205" y="164" text-anchor="middle" font-size="13" fill="#495057">— 이름 하나를 나눠 쓰므로 중복 불가</text>
+
+  <!-- step 2 -->
+  <rect x="510" y="78" width="330" height="92" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="675" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 공용 시노님</text>
+  <text x="675" y="126" text-anchor="middle" font-size="13" fill="#495057">사용자 롤 · 테이블스페이스와 같은 부류</text>
+  <text x="675" y="146" text-anchor="middle" font-size="13" fill="#b45309">독립된 네임스페이스에 따로 있다</text>
+  <text x="675" y="164" text-anchor="middle" font-size="13" fill="#495057">— 같은 이름의 표가 있어도 공존한다</text>
+
+  <line x1="370" y1="124" x2="508" y2="124" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="439" y="116" text-anchor="middle" font-size="13" fill="#495057">①에 없으면</text>
+
+  <!-- step 3 -->
+  <rect x="275" y="210" width="330" height="56" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="440" y="234" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 찾은 것이 시노님이면 끝까지 따라간다</text>
+  <text x="440" y="255" text-anchor="middle" font-size="13" fill="#495057">시노님이 시노님을 가리킬 수도 있다</text>
+  <line x1="205" y1="170" x2="300" y2="208" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="675" y1="170" x2="580" y2="208" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- step 4 -->
+  <rect x="275" y="300" width="330" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="440" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 그 자리에 쓸 수 있는 종류인지 본다</text>
+  <text x="440" y="345" text-anchor="middle" font-size="13" fill="#495057">FROM 자리라면 표나 뷰여야 한다</text>
+  <line x1="440" y1="266" x2="440" y2="298" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- error -->
+  <rect x="640" y="300" width="200" height="56" rx="6" fill="#ffe3e3" stroke="#9d0208"/>
+  <text x="740" y="324" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">⑤ 아니면 에러</text>
+  <text x="740" y="345" text-anchor="middle" font-size="13" fill="#495057">못 찾아도 에러</text>
+  <line x1="605" y1="328" x2="638" y2="328" stroke="#9d0208" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <text x="40" y="398" font-size="14" font-weight="bold" fill="#9d0208">여기서 갈린다</text>
+  <text x="40" y="422" font-size="14" fill="#495057">① 과 ② 는 서로 다른 네임스페이스다. 내 스키마에 employees 표가 있으면 같은 이름의</text>
+  <text x="40" y="444" font-size="14" fill="#495057">공용 시노님이 있어도 ① 에서 끝나므로 표가 읽힌다. 공용 시노님은 쓰이지 않는다.</text>
+</svg>
