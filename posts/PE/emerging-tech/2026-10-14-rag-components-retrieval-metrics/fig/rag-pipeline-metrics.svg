@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="376" viewBox="0 0 880 376" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="376" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">RAG 구성요소 5가지와 지표가 재는 구간</text>
+
+  <!-- row of components -->
+  <rect x="24" y="112" width="130" height="66" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="89" y="139" text-anchor="middle" font-size="14" fill="#1b1b1b">① 질의</text>
+  <text x="89" y="160" text-anchor="middle" font-size="13" fill="#495057">사용자 입력</text>
+
+  <rect x="188" y="112" width="140" height="66" rx="6" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="258" y="139" text-anchor="middle" font-size="14" fill="#1b1b1b">② 질의 인코더</text>
+  <text x="258" y="160" text-anchor="middle" font-size="13" fill="#495057">질의를 벡터로</text>
+
+  <rect x="362" y="112" width="156" height="66" rx="6" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="440" y="139" text-anchor="middle" font-size="14" fill="#1b1b1b">③ 문서 색인</text>
+  <text x="440" y="160" text-anchor="middle" font-size="13" fill="#495057">MIPS 로 상위 k 선별</text>
+
+  <rect x="552" y="112" width="140" height="66" rx="6" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="622" y="139" text-anchor="middle" font-size="14" fill="#1b1b1b">④ 생성기</text>
+  <text x="622" y="160" text-anchor="middle" font-size="13" fill="#495057">질의 + 문서 → 답변</text>
+
+  <rect x="726" y="112" width="130" height="66" rx="6" fill="#f1f3f5" stroke="#495057"/>
+  <text x="791" y="139" text-anchor="middle" font-size="14" fill="#1b1b1b">⑤ 답변</text>
+  <text x="791" y="160" text-anchor="middle" font-size="13" fill="#495057">근거와 함께</text>
+
+  <line x1="154" y1="145" x2="186" y2="145" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="328" y1="145" x2="360" y2="145" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="518" y1="145" x2="550" y2="145" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="692" y1="145" x2="724" y2="145" stroke="#495057" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <text x="440" y="106" text-anchor="middle" font-size="13" fill="#1864ab">상위 k 문서</text>
+
+  <!-- 비매개변수 메모리 표시 -->
+  <text x="440" y="78" text-anchor="middle" font-size="13" fill="#495057">②③ 은 학습된 가중치 밖에 있는 지식 — 색인만 갈아 끼우면 바뀐다</text>
+
+  <!-- metric bands -->
+  <rect x="188" y="212" width="330" height="72" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="353" y="233" text-anchor="middle" font-size="14" fill="#1b1b1b">검색 품질 지표</text>
+  <text x="353" y="254" text-anchor="middle" font-size="13" fill="#1b1b1b">Recall@k · Precision@k · MRR · nDCG@k</text>
+  <text x="353" y="273" text-anchor="middle" font-size="13" fill="#495057">정답 문서가 상위 k 안에, 그리고 위쪽에 있는가</text>
+  <line x1="353" y1="210" x2="353" y2="180" stroke="#b45309" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <rect x="552" y="212" width="304" height="72" rx="6" fill="#fff3cd" stroke="#b45309"/>
+  <text x="704" y="233" text-anchor="middle" font-size="14" fill="#1b1b1b">생성 품질 지표</text>
+  <text x="704" y="254" text-anchor="middle" font-size="13" fill="#1b1b1b">근거 충실도 · 정답 정확도</text>
+  <text x="704" y="273" text-anchor="middle" font-size="13" fill="#495057">받은 문서 안에서만 답했는가</text>
+  <line x1="704" y1="210" x2="704" y2="180" stroke="#b45309" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <text x="24" y="322" font-size="14" fill="#9d0208">③ 이 정답 문서를 상위 k 에 못 올리면 ④ 가 무엇을 해도 그 답은 나오지 않는다.</text>
+  <text x="24" y="346" font-size="14" fill="#495057">그래서 RAG 품질 문제는 먼저 검색 지표부터 끊어서 본다.</text>
+</svg>
