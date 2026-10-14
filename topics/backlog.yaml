@@ -692,7 +692,7 @@ topics:
     difficulty: 입문
     angle: "이름 해석 순서에서 시노님이 놓인 자리"
     code: sql
-    status: todo
+    status: done
   - id: tb-020
     title: "Tibero 7 권한과 롤 — GRANT 체계 정리"
     category: Database
@@ -2147,7 +2147,7 @@ topics:
     angle: "검색이 틀리면 생성이 무엇을 해도 안 되는 구조"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-073
     title: "MLOps 파이프라인과 모델 드리프트 대응"
     category: PE
@@ -2643,7 +2643,7 @@ topics:
     angle: "OFFSET이 뒤 페이지로 갈수록 느려지는 것을 행 수를 늘려 가며 재고, 마지막 키로 이어 받는 방식과 비교"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-051
     title: "임시 테이블과 CTE — 어느 쪽을 쓸까"
     category: Database
@@ -4536,7 +4536,7 @@ topics:
     angle: "인덱스만으로 답이 나올 때 EXPLAIN QUERY PLAN 에 뜨는 표시와 실제 속도 차이"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-060
     title: "인덱스와 NULL — 색인은 NULL을 어떻게 다루는가"
     category: Database
