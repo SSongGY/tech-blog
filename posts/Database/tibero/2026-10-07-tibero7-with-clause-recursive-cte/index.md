@@ -19,6 +19,7 @@ topic_id: tb-015
 <!-- related:start -->
 > **같은 기능을 다른 환경에서 다룬 글** (`cte`)
 > - [CTE — WITH 절로 질의에 이름 붙이기](../../sql-basics/2026-10-07-cte-with-clause/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+> - [임시 테이블과 CTE — 어느 쪽을 쓸까](../../sql-basics/2026-10-14-temp-table-vs-cte/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 <!-- related:end -->
 
 > **실행 검증 없음.** 이 글은 **Tibero 7.2.6 공개 매뉴얼**의 설명과 매뉴얼에 실린 예제만 근거로 정리했다.
