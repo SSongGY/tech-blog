@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="20" y="30" font-size="15" font-weight="bold" fill="#1b2a27">TTL 만료 시점 τ 에서 네 방식이 하는 일</text>
+
+  <!-- 만료 시점 -->
+  <line x1="560" y1="48" x2="560" y2="372" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <text x="566" y="62" font-size="13" fill="#9d0208">τ · TTL 만료</text>
+
+  <!-- 1행 -->
+  <text x="20" y="112" font-size="14" fill="#1b2a27">아무 대책 없음</text>
+  <line x1="190" y1="118" x2="850" y2="118" stroke="#9aa5a2" stroke-width="1.2"/>
+  <line x1="562" y1="118" x2="562" y2="88" stroke="#9d0208" stroke-width="2"/>
+  <line x1="574" y1="118" x2="574" y2="88" stroke="#9d0208" stroke-width="2"/>
+  <line x1="586" y1="118" x2="586" y2="88" stroke="#9d0208" stroke-width="2"/>
+  <line x1="598" y1="118" x2="598" y2="88" stroke="#9d0208" stroke-width="2"/>
+  <line x1="610" y1="118" x2="610" y2="88" stroke="#9d0208" stroke-width="2"/>
+  <text x="624" y="100" font-size="13" fill="#9d0208">한꺼번에 원본으로 — 동시 49건</text>
+
+  <!-- 2행 -->
+  <text x="20" y="192" font-size="14" fill="#1b2a27">뮤텍스 락</text>
+  <line x1="190" y1="198" x2="850" y2="198" stroke="#9aa5a2" stroke-width="1.2"/>
+  <rect x="560" y="172" width="90" height="26" rx="4" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="605" y="190" font-size="13" fill="#1b2a27" text-anchor="middle">재계산 1건</text>
+  <rect x="560" y="202" width="90" height="22" rx="4" fill="#f1e6e6" stroke="#9d0208" stroke-width="1.4"/>
+  <text x="658" y="218" font-size="13" fill="#9d0208">나머지는 끝날 때까지 대기</text>
+
+  <!-- 3행 -->
+  <text x="20" y="272" font-size="14" fill="#1b2a27">확률적 조기 만료</text>
+  <line x1="190" y1="278" x2="850" y2="278" stroke="#9aa5a2" stroke-width="1.2"/>
+  <rect x="470" y="252" width="90" height="26" rx="4" fill="#fdf0dd" stroke="#b45309" stroke-width="1.6"/>
+  <text x="515" y="270" font-size="13" fill="#1b2a27" text-anchor="middle">미리 재계산</text>
+  <text x="208" y="270" font-size="13" fill="#b45309">만료가 가까울수록 확률이 커진다</text>
+  <text x="572" y="270" font-size="13" fill="#2d6a4f">τ 에는 이미 새 값이 있다</text>
+
+  <!-- 4행 -->
+  <text x="20" y="352" font-size="14" fill="#1b2a27">백그라운드 갱신</text>
+  <line x1="190" y1="358" x2="850" y2="358" stroke="#9aa5a2" stroke-width="1.2"/>
+  <rect x="560" y="332" width="90" height="26" rx="4" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="605" y="350" font-size="13" fill="#1b2a27" text-anchor="middle">뒤에서 재계산</text>
+  <text x="658" y="350" font-size="13" fill="#b45309">그동안 낡은 값을 그대로 준다</text>
+</svg>
