@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfaf7"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">분모를 손익계산서 어느 줄에서 가져오는가</text>
+  <text x="440" y="50" text-anchor="middle" font-size="13" fill="#475569">분자는 넷 다 시가총액이다. 아래로 내려갈수록 비용이 더 반영되고, 음수가 될 자리가 늘어난다</text>
+
+  <text x="48" y="80" font-size="13" font-weight="bold" fill="#475569">분모로 쓰는 줄</text>
+  <text x="468" y="80" font-size="13" font-weight="bold" fill="#475569">그 줄로 만든 배수와, 분모가 음수가 되는 조건</text>
+
+  <!-- 1. 매출액 -->
+  <rect x="40" y="90" width="380" height="62" rx="5" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="58" y="113" font-size="14" font-weight="bold" fill="#1f2937">매출액</text>
+  <text x="58" y="136" font-size="13" fill="#475569">손익계산서 맨 윗줄 — 아직 아무것도 빼지 않았다</text>
+  <path d="M420 121 L460 121" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+  <path d="M452 116 L460 121 L452 126 Z" fill="#2d6a4f"/>
+  <rect x="460" y="90" width="380" height="62" rx="5" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="478" y="113" font-size="14" font-weight="bold" fill="#1b4332">PSR = 시가총액 ÷ 매출액</text>
+  <text x="478" y="136" font-size="13" fill="#2d6a4f">음수가 되지 않는다 — 대신 비용 구조를 하나도 담지 못한다</text>
+
+  <!-- 2. 영업이익 -->
+  <rect x="40" y="166" width="380" height="62" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6"/>
+  <text x="58" y="189" font-size="14" font-weight="bold" fill="#1f2937">영업이익</text>
+  <text x="58" y="212" font-size="13" fill="#475569">매출원가와 판매관리비를 뺀 뒤</text>
+  <path d="M420 197 L460 197" fill="none" stroke="#b45309" stroke-width="1.6"/>
+  <path d="M452 192 L460 197 L452 202 Z" fill="#b45309"/>
+  <rect x="460" y="166" width="380" height="62" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6"/>
+  <text x="478" y="189" font-size="14" font-weight="bold" fill="#7c2d12">EV/EBIT · EV/EBITDA</text>
+  <text x="478" y="212" font-size="13" fill="#b45309">영업에서 적자가 나면 성립하지 않는다</text>
+
+  <!-- 3. 당기순이익 -->
+  <rect x="40" y="242" width="380" height="62" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="58" y="265" font-size="14" font-weight="bold" fill="#1f2937">당기순이익</text>
+  <text x="58" y="288" font-size="13" fill="#475569">이자·법인세·영업외 손익까지 뺀 맨 아랫줄</text>
+  <path d="M420 273 L460 273" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+  <path d="M452 268 L460 273 L452 278 Z" fill="#9d0208"/>
+  <rect x="460" y="242" width="380" height="62" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="478" y="265" font-size="14" font-weight="bold" fill="#9d0208">PER = 시가총액 ÷ 당기순이익</text>
+  <text x="478" y="288" font-size="13" fill="#9d0208">가장 자주 음수가 된다 — 일회성 손익에도 흔들린다</text>
+
+  <!-- 4. 영업활동현금흐름 -->
+  <rect x="40" y="318" width="380" height="62" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6"/>
+  <text x="58" y="341" font-size="14" font-weight="bold" fill="#1f2937">영업활동현금흐름</text>
+  <text x="58" y="364" font-size="13" fill="#475569">손익계산서가 아니라 현금흐름표에서 온다</text>
+  <path d="M420 349 L460 349" fill="none" stroke="#b45309" stroke-width="1.6"/>
+  <path d="M452 344 L460 349 L452 354 Z" fill="#b45309"/>
+  <rect x="460" y="318" width="380" height="62" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6"/>
+  <text x="478" y="341" font-size="14" font-weight="bold" fill="#7c2d12">PCR = 시가총액 ÷ 영업활동현금흐름</text>
+  <text x="478" y="364" font-size="13" fill="#b45309">적자여도 양수일 수 있다 — 대신 운전자본 변동이 섞인다</text>
+
+  <!-- 바닥 -->
+  <rect x="40" y="400" width="800" height="78" rx="6" fill="#eef2f6" stroke="#475569" stroke-width="1.4"/>
+  <text x="58" y="424" font-size="14" font-weight="bold" fill="#1f2937">위로 올라가면 분모가 살아남고, 내려가면 분모가 많은 것을 말해 준다</text>
+  <text x="58" y="446" font-size="13" fill="#475569">PSR 이 성립한다는 것은 분모가 음수가 아니라는 뜻일 뿐, 그 회사가 돈을 번다는 뜻이 아니다</text>
+  <text x="58" y="468" font-size="13" fill="#475569">PSR = 순이익률 × PER 이므로, PSR 을 읽으려면 장래의 순이익률을 따로 가정해야 한다</text>
+</svg>
