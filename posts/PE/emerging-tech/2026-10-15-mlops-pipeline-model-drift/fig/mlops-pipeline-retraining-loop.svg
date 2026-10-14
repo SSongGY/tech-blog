@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" width="880" height="350" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="350" fill="#fbfbf8"/>
+
+  <text x="20" y="34" font-size="15" font-weight="bold" fill="#1b2a27">ML 파이프라인 8단계와 재학습 되돌림</text>
+
+  <!-- 1행: 왼쪽에서 오른쪽 -->
+  <rect x="40" y="56" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="130" y="86" font-size="14" fill="#1b2a27" text-anchor="middle">① 데이터 추출</text>
+
+  <rect x="240" y="56" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="330" y="86" font-size="14" fill="#1b2a27" text-anchor="middle">② 데이터 분석</text>
+
+  <rect x="440" y="56" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="530" y="86" font-size="14" fill="#1b2a27" text-anchor="middle">③ 데이터 준비</text>
+
+  <rect x="640" y="56" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="730" y="86" font-size="14" fill="#1b2a27" text-anchor="middle">④ 모델 학습</text>
+
+  <path d="M220 80 L238 80" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M420 80 L438 80" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M620 80 L638 80" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 1행 끝에서 2행 끝으로 -->
+  <path d="M820 80 L850 80 L850 170 L822 170" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+
+  <!-- 2행: 오른쪽에서 왼쪽 -->
+  <rect x="640" y="146" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="730" y="176" font-size="14" fill="#1b2a27" text-anchor="middle">⑤ 모델 평가</text>
+
+  <rect x="440" y="146" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="530" y="176" font-size="14" fill="#1b2a27" text-anchor="middle">⑥ 모델 검증</text>
+
+  <rect x="240" y="146" width="180" height="48" rx="6" fill="#eef2f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="330" y="176" font-size="14" fill="#1b2a27" text-anchor="middle">⑦ 모델 서빙</text>
+
+  <rect x="40" y="146" width="180" height="48" rx="6" fill="#fdf0dd" stroke="#b45309" stroke-width="1.8"/>
+  <text x="130" y="176" font-size="14" fill="#1b2a27" text-anchor="middle">⑧ 모델 모니터링</text>
+
+  <path d="M640 170 L622 170" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M440 170 L422 170" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <path d="M240 170 L222 170" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 드리프트 유입 지점 -->
+  <text x="330" y="222" font-size="13" fill="#9d0208" text-anchor="middle">현장 입력이 들어오는 지점</text>
+  <text x="530" y="222" font-size="13" fill="#4a5a56" text-anchor="middle">여기까지는 과거 데이터만 본다</text>
+
+  <!-- 트리거 -->
+  <rect x="40" y="252" width="300" height="48" rx="6" fill="#fdf0dd" stroke="#b45309" stroke-width="1.8"/>
+  <text x="190" y="282" font-size="14" fill="#1b2a27" text-anchor="middle">재학습 트리거 (분포 변화 · 성능 저하)</text>
+
+  <path d="M130 194 L130 250" stroke="#b45309" stroke-width="2" marker-end="url(#ar2)"/>
+  <path d="M40 276 L18 276 L18 80 L38 80" stroke="#b45309" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+
+  <text x="360" y="272" font-size="13" fill="#4a5a56">Source I 은 입력만 봐도 잡히고,</text>
+  <text x="360" y="292" font-size="13" fill="#9d0208">Source II 는 라벨이 와야 보인다</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
