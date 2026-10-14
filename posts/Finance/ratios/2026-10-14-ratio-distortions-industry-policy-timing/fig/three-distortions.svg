@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfaf7"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">비율 하나를 두 번 계산할 때 값이 갈리는 세 자리</text>
+
+  <!-- 출발점 -->
+  <rect x="200" y="44" width="480" height="52" rx="6" fill="#eef2f6" stroke="#475569" stroke-width="1.6"/>
+  <text x="440" y="66" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">사업의 실질은 그대로 두고, 아래 하나씩만 바꾼다</text>
+  <text x="440" y="86" text-anchor="middle" font-size="13" fill="#475569">한울산업 1차연도 — 매출 2,000억 · 매입 1,800억 · 설비 500억 · 판관비 600억</text>
+
+  <!-- 분기선 -->
+  <path d="M440 96 L440 116 M150 116 L730 116 M150 116 L150 136 M440 116 L440 136 M730 116 L730 136" fill="none" stroke="#475569" stroke-width="1.6"/>
+
+  <!-- ① 업종 -->
+  <rect x="30" y="136" width="240" height="38" rx="5" fill="#fff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="150" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">① 업종 — 비교 대상만 바꿈</text>
+  <path d="M150 174 L150 196" fill="none" stroke="#b45309" stroke-width="1.4"/>
+  <rect x="30" y="196" width="240" height="76" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="48" y="217" font-size="14" fill="#1f2937">한울산업 (장치산업)</text>
+  <text x="48" y="238" font-size="14" fill="#7c2d12">순이익률 12.0%</text>
+  <text x="48" y="259" font-size="14" fill="#1f2937">총자산회전율 0.833회</text>
+  <rect x="30" y="284" width="240" height="76" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="48" y="305" font-size="14" fill="#1f2937">초록유통 (유통업)</text>
+  <text x="48" y="326" font-size="14" fill="#7c2d12">순이익률 3.0%</text>
+  <text x="48" y="347" font-size="14" fill="#1f2937">총자산회전율 3.333회</text>
+  <text x="150" y="386" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">ROA 는 둘 다 10.0%</text>
+  <text x="150" y="406" text-anchor="middle" font-size="13" fill="#475569">마진만 떼어 보면 4배 차이로 읽힌다</text>
+
+  <!-- ② 회계정책 -->
+  <rect x="320" y="136" width="240" height="38" rx="5" fill="#fff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="440" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">② 회계정책 — 적는 법만 바꿈</text>
+  <path d="M440 174 L440 196" fill="none" stroke="#b45309" stroke-width="1.4"/>
+  <rect x="320" y="196" width="240" height="76" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="338" y="217" font-size="14" fill="#1f2937">선입선출법 + 정액법</text>
+  <text x="338" y="238" font-size="14" fill="#7c2d12">영업이익률 10.0%</text>
+  <text x="338" y="259" font-size="14" fill="#1f2937">ROA 8.3%</text>
+  <rect x="320" y="284" width="240" height="76" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="338" y="305" font-size="14" fill="#1f2937">가중평균법 + 체감잔액법</text>
+  <text x="338" y="326" font-size="14" fill="#7c2d12">영업이익률 0.0%</text>
+  <text x="338" y="347" font-size="14" fill="#1f2937">ROA 0.0%</text>
+  <text x="440" y="386" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">같은 매입·판매·설비</text>
+  <text x="440" y="406" text-anchor="middle" font-size="13" fill="#475569">두 줄 다 기준서가 허용하는 작성이다</text>
+
+  <!-- ③ 시점 -->
+  <rect x="610" y="136" width="240" height="38" rx="5" fill="#fff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="730" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">③ 시점 — 분모의 날짜만 바꿈</text>
+  <path d="M730 174 L730 196" fill="none" stroke="#b45309" stroke-width="1.4"/>
+  <rect x="610" y="196" width="240" height="76" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="628" y="217" font-size="14" fill="#1f2937">기말 재고잔액 700억</text>
+  <text x="628" y="238" font-size="14" fill="#7c2d12">재고회전율 2.86회</text>
+  <text x="628" y="259" font-size="14" fill="#1f2937">재고일수 127.8일</text>
+  <rect x="610" y="284" width="240" height="76" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="628" y="305" font-size="14" fill="#1f2937">12개월 평균 950억</text>
+  <text x="628" y="326" font-size="14" fill="#7c2d12">재고회전율 2.11회</text>
+  <text x="628" y="347" font-size="14" fill="#1f2937">재고일수 173.4일</text>
+  <text x="730" y="386" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">같은 해의 같은 재고</text>
+  <text x="730" y="406" text-anchor="middle" font-size="13" fill="#475569">연말에 턴 재고가 회전을 빠르게 만든다</text>
+
+  <!-- 바닥 -->
+  <rect x="30" y="430" width="820" height="66" rx="6" fill="#eef2f6" stroke="#475569" stroke-width="1.4"/>
+  <text x="48" y="453" font-size="14" font-weight="bold" fill="#1f2937">세 자리 모두, 바뀐 것은 비교의 조건이지 회사의 실질이 아니다</text>
+  <text x="48" y="474" font-size="13" fill="#475569">비율을 나란히 놓기 전에 확인할 것 — 같은 업종인가 · 같은 회계정책인가 · 분모가 같은 날짜인가</text>
+  <text x="48" y="490" font-size="13" fill="#475569">셋 중 하나라도 어긋나면, 숫자의 차이는 사업의 차이가 아니라 조건의 차이다</text>
+</svg>

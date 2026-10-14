@@ -2654,7 +2654,7 @@ topics:
     angle: "같은 중간 결과를 두 번 쓸 때 무엇이 다시 계산되는지"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: infra-006
     title: "cut, paste, tr — 텍스트를 칼럼으로 다루기"
     category: Infra
@@ -4294,7 +4294,7 @@ topics:
     angle: "업종이 다를 때, 회계정책이 다를 때, 시점이 다를 때. 같은 회사 숫자로 착시를 만들어 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-056
     title: "PSR과 PCR — 이익이 적자일 때 쓰는 배수"
     category: Finance
@@ -4305,7 +4305,7 @@ topics:
     angle: "PER이 무의미해지는 구간에서 무엇으로 대신하는지. 매출과 현금흐름을 분모로 둘 때의 전제"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-057
     title: "PEG — 성장률로 PER을 나눌 때 생기는 함정"
     category: Finance
