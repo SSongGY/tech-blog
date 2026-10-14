@@ -33,6 +33,22 @@ description: 기출 풀이에서 나온 개념을 정보관리기술사 개념 �
 - **복합 명령을 피한다.** `for`·`while` 루프, `sleep`으로 버티는 대기,
   `find -exec`, 서브셸 `( ... &)`, `xargs`, 명령 치환 `$(...)`은
   규칙으로 맞출 수 없다
+
+- **폴더 이름을 모르면 두 번 부른다.** `$(...)` 가 여기서 가장 자주 샌다.
+  괄호 안에 무엇이 올지는 실행할 때 정해지므로 규칙이 맞춰볼 수가 없고,
+  하네스는 **무조건 물어본다.** 회차는 거기서 선다.
+
+  ```bash
+  # 선다 — 이름을 명령 안에서 만들어 쓴다
+  head -20 posts/PE/emerging-tech/$(ls posts/PE/emerging-tech/ | tail -1)/index.md
+
+  # 통과한다 — 먼저 이름을 보고
+  ls posts/PE/emerging-tech/ | tail -5
+  # 나온 이름을 그대로 적는다
+  head -20 posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md
+  ```
+
+  한 번 더 부르는 비용이 회차가 서는 것보다 싸다. `` ` `` 백틱 치환도 같다.
 - 웹 요청은 `curl` 대신 `WebFetch`·`WebSearch`를 쓴다.
   받은 것이 PDF면 `python scripts/blog.py pdf-text <경로> --find <검색어>`로 본문을 본다
 

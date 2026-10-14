@@ -30,6 +30,22 @@ description: 주식 용어와 재무제표 읽는 법을 2편 정리하고 커�
   두 파일을 같이 고친다
 - **복합 명령을 피한다.** `for`·`while` 루프, `sleep` 대기, `find -exec`,
   서브셸, `xargs`, 명령 치환 `$(...)`
+
+- **폴더 이름을 모르면 두 번 부른다.** `$(...)` 가 여기서 가장 자주 샌다.
+  괄호 안에 무엇이 올지는 실행할 때 정해지므로 규칙이 맞춰볼 수가 없고,
+  하네스는 **무조건 물어본다.** 회차는 거기서 선다.
+
+  ```bash
+  # 선다 — 이름을 명령 안에서 만들어 쓴다
+  head -20 posts/PE/emerging-tech/$(ls posts/PE/emerging-tech/ | tail -1)/index.md
+
+  # 통과한다 — 먼저 이름을 보고
+  ls posts/PE/emerging-tech/ | tail -5
+  # 나온 이름을 그대로 적는다
+  head -20 posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md
+  ```
+
+  한 번 더 부르는 비용이 회차가 서는 것보다 싸다. `` ` `` 백틱 치환도 같다.
 - **`rm`·`mv`를 쓰지 않는다.** 버릴 파일은 이름을 `probe`로 시작하면 gitignore된다
 
 ## 시작 전 — 다른 회차와 겹치지 않는지 확인
