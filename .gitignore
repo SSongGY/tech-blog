@@ -34,3 +34,8 @@ figcheck.html
 # 확인이 끝나 예제로 쓸 것은 제 이름을 붙인다 (probe 로 시작하면 버리는 것이다).
 posts/**/code/probe*
 posts/**/code/_scratch*
+
+# 회차가 저장소 루트에 probe 폴더를 만드는 경우가 있다 (du·find 글의 실습 고정물).
+# 위 규칙은 code/ 아래만 막으므로 루트에 72MB 가 추적되지 않은 채 남아 있었다.
+probe*
+_scratch*

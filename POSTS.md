@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **329편** · 갱신 2026-10-14
+총 **332편** · 갱신 2026-10-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 53편
+## DB문법 (basics) — 54편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-14 | [인덱스가 여럿일 때 무엇이 쓰이는가](posts/Database/sql-basics/2026-10-14-index-choice-multiple-indexes/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-10-14 | [커버링 인덱스 — 테이블을 안 보고 끝내기](posts/Database/sql-basics/2026-10-14-covering-index-no-table-lookup/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [중복 행 찾아 지우기 — GROUP BY HAVING과 rowid](posts/Database/sql-basics/2026-10-13-sql-find-delete-duplicate-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [ORDER BY에 별칭과 표현식 쓰기](posts/Database/sql-basics/2026-10-13-order-by-alias-and-expression/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [CHECK 제약 — 값의 범위를 DB가 지키게](posts/Database/sql-basics/2026-10-13-check-constraint-value-range/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -62,10 +63,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 18편
+## DB기능 (product) — 19편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [Tibero 7 시노님 — 공용과 전용이 놓인 자리가 다르다](posts/Database/tibero/2026-10-14-tibero7-synonym-public-private/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-13 | [Tibero 7 머티리얼라이즈드 뷰 — 갱신 방식 고르기](posts/Database/tibero/2026-10-13-materialized-view-refresh-modes/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-12 | [Tibero 7 제약조건 — 종류와 검증 시점](posts/Database/tibero/2026-10-12-tibero7-constraints-state-deferrable/index.md) | 입문 | Tibero 7.2.6 매뉴얼, SQLite 3.49.1 (비교 절) | 문서 근거 |
 | 2026-10-08 | [Tibero 7 페이징 — ROWNUM이 정렬보다 먼저 붙는 이유와 OFFSET·FETCH](posts/Database/tibero/2026-10-08-tibero7-rownum-paging/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
@@ -85,10 +87,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 120편
+## 기술사 (pe) — 121편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-14 | [RAG 구성요소와 검색 품질 지표](posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [대규모 언어 모델(LLM)의 구조와 한계](posts/PE/emerging-tech/2026-10-14-llm-architecture-limits/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-14 | [람다 아키텍처와 카파 아키텍처](posts/PE/database/2026-10-14-lambda-vs-kappa-architecture/index.md) | 중급 | Nathan Marz, How to beat the CAP theorem (2011-10-13), Marz·Warren, Big Data (Manning, 2015), Jay Kreps, Questioning the Lambda Architecture (2014-07-02), Apache Kafka 공식 문서 (2026-10-14 확인) | 문서 근거 |
 | 2026-10-14 | [데이터 계보(Data Lineage)와 메타데이터 카탈로그](posts/PE/database/2026-10-14-data-lineage-metadata-catalog/index.md) | 중급 | W3C PROV-DM (REC 2013-04-30), W3C DCAT 3 (REC 2024-08-22), ISO/IEC 11179-1:2023 (4판), BCBS 239 (2013-01-09, Basel Framework SRP36 2019-12-15판), Apache Atlas 2.0.0, OpenLineage 스펙 (2026-10-14 확인), DataHub 문서 (2026-10-14 확인), dbt 문서 (2026-10-14 확인) | 문서 근거 |
