@@ -4283,7 +4283,7 @@ topics:
     angle: "부채비율과 같은 정보를 다르게 자르는 지표들. 어느 쪽이 업종 비교에 편한지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-055
     title: "비율 분석이 틀리는 세 가지 경우"
     category: Finance
