@@ -4272,7 +4272,7 @@ topics:
     angle: "단계마다 무엇이 빠지는지. 마진 구조가 다른 두 업종을 같은 매출로 세워 비교"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-054
     title: "자기자본비율과 차입금의존도 — 안정성을 보는 다른 각도"
     category: Finance
