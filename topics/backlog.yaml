@@ -4316,7 +4316,7 @@ topics:
     angle: "어느 성장률을 쓰느냐에 따라 값이 두 배로 갈리는 것을 직접 계산해"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-058
     title: "WACC — 할인율은 어떻게 만들어지는가"
     category: Finance

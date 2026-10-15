@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">분자는 하나, 분모는 여섯 — 같은 회사에서 나오는 PEG</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#475569">가나전자 주가 72,000원 ÷ 기준 연도 EPS 3,000원 = PER 24.0배. 여섯 경우 모두 이 분자를 쓴다</text>
+
+  <!-- 라벨 1행 -->
+  <text x="176" y="150" text-anchor="middle" font-size="13" fill="#b45309">과거 3년 CAGR 39.7%</text>
+  <text x="749" y="150" text-anchor="middle" font-size="13" fill="#b45309">과거 4년 CAGR 5.7%</text>
+
+  <!-- 라벨 2행 -->
+  <text x="336" y="200" text-anchor="middle" font-size="13" fill="#475569">내년 증가율 15.0%</text>
+  <text x="538" y="200" text-anchor="middle" font-size="13" fill="#475569">지속가능성장률 8.4%</text>
+
+  <!-- 라벨 3행 — 두 값이 거의 같은 자리에 떨어진다 -->
+  <text x="428" y="230" text-anchor="middle" font-size="13" fill="#475569">직전 연도 대비 11.1%</text>
+  <text x="428" y="248" text-anchor="middle" font-size="13" fill="#475569">향후 3년 CAGR 11.0%</text>
+
+  <!-- 지시선 -->
+  <path d="M176 158 L176 292" fill="none" stroke="#b45309" stroke-width="1.4"/>
+  <path d="M749 158 L749 292" fill="none" stroke="#b45309" stroke-width="1.4"/>
+  <path d="M336 208 L336 292" fill="none" stroke="#475569" stroke-width="1.4"/>
+  <path d="M538 208 L538 292" fill="none" stroke="#475569" stroke-width="1.4"/>
+  <path d="M426 256 L426 292" fill="none" stroke="#475569" stroke-width="1.4"/>
+  <path d="M430 256 L430 292" fill="none" stroke="#475569" stroke-width="1.4"/>
+
+  <!-- 관습선 PEG = 1 -->
+  <path d="M240 96 L240 330" fill="none" stroke="#b45309" stroke-width="1.4" stroke-dasharray="6 4"/>
+  <text x="248" y="92" font-size="13" font-weight="bold" fill="#b45309">관습선 PEG = 1</text>
+
+  <!-- 수평축 -->
+  <path d="M80 300 L820 300" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <path d="M80 296 L80 304" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <path d="M240 296 L240 304" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <path d="M400 296 L400 304" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <path d="M560 296 L560 304" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <path d="M720 296 L720 304" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <text x="80" y="322" text-anchor="middle" font-size="13" fill="#475569">0</text>
+  <text x="240" y="322" text-anchor="middle" font-size="13" fill="#475569">1</text>
+  <text x="400" y="322" text-anchor="middle" font-size="13" fill="#475569">2</text>
+  <text x="560" y="322" text-anchor="middle" font-size="13" fill="#475569">3</text>
+  <text x="720" y="322" text-anchor="middle" font-size="13" fill="#475569">4</text>
+  <text x="840" y="304" text-anchor="middle" font-size="13" font-weight="bold" fill="#1f2937">PEG</text>
+
+  <!-- 값 표시 -->
+  <circle cx="176" cy="292" r="5" fill="#b45309"/>
+  <circle cx="336" cy="292" r="5" fill="#475569"/>
+  <circle cx="426" cy="292" r="5" fill="#475569"/>
+  <circle cx="430" cy="292" r="5" fill="#475569"/>
+  <circle cx="538" cy="292" r="5" fill="#475569"/>
+  <circle cx="749" cy="292" r="5" fill="#b45309"/>
+  <text x="176" y="285" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">0.60</text>
+  <text x="336" y="285" text-anchor="middle" font-size="13" fill="#1f2937">1.60</text>
+  <text x="428" y="285" text-anchor="middle" font-size="13" fill="#1f2937">2.16 · 2.19</text>
+  <text x="538" y="285" text-anchor="middle" font-size="13" fill="#1f2937">2.86</text>
+  <text x="749" y="285" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">4.18</text>
+
+  <!-- 범위 막대 -->
+  <rect x="176" y="340" width="573" height="12" rx="6" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4"/>
+  <text x="462" y="375" text-anchor="middle" font-size="13" fill="#b45309">같은 회사·같은 날·같은 분자에서 나온 PEG 범위 — 0.60에서 4.18까지 6.9배</text>
+</svg>
