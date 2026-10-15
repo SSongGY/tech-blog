@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **347편** · 갱신 2026-10-15
+총 **348편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -243,10 +243,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 20편
+## 일반 (general) — 21편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [p99가 평균보다 훨씬 나쁜 이유 — 큐잉 이론 최소한](posts/Performance/2026-10-15-p99-queueing-theory-utilization/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-15 | [캐시 스탬피드를 막는 세 가지 방법 비교](posts/Backend/2026-10-15-cache-stampede-three-strategies/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [커넥션 풀은 왜 크게 잡을수록 느려지는가](posts/Backend/2026-10-14-connection-pool-size-littles-law/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-13 | [파티셔닝이 항상 빨라지지 않는 이유 — 프루닝이 깨진 뒤에 남는 비용](posts/Database/2026-10-13-partition-pruning-global-index-cost/index.md) | 심화 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
