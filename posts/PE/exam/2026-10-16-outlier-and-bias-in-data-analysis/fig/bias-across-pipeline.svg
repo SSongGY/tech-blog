@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" role="img" aria-label="데이터 분석 파이프라인 네 단계와 편향 세 범주가 걸치는 구간">
+  <rect x="0" y="0" width="880" height="340" fill="#fbfaf7"/>
+
+  <text x="50" y="34" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b2a24">데이터 분석 파이프라인과 편향이 끼어드는 구간</text>
+
+  <!-- 파이프라인 4단계 -->
+  <g font-family="sans-serif" font-size="14" fill="#1b2a24">
+    <rect x="50" y="52" width="176" height="54" rx="6" fill="#e8f0ea" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="138" y="76" text-anchor="middle">수집 · 표본추출</text>
+    <text x="138" y="95" text-anchor="middle" font-size="13" fill="#44584f">collection</text>
+
+    <rect x="246" y="52" width="176" height="54" rx="6" fill="#e8f0ea" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="334" y="76" text-anchor="middle">전처리 · 정제</text>
+    <text x="334" y="95" text-anchor="middle" font-size="13" fill="#44584f">preprocessing</text>
+
+    <rect x="442" y="52" width="176" height="54" rx="6" fill="#e8f0ea" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="530" y="76" text-anchor="middle">분석 · 학습</text>
+    <text x="530" y="95" text-anchor="middle" font-size="13" fill="#44584f">modelling</text>
+
+    <rect x="638" y="52" width="176" height="54" rx="6" fill="#e8f0ea" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="726" y="76" text-anchor="middle">해석 · 활용</text>
+    <text x="726" y="95" text-anchor="middle" font-size="13" fill="#44584f">use and interpretation</text>
+  </g>
+
+  <!-- 단계 사이 화살표 -->
+  <g stroke="#2d6a4f" stroke-width="2" fill="none">
+    <path d="M226,79 L244,79"/><path d="M238,74 L244,79 L238,84" fill="#2d6a4f"/>
+    <path d="M422,79 L440,79"/><path d="M434,74 L440,79 L434,84" fill="#2d6a4f"/>
+    <path d="M618,79 L636,79"/><path d="M630,74 L636,79 L630,84" fill="#2d6a4f"/>
+  </g>
+
+  <!-- 이상치 처리가 만드는 되먹임 -->
+  <path d="M334,106 L334,126" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+  <rect x="246" y="126" width="372" height="52" rx="6" fill="#fbe9e9" stroke="#9d0208" stroke-width="2"/>
+  <text x="260" y="149" font-family="sans-serif" font-size="13" fill="#6b0205">이상치 검출 · 절삭 · 대체는 여기서 일어난다.</text>
+  <text x="260" y="169" font-family="sans-serif" font-size="13" fill="#6b0205">집단마다 깎이는 비율이 다르면 편향이 새로 생긴다.</text>
+  <path d="M440,178 L440,192" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+  <path d="M435,192 L440,200 L445,192" fill="#9d0208"/>
+
+  <!-- 편향 세 범주가 걸치는 구간 -->
+  <g font-family="sans-serif" font-size="13">
+    <rect x="50" y="200" width="568" height="32" rx="4" fill="#f3e2c7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="62" y="221" fill="#5c3a06">통계 · 연산 편향 — 표본이 모집단을 대표하지 못하거나 처리 과정이 치우친다</text>
+
+    <rect x="50" y="244" width="764" height="32" rx="4" fill="#f3e2c7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="62" y="265" fill="#5c3a06">체계적 편향 — 제도 · 관행 · 과거 기록이 데이터와 규칙 전체에 배어 있다</text>
+
+    <rect x="246" y="288" width="568" height="32" rx="4" fill="#f3e2c7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="258" y="309" fill="#5c3a06">인간 편향 — 라벨링 · 변수 선택 · 결과 해석에 작업자의 판단이 들어간다</text>
+  </g>
+</svg>

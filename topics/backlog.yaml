@@ -4966,3 +4966,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-177
+    title: "심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "교란변수와 집단 구성비가 만드는 역전을 수치로 보이고, 집단별 분해가 왜 필수 절차인지까지 내려 쓴다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-178
+    title: "강건 통계량 — 중앙값, MAD, 절사평균의 붕괴점"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "붕괴점(breakdown point) 개념으로 평균·표준편차와 중앙값·MAD를 비교하고, 이상치 검출에 강건 통계량을 써야 하는 이유를 계산으로 보인다"
+    code: none
+    origin: exam
+    status: todo
