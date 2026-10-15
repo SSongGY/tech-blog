@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **344편** · 갱신 2026-10-15
+총 **346편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 57편
+## DB문법 (basics) — 58편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-15 | [UPDATE … FROM — 다른 표의 값으로 갱신하기](posts/Database/sql-basics/2026-10-15-update-from-other-table/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-10-15 | [부분 인덱스 — WHERE가 붙은 인덱스](posts/Database/sql-basics/2026-10-15-partial-index-where-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [임시 테이블과 CTE — 어느 쪽을 쓸까](posts/Database/sql-basics/2026-10-14-temp-table-vs-cte/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [키셋 페이지네이션 — OFFSET을 버리는 이유](posts/Database/sql-basics/2026-10-14-keyset-pagination-vs-offset/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [인덱스가 여럿일 때 무엇이 쓰이는가](posts/Database/sql-basics/2026-10-14-index-choice-multiple-indexes/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -90,10 +91,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 123편
+## 기술사 (pe) — 124편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [양자 내성 암호(PQC)와 전환 전략](posts/PE/emerging-tech/2026-10-15-post-quantum-cryptography-transition/index.md) | 중급 | NIST FIPS 203 (2024-08-13), NIST FIPS 204 (2024-08-13), NIST FIPS 205 (2024-08-13), NIST IR 8547 ipd (2024-11-12) | 문서 근거 |
 | 2026-10-15 | [MLOps 파이프라인과 모델 드리프트 대응](posts/PE/emerging-tech/2026-10-15-mlops-pipeline-model-drift/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-15 | [디지털 트윈 — ISO 23247 프레임워크](posts/PE/emerging-tech/2026-10-15-digital-twin-iso-23247/index.md) | 중급 | ISO/FDIS 23247-1:2021, ISO/FDIS 23247-2:2021, ISO/IEC 30141 (IoT 참조 아키텍처) | 문서 근거 |
 | 2026-10-14 | [RAG 구성요소와 검색 품질 지표](posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |

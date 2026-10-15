@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#f7f9fb"/>
+
+  <defs>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="15" font-weight="bold" fill="#1f2937">데이터 자산화 기반이 갖춰져야 가치평가가 성립하고, 평가 결과가 활용으로 이어진다</text>
+
+  <!-- 1. assetization -->
+  <text x="40" y="66" font-size="14" font-weight="bold" fill="#2d6a4f">Ⅰ. 데이터 자산화 기반</text>
+  <rect x="40" y="78" width="215" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="100" font-size="13.5" fill="#111827">① 식별·목록화</text>
+  <text x="56" y="120" font-size="13" fill="#4b5563">메타데이터 레지스트리</text>
+
+  <rect x="40" y="146" width="215" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="168" font-size="13.5" fill="#111827">② 품질 확보</text>
+  <text x="56" y="188" font-size="13" fill="#4b5563">데이터 품질 모델</text>
+
+  <rect x="40" y="214" width="215" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="236" font-size="13.5" fill="#111827">③ 권리·통제</text>
+  <text x="56" y="256" font-size="13" fill="#4b5563">데이터 거버넌스</text>
+
+  <rect x="40" y="282" width="215" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="304" font-size="13.5" fill="#111827">④ 유통 기반</text>
+  <text x="56" y="324" font-size="13" fill="#4b5563">계약·거래 체계</text>
+
+  <!-- 2. valuation -->
+  <text x="310" y="66" font-size="14" font-weight="bold" fill="#2d6a4f">Ⅱ. 가치평가</text>
+  <rect x="310" y="78" width="225" height="258" rx="6" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <rect x="330" y="98" width="185" height="44" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="346" y="126" font-size="13.5" fill="#111827">원가접근법</text>
+  <rect x="330" y="154" width="185" height="44" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="346" y="182" font-size="13.5" fill="#111827">시장접근법</text>
+  <rect x="330" y="210" width="185" height="44" rx="5" fill="#ffffff" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="346" y="238" font-size="13.5" fill="#111827">수익접근법</text>
+  <text x="330" y="285" font-size="13" fill="#4b5563">결과 표현: 가액 · 등급 · 점수</text>
+  <text x="330" y="307" font-size="13" fill="#4b5563">수행 주체: 지정 가치평가기관</text>
+
+  <!-- 3. use -->
+  <text x="590" y="66" font-size="14" font-weight="bold" fill="#2d6a4f">Ⅲ. 활용</text>
+  <rect x="590" y="88" width="250" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="111" font-size="13.5" fill="#111827">금융</text>
+  <text x="606" y="131" font-size="13" fill="#4b5563">담보 설정 · 보증 · 투자유치</text>
+
+  <rect x="590" y="166" width="250" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="189" font-size="13.5" fill="#111827">이전·거래</text>
+  <text x="606" y="209" font-size="13" fill="#4b5563">매매 · 라이선스 가격 결정</text>
+
+  <rect x="590" y="244" width="250" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="267" font-size="13.5" fill="#111827">전략</text>
+  <text x="606" y="287" font-size="13" fill="#4b5563">분사 · 장기 경영계획 수립</text>
+
+  <!-- flow arrows -->
+  <line x1="258" y1="207" x2="304" y2="207" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <line x1="538" y1="207" x2="584" y2="207" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- feedback -->
+  <path d="M 715 304 L 715 372 L 148 372 L 148 340" fill="none" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrowAmber)"/>
+  <text x="250" y="398" font-size="13" fill="#b45309">환류: 평가에서 드러난 품질·권리 결함을 자산화 기반으로 되돌려 보완한다</text>
+</svg>
