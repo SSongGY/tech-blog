@@ -1,0 +1,231 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-15-expression-index-function-on-column
+# 명령      : python expression_index.py
+# 수행 시각 : 2026-10-15 23:12 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  240행
+  컬럼   | 타입    | 제약
+  -------+---------+---------
+  id     | INTEGER | PK
+  email  | TEXT    | NOT NULL
+  region | TEXT    | NOT NULL
+  points | INTEGER | NOT NULL
+
+  id | email               | region | points
+  ---+---------------------+--------+-------
+   1 | user001@example.com | 부산   |      7
+   2 | user002@example.com | 대구   |     14
+   3 | User003@example.com | 광주   |     21
+   4 | user004@example.com | 서울   |     28
+   5 | user005@example.com | 부산   |     35
+   6 | User006@example.com | 대구   |     42
+   7 | user007@example.com | 광주   |     49
+   8 | user008@example.com | 서울   |     56
+   9 | User009@example.com | 부산   |     63
+  10 | user010@example.com | 대구   |     70
+  11 | user011@example.com | 광주   |     77
+  12 | User012@example.com | 서울   |     84
+  … 228행 더 있음
+
+================================================================
+1. 인덱스가 없을 때
+================================================================
+[함수 없이 비교]
+  SQL  SELECT id FROM member WHERE email = ?
+QUERY PLAN
+`--SCAN member
+  결과 []
+  norm() 호출 0회
+
+[함수를 씌워 비교]
+  SQL  SELECT id FROM member WHERE norm(email) = ?
+QUERY PLAN
+`--SCAN member
+  결과 [(120,)]
+  norm() 호출 240회
+
+================================================================
+2. 컬럼에 건 일반 인덱스
+================================================================
+[함수 없이 비교]
+  SQL  SELECT id FROM member WHERE email = ?
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email (email=?)
+  결과 []
+  norm() 호출 0회
+
+[함수를 씌워 비교]
+  SQL  SELECT id FROM member WHERE norm(email) = ?
+QUERY PLAN
+`--SCAN member USING COVERING INDEX idx_member_email
+  결과 [(120,)]
+  norm() 호출 240회
+
+[일반 인덱스에 쌓인 키의 앞 세 개]
+  SQL  SELECT email FROM member ORDER BY email LIMIT 3
+QUERY PLAN
+`--SCAN member USING COVERING INDEX idx_member_email
+  결과 [('User003@example.com',), ('User006@example.com',), ('User009@example.com',)]
+  norm() 호출 0회
+
+================================================================
+3. 표현식에 건 인덱스
+================================================================
+[인덱스와 같은 표현식]
+  SQL  SELECT id FROM member WHERE norm(email) = ?
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email_norm (<expr>=?)
+  결과 [(120,)]
+  norm() 호출 0회
+
+[같은 뜻이지만 다르게 적은 표현식]
+  SQL  SELECT id FROM member WHERE norm(email || '') = ?
+QUERY PLAN
+`--SCAN member USING COVERING INDEX idx_member_email
+  결과 [(120,)]
+  norm() 호출 240회
+
+[정렬에도 쓰이는지]
+  SQL  SELECT id FROM member ORDER BY norm(email) LIMIT 3
+QUERY PLAN
+`--SCAN member USING COVERING INDEX idx_member_email_norm
+  결과 [(1,), (2,), (3,)]
+  norm() 호출 0회
+
+[표현식 인덱스에 쌓인 키의 앞 세 개]
+  SQL  SELECT norm(email) FROM member ORDER BY norm(email) LIMIT 3
+QUERY PLAN
+`--SCAN member USING COVERING INDEX idx_member_email_norm
+  결과 [('user001@example.com',), ('user002@example.com',), ('user003@example.com',)]
+  norm() 호출 0회
+
+[앞부분 일치 (LIKE)]
+  SQL  SELECT count(*) FROM member WHERE norm(email) LIKE 'user1%'
+QUERY PLAN
+`--SCAN member USING COVERING INDEX idx_member_email_norm
+  결과 [(100,)]
+  norm() 호출 0회
+
+[앞부분 일치 (LIKE) — case_sensitive_like = ON]
+  SQL  SELECT count(*) FROM member WHERE norm(email) LIKE 'user1%'
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email_norm (<expr>>? AND <expr><?)
+  결과 [(100,)]
+  norm() 호출 0회
+
+[앞부분 일치를 범위로 직접 적으면]
+  SQL  SELECT count(*) FROM member WHERE norm(email) >= 'user1' AND norm(email) < 'user2'
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email_norm (<expr>>? AND <expr><?)
+  결과 [(100,)]
+  norm() 호출 0회
+
+[범위 조건]
+  SQL  SELECT count(*) FROM member WHERE norm(email) BETWEEN 'user100@example.com' AND 'user110@example.com'
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email_norm (<expr>>? AND <expr><?)
+  결과 [(11,)]
+  norm() 호출 0회
+
+================================================================
+4. 대수 계산은 하지 않는다
+================================================================
+[인덱스와 같은 순서 x + y]
+  SQL  SELECT count(*) FROM score WHERE x + y = 60
+QUERY PLAN
+`--SEARCH score USING COVERING INDEX idx_score_xy (<expr>=?)
+  결과 (1,)
+
+[순서만 바꾼 y + x]
+  SQL  SELECT count(*) FROM score WHERE y + x = 60
+QUERY PLAN
+`--SCAN score
+  결과 (1,)
+
+[이항한 x = 60 - y]
+  SQL  SELECT count(*) FROM score WHERE x = 60 - y
+QUERY PLAN
+`--SCAN score
+  결과 (1,)
+
+================================================================
+5. 할 수 없는 것 — 실제 에러 메시지
+================================================================
+[비결정적 함수]
+  SQL  CREATE INDEX idx_bad1 ON member(random())
+  OperationalError: non-deterministic functions prohibited in index expressions
+
+[부질의]
+  SQL  CREATE INDEX idx_bad2 ON member((SELECT max(points) FROM member))
+  OperationalError: subqueries prohibited in index expressions
+
+[CREATE TABLE 의 UNIQUE 제약]
+  SQL  CREATE TABLE t_bad (a TEXT, UNIQUE(norm(a)))
+  OperationalError: expressions prohibited in PRIMARY KEY and UNIQUE constraints
+
+================================================================
+6. 쓸 수 있는 것 — 표현식 UNIQUE 인덱스
+================================================================
+  CREATE UNIQUE INDEX uq_member_email_norm ON member(norm(email))  → 성공
+  대소문자만 다른 주소 INSERT → IntegrityError: UNIQUE constraint failed: index 'uq_member_email_norm'
+
+================================================================
+7. 선택도 — ANALYZE 가 기록한 sqlite_stat1
+================================================================
+  idx_member_email             240 1
+  idx_member_email_norm        240 1
+  uq_member_email_norm         240 1
+
+  sqlite_stat1 의 stat 는 '표의 행 수, 같은 키를 가진 평균 행 수' 다.
+  뒤 숫자가 1이면 그 인덱스로 한 행까지 바로 좁혀진다는 뜻이다.
+
+================================================================
+8. 더 간단한 대안 — COLLATE NOCASE
+================================================================
+[COLLATE 를 붙인 비교]
+  SQL  SELECT id FROM member WHERE email = ? COLLATE NOCASE
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email_nocase (email=?)
+  결과 [(120,)]
+
+[COLLATE 없이 비교]
+  SQL  SELECT id FROM member WHERE email = ?
+QUERY PLAN
+`--SEARCH member USING COVERING INDEX idx_member_email (email=?)
+  결과 []
+
+  'ABC' = 'abc' COLLATE NOCASE  →  True
+  'ÄÖÜ' = 'äöü' COLLATE NOCASE  →  False
+  '가나' = '가나' COLLATE NOCASE  →  True
+
+================================================================
+9. 함수를 등록하지 않은 연결에서 그 DB 를 열면
+================================================================
+[인덱스를 안 쓰는 조회]
+  SQL  SELECT email FROM t
+  결과 [('A@b.com',)]
+
+[인덱스를 쓰는 조회]
+  SQL  SELECT email FROM t WHERE norm(email) = 'a@b.com'
+  OperationalError: no such function: norm
+
+[INSERT — 인덱스를 갱신해야 한다]
+  SQL  INSERT INTO t VALUES ('C@d.com')
+  OperationalError: unknown function: norm()
+

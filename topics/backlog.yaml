@@ -220,7 +220,7 @@ topics:
     difficulty: 중급
     angle: "타임아웃 예산(budget)을 계층별로 배분하는 계산식"
     code: python
-    status: todo
+    status: writing
 
   # ---------- Performance ----------
   - id: perf-001
@@ -2191,7 +2191,7 @@ topics:
     angle: "지연·대역폭·프라이버시 중 무엇 때문에 내리는 결정인지"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-077
     title: "설명가능 AI(XAI) 기법 분류"
     category: PE
@@ -4525,7 +4525,7 @@ topics:
     angle: "lower(email) 로 조회하면 일반 인덱스를 못 탄다. 표현식 인덱스를 만들어 실행계획이 바뀌는 것을 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-059
     title: "커버링 인덱스 — 테이블을 안 보고 끝내기"
     category: Database

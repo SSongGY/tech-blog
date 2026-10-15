@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <!-- 원본 표 -->
+  <rect x="16" y="16" width="848" height="96" rx="8" fill="#ffffff" stroke="#cbd5d1" stroke-width="1.5"/>
+  <text x="34" y="42" font-size="15" font-weight="bold" fill="#1b2a27">member 표 — 240행. 가입 화면에서 대소문자가 섞여 들어왔다</text>
+
+  <rect x="36" y="56" width="256" height="40" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="164" y="81" font-size="13" fill="#1b2a27" text-anchor="middle">id 3 · User003@example.com</text>
+
+  <rect x="312" y="56" width="256" height="40" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="440" y="81" font-size="13" fill="#1b2a27" text-anchor="middle">id 4 · user004@example.com</text>
+
+  <rect x="588" y="56" width="256" height="40" rx="5" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="716" y="81" font-size="13" fill="#1b2a27" text-anchor="middle">id 120 · User120@example.com</text>
+
+  <path d="M224 112 L224 146" stroke="#9d0208" stroke-width="2" marker-end="url(#arrow-r)"/>
+  <path d="M656 112 L656 146" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-g)"/>
+
+  <!-- ① 일반 인덱스 -->
+  <rect x="16" y="146" width="416" height="278" rx="8" fill="#ffffff" stroke="#cbd5d1" stroke-width="1.5"/>
+  <text x="34" y="174" font-size="15" font-weight="bold" fill="#1b2a27">① 일반 인덱스 — ON member(email)</text>
+  <text x="34" y="196" font-size="13" fill="#4a5a56">적힌 글자 그대로 쌓인다</text>
+
+  <rect x="36" y="206" width="376" height="26" rx="4" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.2"/>
+  <text x="48" y="224" font-size="13" fill="#1b2a27">User003@example.com</text>
+
+  <rect x="36" y="236" width="376" height="26" rx="4" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.2"/>
+  <text x="48" y="254" font-size="13" fill="#1b2a27">User006@example.com</text>
+
+  <rect x="36" y="266" width="376" height="26" rx="4" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.2"/>
+  <text x="48" y="284" font-size="13" fill="#1b2a27">⋯ user001@example.com (소문자는 뒤로)</text>
+
+  <text x="34" y="318" font-size="13" fill="#4a5a56">질의: WHERE norm(email) = 'user120@example.com'</text>
+
+  <rect x="36" y="330" width="376" height="72" rx="5" fill="#fdeaea" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="224" y="356" font-size="13" fill="#9d0208" text-anchor="middle">찾는 값이 키에 없다</text>
+  <text x="224" y="382" font-size="13" fill="#9d0208" text-anchor="middle">240행을 훑으며 norm() 을 240회 계산</text>
+
+  <!-- ② 표현식 인덱스 -->
+  <rect x="448" y="146" width="416" height="278" rx="8" fill="#ffffff" stroke="#cbd5d1" stroke-width="1.5"/>
+  <text x="466" y="174" font-size="15" font-weight="bold" fill="#1b2a27">② 표현식 인덱스 — ON member(norm(email))</text>
+  <text x="466" y="196" font-size="13" fill="#4a5a56">norm() 을 미리 먹인 값이 쌓인다</text>
+
+  <rect x="468" y="206" width="376" height="26" rx="4" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="480" y="224" font-size="13" fill="#1b2a27">user001@example.com</text>
+
+  <rect x="468" y="236" width="376" height="26" rx="4" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="480" y="254" font-size="13" fill="#1b2a27">user002@example.com</text>
+
+  <rect x="468" y="266" width="376" height="26" rx="4" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="480" y="284" font-size="13" fill="#1b2a27">user003@example.com (원본은 User003)</text>
+
+  <text x="466" y="318" font-size="13" fill="#4a5a56">질의: WHERE norm(email) = 'user120@example.com'</text>
+
+  <rect x="468" y="330" width="376" height="72" rx="5" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="656" y="356" font-size="13" fill="#2d6a4f" text-anchor="middle">질의에 적힌 표현식이 키와 똑같다</text>
+  <text x="656" y="382" font-size="13" fill="#2d6a4f" text-anchor="middle">한 행으로 바로 좁힌다 — norm() 0회</text>
+
+  <defs>
+    <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrow-r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
