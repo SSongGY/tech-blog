@@ -2202,7 +2202,7 @@ topics:
     angle: "모델 내재적 방법과 사후 설명의 신뢰도 차이"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-078
     title: "ISP와 ISMP — 무엇이 다른가"
     category: PE
