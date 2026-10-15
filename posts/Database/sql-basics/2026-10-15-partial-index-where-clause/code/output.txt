@@ -1,0 +1,133 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-15-partial-index-where-clause
+# 명령      : python partial_index.py
+# 수행 시각 : 2026-10-15 19:08 (대한민국 표준시)
+# 소요      : 3.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[order_tbl]  200000행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  id          | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  status      | TEXT    | NOT NULL
+  amount      | INTEGER | NOT NULL
+  ordered_at  | TEXT    | NOT NULL
+
+  id | customer_id | status | amount | ordered_at
+  ---+-------------+--------+--------+-----------
+   1 |           2 | done   |   1037 | 2026-02-02
+   2 |           3 | done   |   1074 | 2026-03-03
+   3 |           4 | done   |   1111 | 2026-04-04
+   4 |           5 | done   |   1148 | 2026-05-05
+   5 |           6 | done   |   1185 | 2026-06-06
+   6 |           7 | done   |   1222 | 2026-07-07
+   7 |           8 | done   |   1259 | 2026-08-08
+   8 |           9 | done   |   1296 | 2026-09-09
+   9 |          10 | done   |   1333 | 2026-10-10
+  10 |          11 | done   |   1370 | 2026-11-11
+  11 |          12 | done   |   1407 | 2026-12-12
+  12 |          13 | done   |   1444 | 2026-01-13
+  … 199988행 더 있음
+
+================================================================
+1. 인덱스 없음 / 전체 인덱스 / 부분 인덱스 — 크기와 속도
+================================================================
+페이지 크기 4096 바이트
+
+[인덱스 없음]  표만 있을 때 1508 페이지
+QUERY PLAN
+|--SCAN order_tbl
+`--USE TEMP B-TREE FOR ORDER BY
+중앙값 8.74 ms · 20행 반환
+
+[전체 인덱스]  CREATE INDEX idx_full ON order_tbl(status, ordered_at)
+  2681 페이지 — 인덱스 몫 1173 페이지 (4692 KB)
+QUERY PLAN
+`--SEARCH order_tbl USING INDEX idx_full (status=?)
+중앙값 0.03 ms
+
+[부분 인덱스]  CREATE INDEX idx_pending ON order_tbl(ordered_at) WHERE status = 'pending'
+  1519 페이지 — 인덱스 몫 11 페이지 (44 KB)
+QUERY PLAN
+`--SCAN order_tbl USING INDEX idx_pending
+중앙값 0.03 ms
+
+색인 대상 행   전체 200000 중 2000 (1.0%)
+인덱스 페이지  전체 1173 → 부분 11 (0.9%)
+질의 중앙값    없음 8.74 ms · 전체 0.03 ms · 부분 0.03 ms
+
+================================================================
+2. 같은 부분 인덱스에 질의만 바꾼다 — 언제 안 쓰이는가
+================================================================
+인덱스: CREATE INDEX idx_pending ON order_tbl(ordered_at) WHERE status = 'pending'
+
+조건에 리터럴 'pending' 을 그대로 쓴다  →  쓴다
+  SELECT id FROM order_tbl WHERE status = 'pending' ORDER BY ordered_at
+    SCAN order_tbl USING COVERING INDEX idx_pending
+
+같은 조건을 바인딩 파라미터로 넘긴다  →  쓴다
+  SELECT id FROM order_tbl WHERE status = ? ORDER BY ordered_at
+    SCAN order_tbl USING COVERING INDEX idx_pending
+
+AND 로 다른 조건이 더 붙는다  →  쓴다
+  SELECT id FROM order_tbl WHERE status = 'pending' AND amount > 50000
+    SCAN order_tbl USING INDEX idx_pending
+
+OR 로 다른 상태를 함께 찾는다  →  안 쓴다
+  SELECT id FROM order_tbl WHERE status = 'pending' OR status = 'done'
+    SCAN order_tbl
+
+IN 으로 하나만 적는다  →  안 쓴다
+  SELECT id FROM order_tbl WHERE status IN ('pending')
+    SCAN order_tbl
+
+색인 밖의 상태를 찾는다  →  안 쓴다
+  SELECT id FROM order_tbl WHERE status = 'done' ORDER BY ordered_at
+    SCAN order_tbl
+    USE TEMP B-TREE FOR ORDER BY
+
+상태 조건이 아예 없다  →  안 쓴다
+  SELECT id FROM order_tbl ORDER BY ordered_at
+    SCAN order_tbl
+    USE TEMP B-TREE FOR ORDER BY
+
+================================================================
+3. UNIQUE 부분 인덱스 — 살아 있는 행에만 유일성을 건다
+================================================================
+CREATE UNIQUE INDEX idx_live_email ON member(email) WHERE deleted_at IS NULL
+
+[성공] 가입
+[거부] 같은 주소로 또 가입 — 막혀야 한다
+       sqlite3.IntegrityError: UNIQUE constraint failed: member.email
+[성공] 1번을 탈퇴 처리 (행은 남긴다)
+[성공] 같은 주소로 재가입 — 이제 통과해야 한다
+[성공] 탈퇴한 행이 둘이 돼도 상관없다
+
+[member]  3행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  id         | INTEGER | PK
+  email      | TEXT    | NOT NULL
+  deleted_at | TEXT    |
+
+  id | email         | deleted_at
+  ---+---------------+-----------
+   1 | a@example.com | 2026-10-15
+   3 | a@example.com | NULL
+   4 | a@example.com | 2026-10-15
+

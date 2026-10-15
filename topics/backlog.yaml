@@ -4514,7 +4514,7 @@ topics:
     angle: "전체 행 중 일부만 색인한다. 같은 질의를 전체 인덱스와 부분 인덱스로 각각 재서 크기와 속도를 비교"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-058
     title: "표현식 인덱스 — 함수를 씌운 컬럼도 인덱스를 타게"
     category: Database

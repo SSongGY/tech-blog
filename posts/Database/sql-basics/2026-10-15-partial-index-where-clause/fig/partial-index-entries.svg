@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="430" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555550"/>
+    </marker>
+  </defs>
+
+  <!-- 표 -->
+  <text x="30" y="70" font-size="15" font-weight="bold" fill="#222220">order_tbl — 200,000행 (표본 6행)</text>
+  <rect x="30" y="86" width="280" height="244" rx="6" fill="#ffffff" stroke="#555550" stroke-width="1.5"/>
+
+  <rect x="46" y="104" width="248" height="30" rx="4" fill="#efefeb" stroke="#b9b9b2"/>
+  <text x="60" y="124" font-size="14" fill="#333330">id=98      status=done</text>
+
+  <rect x="46" y="142" width="248" height="30" rx="4" fill="#efefeb" stroke="#b9b9b2"/>
+  <text x="60" y="162" font-size="14" fill="#333330">id=99      status=done</text>
+
+  <rect x="46" y="180" width="248" height="30" rx="4" fill="#e2efe7" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="60" y="200" font-size="14" fill="#1d4733" font-weight="bold">id=100    status=pending</text>
+
+  <rect x="46" y="218" width="248" height="30" rx="4" fill="#efefeb" stroke="#b9b9b2"/>
+  <text x="60" y="238" font-size="14" fill="#333330">id=101    status=done</text>
+
+  <text x="60" y="276" font-size="14" fill="#77776f">⋯ 98행 생략 (전부 done)</text>
+
+  <rect x="46" y="288" width="248" height="30" rx="4" fill="#e2efe7" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="60" y="308" font-size="14" fill="#1d4733" font-weight="bold">id=200    status=pending</text>
+
+  <!-- 화살표 -->
+  <line x1="314" y1="150" x2="424" y2="140" stroke="#555550" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="322" y="134" font-size="13" fill="#555550">모든 행</text>
+
+  <line x1="314" y1="300" x2="424" y2="306" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="322" y="332" font-size="13" fill="#2d6a4f">조건에 맞는 행만</text>
+
+  <!-- 전체 인덱스 -->
+  <rect x="430" y="86" width="420" height="124" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="446" y="112" font-size="15" font-weight="bold" fill="#8a3f07">idx_full — (status, ordered_at)</text>
+  <text x="446" y="134" font-size="13" fill="#333330">WHERE 가 없다 → 200,000 항목 전부 들어간다</text>
+
+  <rect x="446" y="146" width="30" height="18" rx="3" fill="#f6e4cf" stroke="#b45309"/>
+  <rect x="482" y="146" width="30" height="18" rx="3" fill="#f6e4cf" stroke="#b45309"/>
+  <rect x="518" y="146" width="30" height="18" rx="3" fill="#f6e4cf" stroke="#b45309"/>
+  <rect x="554" y="146" width="30" height="18" rx="3" fill="#f6e4cf" stroke="#b45309"/>
+  <rect x="590" y="146" width="30" height="18" rx="3" fill="#f6e4cf" stroke="#b45309"/>
+  <rect x="626" y="146" width="30" height="18" rx="3" fill="#f6e4cf" stroke="#b45309"/>
+  <text x="668" y="160" font-size="13" fill="#77776f">⋯</text>
+
+  <text x="446" y="192" font-size="14" font-weight="bold" fill="#8a3f07">실측 1,173 페이지 · 4,692 KB</text>
+
+  <!-- 부분 인덱스 -->
+  <rect x="430" y="250" width="420" height="124" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="446" y="276" font-size="14" font-weight="bold" fill="#1d4733">idx_pending — (ordered_at) WHERE status='pending'</text>
+  <text x="446" y="298" font-size="13" fill="#333330">조건이 참인 2,000 항목만 들어간다 (status 는 키에서 빠진다)</text>
+
+  <rect x="446" y="310" width="30" height="18" rx="3" fill="#d6e9de" stroke="#2d6a4f"/>
+  <rect x="482" y="310" width="30" height="18" rx="3" fill="#d6e9de" stroke="#2d6a4f"/>
+  <text x="524" y="324" font-size="13" fill="#77776f">⋯</text>
+
+  <text x="446" y="356" font-size="14" font-weight="bold" fill="#1d4733">실측 11 페이지 · 44 KB — 전체 인덱스의 0.9%</text>
+
+  <text x="30" y="406" font-size="13" fill="#555550">두 인덱스 모두 같은 질의를 처리한다. 다른 것은 색인하는 항목의 수이고, 그 수는 조건을 만족하는 행의 비율이 정한다.</text>
+</svg>
