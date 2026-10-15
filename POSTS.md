@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **341편** · 갱신 2026-10-15
+총 **344편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 56편
+## DB문법 (basics) — 57편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [UPDATE … FROM — 다른 표의 값으로 갱신하기](posts/Database/sql-basics/2026-10-15-update-from-other-table/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-14 | [임시 테이블과 CTE — 어느 쪽을 쓸까](posts/Database/sql-basics/2026-10-14-temp-table-vs-cte/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [키셋 페이지네이션 — OFFSET을 버리는 이유](posts/Database/sql-basics/2026-10-14-keyset-pagination-vs-offset/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [인덱스가 여럿일 때 무엇이 쓰이는가](posts/Database/sql-basics/2026-10-14-index-choice-multiple-indexes/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -89,11 +90,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 122편
+## 기술사 (pe) — 123편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-15 | [MLOps 파이프라인과 모델 드리프트 대응](posts/PE/emerging-tech/2026-10-15-mlops-pipeline-model-drift/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-15 | [디지털 트윈 — ISO 23247 프레임워크](posts/PE/emerging-tech/2026-10-15-digital-twin-iso-23247/index.md) | 중급 | ISO/FDIS 23247-1:2021, ISO/FDIS 23247-2:2021, ISO/IEC 30141 (IoT 참조 아키텍처) | 문서 근거 |
 | 2026-10-14 | [RAG 구성요소와 검색 품질 지표](posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [대규모 언어 모델(LLM)의 구조와 한계](posts/PE/emerging-tech/2026-10-14-llm-architecture-limits/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-14 | [람다 아키텍처와 카파 아키텍처](posts/PE/database/2026-10-14-lambda-vs-kappa-architecture/index.md) | 중급 | Nathan Marz, How to beat the CAP theorem (2011-10-13), Marz·Warren, Big Data (Manning, 2015), Jay Kreps, Questioning the Lambda Architecture (2014-07-02), Apache Kafka 공식 문서 (2026-10-14 확인) | 문서 근거 |
@@ -216,10 +218,11 @@
 | 2026-09-18 | [소프트웨어 아키텍처 4+1 뷰](posts/PE/software-engineering/2026-09-18-software-architecture-4plus1-views/index.md) | 중급 | IEEE Software 12(6) 1995, ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-09-18 | [요구공학 — 도출부터 검증까지 4단계](posts/PE/software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) | 중급 | SWEBOK Guide V3.0, ISO/IEC/IEEE 29148:2018 | 문서 근거 |
 
-## 리눅스 (linux) — 17편
+## 리눅스 (linux) — 18편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [ssh_config — 별칭, 점프 호스트, 포워딩이 실제로 풀리는 값](posts/Infra/linux/2026-10-15-ssh-config-host-alias-forwarding/index.md) | 중급 | OpenSSH_10.3p1, OpenSSL 3.5.6, GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-13 | [locale과 iconv — 한글이 깨질 때](posts/Infra/linux/2026-10-13-locale-iconv-sort-encoding/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), Cygwin locale 3.6.7, GNU libiconv 1.19, GNU coreutils 8.32 (sort, wc, cut, od) | 실행 검증 |
 | 2026-10-12 | [tail -f와 -F — 로테이션 뒤에도 로그를 놓치지 않기](posts/Linux/command/2026-10-12-tail-follow-log-rotation/index.md) | 입문 | GNU coreutils tail 8.32, GNU grep 3.0, GNU bash 5.3.9 (Git Bash on Windows 11) | 실행 검증 |
 | 2026-10-08 | [time으로 재는 세 가지 — real, user, sys](posts/Infra/linux/2026-10-08-time-real-user-sys/index.md) | 중급 | GNU bash 5.3.9 (Git Bash on Windows 11), GNU coreutils 8.32 (sha256sum, dd, sleep), Cygwin runtime 3.6.7 | 실행 검증 |
