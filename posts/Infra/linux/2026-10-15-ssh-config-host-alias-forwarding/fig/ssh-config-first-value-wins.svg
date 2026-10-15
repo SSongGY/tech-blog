@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="down" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a4a4a"/>
+    </marker>
+    <marker id="side" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="30" font-size="16" font-weight="bold" fill="#1b1b1b">ssh 가 User 값을 정하는 순서 — 먼저 얻은 값이 이긴다</text>
+
+  <text x="40" y="58" font-size="14" font-weight="bold" fill="#333">읽는 순서</text>
+  <text x="440" y="58" font-size="14" font-weight="bold" fill="#333">그때 User 값의 상태</text>
+
+  <!-- ① 명령줄 -->
+  <rect x="40" y="70" width="350" height="56" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="56" y="92" font-size="13" font-weight="bold" fill="#1b1b1b">① 명령줄 옵션</text>
+  <text x="56" y="112" font-size="13" fill="#333">-l / -p / -o User=… / -L / -R / -D / -J</text>
+
+  <rect x="440" y="70" width="400" height="56" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="456" y="99" font-size="13" fill="#4b5563">아직 비어 있다 — 이 예에서는 -o 를 주지 않았다</text>
+
+  <line x1="215" y1="126" x2="215" y2="148" stroke="#4a4a4a" stroke-width="1.8" marker-end="url(#down)"/>
+
+  <!-- ② 사용자 설정 -->
+  <rect x="40" y="150" width="350" height="120" rx="5" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="56" y="172" font-size="13" font-weight="bold" fill="#1b1b1b">② 사용자 설정 ~/.ssh/config — 위에서 아래로</text>
+  <text x="56" y="196" font-size="13" fill="#1b1b1b">Host *</text>
+  <text x="76" y="214" font-size="13" fill="#2d6a4f">User deploy</text>
+  <text x="56" y="238" font-size="13" fill="#1b1b1b">Host web</text>
+  <text x="76" y="256" font-size="13" fill="#9d0208">User admin</text>
+
+  <rect x="440" y="150" width="400" height="56" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="456" y="172" font-size="13" fill="#1b1b1b">deploy 로 확정된다</text>
+  <text x="456" y="192" font-size="13" fill="#2d6a4f">Host * 가 web 에도 걸리고, 먼저 읽혔다</text>
+
+  <rect x="440" y="214" width="400" height="56" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="456" y="236" font-size="13" fill="#1b1b1b">admin 은 버려진다</text>
+  <text x="456" y="256" font-size="13" fill="#9d0208">이미 값이 있는 키워드는 덮이지 않는다</text>
+
+  <line x1="215" y1="270" x2="215" y2="292" stroke="#4a4a4a" stroke-width="1.8" marker-end="url(#down)"/>
+  <line x1="390" y1="178" x2="434" y2="178" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#side)"/>
+  <line x1="390" y1="242" x2="434" y2="242" stroke="#9d0208" stroke-width="1.5" marker-end="url(#side)"/>
+
+  <!-- ③ 시스템 설정 -->
+  <rect x="40" y="294" width="350" height="56" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="56" y="316" font-size="13" font-weight="bold" fill="#1b1b1b">③ 시스템 설정 /etc/ssh/ssh_config</text>
+  <text x="56" y="336" font-size="13" fill="#333">관리자가 깔아 둔 기본값</text>
+
+  <rect x="440" y="294" width="400" height="56" rx="5" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="456" y="323" font-size="13" fill="#4b5563">여기에 User 가 있어도 쓰이지 않는다</text>
+
+  <line x1="40" y1="372" x2="840" y2="372" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="40" y="394" font-size="13" fill="#333">· 그래서 Host * 같은 넓은 블록은 파일 맨 아래에 둔다. 맨 위에 두면 아래의 구체적인 블록이 전부 묻힌다.</text>
+  <text x="40" y="416" font-size="13" fill="#333">· 포워딩 키워드(LocalForward·RemoteForward)는 덮어쓰기가 아니라 쌓이는 쪽이라 이 규칙의 예외다.</text>
+</svg>

@@ -1,0 +1,132 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Infra\linux\2026-10-15-ssh-config-host-alias-forwarding
+# 명령      : bash ssh_config_demo.sh
+# 수행 시각 : 2026-10-15 12:27 (대한민국 표준시)
+# 소요      : 1.0초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+==== 환경
+OpenSSH_10.3p1, OpenSSL 3.5.6 7 Apr 2026
+bash 5.3.9(1)-release
+
+==== 1. 호스트 별칭 — 별칭 하나가 네 가지 값으로 풀린다
+-- probe_work/alias.conf
+   Host web
+       HostName 203.0.113.10
+       User admin
+       Port 2222
+       ServerAliveInterval 60
+       ServerAliveCountMax 3
+-- ssh -G -F alias.conf web
+user admin
+hostname 203.0.113.10
+port 2222
+serveralivecountmax 3
+serveraliveinterval 60
+
+-- HostName 을 안 적은 별칭은 별칭 자체가 호스트명이 된다
+hostname nowhere
+port 22
+
+==== 2. 같은 키워드가 두 번 나오면 — 먼저 읽힌 값이 이긴다
+-- probe_work/order-top.conf
+   Host *
+       User deploy
+   
+   Host web
+       User admin
+-- ssh -G -F order-top.conf web
+user deploy
+-- probe_work/order-bottom.conf
+   Host web
+       User admin
+   
+   Host *
+       User deploy
+-- ssh -G -F order-bottom.conf web
+user admin
+
+==== 3. 패턴, Match, 부정
+-- probe_work/match.conf
+   Match host "*.example.com"
+       Port 2022
+       IdentitiesOnly yes
+   
+   Host short
+       HostName 203.0.113.40
+   
+   Match originalhost short
+       Port 2200
+   
+   Host !bastion *
+       Port 2222
+-- app.example.com
+hostname app.example.com
+port 2022
+identitiesonly yes
+-- short
+hostname 203.0.113.40
+port 2200
+identitiesonly no
+-- bastion
+hostname bastion
+port 22
+identitiesonly no
+-- other
+hostname other
+port 2222
+identitiesonly no
+
+==== 4. Include — 상대경로를 설정 파일 옆으로 보지 않는다
+-- probe_work/include-rel.conf
+   Include probe_work/conf.d/*.conf
+   
+   Host *
+       Port 2222
+-- ssh -G -F include-rel.conf cache
+hostname cache
+port 2222
+
+-- 같은 내용을 절대경로로 Include 하면
+hostname 203.0.113.30
+port 2222
+
+==== 5. 점프 호스트와 세 가지 포워딩이 풀린 모양
+-- probe_work/forward.conf
+   Host bastion
+       HostName 203.0.113.9
+       User jump
+       Port 2200
+   
+   Host db
+       HostName 198.51.100.20
+       User dbadmin
+       ProxyJump bastion
+       LocalForward 15432 127.0.0.1:5432
+       RemoteForward 9000 127.0.0.1:9000
+       DynamicForward 1080
+       ExitOnForwardFailure yes
+-- ssh -G -F forward.conf db
+user dbadmin
+hostname 198.51.100.20
+port 22
+exitonforwardfailure yes
+dynamicforward 1080
+localforward 15432 [127.0.0.1]:5432
+remoteforward 9000 [127.0.0.1]:9000
+proxyjump bastion
+
+==== 6. 명령줄 옵션과 설정 파일의 관계
+-- -o User=override 를 붙이면
+user override
+
+-- -L 은 설정의 LocalForward 를 지우지 않고 더한다
+localforward 18080 [127.0.0.1]:8080
+localforward 15432 [127.0.0.1]:5432
+
+==== 7. -G 가 찍는 전체 줄 수
+87
