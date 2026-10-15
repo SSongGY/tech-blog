@@ -238,7 +238,7 @@ topics:
     difficulty: 중급
     angle: "같은 코드로 2배 차이 나는 측정 결과를 일부러 만들어 보인다"
     code: python
-    status: todo
+    status: writing
   - id: perf-003
     title: "CPU 캐시 라인을 의식하면 같은 루프가 몇 배 빨라진다"
     category: Performance
@@ -2202,7 +2202,7 @@ topics:
     angle: "모델 내재적 방법과 사후 설명의 신뢰도 차이"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-078
     title: "ISP와 ISMP — 무엇이 다른가"
     category: PE
@@ -4542,12 +4542,12 @@ topics:
     category: Database
     subcategory: sql-basics
     track: basics
-    tags: [sql, index, null, basics]
+    tags: [sql, index, "null", basics]
     difficulty: 입문
     angle: "IS NULL 조회가 인덱스를 타는지, UNIQUE 인덱스에 NULL 이 여럿 들어가는지 직접 확인"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-061
     title: "ANALYZE와 통계 — 옵티마이저가 보는 숫자"
     category: Database

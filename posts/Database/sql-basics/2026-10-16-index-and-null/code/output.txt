@@ -1,0 +1,104 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-16-index-and-null
+# 명령      : python main.py
+# 수행 시각 : 2026-10-16 07:13 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  100행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  id         | INTEGER | PK
+  name       | TEXT    | NOT NULL
+  manager_id | INTEGER |
+
+  id | name    | manager_id
+  ---+---------+-----------
+   1 | 사원001 |       NULL
+   2 | 사원002 |       NULL
+   3 | 사원003 |       NULL
+   4 | 사원004 |       NULL
+   5 | 사원005 |          1
+   6 | 사원006 |       NULL
+   7 | 사원007 |       NULL
+   8 | 사원008 |       NULL
+   9 | 사원009 |       NULL
+  10 | 사원010 |          2
+  11 | 사원011 |       NULL
+  12 | 사원012 |       NULL
+  … 88행 더 있음
+
+[인덱스]
+  이름    | 대상 표  | 정의
+  --------+----------+---------------------------------------------
+  idx_mgr | employee | CREATE INDEX idx_mgr ON employee(manager_id)
+
+================================================================
+1. IS NULL 은 인덱스를 타는가 — 그리고 = NULL 과 무엇이 다른가
+================================================================
+  SELECT id FROM employee WHERE manager_id IS NULL
+    계획 : SEARCH employee USING COVERING INDEX idx_mgr (manager_id=?)
+    건수 : 80
+  SELECT id FROM employee WHERE manager_id = NULL
+    계획 : SEARCH employee USING COVERING INDEX idx_mgr (manager_id=?)
+    건수 : 0
+  SELECT id FROM employee WHERE manager_id IS NOT NULL
+    계획 : SEARCH employee USING COVERING INDEX idx_mgr (manager_id>?)
+    건수 : 20
+  SELECT id FROM employee WHERE manager_id <> 3
+    계획 : SCAN employee USING COVERING INDEX idx_mgr
+    건수 : 19
+  SELECT id FROM employee WHERE manager_id IS NOT 3
+    계획 : SCAN employee USING COVERING INDEX idx_mgr
+    건수 : 99
+
+================================================================
+2. 정렬에서 NULL 이 놓이는 자리
+================================================================
+  SELECT manager_id FROM employee ORDER BY manager_id LIMIT 6
+    계획 : SCAN employee USING COVERING INDEX idx_mgr
+    결과 : [None, None, None, None, None, None]
+  SELECT manager_id FROM employee ORDER BY manager_id NULLS LAST LIMIT 6
+    계획 : SCAN employee USING COVERING INDEX idx_mgr
+    결과 : [1, 2, 3, 4, 5, 6]
+  SELECT manager_id FROM employee ORDER BY manager_id DESC LIMIT 6
+    계획 : SCAN employee USING COVERING INDEX idx_mgr
+    결과 : [20, 19, 18, 17, 16, 15]
+  SELECT manager_id FROM employee ORDER BY manager_id DESC NULLS FIRST LIMIT 6
+    계획 : SCAN employee USING COVERING INDEX idx_mgr
+    결과 : [None, None, None, None, None, None]
+
+================================================================
+3. UNIQUE 와 PRIMARY KEY 는 NULL 을 받는가
+================================================================
+  UNIQUE 컬럼에 NULL 세 번 삽입 : 3 행
+  같은 값 두 번 삽입              : IntegrityError: UNIQUE constraint failed: member.email
+
+  PK 가 TEXT · 일반 rowid 표 : NULL 두 번 통과 (2행)
+  PK 가 TEXT · WITHOUT ROWID : NOT NULL constraint failed: t2.code
+  PK 가 TEXT · STRICT        : NOT NULL constraint failed: t3.code
+  PK 가 TEXT · NOT NULL 명시 : NOT NULL constraint failed: t4.code
+
+================================================================
+4. NOT IN 서브쿼리에 NULL 이 섞이면
+================================================================
+  SELECT count(*) FROM employee WHERE id NOT IN (SELECT manager_id FROM employee)
+    결과 : 0건
+  SELECT count(*) FROM employee WHERE id NOT IN (SELECT manager_id FROM employee WHERE manager_id IS NOT NULL)
+    결과 : 80건
+
