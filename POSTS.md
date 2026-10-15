@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **350편** · 갱신 2026-10-15
+총 **353편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 58편
+## DB문법 (basics) — 59편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-15 | [UPDATE … FROM — 다른 표의 값으로 갱신하기](posts/Database/sql-basics/2026-10-15-update-from-other-table/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-15 | [부분 인덱스 — WHERE가 붙은 인덱스](posts/Database/sql-basics/2026-10-15-partial-index-where-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-15 | [표현식 인덱스 — 함수를 씌운 컬럼도 인덱스를 타게](posts/Database/sql-basics/2026-10-15-expression-index-function-on-column/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [임시 테이블과 CTE — 어느 쪽을 쓸까](posts/Database/sql-basics/2026-10-14-temp-table-vs-cte/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [키셋 페이지네이션 — OFFSET을 버리는 이유](posts/Database/sql-basics/2026-10-14-keyset-pagination-vs-offset/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [인덱스가 여럿일 때 무엇이 쓰이는가](posts/Database/sql-basics/2026-10-14-index-choice-multiple-indexes/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -91,12 +92,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 124편
+## 기술사 (pe) — 125편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-15 | [양자 내성 암호(PQC)와 전환 전략](posts/PE/emerging-tech/2026-10-15-post-quantum-cryptography-transition/index.md) | 중급 | NIST FIPS 203 (2024-08-13), NIST FIPS 204 (2024-08-13), NIST FIPS 205 (2024-08-13), NIST IR 8547 ipd (2024-11-12) | 문서 근거 |
 | 2026-10-15 | [MLOps 파이프라인과 모델 드리프트 대응](posts/PE/emerging-tech/2026-10-15-mlops-pipeline-model-drift/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-15 | [엣지 컴퓨팅과 클라우드 연계 구조](posts/PE/emerging-tech/2026-10-15-edge-cloud-continuum-architecture/index.md) | 중급 | NIST SP 500-325 (2018), ETSI GS MEC 003 V2.2.1 (2020-12) | 문서 근거 |
 | 2026-10-15 | [디지털 트윈 — ISO 23247 프레임워크](posts/PE/emerging-tech/2026-10-15-digital-twin-iso-23247/index.md) | 중급 | ISO/FDIS 23247-1:2021, ISO/FDIS 23247-2:2021, ISO/IEC 30141 (IoT 참조 아키텍처) | 문서 근거 |
 | 2026-10-14 | [RAG 구성요소와 검색 품질 지표](posts/PE/emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [대규모 언어 모델(LLM)의 구조와 한계](posts/PE/emerging-tech/2026-10-14-llm-architecture-limits/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
@@ -243,10 +245,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 21편
+## 일반 (general) — 22편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [타임아웃을 계층마다 다르게 줘야 하는 이유](posts/Backend/2026-10-15-timeout-budget-per-layer/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-15 | [p99가 평균보다 훨씬 나쁜 이유 — 큐잉 이론 최소한](posts/Performance/2026-10-15-p99-queueing-theory-utilization/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-15 | [캐시 스탬피드를 막는 세 가지 방법 비교](posts/Backend/2026-10-15-cache-stampede-three-strategies/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-14 | [커넥션 풀은 왜 크게 잡을수록 느려지는가](posts/Backend/2026-10-14-connection-pool-size-littles-law/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
