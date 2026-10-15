@@ -2169,7 +2169,7 @@ topics:
     angle: "시뮬레이션과 무엇이 다른지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-075
     title: "양자 내성 암호(PQC)와 전환 전략"
     category: PE
@@ -2764,7 +2764,7 @@ topics:
     angle: "호스트 별칭, 점프 호스트, 로컬·원격 포워딩을 각각 어디에 쓰는지"
     code: bash
     origin: manual
-    status: todo
+    status: done
   - id: infra-016
     title: "rsync 말고 scp와 sftp — 언제 무엇을"
     category: Infra
@@ -3975,7 +3975,7 @@ topics:
     angle: "상관 서브쿼리로 갱신하던 것을 UPDATE FROM(SQLite 3.33.0+)으로 바꾸고, 조인에 여러 행이 걸릴 때 어느 값이 들어가는지 확인한다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: pe-152
     title: "대수의 법칙과 중심극한정리"
     category: PE

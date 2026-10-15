@@ -1,0 +1,173 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-15-update-from-other-table
+# 명령      : python update_from.py
+# 수행 시각 : 2026-10-15 12:08 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  4행
+  컬럼         | 타입    | 제약
+  -------------+---------+---------
+  product_id   | INTEGER | PK
+  product_name | TEXT    | NOT NULL
+  unit_price   | INTEGER |
+
+  product_id | product_name | unit_price
+  -----------+--------------+-----------
+           1 | 키보드       |      38000
+           2 | 마우스       |      19000
+           3 | 모니터       |     210000
+           4 | 웹캠         |      55000
+
+[supplier_price]  4행
+  컬럼          | 타입    | 제약
+  --------------+---------+---------
+  supplier_name | TEXT    | NOT NULL
+  product_id    | INTEGER | NOT NULL
+  unit_price    | INTEGER | NOT NULL
+
+  supplier_name | product_id | unit_price
+  --------------+------------+-----------
+  가나상사      |          1 |      36500
+  가나상사      |          2 |      17800
+  가나상사      |          3 |     198000
+  다라유통      |          3 |     203000
+
+================================================================
+① 상관 서브쿼리 — WHERE 없이
+================================================================
+UPDATE product
+   SET unit_price = (SELECT sp.unit_price
+                       FROM supplier_price sp
+                      WHERE sp.product_id = product.product_id
+                        AND sp.supplier_name = '가나상사');
+
+  갱신된 행 수: 4
+
+-- 갱신 후 product
+   (1, '키보드', 36500)
+   (2, '마우스', 17800)
+   (3, '모니터', 198000)
+   (4, '웹캠', 'NULL')
+
+================================================================
+①-B 같은 문장을 unit_price NOT NULL 인 표에 돌리면
+================================================================
+  sqlite3.IntegrityError: NOT NULL constraint failed: product_strict.unit_price
+
+-- 갱신 후 product_strict — 문장 전체가 되돌려졌다
+   (1, '키보드', 38000)
+   (2, '마우스', 19000)
+   (3, '모니터', 210000)
+   (4, '웹캠', 55000)
+
+================================================================
+② 상관 서브쿼리 — WHERE EXISTS 로 막기
+================================================================
+UPDATE product
+   SET unit_price = (SELECT sp.unit_price
+                       FROM supplier_price sp
+                      WHERE sp.product_id = product.product_id
+                        AND sp.supplier_name = '가나상사')
+ WHERE EXISTS (SELECT 1
+                 FROM supplier_price sp
+                WHERE sp.product_id = product.product_id
+                  AND sp.supplier_name = '가나상사');
+
+  갱신된 행 수: 3
+
+-- 갱신 후 product
+   (1, '키보드', 36500)
+   (2, '마우스', 17800)
+   (3, '모니터', 198000)
+   (4, '웹캠', 55000)
+
+================================================================
+③ UPDATE … FROM — 조인으로 갱신
+================================================================
+UPDATE product
+   SET unit_price = sp.unit_price
+  FROM supplier_price sp
+ WHERE sp.product_id = product.product_id
+   AND sp.supplier_name = '가나상사';
+
+  갱신된 행 수: 3
+
+-- 갱신 후 product
+   (1, '키보드', 36500)
+   (2, '마우스', 17800)
+   (3, '모니터', 198000)
+   (4, '웹캠', 55000)
+
+================================================================
+④ 조인이 두 행에 걸릴 때 — 공급사를 안 좁히면
+================================================================
+UPDATE product
+   SET unit_price = sp.unit_price
+  FROM supplier_price sp
+ WHERE sp.product_id = product.product_id;
+
+  갱신된 행 수: 3
+
+-- 갱신 후 product
+   (1, '키보드', 36500)
+   (2, '마우스', 17800)
+   (3, '모니터', 203000)
+   (4, '웹캠', 55000)
+
+================================================================
+⑤ FROM 절에 대상 표를 다시 적으면
+================================================================
+UPDATE product
+   SET unit_price = sp.unit_price
+  FROM product p
+       JOIN supplier_price sp ON sp.product_id = p.product_id
+ WHERE p.product_id = 1;
+
+  갱신된 행 수: 4
+
+-- 갱신 후 product
+   (1, '키보드', 36500)
+   (2, '마우스', 36500)
+   (3, '모니터', 36500)
+   (4, '웹캠', 36500)
+
+================================================================
+⑥ 같은 문장을 다섯 번 돌려 ④의 결과가 흔들리는지 본다
+================================================================
+  1회차 — 3번 모니터에 들어간 값: 203000
+  2회차 — 3번 모니터에 들어간 값: 203000
+  3회차 — 3번 모니터에 들어간 값: 203000
+  4회차 — 3번 모니터에 들어간 값: 203000
+  5회차 — 3번 모니터에 들어간 값: 203000
+
+================================================================
+⑦ 실행계획 — ② 와 ③ 이 같은 일을 하는지
+================================================================
+-- ② 상관 서브쿼리 + WHERE EXISTS
+QUERY PLAN
+|--SCAN product
+|--CORRELATED SCALAR SUBQUERY 2
+|  `--SCAN sp
+`--CORRELATED SCALAR SUBQUERY 1
+   `--SCAN sp
+
+-- ③ UPDATE … FROM
+QUERY PLAN
+|--SCAN sp
+`--SEARCH product USING INTEGER PRIMARY KEY (rowid=?)
+
