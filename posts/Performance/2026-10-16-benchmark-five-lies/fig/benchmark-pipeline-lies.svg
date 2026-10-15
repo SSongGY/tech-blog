@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300"
+     font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="300" fill="#fbfaf7"/>
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#3f4a56"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2933">측정 단계마다 끼어드는 왜곡</text>
+
+  <!-- 단계 -->
+  <rect x="24" y="48" width="152" height="40" rx="4" fill="#eef2f6" stroke="#3f4a56" stroke-width="1.5"/>
+  <text x="100" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">① 준비</text>
+  <rect x="194" y="48" width="152" height="40" rx="4" fill="#eef2f6" stroke="#3f4a56" stroke-width="1.5"/>
+  <text x="270" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">② 컴파일</text>
+  <rect x="364" y="48" width="152" height="40" rx="4" fill="#eef2f6" stroke="#3f4a56" stroke-width="1.5"/>
+  <text x="440" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">③ 측정 구간</text>
+  <rect x="534" y="48" width="152" height="40" rx="4" fill="#eef2f6" stroke="#3f4a56" stroke-width="1.5"/>
+  <text x="610" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">④ 반복</text>
+  <rect x="704" y="48" width="152" height="40" rx="4" fill="#eef2f6" stroke="#3f4a56" stroke-width="1.5"/>
+  <text x="780" y="73" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">⑤ 집계·보고</text>
+
+  <line x1="176" y1="68" x2="190" y2="68" stroke="#3f4a56" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="346" y1="68" x2="360" y2="68" stroke="#3f4a56" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="516" y1="68" x2="530" y2="68" stroke="#3f4a56" stroke-width="1.5" marker-end="url(#ar)"/>
+  <line x1="686" y1="68" x2="700" y2="68" stroke="#3f4a56" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <line x1="100" y1="88" x2="100" y2="132" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="270" y1="88" x2="270" y2="132" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="440" y1="88" x2="440" y2="132" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="610" y1="88" x2="610" y2="132" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="780" y1="88" x2="780" y2="132" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <!-- 거짓말 -->
+  <rect x="24" y="132" width="152" height="98" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="100" y="156" text-anchor="middle" font-size="13" fill="#7c3d09">데이터가</text>
+  <text x="100" y="176" text-anchor="middle" font-size="13" fill="#7c3d09">대표적이지 않다</text>
+  <text x="100" y="208" text-anchor="middle" font-size="16" font-weight="bold" fill="#9d0208">32.3배</text>
+
+  <rect x="194" y="132" width="152" height="98" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="270" y="156" text-anchor="middle" font-size="13" fill="#7c3d09">재려던 식이</text>
+  <text x="270" y="176" text-anchor="middle" font-size="13" fill="#7c3d09">이미 계산돼 있다</text>
+  <text x="270" y="208" text-anchor="middle" font-size="16" font-weight="bold" fill="#9d0208">7.2배</text>
+
+  <rect x="364" y="132" width="152" height="98" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="156" text-anchor="middle" font-size="13" fill="#7c3d09">구간이 타이머</text>
+  <text x="440" y="176" text-anchor="middle" font-size="13" fill="#7c3d09">눈금보다 짧다</text>
+  <text x="440" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">0ns 또는 100ns</text>
+  <text x="440" y="221" text-anchor="middle" font-size="13" fill="#7c3d09">로만 찍힌다</text>
+
+  <rect x="534" y="132" width="152" height="98" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="610" y="156" text-anchor="middle" font-size="13" fill="#7c3d09">웜업 회차가</text>
+  <text x="610" y="176" text-anchor="middle" font-size="13" fill="#7c3d09">그대로 섞인다</text>
+  <text x="610" y="208" text-anchor="middle" font-size="16" font-weight="bold" fill="#9d0208">44배</text>
+
+  <rect x="704" y="132" width="152" height="98" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="780" y="156" text-anchor="middle" font-size="13" fill="#7c3d09">대푯값과 조건이</text>
+  <text x="780" y="176" text-anchor="middle" font-size="13" fill="#7c3d09">운영과 다르다</text>
+  <text x="780" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">GC 1.29배</text>
+  <text x="780" y="221" text-anchor="middle" font-size="13" fill="#7c3d09">최대/최소 1.38배</text>
+
+  <text x="24" y="258" font-size="13" fill="#52606d">배수는 전부 Python 3.13.5 · Windows 11 에서 실측한 값이다. 절대 시간은 기계마다 다르지만 대소 관계는 같다.</text>
+  <text x="24" y="280" font-size="13" fill="#52606d">단계 구분은 timeit 이 setup → stmt × number → repeat → 집계 순서로 도는 것을 따랐다.</text>
+</svg>

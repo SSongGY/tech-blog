@@ -238,7 +238,7 @@ topics:
     difficulty: 중급
     angle: "같은 코드로 2배 차이 나는 측정 결과를 일부러 만들어 보인다"
     code: python
-    status: writing
+    status: done
   - id: perf-003
     title: "CPU 캐시 라인을 의식하면 같은 루프가 몇 배 빨라진다"
     category: Performance
