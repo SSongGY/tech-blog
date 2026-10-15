@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **339편** · 갱신 2026-10-15
+총 **341편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -317,10 +317,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 56편
+## 주식·재무 (finance) — 58편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [WACC — 할인율은 어떻게 만들어지는가](posts/Finance/valuation/2026-10-15-wacc-capital-structure/index.md) | 중급 | Python 3.13.5, K-IFRS 제1036호 자산손상, K-IFRS 제1012호 법인세 | 실행 검증 |
+| 2026-10-15 | [PEG — 성장률로 PER을 나눌 때 생기는 함정](posts/Finance/valuation/2026-10-15-peg-growth-rate-choice/index.md) | 중급 | Python 3.13.5, K-IFRS 제1033호 주당이익 | 실행 검증 |
 | 2026-10-14 | [세 가지 마진 — 매출총이익률·영업이익률·순이익률](posts/Finance/ratios/2026-10-14-three-margins-step-by-step/index.md) | 중급 | Python 3.13.5, 한국은행 기업경영분석 통계정보보고서(2019.12), K-IFRS 제1001호, IFRS 18 | 실행 검증 |
 | 2026-10-14 | [비율 분석이 틀리는 세 가지 경우 — 업종, 회계정책, 시점](posts/Finance/ratios/2026-10-14-ratio-distortions-industry-policy-timing/index.md) | 중급 | Python 3.13.5, K-IFRS 제1002호, K-IFRS 제1016호, K-IFRS 제1116호(2019-01-01 시행), K-IFRS 제1008호, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
 | 2026-10-14 | [PSR과 PCR — 이익이 적자일 때 분모를 어디서 가져오는가](posts/Finance/valuation/2026-10-14-psr-pcr-when-earnings-negative/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호, K-IFRS 제1115호, CFA Program Curriculum 2026 Level II | 실행 검증 |
