@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">제어 흐름의 차이 — 단일 에이전트와 다중 에이전트</text>
+
+  <line x1="440" y1="52" x2="440" y2="368" stroke="#cccccc" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 왼쪽: 단일 -->
+  <text x="210" y="76" font-size="15" font-weight="bold" fill="#333333" text-anchor="middle">단일 에이전트 — 한 판단 주체가 도구를 호출</text>
+
+  <rect x="90" y="96" width="240" height="68" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="210" y="124" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">에이전트</text>
+  <text x="210" y="148" font-size="13" fill="#333333" text-anchor="middle">계획·판단·상태를 혼자 보유</text>
+
+  <rect x="60" y="226" width="140" height="60" rx="6" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="130" y="252" font-size="14" fill="#1b1b1b" text-anchor="middle">도구 호출</text>
+  <text x="130" y="272" font-size="13" fill="#666666" text-anchor="middle">기능 단위</text>
+
+  <rect x="222" y="226" width="140" height="60" rx="6" fill="#ffffff" stroke="#666666" stroke-width="2"/>
+  <text x="292" y="252" font-size="14" fill="#1b1b1b" text-anchor="middle">도구 호출</text>
+  <text x="292" y="272" font-size="13" fill="#666666" text-anchor="middle">기능 단위</text>
+
+  <line x1="160" y1="164" x2="130" y2="226" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="260" y1="164" x2="292" y2="226" stroke="#2d6a4f" stroke-width="2"/>
+
+  <text x="210" y="326" font-size="13" fill="#555555" text-anchor="middle">도구는 판단하지 않는다. 호출 결과만 돌려준다</text>
+  <text x="210" y="348" font-size="13" fill="#555555" text-anchor="middle">실패·재시도·일관성이 한 주체 안에서 끝난다</text>
+
+  <!-- 오른쪽: 다중 -->
+  <text x="662" y="76" font-size="15" font-weight="bold" fill="#333333" text-anchor="middle">다중 에이전트 — 판단 주체끼리 과업을 위임</text>
+
+  <rect x="542" y="96" width="240" height="68" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="662" y="124" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">의뢰 에이전트</text>
+  <text x="662" y="148" font-size="13" fill="#333333" text-anchor="middle">목표를 나누고 수행자를 고른다</text>
+
+  <rect x="512" y="226" width="140" height="60" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="582" y="252" font-size="14" fill="#1b1b1b" text-anchor="middle">수행 에이전트</text>
+  <text x="582" y="272" font-size="13" fill="#b45309" text-anchor="middle">자체 상태·도구 보유</text>
+
+  <rect x="674" y="226" width="140" height="60" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="744" y="252" font-size="14" fill="#1b1b1b" text-anchor="middle">수행 에이전트</text>
+  <text x="744" y="272" font-size="13" fill="#b45309" text-anchor="middle">타 조직 소속</text>
+
+  <line x1="612" y1="164" x2="582" y2="226" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="712" y1="164" x2="744" y2="226" stroke="#2d6a4f" stroke-width="2"/>
+
+  <text x="662" y="326" font-size="13" fill="#555555" text-anchor="middle">위임받은 쪽이 다시 판단하므로 결과가 비결정적이다</text>
+  <text x="662" y="348" font-size="13" fill="#555555" text-anchor="middle">과업 상태를 주고받아야 진행 상황이 보인다</text>
+</svg>

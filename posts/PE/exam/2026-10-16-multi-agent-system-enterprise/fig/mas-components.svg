@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">다중 에이전트 시스템의 구성요소와 상호작용 경로</text>
+
+  <!-- 디렉터리 -->
+  <rect x="40" y="62" width="250" height="74" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="165" y="90" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">디렉터리 서비스</text>
+  <text x="165" y="112" font-size="13" fill="#333333" text-anchor="middle">능력·엔드포인트 공표와 탐색</text>
+  <text x="165" y="130" font-size="13" fill="#666666" text-anchor="middle">DF / Agent Card</text>
+
+  <!-- 정책 인가 -->
+  <rect x="590" y="62" width="250" height="74" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="715" y="90" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">정책·인가</text>
+  <text x="715" y="112" font-size="13" fill="#333333" text-anchor="middle">에이전트 신원과 권한 범위</text>
+  <text x="715" y="130" font-size="13" fill="#666666" text-anchor="middle">OAuth 2.0 / mTLS</text>
+
+  <!-- 메시지 전송 버스 -->
+  <rect x="40" y="186" width="800" height="54" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="208" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">메시지·과업 전송 계층</text>
+  <text x="440" y="229" font-size="13" fill="#333333" text-anchor="middle">통신 행위와 과업 상태를 규약으로 정의 — ACL / A2A 전송 바인딩</text>
+
+  <!-- 에이전트 3개 -->
+  <rect x="40" y="286" width="230" height="84" rx="6" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <text x="155" y="314" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">에이전트 A</text>
+  <text x="155" y="336" font-size="13" fill="#333333" text-anchor="middle">목표 분해와 위임</text>
+  <text x="155" y="356" font-size="13" fill="#666666" text-anchor="middle">의뢰자 역할</text>
+
+  <rect x="325" y="286" width="230" height="84" rx="6" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <text x="440" y="314" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">에이전트 B</text>
+  <text x="440" y="336" font-size="13" fill="#333333" text-anchor="middle">전문 과업 수행</text>
+  <text x="440" y="356" font-size="13" fill="#666666" text-anchor="middle">수행자 역할</text>
+
+  <rect x="610" y="286" width="230" height="84" rx="6" fill="#ffffff" stroke="#444444" stroke-width="2"/>
+  <text x="725" y="314" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">에이전트 C</text>
+  <text x="725" y="336" font-size="13" fill="#333333" text-anchor="middle">타 조직 소속·내부 비공개</text>
+  <text x="725" y="356" font-size="13" fill="#666666" text-anchor="middle">수행자 역할</text>
+
+  <!-- 연결선: 디렉터리 -> 버스 -->
+  <line x1="165" y1="136" x2="165" y2="186" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="715" y1="136" x2="715" y2="186" stroke="#b45309" stroke-width="2"/>
+  <!-- 버스 -> 에이전트 -->
+  <line x1="155" y1="240" x2="155" y2="286" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="440" y1="240" x2="440" y2="286" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="725" y1="240" x2="725" y2="286" stroke="#2d6a4f" stroke-width="2"/>
+
+  <text x="440" y="400" font-size="13" fill="#555555" text-anchor="middle">에이전트는 서로의 내부 상태·도구를 공유하지 않고, 공표된 능력과 전달된 과업만으로 협업한다</text>
+  <text x="440" y="420" font-size="13" fill="#555555" text-anchor="middle">구성요소 넷 — 자율 에이전트, 디렉터리, 전송 계층, 정책·인가</text>
+</svg>

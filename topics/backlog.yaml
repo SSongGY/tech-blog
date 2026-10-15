@@ -4944,3 +4944,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-175
+    title: "에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "능력 공표 문서로 상대를 찾고 과업 상태를 주고받는 구조. 모델-도구 연결 규격과 역할이 어떻게 갈리는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-176
+    title: "계약망 프로토콜(Contract Net Protocol)"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "공고-입찰-낙찰로 과업을 분배하는 고전 규약. 다중 에이전트 조정 방식의 원형으로서 오늘의 위임 구조와 무엇이 같고 다른지"
+    code: none
+    origin: exam
+    status: todo
