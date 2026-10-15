@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="20" y="32" font-size="15" font-weight="bold" fill="#1b2a27">세 가지 배분 방식에서 DB 시도가 놓이는 자리 — 클라이언트 예산 1,000ms</text>
+
+  <!-- 클라이언트 예산 경계 -->
+  <line x1="820" y1="46" x2="820" y2="300" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="816" y="58" font-size="13" fill="#9d0208" text-anchor="end">클라이언트 예산 1,000ms</text>
+
+  <!-- ① 같은 타임아웃 -->
+  <text x="20" y="86" font-size="13" font-weight="bold" fill="#1b2a27">① 계층마다 1,000ms</text>
+  <rect x="180" y="70" width="665" height="28" rx="4" fill="#fdeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="500" y="89" font-size="13" fill="#9d0208" text-anchor="middle">1,000ms 짜리 시도가 6번 이어진다  →</text>
+  <text x="180" y="118" font-size="13" fill="#4a5a56">DB 호출 6회 · 997ms 에 클라이언트가 끊었고, 서버 작업은 6,065ms 에 끝났다 (버려진 일 5,068ms)</text>
+
+  <!-- ② 예산 나누기 -->
+  <text x="20" y="162" font-size="13" font-weight="bold" fill="#1b2a27">② 예산 ÷ 재시도 횟수</text>
+  <rect x="206" y="146" width="198" height="28" rx="4" fill="#fdf0dd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="305" y="165" font-size="13" fill="#b45309" text-anchor="middle">310ms</text>
+  <rect x="404" y="146" width="198" height="28" rx="4" fill="#fdf0dd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="503" y="165" font-size="13" fill="#b45309" text-anchor="middle">310ms</text>
+  <rect x="602" y="146" width="199" height="28" rx="4" fill="#fdf0dd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="701" y="165" font-size="13" fill="#b45309" text-anchor="middle">310ms</text>
+  <text x="180" y="194" font-size="13" fill="#4a5a56">DB 호출 3회 · 972ms 에 실패 응답. 평소 400ms 면 오던 답도 310ms 안에는 못 받는다</text>
+
+  <!-- ③ 데드라인 전파 -->
+  <text x="20" y="238" font-size="13" font-weight="bold" fill="#1b2a27">③ 데드라인 + 고정 시도</text>
+  <rect x="206" y="222" width="320" height="28" rx="4" fill="#fdf0dd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="366" y="241" font-size="13" fill="#b45309" text-anchor="middle">500ms — 실패</text>
+  <rect x="526" y="222" width="256" height="28" rx="4" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="654" y="241" font-size="13" fill="#2d6a4f" text-anchor="middle">400ms — 성공</text>
+  <text x="180" y="270" font-size="13" fill="#4a5a56">DB 호출 2회 · 942ms 에 성공 응답. 남은 예산이 500ms 이상일 때만 다시 시도한다</text>
+
+  <!-- 시간 축 -->
+  <line x1="180" y1="300" x2="845" y2="300" stroke="#7b8a86" stroke-width="1.5"/>
+  <line x1="180" y1="296" x2="180" y2="306" stroke="#7b8a86" stroke-width="1.5"/>
+  <line x1="340" y1="296" x2="340" y2="306" stroke="#7b8a86" stroke-width="1.5"/>
+  <line x1="500" y1="296" x2="500" y2="306" stroke="#7b8a86" stroke-width="1.5"/>
+  <line x1="660" y1="296" x2="660" y2="306" stroke="#7b8a86" stroke-width="1.5"/>
+  <line x1="820" y1="296" x2="820" y2="306" stroke="#7b8a86" stroke-width="1.5"/>
+  <text x="180" y="322" font-size="13" fill="#4a5a56" text-anchor="middle">0</text>
+  <text x="340" y="322" font-size="13" fill="#4a5a56" text-anchor="middle">250</text>
+  <text x="500" y="322" font-size="13" fill="#4a5a56" text-anchor="middle">500</text>
+  <text x="660" y="322" font-size="13" fill="#4a5a56" text-anchor="middle">750</text>
+  <text x="820" y="322" font-size="13" fill="#4a5a56" text-anchor="middle">1,000ms</text>
+
+  <text x="20" y="358" font-size="13" fill="#4a5a56">막힌 의존성은 5,000ms 뒤에 답한다. ③의 두 번째 시도만 정상(400ms) 응답을 받은 경우다.</text>
+  <text x="20" y="380" font-size="13" fill="#4a5a56">①의 막대는 오른쪽 끝에서 잘려 있다 — 실제로는 6,065ms 까지 이어진다.</text>
+</svg>

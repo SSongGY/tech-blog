@@ -220,7 +220,7 @@ topics:
     difficulty: 중급
     angle: "타임아웃 예산(budget)을 계층별로 배분하는 계산식"
     code: python
-    status: writing
+    status: done
 
   # ---------- Performance ----------
   - id: perf-001
