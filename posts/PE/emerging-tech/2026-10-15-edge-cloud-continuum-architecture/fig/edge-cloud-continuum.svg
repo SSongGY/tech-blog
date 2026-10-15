@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <text x="20" y="32" font-size="15" font-weight="bold" fill="#1b2a27">엣지–클라우드 연속체의 네 계층과, 작업을 어느 계층에 둘지 가르는 기준</text>
+
+  <!-- 계층 -->
+  <rect x="40" y="52" width="400" height="58" rx="6" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.6"/>
+  <text x="56" y="76" font-size="14" font-weight="bold" fill="#1b2a27">클라우드 (중앙)</text>
+  <text x="56" y="98" font-size="13" fill="#4a5a56">전역 집계 · 모델 학습 · 장기 보관</text>
+
+  <rect x="40" y="136" width="400" height="58" rx="6" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="160" font-size="14" font-weight="bold" fill="#1b2a27">포그 노드 (계층형 군집)</text>
+  <text x="56" y="182" font-size="13" fill="#4a5a56">연산 · 네트워킹 · 저장 · 제어 · 가공 가속</text>
+
+  <rect x="40" y="220" width="400" height="58" rx="6" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="56" y="244" font-size="14" font-weight="bold" fill="#1b2a27">미스트 노드 (경량 포그 계층)</text>
+  <text x="56" y="266" font-size="13" fill="#4a5a56">마이크로컨트롤러급 · 단말과 같은 자리</text>
+
+  <rect x="40" y="304" width="400" height="58" rx="6" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.6"/>
+  <text x="56" y="328" font-size="14" font-weight="bold" fill="#1b2a27">스마트 단말 (엣지 계층)</text>
+  <text x="56" y="350" font-size="13" fill="#4a5a56">센서 · 액추에이터 · 고정 로직의 지역 연산</text>
+
+  <path d="M240 136 L240 110" stroke="#7b8a86" stroke-width="2" marker-end="url(#arrow-s)"/>
+  <path d="M240 220 L240 194" stroke="#7b8a86" stroke-width="2" marker-end="url(#arrow-s)"/>
+  <path d="M240 304 L240 278" stroke="#7b8a86" stroke-width="2" marker-end="url(#arrow-s)"/>
+
+  <!-- 판단 기준 -->
+  <rect x="476" y="52" width="368" height="142" rx="6" fill="#fdf0dd" stroke="#b45309" stroke-width="1.6"/>
+  <text x="494" y="78" font-size="14" font-weight="bold" fill="#b45309">아래로 내리는 힘 — 엣지에 둔다</text>
+  <text x="494" y="104" font-size="13" fill="#1b2a27">① 왕복 지연이 제어 주기보다 길 때</text>
+  <text x="494" y="128" font-size="13" fill="#1b2a27">② 원본을 다 올리면 회선비가 더 클 때</text>
+  <text x="494" y="152" font-size="13" fill="#1b2a27">③ 원본이 경계 밖으로 나가면 안 될 때</text>
+  <text x="494" y="178" font-size="13" fill="#4a5a56">셋 중 하나만 걸려도 내려보낸다</text>
+
+  <rect x="476" y="220" width="368" height="142" rx="6" fill="#eef2f1" stroke="#7b8a86" stroke-width="1.6"/>
+  <text x="494" y="246" font-size="14" font-weight="bold" fill="#1b2a27">위로 올리는 힘 — 클라우드에 둔다</text>
+  <text x="494" y="272" font-size="13" fill="#1b2a27">① 여러 지점을 합쳐야 답이 나올 때</text>
+  <text x="494" y="296" font-size="13" fill="#1b2a27">② 연산량이 노드 용량을 넘을 때</text>
+  <text x="494" y="320" font-size="13" fill="#1b2a27">③ 형상·모델을 한 곳에서 배포할 때</text>
+  <text x="494" y="346" font-size="13" fill="#4a5a56">셋 다 아니면 굳이 올리지 않는다</text>
+
+  <text x="20" y="392" font-size="13" fill="#4a5a56">포그는 계층 구조로 여러 단을 이루고, 엣지는 주변 장치 몇 개로 범위가 좁다. 미스트는 선택 계층이다.</text>
+
+  <defs>
+    <marker id="arrow-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#7b8a86"/>
+    </marker>
+  </defs>
+</svg>

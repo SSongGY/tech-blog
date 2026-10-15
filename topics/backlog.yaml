@@ -2191,7 +2191,7 @@ topics:
     angle: "지연·대역폭·프라이버시 중 무엇 때문에 내리는 결정인지"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-077
     title: "설명가능 AI(XAI) 기법 분류"
     category: PE
