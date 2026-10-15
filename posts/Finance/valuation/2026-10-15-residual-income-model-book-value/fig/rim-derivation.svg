@@ -1,0 +1,56 @@
+<svg viewBox="0 0 880 430" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfaf7"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1f2933">배당할인모형에 clean surplus 관계를 대입하면 잔여이익모형이 된다</text>
+
+  <!-- step 1 -->
+  <rect x="24" y="52" width="330" height="84" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.4"/>
+  <text x="40" y="76" font-size="14" font-weight="bold" fill="#1f2933">① 출발점 — 배당할인모형</text>
+  <text x="40" y="100" font-size="13.5" fill="#3e4c59">주식 가치 = 앞으로 받을 배당을</text>
+  <text x="40" y="122" font-size="13.5" fill="#3e4c59">자기자본비용으로 할인한 합</text>
+
+  <!-- step 2 -->
+  <rect x="526" y="52" width="330" height="84" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.4"/>
+  <text x="542" y="76" font-size="14" font-weight="bold" fill="#1f2933">② 회계 항등식 — clean surplus</text>
+  <text x="542" y="100" font-size="13.5" fill="#3e4c59">기말 장부가 = 기초 장부가</text>
+  <text x="542" y="122" font-size="13.5" fill="#3e4c59">+ 당기순이익 − 배당</text>
+
+  <!-- arrows into merge -->
+  <path d="M189 136 L189 166 L440 166 L440 190" fill="none" stroke="#52606d" stroke-width="1.6" marker-end="url(#ah)"/>
+  <path d="M691 136 L691 166 L440 166" fill="none" stroke="#52606d" stroke-width="1.6"/>
+
+  <text x="452" y="162" font-size="13" fill="#616e7c">배당을 소거한다</text>
+
+  <!-- step 3 -->
+  <rect x="150" y="190" width="580" height="74" rx="6" fill="#eef5f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="170" y="214" font-size="14" font-weight="bold" fill="#17422f">③ 잔여이익모형</text>
+  <text x="170" y="240" font-size="13.5" fill="#1f3b2d">주식 가치 = 기초 장부가 + 앞으로의 잔여이익을 할인한 합</text>
+  <text x="170" y="258" font-size="13" fill="#44614f">잔여이익 = 당기순이익 − 자기자본비용 × 기초 장부가</text>
+
+  <path d="M440 264 L440 294" fill="none" stroke="#52606d" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <!-- three readings -->
+  <rect x="24" y="294" width="266" height="110" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.3"/>
+  <text x="40" y="318" font-size="13.5" font-weight="bold" fill="#1f2933">ROE &gt; 자기자본비용</text>
+  <text x="40" y="342" font-size="13" fill="#3e4c59">잔여이익이 양수로 쌓인다</text>
+  <text x="40" y="364" font-size="13" fill="#2d6a4f" font-weight="bold">가치 &gt; 장부가 (PBR 1배 초과)</text>
+  <text x="40" y="388" font-size="13" fill="#616e7c">예제: 1,339.9 / 1,000.0 = 1.340배</text>
+
+  <rect x="306" y="294" width="266" height="110" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.3"/>
+  <text x="322" y="318" font-size="13.5" font-weight="bold" fill="#1f2933">ROE = 자기자본비용</text>
+  <text x="322" y="342" font-size="13" fill="#3e4c59">잔여이익이 전부 0 이다</text>
+  <text x="322" y="364" font-size="13" fill="#1f2933" font-weight="bold">가치 = 장부가 (PBR 1배)</text>
+  <text x="322" y="388" font-size="13" fill="#616e7c">예제: 1,000.0 / 1,000.0 = 1.000배</text>
+
+  <rect x="588" y="294" width="268" height="110" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.3"/>
+  <text x="604" y="318" font-size="13.5" font-weight="bold" fill="#1f2933">ROE &lt; 자기자본비용</text>
+  <text x="604" y="342" font-size="13" fill="#3e4c59">잔여이익이 음수로 깎인다</text>
+  <text x="604" y="364" font-size="13" fill="#9d0208" font-weight="bold">가치 &lt; 장부가 (PBR 1배 미만)</text>
+  <text x="604" y="388" font-size="13" fill="#616e7c">번 돈이 자본비용에 못 미친다</text>
+
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#52606d"/>
+    </marker>
+  </defs>
+</svg>

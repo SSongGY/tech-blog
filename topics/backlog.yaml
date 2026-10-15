@@ -4338,7 +4338,7 @@ topics:
     angle: "DCF와 같은 답을 다른 경로로 낸다. 추정이 빗나갈 때 어느 쪽이 덜 흔들리는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-060
     title: "지배주주지분 순이익 — 연결에서 EPS를 계산할 때"
     category: Finance

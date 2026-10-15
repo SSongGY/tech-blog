@@ -1,0 +1,37 @@
+<svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#fbfaf7"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1f2933">같은 평가액 1,339.9억을 두 모형이 어디서 가져오는가</text>
+  <text x="24" y="54" font-size="13" fill="#616e7c">사아정밀 · 자기자본비용 9% · 추정기간 5년 · 영구성장률 3% (단위: 억원)</text>
+
+  <!-- RIM bar -->
+  <text x="24" y="104" font-size="14" font-weight="bold" fill="#1f2933">잔여이익모형</text>
+  <rect x="150" y="80" width="477.7" height="40" fill="#2d6a4f"/>
+  <rect x="627.7" y="80" width="87.0" height="40" fill="#74a892"/>
+  <rect x="714.7" y="80" width="75.3" height="40" fill="#b45309"/>
+  <text x="300" y="105" font-size="13.5" font-weight="bold" fill="#ffffff">기초 장부가 1,000.0 (74.6%)</text>
+  <text x="671" y="140" font-size="13" fill="#3e4c59" text-anchor="middle">182.2</text>
+  <text x="671" y="159" font-size="13" fill="#3e4c59" text-anchor="middle">13.6%</text>
+  <text x="752" y="140" font-size="13" fill="#8a4208" text-anchor="middle">157.7</text>
+  <text x="752" y="159" font-size="13" fill="#8a4208" text-anchor="middle">11.8%</text>
+
+  <!-- DDM bar -->
+  <text x="24" y="214" font-size="14" font-weight="bold" fill="#1f2933">배당할인모형</text>
+  <rect x="150" y="190" width="112.8" height="40" fill="#74a892"/>
+  <rect x="262.8" y="190" width="527.2" height="40" fill="#b45309"/>
+  <text x="206" y="250" font-size="13" fill="#3e4c59" text-anchor="middle">236.2</text>
+  <text x="206" y="269" font-size="13" fill="#3e4c59" text-anchor="middle">17.6%</text>
+  <text x="526" y="215" font-size="13.5" font-weight="bold" fill="#ffffff">종료가치 1,103.7 (82.4%)</text>
+
+  <!-- shared right edge -->
+  <line x1="790" y1="70" x2="790" y2="292" stroke="#52606d" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="790" y="310" font-size="13" fill="#3e4c59" text-anchor="end">두 막대의 길이가 같다 — 가정을 맞추면 같은 값이 나온다</text>
+
+  <!-- legend -->
+  <rect x="150" y="332" width="14" height="14" fill="#2d6a4f"/>
+  <text x="170" y="344" font-size="13" fill="#3e4c59">재무상태표에서 읽은 금액</text>
+  <rect x="336" y="332" width="14" height="14" fill="#74a892"/>
+  <text x="356" y="344" font-size="13" fill="#3e4c59">추정기간 5년</text>
+  <rect x="462" y="332" width="14" height="14" fill="#b45309"/>
+  <text x="482" y="344" font-size="13" fill="#8a4208">6년차 이후를 한 줄로 요약한 항</text>
+</svg>
