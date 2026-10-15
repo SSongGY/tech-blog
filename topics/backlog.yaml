@@ -230,7 +230,7 @@ topics:
     difficulty: 중급
     angle: "이용률 70%와 90%에서 대기시간이 몇 배 벌어지는지 시뮬레이션"
     code: python
-    status: writing
+    status: done
   - id: perf-002
     title: "벤치마크가 거짓말하는 5가지 방식"
     category: Performance

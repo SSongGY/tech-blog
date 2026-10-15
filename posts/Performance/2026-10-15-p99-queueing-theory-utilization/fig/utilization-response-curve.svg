@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="420" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555550"/>
+    </marker>
+  </defs>
+
+  <!-- 눈금선 -->
+  <line x1="110" y1="60" x2="760" y2="60" stroke="#e4e4de" stroke-width="1"/>
+  <line x1="110" y1="127.5" x2="760" y2="127.5" stroke="#e4e4de" stroke-width="1"/>
+  <line x1="110" y1="195" x2="760" y2="195" stroke="#e4e4de" stroke-width="1"/>
+  <line x1="110" y1="262.5" x2="760" y2="262.5" stroke="#e4e4de" stroke-width="1"/>
+
+  <!-- 축 -->
+  <line x1="110" y1="40" x2="110" y2="330" stroke="#555550" stroke-width="1.5"/>
+  <line x1="110" y1="330" x2="790" y2="330" stroke="#555550" stroke-width="1.5" marker-end="url(#axis)"/>
+
+  <text x="100" y="335" font-size="13" fill="#555550" text-anchor="end">0</text>
+  <text x="100" y="267" font-size="13" fill="#555550" text-anchor="end">50</text>
+  <text x="100" y="200" font-size="13" fill="#555550" text-anchor="end">100</text>
+  <text x="100" y="132" font-size="13" fill="#555550" text-anchor="end">150</text>
+  <text x="100" y="65" font-size="13" fill="#555550" text-anchor="end">200</text>
+  <text x="30" y="35" font-size="13" font-weight="bold" fill="#333330">평균 응답시간 (ms)</text>
+
+  <text x="110" y="352" font-size="13" fill="#555550" text-anchor="middle">0%</text>
+  <text x="435" y="352" font-size="13" fill="#555550" text-anchor="middle">50%</text>
+  <text x="565" y="352" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">70%</text>
+  <text x="695" y="352" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">90%</text>
+  <text x="760" y="352" font-size="13" fill="#555550" text-anchor="middle">100%</text>
+  <text x="800" y="335" font-size="13" font-weight="bold" fill="#333330">이용률</text>
+
+  <!-- 이론 곡선 E[S]/(1-rho), E[S]=10ms -->
+  <polyline points="110,316.5 175,315.0 240,313.1 305,310.7 370,307.5 435,303.0 500,296.3 565,285.0 597.5,276.0 630,262.5 662.5,240.0 695,195.0 711.3,150.0 727.5,60.0"
+            fill="none" stroke="#b45309" stroke-width="2.5"/>
+
+  <!-- 70% / 90% 기준선 -->
+  <line x1="565" y1="285.3" x2="565" y2="330" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="695" y1="197.3" x2="695" y2="330" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- 실측점 -->
+  <circle cx="435" cy="303.0" r="5" fill="#333330"/>
+  <circle cx="565" cy="285.3" r="6" fill="#2d6a4f"/>
+  <circle cx="630" cy="263.4" r="5" fill="#333330"/>
+  <circle cx="695" cy="197.3" r="6" fill="#9d0208"/>
+  <circle cx="727.5" cy="71.5" r="5" fill="#333330"/>
+
+  <text x="505" y="255" font-size="13" font-weight="bold" fill="#1d4733">33.1ms</text>
+  <text x="630" y="185" font-size="13" font-weight="bold" fill="#7a0206">98.3ms</text>
+
+  <!-- 범례 -->
+  <line x1="140" y1="86" x2="176" y2="86" stroke="#b45309" stroke-width="2.5"/>
+  <text x="184" y="91" font-size="13" fill="#333330">이론 곡선 — 평균 서비스 시간 ÷ (1 − 이용률)</text>
+  <circle cx="158" cy="112" r="5" fill="#333330"/>
+  <text x="184" y="117" font-size="13" fill="#333330">실측 — 요청 40만 건 시뮬레이션</text>
+
+  <text x="30" y="386" font-size="14" fill="#333330">트래픽을 29% 늘려 이용률이 70%에서 90%가 되면 평균 응답은 3.0배가 된다.</text>
+  <text x="30" y="408" font-size="14" fill="#333330">어느 지점에서 곡선이 꺾이는 것이 아니라, 원래 1/(1−이용률) 꼴이다.</text>
+</svg>
