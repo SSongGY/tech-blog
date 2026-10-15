@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfaf7"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2937">부채 비중을 옮기면 — 두 비용은 올라가고, 가중평균은 내려갔다 올라간다</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#475569">두 칸 모두 가로축은 부채 비중(D/V) 0~70%. 세로축 눈금 간격이 서로 다르다</text>
+
+  <!-- 왼쪽 칸: ke 와 세후 kd -->
+  <text x="245" y="80" text-anchor="middle" font-size="13" font-weight="bold" fill="#475569">각각의 자본비용 (세로축 0~20%)</text>
+  <path d="M70 90 L70 340 L420 340" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <text x="62" y="344" text-anchor="end" font-size="13" fill="#475569">0%</text>
+  <text x="62" y="282" text-anchor="end" font-size="13" fill="#475569">5%</text>
+  <text x="62" y="219" text-anchor="end" font-size="13" fill="#475569">10%</text>
+  <text x="62" y="157" text-anchor="end" font-size="13" fill="#475569">15%</text>
+  <text x="62" y="94" text-anchor="end" font-size="13" fill="#475569">20%</text>
+  <path d="M70 277.5 L420 277.5" fill="none" stroke="#e2ded6" stroke-width="1"/>
+  <path d="M70 215 L420 215" fill="none" stroke="#e2ded6" stroke-width="1"/>
+  <path d="M70 152.5 L420 152.5" fill="none" stroke="#e2ded6" stroke-width="1"/>
+  <text x="70" y="362" text-anchor="middle" font-size="13" fill="#475569">0%</text>
+  <text x="245" y="362" text-anchor="middle" font-size="13" fill="#475569">35%</text>
+  <text x="420" y="362" text-anchor="middle" font-size="13" fill="#475569">70%</text>
+
+  <path d="M70 228.8 L120 222.9 L170 215.6 L220 206.2 L270 193.6 L320 176.1 L370 149.8 L420 105.9" fill="none" stroke="#2d6a4f" stroke-width="2.2"/>
+  <path d="M70 300.0 L120 298.1 L170 295.2 L220 290.3 L270 282.5 L320 270.8 L370 252.3 L420 223.0" fill="none" stroke="#b45309" stroke-width="2.2"/>
+  <text x="414" y="98" text-anchor="end" font-size="13" font-weight="bold" fill="#1b4332">자기자본비용 18.73%</text>
+  <text x="414" y="216" text-anchor="end" font-size="13" font-weight="bold" fill="#7c2d12">세후 타인자본비용 9.36%</text>
+  <text x="78" y="246" font-size="13" fill="#2d6a4f">8.90%</text>
+  <text x="78" y="318" font-size="13" fill="#b45309">3.20%</text>
+
+  <!-- 오른쪽 칸: WACC -->
+  <text x="675" y="80" text-anchor="middle" font-size="13" font-weight="bold" fill="#475569">가중평균한 WACC (세로축 8.5~12.5%)</text>
+  <path d="M510 90 L510 340 L840 340" fill="none" stroke="#1f2937" stroke-width="1.6"/>
+  <text x="502" y="344" text-anchor="end" font-size="13" fill="#475569">8.5%</text>
+  <text x="502" y="282" text-anchor="end" font-size="13" fill="#475569">9.5%</text>
+  <text x="502" y="219" text-anchor="end" font-size="13" fill="#475569">10.5%</text>
+  <text x="502" y="157" text-anchor="end" font-size="13" fill="#475569">11.5%</text>
+  <text x="502" y="94" text-anchor="end" font-size="13" fill="#475569">12.5%</text>
+  <path d="M510 277.5 L840 277.5" fill="none" stroke="#e2ded6" stroke-width="1"/>
+  <path d="M510 215 L840 215" fill="none" stroke="#e2ded6" stroke-width="1"/>
+  <path d="M510 152.5 L840 152.5" fill="none" stroke="#e2ded6" stroke-width="1"/>
+  <text x="510" y="362" text-anchor="middle" font-size="13" fill="#475569">0%</text>
+  <text x="675" y="362" text-anchor="middle" font-size="13" fill="#475569">35%</text>
+  <text x="840" y="362" text-anchor="middle" font-size="13" fill="#475569">70%</text>
+
+  <!-- 최저값과 0.1%p 안에 드는 구간 -->
+  <rect x="557" y="300" width="94" height="40" fill="#eaf4ee"/>
+  <text x="604" y="296" text-anchor="middle" font-size="13" fill="#2d6a4f">10~30% 구간</text>
+
+  <path d="M510 315.0 L557 323.3 L604 328.8 L651 328.3 L699 317.1 L746 288.4 L793 227.6 L840 110.6" fill="none" stroke="#1f2937" stroke-width="2.4"/>
+  <circle cx="604" cy="328.8" r="5" fill="#2d6a4f"/>
+  <text x="604" y="222" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">가장 낮은 칸 8.680%</text>
+  <path d="M604 228 L604 322" fill="none" stroke="#2d6a4f" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="834" y="104" text-anchor="end" font-size="13" font-weight="bold" fill="#9d0208">12.170%</text>
+  <text x="520" y="310" font-size="13" fill="#475569">8.900%</text>
+
+  <text x="440" y="394" text-anchor="middle" font-size="13" fill="#475569">왼쪽 두 선은 끝까지 올라가기만 한다. 오른쪽이 내려갔다 올라가는 것은 싼 쪽의 비중이 커지는 효과가</text>
+  <text x="440" y="416" text-anchor="middle" font-size="13" fill="#475569">먼저 이기다가, 어느 지점부터 두 비용이 오르는 효과에 밀리기 때문이다.</text>
+</svg>

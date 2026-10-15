@@ -4327,7 +4327,7 @@ topics:
     angle: "자기자본비용과 타인자본비용의 가중평균. 자본구조가 바뀌면 할인율이 어떻게 움직이는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-059
     title: "잔여이익모형(RIM) — 장부가에서 출발하는 평가"
     category: Finance
