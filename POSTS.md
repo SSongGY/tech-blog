@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **346편** · 갱신 2026-10-15
+총 **347편** · 갱신 2026-10-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -268,10 +268,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 49편
+## 기출문제 (exam) — 50편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-15 | [기출문제 — 데이터 가치평가와 데이터 자산화](posts/PE/exam/2026-10-15-data-valuation-and-assetization/index.md) | 중급 | 데이터 산업진흥 및 이용촉진에 관한 기본법(2021년 제정, 2022.4.20. 시행), ISO/IEC 38505-1:2026(제2판), ISO/IEC 25012:2008, ISO/IEC 11179-1:2023(제4판), 데이터 가치평가 안내서(과학기술정보통신부·한국데이터산업진흥원, 2024) | 문서 근거 |
 | 2026-10-14 | [기출문제 — 터보퀀트(TurboQuant) 벡터 양자화](posts/PE/exam/2026-10-14-turboquant-vector-quantization/index.md) | 심화 | Zandieh et al., arXiv:2504.19874v1 (2025-04-28), Google Research Blog (2026-03-24), Zandieh et al., QJL, AAAI 2025 (arXiv:2406.03482), Jégou et al., IEEE TPAMI 33(1), 2011 | 문서 근거 |
 | 2026-10-14 | [기출문제 — 공공 SLA와 정보시스템 등급제](posts/PE/exam/2026-10-14-public-sla-and-system-grade/index.md) | 중급 | 행정기관 및 공공기관 정보시스템 안정성 고시(행정안전부고시 제2026-23호, 2026.4.13. 시행), 전자정부법(법률 제20654호, 2025.1.7. 일부개정) | 문서 근거 |
 | 2026-10-13 | [기출문제 — 파인튜닝과 RAG, RLHF와 RAFT 학습 파이프라인 비교](posts/PE/exam/2026-10-13-finetuning-rag-rlhf-vs-raft/index.md) | 심화 | Ouyang et al., arXiv:2203.02155 (2022-03), Zhang et al., arXiv:2403.10131v2 (2024-06), Lewis et al., NeurIPS 2020, Hu et al., arXiv:2106.09685v2 (2021-10) | 문서 근거 |
