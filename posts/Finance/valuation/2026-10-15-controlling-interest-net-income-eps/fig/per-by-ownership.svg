@@ -1,0 +1,51 @@
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1f2933">지분율이 내려가도 연결 기준 PER은 움직이지 않는다</text>
+  <text x="24" y="54" font-size="13" fill="#616e7c">시가총액 7,200억 고정 · 연결 당기순이익 800.0억 고정 · 종속기업 지분율만 옮긴 경우</text>
+
+  <!-- grid -->
+  <line x1="110" y1="300" x2="800" y2="300" stroke="#cbd2d9" stroke-width="1"/>
+  <line x1="110" y1="240" x2="800" y2="240" stroke="#e4e7eb" stroke-width="1"/>
+  <line x1="110" y1="180" x2="800" y2="180" stroke="#e4e7eb" stroke-width="1"/>
+  <line x1="110" y1="120" x2="800" y2="120" stroke="#e4e7eb" stroke-width="1"/>
+  <line x1="110" y1="90" x2="110" y2="300" stroke="#cbd2d9" stroke-width="1"/>
+
+  <text x="100" y="305" font-size="13" fill="#616e7c" text-anchor="end">8배</text>
+  <text x="100" y="245" font-size="13" fill="#616e7c" text-anchor="end">10배</text>
+  <text x="100" y="185" font-size="13" fill="#616e7c" text-anchor="end">12배</text>
+  <text x="100" y="125" font-size="13" fill="#616e7c" text-anchor="end">14배</text>
+
+  <!-- flat consolidated-basis line -->
+  <line x1="110" y1="270" x2="790" y2="270" stroke="#9d0208" stroke-width="2.4"/>
+  <text x="400" y="290" font-size="13.5" font-weight="bold" fill="#9d0208">연결 전체를 분자로 쓴 PER — 모든 지분율에서 9.00배</text>
+
+  <!-- controlling-interest line -->
+  <polyline points="110,270 223,252 337,231 450,208 563,180 677,147 790,108"
+            fill="none" stroke="#2d6a4f" stroke-width="2.4"/>
+  <circle cx="110" cy="270" r="4.5" fill="#2d6a4f"/>
+  <circle cx="223" cy="252" r="4.5" fill="#2d6a4f"/>
+  <circle cx="337" cy="231" r="4.5" fill="#2d6a4f"/>
+  <circle cx="450" cy="208" r="4.5" fill="#2d6a4f"/>
+  <circle cx="563" cy="180" r="4.5" fill="#2d6a4f"/>
+  <circle cx="677" cy="147" r="4.5" fill="#2d6a4f"/>
+  <circle cx="790" cy="108" r="4.5" fill="#2d6a4f"/>
+
+  <text x="122" y="256" font-size="13" fill="#2d6a4f">9.00</text>
+  <text x="337" y="219" font-size="13" fill="#2d6a4f" text-anchor="middle">10.29</text>
+  <text x="563" y="168" font-size="13" fill="#2d6a4f" text-anchor="middle">12.00</text>
+  <text x="790" y="96" font-size="13" fill="#2d6a4f" text-anchor="middle">14.40</text>
+  <text x="600" y="128" font-size="13.5" font-weight="bold" fill="#2d6a4f" text-anchor="end">지배주주 순이익을 분자로 쓴 PER</text>
+
+  <!-- x axis labels -->
+  <text x="110" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">100%</text>
+  <text x="223" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">90%</text>
+  <text x="337" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">80%</text>
+  <text x="450" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">70%</text>
+  <text x="563" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">60%</text>
+  <text x="677" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">50%</text>
+  <text x="790" y="324" font-size="13" fill="#3e4c59" text-anchor="middle">40%</text>
+  <text x="450" y="348" font-size="13" fill="#616e7c" text-anchor="middle">종속기업 지분율</text>
+
+  <text x="24" y="378" font-size="13" fill="#616e7c">두 선이 벌어진 폭이 연결 기준으로 계산했을 때 주식이 싸 보이는 정도다. 지분 40%에서는 37.5% 낮게 나온다.</text>
+</svg>

@@ -4349,7 +4349,7 @@ topics:
     angle: "비지배지분을 빼야 하는 이유. 빼지 않고 계산한 PER이 얼마나 낮게 보이는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-061
     title: "총주주수익률(TSR) — 배당과 자사주를 합쳐 보기"
     category: Finance
