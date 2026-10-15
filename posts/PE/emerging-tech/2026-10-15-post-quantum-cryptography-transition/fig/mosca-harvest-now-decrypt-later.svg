@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555550"/>
+    </marker>
+  </defs>
+
+  <!-- Z 시점 기준선 -->
+  <line x1="640" y1="46" x2="640" y2="256" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- 공격자 -->
+  <text x="30" y="40" font-size="14" font-weight="bold" fill="#7a0206">공격자가 하는 일</text>
+  <rect x="100" y="56" width="232" height="42" rx="6" fill="#fdeceb" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="116" y="82" font-size="14" fill="#7a0206">① 오늘 암호문을 수집한다</text>
+
+  <line x1="336" y1="77" x2="632" y2="77" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#ar)"/>
+  <text x="372" y="68" font-size="13" fill="#9d0208">못 푸는 채로 보관한다</text>
+
+  <rect x="648" y="56" width="188" height="42" rx="6" fill="#fdeceb" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="664" y="82" font-size="14" fill="#7a0206">② 그때 복호한다</text>
+
+  <!-- 방어자 -->
+  <text x="30" y="140" font-size="14" font-weight="bold" fill="#333330">우리가 해야 하는 일</text>
+
+  <rect x="120" y="156" width="210" height="38" rx="5" fill="#dfeee6" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="134" y="181" font-size="13" fill="#1d4733">Y — 전환에 걸리는 기간</text>
+
+  <rect x="330" y="156" width="390" height="38" rx="5" fill="#f8ebd8" stroke="#b45309" stroke-width="1.5"/>
+  <text x="344" y="181" font-size="13" fill="#8a3f07">X — 그 데이터를 지켜야 하는 기간</text>
+
+  <!-- 초과 구간 -->
+  <line x1="640" y1="206" x2="720" y2="206" stroke="#9d0208" stroke-width="3"/>
+  <text x="640" y="228" font-size="13" font-weight="bold" fill="#9d0208">초과 구간 — 보호되지 않는다</text>
+
+  <!-- 시간축 -->
+  <line x1="70" y1="256" x2="830" y2="256" stroke="#555550" stroke-width="1.5" marker-end="url(#ag)"/>
+  <line x1="120" y1="248" x2="120" y2="264" stroke="#555550" stroke-width="1.5"/>
+  <text x="100" y="284" font-size="13" fill="#555550">오늘</text>
+  <line x1="640" y1="248" x2="640" y2="264" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="596" y="284" font-size="13" font-weight="bold" fill="#9d0208">CRQC 등장 — Z</text>
+  <text x="792" y="284" font-size="13" fill="#555550">시간</text>
+
+  <text x="30" y="318" font-size="14" fill="#333330">X + Y 가 Z 를 넘으면, 전환을 끝낸 시점에 이미 지켜야 할 기간의 일부가 Z 뒤로 넘어가 있다.</text>
+  <text x="30" y="340" font-size="14" fill="#333330">그래서 전환은 Z 를 기다려 시작할 수 없다.</text>
+</svg>

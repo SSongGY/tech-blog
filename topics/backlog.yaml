@@ -2180,7 +2180,7 @@ topics:
     angle: "지금 수집해 나중에 복호하는 위협 모델"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-076
     title: "엣지 컴퓨팅과 클라우드 연계 구조"
     category: PE
