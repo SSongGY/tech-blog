@@ -2213,7 +2213,7 @@ topics:
     angle: "산출물과 발주 시점이 갈리는 지점"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-079
     title: "IT 거버넌스 — COBIT 2019 구성요소"
     category: PE
