@@ -397,7 +397,7 @@ topics:
     difficulty: 입문
     angle: "문자열 조합이 뚫리는 입력을 보이고 바인딩과 대조"
     code: python
-    status: todo
+    status: writing
   - id: sec-002
     title: "비밀번호 해시에 bcrypt/argon2를 쓰는 이유"
     category: Security
@@ -2213,7 +2213,7 @@ topics:
     angle: "산출물과 발주 시점이 갈리는 지점"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-079
     title: "IT 거버넌스 — COBIT 2019 구성요소"
     category: PE
@@ -4558,7 +4558,7 @@ topics:
     angle: "통계가 없을 때와 있을 때 같은 질의의 계획이 달라지는 것. sqlite_stat1 에 무엇이 쌓이는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-062
     title: "FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝"
     category: Database

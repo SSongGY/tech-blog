@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430"
+     font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfaf7"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2933">ANALYZE 가 쌓는 숫자와 그 숫자가 계획을 가르는 자리</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#52606d">인덱스 idx_people(grade, phone) 기준. stat 문자열은 K개 컬럼이면 K+1개 정수다.</text>
+
+  <!-- 1단계: 인덱스 -->
+  <rect x="30" y="76" width="200" height="86" rx="4" fill="#eef2f6" stroke="#52606d" stroke-width="1.5"/>
+  <text x="130" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">인덱스 idx_people</text>
+  <text x="130" y="124" text-anchor="middle" font-size="13" fill="#3e4c59">(grade, phone)</text>
+  <text x="130" y="146" text-anchor="middle" font-size="13" fill="#3e4c59">표 전체 60,000행</text>
+
+  <path d="M230 119 L292 119" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="261" y="110" text-anchor="middle" font-size="13" fill="#3e4c59">ANALYZE</text>
+
+  <!-- 2단계: sqlite_stat1 한 줄 -->
+  <rect x="300" y="76" width="300" height="86" rx="4" fill="#e6f1ea" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="450" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b4332">sqlite_stat1 한 행</text>
+  <text x="450" y="126" text-anchor="middle" font-size="13" fill="#1b4332">tbl=people  idx=idx_people</text>
+  <text x="450" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b4332">stat = "60000  18  1"</text>
+
+  <!-- 숫자 해설 -->
+  <path d="M374 160 L360 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M440 160 L470 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M484 160 L720 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+
+  <rect x="238" y="198" width="190" height="56" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="333" y="220" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b4332">첫째 정수</text>
+  <text x="333" y="241" text-anchor="middle" font-size="13" fill="#3e4c59">인덱스의 대략적 행 수</text>
+
+  <rect x="438" y="198" width="210" height="56" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="543" y="220" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b4332">둘째 정수</text>
+  <text x="543" y="241" text-anchor="middle" font-size="13" fill="#3e4c59">grade 값 하나당 평균 행 수</text>
+
+  <rect x="658" y="198" width="196" height="56" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="756" y="220" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b4332">셋째 정수</text>
+  <text x="756" y="241" text-anchor="middle" font-size="13" fill="#3e4c59">두 컬럼이 같은 평균 행 수</text>
+
+  <!-- 3단계: 판단 -->
+  <rect x="300" y="282" width="300" height="48" rx="4" fill="#eef2f6" stroke="#52606d" stroke-width="1.5"/>
+  <text x="450" y="304" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2933">둘째 정수를 18과 견준다</text>
+  <text x="450" y="322" text-anchor="middle" font-size="13" fill="#52606d">통계가 없으면 10 으로 가정해 항상 왼쪽이다</text>
+
+  <path d="M330 330 L220 362" fill="none" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+  <path d="M570 330 L680 362" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="40" y="366" width="340" height="48" rx="4" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="210" y="387" text-anchor="middle" font-size="14" font-weight="bold" fill="#7a0206">18 미만 — SCAN people</text>
+  <text x="210" y="406" text-anchor="middle" font-size="13" fill="#7a0206">묶음이 많아 표를 통째로 읽는 편이 싸다</text>
+
+  <rect x="516" y="366" width="340" height="48" rx="4" fill="#e6f1ea" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="686" y="387" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b4332">18 이상 — ANY(grade) AND phone=?</text>
+  <text x="686" y="406" text-anchor="middle" font-size="13" fill="#1b4332">묶음마다 건너뛰며 phone 을 찾는다 — 스킵 스캔</text>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arR" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
