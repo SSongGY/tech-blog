@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L9,3.2 L0,6.4 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="o" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L9,3.2 L0,6.4 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="36" y="30" font-size="18" font-weight="bold" fill="#1b1b1b">코루틴 객체가 지나는 네 가지 상태</text>
+
+  <!-- 종료 경로 (위로 돌아간다) -->
+  <path d="M376,96 L376,66 L792,66 L792,92" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <text x="584" y="58" font-size="13" text-anchor="middle" fill="#1d4733">몸통이 return 하거나 예외가 나면 → StopIteration</text>
+
+  <!-- 상태 박스 -->
+  <rect x="36" y="96" width="180" height="68" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.6"/>
+  <text x="126" y="126" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">CORO_CREATED</text>
+  <text x="126" y="148" font-size="13" text-anchor="middle" fill="#555">호출 직후 · 한 줄도 안 돎</text>
+
+  <rect x="286" y="96" width="180" height="68" rx="6" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="376" y="126" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4733">CORO_RUNNING</text>
+  <text x="376" y="148" font-size="13" text-anchor="middle" fill="#2d6a4f">몸통을 실행 중</text>
+
+  <rect x="536" y="96" width="180" height="68" rx="6" fill="#fdf0d9" stroke="#b45309" stroke-width="1.8"/>
+  <text x="626" y="126" font-size="14" font-weight="bold" text-anchor="middle" fill="#7c3d06">CORO_SUSPENDED</text>
+  <text x="626" y="148" font-size="13" text-anchor="middle" fill="#8a4a0c">프레임을 들고 멈춤</text>
+
+  <rect x="736" y="96" width="120" height="68" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.6"/>
+  <text x="796" y="126" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">CORO_</text>
+  <text x="796" y="146" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">CLOSED</text>
+
+  <!-- 전이 -->
+  <line x1="220" y1="130" x2="278" y2="130" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#g)"/>
+  <text x="249" y="190" font-size="13" text-anchor="middle" fill="#1d4733">send(None)</text>
+  <line x1="249" y1="172" x2="249" y2="135" stroke="#9aa39b" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <line x1="470" y1="130" x2="528" y2="130" stroke="#b45309" stroke-width="2.2" marker-end="url(#o)"/>
+  <text x="499" y="190" font-size="13" text-anchor="middle" fill="#7c3d06">기다리는 쪽이 멈출 때만</text>
+  <line x1="499" y1="172" x2="499" y2="135" stroke="#9aa39b" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- 재개 루프 -->
+  <path d="M626,168 L626,226 L376,226 L376,170" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <text x="501" y="248" font-size="13" text-anchor="middle" fill="#1d4733">다시 send(None) — 멈춘 그 자리부터 이어서 실행한다</text>
+
+  <!-- 바이트코드 메모 -->
+  <rect x="36" y="268" width="820" height="76" rx="6" fill="#ffffff" stroke="#b9b4a8" stroke-width="1.4"/>
+  <text x="56" y="294" font-size="14" font-weight="bold" fill="#1b1b1b">await 한 줄이 컴파일된 모양 (CPython 3.13)</text>
+  <text x="56" y="318" font-size="13" fill="#333">GET_AWAITABLE → SEND → YIELD_VALUE → RESUME → (SEND 로 되돌아감) → END_SEND</text>
+  <text x="56" y="336" font-size="13" fill="#7c3d06">SEND 가 한 번에 끝나면 YIELD_VALUE 를 건너뛴다. 그래서 await 를 적어도 중단이 안 일어날 수 있다.</text>
+</svg>
