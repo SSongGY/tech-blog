@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" width="880" height="390" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="390" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3.2" orient="auto">
+      <path d="M0,0 L9,3.2 L0,6.4 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="18" font-weight="bold" fill="#1b1b1b">ITIL 4 서비스 가치 시스템 — 수요를 가치로 바꾸는 5개 구성요소</text>
+
+  <!-- 입력 -->
+  <rect x="28" y="158" width="118" height="72" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.6"/>
+  <text x="87" y="188" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">기회 · 수요</text>
+  <text x="87" y="210" font-size="13" text-anchor="middle" fill="#555">입력</text>
+  <line x1="150" y1="194" x2="170" y2="194" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- SVS 컨테이너 -->
+  <rect x="176" y="62" width="530" height="266" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="441" y="90" font-size="15" font-weight="bold" text-anchor="middle" fill="#1d4733">서비스 가치 시스템 (SVS)</text>
+
+  <rect x="196" y="106" width="155" height="56" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="273" y="130" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d4733">지침 원칙</text>
+  <text x="273" y="150" font-size="13" text-anchor="middle" fill="#2d6a4f">7가지</text>
+
+  <rect x="363" y="106" width="155" height="56" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="440" y="130" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d4733">거버넌스</text>
+  <text x="440" y="150" font-size="13" text-anchor="middle" fill="#2d6a4f">방향 설정 · 통제</text>
+
+  <rect x="530" y="106" width="155" height="56" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="607" y="130" font-size="13" font-weight="bold" text-anchor="middle" fill="#1d4733">지속적 개선</text>
+  <text x="607" y="150" font-size="13" text-anchor="middle" fill="#2d6a4f">전 구성요소에 적용</text>
+
+  <rect x="196" y="180" width="245" height="64" rx="5" fill="#fdf0d9" stroke="#b45309" stroke-width="1.8"/>
+  <text x="318" y="206" font-size="14" font-weight="bold" text-anchor="middle" fill="#7c3d06">서비스 가치 사슬</text>
+  <text x="318" y="228" font-size="13" text-anchor="middle" fill="#8a4a0c">활동 6개 · SVS의 운영 모델</text>
+
+  <rect x="453" y="180" width="232" height="64" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="569" y="206" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4733">실행 관행</text>
+  <text x="569" y="228" font-size="13" text-anchor="middle" fill="#2d6a4f">34개 · 가치 사슬 활동에 투입</text>
+
+  <text x="441" y="280" font-size="13" text-anchor="middle" fill="#555">가치 사슬이 활동을 잇고, 각 활동이 필요한 관행을 끌어다 쓴다</text>
+  <text x="441" y="302" font-size="13" text-anchor="middle" fill="#555">원칙과 거버넌스가 그 선택을 제약하고, 개선이 전체를 되돌아본다</text>
+
+  <line x1="712" y1="194" x2="732" y2="194" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#ar)"/>
+
+  <!-- 출력 -->
+  <rect x="738" y="158" width="114" height="72" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="795" y="188" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4733">가치</text>
+  <text x="795" y="210" font-size="13" text-anchor="middle" fill="#555">출력</text>
+
+  <text x="40" y="364" font-size="13" fill="#666">네 가지 차원(조직과 사람 · 정보와 기술 · 파트너와 공급업체 · 가치 흐름과 프로세스)이 SVS 전체를 가로질러 적용된다.</text>
+</svg>
