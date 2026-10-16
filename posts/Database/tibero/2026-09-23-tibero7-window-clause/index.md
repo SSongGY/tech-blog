@@ -23,6 +23,7 @@ topic_id: tb-003
 > - [누적합과 이동평균 — SUM OVER의 프레임](../../sql-basics/2026-10-06-sum-over-frame-rows-range/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 > - [LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기](../../sql-basics/2026-10-12-lag-lead-previous-next-row/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 > - [FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝](../../sql-basics/2026-10-16-first-value-last-value-window-frame/index.md) — SQLite 3.49.1, Python 3.13.5
+> - [NTILE — 데이터를 n등분하는 법](../../sql-basics/2026-10-16-ntile-quartile-remainder/index.md) — SQLite 3.49.1, Python 3.13.5
 <!-- related:end -->
 
 > **실행 검증 완료.** 이 글의 출력은 **Tibero 7.2** 인스턴스에서 실제로 돌려 받은 것이다.

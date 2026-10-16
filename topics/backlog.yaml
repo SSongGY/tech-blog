@@ -302,7 +302,7 @@ topics:
     difficulty: 심화
     angle: "변환 결과를 펼쳐 await 지점이 어디로 바뀌는지 보인다"
     code: python
-    status: todo
+    status: done
 
   # ---------- Infra ----------
   - id: infra-001
@@ -2235,7 +2235,7 @@ topics:
     angle: "프로세스 중심에서 가치 흐름으로 옮겨간 배경"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-082
     title: "IT 투자 평가 — TCO와 ROI"
     category: PE
@@ -4580,7 +4580,7 @@ topics:
     angle: "분위수를 나눌 때 나머지가 어느 묶음으로 가는지. 행 수가 딱 나뉘지 않을 때의 규칙"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-064
     title: "집계 함수의 FILTER 절 — CASE WHEN보다 읽기 쉬운 조건부 집계"
     category: Database

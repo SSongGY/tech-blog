@@ -319,3 +319,6 @@
 | 2026-10-16 | db-062 | Database | FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝 |
 | 2026-10-16 | pe-079 | PE | IT 거버넌스 — COBIT 2019 구성요소 |
 | 2026-10-16 | tool-001 | Tooling | git rebase와 merge가 만드는 히스토리의 차이 |
+| 2026-10-16 | db-063 | Database | NTILE — 데이터를 n등분하는 법 |
+| 2026-10-16 | pe-080 | PE | ITSM과 ITIL 4 — 서비스 가치 시스템 |
+| 2026-10-16 | lang-005 | Language | async/await가 숨기고 있는 상태 머신 |
