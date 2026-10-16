@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <text x="30" y="34" font-size="16" font-weight="bold" fill="#1f2937">COBIT 2019 거버넌스 체계가 만들어지는 흐름</text>
+
+  <!-- 1단계 설계요인 -->
+  <rect x="30" y="56" width="230" height="130" fill="#eef2ff" stroke="#4338ca" stroke-width="1.5" rx="6"/>
+  <text x="44" y="80" font-size="14" font-weight="bold" fill="#312e81">① 설계요인 11가지</text>
+  <text x="44" y="104" font-size="13" fill="#1f2937">상황적 — 기업 규모, 위협 환경</text>
+  <text x="44" y="126" font-size="13" fill="#1f2937">전략적 — 전략, IT의 역할, 위험</text>
+  <text x="44" y="148" font-size="13" fill="#1f2937">전술적 — 소싱, 구현 방식, 기술</text>
+  <text x="44" y="172" font-size="13" fill="#6b7280">기업마다 값이 다르다</text>
+
+  <!-- 화살표 1 -->
+  <line x1="262" y1="121" x2="316" y2="121" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="324,121 314,116 314,126" fill="#4b5563"/>
+
+  <!-- 2단계 원칙 -->
+  <rect x="326" y="56" width="230" height="130" fill="#f0fdf4" stroke="#2d6a4f" stroke-width="1.5" rx="6"/>
+  <text x="340" y="80" font-size="14" font-weight="bold" fill="#14532d">② 거버넌스 체계 6원칙</text>
+  <text x="340" y="104" font-size="13" fill="#1f2937">이해관계자 가치 · 통합적 접근</text>
+  <text x="340" y="126" font-size="13" fill="#1f2937">동적 체계 · 거버넌스와 관리 구분</text>
+  <text x="340" y="148" font-size="13" fill="#1f2937">기업 맞춤 · 전사 포괄</text>
+  <text x="340" y="172" font-size="13" fill="#6b7280">무엇을 지켜야 체계인가</text>
+
+  <!-- 화살표 2 -->
+  <line x1="558" y1="121" x2="612" y2="121" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="620,121 610,116 610,126" fill="#4b5563"/>
+
+  <!-- 3단계 맞춤 체계 -->
+  <rect x="622" y="56" width="228" height="130" fill="#fffbeb" stroke="#b45309" stroke-width="1.5" rx="6"/>
+  <text x="636" y="80" font-size="14" font-weight="bold" fill="#78350f">③ 맞춤형 거버넌스 체계</text>
+  <text x="636" y="104" font-size="13" fill="#1f2937">핵심 모델에서 출발해</text>
+  <text x="636" y="126" font-size="13" fill="#1f2937">설계요인으로 범위를 조정</text>
+  <text x="636" y="148" font-size="13" fill="#1f2937">요인이 바뀌면 체계도 재검토</text>
+  <text x="636" y="172" font-size="13" fill="#6b7280">하나로 통하는 체계는 없다</text>
+
+  <!-- 아래로 가는 화살표 -->
+  <line x1="736" y1="188" x2="736" y2="214" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="736,222 731,212 741,212" fill="#4b5563"/>
+
+  <!-- 핵심 모델 -->
+  <text x="30" y="248" font-size="14" font-weight="bold" fill="#1f2937">핵심 모델 — 거버넌스·관리 목표 40개</text>
+
+  <rect x="30" y="262" width="150" height="92" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2" rx="6"/>
+  <text x="46" y="286" font-size="14" font-weight="bold" fill="#14532d">거버넌스</text>
+  <text x="46" y="310" font-size="13" fill="#1f2937">EDM — 5개</text>
+  <text x="46" y="332" font-size="13" fill="#1f2937">평가·지시·모니터링</text>
+
+  <rect x="196" y="262" width="654" height="92" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5" rx="6"/>
+  <text x="212" y="286" font-size="14" font-weight="bold" fill="#1f2937">관리 — 35개</text>
+  <text x="212" y="310" font-size="13" fill="#1f2937">APO 14개</text>
+  <text x="212" y="332" font-size="13" fill="#6b7280">조정·계획·조직화</text>
+  <text x="372" y="310" font-size="13" fill="#1f2937">BAI 11개</text>
+  <text x="372" y="332" font-size="13" fill="#6b7280">구축·확보·구현</text>
+  <text x="532" y="310" font-size="13" fill="#1f2937">DSS 6개</text>
+  <text x="532" y="332" font-size="13" fill="#6b7280">제공·서비스·지원</text>
+  <text x="692" y="310" font-size="13" fill="#1f2937">MEA 4개</text>
+  <text x="692" y="332" font-size="13" fill="#6b7280">모니터링·평가·심사</text>
+
+  <!-- 구성요소 -->
+  <line x1="440" y1="356" x2="440" y2="382" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="440,390 435,380 445,380" fill="#4b5563"/>
+
+  <rect x="30" y="396" width="820" height="76" fill="#fbfbfb" stroke="#d1d5db" stroke-width="1.5" rx="6"/>
+  <text x="46" y="420" font-size="14" font-weight="bold" fill="#1f2937">목표 하나를 떠받치는 구성요소 7가지 (COBIT 5의 조력자를 대체)</text>
+  <text x="46" y="444" font-size="13" fill="#1f2937">프로세스 · 조직 구조 · 정책과 절차 · 정보</text>
+  <text x="46" y="464" font-size="13" fill="#1f2937">문화와 윤리 및 행동 · 인력과 기량 및 역량 · 서비스와 인프라 및 애플리케이션</text>
+
+  <text x="520" y="500" font-size="13" fill="#6b7280">성과 측정은 CMMI 기반 0~5 수준 (역량·성숙도)</text>
+</svg>
