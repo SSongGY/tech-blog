@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400"
+     font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2933">입력이 파서에 닿는가, 닿지 않는가</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#52606d">문장을 먼저 컴파일하고 값을 나중에 묶으면, 값은 문법으로 해석될 기회를 얻지 못한다.</text>
+
+  <!-- 위: 문자열 조합 -->
+  <text x="30" y="92" font-size="14" font-weight="bold" fill="#7a0206">문자열 조합</text>
+
+  <rect x="30" y="104" width="150" height="56" rx="4" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="105" y="128" text-anchor="middle" font-size="13" fill="#7a0206">사용자 입력</text>
+  <text x="105" y="149" text-anchor="middle" font-size="13" fill="#7a0206">' OR '1'='1</text>
+
+  <path d="M180 132 L222 132" stroke="#9d0208" stroke-width="1.6" marker-end="url(#aR)"/>
+
+  <rect x="228" y="104" width="230" height="56" rx="4" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="343" y="128" text-anchor="middle" font-size="13" fill="#7a0206">문자열을 이어 붙여</text>
+  <text x="343" y="149" text-anchor="middle" font-size="13" fill="#7a0206">한 덩어리 SQL 문장을 만든다</text>
+
+  <path d="M458 132 L500 132" stroke="#9d0208" stroke-width="1.6" marker-end="url(#aR)"/>
+
+  <rect x="506" y="104" width="160" height="56" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="586" y="128" text-anchor="middle" font-size="13" fill="#7a0206">파서</text>
+  <text x="586" y="149" text-anchor="middle" font-size="13" fill="#7a0206">prepare</text>
+
+  <path d="M666 132 L708 132" stroke="#9d0208" stroke-width="1.6" marker-end="url(#aR)"/>
+
+  <rect x="714" y="104" width="140" height="56" rx="4" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="784" y="128" text-anchor="middle" font-size="13" fill="#7a0206">입력이 조건을</text>
+  <text x="784" y="149" text-anchor="middle" font-size="13" fill="#7a0206">바꿔 버린다</text>
+
+  <line x1="30" y1="190" x2="854" y2="190" stroke="#cbd2d9" stroke-width="1"/>
+
+  <!-- 아래: 바인딩 -->
+  <text x="30" y="226" font-size="14" font-weight="bold" fill="#1b4332">바인딩</text>
+
+  <rect x="30" y="238" width="150" height="56" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="105" y="262" text-anchor="middle" font-size="13" fill="#1b4332">SQL 문장</text>
+  <text x="105" y="283" text-anchor="middle" font-size="13" fill="#1b4332">… login = ?</text>
+
+  <path d="M180 266 L222 266" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#aG)"/>
+
+  <rect x="228" y="238" width="160" height="56" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="308" y="262" text-anchor="middle" font-size="13" fill="#1b4332">파서</text>
+  <text x="308" y="283" text-anchor="middle" font-size="13" fill="#1b4332">prepare</text>
+
+  <path d="M388 266 L430 266" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#aG)"/>
+
+  <rect x="436" y="238" width="200" height="56" rx="4" fill="#e6f1ea" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="536" y="262" text-anchor="middle" font-size="13" fill="#1b4332">컴파일된 문장 + 빈 칸</text>
+  <text x="536" y="283" text-anchor="middle" font-size="13" fill="#1b4332">여기서 문법이 확정된다</text>
+
+  <path d="M636 266 L678 266" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#aG)"/>
+
+  <rect x="684" y="238" width="170" height="56" rx="4" fill="#e6f1ea" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="769" y="262" text-anchor="middle" font-size="13" fill="#1b4332">bind · step</text>
+  <text x="769" y="283" text-anchor="middle" font-size="13" fill="#1b4332">값은 빈 칸에만 들어간다</text>
+
+  <rect x="30" y="316" width="150" height="46" rx="4" fill="#e6f1ea" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="105" y="337" text-anchor="middle" font-size="13" fill="#1b4332">사용자 입력</text>
+  <text x="105" y="356" text-anchor="middle" font-size="13" fill="#1b4332">' OR '1'='1</text>
+
+  <path d="M180 339 L740 339 L740 300" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#aG)"/>
+  <text x="450" y="332" text-anchor="middle" font-size="13" fill="#1b4332">파서를 거치지 않고 곧장 빈 칸으로</text>
+
+  <defs>
+    <marker id="aR" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#9d0208"/>
+    </marker>
+    <marker id="aG" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

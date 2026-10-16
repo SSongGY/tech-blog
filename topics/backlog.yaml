@@ -397,7 +397,7 @@ topics:
     difficulty: 입문
     angle: "문자열 조합이 뚫리는 입력을 보이고 바인딩과 대조"
     code: python
-    status: writing
+    status: done
   - id: sec-002
     title: "비밀번호 해시에 bcrypt/argon2를 쓰는 이유"
     category: Security
