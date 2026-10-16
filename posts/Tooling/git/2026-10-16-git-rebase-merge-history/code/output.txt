@@ -1,0 +1,116 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Tooling\git\2026-10-16-git-rebase-merge-history
+# 명령      : bash rebase_vs_merge.sh
+# 수행 시각 : 2026-10-16 19:22 (대한민국 표준시)
+# 소요      : 3.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+git version 2.54.0.windows.1
+OS      MINGW64_NT-10.0-26200
+
+================================================================
+공통 출발점 — feature 가 main 에서 갈라진 뒤 양쪽이 각각 나아갔다
+================================================================
+* 86984ca docs: 자주 묻는 질문
+* c42dc1d docs: 사용법
+| * f5de0f7 refactor: 공통 모듈 정리
+| * 01a4d4f feat: 공통 모듈
+|/  
+* 128c3d9 feat: 조회 기능
+* 3244cce feat: 초기 버전
+
+feature 가 갈라져 나온 지점: 128c3d9
+
+================================================================
+① git merge --no-ff feature
+================================================================
+*   c1b5993 merge: 공통 모듈 반영
+|\  
+| * f5de0f7 refactor: 공통 모듈 정리
+| * 01a4d4f feat: 공통 모듈
+* | 86984ca docs: 자주 묻는 질문
+* | c42dc1d docs: 사용법
+|/  
+* 128c3d9 feat: 조회 기능
+* 3244cce feat: 초기 버전
+
+전체 커밋 수            : 7
+머지 커밋 수            : 1
+first-parent 만 따라가면: 5 개
+
+-- git log --oneline --first-parent (주 줄기만)
+c1b5993 merge: 공통 모듈 반영
+86984ca docs: 자주 묻는 질문
+c42dc1d docs: 사용법
+128c3d9 feat: 조회 기능
+3244cce feat: 초기 버전
+
+================================================================
+② git rebase main 뒤 fast-forward 로 합쳤을 때
+================================================================
+-- rebase 전 feature 의 커밋
+f5de0f7 2026-01-04 2026-01-04 refactor: 공통 모듈 정리
+01a4d4f 2026-01-03 2026-01-03 feat: 공통 모듈
+
+-- rebase 후 같은 커밋 (작성일은 그대로, 커밋일과 해시가 바뀐다)
+7ce961f 2026-01-04 2026-01-07 refactor: 공통 모듈 정리
+0fd8e53 2026-01-03 2026-01-07 feat: 공통 모듈
+
+* 7ce961f refactor: 공통 모듈 정리
+* 0fd8e53 feat: 공통 모듈
+* 86984ca docs: 자주 묻는 질문
+* c42dc1d docs: 사용법
+* 128c3d9 feat: 조회 기능
+* 3244cce feat: 초기 버전
+
+전체 커밋 수            : 6
+머지 커밋 수            : 0
+
+================================================================
+③ 두 방식의 최종 작업 트리가 같은지 — 트리 해시를 비교한다
+================================================================
+merge  쪽 트리 : 62d3199db4eab8f42fe45e0825d0d6d9f6b7f463
+rebase 쪽 트리 : 62d3199db4eab8f42fe45e0825d0d6d9f6b7f463
+판정           : 같다 — 파일 내용은 똑같고 히스토리 모양만 다르다
+
+================================================================
+④ git bisect 가 'broken' 이 들어온 커밋을 찾는 데 몇 번 걸리는가
+================================================================
+-- merged 쪽
+   Bisecting: 2 revisions left to test after this (roughly 2 steps)
+   [f5de0f77a58a376c5611f4c96550866fd9478c0d] refactor: 공통 모듈 정리
+   Bisecting: 0 revisions left to test after this (roughly 1 step)
+   f5de0f77a58a376c5611f4c96550866fd9478c0d is the first bad commit
+       refactor: 공통 모듈 정리
+
+-- rebased 쪽
+   Bisecting: 2 revisions left to test after this (roughly 1 step)
+   [c42dc1dbd55e014f2b196207dfaa65b0a41b90c3] docs: 사용법
+   Bisecting: 0 revisions left to test after this (roughly 1 step)
+   7ce961fc2c65d8d634f72b46dcff0e240e9afb20 is the first bad commit
+       refactor: 공통 모듈 정리
+
+================================================================
+⑤ merge 쪽에서 --first-parent 를 붙이면 분기 안으로 들어가지 않는다
+================================================================
+   Bisecting: 1 revision left to test after this (roughly 1 step)
+   [c42dc1dbd55e014f2b196207dfaa65b0a41b90c3] docs: 사용법
+   Bisecting: 0 revisions left to test after this (roughly 0 steps)
+   c1b5993bb102e2acb077e744938f42dad8c1abb6 is the first bad commit
+       merge: 공통 모듈 반영
+
+   rebase 쪽에는 머지 커밋이 없으므로 --first-parent 가 아무것도 줄이지 못한다.
+
+--- stderr ---
+Previous HEAD position was 01a4d4f feat: 공통 모듈
+Switched to branch 'main'
+Previous HEAD position was 0fd8e53 feat: 공통 모듈
+Switched to branch 'main'
+Previous HEAD position was 86984ca docs: 자주 묻는 질문
+Switched to branch 'main'

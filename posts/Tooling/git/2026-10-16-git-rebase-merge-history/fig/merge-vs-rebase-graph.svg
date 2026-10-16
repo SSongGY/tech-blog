@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+
+  <text x="30" y="32" font-size="16" font-weight="bold" fill="#1f2937">같은 작업을 합치는 두 방식이 남기는 히스토리</text>
+  <text x="30" y="54" font-size="13" fill="#6b7280">아래가 오래된 커밋이다. 해시는 예제를 실제로 돌려 얻은 값이다.</text>
+
+  <!-- ===== 왼쪽: merge ===== -->
+  <rect x="30" y="70" width="390" height="330" fill="#fbfbfb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+  <text x="46" y="96" font-size="14" font-weight="bold" fill="#1f2937">① git merge --no-ff — 커밋 7개</text>
+
+  <!-- 선 -->
+  <line x1="110" y1="370" x2="110" y2="330" stroke="#4b5563" stroke-width="2"/>
+  <line x1="110" y1="330" x2="110" y2="280" stroke="#4b5563" stroke-width="2"/>
+  <line x1="110" y1="280" x2="110" y2="230" stroke="#4b5563" stroke-width="2"/>
+  <line x1="110" y1="330" x2="200" y2="280" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="200" y1="280" x2="200" y2="230" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="110" y1="230" x2="155" y2="180" stroke="#4b5563" stroke-width="2"/>
+  <line x1="200" y1="230" x2="155" y2="180" stroke="#2d6a4f" stroke-width="2"/>
+
+  <circle cx="110" cy="370" r="8" fill="#4b5563"/>
+  <text x="128" y="375" font-size="13" fill="#1f2937">3244cce  feat: 초기 버전</text>
+  <circle cx="110" cy="330" r="8" fill="#4b5563"/>
+  <text x="128" y="335" font-size="13" fill="#1f2937">128c3d9  feat: 조회 기능</text>
+  <circle cx="110" cy="280" r="8" fill="#4b5563"/>
+  <text x="46" y="262" font-size="13" fill="#6b7280">main</text>
+  <text x="128" y="285" font-size="13" fill="#1f2937">c42dc1d</text>
+  <circle cx="110" cy="230" r="8" fill="#4b5563"/>
+  <text x="128" y="235" font-size="13" fill="#1f2937">86984ca</text>
+  <circle cx="200" cy="280" r="8" fill="#2d6a4f"/>
+  <text x="218" y="285" font-size="13" fill="#2d6a4f">01a4d4f</text>
+  <circle cx="200" cy="230" r="8" fill="#2d6a4f"/>
+  <text x="218" y="235" font-size="13" fill="#2d6a4f">f5de0f7</text>
+  <text x="290" y="262" font-size="13" fill="#2d6a4f">feature</text>
+  <circle cx="155" cy="180" r="10" fill="#b45309"/>
+  <text x="175" y="185" font-size="13" font-weight="bold" fill="#78350f">c1b5993  merge 커밋</text>
+
+  <text x="46" y="156" font-size="13" fill="#1f2937">부모가 둘인 커밋이 하나 생긴다.</text>
+  <text x="46" y="134" font-size="13" fill="#1f2937">분기가 언제 갈라져 언제 합쳐졌는지가 남는다.</text>
+
+  <!-- ===== 오른쪽: rebase ===== -->
+  <rect x="450" y="70" width="400" height="330" fill="#fbfbfb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+  <text x="466" y="96" font-size="14" font-weight="bold" fill="#1f2937">② git rebase 뒤 fast-forward — 커밋 6개</text>
+
+  <line x1="530" y1="370" x2="530" y2="180" stroke="#4b5563" stroke-width="2"/>
+
+  <circle cx="530" cy="370" r="8" fill="#4b5563"/>
+  <text x="548" y="375" font-size="13" fill="#1f2937">3244cce  feat: 초기 버전</text>
+  <circle cx="530" cy="330" r="8" fill="#4b5563"/>
+  <text x="548" y="335" font-size="13" fill="#1f2937">128c3d9  feat: 조회 기능</text>
+  <circle cx="530" cy="280" r="8" fill="#4b5563"/>
+  <text x="548" y="285" font-size="13" fill="#1f2937">c42dc1d</text>
+  <circle cx="530" cy="230" r="8" fill="#4b5563"/>
+  <text x="548" y="235" font-size="13" fill="#1f2937">86984ca</text>
+  <circle cx="530" cy="200" r="8" fill="#9d0208"/>
+  <text x="548" y="205" font-size="13" fill="#9d0208">0fd8e53  (01a4d4f 를 다시 쓴 것)</text>
+  <circle cx="530" cy="170" r="8" fill="#9d0208"/>
+  <text x="548" y="175" font-size="13" fill="#9d0208">7ce961f  (f5de0f7 를 다시 쓴 것)</text>
+
+  <text x="466" y="134" font-size="13" fill="#1f2937">한 줄로 이어진다. 분기가 있었다는 기록은 없다.</text>
+  <text x="466" y="156" font-size="13" fill="#1f2937">내용이 같아도 해시는 새로 매겨진다.</text>
+
+  <!-- ===== 아래 비교 ===== -->
+  <rect x="30" y="416" width="820" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+  <text x="46" y="440" font-size="13" fill="#1f2937">두 결과의 최종 트리 해시는 62d3199 로 같다 — 파일 내용은 똑같고 히스토리 모양만 다르다.</text>
+  <text x="46" y="462" font-size="13" fill="#1f2937">git bisect 는 양쪽 다 두 번 만에 범인을 찾았다. 다만 merge 쪽만 --first-parent 로 분기 안을 건너뛸 수 있다.</text>
+  <text x="46" y="484" font-size="13" fill="#6b7280">rebase 는 작성일(author date)은 그대로 두고 커밋일(committer date)과 해시를 새로 쓴다.</text>
+</svg>
