@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 430" width="820" height="430" font-family="'Malgun Gothic','Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+  <rect width="820" height="430" fill="#fbfbfb"/>
+
+  <!-- 열 머리 -->
+  <text x="320" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">무모 (reckless)</text>
+  <text x="620" y="52" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">신중 (prudent)</text>
+
+  <!-- 행 머리 -->
+  <text x="100" y="134" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">의도적</text>
+  <text x="100" y="155" text-anchor="middle" font-size="13" fill="#555">(deliberate)</text>
+  <text x="100" y="274" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">비의도적</text>
+  <text x="100" y="295" text-anchor="middle" font-size="13" fill="#555">(inadvertent)</text>
+
+  <!-- 무모 · 의도적 -->
+  <rect x="170" y="70" width="300" height="140" rx="6" fill="#fdf1f1" stroke="#9d0208" stroke-width="2"/>
+  <text x="320" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#6a0003">"깔끔하게 할 시간이 없다"</text>
+  <text x="320" y="134" text-anchor="middle" font-size="13" fill="#5c2b2b">좋은 설계를 알면서도</text>
+  <text x="320" y="154" text-anchor="middle" font-size="13" fill="#5c2b2b">빠르고 지저분하게 간다</text>
+  <text x="320" y="184" text-anchor="middle" font-size="13" fill="#9d0208">상환 계획 없음 — 이자가 가장 비싸다</text>
+
+  <!-- 신중 · 의도적 -->
+  <rect x="470" y="70" width="300" height="140" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="620" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b4332">"지금 내보내고 나중에 갚는다"</text>
+  <text x="620" y="134" text-anchor="middle" font-size="13" fill="#2d6a4f">납기와 상환 비용을</text>
+  <text x="620" y="154" text-anchor="middle" font-size="13" fill="#2d6a4f">견주어 고른 단축</text>
+  <text x="620" y="184" text-anchor="middle" font-size="13" fill="#2d6a4f">부채 항목으로 등록하면 관리 가능</text>
+
+  <!-- 무모 · 비의도적 -->
+  <rect x="170" y="210" width="300" height="140" rx="6" fill="#fdf1f1" stroke="#9d0208" stroke-width="2"/>
+  <text x="320" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#6a0003">"계층 분리가 뭐죠"</text>
+  <text x="320" y="274" text-anchor="middle" font-size="13" fill="#5c2b2b">설계 역량이 모자라</text>
+  <text x="320" y="294" text-anchor="middle" font-size="13" fill="#5c2b2b">부채인 줄 모르고 쌓는다</text>
+  <text x="320" y="324" text-anchor="middle" font-size="13" fill="#9d0208">교육·코드 리뷰로 다룰 문제</text>
+
+  <!-- 신중 · 비의도적 -->
+  <rect x="470" y="210" width="300" height="140" rx="6" fill="#fdf6ec" stroke="#b45309" stroke-width="3"/>
+  <text x="620" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#7c3d06">"이제야 어떻게 했어야 할지 안다"</text>
+  <text x="620" y="274" text-anchor="middle" font-size="13" fill="#6b4318">요구사항이 뒤늦게 드러나며</text>
+  <text x="620" y="294" text-anchor="middle" font-size="13" fill="#6b4318">설계가 사후에 어긋난다</text>
+  <text x="620" y="324" text-anchor="middle" font-size="13" fill="#b45309">불명확한 요구사항이 놓이는 칸</text>
+
+  <text x="40" y="388" font-size="13" fill="#444">가로축은 부채를 지는 태도, 세로축은 부채를 지고 있다는 자각 여부다.</text>
+  <text x="40" y="410" font-size="13" fill="#444">요구사항 불명확에서 비롯한 부채는 오른쪽 아래 칸에 놓인다. 질책이 아니라 상환 계획의 대상이다.</text>
+</svg>
