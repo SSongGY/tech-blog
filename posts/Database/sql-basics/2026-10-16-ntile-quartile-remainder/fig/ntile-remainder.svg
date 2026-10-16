@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfaf7"/>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b1b1b">13행을 NTILE(4)로 나누면 4·3·3·3 이 된다</text>
+  <text x="40" y="60" font-size="13" fill="#444">ORDER BY amount DESC 로 줄 세운 13행. 색이 묶음 번호다.</text>
+
+  <text x="40" y="92" font-size="13" fill="#444">정렬된 행</text>
+
+  <!-- 묶음 1 : 나머지가 더해져 한 행 많다 -->
+  <rect x="76"  y="104" width="52" height="44" rx="4" fill="#fdf0d9" stroke="#b45309" stroke-width="1.6"/>
+  <rect x="132" y="104" width="52" height="44" rx="4" fill="#fdf0d9" stroke="#b45309" stroke-width="1.6"/>
+  <rect x="188" y="104" width="52" height="44" rx="4" fill="#fdf0d9" stroke="#b45309" stroke-width="1.6"/>
+  <rect x="244" y="104" width="52" height="44" rx="4" fill="#fdf0d9" stroke="#b45309" stroke-width="1.6"/>
+  <text x="102" y="132" font-size="13" text-anchor="middle" fill="#7c3d06">980</text>
+  <text x="158" y="132" font-size="13" text-anchor="middle" fill="#7c3d06">950</text>
+  <text x="214" y="132" font-size="13" text-anchor="middle" fill="#7c3d06">870</text>
+  <text x="270" y="132" font-size="13" text-anchor="middle" fill="#7c3d06">760</text>
+
+  <!-- 묶음 2 -->
+  <rect x="300" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <rect x="356" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <rect x="412" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="326" y="132" font-size="13" text-anchor="middle" fill="#1d4733">720</text>
+  <text x="382" y="132" font-size="13" text-anchor="middle" fill="#1d4733">640</text>
+  <text x="438" y="132" font-size="13" text-anchor="middle" fill="#1d4733">610</text>
+
+  <!-- 묶음 3 -->
+  <rect x="468" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <rect x="524" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <rect x="580" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="494" y="132" font-size="13" text-anchor="middle" fill="#1d4733">520</text>
+  <text x="550" y="132" font-size="13" text-anchor="middle" fill="#1d4733">480</text>
+  <text x="606" y="132" font-size="13" text-anchor="middle" fill="#1d4733">410</text>
+
+  <!-- 묶음 4 -->
+  <rect x="636" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <rect x="692" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <rect x="748" y="104" width="52" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="662" y="132" font-size="13" text-anchor="middle" fill="#1d4733">350</text>
+  <text x="718" y="132" font-size="13" text-anchor="middle" fill="#1d4733">300</text>
+  <text x="774" y="132" font-size="13" text-anchor="middle" fill="#1d4733">210</text>
+
+  <!-- 묶음 구간 막대 -->
+  <rect x="76"  y="158" width="220" height="7" rx="3" fill="#b45309"/>
+  <rect x="300" y="158" width="164" height="7" rx="3" fill="#2d6a4f"/>
+  <rect x="468" y="158" width="164" height="7" rx="3" fill="#2d6a4f"/>
+  <rect x="636" y="158" width="164" height="7" rx="3" fill="#2d6a4f"/>
+
+  <text x="186" y="188" font-size="14" font-weight="bold" text-anchor="middle" fill="#7c3d06">묶음 1 — 4행</text>
+  <text x="382" y="188" font-size="14" text-anchor="middle" fill="#1d4733">묶음 2 — 3행</text>
+  <text x="550" y="188" font-size="14" text-anchor="middle" fill="#1d4733">묶음 3 — 3행</text>
+  <text x="718" y="188" font-size="14" text-anchor="middle" fill="#1d4733">묶음 4 — 3행</text>
+
+  <!-- 계산 -->
+  <rect x="40" y="212" width="800" height="92" rx="6" fill="#ffffff" stroke="#b9b4a8" stroke-width="1.4"/>
+  <text x="60" y="240" font-size="14" font-weight="bold" fill="#1b1b1b">묶음 크기가 정해지는 식</text>
+  <text x="60" y="266" font-size="13" fill="#333">몫 q = 13 ÷ 4 = 3 (나머지 버림)   ·   나머지 r = 13 − 4 × 3 = 1</text>
+  <text x="60" y="290" font-size="13" fill="#7c3d06">앞에서 r = 1 개 묶음이 q + 1 = 4 행, 남은 3 개 묶음이 q = 3 행. 큰 묶음이 먼저 온다.</text>
+</svg>
