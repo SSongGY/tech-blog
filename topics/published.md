@@ -316,3 +316,6 @@
 | 2026-10-16 | db-061 | Database | ANALYZE와 통계 — 옵티마이저가 보는 숫자 |
 | 2026-10-16 | pe-078 | PE | ISP와 ISMP — 무엇이 다른가 |
 | 2026-10-16 | sec-001 | Security | SQL 인젝션은 이스케이프가 아니라 바인딩으로 막는다 |
+| 2026-10-16 | db-062 | Database | FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝 |
+| 2026-10-16 | pe-079 | PE | IT 거버넌스 — COBIT 2019 구성요소 |
+| 2026-10-16 | tool-001 | Tooling | git rebase와 merge가 만드는 히스토리의 차이 |

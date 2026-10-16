@@ -424,7 +424,7 @@ topics:
     difficulty: 입문
     angle: "같은 작업을 두 방식으로 돌려 그래프와 bisect 결과를 비교"
     code: shell
-    status: todo
+    status: done
   - id: tool-002
     title: "git bisect로 버그가 들어온 커밋을 자동으로 찾기"
     category: Tooling
@@ -2224,7 +2224,7 @@ topics:
     angle: "거버넌스와 관리를 나눈 이유"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-080
     title: "ITSM과 ITIL 4 — 서비스 가치 시스템"
     category: PE
@@ -4569,7 +4569,7 @@ topics:
     angle: "LAST_VALUE 가 기대와 다른 값을 내는 이유가 기본 프레임에 있다는 것을 프레임을 바꿔 가며"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-063
     title: "NTILE — 데이터를 n등분하는 법"
     category: Database

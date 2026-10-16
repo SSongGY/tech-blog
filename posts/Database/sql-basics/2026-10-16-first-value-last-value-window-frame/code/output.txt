@@ -1,0 +1,151 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-16-first-value-last-value-window-frame
+# 명령      : python window_frame.py
+# 수행 시각 : 2026-10-16 19:09 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  7행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  emp_id    | INTEGER | PK
+  emp_name  | TEXT    | NOT NULL
+  dept_name | TEXT    | NOT NULL
+  salary    | INTEGER | NOT NULL
+
+  emp_id | emp_name | dept_name | salary
+  -------+----------+-----------+-------
+       1 | 김하나   | 개발      |   4200
+       2 | 이두리   | 개발      |   5100
+       3 | 박세진   | 개발      |   5100
+       4 | 최나래   | 개발      |   6300
+       5 | 정다윤   | 영업      |   3800
+       6 | 한소은   | 영업      |   4700
+       7 | 오미루   | 영업      |   5500
+
+================================================================
+① 프레임을 안 적고 그대로 — LAST_VALUE 가 자기 자신을 돌려준다
+================================================================
+SELECT emp_name, dept_name, salary,
+       FIRST_VALUE(salary) OVER w AS first_value,
+       LAST_VALUE(salary)  OVER w AS last_value
+  FROM employee
+WINDOW w AS (PARTITION BY dept_name ORDER BY salary)
+
+  emp_name | dept_name | salary | first_value | last_value
+  ---------+-----------+--------+-------------+-----------
+  김하나   | 개발      | 4200   | 4200        | 4200
+  이두리   | 개발      | 5100   | 4200        | 5100
+  박세진   | 개발      | 5100   | 4200        | 5100
+  최나래   | 개발      | 6300   | 4200        | 6300
+  정다윤   | 영업      | 3800   | 3800        | 3800
+  한소은   | 영업      | 4700   | 3800        | 4700
+  오미루   | 영업      | 5500   | 3800        | 5500
+
+================================================================
+② 프레임 끝을 파티션 끝까지 늘린다 — 의도한 값이 나온다
+================================================================
+SELECT emp_name, dept_name, salary,
+       FIRST_VALUE(salary) OVER w AS first_value,
+       LAST_VALUE(salary)  OVER w AS last_value
+  FROM employee
+WINDOW w AS (PARTITION BY dept_name ORDER BY salary
+             ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING)
+
+  emp_name | dept_name | salary | first_value | last_value
+  ---------+-----------+--------+-------------+-----------
+  김하나   | 개발      | 4200   | 4200        | 6300
+  이두리   | 개발      | 5100   | 4200        | 6300
+  박세진   | 개발      | 5100   | 4200        | 6300
+  최나래   | 개발      | 6300   | 4200        | 6300
+  정다윤   | 영업      | 3800   | 3800        | 5500
+  한소은   | 영업      | 4700   | 3800        | 5500
+  오미루   | 영업      | 5500   | 3800        | 5500
+
+================================================================
+③ ORDER BY 를 뒤집어 FIRST_VALUE 로 받는다 — 프레임을 안 건드린다
+================================================================
+SELECT emp_name, dept_name, salary,
+       FIRST_VALUE(salary) OVER (PARTITION BY dept_name
+                                 ORDER BY salary)      AS lowest,
+       FIRST_VALUE(salary) OVER (PARTITION BY dept_name
+                                 ORDER BY salary DESC) AS highest
+  FROM employee
+
+  emp_name | dept_name | salary | lowest | highest
+  ---------+-----------+--------+--------+--------
+  김하나   | 개발      | 4200   | 4200   | 6300
+  이두리   | 개발      | 5100   | 4200   | 6300
+  박세진   | 개발      | 5100   | 4200   | 6300
+  최나래   | 개발      | 6300   | 4200   | 6300
+  정다윤   | 영업      | 3800   | 3800   | 5500
+  한소은   | 영업      | 4700   | 3800   | 5500
+  오미루   | 영업      | 5500   | 3800   | 5500
+
+================================================================
+④ 동등 행이 있을 때 RANGE 와 ROWS 가 갈린다 (개발 부서, 5100 이 둘)
+================================================================
+SELECT emp_name, salary,
+       LAST_VALUE(emp_name) OVER (ORDER BY salary
+           RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS by_range,
+       LAST_VALUE(emp_name) OVER (ORDER BY salary
+           ROWS  BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS by_rows
+  FROM employee
+ WHERE dept_name = '개발'
+
+  emp_name | salary | by_range | by_rows
+  ---------+--------+----------+--------
+  김하나   | 4200   | 김하나   | 김하나
+  이두리   | 5100   | 박세진   | 이두리
+  박세진   | 5100   | 박세진   | 박세진
+  최나래   | 6300   | 최나래   | 최나래
+
+================================================================
+⑤ 프레임을 좁히면 '구간'이 움직인다 — 자기 포함 최근 3행
+================================================================
+SELECT emp_name, salary,
+       FIRST_VALUE(salary) OVER w AS window_first,
+       LAST_VALUE(salary)  OVER w AS window_last
+  FROM employee
+WINDOW w AS (ORDER BY salary ROWS BETWEEN 2 PRECEDING AND CURRENT ROW)
+
+  emp_name | salary | window_first | window_last
+  ---------+--------+--------------+------------
+  정다윤   | 3800   | 3800         | 3800
+  김하나   | 4200   | 3800         | 4200
+  한소은   | 4700   | 3800         | 4700
+  이두리   | 5100   | 4200         | 5100
+  박세진   | 5100   | 4700         | 5100
+  오미루   | 5500   | 5100         | 5500
+  최나래   | 6300   | 5100         | 6300
+
+================================================================
+⑥ IGNORE NULLS 는 SQLite 가 받지 않는다
+================================================================
+  sqlite3.OperationalError: near "IGNORE": syntax error
+
+================================================================
+⑦ 실행계획 — 윈도우 함수는 정렬한 결과를 코루틴으로 한 번 훑는다
+================================================================
+SELECT emp_name, LAST_VALUE(salary) OVER (PARTITION BY dept_name ORDER BY salary) FROM employee
+
+QUERY PLAN
+|--CO-ROUTINE (subquery-2)
+|  |--SCAN employee
+|  `--USE TEMP B-TREE FOR ORDER BY
+`--SCAN (subquery-2)
+
