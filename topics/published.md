@@ -322,3 +322,4 @@
 | 2026-10-16 | db-063 | Database | NTILE — 데이터를 n등분하는 법 |
 | 2026-10-16 | pe-080 | PE | ITSM과 ITIL 4 — 서비스 가치 시스템 |
 | 2026-10-16 | lang-005 | Language | async/await가 숨기고 있는 상태 머신 |
+| 2026-10-17 | fin-062 | Finance | 상·하한가와 변동성완화장치(VI) |

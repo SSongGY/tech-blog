@@ -4371,7 +4371,7 @@ topics:
     angle: "가격 급변을 멈추는 장치들이 각각 언제 발동하는지. 제도가 없을 때와 있을 때 체결 흐름 비교"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-063
     title: "증거금과 반대매매 — 돈 없이 사는 구조"
     category: Finance
