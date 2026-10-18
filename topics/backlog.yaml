@@ -212,7 +212,7 @@ topics:
     difficulty: 심화
     angle: "이중 쓰기 실패 지점을 5곳으로 나눠 각각 무엇이 깨지는지"
     code: python
-    status: todo
+    status: writing
   - id: be-010
     title: "타임아웃을 계층마다 다르게 줘야 하는 이유"
     category: Backend
@@ -2246,7 +2246,7 @@ topics:
     angle: "숨은 비용을 어디까지 TCO에 넣는지"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-083
     title: "SLA 지표 설계와 측정"
     category: PE
@@ -4591,7 +4591,7 @@ topics:
     angle: "같은 결과를 CASE WHEN 과 FILTER 로 각각 쓰고 어느 쪽이 의도를 드러내는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-065
     title: "ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE"
     category: Database

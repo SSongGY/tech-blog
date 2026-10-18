@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 418" width="880" height="418" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="418" fill="#fbfaf7"/>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b1b1b">행이 걸러지는 자리는 셋이고, FILTER 는 그중 하나만 건드린다</text>
+  <text x="40" y="60" font-size="13" fill="#444">WHERE 는 모든 집계의 입력에서 행을 빼고, FILTER 는 그 집계 호출 하나의 입력에서만 뺀다.</text>
+
+  <!-- ===== 왼쪽 : 처리 순서 ===== -->
+  <text x="40" y="88" font-size="13" font-weight="bold" fill="#444">SELECT 처리 순서</text>
+
+  <rect x="40" y="96" width="280" height="44" rx="5" fill="#eef1f4" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="56" y="123" font-size="13" fill="#1b1b1b">FROM support_ticket — 12행</text>
+
+  <path d="M180 140 L180 154" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M176 150 L180 157 L184 150 Z" fill="#6b7280"/>
+
+  <rect x="40" y="158" width="280" height="44" rx="5" fill="#fdf0d9" stroke="#b45309" stroke-width="1.8"/>
+  <text x="56" y="178" font-size="13" fill="#7c3d06">WHERE — 행을 통째로 뺀다</text>
+  <text x="56" y="195" font-size="13" fill="#7c3d06">뒤따르는 집계 전부가 같이 줄어든다</text>
+
+  <path d="M180 202 L180 216" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M176 212 L180 219 L184 212 Z" fill="#6b7280"/>
+
+  <rect x="40" y="220" width="280" height="44" rx="5" fill="#eef1f4" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="56" y="247" font-size="13" fill="#1b1b1b">GROUP BY — 그룹으로 묶는다</text>
+
+  <path d="M180 264 L180 278" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M176 274 L180 281 L184 274 Z" fill="#6b7280"/>
+
+  <rect x="40" y="282" width="280" height="44" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="56" y="302" font-size="13" fill="#1d4733">집계 계산 — FILTER 가 작동하는 자리</text>
+  <text x="56" y="319" font-size="13" fill="#1d4733">집계 호출마다 입력이 따로 정해진다</text>
+
+  <path d="M180 326 L180 340" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M176 336 L180 343 L184 336 Z" fill="#6b7280"/>
+
+  <rect x="40" y="344" width="280" height="44" rx="5" fill="#eef1f4" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="56" y="371" font-size="13" fill="#1b1b1b">HAVING — 그룹을 뺀다</text>
+
+  <!-- ===== 오른쪽 : 한 그룹이 집계 셋으로 갈라진다 ===== -->
+  <text x="368" y="88" font-size="13" font-weight="bold" fill="#444">챗봇 그룹 4행이 집계 셋에 들어갈 때</text>
+
+  <rect x="368" y="96" width="112" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="424" y="114" font-size="13" text-anchor="middle" fill="#1d4733">closed</text>
+  <text x="424" y="131" font-size="13" text-anchor="middle" fill="#1d4733">normal</text>
+
+  <rect x="488" y="96" width="112" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="544" y="114" font-size="13" text-anchor="middle" fill="#1d4733">closed</text>
+  <text x="544" y="131" font-size="13" text-anchor="middle" fill="#1d4733">normal</text>
+
+  <rect x="608" y="96" width="112" height="44" rx="4" fill="#fdf0d9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="664" y="114" font-size="13" text-anchor="middle" fill="#7c3d06">closed</text>
+  <text x="664" y="131" font-size="13" text-anchor="middle" fill="#7c3d06">high · 2분</text>
+
+  <rect x="728" y="96" width="112" height="44" rx="4" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="784" y="114" font-size="13" text-anchor="middle" fill="#1d4733">closed</text>
+  <text x="784" y="131" font-size="13" text-anchor="middle" fill="#1d4733">normal</text>
+
+  <path d="M604 140 L604 158" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M600 154 L604 161 L608 154 Z" fill="#6b7280"/>
+
+  <rect x="368" y="166" width="472" height="44" rx="5" fill="#eef1f4" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="384" y="186" font-size="13" fill="#1b1b1b">COUNT(*) — 필터 없음</text>
+  <text x="384" y="203" font-size="13" fill="#555">4행 전부가 입력</text>
+  <text x="824" y="194" font-size="18" font-weight="bold" text-anchor="end" fill="#1b1b1b">4</text>
+
+  <rect x="368" y="222" width="472" height="44" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="384" y="242" font-size="13" fill="#1d4733">COUNT(*) FILTER (WHERE status = 'open')</text>
+  <text x="384" y="259" font-size="13" fill="#1d4733">통과한 행이 없다 — COUNT 는 0 을 돌려준다</text>
+  <text x="824" y="250" font-size="18" font-weight="bold" text-anchor="end" fill="#1d4733">0</text>
+
+  <rect x="368" y="278" width="472" height="44" rx="5" fill="#fdf0d9" stroke="#b45309" stroke-width="1.8"/>
+  <text x="384" y="298" font-size="13" fill="#7c3d06">AVG(response_minutes) FILTER (WHERE priority = 'high')</text>
+  <text x="384" y="315" font-size="13" fill="#7c3d06">세 번째 행 하나만 입력</text>
+  <text x="824" y="306" font-size="18" font-weight="bold" text-anchor="end" fill="#7c3d06">2.0</text>
+
+  <rect x="368" y="334" width="472" height="54" rx="5" fill="#fff" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="384" y="354" font-size="13" fill="#9d0208">같은 조건을 WHERE 로 올리면 COUNT(*) 까지 1 이 된다.</text>
+  <text x="384" y="371" font-size="13" fill="#9d0208">한 질의에서 모수와 부분을 같이 세려면 FILTER 여야 한다.</text>
+</svg>
