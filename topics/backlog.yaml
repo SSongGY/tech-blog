@@ -212,7 +212,7 @@ topics:
     difficulty: 심화
     angle: "이중 쓰기 실패 지점을 5곳으로 나눠 각각 무엇이 깨지는지"
     code: python
-    status: writing
+    status: done
   - id: be-010
     title: "타임아웃을 계층마다 다르게 줘야 하는 이유"
     category: Backend

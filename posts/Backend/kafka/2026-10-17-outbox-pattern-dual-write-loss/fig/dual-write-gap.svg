@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 432" width="880" height="432" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="432" fill="#fbfaf7"/>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b1b1b">원자 구역이 둘이면 그 사이에 복구할 기록이 남지 않는다</text>
+  <text x="40" y="60" font-size="13" fill="#444">아웃박스는 메시지를 업무 데이터와 같은 트랜잭션에 적어 두어, 사이에서 죽어도 다시 보낼 근거를 남긴다.</text>
+
+  <!-- ===== 이중 쓰기 ===== -->
+  <text x="40" y="92" font-size="14" font-weight="bold" fill="#9d0208">이중 쓰기 — 원자 구역이 둘</text>
+
+  <rect x="40" y="104" width="240" height="96" rx="5" fill="#eef1f4" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="56" y="128" font-size="13" font-weight="bold" fill="#1b1b1b">DB 트랜잭션</text>
+  <text x="56" y="152" font-size="13" fill="#555">INSERT orders</text>
+  <text x="56" y="174" font-size="13" fill="#555">COMMIT</text>
+
+  <path d="M280 152 L314 152" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M310 148 L317 152 L310 156 Z" fill="#6b7280"/>
+
+  <rect x="320" y="104" width="240" height="96" rx="5" fill="#fff" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="6 4"/>
+  <text x="336" y="128" font-size="13" font-weight="bold" fill="#9d0208">복구할 기록이 없는 구간</text>
+  <text x="336" y="152" font-size="13" fill="#9d0208">P2 죽음 · P3 거절</text>
+  <text x="336" y="174" font-size="13" fill="#9d0208">P4 응답 유실 · P5 순서 역전</text>
+
+  <path d="M560 152 L594 152" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M590 148 L597 152 L590 156 Z" fill="#6b7280"/>
+
+  <rect x="600" y="104" width="240" height="96" rx="5" fill="#eef1f4" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="616" y="128" font-size="13" font-weight="bold" fill="#1b1b1b">브로커</text>
+  <text x="616" y="152" font-size="13" fill="#555">OrderPlaced 발행</text>
+  <text x="616" y="174" font-size="13" fill="#555">응답을 받아야 성공을 안다</text>
+
+  <!-- ===== 아웃박스 ===== -->
+  <text x="40" y="240" font-size="14" font-weight="bold" fill="#2d6a4f">아웃박스 — 원자 구역이 하나</text>
+
+  <rect x="40" y="252" width="360" height="104" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="56" y="276" font-size="13" font-weight="bold" fill="#1d4733">DB 트랜잭션 — COMMIT 한 번</text>
+  <text x="56" y="300" font-size="13" fill="#1d4733">INSERT orders</text>
+  <text x="56" y="322" font-size="13" fill="#1d4733">INSERT outbox (sent_at 은 비워 둔다)</text>
+  <text x="56" y="344" font-size="13" fill="#1d4733">COMMIT</text>
+
+  <path d="M400 304 L434 304" stroke="#6b7280" stroke-width="1.6"/>
+  <path d="M430 300 L437 304 L430 308 Z" fill="#6b7280"/>
+
+  <rect x="440" y="252" width="400" height="104" rx="5" fill="#e4f0e8" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="456" y="276" font-size="13" font-weight="bold" fill="#1d4733">릴레이 — 따로 도는 프로세스</text>
+  <text x="456" y="300" font-size="13" fill="#1d4733">sent_at 이 비어 있는 행을 읽는다</text>
+  <text x="456" y="322" font-size="13" fill="#1d4733">브로커에 발행한다</text>
+  <text x="456" y="344" font-size="13" fill="#1d4733">발행이 끝난 뒤 sent_at 을 적는다</text>
+
+  <rect x="40" y="374" width="800" height="46" rx="5" fill="#fdf0d9" stroke="#b45309" stroke-width="1.6"/>
+  <text x="56" y="396" font-size="13" fill="#7c3d06">릴레이가 어디서 죽어도 아웃박스 행이 남아 있으므로 다음 기동 때 다시 보낸다.</text>
+  <text x="56" y="414" font-size="13" fill="#7c3d06">대신 같은 이벤트가 두 번 갈 수 있다 — 최소 한 번 전달이고, 소비자가 멱등해야 한다.</text>
+</svg>
