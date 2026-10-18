@@ -1,0 +1,54 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\emerging-tech\2026-10-19-kv-cache-transformer-inference
+# 명령      : python kv_cache_size.py
+# 수행 시각 : 2026-10-19 08:26 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+[환경]
+  파이썬  3.13.5
+  플랫폼  Windows 11
+  실행    kv_cache_size.py
+
+[가정한 구성]
+  decoder layers L   = 80
+  query heads        = 64
+  head dim d_h       = 128
+  hidden dim         = 8192
+
+[1] context length vs cache size (batch 1, FP16)
+      tokens |            MHA |    GQA(8group) |            MQA
+  --------------------------------------------------------------
+       1,024 |       2.50 GiB |       0.31 GiB |       0.04 GiB
+       2,048 |       5.00 GiB |       0.62 GiB |       0.08 GiB
+       4,096 |      10.00 GiB |       1.25 GiB |       0.16 GiB
+       8,192 |      20.00 GiB |       2.50 GiB |       0.31 GiB
+      16,384 |      40.00 GiB |       5.00 GiB |       0.62 GiB
+      32,768 |      80.00 GiB |      10.00 GiB |       1.25 GiB
+      65,536 |     160.00 GiB |      20.00 GiB |       2.50 GiB
+     131,072 |     320.00 GiB |      40.00 GiB |       5.00 GiB
+  문맥을 2배로 늘릴 때마다 세 열 모두 정확히 2배가 된다.
+
+[2] batch size vs cache size (16,384 tokens, FP16)
+       batch |            MHA |    GQA(8group) |            MQA
+  --------------------------------------------------------------
+           1 |      40.00 GiB |       5.00 GiB |       0.62 GiB
+           8 |     320.00 GiB |      40.00 GiB |       5.00 GiB
+          32 |    1280.00 GiB |     160.00 GiB |      20.00 GiB
+         128 |    5120.00 GiB |     640.00 GiB |      80.00 GiB
+
+[3] element precision vs cache size (GQA 8group, 16,384 tokens, batch 32)
+   precision | bytes/elem |          cache |  vs FP16
+  ------------------------------------------------------
+        FP16 |        2.0 |     160.00 GiB |     1.0x
+         FP8 |        1.0 |      80.00 GiB |     2.0x
+        INT4 |        0.5 |      40.00 GiB |     4.0x
+
+[4] reduction factor vs head-count ratio
+   GQA(8group): computed   8.0x, head ratio   8.0x -> match
+           MQA: computed  64.0x, head ratio  64.0x -> match
+
