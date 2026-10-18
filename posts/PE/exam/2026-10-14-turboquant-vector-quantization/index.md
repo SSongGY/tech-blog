@@ -213,6 +213,8 @@ LLM 서빙과 벡터 검색은 연산이 아니라 **메모리에서 먼저 막�
 
 > 개념 정리: [근사 최근접 이웃 탐색과 HNSW 색인 — 정확한 답을 포기하고 얻는 것](../../database/2026-09-22-approximate-nearest-neighbor-hnsw/index.md)
 
+> 개념 정리: [벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가](../../data-analysis/2026-10-19-vector-quantization-rate-distortion/index.md)
+
 > 개념 정리: [KV 캐시 — 트랜스포머 추론의 메모리 병목](../../emerging-tech/2026-10-19-kv-cache-transformer-inference/index.md)
 
 끝

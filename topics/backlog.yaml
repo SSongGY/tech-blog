@@ -4877,7 +4877,7 @@ topics:
     angle: "자기회귀 추론에서 키·값을 왜 캐싱하는지, 캐시 크기가 문맥 길이·배치·헤드 수에 어떻게 비례하는지, 양자화·선별 삭제·공유 어텐션 등 완화 수단을 비교한다"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-169
     title: "벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가"
     category: PE
@@ -4888,7 +4888,7 @@ topics:
     angle: "스칼라 양자화와 벡터 양자화를 가르고, 맥스-로이드 알고리즘과 율-왜곡 함수로 비트폭과 왜곡의 관계를 설명한다. 곱 양자화가 왜 부분공간으로 쪼개는지까지"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-170
     title: "존슨-린덴스트라우스 보조정리와 랜덤 투영"
     category: PE

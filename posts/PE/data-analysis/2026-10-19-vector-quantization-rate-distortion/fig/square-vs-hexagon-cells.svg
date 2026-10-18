@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 410" width="880" height="410" role="img" aria-label="2차원 평면을 정사각 칸과 육각 칸으로 덮었을 때의 비교">
+  <rect x="0" y="0" width="880" height="410" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1a1a18">같은 칸 개수로 2차원 평면을 덮는 두 방법</text>
+
+  <line x1="440" y1="56" x2="440" y2="352" stroke="#cfcfc6" stroke-width="1"/>
+
+  <text x="40" y="82" font-family="sans-serif" font-size="14" font-weight="bold" fill="#55554c">정사각 칸 — 스칼라 양자화기를 축마다 따로 건 것</text>
+  <text x="460" y="82" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">육각 칸 — 두 성분을 묶어 양자화한 것</text>
+
+  <!-- 정사각 격자 -->
+  <g stroke="#8a8a80" stroke-width="1.5" fill="#f0f0ea">
+    <rect x="134" y="134" width="64" height="64"/>
+    <rect x="198" y="134" width="64" height="64"/>
+    <rect x="262" y="134" width="64" height="64"/>
+    <rect x="134" y="198" width="64" height="64"/>
+    <rect x="198" y="198" width="64" height="64"/>
+    <rect x="262" y="198" width="64" height="64"/>
+    <rect x="134" y="262" width="64" height="64"/>
+    <rect x="198" y="262" width="64" height="64"/>
+    <rect x="262" y="262" width="64" height="64"/>
+  </g>
+  <g fill="#1a1a18">
+    <circle cx="166" cy="166" r="3.5"/><circle cx="230" cy="166" r="3.5"/><circle cx="294" cy="166" r="3.5"/>
+    <circle cx="166" cy="230" r="3.5"/><circle cx="230" cy="230" r="3.5"/><circle cx="294" cy="230" r="3.5"/>
+    <circle cx="166" cy="294" r="3.5"/><circle cx="230" cy="294" r="3.5"/><circle cx="294" cy="294" r="3.5"/>
+  </g>
+
+  <!-- 육각 격자 -->
+  <g stroke="#2d6a4f" stroke-width="1.5" fill="#e4f1e9">
+    <polygon points="650,190 684.64,210 684.64,250 650,270 615.36,250 615.36,210"/>
+    <polygon points="580.72,190 615.36,210 615.36,250 580.72,270 546.08,250 546.08,210"/>
+    <polygon points="719.28,190 753.92,210 753.92,250 719.28,270 684.64,250 684.64,210"/>
+    <polygon points="615.36,130 650,150 650,190 615.36,210 580.72,190 580.72,150"/>
+    <polygon points="684.64,130 719.28,150 719.28,190 684.64,210 650,190 650,150"/>
+    <polygon points="615.36,250 650,270 650,310 615.36,330 580.72,310 580.72,270"/>
+    <polygon points="684.64,250 719.28,270 719.28,310 684.64,330 650,310 650,270"/>
+  </g>
+  <g fill="#1a1a18">
+    <circle cx="650" cy="230" r="3.5"/><circle cx="580.72" cy="230" r="3.5"/><circle cx="719.28" cy="230" r="3.5"/>
+    <circle cx="615.36" cy="170" r="3.5"/><circle cx="684.64" cy="170" r="3.5"/>
+    <circle cx="615.36" cy="290" r="3.5"/><circle cx="684.64" cy="290" r="3.5"/>
+  </g>
+
+  <text x="40" y="372" font-family="sans-serif" font-size="13" fill="#55554c">정규화 2차 모멘트 G = 1/12 = 0.08333</text>
+  <text x="460" y="372" font-family="sans-serif" font-size="13" fill="#2d6a4f">G = 5/(36√3) = 0.08019 — 0.167 dB 낮다</text>
+
+  <text x="30" y="400" font-family="sans-serif" font-size="13" fill="#3a3a34">점 = 대표값 · 칸 = 그 대표값으로 보내지는 영역. 두 성분이 완전히 독립이어도 육각 칸이 유리하다.</text>
+</svg>
