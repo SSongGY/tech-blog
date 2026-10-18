@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 300" width="880" height="300" role="img" aria-label="학점 처리 모듈의 동등 분할 파티션 7개와 경계값 12개">
+  <rect x="0" y="0" width="880" height="300" fill="#fbfbf8"/>
+
+  <text x="40" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">학점 처리 모듈 — 동등 분할 파티션 7개와 경계값 12개</text>
+  <text x="40" y="58" font-family="sans-serif" font-size="13" fill="#555555">위 숫자는 파티션 대표값, 아래 숫자는 경계값이다. 입력은 정수 점수 하나다.</text>
+
+  <!-- 대표값 -->
+  <text x="85" y="112" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">-5</text>
+  <text x="200" y="112" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">30</text>
+  <text x="330" y="112" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">65</text>
+  <text x="450" y="112" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">75</text>
+  <text x="570" y="112" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">85</text>
+  <text x="695" y="112" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">95</text>
+  <text x="800" y="112" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">150</text>
+
+  <!-- 파티션 -->
+  <rect x="40" y="124" width="90" height="50" fill="#fdecec" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="85" y="145" font-family="sans-serif" font-size="14" fill="#9d0208" text-anchor="middle">무효</text>
+  <text x="85" y="164" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">ERROR</text>
+
+  <rect x="130" y="124" width="140" height="50" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="200" y="145" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">0 ~ 59</text>
+  <text x="200" y="164" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">F</text>
+
+  <rect x="270" y="124" width="120" height="50" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="330" y="145" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">60 ~ 69</text>
+  <text x="330" y="164" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">D</text>
+
+  <rect x="390" y="124" width="120" height="50" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="450" y="145" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">70 ~ 79</text>
+  <text x="450" y="164" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">C</text>
+
+  <rect x="510" y="124" width="120" height="50" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="570" y="145" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">80 ~ 89</text>
+  <text x="570" y="164" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">B</text>
+
+  <rect x="630" y="124" width="130" height="50" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="695" y="145" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">90 ~ 100</text>
+  <text x="695" y="164" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">A</text>
+
+  <rect x="760" y="124" width="80" height="50" fill="#fdecec" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 3"/>
+  <text x="800" y="145" font-family="sans-serif" font-size="14" fill="#9d0208" text-anchor="middle">무효</text>
+  <text x="800" y="164" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">ERROR</text>
+
+  <!-- 경계 눈금 -->
+  <g stroke="#b45309" stroke-width="1.6">
+    <line x1="130" y1="174" x2="130" y2="190"/>
+    <line x1="270" y1="174" x2="270" y2="190"/>
+    <line x1="390" y1="174" x2="390" y2="190"/>
+    <line x1="510" y1="174" x2="510" y2="190"/>
+    <line x1="630" y1="174" x2="630" y2="190"/>
+    <line x1="760" y1="174" x2="760" y2="190"/>
+  </g>
+  <g font-family="sans-serif" font-size="13" fill="#b45309" text-anchor="middle">
+    <text x="112" y="208">-1</text>
+    <text x="148" y="208">0</text>
+    <text x="252" y="208">59</text>
+    <text x="290" y="208">60</text>
+    <text x="372" y="208">69</text>
+    <text x="410" y="208">70</text>
+    <text x="492" y="208">79</text>
+    <text x="530" y="208">80</text>
+    <text x="612" y="208">89</text>
+    <text x="650" y="208">90</text>
+    <text x="738" y="208">100</text>
+    <text x="782" y="208">101</text>
+  </g>
+
+  <text x="40" y="240" font-family="sans-serif" font-size="13" fill="#555555">경계값 12개가 그대로 2-value 경계값 분석의 커버리지 아이템이 된다. 파티션마다 양옆이 다른 파티션이기 때문이다.</text>
+  <text x="40" y="262" font-family="sans-serif" font-size="13" fill="#555555">3-value 는 경계값마다 양쪽 이웃을 더 요구하므로 58·61·68·71·78·81·88·91·99·102 가 추가돼 24개가 된다.</text>
+
+  <g font-family="sans-serif" font-size="13">
+    <rect x="40" y="276" width="14" height="12" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.4"/>
+    <text x="60" y="287" fill="#555555">유효 파티션</text>
+    <rect x="150" y="276" width="14" height="12" fill="#fdecec" stroke="#9d0208" stroke-width="1.4" stroke-dasharray="4 2"/>
+    <text x="170" y="287" fill="#555555">무효 파티션</text>
+    <line x1="280" y1="276" x2="280" y2="288" stroke="#b45309" stroke-width="1.6"/>
+    <text x="290" y="287" fill="#555555">파티션 경계</text>
+  </g>
+</svg>

@@ -4877,7 +4877,7 @@ topics:
     angle: "자기회귀 추론에서 키·값을 왜 캐싱하는지, 캐시 크기가 문맥 길이·배치·헤드 수에 어떻게 비례하는지, 양자화·선별 삭제·공유 어텐션 등 완화 수단을 비교한다"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-169
     title: "벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가"
     category: PE
@@ -4888,7 +4888,7 @@ topics:
     angle: "스칼라 양자화와 벡터 양자화를 가르고, 맥스-로이드 알고리즘과 율-왜곡 함수로 비트폭과 왜곡의 관계를 설명한다. 곱 양자화가 왜 부분공간으로 쪼개는지까지"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-170
     title: "존슨-린덴스트라우스 보조정리와 랜덤 투영"
     category: PE
@@ -4996,6 +4996,28 @@ topics:
     tags: [정보관리기술사, software-engineering, 개념정리]
     difficulty: 중급
     angle: "ISO/IEC/IEEE 29148 언어 품질 기준에서 도출한 9가지 요구사항 스멜과 자동 탐지의 정밀도·재현율 한계, 코드 스멜과의 개념 대응"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-180
+    title: "결정 테이블 테스팅 — 조건 조합을 빠짐없이 케이스로 바꾸는 절차"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, 소프트웨어공학, 개념정리]
+    difficulty: 중급
+    angle: "조건·액션 행 구성, 전체 결정 테이블과 최소화, 커버리지 정의와 조합 폭발 대응까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-181
+    title: "MC/DC — 변경 조건·결정 커버리지와 안전필수 소프트웨어"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, 소프트웨어공학, 개념정리]
+    difficulty: 중급
+    angle: "분기 조건 조합 대비 케이스 수가 선형으로 억제되는 이유와 DO-178C 레벨 요구"
     code: none
     origin: exam
     status: todo
