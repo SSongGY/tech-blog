@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **370편** · 갱신 2026-10-18
+총 **373편** · 갱신 2026-10-18
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 63편
+## DB문법 (basics) — 64편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-17 | [집계 함수의 FILTER 절 — CASE WHEN보다 읽기 쉬운 조건부 집계](posts/Database/sql-basics/2026-10-17-aggregate-filter-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [NTILE — 데이터를 n등분하는 법](posts/Database/sql-basics/2026-10-16-ntile-quartile-remainder/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [인덱스와 NULL — 실행계획이 같은데 결과가 0건인 자리](posts/Database/sql-basics/2026-10-16-index-and-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-16 | [FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝](posts/Database/sql-basics/2026-10-16-first-value-last-value-window-frame/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -96,10 +97,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 129편
+## 기술사 (pe) — 130편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-17 | [IT 투자 평가 — TCO와 ROI](posts/PE/it-management/2026-10-17-it-investment-tco-roi/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [설명가능 AI(XAI) 기법 분류 — 내재적 해석과 사후 설명의 신뢰도 차이](posts/PE/emerging-tech/2026-10-16-xai-method-taxonomy/index.md) | 중급 | NIST IR 8312 (2021-09), ISO/IEC TS 6254:2025 | 문서 근거 |
 | 2026-10-16 | [ITSM과 ITIL 4 — 서비스 가치 시스템](posts/PE/it-management/2026-10-16-itsm-itil4-service-value-system/index.md) | 중급 | ITIL 4 (2019년판), ISO/IEC 20000-1:2018 (제3판) | 문서 근거 |
 | 2026-10-16 | [IT 거버넌스 — COBIT 2019 구성요소](posts/PE/it-management/2026-10-16-it-governance-cobit-2019/index.md) | 중급 | COBIT 2019 | 문서 근거 |
@@ -253,10 +255,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 26편
+## 일반 (general) — 27편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-17 | [아웃박스 패턴 없이 이벤트가 유실되는 경로](posts/Backend/kafka/2026-10-17-outbox-pattern-dual-write-loss/index.md) | 심화 | Python 3.13.5, SQLite 3.49.1 | 실행 검증 |
 | 2026-10-16 | [SQL 인젝션은 이스케이프가 아니라 바인딩으로 막는다](posts/Security/2026-10-16-sql-injection-binding-not-escaping/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [git rebase와 merge가 만드는 히스토리의 차이](posts/Tooling/git/2026-10-16-git-rebase-merge-history/index.md) | 입문 | git 2.54.0.windows.1 | 실행 검증 |
 | 2026-10-16 | [벤치마크가 거짓말하는 다섯 가지 방식](posts/Performance/2026-10-16-benchmark-five-lies/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
