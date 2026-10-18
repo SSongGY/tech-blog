@@ -2246,7 +2246,7 @@ topics:
     angle: "숨은 비용을 어디까지 TCO에 넣는지"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-083
     title: "SLA 지표 설계와 측정"
     category: PE
