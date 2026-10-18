@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **373편** · 갱신 2026-10-19
+총 **374편** · 갱신 2026-10-19
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -287,10 +287,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 53편
+## 기출문제 (exam) — 54편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-19 | [기출문제 — 소프트웨어 테스트 7대 원리와 동등 분할·경계값 분석 테스트 케이스 설계](posts/PE/exam/2026-10-19-test-principles-equivalence-boundary/index.md) | 중급 | ISTQB CTFL Syllabus v4.0.1 (2024-09-15), ISO/IEC/IEEE 29119-4:2021 (2판), Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [기출문제 — 불명확한 요구사항이 만드는 품질저하를 기술부채·코드스멜·리팩토링으로 설명하기](posts/PE/exam/2026-10-16-unclear-requirements-debt-smell-refactoring/index.md) | 중급 | ISO/IEC/IEEE 29148:2018 (2판), ISO/IEC 25010:2023 (2판), Fowler, Refactoring 2nd ed. (2018), Cunningham, OOPSLA'92 Experience Report (1992) | 문서 근거 |
 | 2026-10-16 | [기출문제 — 데이터분석에서 이상치와 편향](posts/PE/exam/2026-10-16-outlier-and-bias-in-data-analysis/index.md) | 중급 | Python 3.13.5, JCGM 200:2012 (국제 측정학 용어집 제3판), NIST/SEMATECH e-Handbook of Statistical Methods (2012), NIST SP 1270 (2022-03), ISO 16269-4:2010, ISO/IEC TR 24027:2021 | 실행 검증 |
 | 2026-10-16 | [기출문제 — 다중 에이전트 시스템(MAS)의 정의·비교·효과](posts/PE/exam/2026-10-16-multi-agent-system-enterprise/index.md) | 중급 | FIPA Agent Management Specification SC00023K(2004-03-18, 표준), A2A Protocol Specification v1.0.0, Model Context Protocol 사양 개정판 2026-07-28, NIST COSAiS 프로젝트(개념 문서 2025-08-14, 페이지 갱신 2026-01-08) | 문서 근거 |
