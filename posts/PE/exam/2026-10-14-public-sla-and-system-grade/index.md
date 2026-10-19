@@ -188,6 +188,8 @@ verified: true
 체계 — 로그와 모니터링, 시각 동기화, 장애 기록 — 를 먼저 세워야 한다. 측정되지 않는 목표치는
 협약서에만 남는다.
 
+> 개념 정리: [SLA·SLO·SLI와 서비스수준관리(SLM) — 재는 것, 목표, 그리고 계약](../../it-management/2026-10-19-sla-slo-sli-service-level-management/index.md)
+
 끝
 
 ---

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfaf7"/>
+
+  <text x="440" y="30" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">측정이 목표를 받치고, 목표가 계약을 받친다</text>
+
+  <!-- SLI -->
+  <rect x="40" y="58" width="230" height="124" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="155" y="84" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f">SLI · 서비스수준지표</text>
+  <text x="155" y="107" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">무엇을 어떻게 재는가</text>
+  <text x="155" y="132" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">정상 이벤트 ⁄ 전체 이벤트</text>
+  <text x="155" y="155" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">가용률, 지연, 오류율, 처리량</text>
+  <text x="155" y="173" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">측정 구간·제외 시간을 정의</text>
+
+  <!-- SLO -->
+  <rect x="325" y="58" width="230" height="124" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="440" y="84" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309">SLO · 서비스수준목표</text>
+  <text x="440" y="107" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">그 지표의 목표치</text>
+  <text x="440" y="132" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">예: 월 가용률 ≥ 99.9%</text>
+  <text x="440" y="155" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">미달해도 배상 의무는 없다</text>
+  <text x="440" y="173" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">내부 운영 기준으로 쓴다</text>
+
+  <!-- SLA -->
+  <rect x="610" y="58" width="230" height="124" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="725" y="84" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#9d0208">SLA · 서비스수준협약</text>
+  <text x="725" y="107" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">목표치를 담은 합의 문서</text>
+  <text x="725" y="132" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">미달 시 결과가 따른다</text>
+  <text x="725" y="155" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">위약금·감액·해지 조항</text>
+  <text x="725" y="173" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">고객과 합의해 문서로 남긴다</text>
+
+  <line x1="274" y1="120" x2="319" y2="120" stroke="#444" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="559" y1="120" x2="604" y2="120" stroke="#444" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="296" y="52" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">목표 부여</text>
+  <text x="581" y="52" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">계약 편입</text>
+
+  <!-- 오차 예산 -->
+  <rect x="325" y="204" width="230" height="46" rx="6" fill="#fff6e8" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="232" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#b45309">오차 예산 = 100% − SLO</text>
+  <line x1="440" y1="186" x2="440" y2="200" stroke="#b45309" stroke-width="2" marker-end="url(#ar3)"/>
+
+  <!-- SLM 주기 -->
+  <rect x="40" y="286" width="800" height="110" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="440" y="310" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b">SLM · 서비스수준관리 — 4단계를 돌린다</text>
+
+  <rect x="70" y="326" width="160" height="48" rx="5" fill="#f3f3ef" stroke="#444" stroke-width="1.2"/>
+  <text x="150" y="356" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">① 합의 — SLA 체결</text>
+
+  <rect x="265" y="326" width="160" height="48" rx="5" fill="#f3f3ef" stroke="#444" stroke-width="1.2"/>
+  <text x="345" y="356" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">② 측정 — SLI 수집</text>
+
+  <rect x="460" y="326" width="160" height="48" rx="5" fill="#f3f3ef" stroke="#444" stroke-width="1.2"/>
+  <text x="540" y="356" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">③ 보고 — 달성도 공표</text>
+
+  <rect x="655" y="326" width="160" height="48" rx="5" fill="#f3f3ef" stroke="#444" stroke-width="1.2"/>
+  <text x="735" y="356" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">④ 검토 — 목표 재조정</text>
+
+  <line x1="234" y1="350" x2="259" y2="350" stroke="#444" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="429" y1="350" x2="454" y2="350" stroke="#444" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="624" y1="350" x2="649" y2="350" stroke="#444" stroke-width="2" marker-end="url(#ar2)"/>
+  <path d="M 735 378 L 735 388 L 150 388 L 150 378" fill="none" stroke="#444" stroke-width="2" marker-end="url(#ar3)"/>
+
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
