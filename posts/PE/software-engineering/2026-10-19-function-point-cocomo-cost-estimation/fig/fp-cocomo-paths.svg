@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" width="880" height="290" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="290" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">두 가지 비용 산정 경로 — 무엇을 재어 무엇으로 바꾸는가</text>
+
+  <!-- 기능점수 방식 -->
+  <text x="12" y="80" font-size="13" font-weight="bold" fill="#2d6a4f">기능점수 방식</text>
+  <rect x="156" y="46" width="106" height="52" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="209" y="68" font-size="13" fill="#1b2430" text-anchor="middle">기능 식별</text>
+  <text x="209" y="86" font-size="13" fill="#5b6670" text-anchor="middle">5가지 유형</text>
+  <path d="M262 72 L276 72" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="278" y="46" width="106" height="52" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="331" y="68" font-size="13" fill="#1b2430" text-anchor="middle">복잡도 판정</text>
+  <text x="331" y="86" font-size="13" fill="#5b6670" text-anchor="middle">정통법·간이법</text>
+  <path d="M384 72 L398 72" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="400" y="46" width="106" height="52" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="453" y="68" font-size="13" fill="#1b2430" text-anchor="middle">총 기능점수</text>
+  <text x="453" y="86" font-size="13" fill="#5b6670" text-anchor="middle">FP</text>
+  <path d="M506 72 L520 72" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="522" y="46" width="106" height="52" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="575" y="68" font-size="13" fill="#1b2430" text-anchor="middle">× FP당 단가</text>
+  <text x="575" y="86" font-size="13" fill="#5b6670" text-anchor="middle">605,784원</text>
+  <path d="M628 72 L642 72" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="644" y="46" width="106" height="52" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="697" y="68" font-size="13" fill="#1b2430" text-anchor="middle">× 보정계수</text>
+  <text x="697" y="86" font-size="13" fill="#5b6670" text-anchor="middle">5가지</text>
+  <path d="M750 72 L764 72" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="766" y="46" width="106" height="52" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="819" y="78" font-size="13" fill="#1b2430" text-anchor="middle">개발원가</text>
+
+  <text x="156" y="122" font-size="13" fill="#2d6a4f">사용자에게 보이는 기능의 양을 잰다 — 구현 언어나 코드량과 무관하다</text>
+
+  <!-- COCOMO -->
+  <text x="12" y="178" font-size="13" font-weight="bold" fill="#b45309">COCOMO 81</text>
+  <rect x="156" y="144" width="106" height="52" fill="#fef3c7" stroke="#b45309"/>
+  <text x="209" y="166" font-size="13" fill="#1b2430" text-anchor="middle">규모 추정</text>
+  <text x="209" y="184" font-size="13" fill="#5b6670" text-anchor="middle">KLOC</text>
+  <path d="M262 170 L276 170" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="278" y="144" width="106" height="52" fill="#fef3c7" stroke="#b45309"/>
+  <text x="331" y="166" font-size="13" fill="#1b2430" text-anchor="middle">개발 모드</text>
+  <text x="331" y="184" font-size="13" fill="#5b6670" text-anchor="middle">3가지 중 선택</text>
+  <path d="M384 170 L398 170" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="400" y="144" width="106" height="52" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="453" y="166" font-size="13" fill="#1b2430" text-anchor="middle">노력(PM)</text>
+  <text x="453" y="184" font-size="13" fill="#5b6670" text-anchor="middle">a × KLOC^b</text>
+  <path d="M506 170 L520 170" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="522" y="144" width="106" height="52" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="575" y="166" font-size="13" fill="#1b2430" text-anchor="middle">기간(개월)</text>
+  <text x="575" y="184" font-size="13" fill="#5b6670" text-anchor="middle">c × 노력^d</text>
+  <path d="M628 170 L642 170" stroke="#5b6670" stroke-width="1.4" marker-end="url(#ar)"/>
+  <rect x="644" y="144" width="106" height="52" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="697" y="166" font-size="13" fill="#1b2430" text-anchor="middle">투입 인원</text>
+  <text x="697" y="184" font-size="13" fill="#5b6670" text-anchor="middle">노력 ÷ 기간</text>
+
+  <text x="156" y="220" font-size="13" fill="#b45309">만들어질 코드의 양을 잰다 — 같은 기능도 언어와 재사용에 따라 값이 달라진다</text>
+
+  <line x1="12" y1="238" x2="868" y2="238" stroke="#d2d6da" stroke-width="1"/>
+  <text x="12" y="262" font-size="13" fill="#1b2430">지수 b가 1보다 크므로 COCOMO는 규모가 커질수록 KLOC당 노력이 늘기만 한다. 기능점수 쪽 규모 보정계수는</text>
+  <text x="12" y="280" font-size="13" fill="#1b2430">약 1,336FP에서 바닥을 치고 다시 올라가는 2차식이라, 너무 작은 사업과 너무 큰 사업 양쪽에서 FP당 원가가 오른다.</text>
+
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 z" fill="#5b6670"/>
+    </marker>
+  </defs>
+</svg>
