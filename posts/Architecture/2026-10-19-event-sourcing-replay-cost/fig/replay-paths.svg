@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="880" height="320" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="320" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">세 가지 읽기 경로 — 스냅샷이 짧게 만드는 것과 못 만드는 것</text>
+
+  <!-- 한 애그리거트의 스트림 -->
+  <text x="12" y="62" font-size="13" fill="#5b6670">애그리거트 하나</text>
+  <rect x="200" y="46" width="540" height="30" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="470" y="66" font-size="13" fill="#1b2430" text-anchor="middle">acct-000 의 이벤트 20,000건 (v1 → v20,000)</text>
+  <rect x="464" y="40" width="12" height="42" fill="#2d6a4f"/>
+  <rect x="734" y="40" width="12" height="42" fill="#2d6a4f"/>
+  <text x="470" y="98" font-size="13" fill="#2d6a4f" text-anchor="middle">스냅샷 v10,000</text>
+  <text x="716" y="98" font-size="13" fill="#2d6a4f" text-anchor="end">스냅샷 v20,000</text>
+
+  <!-- 경로 1 -->
+  <path d="M200 118 L710 118" stroke="#9d0208" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="200" y="138" font-size="13" fill="#9d0208">① 스냅샷 없는 복원 — v1부터 19,999건을 다시 적용한다</text>
+
+  <!-- 경로 2 -->
+  <path d="M470 160 L710 160" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="470" y="180" font-size="13" fill="#2d6a4f">② 스냅샷 있는 복원 — 꼬리 9,999건만</text>
+  <text x="200" y="160" font-size="13" fill="#5b6670">여기는 읽지 않는다 →</text>
+
+  <line x1="12" y1="200" x2="868" y2="200" stroke="#d2d6da" stroke-width="1"/>
+
+  <!-- 저장소 전체 -->
+  <text x="12" y="238" font-size="13" fill="#5b6670">저장소 전체</text>
+  <rect x="200" y="214" width="540" height="12" fill="#eef2f6" stroke="#5b6670"/>
+  <rect x="200" y="230" width="540" height="12" fill="#eef2f6" stroke="#5b6670"/>
+  <rect x="200" y="246" width="540" height="12" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="470" y="272" font-size="13" fill="#5b6670" text-anchor="middle">⋮  계좌 20개 × 20,000건 = 400,000건</text>
+
+  <path d="M200 292 L740 292" stroke="#b45309" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="200" y="312" font-size="13" fill="#b45309">③ 읽기 모델 재구축 — 스냅샷 40개가 있어도 400,000건 전부를 순서대로 읽는다</text>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#5b6670"/>
+    </marker>
+  </defs>
+</svg>
