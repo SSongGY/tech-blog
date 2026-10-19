@@ -330,3 +330,6 @@
 | 2026-10-19 | pe-169 | PE | 벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가 |
 | 2026-10-19 | pe-170 | PE | 존슨-린덴스트라우스 보조정리와 랜덤 투영 |
 | 2026-10-19 | pe-171 | PE | SLA·SLO·SLI와 서비스수준관리(SLM) |
+| 2026-10-19 | db-065 | Database | ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE |
+| 2026-10-19 | pe-094 | PE | 소프트웨어 비용 산정 — 기능점수와 COCOMO |
+| 2026-10-19 | arch-002 | Architecture | 이벤트 소싱이 감당해야 하는 진짜 비용 |

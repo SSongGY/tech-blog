@@ -370,7 +370,7 @@ topics:
     difficulty: 심화
     angle: "스냅샷 없이 리플레이가 선형으로 느려지는 걸 수치로 보인다"
     code: python
-    status: todo
+    status: done
   - id: arch-003
     title: "사가 패턴의 보상 트랜잭션은 왜 어려운가"
     category: Architecture
@@ -2897,7 +2897,7 @@ topics:
     angle: "기능점수 산정 절차와 조정 계수. 두 방식이 서로 다른 값을 내는 이유"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-095
     title: "소프트웨어 재공학과 역공학"
     category: PE
@@ -4602,7 +4602,7 @@ topics:
     angle: "제약을 어겼을 때 어디까지 되돌아가는지가 다섯 가지로 갈린다. 다건 INSERT 로 각각 확인"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-066
     title: "복합 기본키와 대리키 — 어느 쪽을 쓸까"
     category: Database
