@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#fbfaf7"/>
+
+  <text x="32" y="36" font-size="17" font-weight="bold" fill="#1f2933">가용성 영향도가 백업과 대체 사이트를 한 묶음으로 정한다</text>
+  <text x="32" y="58" font-size="13" fill="#52606d">NIST SP 800-34 Rev.1 Table 3-2 · 가로줄 하나가 같이 정해지는 한 묶음이다</text>
+
+  <text x="46" y="92" font-size="13" font-weight="bold" fill="#52606d">가용성 영향도</text>
+  <text x="246" y="92" font-size="13" font-weight="bold" fill="#52606d">백업</text>
+  <text x="536" y="92" font-size="13" font-weight="bold" fill="#52606d">전략 — 대체 사이트</text>
+
+  <!-- row: 낮음 -->
+  <rect x="40" y="104" width="180" height="62" rx="6" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.5"/>
+  <text x="130" y="131" font-size="15" font-weight="bold" fill="#3e4c59" text-anchor="middle">낮음 (Low)</text>
+  <text x="130" y="152" font-size="13" fill="#52606d" text-anchor="middle">낮은 우선순위</text>
+
+  <rect x="240" y="104" width="270" height="62" rx="6" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.5"/>
+  <text x="375" y="141" font-size="14" fill="#3e4c59" text-anchor="middle">테이프 백업</text>
+
+  <rect x="530" y="104" width="310" height="62" rx="6" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.5"/>
+  <text x="685" y="141" font-size="14" fill="#3e4c59" text-anchor="middle">이전(relocate) 또는 콜드 사이트</text>
+
+  <!-- row: 보통 -->
+  <rect x="40" y="178" width="180" height="62" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="130" y="205" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">보통 (Moderate)</text>
+  <text x="130" y="226" font-size="13" fill="#8a5a0b" text-anchor="middle">중요 시스템</text>
+
+  <rect x="240" y="178" width="270" height="62" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="375" y="205" font-size="14" fill="#8a5a0b" text-anchor="middle">광매체 백업,</text>
+  <text x="375" y="225" font-size="14" fill="#8a5a0b" text-anchor="middle">WAN / VLAN 복제</text>
+
+  <rect x="530" y="178" width="310" height="62" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="685" y="215" font-size="14" fill="#8a5a0b" text-anchor="middle">콜드 또는 웜 사이트</text>
+
+  <!-- row: 높음 -->
+  <rect x="40" y="252" width="180" height="62" rx="6" fill="#edf7f1" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="130" y="279" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">높음 (High)</text>
+  <text x="130" y="300" font-size="13" fill="#2d6a4f" text-anchor="middle">임무 필수 시스템</text>
+
+  <rect x="240" y="252" width="270" height="62" rx="6" fill="#edf7f1" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="375" y="289" font-size="14" fill="#2d6a4f" text-anchor="middle">미러 시스템, 디스크 복제</text>
+
+  <rect x="530" y="252" width="310" height="62" rx="6" fill="#edf7f1" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="685" y="289" font-size="14" fill="#2d6a4f" text-anchor="middle">핫 사이트</text>
+
+  <text x="32" y="340" font-size="13" fill="#52606d">아래로 갈수록 RTO · RPO 는 짧아지고 상시 비용은 커진다</text>
+</svg>

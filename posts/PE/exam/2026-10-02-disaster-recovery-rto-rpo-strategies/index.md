@@ -256,6 +256,8 @@ Active-Passive 안에서 대기 사이트의 준비 수준으로 나뉜다. 대�
 환경의 재해복구 설계다.
 
 > 개념 정리: [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](../../system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md)
+>
+> 개념 정리: [재해복구시스템 구축 수준 — 목표 시간을 백업 주기·복제 방식·훈련으로 옮기는 일](../../system/2026-10-20-dr-readiness-levels-backup-and-drills/index.md)
 
 끝
 

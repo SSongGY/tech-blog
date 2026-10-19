@@ -333,3 +333,5 @@
 | 2026-10-19 | db-065 | Database | ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE |
 | 2026-10-19 | pe-094 | PE | 소프트웨어 비용 산정 — 기능점수와 COCOMO |
 | 2026-10-19 | arch-002 | Architecture | 이벤트 소싱이 감당해야 하는 진짜 비용 |
+| 2026-10-20 | pe-172 | PE | RTO·RPO와 재해복구시스템 구축 수준 |
+| 2026-10-20 | pe-173 | PE | 데이터 자산화 — 관리적 자산화와 재무적 자산화 |

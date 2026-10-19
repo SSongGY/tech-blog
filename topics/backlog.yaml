@@ -4921,7 +4921,7 @@ topics:
     angle: "목표 시간을 정하는 일이 아니라 그 시간을 달성하는 복구 방식(미러·핫·웜·콜드)이 무엇을 요구하는지. 백업 주기와 RPO의 관계, 실전환·모의·도상 훈련의 차이까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-173
     title: "데이터 자산화 — 관리적 자산화와 재무적 자산화"
     category: PE
@@ -4932,7 +4932,7 @@ topics:
     angle: "식별·품질·권리·측정·유통의 다섯 요소를 갖추는 관리적 자산화가 무형자산 인식(재무적 자산화)에 어떻게 선행하는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-174
     title: "ISO/IEC 38505-1 데이터 거버넌스 — 데이터 책임 지도와 가치·위험·제약"
     category: PE
