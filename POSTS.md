@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **376편** · 갱신 2026-10-19
+총 **378편** · 갱신 2026-10-19
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -97,12 +97,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 132편
+## 기술사 (pe) — 134편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-19 | [벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가](posts/PE/data-analysis/2026-10-19-vector-quantization-rate-distortion/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-19 | [SLA·SLO·SLI와 서비스수준관리(SLM) — 재는 것, 목표, 그리고 계약](posts/PE/it-management/2026-10-19-sla-slo-sli-service-level-management/index.md) | 중급 | ISO/IEC 20000-1:2018 (제3판), Google SRE Book ch.4 Service Level Objectives, Google SRE Workbook ch.2 Implementing SLOs, 행정기관 및 공공기관 정보시스템 안정성 고시(행정안전부고시 제2026-23호, 2026.4.13. 시행) | 문서 근거 |
 | 2026-10-19 | [KV 캐시 — 트랜스포머 추론의 메모리 병목](posts/PE/emerging-tech/2026-10-19-kv-cache-transformer-inference/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-19 | [존슨-린덴스트라우스 보조정리와 랜덤 투영 — 차원을 줄여도 거리가 남는 이유](posts/PE/data-analysis/2026-10-19-johnson-lindenstrauss-random-projection/index.md) | 중급 | Python 3.13.5, Johnson·Lindenstrauss, Contemporary Mathematics 26 (1984), Dasgupta·Gupta, Random Structures & Algorithms 22(1) (2003), Achlioptas, JCSS 66(4) (2003) | 실행 검증 |
 | 2026-10-17 | [IT 투자 평가 — TCO와 ROI](posts/PE/it-management/2026-10-17-it-investment-tco-roi/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [설명가능 AI(XAI) 기법 분류 — 내재적 해석과 사후 설명의 신뢰도 차이](posts/PE/emerging-tech/2026-10-16-xai-method-taxonomy/index.md) | 중급 | NIST IR 8312 (2021-09), ISO/IEC TS 6254:2025 | 문서 근거 |
 | 2026-10-16 | [ITSM과 ITIL 4 — 서비스 가치 시스템](posts/PE/it-management/2026-10-16-itsm-itil4-service-value-system/index.md) | 중급 | ITIL 4 (2019년판), ISO/IEC 20000-1:2018 (제3판) | 문서 근거 |

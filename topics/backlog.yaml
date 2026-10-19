@@ -4382,7 +4382,7 @@ topics:
     angle: "증거금률에 따라 살 수 있는 금액이 달라지는 계산과, 못 채웠을 때 벌어지는 일"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-064
     title: "신용융자와 대차잔고 — 빌려서 사고 빌려서 파는 쪽"
     category: Finance
@@ -4393,7 +4393,7 @@ topics:
     angle: "두 숫자가 각각 무엇을 뜻하는지. 공매도 글과 이어서 읽는다"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-065
     title: "호가 스프레드 — 체결 비용이 수익률을 깎는 정도"
     category: Finance
@@ -4899,7 +4899,7 @@ topics:
     angle: "고차원 점들의 거리를 보존하며 차원을 줄일 수 있다는 보조정리의 진술과 필요 차원 수, 랜덤 투영이 차원 축소·스케치·양자화에 쓰이는 방식"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-171
     title: "SLA·SLO·SLI와 서비스수준관리(SLM)"
     category: PE
@@ -4910,7 +4910,7 @@ topics:
     angle: "세 용어의 포함 관계를 먼저 끊고, 지표를 어떻게 고르고 측정 가능한 형태로 계약에 적는지까지 내려간다. ISO/IEC 20000-1의 서비스수준관리 요구사항을 축으로"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-172
     title: "RTO·RPO와 재해복구시스템 구축 수준"
     category: PE
