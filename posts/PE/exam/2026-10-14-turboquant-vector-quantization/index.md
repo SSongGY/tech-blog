@@ -217,6 +217,8 @@ LLM 서빙과 벡터 검색은 연산이 아니라 **메모리에서 먼저 막�
 
 > 개념 정리: [KV 캐시 — 트랜스포머 추론의 메모리 병목](../../emerging-tech/2026-10-19-kv-cache-transformer-inference/index.md)
 
+> 개념 정리: [존슨-린덴스트라우스 보조정리와 랜덤 투영 — 차원을 줄여도 거리가 남는 이유](../../data-analysis/2026-10-19-johnson-lindenstrauss-random-projection/index.md)
+
 끝
 
 ## 답안 작성 메모

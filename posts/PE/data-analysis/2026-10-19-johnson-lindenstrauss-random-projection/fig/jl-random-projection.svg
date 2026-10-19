@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfaf7"/>
+
+  <text x="440" y="30" text-anchor="middle" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">랜덤 투영이 거리를 (1 ± ε) 안에 묶는다</text>
+
+  <!-- 원 공간 -->
+  <rect x="30" y="56" width="220" height="190" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="140" y="80" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b">원 공간 (차원 p)</text>
+  <text x="140" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">점 n개, p는 수만도 가능</text>
+  <circle cx="80" cy="150" r="6" fill="#2d6a4f"/>
+  <circle cx="200" cy="130" r="6" fill="#2d6a4f"/>
+  <circle cx="130" cy="215" r="6" fill="#2d6a4f"/>
+  <line x1="80" y1="150" x2="200" y2="130" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="66" y="145" font-family="sans-serif" font-size="13" fill="#1b1b1b">u</text>
+  <text x="210" y="128" font-family="sans-serif" font-size="13" fill="#1b1b1b">v</text>
+  <text x="116" y="236" font-family="sans-serif" font-size="13" fill="#1b1b1b">w</text>
+  <text x="140" y="128" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2d6a4f">‖u − v‖</text>
+
+  <!-- 랜덤 행렬 -->
+  <rect x="320" y="86" width="220" height="130" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="430" y="110" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b">랜덤 행렬 R (p × k)</text>
+  <text x="430" y="134" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">성분은 평균 0, 분산 1</text>
+  <text x="430" y="156" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">가우시안 N(0, 1)</text>
+  <text x="430" y="176" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">또는 ±1 (각 1/2)</text>
+  <text x="430" y="196" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">또는 ±√3 · (1/6, 2/3, 1/6)</text>
+
+  <!-- 화살표 -->
+  <line x1="254" y1="151" x2="314" y2="151" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="546" y1="151" x2="606" y2="151" stroke="#444" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="430" y="238" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1b1b">f(x) = x R ⁄ √k</text>
+
+  <!-- 투영 공간 -->
+  <rect x="612" y="56" width="238" height="190" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="731" y="80" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b">투영 공간 (차원 k)</text>
+  <text x="731" y="100" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">k는 n과 ε만으로 정해진다</text>
+  <circle cx="662" cy="155" r="6" fill="#2d6a4f"/>
+  <circle cx="772" cy="138" r="6" fill="#2d6a4f"/>
+  <circle cx="706" cy="212" r="6" fill="#2d6a4f"/>
+  <line x1="662" y1="155" x2="772" y2="138" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="646" y="150" font-family="sans-serif" font-size="13" fill="#1b1b1b">f(u)</text>
+  <text x="782" y="136" font-family="sans-serif" font-size="13" fill="#1b1b1b">f(v)</text>
+  <text x="686" y="233" font-family="sans-serif" font-size="13" fill="#1b1b1b">f(w)</text>
+
+  <!-- 보장 -->
+  <rect x="150" y="276" width="580" height="78" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="300" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">모든 쌍에 대해 동시에 성립</text>
+  <text x="440" y="323" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1b1b1b">(1 − ε)‖u − v‖² ≤ ‖f(u) − f(v)‖² ≤ (1 + ε)‖u − v‖²</text>
+  <text x="440" y="345" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#555">단, k ≥ 24 ln n ⁄ (3ε² − 2ε³)</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+  </defs>
+</svg>
