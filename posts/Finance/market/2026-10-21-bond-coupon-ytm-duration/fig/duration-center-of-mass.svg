@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="40" y="42" font-size="18" font-weight="bold" fill="#1b1b1b">가나전자 3년물 — 현재가치 비중이 듀레이션의 가중치다</text>
+  <text x="40" y="66" font-size="13" fill="#4a4a4a">액면 10,000원 · 표면금리 3.25% · 매6월후급 · 만기수익률 3.25% 기준 (가상 종목)</text>
+
+  <text x="40" y="94" font-size="13" fill="#1b1b1b">① 가격 10,000원을 현재가치 비중으로 쪼갠다</text>
+
+  <rect x="70" y="104" width="11.84" height="42" fill="#2d6a4f" stroke="#fbfaf7" stroke-width="1"/>
+  <rect x="81.84" y="104" width="11.62" height="42" fill="#2d6a4f" stroke="#fbfaf7" stroke-width="1"/>
+  <rect x="93.46" y="104" width="11.47" height="42" fill="#2d6a4f" stroke="#fbfaf7" stroke-width="1"/>
+  <rect x="104.93" y="104" width="11.25" height="42" fill="#2d6a4f" stroke="#fbfaf7" stroke-width="1"/>
+  <rect x="116.18" y="104" width="11.10" height="42" fill="#2d6a4f" stroke="#fbfaf7" stroke-width="1"/>
+  <rect x="127.28" y="104" width="682.72" height="42" fill="#b45309" stroke="#fbfaf7" stroke-width="1"/>
+
+  <text x="135" y="130" font-size="14" fill="#ffffff">3.0년 · 원금 10,000 + 이표 162.50 → 현재가치 9,225.65원 (92.26%)</text>
+
+  <path d="M 70 158 L 70 166 L 127.28 166 L 127.28 158" fill="none" stroke="#4a4a4a" stroke-width="1.4"/>
+  <text x="70" y="186" font-size="13" fill="#4a4a4a">0.5~2.5년 이표 5회 합계 774.34원 (7.74%)</text>
+
+  <text x="40" y="226" font-size="13" fill="#1b1b1b">② 그 비중을 시점에 올려놓으면 균형점이 듀레이션이다</text>
+
+  <line x1="70" y1="276" x2="810" y2="276" stroke="#1b1b1b" stroke-width="2.5"/>
+
+  <circle cx="193.33" cy="276" r="3.7" fill="#2d6a4f"/>
+  <circle cx="316.67" cy="276" r="3.7" fill="#2d6a4f"/>
+  <circle cx="440.00" cy="276" r="3.6" fill="#2d6a4f"/>
+  <circle cx="563.33" cy="276" r="3.6" fill="#2d6a4f"/>
+  <circle cx="686.67" cy="276" r="3.6" fill="#2d6a4f"/>
+  <circle cx="810.00" cy="276" r="28" fill="#b45309" fill-opacity="0.85"/>
+
+  <text x="70" y="306" font-size="13" fill="#4a4a4a" text-anchor="middle">0년</text>
+  <text x="193.33" y="306" font-size="13" fill="#4a4a4a" text-anchor="middle">0.5</text>
+  <text x="316.67" y="306" font-size="13" fill="#4a4a4a" text-anchor="middle">1.0</text>
+  <text x="440.00" y="306" font-size="13" fill="#4a4a4a" text-anchor="middle">1.5</text>
+  <text x="563.33" y="306" font-size="13" fill="#4a4a4a" text-anchor="middle">2.0</text>
+  <text x="686.67" y="306" font-size="13" fill="#4a4a4a" text-anchor="middle">2.5</text>
+  <text x="810.00" y="318" font-size="13" fill="#4a4a4a" text-anchor="middle">3.0년</text>
+
+  <path d="M 781.04 282 L 770 302 L 792 302 Z" fill="#9d0208"/>
+  <line x1="781.04" y1="302" x2="652" y2="344" stroke="#9d0208" stroke-width="1.4"/>
+  <text x="640" y="350" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="end">맥컬레이 듀레이션 2.8826년 — 잔존만기 3년보다 짧다</text>
+
+  <text x="40" y="384" font-size="13" fill="#4a4a4a">중간에 받는 이표가 무게를 앞으로 끌어당긴 만큼 균형점이 만기보다 왼쪽에 선다. 표면금리가 0이면 균형점은 만기와 같다.</text>
+</svg>

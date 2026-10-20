@@ -4448,7 +4448,7 @@ topics:
     angle: "가격과 수익률이 반대로 움직이는 이유를 현재가치로 계산하고, 듀레이션으로 민감도를 재 본다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-070
     title: "금리가 바뀌면 무엇이 먼저 움직이는가"
     category: Finance

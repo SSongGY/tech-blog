@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfaf7"/>
+
+  <text x="40" y="40" font-size="18" font-weight="bold" fill="#1b1b1b">가격-수익률 곡선과 듀레이션 접선 — 근사가 어긋나는 방향</text>
+  <text x="40" y="64" font-size="13" fill="#4a4a4a">사아리스 30년물 · 표면금리 3.25% · 매6월후급 · 기준 만기수익률 3.25% (가상 종목)</text>
+
+  <line x1="95" y1="330" x2="825" y2="330" stroke="#1b1b1b" stroke-width="1.6"/>
+  <line x1="95" y1="70" x2="95" y2="330" stroke="#1b1b1b" stroke-width="1.6"/>
+
+  <line x1="90" y1="312.67" x2="95" y2="312.67" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="90" y1="226" x2="95" y2="226" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="90" y1="139.33" x2="95" y2="139.33" stroke="#1b1b1b" stroke-width="1.4"/>
+  <text x="85" y="317" font-size="13" fill="#4a4a4a" text-anchor="end">5,000</text>
+  <text x="85" y="230" font-size="13" fill="#4a4a4a" text-anchor="end">10,000</text>
+  <text x="85" y="144" font-size="13" fill="#4a4a4a" text-anchor="end">15,000</text>
+  <text x="40" y="92" font-size="13" fill="#1b1b1b">가격(원)</text>
+
+  <line x1="183.75" y1="330" x2="183.75" y2="335" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="302.08" y1="330" x2="302.08" y2="335" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="420.42" y1="330" x2="420.42" y2="335" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="538.75" y1="330" x2="538.75" y2="335" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="657.08" y1="330" x2="657.08" y2="335" stroke="#1b1b1b" stroke-width="1.4"/>
+  <line x1="775.42" y1="330" x2="775.42" y2="335" stroke="#1b1b1b" stroke-width="1.4"/>
+  <text x="183.75" y="354" font-size="13" fill="#4a4a4a" text-anchor="middle">1%</text>
+  <text x="302.08" y="354" font-size="13" fill="#4a4a4a" text-anchor="middle">2%</text>
+  <text x="420.42" y="354" font-size="13" fill="#4a4a4a" text-anchor="middle">3%</text>
+  <text x="538.75" y="354" font-size="13" fill="#4a4a4a" text-anchor="middle">4%</text>
+  <text x="657.08" y="354" font-size="13" fill="#4a4a4a" text-anchor="middle">5%</text>
+  <text x="775.42" y="354" font-size="13" fill="#4a4a4a" text-anchor="middle">6%</text>
+  <text x="825" y="378" font-size="13" fill="#1b1b1b" text-anchor="end">만기수익률</text>
+
+  <line x1="95" y1="126.83" x2="805" y2="325.17" stroke="#9d0208" stroke-width="2" stroke-dasharray="7 5"/>
+
+  <polyline points="95,75.80 154.17,109.78 213.33,139.50 272.50,165.52 331.67,188.34 390.83,208.37 450,226 509.17,241.53 568.33,255.23 627.50,267.35 686.67,278.08 745.83,287.60 805,296.07"
+            fill="none" stroke="#2d6a4f" stroke-width="2.6"/>
+
+  <circle cx="450" cy="226" r="5" fill="#1b1b1b"/>
+  <text x="462" y="214" font-size="13" fill="#1b1b1b">기준점 3.25% · 10,000원</text>
+
+  <text x="150" y="98" font-size="13" font-weight="bold" fill="#2d6a4f">실제 가격 곡선</text>
+
+  <text x="612" y="126" font-size="13" font-weight="bold" fill="#9d0208">듀레이션 접선</text>
+  <text x="612" y="146" font-size="13" fill="#9d0208">수정 듀레이션 19.0720년</text>
+  <line x1="660" y1="156" x2="692" y2="290" stroke="#9d0208" stroke-width="1.2"/>
+
+  <line x1="568.33" y1="255.23" x2="568.33" y2="290.07" stroke="#b45309" stroke-width="2.4"/>
+  <text x="556" y="298" font-size="13" fill="#b45309" text-anchor="end">4.25%에서 221원 차이 — 볼록성이 메우는 몫</text>
+
+  <text x="40" y="408" font-size="13" fill="#4a4a4a">곡선은 어느 지점에서나 접선 위에 있다. 듀레이션만 쓴 근사는 금리가 오를 때 손실을 과대평가하고, 내릴 때 이익을 과소평가한다.</text>
+  <text x="40" y="428" font-size="13" fill="#4a4a4a">좌표는 code/output.txt 9절의 계산값이다.</text>
+</svg>
