@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import collections
 import datetime as dt
+import json
 import os
 import platform
 import re
@@ -2055,6 +2056,123 @@ def cmd_recent(args: argparse.Namespace) -> int:
     print("회차가 돌고 있지 않은데 뼈대만 남아 있으면 중간에 멈춘 것이다.")
     return 0
 
+# --- 멈춘 회차가 무엇을 기다리는지 ------------------------------------------
+#
+# 회차가 권한 프롬프트 앞에서 서면 기록에 도구 호출만 남고 결과가 안 붙는다.
+# 지금까지는 그 자리를 사람이 대화 기록을 열어 손으로 찾았다. 매번 같은 일이라
+# 명령으로 고정한다. 매시 점검 루틴이 이걸 불러 보고에 싣는다.
+#
+# **터미널에만 찍는다.** 막힌 명령에는 로컬 경로와 사용자 이름이 섞여 들어오고
+# 이 저장소는 공개다. 저장소 안 파일로 쓰지 않는다.
+
+TRANSCRIPT_ENV = "CLAUDE_PROJECT_TRANSCRIPTS"
+
+
+def transcript_dir() -> Path:
+    """세션 기록이 쌓이는 폴더. 저장소 경로를 Claude Code 가 쓰는 이름으로 바꾼다."""
+    override = os.environ.get(TRANSCRIPT_ENV)
+    if override:
+        return Path(override)
+    slug = re.sub(r"[^A-Za-z0-9]", "-", str(ROOT))
+    return Path.home() / ".claude" / "projects" / slug
+
+
+def pending_call(path: Path) -> tuple[str, str, str, str] | None:
+    """결과가 안 붙은 도구 호출 하나를 찾는다. (제목, 시각, 도구, 요약)"""
+    uses: dict[str, tuple[str, str, dict]] = {}
+    results: set[str] = set()
+    title = path.stem[:8]
+    try:
+        lines = path.read_text(encoding="utf-8", errors="replace").splitlines()
+    except OSError:
+        return None
+
+    for line in lines:
+        if not line.startswith("{"):
+            continue
+        try:
+            row = json.loads(line)
+        except ValueError:
+            continue
+        if row.get("type") in ("custom-title", "agent-name"):
+            title = row.get("customTitle") or row.get("agentName") or title
+        content = (row.get("message") or {}).get("content")
+        if not isinstance(content, list):
+            continue
+        for block in content:
+            kind = block.get("type")
+            if kind == "tool_use":
+                uses[block["id"]] = (row.get("timestamp", ""), block["name"],
+                                     block.get("input") or {})
+            elif kind == "tool_result":
+                results.add(block.get("tool_use_id"))
+
+    for call_id, (stamp, name, data) in uses.items():
+        if call_id in results:
+            continue
+        if name in ("Bash", "PowerShell", "Monitor"):
+            summary = str(data.get("command", ""))
+        elif name in ("Write", "Edit"):
+            summary = str(data.get("file_path", ""))
+        else:
+            summary = json.dumps(data, ensure_ascii=False)
+        return title, stamp, name, summary.strip()
+    return None
+
+
+def cmd_stalled(args: argparse.Namespace) -> int:
+    folder = transcript_dir()
+    if not folder.is_dir():
+        print(f"[NG] 기록 폴더가 없다: {folder}")
+        print(f"     다른 곳이면 {TRANSCRIPT_ENV} 환경변수로 알려준다.")
+        return 1
+
+    now = dt.datetime.now(dt.timezone.utc)
+    window = now - dt.timedelta(hours=args.hours)
+    quiet = dt.timedelta(minutes=args.quiet_minutes)
+
+    found = []
+    for path in sorted(folder.glob("*.jsonl")):
+        # 파일 수정 시각으로 1차만 거른다. 버려진 세션도 무언가 건드리면
+        # 수정 시각이 올라가므로, 판단은 멈춘 호출 자체의 시각으로 한다.
+        if dt.datetime.fromtimestamp(path.stat().st_mtime, dt.timezone.utc) < window:
+            continue
+        hit = pending_call(path)
+        if not hit:
+            continue
+        stamp = hit[1]
+        try:
+            called = dt.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        idle = now - called
+        # 몇 달 전에 버려진 세션이 아니라 이번 회차여야 하고,
+        # 방금까지 움직였으면 멈춘 것이 아니라 일하는 중이다.
+        if called < window or idle < quiet:
+            continue
+        found.append((idle.total_seconds(), path.stem, *hit))
+
+    if not found:
+        print(f"최근 {args.hours}시간 · 멈춘 회차 없음")
+        return 0
+
+    print(f"최근 {args.hours}시간 · 멈춘 회차 {len(found)}개"
+          f" ({args.quiet_minutes}분 넘게 조용하고 결과 없는 호출이 남아 있다)\n")
+    for idle, stem, title, stamp, tool, summary in sorted(found, reverse=True):
+        print(f"  {title}")
+        print(f"    세션    {stem}")
+        print(f"    멈춘 지 {int(idle // 60)}분 · 마지막 호출 {stamp}")
+        print(f"    도구    {tool}")
+        for line in summary.splitlines() or [""]:
+            print(f"    명령    {line}")
+        print()
+
+    print("이 명령들이 허용 규칙에 안 맞아 서 있는 것이다.")
+    print("규칙을 늘리기 전에 그 명령이 꼭 필요한지부터 본다 — 대개는")
+    print("blog.py 에 명령을 하나 더 두면 셸을 쓸 일이 없어진다.")
+    return 2
+
+
 # --- 도식 기계 검사 ----------------------------------------------------------
 #
 # §4 의 규칙 중 기계로 확인할 수 있는 것을 검사한다. 예전에는 로컬 HTTP 서버를 띄우고
@@ -2374,6 +2492,13 @@ def main() -> int:
     p_recent.add_argument("hours", nargs="?", default="6",
                           help="쉼표로 여러 개 (예: 6,24)")
     p_recent.set_defaults(func=cmd_recent)
+
+    p_stalled = sub.add_parser("stalled", help="멈춘 회차가 기다리는 명령을 찾는다")
+    p_stalled.add_argument("--hours", type=float, default=6,
+                           help="이 시간 안에 움직인 기록만 본다 (기본 6)")
+    p_stalled.add_argument("--quiet-minutes", type=float, default=10,
+                           help="이만큼 조용해야 멈춘 것으로 본다 (기본 10)")
+    p_stalled.set_defaults(func=cmd_stalled)
 
     p_svg = sub.add_parser("check-svg", help="도식의 기계 검사 (폭·배경·글자·넘침)")
     p_svg.add_argument("target", nargs="*", help="글 폴더나 SVG 파일. 생략하면 전체")
