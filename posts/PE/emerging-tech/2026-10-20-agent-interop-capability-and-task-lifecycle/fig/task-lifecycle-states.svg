@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#f7f7f4"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">과업 수명주기 상태 — 진행 2 · 중단 2 · 종료 4</text>
+
+  <!-- 진행 상태 -->
+  <text x="24" y="48" font-size="13" font-weight="bold" fill="#2d6a4f">진행 상태 — 2가지</text>
+  <rect x="24" y="56" width="640" height="74" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <rect x="40" y="66" width="296" height="54" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="188" y="88" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">제출 SUBMITTED</text>
+  <text x="188" y="109" font-size="13" fill="#444444" text-anchor="middle">접수되어 수신이 확인된 상태</text>
+  <rect x="352" y="66" width="296" height="54" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="500" y="88" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">수행 중 WORKING</text>
+  <text x="500" y="109" font-size="13" fill="#444444" text-anchor="middle">에이전트가 실제로 처리하는 중</text>
+
+  <!-- 진행 <-> 중단 -->
+  <line x1="120" y1="130" x2="120" y2="184" stroke="#444444" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="134" y="152" font-size="13" fill="#555555">더 진행할 수 없는 사유가 생기면</text>
+  <line x1="600" y1="190" x2="600" y2="136" stroke="#444444" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="586" y="178" font-size="13" fill="#555555" text-anchor="end">같은 과업·맥락 ID로 새 메시지를 보내면 재개</text>
+
+  <!-- 중단 상태 -->
+  <text x="24" y="182" font-size="13" font-weight="bold" fill="#b45309">중단 상태 — 2가지 (종료가 아니다)</text>
+  <rect x="24" y="190" width="640" height="74" rx="6" fill="#f8efe0" stroke="#b45309" stroke-width="1.5"/>
+  <rect x="40" y="200" width="296" height="54" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="188" y="222" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">입력 필요 INPUT_REQUIRED</text>
+  <text x="188" y="243" font-size="13" fill="#444444" text-anchor="middle">사용자의 추가 입력을 기다린다</text>
+  <rect x="352" y="200" width="296" height="54" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="500" y="222" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">인증 필요 AUTH_REQUIRED</text>
+  <text x="500" y="243" font-size="13" fill="#444444" text-anchor="middle">진행에 인증이 필요하다</text>
+
+  <!-- 진행 -> 종료 우회 경로 -->
+  <path d="M 664 93 L 712 93 L 712 351 L 670 351" fill="none" stroke="#444444" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="724" y="216" font-size="13" fill="#555555">과업이 끝나면</text>
+  <text x="724" y="236" font-size="13" fill="#555555">네 상태 중 하나로</text>
+
+  <!-- 종료 상태 -->
+  <text x="24" y="316" font-size="13" font-weight="bold" fill="#9d0208">종료 상태 — 4가지</text>
+  <rect x="24" y="324" width="640" height="74" rx="6" fill="#f6e7e7" stroke="#9d0208" stroke-width="1.5"/>
+  <rect x="40" y="334" width="143" height="54" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="111" y="356" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">완료 COMPLETED</text>
+  <text x="111" y="376" font-size="13" fill="#444444" text-anchor="middle">성공 종료</text>
+  <rect x="195" y="334" width="143" height="54" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="266" y="356" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">실패 FAILED</text>
+  <text x="266" y="376" font-size="13" fill="#444444" text-anchor="middle">오류로 종료</text>
+  <rect x="350" y="334" width="143" height="54" rx="4" fill="#ffffff" stroke="#666666" stroke-width="1.5"/>
+  <text x="421" y="356" font-size="13" font-weight="bold" fill="#444444" text-anchor="middle">취소 CANCELED</text>
+  <text x="421" y="376" font-size="13" fill="#444444" text-anchor="middle">완료 전 취소</text>
+  <rect x="505" y="334" width="143" height="54" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="576" y="356" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">거절 REJECTED</text>
+  <text x="576" y="376" font-size="13" fill="#444444" text-anchor="middle">수행하지 않기로 결정</text>
+
+  <text x="24" y="422" font-size="13" fill="#555555">종료 상태의 과업에 보낸 메시지는 거부된다. 실패와 거절을 가르는 것은 "해 보다 실패"와 "하지 않기로 결정"의 차이다.</text>
+</svg>

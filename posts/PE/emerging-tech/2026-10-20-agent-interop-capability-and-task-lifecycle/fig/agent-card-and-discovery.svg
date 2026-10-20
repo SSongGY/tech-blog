@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 364" width="880" height="364" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="364" fill="#f7f7f4"/>
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">능력 공표 문서와 탐색 — 상대를 찾는 세 가지 경로</text>
+
+  <!-- 능력 공표 문서 -->
+  <rect x="24" y="56" width="420" height="264" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="234" y="82" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">능력 공표 문서 Agent Card</text>
+
+  <rect x="40" y="94" width="388" height="100" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="54" y="116" font-size="13" font-weight="bold" fill="#1b1b1b">필수 — 8가지</text>
+  <text x="54" y="140" font-size="13" fill="#333333">name · description · version</text>
+  <text x="54" y="162" font-size="13" fill="#333333">supportedInterfaces · capabilities · skills</text>
+  <text x="54" y="184" font-size="13" fill="#333333">defaultInputModes · defaultOutputModes</text>
+
+  <rect x="40" y="206" width="388" height="100" rx="4" fill="#ffffff" stroke="#999999" stroke-width="1.5"/>
+  <text x="54" y="228" font-size="13" font-weight="bold" fill="#1b1b1b">선택 — 6가지</text>
+  <text x="54" y="252" font-size="13" fill="#333333">provider · documentationUrl · iconUrl</text>
+  <text x="54" y="274" font-size="13" fill="#333333">securitySchemes · securityRequirements</text>
+  <text x="54" y="296" font-size="13" fill="#333333">signatures (문서 위조를 막는 서명)</text>
+
+  <!-- 탐색 경로 -->
+  <text x="480" y="82" font-size="15" font-weight="bold" fill="#1b1b1b">탐색 방법 — 3가지</text>
+
+  <rect x="480" y="94" width="376" height="66" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="496" y="118" font-size="13" font-weight="bold" fill="#2d6a4f">① 잘 알려진 URI</text>
+  <text x="496" y="142" font-size="13" fill="#333333">{도메인}/.well-known/agent-card.json</text>
+
+  <rect x="480" y="176" width="376" height="66" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="496" y="200" font-size="13" font-weight="bold" fill="#1b1b1b">② 레지스트리·카탈로그</text>
+  <text x="496" y="224" font-size="13" fill="#333333">등재된 목록에서 능력으로 검색</text>
+
+  <rect x="480" y="258" width="376" height="66" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="496" y="282" font-size="13" font-weight="bold" fill="#1b1b1b">③ 직접 설정</text>
+  <text x="496" y="306" font-size="13" fill="#333333">주소나 문서를 미리 넣어 둔다</text>
+
+  <line x1="480" y1="127" x2="450" y2="127" stroke="#444444" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="480" y1="209" x2="450" y2="209" stroke="#444444" stroke-width="2" marker-end="url(#ar2)"/>
+  <line x1="480" y1="291" x2="450" y2="291" stroke="#444444" stroke-width="2" marker-end="url(#ar2)"/>
+
+  <text x="24" y="346" font-size="13" fill="#555555">의뢰 에이전트는 이 문서만 읽고 상대를 고른다. 내부 구현·도구·계획은 공개되지 않는다(불투명 실행).</text>
+</svg>

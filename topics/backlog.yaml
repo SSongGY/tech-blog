@@ -4943,7 +4943,7 @@ topics:
     angle: "수집·저장·보고·결정·배포·폐기 여섯 단계의 책임 배치와 ISO/IEC 38500 적용, 2026년 제2판에서 바뀐 것"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-175
     title: "에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기"
     category: PE
@@ -4954,7 +4954,7 @@ topics:
     angle: "능력 공표 문서로 상대를 찾고 과업 상태를 주고받는 구조. 모델-도구 연결 규격과 역할이 어떻게 갈리는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-176
     title: "계약망 프로토콜(Contract Net Protocol)"
     category: PE
