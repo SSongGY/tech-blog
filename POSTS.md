@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **385편** · 갱신 2026-10-20
+총 **386편** · 갱신 2026-10-20
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -356,11 +356,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 63편
+## 주식·재무 (finance) — 64편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-20 | [호가 스프레드 — 체결 비용이 수익률을 깎는 정도](posts/Finance/market/2026-10-20-spread-and-round-trip-cost/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
+| 2026-10-20 | [지수 편입과 리밸런싱 — 지수가 바뀔 때 생기는 수급](posts/Finance/market/2026-10-20-index-inclusion-rebalancing-flow/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [총주주수익률(TSR) — 배당과 자사주를 합쳐 보기](posts/Finance/valuation/2026-10-16-tsr-dividend-buyback/index.md) | 중급 | Python 3.13.5, K-IFRS 제1033호 주당이익 | 실행 검증 |
 | 2026-10-16 | [상·하한가와 변동성완화장치(VI) — 어느 장치가 먼저 걸리는가](posts/Finance/market/2026-10-16-price-limit-volatility-interruption/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-15 | [WACC — 할인율은 어떻게 만들어지는가](posts/Finance/valuation/2026-10-15-wacc-capital-structure/index.md) | 중급 | Python 3.13.5, K-IFRS 제1036호 자산손상, K-IFRS 제1012호 법인세 | 실행 검증 |

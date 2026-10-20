@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+  <defs>
+    <marker id="arrowMain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowBack" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1c1917">생애주기 단계와 품질관리 지표 4구분의 대응</text>
+  <text x="137" y="54" text-anchor="middle" font-size="13" fill="#57534e">데이터 생애주기 3단계</text>
+  <text x="595" y="54" text-anchor="middle" font-size="13" fill="#57534e">품질관리 지표 4구분 12지표</text>
+
+  <!-- feedback loop -->
+  <path d="M60,370 C22,370 22,96 60,96" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrowBack)"/>
+
+  <!-- lifecycle boxes -->
+  <rect x="60" y="68" width="185" height="56" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="152" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#1c1917">준비·계획 (100)</text>
+  <text x="152" y="110" text-anchor="middle" font-size="13" fill="#44403c">임무정의 · 구축계획 수립</text>
+
+  <rect x="60" y="150" width="185" height="138" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="152" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#1c1917">구축 (200)</text>
+  <text x="152" y="198" text-anchor="middle" font-size="13" fill="#44403c">데이터 획득·수집 (210)</text>
+  <text x="152" y="219" text-anchor="middle" font-size="13" fill="#44403c">데이터 정제 (220)</text>
+  <text x="152" y="240" text-anchor="middle" font-size="13" fill="#44403c">데이터 가공 (230)</text>
+  <text x="152" y="261" text-anchor="middle" font-size="13" fill="#44403c">데이터 학습 (240)</text>
+  <text x="152" y="281" text-anchor="middle" font-size="13" fill="#78716c">원시 → 원천 → 가공 → 학습셋</text>
+
+  <rect x="60" y="342" width="185" height="56" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="152" y="364" text-anchor="middle" font-size="14" font-weight="bold" fill="#1c1917">운영·활용 (300)</text>
+  <text x="152" y="384" text-anchor="middle" font-size="13" fill="#44403c">개방 데이터 품질관리</text>
+
+  <!-- arrows -->
+  <line x1="245" y1="96" x2="338" y2="88" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowMain)"/>
+  <line x1="245" y1="176" x2="338" y2="110" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowMain)"/>
+  <line x1="245" y1="200" x2="338" y2="186" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowMain)"/>
+  <line x1="245" y1="240" x2="338" y2="284" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowMain)"/>
+  <line x1="245" y1="266" x2="338" y2="372" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowMain)"/>
+
+  <!-- indicator group boxes -->
+  <rect x="345" y="62" width="500" height="64" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="362" y="86" font-size="14" font-weight="bold" fill="#1c1917">구축공정</text>
+  <text x="362" y="110" font-size="13" fill="#44403c">준비성 · 완전성 · 유용성</text>
+
+  <rect x="345" y="146" width="500" height="88" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="362" y="170" font-size="14" font-weight="bold" fill="#1c1917">데이터 적합성</text>
+  <text x="362" y="194" font-size="13" fill="#44403c">기준 적합성 · 기술 적합성 · 다양성</text>
+  <text x="362" y="216" font-size="13" fill="#44403c">유사성(중복성) · 편향성(유해성)</text>
+
+  <rect x="345" y="252" width="500" height="64" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="362" y="276" font-size="14" font-weight="bold" fill="#1c1917">데이터 정확성</text>
+  <text x="362" y="300" font-size="13" fill="#44403c">구문 정확성 · 의미 정확성(전달성)</text>
+
+  <rect x="345" y="340" width="500" height="64" rx="5" fill="#ffffff" stroke="#44403c" stroke-width="1.5"/>
+  <text x="362" y="364" font-size="14" font-weight="bold" fill="#1c1917">학습모델</text>
+  <text x="362" y="388" font-size="13" fill="#44403c">알고리즘 적정성 · 유효성</text>
+
+  <text x="60" y="432" font-size="13" fill="#2d6a4f">실선: 그 단계에서 검사하는 지표 구분</text>
+  <text x="60" y="453" font-size="13" fill="#b45309">점선: 개방 데이터에 제기된 개선의견이 다음 구축계획으로 되돌아간다</text>
+</svg>
