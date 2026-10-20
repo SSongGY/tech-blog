@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1b1b1b"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1b1b1b">기준가가 만들어지는 경로와, 시장가격이 거기서 벌어지는 자리</text>
+  <text x="40" y="56" font-size="13" fill="#555">ETF 는 보유 자산에서, ETN 은 약정 산식에서 기준가가 나온다. 괴리율은 둘 다 맨 윗단에서 생긴다.</text>
+
+  <text x="240" y="92" font-size="14" font-weight="700" fill="#1b4965" text-anchor="middle">ETF — 집합투자증권</text>
+  <text x="640" y="92" font-size="14" font-weight="700" fill="#5f3f14" text-anchor="middle">ETN — 파생결합증권</text>
+
+  <!-- 시장가격 -->
+  <rect x="170" y="110" width="540" height="46" rx="6" fill="#eef2f6" stroke="#1b1b1b" stroke-width="1.4"/>
+  <text x="440" y="132" font-size="14" font-weight="700" fill="#1b1b1b" text-anchor="middle">거래소에서 체결된 시장가격</text>
+  <text x="440" y="149" font-size="13" fill="#555" text-anchor="middle">사려는 사람과 팔려는 사람의 호가가 만나 정해진다</text>
+
+  <!-- 괴리율 구간 -->
+  <line x1="240" y1="212" x2="240" y2="162" stroke="#9d0208" stroke-width="2.2" marker-end="url(#arrowRed)"/>
+  <line x1="640" y1="212" x2="640" y2="162" stroke="#9d0208" stroke-width="2.2" marker-end="url(#arrowRed)"/>
+  <text x="440" y="182" font-size="14" font-weight="700" fill="#9d0208" text-anchor="middle">② 괴리율</text>
+  <text x="440" y="201" font-size="13" fill="#9d0208" text-anchor="middle">(시장가격 − 기준가) ÷ 기준가 × 100</text>
+
+  <!-- 실시간 기준가 -->
+  <rect x="120" y="212" width="300" height="54" rx="6" fill="#dff0e6" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="270" y="234" font-size="14" font-weight="700" fill="#2d6a4f" text-anchor="middle">실시간 순자산가치 iNAV</text>
+  <text x="270" y="254" font-size="13" fill="#2d6a4f" text-anchor="middle">장중 추정치</text>
+
+  <rect x="460" y="212" width="300" height="54" rx="6" fill="#dff0e6" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="610" y="234" font-size="14" font-weight="700" fill="#2d6a4f" text-anchor="middle">실시간 지표가치 IIV</text>
+  <text x="610" y="254" font-size="13" fill="#2d6a4f" text-anchor="middle">전일 IV × 당일 기초지수 변화율</text>
+
+  <line x1="240" y1="300" x2="240" y2="270" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="640" y1="300" x2="640" y2="270" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- 하루 1회 기준가 -->
+  <rect x="120" y="300" width="300" height="58" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.4"/>
+  <text x="270" y="322" font-size="14" font-weight="700" fill="#1b1b1b" text-anchor="middle">순자산가치 NAV</text>
+  <text x="270" y="342" font-size="13" fill="#555" text-anchor="middle">(보유 자산 − 부채) ÷ 좌수</text>
+
+  <rect x="460" y="300" width="300" height="58" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.4"/>
+  <text x="610" y="322" font-size="14" font-weight="700" fill="#1b1b1b" text-anchor="middle">지표가치 IV</text>
+  <text x="610" y="342" font-size="13" fill="#555" text-anchor="middle">매 영업일 1회, 한국예탁결제원이 산출</text>
+
+  <!-- 기초지수와의 거리 -->
+  <line x1="150" y1="412" x2="150" y2="362" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrow)"/>
+  <line x1="730" y1="412" x2="730" y2="362" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="280" y="385" font-size="13" font-weight="700" fill="#b45309" text-anchor="middle">① 추적차이·추적오차</text>
+  <text x="280" y="403" font-size="13" fill="#b45309" text-anchor="middle">운용 실적이 지수와 달라진다</text>
+  <text x="600" y="385" font-size="13" font-weight="700" fill="#5f3f14" text-anchor="middle">① 자리가 없다 — 지급 약정</text>
+  <text x="600" y="403" font-size="13" fill="#5f3f14" text-anchor="middle">대신 발행사 신용위험을 진다</text>
+
+  <!-- 기초지수 -->
+  <rect x="170" y="412" width="540" height="44" rx="6" fill="#eef2f6" stroke="#1b1b1b" stroke-width="1.4"/>
+  <text x="440" y="440" font-size="14" font-weight="700" fill="#1b1b1b" text-anchor="middle">기초지수 — 따라가기로 한 값</text>
+</svg>

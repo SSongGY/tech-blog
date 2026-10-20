@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **389편** · 갱신 2026-10-21
+총 **390편** · 갱신 2026-10-21
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -298,10 +298,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 56편
+## 기출문제 (exam) — 57편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-21 | [기출문제 — 빅데이터 분석기법: 클러스터링, 필터링, 이상치 탐지](posts/PE/exam/2026-10-21-bigdata-clustering-filtering-outlier-detection/index.md) | 중급 | ISO/IEC 20546:2019, ISO 16269-4:2010, NIST SP 1500-6r2 (2019), Ester et al., KDD-96, Chandola et al., ACM CSUR 41(3), 2009, Sarwar et al., WWW10, 2001 | 문서 근거 |
 | 2026-10-20 | [기출문제 — 이진 탐색 트리와 라우팅 테이블 탐색 알고리즘의 상관관계](posts/PE/exam/2026-10-20-bst-and-routing-table-lookup/index.md) | 심화 | RFC 1812 (1995-06), ACM SIGCOMM '97 Proceedings (1997), pp. 25-36, IEEE INFOCOM 1998 / IEEE/ACM Transactions on Networking (1999), IEEE JSAC Vol. 17 No. 6 (1999-06), Journal of the ACM Vol. 15 No. 4 (1968-10) | 문서 근거 |
 | 2026-10-20 | [기출문제 — AI 학습용 데이터의 특성과 품질관리 지표, 품질관리 활동](posts/PE/exam/2026-10-20-ai-training-data-quality-indicators/index.md) | 중급 | NIA 인공지능 학습용 데이터 품질관리 가이드라인 v3.1 제2권 (2024-01), ISO/IEC 5259-2:2024, ISO/IEC 5259-4:2024, ISO/IEC 25024 | 문서 근거 |
 | 2026-10-19 | [기출문제 — 소프트웨어 테스트 7대 원리와 동등 분할·경계값 분석 테스트 케이스 설계](posts/PE/exam/2026-10-19-test-principles-equivalence-boundary/index.md) | 중급 | ISTQB CTFL Syllabus v4.0.1 (2024-09-15), ISO/IEC/IEEE 29119-4:2021 (2판), Python 3.13.5 | 실행 검증 |
