@@ -209,6 +209,8 @@ verified: true
 >
 > 개념 정리: [데이터 자산화 — 관리적 자산화와 재무적 자산화](../../data-analysis/2026-10-20-data-assetization-managerial-vs-financial/index.md)
 >
+> 개념 정리: [ISO/IEC 38505-1 데이터 거버넌스 — 데이터 책임 지도와 가치·위험·제약](../../it-management/2026-10-20-iso-iec-38505-1-data-accountability-map/index.md)
+>
 > 같은 제도를 평가 요인과 핵심변수 쪽에서 다룬 답안: [기출문제 — 데이터 가치평가의 평가 요인, 방법론, 객관성을 정하는 핵심변수](../2026-10-05-data-valuation-factors-methods/index.md)
 
 끝
