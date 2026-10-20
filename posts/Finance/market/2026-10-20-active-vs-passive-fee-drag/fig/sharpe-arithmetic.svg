@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1b1b1b">샤프의 산술 — 비용 전에는 같고, 비용 뒤에는 낮다</text>
+  <text x="40" y="56" font-size="13" fill="#555">막대 높이는 관계를 보이려고 그린 것이고 특정 수치가 아니다.</text>
+
+  <!-- 시장 전체 -->
+  <rect x="110" y="78" width="320" height="52" fill="#dff0e6" stroke="#2d6a4f" stroke-width="1.4"/>
+  <rect x="430" y="78" width="340" height="52" fill="#fdf0d9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="270" y="100" font-size="14" font-weight="700" fill="#2d6a4f" text-anchor="middle">패시브로 운용되는 돈</text>
+  <text x="270" y="119" font-size="13" fill="#2d6a4f" text-anchor="middle">모든 종목을 시장 비중대로 보유</text>
+  <text x="600" y="100" font-size="14" font-weight="700" fill="#b45309" text-anchor="middle">액티브로 운용되는 돈</text>
+  <text x="600" y="119" font-size="13" fill="#b45309" text-anchor="middle">그 밖의 모든 것 — 비중이 시장과 다르다</text>
+  <text x="440" y="150" font-size="13" fill="#555" text-anchor="middle">둘을 합치면 시장 포트폴리오 전체가 된다</text>
+
+  <!-- 명제 1 -->
+  <text x="110" y="196" font-size="14" font-weight="700" fill="#1b1b1b">명제 1 · 비용을 빼기 전</text>
+  <line x1="110" y1="348" x2="420" y2="348" stroke="#1b1b1b" stroke-width="1.4"/>
+  <rect x="160" y="224" width="80" height="124" fill="#dff0e6" stroke="#2d6a4f" stroke-width="1.4"/>
+  <rect x="290" y="224" width="80" height="124" fill="#fdf0d9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="200" y="368" font-size="13" fill="#2d6a4f" text-anchor="middle">패시브</text>
+  <text x="330" y="368" font-size="13" fill="#b45309" text-anchor="middle">액티브</text>
+  <line x1="150" y1="224" x2="380" y2="224" stroke="#1b1b1b" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="265" y="216" font-size="13" font-weight="700" fill="#1b1b1b" text-anchor="middle">평균 수익률이 같다</text>
+
+  <!-- 명제 2 -->
+  <text x="490" y="196" font-size="14" font-weight="700" fill="#1b1b1b">명제 2 · 비용을 뺀 뒤</text>
+  <line x1="490" y1="348" x2="800" y2="348" stroke="#1b1b1b" stroke-width="1.4"/>
+  <rect x="540" y="236" width="80" height="112" fill="#dff0e6" stroke="#2d6a4f" stroke-width="1.4"/>
+  <rect x="670" y="286" width="80" height="62" fill="#fdf0d9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="580" y="368" font-size="13" fill="#2d6a4f" text-anchor="middle">패시브</text>
+  <text x="710" y="368" font-size="13" fill="#b45309" text-anchor="middle">액티브</text>
+  <line x1="530" y1="224" x2="760" y2="224" stroke="#1b1b1b" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="768" y="229" font-size="13" fill="#555">비용 전 수준</text>
+  <rect x="540" y="224" width="80" height="12" fill="#9d0208"/>
+  <rect x="670" y="224" width="80" height="62" fill="#9d0208"/>
+  <text x="580" y="218" font-size="13" fill="#9d0208" text-anchor="middle">비용</text>
+  <text x="710" y="218" font-size="13" font-weight="700" fill="#9d0208" text-anchor="middle">더 큰 비용</text>
+
+  <text x="40" y="402" font-size="13" fill="#555">명제 1 은 정의에서 바로 나온다. 액티브가 쥔 몫은 시장 전체에서 패시브 몫을 뺀 것이므로 둘의 가중평균이 시장이다.</text>
+  <text x="40" y="422" font-size="13" fill="#555">그래서 평균을 두고 보면 비용 차이가 곧 성과 차이가 된다. 개별 운용의 성패는 이 평균 안에서 갈린다.</text>
+</svg>

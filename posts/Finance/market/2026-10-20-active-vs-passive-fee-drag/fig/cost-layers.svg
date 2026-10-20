@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1b1b1b">비용이 쌓이는 세 층 — 보수율 합계, TER, 그리고 그 바깥</text>
+  <text x="40" y="56" font-size="13" fill="#555">가상 상품 세 개의 연간 비용(%). 상품 이름과 숫자는 계산용으로 만든 값이다.</text>
+
+  <!-- 범례 -->
+  <rect x="180" y="74" width="14" height="14" fill="#2d6a4f"/>
+  <text x="200" y="86" font-size="13" fill="#1b1b1b">보수율 합계 A(운용·판매·수탁·사무관리)</text>
+  <rect x="470" y="74" width="14" height="14" fill="#b45309"/>
+  <text x="490" y="86" font-size="13" fill="#1b1b1b">기타비용 B</text>
+  <rect x="600" y="74" width="14" height="14" fill="#9d0208"/>
+  <text x="620" y="86" font-size="13" fill="#1b1b1b">매매·중개수수료율 D</text>
+
+  <!-- 눈금 -->
+  <line x1="180" y1="106" x2="180" y2="332" stroke="#c9ced4"/>
+  <line x1="340" y1="106" x2="340" y2="332" stroke="#e4e7ea"/>
+  <line x1="500" y1="106" x2="500" y2="332" stroke="#e4e7ea"/>
+  <line x1="660" y1="106" x2="660" y2="332" stroke="#e4e7ea"/>
+  <line x1="820" y1="106" x2="820" y2="332" stroke="#e4e7ea"/>
+  <text x="180" y="350" font-size="13" fill="#555" text-anchor="middle">0</text>
+  <text x="340" y="350" font-size="13" fill="#555" text-anchor="middle">0.5%</text>
+  <text x="500" y="350" font-size="13" fill="#555" text-anchor="middle">1.0%</text>
+  <text x="660" y="350" font-size="13" fill="#555" text-anchor="middle">1.5%</text>
+  <text x="820" y="350" font-size="13" fill="#555" text-anchor="middle">2.0%</text>
+
+  <!-- 가나액티브주식형 : 1.41 / 0.12 / 0.42 -->
+  <text x="170" y="140" font-size="13" font-weight="700" fill="#1b1b1b" text-anchor="end">가나액티브주식형</text>
+  <rect x="180" y="118" width="451.2" height="36" fill="#2d6a4f"/>
+  <rect x="631.2" y="118" width="38.4" height="36" fill="#b45309"/>
+  <rect x="669.6" y="118" width="134.4" height="36" fill="#9d0208"/>
+  <text x="405" y="141" font-size="13" fill="#ffffff" text-anchor="middle">1.41</text>
+  <text x="736" y="141" font-size="13" fill="#ffffff" text-anchor="middle">0.42</text>
+  <text x="814" y="141" font-size="13" font-weight="700" fill="#1b1b1b">1.95</text>
+
+  <!-- TER 구간 표시 -->
+  <line x1="180" y1="164" x2="669.6" y2="164" stroke="#1b1b1b" stroke-width="1.2"/>
+  <line x1="180" y1="160" x2="180" y2="168" stroke="#1b1b1b" stroke-width="1.2"/>
+  <line x1="669.6" y1="160" x2="669.6" y2="168" stroke="#1b1b1b" stroke-width="1.2"/>
+  <text x="424" y="182" font-size="13" fill="#1b1b1b" text-anchor="middle">여기까지가 TER(A+B) 1.53</text>
+  <text x="690" y="182" font-size="13" fill="#9d0208">TER 밖에 따로 적힌다</text>
+
+  <!-- 다라인덱스펀드 : 0.36 / 0.04 / 0.05 -->
+  <text x="170" y="216" font-size="13" font-weight="700" fill="#1b1b1b" text-anchor="end">다라인덱스펀드</text>
+  <rect x="180" y="194" width="115.2" height="36" fill="#2d6a4f"/>
+  <rect x="295.2" y="194" width="12.8" height="36" fill="#b45309"/>
+  <rect x="308" y="194" width="16" height="36" fill="#9d0208"/>
+  <text x="237" y="217" font-size="13" fill="#ffffff" text-anchor="middle">0.36</text>
+  <text x="334" y="217" font-size="13" font-weight="700" fill="#1b1b1b">0.45</text>
+
+  <!-- 마바지수ETF : 0.07 / 0.02 / 0.03 -->
+  <text x="170" y="270" font-size="13" font-weight="700" fill="#1b1b1b" text-anchor="end">마바지수ETF</text>
+  <rect x="180" y="248" width="22.4" height="36" fill="#2d6a4f"/>
+  <rect x="202.4" y="248" width="6.4" height="36" fill="#b45309"/>
+  <rect x="208.8" y="248" width="9.6" height="36" fill="#9d0208"/>
+  <text x="228" y="271" font-size="13" font-weight="700" fill="#1b1b1b">0.12</text>
+
+  <!-- 격차 -->
+  <line x1="218.4" y1="300" x2="804" y2="300" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="6 3"/>
+  <circle cx="218.4" cy="300" r="4" fill="#9d0208"/>
+  <circle cx="804" cy="300" r="4" fill="#9d0208"/>
+  <text x="511" y="322" font-size="13" font-weight="700" fill="#9d0208" text-anchor="middle">실부담 격차 1.83 %p — 이만큼을 액티브가 매년 더 벌어야 본전이다</text>
+
+  <text x="40" y="384" font-size="13" fill="#555">TER 에 들어가지 않는 매매·중개수수료가 액티브 쪽에서 0.42 를 더한다. 회전율이 높을수록 이 칸이 길어진다.</text>
+</svg>
