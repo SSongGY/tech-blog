@@ -1834,7 +1834,17 @@ def cmd_run_examples(args: argparse.Namespace) -> int:
 # 권한 프롬프트 앞에서 멈췄다. 명령 하나로 합쳐 Bash(python *) 하나에 걸리게 한다.
 
 DB_CLIENTS = ("tbsql", "sqlplus", "mysql", "psql")
-TOOLCHAINS = ("go", "cargo", "docker", "openssl", "sqlite3")
+TOOLCHAINS = ("go", "cargo", "docker", "openssl", "sqlite3", "java", "javac")
+
+# JDK·JRE 가 깔리는 표준 위치. PATH 에 잡힌 한 벌 말고 무엇이 더 있는지 보려면
+# 폴더를 훑어야 한다. 회차가 셸로 직접 보려다 멈추므로(아래 java_installs 주석)
+# 여기서 같이 준다.
+JAVA_ROOTS = (
+    r"C:\Program Files\Java",
+    r"C:\Program Files\Eclipse Adoptium",
+    r"C:\Program Files\Microsoft",
+    r"C:\Program Files (x86)\Java",
+)
 # 리눅스 트랙이 쓰는 조회 도구. Git Bash 에는 일부만 있고, 없는 것을 다루는 주제는
 # 이 환경에서 검증할 수 없으므로 todo 로 되돌린다.
 LINUX_TOOLS = ("ps", "top", "df", "du", "free", "vmstat", "iostat",
@@ -1863,12 +1873,44 @@ def tool_version(name: str) -> str:
         if not line:
             continue
         first = line[0].strip()
-        # 버전 숫자가 없으면 --version 을 모르는 다른 명령이 PATH 앞에 있는 것이다.
-        # 윈도우의 find.exe·sort.exe 가 GNU 판을 가린다. 그대로 쓰면 글이 틀린다.
+        # 버전 숫자가 없으면 이 플래그를 모르는 것이다. 다음 플래그를 더 본다 —
+        # 자바 8 은 `--version` 에 사용법만 뱉고 `-version` 에 답한다. 여기서
+        # 끊으면 깔려 있는 JDK 가 "GNU 판이 아닐 수 있다"로 잘못 보고된다.
         if not re.search(r"\d+\.\d+", first):
-            return f"[주의] --version 을 모른다. GNU 판이 아닐 수 있다 → {path}"
+            continue
         return first
-    return "있음 (버전 확인 실패)"
+    # 어느 플래그로도 버전이 안 나왔다. 윈도우의 find.exe·sort.exe 가 Git Bash 의
+    # GNU 판을 가리는 경우가 이렇다. 그대로 쓰면 글이 틀리므로 경로를 같이 준다.
+    return f"[주의] 버전을 못 읽었다. 의도한 판이 맞는지 확인 → {path}"
+
+
+def java_installs() -> list[str]:
+    """깔려 있는 JDK·JRE 폴더를 훑는다.
+
+    회차가 이것을 셸로 직접 보려다 멈춘다.
+
+        ls "/c/Program Files/Java/" 2>/dev/null; ls "/c/Program Files/Microsoft" | head
+
+    `2>/dev/null` 의 리다이렉션이 걸린다. `>` 는 Write·Edit 의 경로 제한을
+    우회하는 통로라 허용 규칙에 넣지 않기로 한 것이고(§3), 그래서 이 모양은
+    앞으로도 안 열린다. 폴더가 없을 때 조용히 넘어가는 일은 파이썬이 한다.
+
+    `C:\\Program Files\\Microsoft` 에는 자바가 아닌 것도 들어 있으므로
+    이름에 jdk·jre 가 든 것만 센다.
+    """
+    found: list[str] = []
+    for root in JAVA_ROOTS:
+        base = Path(root)
+        if not base.is_dir():
+            continue
+        only_java = base.name == "Microsoft"
+        for child in sorted(base.iterdir()):
+            if not child.is_dir():
+                continue
+            if only_java and not re.search(r"jdk|jre", child.name, re.I):
+                continue
+            found.append(str(child))
+    return found
 
 
 def wsl_usable() -> str:
@@ -1897,6 +1939,13 @@ def cmd_env(args: argparse.Namespace) -> int:
     print("\n그 밖의 도구")
     for name in TOOLCHAINS:
         print(f"  {name:8s} {tool_version(name)}")
+
+    installs = java_installs()
+    print(f"\n깔려 있는 JDK·JRE — {len(installs)}벌")
+    for path in installs:
+        print(f"  {path}")
+    if not installs:
+        print("  없음")
 
     print("\n셸·텍스트 도구 — 이 줄을 environment 에 그대로 옮긴다 (§5)")
     for name in SHELL_TOOLS:
