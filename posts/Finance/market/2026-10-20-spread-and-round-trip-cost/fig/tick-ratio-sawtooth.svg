@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1b1b1b">호가가격단위가 주가에서 차지하는 비율 — 구간을 넘을 때마다 튄다</text>
+  <text x="40" y="56" font-size="13" fill="#555">세로축은 호가 한 칸이 주가에서 차지하는 비율. 이 값이 좁힐 수 없는 스프레드의 바닥이다.</text>
+
+  <!-- y 눈금 -->
+  <line x1="90" y1="90" x2="90" y2="320" stroke="#1b1b1b" stroke-width="1.2"/>
+  <line x1="90" y1="320" x2="840" y2="320" stroke="#1b1b1b" stroke-width="1.2"/>
+
+  <line x1="90" y1="90" x2="840" y2="90" stroke="#e4e7ea"/>
+  <text x="82" y="94" font-size="13" fill="#555" text-anchor="end">0.30%</text>
+  <line x1="90" y1="128.3" x2="840" y2="128.3" stroke="#e4e7ea"/>
+  <text x="82" y="132" font-size="13" fill="#555" text-anchor="end">0.25%</text>
+  <line x1="90" y1="166.7" x2="840" y2="166.7" stroke="#e4e7ea"/>
+  <text x="82" y="171" font-size="13" fill="#555" text-anchor="end">0.20%</text>
+  <line x1="90" y1="205" x2="840" y2="205" stroke="#e4e7ea"/>
+  <text x="82" y="209" font-size="13" fill="#555" text-anchor="end">0.15%</text>
+  <line x1="90" y1="243.3" x2="840" y2="243.3" stroke="#e4e7ea"/>
+  <text x="82" y="247" font-size="13" fill="#555" text-anchor="end">0.10%</text>
+  <line x1="90" y1="281.7" x2="840" y2="281.7" stroke="#e4e7ea"/>
+  <text x="82" y="286" font-size="13" fill="#555" text-anchor="end">0.05%</text>
+
+  <!-- 구간 경계 -->
+  <line x1="195.7" y1="90" x2="195.7" y2="320" stroke="#c9ced4" stroke-dasharray="4 4"/>
+  <line x1="301.4" y1="90" x2="301.4" y2="320" stroke="#c9ced4" stroke-dasharray="4 4"/>
+  <line x1="407.1" y1="90" x2="407.1" y2="320" stroke="#c9ced4" stroke-dasharray="4 4"/>
+  <line x1="512.9" y1="90" x2="512.9" y2="320" stroke="#c9ced4" stroke-dasharray="4 4"/>
+  <line x1="618.6" y1="90" x2="618.6" y2="320" stroke="#c9ced4" stroke-dasharray="4 4"/>
+  <line x1="724.3" y1="90" x2="724.3" y2="320" stroke="#c9ced4" stroke-dasharray="4 4"/>
+
+  <!-- 구간별 비율 (구간 안에서는 주가가 오를수록 낮아진다) -->
+  <polyline points="90,243.3 195.7,281.7" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <polyline points="195.7,128.3 301.4,243.3" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <polyline points="301.4,166.7 407.1,281.7" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <polyline points="407.1,128.3 512.9,243.3" fill="none" stroke="#b45309" stroke-width="2.5"/>
+  <polyline points="512.9,166.7 618.6,281.7" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <polyline points="618.6,128.3 724.3,243.3" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <polyline points="724.3,166.7 830,243.3" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+
+  <!-- 경계에서 튀는 폭 -->
+  <line x1="407.1" y1="281.7" x2="407.1" y2="128.3" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 3"/>
+  <circle cx="407.1" cy="281.7" r="4" fill="#b45309"/>
+  <circle cx="407.1" cy="128.3" r="4" fill="#b45309"/>
+
+  <!-- x 라벨 -->
+  <text x="195.7" y="340" font-size="13" fill="#1b1b1b" text-anchor="middle">2,000</text>
+  <text x="301.4" y="340" font-size="13" fill="#1b1b1b" text-anchor="middle">5,000</text>
+  <text x="407.1" y="340" font-size="13" fill="#b45309" font-weight="700" text-anchor="middle">20,000</text>
+  <text x="512.9" y="340" font-size="13" fill="#1b1b1b" text-anchor="middle">50,000</text>
+  <text x="618.6" y="340" font-size="13" fill="#1b1b1b" text-anchor="middle">200,000</text>
+  <text x="724.3" y="340" font-size="13" fill="#1b1b1b" text-anchor="middle">500,000</text>
+  <text x="840" y="340" font-size="13" fill="#555" text-anchor="end">주가(원)</text>
+
+  <!-- 구간별 호가단위 -->
+  <text x="142.8" y="360" font-size="13" fill="#2d6a4f" text-anchor="middle">1원</text>
+  <text x="248.5" y="360" font-size="13" fill="#2d6a4f" text-anchor="middle">5원</text>
+  <text x="354.2" y="360" font-size="13" fill="#2d6a4f" text-anchor="middle">10원</text>
+  <text x="460" y="360" font-size="13" fill="#b45309" text-anchor="middle">50원</text>
+  <text x="565.7" y="360" font-size="13" fill="#2d6a4f" text-anchor="middle">100원</text>
+  <text x="671.4" y="360" font-size="13" fill="#2d6a4f" text-anchor="middle">500원</text>
+  <text x="777.1" y="360" font-size="13" fill="#2d6a4f" text-anchor="middle">1,000원</text>
+
+  <text x="420" y="118" font-size="13" font-weight="700" fill="#b45309">19,999원 0.050% → 20,000원 0.250%</text>
+  <text x="420" y="138" font-size="13" fill="#b45309">주가는 1원 올랐는데 바닥 비용은 5배가 된다</text>
+
+  <text x="40" y="396" font-size="13" fill="#555">가로축은 구간을 같은 너비로 늘여 그린 것이라 주가 축이 선형이 아니다. 각 구간 안에서 비율이 내려가다</text>
+  <text x="40" y="416" font-size="13" fill="#555">다음 구간 첫 호가에서 다시 올라가는 모양만 읽으면 된다.</text>
+</svg>

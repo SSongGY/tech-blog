@@ -2257,7 +2257,7 @@ topics:
     angle: "가용률 99.9%가 실제로 허용하는 장애 시간"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-084
     title: "업무 프로세스 재설계(BPR) — 원안과 AI 도입 이후"
     category: PE
@@ -4404,7 +4404,7 @@ topics:
     angle: "거래가 잦은 종목과 뜸한 종목을 같은 금액으로 사고팔아 왕복 비용을 계산"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-066
     title: "지수 편입과 리밸런싱 — 지수가 바뀔 때 생기는 수급"
     category: Finance
@@ -4613,7 +4613,7 @@ topics:
     angle: "자연키를 그대로 쓸 때와 번호를 따로 둘 때. 외래키가 길어지는 것과 값이 바뀔 때의 비용"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-067
     title: "자기참조 외래키 — 계층 데이터를 한 표에 담기"
     category: Database
