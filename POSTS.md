@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **387편** · 갱신 2026-10-20
+총 **389편** · 갱신 2026-10-21
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -98,12 +98,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 137편
+## 기술사 (pe) — 139편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-20 | [ISO/IEC 38505-1 데이터 거버넌스 — 데이터 책임 지도와 가치·위험·제약](posts/PE/it-management/2026-10-20-iso-iec-38505-1-data-accountability-map/index.md) | 중급 | ISO/IEC 38505-1:2026 (제2판, 2026-08), ISO/IEC 38505-1:2017 (제1판), ISO/IEC 38500:2024 (제3판), ISO/IEC TR 38505-2:2018 | 문서 근거 |
 | 2026-10-20 | [재해복구시스템 구축 수준 — 목표 시간을 백업 주기·복제 방식·훈련으로 옮기는 일](posts/PE/system/2026-10-20-dr-readiness-levels-backup-and-drills/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), NIST SP 800-84 (2006-09), FIPS 199 (2004-02) | 문서 근거 |
 | 2026-10-20 | [데이터 자산화 — 관리적 자산화와 재무적 자산화](posts/PE/data-analysis/2026-10-20-data-assetization-managerial-vs-financial/index.md) | 중급 | IAS 38 / AASB 138 Intangible Assets (2015-09-30 공표본), ISO/IEC 38505-1:2026 (제2판), ISO/IEC 25012:2008, ISO/IEC 11179-1:2023 (제4판), 데이터산업법 (2022-04-20 시행) | 문서 근거 |
+| 2026-10-20 | [에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기](posts/PE/emerging-tech/2026-10-20-agent-interop-capability-and-task-lifecycle/index.md) | 중급 | A2A Protocol Specification v1.0.0, Model Context Protocol 사양 개정판 2026-07-28 | 문서 근거 |
 | 2026-10-19 | [벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가](posts/PE/data-analysis/2026-10-19-vector-quantization-rate-distortion/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-19 | [SLA·SLO·SLI와 서비스수준관리(SLM) — 재는 것, 목표, 그리고 계약](posts/PE/it-management/2026-10-19-sla-slo-sli-service-level-management/index.md) | 중급 | ISO/IEC 20000-1:2018 (제3판), Google SRE Book ch.4 Service Level Objectives, Google SRE Workbook ch.2 Implementing SLOs, 행정기관 및 공공기관 정보시스템 안정성 고시(행정안전부고시 제2026-23호, 2026.4.13. 시행) | 문서 근거 |
 | 2026-10-19 | [KV 캐시 — 트랜스포머 추론의 메모리 병목](posts/PE/emerging-tech/2026-10-19-kv-cache-transformer-inference/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |

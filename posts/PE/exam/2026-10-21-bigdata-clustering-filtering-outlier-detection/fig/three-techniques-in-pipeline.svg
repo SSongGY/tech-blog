@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#f8f9fa"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#212529">빅데이터 분석 파이프라인에서 세 기법이 붙는 자리</text>
+
+  <!-- 파이프라인 단계 -->
+  <g>
+    <rect x="30" y="58" width="178" height="58" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+    <text x="119" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#212529">① 수집·적재</text>
+    <text x="119" y="102" text-anchor="middle" font-size="13" fill="#495057">collection</text>
+
+    <rect x="243" y="58" width="178" height="58" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+    <text x="332" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#212529">② 전처리·정제</text>
+    <text x="332" y="102" text-anchor="middle" font-size="13" fill="#495057">preparation</text>
+
+    <rect x="456" y="58" width="178" height="58" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+    <text x="545" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#212529">③ 분석·모델링</text>
+    <text x="545" y="102" text-anchor="middle" font-size="13" fill="#495057">analytics</text>
+
+    <rect x="669" y="58" width="178" height="58" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+    <text x="758" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#212529">④ 활용·서비스</text>
+    <text x="758" y="102" text-anchor="middle" font-size="13" fill="#495057">visualization / access</text>
+  </g>
+
+  <!-- 단계 사이 화살표 -->
+  <g stroke="#495057" stroke-width="2" fill="none">
+    <path d="M208 87 L237 87"/>
+    <path d="M232 81 L242 87 L232 93 Z" fill="#495057" stroke="none"/>
+    <path d="M421 87 L450 87"/>
+    <path d="M445 81 L455 87 L445 93 Z" fill="#495057" stroke="none"/>
+    <path d="M634 87 L663 87"/>
+    <path d="M658 81 L668 87 L658 93 Z" fill="#495057" stroke="none"/>
+  </g>
+
+  <!-- 기법 박스 -->
+  <g>
+    <rect x="243" y="208" width="178" height="96" rx="6" fill="#fdf4e3" stroke="#b45309" stroke-width="2"/>
+    <text x="332" y="233" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#8a4208">이상치 탐지</text>
+    <text x="332" y="256" text-anchor="middle" font-size="13" fill="#5c3a12">정상 패턴에서</text>
+    <text x="332" y="274" text-anchor="middle" font-size="13" fill="#5c3a12">벗어난 것을 가려낸다</text>
+    <text x="332" y="294" text-anchor="middle" font-size="13" fill="#8a4208">잡음 제거 ＋ 탐지 자체</text>
+
+    <rect x="456" y="208" width="178" height="96" rx="6" fill="#e8f3ed" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="545" y="233" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#1b4332">클러스터링</text>
+    <text x="545" y="256" text-anchor="middle" font-size="13" fill="#1b4332">레이블 없이</text>
+    <text x="545" y="274" text-anchor="middle" font-size="13" fill="#1b4332">집단 구조를 찾는다</text>
+    <text x="545" y="294" text-anchor="middle" font-size="13" fill="#2d6a4f">세그먼트 · 잠재 범주</text>
+
+    <rect x="669" y="208" width="178" height="96" rx="6" fill="#e8f3ed" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="758" y="233" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#1b4332">필터링</text>
+    <text x="758" y="256" text-anchor="middle" font-size="13" fill="#1b4332">개인별로 볼 것을</text>
+    <text x="758" y="274" text-anchor="middle" font-size="13" fill="#1b4332">골라 좁힌다</text>
+    <text x="758" y="294" text-anchor="middle" font-size="13" fill="#2d6a4f">유사도 계산 ＋ 서빙</text>
+  </g>
+
+  <!-- 기법 → 단계 연결 -->
+  <g fill="none">
+    <!-- 이상치 탐지 → ② (주) -->
+    <path d="M300 208 L300 120" stroke="#b45309" stroke-width="2"/>
+    <path d="M294 126 L300 114 L306 126 Z" fill="#b45309"/>
+    <!-- 이상치 탐지 → ③ (보조) -->
+    <path d="M400 208 L400 170 L510 170 L510 120" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M504 126 L510 114 L516 126 Z" fill="#b45309"/>
+    <!-- 클러스터링 → ③ (주) -->
+    <path d="M560 208 L560 120" stroke="#2d6a4f" stroke-width="2"/>
+    <path d="M554 126 L560 114 L566 126 Z" fill="#2d6a4f"/>
+    <!-- 필터링 → ③ (보조, 학습) -->
+    <path d="M690 208 L690 186 L600 186 L600 120" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M594 126 L600 114 L606 126 Z" fill="#2d6a4f"/>
+    <!-- 필터링 → ④ (주) -->
+    <path d="M790 208 L790 120" stroke="#2d6a4f" stroke-width="2"/>
+    <path d="M784 126 L790 114 L796 126 Z" fill="#2d6a4f"/>
+  </g>
+
+  <text x="30" y="200" font-size="13" fill="#495057">실선 = 주된 자리 ／ 점선 = 함께 걸리는 자리</text>
+
+  <!-- 공통 전제 -->
+  <rect x="30" y="334" width="817" height="62" rx="6" fill="#eef1f4" stroke="#868e96" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="48" y="357" font-size="13.5" font-weight="bold" fill="#212529">세 기법의 공통 전제</text>
+  <text x="48" y="379" font-size="13" fill="#343a40">① 거리·유사도 함수를 먼저 정한다 　② 척도가 다른 변수는 정규화한다 　③ 정답 레이블이 없는 상태에서 돌린다</text>
+</svg>

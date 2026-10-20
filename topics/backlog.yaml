@@ -5054,3 +5054,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-185
+    title: "DBSCAN 밀도 기반 군집화 — 군집과 잡음을 같은 정의로 산출하는 구조"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "Eps-이웃부터 잡음까지 여섯 정의를 쌓아 올리는 방식과, 분할 방식이 이상치를 따로 낼 수 없는 이유를 대비해 설명한다. k-dist 그래프로 파라미터를 하나로 줄이는 휴리스틱까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-186
+    title: "협업 필터링 — 사용자 기반, 아이템 기반, 행렬 분해"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "평점 행렬 하나를 놓고 세 접근이 무엇을 먼저 계산하는지로 갈린다는 축을 세운다. 조정 코사인이 보정하는 것, 아이템 기반이 운영에서 선호되는 이유, 희소성·콜드스타트가 설계에 거는 조건까지"
+    code: none
+    origin: exam
+    status: todo
