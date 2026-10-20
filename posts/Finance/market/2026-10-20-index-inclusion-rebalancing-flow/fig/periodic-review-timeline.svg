@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1b1b1b">KOSPI 200 정기변경 — 재는 기간, 알리는 날, 바뀌는 날이 모두 다르다</text>
+  <text x="40" y="56" font-size="13" fill="#555">6월 정기변경을 기준으로 그렸다. 12월 변경은 같은 구조가 두 달씩 뒤로 밀려 반복된다.</text>
+
+  <!-- 심사대상기간 막대 -->
+  <rect x="80" y="150" width="300" height="34" fill="#e3f0e8" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="230" y="172" font-size="14" fill="#2d6a4f" text-anchor="middle">심사대상기간 · 소급 6개월</text>
+  <text x="230" y="206" font-size="13" fill="#555" text-anchor="middle">일평균시가총액과 일평균거래대금을 잰다</text>
+
+  <!-- 타임라인 -->
+  <line x1="80" y1="240" x2="840" y2="240" stroke="#1b1b1b" stroke-width="1.5"/>
+  <polygon points="840,240 830,235 830,245" fill="#1b1b1b"/>
+
+  <line x1="380" y1="150" x2="380" y2="240" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="380" cy="240" r="6" fill="#2d6a4f"/>
+  <circle cx="580" cy="240" r="6" fill="#b45309"/>
+  <circle cx="780" cy="240" r="6" fill="#9d0208"/>
+
+  <!-- 심사기준일 -->
+  <rect x="290" y="92" width="180" height="48" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="380" y="112" font-size="14" font-weight="700" fill="#2d6a4f" text-anchor="middle">심사기준일</text>
+  <text x="380" y="131" font-size="13" fill="#1b1b1b" text-anchor="middle">전전월 최종 매매거래일</text>
+
+  <!-- 공표 -->
+  <rect x="490" y="92" width="180" height="48" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="580" y="112" font-size="14" font-weight="700" fill="#b45309" text-anchor="middle">구성종목 확정·공표</text>
+  <text x="580" y="131" font-size="13" fill="#1b1b1b" text-anchor="middle">5월 중 (11월 중)</text>
+  <line x1="580" y1="140" x2="580" y2="234" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <!-- 정기변경일 -->
+  <rect x="690" y="92" width="180" height="48" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="780" y="112" font-size="14" font-weight="700" fill="#9d0208" text-anchor="middle">정기변경일</text>
+  <text x="780" y="131" font-size="13" fill="#1b1b1b" text-anchor="middle">선물 최종거래일 다음 날</text>
+  <line x1="780" y1="140" x2="780" y2="234" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+  <text x="380" y="266" font-size="13" fill="#555" text-anchor="middle">4월 말</text>
+  <text x="580" y="266" font-size="13" fill="#555" text-anchor="middle">5월</text>
+  <text x="780" y="266" font-size="13" fill="#555" text-anchor="middle">6월</text>
+
+  <path d="M 580 288 L 780 288" stroke="#b45309" stroke-width="1.5"/>
+  <path d="M 580 283 L 580 293" stroke="#b45309" stroke-width="1.5"/>
+  <path d="M 780 283 L 780 293" stroke="#b45309" stroke-width="1.5"/>
+  <text x="680" y="308" font-size="13" fill="#b45309" text-anchor="middle">명단이 공개된 채로 한 달 남짓 지나간다</text>
+
+  <text x="40" y="340" font-size="13" fill="#555">지수를 복제하는 자금이 실제로 움직이는 날은 맨 오른쪽 하나뿐이다.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="17" font-weight="700" fill="#1b1b1b">편입 종목을 사는 돈은 어디서 나오는가</text>
+  <text x="40" y="56" font-size="13" fill="#555">가상 지수 '한빛100'을 4조 원이 복제하고 있다고 두고 계산한 금액이다. 실재하는 지수가 아니다.</text>
+
+  <!-- 왼쪽: 파는 쪽 -->
+  <text x="60" y="96" font-size="14" font-weight="700" fill="#9d0208">판다</text>
+
+  <rect x="60" y="110" width="290" height="76" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="80" y="136" font-size="14" font-weight="700" fill="#1b1b1b">다인바이오 · 제외</text>
+  <text x="80" y="158" font-size="13" fill="#555">보유분을 전량 처분한다</text>
+  <text x="330" y="176" font-size="17" font-weight="700" fill="#9d0208" text-anchor="end">20.25억</text>
+
+  <rect x="60" y="206" width="290" height="92" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="80" y="232" font-size="14" font-weight="700" fill="#1b1b1b">나머지 98종목 · 희석</text>
+  <text x="80" y="254" font-size="13" fill="#555">분모가 0.1894% 커진 만큼</text>
+  <text x="80" y="274" font-size="13" fill="#555">비중이 줄어 조금씩 덜어낸다</text>
+  <text x="330" y="292" font-size="17" font-weight="700" fill="#9d0208" text-anchor="end">75.57억</text>
+
+  <!-- 합류 -->
+  <path d="M 350 148 L 410 148 L 410 220 L 470 220" fill="none" stroke="#1b1b1b" stroke-width="1.8"/>
+  <path d="M 350 252 L 410 252 L 410 220" fill="none" stroke="#1b1b1b" stroke-width="1.8"/>
+  <polygon points="478,220 466,214 466,226" fill="#1b1b1b"/>
+  <text x="410" y="332" font-size="13" fill="#555" text-anchor="middle">20.25 + 75.57 = 95.82</text>
+
+  <!-- 오른쪽: 사는 쪽 -->
+  <text x="490" y="96" font-size="14" font-weight="700" fill="#2d6a4f">산다</text>
+
+  <rect x="490" y="158" width="320" height="124" fill="#e3f0e8" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="512" y="186" font-size="14" font-weight="700" fill="#1b1b1b">사람반도체 · 편입</text>
+  <text x="512" y="208" font-size="13" fill="#555">유동시총 7,680억 · 지수 비중 0.2395%</text>
+  <text x="512" y="230" font-size="13" fill="#555">평소 하루 거래대금의 3.19일치</text>
+  <text x="790" y="268" font-size="22" font-weight="700" fill="#2d6a4f" text-anchor="end">95.82억</text>
+
+  <text x="40" y="364" font-size="13" fill="#555">지수를 그대로 복제하는 자금은 새 돈을 넣지 않는다. 편입 종목을 사는 금액은 제외 종목을 판 돈과</text>
+  <text x="40" y="384" font-size="13" fill="#555">나머지 종목에서 덜어낸 돈의 합과 정확히 같다.</text>
+</svg>

@@ -4415,7 +4415,7 @@ topics:
     angle: "패시브 자금이 기계적으로 따라 사는 구조. 편입 규모를 지수 비중으로 계산해"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-067
     title: "괴리율 — ETF·ETN 가격이 기준가와 벌어질 때"
     category: Finance
