@@ -5098,3 +5098,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-189
+    title: "불변 백업과 에어갭 — 복제가 따라가는 훼손을 끊는 사본"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "복제본은 삭제·암호화·훼손을 그대로 따라간다. 시점 사본·쓰기 금지 보관·운영망 분리가 각각 무엇을 막는지, NIST SP 800-53 CP-9 계열 통제와 묶어 정리한다."
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-190
+    title: "데이터 주권과 국외 이전 — 역외 백업이 부딪히는 법적 제약"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "재해복구에서 가장 강한 수단인 역외 사본이 왜 자유롭지 않은지. 데이터 등급 분류, 국외 이전 요건, 보관지 법이 사본에 미치는 효력을 정리한다."
+    code: none
+    origin: exam
+    status: todo

@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **398편** · 갱신 2026-10-21
+총 **399편** · 갱신 2026-10-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -361,13 +361,14 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 71편
+## 주식·재무 (finance) — 72편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-21 | [시간외거래와 단일가매매 — 정규장 밖에서 가격이 정해지는 방식](posts/Finance/market/2026-10-21-single-price-auction-and-after-hours/index.md) | 입문 | Python 3.13.5, 유가증권시장 업무규정 2026-09-09 개정·2026-09-14 시행, 법제처 찾기쉬운 생활법령정보 2026-09-15 기준 | 실행 검증 |
 | 2026-10-21 | [금리가 바뀌면 무엇이 먼저 움직이는가](posts/Finance/market/2026-10-21-interest-rate-to-valuation/index.md) | 입문 | Python 3.13.5, 한국은행 통화정책 효과의 파급(2026-10-21 조회), 한국은행 기준금리 안내(2026-10-21 조회) | 실행 검증 |
 | 2026-10-21 | [임원·주요주주 소유보고 — 누가 언제 사고팔았는지](posts/Finance/disclosure/2026-10-21-insider-ownership-reporting/index.md) | 중급 | Python 3.13.5, 자본시장법 제173조의3 — 2024-07-24 시행, 금융감독원 기업공시 길라잡이 — 2026-10-21 조회분 | 실행 검증 |
+| 2026-10-21 | [지배구조보고서와 ESG 공시 — 무엇을 어떻게 비교하는가](posts/Finance/disclosure/2026-10-21-governance-report-and-esg-disclosure/index.md) | 중급 | Python 3.13.5, 기업지배구조 보고서 가이드라인 2025.12 (한국거래소), 지속가능성(ESG) 공시 제도화 방안 최종안 — 2026-07-08 발표 | 실행 검증 |
 | 2026-10-21 | [채권 기초 — 표면금리·만기수익률·듀레이션](posts/Finance/market/2026-10-21-bond-coupon-ytm-duration/index.md) | 입문 | Python 3.13.5, 한국은행 「2020 경제금융용어 700선」(2020-08 발간), 기획재정부 국채시장 국채종류(2026-10-21 조회) | 실행 검증 |
 | 2026-10-21 | [감사의견 변형과 상장폐지 사유 — 숫자 밖의 위험 신호](posts/Finance/disclosure/2026-10-21-audit-opinion-and-delisting/index.md) | 중급 | ISA 705 (Revised) — 2016-12-15 이후 종료 회계기간 적용, 유가증권시장 상장규정 — 2025-07-01 시행 개정분 | 문서 근거 |
 | 2026-10-20 | [호가 스프레드 — 체결 비용이 수익률을 깎는 정도](posts/Finance/market/2026-10-20-spread-and-round-trip-cost/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
