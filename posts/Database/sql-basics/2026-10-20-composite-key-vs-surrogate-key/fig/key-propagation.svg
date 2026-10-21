@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">같은 사실, 두 가지 키 설계 — 부모 키가 자식 표에 어떻게 실리는가</text>
+
+  <!-- 왼쪽: 자연키 -->
+  <text x="20" y="54" font-size="14" font-weight="bold" fill="#1b2430">자연키를 그대로 쓴다</text>
+
+  <rect x="20" y="66" width="390" height="56" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="32" y="86" font-size="13" fill="#5b6670">course</text>
+  <text x="32" y="108" font-size="13" fill="#1b2430">PK  course_code</text>
+  <text x="188" y="108" font-size="13" fill="#9d0208" font-weight="bold">'CS-2026-0007'</text>
+
+  <path d="M120 122 L120 150" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M116 144 L120 152 L124 144 Z" fill="#5b6670"/>
+
+  <rect x="20" y="152" width="390" height="56" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="32" y="172" font-size="13" fill="#5b6670">enrollment · 67행</text>
+  <text x="32" y="194" font-size="13" fill="#1b2430">PK  student_code +</text>
+  <text x="188" y="194" font-size="13" fill="#9d0208" font-weight="bold">'CS-2026-0007'</text>
+
+  <path d="M120 208 L120 236" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M116 230 L120 238 L124 230 Z" fill="#5b6670"/>
+
+  <rect x="20" y="238" width="390" height="70" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="32" y="258" font-size="13" fill="#5b6670">attendance · 536행</text>
+  <text x="32" y="280" font-size="13" fill="#1b2430">PK  student_code +</text>
+  <text x="188" y="280" font-size="13" fill="#9d0208" font-weight="bold">'CS-2026-0007'</text>
+  <text x="32" y="300" font-size="13" fill="#1b2430">        + meeting_no</text>
+
+  <rect x="20" y="322" width="390" height="48" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="215" y="342" font-size="13" fill="#9d0208" text-anchor="middle">코드가 한 번 바뀌면 ON UPDATE CASCADE 가</text>
+  <text x="215" y="361" font-size="13" fill="#9d0208" text-anchor="middle" font-weight="bold">604행을 고친다 (1 + 67 + 536)</text>
+
+  <text x="215" y="392" font-size="13" fill="#5b6670" text-anchor="middle">조회는 attendance 한 표에서 끝난다</text>
+  <text x="215" y="412" font-size="13" fill="#2d6a4f" text-anchor="middle" font-weight="bold">DB 크기 12,148,736 바이트</text>
+
+  <!-- 가운데 구분선 -->
+  <path d="M440 46 L440 416" fill="none" stroke="#c9d1d9" stroke-width="1"/>
+
+  <!-- 오른쪽: 대리키 -->
+  <text x="470" y="54" font-size="14" font-weight="bold" fill="#1b2430">번호를 따로 둔다</text>
+
+  <rect x="470" y="66" width="390" height="56" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="482" y="86" font-size="13" fill="#5b6670">course</text>
+  <text x="482" y="108" font-size="13" fill="#1b2430">PK course_id  8</text>
+  <text x="620" y="108" font-size="13" fill="#9d0208" font-weight="bold">UNIQUE 'CS-2026-0007'</text>
+
+  <path d="M570 122 L570 150" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M566 144 L570 152 L574 144 Z" fill="#5b6670"/>
+
+  <rect x="470" y="152" width="390" height="56" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="482" y="172" font-size="13" fill="#5b6670">enrollment · 67행</text>
+  <text x="482" y="194" font-size="13" fill="#1b2430">PK enrollment_id   course_id</text>
+  <text x="700" y="194" font-size="13" fill="#2d6a4f" font-weight="bold">8</text>
+
+  <path d="M570 208 L570 236" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M566 230 L570 238 L574 230 Z" fill="#5b6670"/>
+
+  <rect x="470" y="238" width="390" height="70" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="482" y="258" font-size="13" fill="#5b6670">attendance · 536행</text>
+  <text x="482" y="280" font-size="13" fill="#1b2430">PK attendance_id  enrollment_id</text>
+  <text x="482" y="300" font-size="13" fill="#1b2430">   meeting_no</text>
+
+  <rect x="470" y="322" width="390" height="48" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="665" y="342" font-size="13" fill="#2d6a4f" text-anchor="middle">코드는 course 한 행에만 있으므로</text>
+  <text x="665" y="361" font-size="13" fill="#2d6a4f" text-anchor="middle" font-weight="bold">1행만 고친다</text>
+
+  <text x="665" y="392" font-size="13" fill="#b45309" text-anchor="middle">코드로 찾으려면 표 셋을 거슬러 올라간다</text>
+  <text x="665" y="412" font-size="13" fill="#2d6a4f" text-anchor="middle" font-weight="bold">DB 크기 5,451,776 바이트</text>
+</svg>
