@@ -4503,7 +4503,7 @@ topics:
     angle: "서술형 공시를 읽을 때 비교 가능한 항목만 골라내는 법. 의무화 일정"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: db-057
     title: "부분 인덱스 — WHERE가 붙은 인덱스"
     category: Database
