@@ -129,7 +129,10 @@ Young GC를 줄였더니 Full GC가 앞당겨지는 교환이 여기 있다.
   Old를 키우거나 **그 객체를 안 만드는 쪽**이다. 둘은 로그에서 구분된다. Young 크기를
   바꿔 봤을 때 승격률이 따라 내려가면 전자, 안 움직이면 후자다.
 - **Young을 키우면 같은 힙에서 Old가 줄어든다.** `-Xmn`을 올릴 때 `-Xmx`를 같이 올리지
-  않으면 Full GC 간격이 짧아진다. 위 실측이 그 경우다.
+  않으면 Full GC 간격이 짧아진다. 위 실측이 그 경우다. 참고로 튜닝 가이드는 `-Xmn`이
+  아니라 `NewSize`/`MaxNewSize`로 설명하는데, 로그 머리말이 둘의 관계를 보여 준다 —
+  `-Xmn64m`으로 띄우면 `CommandLine flags:` 줄에 `-XX:MaxNewSize=67108864
+  -XX:NewSize=67108864`로 찍힌다. `-Xmn`은 둘을 같은 값으로 고정하는 약칭이다.
 - **할당률이 비정상으로 높으면 설정이 아니라 코드 문제다.** 초당 10 GiB를 할당하는 코드는
   어떤 GC 설정으로도 정지를 없애지 못한다. 로그가 가리키는 곳은 힙 플래그가 아니다.
 - **측정 구간을 기동 직후로 잡지 않는다.** 클래스 로딩과 JIT 컴파일이 도는 동안의 할당은
@@ -153,6 +156,6 @@ Young GC를 줄였더니 Full GC가 앞당겨지는 교환이 여기 있다.
 ## 참고 자료
 
 - [Java SE 8 HotSpot Virtual Machine Garbage Collection Tuning Guide, 3 Generations](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/generations.html) — 세대 구분, minor/major collection, 승격의 정의, GC 로그 예시
-- [같은 가이드, 4 Sizing the Generations](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html) — `-Xmn`·`NewRatio`·`SurvivorRatio`로 세대 크기를 정하는 방법
+- [같은 가이드, 4 Sizing the Generations](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/sizing.html) — `NewRatio`·`NewSize`/`MaxNewSize`·`SurvivorRatio`로 세대 크기를 정하는 방법. 이 가이드는 `-Xmn`을 다루지 않는다
 - [같은 가이드, 6 The Parallel Collector](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/parallel.html) — 이 글의 실행이 쓴 수집기. Java 8의 서버급 머신 기본값이다
 - [JEP 158: Unified JVM Logging](https://openjdk.org/jeps/158) — Java 9에서 `-Xlog`로 로그 형식이 바뀐 근거
