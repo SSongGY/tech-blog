@@ -4459,7 +4459,7 @@ topics:
     angle: "할인율 변화가 기업가치에 닿는 경로. 성장주와 가치주에서 영향이 갈리는 이유를 DCF로"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-071
     title: "시간외거래와 단일가매매 — 정규장 밖에서 가격이 정해지는 방식"
     category: Finance

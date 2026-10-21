@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1b1b1b"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="360" fill="#fbfaf7"/>
+
+  <text x="30" y="38" font-size="18" font-weight="bold" fill="#1b1b1b">기준금리가 기업가치에 닿는 경로</text>
+
+  <rect x="300" y="60" width="118" height="40" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="359" y="85" font-size="13.5" fill="#1b1b1b" text-anchor="middle">무위험이자율</text>
+
+  <rect x="428" y="60" width="128" height="40" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="492" y="85" font-size="13.5" fill="#1b1b1b" text-anchor="middle">리스크프리미엄</text>
+
+  <line x1="359" y1="100" x2="400" y2="144" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#ar)"/>
+  <line x1="492" y1="100" x2="480" y2="144" stroke="#b45309" stroke-width="1.8" marker-end="url(#ar)"/>
+
+  <rect x="25" y="150" width="150" height="72" rx="6" fill="#e8efe9" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="100" y="180" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">한국은행</text>
+  <text x="100" y="200" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">기준금리</text>
+
+  <rect x="195" y="150" width="150" height="72" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6"/>
+  <text x="270" y="180" font-size="14" fill="#1b1b1b" text-anchor="middle">단기·장기</text>
+  <text x="270" y="200" font-size="14" fill="#1b1b1b" text-anchor="middle">시장금리</text>
+
+  <rect x="365" y="150" width="150" height="72" rx="6" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="186" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">할인율</text>
+  <text x="440" y="206" font-size="13" fill="#4a4a4a" text-anchor="middle">무위험 + 프리미엄</text>
+
+  <rect x="535" y="150" width="150" height="72" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.6"/>
+  <text x="610" y="180" font-size="14" fill="#1b1b1b" text-anchor="middle">미래 현금흐름의</text>
+  <text x="610" y="200" font-size="14" fill="#1b1b1b" text-anchor="middle">현재가치</text>
+
+  <rect x="705" y="150" width="150" height="72" rx="6" fill="#e8efe9" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="780" y="186" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">주식·채권·부동산</text>
+  <text x="780" y="206" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">가격</text>
+
+  <line x1="175" y1="186" x2="193" y2="186" stroke="#1b1b1b" stroke-width="1.8" marker-end="url(#ar)"/>
+  <line x1="345" y1="186" x2="363" y2="186" stroke="#1b1b1b" stroke-width="1.8" marker-end="url(#ar)"/>
+  <line x1="515" y1="186" x2="533" y2="186" stroke="#1b1b1b" stroke-width="1.8" marker-end="url(#ar)"/>
+  <line x1="685" y1="186" x2="703" y2="186" stroke="#1b1b1b" stroke-width="1.8" marker-end="url(#ar)"/>
+
+  <text x="100" y="246" font-size="13" fill="#4a4a4a" text-anchor="middle">금통위 연 8회</text>
+  <text x="270" y="246" font-size="13" fill="#4a4a4a" text-anchor="middle">금리경로</text>
+  <text x="780" y="246" font-size="13" fill="#4a4a4a" text-anchor="middle">자산가격경로</text>
+
+  <line x1="30" y1="272" x2="850" y2="272" stroke="#d6d2c8" stroke-width="1.4"/>
+
+  <text x="30" y="298" font-size="13.5" fill="#1b1b1b">한국은행은 자산가격경로를 "금리가 상승할 경우 주식, 채권, 부동산 등 자산을 통해 얻을 수 있는 미래 수익의</text>
+  <text x="30" y="318" font-size="13.5" fill="#1b1b1b">현재가치가 낮아지게 되어 자산가격이 하락하게 된다"로 적는다. 할인율이 분모에 있다는 뜻이다.</text>
+  <text x="30" y="344" font-size="13" fill="#4a4a4a">같은 할인율 변화라도 현금흐름이 뒤에 몰린 자산이 더 크게 움직인다. 그 몫을 재는 자가 듀레이션이다.</text>
+</svg>
