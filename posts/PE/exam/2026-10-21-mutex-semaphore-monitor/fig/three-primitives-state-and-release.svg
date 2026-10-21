@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" width="880" height="350" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect width="880" height="350" fill="#f8fafc"/>
+  <text x="440" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">세 동기화 기법 — 무엇을 들고 있고, 누가 풀 수 있는가</text>
+
+  <!-- 뮤텍스 -->
+  <rect x="30" y="58" width="260" height="38" rx="6" fill="#2d6a4f"/>
+  <text x="160" y="83" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">뮤텍스 (Mutex)</text>
+  <rect x="30" y="108" width="260" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="160" y="134" text-anchor="middle" font-size="14" fill="#1f2937">상태: 잠김 / 풀림 (2값)</text>
+  <text x="160" y="160" text-anchor="middle" font-size="14" fill="#1f2937">+ 소유자 = 잠근 스레드</text>
+  <text x="160" y="190" text-anchor="middle" font-size="14" fill="#1f2937">연산: lock / unlock</text>
+  <text x="160" y="240" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2d6a4f">소유 스레드만 unlock</text>
+  <text x="160" y="262" text-anchor="middle" font-size="13" fill="#4b5563">남이 풀면 EPERM 또는</text>
+  <text x="160" y="282" text-anchor="middle" font-size="13" fill="#4b5563">정의되지 않은 동작 (유형별)</text>
+
+  <!-- 세마포어 -->
+  <rect x="310" y="58" width="260" height="38" rx="6" fill="#2d6a4f"/>
+  <text x="440" y="83" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">세마포어 (Semaphore)</text>
+  <rect x="310" y="108" width="260" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="134" text-anchor="middle" font-size="14" fill="#1f2937">상태: 비음 정수 계수 S</text>
+  <text x="440" y="160" text-anchor="middle" font-size="14" fill="#1f2937">+ 대기 프로세스 집합</text>
+  <text x="440" y="190" text-anchor="middle" font-size="14" fill="#1f2937">연산: P(감소) / V(증가)</text>
+  <text x="440" y="240" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#b45309">소유자 개념이 없다</text>
+  <text x="440" y="262" text-anchor="middle" font-size="13" fill="#4b5563">P 한 쪽과 V 하는 쪽이</text>
+  <text x="440" y="282" text-anchor="middle" font-size="13" fill="#4b5563">달라도 된다 (신호 전달 가능)</text>
+
+  <!-- 모니터 -->
+  <rect x="590" y="58" width="260" height="38" rx="6" fill="#2d6a4f"/>
+  <text x="720" y="83" text-anchor="middle" font-size="16" font-weight="bold" fill="#ffffff">모니터 (Monitor)</text>
+  <rect x="590" y="108" width="260" height="104" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="720" y="134" text-anchor="middle" font-size="14" fill="#1f2937">상태: 모니터 잠금 1개</text>
+  <text x="720" y="160" text-anchor="middle" font-size="14" fill="#1f2937">+ 조건변수별 대기 큐</text>
+  <text x="720" y="190" text-anchor="middle" font-size="14" fill="#1f2937">연산: wait / signal</text>
+  <text x="720" y="240" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#2d6a4f">잠금·해제를 언어가 넣는다</text>
+  <text x="720" y="262" text-anchor="middle" font-size="13" fill="#4b5563">프로시저 진입·반환 지점에</text>
+  <text x="720" y="282" text-anchor="middle" font-size="13" fill="#4b5563">컴파일러·런타임이 삽입</text>
+
+  <text x="440" y="326" text-anchor="middle" font-size="13" fill="#6b7280">왼쪽일수록 기계에 가깝고, 오른쪽일수록 잠금 관리 책임이 프로그래머에서 언어로 옮겨간다</text>
+</svg>

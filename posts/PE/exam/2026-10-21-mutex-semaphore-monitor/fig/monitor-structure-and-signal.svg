@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect width="880" height="400" fill="#f8fafc"/>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">모니터의 두 가지 큐와 signal 이후 누가 도는가</text>
+
+  <!-- 진입 큐 -->
+  <rect x="24" y="130" width="130" height="86" rx="6" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <text x="89" y="162" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">진입 큐</text>
+  <text x="89" y="185" text-anchor="middle" font-size="13" fill="#4b5563">모니터 잠금을</text>
+  <text x="89" y="203" text-anchor="middle" font-size="13" fill="#4b5563">기다리는 스레드</text>
+  <line x1="156" y1="173" x2="196" y2="173" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 모니터 경계 -->
+  <rect x="202" y="64" width="300" height="276" rx="10" fill="#eef7f1" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="7 4"/>
+  <text x="352" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">모니터 — 한 번에 한 스레드만 수행</text>
+
+  <!-- 공유 데이터 + 프로시저 -->
+  <rect x="226" y="106" width="252" height="74" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="352" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">공유 데이터 + 프로시저</text>
+  <text x="352" y="158" text-anchor="middle" font-size="13" fill="#4b5563">외부에서 직접 접근 불가</text>
+
+  <!-- 조건변수 큐 -->
+  <rect x="226" y="248" width="252" height="74" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="352" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">조건변수 c 의 대기 큐</text>
+  <text x="352" y="300" text-anchor="middle" font-size="13" fill="#4b5563">참·거짓 값을 갖지 않는다</text>
+
+  <!-- wait / signal -->
+  <line x1="276" y1="182" x2="276" y2="244" stroke="#b45309" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="268" y="206" text-anchor="end" font-size="13" font-weight="bold" fill="#b45309">c.wait</text>
+  <text x="268" y="226" text-anchor="end" font-size="13" fill="#6b7280">잠금 반납</text>
+  <line x1="430" y1="246" x2="430" y2="184" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="422" y="206" text-anchor="end" font-size="13" font-weight="bold" fill="#2d6a4f">c.signal</text>
+  <text x="422" y="226" text-anchor="end" font-size="13" fill="#6b7280">한 스레드 재개</text>
+
+  <!-- 오른쪽: 의미론 -->
+  <line x1="506" y1="150" x2="548" y2="150" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="506" y1="276" x2="548" y2="276" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="554" y="104" width="300" height="96" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="704" y="132" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">신호 후 양보 (Hoare, 1974)</text>
+  <text x="704" y="156" text-anchor="middle" font-size="13" fill="#1f2937">대기자가 즉시 재개, 신호자는 멈춘다</text>
+  <text x="704" y="180" text-anchor="middle" font-size="13" fill="#1f2937">깨어난 쪽은 조건을 믿어도 된다</text>
+
+  <rect x="554" y="230" width="300" height="96" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="704" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">신호 후 계속 (Mesa, 1980)</text>
+  <text x="704" y="282" text-anchor="middle" font-size="13" fill="#1f2937">신호는 힌트, 신호자가 그대로 진행</text>
+  <text x="704" y="306" text-anchor="middle" font-size="13" fill="#1f2937">깨어난 쪽이 조건을 다시 검사해야 한다</text>
+
+  <text x="440" y="372" text-anchor="middle" font-size="13" fill="#6b7280">현행 POSIX 조건변수와 Java wait/notify 는 아래쪽 의미론이므로 대기는 if 가 아니라 while 로 감싼다</text>
+</svg>

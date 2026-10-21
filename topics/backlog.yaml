@@ -5076,3 +5076,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-187
+    title: "우선순위 역전과 우선순위 상속 프로토콜"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "낮은 우선순위 태스크가 잠금을 쥔 채 선점될 때 생기는 무한 블로킹을, 기본 우선순위 상속과 우선순위 상한 두 프로토콜로 비교하고 POSIX 뮤텍스 속성(PRIO_INHERIT/PRIO_PROTECT)이 각각 어느 쪽을 표준화했는지까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-188
+    title: "모니터와 조건변수 — 두 가지 시그널 의미론"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "진입 큐와 조건변수 큐를 분리하는 모니터 구조를 설명하고, 신호 후 양보(Hoare)와 신호 후 계속(Mesa)이 깨어난 쪽의 코드 형태를 어떻게 바꾸는지를 POSIX 가짜 깨어남 규정까지 이어서"
+    code: none
+    origin: exam
+    status: todo
