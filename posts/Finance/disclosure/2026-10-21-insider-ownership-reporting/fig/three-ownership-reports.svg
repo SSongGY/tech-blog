@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 486" width="880" height="486" role="img" aria-label="지분공시 세 제도가 같은 거래를 각각 어떻게 거르는지 보여주는 도식">
+  <rect width="880" height="486" fill="#f7f8fa"/>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">지분공시 세 갈래 — 같은 거래가 세 번 따로 걸러진다</text>
+  <text x="24" y="54" font-size="13" fill="#444">가나전자 대표이사 김가나의 150,000주(54억원) 장내 매도 1건을 세 제도에 각각 넣어 본 결과</text>
+
+  <!-- 열 머리 -->
+  <text x="24" y="86" font-size="13" font-weight="bold" fill="#555">제도와 근거</text>
+  <text x="300" y="86" font-size="13" font-weight="bold" fill="#555">보고 의무가 생기는 기준</text>
+  <text x="628" y="86" font-size="13" font-weight="bold" fill="#555">이 거래의 판정</text>
+
+  <!-- 1열: 대량보유상황보고 -->
+  <rect x="24" y="98" width="248" height="106" rx="6" fill="#ffffff" stroke="#8a94a6" stroke-width="1.5"/>
+  <text x="40" y="124" font-size="14" font-weight="bold" fill="#1b1b1b">대량보유상황보고</text>
+  <text x="40" y="146" font-size="13" fill="#333">통칭 5%룰 · 법 제147조</text>
+  <text x="40" y="168" font-size="13" fill="#333">목적: 경영권 이전 가능성</text>
+  <text x="40" y="190" font-size="13" fill="#333">본인 + 특별관계자 합산</text>
+
+  <rect x="300" y="98" width="300" height="106" rx="6" fill="#ffffff" stroke="#8a94a6" stroke-width="1.5"/>
+  <text x="316" y="124" font-size="13" fill="#333">신규: 합산 보유비율 5% 이상</text>
+  <text x="316" y="146" font-size="13" fill="#333">변동: 보유비율 1% 이상 변동</text>
+  <text x="316" y="168" font-size="13" fill="#333">변경: 보유목적·주요계약 변경</text>
+  <text x="316" y="190" font-size="13" fill="#555">분모 = 발행주식총수 20,000,000주</text>
+
+  <rect x="628" y="98" width="228" height="106" rx="6" fill="#fdf4e7" stroke="#b45309" stroke-width="2"/>
+  <text x="644" y="124" font-size="14" font-weight="bold" fill="#b45309">보고 없음</text>
+  <text x="644" y="146" font-size="13" fill="#333">보유비율 변동 0.75%p</text>
+  <text x="644" y="168" font-size="13" fill="#333">1% 를 채우려면</text>
+  <text x="644" y="190" font-size="13" fill="#333">200,000주 이상 필요</text>
+
+  <!-- 2열: 소유상황보고 -->
+  <rect x="24" y="222" width="248" height="106" rx="6" fill="#ffffff" stroke="#8a94a6" stroke-width="1.5"/>
+  <text x="40" y="248" font-size="14" font-weight="bold" fill="#1b1b1b">소유상황보고</text>
+  <text x="40" y="270" font-size="13" fill="#333">임원·주요주주 · 법 제173조</text>
+  <text x="40" y="292" font-size="13" fill="#333">목적: 내부자거래 방지</text>
+  <text x="40" y="314" font-size="13" fill="#333">본인 계산분만 (개별 보고)</text>
+
+  <rect x="300" y="222" width="300" height="106" rx="6" fill="#ffffff" stroke="#8a94a6" stroke-width="1.5"/>
+  <text x="316" y="248" font-size="13" fill="#333">신규: 임원이 되거나 지분 10% 이상</text>
+  <text x="316" y="270" font-size="13" fill="#333">변동: 소유 수량·증권 종류 변동</text>
+  <text x="316" y="292" font-size="13" fill="#333">면제: 1,000주 미만 &amp; 1천만원 미만</text>
+  <text x="316" y="314" font-size="13" fill="#555">면제분은 사라지지 않고 누적된다</text>
+
+  <rect x="628" y="222" width="228" height="106" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="644" y="248" font-size="14" font-weight="bold" fill="#2d6a4f">보고 대상</text>
+  <text x="644" y="270" font-size="13" fill="#333">수량·금액 두 기준 모두</text>
+  <text x="644" y="292" font-size="13" fill="#333">초과</text>
+  <text x="644" y="314" font-size="13" fill="#333">결제일부터 5영업일 이내</text>
+
+  <!-- 3열: 거래계획 사전공시 -->
+  <rect x="24" y="346" width="248" height="106" rx="6" fill="#ffffff" stroke="#8a94a6" stroke-width="1.5"/>
+  <text x="40" y="372" font-size="14" font-weight="bold" fill="#1b1b1b">거래계획 사전공시</text>
+  <text x="40" y="394" font-size="13" fill="#333">법 제173조의3 · 2024.7.24. 시행</text>
+  <text x="40" y="416" font-size="13" fill="#333">목적: 거래 전 예고</text>
+  <text x="40" y="438" font-size="13" fill="#333">임원·주요주주 (재무적 투자자 제외)</text>
+
+  <rect x="300" y="346" width="300" height="106" rx="6" fill="#ffffff" stroke="#8a94a6" stroke-width="1.5"/>
+  <text x="316" y="372" font-size="13" fill="#333">과거 6개월분 + 계획분 합산 기준</text>
+  <text x="316" y="394" font-size="13" fill="#333">면제: 발행주식총수 1% 미만</text>
+  <text x="316" y="416" font-size="13" fill="#333">　　　&amp; 거래금액 50억원 미만</text>
+  <text x="316" y="438" font-size="13" fill="#555">둘 다 채워야 면제된다</text>
+
+  <rect x="628" y="346" width="228" height="106" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="644" y="372" font-size="14" font-weight="bold" fill="#2d6a4f">보고 대상</text>
+  <text x="644" y="394" font-size="13" fill="#333">지분율 0.76% 는 면제선 아래</text>
+  <text x="644" y="416" font-size="13" fill="#333">금액 54.5억원이 초과</text>
+  <text x="644" y="438" font-size="13" fill="#333">거래 개시일 30일 전까지</text>
+
+  <!-- 화살표 -->
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <line x1="274" y1="151" x2="296" y2="151" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="602" y1="151" x2="624" y2="151" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="274" y1="275" x2="296" y2="275" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="602" y1="275" x2="624" y2="275" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="274" y1="399" x2="296" y2="399" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="602" y1="399" x2="624" y2="399" stroke="#6b7280" stroke-width="1.6" marker-end="url(#arw)"/>
+
+  <text x="24" y="474" font-size="13" fill="#9d0208">세 제도의 기준이 서로 독립이므로, 한 제도에서 안 걸리는 거래가 다른 제도에서는 걸린다</text>
+</svg>
