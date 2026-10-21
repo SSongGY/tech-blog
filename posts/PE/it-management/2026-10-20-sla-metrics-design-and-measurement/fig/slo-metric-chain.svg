@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" width="880" height="390" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="390" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">메트릭에서 협약 조항까지 — ISO/IEC 19086-1:2016 8장이 세운 순서</text>
+
+  <!-- 1 메트릭 -->
+  <rect x="20" y="52" width="180" height="62" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="110" y="76" font-size="13" font-weight="bold" fill="#1b2430" text-anchor="middle">① 메트릭 (8.2)</text>
+  <text x="110" y="98" font-size="13" fill="#5b6670" text-anchor="middle">무엇을 어떻게 재는가</text>
+
+  <path d="M200 83 L246 83" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M240 79 L248 83 L240 87 Z" fill="#5b6670"/>
+
+  <!-- 2 서비스 수준 -->
+  <rect x="248" y="52" width="180" height="62" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="338" y="76" font-size="13" font-weight="bold" fill="#1b2430" text-anchor="middle">② 서비스 수준 (8.3.1)</text>
+  <text x="338" y="98" font-size="13" fill="#5b6670" text-anchor="middle">잰 값이 놓이는 눈금</text>
+
+  <path d="M428 83 L474 83" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M468 79 L476 83 L468 87 Z" fill="#5b6670"/>
+
+  <!-- 3 SLO -->
+  <rect x="476" y="22" width="180" height="56" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="566" y="44" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">③ SLO (8.3.2)</text>
+  <text x="566" y="64" font-size="13" fill="#2d6a4f" text-anchor="middle">정량 — 등간·비율 척도</text>
+
+  <!-- 3' SQO -->
+  <rect x="476" y="88" width="180" height="56" fill="#fff4e0" stroke="#b45309"/>
+  <text x="566" y="110" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">③' SQO (8.3.3)</text>
+  <text x="566" y="130" font-size="13" fill="#b45309" text-anchor="middle">정성 — 명목·순서 척도</text>
+
+  <path d="M656 50 L700 50 L700 160" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M656 116 L700 116" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M696 154 L700 162 L704 154 Z" fill="#5b6670"/>
+
+  <!-- 4 구제 -->
+  <rect x="610" y="164" width="180" height="62" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="700" y="188" font-size="13" font-weight="bold" fill="#1b2430" text-anchor="middle">④ 구제·청구 (8.4)</text>
+  <text x="700" y="210" font-size="13" fill="#5b6670" text-anchor="middle">미달 시 무엇이 일어나는가</text>
+
+  <path d="M700 226 L700 254" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M696 248 L700 256 L704 248 Z" fill="#5b6670"/>
+
+  <!-- 5 예외 -->
+  <rect x="610" y="256" width="180" height="62" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="700" y="280" font-size="13" font-weight="bold" fill="#1b2430" text-anchor="middle">⑤ 예외 (8.5)</text>
+  <text x="700" y="302" font-size="13" fill="#5b6670" text-anchor="middle">계획 정지·불가항력 제외</text>
+
+  <!-- 가용률 식 -->
+  <rect x="20" y="150" width="560" height="168" fill="#ffffff" stroke="#5b6670"/>
+  <text x="36" y="176" font-size="13" font-weight="bold" fill="#1b2430">①이 비어 있으면 ③의 숫자는 뜻이 없다 — 가용률 메트릭의 네 자리</text>
+
+  <text x="36" y="208" font-size="13" fill="#1b2430">가용률 =</text>
+  <text x="300" y="200" font-size="13" fill="#2d6a4f" text-anchor="middle">측정 시간 − 제외 시간 − 장애 시간</text>
+  <path d="M120 207 L480 207" fill="none" stroke="#1b2430" stroke-width="1"/>
+  <text x="300" y="225" font-size="13" fill="#2d6a4f" text-anchor="middle">측정 시간 − 제외 시간</text>
+  <text x="500" y="212" font-size="13" fill="#1b2430">× 100</text>
+
+  <text x="36" y="252" font-size="13" fill="#5b6670">ⓐ 측정 창 — 달력 월인가 이동 구간인가</text>
+  <text x="36" y="274" font-size="13" fill="#5b6670">ⓑ 제외 시간 — 공지한 정지를 빼는가</text>
+  <text x="330" y="252" font-size="13" fill="#5b6670">ⓒ 장애 판정 — 경보인가 신고인가</text>
+  <text x="330" y="274" font-size="13" fill="#5b6670">ⓓ 측정 주체 — 제공자인가 제3자인가</text>
+  <text x="36" y="302" font-size="13" fill="#9d0208">넷 중 하나라도 비면 같은 달이 서로 다른 가용률로 적힌다</text>
+
+  <text x="20" y="348" font-size="13" fill="#1b2430">시간 기준 대신 요청 기준으로 재면 분모가 '전체 요청 수'가 된다. 같은 30분 장애가</text>
+  <text x="20" y="368" font-size="13" fill="#1b2430">피크에 나면 99.750%, 새벽에 나면 99.980% 로 적힌다 — 시간 기준은 둘 다 99.931%다.</text>
+</svg>

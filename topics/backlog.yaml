@@ -2257,7 +2257,7 @@ topics:
     angle: "가용률 99.9%가 실제로 허용하는 장애 시간"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-084
     title: "업무 프로세스 재설계(BPR) — 원안과 AI 도입 이후"
     category: PE
