@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfaf7"/>
+
+  <text x="24" y="40" font-size="18" font-weight="bold" fill="#1b1b1b">감사범위가 막혔을 때 의견이 정해지기까지</text>
+  <text x="24" y="64" font-size="13" fill="#4a4a4a">의견거절은 감사인이 바로 꺼내는 결론이 아니라 아래 네 단계를 거친 뒤에 남는 결론이다</text>
+
+  <rect x="40" y="100" width="340" height="66" fill="#e8e2d6" stroke="#9c9484" stroke-width="1.2"/>
+  <text x="56" y="122" font-size="13" fill="#1b1b1b">감사계약을 맺은 뒤 경영진이</text>
+  <text x="56" y="140" font-size="13" fill="#1b1b1b">감사범위를 제한한 것을 알게 된다</text>
+  <text x="56" y="158" font-size="13" fill="#6b705c">ISA 705 문단 11</text>
+
+  <rect x="40" y="186" width="340" height="66" fill="#e8e2d6" stroke="#9c9484" stroke-width="1.2"/>
+  <text x="56" y="208" font-size="13" fill="#1b1b1b">감사인은 경영진에게</text>
+  <text x="56" y="226" font-size="13" fill="#1b1b1b">제한을 제거해 달라고 요구한다</text>
+  <text x="56" y="244" font-size="13" fill="#6b705c">문단 11</text>
+
+  <rect x="40" y="272" width="340" height="66" fill="#e8e2d6" stroke="#9c9484" stroke-width="1.2"/>
+  <text x="56" y="294" font-size="13" fill="#1b1b1b">거부하면 지배기구에 알리고</text>
+  <text x="56" y="312" font-size="13" fill="#1b1b1b">대체 절차가 가능한지 판단한다</text>
+  <text x="56" y="330" font-size="13" fill="#6b705c">문단 12</text>
+
+  <rect x="40" y="358" width="340" height="66" fill="#e8e2d6" stroke="#9c9484" stroke-width="1.2"/>
+  <text x="56" y="380" font-size="13" fill="#1b1b1b">그래도 충분한 증거를 얻지 못하면</text>
+  <text x="56" y="398" font-size="13" fill="#1b1b1b">영향의 범위로 의견을 가른다</text>
+  <text x="56" y="416" font-size="13" fill="#6b705c">문단 13</text>
+
+  <path d="M 210 166 L 210 186 M 204 179 L 210 186 L 216 179" fill="none" stroke="#4a4a4a" stroke-width="1.4"/>
+  <path d="M 210 252 L 210 272 M 204 265 L 210 272 L 216 265" fill="none" stroke="#4a4a4a" stroke-width="1.4"/>
+  <path d="M 210 338 L 210 358 M 204 351 L 210 358 L 216 351" fill="none" stroke="#4a4a4a" stroke-width="1.4"/>
+
+  <rect x="440" y="186" width="400" height="66" fill="#dfe8e2" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="456" y="214" font-size="13" fill="#2d6a4f">제한이 풀리면</text>
+  <text x="456" y="234" font-size="13" fill="#2d6a4f">의견을 변형하지 않고 진행한다</text>
+
+  <rect x="440" y="272" width="400" height="66" fill="#dfe8e2" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="456" y="300" font-size="13" fill="#2d6a4f">대체 절차로 증거를 얻으면</text>
+  <text x="456" y="320" font-size="13" fill="#2d6a4f">의견을 변형하지 않고 진행한다</text>
+
+  <rect x="440" y="348" width="400" height="56" fill="#fbeee0" stroke="#b45309" stroke-width="1.4"/>
+  <text x="456" y="371" font-size="13" fill="#b45309">중요하지만 전반적이지는 않다</text>
+  <text x="456" y="391" font-size="13" font-weight="bold" fill="#b45309">→ 한정의견 (문단 13(a))</text>
+
+  <rect x="440" y="414" width="400" height="56" fill="#fae3e3" stroke="#9d0208" stroke-width="1.4"/>
+  <text x="456" y="437" font-size="13" fill="#9d0208">중요하고 전반적이다 → 감사계약을 해지하고,</text>
+  <text x="456" y="457" font-size="13" font-weight="bold" fill="#9d0208">할 수 없으면 의견거절 (문단 13(b))</text>
+
+  <path d="M 380 219 L 440 219 M 433 213 L 440 219 L 433 225" fill="none" stroke="#2d6a4f" stroke-width="1.4"/>
+  <path d="M 380 305 L 440 305 M 433 299 L 440 305 L 433 311" fill="none" stroke="#2d6a4f" stroke-width="1.4"/>
+  <path d="M 380 391 L 410 391 L 410 376 L 440 376 M 433 370 L 440 376 L 433 382" fill="none" stroke="#4a4a4a" stroke-width="1.4"/>
+  <path d="M 410 391 L 410 442 L 440 442 M 433 436 L 440 442 L 433 448" fill="none" stroke="#4a4a4a" stroke-width="1.4"/>
+
+  <text x="24" y="498" font-size="13" fill="#4a4a4a">같은 "증거를 못 얻었다"에서 출발해도 영향이 특정 계정에 머무르면 한정, 재무제표 전반에 번지면 의견거절로 갈린다.</text>
+</svg>
