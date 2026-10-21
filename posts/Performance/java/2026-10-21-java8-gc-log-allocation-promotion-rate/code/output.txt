@@ -1,0 +1,82 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Performance\java\2026-10-21-java8-gc-log-allocation-promotion-rate
+# 명령      : bash run.sh
+# 수행 시각 : 2026-10-22 08:34 (대한민국 표준시)
+# 소요      : 4.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+
+################################################################
+# A. Young 영역을 작게  (-Xms512m -Xmx512m -Xmn64m)
+################################################################
+경과 시간          : 1.552 초
+버린 할당          : 15,728,640,000 바이트 (15000.0 MiB)
+오래 사는 할당     : 209,715,200 바이트 (200.0 MiB)
+끝까지 살아남은 양 : 104,857,600 바이트 (100.0 MiB)
+체크섬             : -111808
+
+--- probe_gc_young64.log 앞부분 ---
+Java HotSpot(TM) 64-Bit Server VM (25.491-b10) for windows-amd64 JRE (1.8.0_491-b10), built on Mar 30 2026 07:57:25 by "java_re" with MS VC++ 17.13 (VS2022)
+Memory: 4k page, physical 8150824k(244120k free), swap 29122344k(6994260k free)
+CommandLine flags: -XX:InitialHeapSize=536870912 -XX:MaxHeapSize=536870912 -XX:MaxNewSize=67108864 -XX:NewSize=67108864 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+2026-10-22T08:34:21.458+0900: 0.075: [GC (Allocation Failure) [PSYoungGen: 49149K->1497K(57344K)] 49149K->1505K(516096K), 0.0009262 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2026-10-22T08:34:21.458+0900: 0.080: [GC (Allocation Failure) [PSYoungGen: 50649K->1913K(57344K)] 50657K->1921K(516096K), 0.0008678 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2026-10-22T08:34:21.475+0900: 0.086: [GC (Allocation Failure) [PSYoungGen: 51065K->2697K(57344K)] 51073K->2705K(516096K), 0.0008012 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+
+[probe_gc_young64.log]
+  측정 구간            : 0.075초 ~ 1.611초 (1.536초)
+  Young GC             : 251회 · Full GC 0회
+  Young 영역 용량      : 63.0 MiB
+  힙 전체 용량         : 511.0 MiB
+  정지 시간 합계       : 165.8 ms (구간의 10.79%)
+  Young GC 정지        : 평균 0.66 ms · 최대 9.77 ms
+
+  할당률               : 9,875.9 MiB/s
+  승격률               : 129.90 MiB/s
+  승격 비율            : 1.315% (할당한 것 중 Old 로 넘어간 몫)
+  Young GC 간격        : 6.1 ms
+
+  역산 — Old 용량 448.0 MiB 중 199.6 MiB 사용
+  남은 248.4 MiB 를 지금 승격률로 채우는 데 1.9초
+
+################################################################
+# B. Young 영역을 크게  (-Xms512m -Xmx512m -Xmn256m)
+################################################################
+경과 시간          : 1.573 초
+버린 할당          : 15,728,640,000 바이트 (15000.0 MiB)
+오래 사는 할당     : 209,715,200 바이트 (200.0 MiB)
+끝까지 살아남은 양 : 104,857,600 바이트 (100.0 MiB)
+체크섬             : -111808
+
+--- probe_gc_young256.log 앞부분 ---
+Java HotSpot(TM) 64-Bit Server VM (25.491-b10) for windows-amd64 JRE (1.8.0_491-b10), built on Mar 30 2026 07:57:25 by "java_re" with MS VC++ 17.13 (VS2022)
+Memory: 4k page, physical 8150824k(393332k free), swap 29122344k(7008672k free)
+CommandLine flags: -XX:InitialHeapSize=536870912 -XX:MaxHeapSize=536870912 -XX:MaxNewSize=268435456 -XX:NewSize=268435456 -XX:+PrintGC -XX:+PrintGCDateStamps -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:-UseLargePagesIndividualAllocation -XX:+UseParallelGC 
+2026-10-22T08:34:23.378+0900: 0.105: [GC (Allocation Failure) [PSYoungGen: 196608K->3305K(229376K)] 196608K->3313K(491520K), 0.0010592 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2026-10-22T08:34:23.392+0900: 0.123: [GC (Allocation Failure) [PSYoungGen: 199913K->5785K(229376K)] 199921K->5793K(491520K), 0.0011295 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+2026-10-22T08:34:23.417+0900: 0.141: [GC (Allocation Failure) [PSYoungGen: 202393K->8474K(229376K)] 202401K->8482K(491520K), 0.0013723 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+
+[probe_gc_young256.log]
+  측정 구간            : 0.105초 ~ 1.630초 (1.525초)
+  Young GC             : 66회 · Full GC 0회
+  Young 영역 용량      : 252.0 MiB
+  힙 전체 용량         : 508.0 MiB
+  정지 시간 합계       : 94.5 ms (구간의 6.20%)
+  Young GC 정지        : 평균 1.43 ms · 최대 2.72 ms
+
+  할당률               : 9,925.9 MiB/s
+  승격률               : 129.43 MiB/s
+  승격 비율            : 1.304% (할당한 것 중 Old 로 넘어간 몫)
+  Young GC 간격        : 23.1 ms
+
+  역산 — Old 용량 256.0 MiB 중 197.4 MiB 사용
+  남은 58.6 MiB 를 지금 승격률로 채우는 데 0.5초
+
+--- stderr ---
+java version "1.8.0_491"
+Java(TM) SE Runtime Environment (build 1.8.0_491-b10)
+Java HotSpot(TM) 64-Bit Server VM (build 25.491-b10, mixed mode)

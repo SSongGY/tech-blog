@@ -255,7 +255,7 @@ topics:
     difficulty: 심화
     angle: "할당률과 승격률로 힙 설정을 역산하는 절차"
     code: java
-    status: writing
+    status: done
 
   # ---------- Language ----------
   - id: lang-001

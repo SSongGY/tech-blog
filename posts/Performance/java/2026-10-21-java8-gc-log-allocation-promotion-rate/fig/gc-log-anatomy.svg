@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">GC 로그 한 줄에서 할당률과 승격률이 나오는 자리 (Java 8 · Parallel GC)</text>
+
+  <!-- 로그 두 줄 -->
+  <rect x="20" y="46" width="840" height="86" fill="#ffffff" stroke="#5b6670"/>
+
+  <text x="32" y="70" font-size="13" fill="#5b6670" font-family="Consolas, monospace">n번째 GC</text>
+  <text x="130" y="70" font-size="13" fill="#1b2430" font-family="Consolas, monospace">1.794: [GC [PSYoungGen:</text>
+  <text x="370" y="70" font-size="13" fill="#2d6a4f" font-family="Consolas, monospace" font-weight="bold">64195K</text>
+  <text x="432" y="70" font-size="13" fill="#1b2430" font-family="Consolas, monospace">-&gt;</text>
+  <text x="456" y="70" font-size="13" fill="#b45309" font-family="Consolas, monospace" font-weight="bold">768K</text>
+  <text x="500" y="70" font-size="13" fill="#1b2430" font-family="Consolas, monospace">(64512K)]</text>
+  <text x="596" y="70" font-size="13" fill="#1b2430" font-family="Consolas, monospace">256109K-&gt;</text>
+  <text x="692" y="70" font-size="13" fill="#9d0208" font-family="Consolas, monospace" font-weight="bold">193449K</text>
+  <text x="768" y="70" font-size="13" fill="#1b2430" font-family="Consolas, monospace">(523264K)</text>
+
+  <text x="32" y="112" font-size="13" fill="#5b6670" font-family="Consolas, monospace">n+1번째</text>
+  <text x="130" y="112" font-size="13" fill="#1b2430" font-family="Consolas, monospace">1.799: [GC [PSYoungGen:</text>
+  <text x="370" y="112" font-size="13" fill="#2d6a4f" font-family="Consolas, monospace" font-weight="bold">64195K</text>
+  <text x="432" y="112" font-size="13" fill="#1b2430" font-family="Consolas, monospace">-&gt;</text>
+  <text x="456" y="112" font-size="13" fill="#b45309" font-family="Consolas, monospace" font-weight="bold">768K</text>
+  <text x="500" y="112" font-size="13" fill="#1b2430" font-family="Consolas, monospace">(64512K)]</text>
+  <text x="596" y="112" font-size="13" fill="#1b2430" font-family="Consolas, monospace">256877K-&gt;</text>
+  <text x="692" y="112" font-size="13" fill="#9d0208" font-family="Consolas, monospace" font-weight="bold">194473K</text>
+  <text x="768" y="112" font-size="13" fill="#1b2430" font-family="Consolas, monospace">(523264K)</text>
+
+  <!-- 할당률 화살표: n번째 after -> n+1번째 before -->
+  <path d="M470 80 L470 92 L392 92 L392 100" fill="none" stroke="#2d6a4f" stroke-width="1.4"/>
+  <path d="M388 94 L392 102 L396 94 Z" fill="#2d6a4f"/>
+
+  <!-- 설명 박스 1: 할당률 -->
+  <rect x="20" y="152" width="410" height="112" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="34" y="176" font-size="13" font-weight="bold" fill="#2d6a4f">할당률 — Young 이 다시 차는 속도</text>
+  <text x="34" y="200" font-size="13" fill="#1b2430">(n+1번째 직전 Young) − (n번째 직후 Young)</text>
+  <text x="34" y="222" font-size="13" fill="#1b2430">= 64,195K − 768K = 63,427K (이 한 쌍에서)</text>
+  <text x="34" y="246" font-size="13" fill="#2d6a4f" font-weight="bold">251회를 합산한 구간 평균 9,875.9 MiB/s</text>
+
+  <!-- 설명 박스 2: 승격률 -->
+  <rect x="450" y="152" width="410" height="112" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="464" y="176" font-size="13" font-weight="bold" fill="#9d0208">승격률 — Old 가 차는 속도</text>
+  <text x="464" y="200" font-size="13" fill="#1b2430">Old = 힙 전체 − Young (로그에 따로 안 적힌다)</text>
+  <text x="464" y="222" font-size="13" fill="#1b2430">(직후 Old) − (직전 Old) 를 GC 마다 더한다</text>
+  <text x="464" y="246" font-size="13" fill="#9d0208" font-weight="bold">251회를 합산한 구간 평균 129.90 MiB/s</text>
+
+  <!-- 역산 -->
+  <rect x="20" y="284" width="840" height="96" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="34" y="308" font-size="13" font-weight="bold" fill="#1b2430">두 값으로 역산하는 것</text>
+  <text x="34" y="332" font-size="13" fill="#1b2430">Young GC 간격 ≈ Young 용량 ÷ 할당률</text>
+  <text x="34" y="354" font-size="13" fill="#1b2430">Full GC 간격 ≈ Old 여유 ÷ 승격률</text>
+  <text x="440" y="332" font-size="13" fill="#5b6670">63.0 MiB ÷ 9,875.9 MiB/s ≈ 6.4 ms (실측 6.1 ms)</text>
+  <text x="440" y="354" font-size="13" fill="#5b6670">248.4 MiB ÷ 129.90 MiB/s ≈ 1.9초</text>
+</svg>
