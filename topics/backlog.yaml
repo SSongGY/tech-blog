@@ -4470,7 +4470,7 @@ topics:
     angle: "동시호가의 체결 원리. 접수 순서가 아니라 가격·수량으로 한 번에 맞추는 과정"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-072
     title: "감사의견 변형과 상장폐지 사유 — 숫자 밖의 위험 신호"
     category: Finance
@@ -4481,7 +4481,7 @@ topics:
     angle: "한정·부적정·의견거절이 각각 뜻하는 것과 그 뒤에 따라오는 절차"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: fin-073
     title: "임원·주요주주 소유보고 — 누가 언제 사고팔았는지"
     category: Finance

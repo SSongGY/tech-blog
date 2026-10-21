@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfaf7"/>
+
+  <text x="24" y="40" font-size="18" font-weight="bold" fill="#1b1b1b">합치가격은 매도와 매수가 가장 많이 겹치는 가격이다</text>
+  <text x="24" y="64" font-size="13" fill="#4a4a4a">가나전자(가상) 종가 단일가 호가장 · 가격마다 체결가능 수량을 전부 세어 본 결과</text>
+
+  <rect x="398" y="86" width="144" height="232" fill="#2d6a4f" fill-opacity="0.08"/>
+
+  <rect x="24" y="80" width="14" height="14" fill="#9d0208"/>
+  <text x="44" y="92" font-size="13" fill="#4a4a4a">그 가격 이하의 매도 (체결가능)</text>
+  <rect x="24" y="102" width="14" height="14" fill="#2f5d8c"/>
+  <text x="44" y="114" font-size="13" fill="#4a4a4a">그 가격 이상의 매수 (체결가능)</text>
+
+  <rect x="134" y="290" width="44" height="20" fill="#9d0208"/>
+  <rect x="186" y="143.3" width="44" height="166.7" fill="#2f5d8c"/>
+  <text x="182" y="131" font-size="13" fill="#4a4a4a" text-anchor="middle">300주</text>
+
+  <rect x="278" y="256.7" width="44" height="53.3" fill="#9d0208"/>
+  <rect x="330" y="176.7" width="44" height="133.3" fill="#2f5d8c"/>
+  <text x="326" y="164" font-size="13" fill="#4a4a4a" text-anchor="middle">800주</text>
+
+  <rect x="422" y="210" width="44" height="100" fill="#9d0208"/>
+  <rect x="474" y="216.7" width="44" height="93.3" fill="#2f5d8c"/>
+  <text x="470" y="198" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">1,400주</text>
+
+  <rect x="566" y="170" width="44" height="140" fill="#9d0208"/>
+  <rect x="618" y="270" width="44" height="40" fill="#2f5d8c"/>
+  <text x="614" y="158" font-size="13" fill="#4a4a4a" text-anchor="middle">600주</text>
+
+  <rect x="710" y="110" width="44" height="200" fill="#9d0208"/>
+  <rect x="762" y="296.7" width="44" height="13.3" fill="#2f5d8c"/>
+  <text x="758" y="98" font-size="13" fill="#4a4a4a" text-anchor="middle">200주</text>
+
+  <line x1="110" y1="310" x2="830" y2="310" stroke="#1b1b1b" stroke-width="1.8"/>
+
+  <text x="182" y="330" font-size="13" fill="#4a4a4a" text-anchor="middle">14,900원</text>
+  <text x="326" y="330" font-size="13" fill="#4a4a4a" text-anchor="middle">15,000원</text>
+  <text x="470" y="330" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">15,100원</text>
+  <text x="614" y="330" font-size="13" fill="#4a4a4a" text-anchor="middle">15,200원</text>
+  <text x="758" y="330" font-size="13" fill="#4a4a4a" text-anchor="middle">15,300원</text>
+
+  <text x="24" y="296" font-size="13" fill="#4a4a4a">막대 위 숫자는</text>
+  <text x="24" y="314" font-size="13" fill="#4a4a4a">둘 중 작은 값</text>
+
+  <path d="M 470 348 L 470 362 M 463 354 L 470 362 L 477 354" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="488" y="366" font-size="14" font-weight="bold" fill="#2d6a4f">체결수량이 가장 커지는 가격 — 여기 하나로 전부 체결한다</text>
+
+  <text x="24" y="396" font-size="13" fill="#1b1b1b">가격을 낮추면 팔 사람이 줄고, 올리면 살 사람이 줄어든다. 두 감소가 교차하는 자리가 합치가격이다.</text>
+  <text x="24" y="418" font-size="13" fill="#4a4a4a">여기서 15,300원에 사겠다고 적은 매수자도 15,100원에 산다. 체결가격은 그 가격 하나뿐이다.</text>
+</svg>
