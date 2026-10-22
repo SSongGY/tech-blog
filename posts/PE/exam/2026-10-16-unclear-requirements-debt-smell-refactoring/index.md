@@ -231,7 +231,8 @@ Fowler의 정의는 명사와 동사 둘로 갈린다. 명사로는 **"소프트
 
 > 개념 정리: [기술부채 — 측정 방법과 상환 전략](../../software-engineering/2026-10-03-technical-debt-measurement-repayment/index.md) ·
 > [리팩토링 — 코드 스멜 분류와 적용 시점](../../software-engineering/2026-10-03-refactoring-code-smells-when-to-apply/index.md) ·
-> [요구공학 — 도출부터 검증까지 4단계](../../software-engineering/2026-09-18-requirements-engineering-four-phases/index.md)
+> [요구공학 — 도출부터 검증까지 4단계](../../software-engineering/2026-09-18-requirements-engineering-four-phases/index.md) ·
+> [요구사항 스멜 — 언어 기준 9가지와 자동 탐지의 한계](../../software-engineering/2026-10-23-requirements-smells/index.md)
 
 끝
 

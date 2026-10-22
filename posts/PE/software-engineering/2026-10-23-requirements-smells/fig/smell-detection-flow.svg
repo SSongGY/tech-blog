@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="330" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">요구사항 스멜 — 기준에서 결함 판정까지</text>
+
+  <!-- 1행 -->
+  <rect x="20" y="60" width="150" height="70" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.5"/>
+  <text x="95" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">품질 기준</text>
+  <text x="95" y="112" text-anchor="middle" font-size="13" fill="#374151">ISO 29148 언어 기준</text>
+
+  <rect x="200" y="60" width="150" height="70" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-width="1.5"/>
+  <text x="275" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">스멜 정의 9가지</text>
+  <text x="275" y="112" text-anchor="middle" font-size="13" fill="#374151">대상 단위 + 설명</text>
+
+  <rect x="380" y="60" width="150" height="70" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="455" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">탐지기</text>
+  <text x="455" y="112" text-anchor="middle" font-size="13" fill="#374151">사전·품사·형태소</text>
+
+  <rect x="560" y="60" width="150" height="70" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="635" y="90" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">발견 (finding)</text>
+  <text x="635" y="112" text-anchor="middle" font-size="13" fill="#374151">단어 위치에 표시</text>
+
+  <line x1="170" y1="95" x2="198" y2="95" stroke="#374151" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="350" y1="95" x2="378" y2="95" stroke="#374151" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="530" y1="95" x2="558" y2="95" stroke="#374151" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- 자동 구간 표시 -->
+  <rect x="372" y="48" width="346" height="94" rx="10" fill="none" stroke="#6b7280" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="545" y="160" text-anchor="middle" font-size="13" fill="#6b7280">자동 — 정밀도 평균 0.59, 재현율 평균 0.82</text>
+
+  <!-- 2행: 사람 판정 -->
+  <rect x="560" y="190" width="150" height="60" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="635" y="217" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">리뷰어 판정</text>
+  <text x="635" y="237" text-anchor="middle" font-size="13" fill="#374151">문맥으로 결정</text>
+  <line x1="635" y1="130" x2="635" y2="188" stroke="#374151" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <rect x="740" y="160" width="120" height="56" rx="8" fill="#fde8e8" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="800" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">품질 결함</text>
+  <text x="800" y="204" text-anchor="middle" font-size="13" fill="#374151">수정 대상</text>
+
+  <rect x="740" y="236" width="120" height="56" rx="8" fill="#ecfdf3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="800" y="261" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">기각</text>
+  <text x="800" y="280" text-anchor="middle" font-size="13" fill="#374151">다시 띄우지 않음</text>
+
+  <line x1="710" y1="210" x2="738" y2="192" stroke="#9d0208" stroke-width="1.8" marker-end="url(#arr)"/>
+  <line x1="710" y1="232" x2="738" y2="258" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <text x="40" y="215" font-size="13" fill="#374151">스멜은 결함의 <tspan font-weight="bold">징후</tspan>다.</text>
+  <text x="40" y="238" font-size="13" fill="#374151">발견이 곧 결함이 아니므로 판정은 사람이 한다.</text>
+  <text x="40" y="261" font-size="13" fill="#374151">스멜이 주는 것은 <tspan font-weight="bold">검토할 위치</tspan>다.</text>
+</svg>
