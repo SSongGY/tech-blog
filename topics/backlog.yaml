@@ -5157,7 +5157,7 @@ topics:
     angle: "원가모형과 재평가모형의 차이. 평가증이 기타포괄손익으로 가고 평가감이 손익으로 가는 비대칭을 숫자로 보이고, 부채비율에 미치는 효과까지 잇는다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-078
     title: "퇴직급여 — 확정기여형과 확정급여형이 남기는 자국이 다른 이유"
     category: Finance
@@ -5168,7 +5168,7 @@ topics:
     angle: "DC 는 납입액이 곧 비용이고 DB 는 추정이 들어간다. 확정급여채무와 사외적립자산을 상계해 한 줄로 보이는 구조와 그 안에 숨는 변동을 정리한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-079
     title: "현금흐름표 직접법과 간접법 — 같은 현금, 다른 서술"
     category: Finance
