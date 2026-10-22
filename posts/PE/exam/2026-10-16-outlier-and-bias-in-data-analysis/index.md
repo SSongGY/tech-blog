@@ -291,6 +291,8 @@ NIST SP 1270이 통계·연산 편향의 하위 유형으로 드는 **심슨의 
 > 개념 정리: [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](../../data-analysis/2026-10-07-isolation-forest-path-length/index.md)
 >
 > 개념 정리: [데이터 거버넌스와 데이터 품질 관리 체계](../../database/2026-10-06-data-governance-quality-dimensions-roles/index.md)
+>
+> 개념 정리: [심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조](../../data-analysis/2026-10-23-simpsons-paradox-confounder-collapsibility/index.md)
 
 끝
 

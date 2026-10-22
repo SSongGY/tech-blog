@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#fbfbf8"/>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">역전을 만드는 것은 합격 판정이 아니라 지원처의 구성비</text>
+
+  <rect x="35" y="90" width="215" height="88" rx="6" fill="#ffffff" stroke="#555555" stroke-width="2"/>
+  <text x="142" y="121" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">남성 지원자 2,691명</text>
+  <text x="142" y="148" text-anchor="middle" font-size="14" fill="#444444">전체 합격률 44.5%</text>
+
+  <rect x="35" y="268" width="215" height="88" rx="6" fill="#ffffff" stroke="#555555" stroke-width="2"/>
+  <text x="142" y="299" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">여성 지원자 1,835명</text>
+  <text x="142" y="326" text-anchor="middle" font-size="14" fill="#444444">전체 합격률 30.4%</text>
+
+  <rect x="615" y="72" width="230" height="88" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="730" y="103" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">학과 A·B — 들어가기 쉽다</text>
+  <text x="730" y="130" text-anchor="middle" font-size="14" fill="#444444">합격률 62~63%</text>
+
+  <rect x="615" y="286" width="230" height="88" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="730" y="317" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">학과 C~F — 들어가기 어렵다</text>
+  <text x="730" y="344" text-anchor="middle" font-size="14" fill="#444444">합격률 6~37%</text>
+
+  <line x1="250" y1="118" x2="608" y2="104" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#g)"/>
+  <text x="352" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">남성의 51.5%</text>
+
+  <line x1="250" y1="160" x2="608" y2="306" stroke="#9d0208" stroke-width="2.5" marker-end="url(#r)"/>
+  <text x="543" y="257" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">남성의 48.5%</text>
+
+  <line x1="250" y1="290" x2="608" y2="142" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#g)"/>
+  <text x="495" y="158" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">여성의 7.2%</text>
+
+  <line x1="250" y1="330" x2="608" y2="330" stroke="#9d0208" stroke-width="2.5" marker-end="url(#r)"/>
+  <text x="400" y="320" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">여성의 92.8%</text>
+
+  <text x="440" y="418" text-anchor="middle" font-size="14" fill="#b45309">그런데 학과 안에서 보면 6개 중 4개(A·B·D·F)에서 여성 합격률이 더 높다 — 전체와 반대 방향</text>
+</svg>
