@@ -5905,3 +5905,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-193
+    title: "시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "RNN 기울기 소실에서 LSTM 게이트가 나온 이유, 정적·미래 기지·과거 관측 입력 구분, 다중 시점·분위수 출력이 뒤 단계 결정에 주는 것"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-194
+    title: "그래프신경망 — GCN·GAT·시공간 GCN이 이웃 정보를 모으는 방식"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "비유클리드 데이터에서 메시지 전달 구조, 정규화 인접 행렬과 어텐션 가중치의 차이, 교통·전력망 시공간 예측으로의 확장"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-195
+    title: "강화학습 — MDP와 정책·보상·가치 함수·모델 4요소"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "지도학습과 학습 신호가 다른 점, 에이전트-환경 인터페이스, 가치 기반·정책 기반 구분, 실환경 탐색이 불가할 때 시뮬레이터와 안전 제약"
+    code: none
+    origin: exam
+    status: todo

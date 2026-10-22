@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420">
+  <rect x="0" y="0" width="880" height="420" fill="#f8fafc"/>
+
+  <text x="25" y="36" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1f2937">가상발전소의 AI 기법 배치 — 예측 두 축과 결정 한 축</text>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- 입력 -->
+  <rect x="25" y="150" width="140" height="90" fill="#eef2f7" stroke="#475569" stroke-width="2" rx="6"/>
+  <text x="95" y="182" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">데이터 수집</text>
+  <text x="95" y="203" font-family="sans-serif" font-size="13" fill="#334155" text-anchor="middle">계량·기상 예보</text>
+  <text x="95" y="225" font-family="sans-serif" font-size="13" fill="#334155" text-anchor="middle">DER 상태·달력</text>
+
+  <!-- 예측 묶음 -->
+  <rect x="200" y="70" width="330" height="250" fill="none" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="7 5" rx="8"/>
+  <text x="212" y="90" font-family="sans-serif" font-size="13" fill="#2d6a4f">예측 — 시공간 패턴 학습</text>
+
+  <rect x="225" y="105" width="280" height="75" fill="#e8f5ee" stroke="#2d6a4f" stroke-width="2" rx="6"/>
+  <text x="365" y="135" font-family="sans-serif" font-size="15" font-weight="bold" fill="#14532d" text-anchor="middle">(다) 그래프신경망</text>
+  <text x="365" y="158" font-family="sans-serif" font-size="13" fill="#166534" text-anchor="middle">지점·배전망 사이의 공간 의존성</text>
+
+  <rect x="225" y="225" width="280" height="75" fill="#e8f5ee" stroke="#2d6a4f" stroke-width="2" rx="6"/>
+  <text x="365" y="255" font-family="sans-serif" font-size="15" font-weight="bold" fill="#14532d" text-anchor="middle">(가) 시계열 딥러닝</text>
+  <text x="365" y="278" font-family="sans-serif" font-size="13" fill="#166534" text-anchor="middle">시간 의존성 → 다중 시점 예측</text>
+
+  <line x1="365" y1="182" x2="365" y2="221" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="375" y="207" font-family="sans-serif" font-size="13" fill="#4b5563">노드 임베딩</text>
+
+  <!-- 결정 -->
+  <rect x="580" y="150" width="140" height="90" fill="#fff4e6" stroke="#b45309" stroke-width="2" rx="6"/>
+  <text x="650" y="182" font-family="sans-serif" font-size="15" font-weight="bold" fill="#7c2d12" text-anchor="middle">(나) 강화학습</text>
+  <text x="650" y="203" font-family="sans-serif" font-size="13" fill="#92400e" text-anchor="middle">충방전·DR·입찰</text>
+  <text x="650" y="225" font-family="sans-serif" font-size="13" fill="#92400e" text-anchor="middle">정책 결정</text>
+
+  <rect x="755" y="150" width="105" height="90" fill="#eef2f7" stroke="#475569" stroke-width="2" rx="6"/>
+  <text x="807" y="185" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle">DER 제어</text>
+  <text x="807" y="208" font-family="sans-serif" font-size="13" fill="#334155" text-anchor="middle">전력시장</text>
+
+  <line x1="167" y1="195" x2="221" y2="142" stroke="#374151" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="167" y1="195" x2="221" y2="262" stroke="#374151" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="507" y1="262" x2="576" y2="205" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="540" y="280" font-family="sans-serif" font-size="13" fill="#4b5563">분위수 예측</text>
+  <line x1="722" y1="195" x2="751" y2="195" stroke="#b45309" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- 피드백 -->
+  <path d="M807,242 L807,350 L650,350 L650,244" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#ar)"/>
+  <text x="728" y="370" font-family="sans-serif" font-size="13" fill="#92400e" text-anchor="middle">실적·정산 → 보상</text>
+
+  <text x="25" y="395" font-family="sans-serif" font-size="13" fill="#374151">(가)·(다)는 "얼마가 될 것인가"를, (나)는 "그 예측 아래 무엇을 할 것인가"를 맡는다.</text>
+</svg>
