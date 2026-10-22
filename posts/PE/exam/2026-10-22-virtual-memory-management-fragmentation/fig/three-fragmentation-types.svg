@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" width="880" height="390" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect width="880" height="390" fill="#f8fafc"/>
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">단편화 3유형 — 어디에서 공간이 버려지는가</text>
+
+  <!-- ① 외부 단편화 -->
+  <rect x="30" y="54" width="260" height="36" rx="6" fill="#374151"/>
+  <text x="160" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">① 외부 단편화</text>
+  <rect x="40" y="115" width="50" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="65" y="140" text-anchor="middle" font-size="13" fill="#1f2937">A</text>
+  <rect x="90" y="115" width="30" height="40" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="105" y="140" text-anchor="middle" font-size="13" fill="#9d0208">3</text>
+  <rect x="120" y="115" width="60" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="150" y="140" text-anchor="middle" font-size="13" fill="#1f2937">B</text>
+  <rect x="180" y="115" width="20" height="40" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="190" y="140" text-anchor="middle" font-size="13" fill="#9d0208">2</text>
+  <rect x="200" y="115" width="40" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="220" y="140" text-anchor="middle" font-size="13" fill="#1f2937">C</text>
+  <rect x="240" y="115" width="40" height="40" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="260" y="140" text-anchor="middle" font-size="13" fill="#9d0208">4</text>
+  <text x="160" y="188" text-anchor="middle" font-size="13" fill="#374151">새 세그먼트 5 요청</text>
+  <text x="160" y="210" text-anchor="middle" font-size="13" fill="#374151">빈 공간 합 9 ≥ 5 인데</text>
+  <text x="160" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">가장 큰 구멍 4 &lt; 5 → 배치 불가</text>
+  <line x1="40" y1="256" x2="280" y2="256" stroke="#d1d5db"/>
+  <text x="160" y="282" text-anchor="middle" font-size="13" fill="#1f2937">발생: 세그먼테이션(가변 분할)</text>
+  <text x="160" y="304" text-anchor="middle" font-size="13" fill="#4b5563">할당·해제 반복 → 구멍이 흩어짐</text>
+
+  <!-- ② 내부 단편화 -->
+  <rect x="310" y="54" width="260" height="36" rx="6" fill="#374151"/>
+  <text x="440" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">② 내부 단편화</text>
+  <rect x="320" y="115" width="80" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="360" y="140" text-anchor="middle" font-size="13" fill="#1f2937">4 / 4</text>
+  <rect x="400" y="115" width="80" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="440" y="140" text-anchor="middle" font-size="13" fill="#1f2937">4 / 4</text>
+  <rect x="480" y="115" width="40" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="500" y="140" text-anchor="middle" font-size="13" fill="#1f2937">2</text>
+  <rect x="520" y="115" width="40" height="40" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="540" y="140" text-anchor="middle" font-size="13" fill="#9d0208">낭비</text>
+  <text x="440" y="188" text-anchor="middle" font-size="13" fill="#374151">세그먼트 s = 10, 페이지 z = 4</text>
+  <text x="440" y="210" text-anchor="middle" font-size="13" fill="#374151">k = 3쪽 할당, kz − s = 2</text>
+  <text x="440" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">마지막 페이지 뒷부분이 버려짐</text>
+  <line x1="320" y1="256" x2="560" y2="256" stroke="#d1d5db"/>
+  <text x="440" y="282" text-anchor="middle" font-size="13" fill="#1f2937">발생: 페이징(고정 분할)</text>
+  <text x="440" y="304" text-anchor="middle" font-size="13" fill="#4b5563">요청을 페이지 배수로 올려 할당</text>
+
+  <!-- ③ 테이블 단편화 -->
+  <rect x="590" y="54" width="260" height="36" rx="6" fill="#374151"/>
+  <text x="720" y="78" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">③ 테이블 단편화</text>
+  <rect x="600" y="115" width="40" height="40" fill="#fef3c7" stroke="#b45309"/>
+  <text x="620" y="140" text-anchor="middle" font-size="13" fill="#b45309">PT</text>
+  <rect x="640" y="115" width="40" height="40" fill="#fef3c7" stroke="#b45309"/>
+  <text x="660" y="140" text-anchor="middle" font-size="13" fill="#b45309">PT</text>
+  <rect x="680" y="115" width="40" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="700" y="140" text-anchor="middle" font-size="13" fill="#1f2937">P</text>
+  <rect x="720" y="115" width="40" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="740" y="140" text-anchor="middle" font-size="13" fill="#1f2937">P</text>
+  <rect x="760" y="115" width="40" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="780" y="140" text-anchor="middle" font-size="13" fill="#1f2937">P</text>
+  <rect x="800" y="115" width="40" height="40" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="820" y="140" text-anchor="middle" font-size="13" fill="#1f2937">P</text>
+  <text x="720" y="188" text-anchor="middle" font-size="13" fill="#374151">프레임 일부를 매핑 테이블이 차지</text>
+  <text x="720" y="210" text-anchor="middle" font-size="13" fill="#374151">페이지가 작을수록 테이블이 커짐</text>
+  <text x="720" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">가상 주소에 줄 수 없는 공간</text>
+  <line x1="600" y1="256" x2="840" y2="256" stroke="#d1d5db"/>
+  <text x="720" y="282" text-anchor="middle" font-size="13" fill="#1f2937">발생: 페이징·세그먼테이션 모두</text>
+  <text x="720" y="304" text-anchor="middle" font-size="13" fill="#4b5563">PT = 페이지 테이블, P = 데이터 페이지</text>
+
+  <text x="440" y="346" text-anchor="middle" font-size="13.5" fill="#1f2937">페이지 크기 z 를 키우면 ② 내부 단편화가 늘고 ③ 테이블 단편화가 준다</text>
+  <text x="440" y="370" text-anchor="middle" font-size="13" fill="#6b7280">둘의 기대 손실 합이 최소가 되는 z₀ ≈ √(2c·s₀)  (s₀ = 평균 세그먼트 크기, c = 두 손실의 비용비)</text>
+</svg>

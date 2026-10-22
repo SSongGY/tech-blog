@@ -5883,3 +5883,25 @@ topics:
     angle: "GRANT 체계와 권한의 적용 범위. 8.0 에서 롤이 생기면서 달라진 점, 기본으로 켜지지 않아 activate 가 필요한 점, 그리고 SUPER 를 쪼갠 동적 권한을 정리한다."
     code: sql
     status: todo
+  - id: pe-191
+    title: "버디 시스템과 슬랩 할당기"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "커널 메모리 할당기가 외부·내부 단편화를 각각 어떻게 다루는지, 2의 거듭제곱 분할·병합과 같은 크기 객체 캐시의 대가를 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-192
+    title: "워킹셋 모델과 스래싱"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "지역성 원리에서 워킹셋 정의가 나오는 과정, 전역 교체에서 스래싱이 생기는 조건과 워킹셋 원칙·페이지 부재 빈도로 막는 방법"
+    code: none
+    origin: exam
+    status: todo
