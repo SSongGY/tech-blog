@@ -293,7 +293,7 @@ topics:
     difficulty: 중급
     angle: "출력 순서 퀴즈 5개를 명세 기준으로 하나씩 해설"
     code: javascript
-    status: todo
+    status: done
   - id: lang-005
     title: "async/await가 숨기고 있는 상태 머신"
     category: Language
@@ -2886,7 +2886,7 @@ topics:
     angle: "설계 단계부터 보안을 넣는 활동. 행정안전부 시큐어 코딩 가이드의 취약점 분류를 뼈대로"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-094
     title: "소프트웨어 비용 산정 — 기능점수와 COCOMO"
     category: PE
@@ -4624,7 +4624,7 @@ topics:
     angle: "부모를 같은 표에서 가리킨다. 재귀 CTE 로 펴는 글과 이어서 읽는다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-068
     title: "WITHOUT ROWID 테이블 — 기본키가 곧 저장 순서"
     category: Database
@@ -4965,7 +4965,7 @@ topics:
     angle: "공고-입찰-낙찰로 과업을 분배하는 고전 규약. 다중 에이전트 조정 방식의 원형으로서 오늘의 위임 구조와 무엇이 같고 다른지"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-177
     title: "심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조"
     category: PE
@@ -4976,7 +4976,7 @@ topics:
     angle: "교란변수와 집단 구성비가 만드는 역전을 수치로 보이고, 집단별 분해가 왜 필수 절차인지까지 내려 쓴다"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-178
     title: "강건 통계량 — 중앙값, MAD, 절사평균의 붕괴점"
     category: PE

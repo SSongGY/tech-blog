@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 422" width="880" height="422" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="422" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">한 표 안에서 부모를 가리킨다 — 행 여덟 개가 트리를 담는 방법</text>
+
+  <!-- 자기참조 경로: parent_id 값에서 같은 표의 department_id 값으로 -->
+  <text x="245" y="50" font-size="13" fill="#9d0208" text-anchor="middle" font-weight="bold">parent_id 는 같은 표의 department_id 를 가리킨다</text>
+  <path d="M438 193 L458 193 L458 64 L24 64 L24 146 L34 146" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+  <path d="M34 142 L42 146 L34 150 Z" fill="#9d0208"/>
+
+  <!-- 왼쪽: 표 -->
+  <rect x="40" y="78" width="410" height="228" fill="#eef2f6" stroke="#5b6670"/>
+  <rect x="40" y="78" width="410" height="24" fill="#dde5ec" stroke="#5b6670"/>
+  <text x="110" y="95" font-size="13" fill="#5b6670" text-anchor="end">department_id</text>
+  <text x="124" y="95" font-size="13" fill="#5b6670">department_name</text>
+  <text x="434" y="95" font-size="13" fill="#5b6670" text-anchor="end">parent_id</text>
+
+  <text x="110" y="120" font-size="13" fill="#1b2430" text-anchor="end">1</text>
+  <text x="124" y="120" font-size="13" fill="#1b2430">본사</text>
+  <text x="434" y="120" font-size="13" fill="#5b6670" text-anchor="end">NULL</text>
+
+  <text x="110" y="146" font-size="13" fill="#9d0208" text-anchor="end" font-weight="bold">2</text>
+  <text x="124" y="146" font-size="13" fill="#1b2430">기술본부</text>
+  <text x="434" y="146" font-size="13" fill="#1b2430" text-anchor="end">1</text>
+
+  <text x="110" y="172" font-size="13" fill="#1b2430" text-anchor="end">3</text>
+  <text x="124" y="172" font-size="13" fill="#1b2430">경영지원본부</text>
+  <text x="434" y="172" font-size="13" fill="#1b2430" text-anchor="end">1</text>
+
+  <text x="110" y="198" font-size="13" fill="#1b2430" text-anchor="end">4</text>
+  <text x="124" y="198" font-size="13" fill="#1b2430">플랫폼개발팀</text>
+  <text x="434" y="198" font-size="13" fill="#9d0208" text-anchor="end" font-weight="bold">2</text>
+
+  <text x="110" y="224" font-size="13" fill="#1b2430" text-anchor="end">5</text>
+  <text x="124" y="224" font-size="13" fill="#1b2430">데이터플랫폼팀</text>
+  <text x="434" y="224" font-size="13" fill="#1b2430" text-anchor="end">2</text>
+
+  <text x="110" y="250" font-size="13" fill="#1b2430" text-anchor="end">6</text>
+  <text x="124" y="250" font-size="13" fill="#1b2430">인사팀</text>
+  <text x="434" y="250" font-size="13" fill="#1b2430" text-anchor="end">3</text>
+
+  <text x="110" y="276" font-size="13" fill="#1b2430" text-anchor="end">7</text>
+  <text x="124" y="276" font-size="13" fill="#1b2430">쿼리엔진파트</text>
+  <text x="434" y="276" font-size="13" fill="#1b2430" text-anchor="end">4</text>
+
+  <text x="110" y="302" font-size="13" fill="#1b2430" text-anchor="end">8</text>
+  <text x="124" y="302" font-size="13" fill="#1b2430">스토리지파트</text>
+  <text x="434" y="302" font-size="13" fill="#1b2430" text-anchor="end">4</text>
+
+  <text x="40" y="332" font-size="13" fill="#5b6670">뿌리는 parent_id 가 NULL 인 행 하나다</text>
+  <text x="40" y="354" font-size="13" fill="#5b6670">부모 행이 먼저 있어야 자식 행이 들어간다</text>
+  <text x="40" y="376" font-size="13" fill="#5b6670">parent_id 에는 색인이 자동으로 생기지 않는다</text>
+
+  <!-- 오른쪽: 같은 여덟 행이 나타내는 트리 -->
+  <text x="470" y="60" font-size="14" font-weight="bold" fill="#1b2430">같은 여덟 행이 나타내는 트리</text>
+
+  <path d="M482 128 L482 319 M482 149 L500 149 M482 319 L500 319" fill="none" stroke="#5b6670" stroke-width="1.2"/>
+  <path d="M512 162 L512 285 M512 183 L530 183 M512 285 L530 285" fill="none" stroke="#5b6670" stroke-width="1.2"/>
+  <path d="M542 196 L542 251 M542 217 L560 217 M542 251 L560 251" fill="none" stroke="#9d0208" stroke-width="1.2"/>
+  <path d="M512 332 L512 353 M512 353 L530 353" fill="none" stroke="#5b6670" stroke-width="1.2"/>
+
+  <rect x="470" y="102" width="150" height="26" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="480" y="120" font-size="13" fill="#1b2430">본사</text>
+  <text x="730" y="120" font-size="13" fill="#5b6670">depth 0</text>
+
+  <rect x="500" y="136" width="150" height="26" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="510" y="154" font-size="13" fill="#1b2430">기술본부</text>
+  <text x="730" y="154" font-size="13" fill="#5b6670">depth 1</text>
+
+  <rect x="530" y="170" width="150" height="26" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="540" y="188" font-size="13" fill="#9d0208">플랫폼개발팀</text>
+  <text x="730" y="188" font-size="13" fill="#5b6670">depth 2</text>
+
+  <rect x="560" y="204" width="150" height="26" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="570" y="222" font-size="13" fill="#9d0208">쿼리엔진파트</text>
+  <text x="730" y="222" font-size="13" fill="#5b6670">depth 3</text>
+
+  <rect x="560" y="238" width="150" height="26" fill="#fde2e2" stroke="#9d0208"/>
+  <text x="570" y="256" font-size="13" fill="#9d0208">스토리지파트</text>
+  <text x="730" y="256" font-size="13" fill="#5b6670">depth 3</text>
+
+  <rect x="530" y="272" width="150" height="26" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="540" y="290" font-size="13" fill="#1b2430">데이터플랫폼팀</text>
+  <text x="730" y="290" font-size="13" fill="#5b6670">depth 2</text>
+
+  <rect x="500" y="306" width="150" height="26" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="510" y="324" font-size="13" fill="#1b2430">경영지원본부</text>
+  <text x="730" y="324" font-size="13" fill="#5b6670">depth 1</text>
+
+  <rect x="530" y="340" width="150" height="26" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="540" y="358" font-size="13" fill="#1b2430">인사팀</text>
+  <text x="730" y="358" font-size="13" fill="#5b6670">depth 2</text>
+
+  <text x="470" y="386" font-size="13" fill="#9d0208" font-weight="bold">붉은 세 칸 = 플랫폼개발팀 한 행을 지울 때</text>
+  <text x="470" y="406" font-size="13" fill="#9d0208" font-weight="bold">ON DELETE CASCADE 가 함께 지우는 범위</text>
+</svg>
