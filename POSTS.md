@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **409편** · 갱신 2026-10-23
+총 **412편** · 갱신 2026-10-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 66편
+## DB문법 (basics) — 67편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-22 | [자기참조 외래키 — 계층 데이터를 한 표에 담기](posts/Database/sql-basics/2026-10-22-self-referencing-foreign-key/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-20 | [복합 기본키와 대리키 — 어느 쪽을 쓸까](posts/Database/sql-basics/2026-10-20-composite-key-vs-surrogate-key/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-19 | [ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE](posts/Database/sql-basics/2026-10-19-on-conflict-five-resolutions/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-17 | [집계 함수의 FILTER 절 — CASE WHEN보다 읽기 쉬운 조건부 집계](posts/Database/sql-basics/2026-10-17-aggregate-filter-clause/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -99,10 +100,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 140편
+## 기술사 (pe) — 141편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-23 | [소프트웨어 개발 보안 — 시큐어 코딩과 SDL](posts/PE/software-engineering/2026-10-23-secure-coding-and-sdl/index.md) | 중급 | 소프트웨어 개발보안 가이드 2021년 12월판, NIST SP 800-218 SSDF 버전 1.1 (2022년 2월), Microsoft SDL (2026년 10월 확인) | 문서 근거 |
 | 2026-10-20 | [SLA 지표 설계와 측정 — 99.9%가 실제로 허용하는 장애 시간](posts/PE/it-management/2026-10-20-sla-metrics-design-and-measurement/index.md) | 중급 | Python 3.13.5, ISO/IEC 19086-1:2016, IEC 61078:2016 (제3판), Windows 11 | 실행 검증 |
 | 2026-10-20 | [ISO/IEC 38505-1 데이터 거버넌스 — 데이터 책임 지도와 가치·위험·제약](posts/PE/it-management/2026-10-20-iso-iec-38505-1-data-accountability-map/index.md) | 중급 | ISO/IEC 38505-1:2026 (제2판, 2026-08), ISO/IEC 38505-1:2017 (제1판), ISO/IEC 38500:2024 (제3판), ISO/IEC TR 38505-2:2018 | 문서 근거 |
 | 2026-10-20 | [재해복구시스템 구축 수준 — 목표 시간을 백업 주기·복제 방식·훈련으로 옮기는 일](posts/PE/system/2026-10-20-dr-readiness-levels-backup-and-drills/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010-05), NIST SP 800-84 (2006-09), FIPS 199 (2004-02) | 문서 근거 |
@@ -267,10 +269,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 29편
+## 일반 (general) — 30편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-23 | [자바스크립트 이벤트 루프에서 마이크로태스크가 먼저인 이유](posts/Language/javascript/2026-10-23-microtask-before-macrotask/index.md) | 중급 | Node.js v24.19.0, V8 13.6.233.17-node.51, Windows 11 | 실행 검증 |
 | 2026-10-21 | [GC 로그에서 실제로 봐야 할 지표 — 할당률과 승격률로 힙을 역산한다](posts/Performance/java/2026-10-21-java8-gc-log-allocation-promotion-rate/index.md) | 심화 | Java 1.8.0_491 (HotSpot 25.491-b10), javac 1.8.0_202, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-19 | [이벤트 소싱이 감당해야 하는 진짜 비용](posts/Architecture/2026-10-19-event-sourcing-replay-cost/index.md) | 심화 | Python 3.13.5, SQLite 3.49.1, Windows 11 | 실행 검증 |
 | 2026-10-17 | [아웃박스 패턴 없이 이벤트가 유실되는 경로](posts/Backend/kafka/2026-10-17-outbox-pattern-dual-write-loss/index.md) | 심화 | Python 3.13.5, SQLite 3.49.1 | 실행 검증 |
