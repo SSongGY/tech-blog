@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **406편** · 갱신 2026-10-22
+총 **408편** · 갱신 2026-10-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -366,11 +366,13 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 74편
+## 주식·재무 (finance) — 76편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-22 | [연구개발비 — 어디까지가 자산이고 어디부터가 비용인가](posts/Finance/statements/2026-10-22-rnd-capitalisation-vs-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1038호 무형자산, K-IFRS 제1036호 자산손상, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
+| 2026-10-22 | [유형자산 재평가모형 — 장부가를 다시 매길 때 어디로 들어가는가](posts/Finance/statements/2026-10-22-ppe-revaluation-model/index.md) | 중급 | Python 3.13.5, K-IFRS 제1016호 유형자산 | 실행 검증 |
+| 2026-10-22 | [퇴직급여 — 확정기여형과 확정급여형이 재무제표에 다르게 찍히는 이유](posts/Finance/statements/2026-10-22-pension-dc-vs-db/index.md) | 중급 | Python 3.13.5, K-IFRS 제1019호 종업원급여 | 실행 검증 |
 | 2026-10-22 | [전환사채와 신주인수권부사채 — 한 장의 증권을 부채와 자본으로 쪼개는 이유](posts/Finance/statements/2026-10-22-convertible-bond-liability-equity-split/index.md) | 중급 | Python 3.13.5, K-IFRS 제1032호 금융상품: 표시, K-IFRS 제1109호 금융상품 | 실행 검증 |
 | 2026-10-21 | [시간외거래와 단일가매매 — 정규장 밖에서 가격이 정해지는 방식](posts/Finance/market/2026-10-21-single-price-auction-and-after-hours/index.md) | 입문 | Python 3.13.5, 유가증권시장 업무규정 2026-09-09 개정·2026-09-14 시행, 법제처 찾기쉬운 생활법령정보 2026-09-15 기준 | 실행 검증 |
 | 2026-10-21 | [금리가 바뀌면 무엇이 먼저 움직이는가](posts/Finance/market/2026-10-21-interest-rate-to-valuation/index.md) | 입문 | Python 3.13.5, 한국은행 통화정책 효과의 파급(2026-10-21 조회), 한국은행 기준금리 안내(2026-10-21 조회) | 실행 검증 |
