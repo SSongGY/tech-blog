@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">같은 2.5MB 로그에서 각 코덱이 한 번에 볼 수 있는 범위</text>
+  <text x="440" y="52" font-size="13" text-anchor="middle" fill="#555555">가로 700px = 2,524,970 바이트 (입력 전체) · 축척 동일</text>
+
+  <!-- 입력 -->
+  <text x="20" y="96" font-size="14" font-weight="bold" fill="#222222">입력</text>
+  <rect x="150" y="78" width="700" height="28" fill="#e9ecef" stroke="#555555"/>
+  <text x="500" y="97" font-size="13" text-anchor="middle" fill="#222222">로그 2,524,970 바이트</text>
+
+  <!-- gzip: 32KiB 창 = 32768 / 2524970 * 700 = 9.1px -->
+  <text x="20" y="156" font-size="14" font-weight="bold" fill="#222222">gzip</text>
+  <text x="20" y="174" font-size="13" fill="#555555">DEFLATE</text>
+  <rect x="150" y="140" width="700" height="28" fill="#ffffff" stroke="#cccccc"/>
+  <rect x="150" y="140" width="9" height="28" fill="#9d0208"/>
+  <text x="170" y="159" font-size="13" fill="#9d0208">되돌아보는 거리 최대 32KiB (모든 수준 같음)</text>
+  <text x="170" y="186" font-size="13" fill="#555555">LZ77 반복 찾기 → 허프만 부호화</text>
+
+  <!-- bzip2: 900,000 / 2524970 * 700 = 249.5px, 블록 3개로 나뉨 -->
+  <text x="20" y="226" font-size="14" font-weight="bold" fill="#222222">bzip2</text>
+  <text x="20" y="244" font-size="13" fill="#555555">-9 기준</text>
+  <rect x="150" y="210" width="700" height="28" fill="#ffffff" stroke="#cccccc"/>
+  <rect x="150" y="210" width="249" height="28" fill="#b45309" fill-opacity="0.85"/>
+  <rect x="400" y="210" width="249" height="28" fill="#b45309" fill-opacity="0.55"/>
+  <rect x="650" y="210" width="200" height="28" fill="#b45309" fill-opacity="0.3"/>
+  <text x="274" y="229" font-size="13" text-anchor="middle" fill="#ffffff">블록 900,000</text>
+  <text x="524" y="229" font-size="13" text-anchor="middle" fill="#ffffff">블록 900,000</text>
+  <text x="750" y="229" font-size="13" text-anchor="middle" fill="#222222">나머지</text>
+  <text x="170" y="258" font-size="13" fill="#555555">블록마다 따로 BWT 블록 정렬 → 허프만 부호화 (블록 = 수준 × 100k)</text>
+
+  <!-- lzma: 사전 8MiB > 입력 -->
+  <text x="20" y="298" font-size="14" font-weight="bold" fill="#222222">lzma</text>
+  <text x="20" y="316" font-size="13" fill="#555555">-6 기준</text>
+  <rect x="150" y="282" width="700" height="28" fill="#2d6a4f"/>
+  <text x="500" y="301" font-size="13" text-anchor="middle" fill="#ffffff">사전 8MiB — 입력 전체가 들어간다</text>
+  <text x="170" y="330" font-size="13" fill="#555555">사전(이전 데이터 버퍼)에서 반복 찾기 · 수준 0~9 에서 256KiB~64MiB</text>
+
+  <text x="440" y="374" font-size="13" text-anchor="middle" fill="#555555">사전이 입력보다 크면 더 키워도 찾을 수 있는 반복이 늘지 않는다 → lzma 6~9 결과가 같았던 이유</text>
+</svg>
