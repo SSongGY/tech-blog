@@ -4624,7 +4624,7 @@ topics:
     angle: "부모를 같은 표에서 가리킨다. 재귀 CTE 로 펴는 글과 이어서 읽는다"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-068
     title: "WITHOUT ROWID 테이블 — 기본키가 곧 저장 순서"
     category: Database
@@ -5119,4 +5119,767 @@ topics:
     angle: "재해복구에서 가장 강한 수단인 역외 사본이 왜 자유롭지 않은지. 데이터 등급 분류, 국외 이전 요건, 보관지 법이 사본에 미치는 효력을 정리한다."
     code: none
     origin: exam
+    status: todo
+
+  # ========== 금융 보충분 2026-10-22 (track: finance) ==========
+  # 기존 fin-001~074 가 전부 done 이라 todo 가 0 이 됐다. §13 의 학습 순서를 지켜
+  # statements -> ratios -> valuation -> market -> disclosure 순으로 쌓는다.
+  # 숫자는 전부 가상 회사로 만들고, 개별 종목 수치는 쓰지 않는다.
+  - id: fin-075
+    title: "전환사채와 신주인수권부사채 — 한 장의 증권을 부채와 자본으로 쪼개는 이유"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 전환사채, 복합금융상품]
+    difficulty: 중급
+    angle: "발행 시점에 부채요소와 자본요소로 나눠 적는 절차. 전환권이 행사될 때와 만기까지 안 갈 때 각각 재무제표가 어떻게 달라지는지를 가상 회사 숫자로 계산한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-076
+    title: "연구개발비 — 어디까지가 자산이고 어디부터가 비용인가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 연구개발비, 무형자산]
+    difficulty: 중급
+    angle: "연구단계와 개발단계를 가르는 요건. 같은 지출을 자산화했을 때와 비용 처리했을 때 영업이익과 자산총계가 얼마나 갈리는지 나란히 계산한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-077
+    title: "유형자산 재평가모형 — 장부가를 다시 매길 때 어디로 들어가는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 재평가, 기타포괄손익]
+    difficulty: 중급
+    angle: "원가모형과 재평가모형의 차이. 평가증이 기타포괄손익으로 가고 평가감이 손익으로 가는 비대칭을 숫자로 보이고, 부채비율에 미치는 효과까지 잇는다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-078
+    title: "퇴직급여 — 확정기여형과 확정급여형이 남기는 자국이 다른 이유"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 퇴직급여, 종업원급여]
+    difficulty: 중급
+    angle: "DC 는 납입액이 곧 비용이고 DB 는 추정이 들어간다. 확정급여채무와 사외적립자산을 상계해 한 줄로 보이는 구조와 그 안에 숨는 변동을 정리한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-079
+    title: "현금흐름표 직접법과 간접법 — 같은 현금, 다른 서술"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 현금흐름표, 간접법]
+    difficulty: 중급
+    angle: "같은 가상 회사의 영업활동 현금흐름을 두 방법으로 각각 만들어 끝 숫자가 같아지는 것을 확인한다. 간접법이 왜 실무에서 압도적인지도 그 과정에서 드러난다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-080
+    title: "부문별 정보 — 합쳐진 숫자를 쪼개 보는 자리"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 세그먼트, 주석]
+    difficulty: 중급
+    angle: "보고부문을 가르는 기준과 양적 기준선. 전사 영업이익률 하나로는 안 보이던 적자 부문이 부문 공시에서 드러나는 상황을 가상 회사로 만든다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-081
+    title: "주식기준보상 — 스톡옵션이 비용으로 잡히는 구조"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 스톡옵션, 주식기준보상]
+    difficulty: 중급
+    angle: "현금이 나가지 않는데 비용이 생기는 이유. 가득기간에 걸쳐 나눠 잡는 계산과, 그 비용이 자본으로 같이 들어가 자본총계는 안 줄어드는 점을 숫자로 보인다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-082
+    title: "특수관계자 거래 주석 — 내부 거래가 실적에 섞일 때"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 특수관계자, 주석]
+    difficulty: 입문
+    angle: "누구까지가 특수관계자이고 무엇을 적어야 하는가. 연결에서 상계되는 거래와 별도재무제표에 남는 거래가 다르다는 점을 중심에 둔다."
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-083
+    title: "순차입금과 Net Debt/EBITDA — 빚의 크기를 이익으로 재기"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 순차입금, ebitda]
+    difficulty: 중급
+    angle: "총차입금에서 현금성자산을 빼는 이유와 빼면 안 되는 경우. 부채비율이 같은데 순차입금배수는 크게 갈리는 두 회사를 만들어 대조한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-084
+    title: "운전자본 증감 — 이익과 현금흐름을 가장 크게 벌리는 항목"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 운전자본, 현금흐름]
+    difficulty: 중급
+    angle: "매출채권·재고·매입채무가 늘고 주는 것이 영업활동 현금흐름에 더해지고 빼지는 방향. 매출이 커질수록 현금이 마르는 성장 기업의 모양을 계산으로 만든다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-085
+    title: "EBITDA 마진 — 편하지만 틀리기 쉬운 지표"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, ebitda, 마진]
+    difficulty: 중급
+    angle: "감가상각을 빼고 보면 설비 투자가 큰 업종이 좋아 보인다. 같은 EBITDA 마진에서 자본적지출이 다른 두 회사의 잉여현금흐름이 갈리는 것을 숫자로 보인다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-086
+    title: "매출원가율과 판관비율 — 이익률이 깎이는 자리 찾기"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 매출원가율, 판관비]
+    difficulty: 입문
+    angle: "영업이익률이 같아도 원가에서 깎이는 회사와 판관비에서 깎이는 회사는 다르게 움직인다. 매출이 20% 늘 때 두 구조가 어떻게 갈리는지 계산한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-087
+    title: "업종 평균과 비교할 때 — 공표된 집계를 쓰는 법과 그 한계"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [주식, 재무, 업종평균, 통계]
+    difficulty: 중급
+    angle: "적정 수준이라는 기준선을 근거 없이 쓰지 않으려면 어디서 숫자를 가져와야 하는가. 한국은행 기업경영분석 같은 공표 집계의 산출 방식과 평균·중앙값이 갈리는 지점을 정리한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-088
+    title: "배당할인모형(DDM) — 배당만으로 값을 매길 때"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, ddm, 배당]
+    difficulty: 중급
+    angle: "고든 성장모형의 식과 그 식이 성립하려면 필요한 가정. 성장률이 요구수익률에 가까워질 때 값이 발산하는 구간을 표로 보여 한계를 드러낸다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-089
+    title: "EV 를 실제로 계산하기 — 순차입금·우선주·비지배지분"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, ev, 기업가치]
+    difficulty: 중급
+    angle: "시가총액에 무엇을 더하고 무엇을 빼는가. 항목 하나를 빠뜨렸을 때 EV/EBITDA 가 몇 배까지 틀어지는지 가상 회사로 계산한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-090
+    title: "영구성장률과 터미널 밸류 — DCF 값의 대부분이 걸린 가정"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, dcf, 터미널밸류]
+    difficulty: 심화
+    angle: "5년치 현금흐름보다 잔존가치가 더 큰 이유. 영구성장률을 0.5%p 만 움직였을 때 기업가치가 몇 % 변하는지 민감도 표를 직접 계산한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-091
+    title: "SOTP — 사업부를 따로 평가해 더하는 법"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, sotp, 밸류에이션]
+    difficulty: 심화
+    angle: "성격이 다른 사업을 한 배수로 묶으면 생기는 왜곡. 부문별로 다른 멀티플을 적용해 합산하고 순차입금과 지주사 할인을 빼는 순서를 가상 회사로 보인다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-092
+    title: "비교기업 선정 — 멀티플이 흔들리는 가장 큰 이유"
+    category: Finance
+    subcategory: valuation
+    track: finance
+    tags: [주식, 재무, 멀티플, 비교기업]
+    difficulty: 중급
+    angle: "같은 회사를 두고 비교군을 어떻게 짜느냐에 따라 적정주가가 두 배 갈린다. 평균과 중앙값, 이상치 처리까지 같은 데이터로 계산해 폭을 보인다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-093
+    title: "공모주 청약 — 공모가는 어떻게 정해지는가"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 공모주, ipo]
+    difficulty: 입문
+    angle: "수요예측에서 밴드와 확정 공모가가 나오는 절차, 경쟁률과 배정 방식. 균등배정과 비례배정이 섞일 때 실제로 몇 주를 받는지 계산한다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-094
+    title: "주식 병합과 감자 — 주식 수가 줄 때 지분과 자본이 움직이는 방향"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 감자, 주식병합]
+    difficulty: 중급
+    angle: "액면분할의 반대편. 무상감자와 유상감자가 자본금·자본잉여금·현금에 남기는 자국이 다르다는 점을 가상 회사 자본 항목으로 보인다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-095
+    title: "정리매매 — 상장폐지가 결정된 뒤의 거래"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 정리매매, 상장폐지]
+    difficulty: 입문
+    angle: "정리매매 기간의 매매 방식이 정규장과 어떻게 다른지, 그 뒤 주식이 어떻게 되는지. 제도의 목적과 실제 거래 조건을 규정 근거로 정리한다."
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-096
+    title: "주식에 붙는 세금 — 배당소득세·증권거래세·양도소득세"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 세금, 배당소득세]
+    difficulty: 입문
+    angle: "언제 누가 얼마를 떼는가. 세 가지가 각각 어느 시점에 붙는지 정리하고, 세전 수익률과 세후 수익률이 벌어지는 폭을 계산한다. 시행일을 같이 적는다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-097
+    title: "프로그램매매와 차익거래 — 선물과 현물의 가격 차이가 수급을 만들 때"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [주식, 재무, 프로그램매매, 차익거래]
+    difficulty: 중급
+    angle: "이론가와 시장가의 괴리가 매수차익·매도차익을 부르는 구조. 베이시스를 숫자로 만들어 어느 쪽 잔고가 쌓이는지 따라가고, 만기일 수급까지 잇는다."
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-098
+    title: "주요사항보고서 — 수시공시 중 따로 떼어 둔 것"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 주요사항보고서, 공시]
+    difficulty: 입문
+    angle: "거래소 수시공시와 자본시장법상 주요사항보고서가 어떻게 다른가. 보고 사유와 제출 시한을 법령 근거로 정리하고 둘이 겹치는 자리를 짚는다."
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-099
+    title: "분기·반기보고서와 결산 일정 — 언제 무엇이 나오는가"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 정기공시, 결산]
+    difficulty: 입문
+    angle: "사업보고서·반기·분기보고서의 제출 기한과 감사·검토 수준의 차이. 숫자가 나중에 바뀔 수 있는 자리가 어디인지까지 적는다."
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-100
+    title: "불성실공시와 공시번복 — 제재가 작동하는 방식"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 불성실공시, 제재]
+    difficulty: 입문
+    angle: "공시불이행·공시번복·공시변경 세 유형과 벌점 누적이 부르는 결과. 공시를 읽을 때 이 이력을 같이 봐야 하는 이유를 제도 근거로 정리한다."
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-101
+    title: "내부회계관리제도 — 검토에서 감사로 바뀐 뒤 달라진 것"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, 내부회계, 감사]
+    difficulty: 중급
+    angle: "재무제표 감사와 무엇이 다른 절차인가. 비적정 의견이 뜻하는 것과 그것이 재무제표 신뢰도에 주는 신호를 제도 근거로 정리한다."
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-102
+    title: "DART 활용법 — 공시 원문을 찾아 읽는 순서"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [주식, 재무, dart, 공시]
+    difficulty: 입문
+    angle: "회사명으로 들어가 정기보고서·주요사항보고서·지분공시를 차례로 여는 동선. 재무제표 원문과 XBRL 재무공시 중 어느 쪽을 언제 쓰는지까지 적는다."
+    code: none
+    origin: manual
+    status: todo
+
+  # ========== 일반 보충분 2026-10-22 (track: general) ==========
+  # 일반 트랙은 실험·측정·코드가 반드시 들어간다(§14). 그래서 이 묶음은 전부
+  # 이 환경에서 실제로 돌릴 수 있는 것만 골랐다 — Python 3.13 / SQLite / JDK 8 /
+  # openssl 3.5 / git / bash·sed·grep·awk. gcc·go·docker·redis 가 필요한 주제는 넣지 않았다.
+  - id: gen-001
+    title: "파이썬 딕셔너리는 언제 커지는가 — 해시 충돌과 리사이즈 실측"
+    category: Language
+    subcategory: python
+    track: general
+    tags: [python, hash, dict, memory]
+    difficulty: 중급
+    angle: "sys.getsizeof 로 항목을 하나씩 넣으며 크기가 계단처럼 뛰는 지점을 찍는다. 해시가 같은 키를 일부러 만들어 넣었을 때 조회 비용이 어떻게 변하는지도 같이 잰다."
+    code: python
+    status: todo
+  - id: gen-002
+    title: "글자가 깨지는 세 가지 경로 — 인코딩·디코딩을 바이트로 따라가기"
+    category: Language
+    subcategory: python
+    track: general
+    tags: [encoding, utf-8, cp949, unicode]
+    difficulty: 중급
+    angle: "같은 한글을 UTF-8·CP949·UTF-16 으로 인코딩해 바이트 수를 대조하고, 잘못된 짝으로 디코딩했을 때 나오는 글자를 실제로 재현한다. 복구되는 경우와 안 되는 경우를 가른다."
+    code: python
+    status: todo
+  - id: gen-003
+    title: "0.1 + 0.2 가 0.3 이 아닌 것으로 끝나지 않는다 — 금액 계산이 틀어지는 자리"
+    category: Language
+    subcategory: python
+    track: general
+    tags: [float, decimal, rounding, money]
+    difficulty: 중급
+    angle: "부동소수점 누적 오차를 10만 건 합산으로 키워 보이고, Decimal 과 정수 최소단위 방식으로 각각 고친 뒤 비용을 잰다. 반올림 방식(은행가 반올림)까지 대조한다."
+    code: python
+    status: todo
+  - id: gen-004
+    title: "인증서 체인을 직접 만들어 보면 검증 실패가 읽힌다"
+    category: Security
+    subcategory: tls
+    track: general
+    tags: [x509, tls, openssl, certificate]
+    difficulty: 중급
+    angle: "openssl 로 루트 CA·중간 CA·서버 인증서를 만들어 verify 를 통과시킨 뒤, 중간 인증서를 빼거나 기간을 넘기거나 CN 을 틀리게 해 각각 어떤 오류 문구가 나오는지 수집한다."
+    code: shell
+    status: todo
+  - id: gen-005
+    title: "대칭키와 공개키의 속도 차이는 몇 배인가 — openssl speed 로 재기"
+    category: Security
+    subcategory: crypto
+    track: general
+    tags: [crypto, aes, rsa, benchmark]
+    difficulty: 중급
+    angle: "AES-GCM 과 RSA·ECDSA 의 처리량을 같은 기계에서 재고, 왜 TLS 가 둘을 섞어 쓰는지를 그 숫자로 설명한다. 키 길이를 올렸을 때 비용이 어떻게 늘어나는지도 본다."
+    code: shell
+    status: todo
+  - id: gen-006
+    title: "압축 알고리즘 고르기 — gzip·bzip2·lzma 를 같은 데이터로 대조"
+    category: Performance
+    subcategory: compression
+    track: general
+    tags: [compression, gzip, lzma, throughput]
+    difficulty: 중급
+    angle: "로그·JSON·이미 압축된 바이너리 세 가지 입력에 대해 압축률과 압축·해제 시간을 각각 잰다. 압축 수준을 올릴 때 수익이 꺾이는 지점을 표로 찾는다."
+    code: python
+    status: todo
+  - id: gen-007
+    title: "자바 HashMap 이 링크드 리스트를 버리고 트리로 바뀌는 순간"
+    category: Language
+    subcategory: java
+    track: general
+    tags: [java, hashmap, treeify, collision]
+    difficulty: 심화
+    angle: "해시가 같은 키를 일부러 만들어 한 버킷에 몰아넣고, 임계값을 넘기 전후의 조회 시간을 잰다. 트리화가 막아 주는 것과 못 막는 것을 실측으로 가른다."
+    code: java
+    status: todo
+  - id: gen-008
+    title: "문자열을 더하는 네 가지 방법의 비용"
+    category: Language
+    subcategory: java
+    track: general
+    tags: [java, string, stringbuilder, jit]
+    difficulty: 중급
+    angle: "루프 안 + 연산, StringBuilder, String.join, Stream.collect 를 같은 입력으로 돌려 시간과 할당량을 잰다. 컴파일러가 알아서 바꿔 주는 경우와 안 바꿔 주는 경우를 가른다."
+    code: java
+    status: todo
+  - id: gen-009
+    title: "정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어"
+    category: Security
+    subcategory: redos
+    track: general
+    tags: [regex, redos, backtracking, timeout]
+    difficulty: 심화
+    angle: "입력 길이를 한 글자씩 늘리며 매칭 시간이 지수로 뛰는 것을 재고, 같은 뜻의 식을 고쳐 선형으로 돌리는 과정을 보인다. 길이 제한·타임아웃·식 재작성 중 무엇이 실제로 막는지 대조한다."
+    code: python
+    status: todo
+  - id: gen-010
+    title: "제너레이터가 실제로 아끼는 것 — tracemalloc 으로 본 메모리"
+    category: Performance
+    subcategory: python
+    track: general
+    tags: [python, generator, memory, tracemalloc]
+    difficulty: 중급
+    angle: "같은 처리를 리스트로 한 번에 담을 때와 제너레이터로 흘릴 때의 최대 메모리를 잰다. 두 번 훑어야 하는 작업에서는 제너레이터가 오히려 손해라는 것도 같이 보인다."
+    code: python
+    status: todo
+  - id: gen-011
+    title: "GIL 이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기"
+    category: Performance
+    subcategory: python
+    track: general
+    tags: [python, gil, thread, process]
+    difficulty: 심화
+    angle: "순수 계산·파일 입출력·sleep 세 가지를 스레드와 프로세스로 각각 돌려 확장 곡선을 잰다. 프로세스로 바꿨을 때 드는 기동·직렬화 비용이 이득을 먹는 지점까지 찾는다."
+    code: python
+    status: todo
+  - id: gen-012
+    title: "write 는 디스크에 쓰는 것이 아니다 — 버퍼·flush·fsync 를 가르기"
+    category: Backend
+    subcategory: storage
+    track: general
+    tags: [fsync, durability, buffer, io]
+    difficulty: 심화
+    angle: "같은 1만 줄을 버퍼만, flush 까지, fsync 까지 세 가지로 쓰며 시간을 잰다. 세 단계가 각각 무엇을 보장하고 무엇을 안 하는지를 숫자 차이로 보인다."
+    code: python
+    status: todo
+  - id: gen-013
+    title: "커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회"
+    category: Database
+    subcategory: sqlite
+    track: general
+    tags: [sqlite, transaction, commit, fsync]
+    difficulty: 중급
+    angle: "같은 1만 건 INSERT 를 커밋 횟수만 바꿔 넣고 시간과 WAL 크기를 잰다. synchronous 설정을 바꿨을 때 격차가 어떻게 달라지는지까지 묶어 본다."
+    code: python
+    status: todo
+  - id: gen-014
+    title: "블룸 필터를 직접 만들어 오탐률 수식과 맞춰 보기"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [bloom-filter, probabilistic, hash, memory]
+    difficulty: 심화
+    angle: "비트 배열과 해시 개수를 바꿔 가며 실제 오탐률을 세고, 이론식이 주는 값과 나란히 놓는다. 같은 메모리로 집합을 그대로 들고 있을 때와 비교해 언제 이득인지 가른다."
+    code: python
+    status: todo
+  - id: gen-015
+    title: "캐시 크기를 늘리면 적중률은 어디서 꺾이는가"
+    category: Performance
+    subcategory: caching
+    track: general
+    tags: [cache, lru, hit-ratio, zipf]
+    difficulty: 중급
+    angle: "지프 분포를 따르는 접근 기록을 만들어 캐시 크기를 키우며 적중률 곡선을 그린다. 분포가 평평해지면 같은 곡선이 어떻게 무너지는지도 같이 잰다."
+    code: python
+    status: todo
+  - id: gen-016
+    title: "git 이 파일을 어떻게 저장하는지 객체를 직접 뜯어본다"
+    category: Tooling
+    subcategory: git
+    track: general
+    tags: [git, object, blob, tree]
+    difficulty: 중급
+    angle: "커밋 하나를 만든 뒤 cat-file 로 commit·tree·blob 을 차례로 열어 본다. 같은 내용의 파일을 복사했을 때 객체가 늘지 않는 것과, 파일명을 바꿨을 때 tree 만 바뀌는 것을 확인한다."
+    code: shell
+    status: todo
+  - id: gen-017
+    title: "서머타임 경계에서 사라지는 시각과 두 번 오는 시각"
+    category: Backend
+    subcategory: datetime
+    track: general
+    tags: [timezone, dst, zoneinfo, datetime]
+    difficulty: 중급
+    angle: "zoneinfo 로 전환 시각 앞뒤를 1분 간격으로 만들어 존재하지 않는 시각과 중복되는 시각을 뽑아낸다. UTC 로 저장했을 때와 지역 시각으로 저장했을 때 무엇이 달라지는지 대조한다."
+    code: python
+    status: todo
+  - id: gen-018
+    title: "이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort 의 런 탐지"
+    category: Performance
+    subcategory: algorithm
+    track: general
+    tags: [sort, timsort, stability, benchmark]
+    difficulty: 중급
+    angle: "무작위·정렬됨·역순·부분 정렬 네 가지 입력에 대해 정렬 시간을 잰다. 안정 정렬이 필요한 경우를 두 단계 정렬 예제로 만들어 보이고 키 함수 비용까지 같이 본다."
+    code: python
+    status: todo
+
+  # ========== 제품 시리즈: MySQL 8.0 (track: product) ==========
+  # §6 의 제품 순환 세 번째 자리다. feature 키를 Tibero 7·Oracle 19c 와 똑같이 맞춰
+  # relink 가 제품 간 상호 링크를 만들 수 있게 한다. 그 제품에 없는 기능도 빼지 않는다 —
+  # "없다"는 것 자체가 비교 소재다(§6). mysql 클라이언트가 없는 환경에서는 manual-only.
+  - id: my-001
+    title: "MySQL 8.0 에는 시퀀스가 없다 — AUTO_INCREMENT 로 번호를 매기는 법"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: sequence
+    tags: [mysql, sequence, sql]
+    difficulty: 입문
+    angle: "독립된 시퀀스 객체가 없다는 점에서 출발한다. AUTO_INCREMENT 의 증가 규칙, 재기동 시 값이 이어지는 조건, innodb_autoinc_lock_mode 가 번호 건너뜀에 미치는 영향을 매뉴얼 근거로 정리한다."
+    code: sql
+    status: todo
+  - id: my-002
+    title: "MySQL 8.0 계층 질의 — CONNECT BY 없이 재귀 CTE 로"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: hierarchical-query
+    tags: [mysql, hierarchical-query, sql]
+    difficulty: 중급
+    angle: "CONNECT BY 가 없는 대신 WITH RECURSIVE 로 같은 결과를 만든다. LEVEL·경로·순환 탐지를 각각 어떤 식으로 대신하는지와 cte_max_recursion_depth 가 거는 제한을 정리한다."
+    code: sql
+    status: todo
+  - id: my-003
+    title: "MySQL 8.0 윈도우 함수 — 8.0 에서 들어온 기능의 범위"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: window-function
+    tags: [mysql, window-function, sql]
+    difficulty: 중급
+    angle: "5.7 까지 없던 기능이라 대체 문법이 아직 많이 남아 있다. 지원하는 함수 목록과 ROWS·RANGE 프레임 문법, 그리고 변수 트릭으로 쓰던 코드를 바꿀 때 달라지는 점을 정리한다."
+    code: sql
+    status: todo
+  - id: my-004
+    title: "MySQL 8.0 UPSERT — MERGE 대신 ON DUPLICATE KEY UPDATE"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: merge
+    tags: [mysql, merge, sql]
+    difficulty: 중급
+    angle: "표준 MERGE 문이 없다. ON DUPLICATE KEY UPDATE 와 REPLACE 와 INSERT IGNORE 가 각각 무엇을 다르게 하는지, 어떤 유일 제약이 충돌 판정의 기준이 되는지를 가른다."
+    code: sql
+    status: todo
+  - id: my-005
+    title: "MySQL 8.0 파티션 테이블 — 종류별로 언제 쓰는가"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: table-partitioning
+    tags: [mysql, table-partitioning, sql]
+    difficulty: 심화
+    angle: "RANGE·LIST·HASH·KEY 네 가지와 서브파티션의 조건. 파티션 키가 반드시 모든 유일 키에 들어가야 한다는 제약이 설계를 어떻게 묶는지까지 매뉴얼 근거로 적는다."
+    code: sql
+    status: todo
+  - id: my-006
+    title: "MySQL 8.0 인덱스 종류 — 내림차순·함수·보이지 않는 인덱스"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: index-types
+    tags: [mysql, index-types, sql]
+    difficulty: 중급
+    angle: "B-Tree 말고 FULLTEXT·SPATIAL·HASH 가 각각 어느 엔진에서 되는지. 8.0 에서 들어온 내림차순 인덱스와 함수 기반 인덱스, 그리고 지우기 전에 영향을 보는 invisible 인덱스를 정리한다."
+    code: sql
+    status: todo
+  - id: my-007
+    title: "MySQL 8.0 옵티마이저 힌트 — 주석 힌트와 optimizer_switch"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: optimizer-hint
+    tags: [mysql, optimizer-hint, sql]
+    difficulty: 심화
+    angle: "힌트를 거는 자리가 둘이다. 질의 주석 힌트와 세션 단위 optimizer_switch 가 각각 어디까지 미치는지, 인덱스 힌트와 조인 순서 힌트가 무시되는 조건까지 매뉴얼 근거로 적는다."
+    code: sql
+    status: todo
+  - id: my-008
+    title: "MySQL 8.0 실행계획 보기 — EXPLAIN FORMAT=TREE 와 EXPLAIN ANALYZE"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: explain-plan
+    tags: [mysql, explain-plan, sql]
+    difficulty: 중급
+    angle: "표 형태·JSON·TREE 세 출력이 보여 주는 것이 다르다. 추정치만 주는 EXPLAIN 과 실제로 돌려 재는 EXPLAIN ANALYZE 를 가르고, rows 추정이 빗나갈 때 무엇을 보는지 적는다."
+    code: sql
+    status: todo
+  - id: my-009
+    title: "MySQL 8.0 트랜잭션 격리 수준 — 기본값이 REPEATABLE READ 인 쪽"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: transaction-isolation
+    tags: [mysql, transaction-isolation, sql]
+    difficulty: 중급
+    angle: "네 수준의 지원 범위와 설정 방법. 기본값이 READ COMMITTED 인 제품들과 갈리는 지점, 그리고 갭 락이 REPEATABLE READ 에서 팬텀을 막는 방식을 매뉴얼 근거로 정리한다."
+    code: sql
+    status: todo
+  - id: my-010
+    title: "MySQL 8.0 저장 프로시저 — 기본 문법과 제약"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: stored-procedure
+    tags: [mysql, stored-procedure, sql]
+    difficulty: 입문
+    angle: "DELIMITER 부터 시작하는 선언 형태, 매개변수 모드, 커서와 핸들러. 패키지 개념이 없다는 점과 오류 처리를 핸들러로만 해야 한다는 점이 다른 제품과 갈리는 자리다."
+    code: sql
+    status: todo
+  - id: my-011
+    title: "MySQL 8.0 에는 외부 테이블이 없다 — LOAD DATA 와 대체 수단"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: external-table
+    tags: [mysql, external-table, sql]
+    difficulty: 중급
+    angle: "파일을 테이블처럼 읽는 객체가 없다. LOAD DATA 로 적재하는 방식, CSV 스토리지 엔진, FEDERATED 엔진이 각각 무엇까지 대신하고 어디서 막히는지를 가른다."
+    code: sql
+    status: todo
+  - id: my-012
+    title: "MySQL 8.0 딕셔너리 — INFORMATION_SCHEMA 와 performance_schema"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: system-catalog
+    tags: [mysql, system-catalog, sql]
+    difficulty: 입문
+    angle: "무엇을 어디서 찾는가. 8.0 에서 데이터 딕셔너리가 InnoDB 테이블로 바뀌면서 INFORMATION_SCHEMA 조회가 빨라진 배경과, 통계·대기 정보는 performance_schema 쪽이라는 구분을 정리한다."
+    code: sql
+    status: todo
+  - id: my-013
+    title: "MySQL 8.0 큰 값 저장 — BLOB·TEXT 네 가지 크기와 패킷 한계"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: lob
+    tags: [mysql, lob, sql]
+    difficulty: 중급
+    angle: "TINY·일반·MEDIUM·LONG 네 단계의 최대 길이와 행 저장 방식. max_allowed_packet 이 실제로 넣을 수 있는 크기를 따로 제한한다는 점과 인덱스를 거는 방법까지 적는다."
+    code: sql
+    status: todo
+  - id: my-014
+    title: "MySQL 8.0 날짜·시간 타입 — DATETIME 과 TIMESTAMP 의 갈림길"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: datetime-types
+    tags: [mysql, datetime-types, sql]
+    difficulty: 입문
+    angle: "TIMESTAMP 가 시간대 변환을 거치고 2038년 한계를 갖는 반면 DATETIME 은 그렇지 않다. 소수 초 자릿수 지정과 자동 갱신 속성까지 매뉴얼 근거로 정리한다."
+    code: sql
+    status: todo
+  - id: my-015
+    title: "MySQL 8.0 WITH 절 — CTE 와 재귀 질의의 한계"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: cte
+    tags: [mysql, cte, sql]
+    difficulty: 중급
+    angle: "8.0 에서 들어온 기능이라 쓸 수 있는 자리가 정해져 있다. 재귀 CTE 의 작성 규칙, 종료 조건을 빠뜨렸을 때 걸리는 제한, 그리고 파생 테이블과 무엇이 다른지를 정리한다."
+    code: sql
+    status: todo
+  - id: my-016
+    title: "MySQL 8.0 페이징 — LIMIT OFFSET 이 뒤로 갈수록 느려지는 이유"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: row-limiting
+    tags: [mysql, row-limiting, sql]
+    difficulty: 중급
+    angle: "LIMIT·OFFSET 문법과 그 비용. 건너뛰는 행도 읽어야 한다는 점을 실행계획으로 보이고, 정렬 키를 조건에 넣는 방식으로 바꿨을 때 무엇이 달라지는지 정리한다."
+    code: sql
+    status: todo
+  - id: my-017
+    title: "MySQL 8.0 제약조건 — CHECK 가 8.0.16 에서야 실제로 동작한다"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: constraints
+    tags: [mysql, constraints, sql]
+    difficulty: 입문
+    angle: "그 전 버전은 CHECK 를 문법만 받고 무시했다. 종류별 검증 시점, 외래키가 스토리지 엔진에 묶이는 점, 지연 제약이 없다는 점을 매뉴얼 근거로 가른다."
+    code: sql
+    status: todo
+  - id: my-018
+    title: "MySQL 8.0 에는 머티리얼라이즈드 뷰가 없다 — 무엇으로 대신하는가"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: materialized-view
+    tags: [mysql, materialized-view, sql]
+    difficulty: 심화
+    angle: "기능 자체가 없으므로 요약 테이블과 이벤트 스케줄러, 트리거 갱신 세 가지가 실무의 대안이 된다. 각각이 보장하는 신선도와 운영 부담을 매뉴얼 근거로 정리한다."
+    code: sql
+    status: todo
+  - id: my-019
+    title: "MySQL 8.0 에는 시노님이 없다 — 뷰로 이름을 감출 때 생기는 차이"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: synonym
+    tags: [mysql, synonym, sql]
+    difficulty: 입문
+    angle: "다른 스키마 객체에 별명을 붙이는 객체가 없다. 뷰로 대신할 때 갱신 가능 여부와 권한이 어떻게 달라지는지, 스키마 이름을 코드에서 빼는 다른 방법은 무엇인지 적는다."
+    code: sql
+    status: todo
+  - id: my-020
+    title: "MySQL 8.0 권한과 롤 — 8.0 에서 들어온 롤과 동적 권한"
+    category: Database
+    subcategory: mysql
+    track: product
+    product: MySQL
+    product_version: "8.0"
+    feature: privileges
+    tags: [mysql, privileges, sql]
+    difficulty: 중급
+    angle: "GRANT 체계와 권한의 적용 범위. 8.0 에서 롤이 생기면서 달라진 점, 기본으로 켜지지 않아 activate 가 필요한 점, 그리고 SUPER 를 쪼갠 동적 권한을 정리한다."
+    code: sql
     status: todo
