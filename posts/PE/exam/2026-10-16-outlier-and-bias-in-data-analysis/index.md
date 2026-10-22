@@ -293,6 +293,8 @@ NIST SP 1270이 통계·연산 편향의 하위 유형으로 드는 **심슨의 
 > 개념 정리: [데이터 거버넌스와 데이터 품질 관리 체계](../../database/2026-10-06-data-governance-quality-dimensions-roles/index.md)
 >
 > 개념 정리: [심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조](../../data-analysis/2026-10-23-simpsons-paradox-confounder-collapsibility/index.md)
+>
+> 개념 정리: [강건 통계량 — 중앙값, MAD, 절사평균의 붕괴점](../../data-analysis/2026-10-23-robust-statistics-breakdown-point/index.md)
 
 끝
 
