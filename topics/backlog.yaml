@@ -2908,7 +2908,7 @@ topics:
     angle: "레거시를 다루는 네 가지 활동과 각각이 손대는 대상"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-096
     title: "객체지향 설계 원칙 SOLID 5가지"
     category: PE
@@ -4635,7 +4635,7 @@ topics:
     angle: "일반 표와 저장 구조가 어떻게 다른지, 어떤 표에서 이득인지 크기를 재서"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-069
     title: "AUTOINCREMENT와 rowid — 번호가 재사용되는가"
     category: Database
@@ -4987,7 +4987,7 @@ topics:
     angle: "붕괴점(breakdown point) 개념으로 평균·표준편차와 중앙값·MAD를 비교하고, 이상치 검출에 강건 통계량을 써야 하는 이유를 계산으로 보인다"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-179
     title: "요구사항 스멜(Requirements Smell)"
     category: PE
@@ -4998,7 +4998,7 @@ topics:
     angle: "ISO/IEC/IEEE 29148 언어 품질 기준에서 도출한 9가지 요구사항 스멜과 자동 탐지의 정밀도·재현율 한계, 코드 스멜과의 개념 대응"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-180
     title: "결정 테이블 테스팅 — 조건 조합을 빠짐없이 케이스로 바꾸는 절차"
     category: PE
@@ -5497,7 +5497,7 @@ topics:
     difficulty: 중급
     angle: "로그·JSON·이미 압축된 바이너리 세 가지 입력에 대해 압축률과 압축·해제 시간을 각각 잰다. 압축 수준을 올릴 때 수익이 꺾이는 지점을 표로 찾는다."
     code: python
-    status: writing
+    status: done
   - id: gen-007
     title: "자바 HashMap 이 링크드 리스트를 버리고 트리로 바뀌는 순간"
     category: Language

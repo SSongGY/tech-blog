@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+    <marker id="arrow-slow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arrow-fast" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="220" y="34" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">일반 표 (rowid 표)</text>
+  <text x="660" y="34" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">WITHOUT ROWID 표</text>
+  <line x1="440" y1="20" x2="440" y2="400" stroke="#cccccc" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- 왼쪽: 질의 -->
+  <rect x="120" y="56" width="200" height="40" rx="6" fill="#f1f3f5" stroke="#555555"/>
+  <text x="220" y="81" font-size="14" text-anchor="middle" fill="#222222">WHERE word = 'page'</text>
+
+  <!-- 인덱스 B-트리 -->
+  <rect x="40" y="130" width="360" height="90" rx="8" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="220" y="154" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">① 자동 인덱스 B-트리</text>
+  <text x="220" y="176" font-size="13" text-anchor="middle" fill="#444444">sqlite_autoindex_wordcount_1</text>
+  <text x="220" y="202" font-size="14" text-anchor="middle" fill="#222222">키: (word, rowid)  →  rowid = 3 을 얻는다</text>
+
+  <!-- 표 B-트리 -->
+  <rect x="40" y="260" width="360" height="90" rx="8" fill="#fff8e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="220" y="284" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">② 표 B-트리 (키 = rowid)</text>
+  <text x="220" y="308" font-size="14" text-anchor="middle" fill="#222222">rowid 3 → ('page', 2)</text>
+  <text x="220" y="332" font-size="13" text-anchor="middle" fill="#444444">word 값이 ①과 ②에 두 번 저장된다</text>
+
+  <line x1="220" y1="96" x2="220" y2="128" stroke="#9d0208" stroke-width="2" marker-end="url(#arrow-slow)"/>
+  <line x1="220" y1="220" x2="220" y2="258" stroke="#9d0208" stroke-width="2" marker-end="url(#arrow-slow)"/>
+  <text x="232" y="244" font-size="13" fill="#9d0208">rowid 로 한 번 더 탐색</text>
+  <text x="220" y="384" font-size="14" text-anchor="middle" fill="#9d0208">B-트리 2개 · 이진 탐색 2번</text>
+
+  <!-- 오른쪽: 질의 -->
+  <rect x="560" y="56" width="200" height="40" rx="6" fill="#f1f3f5" stroke="#555555"/>
+  <text x="660" y="81" font-size="14" text-anchor="middle" fill="#222222">WHERE word = 'page'</text>
+
+  <rect x="480" y="160" width="360" height="130" rx="8" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="660" y="186" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">인덱스 B-트리 하나 (키 = 기본키)</text>
+  <text x="660" y="212" font-size="14" text-anchor="middle" fill="#222222">키: (word, cnt)  →  ('page', 2)</text>
+  <text x="660" y="238" font-size="13" text-anchor="middle" fill="#444444">기본키 순서로 정렬돼 저장된다</text>
+  <text x="660" y="262" font-size="13" text-anchor="middle" fill="#444444">행 내용이 중간 노드에도 들어간다</text>
+
+  <line x1="660" y1="96" x2="660" y2="158" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-fast)"/>
+  <text x="660" y="384" font-size="14" text-anchor="middle" fill="#2d6a4f">B-트리 1개 · 이진 탐색 1번</text>
+</svg>

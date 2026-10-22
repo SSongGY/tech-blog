@@ -1,0 +1,89 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-23-without-rowid-table
+# 명령      : python without_rowid.py
+# 수행 시각 : 2026-10-23 08:43 (대한민국 표준시)
+# 소요      : 0.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[wordcount_norowid]  5행
+  컬럼 | 타입    | 제약
+  -----+---------+------------
+  word | TEXT    | PK NOT NULL
+  cnt  | INTEGER |
+
+  word   | cnt
+  -------+----
+  btree  |   5
+  index  |   7
+  page   |   2
+  rowid  |   1
+  sqlite |   3
+
+[wordcount_rowid]  5행
+  컬럼 | 타입    | 제약
+  -----+---------+-----
+  word | TEXT    | PK
+  cnt  | INTEGER |
+
+  word   | cnt
+  -------+----
+  sqlite |   3
+  btree  |   5
+  page   |   2
+  index  |   7
+  rowid  |   1
+
+
+1. 같은 다섯 행, 같은 SELECT * — ORDER BY 없이 읽은 순서
+  일반 표        : ['sqlite', 'btree', 'page', 'index', 'rowid']
+  WITHOUT ROWID : ['btree', 'index', 'page', 'rowid', 'sqlite']
+  일반 표의 숨은 rowid: [(2, 'btree'), (4, 'index'), (3, 'page'), (5, 'rowid'), (1, 'sqlite')]
+  WITHOUT ROWID 에서 rowid 를 읽으면: OperationalError: no such column: rowid
+
+2. 스키마에 생긴 객체 — sqlite_schema
+   ('index', 'sqlite_autoindex_wordcount_rowid_1', 'wordcount_rowid')
+   ('table', 'wordcount_norowid', 'wordcount_norowid')
+   ('table', 'wordcount_rowid', 'wordcount_rowid')
+
+3. PRAGMA index_info — 일반 표는 비고, WITHOUT ROWID 는 기본키 컬럼이 나온다
+  wordcount_rowid  : []
+  wordcount_norowid: [(0, 0, 'word')]
+
+4. 단어 하나를 찾는 실행계획 (detail 원문)
+  일반 표         : ['SEARCH wordcount USING INDEX sqlite_autoindex_wordcount_1 (word=?)']
+  WITHOUT ROWID: ['SEARCH wordcount USING PRIMARY KEY (word=?)']
+
+5. 크기 — 행 20,000개, 페이지 4096 바이트
+  짧은 행 (단어 + 정수)         일반     753,664  WITHOUT     364,544  비율 0.48
+  200바이트 BLOB 추가         일반   4,952,064  WITHOUT   5,201,920  비율 1.05
+  2000바이트 BLOB 추가        일반  41,439,232  WITHOUT  93,736,960  비율 2.26
+
+6. 일반 표와 다르게 동작하는 제약
+  일반 표 기본키에 NULL 두 번: [(None, 'a'), (None, 'b')]
+  WITHOUT ROWID 기본키에 NULL: IntegrityError: NOT NULL constraint failed: strict_pk.code
+  AUTOINCREMENT 를 붙이면     : OperationalError: AUTOINCREMENT not allowed on WITHOUT ROWID tables
+  일반 표 INTEGER PRIMARY KEY 생략: [(1, '자동 번호')]
+  WITHOUT ROWID 에서 생략      : IntegrityError: NOT NULL constraint failed: ipk_norowid.item_id
+
+7. 한 페이지에 직접 담을 수 있는 최대 크기 X — 파일 포맷 문서의 식으로 계산
+  U=4096  표 B-트리 잎 X=4061  인덱스 B-트리 X=1002  M=489
+  P= 220  일반 표          페이지에  220  넘침    0
+  P= 220  WITHOUT ROWID 페이지에  220  넘침    0
+  P=2000  일반 표          페이지에 2000  넘침    0
+  P=2000  WITHOUT ROWID 페이지에  489  넘침 1511
+  P=2030  일반 표          페이지에 2030  넘침    0
+  P=2030  WITHOUT ROWID 페이지에  489  넘침 1541
