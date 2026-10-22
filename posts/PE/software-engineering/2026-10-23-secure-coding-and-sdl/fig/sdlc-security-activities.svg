@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 290" width="880" height="290" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="290" fill="#fbfbf8"/>
+
+  <text x="12" y="26" font-size="16" font-weight="bold" fill="#1b2430">개발 단계마다 붙는 보안 활동 — 설계 기준 20개와 보안약점 49개가 들어가는 자리</text>
+
+  <!-- 단계 -->
+  <rect x="20" y="56" width="150" height="32" fill="#dde5ec" stroke="#5b6670"/>
+  <text x="95" y="77" font-size="13" fill="#1b2430" text-anchor="middle">요구사항 분석</text>
+  <rect x="185" y="56" width="150" height="32" fill="#dde5ec" stroke="#5b6670"/>
+  <text x="260" y="77" font-size="13" fill="#1b2430" text-anchor="middle">설계</text>
+  <rect x="350" y="56" width="150" height="32" fill="#dde5ec" stroke="#5b6670"/>
+  <text x="425" y="77" font-size="13" fill="#1b2430" text-anchor="middle">구현</text>
+  <rect x="515" y="56" width="150" height="32" fill="#dde5ec" stroke="#5b6670"/>
+  <text x="590" y="77" font-size="13" fill="#1b2430" text-anchor="middle">테스트</text>
+  <rect x="680" y="56" width="150" height="32" fill="#dde5ec" stroke="#5b6670"/>
+  <text x="755" y="77" font-size="13" fill="#1b2430" text-anchor="middle">유지보수</text>
+
+  <path d="M171 72 L179 72 M336 72 L344 72 M501 72 L509 72 M666 72 L674 72" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M178 68 L184 72 L178 76 Z M343 68 L349 72 L343 76 Z M508 68 L514 72 L508 76 Z M673 68 L679 72 L673 76 Z" fill="#5b6670"/>
+
+  <path d="M95 88 L95 104 M260 88 L260 104 M425 88 L425 104 M590 88 L590 104 M755 88 L755 104" fill="none" stroke="#5b6670" stroke-width="1.2"/>
+
+  <!-- 단계별 보안 활동 -->
+  <rect x="20" y="104" width="150" height="86" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="32" y="126" font-size="13" fill="#1b2430">보안 요구사항</text>
+  <text x="32" y="146" font-size="13" fill="#1b2430">식별</text>
+  <text x="32" y="166" font-size="13" fill="#5b6670">정보 자산의</text>
+  <text x="32" y="186" font-size="13" fill="#5b6670">중요도 분류</text>
+
+  <rect x="185" y="104" width="150" height="86" fill="#e3f0e8" stroke="#2d6a4f"/>
+  <text x="197" y="126" font-size="13" fill="#2d6a4f" font-weight="bold">보안설계 기준</text>
+  <text x="197" y="146" font-size="13" fill="#1b2430">4개 유형</text>
+  <text x="197" y="166" font-size="13" fill="#1b2430">20개 항목</text>
+  <text x="197" y="186" font-size="13" fill="#5b6670">설계서에 반영</text>
+
+  <rect x="350" y="104" width="150" height="86" fill="#e3f0e8" stroke="#2d6a4f"/>
+  <text x="362" y="126" font-size="13" fill="#2d6a4f" font-weight="bold">보안약점 제거</text>
+  <text x="362" y="146" font-size="13" fill="#1b2430">7개 유형</text>
+  <text x="362" y="166" font-size="13" fill="#1b2430">49개 항목</text>
+  <text x="362" y="186" font-size="13" fill="#5b6670">코드로 지킨다</text>
+
+  <rect x="515" y="104" width="150" height="86" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="527" y="126" font-size="13" fill="#1b2430">보안약점 진단</text>
+  <text x="527" y="146" font-size="13" fill="#5b6670">정적 분석 도구</text>
+  <text x="527" y="166" font-size="13" fill="#5b6670">수동 확인</text>
+  <text x="527" y="186" font-size="13" fill="#5b6670">조치 확인</text>
+
+  <rect x="680" y="104" width="150" height="86" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="692" y="126" font-size="13" fill="#1b2430">취약점 신고</text>
+  <text x="692" y="146" font-size="13" fill="#5b6670">접수와 조치</text>
+  <text x="692" y="166" font-size="13" fill="#5b6670">근본 원인 제거</text>
+  <text x="692" y="186" font-size="13" fill="#5b6670">재발 방지</text>
+
+  <!-- 설계 기준이 따로 있는 이유 -->
+  <rect x="20" y="214" width="810" height="56" fill="#fdf1dc" stroke="#b45309"/>
+  <text x="425" y="238" font-size="13" fill="#b45309" text-anchor="middle" font-weight="bold">설계 기준이 따로 있는 이유</text>
+  <text x="425" y="260" font-size="13" fill="#1b2430" text-anchor="middle">인가 누락·세션 관리 결함처럼 코드 한 줄로 드러나지 않는 약점은 구현이 끝난 뒤 도구로 찾기 어렵다</text>
+</svg>
