@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **405편** · 갱신 2026-10-22
+총 **406편** · 갱신 2026-10-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -301,10 +301,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 59편
+## 기출문제 (exam) — 60편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-22 | [기출문제 — 가상메모리 관리기법과 단편화](posts/PE/exam/2026-10-22-virtual-memory-management-fragmentation/index.md) | 중급 | Denning, Virtual Memory, ACM Computing Surveys 2(3), 1970, Randell, CACM 12(7), 1969, Bonwick, USENIX Summer 1994, Linux kernel 7.3.0 문서 (docs.kernel.org) | 문서 근거 |
 | 2026-10-22 | [기출문제 — 재난·전쟁에 대비한 데이터센터 위치 선정과 대응전략](posts/PE/exam/2026-10-22-idc-site-selection-and-disaster-response/index.md) | 심화 | NIST SP 800-34 Rev.1 (2010-05, 2010-11 갱신), NIST SP 800-53 Rev.5 (2020-09), IBM DS8900F Documentation 9.4.0, 과학기술정보통신부고시 제2024-19호 (시행 2024-06-01) | 문서 근거 |
 | 2026-10-21 | [기출문제 — 뮤텍스, 세마포어, 모니터](posts/PE/exam/2026-10-21-mutex-semaphore-monitor/index.md) | 중급 | IEEE Std 1003.1-2017 (POSIX.1-2017, Issue 7 2018 Edition), Dijkstra, EWD123 (1965), Hoare, CACM 17(10), 1974, Lampson·Redell, CACM 23(2), 1980, Java SE 21 JLS §17.1, Sha·Rajkumar·Lehoczky, IEEE TC 39(9), 1990 | 문서 근거 |
 | 2026-10-21 | [기출문제 — 빅데이터 분석기법: 클러스터링, 필터링, 이상치 탐지](posts/PE/exam/2026-10-21-bigdata-clustering-filtering-outlier-detection/index.md) | 중급 | ISO/IEC 20546:2019, ISO 16269-4:2010, NIST SP 1500-6r2 (2019), Ester et al., KDD-96, Chandola et al., ACM CSUR 41(3), 2009, Sarwar et al., WWW10, 2001 | 문서 근거 |
