@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Malgun Gothic','Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="32" font-size="17" font-weight="bold" fill="#1e293b">확정기여는 한 줄, 확정급여는 두 덩어리를 상계한 한 줄</text>
+  <text x="30" y="54" font-size="13" fill="#475569">재무상태표에 보이는 줄 수는 같아도 그 뒤에 있는 변동의 크기가 다르다</text>
+
+  <!-- 확정기여 -->
+  <text x="30" y="96" font-size="14" font-weight="bold" fill="#1e293b">확정기여제도</text>
+  <rect x="30" y="110" width="170" height="50" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.6"/>
+  <text x="115" y="140" font-size="13" fill="#1e293b" text-anchor="middle">기여금 납부</text>
+  <line x1="200" y1="135" x2="268" y2="135" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <rect x="270" y="110" width="170" height="50" rx="6" fill="#fef3e2" stroke="#b45309" stroke-width="1.6"/>
+  <text x="355" y="140" font-size="13" fill="#1e293b" text-anchor="middle">당기 비용</text>
+  <text x="470" y="132" font-size="13" fill="#475569">운용 결과와 할인율 변화는 종업원 몫이라</text>
+  <text x="470" y="150" font-size="13" fill="#475569">회사 장부에 부채가 남지 않는다 (미납분만 부채)</text>
+
+  <line x1="30" y1="186" x2="850" y2="186" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- 확정급여 -->
+  <text x="30" y="216" font-size="14" font-weight="bold" fill="#1e293b">확정급여제도</text>
+
+  <rect x="30" y="232" width="190" height="56" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="125" y="256" font-size="13" fill="#1e293b" text-anchor="middle">확정급여채무</text>
+  <text x="125" y="276" font-size="13" fill="#475569" text-anchor="middle">미래 지급액의 현재가치</text>
+
+  <rect x="30" y="320" width="190" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="125" y="344" font-size="13" fill="#1e293b" text-anchor="middle">사외적립자산</text>
+  <text x="125" y="364" font-size="13" fill="#475569" text-anchor="middle">외부 기금에 쌓인 공정가치</text>
+
+  <line x1="220" y1="260" x2="288" y2="296" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="220" y1="348" x2="288" y2="312" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="290" y="276" width="180" height="56" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
+  <text x="380" y="300" font-size="13" fill="#1e293b" text-anchor="middle">순확정급여부채</text>
+  <text x="380" y="320" font-size="13" fill="#475569" text-anchor="middle">재무상태표의 한 줄</text>
+
+  <line x1="470" y1="292" x2="578" y2="254" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="470" y1="316" x2="578" y2="354" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="226" width="270" height="56" rx="6" fill="#fef3e2" stroke="#b45309" stroke-width="1.6"/>
+  <text x="715" y="250" font-size="13" fill="#1e293b" text-anchor="middle">당기손익</text>
+  <text x="715" y="270" font-size="13" fill="#475569" text-anchor="middle">근무원가 + 순이자</text>
+
+  <rect x="580" y="326" width="270" height="56" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.6"/>
+  <text x="715" y="350" font-size="13" fill="#1e293b" text-anchor="middle">기타포괄손익</text>
+  <text x="715" y="370" font-size="13" fill="#475569" text-anchor="middle">재측정요소 (보험수리적손익 등)</text>
+
+  <text x="580" y="404" font-size="13" fill="#9d0208">후속 기간에 당기손익으로 재분류하지 않는다</text>
+
+  <text x="30" y="436" font-size="13" fill="#1e293b">순이자 = 순확정급여부채 × 할인율. 채무와 자산 각각의 크기는 손익에 드러나지 않고,</text>
+  <text x="30" y="456" font-size="13" fill="#1e293b">할인율이 움직일 때 채무가 크게 출렁이는 몫은 기타포괄손익으로 간다.</text>
+</svg>
