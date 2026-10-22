@@ -177,6 +177,8 @@ SC00023K, 2004-03-18 표준)이 이미 플랫폼에 **생명주기·식별 관�
 **나눌 이유가 업무에 있을 때만 나눈다.**
 
 > 개념 정리: [에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기](../../emerging-tech/2026-10-20-agent-interop-capability-and-task-lifecycle/index.md)
+>
+> 개념 정리: [계약망 프로토콜 — 공고·입찰·낙찰로 과업을 나누는 분산 조정 규약](../../software-engineering/2026-10-23-contract-net-protocol-task-allocation/index.md)
 
 끝
 

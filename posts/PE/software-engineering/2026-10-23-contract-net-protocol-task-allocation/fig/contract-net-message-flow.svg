@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbf8"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ahw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="36" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">계약망 프로토콜의 메시지 흐름</text>
+
+  <rect x="40" y="62" width="185" height="66" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="132" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">관리자 (manager)</text>
+  <text x="132" y="111" text-anchor="middle" font-size="13" fill="#444444">과업을 생성한 노드</text>
+
+  <rect x="655" y="62" width="185" height="66" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="747" y="88" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">계약자 (contractor)</text>
+  <text x="747" y="111" text-anchor="middle" font-size="13" fill="#444444">입찰해 낙찰받은 노드</text>
+
+  <line x1="132" y1="128" x2="132" y2="470" stroke="#888888" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <line x1="747" y1="128" x2="747" y2="470" stroke="#888888" stroke-width="1.5" stroke-dasharray="5 5"/>
+
+  <text x="440" y="176" text-anchor="middle" font-size="14" fill="#1b1b1b">① 과업 공고 — 자격 명세 · 과업 요약 · 입찰 명세 · 만료 시각</text>
+  <line x1="132" y1="190" x2="740" y2="190" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <text x="440" y="241" text-anchor="middle" font-size="14" fill="#1b1b1b">② 입찰 — 노드 요약(자신의 능력을 입찰 명세 형식으로)</text>
+  <line x1="747" y1="255" x2="139" y2="255" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <text x="440" y="306" text-anchor="middle" font-size="14" fill="#1b1b1b">③ 낙찰 — 과업 명세(수행에 필요한 데이터)</text>
+  <line x1="132" y1="320" x2="740" y2="320" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <text x="440" y="371" text-anchor="middle" font-size="14" fill="#1b1b1b">④ 보고 — 중간 보고 또는 최종 보고 (결과 기술)</text>
+  <line x1="747" y1="385" x2="139" y2="385" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ah)"/>
+
+  <text x="440" y="436" text-anchor="middle" font-size="14" fill="#b45309">만료 시각까지 입찰이 없으면 → 재공고 · 자격 명세 완화 · 지정 계약</text>
+  <line x1="132" y1="450" x2="740" y2="450" stroke="#b45309" stroke-width="2.5" stroke-dasharray="8 5" marker-end="url(#ahw)"/>
+</svg>
