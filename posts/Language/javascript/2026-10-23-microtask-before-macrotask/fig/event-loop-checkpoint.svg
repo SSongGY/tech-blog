@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 316" width="880" height="316" font-family="Malgun Gothic, Apple SD Gothic Neo, sans-serif">
+  <rect x="0" y="0" width="880" height="316" fill="#fbfbf8"/>
+
+  <text x="12" y="24" font-size="16" font-weight="bold" fill="#1b2430">태스크 하나 뒤마다 큐를 끝까지 비운다 — 그래서 마이크로태스크가 먼저다</text>
+
+  <!-- 반복 표시 -->
+  <text x="575" y="46" font-size="13" fill="#2d6a4f" text-anchor="middle">큐가 빌 때까지</text>
+  <path d="M605 76 C605 52, 545 52, 545 76" fill="none" stroke="#2d6a4f" stroke-width="1.4"/>
+  <path d="M541 70 L545 78 L549 70 Z" fill="#2d6a4f"/>
+  <text x="775" y="46" font-size="13" fill="#2d6a4f" text-anchor="middle">큐가 빌 때까지</text>
+  <path d="M805 76 C805 52, 745 52, 745 76" fill="none" stroke="#2d6a4f" stroke-width="1.4"/>
+  <path d="M741 70 L745 78 L749 70 Z" fill="#2d6a4f"/>
+
+  <!-- 네 단계 -->
+  <rect x="30" y="76" width="200" height="70" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="42" y="98" font-size="13" fill="#1b2430">태스크 큐에서</text>
+  <text x="42" y="118" font-size="13" fill="#1b2430">태스크 하나를</text>
+  <text x="42" y="138" font-size="13" fill="#1b2430">꺼낸다</text>
+
+  <rect x="260" y="76" width="200" height="70" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="272" y="98" font-size="13" fill="#1b2430">그 태스크를</text>
+  <text x="272" y="118" font-size="13" fill="#1b2430">끝까지 실행한다</text>
+  <text x="272" y="138" font-size="13" fill="#5b6670">(동기 구간이 끝날 때까지)</text>
+
+  <rect x="490" y="76" width="170" height="70" fill="#e3f0e8" stroke="#2d6a4f"/>
+  <text x="502" y="98" font-size="13" fill="#2d6a4f" font-weight="bold">nextTick 큐</text>
+  <text x="502" y="118" font-size="13" fill="#1b2430">비운다</text>
+  <text x="502" y="138" font-size="13" fill="#5b6670">(Node 전용)</text>
+
+  <rect x="690" y="76" width="170" height="70" fill="#e3f0e8" stroke="#2d6a4f"/>
+  <text x="702" y="98" font-size="13" fill="#2d6a4f" font-weight="bold">마이크로태스크 큐</text>
+  <text x="702" y="118" font-size="13" fill="#1b2430">비운다</text>
+  <text x="702" y="138" font-size="13" fill="#5b6670">= 체크포인트</text>
+
+  <path d="M233 111 L253 111 M463 111 L483 111 M663 111 L683 111" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M252 107 L258 111 L252 115 Z M482 107 L488 111 L482 115 Z M682 107 L688 111 L682 115 Z" fill="#5b6670"/>
+
+  <!-- 되돌아가는 경로 -->
+  <text x="450" y="174" font-size="13" fill="#5b6670" text-anchor="middle">그다음에야 태스크 하나를 더 꺼낸다</text>
+  <path d="M775 146 L775 186 L130 186 L130 150" fill="none" stroke="#5b6670" stroke-width="1.4"/>
+  <path d="M126 156 L130 146 L134 156 Z" fill="#5b6670"/>
+
+  <!-- 어느 큐에 무엇이 들어가는가 -->
+  <rect x="30" y="206" width="830" height="92" fill="#eef2f6" stroke="#5b6670"/>
+  <text x="44" y="230" font-size="13" fill="#1b2430"><tspan font-weight="bold">태스크</tspan>  setTimeout · setInterval · setImmediate · I/O 콜백 — 한 번에 하나만 꺼낸다</text>
+  <text x="44" y="254" font-size="13" fill="#1b2430"><tspan font-weight="bold">마이크로태스크</tspan>  프로미스 콜백(.then · catch · finally) · await 다음 줄 · queueMicrotask</text>
+  <text x="44" y="278" font-size="13" fill="#b45309"><tspan font-weight="bold">process.nextTick</tspan>  이벤트 루프 밖의 별도 큐. 마이크로태스크보다 먼저 비워진다 (Node)</text>
+</svg>

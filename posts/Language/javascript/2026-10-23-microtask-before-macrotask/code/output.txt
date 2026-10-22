@@ -1,0 +1,47 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Language\javascript\2026-10-23-microtask-before-macrotask
+# 명령      : node event-loop-order.js
+# 수행 시각 : 2026-10-23 08:35 (대한민국 표준시)
+# 소요      : 3.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+Node.js v24.19.0 · V8 13.6.233.17-node.51
+플랫폼 win32
+
+[1] 같은 틱에 넷을 등록하면
+  동기 코드 1
+  동기 코드 2
+  process.nextTick
+  promise.then
+  queueMicrotask
+  setTimeout 0
+
+[2] 마이크로태스크가 마이크로태스크를 낳으면
+  마이크로태스크 1
+  마이크로태스크 2 — 1 안에서 추가됐다
+  마이크로태스크 3 — 2 안에서 추가됐다
+  setTimeout 0 — 여기서야 태스크가 돈다
+
+[3] await 와 .then 을 섞으면
+  스크립트 시작
+  outer 시작
+  inner 동기 구간
+  프로미스 실행자(executor)는 동기다
+  스크립트 끝
+  outer — await 다음 줄
+  .then 콜백
+  setTimeout 0
+
+[4] setTimeout(0) 과 setImmediate 의 순서
+  최상위에서 50회 (매번 새 프로세스): {"setImmediate":48,"setTimeout":2}
+  I/O 콜백 안에서 50회: {"setImmediate":50}
+  타이머 콜백 안에서 50회: {"setImmediate":50}
+
+[5] 마이크로태스크가 끊이지 않으면
+  마이크로태스크 1,000,000회를 도는 동안
+    경과 22.8 ms · 0ms 타이머가 돌았는가: false
+    태스크 한 박자 뒤 같은 타이머: true (직전 값은 false)
+
