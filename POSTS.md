@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **417편** · 갱신 2026-10-23
+총 **419편** · 갱신 2026-10-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -101,13 +101,15 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 144편
+## 기술사 (pe) — 146편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-23 | [소프트웨어 재공학과 역공학](posts/PE/software-engineering/2026-10-23-software-reengineering-reverse-engineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), Fowler, Refactoring (refactoring.com, 2026년 10월 확인) | 문서 근거 |
 | 2026-10-23 | [심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조](posts/PE/data-analysis/2026-10-23-simpsons-paradox-confounder-collapsibility/index.md) | 중급 | Python 3.13.5, Simpson, JRSS Series B 13(2) (1951), Bickel·Hammel·O'Connell, Science 187(4175) (1975) | 실행 검증 |
 | 2026-10-23 | [소프트웨어 개발 보안 — 시큐어 코딩과 SDL](posts/PE/software-engineering/2026-10-23-secure-coding-and-sdl/index.md) | 중급 | 소프트웨어 개발보안 가이드 2021년 12월판, NIST SP 800-218 SSDF 버전 1.1 (2022년 2월), Microsoft SDL (2026년 10월 확인) | 문서 근거 |
+| 2026-10-23 | [강건 통계량 — 중앙값, MAD, 절사평균의 붕괴점](posts/PE/data-analysis/2026-10-23-robust-statistics-breakdown-point/index.md) | 중급 | Python 3.13.5, Davies·Gather, Annals of Statistics 33(3) (2005), NIST/SEMATECH e-Handbook of Statistical Methods (2012) | 실행 검증 |
+| 2026-10-23 | [요구사항 스멜 — 언어 기준 9가지와 자동 탐지의 한계](posts/PE/software-engineering/2026-10-23-requirements-smells/index.md) | 중급 | ISO/IEC/IEEE 29148:2011, Femmer 외, Journal of Systems and Software 123 (2017) | 문서 근거 |
 | 2026-10-23 | [계약망 프로토콜 — 공고·입찰·낙찰로 과업을 나누는 분산 조정 규약](posts/PE/software-engineering/2026-10-23-contract-net-protocol-task-allocation/index.md) | 중급 | Smith, IEEE Transactions on Computers C-29(12) (1980), FIPA SC00029H Standard (2002-12-03) | 문서 근거 |
 | 2026-10-20 | [SLA 지표 설계와 측정 — 99.9%가 실제로 허용하는 장애 시간](posts/PE/it-management/2026-10-20-sla-metrics-design-and-measurement/index.md) | 중급 | Python 3.13.5, ISO/IEC 19086-1:2016, IEC 61078:2016 (제3판), Windows 11 | 실행 검증 |
 | 2026-10-20 | [ISO/IEC 38505-1 데이터 거버넌스 — 데이터 책임 지도와 가치·위험·제약](posts/PE/it-management/2026-10-20-iso-iec-38505-1-data-accountability-map/index.md) | 중급 | ISO/IEC 38505-1:2026 (제2판, 2026-08), ISO/IEC 38505-1:2017 (제1판), ISO/IEC 38500:2024 (제3판), ISO/IEC TR 38505-2:2018 | 문서 근거 |
