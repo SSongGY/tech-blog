@@ -5135,7 +5135,7 @@ topics:
     angle: "발행 시점에 부채요소와 자본요소로 나눠 적는 절차. 전환권이 행사될 때와 만기까지 안 갈 때 각각 재무제표가 어떻게 달라지는지를 가상 회사 숫자로 계산한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-076
     title: "연구개발비 — 어디까지가 자산이고 어디부터가 비용인가"
     category: Finance
@@ -5146,7 +5146,7 @@ topics:
     angle: "연구단계와 개발단계를 가르는 요건. 같은 지출을 자산화했을 때와 비용 처리했을 때 영업이익과 자산총계가 얼마나 갈리는지 나란히 계산한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-077
     title: "유형자산 재평가모형 — 장부가를 다시 매길 때 어디로 들어가는가"
     category: Finance
