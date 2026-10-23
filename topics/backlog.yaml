@@ -5938,3 +5938,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-196
+    title: "VLSM — 가변 길이 서브넷 마스크"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "정렬 제약 때문에 큰 블록부터 배치해야 하는 이유를 비트 수준에서 보이고, 고정 길이 서브넷과의 주소 낭비 차이를 같은 요구조건으로 계산해 대비한다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-197
+    title: "CIDR와 라우팅 집약"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "클래스 체계가 왜 깨졌는지에서 출발해 접두어 표기와 집약 규칙을 정리하고, 다중 귀속과 사업자 변경 시 집약이 깨지는 지점을 짚는다"
+    code: none
+    origin: exam
+    status: todo
