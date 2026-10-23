@@ -5179,7 +5179,7 @@ topics:
     angle: "같은 가상 회사의 영업활동 현금흐름을 두 방법으로 각각 만들어 끝 숫자가 같아지는 것을 확인한다. 간접법이 왜 실무에서 압도적인지도 그 과정에서 드러난다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-080
     title: "부문별 정보 — 합쳐진 숫자를 쪼개 보는 자리"
     category: Finance
@@ -5190,7 +5190,7 @@ topics:
     angle: "보고부문을 가르는 기준과 양적 기준선. 전사 영업이익률 하나로는 안 보이던 적자 부문이 부문 공시에서 드러나는 상황을 가상 회사로 만든다."
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-081
     title: "주식기준보상 — 스톡옵션이 비용으로 잡히는 구조"
     category: Finance

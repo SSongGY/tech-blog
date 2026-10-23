@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" width="880" height="600" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#44484f"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="880" height="600" fill="#fbfbf8"/>
+
+  <text x="30" y="36" font-size="17" font-weight="bold" fill="#1b1d22">영업활동 현금흐름 — 두 경로가 같은 자리에 모인다</text>
+  <text x="30" y="58" font-size="13" fill="#555960">가상 회사 가나전자, 금액 단위 억원. 이자지급은 재무활동, 법인세납부는 영업활동으로 분류했다.</text>
+
+  <!-- 직접법 -->
+  <text x="40" y="82" font-size="14" font-weight="bold" fill="#1d3557">직접법 — 총현금유입과 총현금유출을 항목별로</text>
+
+  <g>
+    <rect x="30" y="92" width="370" height="54" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+    <text x="44" y="114" font-size="14" fill="#13263f">고객으로부터 유입된 현금</text>
+    <text x="386" y="114" font-size="14" font-weight="bold" text-anchor="end" fill="#13263f">2,155</text>
+    <text x="44" y="134" font-size="13" fill="#4a5a6a">매출액 2,400 − 매출채권 220 − 대손상각비 25</text>
+  </g>
+  <g>
+    <rect x="30" y="154" width="370" height="54" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+    <text x="44" y="176" font-size="14" fill="#13263f">공급자에 대한 현금유출</text>
+    <text x="386" y="176" font-size="14" font-weight="bold" text-anchor="end" fill="#13263f">−1,460</text>
+    <text x="44" y="196" font-size="13" fill="#4a5a6a">매출원가 1,560 + 재고변동 −60 − 매입채무 40</text>
+  </g>
+  <g>
+    <rect x="30" y="216" width="370" height="54" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+    <text x="44" y="238" font-size="14" fill="#13263f">종업원에 대한 현금유출</text>
+    <text x="386" y="238" font-size="14" font-weight="bold" text-anchor="end" fill="#13263f">−140</text>
+    <text x="44" y="258" font-size="13" fill="#4a5a6a">급여 150 − 미지급급여 10</text>
+  </g>
+  <g>
+    <rect x="30" y="278" width="370" height="54" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+    <text x="44" y="300" font-size="14" fill="#13263f">그 밖의 영업비용 유출</text>
+    <text x="386" y="300" font-size="14" font-weight="bold" text-anchor="end" fill="#13263f">−70</text>
+    <text x="44" y="320" font-size="13" fill="#4a5a6a">그 밖의 비용 90 − 대손상각비 25 + 선급비용 5</text>
+  </g>
+
+  <!-- 간접법 -->
+  <text x="470" y="82" font-size="14" font-weight="bold" fill="#4a4e69">간접법 — 당기순이익에서 거꾸로 걷어낸다</text>
+
+  <g>
+    <rect x="460" y="92" width="390" height="54" rx="5" fill="#f2f0f5" stroke="#4a4e69" stroke-width="1.4"/>
+    <text x="474" y="114" font-size="14" fill="#2f3246">당기순이익</text>
+    <text x="836" y="114" font-size="14" font-weight="bold" text-anchor="end" fill="#2f3246">285</text>
+    <text x="474" y="134" font-size="13" fill="#5a5d70">포괄손익계산서의 맨 아랫줄을 그대로 가져온다</text>
+  </g>
+  <g>
+    <rect x="460" y="154" width="390" height="74" rx="5" fill="#f2f0f5" stroke="#4a4e69" stroke-width="1.4"/>
+    <text x="474" y="176" font-size="14" fill="#2f3246">비현금·비영업 항목의 가감</text>
+    <text x="836" y="176" font-size="14" font-weight="bold" text-anchor="end" fill="#2f3246">+315</text>
+    <text x="474" y="196" font-size="13" fill="#5a5d70">감가상각비 180 · 외화환산손실 15 · 이자비용 60</text>
+    <text x="474" y="216" font-size="13" fill="#5a5d70">법인세비용 90 · 유형자산처분이익 −30</text>
+  </g>
+  <g>
+    <rect x="460" y="236" width="390" height="74" rx="5" fill="#f2f0f5" stroke="#4a4e69" stroke-width="1.4"/>
+    <text x="474" y="258" font-size="14" fill="#2f3246">운전자본의 변동</text>
+    <text x="836" y="258" font-size="14" font-weight="bold" text-anchor="end" fill="#2f3246">−115</text>
+    <text x="474" y="278" font-size="13" fill="#5a5d70">매출채권 −220 · 재고자산 +60 · 선급비용 −5</text>
+    <text x="474" y="298" font-size="13" fill="#5a5d70">매입채무 +40 · 미지급급여 +10</text>
+  </g>
+
+  <!-- 합류 -->
+  <path d="M 215 332 L 215 352 L 440 352" fill="none" stroke="#44484f" stroke-width="1.6"/>
+  <path d="M 655 310 L 655 352 L 440 352" fill="none" stroke="#44484f" stroke-width="1.6"/>
+  <path d="M 440 352 L 440 376" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <g>
+    <rect x="240" y="382" width="400" height="48" rx="5" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="1.6"/>
+    <text x="256" y="412" font-size="15" font-weight="bold" fill="#1d4733">영업에서 창출된 현금</text>
+    <text x="624" y="412" font-size="15" font-weight="bold" text-anchor="end" fill="#1d4733">485</text>
+  </g>
+
+  <path d="M 440 430 L 440 452" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <g>
+    <rect x="280" y="454" width="320" height="42" rx="5" fill="#f4f4ef" stroke="#6b6f76" stroke-width="1.3"/>
+    <text x="296" y="480" font-size="14" fill="#33363c">법인세의 납부</text>
+    <text x="584" y="480" font-size="14" font-weight="bold" text-anchor="end" fill="#33363c">−65</text>
+  </g>
+
+  <path d="M 440 496 L 440 518" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <g>
+    <rect x="240" y="520" width="400" height="48" rx="5" fill="#d8e8de" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="256" y="550" font-size="15" font-weight="bold" fill="#1d4733">영업활동 순현금흐름</text>
+    <text x="624" y="550" font-size="15" font-weight="bold" text-anchor="end" fill="#1d4733">420</text>
+  </g>
+
+  <text x="30" y="588" font-size="13" fill="#555960">두 방법은 같은 거래를 다르게 서술할 뿐이므로 합계는 어긋날 수 없다. 어긋나면 환산이 틀린 것이다.</text>
+</svg>
