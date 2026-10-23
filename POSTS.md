@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **419편** · 갱신 2026-10-23
+총 **421편** · 갱신 2026-10-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -377,10 +377,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 76편
+## 주식·재무 (finance) — 78편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-23 | [부문별 정보 — 합쳐진 숫자를 쪼개 보는 자리](posts/Finance/statements/2026-10-23-operating-segments-disclosure/index.md) | 중급 | Python 3.13.5, K-IFRS 제1108호 영업부문 | 실행 검증 |
+| 2026-10-23 | [현금흐름표 직접법과 간접법 — 같은 현금, 다른 서술](posts/Finance/statements/2026-10-23-cash-flow-direct-vs-indirect/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
 | 2026-10-22 | [연구개발비 — 어디까지가 자산이고 어디부터가 비용인가](posts/Finance/statements/2026-10-22-rnd-capitalisation-vs-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1038호 무형자산, K-IFRS 제1036호 자산손상, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
 | 2026-10-22 | [유형자산 재평가모형 — 장부가를 다시 매길 때 어디로 들어가는가](posts/Finance/statements/2026-10-22-ppe-revaluation-model/index.md) | 중급 | Python 3.13.5, K-IFRS 제1016호 유형자산 | 실행 검증 |
 | 2026-10-22 | [퇴직급여 — 확정기여형과 확정급여형이 재무제표에 다르게 찍히는 이유](posts/Finance/statements/2026-10-22-pension-dc-vs-db/index.md) | 중급 | Python 3.13.5, K-IFRS 제1019호 종업원급여 | 실행 검증 |
