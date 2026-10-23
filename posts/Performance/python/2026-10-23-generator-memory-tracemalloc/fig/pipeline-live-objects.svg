@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" font-size="17" font-weight="bold" fill="#1b1b1b" text-anchor="middle">같은 파이프라인에서 한 순간에 살아 있는 레코드 수</text>
+
+  <!-- 리스트 체인 -->
+  <text x="24" y="70" font-size="15" font-weight="bold" fill="#9d0208">리스트로 담는 방식 — 단계마다 전체가 메모리에 남는다</text>
+
+  <rect x="24" y="84" width="150" height="56" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="99" y="108" font-size="14" fill="#1b1b1b" text-anchor="middle">원천</text>
+  <text x="99" y="127" font-size="13" fill="#666" text-anchor="middle">레코드 200,000개</text>
+
+  <path d="M 174 112 L 212 112" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+
+  <rect x="216" y="84" width="190" height="56" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="311" y="108" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">리스트 ①</text>
+  <text x="311" y="127" font-size="13" fill="#9d0208" text-anchor="middle">200,000개가 전부 살아 있다</text>
+
+  <path d="M 406 112 L 444 112" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+
+  <rect x="448" y="84" width="190" height="56" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="543" y="108" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">리스트 ② (필터 결과)</text>
+  <text x="543" y="127" font-size="13" fill="#9d0208" text-anchor="middle">①과 동시에 살아 있다</text>
+
+  <path d="M 638 112 L 676 112" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+
+  <rect x="680" y="84" width="176" height="56" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="768" y="108" font-size="14" fill="#1b1b1b" text-anchor="middle">합계</text>
+  <text x="768" y="127" font-size="13" fill="#666" text-anchor="middle">정수 1개</text>
+
+  <text x="24" y="166" font-size="13" fill="#9d0208">최대 메모리는 ①과 ②가 겹치는 순간에 정해진다 — 실측 48,633.8 KiB</text>
+
+  <line x1="24" y1="186" x2="856" y2="186" stroke="#ccc" stroke-width="1"/>
+
+  <!-- 제너레이터 체인 -->
+  <text x="24" y="218" font-size="15" font-weight="bold" fill="#2d6a4f">제너레이터로 흘리는 방식 — 단계마다 한 개씩만 지나간다</text>
+
+  <rect x="24" y="232" width="150" height="56" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="99" y="256" font-size="14" fill="#1b1b1b" text-anchor="middle">원천</text>
+  <text x="99" y="275" font-size="13" fill="#666" text-anchor="middle">레코드 200,000개</text>
+
+  <path d="M 174 260 L 212 260" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+
+  <rect x="216" y="232" width="190" height="56" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="311" y="256" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">제너레이터 ①</text>
+  <text x="311" y="275" font-size="13" fill="#2d6a4f" text-anchor="middle">지금 만든 1개 + 멈춘 프레임</text>
+
+  <path d="M 406 260 L 444 260" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+
+  <rect x="448" y="232" width="190" height="56" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="543" y="256" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">제너레이터 ② (필터)</text>
+  <text x="543" y="275" font-size="13" fill="#2d6a4f" text-anchor="middle">통과한 1개만 넘긴다</text>
+
+  <path d="M 638 260 L 676 260" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+
+  <rect x="680" y="232" width="176" height="56" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="768" y="256" font-size="14" fill="#1b1b1b" text-anchor="middle">합계</text>
+  <text x="768" y="275" font-size="13" fill="#666" text-anchor="middle">정수 1개</text>
+
+  <text x="24" y="314" font-size="13" fill="#2d6a4f">레코드 수가 늘어도 이 그림은 그대로다 — 실측 1.1 KiB</text>
+
+  <line x1="24" y1="336" x2="856" y2="336" stroke="#ccc" stroke-width="1"/>
+  <text x="24" y="362" font-size="14" font-weight="bold" fill="#1b1b1b">이 그림이 설명하지 못하는 것</text>
+  <text x="24" y="384" font-size="13" fill="#555">아래 줄은 레코드를 보관하지 않으므로 두 번째로 훑으려면 원천을 다시 돌려야 한다.</text>
+  <text x="24" y="404" font-size="13" fill="#555">원천이 비싸면 그 두 번째 통과가 위 줄의 리스트 적재 비용을 넘어선다 — 손익이 뒤집히는 지점이다.</text>
+  <text x="24" y="424" font-size="13" fill="#555">수치는 Python 3.13.5 / Windows 11 에서 tracemalloc 으로 잰 값이다.</text>
+</svg>
