@@ -366,3 +366,6 @@
 | 2026-10-23 | pe-179 | PE | 요구사항 스멜(Requirements Smell) |
 | 2026-10-23 | fin-079 | Finance | 현금흐름표 직접법과 간접법 — 같은 현금, 다른 서술 |
 | 2026-10-23 | fin-080 | Finance | 부문별 정보 — 합쳐진 숫자를 쪼개 보는 자리 |
+| 2026-10-23 | db-069 | Database | AUTOINCREMENT와 rowid — 번호가 재사용되는가 |
+| 2026-10-23 | pe-096 | PE | 객체지향 설계 원칙 SOLID 5가지 |
+| 2026-10-23 | gen-010 | Performance | 제너레이터가 실제로 아끼는 것 — tracemalloc 으로 본 메모리 |

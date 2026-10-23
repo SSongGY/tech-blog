@@ -2919,7 +2919,7 @@ topics:
     angle: "원칙마다 위반 사례와 고친 모습을 짝으로. 답안에서 개수가 점수다"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-097
     title: "UML 다이어그램 분류 — 구조와 행위"
     category: PE
@@ -4646,7 +4646,7 @@ topics:
     angle: "지우고 다시 넣으면 번호가 어떻게 되는지 둘을 나란히 두고 확인. 언제 AUTOINCREMENT 가 필요한지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-070
     title: "스키마 조회 — sqlite_master와 PRAGMA table_info"
     category: Database
@@ -5537,7 +5537,7 @@ topics:
     difficulty: 중급
     angle: "같은 처리를 리스트로 한 번에 담을 때와 제너레이터로 흘릴 때의 최대 메모리를 잰다. 두 번 훑어야 하는 작업에서는 제너레이터가 오히려 손해라는 것도 같이 보인다."
     code: python
-    status: todo
+    status: done
   - id: gen-011
     title: "GIL 이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기"
     category: Performance
