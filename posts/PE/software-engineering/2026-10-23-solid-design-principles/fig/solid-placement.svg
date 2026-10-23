@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="34" font-size="17" font-weight="bold" fill="#1b1b1b" text-anchor="middle">다섯 원칙이 붙는 자리 — 의존이 추상을 향하는 구조 위에서</text>
+
+  <!-- 고수준 모듈 -->
+  <rect x="300" y="60" width="280" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="440" y="83" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">고수준 모듈 (정책)</text>
+  <text x="440" y="104" font-size="13" fill="#555" text-anchor="middle">무엇을 할지 정한다. 어떻게 하는지는 모른다</text>
+
+  <rect x="24" y="60" width="256" height="56" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="152" y="83" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">SRP — 단일 책임</text>
+  <text x="152" y="104" font-size="13" fill="#2d6a4f" text-anchor="middle">이 모듈을 고치라는 요구가 한 곳에서만 온다</text>
+  <path d="M 280 88 L 296 88" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <rect x="600" y="60" width="256" height="56" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="728" y="83" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">OCP — 개방 폐쇄</text>
+  <text x="728" y="104" font-size="13" fill="#2d6a4f" text-anchor="middle">아래에 구현을 더해도 이 박스는 안 고친다</text>
+  <path d="M 584 88 L 600 88" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <path d="M 380 116 L 380 170" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M 500 116 L 500 170" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a)"/>
+  <text x="440" y="148" font-size="13" fill="#2d6a4f" text-anchor="middle">의존 방향</text>
+
+  <!-- 추상 인터페이스 둘 -->
+  <rect x="250" y="170" width="170" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8" stroke-dasharray="6 3"/>
+  <text x="335" y="192" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">추상 인터페이스 A</text>
+  <text x="335" y="212" font-size="13" fill="#555" text-anchor="middle">읽기에 필요한 것만</text>
+
+  <rect x="460" y="170" width="170" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8" stroke-dasharray="6 3"/>
+  <text x="545" y="192" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">추상 인터페이스 B</text>
+  <text x="545" y="212" font-size="13" fill="#555" text-anchor="middle">쓰기에 필요한 것만</text>
+
+  <rect x="650" y="170" width="206" height="54" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="753" y="192" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">ISP — 인터페이스 분리</text>
+  <text x="753" y="212" font-size="13" fill="#2d6a4f" text-anchor="middle">클라이언트마다 따로 쪼갠다</text>
+  <path d="M 630 197 L 646 197" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <rect x="24" y="170" width="206" height="54" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="127" y="192" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">DIP — 의존 역전</text>
+  <text x="127" y="212" font-size="13" fill="#2d6a4f" text-anchor="middle">위아래가 모두 이 선을 향한다</text>
+  <path d="M 230 197 L 246 197" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <path d="M 300 278 L 300 228" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M 490 278 L 390 230" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a)"/>
+  <path d="M 570 278 L 570 228" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 구현 -->
+  <rect x="230" y="278" width="190" height="54" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="325" y="300" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">구현 1 — 파일 저장소</text>
+  <text x="325" y="320" font-size="13" fill="#555" text-anchor="middle">세부 사항. 자주 바뀐다</text>
+
+  <rect x="450" y="278" width="190" height="54" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="545" y="300" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">구현 2 — DB 저장소</text>
+  <text x="545" y="320" font-size="13" fill="#555" text-anchor="middle">세부 사항. 자주 바뀐다</text>
+
+  <rect x="650" y="278" width="206" height="54" rx="6" fill="#eef3ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="753" y="300" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">LSP — 리스코프 치환</text>
+  <text x="753" y="320" font-size="13" fill="#2d6a4f" text-anchor="middle">1을 2로 바꿔도 성질이 유지된다</text>
+  <path d="M 640 305 L 646 305" fill="none" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <line x1="24" y1="360" x2="856" y2="360" stroke="#ccc" stroke-width="1"/>
+  <text x="24" y="386" font-size="14" font-weight="bold" fill="#1b1b1b">읽는 법</text>
+  <text x="24" y="408" font-size="13" fill="#555">화살표는 의존 방향이다. 위아래가 모두 가운데 점선 상자(추상)를 향하고, 추상은 아무도 향하지 않는다.</text>
+  <text x="24" y="428" font-size="13" fill="#555">SRP·OCP 는 고수준 모듈이 바뀌는 이유를 줄이고, ISP·DIP 는 경계선을 긋고, LSP 는 그 선 아래를 바꿔 끼울 수 있게 한다.</text>
+  <text x="24" y="448" font-size="13" fill="#555">다섯이 따로 노는 규칙이 아니라 하나의 구조를 떠받치는 다섯 조건이다.</text>
+</svg>
