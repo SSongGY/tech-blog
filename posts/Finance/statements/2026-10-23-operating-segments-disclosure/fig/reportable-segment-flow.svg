@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 600" width="880" height="600" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#44484f"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="880" height="600" fill="#fbfbf8"/>
+
+  <text x="30" y="36" font-size="17" font-weight="bold" fill="#1b1d22">보고부문을 가리는 순서와, 가상 회사 사아산업에 적용한 결과</text>
+  <text x="30" y="58" font-size="13" fill="#555960">금액 단위는 억원. 괄호 안은 기업회계기준서 제1108호의 문단 번호다.</text>
+
+  <!-- 오른쪽 패널 -->
+  <rect x="460" y="74" width="390" height="462" rx="6" fill="#f4f2ec" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="476" y="96" font-size="14" font-weight="bold" fill="#4a4538">사아산업에 적용하면</text>
+
+  <!-- ① -->
+  <rect x="30" y="110" width="400" height="64" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+  <text x="46" y="136" font-size="14" font-weight="bold" fill="#13263f">① 영업부문을 식별한다</text>
+  <text x="46" y="158" font-size="13" fill="#4a5a6a">최고영업의사결정자가 정기 검토하는 단위 (문단 5)</text>
+  <text x="476" y="136" font-size="13" fill="#3f3a2d">여덟 개 부문의 수익·손익·자산이 보고된다</text>
+
+  <path d="M 230 174 L 230 194" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah2)"/>
+
+  <!-- ② -->
+  <rect x="30" y="196" width="400" height="64" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+  <text x="46" y="222" font-size="14" font-weight="bold" fill="#13263f">② 유사한 부문은 통합할 수 있다</text>
+  <text x="46" y="244" font-size="13" fill="#4a5a6a">제품·생산·고객·유통·규제가 모두 유사하면 (문단 12)</text>
+  <text x="476" y="222" font-size="13" fill="#3f3a2d">통합 없음 — 여덟 개를 그대로 둔다</text>
+
+  <path d="M 230 260 L 230 280" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah2)"/>
+
+  <!-- ③ -->
+  <rect x="30" y="282" width="400" height="64" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+  <text x="46" y="308" font-size="14" font-weight="bold" fill="#13263f">③ 양적기준 — 하나라도 넘으면 별도 보고</text>
+  <text x="46" y="330" font-size="13" fill="#4a5a6a">수익·손익 절대치·자산 중 하나가 합계의 10% (문단 13)</text>
+  <text x="476" y="308" font-size="13" fill="#3f3a2d">기준선 757 · 59.5 · 692 → 다섯 부문 통과</text>
+  <text x="476" y="330" font-size="13" fill="#8a5a12">헬스케어는 손실 120 때문에 걸렸다</text>
+
+  <path d="M 230 346 L 230 366" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah2)"/>
+
+  <!-- ④ -->
+  <rect x="30" y="368" width="400" height="64" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+  <text x="46" y="394" font-size="14" font-weight="bold" fill="#13263f">④ 외부수익 75%를 채웠는지 본다</text>
+  <text x="46" y="416" font-size="13" fill="#4a5a6a">모자라면 미달 부문을 더 넣어 채운다 (문단 15)</text>
+  <text x="476" y="394" font-size="13" fill="#3f3a2d">4,920 / 6,570 = 74.9% → 미달</text>
+  <text x="476" y="416" font-size="13" fill="#8a5a12">디스플레이를 넣어 85.5%, 여섯 부문으로 확정</text>
+
+  <path d="M 230 432 L 230 452" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah2)"/>
+
+  <!-- ⑤ -->
+  <rect x="30" y="454" width="400" height="64" rx="5" fill="#eef3f8" stroke="#1d3557" stroke-width="1.4"/>
+  <text x="46" y="480" font-size="14" font-weight="bold" fill="#13263f">⑤ 나머지는 '그 밖의 모든 부문'</text>
+  <text x="46" y="502" font-size="13" fill="#4a5a6a">통합해 조정항목과 구분하여 공시한다 (문단 16)</text>
+  <text x="476" y="480" font-size="13" fill="#3f3a2d">소프트웨어·신사업 → 외부수익 950</text>
+  <text x="476" y="502" font-size="13" fill="#3f3a2d">부문손익 −10 · 부문자산 710</text>
+
+  <path d="M 230 518 L 230 538" fill="none" stroke="#44484f" stroke-width="1.6" marker-end="url(#ah2)"/>
+
+  <!-- ⑥ -->
+  <rect x="30" y="540" width="820" height="48" rx="5" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="46" y="570" font-size="14" font-weight="bold" fill="#1d4733">⑥ 부문 합계를 기업전체 금액과 조정해 공시한다 (문단 28)</text>
+  <text x="836" y="570" font-size="14" font-weight="bold" text-anchor="end" fill="#1d4733">275 − 10 − 80 = 185</text>
+</svg>

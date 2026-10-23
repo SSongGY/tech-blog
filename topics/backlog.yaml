@@ -5190,7 +5190,7 @@ topics:
     angle: "보고부문을 가르는 기준과 양적 기준선. 전사 영업이익률 하나로는 안 보이던 적자 부문이 부문 공시에서 드러나는 상황을 가상 회사로 만든다."
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-081
     title: "주식기준보상 — 스톡옵션이 비용으로 잡히는 구조"
     category: Finance
