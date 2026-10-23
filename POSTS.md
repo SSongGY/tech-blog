@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **424편** · 갱신 2026-10-23
+총 **425편** · 갱신 2026-10-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -314,11 +314,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 61편
+## 기출문제 (exam) — 62편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-23 | [기출문제 — 가상발전소 전력수요 예측의 AI 기법: 시계열 딥러닝·강화학습·그래프신경망](posts/PE/exam/2026-10-23-vpp-demand-forecasting-ai-techniques/index.md) | 심화 | Hochreiter & Schmidhuber, Neural Computation 9(8) (1997), Lim et al., Temporal Fusion Transformers, arXiv:1912.09363 (2019-12, v3 2020-09), Sutton & Barto, Reinforcement Learning: An Introduction 2nd ed. (2018), Kipf & Welling, ICLR 2017, Liao et al., JMPSCE 10(2) (2022), 분산에너지 활성화 특별법 (2024-06-14 시행) | 문서 근거 |
+| 2026-10-23 | [기출문제 — 서브네팅과 슈퍼네팅, /22를 네 팀에 VLSM으로 나누기](posts/PE/exam/2026-10-23-subnetting-supernetting-vlsm/index.md) | 중급 | RFC 950 (1985), RFC 1338 (1992), RFC 1878 (1995), RFC 4632 (2006), Python 3.13.5 | 실행 검증 |
 | 2026-10-22 | [기출문제 — 가상메모리 관리기법과 단편화](posts/PE/exam/2026-10-22-virtual-memory-management-fragmentation/index.md) | 중급 | Denning, Virtual Memory, ACM Computing Surveys 2(3), 1970, Randell, CACM 12(7), 1969, Bonwick, USENIX Summer 1994, Linux kernel 7.3.0 문서 (docs.kernel.org) | 문서 근거 |
 | 2026-10-22 | [기출문제 — 재난·전쟁에 대비한 데이터센터 위치 선정과 대응전략](posts/PE/exam/2026-10-22-idc-site-selection-and-disaster-response/index.md) | 심화 | NIST SP 800-34 Rev.1 (2010-05, 2010-11 갱신), NIST SP 800-53 Rev.5 (2020-09), IBM DS8900F Documentation 9.4.0, 과학기술정보통신부고시 제2024-19호 (시행 2024-06-01) | 문서 근거 |
 | 2026-10-21 | [기출문제 — 뮤텍스, 세마포어, 모니터](posts/PE/exam/2026-10-21-mutex-semaphore-monitor/index.md) | 중급 | IEEE Std 1003.1-2017 (POSIX.1-2017, Issue 7 2018 Edition), Dijkstra, EWD123 (1965), Hoare, CACM 17(10), 1974, Lampson·Redell, CACM 23(2), 1980, Java SE 21 JLS §17.1, Sha·Rajkumar·Lehoczky, IEEE TC 39(9), 1990 | 문서 근거 |
