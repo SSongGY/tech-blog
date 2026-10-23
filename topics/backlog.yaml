@@ -5009,7 +5009,7 @@ topics:
     angle: "조건·액션 행 구성, 전체 결정 테이블과 최소화, 커버리지 정의와 조합 폭발 대응까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-181
     title: "MC/DC — 변경 조건·결정 커버리지와 안전필수 소프트웨어"
     category: PE
@@ -5020,7 +5020,7 @@ topics:
     angle: "분기 조건 조합 대비 케이스 수가 선형으로 억제되는 이유와 DO-178C 레벨 요구"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-182
     title: "최장 접두사 일치와 포워딩 테이블 탐색"
     category: PE

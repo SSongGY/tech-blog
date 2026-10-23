@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="15" font-weight="bold" fill="#1b1b1b">결정 테이블의 네 부분 — 행은 조건과 액션, 열은 규칙</text>
+
+  <!-- 표 바깥 테두리 -->
+  <rect x="40" y="52" width="700" height="218" fill="#ffffff" stroke="#44403c" stroke-width="1.6"/>
+
+  <!-- 구역 구분선 -->
+  <line x1="110" y1="52" x2="110" y2="270" stroke="#44403c" stroke-width="1.6"/>
+  <line x1="300" y1="52" x2="300" y2="270" stroke="#44403c" stroke-width="1.6"/>
+  <line x1="40" y1="80" x2="740" y2="80" stroke="#44403c" stroke-width="1.6"/>
+  <line x1="40" y1="164" x2="740" y2="164" stroke="#44403c" stroke-width="1.6"/>
+
+  <!-- 규칙 열 구분선 -->
+  <line x1="410" y1="52" x2="410" y2="270" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="520" y1="52" x2="520" y2="270" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="630" y1="52" x2="630" y2="270" stroke="#d6d3d1" stroke-width="1"/>
+  <!-- 행 구분선 -->
+  <line x1="110" y1="108" x2="740" y2="108" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="110" y1="136" x2="740" y2="136" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="110" y1="190" x2="740" y2="190" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="110" y1="216" x2="740" y2="216" stroke="#d6d3d1" stroke-width="1"/>
+  <line x1="110" y1="243" x2="740" y2="243" stroke="#d6d3d1" stroke-width="1"/>
+
+  <!-- 구역 이름 -->
+  <rect x="40" y="80" width="70" height="84" fill="#eef4f0"/>
+  <rect x="40" y="164" width="70" height="106" fill="#faf0e6"/>
+  <text x="75" y="118" font-size="14" fill="#2d6a4f" text-anchor="middle">조건부</text>
+  <text x="75" y="134" font-size="13" fill="#2d6a4f" text-anchor="middle">(원인)</text>
+  <text x="75" y="212" font-size="14" fill="#b45309" text-anchor="middle">액션부</text>
+  <text x="75" y="228" font-size="13" fill="#b45309" text-anchor="middle">(결과)</text>
+
+  <text x="205" y="72" font-size="13" fill="#57534e" text-anchor="middle">스텁 (항목 이름)</text>
+  <text x="355" y="72" font-size="13" fill="#1b1b1b" text-anchor="middle">규칙 1</text>
+  <text x="465" y="72" font-size="13" fill="#1b1b1b" text-anchor="middle">규칙 2</text>
+  <text x="575" y="72" font-size="13" fill="#1b1b1b" text-anchor="middle">규칙 3</text>
+  <text x="685" y="72" font-size="13" fill="#1b1b1b" text-anchor="middle">규칙 4</text>
+
+  <!-- 조건 행 -->
+  <text x="122" y="100" font-size="13" fill="#1b1b1b">토큰 유효</text>
+  <text x="355" y="100" font-size="14" fill="#1b1b1b" text-anchor="middle">F</text>
+  <text x="465" y="100" font-size="14" fill="#1b1b1b" text-anchor="middle">T</text>
+  <text x="575" y="100" font-size="14" fill="#1b1b1b" text-anchor="middle">T</text>
+  <text x="685" y="100" font-size="14" fill="#1b1b1b" text-anchor="middle">T</text>
+
+  <text x="122" y="128" font-size="13" fill="#1b1b1b">한도 이내</text>
+  <text x="355" y="128" font-size="14" fill="#9a3412" text-anchor="middle">–</text>
+  <text x="465" y="128" font-size="14" fill="#1b1b1b" text-anchor="middle">F</text>
+  <text x="575" y="128" font-size="14" fill="#1b1b1b" text-anchor="middle">T</text>
+  <text x="685" y="128" font-size="14" fill="#1b1b1b" text-anchor="middle">T</text>
+
+  <text x="122" y="156" font-size="13" fill="#1b1b1b">리소스 존재</text>
+  <text x="355" y="156" font-size="14" fill="#9a3412" text-anchor="middle">–</text>
+  <text x="465" y="156" font-size="14" fill="#9a3412" text-anchor="middle">–</text>
+  <text x="575" y="156" font-size="14" fill="#1b1b1b" text-anchor="middle">F</text>
+  <text x="685" y="156" font-size="14" fill="#1b1b1b" text-anchor="middle">T</text>
+
+  <!-- 액션 행 -->
+  <text x="122" y="183" font-size="13" fill="#1b1b1b">401 반환</text>
+  <text x="355" y="183" font-size="14" fill="#9d0208" text-anchor="middle">X</text>
+
+  <text x="122" y="209" font-size="13" fill="#1b1b1b">429 반환</text>
+  <text x="465" y="209" font-size="14" fill="#9d0208" text-anchor="middle">X</text>
+
+  <text x="122" y="236" font-size="13" fill="#1b1b1b">404 반환</text>
+  <text x="575" y="236" font-size="14" fill="#9d0208" text-anchor="middle">X</text>
+
+  <text x="122" y="262" font-size="13" fill="#1b1b1b">200 반환</text>
+  <text x="685" y="262" font-size="14" fill="#2d6a4f" text-anchor="middle">X</text>
+
+  <!-- 범례 -->
+  <text x="760" y="100" font-size="13" fill="#57534e">T 조건 충족</text>
+  <text x="760" y="124" font-size="13" fill="#57534e">F 충족 안 함</text>
+  <text x="760" y="148" font-size="13" fill="#9a3412">–  결과와 무관</text>
+  <text x="760" y="172" font-size="13" fill="#57534e">N/A 실현 불가</text>
+  <text x="760" y="196" font-size="13" fill="#9d0208">X 액션 수행</text>
+
+  <text x="40" y="320" font-size="15" font-weight="bold" fill="#1b1b1b">세 단계 — 전개하고, 지우고, 병합한다</text>
+
+  <rect x="40" y="340" width="186" height="76" rx="6" fill="#ffffff" stroke="#44403c" stroke-width="1.4"/>
+  <text x="133" y="366" font-size="14" fill="#1b1b1b" text-anchor="middle">① 전체 전개</text>
+  <text x="133" y="388" font-size="13" fill="#57534e" text-anchor="middle">조건 n개 → 2ⁿ 열</text>
+  <text x="133" y="406" font-size="13" fill="#b45309" text-anchor="middle">n=20이면 1,048,576</text>
+
+  <rect x="262" y="340" width="186" height="76" rx="6" fill="#ffffff" stroke="#44403c" stroke-width="1.4"/>
+  <text x="355" y="366" font-size="14" fill="#1b1b1b" text-anchor="middle">② 단순화</text>
+  <text x="355" y="388" font-size="13" fill="#57534e" text-anchor="middle">실현 불가능한 열 삭제</text>
+  <text x="355" y="406" font-size="13" fill="#57534e" text-anchor="middle">(N/A 조합)</text>
+
+  <rect x="484" y="340" width="186" height="76" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="577" y="366" font-size="14" fill="#2d6a4f" text-anchor="middle">③ 최소화</text>
+  <text x="577" y="388" font-size="13" fill="#57534e" text-anchor="middle">무관한 조건이 있는</text>
+  <text x="577" y="406" font-size="13" fill="#57534e" text-anchor="middle">열끼리 병합 → –</text>
+
+  <rect x="706" y="340" width="134" height="76" rx="6" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="773" y="366" font-size="14" fill="#2d6a4f" text-anchor="middle">커버리지 항목</text>
+  <text x="773" y="388" font-size="13" fill="#57534e" text-anchor="middle">= 남은 열</text>
+  <text x="773" y="406" font-size="13" fill="#57534e" text-anchor="middle">100% = 전부 실행</text>
+
+  <line x1="226" y1="378" x2="258" y2="378" stroke="#44403c" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="448" y1="378" x2="480" y2="378" stroke="#44403c" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="670" y1="378" x2="702" y2="378" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arg)"/>
+
+  <text x="40" y="452" font-size="13" fill="#57534e">②와 ③은 순서가 정해져 있다 — 실현 불가능한 열을 먼저 지워야 그 조합이 병합에 끌려 들어가지 않는다.</text>
+
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#44403c"/>
+    </marker>
+    <marker id="arg" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

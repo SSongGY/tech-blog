@@ -199,6 +199,10 @@ ISTQB는 두 가지 방식을 구분한다. **2-value**는 경계값마다 그 �
 **어떤 결함을 받아들일 수 없는가**의 문제로 다뤄야 한다.
 
 > 개념 정리: [테스트 레벨과 테스트 기법 분류](../../software-engineering/2026-09-21-test-levels-and-techniques/index.md)
+>
+> 개념 정리: [결정 테이블 테스팅 — 조건 조합을 빠짐없이 케이스로 바꾸는 절차](../../software-engineering/2026-10-23-decision-table-testing/index.md)
+>
+> 개념 정리: [MC/DC — 조건마다 독립 영향을 보이는 커버리지와 안전필수 소프트웨어](../../software-engineering/2026-10-23-mcdc-modified-condition-decision-coverage/index.md)
 
 끝
 
@@ -223,3 +227,5 @@ ISTQB는 두 가지 방식을 구분한다. **2-value**는 경계값마다 그 �
 - [ISTQB Certified Tester Foundation Level Syllabus v4.0.1 (2024-09-15)](https://astqb.org/assets/documents/ISTQB_CTFL_Syllabus_v4.0.1.pdf) — §1.3 테스트 원리, §4.1 기법 분류, §4.2.1 Equivalence Partitioning, §4.2.2 Boundary Value Analysis, §4.3 White-Box Test Techniques
 - [ISO/IEC/IEEE 29119-4:2021 Software and systems engineering — Software testing — Part 4: Test techniques](https://www.iso.org/standard/79430.html) — 5.2 명세 기반 기법, 5.3 구조 기반 기법, 5.4 경험 기반 기법 (목차는 발행처 공개 미리보기로 확인, 본문은 유료)
 - [테스트 레벨과 테스트 기법 분류](../../software-engineering/2026-09-21-test-levels-and-techniques/index.md) — 같은 표준을 근거로 한 개념 정리
+- [결정 테이블 테스팅 — 조건 조합을 빠짐없이 케이스로 바꾸는 절차](../../software-engineering/2026-10-23-decision-table-testing/index.md) — (나)의 명세 기반 기법 가운데 조건 조합을 다루는 기법의 개념 정리
+- [MC/DC — 조건마다 독립 영향을 보이는 커버리지와 안전필수 소프트웨어](../../software-engineering/2026-10-23-mcdc-modified-condition-decision-coverage/index.md) — (나)의 화이트박스 기법 가운데 가장 강한 커버리지 기준의 개념 정리
