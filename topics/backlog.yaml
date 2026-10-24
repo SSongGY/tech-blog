@@ -5053,7 +5053,7 @@ topics:
     angle: "ISO/IEC 25012의 15개 데이터 품질특성을 어떻게 수치로 재는가. 측정함수(measurement function)와 품질 측정원소(quality measure element)의 관계, 5259-2가 25024의 측정을 가져다 쓰면서 AI용으로 고친 지점"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-185
     title: "DBSCAN 밀도 기반 군집화 — 군집과 잡음을 같은 정의로 산출하는 구조"
     category: PE
@@ -5064,7 +5064,7 @@ topics:
     angle: "Eps-이웃부터 잡음까지 여섯 정의를 쌓아 올리는 방식과, 분할 방식이 이상치를 따로 낼 수 없는 이유를 대비해 설명한다. k-dist 그래프로 파라미터를 하나로 줄이는 휴리스틱까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-186
     title: "협업 필터링 — 사용자 기반, 아이템 기반, 행렬 분해"
     category: PE
