@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowBack" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b2a24">프로젝트 위험관리 7개 프로세스 — PMBOK 제6판</text>
+  <text x="40" y="58" font-size="13" fill="#4a5a52">다섯은 계획, 대응 실행은 실행, 감시는 감시·통제 프로세스 그룹에 놓인다</text>
+
+  <rect x="40" y="80" width="520" height="186" rx="12" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="300" y="104" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">계획 프로세스 그룹</text>
+
+  <rect x="576" y="80" width="130" height="186" rx="12" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="641" y="104" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">실행</text>
+
+  <rect x="722" y="80" width="118" height="186" rx="12" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="781" y="104" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">감시·통제</text>
+
+  <rect x="48" y="118" width="94" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="95" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">① 위험관리</text>
+  <text x="95" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">계획</text>
+  <text x="95" y="212" font-size="13" fill="#4a5a52" text-anchor="middle">허용수준</text>
+
+  <rect x="150" y="118" width="94" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="197" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">② 위험</text>
+  <text x="197" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">식별</text>
+  <text x="197" y="212" font-size="13" fill="#4a5a52" text-anchor="middle">등록부</text>
+
+  <rect x="252" y="118" width="94" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="299" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">③ 정성적</text>
+  <text x="299" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">위험 분석</text>
+  <text x="299" y="212" font-size="13" fill="#4a5a52" text-anchor="middle">우선순위</text>
+
+  <rect x="354" y="118" width="94" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="401" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">④ 정량적</text>
+  <text x="401" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">위험 분석</text>
+  <text x="401" y="212" font-size="13" fill="#4a5a52" text-anchor="middle">노출도</text>
+
+  <rect x="456" y="118" width="94" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="503" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑤ 위험 대응</text>
+  <text x="503" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">계획</text>
+  <text x="503" y="212" font-size="13" fill="#4a5a52" text-anchor="middle">전략·담당자</text>
+
+  <rect x="584" y="118" width="114" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.4"/>
+  <text x="641" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑥ 위험 대응</text>
+  <text x="641" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">실행</text>
+  <text x="641" y="212" font-size="13" fill="#b45309" text-anchor="middle">제6판 신설</text>
+
+  <rect x="730" y="118" width="102" height="130" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="781" y="162" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑦ 위험</text>
+  <text x="781" y="182" font-size="13" font-weight="bold" fill="#1b2a24" text-anchor="middle">감시</text>
+  <text x="781" y="212" font-size="13" fill="#4a5a52" text-anchor="middle">잔존·신규</text>
+
+  <line x1="562" y1="183" x2="578" y2="183" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="708" y1="183" x2="724" y2="183" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <path d="M781,268 L781,300 L197,300 L197,252" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowBack)"/>
+  <text x="489" y="322" font-size="13" fill="#b45309" text-anchor="middle">신규·창발 위험을 다시 식별한다 — 착수 시점의 등록부로 끝내지 않는다</text>
+
+  <text x="48" y="352" font-size="13" fill="#4a5a52">제5판은 6개였다. 대응 실행이 제6판에서 떨어져 나왔고, 위험 통제는 위험 감시로 이름이 바뀌었다.</text>
+</svg>
