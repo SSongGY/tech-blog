@@ -216,6 +216,10 @@ log₂(주소 비트 수)이므로, 항목이 몇 개든 IPv4는 5회, IPv6는 7
 아닌 형태로 주어졌을 때, 자료구조를 통째로 버릴 것인지, 키 표현을 바꿔 쓰던 구조를 살릴
 것인지, 탐색하는 축 자체를 옮길 것인지를 저울질하는 것이다.
 
+> 개념 정리: [최장 접두사 일치와 포워딩 테이블 탐색](../../network/2026-10-25-longest-prefix-match-forwarding-lookup/index.md)
+>
+> 개념 정리: [트라이와 PATRICIA — 비교 대신 비트로 분기하는 탐색 구조](../../software-engineering/2026-10-25-trie-and-patricia-bit-branching/index.md)
+
 끝
 
 ---

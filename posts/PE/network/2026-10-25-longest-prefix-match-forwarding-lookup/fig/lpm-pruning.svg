@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="880" height="370" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="370" fill="#fdfdfb"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#1f2937">목적지 10.1.2.3 에 대한 경로 선별 — 규칙을 순서대로 적용해 후보를 줄인다</text>
+
+  <!-- column headers -->
+  <text x="30" y="62" font-size="14" font-weight="bold" fill="#334155">포워딩 테이블 (항목 4개)</text>
+  <text x="330" y="62" font-size="14" font-weight="bold" fill="#334155">규칙 1 · 기본 일치</text>
+  <text x="630" y="62" font-size="14" font-weight="bold" fill="#334155">규칙 2 · 최장 일치</text>
+
+  <!-- col 1: table -->
+  <rect x="30" y="74" width="230" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="95" font-size="13" fill="#1f2937">0.0.0.0/0 → ISP-A</text>
+  <rect x="30" y="114" width="230" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="135" font-size="13" fill="#1f2937">10.0.0.0/8 → R1</text>
+  <rect x="30" y="154" width="230" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="175" font-size="13" fill="#1f2937">10.1.0.0/16 → R2</text>
+  <rect x="30" y="194" width="230" height="32" rx="4" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="42" y="215" font-size="13" fill="#1f2937">172.16.0.0/12 → R3</text>
+
+  <!-- arrow 1 -->
+  <line x1="268" y1="150" x2="312" y2="150" stroke="#334155" stroke-width="2"/>
+  <polygon points="322,150 310,145 310,155" fill="#334155"/>
+
+  <!-- col 2: basic match -->
+  <rect x="330" y="74" width="230" height="32" rx="4" fill="#eef7f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="342" y="95" font-size="13" fill="#17422f">0.0.0.0/0 — 길이 0, 남음</text>
+  <rect x="330" y="114" width="230" height="32" rx="4" fill="#eef7f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="342" y="135" font-size="13" fill="#17422f">10.0.0.0/8 — 길이 8, 남음</text>
+  <rect x="330" y="154" width="230" height="32" rx="4" fill="#eef7f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="342" y="175" font-size="13" fill="#17422f">10.1.0.0/16 — 길이 16, 남음</text>
+  <rect x="330" y="194" width="230" height="32" rx="4" fill="#fbecec" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <text x="342" y="215" font-size="13" fill="#7a0206">172.16.0.0/12 — 버림</text>
+
+  <!-- arrow 2 -->
+  <line x1="568" y1="150" x2="612" y2="150" stroke="#334155" stroke-width="2"/>
+  <polygon points="622,150 610,145 610,155" fill="#334155"/>
+
+  <!-- col 3 -->
+  <rect x="630" y="114" width="220" height="32" rx="4" fill="#eef7f1" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="642" y="135" font-size="13" font-weight="bold" fill="#17422f">10.1.0.0/16 — 길이 최대</text>
+
+  <line x1="740" y1="152" x2="740" y2="190" stroke="#2d6a4f" stroke-width="2"/>
+  <polygon points="740,200 735,188 745,188" fill="#2d6a4f"/>
+  <rect x="630" y="204" width="220" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="642" y="225" font-size="13" font-weight="bold" fill="#17422f">다음 홉 = R2</text>
+
+  <!-- notes -->
+  <text x="30" y="276" font-size="13" fill="#b45309">남은 규칙 3개(약 TOS · 최선 메트릭 · 벤더 정책)는 길이가 같은 경로가 둘 이상 남았을 때만 일한다.</text>
+  <text x="30" y="300" font-size="13" fill="#334155">기본 경로 0.0.0.0/0 은 접두사 길이가 0 이므로 별도 예외 없이 규칙 2 에서 가장 먼저 밀려난다.</text>
+  <text x="30" y="324" font-size="13" fill="#334155">세 경로가 동시에 맞는 이유는 접두사가 값이 아니라 주소 구간이고, 구간끼리 포함 관계로 겹치기 때문이다.</text>
+</svg>

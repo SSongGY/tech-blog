@@ -5031,7 +5031,7 @@ topics:
     angle: "RFC 1812의 경로 선별 규칙에서 출발해 접두사가 왜 구간으로 겹치는지, 포워딩 테이블 탐색이 정확 일치 탐색과 무엇이 다른지를 정리한다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-183
     title: "트라이와 PATRICIA — 비교 대신 비트로 분기하는 탐색 구조"
     category: PE
@@ -5042,7 +5042,7 @@ topics:
     angle: "이진 탐색 트리와 달리 삽입 순서에 무관하게 모양이 정해지는 이유, 경로 압축과 레벨 압축이 깊이를 줄이는 방식을 원 논문 근거로 정리한다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-184
     title: "ISO/IEC 25024 데이터 품질 측정 — 측정함수와 품질 측정원소"
     category: PE
