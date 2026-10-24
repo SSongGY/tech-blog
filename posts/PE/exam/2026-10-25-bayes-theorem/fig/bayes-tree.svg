@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="340" fill="#fbfbfd"/>
+
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="28" font-size="15" font-weight="bold" fill="#1f2937">사전확률과 가능도에서 사후확률이 나오는 경로</text>
+
+  <!-- root -->
+  <rect x="24" y="148" width="104" height="50" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="1.6"/>
+  <text x="76" y="170" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">전체 세션</text>
+  <text x="76" y="189" font-size="13" fill="#4b5563" text-anchor="middle">100만 건</text>
+
+  <!-- hypotheses -->
+  <rect x="212" y="64" width="172" height="56" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="298" y="87" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">H : 침입이다</text>
+  <text x="298" y="107" font-size="13" fill="#39533f" text-anchor="middle">P(H) = 0.001</text>
+
+  <rect x="212" y="222" width="172" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="298" y="245" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">¬H : 정상이다</text>
+  <text x="298" y="265" font-size="13" fill="#4b5563" text-anchor="middle">P(¬H) = 0.999</text>
+
+  <line x1="128" y1="166" x2="206" y2="104" stroke="#374151" stroke-width="1.6" marker-end="url(#k)"/>
+  <line x1="128" y1="182" x2="206" y2="240" stroke="#374151" stroke-width="1.6" marker-end="url(#k)"/>
+
+  <!-- evidence -->
+  <rect x="466" y="64" width="212" height="56" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="572" y="87" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">E : 경보 — 참탐지</text>
+  <text x="572" y="107" font-size="13" fill="#39533f" text-anchor="middle">0.001 × 0.99 = 0.00099</text>
+
+  <rect x="466" y="222" width="212" height="56" rx="6" fill="#fdeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="572" y="245" font-size="14" font-weight="bold" fill="#7a0206" text-anchor="middle">E : 경보 — 오탐</text>
+  <text x="572" y="265" font-size="13" fill="#8a1114" text-anchor="middle">0.999 × 0.01 = 0.00999</text>
+
+  <line x1="384" y1="92" x2="460" y2="92" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <text x="422" y="56" font-size="13" fill="#2d6a4f" text-anchor="middle">P(E|H)=0.99</text>
+
+  <line x1="384" y1="250" x2="460" y2="250" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+  <text x="422" y="214" font-size="13" fill="#9d0208" text-anchor="middle">P(E|¬H)=0.01</text>
+
+  <!-- result -->
+  <rect x="700" y="128" width="156" height="86" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="1.8"/>
+  <text x="778" y="152" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">사후확률 P(H|E)</text>
+  <text x="778" y="174" font-size="13" fill="#4b5563" text-anchor="middle">0.00099 ÷ 0.01098</text>
+  <text x="778" y="196" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">≈ 9.02%</text>
+
+  <line x1="678" y1="104" x2="698" y2="146" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="678" y1="250" x2="698" y2="200" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+
+  <text x="24" y="320" font-size="13" fill="#4b5563">분모 P(E) = 0.00099 + 0.00999 = 0.01098 — 두 갈래의 경보를 더한 것이 전확률이다. 그림의 칸 크기는 확률에 비례하지 않는다.</text>
+</svg>

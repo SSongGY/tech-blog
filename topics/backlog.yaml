@@ -5993,3 +5993,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-201
+    title: "나이브 베이즈 분류기"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "베이즈 정리에서 조건부 독립 가정을 넣어 곱으로 분해하는 과정, 라플라스 스무딩과 로그 확률 합산, 스팸 필터·문서 분류 적용과 가정이 깨지는 지점"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-202
+    title: "ISO/IEC 23894 인공지능 위험관리"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "ISO 31000의 원칙·프레임워크·프로세스를 AI에 맞춰 옮긴 구조와 부속서의 AI 고유 위험원, ISO/IEC 42001 6.1.2와 어떻게 맞물리는지"
+    code: none
+    origin: exam
+    status: todo
