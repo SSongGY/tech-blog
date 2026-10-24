@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="특수관계자 범위 안에 연결실체가 더 좁게 들어 있고, 관계기업과 주요 경영진은 특수관계자이지만 연결 범위 밖에 있으며, 오른쪽에 특수관계자가 아닌 네 가지를 모은 구조도">
+  <rect width="880" height="400" fill="#f7f8fa"/>
+
+  <text x="24" y="32" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1f23">특수관계자 범위와 연결 범위는 겹치지만 같지 않다</text>
+
+  <!-- 특수관계자 범위 -->
+  <rect x="24" y="52" width="612" height="320" rx="8" fill="#ffffff" stroke="#55606b" stroke-width="2"/>
+  <text x="44" y="78" font-family="sans-serif" font-size="14" font-weight="bold" fill="#55606b">특수관계자 (문단 9) — 이 안의 거래는 주석에 적는다</text>
+
+  <!-- 연결실체 -->
+  <rect x="44" y="94" width="306" height="258" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="7 4"/>
+  <text x="62" y="118" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">연결실체 — 연결에서 상계된다</text>
+
+  <rect x="66" y="136" width="262" height="62" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="82" y="160" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">마바홀딩스</text>
+  <text x="82" y="183" font-family="sans-serif" font-size="13" fill="#1b1f23">지배기업 · 연결재무제표를 만든다</text>
+
+  <path d="M 197 200 L 197 252" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <rect x="150" y="214" width="94" height="24" rx="3" fill="#e7f1ec"/>
+  <text x="197" y="231" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2d6a4f">지분 100%</text>
+
+  <rect x="66" y="256" width="262" height="62" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="82" y="280" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">사아전자</text>
+  <text x="82" y="303" font-family="sans-serif" font-size="13" fill="#1b1f23">종속기업 · 별도재무제표도 낸다</text>
+
+  <text x="62" y="340" font-family="sans-serif" font-size="13" fill="#9d0208">둘 사이의 거래는 연결 주석에 나오지 않는다</text>
+
+  <!-- 연결 밖의 특수관계자 -->
+  <rect x="370" y="136" width="246" height="92" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="388" y="160" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">자차물산</text>
+  <text x="388" y="183" font-family="sans-serif" font-size="13" fill="#1b1f23">관계기업 · 사아전자가 지분 30%</text>
+  <text x="388" y="206" font-family="sans-serif" font-size="13" fill="#1b1f23">지분법 대상이라 합산하지 않는다</text>
+
+  <rect x="370" y="248" width="246" height="92" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="388" y="272" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309">주요 경영진</text>
+  <text x="388" y="295" font-family="sans-serif" font-size="13" fill="#1b1f23">이사·임원과 그 가까운 가족</text>
+  <text x="388" y="318" font-family="sans-serif" font-size="13" fill="#1b1f23">보상을 다섯 분류로 공시한다</text>
+
+  <path d="M 332 182 L 364 182" stroke="#b45309" stroke-width="2" fill="none" marker-end="url(#arrowB)"/>
+
+  <!-- 특수관계자가 아닌 것 -->
+  <rect x="656" y="52" width="200" height="320" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="674" y="78" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208">특수관계자가 아니다</text>
+  <text x="674" y="98" font-family="sans-serif" font-size="13" fill="#9d0208">(문단 11)</text>
+  <text x="674" y="132" font-family="sans-serif" font-size="13" fill="#1b1f23">임원만 겸직하는</text>
+  <text x="674" y="152" font-family="sans-serif" font-size="13" fill="#1b1f23">두 기업</text>
+  <text x="674" y="186" font-family="sans-serif" font-size="13" fill="#1b1f23">같은 공동기업을</text>
+  <text x="674" y="206" font-family="sans-serif" font-size="13" fill="#1b1f23">공동지배하는 참여자</text>
+  <text x="674" y="240" font-family="sans-serif" font-size="13" fill="#1b1f23">주거래은행·노동조합</text>
+  <text x="674" y="260" font-family="sans-serif" font-size="13" fill="#1b1f23">전기 공급자</text>
+  <text x="674" y="294" font-family="sans-serif" font-size="13" fill="#1b1f23">매출을 크게 차지하는</text>
+  <text x="674" y="314" font-family="sans-serif" font-size="13" fill="#1b1f23">대형 고객</text>
+  <text x="674" y="348" font-family="sans-serif" font-size="13" fill="#9d0208">거래가 많다는 사실만으로</text>
+  <text x="674" y="366" font-family="sans-serif" font-size="13" fill="#9d0208">특수관계가 생기지 않는다</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
