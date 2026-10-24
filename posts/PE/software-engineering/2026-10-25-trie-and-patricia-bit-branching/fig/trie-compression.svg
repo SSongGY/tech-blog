@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fdfdfb"/>
+
+  <text x="24" y="26" font-size="16" font-weight="bold" fill="#1f2937">같은 키 집합 {0000, 0001, 0010, 0011} 을 담은 세 가지 트라이</text>
+
+  <text x="150" y="56" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">① 이진 트라이</text>
+  <text x="440" y="56" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">② 경로 압축 (PATRICIA)</text>
+  <text x="730" y="56" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">③ 레벨 압축까지 (LC-트라이)</text>
+
+  <!-- ===== panel 1: plain binary trie ===== -->
+  <line x1="150" y1="92" x2="150" y2="132" stroke="#9d0208" stroke-width="2"/>
+  <line x1="150" y1="132" x2="150" y2="172" stroke="#9d0208" stroke-width="2"/>
+  <line x1="150" y1="172" x2="110" y2="212" stroke="#334155" stroke-width="1.6"/>
+  <line x1="150" y1="172" x2="190" y2="212" stroke="#334155" stroke-width="1.6"/>
+  <line x1="110" y1="212" x2="90" y2="252" stroke="#334155" stroke-width="1.6"/>
+  <line x1="110" y1="212" x2="130" y2="252" stroke="#334155" stroke-width="1.6"/>
+  <line x1="190" y1="212" x2="170" y2="252" stroke="#334155" stroke-width="1.6"/>
+  <line x1="190" y1="212" x2="210" y2="252" stroke="#334155" stroke-width="1.6"/>
+
+  <circle cx="150" cy="92" r="11" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
+  <circle cx="150" cy="132" r="11" fill="#fbecec" stroke="#9d0208" stroke-width="1.8"/>
+  <circle cx="150" cy="172" r="11" fill="#fbecec" stroke="#9d0208" stroke-width="1.8"/>
+  <circle cx="110" cy="212" r="11" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
+  <circle cx="190" cy="212" r="11" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
+  <circle cx="90" cy="252" r="9" fill="#334155"/>
+  <circle cx="130" cy="252" r="9" fill="#334155"/>
+  <circle cx="170" cy="252" r="9" fill="#334155"/>
+  <circle cx="210" cy="252" r="9" fill="#334155"/>
+
+  <text x="232" y="137" font-size="13" fill="#9d0208">자식이 하나뿐인</text>
+  <text x="232" y="155" font-size="13" fill="#9d0208">내부 노드 2개</text>
+
+  <text x="90" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0000</text>
+  <text x="130" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0001</text>
+  <text x="170" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0010</text>
+  <text x="210" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0011</text>
+
+  <text x="150" y="306" font-size="13" font-weight="bold" fill="#1f2937" text-anchor="middle">노드 9개 · 깊이 4</text>
+
+  <!-- ===== panel 2: path compressed ===== -->
+  <line x1="440" y1="92" x2="400" y2="172" stroke="#334155" stroke-width="1.6"/>
+  <line x1="440" y1="92" x2="480" y2="172" stroke="#334155" stroke-width="1.6"/>
+  <line x1="400" y1="172" x2="380" y2="252" stroke="#334155" stroke-width="1.6"/>
+  <line x1="400" y1="172" x2="420" y2="252" stroke="#334155" stroke-width="1.6"/>
+  <line x1="480" y1="172" x2="460" y2="252" stroke="#334155" stroke-width="1.6"/>
+  <line x1="480" y1="172" x2="500" y2="252" stroke="#334155" stroke-width="1.6"/>
+
+  <circle cx="440" cy="92" r="11" fill="#fff7ed" stroke="#b45309" stroke-width="2.2"/>
+  <circle cx="400" cy="172" r="11" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
+  <circle cx="480" cy="172" r="11" fill="#ffffff" stroke="#334155" stroke-width="1.8"/>
+  <circle cx="380" cy="252" r="9" fill="#334155"/>
+  <circle cx="420" cy="252" r="9" fill="#334155"/>
+  <circle cx="460" cy="252" r="9" fill="#334155"/>
+  <circle cx="500" cy="252" r="9" fill="#334155"/>
+
+  <text x="440" y="77" font-size="13" fill="#b45309" text-anchor="middle">skip = 2 (앞 두 비트 00 을 건너뜀)</text>
+
+  <text x="380" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0000</text>
+  <text x="420" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0001</text>
+  <text x="460" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0010</text>
+  <text x="500" y="276" font-size="13" fill="#1f2937" text-anchor="middle">0011</text>
+
+  <text x="440" y="306" font-size="13" font-weight="bold" fill="#1f2937" text-anchor="middle">노드 7개 (= 2n-1) · 깊이 2</text>
+
+  <!-- ===== panel 3: level compressed ===== -->
+  <line x1="730" y1="92" x2="670" y2="172" stroke="#2d6a4f" stroke-width="1.8"/>
+  <line x1="730" y1="92" x2="710" y2="172" stroke="#2d6a4f" stroke-width="1.8"/>
+  <line x1="730" y1="92" x2="750" y2="172" stroke="#2d6a4f" stroke-width="1.8"/>
+  <line x1="730" y1="92" x2="790" y2="172" stroke="#2d6a4f" stroke-width="1.8"/>
+
+  <circle cx="730" cy="92" r="11" fill="#eef7f1" stroke="#2d6a4f" stroke-width="2.4"/>
+  <circle cx="670" cy="172" r="9" fill="#334155"/>
+  <circle cx="710" cy="172" r="9" fill="#334155"/>
+  <circle cx="750" cy="172" r="9" fill="#334155"/>
+  <circle cx="790" cy="172" r="9" fill="#334155"/>
+
+  <text x="730" y="77" font-size="13" fill="#2d6a4f" text-anchor="middle">skip = 2 · 분기 차수 4</text>
+
+  <text x="670" y="196" font-size="13" fill="#1f2937" text-anchor="middle">0000</text>
+  <text x="710" y="196" font-size="13" fill="#1f2937" text-anchor="middle">0001</text>
+  <text x="750" y="196" font-size="13" fill="#1f2937" text-anchor="middle">0010</text>
+  <text x="790" y="196" font-size="13" fill="#1f2937" text-anchor="middle">0011</text>
+
+  <text x="730" y="306" font-size="13" font-weight="bold" fill="#1f2937" text-anchor="middle">노드 5개 · 깊이 1</text>
+
+  <!-- footer -->
+  <text x="24" y="344" font-size="13" fill="#334155">① → ② 경로 압축: 자식이 하나뿐인 내부 노드를 없애고 건너뛴 비트 수를 노드에 적는다.</text>
+  <text x="24" y="366" font-size="13" fill="#334155">② → ③ 레벨 압축: 꽉 찬 상위 i개 레벨을 차수 2ⁱ 노드 하나로 접는다. 여기서는 i = 2.</text>
+</svg>
