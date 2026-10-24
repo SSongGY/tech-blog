@@ -5223,7 +5223,7 @@ topics:
     angle: "총차입금에서 현금성자산을 빼는 이유와 빼면 안 되는 경우. 부채비율이 같은데 순차입금배수는 크게 갈리는 두 회사를 만들어 대조한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-084
     title: "운전자본 증감 — 이익과 현금흐름을 가장 크게 벌리는 항목"
     category: Finance
@@ -5234,7 +5234,7 @@ topics:
     angle: "매출채권·재고·매입채무가 늘고 주는 것이 영업활동 현금흐름에 더해지고 빼지는 방향. 매출이 커질수록 현금이 마르는 성장 기업의 모양을 계산으로 만든다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-085
     title: "EBITDA 마진 — 편하지만 틀리기 쉬운 지표"
     category: Finance
