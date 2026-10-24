@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fbfaf7"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1f2937">간접법 — 당기순이익에서 영업활동 현금흐름까지 (억원)</text>
+  <text x="24" y="54" font-size="13" fill="#4b5563">사름식품이 매출 1,000에서 1,500으로 자란 해. 영업이익 90.00, 당기순이익 70.20인데 영업에서는 현금이 빠져나간다</text>
+
+  <!-- 0 기준선 -->
+  <line x1="60" y1="300" x2="856" y2="300" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="38" y="305" font-size="13" fill="#6b7280">0</text>
+
+  <!-- 연결선 -->
+  <line x1="180" y1="173.6" x2="220" y2="173.6" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="310" y1="106.1" x2="350" y2="106.1" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="440" y1="254.1" x2="480" y2="254.1" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="570" y1="374.9" x2="610" y2="374.9" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="700" y1="323.1" x2="740" y2="323.1" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- 당기순이익 70.20 -->
+  <rect x="90" y="173.6" width="90" height="126.4" fill="#2d6a4f"/>
+  <text x="135" y="167" font-size="14" fill="#2d6a4f" text-anchor="middle">+70.20</text>
+  <text x="135" y="420" font-size="13" fill="#374151" text-anchor="middle">당기순이익</text>
+
+  <!-- 감가상각비 +37.50 -->
+  <rect x="220" y="106.1" width="90" height="67.5" fill="#52a37a"/>
+  <text x="265" y="99" font-size="14" fill="#2d6a4f" text-anchor="middle">+37.50</text>
+  <text x="265" y="420" font-size="13" fill="#374151" text-anchor="middle">감가상각비</text>
+
+  <!-- 매출채권 증가 −82.19 -->
+  <rect x="350" y="106.1" width="90" height="148.0" fill="#9d0208"/>
+  <text x="395" y="186" font-size="14" fill="#ffffff" text-anchor="middle">−82.19</text>
+  <text x="395" y="420" font-size="13" fill="#374151" text-anchor="middle">매출채권 증가</text>
+
+  <!-- 재고자산 증가 −67.12 -->
+  <rect x="480" y="254.1" width="90" height="120.8" fill="#9d0208"/>
+  <text x="525" y="320" font-size="14" fill="#ffffff" text-anchor="middle">−67.12</text>
+  <text x="525" y="420" font-size="13" fill="#374151" text-anchor="middle">재고자산 증가</text>
+
+  <!-- 매입채무 증가 +28.77 -->
+  <rect x="610" y="323.1" width="90" height="51.8" fill="#52a37a"/>
+  <text x="655" y="392" font-size="14" fill="#2d6a4f" text-anchor="middle">+28.77</text>
+  <text x="655" y="420" font-size="13" fill="#374151" text-anchor="middle">매입채무 증가</text>
+
+  <!-- 영업활동 현금흐름 −12.85 -->
+  <rect x="740" y="300" width="90" height="23.1" fill="#6b0206"/>
+  <text x="785" y="341" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">−12.85</text>
+  <text x="785" y="420" font-size="13" fill="#374151" text-anchor="middle">영업활동 현금흐름</text>
+
+  <text x="24" y="443" font-size="13" fill="#4b5563">초록은 가산, 붉은색은 차감. 운전자본 세 항목의 합계 −120.55가 당기순이익과 감가상각비의 합계 107.70을 넘겨 부호를 뒤집는다.</text>
+</svg>
