@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **427편** · 갱신 2026-10-25
+총 **429편** · 갱신 2026-10-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -383,10 +383,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 78편
+## 주식·재무 (finance) — 80편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-25 | [주식기준보상 — 현금이 나가지 않는데 비용으로 잡히는 구조](posts/Finance/statements/2026-10-25-share-based-payment-vesting-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1102호 주식기준보상, IFRS 2 Share-based Payment (2023년판) | 실행 검증 |
+| 2026-10-25 | [특수관계자 거래 주석 — 연결에서 사라지는 거래와 별도에 남는 거래](posts/Finance/statements/2026-10-25-related-party-disclosures-consolidation/index.md) | 입문 | Python 3.13.5, K-IFRS 제1024호 특수관계자 공시, IAS 24 Related Party Disclosures (2022년판) | 실행 검증 |
 | 2026-10-23 | [부문별 정보 — 합쳐진 숫자를 쪼개 보는 자리](posts/Finance/statements/2026-10-23-operating-segments-disclosure/index.md) | 중급 | Python 3.13.5, K-IFRS 제1108호 영업부문 | 실행 검증 |
 | 2026-10-23 | [현금흐름표 직접법과 간접법 — 같은 현금, 다른 서술](posts/Finance/statements/2026-10-23-cash-flow-direct-vs-indirect/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
 | 2026-10-22 | [연구개발비 — 어디까지가 자산이고 어디부터가 비용인가](posts/Finance/statements/2026-10-22-rnd-capitalisation-vs-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1038호 무형자산, K-IFRS 제1036호 자산손상, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
