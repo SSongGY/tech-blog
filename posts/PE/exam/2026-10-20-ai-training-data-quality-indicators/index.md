@@ -245,6 +245,8 @@ AI 학습용 데이터 품질관리의 요지는 세 문장으로 줄어든다.
 
 > 개념 정리: [ISO/IEC 5259 — 분석·머신러닝용 데이터 품질 표준 시리즈](../../data-analysis/2026-09-30-iso-iec-5259-data-quality-series/index.md)
 >
+> 개념 정리: [ISO/IEC 25024 데이터 품질 측정 — 품질 측정원소와 측정함수](../../data-analysis/2026-10-25-iso-25024-data-quality-measurement-qme/index.md)
+>
 > 같은 주제를 품질관리 원칙과 범위 중심으로 쓴 답안: [인공지능 학습용 데이터 품질관리](../2026-09-30-ai-training-data-quality-management/index.md)
 
 끝

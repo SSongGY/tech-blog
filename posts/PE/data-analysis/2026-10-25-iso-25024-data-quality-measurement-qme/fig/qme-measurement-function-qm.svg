@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfaf7"/>
+  <text x="40" y="36" font-size="15" font-weight="bold" fill="#1b1b1b">ISO/IEC 25024의 측정 구조 — 품질 측정원소에서 데이터 품질측도까지</text>
+
+  <defs>
+    <marker id="up" markerWidth="10" markerHeight="10" refX="5" refY="9" orient="auto">
+      <path d="M5,0 L10,10 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="left" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M10,5 L0,0 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- 왼쪽 3층 -->
+  <rect x="60" y="320" width="360" height="74" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="80" y="346" font-size="14" font-weight="bold" fill="#2d6a4f">① 품질 측정원소 (QME)</text>
+  <text x="80" y="368" font-size="13" fill="#1b1b1b">세거나 재어 얻는 기본값</text>
+  <text x="80" y="386" font-size="13" fill="#555047">예: 규칙을 만족하는 항목 수 A, 대상 항목 총수 B</text>
+
+  <path d="M240,320 L240,296" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#up)"/>
+
+  <rect x="60" y="210" width="360" height="74" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="80" y="236" font-size="14" font-weight="bold" fill="#2d6a4f">② 측정함수</text>
+  <text x="80" y="258" font-size="13" fill="#1b1b1b">둘 이상의 QME를 결합하는 계산식</text>
+  <text x="80" y="276" font-size="13" fill="#555047">예: X = A / B</text>
+
+  <path d="M240,210 L240,186" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#up)"/>
+
+  <rect x="60" y="100" width="360" height="74" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2.4"/>
+  <text x="80" y="126" font-size="14" font-weight="bold" fill="#2d6a4f">③ 데이터 품질측도 (QM)</text>
+  <text x="80" y="148" font-size="13" fill="#1b1b1b">한 품질특성을 한 목표 엔티티에서 잰 값</text>
+  <text x="80" y="166" font-size="13" fill="#9d0208">등급 기준선은 표준이 주지 않는다</text>
+
+  <!-- 오른쪽 두 입력 -->
+  <rect x="520" y="92" width="320" height="86" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="540" y="118" font-size="14" font-weight="bold" fill="#b45309">무엇을 재는가 — 품질특성</text>
+  <text x="540" y="140" font-size="13" fill="#1b1b1b">ISO/IEC 25012의 15개 특성</text>
+  <text x="540" y="160" font-size="13" fill="#555047">고유 5 · 고유+시스템의존 7 · 시스템의존 3</text>
+
+  <rect x="520" y="226" width="320" height="86" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="540" y="252" font-size="14" font-weight="bold" fill="#b45309">어디서 재는가 — 목표 엔티티</text>
+  <text x="540" y="274" font-size="13" fill="#1b1b1b">측도를 적용할 대상</text>
+  <text x="540" y="294" font-size="13" fill="#555047">데이터 생애주기 전체에 걸쳐 고른다</text>
+
+  <path d="M520,135 L430,135" stroke="#b45309" stroke-width="2.2" marker-end="url(#left)"/>
+  <path d="M520,269 L470,269 L470,152 L430,152" fill="none" stroke="#b45309" stroke-width="2.2" marker-end="url(#left)"/>
+
+  <text x="60" y="422" font-size="13" fill="#555047">적합성은 특성 선택 · 목표 엔티티 선택 · 측도 선택 · 변경 근거 제시 · 추가 측도 명시의 5단계를 요구한다.</text>
+</svg>
