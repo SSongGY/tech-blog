@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" role="img" aria-label="용역제공조건·비시장 성과조건·시장조건·비가득조건 네 갈래가 부여일 공정가치와 수량 추정 중 어느 쪽에 반영되고 미충족 시 누적 인식액이 어떻게 갈리는지 보이는 표 형태 도식">
+  <rect width="880" height="430" fill="#f7f8fa"/>
+
+  <text x="24" y="32" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1f23">조건을 어디에 반영하는가 — 그것이 환입 여부를 가른다</text>
+
+  <!-- 상단 분기 -->
+  <rect x="24" y="52" width="212" height="34" rx="5" fill="#e3e7eb" stroke="#55606b" stroke-width="1.5"/>
+  <text x="130" y="74" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">주식선택권에 붙은 조건</text>
+
+  <!-- 열 머리 -->
+  <rect x="248" y="52" width="150" height="54" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="323" y="74" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">용역제공조건</text>
+  <text x="323" y="94" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">3년 근속</text>
+
+  <rect x="406" y="52" width="150" height="54" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="481" y="74" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">비시장 성과조건</text>
+  <text x="481" y="94" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">영업이익 목표</text>
+
+  <rect x="564" y="52" width="150" height="54" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="639" y="74" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309">시장조건</text>
+  <text x="639" y="94" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">주가 목표</text>
+
+  <rect x="722" y="52" width="134" height="54" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="789" y="74" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309">비가득조건</text>
+  <text x="789" y="94" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">가득 후 양도 제한</text>
+
+  <!-- 1행 -->
+  <rect x="24" y="118" width="212" height="62" rx="5" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <text x="40" y="144" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1f23">부여일 공정가치에</text>
+  <text x="40" y="165" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1f23">반영하는가</text>
+  <rect x="248" y="118" width="150" height="62" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="323" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9d0208">반영하지 않는다</text>
+  <rect x="406" y="118" width="150" height="62" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="481" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9d0208">반영하지 않는다</text>
+  <rect x="564" y="118" width="150" height="62" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1"/>
+  <text x="639" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#b45309">반영한다</text>
+  <rect x="722" y="118" width="134" height="62" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1"/>
+  <text x="789" y="155" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#b45309">반영한다</text>
+
+  <!-- 2행 -->
+  <rect x="24" y="190" width="212" height="62" rx="5" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <text x="40" y="216" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1f23">가득 예상 수량으로</text>
+  <text x="40" y="237" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1f23">반영하는가</text>
+  <rect x="248" y="190" width="150" height="62" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="323" y="227" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#2d6a4f">반영한다</text>
+  <rect x="406" y="190" width="150" height="62" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="481" y="227" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#2d6a4f">반영한다</text>
+  <rect x="564" y="190" width="150" height="62" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="639" y="227" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9d0208">반영하지 않는다</text>
+  <rect x="722" y="190" width="134" height="62" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="789" y="227" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#9d0208">반영하지 않는다</text>
+
+  <!-- 3행 -->
+  <rect x="24" y="262" width="212" height="76" rx="5" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <text x="40" y="288" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1f23">끝내 충족되지 않으면</text>
+  <text x="40" y="309" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1f23">누적 인식액은</text>
+  <text x="40" y="330" font-family="sans-serif" font-size="13" fill="#55606b">(다른 조건은 모두 충족)</text>
+  <rect x="248" y="262" width="150" height="76" rx="5" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="323" y="296" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#9d0208">0 — 전액 환입</text>
+  <text x="323" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">퇴사하면 사라진다</text>
+  <rect x="406" y="262" width="150" height="76" rx="5" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="481" y="296" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#9d0208">0 — 전액 환입</text>
+  <text x="481" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">미달이면 되돌린다</text>
+  <rect x="564" y="262" width="150" height="76" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="639" y="296" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f">그대로 남는다</text>
+  <text x="639" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">환입하지 않는다</text>
+  <rect x="722" y="262" width="134" height="76" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="789" y="296" text-anchor="middle" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f">그대로 남는다</text>
+  <text x="789" y="320" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">환입하지 않는다</text>
+
+  <!-- 요약 -->
+  <rect x="24" y="352" width="832" height="56" rx="6" fill="#e3e7eb" stroke="#55606b" stroke-width="1.5"/>
+  <text x="44" y="376" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">공정가치에 미리 깎아 넣은 조건은 나중에 되돌리지 않고, 수량으로 반영한 조건만 되돌린다</text>
+  <text x="44" y="398" font-family="sans-serif" font-size="13" fill="#1b1f23">그래서 시장조건이 붙은 부여는 부여일 공정가치 자체가 낮게 측정된다</text>
+</svg>

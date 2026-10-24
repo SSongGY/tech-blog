@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" role="img" aria-label="부여일에 측정한 공정가치가 가득기간 3년에 걸쳐 배분되고, 같은 금액이 비용과 자본에 동시에 들어가 자본총계는 변하지 않는 흐름도">
+  <rect width="880" height="440" fill="#f7f8fa"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1f23">주식기준보상 — 한 번 재고, 나누어 인식하고, 양쪽에 동시에 들어간다</text>
+
+  <!-- 1. 부여일 측정 -->
+  <rect x="24" y="62" width="214" height="150" rx="6" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <rect x="24" y="62" width="214" height="28" rx="6" fill="#e3e7eb"/>
+  <text x="36" y="81" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">① 부여일에 한 번만 측정</text>
+  <text x="36" y="113" font-family="sans-serif" font-size="13" fill="#1b1f23">주식선택권 1개 4,000원</text>
+  <text x="36" y="136" font-family="sans-serif" font-size="13" fill="#1b1f23">× 1인당 100개</text>
+  <text x="36" y="159" font-family="sans-serif" font-size="13" fill="#1b1f23">× 가득 예상 인원</text>
+  <line x1="36" y1="172" x2="226" y2="172" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="36" y="194" font-family="sans-serif" font-size="13" fill="#9d0208">주가가 변해도 다시 재지 않는다</text>
+
+  <path d="M 246 137 L 278 137" stroke="#55606b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 2. 가득기간 배분 -->
+  <rect x="288" y="62" width="306" height="150" rx="6" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <rect x="288" y="62" width="306" height="28" rx="6" fill="#e3e7eb"/>
+  <text x="300" y="81" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">② 가득기간 3년에 걸쳐 누적</text>
+
+  <text x="300" y="112" font-family="sans-serif" font-size="13" fill="#1b1f23">2026</text>
+  <rect x="340" y="101" width="89" height="15" fill="#2d6a4f"/>
+  <text x="437" y="113" font-family="sans-serif" font-size="13" fill="#1b1f23">12,000,000</text>
+
+  <text x="300" y="142" font-family="sans-serif" font-size="13" fill="#1b1f23">2027</text>
+  <rect x="340" y="131" width="167" height="15" fill="#2d6a4f"/>
+  <text x="515" y="143" font-family="sans-serif" font-size="13" fill="#1b1f23">22,666,667</text>
+
+  <text x="300" y="172" font-family="sans-serif" font-size="13" fill="#1b1f23">2028</text>
+  <rect x="340" y="161" width="260" height="15" fill="#2d6a4f" opacity="0.55"/>
+  <rect x="340" y="161" width="167" height="15" fill="#2d6a4f"/>
+  <text x="300" y="200" font-family="sans-serif" font-size="13" fill="#1b1f23">막대는 누적 보상원가 · 당기 비용은 전기와의 차이 (2028년 누적 35,200,000)</text>
+
+  <path d="M 602 137 L 634 137" stroke="#55606b" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- 3. 양쪽 동시 -->
+  <rect x="644" y="62" width="212" height="150" rx="6" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <rect x="644" y="62" width="212" height="28" rx="6" fill="#e3e7eb"/>
+  <text x="656" y="81" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">③ 같은 금액이 양쪽에</text>
+  <rect x="656" y="100" width="188" height="44" rx="4" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="668" y="119" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309">주식보상비용</text>
+  <text x="668" y="137" font-family="sans-serif" font-size="13" fill="#1b1f23">손익계산서 — 이익을 깎는다</text>
+  <rect x="656" y="152" width="188" height="44" rx="4" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="668" y="171" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">주식선택권</text>
+  <text x="668" y="189" font-family="sans-serif" font-size="13" fill="#1b1f23">자본 — 같은 금액만큼 증가</text>
+
+  <!-- 결론 띠 -->
+  <rect x="24" y="238" width="832" height="56" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="44" y="262" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">이익잉여금이 줄어든 만큼 주식선택권이 늘어난다 → 자본총계는 변하지 않는다</text>
+  <text x="44" y="284" font-family="sans-serif" font-size="13" fill="#1b1f23">현금도 나가지 않으므로 현금흐름표 영업활동에서는 당기순이익에 도로 가산된다</text>
+
+  <!-- 가득일 이후 -->
+  <rect x="24" y="314" width="406" height="106" rx="6" fill="#ffffff" stroke="#55606b" stroke-width="1.5"/>
+  <text x="44" y="339" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">가득일까지 — 수량 추정을 매 보고기간 고친다</text>
+  <text x="44" y="363" font-family="sans-serif" font-size="13" fill="#1b1f23">가득 예상 인원이 바뀌면 누적액을 다시 계산한다</text>
+  <text x="44" y="385" font-family="sans-serif" font-size="13" fill="#1b1f23">가득일에는 실제로 가득된 수량에 맞춘다</text>
+  <text x="44" y="407" font-family="sans-serif" font-size="13" fill="#1b1f23">시장조건은 예외 — 수량 추정을 고치지 않는다</text>
+
+  <rect x="450" y="314" width="406" height="106" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="470" y="339" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208">가득일 이후 — 자본을 수정하지 않는다</text>
+  <text x="470" y="363" font-family="sans-serif" font-size="13" fill="#1b1f23">행사하든 권리가 소멸하든 비용을 환입하지 않는다</text>
+  <text x="470" y="385" font-family="sans-serif" font-size="13" fill="#1b1f23">자본 안에서 다른 항목으로 대체하는 것은 막지 않는다</text>
+  <text x="470" y="407" font-family="sans-serif" font-size="13" fill="#1b1f23">손익계산서에는 아무 일도 일어나지 않는다</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#55606b"/>
+    </marker>
+  </defs>
+</svg>

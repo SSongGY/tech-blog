@@ -2930,7 +2930,7 @@ topics:
     angle: "14종을 두 갈래로 묶고 시험에 자주 나오는 것만 깊이"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-098
     title: "소프트웨어 테스트 자동화와 테스트 피라미드"
     category: PE
@@ -4657,7 +4657,7 @@ topics:
     angle: "표·인덱스·트리거 정의를 질의로 꺼내는 법. 컬럼 목록과 제약을 코드로 읽을 때"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-071
     title: "PRAGMA — 동작을 바꾸는 설정들"
     category: Database
@@ -5201,7 +5201,7 @@ topics:
     angle: "현금이 나가지 않는데 비용이 생기는 이유. 가득기간에 걸쳐 나눠 잡는 계산과, 그 비용이 자본으로 같이 들어가 자본총계는 안 줄어드는 점을 숫자로 보인다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-082
     title: "특수관계자 거래 주석 — 내부 거래가 실적에 섞일 때"
     category: Finance
@@ -5212,7 +5212,7 @@ topics:
     angle: "누구까지가 특수관계자이고 무엇을 적어야 하는가. 연결에서 상계되는 거래와 별도재무제표에 남는 거래가 다르다는 점을 중심에 둔다."
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-083
     title: "순차입금과 Net Debt/EBITDA — 빚의 크기를 이익으로 재기"
     category: Finance
@@ -5547,7 +5547,7 @@ topics:
     difficulty: 심화
     angle: "순수 계산·파일 입출력·sleep 세 가지를 스레드와 프로세스로 각각 돌려 확장 곡선을 잰다. 프로세스로 바꿨을 때 드는 기동·직렬화 비용이 이득을 먹는 지점까지 찾는다."
     code: python
-    status: todo
+    status: writing
   - id: gen-012
     title: "write 는 디스크에 쓰는 것이 아니다 — 버퍼·flush·fsync 를 가르기"
     category: Backend
