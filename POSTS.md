@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **437편** · 갱신 2026-10-25
+총 **439편** · 갱신 2026-10-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -320,10 +320,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 64편
+## 기출문제 (exam) — 66편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-25 | [기출문제 — ISO/IEC 42001:2023 인공지능 경영시스템](posts/PE/exam/2026-10-25-iso-iec-42001-ai-management-system/index.md) | 중급 | ISO/IEC 42001:2023 (제1판, 2023-12), ISO/IEC 42006:2025 (제1판, 2025-07), ISO/IEC 42005:2025, ISO/IEC 23894:2023, ISO/IEC 17021-1:2015 | 문서 근거 |
+| 2026-10-25 | [기출문제 — 베이즈 정리](posts/PE/exam/2026-10-25-bayes-theorem/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §8.1.10 | 실행 검증 |
 | 2026-10-24 | [기출문제 — 프로젝트 위험관리](posts/PE/exam/2026-10-24-project-risk-management-processes/index.md) | 중급 | PMBOK Guide 6th Edition (PMI, 2017), PMBOK Guide 8th Edition (PMI, 2025-11), ISO 31000:2018, ISO 21502:2020 | 문서 근거 |
 | 2026-10-24 | [기출문제 — NIST AI RMF의 핵심구조 4가지와 신뢰 가능한 AI 특성 7가지](posts/PE/exam/2026-10-24-nist-ai-rmf-core-and-trustworthy-characteristics/index.md) | 중급 | NIST AI 100-1 AI RMF 1.0 (2023-01), ISO/IEC TS 5723:2022, ISO 9000:2015, NIST SP 1270 (2022-03) | 문서 근거 |
 | 2026-10-23 | [기출문제 — 가상발전소 전력수요 예측의 AI 기법: 시계열 딥러닝·강화학습·그래프신경망](posts/PE/exam/2026-10-23-vpp-demand-forecasting-ai-techniques/index.md) | 심화 | Hochreiter & Schmidhuber, Neural Computation 9(8) (1997), Lim et al., Temporal Fusion Transformers, arXiv:1912.09363 (2019-12, v3 2020-09), Sutton & Barto, Reinforcement Learning: An Introduction 2nd ed. (2018), Kipf & Welling, ICLR 2017, Liao et al., JMPSCE 10(2) (2022), 분산에너지 활성화 특별법 (2024-06-14 시행) | 문서 근거 |
