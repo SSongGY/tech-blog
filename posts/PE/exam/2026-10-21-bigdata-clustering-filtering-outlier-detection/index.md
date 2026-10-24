@@ -259,6 +259,8 @@ verified: true
 난다.
 
 > 개념 정리: [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](../../data-analysis/2026-10-07-isolation-forest-path-length/index.md)
+>
+> 개념 정리: [DBSCAN — 군집과 잡음을 같은 정의에서 뽑아내는 여섯 단계](../../data-analysis/2026-10-25-dbscan-density-based-clustering-definitions/index.md)
 
 끝
 
