@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowBack" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#b45309"/>
+    </marker>
+    <marker id="arrowThin" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 Z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b2a24">AI RMF 핵심구조(Core) — 4가지 기능</text>
+  <text x="40" y="58" font-size="13" fill="#4a5a52">통제는 나란히 선 단계가 아니라 나머지 셋 전부에 스며드는 횡단 기능이다</text>
+
+  <rect x="40" y="76" width="800" height="316" rx="14" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="62" y="106" font-size="15" font-weight="bold" fill="#2d6a4f">① 통제 (GOVERN)</text>
+  <text x="62" y="128" font-size="13" fill="#2d6a4f">정책·절차·역할·위험 허용수준을 세우고 위험 문화를 만든다 — 횡단 기능</text>
+
+  <line x1="155" y1="142" x2="155" y2="178" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrowThin)"/>
+  <line x1="420" y1="142" x2="420" y2="178" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrowThin)"/>
+  <line x1="685" y1="142" x2="685" y2="178" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrowThin)"/>
+
+  <rect x="62" y="182" width="186" height="108" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="155" y="214" font-size="15" font-weight="bold" fill="#1b2a24" text-anchor="middle">② 식별 (MAP)</text>
+  <text x="155" y="240" font-size="13" fill="#3c4a44" text-anchor="middle">맥락을 세워</text>
+  <text x="155" y="262" font-size="13" fill="#3c4a44" text-anchor="middle">위험을 틀 짓는다</text>
+
+  <rect x="327" y="182" width="186" height="108" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="420" y="214" font-size="15" font-weight="bold" fill="#1b2a24" text-anchor="middle">③ 측정 (MEASURE)</text>
+  <text x="420" y="240" font-size="13" fill="#3c4a44" text-anchor="middle">분석·평가·감시</text>
+  <text x="420" y="262" font-size="13" fill="#3c4a44" text-anchor="middle">(TEVV 체계)</text>
+
+  <rect x="592" y="182" width="186" height="108" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="685" y="214" font-size="15" font-weight="bold" fill="#1b2a24" text-anchor="middle">④ 관리 (MANAGE)</text>
+  <text x="685" y="240" font-size="13" fill="#3c4a44" text-anchor="middle">자원 배분·대응·</text>
+  <text x="685" y="262" font-size="13" fill="#3c4a44" text-anchor="middle">복구·소통</text>
+
+  <line x1="252" y1="240" x2="321" y2="240" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="517" y1="240" x2="586" y2="240" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="287" y="228" font-size="13" fill="#2d6a4f" text-anchor="middle">위험 지식</text>
+  <text x="552" y="228" font-size="13" fill="#2d6a4f" text-anchor="middle">측정 결과</text>
+
+  <path d="M685,294 L685,336 L155,336 L155,294" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowBack)"/>
+  <text x="420" y="358" font-size="13" fill="#b45309" text-anchor="middle">신규·창발 위험을 다시 식별한다 — 생애주기 내내 반복</text>
+
+  <text x="62" y="384" font-size="13" fill="#4a5a52">체크리스트가 아니며 순서가 고정된 단계도 아니다. 다만 식별 → 측정 → 관리로 정보가 흐른다.</text>
+</svg>

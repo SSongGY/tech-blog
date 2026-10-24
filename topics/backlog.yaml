@@ -5960,3 +5960,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-198
+    title: "ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "ISO 31000:2018의 세 층(원칙·프레임워크·프로세스)을 갈라 정리하고, 프로세스 6단계를 PMBOK 프로젝트 위험관리와 대응시킨다. 조직 차원 위험관리와 프로젝트 차원 위험관리가 어디서 갈리는지를 축으로 쓴다."
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-199
+    title: "AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "NIST SP 1270이 나눈 편향 3가지 범주를 발생 지점(사회·데이터·알고리즘·인지)으로 갈라 정리하고, 각 범주가 AI RMF의 어느 기능에서 측정·관리되는지까지 잇는다. 편향 완화가 공정성을 보장하지 않는 이유를 함께 쓴다."
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-200
+    title: "정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "정성 분석이 순서를 매기는 활동이라면 정량 분석은 노출도를 수치로 내는 활동이다. EMV·의사결정나무·몬테카를로를 직접 계산해 보이고, 입력 추정이 부실할 때 분포가 어떻게 잘못된 확신을 주는지까지 쓴다."
+    code: none
+    origin: exam
+    status: todo

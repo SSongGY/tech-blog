@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b2a24">신뢰 가능한 AI의 7가지 특성</text>
+  <text x="40" y="58" font-size="13" fill="#4a5a52">타당·신뢰가 토대이고, 책임·투명은 나머지 전부에 걸쳐 있다</text>
+
+  <rect x="676" y="76" width="164" height="212" rx="10" fill="#dceae2" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="758" y="148" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑦ 책임·투명</text>
+  <text x="758" y="172" font-size="13" fill="#3c4a44" text-anchor="middle">Accountable</text>
+  <text x="758" y="192" font-size="13" fill="#3c4a44" text-anchor="middle">and Transparent</text>
+  <text x="758" y="220" font-size="13" fill="#4a5a52" text-anchor="middle">투명성이</text>
+  <text x="758" y="240" font-size="13" fill="#4a5a52" text-anchor="middle">책임성의 전제</text>
+
+  <rect x="40" y="76" width="120" height="132" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="100" y="124" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">② 안전</text>
+  <text x="100" y="152" font-size="13" fill="#4a5a52" text-anchor="middle">생명·건강</text>
+  <text x="100" y="172" font-size="13" fill="#4a5a52" text-anchor="middle">재산·환경</text>
+
+  <rect x="172" y="76" width="120" height="132" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="232" y="124" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">③ 보안·복원</text>
+  <text x="232" y="152" font-size="13" fill="#4a5a52" text-anchor="middle">기밀·무결·</text>
+  <text x="232" y="172" font-size="13" fill="#4a5a52" text-anchor="middle">가용성 유지</text>
+
+  <rect x="304" y="76" width="120" height="132" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="364" y="114" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">④ 설명·</text>
+  <text x="364" y="134" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">해석 가능</text>
+  <text x="364" y="162" font-size="13" fill="#4a5a52" text-anchor="middle">어떻게 / 왜</text>
+  <text x="364" y="182" font-size="13" fill="#4a5a52" text-anchor="middle">그 결정인가</text>
+
+  <rect x="436" y="76" width="120" height="132" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="496" y="114" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑤ 프라이버시</text>
+  <text x="496" y="134" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">강화</text>
+  <text x="496" y="162" font-size="13" fill="#4a5a52" text-anchor="middle">익명·기밀·</text>
+  <text x="496" y="182" font-size="13" fill="#4a5a52" text-anchor="middle">통제, PET</text>
+
+  <rect x="568" y="76" width="120" height="132" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="628" y="114" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">⑥ 공정·유해</text>
+  <text x="628" y="134" font-size="14" font-weight="bold" fill="#1b2a24" text-anchor="middle">편향 관리</text>
+  <text x="628" y="162" font-size="13" fill="#4a5a52" text-anchor="middle">편향 3범주</text>
+  <text x="628" y="182" font-size="13" fill="#4a5a52" text-anchor="middle">체계·통계·인지</text>
+
+  <rect x="40" y="222" width="648" height="66" rx="10" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="364" y="250" font-size="15" font-weight="bold" fill="#1b2a24" text-anchor="middle">① 타당·신뢰 (Valid and Reliable)</text>
+  <text x="364" y="274" font-size="13" fill="#3c4a44" text-anchor="middle">정확성·견고성을 포함하며, 신뢰 가능성의 필요조건이므로 토대에 놓인다</text>
+
+  <rect x="40" y="306" width="800" height="64" rx="8" fill="#fbf1e3" stroke="#b45309" stroke-width="1.8"/>
+  <text x="60" y="332" font-size="13" font-weight="bold" fill="#b45309">상충 관계</text>
+  <text x="142" y="332" font-size="13" fill="#6b4410">해석 가능성 ↔ 프라이버시, 예측 정확도 ↔ 해석 가능성처럼 특성끼리 당긴다.</text>
+  <text x="142" y="356" font-size="13" fill="#6b4410">신뢰 가능성은 가장 약한 특성만큼이며, 맥락에 따라 균형을 잡아야 한다.</text>
+</svg>
