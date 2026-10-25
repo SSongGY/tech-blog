@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **445편** · 갱신 2026-10-25
+총 **447편** · 갱신 2026-10-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -395,7 +395,7 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 84편
+## 주식·재무 (finance) — 86편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -403,7 +403,9 @@
 | 2026-10-25 | [주식기준보상 — 현금이 나가지 않는데 비용으로 잡히는 구조](posts/Finance/statements/2026-10-25-share-based-payment-vesting-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1102호 주식기준보상, IFRS 2 Share-based Payment (2023년판) | 실행 검증 |
 | 2026-10-25 | [특수관계자 거래 주석 — 연결에서 사라지는 거래와 별도에 남는 거래](posts/Finance/statements/2026-10-25-related-party-disclosures-consolidation/index.md) | 입문 | Python 3.13.5, K-IFRS 제1024호 특수관계자 공시, IAS 24 Related Party Disclosures (2022년판) | 실행 검증 |
 | 2026-10-25 | [순차입금과 Net Debt/EBITDA — 빚의 크기를 이익으로 재기](posts/Finance/ratios/2026-10-25-net-debt-and-ebitda-multiple/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, K-IFRS 제1116호 리스, K-IFRS 제1118호 재무제표 표시와 공시(2027.1.1 시행), 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
+| 2026-10-25 | [업종 평균과 비교할 때 — 공표된 집계를 쓰는 법과 그 한계](posts/Finance/ratios/2026-10-25-industry-average-aggregate-vs-median/index.md) | 중급 | Python 3.13.5, 한국은행 『기업경영분석』 통계정보보고서(2019.12), 통계청 제10차 한국표준산업분류(고시 제2017-13호, 2017.7.1 시행) | 실행 검증 |
 | 2026-10-25 | [EBITDA 마진 — 편하지만 틀리기 쉬운 지표](posts/Finance/ratios/2026-10-25-ebitda-margin-and-capex-gap/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시, K-IFRS 제1007호 현금흐름표, K-IFRS 제1116호 리스, K-IFRS 제1118호 재무제표 표시와 공시(2027.1.1 시행) | 실행 검증 |
+| 2026-10-25 | [배당할인모형(DDM) — 배당만으로 값을 매길 때](posts/Finance/valuation/2026-10-25-dividend-discount-model-gordon-growth/index.md) | 중급 | Python 3.13.5, Gordon & Shapiro(1956), Management Science 3(1), 102-110 | 실행 검증 |
 | 2026-10-25 | [매출원가율과 판관비율 — 이익률이 깎이는 자리 찾기](posts/Finance/ratios/2026-10-25-cogs-ratio-vs-sga-ratio/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
 | 2026-10-23 | [부문별 정보 — 합쳐진 숫자를 쪼개 보는 자리](posts/Finance/statements/2026-10-23-operating-segments-disclosure/index.md) | 중급 | Python 3.13.5, K-IFRS 제1108호 영업부문 | 실행 검증 |
 | 2026-10-23 | [현금흐름표 직접법과 간접법 — 같은 현금, 다른 서술](posts/Finance/statements/2026-10-23-cash-flow-direct-vs-indirect/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표 | 실행 검증 |
