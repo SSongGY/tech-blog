@@ -5075,7 +5075,7 @@ topics:
     angle: "평점 행렬 하나를 놓고 세 접근이 무엇을 먼저 계산하는지로 갈린다는 축을 세운다. 조정 코사인이 보정하는 것, 아이템 기반이 운영에서 선호되는 이유, 희소성·콜드스타트가 설계에 거는 조건까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-187
     title: "우선순위 역전과 우선순위 상속 프로토콜"
     category: PE
@@ -5086,7 +5086,7 @@ topics:
     angle: "낮은 우선순위 태스크가 잠금을 쥔 채 선점될 때 생기는 무한 블로킹을, 기본 우선순위 상속과 우선순위 상한 두 프로토콜로 비교하고 POSIX 뮤텍스 속성(PRIO_INHERIT/PRIO_PROTECT)이 각각 어느 쪽을 표준화했는지까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-188
     title: "모니터와 조건변수 — 두 가지 시그널 의미론"
     category: PE

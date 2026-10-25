@@ -277,6 +277,8 @@ POSIX 규격은 잠금 호출이 0을 돌려주고 끝나면 그 뮤텍스가 �
 현행 POSIX와 Java의 조건변수가 모두 신호를 힌트로 보는 의미론이므로, 어느 기법을 쓰든 조건
 대기는 반복 검사로 짜야 한다는 점이 세 장을 관통하는 실무 결론이다.
 
+> 개념 정리: [우선순위 역전과 우선순위 상속 프로토콜 — 차단 시간에 상한을 거는 두 가지 방법](../../system/2026-10-25-priority-inversion-and-inheritance-protocols/index.md)
+>
 > 관련 개념 정리: [교착상태 4조건과 해결 기법](../../system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) · [프로세스와 스레드 — 문맥 교환 비용](../../system/2026-09-29-process-thread-context-switch-cost/index.md)
 
 끝
