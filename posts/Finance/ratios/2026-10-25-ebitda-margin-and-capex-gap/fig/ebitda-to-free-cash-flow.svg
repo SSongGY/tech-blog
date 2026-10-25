@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#fbfbf9"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#44403c"/>
+    </marker>
+    <marker id="arrowLoop" markerWidth="9" markerHeight="9" refX="7" refY="3.2"
+            orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1c1917">
+    영업이익에서 잉여현금흐름까지 — EBITDA가 건너뛰는 구간
+  </text>
+  <text x="40" y="54" font-size="13" fill="#57534e">
+    단위 억원. 가상 회사 세 곳의 값이며 EBITDA 마진은 셋 다 20.0%다.
+  </text>
+
+  <!-- 되돌아오는 흐름 -->
+  <path d="M185,194 C 40,194 40,374 185,374" fill="none" stroke="#b45309"
+        stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#arrowLoop)"/>
+  <text x="112" y="254" font-size="13" fill="#b45309" text-anchor="middle">같은 설비가</text>
+  <text x="112" y="272" font-size="13" fill="#b45309" text-anchor="middle">위에서 빠지고</text>
+  <text x="112" y="290" font-size="13" fill="#b45309" text-anchor="middle">아래서 돌아온다</text>
+
+  <!-- 단계 상자 -->
+  <rect x="190" y="80" width="230" height="48" rx="5" fill="#ffffff" stroke="#78716c" stroke-width="1.4"/>
+  <text x="305" y="110" font-size="15" fill="#1c1917" text-anchor="middle">영업이익</text>
+
+  <rect x="190" y="170" width="230" height="48" rx="5" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="305" y="200" font-size="15" font-weight="bold" fill="#7c2d12" text-anchor="middle">EBITDA</text>
+
+  <rect x="190" y="260" width="230" height="48" rx="5" fill="#ffffff" stroke="#78716c" stroke-width="1.4"/>
+  <text x="305" y="290" font-size="15" fill="#1c1917" text-anchor="middle">영업활동현금흐름</text>
+
+  <rect x="190" y="350" width="230" height="48" rx="5" fill="#e3efe7" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="305" y="380" font-size="15" font-weight="bold" fill="#1b4332" text-anchor="middle">잉여현금흐름</text>
+
+  <!-- 단계 사이 화살표와 연산 -->
+  <line x1="305" y1="128" x2="305" y2="166" stroke="#44403c" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="305" y1="218" x2="305" y2="256" stroke="#44403c" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="305" y1="308" x2="305" y2="346" stroke="#44403c" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <text x="434" y="152" font-size="13" fill="#b45309">＋ 감가상각비와 무형자산상각비</text>
+  <text x="434" y="242" font-size="13" fill="#44403c">－ 이자 지급 － 법인세 납부</text>
+  <text x="434" y="332" font-size="13" fill="#b45309">－ 자본적지출</text>
+
+  <!-- 회사별 값 -->
+  <line x1="600" y1="64" x2="850" y2="64" stroke="#d6d3d1" stroke-width="1"/>
+  <text x="648" y="84" font-size="13" fill="#57534e" text-anchor="middle">한솔소재</text>
+  <text x="733" y="84" font-size="13" fill="#57534e" text-anchor="middle">너른소프트</text>
+  <text x="818" y="84" font-size="13" fill="#57534e" text-anchor="middle">벼리물류</text>
+  <line x1="600" y1="92" x2="850" y2="92" stroke="#d6d3d1" stroke-width="1"/>
+
+  <text x="648" y="110" font-size="14" fill="#1c1917" text-anchor="middle">80</text>
+  <text x="733" y="110" font-size="14" fill="#1c1917" text-anchor="middle">185</text>
+  <text x="818" y="110" font-size="14" fill="#1c1917" text-anchor="middle">110</text>
+
+  <rect x="600" y="178" width="250" height="32" rx="4" fill="#fef3c7"/>
+  <text x="648" y="200" font-size="14" font-weight="bold" fill="#7c2d12" text-anchor="middle">200</text>
+  <text x="733" y="200" font-size="14" font-weight="bold" fill="#7c2d12" text-anchor="middle">200</text>
+  <text x="818" y="200" font-size="14" font-weight="bold" fill="#7c2d12" text-anchor="middle">200</text>
+
+  <text x="648" y="290" font-size="14" fill="#1c1917" text-anchor="middle">163</text>
+  <text x="733" y="290" font-size="14" fill="#1c1917" text-anchor="middle">159</text>
+  <text x="818" y="290" font-size="14" fill="#1c1917" text-anchor="middle">162</text>
+
+  <rect x="600" y="358" width="250" height="32" rx="4" fill="#e3efe7"/>
+  <text x="648" y="380" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">13</text>
+  <text x="733" y="380" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">139</text>
+  <text x="818" y="380" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">122</text>
+
+  <text x="190" y="428" font-size="13" fill="#57534e">
+    EBITDA 줄에서는 셋이 같고, 두 칸 아래에서 13과 139로 갈린다.
+  </text>
+</svg>

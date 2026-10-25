@@ -5245,7 +5245,7 @@ topics:
     angle: "감가상각을 빼고 보면 설비 투자가 큰 업종이 좋아 보인다. 같은 EBITDA 마진에서 자본적지출이 다른 두 회사의 잉여현금흐름이 갈리는 것을 숫자로 보인다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-086
     title: "매출원가율과 판관비율 — 이익률이 깎이는 자리 찾기"
     category: Finance
@@ -5256,7 +5256,7 @@ topics:
     angle: "영업이익률이 같아도 원가에서 깎이는 회사와 판관비에서 깎이는 회사는 다르게 움직인다. 매출이 20% 늘 때 두 구조가 어떻게 갈리는지 계산한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-087
     title: "업종 평균과 비교할 때 — 공표된 집계를 쓰는 법과 그 한계"
     category: Finance
