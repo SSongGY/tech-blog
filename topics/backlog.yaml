@@ -5267,7 +5267,7 @@ topics:
     angle: "적정 수준이라는 기준선을 근거 없이 쓰지 않으려면 어디서 숫자를 가져와야 하는가. 한국은행 기업경영분석 같은 공표 집계의 산출 방식과 평균·중앙값이 갈리는 지점을 정리한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-088
     title: "배당할인모형(DDM) — 배당만으로 값을 매길 때"
     category: Finance
@@ -5278,7 +5278,7 @@ topics:
     angle: "고든 성장모형의 식과 그 식이 성립하려면 필요한 가정. 성장률이 요구수익률에 가까워질 때 값이 발산하는 구간을 표로 보여 한계를 드러낸다."
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-089
     title: "EV 를 실제로 계산하기 — 순차입금·우선주·비지배지분"
     category: Finance
