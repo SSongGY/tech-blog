@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **441편** · 갱신 2026-10-25
+총 **443편** · 갱신 2026-10-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -320,11 +320,13 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 66편
+## 기출문제 (exam) — 68편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-25 | [기출문제 — ISO/IEC 42001:2023 인공지능 경영시스템](posts/PE/exam/2026-10-25-iso-iec-42001-ai-management-system/index.md) | 중급 | ISO/IEC 42001:2023 (제1판, 2023-12), ISO/IEC 42006:2025 (제1판, 2025-07), ISO/IEC 42005:2025, ISO/IEC 23894:2023, ISO/IEC 17021-1:2015 | 문서 근거 |
+| 2026-10-25 | [기출문제 — 안면인식 결제 서비스](posts/PE/exam/2026-10-25-facial-recognition-payment-biometric-standards/index.md) | 중급 | ISO/IEC 2382-37:2022, ISO/IEC 19795-1:2021, ISO/IEC 30107-3:2023, ISO/IEC 24745:2022, 개인정보 보호법 시행령 제18조 | 문서 근거 |
+| 2026-10-25 | [기출문제 — 선도개발을 위한 개발방법론 테일러링](posts/PE/exam/2026-10-25-development-methodology-tailoring/index.md) | 중급 | ISO/IEC/IEEE 12207:2017, 행정안전부고시 제2022-31호 행정기관 및 공공기관 정보시스템 구축·운영 지침 | 문서 근거 |
 | 2026-10-25 | [기출문제 — 베이즈 정리](posts/PE/exam/2026-10-25-bayes-theorem/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §8.1.10 | 실행 검증 |
 | 2026-10-24 | [기출문제 — 프로젝트 위험관리](posts/PE/exam/2026-10-24-project-risk-management-processes/index.md) | 중급 | PMBOK Guide 6th Edition (PMI, 2017), PMBOK Guide 8th Edition (PMI, 2025-11), ISO 31000:2018, ISO 21502:2020 | 문서 근거 |
 | 2026-10-24 | [기출문제 — NIST AI RMF의 핵심구조 4가지와 신뢰 가능한 AI 특성 7가지](posts/PE/exam/2026-10-24-nist-ai-rmf-core-and-trustworthy-characteristics/index.md) | 중급 | NIST AI 100-1 AI RMF 1.0 (2023-01), ISO/IEC TS 5723:2022, ISO 9000:2015, NIST SP 1270 (2022-03) | 문서 근거 |
