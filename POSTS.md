@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **449편** · 갱신 2026-10-26
+총 **451편** · 갱신 2026-10-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -102,10 +102,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 155편
+## 기술사 (pe) — 157편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-26 | [모니터와 조건변수 — 두 가지 시그널 의미론](posts/PE/system/2026-10-26-monitor-condition-variable-signal-semantics/index.md) | 중급 | Hoare, CACM 17(10) pp.549-557 (1974), Lampson·Redell, CACM 23(2) pp.105-117 (1980), POSIX.1-2017 (IEEE Std 1003.1-2017), Open Group Base Specifications Issue 7 2018 Edition, Java SE 21 JLS §17.2.1 | 문서 근거 |
+| 2026-10-26 | [불변 백업과 에어갭 — 복제가 따라가는 훼손을 끊는 사본](posts/PE/security/2026-10-26-immutable-backup-and-air-gap/index.md) | 중급 | NIST SP 800-209 (October 2020), NIST SP 800-53 Rev. 5 (September 2020, updates as of December 10, 2020), NIST IR 8374 (February 2022), CNSSI 4009-2022 | 문서 근거 |
 | 2026-10-25 | [트라이와 PATRICIA — 비교 대신 비트로 분기하는 탐색 구조](posts/PE/software-engineering/2026-10-25-trie-and-patricia-bit-branching/index.md) | 중급 | Python 3.13.5, Journal of the ACM Vol. 15 No. 4 (1968-10), pp. 514-534, Communications of the ACM Vol. 3 No. 9 (1960-09), pp. 490-499, IEEE JSAC Vol. 17 No. 6 (1999-06), pp. 1083-1092, Dr. Dobb's Journal (1998-08) | 실행 검증 |
 | 2026-10-25 | [우선순위 역전과 우선순위 상속 프로토콜 — 차단 시간에 상한을 거는 두 가지 방법](posts/PE/system/2026-10-25-priority-inversion-and-inheritance-protocols/index.md) | 중급 | Sha·Rajkumar·Lehoczky, IEEE Transactions on Computers 39(9) pp.1175-1185 (1990), POSIX.1-2017 (IEEE Std 1003.1-2017), Open Group Base Specifications Issue 7 2018 Edition | 문서 근거 |
 | 2026-10-25 | [최장 접두사 일치와 포워딩 테이블 탐색](posts/PE/network/2026-10-25-longest-prefix-match-forwarding-lookup/index.md) | 중급 | RFC 1812 (1995-06), RFC 4632 (2006-08, BCP 122), RFC 7608 (2015-07, BCP 198), RFC 1519 (1993-09) | 문서 근거 |
