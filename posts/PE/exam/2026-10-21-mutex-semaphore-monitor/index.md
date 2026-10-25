@@ -279,6 +279,8 @@ POSIX 규격은 잠금 호출이 0을 돌려주고 끝나면 그 뮤텍스가 �
 
 > 개념 정리: [우선순위 역전과 우선순위 상속 프로토콜 — 차단 시간에 상한을 거는 두 가지 방법](../../system/2026-10-25-priority-inversion-and-inheritance-protocols/index.md)
 >
+> 개념 정리: [모니터와 조건변수 — 두 가지 시그널 의미론](../../system/2026-10-26-monitor-condition-variable-signal-semantics/index.md)
+>
 > 관련 개념 정리: [교착상태 4조건과 해결 기법](../../system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) · [프로세스와 스레드 — 문맥 교환 비용](../../system/2026-09-29-process-thread-context-switch-cost/index.md)
 
 끝

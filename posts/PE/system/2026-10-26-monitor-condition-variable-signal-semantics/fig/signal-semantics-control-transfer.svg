@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 412" width="880" height="412" font-family="'Malgun Gothic','Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="412" fill="#fbfaf7"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1f2328">signal 직후 누가 도는가 — 두 의미론의 제어 이동</text>
+
+  <line x1="446" y1="44" x2="446" y2="396" stroke="#d8d4cc" stroke-width="1.2"/>
+
+  <text x="228" y="62" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#b45309">신호 후 양보 — Hoare (1974)</text>
+  <text x="652" y="62" text-anchor="middle" font-size="14.5" font-weight="bold" fill="#2d6a4f">신호 후 계속 — Mesa (1980)</text>
+
+  <rect x="38" y="74" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="52" y="105" font-size="13.5" fill="#1f2328">① 신호자가 c.signal 을 실행한다</text>
+  <path d="M 223 127 L 233 127 L 228 134 Z" fill="#8a8578"/>
+
+  <rect x="38" y="136" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="52" y="167" font-size="13.5" fill="#1f2328">② 신호자는 urgent 큐로 물러난다</text>
+  <path d="M 223 189 L 233 189 L 228 196 Z" fill="#8a8578"/>
+
+  <rect x="38" y="198" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="52" y="220" font-size="13.5" fill="#1f2328">③ 대기자가 곧바로 재개된다 —</text>
+  <text x="52" y="239" font-size="13.5" fill="#1f2328">제3의 프로세스는 끼어들 수 없다</text>
+  <path d="M 223 251 L 233 251 L 228 258 Z" fill="#8a8578"/>
+
+  <rect x="38" y="260" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="52" y="282" font-size="13.5" fill="#1f2328">④ 모니터 퇴장 때 urgent 큐가</text>
+  <text x="52" y="301" font-size="13.5" fill="#1f2328">진입 큐보다 먼저 선택된다</text>
+  <path d="M 223 316 L 233 316 L 228 324 Z" fill="#b45309"/>
+
+  <rect x="38" y="328" width="380" height="62" rx="5" fill="#fdf4e6" stroke="#b45309" stroke-width="1.5"/>
+  <text x="52" y="356" font-size="14" font-family="'Consolas','D2Coding',monospace" fill="#7c3a06">if  조건이 아니면 wait</text>
+  <text x="52" y="378" font-size="13" fill="#7c3a06">재개 시점에 조건이 보장된다</text>
+
+  <rect x="462" y="74" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="476" y="105" font-size="13.5" fill="#1f2328">① 신호자가 c.notify 를 실행한다</text>
+  <path d="M 647 127 L 657 127 L 652 134 Z" fill="#8a8578"/>
+
+  <rect x="462" y="136" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="476" y="167" font-size="13.5" fill="#1f2328">② 신호자는 잠금을 쥔 채 계속한다</text>
+  <path d="M 647 189 L 657 189 L 652 196 Z" fill="#8a8578"/>
+
+  <rect x="462" y="198" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="476" y="220" font-size="13.5" fill="#1f2328">③ 대기자는 깨어나도 잠금을</text>
+  <text x="476" y="239" font-size="13.5" fill="#1f2328">다시 얻어야 재개된다</text>
+  <path d="M 647 251 L 657 251 L 652 258 Z" fill="#8a8578"/>
+
+  <rect x="462" y="260" width="380" height="52" rx="5" fill="#ffffff" stroke="#8a8578" stroke-width="1.2"/>
+  <text x="476" y="282" font-size="13.5" fill="#1f2328">④ 그사이 다른 프로세스가 들어와</text>
+  <text x="476" y="301" font-size="13.5" fill="#1f2328">조건을 되돌릴 수 있다</text>
+  <path d="M 647 316 L 657 316 L 652 324 Z" fill="#2d6a4f"/>
+
+  <rect x="462" y="328" width="380" height="62" rx="5" fill="#eaf3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="476" y="356" font-size="14" font-family="'Consolas','D2Coding',monospace" fill="#1d4b36">while 조건이 아니면 wait</text>
+  <text x="476" y="378" font-size="13" fill="#1d4b36">재개할 때마다 다시 판단한다</text>
+</svg>
