@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">AR과 MA — 무엇을 기억해 현재 값을 만드는가</text>
+
+  <!-- AR panel -->
+  <rect x="24" y="48" width="406" height="246" rx="8" fill="#f1f7f3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="227" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">AR(p) — 과거 관측값을 기억한다</text>
+
+  <rect x="45" y="100" width="120" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="105" y="118" text-anchor="middle" font-size="13" fill="#222">백색잡음</text>
+  <text x="105" y="138" text-anchor="middle" font-size="13" fill="#222">A(t)</text>
+
+  <rect x="206" y="100" width="64" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="238" y="129" text-anchor="middle" font-size="19" fill="#222">+</text>
+
+  <rect x="311" y="100" width="94" height="44" rx="5" fill="#2d6a4f" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="358" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">X(t)</text>
+
+  <rect x="118" y="212" width="188" height="52" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="212" y="232" text-anchor="middle" font-size="13" fill="#222">과거 관측값</text>
+  <text x="212" y="252" text-anchor="middle" font-size="13" fill="#222">X(t-1) … X(t-p)</text>
+
+  <path d="M165,122 L201,122" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <path d="M270,122 L306,122" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <path d="M358,144 L358,238 L312,238" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <path d="M228,212 L228,150" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <text x="238" y="186" font-size="13" fill="#2d6a4f">가중치 phi(1) … phi(p)</text>
+  <text x="372" y="196" font-size="13" fill="#555">되먹임</text>
+
+  <!-- MA panel -->
+  <rect x="450" y="48" width="406" height="246" rx="8" fill="#fdf5e9" stroke="#b45309" stroke-width="1.5"/>
+  <text x="653" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">MA(q) — 과거 예측오차를 기억한다</text>
+
+  <rect x="466" y="100" width="120" height="44" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+  <text x="526" y="118" text-anchor="middle" font-size="13" fill="#222">백색잡음</text>
+  <text x="526" y="138" text-anchor="middle" font-size="13" fill="#222">A(t)</text>
+
+  <rect x="630" y="100" width="64" height="44" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+  <text x="662" y="129" text-anchor="middle" font-size="19" fill="#222">+</text>
+
+  <rect x="735" y="100" width="94" height="44" rx="5" fill="#b45309" stroke="#b45309" stroke-width="1.4"/>
+  <text x="782" y="128" text-anchor="middle" font-size="15" font-weight="bold" fill="#ffffff">X(t)</text>
+
+  <rect x="542" y="212" width="188" height="52" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.4"/>
+  <text x="636" y="232" text-anchor="middle" font-size="13" fill="#222">과거 백색잡음</text>
+  <text x="636" y="252" text-anchor="middle" font-size="13" fill="#222">A(t-1) … A(t-q)</text>
+
+  <path d="M586,122 L625,122" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <path d="M694,122 L730,122" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <path d="M510,144 L510,238 L536,238" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <path d="M652,212 L652,150" stroke="#333" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+  <text x="662" y="186" font-size="13" fill="#b45309">가중치 -theta(1) … -theta(q)</text>
+  <text x="452" y="196" font-size="13" fill="#555">지연</text>
+
+  <!-- identification band -->
+  <text x="24" y="322" font-size="14" font-weight="bold" fill="#222">식별 — 표본 ACF와 PACF의 모양으로 차수를 읽는다</text>
+  <text x="24" y="348" font-size="13" fill="#2d6a4f">AR(p)</text>
+  <text x="90" y="348" font-size="13" fill="#222">ACF는 지수적으로 감쇠한다 · PACF는 시차 p를 넘으면 0으로 끊긴다 → p를 PACF에서 읽는다</text>
+  <text x="24" y="372" font-size="13" fill="#b45309">MA(q)</text>
+  <text x="90" y="372" font-size="13" fill="#222">ACF는 시차 q를 넘으면 0으로 끊긴다 → q를 ACF에서 읽는다 · PACF는 감쇠한다</text>
+  <text x="24" y="396" font-size="13" fill="#555">ARMA</text>
+  <text x="90" y="396" font-size="13" fill="#222">둘 다 감쇠해 그림만으로는 끊기지 않는다 · 시행착오와 AIC 같은 정보기준으로 고른다</text>
+  <text x="24" y="420" font-size="13" fill="#9d0208">비정상</text>
+  <text x="90" y="420" font-size="13" fill="#222">ACF가 0으로 내려오지 않는다 → 차분해 정상계열로 만든 뒤 다시 식별한다 (ARIMA)</text>
+</svg>
