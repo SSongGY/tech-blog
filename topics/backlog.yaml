@@ -6015,3 +6015,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-203
+    title: "생체인식 템플릿 보호 (ISO/IEC 24745)"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "얼굴·지문은 유출돼도 바꿀 수 없다는 점에서 출발해 기밀성·무결성·갱신성·비가역성·비연결성 요구를 정리하고, 취소 가능 생체인식과 생체 암호의 구현 갈래를 비교한다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-204
+    title: "제시공격 탐지 (PAD, ISO/IEC 30107)"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "제시공격의 유형 분류에서 시작해 탐지 기법을 능동·수동으로 가르고, 시험·보고 표준이 적용 범위에서 무엇을 제외하는지까지 적어 '인증 통과=안전'이 아님을 보인다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-205
+    title: "ISO/IEC/IEEE 12207 소프트웨어 생명주기 프로세스"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "합의·조직지원·기술관리·기술 네 프로세스군의 구성과 각 프로세스의 목적·결과 구조를 정리하고, 15288과 같은 목적을 두고 활동만 다른 이유를 짚는다"
+    code: none
+    origin: exam
+    status: todo
