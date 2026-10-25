@@ -261,6 +261,8 @@ verified: true
 > 개념 정리: [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](../../data-analysis/2026-10-07-isolation-forest-path-length/index.md)
 >
 > 개념 정리: [DBSCAN — 군집과 잡음을 같은 정의에서 뽑아내는 여섯 단계](../../data-analysis/2026-10-25-dbscan-density-based-clustering-definitions/index.md)
+>
+> 개념 정리: [협업 필터링 — 사용자 기반·아이템 기반·행렬 분해가 먼저 계산하는 것](../../data-analysis/2026-10-25-collaborative-filtering-user-item-matrix-factorization/index.md)
 
 끝
 

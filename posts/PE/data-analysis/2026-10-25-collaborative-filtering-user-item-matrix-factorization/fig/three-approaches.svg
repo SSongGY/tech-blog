@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbfa"/>
+
+  <!-- ===== 왼쪽: 평점 행렬과 두 이웃 방식 ===== -->
+  <text x="40" y="38" font-size="15" font-weight="bold" fill="#1b1b1b">평점 행렬 R — 사용자 6 × 아이템 5</text>
+  <text x="40" y="60" font-size="13" fill="#555555">빈칸이 예측 대상이다</text>
+
+  <!-- 열 머리 -->
+  <text x="120" y="80" font-size="13" fill="#333333" text-anchor="middle">i1</text>
+  <text x="160" y="80" font-size="13" fill="#333333" text-anchor="middle">i2</text>
+  <text x="200" y="80" font-size="13" fill="#333333" text-anchor="middle">i3</text>
+  <text x="240" y="80" font-size="13" fill="#333333" text-anchor="middle">i4</text>
+  <text x="280" y="80" font-size="13" fill="#333333" text-anchor="middle">i5</text>
+
+  <!-- 행 머리 -->
+  <text x="90" y="107" font-size="13" fill="#333333" text-anchor="end">u1</text>
+  <text x="90" y="135" font-size="13" fill="#333333" text-anchor="end">u2</text>
+  <text x="90" y="163" font-size="13" fill="#333333" text-anchor="end">u3</text>
+  <text x="90" y="191" font-size="13" fill="#333333" text-anchor="end">u4</text>
+  <text x="90" y="219" font-size="13" fill="#333333" text-anchor="end">u5</text>
+  <text x="90" y="247" font-size="13" fill="#333333" text-anchor="end">u6</text>
+
+  <!-- 격자 -->
+  <rect x="100" y="88" width="200" height="168" fill="#ffffff" stroke="#999999" stroke-width="1"/>
+  <line x1="140" y1="88" x2="140" y2="256" stroke="#dddddd"/>
+  <line x1="180" y1="88" x2="180" y2="256" stroke="#dddddd"/>
+  <line x1="220" y1="88" x2="220" y2="256" stroke="#dddddd"/>
+  <line x1="260" y1="88" x2="260" y2="256" stroke="#dddddd"/>
+  <line x1="100" y1="116" x2="300" y2="116" stroke="#dddddd"/>
+  <line x1="100" y1="144" x2="300" y2="144" stroke="#dddddd"/>
+  <line x1="100" y1="172" x2="300" y2="172" stroke="#dddddd"/>
+  <line x1="100" y1="200" x2="300" y2="200" stroke="#dddddd"/>
+  <line x1="100" y1="228" x2="300" y2="228" stroke="#dddddd"/>
+
+  <!-- 값 -->
+  <g font-size="13" fill="#1b1b1b" text-anchor="middle">
+    <text x="120" y="107">5</text><text x="160" y="107">4</text><text x="200" y="107">5</text><text x="240" y="107">1</text>
+    <text x="120" y="135">4</text><text x="160" y="135">3</text><text x="200" y="135">4</text><text x="240" y="135">1</text><text x="280" y="135">2</text>
+    <text x="120" y="163">2</text><text x="160" y="163">1</text><text x="200" y="163">2</text><text x="240" y="163">5</text><text x="280" y="163">4</text>
+    <text x="120" y="191">5</text><text x="160" y="191">5</text><text x="200" y="191">4</text><text x="240" y="191">2</text><text x="280" y="191">1</text>
+    <text x="120" y="219">1</text><text x="160" y="219">2</text><text x="200" y="219">1</text><text x="240" y="219">4</text><text x="280" y="219">5</text>
+    <text x="120" y="247">3</text><text x="160" y="247">2</text><text x="200" y="247">3</text><text x="240" y="247">1</text><text x="280" y="247">2</text>
+  </g>
+  <text x="280" y="107" font-size="15" fill="#9d0208" text-anchor="middle" font-weight="bold">?</text>
+
+  <!-- 행 묶음 (사용자 기반) -->
+  <rect x="96" y="84" width="208" height="64" fill="none" stroke="#2d6a4f" stroke-width="2.5" rx="4"/>
+  <!-- 열 묶음 (아이템 기반) -->
+  <rect x="216" y="84" width="88" height="176" fill="none" stroke="#b45309" stroke-width="2.5" rx="4"/>
+
+  <!-- 범례 -->
+  <rect x="40" y="284" width="14" height="14" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="62" y="296" font-size="13" fill="#1b1b1b">① 사용자 기반 — 행끼리 닮은 정도를 먼저 센다</text>
+  <rect x="40" y="310" width="14" height="14" fill="none" stroke="#b45309" stroke-width="2.5"/>
+  <text x="62" y="322" font-size="13" fill="#1b1b1b">② 아이템 기반 — 열끼리 닮은 정도를 먼저 센다</text>
+  <text x="62" y="346" font-size="13" fill="#555555">둘 다 공통 평가자(또는 공통 아이템)가 있어야 계산된다</text>
+
+  <!-- ===== 오른쪽: 행렬 분해 ===== -->
+  <line x1="370" y1="30" x2="370" y2="370" stroke="#dddddd" stroke-width="1"/>
+
+  <text x="410" y="38" font-size="15" font-weight="bold" fill="#1b1b1b">③ 행렬 분해 — 닮은 정도를 세지 않는다</text>
+  <text x="410" y="60" font-size="13" fill="#555555">사용자와 아이템을 같은 잠재요인 공간 f 로 보낸다</text>
+
+  <rect x="410" y="88" width="110" height="168" fill="#ffffff" stroke="#333333" stroke-width="1.5" rx="3"/>
+  <text x="465" y="168" font-size="17" fill="#1b1b1b" text-anchor="middle" font-style="italic">R</text>
+  <text x="465" y="190" font-size="13" fill="#555555" text-anchor="middle">6 × 5</text>
+  <text x="465" y="276" font-size="13" fill="#555555" text-anchor="middle">관측된 평점만</text>
+
+  <text x="540" y="176" font-size="20" fill="#333333" text-anchor="middle">≈</text>
+
+  <rect x="564" y="88" width="56" height="168" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5" rx="3"/>
+  <text x="592" y="168" font-size="17" fill="#1b1b1b" text-anchor="middle" font-style="italic">P</text>
+  <text x="592" y="190" font-size="13" fill="#555555" text-anchor="middle">6 × f</text>
+  <text x="592" y="276" font-size="13" fill="#2d6a4f" text-anchor="middle">사용자 요인</text>
+
+  <text x="640" y="176" font-size="20" fill="#333333" text-anchor="middle">·</text>
+
+  <rect x="664" y="144" width="150" height="56" fill="#fdf2e3" stroke="#b45309" stroke-width="1.5" rx="3"/>
+  <text x="739" y="168" font-size="17" fill="#1b1b1b" text-anchor="middle" font-style="italic">Qᵀ</text>
+  <text x="739" y="190" font-size="13" fill="#555555" text-anchor="middle">f × 5</text>
+  <text x="739" y="276" font-size="13" fill="#b45309" text-anchor="middle">아이템 요인</text>
+
+  <text x="410" y="316" font-size="14" fill="#1b1b1b">예측식   r̂(u,i) = μ + b(u) + b(i) + q(i)ᵀ p(u)</text>
+  <text x="410" y="342" font-size="13" fill="#555555">빈칸을 채우지 않고 관측된 평점만으로 P·Q 를 학습한다</text>
+</svg>
