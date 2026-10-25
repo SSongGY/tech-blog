@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#222">데이터 관측가능성 — 파이프라인에서 무엇을 내보내 상태를 추론하는가</text>
+
+  <!-- pipeline row -->
+  <rect x="60" y="62" width="190" height="52" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="155" y="83" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">원천 시스템</text>
+  <text x="155" y="103" text-anchor="middle" font-size="13" fill="#333">업무 DB · 로그 · 외부 연계</text>
+
+  <rect x="345" y="62" width="190" height="52" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="83" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">파이프라인</text>
+  <text x="440" y="103" text-anchor="middle" font-size="13" fill="#333">적재 · 변환 · 적합성 검사</text>
+
+  <rect x="630" y="62" width="190" height="52" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="725" y="83" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">소비 지점</text>
+  <text x="725" y="103" text-anchor="middle" font-size="13" fill="#333">보고서 · 지표 · 학습 데이터</text>
+
+  <path d="M250,88 L340,88" stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#a2)"/>
+  <path d="M535,88 L625,88" stroke="#444" stroke-width="1.8" fill="none" marker-end="url(#a2)"/>
+
+  <!-- signal arrows -->
+  <path d="M104,206 L104,120" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+  <path d="M272,206 L272,120" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+  <path d="M440,206 L440,120" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+  <path d="M608,206 L608,120" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+  <path d="M776,206 L776,120" stroke="#b45309" stroke-width="1.5" fill="none" marker-end="url(#a2)"/>
+
+  <text x="864" y="150" text-anchor="end" font-size="13" fill="#b45309">관측 신호를 전 구간에서 내보낸다</text>
+
+  <!-- signal row -->
+  <rect x="28" y="208" width="152" height="62" rx="6" fill="#fdf5e9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="104" y="231" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">신선도</text>
+  <text x="104" y="252" text-anchor="middle" font-size="13" fill="#333">제때 도착했는가</text>
+
+  <rect x="196" y="208" width="152" height="62" rx="6" fill="#fdf5e9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="272" y="231" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">규모</text>
+  <text x="272" y="252" text-anchor="middle" font-size="13" fill="#333">예상한 양이 왔는가</text>
+
+  <rect x="364" y="208" width="152" height="62" rx="6" fill="#fdf5e9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="440" y="231" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">분포 · 품질</text>
+  <text x="440" y="252" text-anchor="middle" font-size="13" fill="#333">값의 모양이 같은가</text>
+
+  <rect x="532" y="208" width="152" height="62" rx="6" fill="#fdf5e9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="608" y="231" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">스키마</text>
+  <text x="608" y="252" text-anchor="middle" font-size="13" fill="#333">구조가 바뀌었는가</text>
+
+  <rect x="700" y="208" width="152" height="62" rx="6" fill="#fdf5e9" stroke="#b45309" stroke-width="1.4"/>
+  <text x="776" y="231" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">계보</text>
+  <text x="776" y="252" text-anchor="middle" font-size="13" fill="#333">어디서 와 어디로 가는가</text>
+
+  <!-- bottom notes -->
+  <text x="28" y="312" font-size="14" font-weight="bold" fill="#222">신호를 모아 하는 일</text>
+  <text x="170" y="312" font-size="14" fill="#2d6a4f">탐지</text>
+  <text x="212" y="312" font-size="14" fill="#444">→</text>
+  <text x="236" y="312" font-size="14" fill="#2d6a4f">진단(계보를 타고 근본원인까지)</text>
+  <text x="488" y="312" font-size="14" fill="#444">→</text>
+  <text x="512" y="312" font-size="14" fill="#2d6a4f">영향범위 산정</text>
+  <text x="634" y="312" font-size="14" fill="#444">→</text>
+  <text x="658" y="312" font-size="14" fill="#2d6a4f">조치와 재처리</text>
+
+  <text x="28" y="344" font-size="13" fill="#555">모니터링은 정해 둔 규칙이 깨진 것을 알린다 — 아는 고장만 잡는다</text>
+  <text x="28" y="368" font-size="13" fill="#555">관측가능성은 규칙을 미리 두지 않은 변화도 신호의 평소 모양과 견주어 드러낸다</text>
+  <text x="28" y="392" font-size="13" fill="#9d0208">주의 — 신호는 문제를 가리킬 뿐이다. 데이터 품질을 보장하지는 않는다</text>
+</svg>

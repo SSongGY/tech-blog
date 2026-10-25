@@ -6048,3 +6048,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-206
+    title: "ARIMA와 Box-Jenkins 모형화 절차"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "정상성 판정과 차분, 식별-추정-진단 3단계 절차, 잔차 백색잡음 검정과 정보기준(AIC)에 의한 차수 선택, SARIMA 확장까지"
+    code: none
+    origin: exam
+    status: todo
