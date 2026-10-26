@@ -1,0 +1,170 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-26-schema-introspection-sqlite-master-pragma
+# 명령      : python schema_introspection.py
+# 수행 시각 : 2026-10-26 08:26 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[author]  2행
+  컬럼      | 타입    | 제약
+  ----------+---------+-------------
+  author_id | INTEGER | PK
+  name      | TEXT    | NOT NULL
+  country   | TEXT    | DEFAULT 'KR'
+
+  author_id | name              | country
+  ----------+-------------------+--------
+          1 | 김연수            | KR
+          2 | Ursula K. Le Guin | US
+
+[book]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+----------------------
+  isbn      | TEXT    | PK NOT NULL
+  edition   | INTEGER | PK NOT NULL DEFAULT 1
+  title     | TEXT    | NOT NULL
+  author_id | INTEGER |
+  price     | INTEGER |
+
+  isbn       | edition | title                  | author_id | price
+  -----------+---------+------------------------+-----------+------
+  978-89-001 |       1 | 파도가 바다의 일이라면 |         1 | 15000
+  978-89-001 |       2 | 파도가 바다의 일이라면 |         1 | 17000
+  978-00-204 |       1 | The Dispossessed       |         2 | 24000
+
+[인덱스]
+  이름          | 대상 표 | 정의
+  --------------+---------+---------------------------------------------------------------
+  ix_book_cheap | book    | CREATE INDEX ix_book_cheap ON book(price) WHERE price < 20000
+  ux_book_title | book    | CREATE UNIQUE INDEX ux_book_title ON book(title, edition DESC)
+
+================================================================
+1. sqlite_master — 이 데이터베이스에 무엇이 들어 있는가
+================================================================
+  type    | name                      | tbl_name      | sql_is_null
+  --------+---------------------------+---------------+------------
+  index   | ix_book_cheap             | book          | 0          
+  index   | sqlite_autoindex_author_1 | author        | 1          
+  index   | sqlite_autoindex_book_1   | book          | 1          
+  index   | ux_book_title             | book          | 0          
+  table   | author                    | author        | 0          
+  table   | book                      | book          | 0          
+  trigger | trg_book_price_floor      | book          | 0          
+  view    | v_book_author             | v_book_author | 0          
+
+================================================================
+2. sqlite_master.sql — 정의는 친 문장 그대로 남는다
+================================================================
+CREATE INDEX ix_book_cheap ON book(price) WHERE price < 20000
+
+================================================================
+3. PRAGMA table_info(book) — 컬럼 목록
+================================================================
+  cid | name      | type    | notnull | dflt_value | pk
+  ----+-----------+---------+---------+------------+---
+  0   | isbn      | TEXT    | 1       | NULL       | 1 
+  1   | edition   | INTEGER | 1       | 1          | 2 
+  2   | title     | TEXT    | 1       | NULL       | 0 
+  3   | author_id | INTEGER | 0       | NULL       | 0 
+  4   | price     | INTEGER | 0       | NULL       | 0 
+
+================================================================
+4. PRAGMA table_xinfo(book) — 숨은 컬럼까지
+================================================================
+  cid | name       | type    | notnull | dflt_value | pk | hidden
+  ----+------------+---------+---------+------------+----+-------
+  0   | isbn       | TEXT    | 1       | NULL       | 1  | 0     
+  1   | edition    | INTEGER | 1       | 1          | 2  | 0     
+  2   | title      | TEXT    | 1       | NULL       | 0  | 0     
+  3   | author_id  | INTEGER | 0       | NULL       | 0  | 0     
+  4   | price      | INTEGER | 0       | NULL       | 0  | 0     
+  5   | title_fold | TEXT    | 0       | NULL       | 0  | 2     
+
+================================================================
+5. PRAGMA index_list — 이 표에 달린 인덱스
+================================================================
+  seq | name                    | unique | origin | partial
+  ----+-------------------------+--------+--------+--------
+  0   | ix_book_cheap           | 0      | c      | 1      
+  1   | ux_book_title           | 1      | c      | 0      
+  2   | sqlite_autoindex_book_1 | 1      | pk     | 0      
+
+  seq | name                      | unique | origin | partial
+  ----+---------------------------+--------+--------+--------
+  0   | sqlite_autoindex_author_1 | 1      | u      | 0      
+
+================================================================
+6. PRAGMA index_xinfo(ux_book_title) — 인덱스 안의 컬럼 순서
+================================================================
+  seqno | cid | name    | desc | coll   | key
+  ------+-----+---------+------+--------+----
+  0     | 2   | title   | 0    | BINARY | 1  
+  1     | 1   | edition | 1    | BINARY | 1  
+  2     | -1  | NULL    | 0    | BINARY | 0  
+
+================================================================
+7. PRAGMA foreign_key_list(book) — 외래키
+================================================================
+  id | seq | table  | from      | to        | on_update | on_delete | match
+  ---+-----+--------+-----------+-----------+-----------+-----------+------
+  0  | 0   | author | author_id | author_id | NO ACTION | SET NULL  | NONE 
+
+================================================================
+8. pragma_ 테이블 값 함수 — 모든 표의 컬럼을 한 번에
+================================================================
+  tbl    | cid | col       | type    | notnull | dflt_value
+  -------+-----+-----------+---------+---------+-----------
+  author | 0   | author_id | INTEGER | 0       | NULL      
+  author | 1   | name      | TEXT    | 1       | NULL      
+  author | 2   | country   | TEXT    | 0       | 'KR'      
+  book   | 0   | isbn      | TEXT    | 1       | NULL      
+  book   | 1   | edition   | INTEGER | 1       | 1         
+  book   | 2   | title     | TEXT    | 1       | NULL      
+  book   | 3   | author_id | INTEGER | 0       | NULL      
+  book   | 4   | price     | INTEGER | 0       | NULL      
+
+================================================================
+9. NOT NULL 인데 기본값이 없는 컬럼 — 적재 전에 걸러낼 것들
+================================================================
+  tbl    | col  
+  -------+------
+  author | name 
+  book   | title
+
+================================================================
+10. author_id 는 PK 인데 notnull 이 0 이다 — 정말 NULL 이 들어가나
+================================================================
+  author_id | name             
+  ----------+------------------
+  1         | 김연수              
+  2         | Ursula K. Le Guin
+  3         | 이름 없음            
+
+================================================================
+11. PRAGMA 인자에 플레이스홀더를 쓸 수 있나
+================================================================
+  PRAGMA table_info(?) — OperationalError: near "?": syntax error
+
+  cid | name      | type   
+  ----+-----------+--------
+  0   | isbn      | TEXT   
+  1   | edition   | INTEGER
+  2   | title     | TEXT   
+  3   | author_id | INTEGER
+  4   | price     | INTEGER
+

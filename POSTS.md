@@ -107,6 +107,7 @@
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-26 | [UML 다이어그램 분류 — 구조 7종과 행위 7종](posts/PE/software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01), OMG UML 1.5 (formal/03-03-01) | 문서 근거 |
 | 2026-10-26 | [모니터와 조건변수 — 두 가지 시그널 의미론](posts/PE/system/2026-10-26-monitor-condition-variable-signal-semantics/index.md) | 중급 | Hoare, CACM 17(10) pp.549-557 (1974), Lampson·Redell, CACM 23(2) pp.105-117 (1980), POSIX.1-2017 (IEEE Std 1003.1-2017), Open Group Base Specifications Issue 7 2018 Edition, Java SE 21 JLS §17.2.1 | 문서 근거 |
 | 2026-10-26 | [불변 백업과 에어갭 — 복제가 따라가는 훼손을 끊는 사본](posts/PE/security/2026-10-26-immutable-backup-and-air-gap/index.md) | 중급 | NIST SP 800-209 (October 2020), NIST SP 800-53 Rev. 5 (September 2020, updates as of December 10, 2020), NIST IR 8374 (February 2022), CNSSI 4009-2022 | 문서 근거 |
 | 2026-10-25 | [트라이와 PATRICIA — 비교 대신 비트로 분기하는 탐색 구조](posts/PE/software-engineering/2026-10-25-trie-and-patricia-bit-branching/index.md) | 중급 | Python 3.13.5, Journal of the ACM Vol. 15 No. 4 (1968-10), pp. 514-534, Communications of the ACM Vol. 3 No. 9 (1960-09), pp. 490-499, IEEE JSAC Vol. 17 No. 6 (1999-06), pp. 1083-1092, Dr. Dobb's Journal (1998-08) | 실행 검증 |
@@ -115,7 +116,6 @@
 | 2026-10-25 | [ISO/IEC 25024 데이터 품질 측정 — 품질 측정원소와 측정함수](posts/PE/data-analysis/2026-10-25-iso-25024-data-quality-measurement-qme/index.md) | 중급 | ISO/IEC 25024:2015, ISO/IEC 25012:2008, ISO/IEC 25020:2019, ISO/IEC 5259-2:2024 | 문서 근거 |
 | 2026-10-25 | [DBSCAN — 군집과 잡음을 같은 정의에서 뽑아내는 여섯 단계](posts/PE/data-analysis/2026-10-25-dbscan-density-based-clustering-definitions/index.md) | 중급 | Python 3.13.5, Ester·Kriegel·Sander·Xu, KDD-96 Proceedings pp.226-231 (1996) | 실행 검증 |
 | 2026-10-25 | [협업 필터링 — 사용자 기반·아이템 기반·행렬 분해가 먼저 계산하는 것](posts/PE/data-analysis/2026-10-25-collaborative-filtering-user-item-matrix-factorization/index.md) | 중급 | Python 3.13.5, Sarwar·Karypis·Konstan·Riedl, WWW10 Proceedings pp.285-295 (2001), Koren·Bell·Volinsky, IEEE Computer 42(8) pp.30-37 (2009) | 실행 검증 |
-| 2026-10-23 | [UML 다이어그램 분류 — 구조와 행위](posts/PE/software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md) | 중급 | — | 문서 근거 (미완) |
 | 2026-10-23 | [객체지향 설계 원칙 SOLID 5가지](posts/PE/software-engineering/2026-10-23-solid-design-principles/index.md) | 중급 | Robert C. Martin, Design Principles and Design Patterns (2000), Liskov & Wing, ACM TOPLAS 16(6) (1994) | 문서 근거 |
 | 2026-10-23 | [소프트웨어 재공학과 역공학](posts/PE/software-engineering/2026-10-23-software-reengineering-reverse-engineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), Fowler, Refactoring (refactoring.com, 2026년 10월 확인) | 문서 근거 |
 | 2026-10-23 | [심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조](posts/PE/data-analysis/2026-10-23-simpsons-paradox-confounder-collapsibility/index.md) | 중급 | Python 3.13.5, Simpson, JRSS Series B 13(2) (1951), Bickel·Hammel·O'Connell, Science 187(4175) (1975) | 실행 검증 |
@@ -293,7 +293,7 @@
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
-| 2026-10-23 | [GIL 이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기](posts/Performance/python/2026-10-26-gil-bound-and-unbound-workloads/index.md) | 심화 | — | 실행 검증 (미완) |
+| 2026-10-26 | [GIL이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기](posts/Performance/python/2026-10-26-gil-bound-and-unbound-workloads/index.md) | 심화 | Python 3.13.5, Windows 11, 논리 코어 20개 | 실행 검증 |
 | 2026-10-23 | [자바스크립트 이벤트 루프에서 마이크로태스크가 먼저인 이유](posts/Language/javascript/2026-10-23-microtask-before-macrotask/index.md) | 중급 | Node.js v24.19.0, V8 13.6.233.17-node.51, Windows 11 | 실행 검증 |
 | 2026-10-23 | [제너레이터가 실제로 아끼는 것 — tracemalloc 으로 본 메모리](posts/Performance/python/2026-10-23-generator-memory-tracemalloc/index.md) | 중급 | Python 3.13.5, CPython 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-23 | [압축 알고리즘 고르기 — gzip·bzip2·lzma 를 같은 데이터로 대조](posts/Performance/compression/2026-10-23-compression-gzip-bzip2-lzma/index.md) | 중급 | Python 3.13.5, zlib 1.3.1, Windows 11 | 실행 검증 |

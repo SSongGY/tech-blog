@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#f7f7f5"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2933">같은 스키마를 읽는 두 경로</text>
+
+  <!-- 1. DDL -->
+  <rect x="24" y="52" width="250" height="118" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.5"/>
+  <text x="38" y="74" font-size="13" font-weight="bold" fill="#1f2933">내가 친 DDL</text>
+  <text x="38" y="98" font-size="13" fill="#3e4c59" font-family="'Consolas',monospace">CREATE TABLE book (</text>
+  <text x="38" y="118" font-size="13" fill="#3e4c59" font-family="'Consolas',monospace">  isbn TEXT NOT NULL,</text>
+  <text x="38" y="138" font-size="13" fill="#3e4c59" font-family="'Consolas',monospace">  PRIMARY KEY (isbn, ...)</text>
+  <text x="38" y="158" font-size="13" fill="#3e4c59" font-family="'Consolas',monospace">);</text>
+
+  <!-- 화살표: DDL -> sqlite_schema -->
+  <line x1="274" y1="111" x2="326" y2="111" stroke="#52606d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="280" y="103" font-size="13" fill="#3e4c59">저장</text>
+
+  <!-- 2. sqlite_schema -->
+  <rect x="330" y="52" width="520" height="150" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="344" y="74" font-size="13" font-weight="bold" fill="#2d6a4f">sqlite_schema — 파일에 든 표 (별칭 sqlite_master)</text>
+
+  <line x1="344" y1="86" x2="836" y2="86" stroke="#cbd2d9" stroke-width="1"/>
+  <text x="344" y="106" font-size="13" fill="#1f2933">type</text>
+  <text x="408" y="106" font-size="13" fill="#1f2933">name</text>
+  <text x="614" y="106" font-size="13" fill="#1f2933">tbl_name</text>
+  <text x="700" y="106" font-size="13" fill="#1f2933">sql</text>
+  <line x1="344" y1="114" x2="836" y2="114" stroke="#cbd2d9" stroke-width="1"/>
+
+  <text x="344" y="134" font-size="13" fill="#3e4c59">table</text>
+  <text x="408" y="134" font-size="13" fill="#3e4c59">book</text>
+  <text x="614" y="134" font-size="13" fill="#3e4c59">book</text>
+  <text x="700" y="134" font-size="13" fill="#2d6a4f">원문 DDL</text>
+
+  <text x="344" y="156" font-size="13" fill="#3e4c59">index</text>
+  <text x="408" y="156" font-size="13" fill="#3e4c59">ux_book_title</text>
+  <text x="614" y="156" font-size="13" fill="#3e4c59">book</text>
+  <text x="700" y="156" font-size="13" fill="#2d6a4f">원문 DDL</text>
+
+  <text x="344" y="178" font-size="13" fill="#3e4c59">index</text>
+  <text x="408" y="178" font-size="13" fill="#3e4c59">sqlite_autoindex_book_1</text>
+  <text x="614" y="178" font-size="13" fill="#3e4c59">book</text>
+  <text x="700" y="178" font-size="13" fill="#9d0208">NULL</text>
+
+  <text x="330" y="222" font-size="13" fill="#9d0208">PRIMARY KEY·UNIQUE 가 자동으로 만든 인덱스에는 적어 둘 원문이 없다</text>
+
+  <!-- 화살표: sqlite_schema -> 파서 -->
+  <line x1="590" y1="236" x2="590" y2="268" stroke="#52606d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="600" y="258" font-size="13" fill="#3e4c59">DB 를 열 때 문장을 파싱한다</text>
+
+  <!-- 3. 메모리 스키마 -->
+  <rect x="330" y="272" width="520" height="74" rx="6" fill="#ffffff" stroke="#52606d" stroke-width="1.5"/>
+  <text x="344" y="296" font-size="13" font-weight="bold" fill="#1f2933">메모리 안의 스키마 — 컬럼·제약·인덱스가 항목으로 쪼개져 있다</text>
+  <text x="344" y="320" font-size="13" fill="#3e4c59">컬럼 순서 · 타입 · NOT NULL · 기본값 · PK 자리 · 정렬 방향 · 외래키 동작</text>
+  <text x="344" y="338" font-size="13" fill="#3e4c59">생성 컬럼처럼 원문에만 있던 것도 여기서는 하나의 항목이 된다</text>
+
+  <!-- 화살표: 메모리 -> PRAGMA -->
+  <line x1="590" y1="346" x2="590" y2="378" stroke="#52606d" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4. PRAGMA -->
+  <rect x="330" y="382" width="520" height="66" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="344" y="406" font-size="13" font-weight="bold" fill="#2d6a4f">PRAGMA — 파싱된 항목을 행으로 돌려준다</text>
+  <text x="344" y="430" font-size="13" fill="#3e4c59">table_info · table_xinfo · index_list · index_xinfo · foreign_key_list</text>
+
+  <!-- 왼쪽 요약 -->
+  <rect x="24" y="272" width="250" height="176" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="38" y="296" font-size="13" font-weight="bold" fill="#b45309">어느 쪽을 볼 것인가</text>
+  <text x="38" y="322" font-size="13" fill="#3e4c59">정의 문장을 그대로 보려면</text>
+  <text x="38" y="340" font-size="13" fill="#3e4c59">→ sqlite_schema.sql</text>
+  <text x="38" y="368" font-size="13" fill="#3e4c59">컬럼·제약을 항목으로</text>
+  <text x="38" y="386" font-size="13" fill="#3e4c59">코드에서 다루려면</text>
+  <text x="38" y="404" font-size="13" fill="#3e4c59">→ PRAGMA</text>
+  <text x="38" y="432" font-size="13" fill="#3e4c59">둘은 서로를 대신하지 못한다</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+</svg>
