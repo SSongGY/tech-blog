@@ -1,0 +1,131 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-26-attach-multiple-databases
+# 명령      : python attach_demo.py
+# 수행 시각 : 2026-10-26 23:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 두 파일을 대상으로 한다
+================================================================
+--- 파일 sales.db ---
+[orders]  3행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  order_id    | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  amount      | INTEGER | NOT NULL
+  ordered_on  | TEXT    | NOT NULL
+
+  order_id | customer_id | amount | ordered_on
+  ---------+-------------+--------+-----------
+       101 |           1 |  48000 | 2026-10-02
+       102 |           2 |  15000 | 2026-10-11
+       103 |           1 |   9000 | 2026-10-20
+
+--- 파일 archive.db ---
+[orders]  2행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  order_id    | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  amount      | INTEGER | NOT NULL
+  ordered_on  | TEXT    | NOT NULL
+
+  order_id | customer_id | amount | ordered_on
+  ---------+-------------+--------+-----------
+         7 |           1 |  32000 | 2024-03-15
+         8 |           3 |   5000 | 2024-07-01
+
+[customer]  3행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  customer_id | INTEGER | PK
+  name        | TEXT    | NOT NULL
+
+  customer_id | name
+  ------------+-------
+            1 | 김하늘
+            2 | 박도윤
+            3 | 이서준
+
+================================================================
+1. ATTACH — 붙이고 나면 database_list 에 한 줄이 는다
+================================================================
+  seq=0  schema=main
+  seq=2  schema=archive
+
+================================================================
+2. 파일을 건너뛰는 조인과 UNION
+================================================================
+sql> SELECT o.order_id, c.name, o.amount FROM main.orders AS o JOIN archive.customer AS c USING (customer_id) ORDER BY o.order_id
+     (101, '김하늘', 48000)
+     (102, '박도윤', 15000)
+     (103, '김하늘', 9000)
+
+sql> SELECT customer_id, SUM(amount) AS total FROM (SELECT customer_id, amount FROM main.orders UNION ALL SELECT customer_id, amount FROM archive.orders) GROUP BY customer_id ORDER BY customer_id
+     (1, 89000)
+     (2, 15000)
+     (3, 5000)
+
+================================================================
+3. 같은 이름의 표가 양쪽에 있을 때 — 접두사를 빼면 어디로 가나
+================================================================
+sql> SELECT COUNT(*) FROM orders
+     (3,)
+
+sql> SELECT COUNT(*) FROM main.orders
+     (3,)
+
+sql> SELECT COUNT(*) FROM archive.orders
+     (2,)
+
+================================================================
+4. 트랜잭션은 두 파일에 걸친다 — ROLLBACK 이 양쪽을 되돌린다
+================================================================
+  BEGIN 뒤 INSERT 2건 (파일 하나씩)
+sql> SELECT (SELECT COUNT(*) FROM main.orders), (SELECT COUNT(*) FROM archive.orders)
+     (4, 3)
+
+  ROLLBACK 수행
+sql> SELECT (SELECT COUNT(*) FROM main.orders), (SELECT COUNT(*) FROM archive.orders)
+     (3, 2)
+
+================================================================
+5. 트랜잭션 안에서 DETACH 를 하면 ROLLBACK 이 되돌려 주는가
+================================================================
+  BEGIN 안에서 DETACH 수행 — 에러 없음
+  ROLLBACK 뒤 database_list = ['main']
+  다시 ATTACH 한 뒤      = ['main', 'archive']
+
+================================================================
+6. 저널 모드별 다중 파일 원자성 — 값만 찍는다
+================================================================
+  main     journal_mode = delete
+  archive  journal_mode = delete
+  main 을 WAL 로 바꾼 뒤 = wal
+
+================================================================
+7. 몇 개까지 붙일 수 있나 — 에러가 날 때까지 붙여 본다
+================================================================
+  10개까지 붙은 뒤 OperationalError: too many attached databases - max 10
+  database_list 행 수 = 11
+  이 상태에서 VACUUM INTO → OperationalError: too many attached databases - max 10
+  mem* 를 전부 DETACH 한 뒤 행 수 = 2
+
+================================================================
+8. VACUUM INTO — 붙이지 않고 파일 하나를 통째로 복제한다
+================================================================
+  backup.db 생성, 8192 바이트
+  복제본 orders 행 수 = 3

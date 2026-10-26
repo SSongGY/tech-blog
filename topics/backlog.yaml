@@ -4679,7 +4679,7 @@ topics:
     angle: "파일을 붙여 한 질의로 조인한다. 백업·이관에 쓰는 법과 트랜잭션이 걸치는 범위"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-073
     title: "JSON 함수 — 문서를 컬럼처럼 다루기"
     category: Database
@@ -5893,7 +5893,7 @@ topics:
     angle: "커널 메모리 할당기가 외부·내부 단편화를 각각 어떻게 다루는지, 2의 거듭제곱 분할·병합과 같은 크기 객체 캐시의 대가를 비교"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-192
     title: "워킹셋 모델과 스래싱"
     category: PE
