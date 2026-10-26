@@ -6059,3 +6059,47 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-207
+    title: "MITRE ATT&CK 프레임워크 — 행렬 구조와 활용"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "전술·기법·하위기법·절차의 객체 구조와 그룹·소프트웨어·완화 객체의 관계, 커버리지 평가와 공격자 모의에 쓰는 방법까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-208
+    title: "사이버 킬체인과 침해지표(IoC) — 고통의 피라미드"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "킬체인 7단계와 침해지표 계층을 나란히 놓고, 탐지를 어느 계층에 걸 때 공격자 비용이 어떻게 달라지는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-209
+    title: "STIX와 TAXII — 위협정보 공유 표준"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "STIX 2.1 도메인 객체·관계 객체의 구조와 TAXII 교환 방식, 공유 체계에서 무엇이 표준화되고 무엇이 남는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-210
+    title: "무결성 제약의 네 종류 — 개체·참조·도메인·사용자 정의"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "네 종류를 널 취급과 검사 시점으로 비교하고, 선언적 제약으로 못 거는 규칙을 어디서 받아야 하는지"
+    code: none
+    origin: exam
+    status: todo

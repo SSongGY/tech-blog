@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <text x="440" y="34" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2933">참조 무결성 제약이 검사되는 네 연산</text>
+
+  <!-- 연산 라벨 : 자식 쪽 -->
+  <rect x="520" y="56" width="150" height="30" rx="4" fill="#fdf0e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="595" y="76" font-size="14" text-anchor="middle" fill="#7c3d00">① 자식 INSERT</text>
+  <rect x="682" y="56" width="150" height="30" rx="4" fill="#fdf0e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="757" y="76" font-size="14" text-anchor="middle" fill="#7c3d00">② 자식 UPDATE</text>
+
+  <!-- 연산 라벨 : 부모 쪽 -->
+  <rect x="48" y="56" width="150" height="30" rx="4" fill="#fae7e7" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="123" y="76" font-size="14" text-anchor="middle" fill="#7a0206">③ 부모 DELETE</text>
+  <rect x="210" y="56" width="150" height="30" rx="4" fill="#fae7e7" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="285" y="76" font-size="14" text-anchor="middle" fill="#7a0206">④ 부모 UPDATE</text>
+
+  <line x1="123" y1="86" x2="123" y2="112" stroke="#9d0208" stroke-width="1.5" marker-end="url(#ar-red)"/>
+  <line x1="285" y1="86" x2="285" y2="112" stroke="#9d0208" stroke-width="1.5" marker-end="url(#ar-red)"/>
+  <line x1="595" y1="86" x2="595" y2="112" stroke="#b45309" stroke-width="1.5" marker-end="url(#ar-amber)"/>
+  <line x1="757" y1="86" x2="757" y2="112" stroke="#b45309" stroke-width="1.5" marker-end="url(#ar-amber)"/>
+
+  <defs>
+    <marker id="ar-red" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#9d0208"/>
+    </marker>
+    <marker id="ar-amber" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#b45309"/>
+    </marker>
+    <marker id="ar-green" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <!-- 부모 표 -->
+  <rect x="48" y="114" width="312" height="118" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="204" y="140" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b4332">부모 표 (참조되는 표)</text>
+  <line x1="64" y1="152" x2="344" y2="152" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="64" y="176" font-size="14" fill="#1f2933">후보키 — PRIMARY KEY 또는 UNIQUE</text>
+  <text x="64" y="200" font-size="14" fill="#1f2933">값이 중복되지 않아야 한 행이 특정된다</text>
+  <text x="64" y="222" font-size="13" fill="#52606d">모델에서는 부모 엔터티의 주식별자</text>
+
+  <!-- 자식 표 -->
+  <rect x="520" y="114" width="312" height="118" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="676" y="140" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b4332">자식 표 (참조하는 표)</text>
+  <line x1="536" y1="152" x2="816" y2="152" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="536" y="176" font-size="14" fill="#1f2933">외래키 — 부모 후보키와 열 개수·순서 일치</text>
+  <text x="536" y="200" font-size="14" fill="#1f2933">널이면 짝이 없어도 제약을 벗어난다</text>
+  <text x="536" y="222" font-size="13" fill="#52606d">모델에서는 관계를 따라 내려온 키</text>
+
+  <!-- 참조 화살표 -->
+  <line x1="516" y1="178" x2="368" y2="178" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#ar-green)"/>
+  <text x="442" y="168" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b4332">참조</text>
+  <text x="442" y="202" font-size="13" text-anchor="middle" fill="#52606d">짝이 있어야</text>
+  <text x="442" y="220" font-size="13" text-anchor="middle" fill="#52606d">한다</text>
+
+  <!-- 판정 -->
+  <text x="48" y="268" font-size="14" fill="#7c3d00">①② 자식 쪽 변경 — 짝이 없으면 그 자리에서 거부된다</text>
+  <text x="48" y="292" font-size="14" fill="#7a0206">③④ 부모 쪽 변경 — 남겨진 자식 행을 어떻게 할지는 참조 동작이 정한다</text>
+
+  <!-- 참조 동작 -->
+  <rect x="48" y="312" width="784" height="96" rx="6" fill="#f6f1e7" stroke="#b45309" stroke-width="2"/>
+  <text x="68" y="338" font-size="15" font-weight="bold" fill="#7c3d00">참조 동작 — ON DELETE / ON UPDATE 에 각각 하나씩 건다</text>
+  <text x="68" y="364" font-size="14" fill="#1f2933">NO ACTION (기본값) · RESTRICT · CASCADE · SET NULL · SET DEFAULT</text>
+  <text x="68" y="390" font-size="13" fill="#52606d">검사 시점은 제약이 즉시(immediate)인지 지연(deferred)인지로 또 한 번 갈린다</text>
+</svg>
