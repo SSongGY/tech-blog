@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fdfdfb"/>
+
+  <text x="440" y="34" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2933">TTPs 의 세 계층 — 추상 수준이 내려갈수록 구체적이 된다</text>
+
+  <defs>
+    <marker id="dn" markerWidth="10" markerHeight="10" refX="4" refY="8" orient="auto">
+      <path d="M0,0 L8,0 L4,8 z" fill="#52606d"/>
+    </marker>
+  </defs>
+
+  <!-- 좌측 축 -->
+  <line x1="38" y1="72" x2="38" y2="330" stroke="#52606d" stroke-width="2" marker-end="url(#dn)"/>
+  <text x="22" y="150" font-size="13" fill="#52606d" transform="rotate(-90 22 150)">추상 수준 높음</text>
+  <text x="22" y="300" font-size="13" fill="#52606d" transform="rotate(-90 22 300)">구체적</text>
+
+  <!-- 계층 1 : 전술 -->
+  <rect x="58" y="62" width="420" height="78" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="76" y="88" font-size="15" font-weight="bold" fill="#1b4332">전술 (Tactic) — 공격자가 이루려는 단기 목표</text>
+  <text x="76" y="112" font-size="14" fill="#1f2933">"왜 그 행동을 하는가". ATT&amp;CK 행렬의 열 하나에 해당한다</text>
+  <text x="76" y="132" font-size="13" fill="#52606d">정찰 · 초기 접근 · 실행 · 지속성 · 권한 상승 · 유출 · 영향 …</text>
+
+  <rect x="500" y="62" width="336" height="78" rx="6" fill="#f6f1e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="518" y="88" font-size="14" font-weight="bold" fill="#7c3d00">예시</text>
+  <text x="518" y="112" font-size="14" fill="#1f2933">자격증명 접근</text>
+  <text x="518" y="132" font-size="13" fill="#52606d">계정과 비밀번호를 얻는다</text>
+
+  <!-- 계층 2 : 기법 -->
+  <rect x="58" y="154" width="420" height="78" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="76" y="180" font-size="15" font-weight="bold" fill="#1b4332">기법 (Technique) — 그 목표를 이루는 수단</text>
+  <text x="76" y="204" font-size="14" fill="#1f2933">"어떻게 이루는가". 하위기법으로 한 단계 더 나뉜다</text>
+  <text x="76" y="224" font-size="13" fill="#52606d">기법 하나에 여러 하위기법, 하위기법 하나에 여러 절차가 달린다</text>
+
+  <rect x="500" y="154" width="336" height="78" rx="6" fill="#f6f1e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="518" y="180" font-size="14" font-weight="bold" fill="#7c3d00">예시</text>
+  <text x="518" y="204" font-size="14" fill="#1f2933">OS 자격증명 덤프</text>
+  <text x="518" y="224" font-size="13" fill="#52606d">하위기법: LSASS 메모리</text>
+
+  <!-- 계층 3 : 절차 -->
+  <rect x="58" y="246" width="420" height="78" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="76" y="272" font-size="15" font-weight="bold" fill="#1b4332">절차 (Procedure) — 실제로 사용한 구현</text>
+  <text x="76" y="296" font-size="14" fill="#1f2933">"무엇으로 그렇게 했는가". 실제 관측된 사용 사례로 기록된다</text>
+  <text x="76" y="316" font-size="13" fill="#52606d">절차 하나가 여러 기법·하위기법에 걸칠 수 있다</text>
+
+  <rect x="500" y="246" width="336" height="78" rx="6" fill="#f6f1e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="518" y="272" font-size="14" font-weight="bold" fill="#7c3d00">예시</text>
+  <text x="518" y="296" font-size="14" fill="#1f2933">PowerShell 로 프로세스에 주입해</text>
+  <text x="518" y="316" font-size="14" fill="#1f2933">LSASS 메모리에서 자격증명을 긁는다</text>
+
+  <!-- 하단 -->
+  <line x1="58" y1="340" x2="836" y2="340" stroke="#d3d8de" stroke-width="1"/>
+  <text x="58" y="366" font-size="14" fill="#1f2933">세 계층을 합쳐 <tspan font-weight="bold">행위(behavior)</tspan> 라 부른다. 해시·IP·도메인과 달리 바꾸는 데 비용이 든다.</text>
+  <text x="58" y="392" font-size="14" fill="#7a0206">위로 갈수록 오래 유지되고 아래로 갈수록 자주 바뀐다 — 탐지를 어느 계층에 걸지가 갈린다.</text>
+</svg>
