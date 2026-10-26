@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **463편** · 갱신 2026-10-27
+총 **465편** · 갱신 2026-10-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -330,10 +330,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 72편
+## 기출문제 (exam) — 74편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [기출문제 — 프롬프트 인젝션](posts/PE/exam/2026-10-27-prompt-injection/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
+| 2026-10-27 | [기출문제 — 은행가 알고리즘](posts/PE/exam/2026-10-27-bankers-algorithm/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.8 슬라이드 (S. Weiss 2020 개정판) | 실행 검증 |
 | 2026-10-26 | [기출문제 — TTPs(전술·기법·절차)](posts/PE/exam/2026-10-26-ttps-tactics-techniques-procedures/index.md) | 중급 | NIST SP 800-150 (2016-10), MITRE ATT&CK v20 (2026-10-26 확인), MITRE ATT&CK Design and Philosophy (2020-03), STIX 2.1 OASIS Standard | 문서 근거 |
 | 2026-10-26 | [기출문제 — 정보모델링의 참조 무결성](posts/PE/exam/2026-10-26-referential-integrity-information-modeling/index.md) | 중급 | ISO/IEC 9075-2:2023, FIPS PUB 184 (IDEF1X, 1993), PostgreSQL 18 문서, MySQL 8.4 문서, SQLite 3.49.1 문서 | 문서 근거 |
 | 2026-10-26 | [기출문제 — 데이터 관측가능성(Data Observability)](posts/PE/exam/2026-10-26-data-observability/index.md) | 중급 | ISO/IEC 25012:2008, ISO/IEC 25024:2015, OpenTelemetry Observability Primer (2026-10-26 확인) | 문서 근거 |
