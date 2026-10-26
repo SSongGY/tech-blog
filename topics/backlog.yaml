@@ -2941,7 +2941,7 @@ topics:
     angle: "계층별 비율이 왜 그 모양이어야 하는지. 역피라미드가 만드는 비용"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-099
     title: "인덱스 구조 비교 — B+트리, 해시, 비트맵"
     category: PE

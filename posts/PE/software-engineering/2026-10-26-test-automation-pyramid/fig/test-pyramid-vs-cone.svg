@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#f8fafc"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1e293b">테스트 자동화 피라미드와 뒤집힌 모양</text>
+  <text x="40" y="56" font-size="13" fill="#475569">칸의 넓이가 그 계층에 두는 테스트 건수다. 색은 세 계층을 양쪽에서 같게 맞췄다.</text>
+
+  <text x="230" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">권장 — 피라미드</text>
+  <text x="650" y="100" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">안티패턴 — 아이스크림 콘</text>
+
+  <!-- 피라미드 -->
+  <polygon points="180,120 280,120 313,200 147,200" fill="#fde0e0" stroke="#9d0208" stroke-width="2"/>
+  <polygon points="147,200 313,200 347,280 113,280" fill="#fdeacd" stroke="#b45309" stroke-width="2"/>
+  <polygon points="113,280 347,280 380,360 80,360" fill="#d9ece2" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="230" y="167" font-size="13" text-anchor="middle" fill="#9d0208">종단 간</text>
+  <text x="230" y="247" font-size="13" text-anchor="middle" fill="#b45309">통합</text>
+  <text x="230" y="327" font-size="14" text-anchor="middle" fill="#2d6a4f">단위</text>
+
+  <!-- 아이스크림 콘 -->
+  <polygon points="500,120 800,120 767,200 533,200" fill="#fde0e0" stroke="#9d0208" stroke-width="2"/>
+  <polygon points="533,200 767,200 733,280 567,280" fill="#fdeacd" stroke="#b45309" stroke-width="2"/>
+  <polygon points="567,280 733,280 700,360 600,360" fill="#d9ece2" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="650" y="167" font-size="14" text-anchor="middle" fill="#9d0208">종단 간</text>
+  <text x="650" y="247" font-size="13" text-anchor="middle" fill="#b45309">통합</text>
+  <text x="650" y="327" font-size="13" text-anchor="middle" fill="#2d6a4f">단위</text>
+
+  <!-- 축 설명 -->
+  <text x="440" y="140" font-size="13" text-anchor="middle" fill="#9d0208">느리다</text>
+  <line x1="440" y1="152" x2="440" y2="318" stroke="#64748b" stroke-width="1.5" marker-end="url(#ax)"/>
+  <text x="440" y="340" font-size="13" text-anchor="middle" fill="#2d6a4f">빠르다</text>
+
+  <text x="40" y="398" font-size="13" fill="#475569">위로 갈수록 느리고 불안정하며 실패했을 때 어느 모듈 탓인지 좁혀지지 않는다.</text>
+  <text x="40" y="418" font-size="13" fill="#475569">피라미드는 대부분의 결함을 아래에서 걸러내고, 아이스크림 콘은 같은 결함을 위에서 찾게 만든다.</text>
+
+  <defs>
+    <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>
