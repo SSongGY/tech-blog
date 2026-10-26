@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#f7f7f5"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#1f2933">UML 다이어그램 분류 — 구조 7종 · 행위 7종</text>
+
+  <!-- 뿌리 -->
+  <rect x="330" y="46" width="220" height="42" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="2"/>
+  <text x="440" y="72" font-size="14" font-weight="bold" fill="#1f2933" text-anchor="middle">UML 다이어그램 (14종)</text>
+
+  <!-- 분기선 -->
+  <line x1="440" y1="88" x2="440" y2="106" stroke="#52606d" stroke-width="1.5"/>
+  <line x1="230" y1="106" x2="650" y2="106" stroke="#52606d" stroke-width="1.5"/>
+  <line x1="230" y1="106" x2="230" y2="128" stroke="#52606d" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="650" y1="106" x2="650" y2="128" stroke="#52606d" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 구조 -->
+  <rect x="40" y="132" width="380" height="232" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="58" y="158" font-size="14" font-weight="bold" fill="#2d6a4f">구조 다이어그램 Structure — 7종</text>
+  <text x="58" y="180" font-size="13" fill="#52606d">시간과 무관한 정적 구조를 보인다</text>
+  <text x="58" y="210" font-size="13" fill="#3e4c59">① 클래스 Class</text>
+  <text x="58" y="232" font-size="13" fill="#3e4c59">② 객체 Object</text>
+  <text x="58" y="254" font-size="13" fill="#3e4c59">③ 패키지 Package</text>
+  <text x="58" y="276" font-size="13" fill="#3e4c59">④ 컴포넌트 Component</text>
+  <text x="58" y="298" font-size="13" fill="#3e4c59">⑤ 복합구조 Composite Structure</text>
+  <text x="58" y="320" font-size="13" fill="#3e4c59">⑥ 배치 Deployment</text>
+  <text x="58" y="342" font-size="13" fill="#3e4c59">⑦ 프로파일 Profile</text>
+
+  <!-- 행위 -->
+  <rect x="460" y="132" width="380" height="276" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="478" y="158" font-size="14" font-weight="bold" fill="#b45309">행위 다이어그램 Behavior — 7종</text>
+  <text x="478" y="180" font-size="13" fill="#52606d">시간에 따른 동적 행위를 보인다</text>
+  <text x="478" y="210" font-size="13" fill="#3e4c59">① 유스케이스 Use Case</text>
+  <text x="478" y="232" font-size="13" fill="#3e4c59">② 활동 Activity</text>
+  <text x="478" y="254" font-size="13" fill="#3e4c59">③ 상태머신 State Machine</text>
+
+  <!-- 상호작용 -->
+  <rect x="478" y="270" width="344" height="122" rx="6" fill="#fdf6ec" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="494" y="292" font-size="13" font-weight="bold" fill="#b45309">상호작용 Interaction — 4종 (④~⑦)</text>
+  <text x="494" y="314" font-size="13" fill="#3e4c59">④ 순차 Sequence</text>
+  <text x="494" y="336" font-size="13" fill="#3e4c59">⑤ 통신 Communication</text>
+  <text x="494" y="358" font-size="13" fill="#3e4c59">⑥ 상호작용개요 Interaction Overview</text>
+  <text x="494" y="380" font-size="13" fill="#3e4c59">⑦ 타이밍 Timing</text>
+
+  <text x="40" y="428" font-size="13" fill="#52606d">두 갈래의 경계는 엄격하지 않다 — 구조 안에 상태머신을 중첩하는 식의 혼합을 표준이 허용한다</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+</svg>
