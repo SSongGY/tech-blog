@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#fdfdfb"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+    <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">명령 채널과 데이터 채널이 한 프롬프트로 합쳐지는 자리에서 생긴다</text>
+
+  <rect x="24" y="66" width="196" height="58" rx="6" fill="#e7f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="122" y="90" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">시스템 프롬프트</text>
+  <text x="122" y="110" text-anchor="middle" font-size="13" fill="#2d6a4f">높은 신뢰 · 개발자가 작성</text>
+
+  <rect x="24" y="152" width="196" height="58" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="122" y="176" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">사용자 입력</text>
+  <text x="122" y="196" text-anchor="middle" font-size="13" fill="#b45309">낮은 신뢰 · 질의 접근</text>
+
+  <rect x="24" y="238" width="196" height="58" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="122" y="262" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">외부 자원</text>
+  <text x="122" y="282" text-anchor="middle" font-size="13" fill="#9d0208">웹·문서·도구 결과</text>
+
+  <rect x="320" y="128" width="150" height="106" rx="8" fill="#eef2f7" stroke="#44586e" stroke-width="2"/>
+  <text x="395" y="166" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">하나의 프롬프트</text>
+  <text x="395" y="188" text-anchor="middle" font-size="13" fill="#555">명령과 데이터가</text>
+  <text x="395" y="206" text-anchor="middle" font-size="13" fill="#555">구분되지 않는다</text>
+
+  <rect x="568" y="128" width="130" height="106" rx="8" fill="#ffffff" stroke="#44586e" stroke-width="2"/>
+  <text x="633" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">모델</text>
+  <text x="633" y="198" text-anchor="middle" font-size="13" fill="#555">전부 명령으로 읽는다</text>
+
+  <rect x="762" y="128" width="100" height="106" rx="8" fill="#ffffff" stroke="#44586e" stroke-width="2"/>
+  <text x="812" y="166" text-anchor="middle" font-size="13" fill="#222">도구 호출</text>
+  <text x="812" y="188" text-anchor="middle" font-size="13" fill="#222">출력</text>
+  <text x="812" y="210" text-anchor="middle" font-size="13" fill="#222">연결 자원</text>
+
+  <line x1="220" y1="95" x2="314" y2="150" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="220" y1="181" x2="314" y2="181" stroke="#b45309" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="220" y1="267" x2="314" y2="212" stroke="#9d0208" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="470" y1="181" x2="562" y2="181" stroke="#333" stroke-width="2" marker-end="url(#ah)"/>
+  <line x1="698" y1="181" x2="756" y2="181" stroke="#333" stroke-width="2" marker-end="url(#ah)"/>
+
+  <text x="239" y="174" font-size="13" fill="#b45309">직접 주입</text>
+  <text x="246" y="272" font-size="13" fill="#9d0208">간접 주입</text>
+
+  <path d="M 812 234 L 812 322 L 130 322 L 130 302" fill="none" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ahr)"/>
+  <text x="470" y="316" text-anchor="middle" font-size="13" fill="#9d0208">주입된 명령이 도구·출력을 거쳐 외부 자원에 되실리면 스스로 퍼진다</text>
+
+  <text x="440" y="348" text-anchor="middle" font-size="13" fill="#444">직접 주입 = 질의 접근(공격자가 주 사용자) · 간접 주입 = 자원 통제(공격자가 제3자)</text>
+</svg>
