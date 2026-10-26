@@ -5311,7 +5311,7 @@ topics:
     angle: "성격이 다른 사업을 한 배수로 묶으면 생기는 왜곡. 부문별로 다른 멀티플을 적용해 합산하고 순차입금과 지주사 할인을 빼는 순서를 가상 회사로 보인다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-092
     title: "비교기업 선정 — 멀티플이 흔들리는 가장 큰 이유"
     category: Finance
@@ -5322,7 +5322,7 @@ topics:
     angle: "같은 회사를 두고 비교군을 어떻게 짜느냐에 따라 적정주가가 두 배 갈린다. 평균과 중앙값, 이상치 처리까지 같은 데이터로 계산해 폭을 보인다."
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: fin-093
     title: "공모주 청약 — 공모가는 어떻게 정해지는가"
     category: Finance

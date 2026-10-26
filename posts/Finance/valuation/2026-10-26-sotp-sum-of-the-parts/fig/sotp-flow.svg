@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#f7f8fa"/>
+
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#1f2933">SOTP — 부문별 가치를 더해 주주 몫까지 내려오는 순서</text>
+  <text x="24" y="56" font-size="13" fill="#52606d">가나홀딩스 (가상 회사) · 단위 억원 · 발행주식 2,000만주</text>
+
+  <!-- 비금융 부문 묶음 -->
+  <rect x="24" y="78" width="420" height="214" rx="8" fill="#ffffff" stroke="#b3bac5" stroke-width="1.5"/>
+  <text x="40" y="102" font-size="14" font-weight="700" fill="#2d6a4f">비금융 부문 — EV/EBITDA 로 평가</text>
+
+  <rect x="40" y="116" width="190" height="48" rx="5" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="50" y="136" font-size="13" fill="#1f2933">반도체소재</text>
+  <text x="220" y="136" font-size="15" font-weight="700" fill="#2d6a4f" text-anchor="end">8,800</text>
+  <text x="50" y="156" font-size="13" fill="#52606d">EBITDA 800 × 11.0배</text>
+
+  <rect x="40" y="172" width="190" height="48" rx="5" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="50" y="192" font-size="13" fill="#1f2933">유통</text>
+  <text x="220" y="192" font-size="15" font-weight="700" fill="#2d6a4f" text-anchor="end">1,650</text>
+  <text x="50" y="212" font-size="13" fill="#52606d">EBITDA 300 × 5.5배</text>
+
+  <rect x="40" y="228" width="190" height="48" rx="5" fill="#fdeeee" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="50" y="248" font-size="13" fill="#1f2933">본사 미배분비용</text>
+  <text x="220" y="248" font-size="15" font-weight="700" fill="#9d0208" text-anchor="end">−1,140</text>
+  <text x="50" y="268" font-size="13" fill="#52606d">연 120 × 9.5배</text>
+
+  <path d="M236 196 L254 196" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="258" y="140" width="172" height="44" rx="5" fill="#eef2f7" stroke="#3f5c78" stroke-width="1.8"/>
+  <text x="268" y="168" font-size="13" fill="#1f2933">비금융 EV 합계</text>
+  <text x="420" y="168" font-size="16" font-weight="700" fill="#3f5c78" text-anchor="end">9,310</text>
+
+  <rect x="258" y="196" width="172" height="40" rx="5" fill="#fdeeee" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="268" y="221" font-size="13" fill="#1f2933">− 비금융 순차입금</text>
+  <text x="420" y="221" font-size="14" font-weight="700" fill="#9d0208" text-anchor="end">2,800</text>
+
+  <rect x="258" y="248" width="172" height="40" rx="5" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="268" y="273" font-size="13" fill="#1f2933">비금융 지분가치</text>
+  <text x="420" y="273" font-size="15" font-weight="700" fill="#2d6a4f" text-anchor="end">6,510</text>
+
+  <!-- 금융 부문 묶음 -->
+  <rect x="464" y="78" width="392" height="214" rx="8" fill="#ffffff" stroke="#b3bac5" stroke-width="1.5"/>
+  <text x="480" y="102" font-size="14" font-weight="700" fill="#b45309">금융 부문 — EBITDA 배수를 쓰지 않는다</text>
+  <text x="480" y="122" font-size="13" fill="#52606d">이자가 영업수익이라 차입금이 영업부채다.</text>
+
+  <rect x="480" y="136" width="200" height="60" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="492" y="158" font-size="13" fill="#1f2933">캐피탈</text>
+  <text x="668" y="158" font-size="15" font-weight="700" fill="#b45309" text-anchor="end">1,400</text>
+  <text x="492" y="180" font-size="13" fill="#52606d">자기자본 2,000 × PBR 0.7배</text>
+
+  <path d="M688 166 L716 166" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="672" y="212" width="168" height="60" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="684" y="234" font-size="13" fill="#1f2933">× 보유 지분율 60%</text>
+  <text x="828" y="234" font-size="15" font-weight="700" fill="#b45309" text-anchor="end">840</text>
+  <text x="684" y="256" font-size="13" fill="#52606d">나머지 40%는 비지배지분</text>
+  <path d="M722 166 L756 166 L756 206" stroke="#52606d" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+
+  <!-- 합산 -->
+  <path d="M345 290 L345 322" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M756 278 L756 306 L452 306 L452 322" stroke="#52606d" stroke-width="1.6" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="232" y="328" width="334" height="44" rx="6" fill="#eef2f7" stroke="#3f5c78" stroke-width="2"/>
+  <text x="248" y="356" font-size="14" font-weight="700" fill="#1f2933">합산 지분가치 (6,510 + 840)</text>
+  <text x="550" y="356" font-size="17" font-weight="700" fill="#3f5c78" text-anchor="end">7,350</text>
+
+  <path d="M399 378 L399 404" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="232" y="410" width="334" height="44" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="248" y="438" font-size="14" fill="#1f2933">− 지주회사 할인 20% (근거를 적는다)</text>
+  <text x="550" y="438" font-size="15" font-weight="700" fill="#9d0208" text-anchor="end">1,470</text>
+
+  <path d="M399 460 L399 486" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="232" y="492" width="334" height="48" rx="6" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="2.4"/>
+  <text x="248" y="522" font-size="14" font-weight="700" fill="#1f2933">주주귀속 가치 · 주당 29,400원</text>
+  <text x="550" y="522" font-size="17" font-weight="700" fill="#2d6a4f" text-anchor="end">5,880</text>
+
+  <text x="592" y="356" font-size="13" fill="#52606d">금융 자회사 차입금 9,000 은</text>
+  <text x="592" y="375" font-size="13" fill="#52606d">이 경로 어디서도 빠지지 않는다.</text>
+  <text x="592" y="400" font-size="13" fill="#9d0208">연결 순차입금으로 한 번에 빼면</text>
+  <text x="592" y="419" font-size="13" fill="#9d0208">지분가치가 음수가 된다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+</svg>
