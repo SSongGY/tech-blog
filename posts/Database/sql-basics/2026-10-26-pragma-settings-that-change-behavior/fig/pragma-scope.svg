@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#f8fafc"/>
+
+  <text x="40" y="36" font-size="17" font-weight="bold" fill="#1e293b">PRAGMA 설정이 사는 곳 — 연결 안인가, 파일 안인가</text>
+  <text x="40" y="58" font-size="13" fill="#475569">같은 DB 파일에 붙은 두 연결. 한쪽이 바꾼 값이 다른 쪽에 보이는지로 갈린다.</text>
+
+  <!-- 연결 A -->
+  <rect x="40" y="78" width="330" height="168" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="40" y="78" width="330" height="30" rx="8" fill="#2d6a4f"/>
+  <rect x="40" y="96" width="330" height="12" fill="#2d6a4f"/>
+  <text x="56" y="99" font-size="14" font-weight="bold" fill="#ffffff">연결 A — 설정을 바꾼 쪽</text>
+  <text x="56" y="134" font-size="13" fill="#1e293b">PRAGMA foreign_keys = ON</text>
+  <text x="306" y="134" font-size="13" text-anchor="end" fill="#2d6a4f">1</text>
+  <text x="56" y="160" font-size="13" fill="#1e293b">PRAGMA synchronous = OFF</text>
+  <text x="306" y="160" font-size="13" text-anchor="end" fill="#2d6a4f">0</text>
+  <text x="56" y="186" font-size="13" fill="#1e293b">PRAGMA cache_size = -8000</text>
+  <text x="330" y="186" font-size="13" text-anchor="end" fill="#2d6a4f">-8000</text>
+  <text x="56" y="222" font-size="13" fill="#64748b">세 값은 이 연결의 메모리에만 있다</text>
+
+  <!-- 연결 B -->
+  <rect x="510" y="78" width="330" height="168" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <rect x="510" y="78" width="330" height="30" rx="8" fill="#b45309"/>
+  <rect x="510" y="96" width="330" height="12" fill="#b45309"/>
+  <text x="526" y="99" font-size="14" font-weight="bold" fill="#ffffff">연결 B — 끊었다 새로 붙은 쪽</text>
+  <text x="526" y="134" font-size="13" fill="#1e293b">PRAGMA foreign_keys</text>
+  <text x="800" y="134" font-size="13" text-anchor="end" fill="#b45309">0</text>
+  <text x="526" y="160" font-size="13" fill="#1e293b">PRAGMA synchronous</text>
+  <text x="800" y="160" font-size="13" text-anchor="end" fill="#b45309">2</text>
+  <text x="526" y="186" font-size="13" fill="#1e293b">PRAGMA cache_size</text>
+  <text x="800" y="186" font-size="13" text-anchor="end" fill="#b45309">-2000</text>
+  <text x="526" y="222" font-size="13" fill="#64748b">전부 기본값으로 돌아와 있다</text>
+
+  <!-- 건너가지 않는다 -->
+  <line x1="378" y1="150" x2="502" y2="150" stroke="#9d0208" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="432" y1="136" x2="448" y2="164" stroke="#9d0208" stroke-width="2.5"/>
+  <line x1="448" y1="136" x2="432" y2="164" stroke="#9d0208" stroke-width="2.5"/>
+  <text x="440" y="188" font-size="13" text-anchor="middle" fill="#9d0208">건너가지</text>
+  <text x="440" y="206" font-size="13" text-anchor="middle" fill="#9d0208">않는다</text>
+
+  <!-- 파일 -->
+  <rect x="235" y="330" width="410" height="118" rx="8" fill="#ffffff" stroke="#1e3a8a" stroke-width="2"/>
+  <rect x="235" y="330" width="410" height="30" rx="8" fill="#1e3a8a"/>
+  <rect x="235" y="348" width="410" height="12" fill="#1e3a8a"/>
+  <text x="251" y="351" font-size="14" font-weight="bold" fill="#ffffff">library.db — 파일 안에 적힌 값</text>
+  <text x="251" y="388" font-size="13" fill="#1e293b">journal_mode</text>
+  <text x="620" y="388" font-size="13" text-anchor="end" fill="#1e3a8a">wal</text>
+  <text x="251" y="414" font-size="13" fill="#1e293b">user_version</text>
+  <text x="620" y="414" font-size="13" text-anchor="end" fill="#1e3a8a">7</text>
+  <text x="251" y="438" font-size="13" fill="#64748b">연결을 닫아도 남아 다음 연결이 그대로 본다</text>
+
+  <!-- 파일 → 두 연결 -->
+  <path d="M 290 330 L 290 290 L 205 290 L 205 250" fill="none" stroke="#1e3a8a" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 590 330 L 590 290 L 675 290 L 675 250" fill="none" stroke="#1e3a8a" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="440" y="285" font-size="13" text-anchor="middle" fill="#1e3a8a">붙을 때 파일에서 읽어 온다</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e3a8a"/>
+    </marker>
+  </defs>
+</svg>

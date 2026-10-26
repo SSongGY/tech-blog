@@ -2941,7 +2941,7 @@ topics:
     angle: "계층별 비율이 왜 그 모양이어야 하는지. 역피라미드가 만드는 비용"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-099
     title: "인덱스 구조 비교 — B+트리, 해시, 비트맵"
     category: PE
@@ -4668,7 +4668,7 @@ topics:
     angle: "foreign_keys·synchronous·cache_size 처럼 자주 건드리는 것들이 무엇을 바꾸는지. 연결마다 다시 켜야 하는 것"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-072
     title: "ATTACH — 여러 데이터베이스 파일을 한 연결에서"
     category: Database
@@ -5557,7 +5557,7 @@ topics:
     difficulty: 심화
     angle: "같은 1만 줄을 버퍼만, flush 까지, fsync 까지 세 가지로 쓰며 시간을 잰다. 세 단계가 각각 무엇을 보장하고 무엇을 안 하는지를 숫자 차이로 보인다."
     code: python
-    status: todo
+    status: writing
   - id: gen-013
     title: "커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회"
     category: Database

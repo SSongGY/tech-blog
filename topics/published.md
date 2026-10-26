@@ -392,3 +392,4 @@
 | 2026-10-26 | db-070 | Database | 스키마 조회 — sqlite_master와 PRAGMA table_info |
 | 2026-10-26 | pe-097 | PE | UML 다이어그램 분류 — 구조와 행위 |
 | 2026-10-26 | gen-011 | Performance | GIL 이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기 |
+| 2026-10-26 | db-071 | Database | PRAGMA — 동작을 바꾸는 설정들 |

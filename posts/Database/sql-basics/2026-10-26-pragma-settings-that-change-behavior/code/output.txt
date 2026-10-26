@@ -1,0 +1,93 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-26-pragma-settings-that-change-behavior
+# 명령      : python pragma_settings.py
+# 수행 시각 : 2026-10-26 20:13 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[author]  2행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  author_id | INTEGER | PK
+  name      | TEXT    | NOT NULL
+
+  author_id | name
+  ----------+-------
+          1 | 김작가
+          2 | 이작가
+
+[book]  2행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  book_id   | INTEGER | PK
+  title     | TEXT    | NOT NULL
+  author_id | INTEGER |
+
+  book_id | title      | author_id
+  --------+------------+----------
+       10 | 첫 책      |         1
+       11 | 두 번째 책 |         2
+
+
+1. PRAGMA 의 두 가지 꼴 — 묻기와 바꾸기
+  PRAGMA foreign_keys;            -> 0
+  PRAGMA foreign_keys = ON;  뒤   -> 1
+  PRAGMA foreign_keys = 0;   뒤   -> 0
+
+2. foreign_keys — 끄면 없는 저자를 가리켜도 들어간다
+  OFF 에서 author_id=999 입력    -> 성공, 현재 book 행 수 3
+  ON 에서 같은 입력              -> IntegrityError: FOREIGN KEY constraint failed
+  이미 들어간 위반 행은 켜도 사라지지 않는다. 확인은 foreign_key_check 로 한다.
+  (rollback 뒤라 OFF 가 먹는다)  -> foreign_keys = 0
+  PRAGMA foreign_key_check;      -> [('book', 22, 'author', 0)]
+
+3. 어디까지 남는가 — 연결을 끊고 다시 붙여 본다
+  PRAGMA               끊기 전        다시 붙은 뒤   남는가
+  foreign_keys            1              0   연결과 함께 사라진다
+  synchronous             0              2   연결과 함께 사라진다
+  cache_size          -8000          -2000   연결과 함께 사라진다
+  journal_mode          wal            wal   파일에 남는다
+  user_version            7              7   파일에 남는다
+
+4. cache_size 의 부호 — 양수는 페이지 수, 음수는 KiB
+  page_size                      -> 4096
+  cache_size = -2000             ->  -2000  최대 2,048,000 바이트
+  cache_size = 2000              ->   2000  최대 8,192,000 바이트
+  cache_size = -8000             ->  -8000  최대 8,192,000 바이트
+
+5. 트랜잭션 안에서는 안 먹는 PRAGMA 가 있다
+  트랜잭션 안에서 journal_mode=WAL -> delete  (바뀌지 않는다)
+  트랜잭션 안에서 foreign_keys=ON  -> 0  (조용히 무시된다)
+  트랜잭션을 끝낸 뒤 다시 ON       -> 1
+
+6. 알 수 없는 이름을 줘도 에러가 아니다
+  PRAGMA fooreign_keys;          -> []  (오타가 조용히 묻힌다)
+  PRAGMA foreign_keys = maybe;   -> 0  (해석 못 한 값은 0 으로)
+
+7. 조회용 PRAGMA — 표처럼 읽는다
+  PRAGMA table_info(book);
+    (0, 'book_id', 'INTEGER', 0, None, 1)
+    (1, 'title', 'TEXT', 1, None, 0)
+    (2, 'author_id', 'INTEGER', 0, None, 0)
+  PRAGMA integrity_check;        -> ok
+  PRAGMA foreign_key_list(book);
+    (0, 0, 'author', 'author_id', 'author_id', 'NO ACTION', 'NO ACTION', 'NONE')
+  같은 값을 SELECT 로도 읽는다 — pragma_ 접두 함수
+    WHERE notnull = 1          -> OperationalError: near "notnull": syntax error
+    WHERE "notnull" = 1        -> [('title', 'TEXT')]
+
+작업 폴더: C:\Users\song\AppData\Local\Temp\pragma_demo_b_uaalvz
