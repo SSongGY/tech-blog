@@ -5289,7 +5289,7 @@ topics:
     angle: "시가총액에 무엇을 더하고 무엇을 빼는가. 항목 하나를 빠뜨렸을 때 EV/EBITDA 가 몇 배까지 틀어지는지 가상 회사로 계산한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-090
     title: "영구성장률과 터미널 밸류 — DCF 값의 대부분이 걸린 가정"
     category: Finance
@@ -5300,7 +5300,7 @@ topics:
     angle: "5년치 현금흐름보다 잔존가치가 더 큰 이유. 영구성장률을 0.5%p 만 움직였을 때 기업가치가 몇 % 변하는지 민감도 표를 직접 계산한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-091
     title: "SOTP — 사업부를 따로 평가해 더하는 법"
     category: Finance

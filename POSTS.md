@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **451편** · 갱신 2026-10-26
+총 **456편** · 갱신 2026-10-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 69편
+## DB문법 (basics) — 70편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-26 | [스키마 조회 — sqlite_master와 PRAGMA table_info](posts/Database/sql-basics/2026-10-26-schema-introspection-sqlite-master-pragma/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-23 | [WITHOUT ROWID 테이블 — 기본키가 곧 저장 순서](posts/Database/sql-basics/2026-10-23-without-rowid-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-23 | [AUTOINCREMENT와 rowid — 번호가 재사용되는가](posts/Database/sql-basics/2026-10-23-autoincrement-rowid-reuse/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-22 | [자기참조 외래키 — 계층 데이터를 한 표에 담기](posts/Database/sql-basics/2026-10-22-self-referencing-foreign-key/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -102,7 +103,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 157편
+## 기술사 (pe) — 158편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -114,6 +115,7 @@
 | 2026-10-25 | [ISO/IEC 25024 데이터 품질 측정 — 품질 측정원소와 측정함수](posts/PE/data-analysis/2026-10-25-iso-25024-data-quality-measurement-qme/index.md) | 중급 | ISO/IEC 25024:2015, ISO/IEC 25012:2008, ISO/IEC 25020:2019, ISO/IEC 5259-2:2024 | 문서 근거 |
 | 2026-10-25 | [DBSCAN — 군집과 잡음을 같은 정의에서 뽑아내는 여섯 단계](posts/PE/data-analysis/2026-10-25-dbscan-density-based-clustering-definitions/index.md) | 중급 | Python 3.13.5, Ester·Kriegel·Sander·Xu, KDD-96 Proceedings pp.226-231 (1996) | 실행 검증 |
 | 2026-10-25 | [협업 필터링 — 사용자 기반·아이템 기반·행렬 분해가 먼저 계산하는 것](posts/PE/data-analysis/2026-10-25-collaborative-filtering-user-item-matrix-factorization/index.md) | 중급 | Python 3.13.5, Sarwar·Karypis·Konstan·Riedl, WWW10 Proceedings pp.285-295 (2001), Koren·Bell·Volinsky, IEEE Computer 42(8) pp.30-37 (2009) | 실행 검증 |
+| 2026-10-23 | [UML 다이어그램 분류 — 구조와 행위](posts/PE/software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md) | 중급 | — | 문서 근거 (미완) |
 | 2026-10-23 | [객체지향 설계 원칙 SOLID 5가지](posts/PE/software-engineering/2026-10-23-solid-design-principles/index.md) | 중급 | Robert C. Martin, Design Principles and Design Patterns (2000), Liskov & Wing, ACM TOPLAS 16(6) (1994) | 문서 근거 |
 | 2026-10-23 | [소프트웨어 재공학과 역공학](posts/PE/software-engineering/2026-10-23-software-reengineering-reverse-engineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), Fowler, Refactoring (refactoring.com, 2026년 10월 확인) | 문서 근거 |
 | 2026-10-23 | [심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조](posts/PE/data-analysis/2026-10-23-simpsons-paradox-confounder-collapsibility/index.md) | 중급 | Python 3.13.5, Simpson, JRSS Series B 13(2) (1951), Bickel·Hammel·O'Connell, Science 187(4175) (1975) | 실행 검증 |
@@ -287,10 +289,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 32편
+## 일반 (general) — 33편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-23 | [GIL 이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기](posts/Performance/python/2026-10-26-gil-bound-and-unbound-workloads/index.md) | 심화 | — | 실행 검증 (미완) |
 | 2026-10-23 | [자바스크립트 이벤트 루프에서 마이크로태스크가 먼저인 이유](posts/Language/javascript/2026-10-23-microtask-before-macrotask/index.md) | 중급 | Node.js v24.19.0, V8 13.6.233.17-node.51, Windows 11 | 실행 검증 |
 | 2026-10-23 | [제너레이터가 실제로 아끼는 것 — tracemalloc 으로 본 메모리](posts/Performance/python/2026-10-23-generator-memory-tracemalloc/index.md) | 중급 | Python 3.13.5, CPython 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-23 | [압축 알고리즘 고르기 — gzip·bzip2·lzma 를 같은 데이터로 대조](posts/Performance/compression/2026-10-23-compression-gzip-bzip2-lzma/index.md) | 중급 | Python 3.13.5, zlib 1.3.1, Windows 11 | 실행 검증 |
@@ -399,10 +402,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 86편
+## 주식·재무 (finance) — 88편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-26 | [영구성장률과 터미널 밸류 — DCF 값의 대부분이 걸린 가정](posts/Finance/valuation/2026-10-26-terminal-value-perpetual-growth/index.md) | 심화 | Python 3.13.5, K-IFRS 제1036호 자산손상 | 실행 검증 |
+| 2026-10-26 | [EV 를 실제로 계산하기 — 순차입금·우선주·비지배지분](posts/Finance/valuation/2026-10-26-ev-bridge-net-debt-preferred-minority/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시, K-IFRS 제1007호 현금흐름표, K-IFRS 제1032호 금융상품 표시, K-IFRS 제1110호 연결재무제표, K-IFRS 제1116호 리스 | 실행 검증 |
 | 2026-10-25 | [운전자본 증감 — 이익과 현금흐름을 가장 크게 벌리는 항목](posts/Finance/ratios/2026-10-25-working-capital-change-and-operating-cash-flow/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
 | 2026-10-25 | [주식기준보상 — 현금이 나가지 않는데 비용으로 잡히는 구조](posts/Finance/statements/2026-10-25-share-based-payment-vesting-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1102호 주식기준보상, IFRS 2 Share-based Payment (2023년판) | 실행 검증 |
 | 2026-10-25 | [특수관계자 거래 주석 — 연결에서 사라지는 거래와 별도에 남는 거래](posts/Finance/statements/2026-10-25-related-party-disclosures-consolidation/index.md) | 입문 | Python 3.13.5, K-IFRS 제1024호 특수관계자 공시, IAS 24 Related Party Disclosures (2022년판) | 실행 검증 |
