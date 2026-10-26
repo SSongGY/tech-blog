@@ -5557,7 +5557,7 @@ topics:
     difficulty: 심화
     angle: "같은 1만 줄을 버퍼만, flush 까지, fsync 까지 세 가지로 쓰며 시간을 잰다. 세 단계가 각각 무엇을 보장하고 무엇을 안 하는지를 숫자 차이로 보인다."
     code: python
-    status: writing
+    status: done
   - id: gen-013
     title: "커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회"
     category: Database
