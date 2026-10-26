@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **461편** · 갱신 2026-10-26
+총 **463편** · 갱신 2026-10-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -407,11 +407,13 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 88편
+## 주식·재무 (finance) — 90편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-26 | [영구성장률과 터미널 밸류 — DCF 값의 대부분이 걸린 가정](posts/Finance/valuation/2026-10-26-terminal-value-perpetual-growth/index.md) | 심화 | Python 3.13.5, K-IFRS 제1036호 자산손상 | 실행 검증 |
+| 2026-10-26 | [SOTP — 사업부를 따로 평가해 더하는 법](posts/Finance/valuation/2026-10-26-sotp-sum-of-the-parts/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
+| 2026-10-26 | [비교기업 선정 — 멀티플이 흔들리는 가장 큰 이유](posts/Finance/valuation/2026-10-26-peer-group-selection-multiple-spread/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-26 | [EV 를 실제로 계산하기 — 순차입금·우선주·비지배지분](posts/Finance/valuation/2026-10-26-ev-bridge-net-debt-preferred-minority/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시, K-IFRS 제1007호 현금흐름표, K-IFRS 제1032호 금융상품 표시, K-IFRS 제1110호 연결재무제표, K-IFRS 제1116호 리스 | 실행 검증 |
 | 2026-10-25 | [운전자본 증감 — 이익과 현금흐름을 가장 크게 벌리는 항목](posts/Finance/ratios/2026-10-25-working-capital-change-and-operating-cash-flow/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
 | 2026-10-25 | [주식기준보상 — 현금이 나가지 않는데 비용으로 잡히는 구조](posts/Finance/statements/2026-10-25-share-based-payment-vesting-expense/index.md) | 중급 | Python 3.13.5, K-IFRS 제1102호 주식기준보상, IFRS 2 Share-based Payment (2023년판) | 실행 검증 |
