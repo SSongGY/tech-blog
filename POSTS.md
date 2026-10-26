@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **458편** · 갱신 2026-10-26
+총 **461편** · 갱신 2026-10-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 70편
+## DB문법 (basics) — 71편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-26 | [스키마 조회 — sqlite_master와 PRAGMA table_info](posts/Database/sql-basics/2026-10-26-schema-introspection-sqlite-master-pragma/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-26 | [PRAGMA — 동작을 바꾸는 설정들](posts/Database/sql-basics/2026-10-26-pragma-settings-that-change-behavior/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-23 | [WITHOUT ROWID 테이블 — 기본키가 곧 저장 순서](posts/Database/sql-basics/2026-10-23-without-rowid-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-23 | [AUTOINCREMENT와 rowid — 번호가 재사용되는가](posts/Database/sql-basics/2026-10-23-autoincrement-rowid-reuse/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-22 | [자기참조 외래키 — 계층 데이터를 한 표에 담기](posts/Database/sql-basics/2026-10-22-self-referencing-foreign-key/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -103,11 +104,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 158편
+## 기술사 (pe) — 159편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-26 | [UML 다이어그램 분류 — 구조 7종과 행위 7종](posts/PE/software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01), OMG UML 1.5 (formal/03-03-01) | 문서 근거 |
+| 2026-10-26 | [소프트웨어 테스트 자동화와 테스트 피라미드](posts/PE/software-engineering/2026-10-26-test-automation-pyramid/index.md) | 중급 | ISTQB CTFL Syllabus v4.0, Mike Cohn, Succeeding with Agile (2009), Martin Fowler, TestPyramid (2012) | 문서 근거 |
 | 2026-10-26 | [모니터와 조건변수 — 두 가지 시그널 의미론](posts/PE/system/2026-10-26-monitor-condition-variable-signal-semantics/index.md) | 중급 | Hoare, CACM 17(10) pp.549-557 (1974), Lampson·Redell, CACM 23(2) pp.105-117 (1980), POSIX.1-2017 (IEEE Std 1003.1-2017), Open Group Base Specifications Issue 7 2018 Edition, Java SE 21 JLS §17.2.1 | 문서 근거 |
 | 2026-10-26 | [불변 백업과 에어갭 — 복제가 따라가는 훼손을 끊는 사본](posts/PE/security/2026-10-26-immutable-backup-and-air-gap/index.md) | 중급 | NIST SP 800-209 (October 2020), NIST SP 800-53 Rev. 5 (September 2020, updates as of December 10, 2020), NIST IR 8374 (February 2022), CNSSI 4009-2022 | 문서 근거 |
 | 2026-10-25 | [트라이와 PATRICIA — 비교 대신 비트로 분기하는 탐색 구조](posts/PE/software-engineering/2026-10-25-trie-and-patricia-bit-branching/index.md) | 중급 | Python 3.13.5, Journal of the ACM Vol. 15 No. 4 (1968-10), pp. 514-534, Communications of the ACM Vol. 3 No. 9 (1960-09), pp. 490-499, IEEE JSAC Vol. 17 No. 6 (1999-06), pp. 1083-1092, Dr. Dobb's Journal (1998-08) | 실행 검증 |
@@ -289,10 +291,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 33편
+## 일반 (general) — 34편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-26 | [write 는 디스크에 쓰는 것이 아니다 — 버퍼·flush·fsync 를 가르기](posts/Backend/storage/2026-10-26-write-buffer-flush-fsync/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [GIL이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기](posts/Performance/python/2026-10-26-gil-bound-and-unbound-workloads/index.md) | 심화 | Python 3.13.5, Windows 11, 논리 코어 20개 | 실행 검증 |
 | 2026-10-23 | [자바스크립트 이벤트 루프에서 마이크로태스크가 먼저인 이유](posts/Language/javascript/2026-10-23-microtask-before-macrotask/index.md) | 중급 | Node.js v24.19.0, V8 13.6.233.17-node.51, Windows 11 | 실행 검증 |
 | 2026-10-23 | [제너레이터가 실제로 아끼는 것 — tracemalloc 으로 본 메모리](posts/Performance/python/2026-10-23-generator-memory-tracemalloc/index.md) | 중급 | Python 3.13.5, CPython 3.13.5, Windows 11 | 실행 검증 |
