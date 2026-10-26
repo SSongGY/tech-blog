@@ -5322,7 +5322,7 @@ topics:
     angle: "같은 회사를 두고 비교군을 어떻게 짜느냐에 따라 적정주가가 두 배 갈린다. 평균과 중앙값, 이상치 처리까지 같은 데이터로 계산해 폭을 보인다."
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-093
     title: "공모주 청약 — 공모가는 어떻게 정해지는가"
     category: Finance

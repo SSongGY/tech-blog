@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#f7f8fa"/>
+
+  <text x="24" y="34" font-size="17" font-weight="700" fill="#1f2933">비교기업을 거르는 단계와, 그 결과 달라지는 배수</text>
+  <text x="24" y="56" font-size="13" fill="#52606d">평가 대상 다온소재 (가상 회사) · 후보 10개사도 전부 가상 · EV/EBITDA 기준</text>
+
+  <!-- 왼쪽: 거르는 단계 -->
+  <text x="24" y="90" font-size="14" font-weight="700" fill="#3f5c78">① 요건을 단계로 건다</text>
+
+  <rect x="24" y="102" width="400" height="52" rx="6" fill="#eef2f7" stroke="#3f5c78" stroke-width="1.6"/>
+  <text x="40" y="124" font-size="13.5" fill="#1f2933">동종 상장사 후보</text>
+  <text x="408" y="124" font-size="16" font-weight="700" fill="#3f5c78" text-anchor="end">10사</text>
+  <text x="40" y="144" font-size="13" fill="#52606d">거래소 소분류 업종 동일 · 주력 제품·용역 유사</text>
+
+  <path d="M224 158 L224 174" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="52" y="180" width="344" height="52" rx="6" fill="#fdf3e3" stroke="#b45309" stroke-width="1.6"/>
+  <text x="68" y="202" font-size="13.5" fill="#1f2933">주당 세전계속사업이익이 ±30% 안</text>
+  <text x="380" y="202" font-size="16" font-weight="700" fill="#b45309" text-anchor="end">6사</text>
+  <text x="68" y="222" font-size="13" fill="#52606d">허용 폭 1,050 ~ 1,950원 (대상 1,500원)</text>
+
+  <path d="M224 236 L224 252" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="80" y="258" width="288" height="52" rx="6" fill="#fdf3e3" stroke="#b45309" stroke-width="1.6"/>
+  <text x="96" y="280" font-size="13.5" fill="#1f2933">주당순자산이 ±30% 안</text>
+  <text x="352" y="280" font-size="16" font-weight="700" fill="#b45309" text-anchor="end">4사</text>
+  <text x="96" y="300" font-size="13" fill="#52606d">허용 폭 8,400 ~ 15,600원 (대상 12,000원)</text>
+
+  <path d="M224 314 L224 330" stroke="#52606d" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="108" y="336" width="232" height="48" rx="6" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="124" y="356" font-size="13.5" font-weight="700" fill="#1f2933">최소 3사 요건 충족</text>
+  <text x="324" y="356" font-size="16" font-weight="700" fill="#2d6a4f" text-anchor="end">4사</text>
+  <text x="124" y="376" font-size="13" fill="#52606d">3사 미만이면 상대가치를 쓰지 않는다</text>
+
+  <!-- 오른쪽: 배수 분포 -->
+  <text x="458" y="90" font-size="14" font-weight="700" fill="#3f5c78">② 같은 후보들의 EV/EBITDA 가 놓인 자리</text>
+  <text x="624" y="112" font-size="13" fill="#2d6a4f">● 요건 통과 4사</text>
+  <text x="744" y="112" font-size="13" fill="#52606d">○ 탈락 6사</text>
+
+  <line x1="470" y1="170" x2="848" y2="170" stroke="#8c99a8" stroke-width="1.4"/>
+  <line x1="470" y1="165" x2="470" y2="175" stroke="#8c99a8" stroke-width="1.4"/>
+  <line x1="554" y1="165" x2="554" y2="175" stroke="#8c99a8" stroke-width="1.4"/>
+  <line x1="638" y1="165" x2="638" y2="175" stroke="#8c99a8" stroke-width="1.4"/>
+  <line x1="722" y1="165" x2="722" y2="175" stroke="#8c99a8" stroke-width="1.4"/>
+  <line x1="806" y1="165" x2="806" y2="175" stroke="#8c99a8" stroke-width="1.4"/>
+  <text x="470" y="192" font-size="13" fill="#52606d" text-anchor="middle">0배</text>
+  <text x="554" y="192" font-size="13" fill="#52606d" text-anchor="middle">10</text>
+  <text x="638" y="192" font-size="13" fill="#52606d" text-anchor="middle">20</text>
+  <text x="722" y="192" font-size="13" fill="#52606d" text-anchor="middle">30</text>
+  <text x="806" y="192" font-size="13" fill="#52606d" text-anchor="middle">40</text>
+
+  <!-- 탈락 6사 -->
+  <circle cx="521" cy="150" r="6" fill="#ffffff" stroke="#8c99a8" stroke-width="1.6"/>
+  <circle cx="556" cy="150" r="6" fill="#ffffff" stroke="#8c99a8" stroke-width="1.6"/>
+  <circle cx="569" cy="150" r="6" fill="#ffffff" stroke="#8c99a8" stroke-width="1.6"/>
+  <circle cx="575" cy="134" r="6" fill="#ffffff" stroke="#8c99a8" stroke-width="1.6"/>
+  <circle cx="655" cy="150" r="6" fill="#ffffff" stroke="#8c99a8" stroke-width="1.6"/>
+  <circle cx="823" cy="150" r="6" fill="#ffffff" stroke="#8c99a8" stroke-width="1.6"/>
+  <!-- 통과 4사 -->
+  <circle cx="524" cy="134" r="6.5" fill="#2d6a4f"/>
+  <circle cx="541" cy="150" r="6.5" fill="#2d6a4f"/>
+  <circle cx="545" cy="134" r="6.5" fill="#2d6a4f"/>
+  <circle cx="546" cy="118" r="6.5" fill="#2d6a4f"/>
+
+  <text x="848" y="132" font-size="13" fill="#9d0208" text-anchor="end">42배 — 이익이 거의 없는 회사</text>
+
+  <!-- 대표값 -->
+  <text x="458" y="226" font-size="14" font-weight="700" fill="#3f5c78">③ 어느 비교군을 쓰느냐에 따른 결론</text>
+
+  <rect x="470" y="240" width="378" height="38" rx="5" fill="#fdeeee" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="482" y="264" font-size="13.5" fill="#1f2933">후보 10사 평균 13.74배</text>
+  <text x="836" y="264" font-size="15" font-weight="700" fill="#9d0208" text-anchor="end">주당 65,700원</text>
+
+  <rect x="470" y="284" width="378" height="38" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="482" y="308" font-size="13.5" fill="#1f2933">후보 10사 중앙값 9.65배</text>
+  <text x="836" y="308" font-size="15" font-weight="700" fill="#b45309" text-anchor="end">주당 45,250원</text>
+
+  <rect x="470" y="328" width="378" height="38" rx="5" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="482" y="352" font-size="13.5" fill="#1f2933">요건 통과 4사 평균 8.20배</text>
+  <text x="836" y="352" font-size="15" font-weight="700" fill="#2d6a4f" text-anchor="end">주당 38,000원</text>
+
+  <text x="470" y="394" font-size="13.5" font-weight="700" fill="#1f2933">같은 회사, 같은 EBITDA, 같은 순차입금이다.</text>
+  <text x="470" y="416" font-size="13.5" font-weight="700" fill="#9d0208">비교군만 바꿨는데 1.73배 차이가 난다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#52606d"/>
+    </marker>
+  </defs>
+</svg>
