@@ -2952,7 +2952,7 @@ topics:
     angle: "구조별로 어떤 질의에 강하고 어디서 무너지는지"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-100
     title: "데이터베이스 백업과 복구 기법"
     category: PE
@@ -4679,7 +4679,7 @@ topics:
     angle: "파일을 붙여 한 질의로 조인한다. 백업·이관에 쓰는 법과 트랜잭션이 걸치는 범위"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-073
     title: "JSON 함수 — 문서를 컬럼처럼 다루기"
     category: Database
@@ -5587,7 +5587,7 @@ topics:
     difficulty: 중급
     angle: "지프 분포를 따르는 접근 기록을 만들어 캐시 크기를 키우며 적중률 곡선을 그린다. 분포가 평평해지면 같은 곡선이 어떻게 무너지는지도 같이 잰다."
     code: python
-    status: todo
+    status: writing
   - id: gen-016
     title: "git 이 파일을 어떻게 저장하는지 객체를 직접 뜯어본다"
     category: Tooling
@@ -6100,6 +6100,28 @@ topics:
     tags: [정보관리기술사, database, 개념정리]
     difficulty: 중급
     angle: "네 종류를 널 취급과 검사 시점으로 비교하고, 선언적 제약으로 못 거는 규칙을 어디서 받아야 하는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-211
+    title: "프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "완전 차단이 없다는 전제에서 시스템을 설계하는 쪽. 스포트라이팅·신뢰 계층 학습 같은 모델층 방어와, 권한 분리·사람 승인·정의된 인터페이스 같은 설계층 방어를 나눠 정리하고 각 방어가 뚫리는 경로까지 적는다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-212
+    title: "자원 할당 그래프와 대기 그래프 — 교착 탐지"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, deadlock, os, 개념정리]
+    difficulty: 중급
+    angle: "단일 인스턴스에서는 사이클이 곧 교착이지만 다중 인스턴스에서는 아니라는 점을 그래프로 보이고, 자원 할당 그래프를 대기 그래프로 줄이는 변환과 탐지 알고리즘의 주기를 정리한다"
     code: none
     origin: exam
     status: todo

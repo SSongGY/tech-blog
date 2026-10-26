@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="320" viewBox="0 0 880 320" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="320" fill="#fdfdfb"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">자원 요청 하나를 처리하는 순서 — 세 검사를 모두 통과해야 할당이 확정된다</text>
+
+  <rect x="16" y="70" width="100" height="56" rx="6" fill="#eef2f7" stroke="#44586e" stroke-width="1.5"/>
+  <text x="66" y="95" text-anchor="middle" font-size="13" fill="#222">Pi 의</text>
+  <text x="66" y="113" text-anchor="middle" font-size="13" fill="#222">자원 요청</text>
+
+  <rect x="138" y="70" width="136" height="56" rx="6" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="206" y="95" text-anchor="middle" font-size="13" fill="#222">① Request ≤ Need</text>
+  <text x="206" y="113" text-anchor="middle" font-size="13" fill="#555">선언한 최대 안인가</text>
+
+  <rect x="296" y="70" width="164" height="56" rx="6" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="378" y="95" text-anchor="middle" font-size="13" fill="#222">② Request ≤ Available</text>
+  <text x="378" y="113" text-anchor="middle" font-size="13" fill="#555">지금 줄 수 있는가</text>
+
+  <rect x="482" y="70" width="126" height="56" rx="6" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="545" y="95" text-anchor="middle" font-size="13" fill="#222">③ 가장 할당</text>
+  <text x="545" y="113" text-anchor="middle" font-size="13" fill="#555">임시 상태 생성</text>
+
+  <rect x="630" y="70" width="128" height="56" rx="6" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="694" y="95" text-anchor="middle" font-size="13" fill="#222">안전성 알고리즘</text>
+  <text x="694" y="113" text-anchor="middle" font-size="13" fill="#555">안전 순서가 있는가</text>
+
+  <rect x="780" y="70" width="86" height="56" rx="6" fill="#e7f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="823" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">승인</text>
+
+  <rect x="131" y="215" width="150" height="52" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="206" y="246" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">오류 — 최대 요구 초과</text>
+
+  <rect x="436" y="215" width="230" height="52" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="551" y="246" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">대기 — 상태를 원복하고 재시도</text>
+
+  <line x1="116" y1="98" x2="132" y2="98" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="274" y1="98" x2="290" y2="98" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="460" y1="98" x2="476" y2="98" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="608" y1="98" x2="624" y2="98" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="758" y1="98" x2="774" y2="98" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
+
+  <text x="282" y="88" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+  <text x="468" y="88" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+  <text x="766" y="62" text-anchor="middle" font-size="13" fill="#2d6a4f">안전</text>
+
+  <path d="M 206 126 L 206 209" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="214" y="172" font-size="13" fill="#9d0208">아니오</text>
+
+  <path d="M 378 126 L 378 241 L 430 241" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="386" y="172" font-size="13" fill="#b45309">아니오</text>
+
+  <path d="M 694 126 L 694 241 L 672 241" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="702" y="172" font-size="13" fill="#b45309">불안전</text>
+
+  <text x="440" y="300" text-anchor="middle" font-size="13" fill="#444">가장 할당 = Available − Request · Allocation_i + Request · Need_i − Request</text>
+</svg>

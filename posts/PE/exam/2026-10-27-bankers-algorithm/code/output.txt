@@ -1,0 +1,39 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\exam\2026-10-27-bankers-algorithm
+# 명령      : python bankers.py
+# 수행 시각 : 2026-10-27 02:19 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.8 슬라이드 (S. Weiss 2020 개정판)
+# 종료 코드 : 0
+
+= 상태 =
+          Max   Allocation     Need
+P0     (5, 4)       (0, 1)   (5, 3)
+P1     (5, 2)       (3, 0)   (2, 2)
+P2     (9, 2)       (2, 1)   (7, 1)
+Available = (5, 3)
+
+= 안전성 알고리즘 추적 =
+    Work=(5, 3) 에서 NeedP0=(5, 3) 충족 → P0 완료, Work=(5, 4)
+    Work=(5, 4) 에서 NeedP1=(2, 2) 충족 → P1 완료, Work=(8, 4)
+    Work=(8, 4) 에서 NeedP2=(7, 1) 충족 → P2 완료, Work=(10, 5)
+  결과: 안전, 순서 <P0, P1, P2>
+
+= 안전 순서 전수 탐색 = 3가지 / 전체 6가지
+  <P0, P1, P2>
+  <P1, P0, P2>
+  <P1, P2, P0>
+
+= 자원 요청 판정 =
+  P1 Request(2, 2)
+    승인 — 가장 할당 후 Available=(3, 1), 안전 순서 <P1, P0, P2>
+  P2 Request(5, 0)
+    거절 — 가장 할당 후 Available=(0, 3) 이 불안전. 원래 상태로 되돌린다
+  P2 Request(6, 1)
+    대기 — Request(6, 1) > Available(5, 3). 지금 줄 자원이 없다
+  P0 Request(6, 0)
+    오류 — Request(6, 0) > Need(5, 3). 최대 요구를 넘었다
