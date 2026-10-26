@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **456편** · 갱신 2026-10-26
+총 **458편** · 갱신 2026-10-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -327,10 +327,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 70편
+## 기출문제 (exam) — 72편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-26 | [기출문제 — TTPs(전술·기법·절차)](posts/PE/exam/2026-10-26-ttps-tactics-techniques-procedures/index.md) | 중급 | NIST SP 800-150 (2016-10), MITRE ATT&CK v20 (2026-10-26 확인), MITRE ATT&CK Design and Philosophy (2020-03), STIX 2.1 OASIS Standard | 문서 근거 |
+| 2026-10-26 | [기출문제 — 정보모델링의 참조 무결성](posts/PE/exam/2026-10-26-referential-integrity-information-modeling/index.md) | 중급 | ISO/IEC 9075-2:2023, FIPS PUB 184 (IDEF1X, 1993), PostgreSQL 18 문서, MySQL 8.4 문서, SQLite 3.49.1 문서 | 문서 근거 |
 | 2026-10-26 | [기출문제 — 데이터 관측가능성(Data Observability)](posts/PE/exam/2026-10-26-data-observability/index.md) | 중급 | ISO/IEC 25012:2008, ISO/IEC 25024:2015, OpenTelemetry Observability Primer (2026-10-26 확인) | 문서 근거 |
 | 2026-10-26 | [기출문제 — 자기회귀모형(AR)과 이동평균모형(MA)](posts/PE/exam/2026-10-26-autoregressive-and-moving-average-models/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §6.4.4 (2012 개정) | 실행 검증 |
 | 2026-10-25 | [기출문제 — ISO/IEC 42001:2023 인공지능 경영시스템](posts/PE/exam/2026-10-25-iso-iec-42001-ai-management-system/index.md) | 중급 | ISO/IEC 42001:2023 (제1판, 2023-12), ISO/IEC 42006:2025 (제1판, 2025-07), ISO/IEC 42005:2025, ISO/IEC 23894:2023, ISO/IEC 17021-1:2015 | 문서 근거 |
