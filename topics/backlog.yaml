@@ -2952,7 +2952,7 @@ topics:
     angle: "구조별로 어떤 질의에 강하고 어디서 무너지는지"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-100
     title: "데이터베이스 백업과 복구 기법"
     category: PE

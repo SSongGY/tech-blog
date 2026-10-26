@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfaf7"/>
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b2430">인덱스 구조 3종 — 키를 어디에 어떤 모양으로 두는가</text>
+
+  <defs>
+    <marker id="a2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#44525f"/>
+    </marker>
+  </defs>
+
+  <!-- ① B+트리 -->
+  <rect x="24" y="48" width="268" height="330" rx="10" fill="#eef3f0" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="40" y="72" font-size="15" font-weight="bold" fill="#2d6a4f">① B+트리</text>
+
+  <rect x="96" y="86" width="124" height="34" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="112" y="108" font-size="13" fill="#1b2430">루트 (키만)</text>
+
+  <rect x="40" y="146" width="104" height="34" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="56" y="168" font-size="13" fill="#1b2430">브랜치</text>
+  <rect x="172" y="146" width="104" height="34" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="188" y="168" font-size="13" fill="#1b2430">브랜치</text>
+
+  <rect x="40" y="206" width="104" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="56" y="224" font-size="13" font-weight="bold" fill="#1b2430">리프</text>
+  <text x="56" y="241" font-size="13" fill="#44525f">키 + 행 주소</text>
+  <rect x="172" y="206" width="104" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="188" y="224" font-size="13" font-weight="bold" fill="#1b2430">리프</text>
+  <text x="188" y="241" font-size="13" fill="#44525f">키 + 행 주소</text>
+
+  <line x1="140" y1="120" x2="100" y2="144" stroke="#44525f" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="176" y1="120" x2="216" y2="144" stroke="#44525f" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="92" y1="180" x2="92" y2="204" stroke="#44525f" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="224" y1="180" x2="224" y2="204" stroke="#44525f" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="144" y1="228" x2="170" y2="228" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a2)"/>
+  <line x1="170" y1="238" x2="146" y2="238" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a2)"/>
+
+  <text x="40" y="282" font-size="13" fill="#1b2430">· 리프만 행 주소를 들고, 깊이가 모두 같다</text>
+  <text x="40" y="302" font-size="13" fill="#1b2430">· 리프끼리 양방향으로 이어져 있다</text>
+  <text x="40" y="326" font-size="13" font-weight="bold" fill="#2d6a4f">강함: 등호 · 범위 · 정렬 · 선두열 LIKE</text>
+  <text x="40" y="350" font-size="13" fill="#9d0208">약함: 값 종류가 적으면 리프를 다 읽는다</text>
+
+  <!-- ② 해시 -->
+  <rect x="306" y="48" width="268" height="330" rx="10" fill="#eef3f0" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="322" y="72" font-size="15" font-weight="bold" fill="#2d6a4f">② 해시</text>
+
+  <rect x="322" y="86" width="236" height="34" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="338" y="108" font-size="13" fill="#1b2430">h(키) → 버킷 번호</text>
+
+  <rect x="322" y="146" width="56" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="344" y="171" font-size="13" fill="#1b2430">0</text>
+  <rect x="382" y="146" width="56" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="404" y="171" font-size="13" fill="#1b2430">1</text>
+  <rect x="442" y="146" width="56" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="464" y="171" font-size="13" fill="#1b2430">2</text>
+  <rect x="502" y="146" width="56" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="524" y="171" font-size="13" fill="#1b2430">3</text>
+
+  <line x1="440" y1="120" x2="410" y2="144" stroke="#44525f" stroke-width="1.4" marker-end="url(#a2)"/>
+  <line x1="410" y1="186" x2="410" y2="208" stroke="#b45309" stroke-width="1.4" marker-end="url(#a2)"/>
+  <rect x="352" y="206" width="148" height="46" rx="4" fill="#fff7ed" stroke="#b45309" stroke-width="1.4"/>
+  <text x="366" y="226" font-size="13" fill="#1b2430">오버플로 체인</text>
+  <text x="366" y="244" font-size="13" fill="#b45309">충돌이 쌓이는 곳</text>
+
+  <text x="322" y="282" font-size="13" fill="#1b2430">· 버킷 번호가 키의 대소 관계와 무관하다</text>
+  <text x="322" y="302" font-size="13" fill="#1b2430">· 원래 키가 아니라 해시값을 저장한다</text>
+  <text x="322" y="326" font-size="13" font-weight="bold" fill="#2d6a4f">강함: 등호 한 건 조회</text>
+  <text x="322" y="350" font-size="13" fill="#9d0208">약함: 범위 · 정렬 · 선두열 LIKE 전부 불가</text>
+
+  <!-- ③ 비트맵 -->
+  <rect x="588" y="48" width="268" height="330" rx="10" fill="#eef3f0" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="604" y="72" font-size="15" font-weight="bold" fill="#2d6a4f">③ 비트맵</text>
+
+  <text x="604" y="104" font-size="13" fill="#44525f">값마다 비트열 하나. 1비트 = 행 하나</text>
+
+  <rect x="604" y="116" width="236" height="34" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="618" y="138" font-size="13" fill="#1b2430">'M'   1 0 1 1 1 0 0</text>
+  <rect x="604" y="156" width="236" height="34" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="618" y="178" font-size="13" fill="#1b2430">'F'    0 1 0 0 0 1 1</text>
+
+  <rect x="604" y="206" width="236" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="618" y="224" font-size="13" font-weight="bold" fill="#1b2430">조건 병합</text>
+  <text x="618" y="241" font-size="13" fill="#44525f">비트열끼리 AND · OR 뒤 1을 센다</text>
+
+  <text x="604" y="282" font-size="13" fill="#1b2430">· 전부 NULL 인 키도 인덱스에 들어간다</text>
+  <text x="604" y="302" font-size="13" fill="#1b2430">· 비트열은 B트리 리프에 담겨 저장된다</text>
+  <text x="604" y="326" font-size="13" font-weight="bold" fill="#2d6a4f">강함: 값 종류가 적은 열 여러 개를 AND</text>
+  <text x="604" y="350" font-size="13" fill="#9d0208">약함: 갱신 한 건이 키 전체를 잠근다</text>
+
+  <text x="24" y="404" font-size="13" fill="#44525f">세 구조는 같은 질의를 두고 경쟁하지 않는다. 질의가 요구하는 접근 방식이 구조를 고른다.</text>
+  <text x="24" y="426" font-size="13" fill="#44525f">값 종류가 적고 읽기 위주 → ③ · 등호 한 건 → ② · 그 밖의 대부분 → ①</text>
+</svg>
