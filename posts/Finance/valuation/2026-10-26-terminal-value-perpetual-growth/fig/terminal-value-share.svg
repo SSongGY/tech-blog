@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="영구성장률 1%·2%·3% 에서 기업가치를 예측 기간 현재가치와 잔존가치 현재가치로 나눠 쌓은 막대 도식">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">한들소재 — 기업가치에서 잔존가치가 차지하는 몫 (할인율 9.0% 고정, 단위: 억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#4a4a4a">초록은 5년 예측 현금흐름의 현재가치, 주황은 6년차 이후를 하나로 묶은 잔존가치의 현재가치</text>
+
+  <!-- 눈금 -->
+  <line x1="200" y1="320" x2="700" y2="320" stroke="#9a9a9a" stroke-width="1.2"/>
+  <text x="192" y="324" font-family="sans-serif" font-size="13" fill="#6a6a6a" text-anchor="end">0</text>
+  <line x1="200" y1="215" x2="700" y2="215" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="192" y="219" font-family="sans-serif" font-size="13" fill="#6a6a6a" text-anchor="end">1,000</text>
+  <line x1="200" y1="110" x2="700" y2="110" stroke="#dcdcdc" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="192" y="114" font-family="sans-serif" font-size="13" fill="#6a6a6a" text-anchor="end">2,000</text>
+
+  <!-- g = 1.0% -->
+  <rect x="240" y="263.2" width="120" height="56.8" fill="#2d6a4f"/>
+  <rect x="240" y="127.1" width="120" height="136.1" fill="#b45309"/>
+  <text x="300" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">70.5%</text>
+  <text x="300" y="296" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">541.3</text>
+  <text x="300" y="119" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">EV 1,837.7</text>
+  <text x="300" y="342" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">g = 1.0%</text>
+
+  <!-- g = 2.0% -->
+  <rect x="400" y="263.2" width="120" height="56.8" fill="#2d6a4f"/>
+  <rect x="400" y="106.1" width="120" height="157.1" fill="#b45309"/>
+  <text x="460" y="190" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">73.4%</text>
+  <text x="460" y="296" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">541.3</text>
+  <text x="460" y="98" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">EV 2,037.6</text>
+  <text x="460" y="342" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">g = 2.0%</text>
+  <text x="460" y="362" font-family="sans-serif" font-size="13" fill="#4a4a4a" text-anchor="middle">기준 가정</text>
+
+  <!-- g = 3.0% -->
+  <rect x="560" y="263.2" width="120" height="56.8" fill="#2d6a4f"/>
+  <rect x="560" y="78.1" width="120" height="185.1" fill="#b45309"/>
+  <text x="620" y="176" font-family="sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">76.5%</text>
+  <text x="620" y="296" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">541.3</text>
+  <text x="620" y="70" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">EV 2,304.1</text>
+  <text x="620" y="342" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">g = 3.0%</text>
+
+  <!-- 왼쪽 설명 -->
+  <text x="24" y="110" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b">잔존가치 산식</text>
+  <text x="24" y="134" font-family="monospace" font-size="14" fill="#1b1b1b">TV = FCF₅ × (1+g)</text>
+  <text x="24" y="154" font-family="monospace" font-size="14" fill="#1b1b1b">         ÷ (r − g)</text>
+  <text x="24" y="184" font-family="sans-serif" font-size="13" fill="#4a4a4a">분모가 r − g 라</text>
+  <text x="24" y="202" font-family="sans-serif" font-size="13" fill="#4a4a4a">g 가 커지면 분모가</text>
+  <text x="24" y="220" font-family="sans-serif" font-size="13" fill="#4a4a4a">줄어 값이 급히 커진다.</text>
+  <text x="24" y="248" font-family="sans-serif" font-size="13" fill="#b45309">g 가 r 에 닿으면</text>
+  <text x="24" y="266" font-family="sans-serif" font-size="13" fill="#b45309">분모가 0 이 되어</text>
+  <text x="24" y="284" font-family="sans-serif" font-size="13" fill="#b45309">식이 성립하지 않는다.</text>
+
+  <!-- 오른쪽 설명 -->
+  <text x="724" y="110" font-family="sans-serif" font-size="13" fill="#1b1b1b">g 를 1.0%p 올리면</text>
+  <text x="724" y="128" font-family="sans-serif" font-size="13" fill="#1b1b1b">초록은 그대로인데</text>
+  <text x="724" y="146" font-family="sans-serif" font-size="13" fill="#1b1b1b">주황만 1,296.5 에서</text>
+  <text x="724" y="164" font-family="sans-serif" font-size="13" fill="#1b1b1b">1,762.8 로 늘어난다.</text>
+  <text x="724" y="192" font-family="sans-serif" font-size="13" fill="#4a4a4a">기업가치가 움직이는</text>
+  <text x="724" y="210" font-family="sans-serif" font-size="13" fill="#4a4a4a">몫은 거의 전부</text>
+  <text x="724" y="228" font-family="sans-serif" font-size="13" fill="#4a4a4a">잔존가치에서 나온다.</text>
+</svg>
