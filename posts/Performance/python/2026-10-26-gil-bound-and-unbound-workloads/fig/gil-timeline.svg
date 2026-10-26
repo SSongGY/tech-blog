@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#f7f7f5"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#1f2933">스레드 4개가 같은 일을 할 때 — GIL 을 쥐고 있는 구간과 놓는 구간</text>
+
+  <!-- 위: 순수 계산 -->
+  <text x="24" y="60" font-size="14" font-weight="bold" fill="#9d0208">순수 계산 — 바이트코드만 돈다. GIL 을 놓을 자리가 없다</text>
+
+  <text x="24" y="90" font-size="13" fill="#3e4c59">스레드1</text>
+  <text x="24" y="116" font-size="13" fill="#3e4c59">스레드2</text>
+  <text x="24" y="142" font-size="13" fill="#3e4c59">스레드3</text>
+  <text x="24" y="168" font-size="13" fill="#3e4c59">스레드4</text>
+
+  <rect x="100" y="76" width="140" height="20" fill="#2d6a4f"/>
+  <rect x="240" y="76" width="420" height="20" fill="#e4e7eb"/>
+  <rect x="100" y="102" width="140" height="20" fill="#e4e7eb"/>
+  <rect x="240" y="102" width="140" height="20" fill="#2d6a4f"/>
+  <rect x="380" y="102" width="280" height="20" fill="#e4e7eb"/>
+  <rect x="100" y="128" width="280" height="20" fill="#e4e7eb"/>
+  <rect x="380" y="128" width="140" height="20" fill="#2d6a4f"/>
+  <rect x="520" y="128" width="140" height="20" fill="#e4e7eb"/>
+  <rect x="100" y="154" width="420" height="20" fill="#e4e7eb"/>
+  <rect x="520" y="154" width="140" height="20" fill="#2d6a4f"/>
+
+  <line x1="660" y1="70" x2="660" y2="182" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="670" y="130" font-size="13" fill="#9d0208">끝</text>
+  <text x="670" y="150" font-size="13" fill="#9d0208">4칸</text>
+
+  <!-- 아래: 기다리는 작업 -->
+  <text x="24" y="226" font-size="14" font-weight="bold" fill="#2d6a4f">sleep · 파일 입출력 — 기다리는 동안 GIL 을 내놓는다</text>
+
+  <text x="24" y="256" font-size="13" fill="#3e4c59">스레드1</text>
+  <text x="24" y="282" font-size="13" fill="#3e4c59">스레드2</text>
+  <text x="24" y="308" font-size="13" fill="#3e4c59">스레드3</text>
+  <text x="24" y="334" font-size="13" fill="#3e4c59">스레드4</text>
+
+  <rect x="100" y="242" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="118" y="242" width="104" height="20" fill="#fdf0d5" stroke="#b45309" stroke-width="1"/>
+  <rect x="222" y="242" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="100" y="268" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="118" y="268" width="104" height="20" fill="#fdf0d5" stroke="#b45309" stroke-width="1"/>
+  <rect x="222" y="268" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="100" y="294" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="118" y="294" width="104" height="20" fill="#fdf0d5" stroke="#b45309" stroke-width="1"/>
+  <rect x="222" y="294" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="100" y="320" width="18" height="20" fill="#2d6a4f"/>
+  <rect x="118" y="320" width="104" height="20" fill="#fdf0d5" stroke="#b45309" stroke-width="1"/>
+  <rect x="222" y="320" width="18" height="20" fill="#2d6a4f"/>
+
+  <line x1="240" y1="236" x2="240" y2="348" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="250" y="296" font-size="13" fill="#2d6a4f">끝</text>
+  <text x="250" y="316" font-size="13" fill="#2d6a4f">1칸 남짓</text>
+
+  <!-- 범례 -->
+  <rect x="24" y="372" width="18" height="16" fill="#2d6a4f"/>
+  <text x="50" y="385" font-size="13" fill="#3e4c59">GIL 을 쥐고 바이트코드를 실행</text>
+  <rect x="280" y="372" width="18" height="16" fill="#fdf0d5" stroke="#b45309" stroke-width="1"/>
+  <text x="306" y="385" font-size="13" fill="#3e4c59">GIL 을 놓고 커널의 응답을 기다림</text>
+  <rect x="556" y="372" width="18" height="16" fill="#e4e7eb"/>
+  <text x="582" y="385" font-size="13" fill="#3e4c59">GIL 을 기다리며 멈춰 있음</text>
+
+  <text x="24" y="416" font-size="13" fill="#52606d">가로축은 시간이고 칸 하나가 한 작업의 계산량이다. 실제 전환은 훨씬 잘게 끊기지만 합계는 달라지지 않는다.</text>
+</svg>
