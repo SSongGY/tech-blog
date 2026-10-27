@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **487편** · 갱신 2026-10-27
+총 **489편** · 갱신 2026-10-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -429,11 +429,13 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 92편
+## 주식·재무 (finance) — 94편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [주식에 붙는 세금 — 배당소득세·증권거래세·양도소득세](posts/Finance/market/2026-10-27-taxes-on-korean-stocks/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [주식 병합과 감자 — 주식 수가 줄 때 자본이 움직이는 방향](posts/Finance/market/2026-10-27-share-consolidation-and-capital-reduction/index.md) | 중급 | Python 3.13.5, 상법 제438조~제451조 (2026-10-27 확인), 일반기업회계기준 제15장 15.11 (2026-10-27 확인) | 실행 검증 |
+| 2026-10-27 | [정리매매 — 상장폐지가 결정된 뒤의 거래](posts/Finance/market/2026-10-27-liquidation-trading-after-delisting/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [공모주 청약 — 공모가가 정해지는 절차와 배정 계산](posts/Finance/market/2026-10-27-ipo-bookbuilding-and-allocation/index.md) | 입문 | Python 3.13.5, 증권 인수업무 등에 관한 규정 2023-12-19 개정, 자본시장과 금융투자업에 관한 법률 시행령 2026-10-13 시행 | 실행 검증 |
 | 2026-10-26 | [영구성장률과 터미널 밸류 — DCF 값의 대부분이 걸린 가정](posts/Finance/valuation/2026-10-26-terminal-value-perpetual-growth/index.md) | 심화 | Python 3.13.5, K-IFRS 제1036호 자산손상 | 실행 검증 |
 | 2026-10-26 | [SOTP — 사업부를 따로 평가해 더하는 법](posts/Finance/valuation/2026-10-26-sotp-sum-of-the-parts/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
