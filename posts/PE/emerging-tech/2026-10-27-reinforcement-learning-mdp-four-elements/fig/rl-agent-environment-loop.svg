@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf9"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="36" font-size="17" font-weight="bold" fill="#1b2a24">에이전트–환경 상호작용과 학습 시스템 4요소</text>
+  <text x="24" y="57" font-size="13" fill="#555555">정책·가치 함수·모델은 에이전트 안에, 보상은 환경이 준다. 점선은 선택 요소다</text>
+
+  <!-- agent -->
+  <rect x="40" y="80" width="330" height="235" rx="10" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="56" y="106" font-size="15" font-weight="bold" fill="#1b2a24">에이전트</text>
+
+  <rect x="60" y="118" width="290" height="52" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="76" y="140" font-size="14" font-weight="bold" fill="#1b2a24">① 정책 π</text>
+  <text x="76" y="160" font-size="13" fill="#333333">상태 → 행동 (학습의 결과물)</text>
+
+  <rect x="60" y="180" width="290" height="52" rx="6" fill="#ffffff" stroke="#333333" stroke-width="1.4"/>
+  <text x="76" y="202" font-size="14" font-weight="bold" fill="#1b2a24">③ 가치 함수 V(s), Q(s,a)</text>
+  <text x="76" y="222" font-size="13" fill="#333333">앞으로 받을 보상의 합 추정</text>
+
+  <rect x="60" y="242" width="290" height="52" rx="6" fill="#ffffff" stroke="#666666" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <text x="76" y="264" font-size="14" font-weight="bold" fill="#444444">④ 환경 모델 T̂, R̂ — 선택</text>
+  <text x="76" y="284" font-size="13" fill="#555555">없으면 모델 프리, 있으면 모델 기반</text>
+
+  <!-- environment -->
+  <rect x="560" y="140" width="290" height="115" rx="10" fill="#ffffff" stroke="#333333" stroke-width="2"/>
+  <text x="578" y="168" font-size="15" font-weight="bold" fill="#1b2a24">환경 (MDP)</text>
+  <text x="578" y="194" font-size="13" fill="#333333">전이 T(s′ | s, a)</text>
+  <text x="578" y="216" font-size="13" fill="#333333">보상 R(s, a, s′)  ← ② 보상의 출처</text>
+  <text x="578" y="240" font-size="13" fill="#555555">할인율 γ 로 미래를 깎는다</text>
+
+  <!-- loop arrows -->
+  <line x1="372" y1="165" x2="555" y2="165" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="463" y="155" font-size="14" fill="#2d6a4f" text-anchor="middle">행동 a_t</text>
+
+  <line x1="555" y1="240" x2="372" y2="240" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="463" y="262" font-size="14" fill="#2d6a4f" text-anchor="middle">상태 s_t+1 · 보상 r_t+1</text>
+
+  <!-- goal -->
+  <rect x="40" y="330" width="810" height="58" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.6"/>
+  <text x="60" y="354" font-size="14" fill="#1b2a24">목표: 기대 누적 보상 E[ Σ γ^t r_t+1 ] 을 최대로 만드는 정책 π* 찾기</text>
+  <text x="60" y="376" font-size="13" fill="#555555">즉시 오는 보상(r)과 앞으로의 합인 가치(V·Q)를 구분해 쓴다</text>
+</svg>
