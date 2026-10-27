@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **484편** · 갱신 2026-10-27
+총 **487편** · 갱신 2026-10-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 74편
+## DB문법 (basics) — 75편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-27 | [JSON 함수 — 문서를 컬럼처럼 다루기](posts/Database/sql-basics/2026-10-27-json-functions-extract-each/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-27 | [generate_series와 가상 테이블 — 없는 행을 만들어 쓰기](posts/Database/sql-basics/2026-10-27-generate-series-virtual-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [전문검색 FTS5 — LIKE로는 안 되는 검색](posts/Database/sql-basics/2026-10-27-fts5-full-text-search/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [스키마 조회 — sqlite_master와 PRAGMA table_info](posts/Database/sql-basics/2026-10-26-schema-introspection-sqlite-master-pragma/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [PRAGMA — 동작을 바꾸는 설정들](posts/Database/sql-basics/2026-10-26-pragma-settings-that-change-behavior/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -107,13 +108,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 168편
+## 기술사 (pe) — 169편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-27 | [워킹셋 모델과 스래싱](posts/PE/system/2026-10-27-working-set-model-and-thrashing/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](posts/PE/data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md) | 중급 | Hochreiter & Schmidhuber, Neural Computation 9(8) (1997), Gers et al., Neural Computation 12(10) (2000), Vaswani et al., NeurIPS (2017), Bai et al., arXiv:1803.01271 (2018), Lim et al., arXiv:1912.09363 v3 (2020-09) | 문서 근거 |
 | 2026-10-27 | [강화학습 — MDP와 정책·보상·가치 함수·모델 4요소](posts/PE/emerging-tech/2026-10-27-reinforcement-learning-mdp-four-elements/index.md) | 중급 | Kaelbling, Littman & Moore, JAIR Vol. 4 (1996), pp. 237-285, Arulkumaran et al., IEEE Signal Processing Magazine 34(6), 2017 (arXiv:1708.05866) | 문서 근거 |
+| 2026-10-27 | [쿼리 최적화 — 옵티마이저의 판단 근거](posts/PE/database/2026-10-27-query-optimizer-decision-basis/index.md) | 중급 | PostgreSQL 16 문서, Oracle Database 19c SQL Tuning Guide, SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [그래프신경망 — GCN·GAT·시공간 GCN이 이웃 정보를 모으는 방식](posts/PE/emerging-tech/2026-10-27-graph-neural-network-gcn-gat-stgcn/index.md) | 중급 | GCN: Kipf & Welling, ICLR 2017 (arXiv:1609.02907v4), GAT: Veličković et al., ICLR 2018 (arXiv:1710.10903v3), STGCN: Yu et al., IJCAI 2018 (arXiv:1709.04875) | 문서 근거 |
 | 2026-10-27 | [데이터베이스 이중화와 복제 방식](posts/PE/database/2026-10-27-database-replication-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 문서, Oracle Database 19c Data Guard 문서, NIST SP 800-34 Rev. 1 | 문서 근거 |
 | 2026-10-27 | [데이터베이스 백업과 복구 기법](posts/PE/database/2026-10-27-database-backup-recovery/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010), ACM TODS 17(1) ARIES (1992) | 문서 근거 |
@@ -303,10 +305,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 37편
+## 일반 (general) — 38편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort의 런 탐지](posts/Performance/algorithm/2026-10-27-timsort-run-detection/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [서머타임 경계에서 사라지는 시각과 두 번 오는 시각](posts/Backend/datetime/2026-10-27-dst-missing-and-ambiguous-times/index.md) | 중급 | Python 3.13.5, tzdata 2026.5 (IANA 2026e), Windows 11 | 실행 검증 |
 | 2026-10-27 | [커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회](posts/Database/sqlite/2026-10-27-commit-batching-and-wal-size/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [write 는 디스크에 쓰는 것이 아니다 — 버퍼·flush·fsync 를 가르기](posts/Backend/storage/2026-10-26-write-buffer-flush-fsync/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
