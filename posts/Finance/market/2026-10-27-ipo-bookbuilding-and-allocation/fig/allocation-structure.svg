@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <!-- 공모주식 전체 -->
+  <rect x="330" y="20" width="220" height="48" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="40" text-anchor="middle" font-size="14" fill="#212529">공모주식</text>
+  <text x="440" y="59" text-anchor="middle" font-size="14" fill="#212529" font-weight="bold">2,000,000주</text>
+
+  <path d="M440 68 L440 92" stroke="#495057" stroke-width="1.5" fill="none"/>
+  <path d="M117 92 L763 92" stroke="#495057" stroke-width="1.5" fill="none"/>
+  <path d="M117 92 L117 118 M337 92 L337 118 M557 92 L557 118 M763 92 L763 118" stroke="#495057" stroke-width="1.5" fill="none"/>
+
+  <!-- 유형군 4개 -->
+  <rect x="22" y="118" width="190" height="72" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="117" y="141" text-anchor="middle" font-size="13" fill="#212529">우리사주조합원</text>
+  <text x="117" y="162" text-anchor="middle" font-size="15" fill="#212529" font-weight="bold">20%</text>
+  <text x="117" y="180" text-anchor="middle" font-size="13" fill="#495057">400,000주</text>
+
+  <rect x="242" y="118" width="190" height="72" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="337" y="141" text-anchor="middle" font-size="13" fill="#1b4332">일반청약자</text>
+  <text x="337" y="162" text-anchor="middle" font-size="15" fill="#1b4332" font-weight="bold">25% 이상</text>
+  <text x="337" y="180" text-anchor="middle" font-size="13" fill="#2d6a4f">500,000주</text>
+
+  <rect x="462" y="118" width="190" height="72" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="557" y="141" text-anchor="middle" font-size="13" fill="#212529">고위험고수익투자신탁등</text>
+  <text x="557" y="162" text-anchor="middle" font-size="15" fill="#212529" font-weight="bold">5% 이상</text>
+  <text x="557" y="180" text-anchor="middle" font-size="13" fill="#495057">100,000주</text>
+
+  <rect x="668" y="118" width="190" height="72" rx="6" fill="#e9ecef" stroke="#495057" stroke-width="1.5"/>
+  <text x="763" y="141" text-anchor="middle" font-size="13" fill="#212529">기관투자자</text>
+  <text x="763" y="162" text-anchor="middle" font-size="15" fill="#212529" font-weight="bold">앞을 뺀 잔여</text>
+  <text x="763" y="180" text-anchor="middle" font-size="13" fill="#495057">1,000,000주</text>
+
+  <!-- 일반청약자 분기 -->
+  <path d="M337 190 L337 216" stroke="#2d6a4f" stroke-width="2.2" fill="none"/>
+  <path d="M222 216 L452 216" stroke="#2d6a4f" stroke-width="2.2" fill="none"/>
+  <path d="M222 216 L222 244 M452 216 L452 244" stroke="#2d6a4f" stroke-width="2.2" fill="none"/>
+
+  <rect x="122" y="244" width="200" height="72" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="222" y="267" text-anchor="middle" font-size="14" fill="#1b4332" font-weight="bold">균등방식</text>
+  <text x="222" y="287" text-anchor="middle" font-size="13" fill="#1b4332">일반청약자 몫의 50% 이상</text>
+  <text x="222" y="306" text-anchor="middle" font-size="13" fill="#2d6a4f">250,000주</text>
+
+  <rect x="352" y="244" width="200" height="72" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="2.2"/>
+  <text x="452" y="267" text-anchor="middle" font-size="14" fill="#1b4332" font-weight="bold">비례방식</text>
+  <text x="452" y="287" text-anchor="middle" font-size="13" fill="#1b4332">균등방식을 뺀 나머지</text>
+  <text x="452" y="306" text-anchor="middle" font-size="13" fill="#2d6a4f">250,000주</text>
+
+  <!-- 배정 기준 -->
+  <path d="M222 316 L222 342 M452 316 L452 342" stroke="#2d6a4f" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+
+  <rect x="122" y="342" width="200" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.3"/>
+  <text x="222" y="364" text-anchor="middle" font-size="13" fill="#1b4332">청약수량을 보지 않는다</text>
+  <text x="222" y="384" text-anchor="middle" font-size="13" fill="#495057">최소 증거금만 넘기면 동등</text>
+
+  <rect x="352" y="342" width="200" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.3"/>
+  <text x="452" y="364" text-anchor="middle" font-size="13" fill="#1b4332">청약수량에 비례한다</text>
+  <text x="452" y="384" text-anchor="middle" font-size="13" fill="#495057">많이 넣을수록 많이 받는다</text>
+
+  <!-- 주석 -->
+  <text x="596" y="366" font-size="13" fill="#495057">비율은 규정이 정한 하한이고,</text>
+  <text x="596" y="386" font-size="13" fill="#495057">주식수는 가상 회사 마루소재의 예다.</text>
+</svg>
