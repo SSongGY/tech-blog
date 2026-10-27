@@ -5926,7 +5926,7 @@ topics:
     angle: "비유클리드 데이터에서 메시지 전달 구조, 정규화 인접 행렬과 어텐션 가중치의 차이, 교통·전력망 시공간 예측으로의 확장"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-195
     title: "강화학습 — MDP와 정책·보상·가치 함수·모델 4요소"
     category: PE
@@ -5937,7 +5937,7 @@ topics:
     angle: "지도학습과 학습 신호가 다른 점, 에이전트-환경 인터페이스, 가치 기반·정책 기반 구분, 실환경 탐색이 불가할 때 시뮬레이터와 안전 제약"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-196
     title: "VLSM — 가변 길이 서브넷 마스크"
     category: PE

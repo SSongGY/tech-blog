@@ -205,6 +205,10 @@ Liao 등의 리뷰도 전력계통 GNN 응용 분류에 **시계열 예측**을 
 제 자리에서 작동한다.
 
 > 개념 정리: [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](../../data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md)
+>
+> 개념 정리: [그래프신경망 — GCN·GAT·시공간 GCN이 이웃 정보를 모으는 방식](../../emerging-tech/2026-10-27-graph-neural-network-gcn-gat-stgcn/index.md)
+>
+> 개념 정리: [강화학습 — MDP와 정책·보상·가치 함수·모델 4요소](../../emerging-tech/2026-10-27-reinforcement-learning-mdp-four-elements/index.md)
 
 끝
 
