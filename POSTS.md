@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **490편** · 갱신 2026-10-28
+총 **492편** · 갱신 2026-10-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -108,10 +108,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 169편
+## 기술사 (pe) — 171편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-28 | [VLSM — 가변 길이 서브넷 마스크](posts/PE/network/2026-10-28-vlsm-variable-length-subnet-mask/index.md) | 중급 | Python 3.13.5, RFC 950 (1985-08), RFC 1812 (1995-06), RFC 1878 (1995-12), RFC 2453 (1998-11, STD 56) | 실행 검증 |
+| 2026-10-28 | [CIDR와 라우팅 집약](posts/PE/network/2026-10-28-cidr-and-route-aggregation/index.md) | 중급 | Python 3.13.5, RFC 791 (1981-09), RFC 1338 (1992-06), RFC 4632 (2006-08, BCP 122), RFC 7608 (2015-07, BCP 198) | 실행 검증 |
 | 2026-10-27 | [워킹셋 모델과 스래싱](posts/PE/system/2026-10-27-working-set-model-and-thrashing/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](posts/PE/data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md) | 중급 | Hochreiter & Schmidhuber, Neural Computation 9(8) (1997), Gers et al., Neural Computation 12(10) (2000), Vaswani et al., NeurIPS (2017), Bai et al., arXiv:1803.01271 (2018), Lim et al., arXiv:1912.09363 v3 (2020-09) | 문서 근거 |
 | 2026-10-27 | [강화학습 — MDP와 정책·보상·가치 함수·모델 4요소](posts/PE/emerging-tech/2026-10-27-reinforcement-learning-mdp-four-elements/index.md) | 중급 | Kaelbling, Littman & Moore, JAIR Vol. 4 (1996), pp. 237-285, Arulkumaran et al., IEEE Signal Processing Magazine 34(6), 2017 (arXiv:1708.05866) | 문서 근거 |
