@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#fbfbf7"/>
+  <defs>
+    <marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b2a2f">비용 기반 옵티마이저의 3구성요소와 입력</text>
+  <text x="40" y="58" font-size="13" fill="#52616b">파싱된 질의 블록이 들어가 비용이 가장 낮은 실행 계획 하나가 나온다</text>
+
+  <rect x="40" y="86" width="180" height="62" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="130" y="112" font-size="14" fill="#1b2a2f" text-anchor="middle">파싱된 질의 블록</text>
+  <text x="130" y="134" font-size="13" fill="#52616b" text-anchor="middle">query block 집합</text>
+
+  <rect x="260" y="86" width="200" height="62" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="360" y="112" font-size="14" fill="#1b2a2f" text-anchor="middle">① 질의 변환기</text>
+  <text x="360" y="134" font-size="13" fill="#52616b" text-anchor="middle">뜻이 같은 다른 형태로 고쳐 쓴다</text>
+
+  <rect x="500" y="86" width="200" height="62" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="600" y="112" font-size="14" fill="#1b2a2f" text-anchor="middle">② 추정기</text>
+  <text x="600" y="134" font-size="13" fill="#52616b" text-anchor="middle">선택도 · 카디널리티 · 비용</text>
+
+  <rect x="500" y="208" width="200" height="62" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="600" y="234" font-size="14" fill="#1b2a2f" text-anchor="middle">③ 계획 생성기</text>
+  <text x="600" y="256" font-size="13" fill="#52616b" text-anchor="middle">경로 · 조인 방식 · 조인 순서 탐색</text>
+
+  <rect x="260" y="208" width="200" height="62" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="360" y="234" font-size="14" fill="#1b2a2f" text-anchor="middle">실행 계획 1개</text>
+  <text x="360" y="256" font-size="13" fill="#52616b" text-anchor="middle">추정 비용이 가장 낮은 것</text>
+
+  <rect x="40" y="208" width="180" height="62" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="130" y="234" font-size="14" fill="#b45309" text-anchor="middle">통계</text>
+  <text x="130" y="256" font-size="13" fill="#52616b" text-anchor="middle">행 수 · 고유값 · 분포</text>
+
+  <line x1="220" y1="117" x2="254" y2="117" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="460" y1="117" x2="494" y2="117" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="600" y1="148" x2="600" y2="202" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <line x1="500" y1="239" x2="466" y2="239" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <path d="M220 229 L240 229 L240 170 L560 170 L560 154" fill="none" stroke="#b45309" stroke-width="1.6" marker-end="url(#ar2)"/>
+  <text x="252" y="190" font-size="13" fill="#b45309">통계는 추정기로만 들어간다 — 계획 생성기는 추정기가 매긴 비용만 본다</text>
+
+  <text x="40" y="304" font-size="13" fill="#52616b">②와 ③은 한 번씩 도는 것이 아니라 맞물린다. 계획 생성기가 후보를 만들 때마다 추정기가 그 후보의 비용을 매긴다.</text>
+  <text x="40" y="330" font-size="13" fill="#52616b">따라서 통계가 틀리면 틀린 비용이 모든 후보에 똑같이 적용되고, 잘못 매겨진 순위 그대로 하나가 뽑힌다.</text>
+</svg>

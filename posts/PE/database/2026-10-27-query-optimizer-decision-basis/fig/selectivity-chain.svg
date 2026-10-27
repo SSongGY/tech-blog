@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="340" fill="#fbfbf7"/>
+  <defs>
+    <marker id="ar3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b2a2f">통계 → 선택도 → 카디널리티 → 비용 — 어긋나면 처음부터 어긋난다</text>
+  <text x="40" y="58" font-size="13" fill="#52616b">뒤쪽 세 단계는 앞 단계의 값을 그대로 받아 계산한다. 틀린 값은 걸러지지 않고 끝까지 간다.</text>
+
+  <rect x="40" y="82" width="150" height="56" rx="6" fill="#fdf2e2" stroke="#b45309" stroke-width="1.5"/>
+  <text x="115" y="106" font-size="14" fill="#b45309" text-anchor="middle">통계</text>
+  <text x="115" y="127" font-size="13" fill="#52616b" text-anchor="middle">n_distinct 676</text>
+
+  <rect x="230" y="82" width="170" height="56" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="315" y="106" font-size="14" fill="#1b2a2f" text-anchor="middle">선택도</text>
+  <text x="315" y="127" font-size="13" fill="#52616b" text-anchor="middle">0.001456</text>
+
+  <rect x="440" y="82" width="170" height="56" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="525" y="106" font-size="14" fill="#1b2a2f" text-anchor="middle">카디널리티</text>
+  <text x="525" y="127" font-size="13" fill="#52616b" text-anchor="middle">10000 × 선택도 = 14.6행</text>
+
+  <rect x="650" y="82" width="190" height="56" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="745" y="106" font-size="14" fill="#1b2a2f" text-anchor="middle">비용과 계획 선택</text>
+  <text x="745" y="127" font-size="13" fill="#52616b" text-anchor="middle">경로·조인 순서를 고른다</text>
+
+  <line x1="190" y1="110" x2="224" y2="110" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar3)"/>
+  <line x1="400" y1="110" x2="434" y2="110" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar3)"/>
+  <line x1="610" y1="110" x2="644" y2="110" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar3)"/>
+
+  <text x="40" y="180" font-size="13" fill="#52616b">같은 등호 조건에서 고유값 추정치만 바꿔 넣었을 때의 추정 행 수 — 산식은 (1 − Σmcf) / (n_distinct − num_mcv)</text>
+
+  <g font-size="13" text-anchor="middle">
+    <rect x="40" y="194" width="200" height="30" fill="#e8f1ec" stroke="#2d6a4f"/><text x="140" y="214" fill="#1b2a2f">통계의 n_distinct</text>
+    <rect x="240" y="194" width="200" height="30" fill="#e8f1ec" stroke="#2d6a4f"/><text x="340" y="214" fill="#1b2a2f">선택도</text>
+    <rect x="440" y="194" width="200" height="30" fill="#e8f1ec" stroke="#2d6a4f"/><text x="540" y="214" fill="#1b2a2f">추정 행 수</text>
+    <rect x="640" y="194" width="200" height="30" fill="#e8f1ec" stroke="#2d6a4f"/><text x="740" y="214" fill="#1b2a2f">맞는 값 대비</text>
+
+    <rect x="40" y="224" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="140" y="242" fill="#1b2a2f">676 (맞는 값)</text>
+    <rect x="240" y="224" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="340" y="242" fill="#1b2a2f">0.001456</text>
+    <rect x="440" y="224" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="540" y="242" fill="#1b2a2f">14.6</text>
+    <rect x="640" y="224" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="242" fill="#1b2a2f">1.0배</text>
+
+    <rect x="40" y="250" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="140" y="268" fill="#1b2a2f">300</text>
+    <rect x="240" y="250" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="340" y="268" fill="#1b2a2f">0.003344</text>
+    <rect x="440" y="250" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="540" y="268" fill="#1b2a2f">33.4</text>
+    <rect x="640" y="250" width="200" height="26" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="268" fill="#1b2a2f">2.3배</text>
+
+    <rect x="40" y="276" width="200" height="26" fill="#fdf2e2" stroke="#b45309"/><text x="140" y="294" fill="#b45309">50</text>
+    <rect x="240" y="276" width="200" height="26" fill="#fdf2e2" stroke="#b45309"/><text x="340" y="294" fill="#b45309">0.024242</text>
+    <rect x="440" y="276" width="200" height="26" fill="#fdf2e2" stroke="#b45309"/><text x="540" y="294" fill="#b45309">242.4</text>
+    <rect x="640" y="276" width="200" height="26" fill="#fdf2e2" stroke="#b45309"/><text x="740" y="294" fill="#b45309">16.6배</text>
+  </g>
+
+  <text x="40" y="326" font-size="13" fill="#52616b">고유값 추정치 하나가 어긋나면 추정 행 수가 열 배 넘게 벌어진다. 옵티마이저는 이 숫자를 사실로 받아 비용을 매긴다.</text>
+</svg>
