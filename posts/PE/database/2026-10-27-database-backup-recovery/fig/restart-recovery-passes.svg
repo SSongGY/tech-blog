@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">체크포인트와 장애 지점이 트랜잭션을 가른다 — 재시작 복구 3단계</text>
+
+  <!-- 시간 축 -->
+  <path d="M110 58 H812" fill="none" stroke="#8795a4"/>
+  <text x="822" y="62" font-size="13" fill="#5b6b7c">시간</text>
+
+  <!-- 체크포인트 -->
+  <path d="M268 50 V268" fill="none" stroke="#1f3a5f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="268" y="44" font-size="13" fill="#1f3a5f" text-anchor="middle">체크포인트</text>
+
+  <!-- RedoLSN -->
+  <path d="M214 86 V268" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="180" y="80" font-size="13" fill="#b45309" text-anchor="middle">RedoLSN</text>
+
+  <!-- 장애 -->
+  <path d="M700 50 V268" fill="none" stroke="#9d0208" stroke-width="2"/>
+  <text x="700" y="44" font-size="13" fill="#9d0208" text-anchor="middle">장애</text>
+
+  <!-- T1 -->
+  <text x="40" y="108" font-size="13" fill="#1b2a3a">T1</text>
+  <rect x="140" y="96" width="92" height="16" rx="3" fill="#d8ece0" stroke="#2d6a4f"/>
+  <text x="240" y="108" font-size="13" fill="#2d6a4f">커밋</text>
+  <!-- T2 -->
+  <text x="40" y="140" font-size="13" fill="#1b2a3a">T2</text>
+  <rect x="196" y="128" width="208" height="16" rx="3" fill="#d8ece0" stroke="#2d6a4f"/>
+  <text x="412" y="140" font-size="13" fill="#2d6a4f">커밋</text>
+  <!-- T3 -->
+  <text x="40" y="172" font-size="13" fill="#1b2a3a">T3</text>
+  <rect x="224" y="160" width="476" height="16" rx="3" fill="#f6dcdc" stroke="#9d0208"/>
+  <text x="710" y="172" font-size="13" fill="#9d0208">미완료</text>
+  <!-- T4 -->
+  <text x="40" y="204" font-size="13" fill="#1b2a3a">T4</text>
+  <rect x="330" y="192" width="234" height="16" rx="3" fill="#d8ece0" stroke="#2d6a4f"/>
+  <text x="572" y="204" font-size="13" fill="#2d6a4f">커밋</text>
+  <!-- T5 -->
+  <text x="40" y="236" font-size="13" fill="#1b2a3a">T5</text>
+  <rect x="604" y="224" width="96" height="16" rx="3" fill="#f6dcdc" stroke="#9d0208"/>
+  <text x="710" y="236" font-size="13" fill="#9d0208">미완료</text>
+
+  <text x="782" y="108" font-size="13" fill="#3c4a58">루저 아님</text>
+  <text x="782" y="140" font-size="13" fill="#3c4a58">루저 아님</text>
+  <text x="782" y="172" font-size="13" fill="#9d0208">루저</text>
+  <text x="782" y="204" font-size="13" fill="#3c4a58">루저 아님</text>
+  <text x="782" y="236" font-size="13" fill="#9d0208">루저</text>
+
+  <!-- 3단계 -->
+  <rect x="24" y="286" width="832" height="128" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+
+  <defs>
+    <marker id="arrowR" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#1f3a5f"/>
+    </marker>
+    <marker id="arrowL" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="44" y="319" font-size="13" fill="#1b2a3a">① 분석</text>
+  <text x="300" y="303" font-size="13" fill="#3c4a58">체크포인트부터 로그 끝까지 — 더티 페이지와 진행 중 트랜잭션을 되살린다</text>
+  <path d="M268 315 H694" fill="none" stroke="#1f3a5f" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <text x="44" y="357" font-size="13" fill="#1b2a3a">② 재수행</text>
+  <text x="246" y="341" font-size="13" fill="#3c4a58">RedoLSN 부터 역사를 반복한다 — 루저의 갱신까지 전부 다시 적용</text>
+  <path d="M214 353 H694" fill="none" stroke="#1f3a5f" stroke-width="2" marker-end="url(#arrowR)"/>
+
+  <text x="44" y="395" font-size="13" fill="#1b2a3a">③ 취소</text>
+  <text x="246" y="379" font-size="13" fill="#9d0208">로그 끝에서 역순으로 — 루저(T3 · T5)만 되돌린다</text>
+  <path d="M700 391 H230" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#arrowL)"/>
+</svg>
