@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">커밋 한 번이 WAL 에 남기는 것 — 프레임과 커밋 레코드</text>
+
+  <!-- ===== 위: WAL 파일 구조 ===== -->
+  <rect x="24" y="44" width="832" height="140" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+  <text x="40" y="66" font-size="13" fill="#5b6b7c">WAL 파일 — 머리말 32바이트 뒤로 프레임이 붙는다</text>
+
+  <rect x="44" y="84" width="118" height="58" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="103" y="108" font-size="13" fill="#1b2a3a" text-anchor="middle">WAL 머리말</text>
+  <text x="103" y="128" font-size="13" fill="#1b2a3a" text-anchor="middle">32 바이트</text>
+
+  <rect x="180" y="84" width="300" height="58" rx="4" fill="#ffffff" stroke="#1f3a5f"/>
+  <rect x="180" y="84" width="110" height="58" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="235" y="108" font-size="13" fill="#1b2a3a" text-anchor="middle">프레임 머리말</text>
+  <text x="235" y="128" font-size="13" fill="#1b2a3a" text-anchor="middle">24 바이트</text>
+  <text x="385" y="108" font-size="13" fill="#1b2a3a" text-anchor="middle">페이지 데이터</text>
+  <text x="385" y="128" font-size="13" fill="#1b2a3a" text-anchor="middle">4,096 바이트</text>
+  <text x="330" y="160" font-size="13" fill="#5b6b7c" text-anchor="middle">프레임 하나 = 4,120 바이트</text>
+
+  <text x="508" y="98" font-size="13" fill="#3c4a58">프레임 머리말의 4~7바이트 = 커밋 뒤 DB 페이지 수.</text>
+  <text x="508" y="120" font-size="13" fill="#2d6a4f">0 이 아니면 그 프레임이 커밋 레코드다.</text>
+  <text x="508" y="142" font-size="13" fill="#3c4a58">커밋은 이 프레임이 붙는 것으로 끝난다.</text>
+  <text x="508" y="164" font-size="13" fill="#3c4a58">본 DB 파일은 이 시점에 건드리지 않는다.</text>
+
+  <!-- ===== 아래 왼쪽: 커밋 1회 ===== -->
+  <rect x="24" y="198" width="406" height="222" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+  <text x="40" y="220" font-size="14" font-weight="bold" fill="#1b2a3a">커밋 1회 — 바뀐 페이지가 한 번씩만 붙는다</text>
+
+  <rect x="44" y="238" width="56" height="44" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="72" y="265" font-size="13" fill="#1b2a3a" text-anchor="middle">p2</text>
+  <rect x="106" y="238" width="56" height="44" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="134" y="265" font-size="13" fill="#1b2a3a" text-anchor="middle">p5</text>
+  <rect x="168" y="238" width="56" height="44" rx="4" fill="#d8ece0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="196" y="258" font-size="13" fill="#1b4332" text-anchor="middle">p9</text>
+  <text x="196" y="277" font-size="13" fill="#2d6a4f" text-anchor="middle">커밋</text>
+
+  <text x="244" y="265" font-size="13" fill="#5b6b7c">… 여기까지</text>
+
+  <text x="44" y="316" font-size="13" fill="#3c4a58">커밋 레코드는 마지막 한 프레임뿐이다.</text>
+  <text x="44" y="340" font-size="13" fill="#3c4a58">fsync 도 그때 한 번만 일어난다.</text>
+  <text x="44" y="372" font-size="13" fill="#1b2a3a">측정 — 1만 건을 커밋 1회로:</text>
+  <text x="44" y="394" font-size="13" fill="#1b2a3a">프레임 43개 · WAL 177,192바이트</text>
+
+  <!-- ===== 아래 오른쪽: 커밋 여러 번 ===== -->
+  <rect x="450" y="198" width="406" height="222" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+  <text x="466" y="220" font-size="14" font-weight="bold" fill="#1b2a3a">커밋 k회 — 같은 페이지가 커밋마다 다시 붙는다</text>
+
+  <rect x="470" y="238" width="52" height="44" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="496" y="265" font-size="13" fill="#1b2a3a" text-anchor="middle">p2</text>
+  <rect x="528" y="238" width="52" height="44" rx="4" fill="#d8ece0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="554" y="258" font-size="13" fill="#1b4332" text-anchor="middle">p9</text>
+  <text x="554" y="277" font-size="13" fill="#2d6a4f" text-anchor="middle">커밋</text>
+  <rect x="586" y="238" width="52" height="44" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="612" y="265" font-size="13" fill="#1b2a3a" text-anchor="middle">p2</text>
+  <rect x="644" y="238" width="52" height="44" rx="4" fill="#d8ece0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="670" y="258" font-size="13" fill="#1b4332" text-anchor="middle">p9</text>
+  <text x="670" y="277" font-size="13" fill="#2d6a4f" text-anchor="middle">커밋</text>
+  <rect x="702" y="238" width="52" height="44" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="728" y="265" font-size="13" fill="#1b2a3a" text-anchor="middle">p2</text>
+  <text x="766" y="265" font-size="13" fill="#5b6b7c">…</text>
+
+  <text x="470" y="316" font-size="13" fill="#3c4a58">같은 p2 가 커밋마다 통째로 다시 붙는다.</text>
+  <text x="470" y="340" font-size="13" fill="#3c4a58">쓴 양도, fsync 횟수도 커밋 수를 따라간다.</text>
+  <text x="470" y="372" font-size="13" fill="#1b2a3a">측정 — 같은 1만 건을 1만 회로 나누면:</text>
+  <text x="470" y="394" font-size="13" fill="#1b2a3a">프레임 10,079개 · WAL 41,525,512바이트</text>
+  <text x="470" y="413" font-size="13" fill="#5b6b7c">(wal_autocheckpoint 를 끄고 쟀을 때)</text>
+</svg>
