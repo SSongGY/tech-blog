@@ -2974,7 +2974,7 @@ topics:
     angle: "동기와 비동기가 일관성·가용성에서 무엇을 맞바꾸는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-102
     title: "쿼리 최적화 — 옵티마이저의 판단 근거"
     category: PE
@@ -4701,7 +4701,7 @@ topics:
     angle: "LIKE '%단어%' 가 인덱스를 못 타는 것과 비교해, 가상 테이블로 바꾸면 무엇이 달라지는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-075
     title: "generate_series와 가상 테이블 — 없는 행을 만들어 쓰기"
     category: Database
@@ -5607,7 +5607,7 @@ topics:
     difficulty: 중급
     angle: "zoneinfo 로 전환 시각 앞뒤를 1분 간격으로 만들어 존재하지 않는 시각과 중복되는 시각을 뽑아낸다. UTC 로 저장했을 때와 지역 시각으로 저장했을 때 무엇이 달라지는지 대조한다."
     code: python
-    status: todo
+    status: done
   - id: gen-018
     title: "이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort 의 런 탐지"
     category: Performance
