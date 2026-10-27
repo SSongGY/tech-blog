@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect width="880" height="330" fill="#fbfaf7"/>
+
+  <text x="40" y="36" font-size="17" font-weight="bold" fill="#1f2937">하루 안에서 체결이 일어나는 자리 — 정규장과 정리매매</text>
+  <text x="40" y="60" font-size="13" fill="#4b5563">같은 09:00~15:30인데 체결이 이어지느냐, 30분마다 한 번씩 끊어지느냐가 다르다</text>
+
+  <!-- row A : regular session -->
+  <text x="40" y="106" font-size="14" font-weight="bold" fill="#2d6a4f">정규장</text>
+  <rect x="90" y="118" width="711" height="26" rx="4" fill="#d8f0e2" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="445" y="136" font-size="13" fill="#1b4332" text-anchor="middle">접속매매 — 호가가 맞는 순간 바로 체결된다</text>
+  <circle cx="90" cy="131" r="7" fill="#2d6a4f"/>
+  <circle cx="820" cy="131" r="7" fill="#2d6a4f"/>
+  <text x="90" y="166" font-size="13" fill="#1b4332" text-anchor="middle">시가단일가</text>
+  <text x="820" y="166" font-size="13" fill="#1b4332" text-anchor="middle">종가단일가</text>
+
+  <!-- row B : liquidation session -->
+  <text x="40" y="212" font-size="14" font-weight="bold" fill="#9d0208">정리매매</text>
+  <line x1="90" y1="231" x2="820" y2="231" stroke="#d1d5db" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="90" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="146" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="202" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="259" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="315" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="371" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="427" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="483" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="539" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="595" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="652" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="708" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="764" cy="231" r="7" fill="#9d0208"/>
+  <circle cx="820" cy="231" r="7" fill="#9d0208"/>
+  <text x="455" y="202" font-size="13" fill="#9d0208" text-anchor="middle">30분마다 한 번 — 하루 14회, 사이에는 체결이 없다</text>
+
+  <!-- time axis -->
+  <line x1="90" y1="266" x2="820" y2="266" stroke="#9ca3af" stroke-width="1.4"/>
+  <line x1="90" y1="262" x2="90" y2="270" stroke="#9ca3af" stroke-width="1.4"/>
+  <line x1="315" y1="262" x2="315" y2="270" stroke="#9ca3af" stroke-width="1.4"/>
+  <line x1="539" y1="262" x2="539" y2="270" stroke="#9ca3af" stroke-width="1.4"/>
+  <line x1="764" y1="262" x2="764" y2="270" stroke="#9ca3af" stroke-width="1.4"/>
+  <line x1="820" y1="262" x2="820" y2="270" stroke="#9ca3af" stroke-width="1.4"/>
+  <text x="90" y="286" font-size="13" fill="#6b7280" text-anchor="middle">09:00</text>
+  <text x="315" y="286" font-size="13" fill="#6b7280" text-anchor="middle">11:00</text>
+  <text x="539" y="286" font-size="13" fill="#6b7280" text-anchor="middle">13:00</text>
+  <text x="764" y="286" font-size="13" fill="#6b7280" text-anchor="middle">15:00</text>
+  <text x="820" y="306" font-size="13" fill="#6b7280" text-anchor="middle">15:30</text>
+
+  <text x="40" y="322" font-size="13" fill="#374151">단일가매매는 모은 호가를 한 가격으로 한 번에 맞춘다. 체결 사이의 30분에는 호가만 쌓이고 가격이 움직이지 않는다.</text>
+</svg>

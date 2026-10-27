@@ -5355,7 +5355,7 @@ topics:
     angle: "정리매매 기간의 매매 방식이 정규장과 어떻게 다른지, 그 뒤 주식이 어떻게 되는지. 제도의 목적과 실제 거래 조건을 규정 근거로 정리한다."
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-096
     title: "주식에 붙는 세금 — 배당소득세·증권거래세·양도소득세"
     category: Finance
@@ -5366,7 +5366,7 @@ topics:
     angle: "언제 누가 얼마를 떼는가. 세 가지가 각각 어느 시점에 붙는지 정리하고, 세전 수익률과 세후 수익률이 벌어지는 폭을 계산한다. 시행일을 같이 적는다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-097
     title: "프로그램매매와 차익거래 — 선물과 현물의 가격 차이가 수급을 만들 때"
     category: Finance
