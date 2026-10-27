@@ -271,6 +271,10 @@ def allocate(base, demands):
 비트 계산의 정확성이지만, 실무 설계에서 같은 표를 그대로 쓰면 첫 증설에서 무너진다.
 **정렬 제약과 배치 순서를 이해했는지가 이 문제의 실제 평가점이다.**
 
+> 개념 정리: [VLSM — 가변 길이 서브넷 마스크](../../network/2026-10-28-vlsm-variable-length-subnet-mask/index.md)
+>
+> 개념 정리: [CIDR와 라우팅 집약](../../network/2026-10-28-cidr-and-route-aggregation/index.md)
+
 끝
 
 ---

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 352" width="880" height="352" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="352" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">집약이 성립할 때와 구멍이 뚫릴 때, 상위 도메인이 갖는 항목 수</text>
+
+  <line x1="440" y1="52" x2="440" y2="320" stroke="#c8c4bc" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 왼쪽: 집약 성립 -->
+  <text x="40" y="70" font-size="14" font-weight="bold" fill="#2d6a4f">① 네 고객이 한 사업자 아래 있을 때</text>
+
+  <path d="M228 150 L228 96" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <path d="M228 90 L222 100 L234 100 Z" fill="#2d6a4f"/>
+  <text x="248" y="96" font-size="14" fill="#1b4332">상위 도메인에 올라가는 항목 1개</text>
+  <text x="248" y="114" font-size="13" fill="#2d6a4f">203.0.113.0/24</text>
+
+  <rect x="40" y="150" width="376" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="228" y="170" font-size="14" fill="#1b4332" text-anchor="middle">사업자 A</text>
+  <text x="228" y="188" font-size="13" fill="#2d6a4f" text-anchor="middle">203.0.113.0/24 를 하나로 광고</text>
+
+  <path d="M84 240 L84 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M180 240 L180 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M276 240 L276 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M372 240 L372 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+
+  <rect x="40" y="240" width="88" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="84" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.0/26</text>
+  <rect x="136" y="240" width="88" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="180" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.64/26</text>
+  <rect x="232" y="240" width="88" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="276" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.128/26</text>
+  <rect x="328" y="240" width="88" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="372" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.192/26</text>
+
+  <text x="228" y="304" font-size="13" fill="#5a5a5a" text-anchor="middle">고객 넷이 인접하고 정렬돼 있어 상위 접두사 하나로 덮인다</text>
+
+  <!-- 오른쪽: 구멍 -->
+  <text x="465" y="70" font-size="14" font-weight="bold" fill="#b45309">② 고객 한 곳이 사업자를 옮기면</text>
+
+  <path d="M593 150 L593 96" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <path d="M593 90 L587 100 L599 100 Z" fill="#2d6a4f"/>
+  <path d="M792 150 L792 96" fill="none" stroke="#b45309" stroke-width="2"/>
+  <path d="M792 90 L786 100 L798 100 Z" fill="#b45309"/>
+  <text x="628" y="96" font-size="14" fill="#7c3d06">항목 2개</text>
+  <text x="628" y="114" font-size="13" fill="#b45309">/24 와 /26</text>
+
+  <rect x="465" y="150" width="256" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="593" y="170" font-size="14" fill="#1b4332" text-anchor="middle">사업자 A</text>
+  <text x="593" y="188" font-size="13" fill="#2d6a4f" text-anchor="middle">/24 를 그대로 광고</text>
+
+  <rect x="745" y="150" width="95" height="46" fill="#fde8c8" stroke="#b45309" stroke-width="1.5"/>
+  <text x="792" y="170" font-size="14" fill="#7c3d06" text-anchor="middle">사업자 B</text>
+  <text x="792" y="188" font-size="13" fill="#b45309" text-anchor="middle">.128/26</text>
+
+  <path d="M505 240 L505 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M593 240 L593 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M681 240 L681 196" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M792 240 L792 196" fill="none" stroke="#b45309" stroke-width="1.2"/>
+
+  <rect x="465" y="240" width="80" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="505" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.0/26</text>
+  <rect x="553" y="240" width="80" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="593" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.64/26</text>
+  <rect x="641" y="240" width="80" height="40" fill="#edf7ee" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="681" y="265" font-size="13" fill="#1b4332" text-anchor="middle">.192/26</text>
+  <rect x="745" y="240" width="95" height="40" fill="#fde8c8" stroke="#b45309" stroke-width="1.2"/>
+  <text x="792" y="265" font-size="13" fill="#7c3d06" text-anchor="middle">.128/26</text>
+
+  <text x="652" y="304" font-size="13" fill="#5a5a5a" text-anchor="middle">주소를 바꾸지 않고 옮기면 A 의 집약에 구멍이 생긴다</text>
+  <text x="652" y="324" font-size="13" fill="#5a5a5a" text-anchor="middle">최장 일치로 /26 이 이기므로 항목이 하나 늘어난다</text>
+</svg>
