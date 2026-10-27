@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="484" viewBox="0 0 880 484" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="484" fill="#fbfbf8"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#1b2a3a">한 문서를 두 가지로 편다 — json_each 는 한 겹, json_tree 는 끝까지</text>
+
+  <!-- ===== 위: 문서 트리 ===== -->
+  <rect x="24" y="44" width="832" height="208" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+  <text x="40" y="64" font-size="13" fill="#5b6b7c">payload 한 행의 JSON 문서</text>
+
+  <!-- 루트 -->
+  <rect x="48" y="150" width="112" height="30" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="104" y="170" font-size="13" fill="#1b2a3a" text-anchor="middle">$ · object</text>
+
+  <!-- 루트 → 1단계 -->
+  <path d="M160 165 H182 M182 100 V230" fill="none" stroke="#8795a4"/>
+  <path d="M182 100 H206 M182 136 H206 M182 172 H206 M182 208 H206" fill="none" stroke="#8795a4"/>
+
+  <!-- 1단계 -->
+  <rect x="206" y="86" width="172" height="28" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="218" y="105" font-size="13" fill="#1b2a3a">status · "pending"</text>
+  <rect x="206" y="122" width="172" height="28" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="218" y="141" font-size="13" fill="#1b2a3a">amount · 12500</text>
+  <rect x="206" y="158" width="172" height="28" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="218" y="177" font-size="13" fill="#1b2a3a">tags · array</text>
+  <rect x="206" y="194" width="172" height="28" rx="4" fill="#e8eef5" stroke="#1f3a5f"/>
+  <text x="218" y="213" font-size="13" fill="#1b2a3a">ship · object</text>
+
+  <!-- 경계선 -->
+  <path d="M400 76 V240" fill="none" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="400" y="70" font-size="13" fill="#2d6a4f" text-anchor="middle">json_each 가 멈추는 깊이</text>
+
+  <!-- 1단계 → 2단계 (경계선을 넘는다) -->
+  <path d="M378 172 H430" fill="none" stroke="#8795a4"/>
+  <path d="M378 208 H392 M392 208 V244 M392 208 H430 M392 244 H430" fill="none" stroke="#8795a4"/>
+
+  <!-- 2단계 -->
+  <rect x="430" y="158" width="196" height="28" rx="4" fill="#f3f1ea" stroke="#6b7a89" stroke-dasharray="4 3"/>
+  <text x="442" y="177" font-size="13" fill="#3c4a58">[0] · "express"</text>
+  <rect x="430" y="194" width="196" height="28" rx="4" fill="#f3f1ea" stroke="#6b7a89" stroke-dasharray="4 3"/>
+  <text x="442" y="213" font-size="13" fill="#3c4a58">city · "부산"</text>
+  <rect x="430" y="230" width="196" height="28" rx="4" fill="#f3f1ea" stroke="#6b7a89" stroke-dasharray="4 3"/>
+  <text x="442" y="249" font-size="13" fill="#3c4a58">zip · "48058"</text>
+
+  <text x="648" y="177" font-size="13" fill="#5b6b7c">json_each 는 이 세 칸을</text>
+  <text x="648" y="196" font-size="13" fill="#5b6b7c">행으로 내놓지 않는다.</text>
+  <text x="648" y="215" font-size="13" fill="#5b6b7c">tags · ship 의 value 안에</text>
+  <text x="648" y="234" font-size="13" fill="#5b6b7c">문자열로 접혀 있다.</text>
+
+  <!-- ===== 아래 왼쪽: json_each ===== -->
+  <rect x="24" y="266" width="406" height="200" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+  <text x="40" y="288" font-size="14" font-weight="bold" fill="#1b2a3a">json_each(payload) → 4행</text>
+
+  <rect x="40" y="298" width="374" height="26" fill="#eef2f6"/>
+  <text x="52" y="316" font-size="13" fill="#3c4a58">key</text>
+  <text x="140" y="316" font-size="13" fill="#3c4a58">value</text>
+  <text x="340" y="316" font-size="13" fill="#3c4a58">type</text>
+
+  <text x="52" y="345" font-size="13" fill="#1b2a3a">status</text>
+  <text x="140" y="345" font-size="13" fill="#1b2a3a">pending</text>
+  <text x="340" y="345" font-size="13" fill="#1b2a3a">text</text>
+  <text x="52" y="371" font-size="13" fill="#1b2a3a">amount</text>
+  <text x="140" y="371" font-size="13" fill="#1b2a3a">12500</text>
+  <text x="340" y="371" font-size="13" fill="#1b2a3a">integer</text>
+  <text x="52" y="397" font-size="13" fill="#1b2a3a">tags</text>
+  <text x="140" y="397" font-size="13" fill="#1b2a3a">["express"]</text>
+  <text x="340" y="397" font-size="13" fill="#1b2a3a">array</text>
+  <text x="52" y="423" font-size="13" fill="#1b2a3a">ship</text>
+  <text x="140" y="423" font-size="13" fill="#1b2a3a">{"city":"부산",…}</text>
+  <text x="340" y="423" font-size="13" fill="#1b2a3a">object</text>
+
+  <text x="40" y="452" font-size="13" fill="#5b6b7c">배열·객체는 펴지 않고 문자열 그대로 돌려준다</text>
+
+  <!-- ===== 아래 오른쪽: json_tree ===== -->
+  <rect x="450" y="266" width="406" height="200" rx="6" fill="#ffffff" stroke="#c9d2dc"/>
+  <text x="466" y="288" font-size="14" font-weight="bold" fill="#1b2a3a">json_tree(payload) · atom IS NOT NULL → 5행</text>
+
+  <rect x="466" y="298" width="374" height="26" fill="#eef2f6"/>
+  <text x="478" y="316" font-size="13" fill="#3c4a58">fullkey</text>
+  <text x="610" y="316" font-size="13" fill="#3c4a58">atom</text>
+  <text x="760" y="316" font-size="13" fill="#3c4a58">type</text>
+
+  <text x="478" y="343" font-size="13" fill="#1b2a3a">$.status</text>
+  <text x="610" y="343" font-size="13" fill="#1b2a3a">pending</text>
+  <text x="760" y="343" font-size="13" fill="#1b2a3a">text</text>
+  <text x="478" y="366" font-size="13" fill="#1b2a3a">$.amount</text>
+  <text x="610" y="366" font-size="13" fill="#1b2a3a">12500</text>
+  <text x="760" y="366" font-size="13" fill="#1b2a3a">integer</text>
+  <text x="478" y="389" font-size="13" fill="#1b2a3a">$.tags[0]</text>
+  <text x="610" y="389" font-size="13" fill="#1b2a3a">express</text>
+  <text x="760" y="389" font-size="13" fill="#1b2a3a">text</text>
+  <text x="478" y="412" font-size="13" fill="#1b2a3a">$.ship.city</text>
+  <text x="610" y="412" font-size="13" fill="#1b2a3a">부산</text>
+  <text x="760" y="412" font-size="13" fill="#1b2a3a">text</text>
+  <text x="478" y="435" font-size="13" fill="#1b2a3a">$.ship.zip</text>
+  <text x="610" y="435" font-size="13" fill="#1b2a3a">48058</text>
+  <text x="760" y="435" font-size="13" fill="#1b2a3a">text</text>
+
+  <text x="466" y="458" font-size="13" fill="#5b6b7c">경계선을 넘어 끝까지 내려가고 fullkey 로 자리를 알려준다</text>
+</svg>

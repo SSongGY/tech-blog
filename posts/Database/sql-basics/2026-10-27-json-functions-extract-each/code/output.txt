@@ -1,0 +1,151 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-27-json-functions-extract-each
+# 명령      : python json_demo.py
+# 수행 시각 : 2026-10-27 09:04 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[orders]  4행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  order_id | INTEGER | PK
+  customer | TEXT    | NOT NULL
+  payload  | TEXT    | NOT NULL
+
+  order_id | customer | payload
+  ---------+----------+-----------------------------------------------------------------------------------------------------------
+         1 | 김하늘   | {"status": "paid", "amount": 48000, "tags": ["express", "gift"], "ship": {"city": "서울", "zip": "04524"}}
+         2 | 박도윤   | {"status": "pending", "amount": 12500, "tags": ["express"], "ship": {"city": "부산", "zip": "48058"}}
+         3 | 이서연   | {"status": "paid", "amount": 230000, "tags": [], "ship": {"city": "서울", "zip": "06236"}}
+         4 | 최민재   | {"status": "canceled", "amount": 7900, "tags": ["coupon", "gift", "first"], "ship": {"city": "대전"}}
+
+================================================================
+1. json_extract — 경로로 값 하나 꺼내기
+================================================================
+  SQL> SELECT order_id, json_extract(payload, '$.status') AS status, json_extract(payload, '$.amount') AS amount, json_extract(payload, '$.ship.city') AS city FROM orders ORDER BY order_id
+       (1, 'paid', 48000, '서울')
+       (2, 'pending', 12500, '부산')
+       (3, 'paid', 230000, '서울')
+       (4, 'canceled', 7900, '대전')
+
+  SQL> SELECT json_extract(payload, '$.ship.zip') FROM orders WHERE order_id = 4
+       (None,)
+
+================================================================
+2. -> 와 ->> 는 무엇이 다른가
+================================================================
+  SQL> SELECT payload -> '$.status' AS arrow, payload ->> '$.status' AS arrow2, typeof(payload -> '$.status') AS t1, typeof(payload ->> '$.status') AS t2 FROM orders WHERE order_id = 1
+       ('"paid"', 'paid', 'text', 'text')
+
+================================================================
+3. json_type · json_valid · json_array_length
+================================================================
+  SQL> SELECT order_id, json_type(payload, '$.amount') AS amount_type, json_type(payload, '$.tags') AS tags_type, json_type(payload, '$.ship.zip') AS zip_type, json_array_length(payload, '$.tags') AS tag_count FROM orders ORDER BY order_id
+       (1, 'integer', 'array', 'text', 2)
+       (2, 'integer', 'array', 'text', 1)
+       (3, 'integer', 'array', 'text', 0)
+       (4, 'integer', 'array', None, 3)
+
+  SQL> SELECT json_valid('{"a":1}'), json_valid('{a:1}'), json_valid('[1,2,')
+       (1, 0, 0)
+
+================================================================
+4. json_each — 배열을 행으로 편다
+================================================================
+  SQL> SELECT o.order_id, o.customer, t.key, t.value FROM orders AS o, json_each(o.payload, '$.tags') AS t ORDER BY o.order_id, t.key
+       (1, '김하늘', 0, 'express')
+       (1, '김하늘', 1, 'gift')
+       (2, '박도윤', 0, 'express')
+       (4, '최민재', 0, 'coupon')
+       (4, '최민재', 1, 'gift')
+       (4, '최민재', 2, 'first')
+
+  SQL> SELECT t.value AS tag, COUNT(*) AS n FROM orders AS o, json_each(o.payload, '$.tags') AS t GROUP BY t.value ORDER BY n DESC, tag
+       ('express', 2)
+       ('gift', 2)
+       ('coupon', 1)
+       ('first', 1)
+
+================================================================
+5. json_each 는 객체도 편다 / json_tree 는 끝까지 내려간다
+================================================================
+  SQL> SELECT key, value, type FROM json_each((SELECT payload FROM orders WHERE order_id = 2))
+       ('status', 'pending', 'text')
+       ('amount', 12500, 'integer')
+       ('tags', '["express"]', 'array')
+       ('ship', '{"city":"부산","zip":"48058"}', 'object')
+
+  SQL> SELECT fullkey, type, atom FROM json_tree((SELECT payload FROM orders WHERE order_id = 2)) WHERE atom IS NOT NULL
+       ('$.status', 'text', 'pending')
+       ('$.amount', 'integer', 12500)
+       ('$.tags[0]', 'text', 'express')
+       ('$.ship.city', 'text', '부산')
+       ('$.ship.zip', 'text', '48058')
+
+================================================================
+6. 다시 묶기 — json_object · json_group_array
+================================================================
+  SQL> SELECT json_object( 'city', json_extract(payload, '$.ship.city'), 'total', SUM(json_extract(payload, '$.amount')), 'ids', json_group_array(order_id) ) AS summary FROM orders WHERE json_extract(payload, '$.status') <> 'canceled' GROUP BY json_extract(payload, '$.ship.city') ORDER BY 1
+       ('{"city":"부산","total":12500,"ids":[2]}',)
+       ('{"city":"서울","total":278000,"ids":[1,3]}',)
+
+================================================================
+7. 인덱스 — JSON 그대로는 안 타고, 꺼내 둬야 탄다
+================================================================
+  (가) 식에 바로 인덱스를 거는 경우
+  SQL> EXPLAIN QUERY PLAN SELECT order_id FROM orders WHERE json_extract(payload, '$.status') = 'paid'
+       (3, 0, 53, 'SEARCH orders USING COVERING INDEX idx_status (<expr>=?)')
+
+  (나) 같은 뜻을 ->> 로 적으면
+  SQL> EXPLAIN QUERY PLAN SELECT order_id FROM orders WHERE payload ->> '$.status' = 'paid'
+       (2, 0, 216, 'SCAN orders')
+
+  (나-2) ->> 쪽에도 같은 모양으로 인덱스를 하나 더 걸면
+  SQL> EXPLAIN QUERY PLAN SELECT order_id FROM orders WHERE payload ->> '$.status' = 'paid'
+       (3, 0, 53, 'SEARCH orders USING COVERING INDEX idx_status_arrow (<expr>=?)')
+
+  (다) 생성 컬럼으로 빼고 거는 경우
+  SQL> EXPLAIN QUERY PLAN SELECT order_id FROM orders WHERE amount > 20000
+       (3, 0, 203, 'SEARCH orders USING INDEX idx_amount (amount>?)')
+
+  (라) 배열 안을 조건으로 쓰면
+  SQL> EXPLAIN QUERY PLAN SELECT o.order_id FROM orders AS o, json_each(o.payload, '$.tags') AS t WHERE t.value = 'gift'
+       (3, 0, 216, 'SCAN o')
+       (5, 0, 0, 'SCAN t VIRTUAL TABLE INDEX 3:')
+
+================================================================
+8. 없는 경로와 NULL — 어느 쪽이 NULL 인지 구분되지 않는다
+================================================================
+  SQL> SELECT order_id, json_extract(payload, '$.ship.zip') AS zip, json_type(payload, '$.ship.zip') AS zip_type FROM orders WHERE order_id IN (3, 4)
+       (3, '06236', 'text')
+       (4, None, None)
+
+  SQL> SELECT json_extract('{"a":null}', '$.a') AS stored_null, json_type('{"a":null}', '$.a') AS stored_type, json_extract('{"a":null}', '$.b') AS missing, json_type('{"a":null}', '$.b') AS missing_type
+       (None, 'null', None, None)
+
+================================================================
+9. JSONB — 저장 형식을 바꾸면 크기가 달라진다
+================================================================
+  SQL> SELECT length(payload) AS text_chars, octet_length(payload) AS text_bytes, octet_length(jsonb(payload)) AS jsonb_bytes FROM orders ORDER BY order_id
+       (104, 108, 76)
+       (99, 103, 73)
+       (88, 92, 63)
+       (99, 103, 74)
+
+  SQL> SELECT jsonb_extract(jsonb(payload), '$.ship.city') AS city, typeof(jsonb(payload)) AS stored_as FROM orders WHERE order_id = 1
+       ('서울', 'blob')
+

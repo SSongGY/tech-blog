@@ -2963,7 +2963,7 @@ topics:
     angle: "로그 기반 복구의 REDO·UNDO와 체크포인트. 복구 시점 목표(RPO·RTO)와의 연결"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-101
     title: "데이터베이스 이중화와 복제 방식"
     category: PE
@@ -4690,7 +4690,7 @@ topics:
     angle: "json_extract 로 값을 꺼내고 json_each 로 배열을 행으로 편다. 언제 컬럼으로 쪼개야 하는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-074
     title: "전문검색 FTS5 — LIKE로는 안 되는 검색"
     category: Database
@@ -5567,7 +5567,7 @@ topics:
     difficulty: 중급
     angle: "같은 1만 건 INSERT 를 커밋 횟수만 바꿔 넣고 시간과 WAL 크기를 잰다. synchronous 설정을 바꿨을 때 격차가 어떻게 달라지는지까지 묶어 본다."
     code: python
-    status: todo
+    status: done
   - id: gen-014
     title: "블룸 필터를 직접 만들어 오탐률 수식과 맞춰 보기"
     category: Architecture
