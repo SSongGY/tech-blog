@@ -6125,3 +6125,69 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-084
+    title: "VACUUM — 지운 행이 차지하던 공간은 어디로 가는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, vacuum, storage, basics]
+    difficulty: 입문
+    angle: "DELETE 후 파일 크기가 그대로인 것을 PRAGMA page_count/freelist_count 로 보이고, VACUUM 과 auto_vacuum 이 각각 무엇을 되돌리는지 대조한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-085
+    title: "BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, transaction, locking, basics]
+    difficulty: 중급
+    angle: "같은 트랜잭션을 세 모드로 열고 다른 연결에서 쓰기를 시도해, SQLITE_BUSY 가 어느 시점에 나는지 대조한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-086
+    title: "INDEXED BY와 NOT INDEXED — 옵티마이저에 손을 대는 두 구문"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, index, query-plan, basics]
+    difficulty: 중급
+    angle: "EXPLAIN QUERY PLAN 으로 기본 선택을 보이고, 두 구문으로 강제했을 때 계획과 읽는 행 수가 어떻게 달라지는지. 그리고 왜 이것이 성능 힌트가 아니라 안전장치인지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-087
+    title: "VALUES 절을 표처럼 쓰기 — 임시 데이터를 조인에 끼워 넣는다"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, values, join, basics]
+    difficulty: 입문
+    angle: "코드 매핑표나 기준값 몇 줄을 임시 테이블 없이 VALUES 로 만들어 조인한다. CTE 와 임시 테이블 대비 어디까지가 적당한지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-088
+    title: "foreign_key_check — 제약을 켜기 전에 깨진 참조를 찾는다"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, foreign-key, integrity, basics]
+    difficulty: 중급
+    angle: "외래키를 끈 채 쌓인 데이터에 제약을 걸면 무슨 일이 나는지. PRAGMA foreign_key_check 가 돌려주는 네 칸을 읽는 법과, 고친 뒤 켜는 순서"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-089
+    title: "R*Tree 가상 테이블 — 범위가 겹치는 행 찾기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, rtree, range-query, basics]
+    difficulty: 중급
+    angle: "기간이나 좌표 범위가 겹치는 행을 BETWEEN 두 개로 찾으면 왜 인덱스가 반만 듣는지 보이고, rtree 가상 테이블로 바꿨을 때 실행계획이 어떻게 달라지는지"
+    code: python
+    origin: manual
+    status: todo
