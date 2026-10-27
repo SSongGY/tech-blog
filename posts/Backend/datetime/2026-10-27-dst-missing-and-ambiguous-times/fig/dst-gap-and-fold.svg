@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 490" width="880" height="490" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="490" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#555555"/>
+    </marker>
+    <pattern id="hatch" width="8" height="8" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#fef3e2"/>
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#b45309" stroke-width="1.4"/>
+    </pattern>
+  </defs>
+
+  <!-- 봄 -->
+  <text x="30" y="28" font-size="15" font-weight="bold" fill="#b45309">봄 — 뉴욕 2026-03-08, 벽시계가 02:00 에서 03:00 으로 건너뛴다</text>
+
+  <text x="30" y="72" font-size="13" fill="#555555">UTC</text>
+  <line x1="120" y1="72" x2="856" y2="72" stroke="#555555" stroke-width="1.4" marker-end="url(#axis)"/>
+  <text x="150" y="60" font-size="13" fill="#333333">06:00</text>
+  <text x="370" y="60" font-size="13" fill="#333333">07:00</text>
+  <text x="590" y="60" font-size="13" fill="#333333">08:00</text>
+  <text x="810" y="60" font-size="13" fill="#333333">09:00</text>
+  <line x1="165" y1="66" x2="165" y2="78" stroke="#555555" stroke-width="1.4"/>
+  <line x1="385" y1="66" x2="385" y2="78" stroke="#555555" stroke-width="1.4"/>
+  <line x1="605" y1="66" x2="605" y2="78" stroke="#555555" stroke-width="1.4"/>
+  <line x1="825" y1="66" x2="825" y2="78" stroke="#555555" stroke-width="1.4"/>
+
+  <line x1="165" y1="80" x2="165" y2="142" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="385" y1="80" x2="385" y2="142" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="605" y1="80" x2="605" y2="142" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="825" y1="80" x2="825" y2="142" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <rect x="165" y="124" width="220" height="36" fill="url(#hatch)" stroke="#b45309" stroke-width="1.4"/>
+
+  <text x="30" y="150" font-size="13" fill="#555555">뉴욕</text>
+  <line x1="120" y1="150" x2="856" y2="150" stroke="#555555" stroke-width="1.4" marker-end="url(#axis)"/>
+  <line x1="165" y1="144" x2="165" y2="156" stroke="#555555" stroke-width="1.4"/>
+  <line x1="385" y1="144" x2="385" y2="156" stroke="#555555" stroke-width="1.4"/>
+  <line x1="605" y1="144" x2="605" y2="156" stroke="#555555" stroke-width="1.4"/>
+  <line x1="825" y1="144" x2="825" y2="156" stroke="#555555" stroke-width="1.4"/>
+  <text x="138" y="178" font-size="13" fill="#333333">01:00 EST</text>
+  <text x="358" y="178" font-size="13" fill="#2d6a4f">03:00 EDT</text>
+  <text x="578" y="178" font-size="13" fill="#333333">04:00 EDT</text>
+  <text x="798" y="178" font-size="13" fill="#333333">05:00 EDT</text>
+
+  <rect x="200" y="196" width="440" height="42" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="420" y="214" font-size="13" text-anchor="middle" fill="#b45309">02:00 부터 02:59 까지는 벽시계에 나타나지 않는다</text>
+  <text x="420" y="232" font-size="13" text-anchor="middle" fill="#5a5a5a">그래도 02:30 을 만들 수 있고, 예외 없이 다른 순간이 된다</text>
+
+  <line x1="30" y1="262" x2="850" y2="262" stroke="#c9c9c9" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 가을 -->
+  <text x="30" y="296" font-size="15" font-weight="bold" fill="#2d6a4f">가을 — 뉴욕 2026-11-01, 01 시대가 두 번 지나간다</text>
+
+  <text x="30" y="340" font-size="13" fill="#555555">UTC</text>
+  <line x1="120" y1="340" x2="856" y2="340" stroke="#555555" stroke-width="1.4" marker-end="url(#axis)"/>
+  <text x="150" y="328" font-size="13" fill="#333333">05:00</text>
+  <text x="370" y="328" font-size="13" fill="#333333">06:00</text>
+  <text x="590" y="328" font-size="13" fill="#333333">07:00</text>
+  <text x="810" y="328" font-size="13" fill="#333333">08:00</text>
+  <line x1="165" y1="334" x2="165" y2="346" stroke="#555555" stroke-width="1.4"/>
+  <line x1="385" y1="334" x2="385" y2="346" stroke="#555555" stroke-width="1.4"/>
+  <line x1="605" y1="334" x2="605" y2="346" stroke="#555555" stroke-width="1.4"/>
+  <line x1="825" y1="334" x2="825" y2="346" stroke="#555555" stroke-width="1.4"/>
+
+  <rect x="165" y="356" width="220" height="30" rx="3" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="275" y="376" font-size="13" text-anchor="middle" fill="#2d6a4f">01:00–01:59 EDT · fold=0</text>
+  <rect x="385" y="356" width="220" height="30" rx="3" fill="#d6e9de" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="495" y="376" font-size="13" text-anchor="middle" fill="#2d6a4f">01:00–01:59 EST · fold=1</text>
+  <rect x="605" y="356" width="220" height="30" rx="3" fill="#ffffff" stroke="#8a8a8a" stroke-width="1.2"/>
+  <text x="715" y="376" font-size="13" text-anchor="middle" fill="#333333">02:00–02:59 EST</text>
+
+  <text x="30" y="406" font-size="13" fill="#555555">뉴욕</text>
+  <line x1="120" y1="406" x2="856" y2="406" stroke="#555555" stroke-width="1.4" marker-end="url(#axis)"/>
+  <line x1="165" y1="400" x2="165" y2="412" stroke="#555555" stroke-width="1.4"/>
+  <line x1="385" y1="400" x2="385" y2="412" stroke="#555555" stroke-width="1.4"/>
+  <line x1="605" y1="400" x2="605" y2="412" stroke="#555555" stroke-width="1.4"/>
+  <line x1="825" y1="400" x2="825" y2="412" stroke="#555555" stroke-width="1.4"/>
+  <text x="138" y="434" font-size="13" fill="#333333">01:00</text>
+  <text x="358" y="434" font-size="13" fill="#2d6a4f">01:00 (다시)</text>
+  <text x="578" y="434" font-size="13" fill="#333333">02:00</text>
+  <text x="798" y="434" font-size="13" fill="#333333">03:00</text>
+
+  <text x="138" y="466" font-size="13" fill="#5a5a5a">"01:30" 이라는 표기 하나가 한 시간 떨어진 두 순간을 가리킨다. fold 가 둘을 가른다.</text>
+</svg>
