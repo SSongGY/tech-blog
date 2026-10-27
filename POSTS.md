@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **478편** · 갱신 2026-10-27
+총 **480편** · 갱신 2026-10-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -107,12 +107,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 162편
+## 기술사 (pe) — 164편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-27 | [데이터베이스 이중화와 복제 방식](posts/PE/database/2026-10-27-database-replication-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 문서, Oracle Database 19c Data Guard 문서, NIST SP 800-34 Rev. 1 | 문서 근거 |
 | 2026-10-27 | [데이터베이스 백업과 복구 기법](posts/PE/database/2026-10-27-database-backup-recovery/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010), ACM TODS 17(1) ARIES (1992) | 문서 근거 |
+| 2026-10-27 | [데이터 주권과 국외 이전 — 역외 백업이 부딪히는 법적 제약](posts/PE/it-management/2026-10-27-data-sovereignty-and-cross-border-transfer/index.md) | 중급 | 개인정보 보호법 [시행 2026. 9. 11.] [법률 제21445호], 클라우드컴퓨팅법 [시행 2025. 10. 1.] [법률 제21066호], GDPR (Regulation (EU) 2016/679), 18 U.S.C. §2713 (Pub. L. 115-141, 2018. 3. 23.), NIST SP 800-34 Rev.1 | 문서 근거 |
+| 2026-10-27 | [버디 시스템과 슬랩 할당기 — 단편화를 나눠 맡는 두 층](posts/PE/system/2026-10-27-buddy-system-and-slab-allocator/index.md) | 중급 | Bonwick, USENIX Summer 1994 Technical Conference 논문 (SunOS 5.4 기준), Linux kernel 7.3.0 문서 (docs.kernel.org), Denning, ACM Computing Surveys 2(3), 1970 | 문서 근거 |
 | 2026-10-26 | [UML 다이어그램 분류 — 구조 7종과 행위 7종](posts/PE/software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01), OMG UML 1.5 (formal/03-03-01) | 문서 근거 |
 | 2026-10-26 | [소프트웨어 테스트 자동화와 테스트 피라미드](posts/PE/software-engineering/2026-10-26-test-automation-pyramid/index.md) | 중급 | ISTQB CTFL Syllabus v4.0, Mike Cohn, Succeeding with Agile (2009), Martin Fowler, TestPyramid (2012) | 문서 근거 |
 | 2026-10-26 | [모니터와 조건변수 — 두 가지 시그널 의미론](posts/PE/system/2026-10-26-monitor-condition-variable-signal-semantics/index.md) | 중급 | Hoare, CACM 17(10) pp.549-557 (1974), Lampson·Redell, CACM 23(2) pp.105-117 (1980), POSIX.1-2017 (IEEE Std 1003.1-2017), Open Group Base Specifications Issue 7 2018 Edition, Java SE 21 JLS §17.2.1 | 문서 근거 |
