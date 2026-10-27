@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="24" y="30" font-size="15" fill="#212529" font-weight="bold">자본금 감소를 위한 주식병합의 절차</text>
+
+  <!-- 1 -->
+  <rect x="40" y="58" width="250" height="56" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="165" y="92" text-anchor="middle" font-size="15" fill="#1b4332" font-weight="bold">① 주주총회 결의</text>
+  <text x="320" y="82" font-size="13" fill="#212529">자본금 감소는 특별결의(제438조제1항).</text>
+  <text x="320" y="103" font-size="13" fill="#b45309">결손 보전이 목적이면 보통결의로 족하다(같은 조 제2항).</text>
+  <path d="M165 114 L165 130" stroke="#2d6a4f" stroke-width="1.8"/>
+
+  <!-- 2 -->
+  <rect x="40" y="130" width="250" height="56" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="165" y="164" text-anchor="middle" font-size="15" fill="#1b4332" font-weight="bold">② 채권자 이의절차</text>
+  <text x="320" y="154" font-size="13" fill="#212529">1개월 이상의 이의 제출 기간을 둔다(제439조제2항).</text>
+  <text x="320" y="175" font-size="13" fill="#b45309">결손 보전 감자는 이 절차가 면제된다(같은 항 단서).</text>
+  <path d="M165 186 L165 202" stroke="#2d6a4f" stroke-width="1.8"/>
+
+  <!-- 3 -->
+  <rect x="40" y="202" width="250" height="56" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="165" y="236" text-anchor="middle" font-size="15" fill="#1b4332" font-weight="bold">③ 주권 제출 공고</text>
+  <text x="320" y="226" font-size="13" fill="#212529">종이 주권은 1개월 이상의 기간을 정해 공고한다(제440조).</text>
+  <text x="320" y="247" font-size="13" fill="#212529">전자등록주식은 병합기준일 2주 전까지 공고한다(전자증권법 제65조).</text>
+  <path d="M165 258 L165 274" stroke="#2d6a4f" stroke-width="1.8"/>
+
+  <!-- 4 -->
+  <rect x="40" y="274" width="250" height="56" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="165" y="308" text-anchor="middle" font-size="15" fill="#1b4332" font-weight="bold">④ 효력 발생</text>
+  <text x="320" y="298" font-size="13" fill="#212529">주권 제출 기간이 만료한 때 효력이 생긴다(제441조 본문).</text>
+  <text x="320" y="319" font-size="13" fill="#212529">채권자 절차가 남았으면 그 절차가 끝난 때다(같은 조 단서).</text>
+  <path d="M165 330 L165 346" stroke="#2d6a4f" stroke-width="1.8"/>
+
+  <!-- 5 -->
+  <rect x="40" y="346" width="250" height="56" rx="6" fill="#e7f1ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="165" y="380" text-anchor="middle" font-size="15" fill="#1b4332" font-weight="bold">⑤ 단주 처리</text>
+  <text x="320" y="370" font-size="13" fill="#212529">1주에 못 미치는 몫은 팔아서 대금을 주주에게 준다(제443조).</text>
+  <text x="320" y="391" font-size="13" fill="#212529">거래소 시세가 있는 주식은 거래소를 통해 판다(같은 조 단서).</text>
+
+  <text x="40" y="424" font-size="13" fill="#495057">조문 번호는 모두 「상법」의 것이다.</text>
+</svg>
