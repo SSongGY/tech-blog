@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf7"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b2a2f">달력을 왼쪽에 두면 주문이 없는 날도 한 행을 차지한다</text>
+  <text x="40" y="58" font-size="13" fill="#52616b">FROM calendar c LEFT JOIN order_log o ON o.ordered_on = c.day — 왼쪽 행은 짝이 없어도 남고, 오른쪽 컬럼이 NULL 이 된다</text>
+
+  <!-- column headers -->
+  <rect x="40" y="76" width="150" height="34" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="115" y="99" font-size="13" fill="#1b2a2f" text-anchor="middle">calendar.day</text>
+  <rect x="190" y="76" width="280" height="34" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="330" y="99" font-size="13" fill="#1b2a2f" text-anchor="middle">짝이 맞는 order_log.order_id</text>
+  <rect x="470" y="76" width="170" height="34" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="555" y="99" font-size="13" fill="#1b2a2f" text-anchor="middle">COUNT(o.order_id)</text>
+  <rect x="640" y="76" width="200" height="34" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="740" y="99" font-size="13" fill="#1b2a2f" text-anchor="middle">COALESCE(SUM(o.amount), 0)</text>
+
+  <g font-size="13">
+    <!-- row 1 -->
+    <rect x="40" y="110" width="150" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="115" y="127" fill="#1b2a2f" text-anchor="middle">2026-03-01</text>
+    <rect x="190" y="110" width="280" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="330" y="127" fill="#1b2a2f" text-anchor="middle">1, 2</text>
+    <rect x="470" y="110" width="170" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="555" y="127" fill="#1b2a2f" text-anchor="middle">2</text>
+    <rect x="640" y="110" width="200" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="127" fill="#1b2a2f" text-anchor="middle">20000</text>
+    <!-- row 2 -->
+    <rect x="40" y="134" width="150" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="115" y="151" fill="#1b2a2f" text-anchor="middle">2026-03-02</text>
+    <rect x="190" y="134" width="280" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="330" y="151" fill="#1b2a2f" text-anchor="middle">3</text>
+    <rect x="470" y="134" width="170" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="555" y="151" fill="#1b2a2f" text-anchor="middle">1</text>
+    <rect x="640" y="134" width="200" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="151" fill="#1b2a2f" text-anchor="middle">31000</text>
+    <!-- row 3 -->
+    <rect x="40" y="158" width="150" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="115" y="175" fill="#b45309" text-anchor="middle">2026-03-03</text>
+    <rect x="190" y="158" width="280" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="330" y="175" fill="#b45309" text-anchor="middle">짝 없음 → o.* 가 전부 NULL</text>
+    <rect x="470" y="158" width="170" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="555" y="175" fill="#b45309" text-anchor="middle">0</text>
+    <rect x="640" y="158" width="200" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="740" y="175" fill="#b45309" text-anchor="middle">0</text>
+    <!-- row 4 -->
+    <rect x="40" y="182" width="150" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="115" y="199" fill="#b45309" text-anchor="middle">2026-03-04</text>
+    <rect x="190" y="182" width="280" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="330" y="199" fill="#b45309" text-anchor="middle">짝 없음 → o.* 가 전부 NULL</text>
+    <rect x="470" y="182" width="170" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="555" y="199" fill="#b45309" text-anchor="middle">0</text>
+    <rect x="640" y="182" width="200" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="740" y="199" fill="#b45309" text-anchor="middle">0</text>
+    <!-- row 5 -->
+    <rect x="40" y="206" width="150" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="115" y="223" fill="#1b2a2f" text-anchor="middle">2026-03-05</text>
+    <rect x="190" y="206" width="280" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="330" y="223" fill="#1b2a2f" text-anchor="middle">4, 5, 6</text>
+    <rect x="470" y="206" width="170" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="555" y="223" fill="#1b2a2f" text-anchor="middle">3</text>
+    <rect x="640" y="206" width="200" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="223" fill="#1b2a2f" text-anchor="middle">41000</text>
+    <!-- row 6 -->
+    <rect x="40" y="230" width="150" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="115" y="247" fill="#1b2a2f" text-anchor="middle">2026-03-06</text>
+    <rect x="190" y="230" width="280" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="330" y="247" fill="#1b2a2f" text-anchor="middle">7</text>
+    <rect x="470" y="230" width="170" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="555" y="247" fill="#1b2a2f" text-anchor="middle">1</text>
+    <rect x="640" y="230" width="200" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="247" fill="#1b2a2f" text-anchor="middle">14000</text>
+    <!-- row 7 -->
+    <rect x="40" y="254" width="150" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="115" y="271" fill="#b45309" text-anchor="middle">2026-03-07</text>
+    <rect x="190" y="254" width="280" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="330" y="271" fill="#b45309" text-anchor="middle">짝 없음 → o.* 가 전부 NULL</text>
+    <rect x="470" y="254" width="170" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="555" y="271" fill="#b45309" text-anchor="middle">0</text>
+    <rect x="640" y="254" width="200" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="740" y="271" fill="#b45309" text-anchor="middle">0</text>
+    <!-- row 8 -->
+    <rect x="40" y="278" width="150" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="115" y="295" fill="#b45309" text-anchor="middle">2026-03-08</text>
+    <rect x="190" y="278" width="280" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="330" y="295" fill="#b45309" text-anchor="middle">짝 없음 → o.* 가 전부 NULL</text>
+    <rect x="470" y="278" width="170" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="555" y="295" fill="#b45309" text-anchor="middle">0</text>
+    <rect x="640" y="278" width="200" height="24" fill="#fdf2e2" stroke="#b45309"/><text x="740" y="295" fill="#b45309" text-anchor="middle">0</text>
+    <!-- row 9 -->
+    <rect x="40" y="302" width="150" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="115" y="319" fill="#1b2a2f" text-anchor="middle">2026-03-09</text>
+    <rect x="190" y="302" width="280" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="330" y="319" fill="#1b2a2f" text-anchor="middle">8</text>
+    <rect x="470" y="302" width="170" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="555" y="319" fill="#1b2a2f" text-anchor="middle">1</text>
+    <rect x="640" y="302" width="200" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="319" fill="#1b2a2f" text-anchor="middle">22000</text>
+    <!-- row 10 -->
+    <rect x="40" y="326" width="150" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="115" y="343" fill="#1b2a2f" text-anchor="middle">2026-03-10</text>
+    <rect x="190" y="326" width="280" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="330" y="343" fill="#1b2a2f" text-anchor="middle">9</text>
+    <rect x="470" y="326" width="170" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="555" y="343" fill="#1b2a2f" text-anchor="middle">1</text>
+    <rect x="640" y="326" width="200" height="24" fill="#ffffff" stroke="#c9d6cf"/><text x="740" y="343" fill="#1b2a2f" text-anchor="middle">6000</text>
+  </g>
+
+  <text x="40" y="376" font-size="13" fill="#52616b">COUNT(o.order_id) 는 NULL 을 세지 않으므로 짝 없는 날이 0 이 된다. COUNT(*) 로 쓰면 그 자리가 1 이 된다.</text>
+</svg>

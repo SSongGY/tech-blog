@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 410" width="880" height="410" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="410" fill="#fbfbf7"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b2a2f">재귀 CTE 가 달력 10행을 만드는 순서</text>
+  <text x="40" y="58" font-size="13" fill="#52616b">초기 행을 큐에 넣고, 큐에서 꺼낸 행만 보고 다음 행을 만들어 다시 큐에 넣는다</text>
+
+  <!-- A: initial-select -->
+  <rect x="40" y="86" width="210" height="68" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="145" y="112" font-size="14" fill="#1b2a2f" text-anchor="middle">① initial-select 실행</text>
+  <text x="145" y="136" font-size="13" fill="#2d6a4f" text-anchor="middle" font-family="Consolas,monospace">SELECT '2026-03-01'</text>
+
+  <!-- B: queue -->
+  <rect x="300" y="86" width="140" height="68" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="370" y="112" font-size="14" fill="#1b2a2f" text-anchor="middle">큐 (queue)</text>
+  <text x="370" y="136" font-size="13" fill="#52616b" text-anchor="middle">대기 중인 행</text>
+
+  <!-- C: pop -->
+  <rect x="490" y="86" width="350" height="68" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="665" y="112" font-size="14" fill="#1b2a2f" text-anchor="middle">② 큐에서 행 하나를 꺼낸다</text>
+  <text x="665" y="136" font-size="14" fill="#1b2a2f" text-anchor="middle">꺼낸 행을 재귀 테이블에 넣는다</text>
+
+  <!-- D: recursive-select -->
+  <rect x="490" y="212" width="350" height="78" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="665" y="238" font-size="14" fill="#1b2a2f" text-anchor="middle">③ 방금 꺼낸 행만 보고 recursive-select</text>
+  <text x="665" y="264" font-size="13" fill="#2d6a4f" text-anchor="middle" font-family="Consolas,monospace">date(day,'+1 day') WHERE day &lt; '2026-03-10'</text>
+
+  <!-- E: terminate -->
+  <rect x="40" y="212" width="210" height="78" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="145" y="241" font-size="14" fill="#b45309" text-anchor="middle">④ 큐가 비면 멈춘다</text>
+  <text x="145" y="266" font-size="13" fill="#52616b" text-anchor="middle">calendar = 10행</text>
+
+  <!-- arrows -->
+  <line x1="250" y1="120" x2="294" y2="120" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="440" y1="120" x2="484" y2="120" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="665" y1="154" x2="665" y2="206" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar)"/>
+  <path d="M490 251 L380 251 L380 160" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="366" y="196" font-size="13" fill="#2d6a4f" text-anchor="end">결과 행을 다시 큐에 넣는다</text>
+  <path d="M330 154 L330 182 L145 182 L145 206" fill="none" stroke="#b45309" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- trace -->
+  <text x="40" y="324" font-size="13" fill="#52616b">재귀 테이블에 쌓이는 순서 — 마지막 행은 WHERE 조건에 걸려 다음 행을 만들지 않는다</text>
+  <g font-size="13" text-anchor="middle">
+    <rect x="40" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="75" y="357" fill="#1b2a2f">03-01</text>
+    <rect x="118" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="153" y="357" fill="#1b2a2f">03-02</text>
+    <rect x="196" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="231" y="357" fill="#1b2a2f">03-03</text>
+    <rect x="274" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="309" y="357" fill="#1b2a2f">03-04</text>
+    <rect x="352" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="387" y="357" fill="#1b2a2f">03-05</text>
+    <rect x="430" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="465" y="357" fill="#1b2a2f">03-06</text>
+    <rect x="508" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="543" y="357" fill="#1b2a2f">03-07</text>
+    <rect x="586" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="621" y="357" fill="#1b2a2f">03-08</text>
+    <rect x="664" y="336" width="70" height="32" rx="4" fill="#ffffff" stroke="#2d6a4f"/><text x="699" y="357" fill="#1b2a2f">03-09</text>
+    <rect x="742" y="336" width="70" height="32" rx="4" fill="#fdf2e2" stroke="#b45309"/><text x="777" y="357" fill="#b45309">03-10</text>
+  </g>
+  <text x="40" y="392" font-size="13" fill="#52616b">큐에서 꺼내는 순서는 ORDER BY 가 없으면 정의되지 않는다 — 지금 구현은 FIFO 이지만 문서는 의존하지 말라고 적는다</text>
+</svg>

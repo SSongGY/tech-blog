@@ -2985,7 +2985,7 @@ topics:
     angle: "규칙 기반과 비용 기반의 차이, 통계 정보가 틀렸을 때 생기는 일"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-103
     title: "무선 네트워크 보안 — WPA3와 인증 방식"
     category: PE
@@ -4712,7 +4712,7 @@ topics:
     angle: "날짜 빈칸 채우기처럼 기준 행이 필요한 경우. 재귀 CTE 로 같은 일을 하는 방법과 비교"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-076
     title: "BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가"
     category: Database
@@ -5617,7 +5617,7 @@ topics:
     difficulty: 중급
     angle: "무작위·정렬됨·역순·부분 정렬 네 가지 입력에 대해 정렬 시간을 잰다. 안정 정렬이 필요한 경우를 두 단계 정렬 예제로 만들어 보이고 키 함수 비용까지 같이 본다."
     code: python
-    status: todo
+    status: done
 
   # ========== 제품 시리즈: MySQL 8.0 (track: product) ==========
   # §6 의 제품 순환 세 번째 자리다. feature 키를 Tibero 7·Oracle 19c 와 똑같이 맞춰
