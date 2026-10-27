@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="오픈소스 DBMS 고가용성 계층 구성">
+  <rect x="0" y="0" width="880" height="400" fill="#f8f9fa"/>
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="o" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- 주 센터 영역 -->
+  <rect x="36" y="196" width="566" height="150" rx="10" fill="#eef4ef" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="52" y="218" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#1b4332">주 센터 — 쿼럼 기반 동기 복제, 자동 장애 전환</text>
+
+  <!-- 원격 센터 영역 -->
+  <rect x="624" y="196" width="220" height="150" rx="10" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="640" y="218" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#7c2d12">원격 센터 — 비동기</text>
+
+  <!-- 애플리케이션 -->
+  <rect x="320" y="24" width="240" height="54" rx="8" fill="#ffffff" stroke="#333" stroke-width="2"/>
+  <text x="440" y="56" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#222" text-anchor="middle">애플리케이션</text>
+
+  <!-- 라우팅 계층 -->
+  <rect x="320" y="112" width="240" height="60" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="137" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">접속 라우팅 계층</text>
+  <text x="440" y="159" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">쓰기 노드 추적 · 읽기 분산</text>
+
+  <!-- 쓰기 노드 -->
+  <rect x="56" y="240" width="160" height="80" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="136" y="270" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">쓰기 노드</text>
+  <text x="136" y="293" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">트랜잭션 로그</text>
+  <text x="136" y="311" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">생성</text>
+
+  <!-- 읽기 노드 A -->
+  <rect x="240" y="240" width="160" height="80" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="320" y="270" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">읽기 노드 A</text>
+  <text x="320" y="293" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">승격 후보</text>
+
+  <!-- 읽기 노드 B -->
+  <rect x="424" y="240" width="160" height="80" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="504" y="270" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">읽기 노드 B</text>
+  <text x="504" y="293" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">승격 후보</text>
+
+  <!-- 원격 복제본 -->
+  <rect x="648" y="240" width="172" height="80" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="734" y="270" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#7c2d12" text-anchor="middle">원격 복제본</text>
+  <text x="734" y="293" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">수동 전환</text>
+  <text x="734" y="311" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">유실 구간 존재</text>
+
+  <!-- 화살표 -->
+  <line x1="440" y1="78" x2="440" y2="106" stroke="#333" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M380,172 L380,210 L136,210 L136,236" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M500,172 L500,210 L504,210 L504,236" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <line x1="216" y1="280" x2="236" y2="280" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M136,320 L136,334 L504,334 L504,324" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <line x1="584" y1="280" x2="644" y2="280" stroke="#b45309" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#o)"/>
+</svg>

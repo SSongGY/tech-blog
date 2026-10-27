@@ -6213,3 +6213,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-215
+    title: "이기종 DBMS 마이그레이션 — 스키마 변환과 데이터 정합성 검증"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "자동 변환이 어디까지 되고 어디서 사람 손이 필요한지, 건수·체크섬·샘플 대조로 정합성을 어떻게 증명하는지"
+    code: none
+    origin: exam
+    status: todo

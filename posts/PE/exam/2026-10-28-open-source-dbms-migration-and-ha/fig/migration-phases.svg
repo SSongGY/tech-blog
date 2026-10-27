@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" role="img" aria-label="오픈소스 DBMS 전환 단계별 절차">
+  <rect x="0" y="0" width="880" height="340" fill="#f8f9fa"/>
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#1b4332"/>
+    </marker>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- 되돌림 경로: 검증 실패 시 스키마 변환으로 -->
+  <path d="M440,288 L440,312 L852,312 L852,38 L440,38 L440,66"
+        fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#arw)"/>
+  <text x="648" y="30" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#b45309" text-anchor="middle">검증에서 차이가 나오면 변환 규칙으로 되돌아간다</text>
+
+  <!-- 3 -> 4 -->
+  <path d="M710,148 L710,180 L170,180 L170,206" fill="none" stroke="#1b4332" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- 1단계 -->
+  <rect x="60" y="70" width="220" height="78" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="170" y="100" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">① 진단·평가</text>
+  <text x="170" y="123" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">객체·SQL 인벤토리</text>
+  <text x="170" y="141" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">난이도·공수 산정</text>
+
+  <!-- 2단계 -->
+  <rect x="330" y="70" width="220" height="78" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="100" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">② 스키마 변환</text>
+  <text x="440" y="123" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">타입·제약·시퀀스</text>
+  <text x="440" y="141" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">저장 프로시저 재작성</text>
+
+  <!-- 3단계 -->
+  <rect x="600" y="70" width="220" height="78" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="710" y="100" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">③ 데이터 이관</text>
+  <text x="710" y="123" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">초기 적재 + 변경분</text>
+  <text x="710" y="141" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">건수·체크섬 대조</text>
+
+  <!-- 4단계 -->
+  <rect x="60" y="210" width="220" height="78" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="170" y="240" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">④ 애플리케이션 전환</text>
+  <text x="170" y="263" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">드라이버·SQL 방언</text>
+  <text x="170" y="281" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">격리수준·커밋 동작</text>
+
+  <!-- 5단계 -->
+  <rect x="330" y="210" width="220" height="78" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="240" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#7c2d12" text-anchor="middle">⑤ 병행 검증</text>
+  <text x="440" y="263" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">동일 입력 결과 대조</text>
+  <text x="440" y="281" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">성능·부하 재측정</text>
+
+  <!-- 6단계 -->
+  <rect x="600" y="210" width="220" height="78" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="710" y="240" font-family="Malgun Gothic, sans-serif" font-size="16" font-weight="bold" fill="#1b4332" text-anchor="middle">⑥ 전환·안정화</text>
+  <text x="710" y="263" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">절체 시점·되돌림 계획</text>
+  <text x="710" y="281" font-family="Malgun Gothic, sans-serif" font-size="14" fill="#333" text-anchor="middle">운영 지표 감시</text>
+
+  <!-- 가로 화살표 -->
+  <line x1="280" y1="109" x2="324" y2="109" stroke="#1b4332" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="550" y1="109" x2="594" y2="109" stroke="#1b4332" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="280" y1="249" x2="324" y2="249" stroke="#1b4332" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="550" y1="249" x2="594" y2="249" stroke="#1b4332" stroke-width="2" marker-end="url(#ar)"/>
+</svg>
