@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **480편** · 갱신 2026-10-27
+총 **482편** · 갱신 2026-10-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -107,10 +107,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 164편
+## 기술사 (pe) — 166편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [워킹셋 모델과 스래싱](posts/PE/system/2026-10-27-working-set-model-and-thrashing/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-27 | [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](posts/PE/data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md) | 중급 | Hochreiter & Schmidhuber, Neural Computation 9(8) (1997), Gers et al., Neural Computation 12(10) (2000), Vaswani et al., NeurIPS (2017), Bai et al., arXiv:1803.01271 (2018), Lim et al., arXiv:1912.09363 v3 (2020-09) | 문서 근거 |
 | 2026-10-27 | [데이터베이스 이중화와 복제 방식](posts/PE/database/2026-10-27-database-replication-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 문서, Oracle Database 19c Data Guard 문서, NIST SP 800-34 Rev. 1 | 문서 근거 |
 | 2026-10-27 | [데이터베이스 백업과 복구 기법](posts/PE/database/2026-10-27-database-backup-recovery/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010), ACM TODS 17(1) ARIES (1992) | 문서 근거 |
 | 2026-10-27 | [데이터 주권과 국외 이전 — 역외 백업이 부딪히는 법적 제약](posts/PE/it-management/2026-10-27-data-sovereignty-and-cross-border-transfer/index.md) | 중급 | 개인정보 보호법 [시행 2026. 9. 11.] [법률 제21445호], 클라우드컴퓨팅법 [시행 2025. 10. 1.] [법률 제21066호], GDPR (Regulation (EU) 2016/679), 18 U.S.C. §2713 (Pub. L. 115-141, 2018. 3. 23.), NIST SP 800-34 Rev.1 | 문서 근거 |
