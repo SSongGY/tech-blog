@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **489편** · 갱신 2026-10-28
+총 **490편** · 갱신 2026-10-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -348,10 +348,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 76편
+## 기출문제 (exam) — 77편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-28 | [기출문제 — 상용 DBMS의 오픈소스 전환: 배경·제약사항·마이그레이션 절차·HA 구성](posts/PE/exam/2026-10-28-open-source-dbms-migration-and-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 Reference Manual, MySQL Shell 8.0 InnoDB ClusterSet 문서, PostgreSQL License (1996-2026) | 문서 근거 |
 | 2026-10-27 | [기출문제 — 프롬프트 인젝션](posts/PE/exam/2026-10-27-prompt-injection/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
 | 2026-10-27 | [기출문제 — 모델 전도 공격](posts/PE/exam/2026-10-27-model-inversion-attack/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), ACM CCS 2015 Proceedings pp.1322-1333 | 문서 근거 |
 | 2026-10-27 | [기출문제 — 동적 라우팅 프로토콜 IGP와 EGP](posts/PE/exam/2026-10-27-igp-and-egp/index.md) | 중급 | RFC 1812 (1995-06), RFC 4271 (2006-01), RFC 1930 / BCP 6 (1996-03), RFC 6793 (2012-12) | 문서 근거 |
