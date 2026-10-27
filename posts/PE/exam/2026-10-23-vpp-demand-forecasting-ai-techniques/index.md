@@ -204,6 +204,8 @@ Liao 등의 리뷰도 전력계통 GNN 응용 분류에 **시계열 예측**을 
 유지하는 토폴로지 관리, 예측과 실적을 맞대어 보는 정산 데이터 흐름이 갖춰져야 세 기법이
 제 자리에서 작동한다.
 
+> 개념 정리: [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](../../data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md)
+
 끝
 
 ---

@@ -5904,7 +5904,7 @@ topics:
     angle: "지역성 원리에서 워킹셋 정의가 나오는 과정, 전역 교체에서 스래싱이 생기는 조건과 워킹셋 원칙·페이지 부재 빈도로 막는 방법"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-193
     title: "시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리"
     category: PE
@@ -5915,7 +5915,7 @@ topics:
     angle: "RNN 기울기 소실에서 LSTM 게이트가 나온 이유, 정적·미래 기지·과거 관측 입력 구분, 다중 시점·분위수 출력이 뒤 단계 결정에 주는 것"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-194
     title: "그래프신경망 — GCN·GAT·시공간 GCN이 이웃 정보를 모으는 방식"
     category: PE

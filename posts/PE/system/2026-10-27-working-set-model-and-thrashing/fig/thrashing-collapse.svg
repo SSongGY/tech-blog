@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">스래싱 — 다중 프로그래밍 정도를 한 칸 넘기면 처리율이 무너진다</text>
+  <text x="30" y="56" font-size="13" fill="#555">세로축은 바쁜 프로세서 수, 가로축은 주기억장치에 올린 프로그램 수 n</text>
+
+  <!-- 구간 배경 -->
+  <rect x="110" y="86" width="320" height="204" fill="#eaf2ec"/>
+  <rect x="430" y="86" width="290" height="204" fill="#fdeeee"/>
+
+  <!-- 축 -->
+  <line x1="110" y1="80" x2="110" y2="290" stroke="#555" stroke-width="1.5"/>
+  <line x1="110" y1="290" x2="730" y2="290" stroke="#555" stroke-width="1.5"/>
+  <text x="30" y="92" font-size="13" fill="#1b1b1b">바쁜 프로세서 수</text>
+  <text x="600" y="312" font-size="13" fill="#1b1b1b">프로그램 수 n →</text>
+
+  <!-- 정상 구간 곡선 -->
+  <polyline points="110,282 180,236 250,196 320,160 380,130 430,114"
+            fill="none" stroke="#2d6a4f" stroke-width="3"/>
+  <!-- 붕괴 구간 곡선 -->
+  <polyline points="430,114 452,160 476,214 510,252 560,272 640,280 720,283"
+            fill="none" stroke="#9d0208" stroke-width="3"/>
+
+  <!-- 임계점 -->
+  <line x1="430" y1="86" x2="430" y2="290" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <circle cx="430" cy="114" r="5" fill="#9d0208"/>
+  <text x="430" y="78" font-size="13" font-weight="bold" text-anchor="middle" fill="#9d0208">n₀ : Σ w(t, τ) = M</text>
+
+  <!-- 구간 이름 -->
+  <text x="250" y="110" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">워킹셋이 다 들어간다</text>
+  <text x="250" y="132" font-size="13" text-anchor="middle" fill="#2d6a4f">m 작음 · e(m) 높음</text>
+  <text x="590" y="130" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">서로의 워킹셋을 밀어낸다</text>
+  <text x="590" y="152" font-size="13" text-anchor="middle" fill="#9d0208">m 급증 · e(m) 붕괴</text>
+
+  <!-- 설명 박스 -->
+  <rect x="110" y="326" width="340" height="40" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="124" y="351" font-size="13" fill="#1b1b1b">e(m) = 1 / (1 + m·T), T는 쪽 하나를 옮기는 시간</text>
+
+  <rect x="470" y="326" width="380" height="40" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="484" y="351" font-size="13" fill="#1b1b1b">T가 크면 m이 조금 올라도 e(m)이 급락한다</text>
+</svg>

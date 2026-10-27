@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="310" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">워킹셋 W(t, τ) — 창 길이가 같아도 시점이 다르면 내용이 바뀐다</text>
+  <text x="30" y="56" font-size="13" fill="#555">참조열 ABCABCABACBDEFDEFDEDFEDA · 창 길이 τ = 4</text>
+
+  <!-- 참조열 칸 -->
+  <g>
+    <rect x="40" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="70" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="100" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="130" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="160" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="190" y="92" width="28" height="34" fill="#eaf2ec" stroke="#bbb"/>
+    <rect x="220" y="92" width="28" height="34" fill="#eaf2ec" stroke="#bbb"/>
+    <rect x="250" y="92" width="28" height="34" fill="#eaf2ec" stroke="#bbb"/>
+    <rect x="280" y="92" width="28" height="34" fill="#eaf2ec" stroke="#bbb"/>
+    <rect x="310" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="340" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="370" y="92" width="28" height="34" fill="#fdf3e7" stroke="#bbb"/>
+    <rect x="400" y="92" width="28" height="34" fill="#fdf3e7" stroke="#bbb"/>
+    <rect x="430" y="92" width="28" height="34" fill="#fdf3e7" stroke="#bbb"/>
+    <rect x="460" y="92" width="28" height="34" fill="#fdf3e7" stroke="#bbb"/>
+    <rect x="490" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="520" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="550" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="580" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="610" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="640" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="670" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="700" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+    <rect x="730" y="92" width="28" height="34" fill="#ffffff" stroke="#bbb"/>
+  </g>
+
+  <g font-size="14" text-anchor="middle" fill="#1b1b1b">
+    <text x="54" y="115">A</text><text x="84" y="115">B</text><text x="114" y="115">C</text><text x="144" y="115">A</text>
+    <text x="174" y="115">B</text><text x="204" y="115">C</text><text x="234" y="115">A</text><text x="264" y="115">B</text>
+    <text x="294" y="115">A</text><text x="324" y="115">C</text><text x="354" y="115">B</text><text x="384" y="115">D</text>
+    <text x="414" y="115">E</text><text x="444" y="115">F</text><text x="474" y="115">D</text><text x="504" y="115">E</text>
+    <text x="534" y="115">F</text><text x="564" y="115">D</text><text x="594" y="115">E</text><text x="624" y="115">D</text>
+    <text x="654" y="115">F</text><text x="684" y="115">E</text><text x="714" y="115">D</text><text x="744" y="115">A</text>
+  </g>
+
+  <!-- 두 시점의 창 -->
+  <rect x="188" y="88" width="122" height="42" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="368" y="88" width="122" height="42" fill="none" stroke="#b45309" stroke-width="2"/>
+  <text x="249" y="82" font-size="13" text-anchor="middle" fill="#2d6a4f">t = 9</text>
+  <text x="429" y="82" font-size="13" text-anchor="middle" fill="#b45309">t = 15</text>
+
+  <text x="40" y="150" font-size="13" fill="#555">참조 순서(가상시간) →</text>
+
+  <line x1="249" y1="132" x2="249" y2="172" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="429" y1="132" x2="429" y2="172" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="166" y="176" width="166" height="50" fill="#eaf2ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="249" y="196" font-size="13" text-anchor="middle" fill="#1b1b1b">W(9, 4) = {A, B, C}</text>
+  <text x="249" y="216" font-size="13" text-anchor="middle" fill="#2d6a4f">w(9, 4) = 3</text>
+
+  <rect x="346" y="176" width="166" height="50" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="429" y="196" font-size="13" text-anchor="middle" fill="#1b1b1b">W(15, 4) = {D, E, F}</text>
+  <text x="429" y="216" font-size="13" text-anchor="middle" fill="#b45309">w(15, 4) = 3</text>
+
+  <rect x="546" y="176" width="300" height="50" fill="#ffffff" stroke="#999" stroke-width="1.5"/>
+  <text x="560" y="196" font-size="13" fill="#1b1b1b">창을 τ = 8 로 넓히면 w(15, 8) = 6</text>
+  <text x="560" y="216" font-size="13" fill="#555">τ 가 커지면 w 는 줄지 않는다 (비감소)</text>
+
+  <text x="30" y="258" font-size="13" fill="#1b1b1b">두 집합이 겹치지 않는 것이 지역성이다. 프로그램은 한동안 몇 쪽만 맴돌다 다른 묶음으로 옮겨 간다.</text>
+  <text x="30" y="280" font-size="13" fill="#1b1b1b">워킹셋 정책은 이 창 안의 쪽만 주기억장치에 붙잡아 두고, 창을 벗어난 쪽을 내보낼 후보로 삼는다.</text>
+</svg>
