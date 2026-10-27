@@ -6191,3 +6191,25 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: pe-213
+    title: "기계 학습 제거(Machine Unlearning) — 정확 제거와 근사 제거"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "학습된 모델에서 특정 데이터의 영향을 지우는 방법. 재학습 기반 정확 제거와 파라미터 갱신 기반 근사 제거의 보장 수준·계산 비용 맞바꿈, 잊힐 권리와의 연결"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-214
+    title: "경로벡터 라우팅과 BGP 경로 선택 — 메트릭이 아니라 정책으로 고른다"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "거리벡터·링크상태와 구분되는 경로벡터 방식. AS_PATH로 루프를 막는 원리와 BGP 경로 속성·경로 선택 순서, iBGP 풀메시와 경로 반사기"
+    code: none
+    origin: exam
+    status: todo
