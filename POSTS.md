@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **468편** · 갱신 2026-10-27
+총 **471편** · 갱신 2026-10-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 72편
+## DB문법 (basics) — 73편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [JSON 함수 — 문서를 컬럼처럼 다루기](posts/Database/sql-basics/2026-10-27-json-functions-extract-each/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [스키마 조회 — sqlite_master와 PRAGMA table_info](posts/Database/sql-basics/2026-10-26-schema-introspection-sqlite-master-pragma/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [PRAGMA — 동작을 바꾸는 설정들](posts/Database/sql-basics/2026-10-26-pragma-settings-that-change-behavior/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [ATTACH — 여러 데이터베이스 파일을 한 연결에서](posts/Database/sql-basics/2026-10-26-attach-multiple-databases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -105,10 +106,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 160편
+## 기술사 (pe) — 161편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [데이터베이스 백업과 복구 기법](posts/PE/database/2026-10-27-database-backup-recovery/index.md) | 중급 | NIST SP 800-34 Rev.1 (2010), ACM TODS 17(1) ARIES (1992) | 문서 근거 |
 | 2026-10-26 | [UML 다이어그램 분류 — 구조 7종과 행위 7종](posts/PE/software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01), OMG UML 1.5 (formal/03-03-01) | 문서 근거 |
 | 2026-10-26 | [소프트웨어 테스트 자동화와 테스트 피라미드](posts/PE/software-engineering/2026-10-26-test-automation-pyramid/index.md) | 중급 | ISTQB CTFL Syllabus v4.0, Mike Cohn, Succeeding with Agile (2009), Martin Fowler, TestPyramid (2012) | 문서 근거 |
 | 2026-10-26 | [모니터와 조건변수 — 두 가지 시그널 의미론](posts/PE/system/2026-10-26-monitor-condition-variable-signal-semantics/index.md) | 중급 | Hoare, CACM 17(10) pp.549-557 (1974), Lampson·Redell, CACM 23(2) pp.105-117 (1980), POSIX.1-2017 (IEEE Std 1003.1-2017), Open Group Base Specifications Issue 7 2018 Edition, Java SE 21 JLS §17.2.1 | 문서 근거 |
@@ -293,10 +295,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 35편
+## 일반 (general) — 36편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-27 | [커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회](posts/Database/sqlite/2026-10-27-commit-batching-and-wal-size/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [write 는 디스크에 쓰는 것이 아니다 — 버퍼·flush·fsync 를 가르기](posts/Backend/storage/2026-10-26-write-buffer-flush-fsync/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-26 | [GIL이 걸리는 작업과 안 걸리는 작업을 실측으로 가르기](posts/Performance/python/2026-10-26-gil-bound-and-unbound-workloads/index.md) | 심화 | Python 3.13.5, Windows 11, 논리 코어 20개 | 실행 검증 |
 | 2026-10-26 | [캐시 크기를 늘리면 적중률은 어디서 꺾이는가](posts/Performance/caching/2026-10-26-cache-size-hit-ratio-curve/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
