@@ -5333,7 +5333,7 @@ topics:
     angle: "수요예측에서 밴드와 확정 공모가가 나오는 절차, 경쟁률과 배정 방식. 균등배정과 비례배정이 섞일 때 실제로 몇 주를 받는지 계산한다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-094
     title: "주식 병합과 감자 — 주식 수가 줄 때 지분과 자본이 움직이는 방향"
     category: Finance
@@ -5344,7 +5344,7 @@ topics:
     angle: "액면분할의 반대편. 무상감자와 유상감자가 자본금·자본잉여금·현금에 남기는 자국이 다르다는 점을 가상 회사 자본 항목으로 보인다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-095
     title: "정리매매 — 상장폐지가 결정된 뒤의 거래"
     category: Finance
