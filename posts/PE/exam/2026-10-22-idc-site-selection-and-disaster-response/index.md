@@ -227,6 +227,8 @@ IBM은 동기 복제 방식인 Metro Mirror에 대해 **최대 300 km까지 지�
 > 개념 정리: [재해복구시스템 구축 수준 — 목표 시간을 백업 주기·복제 방식·훈련으로 옮기는 일](../../system/2026-10-20-dr-readiness-levels-backup-and-drills/index.md)
 >
 > 개념 정리: [불변 백업과 에어갭 — 복제가 따라가는 훼손을 끊는 사본](../../security/2026-10-26-immutable-backup-and-air-gap/index.md)
+>
+> 개념 정리: [데이터 주권과 국외 이전 — 역외 백업이 부딪히는 법적 제약](../../it-management/2026-10-27-data-sovereignty-and-cross-border-transfer/index.md)
 
 끝
 
