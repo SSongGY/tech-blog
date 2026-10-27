@@ -273,6 +273,8 @@ TLB가 가린다.
 현역인 이유다.
 
 > 관련 개념 정리: [페이지 교체 알고리즘과 벨레이디의 이상현상](../../system/2026-10-12-page-replacement-belady-anomaly/index.md)
+>
+> 개념 정리: [버디 시스템과 슬랩 할당기 — 단편화를 나눠 맡는 두 층](../../system/2026-10-27-buddy-system-and-slab-allocator/index.md)
 
 끝
 

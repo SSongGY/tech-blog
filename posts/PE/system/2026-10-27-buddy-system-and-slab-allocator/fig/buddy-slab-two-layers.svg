@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 530" width="880" height="530" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="530" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="30" font-size="17" font-weight="bold" fill="#222">커널 메모리 요청이 지나는 두 층</text>
+
+  <!-- A. 요청 -->
+  <rect x="40" y="48" width="560" height="40" rx="4" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="320" y="73" font-size="14" fill="#222" text-anchor="middle">커널 코드 — kmem_cache_alloc(inode_cache)</text>
+  <line x1="320" y1="88" x2="320" y2="104" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- B. 슬랩 층 -->
+  <rect x="40" y="108" width="560" height="172" rx="5" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="56" y="130" font-size="14" font-weight="bold" fill="#2d6a4f">슬랩 할당기 — 객체 캐시 하나당 슬랩 목록 하나</text>
+
+  <rect x="56" y="140" width="170" height="34" rx="3" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="141" y="162" font-size="13" fill="#222" text-anchor="middle">empty · 전부 할당</text>
+  <rect x="232" y="140" width="170" height="34" rx="3" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="317" y="162" font-size="13" fill="#222" text-anchor="middle">partial · 일부 할당</text>
+  <rect x="408" y="140" width="170" height="34" rx="3" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="493" y="162" font-size="13" fill="#222" text-anchor="middle">complete · 전부 빔</text>
+
+  <text x="56" y="194" font-size="13" fill="#444">슬랩 하나의 속</text>
+
+  <rect x="56" y="200" width="522" height="42" rx="3" fill="#ffffff" stroke="#2d6a4f" stroke-dasharray="4 3"/>
+  <rect x="62" y="206" width="84" height="30" fill="#d9e8df" stroke="#2d6a4f"/>
+  <text x="104" y="226" font-size="13" fill="#222" text-anchor="middle">buf</text>
+  <rect x="150" y="206" width="84" height="30" fill="#d9e8df" stroke="#2d6a4f"/>
+  <text x="192" y="226" font-size="13" fill="#222" text-anchor="middle">buf</text>
+  <rect x="238" y="206" width="84" height="30" fill="#d9e8df" stroke="#2d6a4f"/>
+  <text x="280" y="226" font-size="13" fill="#222" text-anchor="middle">buf</text>
+  <rect x="326" y="206" width="84" height="30" fill="#d9e8df" stroke="#2d6a4f"/>
+  <text x="368" y="226" font-size="13" fill="#222" text-anchor="middle">buf</text>
+  <rect x="414" y="206" width="78" height="30" fill="#f6e7cf" stroke="#b45309"/>
+  <text x="453" y="226" font-size="13" fill="#7a3c06" text-anchor="middle">자투리</text>
+  <rect x="496" y="206" width="76" height="30" fill="#ffffff" stroke="#555"/>
+  <text x="534" y="226" font-size="13" fill="#222" text-anchor="middle">kmem_slab</text>
+
+  <text x="56" y="265" font-size="13" fill="#444">버퍼 n개가 들어가면 버려지는 것은 끝의 자투리뿐 — 내부 단편화는 많아야 1/n</text>
+
+  <line x1="320" y1="280" x2="320" y2="298" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="332" y="294" font-size="13" fill="#444">뒷단(kmem_cache_grow)이 페이지를 받아 온다</text>
+
+  <!-- C. 버디 층 -->
+  <rect x="40" y="302" width="560" height="162" rx="5" fill="#fdf5e9" stroke="#b45309" stroke-width="2"/>
+  <text x="56" y="324" font-size="14" font-weight="bold" fill="#7a3c06">페이지 할당기 — 버디 (존마다 free_area[차수])</text>
+
+  <text x="56" y="352" font-size="13" fill="#444">차수 2</text>
+  <rect x="112" y="336" width="168" height="22" fill="#f6e7cf" stroke="#b45309"/>
+  <text x="196" y="352" font-size="13" fill="#7a3c06" text-anchor="middle">4쪽</text>
+
+  <text x="56" y="390" font-size="13" fill="#444">차수 1</text>
+  <rect x="112" y="374" width="82" height="22" fill="#f6e7cf" stroke="#b45309"/>
+  <text x="153" y="390" font-size="13" fill="#7a3c06" text-anchor="middle">2쪽</text>
+  <rect x="198" y="374" width="82" height="22" fill="#f6e7cf" stroke="#b45309"/>
+  <text x="239" y="390" font-size="13" fill="#7a3c06" text-anchor="middle">2쪽</text>
+
+  <text x="56" y="428" font-size="13" fill="#444">차수 0</text>
+  <rect x="112" y="412" width="39" height="22" fill="#f6e7cf" stroke="#b45309"/>
+  <rect x="155" y="412" width="39" height="22" fill="#f6e7cf" stroke="#b45309"/>
+  <rect x="198" y="412" width="39" height="22" fill="#f6e7cf" stroke="#b45309"/>
+  <rect x="241" y="412" width="39" height="22" fill="#f6e7cf" stroke="#b45309"/>
+
+  <line x1="294" y1="340" x2="294" y2="430" stroke="#b45309" stroke-width="1.5" marker-end="url(#arg)"/>
+  <line x1="306" y1="430" x2="306" y2="340" stroke="#b45309" stroke-width="1.5" marker-end="url(#arg)"/>
+
+  <text x="322" y="352" font-size="13" fill="#7a3c06">쪼개기 — 요청보다 크면 반으로</text>
+  <text x="322" y="390" font-size="13" fill="#7a3c06">합치기 — 짝이 비면 다시 하나로</text>
+  <text x="322" y="428" font-size="13" fill="#444">짝의 주소는 계산된다 (탐색 없음)</text>
+
+  <line x1="320" y1="464" x2="320" y2="482" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- D. 물리 메모리 -->
+  <rect x="40" y="486" width="560" height="34" rx="4" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="320" y="508" font-size="14" fill="#222" text-anchor="middle">물리 메모리 (존별 페이지)</text>
+
+  <!-- 오른쪽 설명 -->
+  <rect x="626" y="140" width="219" height="102" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="640" y="163" font-size="13" font-weight="bold" fill="#2d6a4f">맡는 단편화: 내부</text>
+  <text x="640" y="186" font-size="13" fill="#333">페이지를 객체 크기로 잘라</text>
+  <text x="640" y="207" font-size="13" fill="#333">올림 낭비를 걷어낸다</text>
+  <text x="640" y="228" font-size="13" fill="#333">상한 1/n (SunOS 5.4는 1/8)</text>
+
+  <rect x="626" y="334" width="219" height="102" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="640" y="357" font-size="13" font-weight="bold" fill="#7a3c06">맡는 단편화: 외부</text>
+  <text x="640" y="380" font-size="13" fill="#333">짝을 계산해 병합한다</text>
+  <text x="640" y="401" font-size="13" fill="#333">대가: 2의 거듭제곱 올림</text>
+  <text x="640" y="422" font-size="13" fill="#333">→ 내부 단편화가 생긴다</text>
+</svg>
