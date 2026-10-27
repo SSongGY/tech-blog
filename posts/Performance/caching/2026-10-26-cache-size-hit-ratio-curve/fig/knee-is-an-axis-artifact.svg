@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfaf7"/>
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b2430">같은 측정값을 축만 바꿔 그린 두 그림 — '무릎'은 선형 축이 만든다</text>
+  <text x="24" y="52" font-size="13" fill="#44525f">지프 alpha=1.0 · 키 10,000개 · 접근 200,000회 (code/output.txt 의 값)</text>
+
+  <!-- 왼쪽 패널 -->
+  <rect x="24" y="66" width="416" height="286" rx="8" fill="#ffffff" stroke="#44525f" stroke-width="1.2"/>
+  <text x="44" y="86" font-size="14" font-weight="bold" fill="#1b2430">가로축 = 캐시 크기 (선형)</text>
+
+  <line x1="84" y1="310" x2="424" y2="310" stroke="#44525f" stroke-width="1.2"/>
+  <line x1="84" y1="100" x2="84" y2="310" stroke="#44525f" stroke-width="1.2"/>
+  <text x="50" y="314" font-size="13" fill="#44525f">0%</text>
+  <text x="44" y="213" font-size="13" fill="#44525f">50%</text>
+  <text x="38" y="108" font-size="13" fill="#44525f">100%</text>
+  <text x="78" y="330" font-size="13" fill="#44525f">0</text>
+  <text x="236" y="330" font-size="13" fill="#44525f">1,600</text>
+  <text x="398" y="330" font-size="13" fill="#44525f">3,200</text>
+
+  <polyline fill="none" stroke="#2d6a4f" stroke-width="2.4"
+    points="85,247 87,228 89,214 95,199 105,184 126,169 168,154 252,140 420,125"/>
+  <polyline fill="none" stroke="#b45309" stroke-width="2.4" stroke-dasharray="6 4"
+    points="85,283 87,262 89,246 95,228 105,211 126,193 168,175 252,156 420,136"/>
+
+  <text x="166" y="274" font-size="13" fill="#9d0208">여기서 꺾인 것처럼 보인다</text>
+  <line x1="164" y1="269" x2="130" y2="208" stroke="#9d0208" stroke-width="1.2"/>
+
+  <!-- 오른쪽 패널 -->
+  <rect x="456" y="66" width="400" height="286" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="476" y="86" font-size="14" font-weight="bold" fill="#2d6a4f">가로축 = 캐시 크기 (두 배씩)</text>
+
+  <line x1="510" y1="310" x2="848" y2="310" stroke="#44525f" stroke-width="1.2"/>
+  <line x1="510" y1="100" x2="510" y2="310" stroke="#44525f" stroke-width="1.2"/>
+  <text x="476" y="314" font-size="13" fill="#44525f">0%</text>
+  <text x="470" y="213" font-size="13" fill="#44525f">50%</text>
+  <text x="464" y="108" font-size="13" fill="#44525f">100%</text>
+  <text x="502" y="330" font-size="13" fill="#44525f">10</text>
+  <text x="664" y="330" font-size="13" fill="#44525f">200</text>
+  <text x="820" y="330" font-size="13" fill="#44525f">3,200</text>
+
+  <polyline fill="none" stroke="#2d6a4f" stroke-width="2.4"
+    points="510,247 552,228 594,214 636,199 678,184 719,169 761,154 803,140 845,125"/>
+  <polyline fill="none" stroke="#b45309" stroke-width="2.4" stroke-dasharray="6 4"
+    points="510,283 552,262 594,246 636,228 678,211 719,193 761,175 803,156 845,136"/>
+
+  <text x="572" y="136" font-size="13" fill="#2d6a4f">두 배마다 +7.1%p 로 일정하다</text>
+
+  <!-- 범례 -->
+  <line x1="24" y1="374" x2="56" y2="374" stroke="#2d6a4f" stroke-width="2.4"/>
+  <text x="64" y="379" font-size="13" fill="#1b2430">상한 — 인기 상위 k개를 고정해 둔 캐시</text>
+  <line x1="340" y1="374" x2="372" y2="374" stroke="#b45309" stroke-width="2.4" stroke-dasharray="6 4"/>
+  <text x="380" y="379" font-size="13" fill="#1b2430">LRU</text>
+
+  <text x="24" y="404" font-size="13" fill="#44525f">상한은 H(C) = 상위 C개의 누적 접근 확률. 지프 분포에서 이 값은 ln C 에 비례해 오른다.</text>
+</svg>

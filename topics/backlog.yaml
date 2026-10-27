@@ -5587,7 +5587,7 @@ topics:
     difficulty: 중급
     angle: "지프 분포를 따르는 접근 기록을 만들어 캐시 크기를 키우며 적중률 곡선을 그린다. 분포가 평평해지면 같은 곡선이 어떻게 무너지는지도 같이 잰다."
     code: python
-    status: writing
+    status: done
   - id: gen-016
     title: "git 이 파일을 어떻게 저장하는지 객체를 직접 뜯어본다"
     category: Tooling
