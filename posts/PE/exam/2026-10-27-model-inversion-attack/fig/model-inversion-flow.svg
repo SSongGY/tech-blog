@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#374151"/>
+    </marker>
+    <marker id="arR" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <!-- A 학습 데이터 -->
+  <rect x="40" y="60" width="175" height="88" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.6"/>
+  <text x="127" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#111827">학습 데이터</text>
+  <text x="127" y="115" text-anchor="middle" font-size="13" fill="#374151">개인 레코드</text>
+  <text x="127" y="135" text-anchor="middle" font-size="13" fill="#374151">얼굴·민감 속성</text>
+
+  <!-- A -> B -->
+  <line x1="215" y1="104" x2="288" y2="104" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="251" y="95" text-anchor="middle" font-size="13" fill="#374151">학습</text>
+
+  <!-- B 배포 모델 -->
+  <rect x="295" y="60" width="175" height="88" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="382" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#14532d">배포된 모델</text>
+  <text x="382" y="115" text-anchor="middle" font-size="13" fill="#374151">서비스형 기계학습</text>
+  <text x="382" y="135" text-anchor="middle" font-size="13" fill="#374151">API 질의만 공개</text>
+
+  <!-- C 공격자 -->
+  <rect x="295" y="255" width="175" height="88" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="382" y="287" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">공격자</text>
+  <text x="382" y="310" text-anchor="middle" font-size="13" fill="#374151">질의 접근 능력</text>
+  <text x="382" y="330" text-anchor="middle" font-size="13" fill="#374151">목표 클래스를 지정</text>
+
+  <!-- C -> B 질의 -->
+  <line x1="340" y1="255" x2="340" y2="155" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+  <text x="332" y="208" text-anchor="end" font-size="13" fill="#9d0208">① 후보 입력 질의</text>
+
+  <!-- B -> C 신뢰도 -->
+  <line x1="428" y1="148" x2="428" y2="248" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+  <text x="438" y="208" font-size="13" fill="#9d0208">② 레이블 + 신뢰도</text>
+
+  <!-- C -> D -->
+  <line x1="470" y1="299" x2="548" y2="299" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+
+  <!-- D 탐색 -->
+  <rect x="555" y="255" width="190" height="88" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="650" y="287" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">③ 반복 탐색</text>
+  <text x="650" y="310" text-anchor="middle" font-size="13" fill="#374151">신뢰도가 커지는</text>
+  <text x="650" y="330" text-anchor="middle" font-size="13" fill="#374151">방향으로 입력 갱신</text>
+
+  <!-- D -> E -->
+  <polyline points="650,255 650,205 800,205 800,155" fill="none" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arR)"/>
+  <text x="662" y="197" font-size="13" fill="#9d0208">④ 수렴</text>
+
+  <!-- E 복원 결과 -->
+  <rect x="640" y="60" width="200" height="88" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="740" y="92" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">클래스 대표상</text>
+  <text x="740" y="115" text-anchor="middle" font-size="13" fill="#374151">학습 집합과 의미적으로</text>
+  <text x="740" y="135" text-anchor="middle" font-size="13" fill="#374151">유사한 입력</text>
+
+  <!-- 주의 -->
+  <rect x="40" y="368" width="800" height="42" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.4"/>
+  <text x="56" y="394" font-size="13.5" fill="#7c2d12">복원되는 것은 그 클래스를 대표하는 입력이다. 특정 학습 레코드의 원본을 그대로 되살리지는 못한다.</text>
+</svg>
