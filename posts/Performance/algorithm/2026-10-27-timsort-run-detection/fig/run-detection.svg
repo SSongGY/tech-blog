@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf7"/>
+
+  <text x="40" y="34" font-size="17" font-weight="bold" fill="#1b2a2f">런을 찾고, 뒤집고, 이어 붙인다</text>
+  <text x="40" y="58" font-size="13" fill="#52616b">입력 [3, 2, 1, 3, 4, 5, 0] — CPython 정렬 설명 문서가 드는 예</text>
+
+  <text x="40" y="86" font-size="14" fill="#1b2a2f">① 앞에서부터 훑으며 오름차순 또는 내림차순이 이어지는 구간을 찾는다</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="40" y="96" width="90" height="38" rx="4" fill="#fdf2e2" stroke="#b45309"/><text x="85" y="121" fill="#b45309">3</text>
+    <rect x="136" y="96" width="90" height="38" rx="4" fill="#fdf2e2" stroke="#b45309"/><text x="181" y="121" fill="#b45309">2</text>
+    <rect x="232" y="96" width="90" height="38" rx="4" fill="#fdf2e2" stroke="#b45309"/><text x="277" y="121" fill="#b45309">1</text>
+    <rect x="328" y="96" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="373" y="121" fill="#2d6a4f">3</text>
+    <rect x="424" y="96" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="469" y="121" fill="#2d6a4f">4</text>
+    <rect x="520" y="96" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="565" y="121" fill="#2d6a4f">5</text>
+    <rect x="616" y="96" width="90" height="38" rx="4" fill="#ffffff" stroke="#52616b"/><text x="661" y="121" fill="#1b2a2f">0</text>
+  </g>
+  <text x="181" y="156" font-size="13" fill="#b45309" text-anchor="middle">내림차순 런 3개</text>
+  <text x="469" y="156" font-size="13" fill="#2d6a4f" text-anchor="middle">오름차순 런 3개</text>
+  <text x="661" y="156" font-size="13" fill="#52616b" text-anchor="middle">남은 1개</text>
+
+  <text x="40" y="192" font-size="14" fill="#1b2a2f">② 내림차순 런은 제자리에서 뒤집는다 — 양 끝에서 맞바꿔 가운데서 만난다</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="40" y="202" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="85" y="227" fill="#2d6a4f">1</text>
+    <rect x="136" y="202" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="181" y="227" fill="#2d6a4f">2</text>
+    <rect x="232" y="202" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="277" y="227" fill="#2d6a4f">3</text>
+    <rect x="328" y="202" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="373" y="227" fill="#2d6a4f">3</text>
+    <rect x="424" y="202" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="469" y="227" fill="#2d6a4f">4</text>
+    <rect x="520" y="202" width="90" height="38" rx="4" fill="#e8f1ec" stroke="#2d6a4f"/><text x="565" y="227" fill="#2d6a4f">5</text>
+    <rect x="616" y="202" width="90" height="38" rx="4" fill="#ffffff" stroke="#52616b"/><text x="661" y="227" fill="#1b2a2f">0</text>
+  </g>
+
+  <text x="40" y="276" font-size="14" fill="#1b2a2f">③ 뒤집은 런이 뒤따르는 오름차순 런과 이어진다 — 남는 것은 런 2개</text>
+  <rect x="40" y="288" width="570" height="42" rx="6" fill="#e8f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="325" y="314" font-size="14" fill="#1b2a2f" text-anchor="middle">런 A = [1, 2, 3, 3, 4, 5] — 6개</text>
+  <rect x="616" y="288" width="90" height="42" rx="6" fill="#ffffff" stroke="#52616b" stroke-width="1.5"/>
+  <text x="661" y="314" font-size="14" fill="#1b2a2f" text-anchor="middle">[0]</text>
+
+  <text x="40" y="358" font-size="13" fill="#52616b">④ 런이 minrun(파이썬 구현은 32)보다 짧으면 이진 삽입 정렬로 그 길이까지 늘린 뒤 스택에 쌓는다.</text>
+  <text x="40" y="382" font-size="13" fill="#52616b">같은 값이 섞인 내림차순 런은 같은 값 구간을 먼저 뒤집어 두어야 안정성이 깨지지 않는다.</text>
+</svg>
