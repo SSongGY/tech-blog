@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">203.0.113.0/25 한 블록에 같은 요구를 두 순서로 배치</text>
+  <text x="24" y="52" font-size="13" fill="#444">서브넷은 자기 크기의 배수 주소에서만 시작한다. 커서가 그 배수가 아니면 건너뛴다.</text>
+
+  <!-- 1. 큰 것부터 -->
+  <text x="24" y="86" font-size="14" font-weight="bold" fill="#2d6a4f">① 큰 것부터 — 건너뜀 0개</text>
+
+  <rect x="60" y="98" width="380" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="250" y="119" font-size="14" fill="#1b4332" text-anchor="middle">영업망 /26</text>
+  <text x="250" y="136" font-size="13" fill="#2d6a4f" text-anchor="middle">주소 64 · 호스트 62</text>
+
+  <rect x="440" y="98" width="190" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="535" y="119" font-size="14" fill="#1b4332" text-anchor="middle">운영망 /27</text>
+  <text x="535" y="136" font-size="13" fill="#2d6a4f" text-anchor="middle">주소 32 · 호스트 30</text>
+
+  <rect x="630" y="98" width="95" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="677" y="119" font-size="13" fill="#1b4332" text-anchor="middle">백업망</text>
+  <text x="677" y="136" font-size="13" fill="#2d6a4f" text-anchor="middle">/28 · 16</text>
+
+  <rect x="725" y="98" width="24" height="46" fill="#b7e4c7" stroke="#2d6a4f" stroke-width="1.5"/>
+  <rect x="749" y="98" width="24" height="46" fill="#b7e4c7" stroke="#2d6a4f" stroke-width="1.5"/>
+  <rect x="773" y="98" width="47" height="46" fill="#eceae4" stroke="#8a8a8a" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <path d="M737 144 L737 160 L700 160" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <path d="M761 144 L761 170 L700 170" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="694" y="164" font-size="13" fill="#2d6a4f" text-anchor="end">링크 2개 각각 /30 · 호스트 2</text>
+  <path d="M796 144 L796 182 L700 182" fill="none" stroke="#8a8a8a" stroke-width="1.2"/>
+  <text x="694" y="186" font-size="13" fill="#5a5a5a" text-anchor="end">남은 주소 8개</text>
+
+  <!-- 2. 요구 순서 그대로 -->
+  <text x="24" y="232" font-size="14" font-weight="bold" fill="#9d0208">② 요구 순서 그대로 — 건너뛴 28개를 되돌려 쓰지 못한다</text>
+
+  <rect x="60" y="244" width="380" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="250" y="272" font-size="14" fill="#1b4332" text-anchor="middle">영업망 /26</text>
+
+  <rect x="440" y="244" width="24" height="46" fill="#b7e4c7" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <rect x="464" y="244" width="166" height="46" fill="#fde8c8" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="547" y="266" font-size="13" fill="#7c3d06" text-anchor="middle">건너뜀 28개</text>
+  <text x="547" y="284" font-size="13" fill="#b45309" text-anchor="middle">.68 ~ .95</text>
+
+  <rect x="630" y="244" width="190" height="46" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="725" y="272" font-size="14" fill="#1b4332" text-anchor="middle">운영망 /27</text>
+
+  <path d="M452 290 L452 306 L430 306" fill="none" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="424" y="310" font-size="13" fill="#2d6a4f" text-anchor="end">링크 /30 (.64)</text>
+
+  <path d="M820 268 L852 268" fill="none" stroke="#9d0208" stroke-width="2"/>
+  <path d="M852 268 L844 263 L844 273 Z" fill="#9d0208"/>
+  <text x="856" y="290" font-size="30" fill="#9d0208" text-anchor="middle">✕</text>
+  <text x="820" y="334" font-size="13" fill="#9d0208" text-anchor="end">남은 /30 은 .128 부터 놓아야 하는데 블록 밖이다 — 배치 실패</text>
+
+  <!-- 눈금 -->
+  <line x1="60" y1="348" x2="820" y2="348" stroke="#8a8a8a" stroke-width="1"/>
+  <line x1="60" y1="344" x2="60" y2="352" stroke="#8a8a8a" stroke-width="1"/>
+  <line x1="440" y1="344" x2="440" y2="352" stroke="#8a8a8a" stroke-width="1"/>
+  <line x1="630" y1="344" x2="630" y2="352" stroke="#8a8a8a" stroke-width="1"/>
+  <line x1="725" y1="344" x2="725" y2="352" stroke="#8a8a8a" stroke-width="1"/>
+  <line x1="820" y1="344" x2="820" y2="352" stroke="#8a8a8a" stroke-width="1"/>
+  <text x="60" y="368" font-size="13" fill="#5a5a5a" text-anchor="middle">.0</text>
+  <text x="440" y="368" font-size="13" fill="#5a5a5a" text-anchor="middle">.64</text>
+  <text x="630" y="368" font-size="13" fill="#5a5a5a" text-anchor="middle">.96</text>
+  <text x="725" y="368" font-size="13" fill="#5a5a5a" text-anchor="middle">.112</text>
+  <text x="820" y="368" font-size="13" fill="#5a5a5a" text-anchor="middle">.128</text>
+
+  <!-- 비트 설명 -->
+  <rect x="60" y="384" width="760" height="40" fill="#eef3f7" stroke="#3a6b8a" stroke-width="1.2"/>
+  <text x="76" y="402" font-size="13" fill="#1b3a4b">크기 2ᵐ 인 서브넷은 시작 주소의 하위 m 비트가 전부 0 이어야 한다.</text>
+  <text x="76" y="418" font-size="13" fill="#1b3a4b">큰 것부터 놓으면 커서가 늘 앞선 블록 크기의 배수이고, 그 값은 더 작은 뒤 블록 크기의 배수이기도 하므로 건너뛸 일이 없다.</text>
+</svg>
