@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="880" height="370" font-family="'Noto Sans KR','Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect width="880" height="370" fill="#fbfaf7"/>
+
+  <text x="40" y="36" font-size="17" font-weight="bold" fill="#1f2937">세 가지 세금이 붙는 시점 — 사고, 가지고 있고, 파는 자리</text>
+  <text x="40" y="60" font-size="13" fill="#4b5563">살 때는 아무것도 붙지 않는다. 배당을 받을 때와 팔 때 각각 다른 세금이 걸린다</text>
+
+  <!-- timeline -->
+  <line x1="60" y1="130" x2="816" y2="130" stroke="#9ca3af" stroke-width="2"/>
+  <polygon points="816,124 832,130 816,136" fill="#9ca3af"/>
+
+  <!-- node 1 : buy -->
+  <circle cx="130" cy="130" r="11" fill="#2d6a4f"/>
+  <text x="130" y="110" font-size="15" font-weight="bold" fill="#1b4332" text-anchor="middle">매수</text>
+  <rect x="48" y="158" width="164" height="76" rx="6" fill="#d8f0e2" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="130" y="184" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">붙는 세금 없음</text>
+  <text x="130" y="206" font-size="13" fill="#1b4332" text-anchor="middle">증권거래세는</text>
+  <text x="130" y="225" font-size="13" fill="#1b4332" text-anchor="middle">파는 쪽이 낸다</text>
+
+  <!-- node 2 : dividend -->
+  <circle cx="420" cy="130" r="11" fill="#b45309"/>
+  <text x="420" y="110" font-size="15" font-weight="bold" fill="#7c2d12" text-anchor="middle">보유 중 배당</text>
+  <rect x="300" y="158" width="240" height="118" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.6"/>
+  <text x="420" y="184" font-size="14" font-weight="bold" fill="#7c2d12" text-anchor="middle">배당소득세 15.4%</text>
+  <text x="420" y="206" font-size="13" fill="#7c2d12" text-anchor="middle">소득세 14% + 지방소득세 1.4%</text>
+  <text x="420" y="228" font-size="13" fill="#7c2d12" text-anchor="middle">지급 법인이 원천징수한다</text>
+  <text x="420" y="250" font-size="13" fill="#7c2d12" text-anchor="middle">금융소득 연 2,000만원을 넘으면</text>
+  <text x="420" y="269" font-size="13" fill="#7c2d12" text-anchor="middle">초과분이 종합과세로 넘어간다</text>
+
+  <!-- node 3 : sell -->
+  <circle cx="712" cy="130" r="11" fill="#9d0208"/>
+  <text x="712" y="110" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">매도</text>
+  <rect x="592" y="158" width="240" height="118" rx="6" fill="#fdeaea" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="712" y="184" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">증권거래세 0.20%</text>
+  <text x="712" y="206" font-size="13" fill="#9d0208" text-anchor="middle">이익이 아니라 매도대금에 붙는다</text>
+  <text x="712" y="228" font-size="13" fill="#9d0208" text-anchor="middle">손실이 나도 뗀다</text>
+  <text x="712" y="250" font-size="13" fill="#9d0208" text-anchor="middle">대주주면 양도소득세가 더 붙고</text>
+  <text x="712" y="269" font-size="13" fill="#9d0208" text-anchor="middle">본인이 신고한다</text>
+
+  <!-- holding span -->
+  <path d="M130 130 L420 130" stroke="#b45309" stroke-width="3"/>
+  <path d="M420 130 L712 130" stroke="#9d0208" stroke-width="3"/>
+
+  <rect x="48" y="304" width="784" height="46" rx="6" fill="#f3f4f6" stroke="#d1d5db" stroke-width="1.2"/>
+  <text x="64" y="324" font-size="13" fill="#374151">소액주주가 증권시장에서 판 상장주식의 시세차익에는 양도소득세가 없다. 그래서 세 세금 중 누구나 반드시 무는 것은</text>
+  <text x="64" y="343" font-size="13" fill="#374151">증권거래세 하나뿐이고, 배당과 양도소득세는 받는 형태와 보유 규모에 따라 걸린다.</text>
+</svg>
