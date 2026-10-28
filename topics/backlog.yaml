@@ -405,7 +405,7 @@ topics:
     difficulty: 중급
     angle: "SHA-256 대비 초당 시도 횟수를 직접 측정해 차이를 보인다"
     code: python
-    status: todo
+    status: writing
   - id: sec-003
     title: "JWT를 세션 대신 쓸 때 포기하는 것"
     category: Security
@@ -3007,7 +3007,7 @@ topics:
     angle: "확장 한계 때문에 다음 기술이 나온 흐름으로"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-105
     title: "CDN과 캐시 계층 — 응답을 앞당기는 구조"
     category: PE
@@ -4734,7 +4734,7 @@ topics:
     angle: "1만 건을 건별 커밋과 트랜잭션 묶음으로 각각 넣어 시간을 잰다. 왜 그렇게 갈리는지"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-078
     title: "VACUUM — 지웠는데 파일이 안 줄어들 때"
     category: Database
@@ -6221,6 +6221,17 @@ topics:
     tags: [정보관리기술사, database, 개념정리]
     difficulty: 중급
     angle: "자동 변환이 어디까지 되고 어디서 사람 손이 필요한지, 건수·체크섬·샘플 대조로 정합성을 어떻게 증명하는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-216
+    title: "전사적 아키텍처(EA/ITA) — 참조모형과 아키텍처 매트릭스"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "ISP·ISMP와 해상도 계층으로 묶어, BRM·SRM·DRM·TRM/SP·PRM 참조모형과 BA·AA·DA·TA·SA 아키텍처 구성, 현행-목표-이행계획의 3단 구조를 답안 형태로 정리한다"
     code: none
     origin: exam
     status: todo

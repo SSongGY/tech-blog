@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **495편** · 갱신 2026-10-28
+총 **496편** · 갱신 2026-10-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 76편
+## DB문법 (basics) — 77편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-28 | [BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가](posts/Database/sql-basics/2026-10-28-begin-immediate-write-lock/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-10-28 | [배치 삽입 — 한 건씩 넣을 때와 묶을 때](posts/Database/sql-basics/2026-10-28-batch-insert-commit-granularity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [JSON 함수 — 문서를 컬럼처럼 다루기](posts/Database/sql-basics/2026-10-27-json-functions-extract-each/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [generate_series와 가상 테이블 — 없는 행을 만들어 쓰기](posts/Database/sql-basics/2026-10-27-generate-series-virtual-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [전문검색 FTS5 — LIKE로는 안 되는 검색](posts/Database/sql-basics/2026-10-27-fts5-full-text-search/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
