@@ -1,0 +1,100 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-28-begin-immediate-write-lock
+# 명령      : python locking_demo.py
+# 수행 시각 : 2026-10-28 08:56 (대한민국 표준시)
+# 소요      : 3.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+  journal_mode delete (롤백 저널, 기본값)
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  2행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  owner   | TEXT    | NOT NULL
+  balance | INTEGER | NOT NULL
+
+  id | owner | balance
+  ---+-------+--------
+   1 | 가나  |    1000
+   2 | 다라  |     500
+
+
+[1] 롤백 저널 모드 · 두 연결 모두 BEGIN (= DEFERRED)
+  ---------------------------------------------------------------------------------------------------
+  연결          문장                                                     결과                       소요
+  A             BEGIN                                                    OK                      0.00s
+  B             BEGIN                                                    OK                      0.00s
+  A             SELECT balance FROM account WHERE id = 1                 OK                      0.00s
+  B             SELECT balance FROM account WHERE id = 2                 OK                      0.00s
+  A             UPDATE account SET balance = balance - 100 WHERE id = 1  OK                      0.00s
+  B             UPDATE account SET balance = balance + 100 WHERE id = 2  SQLITE_BUSY             0.00s
+  A             COMMIT                                                   SQLITE_BUSY             0.00s
+  B             COMMIT                                                   OK                      0.00s
+  A             COMMIT                                                   OK                      0.00s
+
+[2] WAL 모드 · 두 연결 모두 BEGIN (= DEFERRED)
+  ---------------------------------------------------------------------------------------------------
+  연결          문장                                                     결과                       소요
+  A             BEGIN                                                    OK                      0.00s
+  B             BEGIN                                                    OK                      0.00s
+  A             SELECT balance FROM account WHERE id = 1                 OK                      0.00s
+  B             SELECT balance FROM account WHERE id = 2                 OK                      0.00s
+  A             UPDATE account SET balance = balance - 100 WHERE id = 1  OK                      0.00s
+  A             COMMIT                                                   OK                      0.00s
+  B             UPDATE account SET balance = balance + 100 WHERE id = 2  SQLITE_BUSY_SNAPSHOT    0.00s
+  B             ROLLBACK                                                 OK                      0.00s
+
+[3] WAL 모드 · 두 연결 모두 BEGIN IMMEDIATE
+  ---------------------------------------------------------------------------------------------------
+  연결          문장                                                     결과                       소요
+  A             BEGIN IMMEDIATE                                          OK                      0.00s
+  B             BEGIN IMMEDIATE                                          SQLITE_BUSY             0.00s
+  A             SELECT balance FROM account WHERE id = 1                 OK                      0.00s
+  A             UPDATE account SET balance = balance - 100 WHERE id = 1  OK                      0.00s
+  A             COMMIT                                                   OK                      0.00s
+  B             BEGIN IMMEDIATE                                          OK                      0.00s
+  B             UPDATE account SET balance = balance + 100 WHERE id = 2  OK                      0.00s
+  B             COMMIT                                                   OK                      0.00s
+
+[4] busy_timeout 3000ms · 같은 충돌을 두 방식으로
+  ---------------------------------------------------------------------------------------------------
+  연결          문장                                                     결과                       소요
+  A             BEGIN IMMEDIATE                                          OK                      0.00s
+  B(IMMEDIATE)  BEGIN IMMEDIATE                                          SQLITE_BUSY             3.41s
+  A             COMMIT                                                   OK                      0.00s
+  B(DEFERRED)   BEGIN                                                    OK                      0.00s
+  B(DEFERRED)   SELECT balance FROM account WHERE id = 2                 OK                      0.00s
+  A             UPDATE account SET balance = balance - 1 WHERE id = 1    OK                      0.00s
+  B(DEFERRED)   UPDATE account SET balance = balance + 1 WHERE id = 2    SQLITE_BUSY_SNAPSHOT    0.00s
+  B(DEFERRED)   ROLLBACK                                                 OK                      0.00s
+
+최종 상태
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  2행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  owner   | TEXT    | NOT NULL
+  balance | INTEGER | NOT NULL
+
+  id | owner | balance
+  ---+-------+--------
+   1 | 가나  |     999
+   2 | 다라  |     500
+

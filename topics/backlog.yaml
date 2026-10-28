@@ -187,7 +187,7 @@ topics:
     difficulty: 심화
     angle: "TTL 만료와 GC 정지가 겹칠 때 락이 깨지는 시나리오를 타임라인으로"
     code: python
-    status: todo
+    status: done
   - id: be-007
     title: "낙관적 잠금과 비관적 잠금, 어느 쪽이 언제 싼가"
     category: Backend
@@ -2996,7 +2996,7 @@ topics:
     angle: "이전 방식의 무엇이 깨졌고 무엇으로 막았는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-104
     title: "네트워크 가상화 — VLAN, VXLAN, 오버레이"
     category: PE
@@ -4723,7 +4723,7 @@ topics:
     angle: "기본 BEGIN 과 무엇이 다른지. 두 연결이 동시에 쓸 때 어느 쪽이 SQLITE_BUSY 를 만나는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-077
     title: "배치 삽입 — 한 건씩 넣을 때와 묶을 때"
     category: Database
