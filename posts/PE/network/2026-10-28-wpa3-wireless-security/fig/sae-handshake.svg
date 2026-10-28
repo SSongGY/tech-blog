@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">SAE 핸드셰이크 — 커밋 2회, 확인 2회</text>
+  <text x="24" y="54" font-size="13" fill="#555">비밀번호는 오가지 않고, 비밀번호에서 만든 군 원소(PWE)로 각자 계산한 값만 오간다</text>
+
+  <!-- lanes -->
+  <rect x="60" y="72" width="170" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f"/>
+  <text x="145" y="97" font-size="14" text-anchor="middle" fill="#1b1b1b">STA (단말)</text>
+  <line x1="145" y1="112" x2="145" y2="372" stroke="#bbb" stroke-dasharray="5 4"/>
+
+  <rect x="650" y="72" width="170" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f"/>
+  <text x="735" y="97" font-size="14" text-anchor="middle" fill="#1b1b1b">AP (접속점)</text>
+  <line x1="735" y1="112" x2="735" y2="372" stroke="#bbb" stroke-dasharray="5 4"/>
+
+  <!-- step 1: PWE -->
+  <rect x="44" y="130" width="202" height="46" rx="4" fill="#ffffff" stroke="#b45309"/>
+  <text x="145" y="150" font-size="13" text-anchor="middle" fill="#1b1b1b">① 비밀번호 + 양쪽 MAC</text>
+  <text x="145" y="168" font-size="13" text-anchor="middle" fill="#b45309">→ PWE 유도</text>
+
+  <rect x="634" y="130" width="202" height="46" rx="4" fill="#ffffff" stroke="#b45309"/>
+  <text x="735" y="150" font-size="13" text-anchor="middle" fill="#1b1b1b">① 같은 입력으로</text>
+  <text x="735" y="168" font-size="13" text-anchor="middle" fill="#b45309">→ 같은 PWE 유도</text>
+
+  <!-- commit -->
+  <line x1="145" y1="212" x2="730" y2="212" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="438" y="205" font-size="13" text-anchor="middle" fill="#1b1b1b">② Commit — 스칼라 sA, 원소 EA</text>
+
+  <line x1="735" y1="252" x2="150" y2="252" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="438" y="245" font-size="13" text-anchor="middle" fill="#1b1b1b">③ Commit — 스칼라 sB, 원소 EB</text>
+
+  <text x="438" y="278" font-size="13" text-anchor="middle" fill="#666">양쪽이 공유 비밀 K 를 각자 계산하고 κ = Hash(K) 를 얻는다</text>
+
+  <!-- confirm -->
+  <line x1="145" y1="312" x2="730" y2="312" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="438" y="305" font-size="13" text-anchor="middle" fill="#1b1b1b">④ Confirm — cA = HMAC(κ, 주고받은 값 전부)</text>
+
+  <line x1="735" y1="352" x2="150" y2="352" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arw)"/>
+  <text x="438" y="345" font-size="13" text-anchor="middle" fill="#1b1b1b">⑤ Confirm — cB</text>
+
+  <!-- result -->
+  <rect x="200" y="384" width="480" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="409" font-size="13" text-anchor="middle" fill="#1b1b1b">⑥ κ 를 PMK 로 삼아 4-way 핸드셰이크로 세션 키 생성</text>
+
+  <text x="24" y="442" font-size="13" fill="#777">확인 값이 맞지 않으면 그 자리에서 중단된다 — 공격자는 한 번에 한 번만 추측할 수 있다</text>
+</svg>
