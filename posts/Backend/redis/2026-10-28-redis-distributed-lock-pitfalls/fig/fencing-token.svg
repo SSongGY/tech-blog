@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="down" markerWidth="9" markerHeight="7" refX="4.5" refY="6.5" orient="auto">
+      <polygon points="0 0, 9 0, 4.5 7" fill="#555"/>
+    </marker>
+    <marker id="downRed" markerWidth="9" markerHeight="7" refX="4.5" refY="6.5" orient="auto">
+      <polygon points="0 0, 9 0, 4.5 7" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">TTL 이 만료된 뒤에도 쓰기는 도착한다</text>
+  <text x="24" y="54" font-size="13" fill="#555">락은 임계구역 진입만 막는다. 늦게 도착한 쓰기는 자원 쪽에서 토큰을 보고 거절해야 막힌다</text>
+
+  <!-- time axis -->
+  <line x1="150" y1="88" x2="850" y2="88" stroke="#999"/>
+  <text x="858" y="106" font-size="13" text-anchor="end" fill="#777">시간 →</text>
+
+  <!-- lane labels -->
+  <rect x="24" y="105" width="116" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f"/>
+  <text x="82" y="130" font-size="13" text-anchor="middle" fill="#1b1b1b">워커 A</text>
+
+  <rect x="24" y="195" width="116" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f"/>
+  <text x="82" y="220" font-size="13" text-anchor="middle" fill="#1b1b1b">워커 B</text>
+
+  <rect x="24" y="299" width="116" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f"/>
+  <text x="82" y="324" font-size="13" text-anchor="middle" fill="#1b1b1b">공유 자원</text>
+
+  <line x1="150" y1="125" x2="850" y2="125" stroke="#ddd"/>
+  <line x1="150" y1="215" x2="850" y2="215" stroke="#ddd"/>
+  <line x1="150" y1="319" x2="850" y2="319" stroke="#ddd"/>
+
+  <!-- A acquires -->
+  <rect x="160" y="105" width="215" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="267" y="121" font-size="13" text-anchor="middle" fill="#1b1b1b">SET NX PX 10000 성공</text>
+  <text x="267" y="138" font-size="13" text-anchor="middle" fill="#2d6a4f">펜싱 토큰 33</text>
+
+  <!-- A stalls -->
+  <rect x="390" y="105" width="175" height="40" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="477" y="121" font-size="13" text-anchor="middle" fill="#b45309">GC 정지·네트워크</text>
+  <text x="477" y="138" font-size="13" text-anchor="middle" fill="#b45309">지연으로 멈춤</text>
+
+  <!-- TTL expiry marker -->
+  <line x1="576" y1="94" x2="576" y2="288" stroke="#9d0208" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <text x="576" y="82" font-size="13" text-anchor="middle" fill="#9d0208">TTL 만료 (A 는 모른다)</text>
+
+  <!-- B acquires -->
+  <rect x="592" y="195" width="180" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="682" y="211" font-size="13" text-anchor="middle" fill="#1b1b1b">SET NX PX 성공</text>
+  <text x="682" y="228" font-size="13" text-anchor="middle" fill="#2d6a4f">펜싱 토큰 34</text>
+
+  <!-- B writes -->
+  <line x1="640" y1="240" x2="640" y2="295" stroke="#555" stroke-width="1.4" marker-end="url(#down)"/>
+  <text x="648" y="270" font-size="13" fill="#1b1b1b">쓰기(34)</text>
+
+  <!-- A writes late -->
+  <line x1="830" y1="150" x2="830" y2="295" stroke="#9d0208" stroke-width="1.4" marker-end="url(#downRed)"/>
+  <text x="822" y="175" font-size="13" text-anchor="end" fill="#9d0208">A 가 깨어나 쓰기(33)</text>
+
+  <rect x="560" y="299" width="160" height="40" rx="4" fill="#eef3ef" stroke="#2d6a4f"/>
+  <text x="640" y="324" font-size="13" text-anchor="middle" fill="#1b1b1b">기록 (토큰 34)</text>
+
+  <rect x="740" y="299" width="130" height="40" rx="4" fill="#f6e6e6" stroke="#9d0208" stroke-width="2"/>
+  <text x="805" y="324" font-size="13" text-anchor="middle" fill="#9d0208">33 ≤ 34 → 거절</text>
+
+  <text x="24" y="372" font-size="13" fill="#1b1b1b">자원이 "마지막으로 처리한 토큰"을 기억하고, 그보다 작거나 같은 토큰의 쓰기를 거절한다.</text>
+  <text x="24" y="394" font-size="13" fill="#1b1b1b">토큰은 Redis 의 INCR 처럼 단조 증가하는 값이면 된다.</text>
+</svg>
