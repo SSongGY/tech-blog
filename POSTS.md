@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **492편** · 갱신 2026-10-28
+총 **495편** · 갱신 2026-10-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 75편
+## DB문법 (basics) — 76편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-28 | [BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가](posts/Database/sql-basics/2026-10-28-begin-immediate-write-lock/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [JSON 함수 — 문서를 컬럼처럼 다루기](posts/Database/sql-basics/2026-10-27-json-functions-extract-each/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [generate_series와 가상 테이블 — 없는 행을 만들어 쓰기](posts/Database/sql-basics/2026-10-27-generate-series-virtual-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [전문검색 FTS5 — LIKE로는 안 되는 검색](posts/Database/sql-basics/2026-10-27-fts5-full-text-search/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -108,10 +109,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 171편
+## 기술사 (pe) — 172편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-28 | [무선 네트워크 보안 — WPA3와 인증 방식](posts/PE/network/2026-10-28-wpa3-wireless-security/index.md) | 중급 | WPA3 Specification v3.5 (2025), RFC 7664, RFC 8110, IEEE 802.11 (SAE) | 문서 근거 |
 | 2026-10-28 | [VLSM — 가변 길이 서브넷 마스크](posts/PE/network/2026-10-28-vlsm-variable-length-subnet-mask/index.md) | 중급 | Python 3.13.5, RFC 950 (1985-08), RFC 1812 (1995-06), RFC 1878 (1995-12), RFC 2453 (1998-11, STD 56) | 실행 검증 |
 | 2026-10-28 | [CIDR와 라우팅 집약](posts/PE/network/2026-10-28-cidr-and-route-aggregation/index.md) | 중급 | Python 3.13.5, RFC 791 (1981-09), RFC 1338 (1992-06), RFC 4632 (2006-08, BCP 122), RFC 7608 (2015-07, BCP 198) | 실행 검증 |
 | 2026-10-27 | [워킹셋 모델과 스래싱](posts/PE/system/2026-10-27-working-set-model-and-thrashing/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
@@ -307,10 +309,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 38편
+## 일반 (general) — 39편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-28 | [분산 락을 Redis로 만들 때 빠지는 함정](posts/Backend/redis/2026-10-28-redis-distributed-lock-pitfalls/index.md) | 심화 | Python 3.13.5, fakeredis 2.40.0, redis-py 8.1.0, Redis 8.4 (DELEX 도입 버전) | 실행 검증 |
 | 2026-10-27 | [이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort의 런 탐지](posts/Performance/algorithm/2026-10-27-timsort-run-detection/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [서머타임 경계에서 사라지는 시각과 두 번 오는 시각](posts/Backend/datetime/2026-10-27-dst-missing-and-ambiguous-times/index.md) | 중급 | Python 3.13.5, tzdata 2026.5 (IANA 2026e), Windows 11 | 실행 검증 |
 | 2026-10-27 | [커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회](posts/Database/sqlite/2026-10-27-commit-batching-and-wal-size/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
