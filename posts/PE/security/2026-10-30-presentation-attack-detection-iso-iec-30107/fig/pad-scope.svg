@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="400" fill="#fbfbf7"/>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#444444"/>
+    </marker>
+    <marker id="arg" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">ISO/IEC 30107 계열이 다루는 구간</text>
+
+  <!-- pipeline -->
+  <rect x="26" y="74" width="134" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="93" y="98" font-size="14" text-anchor="middle" fill="#1b1b1b">캡처 대상자</text>
+  <text x="93" y="117" font-size="13" text-anchor="middle" fill="#555555">제시 presentation</text>
+
+  <line x1="160" y1="102" x2="186" y2="102" stroke="#444444" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="190" y="74" width="168" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="274" y="98" font-size="14" text-anchor="middle" fill="#1b1b1b">데이터 수집 서브시스템</text>
+  <text x="274" y="117" font-size="13" text-anchor="middle" fill="#555555">캡처 장치 + PAD 기능</text>
+
+  <line x1="358" y1="102" x2="388" y2="102" stroke="#444444" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="392" y="74" width="124" height="56" rx="6" fill="#f2f2ee" stroke="#777777" stroke-width="1.4"/>
+  <text x="454" y="107" font-size="14" text-anchor="middle" fill="#1b1b1b">신호처리</text>
+
+  <line x1="516" y1="102" x2="546" y2="102" stroke="#444444" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="550" y="74" width="110" height="56" rx="6" fill="#f2f2ee" stroke="#777777" stroke-width="1.4"/>
+  <text x="605" y="107" font-size="14" text-anchor="middle" fill="#1b1b1b">비교</text>
+
+  <line x1="660" y1="102" x2="690" y2="102" stroke="#444444" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="694" y="74" width="150" height="56" rx="6" fill="#f2f2ee" stroke="#777777" stroke-width="1.4"/>
+  <text x="769" y="107" font-size="14" text-anchor="middle" fill="#1b1b1b">의사결정</text>
+
+  <!-- storage -->
+  <rect x="550" y="168" width="110" height="48" rx="6" fill="#f2f2ee" stroke="#777777" stroke-width="1.4"/>
+  <text x="605" y="197" font-size="13" text-anchor="middle" fill="#1b1b1b">저장</text>
+  <line x1="605" y1="168" x2="605" y2="134" stroke="#444444" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- scope bracket -->
+  <path d="M26,146 L26,156 L358,156 L358,146" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="192" y1="156" x2="192" y2="176" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arg)"/>
+  <rect x="26" y="180" width="332" height="56" rx="6" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="192" y="204" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">ISO/IEC 30107 범위</text>
+  <text x="192" y="223" font-size="13" text-anchor="middle" fill="#2d6a4f">캡처 장치에서 일어나는 제시만</text>
+
+  <!-- out of scope -->
+  <rect x="26" y="262" width="818" height="112" rx="8" fill="#fdeeee" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="7 4"/>
+  <text x="44" y="288" font-size="14" font-weight="bold" fill="#9d0208">범위 밖 — PAD 인증으로 가려지지 않는다</text>
+  <text x="44" y="314" font-size="13" fill="#9d0208">· 캡처 장치를 건너뛰고 신호를 밀어 넣는 주입 공격</text>
+  <text x="44" y="336" font-size="13" fill="#9d0208">· 등록 단계에서 두 사람 이상에 맞춘 샘플을 내는 모핑 공격</text>
+  <text x="44" y="358" font-size="13" fill="#9d0208">· 저장·전송 구간 공격, 그리고 시스템 수준 보안·취약점 평가 전반</text>
+  <text x="470" y="314" font-size="13" fill="#9d0208">· 특정 PAD 기법 자체의 표준화</text>
+  <text x="470" y="336" font-size="13" fill="#9d0208">· 대응기법·알고리즘·센서의 상세</text>
+</svg>

@@ -120,6 +120,8 @@ verified: true
   편의 수단이고 대체 경로가 본선**이라는 원칙을 적는다.
 
 > 개념 정리: [생체인식 템플릿 보호 (ISO/IEC 24745) — 바꿀 수 없는 인증정보를 갱신 가능하게 만드는 법](../../security/2026-10-29-biometric-template-protection-iso-iec-24745/index.md)
+>
+> 개념 정리: [제시공격 탐지 (PAD, ISO/IEC 30107) — 무엇을 재고 무엇을 재지 않는가](../../security/2026-10-30-presentation-attack-detection-iso-iec-30107/index.md)
 
 끝
 

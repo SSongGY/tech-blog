@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#fbfbf7"/>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">PAD 서브시스템의 두 오류 — APCER와 BPCER</text>
+
+  <!-- column headers -->
+  <text x="430" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">PAD 판정: 정상 제시</text>
+  <text x="658" y="70" font-size="14" font-weight="bold" text-anchor="middle" fill="#333333">PAD 판정: 공격 제시</text>
+
+  <!-- row headers -->
+  <text x="40" y="128" font-size="14" font-weight="bold" fill="#333333">실제: 정상 제시</text>
+  <text x="40" y="150" font-size="13" fill="#666666">bona fide</text>
+  <text x="40" y="230" font-size="14" font-weight="bold" fill="#333333">실제: 공격 제시</text>
+  <text x="40" y="252" font-size="13" fill="#666666">attack · PAI 사용</text>
+
+  <!-- cells -->
+  <rect x="320" y="86" width="220" height="80" rx="6" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="430" y="122" font-size="14" text-anchor="middle" fill="#2d6a4f">정상 통과</text>
+  <text x="430" y="144" font-size="13" text-anchor="middle" fill="#2d6a4f">의도한 동작</text>
+
+  <rect x="548" y="86" width="220" height="80" rx="6" fill="#fef3e2" stroke="#b45309" stroke-width="1.8"/>
+  <text x="658" y="114" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">BPCER</text>
+  <text x="658" y="136" font-size="13" text-anchor="middle" fill="#b45309">정당한 이용자가 막힌다</text>
+  <text x="658" y="154" font-size="13" text-anchor="middle" fill="#b45309">편의성 저하</text>
+
+  <rect x="320" y="186" width="220" height="80" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="430" y="214" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">APCER</text>
+  <text x="430" y="236" font-size="13" text-anchor="middle" fill="#9d0208">공격이 통과한다</text>
+  <text x="430" y="254" font-size="13" text-anchor="middle" fill="#9d0208">보안 침해</text>
+
+  <rect x="548" y="186" width="220" height="80" rx="6" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="658" y="222" font-size="14" text-anchor="middle" fill="#2d6a4f">공격 차단</text>
+  <text x="658" y="244" font-size="13" text-anchor="middle" fill="#2d6a4f">의도한 동작</text>
+
+  <!-- note -->
+  <rect x="26" y="284" width="818" height="34" rx="6" fill="#f2f2ee" stroke="#777777" stroke-width="1.2"/>
+  <text x="44" y="306" font-size="13" fill="#333333">APCER는 PAI 종(PAIS)마다 따로 계산한다 · 단일 수치는 APCER를 고정한 BPCER로 적는다 (APCER 5% → BPCER20)</text>
+</svg>
