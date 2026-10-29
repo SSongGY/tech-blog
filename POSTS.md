@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **496편** · 갱신 2026-10-28
+총 **499편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -354,11 +354,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 77편
+## 기출문제 (exam) — 78편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-28 | [기출문제 — 상용 DBMS의 오픈소스 전환: 배경·제약사항·마이그레이션 절차·HA 구성](posts/PE/exam/2026-10-28-open-source-dbms-migration-and-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 Reference Manual, MySQL Shell 8.0 InnoDB ClusterSet 문서, PostgreSQL License (1996-2026) | 문서 근거 |
+| 2026-10-28 | [기출문제 — ISP의 정의와 목적, 수행방법론 체계와 절차, ISMP와의 비교](posts/PE/exam/2026-10-28-isp-definition-methodology-ismp-comparison/index.md) | 중급 | SW사업 대가산정 가이드 2024년 개정판, 전자정부지원사업 정보화전략계획(ISP) 산출물 점검 가이드 V1.0 (2015.7), ISP·ISMP 수립 공통가이드 제9판 (2025) | 문서 근거 |
 | 2026-10-27 | [기출문제 — 프롬프트 인젝션](posts/PE/exam/2026-10-27-prompt-injection/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
 | 2026-10-27 | [기출문제 — 모델 전도 공격](posts/PE/exam/2026-10-27-model-inversion-attack/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), ACM CCS 2015 Proceedings pp.1322-1333 | 문서 근거 |
 | 2026-10-27 | [기출문제 — 동적 라우팅 프로토콜 IGP와 EGP](posts/PE/exam/2026-10-27-igp-and-egp/index.md) | 중급 | RFC 1812 (1995-06), RFC 4271 (2006-01), RFC 1930 / BCP 6 (1996-03), RFC 6793 (2012-12) | 문서 근거 |
@@ -436,10 +437,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 94편
+## 주식·재무 (finance) — 96편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-29 | [프로그램매매와 차익거래 — 선물이 비싸지면 누가 현물을 사는가](posts/Finance/market/2026-10-29-program-trading-and-index-arbitrage/index.md) | 중급 | Python 3.13.5, 한국거래소 유가증권시장 프로그램매매 제도 — 규정포털 안내 2026-10-29 확인, 한국거래소 코스닥시장 사이드카 제도 — 규정포털 안내 2026-10-29 확인 | 실행 검증 |
+| 2026-10-29 | [주요사항보고서와 수시공시 — 한 사건이 두 갈래로 알려지는 이유](posts/Finance/disclosure/2026-10-29-major-business-report-and-timely-disclosure/index.md) | 중급 | Python 3.13.5, 자본시장과 금융투자업에 관한 법률 — 2025-01-21 개정 제161조, 자본시장과 금융투자업에 관한 법률 시행령 — 2025-04-22 개정 제171조, 한국거래소 유가증권시장 수시공시 제도 — 규정포털 안내 2026-10-29 확인 | 실행 검증 |
 | 2026-10-27 | [주식에 붙는 세금 — 배당소득세·증권거래세·양도소득세](posts/Finance/market/2026-10-27-taxes-on-korean-stocks/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [주식 병합과 감자 — 주식 수가 줄 때 자본이 움직이는 방향](posts/Finance/market/2026-10-27-share-consolidation-and-capital-reduction/index.md) | 중급 | Python 3.13.5, 상법 제438조~제451조 (2026-10-27 확인), 일반기업회계기준 제15장 15.11 (2026-10-27 확인) | 실행 검증 |
 | 2026-10-27 | [정리매매 — 상장폐지가 결정된 뒤의 거래](posts/Finance/market/2026-10-27-liquidation-trading-after-delisting/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
