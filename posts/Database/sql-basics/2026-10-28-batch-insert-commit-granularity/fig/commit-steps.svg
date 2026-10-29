@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#212529">커밋 한 번이 하는 일</text>
+  <text x="24" y="50" font-size="13" fill="#495057">붉은 칸이 디스크 플러시다. INSERT 문 개수가 아니라 이 칸을 몇 번 지나느냐가 시간을 가른다.</text>
+
+  <!-- 롤백 저널 모드 -->
+  <text x="24" y="88" font-size="13" font-weight="bold" fill="#212529">journal_mode = DELETE · synchronous = FULL</text>
+
+  <rect x="24"  y="100" width="122" height="52" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="85"  y="124" font-size="13" fill="#212529" text-anchor="middle">저널 파일</text>
+  <text x="85"  y="141" font-size="13" fill="#212529" text-anchor="middle">생성</text>
+
+  <rect x="166" y="100" width="122" height="52" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="227" y="124" font-size="13" fill="#212529" text-anchor="middle">원본 페이지</text>
+  <text x="227" y="141" font-size="13" fill="#212529" text-anchor="middle">기록</text>
+
+  <rect x="308" y="100" width="122" height="52" rx="5" fill="#fbe9e9" stroke="#9d0208" stroke-width="2"/>
+  <text x="369" y="124" font-size="13" fill="#9d0208" text-anchor="middle">저널</text>
+  <text x="369" y="141" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">플러시</text>
+
+  <rect x="450" y="100" width="122" height="52" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="511" y="124" font-size="13" fill="#212529" text-anchor="middle">DB 파일</text>
+  <text x="511" y="141" font-size="13" fill="#212529" text-anchor="middle">쓰기</text>
+
+  <rect x="592" y="100" width="122" height="52" rx="5" fill="#fbe9e9" stroke="#9d0208" stroke-width="2"/>
+  <text x="653" y="124" font-size="13" fill="#9d0208" text-anchor="middle">DB 파일</text>
+  <text x="653" y="141" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">플러시</text>
+
+  <rect x="734" y="100" width="122" height="52" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="795" y="124" font-size="13" fill="#212529" text-anchor="middle">저널</text>
+  <text x="795" y="141" font-size="13" fill="#212529" text-anchor="middle">삭제</text>
+
+  <line x1="148" y1="126" x2="163" y2="126" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="290" y1="126" x2="305" y2="126" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="432" y1="126" x2="447" y2="126" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="574" y1="126" x2="589" y2="126" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="716" y1="126" x2="731" y2="126" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="24" y="176" font-size="13" fill="#9d0208">플러시 2회 · 파일 생성과 삭제 각 1회</text>
+
+  <!-- WAL 모드 -->
+  <text x="24" y="218" font-size="13" font-weight="bold" fill="#212529">journal_mode = WAL</text>
+
+  <rect x="24"  y="230" width="122" height="52" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="85"  y="254" font-size="13" fill="#212529" text-anchor="middle">변경 페이지를</text>
+  <text x="85"  y="271" font-size="13" fill="#212529" text-anchor="middle">WAL에 추가</text>
+
+  <rect x="166" y="230" width="122" height="52" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="227" y="254" font-size="13" fill="#212529" text-anchor="middle">커밋 레코드</text>
+  <text x="227" y="271" font-size="13" fill="#212529" text-anchor="middle">추가</text>
+
+  <rect x="308" y="230" width="122" height="52" rx="5" fill="#fbe9e9" stroke="#9d0208" stroke-width="2"
+        stroke-dasharray="5 3"/>
+  <text x="369" y="254" font-size="13" fill="#9d0208" text-anchor="middle">WAL</text>
+  <text x="369" y="271" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">플러시</text>
+
+  <line x1="148" y1="256" x2="163" y2="256" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="290" y1="256" x2="305" y2="256" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="450" y="248" font-size="13" fill="#495057">DB 파일 쓰기도, 파일 생성·삭제도 없다.</text>
+  <text x="450" y="268" font-size="13" fill="#495057">DB 파일 반영은 체크포인트가 몰아서 한다.</text>
+
+  <text x="24" y="306" font-size="13" fill="#9d0208">플러시 1회 — synchronous = NORMAL 이면 이 칸도 건너뛴다(점선)</text>
+</svg>

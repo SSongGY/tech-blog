@@ -5377,7 +5377,7 @@ topics:
     angle: "이론가와 시장가의 괴리가 매수차익·매도차익을 부르는 구조. 베이시스를 숫자로 만들어 어느 쪽 잔고가 쌓이는지 따라가고, 만기일 수급까지 잇는다."
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-098
     title: "주요사항보고서 — 수시공시 중 따로 떼어 둔 것"
     category: Finance

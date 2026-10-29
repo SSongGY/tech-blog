@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf9"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1f2937">프로그램매매가 갈리는 두 갈래와, 괴리 부호가 정하는 방향</text>
+
+  <!-- 상단: 프로그램매매 분류 -->
+  <rect x="24" y="52" width="400" height="156" rx="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="40" y="76" font-size="14" font-weight="bold" fill="#374151">유가증권시장에서 프로그램매매로 집계되는 것</text>
+
+  <rect x="40" y="92" width="170" height="48" rx="4" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.4"/>
+  <text x="125" y="112" font-size="13" text-anchor="middle" fill="#1f2937">지수차익거래</text>
+  <text x="125" y="130" font-size="13" text-anchor="middle" fill="#4b5563">전부 해당</text>
+
+  <rect x="238" y="92" width="170" height="48" rx="4" fill="#eef2ff" stroke="#4f46e5" stroke-width="1.4"/>
+  <text x="323" y="112" font-size="13" text-anchor="middle" fill="#1f2937">비차익거래</text>
+  <text x="323" y="130" font-size="13" text-anchor="middle" fill="#4b5563">15종목 이상일 때만</text>
+
+  <text x="40" y="162" font-size="13" fill="#4b5563">지수차익거래 = KOSPI 200 구성종목 주식집단과</text>
+  <text x="40" y="182" font-size="13" fill="#4b5563">KOSPI 200 선물·옵션의 가격차를 노려 연계 매매</text>
+  <text x="40" y="202" font-size="13" fill="#4b5563">비차익거래 = 동일인이 일시에 15종목 이상 일괄매매</text>
+
+  <!-- 상단 우: 괴리 정의 -->
+  <rect x="456" y="52" width="400" height="156" rx="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="472" y="76" font-size="14" font-weight="bold" fill="#374151">무엇과 무엇을 비교하는가</text>
+
+  <text x="472" y="104" font-size="13" fill="#1f2937">이론가격 = 현물 + 보유비용 − 배당</text>
+  <text x="472" y="128" font-size="13" fill="#1f2937">시장베이시스 = 시장선물 − 현물</text>
+  <text x="472" y="152" font-size="13" fill="#1f2937">괴리 = 시장선물 − 이론가격</text>
+
+  <rect x="472" y="166" width="368" height="30" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="1.2"/>
+  <text x="656" y="186" font-size="13" text-anchor="middle" fill="#78350f">차익거래를 부르는 것은 베이시스가 아니라 괴리다</text>
+
+  <!-- 하단: 방향 -->
+  <rect x="24" y="232" width="832" height="178" rx="6" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="40" y="256" font-size="14" font-weight="bold" fill="#374151">괴리의 부호와 크기가 정하는 세 갈래</text>
+
+  <!-- 고평가 -->
+  <rect x="40" y="272" width="256" height="118" rx="5" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="168" y="294" font-size="13" font-weight="bold" text-anchor="middle" fill="#2d6a4f">괴리 &gt; 왕복 거래비용</text>
+  <text x="168" y="316" font-size="13" text-anchor="middle" fill="#4b5563">선물이 이론가보다 비싸다</text>
+  <line x1="60" y1="328" x2="276" y2="328" stroke="#a7d3bf" stroke-width="1"/>
+  <text x="168" y="344" font-size="13" text-anchor="middle" fill="#1f2937">매수차익거래</text>
+  <text x="168" y="364" font-size="13" text-anchor="middle" fill="#2d6a4f">현물 매수 + 선물 매도</text>
+  <text x="168" y="384" font-size="13" text-anchor="middle" fill="#4b5563">→ 매수차익잔고 증가</text>
+
+  <!-- 균형권 -->
+  <rect x="312" y="272" width="256" height="118" rx="5" fill="#fffbeb" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="294" font-size="13" font-weight="bold" text-anchor="middle" fill="#b45309">|괴리| ≤ 왕복 거래비용</text>
+  <text x="440" y="316" font-size="13" text-anchor="middle" fill="#4b5563">벌어졌지만 비용을 못 덮는다</text>
+  <line x1="332" y1="328" x2="548" y2="328" stroke="#e7cfa0" stroke-width="1"/>
+  <text x="440" y="344" font-size="13" text-anchor="middle" fill="#1f2937">진입하지 않는다</text>
+  <text x="440" y="364" font-size="13" text-anchor="middle" fill="#b45309">들어가면 비용만큼 손실</text>
+  <text x="440" y="384" font-size="13" text-anchor="middle" fill="#4b5563">→ 잔고 변화 없음</text>
+
+  <!-- 저평가 -->
+  <rect x="584" y="272" width="256" height="118" rx="5" fill="#fef2f2" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="712" y="294" font-size="13" font-weight="bold" text-anchor="middle" fill="#9d0208">괴리 &lt; −왕복 거래비용</text>
+  <text x="712" y="316" font-size="13" text-anchor="middle" fill="#4b5563">선물이 이론가보다 싸다</text>
+  <line x1="604" y1="328" x2="820" y2="328" stroke="#e8b4b4" stroke-width="1"/>
+  <text x="712" y="344" font-size="13" text-anchor="middle" fill="#1f2937">매도차익거래</text>
+  <text x="712" y="364" font-size="13" text-anchor="middle" fill="#9d0208">현물 매도 + 선물 매수</text>
+  <text x="712" y="384" font-size="13" text-anchor="middle" fill="#4b5563">→ 매도차익잔고 증가</text>
+</svg>
