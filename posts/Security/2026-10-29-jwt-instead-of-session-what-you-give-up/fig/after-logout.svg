@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fbfbfd"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1f">로그아웃 버튼을 누른 직후, 같은 자격증명으로 들어온 다음 요청</text>
+
+  <line x1="440" y1="46" x2="440" y2="406" stroke="#c9ccd4" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <text x="220" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">서버 세션 — 참조를 건넨다</text>
+  <text x="660" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">JWT — 값을 건넨다</text>
+
+  <!-- 좌 1 -->
+  <rect x="60" y="82" width="320" height="46" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.4"/>
+  <text x="220" y="102" text-anchor="middle" font-size="14" fill="#1b1b1f">요청이 도착한다</text>
+  <text x="220" y="120" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#6b6e76">Cookie: sid=LwnrDyoB…</text>
+  <line x1="220" y1="128" x2="220" y2="152" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- 좌 2 -->
+  <rect x="60" y="154" width="320" height="46" rx="5" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="220" y="174" text-anchor="middle" font-size="14" fill="#1b1b1f">서버가 저장소를 조회한다</text>
+  <text x="220" y="192" text-anchor="middle" font-size="13" fill="#6b6e76">네트워크 왕복 또는 메모리 조회 1회</text>
+  <line x1="220" y1="200" x2="220" y2="224" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- 좌 3 -->
+  <rect x="60" y="226" width="320" height="46" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.4"/>
+  <text x="220" y="246" text-anchor="middle" font-size="14" fill="#1b1b1f">그 자리가 비어 있다</text>
+  <text x="220" y="264" text-anchor="middle" font-size="13" fill="#6b6e76">로그아웃이 지운 것이 바로 이 자리다</text>
+  <line x1="220" y1="272" x2="220" y2="296" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- 좌 4 -->
+  <rect x="60" y="298" width="320" height="54" rx="5" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="220" y="320" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">401 거부</text>
+  <text x="220" y="342" text-anchor="middle" font-size="13" fill="#4a4d55">취소가 즉시 반영된다</text>
+
+  <!-- 우 1 -->
+  <rect x="500" y="82" width="320" height="46" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.4"/>
+  <text x="660" y="102" text-anchor="middle" font-size="14" fill="#1b1b1f">요청이 도착한다</text>
+  <text x="660" y="120" text-anchor="middle" font-size="13" font-family="Consolas,monospace" fill="#6b6e76">Authorization: Bearer eyJhbGci…</text>
+  <line x1="660" y1="128" x2="660" y2="152" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+
+  <!-- 우 2 -->
+  <rect x="500" y="154" width="320" height="46" rx="5" fill="#fdeeee" stroke="#9d0208" stroke-width="1.4"/>
+  <text x="660" y="174" text-anchor="middle" font-size="14" fill="#1b1b1f">서명을 검증한다</text>
+  <text x="660" y="192" text-anchor="middle" font-size="13" fill="#6b6e76">키만 있으면 된다. 조회할 곳이 없다</text>
+  <line x1="660" y1="200" x2="660" y2="224" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+
+  <!-- 우 3 -->
+  <rect x="500" y="226" width="320" height="46" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.4"/>
+  <text x="660" y="246" text-anchor="middle" font-size="14" fill="#1b1b1f">exp 를 확인한다 — 아직 안 지났다</text>
+  <text x="660" y="264" text-anchor="middle" font-size="13" fill="#6b6e76">만료 말고 거를 조건이 토큰 안에 없다</text>
+  <line x1="660" y1="272" x2="660" y2="296" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+
+  <!-- 우 4 -->
+  <rect x="500" y="298" width="320" height="54" rx="5" fill="#fdeeee" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="660" y="320" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">200 통과</text>
+  <text x="660" y="342" text-anchor="middle" font-size="13" fill="#4a4d55">서버는 로그아웃이 있었다는 것을 모른다</text>
+
+  <rect x="60" y="376" width="760" height="54" rx="5" fill="#fff7e8" stroke="#b45309" stroke-width="1.4"/>
+  <text x="440" y="398" text-anchor="middle" font-size="14" fill="#1b1b1f">RFC 7519 는 exp 로 만료만 정의하고 발급된 토큰을 거두는 절차는 정의하지 않는다</text>
+  <text x="440" y="419" text-anchor="middle" font-size="13" fill="#b45309">취소를 넣으려면 오른쪽 경로에도 조회 단계를 만들어야 한다 — 왼쪽과 같아진다</text>
+
+  <defs>
+    <marker id="g" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="r" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
