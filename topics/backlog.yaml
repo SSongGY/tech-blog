@@ -5399,7 +5399,7 @@ topics:
     angle: "사업보고서·반기·분기보고서의 제출 기한과 감사·검토 수준의 차이. 숫자가 나중에 바뀔 수 있는 자리가 어디인지까지 적는다."
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: fin-100
     title: "불성실공시와 공시번복 — 제재가 작동하는 방식"
     category: Finance
@@ -5410,7 +5410,7 @@ topics:
     angle: "공시불이행·공시번복·공시변경 세 유형과 벌점 누적이 부르는 결과. 공시를 읽을 때 이 이력을 같이 봐야 하는 이유를 제도 근거로 정리한다."
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: fin-101
     title: "내부회계관리제도 — 검토에서 감사로 바뀐 뒤 달라진 것"
     category: Finance
@@ -5992,7 +5992,7 @@ topics:
     angle: "정성 분석이 순서를 매기는 활동이라면 정량 분석은 노출도를 수치로 내는 활동이다. EMV·의사결정나무·몬테카를로를 직접 계산해 보이고, 입력 추정이 부실할 때 분포가 어떻게 잘못된 확신을 주는지까지 쓴다."
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-201
     title: "나이브 베이즈 분류기"
     category: PE
@@ -6003,7 +6003,7 @@ topics:
     angle: "베이즈 정리에서 조건부 독립 가정을 넣어 곱으로 분해하는 과정, 라플라스 스무딩과 로그 확률 합산, 스팸 필터·문서 분류 적용과 가정이 깨지는 지점"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-202
     title: "ISO/IEC 23894 인공지능 위험관리"
     category: PE
