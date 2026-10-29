@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="Segoe UI, Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#55606e"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="17" font-weight="600" fill="#222">탐지에서 대응까지 — 세 도구가 맡는 구간</text>
+
+  <!-- 단계 -->
+  <rect x="160" y="62" width="164" height="56" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="176" y="86" font-size="13" fill="#55606e" font-family="Consolas, monospace">DE.CM</text>
+  <text x="176" y="106" font-size="14" fill="#222">지속 모니터링</text>
+
+  <rect x="340" y="62" width="164" height="56" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="356" y="86" font-size="13" fill="#55606e" font-family="Consolas, monospace">DE.AE</text>
+  <text x="356" y="106" font-size="14" fill="#222">이상 이벤트 분석</text>
+
+  <rect x="520" y="62" width="164" height="56" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="536" y="86" font-size="13" fill="#55606e" font-family="Consolas, monospace">DE.AE-08</text>
+  <text x="536" y="106" font-size="14" fill="#222">인시던트 선언</text>
+
+  <rect x="700" y="62" width="164" height="56" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="716" y="86" font-size="13" fill="#55606e" font-family="Consolas, monospace">RS.MI</text>
+  <text x="716" y="106" font-size="14" fill="#222">완화와 격리</text>
+
+  <line x1="326" y1="90" x2="338" y2="90" stroke="#55606e" marker-end="url(#arrow)"/>
+  <line x1="506" y1="90" x2="518" y2="90" stroke="#55606e" marker-end="url(#arrow)"/>
+  <line x1="686" y1="90" x2="698" y2="90" stroke="#55606e" marker-end="url(#arrow)"/>
+
+  <!-- EDR -->
+  <text x="40" y="167" font-size="15" font-weight="600" fill="#222">EDR</text>
+  <text x="40" y="187" font-size="13" fill="#666">단말 한 대씩</text>
+  <rect x="160" y="146" width="164" height="38" rx="5" fill="#e7f3ec" stroke="#2d6a4f"/>
+  <text x="176" y="170" font-size="13" fill="#2d6a4f">단말 활동 수집</text>
+  <line x1="324" y1="165" x2="700" y2="165" stroke="#2d6a4f" stroke-dasharray="4 4"/>
+  <rect x="700" y="146" width="164" height="38" rx="5" fill="#e7f3ec" stroke="#2d6a4f"/>
+  <text x="716" y="170" font-size="13" fill="#2d6a4f">단말 격리와 차단</text>
+
+  <!-- SIEM -->
+  <text x="40" y="225" font-size="15" font-weight="600" fill="#222">SIEM</text>
+  <text x="40" y="245" font-size="13" fill="#666">조직 전체 로그</text>
+  <rect x="160" y="204" width="524" height="38" rx="5" fill="#eaf0f6" stroke="#2b5c8a"/>
+  <text x="176" y="228" font-size="13" fill="#2b5c8a">여러 로그원을 한곳에 모아 상관 분석하고 경보를 만든다</text>
+
+  <!-- SOAR -->
+  <text x="40" y="283" font-size="15" font-weight="600" fill="#222">SOAR</text>
+  <text x="40" y="303" font-size="13" fill="#666">정해 둔 절차</text>
+  <rect x="340" y="262" width="524" height="38" rx="5" fill="#f6f0e6" stroke="#b45309"/>
+  <text x="356" y="286" font-size="13" fill="#b45309">경보를 받아 분류·조치 절차를 자동으로 수행한다</text>
+
+  <!-- 주석 -->
+  <rect x="40" y="322" width="824" height="56" rx="5" fill="#f4f6f8" stroke="#55606e"/>
+  <text x="56" y="344" font-size="13" fill="#333">구간은 제품마다 겹친다. 이 그림은 CSF 2.0 Function 으로 늘어놓은 대응 흐름 위에,</text>
+  <text x="56" y="365" font-size="13" fill="#333">각 단계에서 예시 도구로 이름이 오른 자리를 표시한 것이다.</text>
+</svg>
