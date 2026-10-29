@@ -5992,7 +5992,7 @@ topics:
     angle: "정성 분석이 순서를 매기는 활동이라면 정량 분석은 노출도를 수치로 내는 활동이다. EMV·의사결정나무·몬테카를로를 직접 계산해 보이고, 입력 추정이 부실할 때 분포가 어떻게 잘못된 확신을 주는지까지 쓴다."
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-201
     title: "나이브 베이즈 분류기"
     category: PE
@@ -6003,7 +6003,7 @@ topics:
     angle: "베이즈 정리에서 조건부 독립 가정을 넣어 곱으로 분해하는 과정, 라플라스 스무딩과 로그 확률 합산, 스팸 필터·문서 분류 적용과 가정이 깨지는 지점"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-202
     title: "ISO/IEC 23894 인공지능 위험관리"
     category: PE

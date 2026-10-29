@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 438" width="880" height="438" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="438" fill="#fdfdfb"/>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1a202c">사건 모델 2가지 — 같은 문서를 다르게 본다</text>
+  <text x="24" y="52" font-size="13" fill="#4a5568">문서 "무료 자료 공유" · 어휘 16개 · 색칠한 칸이 문서에 등장한 단어</text>
+
+  <!-- 어휘 격자 -->
+  <text x="24" y="82" font-size="13" font-weight="bold" fill="#1a202c">어휘 전체</text>
+  <rect x="24" y="92" width="100" height="30" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.4" rx="3"/>
+  <text x="74" y="112" font-size="13" fill="#1a202c" text-anchor="middle">무료</text>
+  <rect x="130" y="92" width="100" height="30" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.4" rx="3"/>
+  <text x="180" y="112" font-size="13" fill="#1a202c" text-anchor="middle">자료</text>
+  <rect x="236" y="92" width="100" height="30" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.4" rx="3"/>
+  <text x="286" y="112" font-size="13" fill="#1a202c" text-anchor="middle">공유</text>
+  <rect x="342" y="92" width="100" height="30" fill="#f1f1ef" stroke="#a0aec0" stroke-width="1.2" rx="3"/>
+  <text x="392" y="112" font-size="13" fill="#718096" text-anchor="middle">쿠폰</text>
+  <rect x="448" y="92" width="100" height="30" fill="#f1f1ef" stroke="#a0aec0" stroke-width="1.2" rx="3"/>
+  <text x="498" y="112" font-size="13" fill="#718096" text-anchor="middle">대출</text>
+  <rect x="554" y="92" width="100" height="30" fill="#f1f1ef" stroke="#a0aec0" stroke-width="1.2" rx="3"/>
+  <text x="604" y="112" font-size="13" fill="#718096" text-anchor="middle">회의</text>
+  <rect x="660" y="92" width="100" height="30" fill="#f1f1ef" stroke="#a0aec0" stroke-width="1.2" rx="3"/>
+  <text x="710" y="112" font-size="13" fill="#718096" text-anchor="middle">부탁</text>
+  <rect x="766" y="92" width="90" height="30" fill="#f1f1ef" stroke="#a0aec0" stroke-width="1.2" rx="3"/>
+  <text x="811" y="112" font-size="13" fill="#718096" text-anchor="middle">… 외 9개</text>
+
+  <!-- 다항 모델 -->
+  <rect x="24" y="146" width="406" height="208" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6" rx="6"/>
+  <rect x="24" y="146" width="406" height="34" fill="#2d6a4f" rx="6"/>
+  <rect x="24" y="170" width="406" height="10" fill="#2d6a4f"/>
+  <text x="227" y="169" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">다항 (multinomial)</text>
+
+  <text x="40" y="206" font-size="13" fill="#1a202c">문서를 <tspan font-weight="bold">단어 사건의 열</tspan>로 본다. 횟수를 센다.</text>
+  <text x="40" y="232" font-size="13" fill="#4a5568">곱하는 항: 문서에 <tspan font-weight="bold" fill="#2d6a4f">나온 단어 3개</tspan>만</text>
+  <text x="40" y="256" font-size="13" fill="#4a5568">P(무료|c) × P(자료|c) × P(공유|c)</text>
+  <text x="40" y="284" font-size="13" fill="#1a202c">조건부확률 추정 (라플라스 α)</text>
+  <text x="40" y="308" font-size="13" fill="#4a5568">(단어 빈도 + α) / (클래스 총 토큰 + α|V|)</text>
+  <text x="40" y="336" font-size="13" fill="#2d6a4f">같은 단어가 두 번 나오면 두 번 곱해진다</text>
+
+  <!-- 베르누이 모델 -->
+  <rect x="450" y="146" width="406" height="208" fill="#ffffff" stroke="#b45309" stroke-width="1.6" rx="6"/>
+  <rect x="450" y="146" width="406" height="34" fill="#b45309" rx="6"/>
+  <rect x="450" y="170" width="406" height="10" fill="#b45309"/>
+  <text x="653" y="169" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">다변량 베르누이 (Bernoulli)</text>
+
+  <text x="466" y="206" font-size="13" fill="#1a202c">문서를 <tspan font-weight="bold">0/1 벡터</tspan>로 본다. 있나 없나만 본다.</text>
+  <text x="466" y="232" font-size="13" fill="#4a5568">곱하는 항: <tspan font-weight="bold" fill="#b45309">어휘 16개 전부</tspan></text>
+  <text x="466" y="256" font-size="13" fill="#4a5568">나온 3개는 P(w|c), 안 나온 13개는 1−P(w|c)</text>
+  <text x="466" y="284" font-size="13" fill="#1a202c">조건부확률 추정 (라플라스)</text>
+  <text x="466" y="308" font-size="13" fill="#4a5568">(그 단어를 포함한 문서 수 + 1) / (클래스 문서 수 + 2)</text>
+  <text x="466" y="336" font-size="13" fill="#b45309">같은 단어가 두 번 나와도 한 번만 센다</text>
+
+  <!-- 결과 -->
+  <rect x="24" y="366" width="832" height="58" fill="#f6f7f9" stroke="#4a5568" stroke-width="1.2" rx="5"/>
+  <text x="40" y="388" font-size="13" fill="#1a202c">이 문서에서는 둘 다 '정상'으로 판정했지만 사후확률이 갈렸다 — 다항 0.704, 베르누이 0.815.</text>
+  <text x="40" y="410" font-size="13" fill="#1a202c">어휘가 작을 때는 베르누이가 나을 때도 있으나 어휘가 커지면 다항이 대체로 낫다는 것이 원 논문의 결론이다.</text>
+</svg>
