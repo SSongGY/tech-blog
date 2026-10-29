@@ -111,6 +111,8 @@ verified: true
 > 관련 답안: [IT 프로젝트의 부정적 위험과 대응 전략 5가지](../2026-10-09-negative-risk-response-strategies/index.md)
 >
 > 개념 정리: [PMBOK 지식 영역과 프로세스 그룹](../../it-management/2026-10-01-pmbok-knowledge-areas-process-groups/index.md)
+>
+> 개념 정리: [ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스](../../it-management/2026-10-29-iso-31000-risk-management-principles-framework-process/index.md)
 
 끝
 

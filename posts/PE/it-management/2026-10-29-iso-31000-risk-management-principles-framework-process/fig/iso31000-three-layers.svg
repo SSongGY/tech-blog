@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrowBack" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1a202c">ISO 31000:2018 — 원칙 · 프레임워크 · 프로세스</text>
+  <text x="24" y="54" font-size="13" fill="#4a5568">원칙이 좋은 위험관리의 기준을 정하고, 프레임워크가 조직에 심고, 프로세스가 위험을 하나씩 처리한다</text>
+
+  <!-- Panel A : 원칙 -->
+  <rect x="20" y="68" width="240" height="364" fill="#ffffff" stroke="#4a5568" stroke-width="1.5" rx="6"/>
+  <rect x="20" y="68" width="240" height="34" fill="#2d6a4f" rx="6"/>
+  <rect x="20" y="92" width="240" height="10" fill="#2d6a4f"/>
+  <text x="140" y="91" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">원칙 8가지 (§4)</text>
+
+  <text x="40" y="134" font-size="13" fill="#1a202c">① 통합</text>
+  <text x="40" y="168" font-size="13" fill="#1a202c">② 구조화 · 포괄</text>
+  <text x="40" y="202" font-size="13" fill="#1a202c">③ 맞춤화</text>
+  <text x="40" y="236" font-size="13" fill="#1a202c">④ 포용</text>
+  <text x="40" y="270" font-size="13" fill="#1a202c">⑤ 동태성</text>
+  <text x="40" y="304" font-size="13" fill="#1a202c">⑥ 최선의 가용 정보</text>
+  <text x="40" y="338" font-size="13" fill="#1a202c">⑦ 인적 · 문화적 요인</text>
+  <text x="40" y="372" font-size="13" fill="#1a202c">⑧ 지속적 개선</text>
+  <text x="40" y="410" font-size="13" fill="#4a5568">설계 기준이지 점검표가 아니다</text>
+
+  <line x1="264" y1="250" x2="294" y2="250" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Panel B : 프레임워크 -->
+  <rect x="300" y="68" width="250" height="364" fill="#ffffff" stroke="#4a5568" stroke-width="1.5" rx="6"/>
+  <rect x="300" y="68" width="250" height="34" fill="#2d6a4f" rx="6"/>
+  <rect x="300" y="92" width="250" height="10" fill="#2d6a4f"/>
+  <text x="425" y="91" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">프레임워크 6요소 (§5)</text>
+
+  <rect x="316" y="114" width="194" height="40" fill="#e3f0e8" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="413" y="139" font-size="13" font-weight="bold" fill="#1a202c" text-anchor="middle">① 리더십과 의지 (§5.2)</text>
+  <line x1="413" y1="154" x2="413" y2="164" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="316" y="166" width="194" height="40" fill="#e3f0e8" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="413" y="191" font-size="13" font-weight="bold" fill="#1a202c" text-anchor="middle">② 통합 (§5.3)</text>
+  <line x1="413" y1="206" x2="413" y2="216" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="316" y="218" width="194" height="40" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="413" y="243" font-size="13" fill="#1a202c" text-anchor="middle">③ 설계 (§5.4)</text>
+  <line x1="413" y1="258" x2="413" y2="268" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="316" y="270" width="194" height="40" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="413" y="295" font-size="13" fill="#1a202c" text-anchor="middle">④ 실행 (§5.5)</text>
+  <line x1="413" y1="310" x2="413" y2="320" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="316" y="322" width="194" height="40" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="413" y="347" font-size="13" fill="#1a202c" text-anchor="middle">⑤ 평가 (§5.6)</text>
+  <line x1="413" y1="362" x2="413" y2="372" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="316" y="374" width="194" height="40" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="413" y="399" font-size="13" fill="#1a202c" text-anchor="middle">⑥ 개선 (§5.7)</text>
+
+  <path d="M 510 394 L 532 394 L 532 238 L 514 238" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arrowBack)"/>
+  <text x="516" y="212" font-size="13" fill="#2d6a4f">순환</text>
+
+  <line x1="554" y1="250" x2="584" y2="250" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Panel C : 프로세스 -->
+  <rect x="590" y="68" width="266" height="364" fill="#ffffff" stroke="#4a5568" stroke-width="1.5" rx="6"/>
+  <rect x="590" y="68" width="266" height="34" fill="#2d6a4f" rx="6"/>
+  <rect x="590" y="92" width="266" height="10" fill="#2d6a4f"/>
+  <text x="723" y="91" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">프로세스 6단계 (§6)</text>
+
+  <rect x="606" y="112" width="234" height="46" fill="#fdf0db" stroke="#b45309" stroke-width="1.4" rx="4"/>
+  <text x="723" y="132" font-size="13" font-weight="bold" fill="#1a202c" text-anchor="middle">① 의사소통과 협의 (§6.2)</text>
+  <text x="723" y="150" font-size="13" fill="#b45309" text-anchor="middle">전 단계에 걸쳐 수행</text>
+
+  <rect x="606" y="168" width="234" height="38" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="723" y="192" font-size="13" fill="#1a202c" text-anchor="middle">② 범위 · 상황 · 기준 (§6.3)</text>
+  <line x1="723" y1="206" x2="723" y2="216" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="606" y="218" width="234" height="50" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="723" y="238" font-size="13" font-weight="bold" fill="#1a202c" text-anchor="middle">③ 위험 평가 (§6.4)</text>
+  <text x="723" y="258" font-size="13" fill="#4a5568" text-anchor="middle">식별 → 분석 → 평가</text>
+  <line x1="723" y1="268" x2="723" y2="278" stroke="#4a5568" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <rect x="606" y="280" width="234" height="38" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="723" y="304" font-size="13" fill="#1a202c" text-anchor="middle">④ 위험 처리 (§6.5) — 7가지 선택안</text>
+
+  <rect x="606" y="328" width="234" height="46" fill="#fdf0db" stroke="#b45309" stroke-width="1.4" rx="4"/>
+  <text x="723" y="348" font-size="13" font-weight="bold" fill="#1a202c" text-anchor="middle">⑤ 모니터링과 검토 (§6.6)</text>
+  <text x="723" y="366" font-size="13" fill="#b45309" text-anchor="middle">전 단계에 걸쳐 수행</text>
+
+  <rect x="606" y="384" width="234" height="38" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="723" y="408" font-size="13" fill="#1a202c" text-anchor="middle">⑥ 기록과 보고 (§6.7)</text>
+</svg>
