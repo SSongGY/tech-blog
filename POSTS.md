@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **523편** · 갱신 2026-10-30
+총 **525편** · 갱신 2026-10-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -112,10 +112,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 182편
+## 기술사 (pe) — 184편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-30 | [제시공격 탐지 (PAD, ISO/IEC 30107) — 무엇을 재고 무엇을 재지 않는가](posts/PE/security/2026-10-30-presentation-attack-detection-iso-iec-30107/index.md) | 중급 | ISO/IEC 30107-1:2023 (제2판), ISO/IEC 30107-3:2023 (제2판), ISO/IEC 30107-1:2016 (대체됨), ISO/IEC 2382-37 (생체인식 용어) | 문서 근거 |
+| 2026-10-30 | [ISO/IEC/IEEE 12207 소프트웨어 생명주기 프로세스 — 프로세스군 4개와 15288이 갈리는 한 지점](posts/PE/software-engineering/2026-10-30-iso-iec-ieee-12207-software-life-cycle-processes/index.md) | 중급 | ISO/IEC/IEEE 12207:2026 (제2판), ISO/IEC/IEEE 12207:2017 (제1판), ISO/IEC/IEEE 15288:2023, ISO/IEC 12207:2008 (대체됨) | 문서 근거 |
 | 2026-10-29 | [정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션](posts/PE/it-management/2026-10-29-quantitative-risk-analysis-emv-monte-carlo/index.md) | 중급 | Python 3.13.5, IEC 31010:2019 (Edition 2.0), NIST SP 800-30 Rev. 1 | 실행 검증 |
 | 2026-10-29 | [웹 취약점 — OWASP Top 10 분류와 대응](posts/PE/security/2026-10-29-owasp-top-10-categories-and-defenses/index.md) | 중급 | OWASP Top 10:2025, OWASP Top 10:2021 | 문서 근거 |
 | 2026-10-29 | [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](posts/PE/ai/2026-10-29-nist-ai-bias-three-categories/index.md) | 중급 | NIST SP 1270 (2022-03-15 발행, 2022-03-24 갱신), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
