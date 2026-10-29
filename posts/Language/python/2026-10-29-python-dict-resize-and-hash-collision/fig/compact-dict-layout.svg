@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="310" fill="#f8f9fa"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#212529">CPython 딕셔너리는 배열 두 개로 되어 있다</text>
+  <text x="24" y="50" font-size="13" fill="#495057">슬롯 배열은 항목 배열의 몇 번째인지만 담고, 키와 값은 들어온 순서대로 항목 배열에 쌓인다. 키 1, 2, 10 을 차례로 넣은 모습이다.</text>
+
+  <text x="24" y="80" font-size="13" font-weight="bold" fill="#212529">dk_indices — 슬롯 8칸 (-1 은 빈 슬롯)</text>
+
+  <text x="54"  y="100" font-size="13" fill="#868e96" text-anchor="middle">0</text>
+  <text x="118" y="100" font-size="13" fill="#868e96" text-anchor="middle">1</text>
+  <text x="182" y="100" font-size="13" fill="#868e96" text-anchor="middle">2</text>
+  <text x="246" y="100" font-size="13" fill="#868e96" text-anchor="middle">3</text>
+  <text x="310" y="100" font-size="13" fill="#868e96" text-anchor="middle">4</text>
+  <text x="374" y="100" font-size="13" fill="#868e96" text-anchor="middle">5</text>
+  <text x="438" y="100" font-size="13" fill="#868e96" text-anchor="middle">6</text>
+  <text x="502" y="100" font-size="13" fill="#868e96" text-anchor="middle">7</text>
+
+  <rect x="24"  y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="54"  y="132" font-size="13" fill="#868e96" text-anchor="middle">-1</text>
+  <rect x="88"  y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="118" y="132" font-size="13" fill="#2d6a4f" text-anchor="middle">0</text>
+  <rect x="152" y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="182" y="132" font-size="13" fill="#2d6a4f" text-anchor="middle">1</text>
+  <rect x="216" y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="246" y="132" font-size="13" fill="#b45309" text-anchor="middle">2</text>
+  <rect x="280" y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="310" y="132" font-size="13" fill="#868e96" text-anchor="middle">-1</text>
+  <rect x="344" y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="374" y="132" font-size="13" fill="#868e96" text-anchor="middle">-1</text>
+  <rect x="408" y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="438" y="132" font-size="13" fill="#868e96" text-anchor="middle">-1</text>
+  <rect x="472" y="106" width="60" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="502" y="132" font-size="13" fill="#868e96" text-anchor="middle">-1</text>
+
+  <text x="556" y="118" font-size="13" fill="#495057">첫 슬롯 = hash &amp; 7 (하위 3비트)</text>
+  <text x="556" y="140" font-size="13" fill="#495057">칸의 수 = 항목 배열의 몇 번째인지</text>
+
+  <text x="24" y="176" font-size="13" fill="#b45309">키 10 은 10 &amp; 7 = 2 로 가는데 그 슬롯이 이미 찼다 → 탐색식 (2 × 5 + 1 + 0) &amp; 7 = 3 으로 옮겨 앉는다</text>
+
+  <text x="24" y="206" font-size="13" font-weight="bold" fill="#212529">dk_entries — 쓸 수 있는 칸 5개 (들어온 순서대로)</text>
+
+  <rect x="24"  y="214" width="150" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="99"  y="240" font-size="13" fill="#212529" text-anchor="middle">hash 1 · key 1</text>
+  <rect x="182" y="214" width="150" height="40" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="257" y="240" font-size="13" fill="#212529" text-anchor="middle">hash 2 · key 2</text>
+  <rect x="340" y="214" width="150" height="40" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="415" y="240" font-size="13" fill="#212529" text-anchor="middle">hash 10 · key 10</text>
+  <rect x="498" y="214" width="150" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="573" y="240" font-size="13" fill="#868e96" text-anchor="middle">빈 칸</text>
+  <rect x="656" y="214" width="150" height="40" rx="4" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <text x="731" y="240" font-size="13" fill="#868e96" text-anchor="middle">빈 칸</text>
+
+  <text x="24" y="280" font-size="13" fill="#495057">쓸 수 있는 칸 수 = (슬롯 8 × 2) / 3 = 5. 6번째 항목이 들어오는 순간 더 큰 테이블을 새로 만들고 전부 옮겨 담는다.</text>
+  <text x="24" y="300" font-size="13" fill="#495057">새 크기는 2의 거듭제곱 중 현재 항목 수 × 3 이상인 첫 값이다.</text>
+</svg>

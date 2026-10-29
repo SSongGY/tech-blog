@@ -5447,7 +5447,7 @@ topics:
     difficulty: 중급
     angle: "sys.getsizeof 로 항목을 하나씩 넣으며 크기가 계단처럼 뛰는 지점을 찍는다. 해시가 같은 키를 일부러 만들어 넣었을 때 조회 비용이 어떻게 변하는지도 같이 잰다."
     code: python
-    status: writing
+    status: done
   - id: gen-002
     title: "글자가 깨지는 세 가지 경로 — 인코딩·디코딩을 바이트로 따라가기"
     category: Language
