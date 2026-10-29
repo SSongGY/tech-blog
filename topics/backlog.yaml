@@ -6334,3 +6334,102 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: fin-103
+    title: "매출채권 손실충당금 — 기대신용손실을 어떻게 잡는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, receivables, ecl]
+    difficulty: 중급
+    angle: "연체 구간별 충당률을 매긴 가상 회사 표로 기대신용손실을 직접 계산하고, 충당금이 늘면 손익계산서와 현금흐름표가 각각 어떻게 움직이는지 대조한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-104
+    title: "차입원가 자본화 — 이자가 비용이 아니라 자산이 되는 구간"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, borrowing-cost, capitalisation]
+    difficulty: 중급
+    angle: "건설 중인 자산에 들어간 이자를 자본화한 회사와 전액 비용 처리한 회사의 손익·자산을 같은 숫자로 나란히 계산해, 영업이익과 감가상각이 어떻게 이연되는지 보인다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-105
+    title: "총액 인식과 순액 인식 — 본인인가 대리인인가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, agent]
+    difficulty: 중급
+    angle: "같은 거래를 총액으로 잡은 회사와 순액으로 잡은 회사의 매출액이 몇 배 차이 나는 것을 계산해 보이고, 본인·대리인 판단 지표를 들어 매출 규모 비교가 왜 위험한지 쓴다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-106
+    title: "유형자산 손상차손 — 회수가능액은 둘 중 큰 값이다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, impairment, ppe]
+    difficulty: 중급
+    angle: "사용가치와 순공정가치를 각각 계산해 둘 중 큰 값을 회수가능액으로 잡는 과정을 가상 회사 숫자로 따라가고, 영업권과 달리 환입이 가능한 점을 대조한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-107
+    title: "영업현금흐름으로 보는 상환 능력 — 이자보상배율이 놓치는 것"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [finance, ratios, cashflow, coverage]
+    difficulty: 중급
+    angle: "이익은 같은데 영업현금흐름이 갈리는 두 가상 회사로 현금흐름 기준 부채상환비율과 이자보상배율을 동시에 계산해, 발생주의 지표 하나만 볼 때 생기는 공백을 짚는다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-108
+    title: "보통주와 우선주의 가격이 갈리는 이유"
+    category: Finance
+    subcategory: market
+    track: finance
+    tags: [finance, market, preferred-stock, discount]
+    difficulty: 입문
+    angle: "의결권·배당 우선권·유동성 세 갈래로 괴리 요인을 나누고, 가상 회사의 배당금과 발행주식 수로 보통주·우선주 배당수익률을 각각 계산해 대조한다. 특정 종목의 괴리율 수치는 쓰지 않는다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-109
+    title: "합병·분할 공시와 주식매수청구권 — 반대한 주주가 받는 길"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [finance, disclosure, merger, appraisal-right]
+    difficulty: 중급
+    angle: "합병 공시부터 주주총회·청구 기간·매수가격 결정까지의 순서를 단계로 정리하고, 합병비율이 지분율을 어떻게 바꾸는지 가상 회사 두 곳으로 계산한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-110
+    title: "감사인 지정제 — 회사가 감사인을 고르지 못하는 경우"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [finance, disclosure, audit, auditor-designation]
+    difficulty: 중급
+    angle: "주기적 지정과 직권 지정을 나누어 사유를 항목으로 정리하고, 지정 사실이 사업보고서 어디에 적히는지와 투자자가 그것을 무엇의 신호로 읽어야 하는지까지 쓴다. 특정 회사 사례는 들지 않는다"
+    code: none
+    origin: manual
+    status: todo
+  - id: fin-111
+    title: "자기주식의 회계 — 사도 비용이 아니고 팔아도 이익이 아니다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, treasury-stock, equity]
+    difficulty: 중급
+    angle: "자기주식 취득·처분·소각을 가상 회사의 자본 항목 변화로 따라가며, 손익계산서를 전혀 거치지 않는데도 EPS와 ROE가 바뀌는 경로를 계산으로 보인다"
+    code: python
+    origin: manual
+    status: todo
