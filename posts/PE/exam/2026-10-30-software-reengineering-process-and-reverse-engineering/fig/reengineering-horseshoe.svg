@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="aw" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="34" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b1b1b">재공학 절차 — 추상화, 변환, 구체화</text>
+
+  <!-- abstraction level guides -->
+  <text x="36" y="104" font-size="13" fill="#6b6b6b">아키텍처 수준</text>
+  <text x="36" y="214" font-size="13" fill="#6b6b6b">기능 수준</text>
+  <text x="36" y="324" font-size="13" fill="#6b6b6b">코드 수준</text>
+  <line x1="150" y1="88" x2="740" y2="88" stroke="#e0e0da" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="150" y1="198" x2="740" y2="198" stroke="#e0e0da" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="150" y1="308" x2="740" y2="308" stroke="#e0e0da" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- left arm : reverse engineering -->
+  <rect x="160" y="282" width="190" height="56" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="255" y="306" text-anchor="middle" font-size="14" fill="#1b1b1b">기존 시스템 소스</text>
+  <text x="255" y="326" text-anchor="middle" font-size="13" fill="#4a4a4a">source code</text>
+
+  <rect x="160" y="172" width="190" height="56" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="255" y="196" text-anchor="middle" font-size="14" fill="#1b1b1b">기능·데이터 구조 복원</text>
+  <text x="255" y="216" text-anchor="middle" font-size="13" fill="#4a4a4a">call graph, schema</text>
+
+  <rect x="160" y="62" width="190" height="56" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="255" y="86" text-anchor="middle" font-size="14" fill="#1b1b1b">현행 아키텍처 표현</text>
+  <text x="255" y="106" text-anchor="middle" font-size="13" fill="#4a4a4a">as-is architecture</text>
+
+  <path d="M130,300 L130,100" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+  <text x="122" y="206" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f" transform="rotate(-90 122 206)">역공학 — 추상화</text>
+
+  <!-- bridge -->
+  <path d="M350,90 L530,90" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+  <text x="440" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">변환 Δ</text>
+  <text x="440" y="112" text-anchor="middle" font-size="13" fill="#4a4a4a">목표 구조 결정</text>
+
+  <!-- right arm : forward engineering -->
+  <rect x="530" y="62" width="190" height="56" rx="6" fill="#eef1f6" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="625" y="86" text-anchor="middle" font-size="14" fill="#1b1b1b">목표 아키텍처</text>
+  <text x="625" y="106" text-anchor="middle" font-size="13" fill="#4a4a4a">to-be architecture</text>
+
+  <rect x="530" y="172" width="190" height="56" rx="6" fill="#eef1f6" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="625" y="196" text-anchor="middle" font-size="14" fill="#1b1b1b">상세 설계·데이터 전환</text>
+  <text x="625" y="216" text-anchor="middle" font-size="13" fill="#4a4a4a">design, migration</text>
+
+  <rect x="530" y="282" width="190" height="56" rx="6" fill="#eef1f6" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="625" y="306" text-anchor="middle" font-size="14" fill="#1b1b1b">새 시스템 구현</text>
+  <text x="625" y="326" text-anchor="middle" font-size="13" fill="#4a4a4a">new source code</text>
+
+  <path d="M750,100 L750,300" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+  <text x="758" y="200" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f" transform="rotate(90 758 200)">순공학 — 구체화</text>
+
+  <!-- code level shortcut -->
+  <path d="M350,374 L530,374" stroke="#b45309" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#aw)"/>
+  <path d="M255,338 L255,374 L352,374" stroke="#b45309" stroke-width="2.5" fill="none" stroke-dasharray="7 5"/>
+  <path d="M625,374 L625,340" stroke="#b45309" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#aw)"/>
+  <text x="440" y="366" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">재구조화 · 소스코드 변환 (코드 수준에서 끝낸다)</text>
+
+  <text x="440" y="416" text-anchor="middle" font-size="13" fill="#4a4a4a">왼쪽 팔에서 올리고, 위에서 바꾸고, 오른쪽 팔로 내린다. 올리는 높이가 재공학의 범위를 정한다.</text>
+</svg>

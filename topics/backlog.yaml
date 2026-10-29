@@ -6433,3 +6433,25 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: pe-222
+    title: "소프트웨어 유지보수 유형과 유지보수 프로세스"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "ISO/IEC/IEEE 14764:2022 기준으로 유지보수 유형 4가지(수정·적응·완전·예방)와 유지보수 프로세스 활동·과업, 문제/변경 분석과 소프트웨어 폐기까지. 재공학 과제가 이 프로세스의 어디에 놓이는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-223
+    title: "데이터 역공학 — 물리 스키마에서 논리 모델 복원"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "제약이 코드에만 있는 레거시 DB에서 논리 스키마를 복원하는 절차와 기법, 데이터 프로파일링으로 암묵적 외래키·도메인을 찾는 방법, 데이터 전환 규칙으로 잇는 과정"
+    code: none
+    origin: exam
+    status: todo
