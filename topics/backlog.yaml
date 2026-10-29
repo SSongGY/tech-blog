@@ -6235,3 +6235,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-217
+    title: "시스톨릭 어레이"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, 컴퓨터구조, 개념정리]
+    difficulty: 중급
+    angle: "셀 사이로 데이터를 흘려 보내 버퍼 접근을 줄이는 구조. 행렬 곱 매핑, 가중치 고정 대 출력 고정 데이터플로, 지연과 활용률의 트레이드오프"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-218
+    title: "루프라인 모델"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, 컴퓨터구조, 개념정리]
+    difficulty: 중급
+    angle: "연산강도와 능선점으로 메모리 바운드·연산 바운드를 가르는 성능 모델. 병목 판별 절차와 최적화 선택에 쓰는 법"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-219
+    title: "도메인 특화 아키텍처(DSA)"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, 컴퓨터구조, 개념정리]
+    difficulty: 중급
+    angle: "범용 기능을 빼서 면적·전력을 얻는 설계 원리. 설계 지침, 성공 조건, 컴파일러 의존성과 수명 위험"
+    code: none
+    origin: exam
+    status: todo

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf9"/>
+
+  <text x="210" y="34" font-size="17" font-weight="bold" fill="#1b3a2f" text-anchor="middle">GPU — 범용 병렬 코어 + 하드웨어 캐시</text>
+  <text x="670" y="34" font-size="17" font-weight="bold" fill="#1b3a2f" text-anchor="middle">TPU — 고정 행렬 유닛 + 소프트웨어 버퍼</text>
+
+  <line x1="440" y1="52" x2="440" y2="400" stroke="#c8c8c0" stroke-width="1" stroke-dasharray="5 5"/>
+
+  <!-- GPU column -->
+  <rect x="60" y="62" width="300" height="52" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="210" y="86" font-size="15" fill="#15372b" text-anchor="middle">HBM (전역 메모리)</text>
+  <text x="210" y="105" font-size="13" fill="#4a5a52" text-anchor="middle">가중치 · 활성값 · 중간 결과를 모두 보관</text>
+
+  <rect x="60" y="146" width="300" height="52" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="210" y="170" font-size="15" fill="#15372b" text-anchor="middle">L2 캐시</text>
+  <text x="210" y="189" font-size="13" fill="#4a5a52" text-anchor="middle">하드웨어가 적재·축출을 결정</text>
+
+  <rect x="60" y="230" width="300" height="52" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="210" y="254" font-size="15" fill="#15372b" text-anchor="middle">L1 / 공유 메모리</text>
+  <text x="210" y="273" font-size="13" fill="#4a5a52" text-anchor="middle">SM당 합계 256KB, 분할 비율은 실행 시 선택</text>
+
+  <rect x="60" y="314" width="300" height="52" rx="6" fill="#dfeae4" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="210" y="338" font-size="15" font-weight="bold" fill="#15372b" text-anchor="middle">SM 다수 — 코어 + 텐서 코어</text>
+  <text x="210" y="357" font-size="13" fill="#4a5a52" text-anchor="middle">워프 단위로 스레드를 바꿔 지연을 가린다</text>
+
+  <path d="M210 114 L210 146" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M210 198 L210 230" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
+  <path d="M210 282 L210 314" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ah)"/>
+
+  <!-- TPU column -->
+  <rect x="520" y="62" width="300" height="52" rx="6" fill="#fdf1e3" stroke="#b45309" stroke-width="2"/>
+  <text x="670" y="86" font-size="15" fill="#5c3306" text-anchor="middle">가중치 메모리 (칩 외부 DRAM)</text>
+  <text x="670" y="105" font-size="13" fill="#6b5340" text-anchor="middle">추론 중 가중치는 읽기 전용</text>
+
+  <rect x="520" y="146" width="300" height="52" rx="6" fill="#fdf1e3" stroke="#b45309" stroke-width="2"/>
+  <text x="670" y="170" font-size="15" fill="#5c3306" text-anchor="middle">통합 버퍼 + 가중치 FIFO</text>
+  <text x="670" y="189" font-size="13" fill="#6b5340" text-anchor="middle">컴파일러가 적재 시점을 직접 지정</text>
+
+  <rect x="520" y="230" width="300" height="52" rx="6" fill="#f3e4d2" stroke="#b45309" stroke-width="2.5"/>
+  <text x="670" y="254" font-size="15" font-weight="bold" fill="#5c3306" text-anchor="middle">MXU — 256×256 시스톨릭 어레이</text>
+  <text x="670" y="273" font-size="13" fill="#6b5340" text-anchor="middle">값이 셀에서 셀로 전달돼 버퍼 접근이 준다</text>
+
+  <rect x="520" y="314" width="300" height="52" rx="6" fill="#fdf1e3" stroke="#b45309" stroke-width="2"/>
+  <text x="670" y="338" font-size="15" fill="#5c3306" text-anchor="middle">누산기 → 활성화 유닛</text>
+  <text x="670" y="357" font-size="13" fill="#6b5340" text-anchor="middle">결과는 통합 버퍼로 되돌아간다</text>
+
+  <path d="M670 114 L670 146" stroke="#b45309" stroke-width="2" marker-end="url(#ao)"/>
+  <path d="M670 198 L670 230" stroke="#b45309" stroke-width="2" marker-end="url(#ao)"/>
+  <path d="M670 282 L670 314" stroke="#b45309" stroke-width="2" marker-end="url(#ao)"/>
+  <path d="M828 340 C860 340 860 160 828 160" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#ao)"/>
+
+  <text x="210" y="398" font-size="13" fill="#444" text-anchor="middle">적재 순서를 하드웨어가 정한다 → 제어 회로가 면적을 쓴다</text>
+  <text x="670" y="398" font-size="13" fill="#444" text-anchor="middle">적재 순서를 컴파일러가 정한다 → 제어는 다이의 2%</text>
+
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ao" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>
