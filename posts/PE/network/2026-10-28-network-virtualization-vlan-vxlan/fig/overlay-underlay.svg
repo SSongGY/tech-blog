@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="340" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="a1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#212529">오버레이와 언더레이</text>
+  <text x="24" y="50" font-size="13" fill="#495057">같은 VNI를 가진 종단은 IP 몇 홉 건너에 있어도 한 L2 구간처럼 통신한다.</text>
+
+  <!-- 오버레이 영역 -->
+  <rect x="24" y="68" width="832" height="96" rx="6" fill="#eef4f0" stroke="#2d6a4f"
+        stroke-width="1.5" stroke-dasharray="7 4"/>
+  <text x="40" y="90" font-size="13" font-weight="bold" fill="#2d6a4f">오버레이 — 테넌트가 보는 가상 L2 구간 (VNI 10100)</text>
+
+  <rect x="60" y="100" width="150" height="46" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="135" y="129" font-size="13" fill="#212529" text-anchor="middle">가상 서버 A</text>
+
+  <rect x="670" y="100" width="150" height="46" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="745" y="129" font-size="13" fill="#212529" text-anchor="middle">가상 서버 B</text>
+
+  <line x1="212" y1="123" x2="666" y2="123" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="440" y="117" font-size="13" fill="#2d6a4f" text-anchor="middle">같은 네트워크로 보인다</text>
+
+  <!-- VTEP -->
+  <rect x="60" y="190" width="150" height="56" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="135" y="214" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">VTEP A</text>
+  <text x="135" y="233" font-size="13" fill="#b45309" text-anchor="middle">캡슐화</text>
+
+  <rect x="670" y="190" width="150" height="56" rx="5" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="745" y="214" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">VTEP B</text>
+  <text x="745" y="233" font-size="13" fill="#b45309" text-anchor="middle">캡슐화 해제</text>
+
+  <line x1="135" y1="150" x2="135" y2="186" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#a1)"/>
+  <line x1="745" y1="186" x2="745" y2="150" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#a1)"/>
+
+  <!-- 언더레이 -->
+  <rect x="250" y="190" width="380" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="214" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">언더레이 — 기존 IP 라우팅 망</text>
+  <text x="440" y="233" font-size="13" fill="#495057" text-anchor="middle">UDP 4789 패킷으로만 보인다</text>
+
+  <line x1="212" y1="218" x2="246" y2="218" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#a1)"/>
+  <line x1="632" y1="218" x2="666" y2="218" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#a1)"/>
+
+  <text x="24" y="284" font-size="13" fill="#495057">언더레이 장비는 안쪽 MAC 주소를 배우지 않는다. 테넌트 수가 늘어도 중계 장비의 MAC 표는 커지지 않는다.</text>
+  <text x="24" y="306" font-size="13" fill="#495057">장애 복구와 다중 경로는 언더레이의 IP 라우팅이 맡는다. 스패닝 트리로 경로를 막을 일이 없다.</text>
+</svg>

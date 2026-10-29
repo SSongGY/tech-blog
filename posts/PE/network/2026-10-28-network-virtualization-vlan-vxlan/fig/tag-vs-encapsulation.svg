@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="300" fill="#f8f9fa"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#212529">태그 삽입(VLAN)과 캡슐화(VXLAN)</text>
+  <text x="24" y="50" font-size="13" fill="#495057">VLAN은 프레임 안에 4바이트를 끼워 넣는다. VXLAN은 프레임 전체를 다른 패킷의 내용으로 감싼다.</text>
+
+  <!-- 802.1Q -->
+  <text x="24" y="84" font-size="13" font-weight="bold" fill="#212529">IEEE 802.1Q 태그 프레임 — 식별자 12비트</text>
+
+  <rect x="24"  y="94" width="110" height="50" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="79"  y="118" font-size="13" fill="#212529" text-anchor="middle">목적지 MAC</text>
+  <text x="79"  y="136" font-size="13" fill="#6c757d" text-anchor="middle">6바이트</text>
+
+  <rect x="134" y="94" width="110" height="50" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="189" y="118" font-size="13" fill="#212529" text-anchor="middle">출발지 MAC</text>
+  <text x="189" y="136" font-size="13" fill="#6c757d" text-anchor="middle">6바이트</text>
+
+  <rect x="244" y="94" width="200" height="50" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="344" y="114" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">VLAN 태그 4바이트</text>
+  <text x="344" y="134" font-size="13" fill="#b45309" text-anchor="middle">TPID 0x8100 · VID 12비트</text>
+
+  <rect x="444" y="94" width="100" height="50" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="494" y="118" font-size="13" fill="#212529" text-anchor="middle">이더타입</text>
+  <text x="494" y="136" font-size="13" fill="#6c757d" text-anchor="middle">2바이트</text>
+
+  <rect x="544" y="94" width="312" height="50" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="700" y="124" font-size="13" fill="#212529" text-anchor="middle">페이로드</text>
+
+  <text x="244" y="164" font-size="13" fill="#b45309">VID 12비트 → 쓸 수 있는 값 1~4094 (0과 4095는 예약)</text>
+
+  <!-- VXLAN -->
+  <text x="24" y="206" font-size="13" font-weight="bold" fill="#212529">RFC 7348 VXLAN 캡슐화 — 식별자 24비트</text>
+
+  <rect x="24"  y="216" width="90" height="50" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="69"  y="240" font-size="13" fill="#212529" text-anchor="middle">외부 MAC</text>
+  <text x="69"  y="258" font-size="13" fill="#6c757d" text-anchor="middle">VTEP 간</text>
+
+  <rect x="114" y="216" width="90" height="50" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="159" y="240" font-size="13" fill="#212529" text-anchor="middle">외부 IP</text>
+  <text x="159" y="258" font-size="13" fill="#6c757d" text-anchor="middle">VTEP 간</text>
+
+  <rect x="204" y="216" width="110" height="50" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="259" y="240" font-size="13" fill="#212529" text-anchor="middle">외부 UDP</text>
+  <text x="259" y="258" font-size="13" fill="#6c757d" text-anchor="middle">포트 4789</text>
+
+  <rect x="314" y="216" width="160" height="50" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="394" y="236" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">VXLAN 헤더 8바이트</text>
+  <text x="394" y="256" font-size="13" fill="#b45309" text-anchor="middle">VNI 24비트</text>
+
+  <rect x="474" y="216" width="382" height="50" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"
+        stroke-dasharray="6 3"/>
+  <text x="665" y="236" font-size="13" fill="#212529" text-anchor="middle">원본 이더넷 프레임 전체</text>
+  <text x="665" y="256" font-size="13" fill="#6c757d" text-anchor="middle">위쪽 프레임이 그대로 들어간다</text>
+
+  <text x="314" y="286" font-size="13" fill="#b45309">VNI 24비트 → 약 1,600만 세그먼트</text>
+</svg>
