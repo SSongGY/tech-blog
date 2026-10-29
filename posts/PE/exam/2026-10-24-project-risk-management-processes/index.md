@@ -113,6 +113,8 @@ verified: true
 > 개념 정리: [PMBOK 지식 영역과 프로세스 그룹](../../it-management/2026-10-01-pmbok-knowledge-areas-process-groups/index.md)
 >
 > 개념 정리: [ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스](../../it-management/2026-10-29-iso-31000-risk-management-principles-framework-process/index.md)
+>
+> 개념 정리: [정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션](../../it-management/2026-10-29-quantitative-risk-analysis-emv-monte-carlo/index.md)
 
 끝
 

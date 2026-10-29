@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrowPick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1a202c">의사결정나무 — 잎의 기대값을 뿌리로 접는다 (rollback)</text>
+  <text x="24" y="52" font-size="13" fill="#4a5568">단위 백만원 · 기회노드에서 확률가중 평균을 내고, 가지 비용을 더해 결정노드로 올린다</text>
+
+  <!-- 결정 노드 (사각형) -->
+  <rect x="20" y="180" width="96" height="56" fill="#ffffff" stroke="#1a202c" stroke-width="2"/>
+  <text x="68" y="204" font-size="14" font-weight="bold" fill="#1a202c" text-anchor="middle">결정</text>
+  <text x="68" y="224" font-size="13" fill="#4a5568" text-anchor="middle">사각형</text>
+
+  <!-- 세 가지 -->
+  <line x1="116" y1="196" x2="264" y2="110" stroke="#4a5568" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="116" y1="208" x2="264" y2="208" stroke="#4a5568" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="116" y1="220" x2="264" y2="312" stroke="#2d6a4f" stroke-width="2.4" marker-end="url(#arrowPick)"/>
+
+  <rect x="126" y="140" width="128" height="19" fill="#fdfdfb"/>
+  <text x="190" y="155" font-size="13" fill="#4a5568" text-anchor="middle">자체 개발 2,000</text>
+  <rect x="134" y="190" width="112" height="19" fill="#fdfdfb"/>
+  <text x="190" y="205" font-size="13" fill="#4a5568" text-anchor="middle">패키지 2,600</text>
+  <rect x="126" y="258" width="128" height="19" fill="#fdfdfb"/>
+  <text x="190" y="273" font-size="13" fill="#2d6a4f" text-anchor="middle">현행 유지 900</text>
+
+  <!-- 기회 노드 (원) -->
+  <circle cx="290" cy="108" r="22" fill="#ffffff" stroke="#1a202c" stroke-width="2"/>
+  <circle cx="290" cy="208" r="22" fill="#ffffff" stroke="#1a202c" stroke-width="2"/>
+  <circle cx="290" cy="316" r="22" fill="#ffffff" stroke="#1a202c" stroke-width="2"/>
+  <text x="290" y="113" font-size="13" fill="#4a5568" text-anchor="middle">원</text>
+  <text x="290" y="213" font-size="13" fill="#4a5568" text-anchor="middle">원</text>
+  <text x="290" y="321" font-size="13" fill="#4a5568" text-anchor="middle">원</text>
+
+  <!-- 가지 1 결과 -->
+  <line x1="310" y1="97" x2="340" y2="80" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="310" y1="119" x2="340" y2="138" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="346" y="62" width="196" height="34" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.2" rx="4"/>
+  <text x="444" y="84" font-size="13" fill="#1a202c" text-anchor="middle">p=0.60 요건 충족 +0</text>
+  <rect x="346" y="122" width="196" height="34" fill="#fdeaea" stroke="#9d0208" stroke-width="1.2" rx="4"/>
+  <text x="444" y="144" font-size="13" fill="#1a202c" text-anchor="middle">p=0.40 재작업 +900</text>
+  <text x="554" y="113" font-size="13" fill="#1a202c">기회노드 360 · 가지 <tspan font-weight="bold">2,360</tspan></text>
+
+  <!-- 가지 2 결과 -->
+  <line x1="310" y1="197" x2="340" y2="190" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="310" y1="219" x2="340" y2="242" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="346" y="173" width="196" height="34" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.2" rx="4"/>
+  <text x="444" y="195" font-size="13" fill="#1a202c" text-anchor="middle">p=0.90 표준 충족 +0</text>
+  <rect x="346" y="226" width="196" height="34" fill="#fff4e3" stroke="#b45309" stroke-width="1.2" rx="4"/>
+  <text x="444" y="248" font-size="13" fill="#1a202c" text-anchor="middle">p=0.10 커스터마이징 +500</text>
+  <text x="554" y="221" font-size="13" fill="#1a202c">기회노드 50 · 가지 <tspan font-weight="bold">2,650</tspan></text>
+
+  <!-- 가지 3 결과 -->
+  <line x1="310" y1="305" x2="340" y2="298" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="310" y1="327" x2="340" y2="350" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="346" y="281" width="196" height="34" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.2" rx="4"/>
+  <text x="444" y="303" font-size="13" fill="#1a202c" text-anchor="middle">p=0.45 운영 가능 +0</text>
+  <rect x="346" y="334" width="196" height="34" fill="#fdeaea" stroke="#9d0208" stroke-width="1.2" rx="4"/>
+  <text x="444" y="356" font-size="13" fill="#1a202c" text-anchor="middle">p=0.55 장애 대응 +1,500</text>
+  <text x="554" y="329" font-size="13" fill="#2d6a4f">기회노드 825 · 가지 <tspan font-weight="bold">1,725</tspan> 선택</text>
+
+  <!-- 경고 -->
+  <rect x="20" y="382" width="840" height="46" fill="#fff4e3" stroke="#b45309" stroke-width="1.2" rx="5"/>
+  <text x="34" y="401" font-size="13" font-weight="bold" fill="#b45309">기대값이 가리지 못하는 것</text>
+  <text x="34" y="420" font-size="13" fill="#1a202c">선택된 가지는 확률 0.55 로 2,400 이 되고, 그 값은 기각된 '자체 개발'의 기대비용 2,360 보다 크다. 기대값은 위험 선호를 담지 않는다.</text>
+</svg>
