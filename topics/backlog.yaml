@@ -405,7 +405,7 @@ topics:
     difficulty: 중급
     angle: "SHA-256 대비 초당 시도 횟수를 직접 측정해 차이를 보인다"
     code: python
-    status: writing
+    status: done
   - id: sec-003
     title: "JWT를 세션 대신 쓸 때 포기하는 것"
     category: Security
@@ -3007,7 +3007,7 @@ topics:
     angle: "확장 한계 때문에 다음 기술이 나온 흐름으로"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-105
     title: "CDN과 캐시 계층 — 응답을 앞당기는 구조"
     category: PE
@@ -4734,7 +4734,7 @@ topics:
     angle: "1만 건을 건별 커밋과 트랜잭션 묶음으로 각각 넣어 시간을 잰다. 왜 그렇게 갈리는지"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-078
     title: "VACUUM — 지웠는데 파일이 안 줄어들 때"
     category: Database
@@ -5970,7 +5970,7 @@ topics:
     angle: "ISO 31000:2018의 세 층(원칙·프레임워크·프로세스)을 갈라 정리하고, 프로세스 6단계를 PMBOK 프로젝트 위험관리와 대응시킨다. 조직 차원 위험관리와 프로젝트 차원 위험관리가 어디서 갈리는지를 축으로 쓴다."
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-199
     title: "AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적"
     category: PE

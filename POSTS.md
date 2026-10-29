@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **500편** · 갱신 2026-10-29
+총 **502편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -110,12 +110,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 172편
+## 기술사 (pe) — 173편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-28 | [무선 네트워크 보안 — WPA3와 인증 방식](posts/PE/network/2026-10-28-wpa3-wireless-security/index.md) | 중급 | WPA3 Specification v3.5 (2025), RFC 7664, RFC 8110, IEEE 802.11 (SAE) | 문서 근거 |
 | 2026-10-28 | [VLSM — 가변 길이 서브넷 마스크](posts/PE/network/2026-10-28-vlsm-variable-length-subnet-mask/index.md) | 중급 | Python 3.13.5, RFC 950 (1985-08), RFC 1812 (1995-06), RFC 1878 (1995-12), RFC 2453 (1998-11, STD 56) | 실행 검증 |
+| 2026-10-28 | [네트워크 가상화 — VLAN, VXLAN, 오버레이](posts/PE/network/2026-10-28-network-virtualization-vlan-vxlan/index.md) | 중급 | IEEE 802.1Q, RFC 7348 (VXLAN), RFC 8926 (Geneve), RFC 7637 (NVGRE) | 문서 근거 |
 | 2026-10-28 | [CIDR와 라우팅 집약](posts/PE/network/2026-10-28-cidr-and-route-aggregation/index.md) | 중급 | Python 3.13.5, RFC 791 (1981-09), RFC 1338 (1992-06), RFC 4632 (2006-08, BCP 122), RFC 7608 (2015-07, BCP 198) | 실행 검증 |
 | 2026-10-27 | [워킹셋 모델과 스래싱](posts/PE/system/2026-10-27-working-set-model-and-thrashing/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](posts/PE/data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md) | 중급 | Hochreiter & Schmidhuber, Neural Computation 9(8) (1997), Gers et al., Neural Computation 12(10) (2000), Vaswani et al., NeurIPS (2017), Bai et al., arXiv:1803.01271 (2018), Lim et al., arXiv:1912.09363 v3 (2020-09) | 문서 근거 |
@@ -310,11 +311,12 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 39편
+## 일반 (general) — 40편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-28 | [분산 락을 Redis로 만들 때 빠지는 함정](posts/Backend/redis/2026-10-28-redis-distributed-lock-pitfalls/index.md) | 심화 | Python 3.13.5, fakeredis 2.40.0, redis-py 8.1.0, Redis 8.4 (DELEX 도입 버전) | 실행 검증 |
+| 2026-10-28 | [비밀번호 해시에 bcrypt·argon2를 쓰는 이유](posts/Security/2026-10-28-password-hashing-bcrypt-argon2/index.md) | 중급 | Python 3.13.5, bcrypt 5.0.0, argon2-cffi 25.1.0, Windows 11 | 실행 검증 |
 | 2026-10-27 | [이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort의 런 탐지](posts/Performance/algorithm/2026-10-27-timsort-run-detection/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [서머타임 경계에서 사라지는 시각과 두 번 오는 시각](posts/Backend/datetime/2026-10-27-dst-missing-and-ambiguous-times/index.md) | 중급 | Python 3.13.5, tzdata 2026.5 (IANA 2026e), Windows 11 | 실행 검증 |
 | 2026-10-27 | [커밋을 몇 번으로 나누느냐가 만드는 차이 — 1회·100회·1만 회](posts/Database/sqlite/2026-10-27-commit-batching-and-wal-size/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
