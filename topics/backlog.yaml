@@ -5421,7 +5421,7 @@ topics:
     angle: "재무제표 감사와 무엇이 다른 절차인가. 비적정 의견이 뜻하는 것과 그것이 재무제표 신뢰도에 주는 신호를 제도 근거로 정리한다."
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-102
     title: "DART 활용법 — 공시 원문을 찾아 읽는 순서"
     category: Finance
@@ -5432,7 +5432,7 @@ topics:
     angle: "회사명으로 들어가 정기보고서·주요사항보고서·지분공시를 차례로 여는 동선. 재무제표 원문과 XBRL 재무공시 중 어느 쪽을 언제 쓰는지까지 적는다."
     code: none
     origin: manual
-    status: todo
+    status: done
 
   # ========== 일반 보충분 2026-10-22 (track: general) ==========
   # 일반 트랙은 실험·측정·코드가 반드시 들어간다(§14). 그래서 이 묶음은 전부

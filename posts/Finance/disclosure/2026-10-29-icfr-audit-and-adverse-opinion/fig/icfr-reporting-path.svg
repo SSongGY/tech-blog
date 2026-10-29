@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#33312e"/>
+    </marker>
+    <marker id="ahg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="26" font-size="15" font-weight="bold" fill="#33312e">내부회계관리제도 보고 경로 — 누가 무엇을 작성해 누구에게 내는가</text>
+
+  <!-- 보고 대상 -->
+  <rect x="300" y="40" width="150" height="46" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="375" y="69" font-size="15" fill="#33312e" text-anchor="middle">주주총회</text>
+
+  <rect x="480" y="40" width="150" height="46" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="555" y="69" font-size="15" fill="#33312e" text-anchor="middle">이사회</text>
+
+  <!-- 회사 안쪽 경로 -->
+  <rect x="40" y="140" width="130" height="52" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="105" y="163" font-size="15" fill="#33312e" text-anchor="middle">대표자</text>
+  <text x="105" y="181" font-size="13" fill="#6b655c" text-anchor="middle">제8조 제1항·제3항</text>
+
+  <rect x="215" y="140" width="165" height="52" rx="4" fill="#efece4" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="297" y="163" font-size="15" fill="#33312e" text-anchor="middle">운영실태보고서</text>
+  <text x="297" y="181" font-size="13" fill="#6b655c" text-anchor="middle">제8조 제4항</text>
+
+  <rect x="425" y="140" width="160" height="52" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="505" y="163" font-size="15" fill="#33312e" text-anchor="middle">감사(감사위원회)</text>
+  <text x="505" y="181" font-size="13" fill="#6b655c" text-anchor="middle">제8조 제5항</text>
+
+  <rect x="640" y="230" width="170" height="52" rx="4" fill="#efece4" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="725" y="253" font-size="15" fill="#33312e" text-anchor="middle">평가보고서</text>
+  <text x="725" y="271" font-size="13" fill="#6b655c" text-anchor="middle">운영실태를 평가한 결과</text>
+
+  <!-- 외부감사인 -->
+  <rect x="40" y="330" width="150" height="52" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="115" y="353" font-size="15" fill="#2d6a4f" text-anchor="middle">외부감사인</text>
+  <text x="115" y="371" font-size="13" fill="#2d6a4f" text-anchor="middle">제8조 제6항·제7항</text>
+
+  <rect x="250" y="330" width="250" height="52" rx="4" fill="#e7f0ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="375" y="353" font-size="15" fill="#2d6a4f" text-anchor="middle">감사보고서 또는 검토보고서</text>
+  <text x="375" y="371" font-size="13" fill="#2d6a4f" text-anchor="middle">자산 1천억원 이상 상장사는 감사</text>
+
+  <!-- 화살표: 대표자 → 운영실태보고서 -->
+  <path d="M 170 166 L 209 166" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- 운영실태보고서 → 주주총회 -->
+  <path d="M 310 140 L 310 110 L 375 110 L 375 92" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <!-- 운영실태보고서 → 이사회 -->
+  <path d="M 345 140 L 345 120 L 555 120 L 555 92" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="398" y="135" font-size="13" fill="#6b655c">사업연도마다 보고</text>
+
+  <!-- 운영실태보고서 → 감사(감사위원회) -->
+  <path d="M 380 166 L 419 166" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+
+  <!-- 감사(감사위원회) → 평가보고서 -->
+  <path d="M 505 192 L 505 256 L 634 256" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="516" y="222" font-size="13" fill="#6b655c">운영실태를 평가해 작성</text>
+
+  <!-- 평가보고서 → 이사회 -->
+  <path d="M 790 230 L 790 63 L 636 63" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#ah)"/>
+  <text x="648" y="110" font-size="13" fill="#6b655c">정기총회 1주 전까지</text>
+  <text x="648" y="128" font-size="13" fill="#6b655c">이사회에 대면 보고</text>
+
+  <!-- 외부감사인 → 보고서 -->
+  <path d="M 190 356 L 244 356" stroke="#2d6a4f" stroke-width="1.8" fill="none" marker-end="url(#ahg)"/>
+
+  <!-- 외부감사인 → 운영실태보고서 (인증 대상) -->
+  <path d="M 105 330 L 105 215 L 297 215 L 297 198" stroke="#2d6a4f" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ahg)"/>
+  <text x="118" y="250" font-size="13" fill="#2d6a4f">보고 내용이 인증 대상이다</text>
+</svg>
