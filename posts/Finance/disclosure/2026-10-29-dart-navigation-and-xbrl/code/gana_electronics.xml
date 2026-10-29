@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  가상 회사 '가나전자'의 XBRL 인스턴스를 구조만 같게 줄여 만든 것이다.
+  실제 DART 인스턴스는 K-IFRS 택사노미의 요소 이름과 네임스페이스를 쓰고
+  파일 하나에 수천 개의 사실(fact)이 들어간다. 여기서는 세 가지만 남겼다.
+    - 기간을 가리키는 context
+    - 금액의 단위를 가리키는 unit
+    - 요소 이름 + contextRef + unitRef 로 적힌 사실
+  숫자는 전부 지어낸 값이다.
+-->
+<xbrl xmlns="http://www.xbrl.org/2003/instance"
+      xmlns:demo="http://example.invalid/demo-taxonomy">
+
+  <context id="FY2025">
+    <entity><identifier scheme="http://example.invalid/corp">가나전자</identifier></entity>
+    <period><startDate>2025-01-01</startDate><endDate>2025-12-31</endDate></period>
+  </context>
+  <context id="FY2024">
+    <entity><identifier scheme="http://example.invalid/corp">가나전자</identifier></entity>
+    <period><startDate>2024-01-01</startDate><endDate>2024-12-31</endDate></period>
+  </context>
+  <context id="FY2023">
+    <entity><identifier scheme="http://example.invalid/corp">가나전자</identifier></entity>
+    <period><startDate>2023-01-01</startDate><endDate>2023-12-31</endDate></period>
+  </context>
+
+  <unit id="KRW">
+    <measure>iso4217:KRW</measure>
+  </unit>
+
+  <demo:Revenue contextRef="FY2025" unitRef="KRW" decimals="-6">1842300000000</demo:Revenue>
+  <demo:Revenue contextRef="FY2024" unitRef="KRW" decimals="-6">1710800000000</demo:Revenue>
+  <demo:Revenue contextRef="FY2023" unitRef="KRW" decimals="-6">1655400000000</demo:Revenue>
+
+  <demo:OperatingIncome contextRef="FY2025" unitRef="KRW" decimals="-6">112700000000</demo:OperatingIncome>
+  <demo:OperatingIncome contextRef="FY2024" unitRef="KRW" decimals="-6">139500000000</demo:OperatingIncome>
+  <demo:OperatingIncome contextRef="FY2023" unitRef="KRW" decimals="-6">128100000000</demo:OperatingIncome>
+
+</xbrl>

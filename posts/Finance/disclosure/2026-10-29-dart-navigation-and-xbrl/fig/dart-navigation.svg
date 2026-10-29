@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#33312e"/>
+    </marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="26" font-size="15" font-weight="bold" fill="#33312e">회사명 하나로 들어가 네 갈래로 갈라지는 동선 — 각 갈래가 답하는 질문</text>
+
+  <rect x="40" y="150" width="170" height="80" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.8"/>
+  <text x="125" y="180" font-size="15" fill="#33312e" text-anchor="middle">DART 공시통합검색</text>
+  <text x="125" y="202" font-size="13" fill="#6b655c" text-anchor="middle">회사명을 넣고</text>
+  <text x="125" y="220" font-size="13" fill="#6b655c" text-anchor="middle">공시유형으로 좁힌다</text>
+
+  <!-- 정기공시 -->
+  <rect x="260" y="40" width="160" height="52" rx="4" fill="#efece4" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="340" y="72" font-size="15" fill="#33312e" text-anchor="middle">정기공시</text>
+  <rect x="470" y="40" width="370" height="52" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="484" y="63" font-size="14" fill="#33312e">사업보고서 · 반기보고서 · 분기보고서</text>
+  <text x="484" y="82" font-size="13" fill="#6b655c">이 회사가 어떤 회사인가</text>
+
+  <!-- 주요사항보고 -->
+  <rect x="260" y="120" width="160" height="52" rx="4" fill="#efece4" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="340" y="152" font-size="15" fill="#33312e" text-anchor="middle">주요사항보고</text>
+  <rect x="470" y="120" width="370" height="52" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="484" y="143" font-size="14" fill="#33312e">주요사항보고서</text>
+  <text x="484" y="162" font-size="13" fill="#6b655c">방금 무슨 일이 있었는가</text>
+
+  <!-- 지분공시 -->
+  <rect x="260" y="200" width="160" height="52" rx="4" fill="#efece4" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="340" y="232" font-size="15" fill="#33312e" text-anchor="middle">지분공시</text>
+  <rect x="470" y="200" width="370" height="52" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="484" y="223" font-size="14" fill="#33312e">대량보유상황보고서 · 임원 소유상황보고서</text>
+  <text x="484" y="242" font-size="13" fill="#6b655c">누가 얼마나 들고 있고, 늘렸는가 줄였는가</text>
+
+  <!-- 외부감사관련 -->
+  <rect x="260" y="280" width="160" height="52" rx="4" fill="#efece4" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="340" y="312" font-size="15" fill="#33312e" text-anchor="middle">외부감사관련</text>
+  <rect x="470" y="280" width="370" height="52" rx="4" fill="#ffffff" stroke="#8a857d" stroke-width="1.5"/>
+  <text x="484" y="303" font-size="14" fill="#33312e">감사보고서 · 내부회계관리제도 감사보고서</text>
+  <text x="484" y="322" font-size="13" fill="#6b655c">그 숫자를 누가 어디까지 확인했는가</text>
+
+  <!-- XBRL -->
+  <rect x="260" y="370" width="580" height="52" rx="4" fill="#e7f0ea" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="274" y="393" font-size="14" fill="#2d6a4f">XBRL 재무공시 · Open DART API</text>
+  <text x="274" y="412" font-size="13" fill="#2d6a4f">읽을 문서가 아니라 셀 숫자가 필요할 때. 값에 요소 이름과 기간이 붙어 나온다</text>
+
+  <path d="M 210 190 L 232 190 L 232 66 L 254 66" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <path d="M 232 190 L 232 146 L 254 146" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <path d="M 232 190 L 232 226 L 254 226" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <path d="M 232 190 L 232 306 L 254 306" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+
+  <path d="M 420 66 L 464 66" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <path d="M 420 146 L 464 146" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <path d="M 420 226 L 464 226" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <path d="M 420 306 L 464 306" stroke="#33312e" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+
+  <path d="M 125 230 L 125 396 L 254 396" stroke="#2d6a4f" stroke-width="1.8" fill="none" stroke-dasharray="6 4" marker-end="url(#ag)"/>
+  <text x="140" y="340" font-size="13" fill="#2d6a4f">문서 대신</text>
+  <text x="140" y="358" font-size="13" fill="#2d6a4f">데이터가 필요하면</text>
+</svg>
