@@ -6268,3 +6268,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-220
+    title: "서비스 메시 — 데이터 플레인과 컨트롤 플레인"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, 클라우드, 개념정리]
+    difficulty: 중급
+    angle: "사이드카 프록시가 무엇을 가져가고 무엇이 서비스 코드에 남는지. NIST SP 800-204 §2.7.2 기준으로 인가 분담점까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-221
+    title: "아키텍처 결정 기록(ADR)"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, 소프트웨어공학, 개념정리]
+    difficulty: 중급
+    angle: "결정·배경·대안·결과 네 항목이 왜 그 순서인지, 설계 문서와 무엇이 다른지"
+    code: none
+    origin: exam
+    status: todo
