@@ -5388,7 +5388,7 @@ topics:
     angle: "거래소 수시공시와 자본시장법상 주요사항보고서가 어떻게 다른가. 보고 사유와 제출 시한을 법령 근거로 정리하고 둘이 겹치는 자리를 짚는다."
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-099
     title: "분기·반기보고서와 결산 일정 — 언제 무엇이 나오는가"
     category: Finance
