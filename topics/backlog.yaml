@@ -386,7 +386,7 @@ topics:
     difficulty: 중급
     angle: "커밋 히스토리에서 함께 바뀌는 파일을 군집화해 경계를 추정"
     code: python
-    status: todo
+    status: done
 
   # ---------- Security ----------
   - id: sec-001
@@ -3051,7 +3051,7 @@ topics:
     angle: "탐지에서 대응까지 어느 도구가 어디를 맡는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-109
     title: "파일 시스템 구조 — 아이노드와 저널링"
     category: PE
@@ -4778,7 +4778,7 @@ topics:
     angle: "SQLite 에 split 함수가 없다. 재귀 CTE 로 만드는 법과 애초에 쪼개 저장해야 하는 경우"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-082
     title: "날짜 함수 심화 — strftime으로 주차·분기 뽑기"
     category: Database
