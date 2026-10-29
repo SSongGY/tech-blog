@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="880" height="320" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="320" fill="#ffffff"/>
+  <defs>
+    <marker id="aR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6472"/>
+    </marker>
+    <marker id="aC" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="26" font-size="15" font-weight="bold" fill="#1b2430">사가의 세 구간 — 어디까지 되돌릴 수 있는가</text>
+
+  <g font-size="13" text-anchor="middle">
+    <text x="225" y="52" fill="#2d6a4f">보상 가능 구간</text>
+    <text x="525" y="52" fill="#b45309">되돌릴 수 없는 지점</text>
+    <text x="740" y="52" fill="#5a6472">재시도 전용 구간</text>
+  </g>
+  <g stroke-width="1.5">
+    <line x1="40"  y1="60" x2="410" y2="60" stroke="#2d6a4f"/>
+    <line x1="440" y1="60" x2="610" y2="60" stroke="#b45309"/>
+    <line x1="640" y1="60" x2="840" y2="60" stroke="#5a6472"/>
+  </g>
+
+  <!-- 정방향 단계 -->
+  <g stroke-width="1.5">
+    <rect x="40"  y="76" width="170" height="62" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="240" y="76" width="170" height="62" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="440" y="76" width="170" height="62" fill="#fdf1e0" stroke="#b45309"/>
+    <rect x="640" y="76" width="200" height="62" fill="#f6f7f9" stroke="#5a6472"/>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#1b2430">
+    <text x="125" y="102" font-weight="bold">T1 결제</text>
+    <text x="125" y="124">보상 가능</text>
+    <text x="325" y="102" font-weight="bold">T2 재고 확보</text>
+    <text x="325" y="124">보상 가능</text>
+    <text x="525" y="102" font-weight="bold">T3 출고</text>
+    <text x="525" y="124">피벗</text>
+    <text x="740" y="102" font-weight="bold">T4 알림 발송</text>
+    <text x="740" y="124">재시도</text>
+  </g>
+  <g stroke="#5a6472" stroke-width="1.5">
+    <line x1="210" y1="107" x2="238" y2="107" marker-end="url(#aR)"/>
+    <line x1="410" y1="107" x2="438" y2="107" marker-end="url(#aR)"/>
+    <line x1="610" y1="107" x2="638" y2="107" marker-end="url(#aR)"/>
+  </g>
+
+  <!-- 보상 경로 -->
+  <path d="M470 138 L470 168 L325 168 L325 198" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#aC)"/>
+  <text x="484" y="162" font-size="13" fill="#9d0208">T3 전에 실패하면 역순으로</text>
+
+  <g stroke-width="1.5">
+    <rect x="40"  y="200" width="170" height="62" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="240" y="200" width="170" height="62" fill="#fbe9e9" stroke="#9d0208"/>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#1b2430">
+    <text x="125" y="226" font-weight="bold">C1 환불</text>
+    <text x="125" y="248">T1 을 되돌린다</text>
+    <text x="325" y="226" font-weight="bold">C2 재고 반납</text>
+    <text x="325" y="248">T2 를 되돌린다</text>
+  </g>
+  <line x1="240" y1="231" x2="212" y2="231" stroke="#9d0208" stroke-width="1.5" marker-end="url(#aC)"/>
+
+  <rect x="440" y="200" width="400" height="62" fill="#ffffff" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <g font-size="13" fill="#9d0208">
+    <text x="456" y="226">보상 자체가 실패하면 재시도한다.</text>
+    <text x="456" y="248">한도까지 실패하면 보류 큐로 넘겨 사람이 정리한다.</text>
+  </g>
+
+  <text x="40" y="300" font-size="13" fill="#1b2430">피벗 이후 단계는 되돌리지 않고 성공할 때까지 재시도한다. 피벗을 어디에 두느냐가 설계의 핵심이다.</text>
+</svg>
