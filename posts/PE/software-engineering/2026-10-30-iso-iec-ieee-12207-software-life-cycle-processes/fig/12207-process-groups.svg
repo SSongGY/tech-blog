@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="496" viewBox="0 0 880 496" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="496" fill="#fbfbf7"/>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">ISO/IEC/IEEE 12207 프로세스군 4개 · 프로세스 30개</text>
+  <text x="24" y="54" font-size="13" fill="#555555">적용 수준이 내려갈수록 다루는 대상이 조직에서 제품으로 좁아진다</text>
+
+  <!-- level axis -->
+  <text x="30" y="110" font-size="14" font-weight="bold" fill="#2d6a4f">조직 바깥</text>
+  <text x="30" y="130" font-size="13" fill="#666666">당사자 사이</text>
+
+  <text x="30" y="214" font-size="14" font-weight="bold" fill="#2d6a4f">조직</text>
+  <text x="30" y="234" font-size="13" fill="#666666">여러 프로젝트</text>
+
+  <text x="30" y="318" font-size="14" font-weight="bold" fill="#2d6a4f">프로젝트</text>
+  <text x="30" y="338" font-size="13" fill="#666666">한 프로젝트</text>
+
+  <text x="30" y="422" font-size="14" font-weight="bold" fill="#2d6a4f">제품</text>
+  <text x="30" y="442" font-size="13" fill="#666666">소프트웨어 시스템</text>
+
+  <line x1="166" y1="78" x2="166" y2="480" stroke="#2d6a4f" stroke-width="2"/>
+
+  <!-- group 1 -->
+  <rect x="186" y="78" width="664" height="84" rx="7" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="204" y="104" font-size="15" font-weight="bold" fill="#1b1b1b">합의 프로세스 (2)</text>
+  <text x="204" y="130" font-size="13" fill="#333333">취득 · 공급</text>
+  <text x="204" y="150" font-size="13" fill="#666666">취득자와 공급자가 무엇을 주고받을지 합의한다</text>
+
+  <!-- group 2 -->
+  <rect x="186" y="178" width="664" height="84" rx="7" fill="#f2f6f3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="204" y="204" font-size="15" font-weight="bold" fill="#1b1b1b">조직 프로젝트 지원 프로세스 (6)</text>
+  <text x="204" y="230" font-size="13" fill="#333333">생명주기 모델 관리 · 인프라 관리 · 포트폴리오 관리 · 인적자원 관리 · 품질 관리 · 지식 관리</text>
+  <text x="204" y="250" font-size="13" fill="#666666">프로젝트가 돌아갈 환경을 조직이 갖춘다</text>
+
+  <!-- group 3 -->
+  <rect x="186" y="278" width="664" height="84" rx="7" fill="#f2f6f3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="204" y="304" font-size="15" font-weight="bold" fill="#1b1b1b">기술관리 프로세스 (8)</text>
+  <text x="204" y="330" font-size="13" fill="#333333">계획 · 평가와 통제 · 의사결정 관리 · 위험 관리 · 형상 관리 · 정보 관리 · 측정 · 품질보증</text>
+  <text x="204" y="350" font-size="13" fill="#666666">한 프로젝트를 계획하고 통제한다</text>
+
+  <!-- group 4 -->
+  <rect x="186" y="378" width="664" height="102" rx="7" fill="#f2f6f3" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="204" y="404" font-size="15" font-weight="bold" fill="#1b1b1b">기술 프로세스 (14)</text>
+  <text x="204" y="428" font-size="13" fill="#333333">비즈니스·임무 분석 · 이해관계자 요구 정의 · 시스템 요구 정의 · 시스템 아키텍처 정의 ·</text>
+  <text x="204" y="448" font-size="13" fill="#333333">설계 정의 · 시스템 분석 · 구현 · 통합 · 검증 · 전이 · 확인 · 운영 · 유지보수 · 폐기</text>
+  <text x="204" y="466" font-size="13" fill="#666666">제품을 만들고 쓰고 버린다</text>
+</svg>

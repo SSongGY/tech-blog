@@ -6036,7 +6036,7 @@ topics:
     angle: "제시공격의 유형 분류에서 시작해 탐지 기법을 능동·수동으로 가르고, 시험·보고 표준이 적용 범위에서 무엇을 제외하는지까지 적어 '인증 통과=안전'이 아님을 보인다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-205
     title: "ISO/IEC/IEEE 12207 소프트웨어 생명주기 프로세스"
     category: PE
@@ -6047,7 +6047,7 @@ topics:
     angle: "합의·조직지원·기술관리·기술 네 프로세스군의 구성과 각 프로세스의 목적·결과 구조를 정리하고, 15288과 같은 목적을 두고 활동만 다른 이유를 짚는다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-206
     title: "ARIMA와 Box-Jenkins 모형화 절차"
     category: PE
