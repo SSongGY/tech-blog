@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **514편** · 갱신 2026-10-29
+총 **517편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 78편
+## DB문법 (basics) — 79편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-29 | [VACUUM — 지웠는데 파일이 안 줄어들 때](posts/Database/sql-basics/2026-10-29-vacuum-reclaim-free-pages/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-10-29 | [파라미터 바인딩 — 문자열을 붙이면 안 되는 이유](posts/Database/sql-basics/2026-10-29-parameter-binding-why-not-concatenate/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-28 | [BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가](posts/Database/sql-basics/2026-10-28-begin-immediate-write-lock/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-28 | [배치 삽입 — 한 건씩 넣을 때와 묶을 때](posts/Database/sql-basics/2026-10-28-batch-insert-commit-granularity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [JSON 함수 — 문서를 컬럼처럼 다루기](posts/Database/sql-basics/2026-10-27-json-functions-extract-each/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -111,11 +112,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 180편
+## 기술사 (pe) — 181편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-29 | [정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션](posts/PE/it-management/2026-10-29-quantitative-risk-analysis-emv-monte-carlo/index.md) | 중급 | Python 3.13.5, IEC 31010:2019 (Edition 2.0), NIST SP 800-30 Rev. 1 | 실행 검증 |
+| 2026-10-29 | [웹 취약점 — OWASP Top 10 분류와 대응](posts/PE/security/2026-10-29-owasp-top-10-categories-and-defenses/index.md) | 중급 | OWASP Top 10:2025, OWASP Top 10:2021 | 문서 근거 |
 | 2026-10-29 | [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](posts/PE/ai/2026-10-29-nist-ai-bias-three-categories/index.md) | 중급 | NIST SP 1270 (2022-03-15 발행, 2022-03-24 갱신), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
 | 2026-10-29 | [나이브 베이즈 분류기 — 조건부 독립 가정, 라플라스 스무딩, 로그 확률 합산](posts/PE/data-analysis/2026-10-29-naive-bayes-classifier/index.md) | 중급 | Python 3.13.5, scikit-learn 문서 1.9절 Naive Bayes | 실행 검증 |
 | 2026-10-29 | [ISO/IEC 23894 인공지능 위험관리 — ISO 31000을 AI에 옮긴 세 덩어리와 부속서 3개](posts/PE/it-management/2026-10-29-iso-iec-23894-ai-risk-management/index.md) | 중급 | ISO/IEC 23894:2023 (초판, ISO/IEC JTC 1/SC 42), ISO 31000:2018, ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 | 문서 근거 |
@@ -319,11 +321,12 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 41편
+## 일반 (general) — 42편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-29 | [사가 패턴의 보상 트랜잭션은 왜 어려운가](posts/Architecture/2026-10-29-saga-compensating-transaction/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
+| 2026-10-29 | [JWT를 세션 대신 쓸 때 포기하는 것](posts/Security/2026-10-29-jwt-instead-of-session-what-you-give-up/index.md) | 중급 | Python 3.13.5, PyJWT 2.10.1, cryptography 50.0.0 | 실행 검증 |
 | 2026-10-28 | [분산 락을 Redis로 만들 때 빠지는 함정](posts/Backend/redis/2026-10-28-redis-distributed-lock-pitfalls/index.md) | 심화 | Python 3.13.5, fakeredis 2.40.0, redis-py 8.1.0, Redis 8.4 (DELEX 도입 버전) | 실행 검증 |
 | 2026-10-28 | [비밀번호 해시에 bcrypt·argon2를 쓰는 이유](posts/Security/2026-10-28-password-hashing-bcrypt-argon2/index.md) | 중급 | Python 3.13.5, bcrypt 5.0.0, argon2-cffi 25.1.0, Windows 11 | 실행 검증 |
 | 2026-10-27 | [이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort의 런 탐지](posts/Performance/algorithm/2026-10-27-timsort-run-detection/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
