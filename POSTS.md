@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **519편** · 갱신 2026-10-29
+총 **522편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -112,7 +112,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 181편
+## 기술사 (pe) — 182편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -122,6 +122,7 @@
 | 2026-10-29 | [나이브 베이즈 분류기 — 조건부 독립 가정, 라플라스 스무딩, 로그 확률 합산](posts/PE/data-analysis/2026-10-29-naive-bayes-classifier/index.md) | 중급 | Python 3.13.5, scikit-learn 문서 1.9절 Naive Bayes | 실행 검증 |
 | 2026-10-29 | [ISO/IEC 23894 인공지능 위험관리 — ISO 31000을 AI에 옮긴 세 덩어리와 부속서 3개](posts/PE/it-management/2026-10-29-iso-iec-23894-ai-risk-management/index.md) | 중급 | ISO/IEC 23894:2023 (초판, ISO/IEC JTC 1/SC 42), ISO 31000:2018, ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 | 문서 근거 |
 | 2026-10-29 | [ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스](posts/PE/it-management/2026-10-29-iso-31000-risk-management-principles-framework-process/index.md) | 중급 | ISO 31000:2018 (2018-02 발행, 2023 재확인), ISO 31000:2009 (철회), IEC 31010:2019, PMBOK Guide 6th Edition (PMI, 2017) | 문서 근거 |
+| 2026-10-29 | [암호 알고리즘 안전성 — 보안강도, 키 길이, 그리고 암호주기](posts/PE/security/2026-10-29-crypto-key-length-and-lifetime/index.md) | 중급 | NIST SP 800-57 Part 1 Rev. 5 (2020-05), NIST IR 8547 (2026-10, 최종본), FIPS 203·204·205 (2024), NIST SP 800-131A Rev. 2 | 문서 근거 |
 | 2026-10-29 | [CDN과 캐시 계층 — 응답을 앞당기는 구조](posts/PE/network/2026-10-29-cdn-cache-layers/index.md) | 중급 | RFC 6707 (2012-09), RFC 9111 (2022-06), RFC 9213 (2022-06), RFC 9211 (2022-06), RFC 5861 (2010-05) | 문서 근거 |
 | 2026-10-29 | [생체인식 템플릿 보호 (ISO/IEC 24745) — 바꿀 수 없는 인증정보를 갱신 가능하게 만드는 법](posts/PE/security/2026-10-29-biometric-template-protection-iso-iec-24745/index.md) | 중급 | ISO/IEC 24745:2022 (제2판, ISO/IEC JTC 1/SC 27), ISO/IEC 24745:2011 (철회), ISO/IEC 30136:2018, ISO/IEC 2382-37:2022 | 문서 근거 |
 | 2026-10-28 | [무선 네트워크 보안 — WPA3와 인증 방식](posts/PE/network/2026-10-28-wpa3-wireless-security/index.md) | 중급 | WPA3 Specification v3.5 (2025), RFC 7664, RFC 8110, IEEE 802.11 (SAE) | 문서 근거 |
@@ -321,11 +322,13 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 42편
+## 일반 (general) — 44편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-29 | [사가 패턴의 보상 트랜잭션은 왜 어려운가](posts/Architecture/2026-10-29-saga-compensating-transaction/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
+| 2026-10-29 | [파이썬 딕셔너리는 언제 커지는가 — 리사이즈 지점과 해시 충돌 실측](posts/Language/python/2026-10-29-python-dict-resize-and-hash-collision/index.md) | 중급 | Python 3.13.5 (CPython), Windows 11 | 실행 검증 |
+| 2026-10-29 | [피벗과 언피벗 — 행을 열로, 열을 행으로](posts/Database/sql-basics/2026-10-29-pivot-unpivot-with-case-and-union/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-29 | [JWT를 세션 대신 쓸 때 포기하는 것](posts/Security/2026-10-29-jwt-instead-of-session-what-you-give-up/index.md) | 중급 | Python 3.13.5, PyJWT 2.10.1, cryptography 50.0.0 | 실행 검증 |
 | 2026-10-28 | [분산 락을 Redis로 만들 때 빠지는 함정](posts/Backend/redis/2026-10-28-redis-distributed-lock-pitfalls/index.md) | 심화 | Python 3.13.5, fakeredis 2.40.0, redis-py 8.1.0, Redis 8.4 (DELEX 도입 버전) | 실행 검증 |
 | 2026-10-28 | [비밀번호 해시에 bcrypt·argon2를 쓰는 이유](posts/Security/2026-10-28-password-hashing-bcrypt-argon2/index.md) | 중급 | Python 3.13.5, bcrypt 5.0.0, argon2-cffi 25.1.0, Windows 11 | 실행 검증 |
