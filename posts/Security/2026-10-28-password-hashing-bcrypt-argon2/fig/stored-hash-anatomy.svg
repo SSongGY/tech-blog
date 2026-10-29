@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#f8f9fa"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#212529">저장되는 해시 문자열에 무엇이 들어 있나</text>
+  <text x="24" y="50" font-size="13" fill="#495057">비용 설정과 솔트가 해시와 같은 줄에 들어간다. 그래서 비용을 올려도 예전 비밀번호가 그대로 검증된다.</text>
+
+  <!-- bcrypt -->
+  <text x="24" y="86" font-size="13" font-weight="bold" fill="#212529">bcrypt</text>
+
+  <rect x="24"  y="96" width="110" height="52" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="79"  y="120" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">$2b$</text>
+  <text x="79"  y="139" font-size="13" fill="#6c757d" text-anchor="middle">알고리즘</text>
+
+  <rect x="134" y="96" width="130" height="52" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="199" y="120" font-size="14" font-family="monospace" font-weight="bold" fill="#b45309" text-anchor="middle">12$</text>
+  <text x="199" y="139" font-size="13" fill="#b45309" text-anchor="middle">비용 인자</text>
+
+  <rect x="264" y="96" width="250" height="52" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="389" y="120" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">zNBkbrF5Jhk1KJDg6M2B3.</text>
+  <text x="389" y="139" font-size="13" fill="#6c757d" text-anchor="middle">솔트 128비트</text>
+
+  <rect x="514" y="96" width="342" height="52" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="685" y="120" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">tIPBpkMjLvv01N8ShjtmxDmcGoD./FO</text>
+  <text x="685" y="139" font-size="13" fill="#6c757d" text-anchor="middle">해시 결과</text>
+
+  <text x="134" y="170" font-size="13" fill="#b45309">비용 인자는 2의 지수다. 12는 2¹² 라운드를 뜻하고, 1 올릴 때마다 계산량이 2배가 된다.</text>
+
+  <!-- argon2 -->
+  <text x="24" y="212" font-size="13" font-weight="bold" fill="#212529">Argon2id</text>
+
+  <rect x="24"  y="222" width="130" height="52" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="89"  y="246" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">$argon2id$</text>
+  <text x="89"  y="265" font-size="13" fill="#6c757d" text-anchor="middle">변종</text>
+
+  <rect x="154" y="222" width="96" height="52" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="202" y="246" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">v=19$</text>
+  <text x="202" y="265" font-size="13" fill="#6c757d" text-anchor="middle">버전</text>
+
+  <rect x="250" y="222" width="250" height="52" rx="4" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="375" y="246" font-size="14" font-family="monospace" font-weight="bold" fill="#b45309" text-anchor="middle">m=65536,t=3,p=4$</text>
+  <text x="375" y="265" font-size="13" fill="#b45309" text-anchor="middle">메모리 KiB · 반복 · 병렬도</text>
+
+  <rect x="500" y="222" width="150" height="52" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="575" y="246" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">nNg2YyP…YQ$</text>
+  <text x="575" y="265" font-size="13" fill="#6c757d" text-anchor="middle">솔트</text>
+
+  <rect x="650" y="222" width="206" height="52" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="753" y="246" font-size="14" font-family="monospace" fill="#212529" text-anchor="middle">epkB9IhT…zJ1M</text>
+  <text x="753" y="265" font-size="13" fill="#6c757d" text-anchor="middle">해시 결과</text>
+
+  <text x="250" y="296" font-size="13" fill="#b45309">비용이 세 축으로 갈린다. bcrypt는 시간만, Argon2는 메모리까지 함께 요구한다.</text>
+
+  <text x="24" y="334" font-size="13" fill="#495057">검증할 때는 저장된 문자열에서 비용 설정과 솔트를 먼저 읽고, 입력된 비밀번호를 같은 조건으로 다시 계산해 맞춰 본다.</text>
+</svg>
