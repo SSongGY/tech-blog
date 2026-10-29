@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **511편** · 갱신 2026-10-29
+총 **512편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -363,10 +363,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 79편
+## 기출문제 (exam) — 80편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-29 | [기출문제 — 클라우드 네이티브 전환 사업의 TA와 AA, 역할 분담과 협업](posts/PE/exam/2026-10-29-ta-aa-role-split-and-collaboration/index.md) | 심화 | NIST SP 800-204 (2019-08), CNCF Cloud Native Definition v1.1 (2024-02-26), ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-10-29 | [기출문제 — GPU와 TPU의 개념·비교, TPU 선택 이유와 효율성](posts/PE/exam/2026-10-29-gpu-tpu-architecture-and-efficiency/index.md) | 심화 | Jouppi et al., In-Datacenter Performance Analysis of a TPU, ISCA 2017 (arXiv:1704.04760), Jouppi et al., TPU v4, ISCA 2023 (arXiv:2304.01433), Google Cloud TPU 공식 문서 (TPU7x/Ironwood, 2025), NVIDIA CUDA C++ Programming Guide 12.6, NVIDIA Blackwell Tuning Guide (CUDA 13.4) | 문서 근거 |
 | 2026-10-28 | [기출문제 — 상용 DBMS의 오픈소스 전환: 배경·제약사항·마이그레이션 절차·HA 구성](posts/PE/exam/2026-10-28-open-source-dbms-migration-and-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 Reference Manual, MySQL Shell 8.0 InnoDB ClusterSet 문서, PostgreSQL License (1996-2026) | 문서 근거 |
 | 2026-10-28 | [기출문제 — ISP의 정의와 목적, 수행방법론 체계와 절차, ISMP와의 비교](posts/PE/exam/2026-10-28-isp-definition-methodology-ismp-comparison/index.md) | 중급 | SW사업 대가산정 가이드 2024년 개정판, 전자정부지원사업 정보화전략계획(ISP) 산출물 점검 가이드 V1.0 (2015.7), ISP·ISMP 수립 공통가이드 제9판 (2025) | 문서 근거 |
