@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="310" viewBox="0 0 880 310"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="310" fill="#f8f9fa"/>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#212529">키 길이를 늘려 올라가는 길은 2035에서 끝난다</text>
+  <text x="24" y="50" font-size="13" fill="#495057">양자 취약 공개키는 보안강도가 얼마든 같은 일정을 따른다. 대칭키와 해시는 길이를 늘리는 종래 방식이 그대로 남는다.</text>
+
+  <text x="440" y="84" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">2030</text>
+  <text x="650" y="84" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">2035</text>
+  <line x1="440" y1="92" x2="440" y2="270" stroke="#868e96" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <line x1="650" y1="92" x2="650" y2="270" stroke="#868e96" stroke-width="1.2" stroke-dasharray="5 4"/>
+
+  <text x="24" y="122" font-size="13" font-weight="bold" fill="#212529">종래 공개키</text>
+  <text x="24" y="140" font-size="13" fill="#495057">RSA·ECDSA·DH</text>
+  <rect x="150" y="104" width="290" height="44" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="295" y="131" font-size="13" fill="#2d6a4f" text-anchor="middle">허용 (acceptable)</text>
+  <rect x="440" y="104" width="210" height="44" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.8"/>
+  <text x="545" y="131" font-size="13" fill="#b45309" text-anchor="middle">폐지 예정 (deprecated)</text>
+  <rect x="650" y="104" width="206" height="44" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="753" y="131" font-size="13" fill="#9d0208" text-anchor="middle">금지 (disallowed)</text>
+
+  <text x="24" y="182" font-size="13" font-weight="bold" fill="#212529">양자 내성</text>
+  <text x="24" y="200" font-size="13" fill="#495057">ML-KEM·ML-DSA</text>
+  <rect x="150" y="164" width="706" height="44" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="503" y="191" font-size="13" fill="#2d6a4f" text-anchor="middle">표준 발행 완료 — FIPS 203 · 204 · 205 (2024)</text>
+
+  <text x="24" y="242" font-size="13" font-weight="bold" fill="#212529">대칭키·해시</text>
+  <text x="24" y="260" font-size="13" fill="#495057">AES·SHA-2/3</text>
+  <rect x="150" y="224" width="706" height="44" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="503" y="251" font-size="13" fill="#2d6a4f" text-anchor="middle">길이를 늘려 대응한다 — AES-256, SHA-384</text>
+
+  <text x="24" y="294" font-size="13" fill="#495057">연방 고가치·고영향 시스템은 더 이르다 — 키 설정 2030-12-31, 전자서명 2031-12-31</text>
+</svg>

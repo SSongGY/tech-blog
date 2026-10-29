@@ -3040,7 +3040,7 @@ topics:
     angle: "NIST 권고를 근거로 알고리즘별 권장 기간. 근거 없는 수치를 쓰지 않는다"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-108
     title: "보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담"
     category: PE
