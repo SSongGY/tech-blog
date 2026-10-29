@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **525편** · 갱신 2026-10-30
+총 **528편** · 갱신 2026-10-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 79편
+## DB문법 (basics) — 80편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-30 | [문자열을 구분자로 나누기 — SQLite에 split이 없을 때](posts/Database/sql-basics/2026-10-30-split-string-by-delimiter/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-29 | [VACUUM — 지웠는데 파일이 안 줄어들 때](posts/Database/sql-basics/2026-10-29-vacuum-reclaim-free-pages/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-29 | [파라미터 바인딩 — 문자열을 붙이면 안 되는 이유](posts/Database/sql-basics/2026-10-29-parameter-binding-why-not-concatenate/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-28 | [BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가](posts/Database/sql-basics/2026-10-28-begin-immediate-write-lock/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -112,10 +113,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 184편
+## 기술사 (pe) — 185편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-30 | [보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담](posts/PE/security/2026-10-30-security-operations-siem-soar-edr/index.md) | 중급 | NIST SP 800-61r3 (2025-04), NIST CSF 2.0 (2024-02), OMB M-22-01 (2021-10-08) | 문서 근거 |
 | 2026-10-30 | [제시공격 탐지 (PAD, ISO/IEC 30107) — 무엇을 재고 무엇을 재지 않는가](posts/PE/security/2026-10-30-presentation-attack-detection-iso-iec-30107/index.md) | 중급 | ISO/IEC 30107-1:2023 (제2판), ISO/IEC 30107-3:2023 (제2판), ISO/IEC 30107-1:2016 (대체됨), ISO/IEC 2382-37 (생체인식 용어) | 문서 근거 |
 | 2026-10-30 | [ISO/IEC/IEEE 12207 소프트웨어 생명주기 프로세스 — 프로세스군 4개와 15288이 갈리는 한 지점](posts/PE/software-engineering/2026-10-30-iso-iec-ieee-12207-software-life-cycle-processes/index.md) | 중급 | ISO/IEC/IEEE 12207:2026 (제2판), ISO/IEC/IEEE 12207:2017 (제1판), ISO/IEC/IEEE 15288:2023, ISO/IEC 12207:2008 (대체됨) | 문서 근거 |
 | 2026-10-29 | [정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션](posts/PE/it-management/2026-10-29-quantitative-risk-analysis-emv-monte-carlo/index.md) | 중급 | Python 3.13.5, IEC 31010:2019 (Edition 2.0), NIST SP 800-30 Rev. 1 | 실행 검증 |
@@ -324,10 +326,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 44편
+## 일반 (general) — 45편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-30 | [모놀리스를 쪼개기 전에 — 커밋 이력에서 경계를 찾아낸다](posts/Architecture/2026-10-30-find-service-boundaries-from-cochange/index.md) | 중급 | Python 3.13.5, git 2.54.0.windows.1 | 실행 검증 |
 | 2026-10-29 | [사가 패턴의 보상 트랜잭션은 왜 어려운가](posts/Architecture/2026-10-29-saga-compensating-transaction/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
 | 2026-10-29 | [파이썬 딕셔너리는 언제 커지는가 — 리사이즈 지점과 해시 충돌 실측](posts/Language/python/2026-10-29-python-dict-resize-and-hash-collision/index.md) | 중급 | Python 3.13.5 (CPython), Windows 11 | 실행 검증 |
 | 2026-10-29 | [피벗과 언피벗 — 행을 열로, 열을 행으로](posts/Database/sql-basics/2026-10-29-pivot-unpivot-with-case-and-union/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
