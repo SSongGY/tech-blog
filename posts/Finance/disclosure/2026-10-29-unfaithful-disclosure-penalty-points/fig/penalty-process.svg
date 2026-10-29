@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fdfdfb"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="16" y="28" font-size="17" font-weight="bold" fill="#1b263b">불성실공시법인 지정 절차와 벌점이 부르는 결과 (코스닥시장)</text>
+
+  <!-- 절차 -->
+  <text x="30" y="58" font-size="13" fill="#6c757d">절차</text>
+  <rect x="30" y="66" width="300" height="42" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="180" y="92" font-size="14" text-anchor="middle" fill="#212529">공시불이행 · 공시번복 · 공시변경</text>
+
+  <line x1="180" y1="108" x2="180" y2="119" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="30" y="121" width="300" height="42" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="180" y="147" font-size="14" text-anchor="middle" fill="#212529">거래소의 지정 예고 · 통보</text>
+
+  <line x1="180" y1="163" x2="180" y2="174" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="30" y="176" width="300" height="42" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="180" y="202" font-size="14" text-anchor="middle" fill="#212529">이의신청 — 통보일부터 7일 이내</text>
+
+  <line x1="180" y1="218" x2="180" y2="229" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="30" y="231" width="300" height="42" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="180" y="257" font-size="14" text-anchor="middle" fill="#212529">공시위원회 심의 — 10일 이내</text>
+
+  <line x1="180" y1="273" x2="180" y2="284" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="30" y="286" width="300" height="42" fill="#e9ecef" stroke="#495057" stroke-width="2"/>
+  <text x="180" y="312" font-size="14" text-anchor="middle" fill="#212529">지정 여부 결정 — 3일 이내</text>
+  <text x="30" y="348" font-size="13" fill="#6c757d">기간은 모두 매매거래일 기준이다.</text>
+
+  <!-- 결정에서 결과로 -->
+  <line x1="330" y1="307" x2="378" y2="307" stroke="#495057" stroke-width="2"/>
+  <line x1="378" y1="87" x2="378" y2="307" stroke="#495057" stroke-width="2"/>
+
+  <text x="398" y="58" font-size="13" fill="#6c757d">결과</text>
+  <line x1="378" y1="87" x2="396" y2="87" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="398" y="66" width="452" height="42" fill="#fdebd0" stroke="#b45309" stroke-width="2"/>
+  <text x="414" y="92" font-size="14" fill="#7c3f00">지정 — 벌점 1건당 0~14점, 제재금 1건당 5억원 이내</text>
+
+  <line x1="378" y1="142" x2="396" y2="142" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="398" y="121" width="452" height="42" fill="#fde2e2" stroke="#9d0208" stroke-width="2"/>
+  <text x="414" y="147" font-size="14" fill="#9d0208">부과 벌점 8점 이상 → 지정일 1일간 매매거래정지</text>
+
+  <line x1="378" y1="197" x2="396" y2="197" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="398" y="176" width="452" height="42" fill="#fde2e2" stroke="#9d0208" stroke-width="2"/>
+  <text x="414" y="202" font-size="14" fill="#9d0208">최근 1년 누계 15점 이상 → 상장적격성 실질심사</text>
+
+  <line x1="378" y1="252" x2="396" y2="252" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="398" y="231" width="452" height="42" fill="#fde2e2" stroke="#9d0208" stroke-width="2"/>
+  <text x="414" y="257" font-size="14" fill="#9d0208">같은 누계 15점 → 개선계획서 · 이행보고서 제출</text>
+
+  <line x1="378" y1="307" x2="396" y2="307" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="398" y="286" width="452" height="42" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="414" y="312" font-size="14" fill="#1b4332">미지정 — 성실공시 이행촉구, 6개월 내 재예고시 가중</text>
+
+  <text x="398" y="348" font-size="13" fill="#6c757d">누계는 지정일부터 거슬러 1년간의 벌점을 합산한다.</text>
+  <line x1="16" y1="366" x2="864" y2="366" stroke="#ced4da"/>
+  <text x="16" y="386" font-size="13" fill="#6c757d">위반 동기가 경미하고 부과 벌점이 8점 미만이며 누계가 15점 미만이고 이의신청이 없으면 공시위원회 심의를 생략할 수 있다.</text>
+</svg>
