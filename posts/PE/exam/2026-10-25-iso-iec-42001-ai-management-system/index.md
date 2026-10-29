@@ -114,6 +114,8 @@ Management system)은 조직이 **인공지능 경영시스템(AIMS, AI Manageme
 > 관련 답안: [기출문제 — 인공지능 기본법의 고영향 인공지능: 정의, 활용 영역, 사업자의 안전성·신뢰성 확보 활동](../2026-10-05-high-impact-ai-basic-act/index.md)
 >
 > 개념 정리: [AI 시스템 영향평가 — ISO/IEC 42005와 기본권 영향평가](../../it-management/2026-10-05-ai-system-impact-assessment-iso-42005/index.md)
+>
+> 개념 정리: [ISO/IEC 23894 인공지능 위험관리 — ISO 31000을 AI에 옮긴 세 덩어리와 부속서 3개](../../it-management/2026-10-29-iso-iec-23894-ai-risk-management/index.md)
 
 끝
 
