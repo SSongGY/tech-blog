@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **502편** · 갱신 2026-10-29
+총 **504편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -110,10 +110,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 173편
+## 기술사 (pe) — 175편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-29 | [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](posts/PE/ai/2026-10-29-nist-ai-bias-three-categories/index.md) | 중급 | NIST SP 1270 (2022-03-15 발행, 2022-03-24 갱신), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
+| 2026-10-29 | [ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스](posts/PE/it-management/2026-10-29-iso-31000-risk-management-principles-framework-process/index.md) | 중급 | ISO 31000:2018 (2018-02 발행, 2023 재확인), ISO 31000:2009 (철회), IEC 31010:2019, PMBOK Guide 6th Edition (PMI, 2017) | 문서 근거 |
 | 2026-10-28 | [무선 네트워크 보안 — WPA3와 인증 방식](posts/PE/network/2026-10-28-wpa3-wireless-security/index.md) | 중급 | WPA3 Specification v3.5 (2025), RFC 7664, RFC 8110, IEEE 802.11 (SAE) | 문서 근거 |
 | 2026-10-28 | [VLSM — 가변 길이 서브넷 마스크](posts/PE/network/2026-10-28-vlsm-variable-length-subnet-mask/index.md) | 중급 | Python 3.13.5, RFC 950 (1985-08), RFC 1812 (1995-06), RFC 1878 (1995-12), RFC 2453 (1998-11, STD 56) | 실행 검증 |
 | 2026-10-28 | [네트워크 가상화 — VLAN, VXLAN, 오버레이](posts/PE/network/2026-10-28-network-virtualization-vlan-vxlan/index.md) | 중급 | IEEE 802.1Q, RFC 7348 (VXLAN), RFC 8926 (Geneve), RFC 7637 (NVGRE) | 문서 근거 |
