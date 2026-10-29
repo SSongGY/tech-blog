@@ -114,6 +114,8 @@ Core는 AI 위험을 관리하기 위한 **결과(outcome)와 행동(action)** �
   포함한 다학제적 시각이 필요하다는 것이 프레임워크의 요구다.
 
 > 관련 답안: [AI 리스크 — 개념, 보안·프라이버시·사회적 리스크](../2026-10-12-ai-risk-security-privacy-social/index.md)
+>
+> 개념 정리: [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](../../ai/2026-10-29-nist-ai-bias-three-categories/index.md)
 
 끝
 

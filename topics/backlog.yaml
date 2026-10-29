@@ -378,7 +378,7 @@ topics:
     difficulty: 심화
     angle: "보상이 실패하는 경우를 어떻게 다룰지가 핵심"
     code: python
-    status: todo
+    status: writing
   - id: arch-004
     title: "모놀리스를 쪼개기 전에 확인할 경계 찾기"
     category: Architecture
@@ -3018,7 +3018,7 @@ topics:
     angle: "어디에 무엇을 캐시하고 무효화를 어떻게 전파하는지"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-106
     title: "웹 취약점 — OWASP Top 10 분류와 대응"
     category: PE
@@ -4745,7 +4745,7 @@ topics:
     angle: "빈 페이지가 재사용되는 구조. VACUUM 전후 파일 크기와 auto_vacuum 설정"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-079
     title: "파라미터 바인딩 — 문자열을 붙이면 안 되는 이유"
     category: Database
@@ -5399,7 +5399,7 @@ topics:
     angle: "사업보고서·반기·분기보고서의 제출 기한과 감사·검토 수준의 차이. 숫자가 나중에 바뀔 수 있는 자리가 어디인지까지 적는다."
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: fin-100
     title: "불성실공시와 공시번복 — 제재가 작동하는 방식"
     category: Finance
@@ -5410,7 +5410,7 @@ topics:
     angle: "공시불이행·공시번복·공시변경 세 유형과 벌점 누적이 부르는 결과. 공시를 읽을 때 이 이력을 같이 봐야 하는 이유를 제도 근거로 정리한다."
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: fin-101
     title: "내부회계관리제도 — 검토에서 감사로 바뀐 뒤 달라진 것"
     category: Finance
@@ -5970,7 +5970,7 @@ topics:
     angle: "ISO 31000:2018의 세 층(원칙·프레임워크·프로세스)을 갈라 정리하고, 프로세스 6단계를 PMBOK 프로젝트 위험관리와 대응시킨다. 조직 차원 위험관리와 프로젝트 차원 위험관리가 어디서 갈리는지를 축으로 쓴다."
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-199
     title: "AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적"
     category: PE
@@ -5981,7 +5981,7 @@ topics:
     angle: "NIST SP 1270이 나눈 편향 3가지 범주를 발생 지점(사회·데이터·알고리즘·인지)으로 갈라 정리하고, 각 범주가 AI RMF의 어느 기능에서 측정·관리되는지까지 잇는다. 편향 완화가 공정성을 보장하지 않는 이유를 함께 쓴다."
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-200
     title: "정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션"
     category: PE

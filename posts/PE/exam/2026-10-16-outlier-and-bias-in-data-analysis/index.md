@@ -295,6 +295,8 @@ NIST SP 1270이 통계·연산 편향의 하위 유형으로 드는 **심슨의 
 > 개념 정리: [심슨의 역설 — 집단별 결론과 전체 결론이 뒤집히는 구조](../../data-analysis/2026-10-23-simpsons-paradox-confounder-collapsibility/index.md)
 >
 > 개념 정리: [강건 통계량 — 중앙값, MAD, 절사평균의 붕괴점](../../data-analysis/2026-10-23-robust-statistics-breakdown-point/index.md)
+>
+> 개념 정리: [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](../../ai/2026-10-29-nist-ai-bias-three-categories/index.md)
 
 끝
 

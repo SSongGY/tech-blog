@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="down" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="flow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4a5568"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1a202c">AI 생애주기에서 세 범주의 편향이 들어오는 자리</text>
+  <text x="24" y="54" font-size="13" fill="#4a5568">데이터 안에서 측정되는 것은 계산통계적 편향뿐이고, 나머지 둘은 데이터 밖의 기준으로 본다</text>
+
+  <!-- 체계적 편향 : 전 구간 -->
+  <rect x="24" y="76" width="832" height="54" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.6" rx="5"/>
+  <text x="440" y="100" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">① 체계적 편향 (systemic) — 기관의 절차 · 관행 · 과거 기록</text>
+  <text x="440" y="120" font-size="13" fill="#1a202c" text-anchor="middle">의식적 차별이 없어도 기존 규칙을 따르는 것만으로 생긴다. 데이터에 들어오기 전부터 있다</text>
+
+  <line x1="150" y1="130" x2="150" y2="186" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <line x1="440" y1="130" x2="440" y2="186" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <line x1="730" y1="130" x2="730" y2="186" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+
+  <!-- 생애주기 -->
+  <text x="24" y="182" font-size="13" font-weight="bold" fill="#4a5568">AI 생애주기</text>
+  <rect x="24" y="190" width="150" height="56" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="99" y="224" font-size="13" fill="#1a202c" text-anchor="middle">기획 · 설계</text>
+  <line x1="178" y1="218" x2="196" y2="218" stroke="#4a5568" stroke-width="1.6" marker-end="url(#flow)"/>
+
+  <rect x="200" y="190" width="170" height="56" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="285" y="224" font-size="13" fill="#1a202c" text-anchor="middle">데이터 수집 · 전처리</text>
+  <line x1="374" y1="218" x2="392" y2="218" stroke="#4a5568" stroke-width="1.6" marker-end="url(#flow)"/>
+
+  <rect x="396" y="190" width="150" height="56" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="471" y="224" font-size="13" fill="#1a202c" text-anchor="middle">모델 학습 · 평가</text>
+  <line x1="550" y1="218" x2="568" y2="218" stroke="#4a5568" stroke-width="1.6" marker-end="url(#flow)"/>
+
+  <rect x="572" y="190" width="130" height="56" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="637" y="224" font-size="13" fill="#1a202c" text-anchor="middle">배포</text>
+  <line x1="706" y1="218" x2="724" y2="218" stroke="#4a5568" stroke-width="1.6" marker-end="url(#flow)"/>
+
+  <rect x="728" y="190" width="128" height="56" fill="#eef2f0" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="792" y="224" font-size="13" fill="#1a202c" text-anchor="middle">사용 · 의사결정</text>
+
+  <!-- 계산통계적 : 데이터~모델 -->
+  <line x1="285" y1="306" x2="285" y2="250" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <line x1="471" y1="306" x2="471" y2="250" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <rect x="200" y="308" width="346" height="54" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.6" rx="5"/>
+  <text x="373" y="331" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">② 계산통계적 편향</text>
+  <text x="373" y="351" font-size="13" fill="#1a202c" text-anchor="middle">표본의 비대표성 · 과적합 · 이상치 처리 · 결측 대체</text>
+
+  <!-- 인간인지적 : 기획 + 배포~사용 -->
+  <line x1="99" y1="306" x2="99" y2="250" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <line x1="700" y1="306" x2="700" y2="250" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <path d="M 99 308 L 99 384 L 568 384" fill="none" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <rect x="572" y="308" width="284" height="54" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.6" rx="5"/>
+  <text x="714" y="331" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">③ 인간인지적 편향</text>
+  <text x="714" y="351" font-size="13" fill="#1a202c" text-anchor="middle">정박 · 가용성 · 확증 · 프레이밍 효과</text>
+  <line x1="568" y1="384" x2="714" y2="384" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <line x1="714" y1="384" x2="714" y2="366" stroke="#9d0208" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#down)"/>
+  <text x="112" y="406" font-size="13" fill="#9d0208">기획 단계의 판단과 배포 후 해석 양쪽에 들어간다</text>
+</svg>
