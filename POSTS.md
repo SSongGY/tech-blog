@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **506편** · 갱신 2026-10-29
+총 **509편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 77편
+## DB문법 (basics) — 78편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-29 | [VACUUM — 지웠는데 파일이 안 줄어들 때](posts/Database/sql-basics/2026-10-29-vacuum-reclaim-free-pages/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-28 | [BEGIN IMMEDIATE — 쓰기 잠금을 언제 잡는가](posts/Database/sql-basics/2026-10-28-begin-immediate-write-lock/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-28 | [배치 삽입 — 한 건씩 넣을 때와 묶을 때](posts/Database/sql-basics/2026-10-28-batch-insert-commit-granularity/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-27 | [JSON 함수 — 문서를 컬럼처럼 다루기](posts/Database/sql-basics/2026-10-27-json-functions-extract-each/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -110,12 +111,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 175편
+## 기술사 (pe) — 176편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-29 | [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](posts/PE/ai/2026-10-29-nist-ai-bias-three-categories/index.md) | 중급 | NIST SP 1270 (2022-03-15 발행, 2022-03-24 갱신), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
 | 2026-10-29 | [ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스](posts/PE/it-management/2026-10-29-iso-31000-risk-management-principles-framework-process/index.md) | 중급 | ISO 31000:2018 (2018-02 발행, 2023 재확인), ISO 31000:2009 (철회), IEC 31010:2019, PMBOK Guide 6th Edition (PMI, 2017) | 문서 근거 |
+| 2026-10-29 | [CDN과 캐시 계층 — 응답을 앞당기는 구조](posts/PE/network/2026-10-29-cdn-cache-layers/index.md) | 중급 | RFC 6707 (2012-09), RFC 9111 (2022-06), RFC 9213 (2022-06), RFC 9211 (2022-06), RFC 5861 (2010-05) | 문서 근거 |
 | 2026-10-28 | [무선 네트워크 보안 — WPA3와 인증 방식](posts/PE/network/2026-10-28-wpa3-wireless-security/index.md) | 중급 | WPA3 Specification v3.5 (2025), RFC 7664, RFC 8110, IEEE 802.11 (SAE) | 문서 근거 |
 | 2026-10-28 | [VLSM — 가변 길이 서브넷 마스크](posts/PE/network/2026-10-28-vlsm-variable-length-subnet-mask/index.md) | 중급 | Python 3.13.5, RFC 950 (1985-08), RFC 1812 (1995-06), RFC 1878 (1995-12), RFC 2453 (1998-11, STD 56) | 실행 검증 |
 | 2026-10-28 | [네트워크 가상화 — VLAN, VXLAN, 오버레이](posts/PE/network/2026-10-28-network-virtualization-vlan-vxlan/index.md) | 중급 | IEEE 802.1Q, RFC 7348 (VXLAN), RFC 8926 (Geneve), RFC 7637 (NVGRE) | 문서 근거 |
@@ -313,10 +315,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 40편
+## 일반 (general) — 41편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-29 | [사가 패턴의 보상 트랜잭션은 왜 어려운가](posts/Architecture/2026-10-29-saga-compensating-transaction/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
 | 2026-10-28 | [분산 락을 Redis로 만들 때 빠지는 함정](posts/Backend/redis/2026-10-28-redis-distributed-lock-pitfalls/index.md) | 심화 | Python 3.13.5, fakeredis 2.40.0, redis-py 8.1.0, Redis 8.4 (DELEX 도입 버전) | 실행 검증 |
 | 2026-10-28 | [비밀번호 해시에 bcrypt·argon2를 쓰는 이유](posts/Security/2026-10-28-password-hashing-bcrypt-argon2/index.md) | 중급 | Python 3.13.5, bcrypt 5.0.0, argon2-cffi 25.1.0, Windows 11 | 실행 검증 |
 | 2026-10-27 | [이미 정렬된 데이터를 다시 정렬하면 왜 빠른가 — Timsort의 런 탐지](posts/Performance/algorithm/2026-10-27-timsort-run-detection/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
