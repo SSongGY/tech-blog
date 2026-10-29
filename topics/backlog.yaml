@@ -413,7 +413,7 @@ topics:
     difficulty: 중급
     angle: "즉시 로그아웃 요구가 들어오면 무엇이 무너지는지"
     code: python
-    status: todo
+    status: done
 
   # ---------- Tooling ----------
   - id: tool-001
@@ -3029,7 +3029,7 @@ topics:
     angle: "항목별 원인과 막는 지점. 코드로 막을 것과 설정으로 막을 것을 나눠"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-107
     title: "암호 알고리즘 안전성 — 키 길이와 수명"
     category: PE
@@ -4756,7 +4756,7 @@ topics:
     angle: "따옴표가 든 값으로 질의가 깨지는 것을 직접 재현하고, 바인딩이 그것을 어떻게 막는지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-080
     title: "피벗과 언피벗 — 행을 열로, 열을 행으로"
     category: Database

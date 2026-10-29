@@ -1,0 +1,129 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-29-parameter-binding-why-not-concatenate
+# 명령      : python binding_basics.py
+# 수행 시각 : 2026-10-29 19:07 (대한민국 표준시)
+# 소요      : 0.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[member]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  member_id | INTEGER | PK
+  login     | TEXT    | NOT NULL
+  nickname  | TEXT    |
+  score     | INTEGER |
+
+  member_id | login  | nickname | score
+  ----------+--------+----------+------
+          1 | lee    | NULL     |   610
+          2 | kim    | 김작가   |   820
+          3 | obrien | O'Brien  |   745
+
+[metric]  0행
+  컬럼  | 타입        | 제약
+  ------+-------------+---------
+  name  | TEXT        | NOT NULL
+  value | (타입 없음) |
+
+  (행 없음)
+
+----------------------------------------------------------------
+1. 값에 따옴표가 들어가면 — 조합은 문장이 깨진다
+----------------------------------------------------------------
+  SQL   : SELECT login, nickname FROM member WHERE nickname = 'O'Brien'
+  결과  : OperationalError: near "Brien": syntax error
+
+  SQL   : SELECT login, nickname FROM member WHERE nickname = ?
+  바인딩: ("O'Brien",)
+  결과  : 1행 [('obrien', "O'Brien")]
+
+----------------------------------------------------------------
+2. 값이 비어 있으면 — 조합은 조용히 틀린 답을 준다
+----------------------------------------------------------------
+  SQL   : SELECT login, nickname FROM member WHERE nickname = 'None'
+  결과  : 0행 []
+  (닉네임이 비어 있는 lee 를 찾고 싶었지만 'None' 이라는 이름을 찾았다)
+
+  SQL   : SELECT login, nickname FROM member WHERE nickname = ?
+  바인딩: (None,)
+  결과  : 0행 []
+  (NULL = NULL 은 참이 아니므로 0행. SQL 에서 맞는 결과다)
+
+  SQL   : SELECT login, nickname FROM member WHERE nickname IS NULL
+  결과  : 1행 [('lee', None)]
+  (NULL 을 찾을 때는 바인딩이 아니라 IS NULL 을 쓴다)
+
+----------------------------------------------------------------
+3. 저장할 때 — 조합은 값을 텍스트로 보낸다
+----------------------------------------------------------------
+  member.score — INTEGER 로 선언된 컬럼
+    bind     85       typeof=integer
+    concat   85       typeof=integer
+    (어느 쪽이든 integer. 선언된 타입이 텍스트를 숫자로 되돌렸다)
+
+  metric.value — 타입을 선언하지 않은 컬럼
+    bind     85       typeof=integer
+    concat   '85'     typeof=text
+    (되돌려 줄 선언이 없으니 조합 쪽은 텍스트인 채로 남았다)
+
+  그래서 같은 조건이 다른 답을 준다 (85 는 900 보다 작다):
+    concat   value > 900 에 걸리는가: True
+    bind     value > 900 에 걸리는가: False
+    (텍스트는 모든 숫자보다 크다고 보므로 참이 됐다. 85 가 커서가 아니다)
+    SELECT '85' > 900         ->  1
+    SELECT '12' > 900         ->  1
+    SELECT '12' > 9000000     ->  1
+
+----------------------------------------------------------------
+4. 자리표시자 두 가지 — 위치식 ? 와 이름식 :name
+----------------------------------------------------------------
+  SQL   : SELECT login, score FROM member WHERE score >= ? AND score <= ?
+  결과  : [('lee', 610), ('obrien', 745)]
+
+  SQL   : SELECT login, score FROM member WHERE score >= :low AND score <= :high
+  결과  : [('lee', 610), ('obrien', 745)]
+
+  SQL   : SELECT login FROM member WHERE score > ?
+  결과  : ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+  (개수가 어긋나면 실행 전에 막힌다 — 조합에는 이 검사가 없다)
+
+----------------------------------------------------------------
+5. IN 목록 — 값이 아니라 자리표시자를 만든다
+----------------------------------------------------------------
+  SQL   : SELECT login, score FROM member WHERE login IN (?,?)
+  바인딩: ('kim', 'lee')
+  결과  : [('lee', 610), ('kim', 820)]
+
+----------------------------------------------------------------
+6. 컬럼 이름은 바인딩되지 않는다
+----------------------------------------------------------------
+  SQL   : SELECT login, score FROM member ORDER BY ? DESC
+  바인딩: ('score',)
+  결과  : [('lee', 610), ('kim', 820), ('obrien', 745)]
+  (정렬되지 않았다. 에러도 안 난다)
+
+  SQL   : SELECT login, score FROM member ORDER BY score DESC
+  결과  : [('kim', 820), ('obrien', 745), ('lee', 610)]
+  (허용 목록으로 거른 뒤 문자열에 넣는다)
+
+----------------------------------------------------------------
+7. 같은 문장을 20000번 반복 — 조합과 바인딩의 비용 차이
+----------------------------------------------------------------
+  문자열 조합   0.049초
+  바인딩        0.015초
+  executemany   0.009초
+
