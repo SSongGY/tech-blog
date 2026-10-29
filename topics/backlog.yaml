@@ -3040,7 +3040,7 @@ topics:
     angle: "NIST 권고를 근거로 알고리즘별 권장 기간. 근거 없는 수치를 쓰지 않는다"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-108
     title: "보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담"
     category: PE
@@ -4767,7 +4767,7 @@ topics:
     angle: "CASE WHEN 집계로 가로로 펴고, UNION ALL 로 세로로 되돌린다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-081
     title: "문자열을 구분자로 나누기"
     category: Database
@@ -5447,7 +5447,7 @@ topics:
     difficulty: 중급
     angle: "sys.getsizeof 로 항목을 하나씩 넣으며 크기가 계단처럼 뛰는 지점을 찍는다. 해시가 같은 키를 일부러 만들어 넣었을 때 조회 비용이 어떻게 변하는지도 같이 잰다."
     code: python
-    status: todo
+    status: writing
   - id: gen-002
     title: "글자가 깨지는 세 가지 경로 — 인코딩·디코딩을 바이트로 따라가기"
     category: Language

@@ -1,0 +1,212 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-29-pivot-unpivot-with-case-and-union
+# 명령      : python pivot_unpivot.py
+# 수행 시각 : 2026-10-29 23:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[sale]  11행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  region  | TEXT    | NOT NULL
+  quarter | INTEGER | NOT NULL
+  amount  | INTEGER | NOT NULL
+
+  region | quarter | amount
+  -------+---------+-------
+  서울   |       1 |    120
+  서울   |       2 |    150
+  서울   |       3 |     90
+  서울   |       4 |    200
+  부산   |       1 |     80
+  부산   |       2 |     70
+  부산   |       3 |    110
+  부산   |       4 |     60
+  대구   |       1 |     40
+  대구   |       2 |     55
+  대구   |       3 |     30
+
+----------------------------------------------------------------
+1. 집계 없이 CASE 만 쓰면 — 행 수가 그대로다
+----------------------------------------------------------------
+SELECT region,
+       CASE WHEN quarter = 1 THEN amount END AS q1,
+       CASE WHEN quarter = 2 THEN amount END AS q2
+  FROM sale
+ WHERE region = '서울'
+
+  region | q1   | q2  
+  -------+------+-----
+    서울 |  120 | NULL
+    서울 | NULL |  150
+    서울 | NULL | NULL
+    서울 | NULL | NULL
+
+----------------------------------------------------------------
+2. 피벗 — SUM(CASE WHEN ...)
+----------------------------------------------------------------
+SELECT region,
+       SUM(CASE WHEN quarter = 1 THEN amount END) AS q1,
+       SUM(CASE WHEN quarter = 2 THEN amount END) AS q2,
+       SUM(CASE WHEN quarter = 3 THEN amount END) AS q3,
+       SUM(CASE WHEN quarter = 4 THEN amount END) AS q4
+  FROM sale
+ GROUP BY region
+ ORDER BY region
+
+  region | q1  | q2  | q3  | q4  
+  -------+-----+-----+-----+-----
+    대구 |  40 |  55 |  30 | NULL
+    부산 |  80 |  70 | 110 |   60
+    서울 | 120 | 150 |  90 |  200
+
+----------------------------------------------------------------
+3. 같은 결과를 FILTER 절로
+----------------------------------------------------------------
+SELECT region,
+       SUM(amount) FILTER (WHERE quarter = 1) AS q1,
+       SUM(amount) FILTER (WHERE quarter = 2) AS q2,
+       SUM(amount) FILTER (WHERE quarter = 3) AS q3,
+       SUM(amount) FILTER (WHERE quarter = 4) AS q4
+  FROM sale
+ GROUP BY region
+ ORDER BY region
+
+  region | q1  | q2  | q3  | q4  
+  -------+-----+-----+-----+-----
+    대구 |  40 |  55 |  30 | NULL
+    부산 |  80 |  70 | 110 |   60
+    서울 | 120 | 150 |  90 |  200
+
+----------------------------------------------------------------
+4. 빈 칸은 0 이 아니라 NULL 이다
+----------------------------------------------------------------
+SELECT region,
+       COUNT(CASE WHEN quarter = 4 THEN amount END) AS q4_cnt,
+       SUM(CASE WHEN quarter = 4 THEN amount END)   AS q4_sum,
+       COALESCE(SUM(CASE WHEN quarter = 4 THEN amount END), 0) AS q4_zero
+  FROM sale
+ GROUP BY region
+ ORDER BY region
+
+  region | q4_cnt | q4_sum | q4_zero
+  -------+--------+--------+--------
+    대구 |      0 |   NULL |       0
+    부산 |      1 |     60 |      60
+    서울 |      1 |    200 |     200
+
+----------------------------------------------------------------
+5. 언피벗 — UNION ALL
+----------------------------------------------------------------
+SELECT region, 1 AS quarter, q1 AS amount FROM sale_wide WHERE q1 IS NOT NULL
+UNION ALL
+SELECT region, 2, q2 FROM sale_wide WHERE q2 IS NOT NULL
+UNION ALL
+SELECT region, 3, q3 FROM sale_wide WHERE q3 IS NOT NULL
+UNION ALL
+SELECT region, 4, q4 FROM sale_wide WHERE q4 IS NOT NULL
+ORDER BY region, quarter
+
+  region | quarter | amount
+  -------+---------+-------
+    대구 |       1 |     40
+    대구 |       2 |     55
+    대구 |       3 |     30
+    부산 |       1 |     80
+    부산 |       2 |     70
+    부산 |       3 |    110
+    부산 |       4 |     60
+    서울 |       1 |    120
+    서울 |       2 |    150
+    서울 |       3 |     90
+    서울 |       4 |    200
+
+----------------------------------------------------------------
+6. 언피벗 — 분기 번호 목록과 교차 조인
+----------------------------------------------------------------
+WITH quarter_no(quarter) AS (VALUES (1), (2), (3), (4))
+SELECT w.region,
+       q.quarter,
+       CASE q.quarter WHEN 1 THEN w.q1 WHEN 2 THEN w.q2
+                      WHEN 3 THEN w.q3 ELSE w.q4 END AS amount
+  FROM sale_wide AS w
+  CROSS JOIN quarter_no AS q
+ WHERE CASE q.quarter WHEN 1 THEN w.q1 WHEN 2 THEN w.q2
+                      WHEN 3 THEN w.q3 ELSE w.q4 END IS NOT NULL
+ ORDER BY w.region, q.quarter
+
+  region | quarter | amount
+  -------+---------+-------
+    대구 |       1 |     40
+    대구 |       2 |     55
+    대구 |       3 |     30
+    부산 |       1 |     80
+    부산 |       2 |     70
+    부산 |       3 |    110
+    부산 |       4 |     60
+    서울 |       1 |    120
+    서울 |       2 |    150
+    서울 |       3 |     90
+    서울 |       4 |    200
+
+----------------------------------------------------------------
+7-1. UNION ALL 언피벗의 실행계획
+----------------------------------------------------------------
+QUERY PLAN
+`--MERGE (UNION ALL)
+   |--LEFT
+   |  `--MERGE (UNION ALL)
+   |     |--LEFT
+   |     |  |--CO-ROUTINE sale_wide
+   |     |  |  |--SCAN sale
+   |     |  |  `--USE TEMP B-TREE FOR GROUP BY
+   |     |  |--SCAN sale_wide
+   |     |  `--USE TEMP B-TREE FOR ORDER BY
+   |     `--RIGHT
+   |        |--CO-ROUTINE sale_wide
+   |        |  |--SCAN sale
+   |        |  `--USE TEMP B-TREE FOR GROUP BY
+   |        |--SCAN sale_wide
+   |        `--USE TEMP B-TREE FOR ORDER BY
+   `--RIGHT
+      `--MERGE (UNION ALL)
+         |--LEFT
+         |  |--CO-ROUTINE sale_wide
+         |  |  |--SCAN sale
+         |  |  `--USE TEMP B-TREE FOR GROUP BY
+         |  |--SCAN sale_wide
+         |  `--USE TEMP B-TREE FOR ORDER BY
+         `--RIGHT
+            |--CO-ROUTINE sale_wide
+            |  |--SCAN sale
+            |  `--USE TEMP B-TREE FOR GROUP BY
+            |--SCAN sale_wide
+            `--USE TEMP B-TREE FOR ORDER BY
+
+----------------------------------------------------------------
+7-2. 교차 조인 언피벗의 실행계획
+----------------------------------------------------------------
+QUERY PLAN
+|--CO-ROUTINE sale_wide
+|  |--SCAN sale
+|  `--USE TEMP B-TREE FOR GROUP BY
+|--MATERIALIZE quarter_no
+|  `--SCAN 4 CONSTANT ROWS
+|--SCAN w
+|--SCAN q
+`--USE TEMP B-TREE FOR ORDER BY
+
