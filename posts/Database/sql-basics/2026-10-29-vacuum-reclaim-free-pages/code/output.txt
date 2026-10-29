@@ -1,0 +1,94 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-29-vacuum-reclaim-free-pages
+# 명령      : python vacuum_demo.py
+# 수행 시각 : 2026-10-29 14:44 (대한민국 표준시)
+# 소요      : 5.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+
+================================================================
+1. auto_vacuum = NONE (기본값)
+================================================================
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[order_log]  20000행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  id        | INTEGER | PK
+  placed_on | TEXT    | NOT NULL
+  status    | TEXT    | NOT NULL
+  memo      | TEXT    |
+
+  id | placed_on  | status    | memo
+  ---+------------+-----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   1 | 2026-10-02 | paid      | 1번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   2 | 2026-10-03 | paid      | 2번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   3 | 2026-10-04 | cancelled | 3번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   4 | 2026-10-05 | paid      | 4번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   5 | 2026-10-06 | paid      | 5번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   6 | 2026-10-07 | cancelled | 6번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   7 | 2026-10-08 | paid      | 7번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   8 | 2026-10-09 | paid      | 8번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   9 | 2026-10-10 | cancelled | 9번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  10 | 2026-10-11 | paid      | 10번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  11 | 2026-10-12 | paid      | 11번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  12 | 2026-10-13 | cancelled | 12번 주문 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  … 19988행 더 있음
+
+[인덱스]
+  이름                 | 대상 표   | 정의
+  ---------------------+-----------+-------------------------------------------------------
+  idx_order_log_status | order_log | CREATE INDEX idx_order_log_status ON order_log(status)
+
+  PRAGMA auto_vacuum → 0
+
+  적재 직후                     행 20,000 · 페이지 1,332 · freelist     0 · 파일 5,455,872 바이트
+  90% 삭제 후                  행  2,000 · 페이지 1,332 · freelist 1,168 · 파일 5,455,872 바이트
+  5,000행 다시 넣은 뒤            행  7,000 · 페이지 1,332 · freelist   857 · 파일 5,455,872 바이트
+  VACUUM 후                  행  7,000 · 페이지   445 · freelist     0 · 파일 1,822,720 바이트
+
+================================================================
+2. auto_vacuum = FULL
+================================================================
+  PRAGMA auto_vacuum → 1
+  적재 직후                     행 20,000 · 페이지 1,334 · freelist     0 · 파일 5,464,064 바이트
+  90% 삭제 후                  행  2,000 · 페이지   165 · freelist     0 · 파일   675,840 바이트
+
+================================================================
+3. auto_vacuum = INCREMENTAL
+================================================================
+  PRAGMA auto_vacuum → 2
+  적재 직후                     행 20,000 · 페이지 1,334 · freelist     0 · 파일 5,464,064 바이트
+  90% 삭제 후                  행  2,000 · 페이지 1,334 · freelist 1,168 · 파일 5,464,064 바이트
+  execute 만 (100 요청)        행  2,000 · 페이지 1,333 · freelist 1,167 · 파일 5,459,968 바이트
+  fetchall (100 요청)         행  2,000 · 페이지 1,233 · freelist 1,067 · 파일 5,050,368 바이트
+      ↑ 받은 결과 행 100개 — 돌려준 페이지 수와 같다
+  fetchall (전부)             행  2,000 · 페이지   165 · freelist     0 · 파일   675,840 바이트
+      ↑ 받은 결과 행 1067개
+
+================================================================
+4. 이미 만든 DB 의 auto_vacuum 바꾸기
+================================================================
+  바꾸기 전               → 0
+  PRAGMA 만 건 직후        → 0
+  그 상태로 VACUUM 한 뒤   → 1
+
+================================================================
+5. VACUUM INTO — 원본을 열어 둔 채 사본 만들기
+================================================================
+  원본 (90% 삭제 후)             행  2,000 · 페이지 1,332 · freelist 1,168 · 파일 5,455,872 바이트
+  원본 — VACUUM INTO 뒤        행  2,000 · 페이지 1,332 · freelist 1,168 · 파일 5,455,872 바이트
+  사본                        행  2,000 · 페이지   135 · freelist     0 · 파일   552,960 바이트
+

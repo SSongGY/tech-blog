@@ -378,7 +378,7 @@ topics:
     difficulty: 심화
     angle: "보상이 실패하는 경우를 어떻게 다룰지가 핵심"
     code: python
-    status: writing
+    status: done
   - id: arch-004
     title: "모놀리스를 쪼개기 전에 확인할 경계 찾기"
     category: Architecture
@@ -3018,7 +3018,7 @@ topics:
     angle: "어디에 무엇을 캐시하고 무효화를 어떻게 전파하는지"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-106
     title: "웹 취약점 — OWASP Top 10 분류와 대응"
     category: PE
@@ -4745,7 +4745,7 @@ topics:
     angle: "빈 페이지가 재사용되는 구조. VACUUM 전후 파일 크기와 auto_vacuum 설정"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-079
     title: "파라미터 바인딩 — 문자열을 붙이면 안 되는 이유"
     category: Database

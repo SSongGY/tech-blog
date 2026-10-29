@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <text x="40" y="30" font-size="15" font-weight="bold" fill="#1b2430">데이터베이스 파일 = 같은 크기 페이지의 배열 (page_size 4096바이트)</text>
+
+  <!-- 범례 -->
+  <rect x="500" y="51" width="12" height="12" fill="#e8f3ed" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="518" y="62" font-size="13" fill="#1b2430">쓰는 페이지</text>
+  <rect x="620" y="51" width="12" height="12" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="638" y="62" font-size="13" fill="#1b2430">빈 페이지</text>
+  <rect x="730" y="51" width="12" height="12" fill="#fdf1e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="748" y="62" font-size="13" fill="#1b2430">트렁크</text>
+
+  <text x="40" y="62" font-size="14" font-weight="bold" fill="#9d0208">① 90% 삭제 직후 — 파일 크기는 그대로다</text>
+
+  <!-- 1행: 삭제 직후 -->
+  <g stroke-width="1.5">
+    <rect x="40"  y="74" width="47" height="48" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="91"  y="74" width="47" height="48" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="142" y="74" width="47" height="48" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="193" y="74" width="47" height="48" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="244" y="74" width="47" height="48" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="295" y="74" width="47" height="48" fill="#fdf1e0" stroke="#b45309"/>
+    <rect x="346" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="397" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="448" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="499" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="550" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="601" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="652" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="703" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+    <rect x="754" y="74" width="47" height="48" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="805" y="74" width="47" height="48" fill="#fbe9e9" stroke="#9d0208"/>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#1b2430">
+    <text x="63.5"  y="103">헤더</text>
+    <text x="114.5" y="103">표</text>
+    <text x="165.5" y="103">표</text>
+    <text x="216.5" y="103">표</text>
+    <text x="267.5" y="103">인덱스</text>
+    <text x="318.5" y="103" fill="#b45309">트렁크</text>
+    <text x="369.5" y="103" fill="#9d0208">빈</text>
+    <text x="420.5" y="103" fill="#9d0208">빈</text>
+    <text x="471.5" y="103" fill="#9d0208">빈</text>
+    <text x="522.5" y="103" fill="#9d0208">빈</text>
+    <text x="573.5" y="103" fill="#9d0208">빈</text>
+    <text x="624.5" y="103" fill="#9d0208">빈</text>
+    <text x="675.5" y="103" fill="#9d0208">빈</text>
+    <text x="726.5" y="103" fill="#9d0208">빈</text>
+    <text x="777.5" y="103">표</text>
+    <text x="828.5" y="103" fill="#9d0208">빈</text>
+  </g>
+
+  <!-- 트렁크가 빈 페이지 번호를 담는다 -->
+  <g stroke="#b45309" stroke-width="1.3" stroke-dasharray="4 3" fill="none">
+    <path d="M318.5 122 L318.5 140 L828.5 140"/>
+    <path d="M369.5 140 L369.5 124"/>
+    <path d="M420.5 140 L420.5 124"/>
+    <path d="M471.5 140 L471.5 124"/>
+    <path d="M522.5 140 L522.5 124"/>
+    <path d="M573.5 140 L573.5 124"/>
+    <path d="M624.5 140 L624.5 124"/>
+    <path d="M675.5 140 L675.5 124"/>
+    <path d="M726.5 140 L726.5 124"/>
+    <path d="M828.5 140 L828.5 124"/>
+  </g>
+  <text x="40" y="162" font-size="13" fill="#b45309">트렁크 페이지가 빈 페이지 번호를 모아 담는다 — 이 묶음이 freelist 다</text>
+
+  <!-- 헤더 필드 -->
+  <rect x="40" y="174" width="812" height="56" fill="#f6f7f9" stroke="#8a93a0" stroke-width="1.2"/>
+  <text x="56" y="196" font-size="13" fill="#1b2430">파일 헤더 오프셋 32 (4바이트) — 첫 freelist 트렁크 페이지 번호. 비어 있으면 0</text>
+  <text x="56" y="218" font-size="13" fill="#1b2430">파일 헤더 오프셋 36 (4바이트) — freelist 전체 페이지 수. PRAGMA freelist_count 가 읽는 값</text>
+
+  <text x="40" y="258" font-size="14" font-weight="bold" fill="#2d6a4f">② VACUUM 후 — 내용을 앞에서부터 다시 깔고 뒤를 잘라낸다</text>
+
+  <!-- 2행: VACUUM 후 -->
+  <g stroke="#2d6a4f" stroke-width="1.5" fill="#e8f3ed">
+    <rect x="40"  y="270" width="47" height="48"/>
+    <rect x="91"  y="270" width="47" height="48"/>
+    <rect x="142" y="270" width="47" height="48"/>
+    <rect x="193" y="270" width="47" height="48"/>
+    <rect x="244" y="270" width="47" height="48"/>
+    <rect x="295" y="270" width="47" height="48"/>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#1b2430">
+    <text x="63.5"  y="299">헤더</text>
+    <text x="114.5" y="299">표</text>
+    <text x="165.5" y="299">표</text>
+    <text x="216.5" y="299">표</text>
+    <text x="267.5" y="299">인덱스</text>
+    <text x="318.5" y="299">표</text>
+  </g>
+  <rect x="346" y="270" width="506" height="48" fill="#ffffff" stroke="#8a93a0" stroke-width="1.3" stroke-dasharray="6 4"/>
+  <text x="599" y="299" font-size="13" text-anchor="middle" fill="#5a6472">잘려 나간 부분 — 파일이 실제로 짧아진다</text>
+
+  <text x="40" y="346" font-size="13" fill="#1b2430">VACUUM 은 임시 파일에 DB 를 새로 쓴 뒤 원본에 덮어쓴다. 작업 중 원본 크기의 두 배쯤 되는 여유 공간이 필요하다.</text>
+</svg>
