@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#fbfbfd"/>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1f">OWASP Top 10:2025 — 열 항목을 막는 지점으로 묶으면 네 층</text>
+  <text x="440" y="54" text-anchor="middle" font-size="13" fill="#6b6e76">위로 갈수록 이른 단계에서 막는다. 아래층으로 내려올수록 남은 것만 막는다</text>
+
+  <!-- 1층: 설계 -->
+  <rect x="40" y="70" width="800" height="78" rx="6" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="62" y="98" font-size="15" font-weight="bold" fill="#2d6a4f">① 설계</text>
+  <text x="62" y="120" font-size="13" fill="#4a4d55">위협 모델링 · 보안 요구사항 · 신뢰 경계 설정</text>
+  <text x="62" y="139" font-size="13" fill="#6b6e76">코드를 쓰기 전에 결정한다. 여기서 빠뜨리면 아래 세 층이 전부 뒷수습이 된다</text>
+  <rect x="610" y="88" width="212" height="42" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.3"/>
+  <text x="716" y="105" text-anchor="middle" font-size="13" fill="#1b1b1f">A06 안전하지 않은 설계</text>
+  <text x="716" y="123" text-anchor="middle" font-size="13" fill="#6b6e76">1개 항목</text>
+
+  <!-- 2층: 코드 -->
+  <rect x="40" y="158" width="800" height="104" rx="6" fill="#ffffff" stroke="#55585f" stroke-width="1.6"/>
+  <text x="62" y="186" font-size="15" font-weight="bold" fill="#1b1b1f">② 코드</text>
+  <text x="62" y="208" font-size="13" fill="#4a4d55">서버 측 검증 · 파라미터 바인딩 · 예외 처리 · 세션 처리</text>
+  <text x="62" y="227" font-size="13" fill="#6b6e76">설정으로는 못 막는다. 소스를 고쳐야 사라진다</text>
+  <text x="62" y="250" font-size="13" fill="#9d0208">네 항목 중 A01 은 2025 데이터에서 발생 건수 1위다</text>
+
+  <rect x="470" y="172" width="170" height="36" rx="5" fill="#fdeeee" stroke="#9d0208" stroke-width="1.3"/>
+  <text x="555" y="195" text-anchor="middle" font-size="13" fill="#1b1b1f">A01 접근통제 실패</text>
+  <rect x="652" y="172" width="170" height="36" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.3"/>
+  <text x="737" y="195" text-anchor="middle" font-size="13" fill="#1b1b1f">A05 인젝션</text>
+  <rect x="470" y="216" width="170" height="36" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.3"/>
+  <text x="555" y="239" text-anchor="middle" font-size="13" fill="#1b1b1f">A07 인증 실패</text>
+  <rect x="652" y="216" width="170" height="36" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.3"/>
+  <text x="737" y="239" text-anchor="middle" font-size="13" fill="#1b1b1f">A10 예외 조건 처리</text>
+
+  <!-- 3층: 설정 -->
+  <rect x="40" y="272" width="800" height="78" rx="6" fill="#fff7e8" stroke="#b45309" stroke-width="1.6"/>
+  <text x="62" y="300" font-size="15" font-weight="bold" fill="#b45309">③ 설정 · 인프라</text>
+  <text x="62" y="322" font-size="13" fill="#4a4d55">기본 계정 제거 · 불필요한 기능 차단 · TLS 와 키 관리</text>
+  <text x="62" y="341" font-size="13" fill="#6b6e76">코드를 안 고쳐도 배포 구성으로 막힌다. 환경마다 따로 확인해야 한다</text>
+  <rect x="610" y="282" width="212" height="36" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="716" y="305" text-anchor="middle" font-size="13" fill="#1b1b1f">A02 보안 설정 오류</text>
+  <rect x="610" y="322" width="212" height="22" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.3"/>
+  <text x="716" y="338" text-anchor="middle" font-size="13" fill="#1b1b1f">A04 암호화 실패</text>
+
+  <!-- 4층: 공급망·운영 -->
+  <rect x="40" y="360" width="800" height="78" rx="6" fill="#ffffff" stroke="#55585f" stroke-width="1.6"/>
+  <text x="62" y="388" font-size="15" font-weight="bold" fill="#1b1b1f">④ 공급망 · 운영</text>
+  <text x="62" y="410" font-size="13" fill="#4a4d55">SBOM · 서명 검증 · 파이프라인 권한 · 로그와 경보</text>
+  <text x="62" y="429" font-size="13" fill="#6b6e76">내 코드가 멀쩡해도 뚫린다. 2025 에서 가장 크게 늘어난 층이다</text>
+  <rect x="470" y="372" width="170" height="26" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.3"/>
+  <text x="555" y="390" text-anchor="middle" font-size="13" fill="#1b1b1f">A03 공급망 실패</text>
+  <rect x="652" y="372" width="170" height="26" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.3"/>
+  <text x="737" y="390" text-anchor="middle" font-size="13" fill="#1b1b1f">A08 무결성 실패</text>
+  <rect x="470" y="404" width="352" height="26" rx="5" fill="#ffffff" stroke="#55585f" stroke-width="1.3"/>
+  <text x="646" y="422" text-anchor="middle" font-size="13" fill="#1b1b1f">A09 로깅 · 경보 실패</text>
+</svg>
