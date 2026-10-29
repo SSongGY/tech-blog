@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 432" width="880" height="432" font-family="Segoe UI, Malgun Gothic, sans-serif">
+  <rect x="0" y="0" width="880" height="432" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="17" font-weight="600" fill="#222">같은 이력, 같은 파일 — 기준을 바꾸면 묶음이 갈린다</text>
+
+  <line x1="440" y1="56" x2="440" y2="350" stroke="#c8cdd4"/>
+
+  <!-- ===== 왼쪽: 동시 변경 횟수 ===== -->
+  <text x="40" y="78" font-size="15" font-weight="600" fill="#9d0208">동시 변경 3회 이상으로 이으면</text>
+
+  <rect x="40" y="180" width="150" height="44" rx="5" fill="#f6f0e6" stroke="#b45309"/>
+  <text x="54" y="200" font-size="13" fill="#b45309">공용 설정</text>
+  <text x="54" y="217" font-size="13" fill="#b45309" font-family="Consolas, monospace">common/config.py</text>
+
+  <rect x="250" y="96" width="150" height="44" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="264" y="116" font-size="13" fill="#222">주문 3개 파일</text>
+  <text x="264" y="133" font-size="13" fill="#55606e" font-family="Consolas, monospace">order/*</text>
+
+  <rect x="250" y="156" width="150" height="44" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="264" y="176" font-size="13" fill="#222">청구서</text>
+  <text x="264" y="193" font-size="13" fill="#55606e" font-family="Consolas, monospace">billing/invoice.py</text>
+
+  <rect x="250" y="216" width="150" height="44" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="264" y="236" font-size="13" fill="#222">배송 3개 파일</text>
+  <text x="264" y="253" font-size="13" fill="#55606e" font-family="Consolas, monospace">shipping/*</text>
+
+  <rect x="250" y="276" width="150" height="44" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="264" y="296" font-size="13" fill="#222">결제</text>
+  <text x="264" y="313" font-size="13" fill="#55606e" font-family="Consolas, monospace">billing/payment.py</text>
+
+  <line x1="190" y1="202" x2="250" y2="118" stroke="#b45309"/>
+  <line x1="190" y1="202" x2="250" y2="178" stroke="#b45309"/>
+  <line x1="190" y1="202" x2="250" y2="238" stroke="#b45309"/>
+  <line x1="190" y1="202" x2="250" y2="298" stroke="#b45309"/>
+  <line x1="325" y1="140" x2="325" y2="156" stroke="#2d6a4f" stroke-width="2"/>
+
+  <text x="40" y="342" font-size="14" fill="#9d0208">공용 설정이 전부를 이어 버려 묶음이 1개로 뭉친다</text>
+
+  <!-- ===== 오른쪽: 자카드 계수 ===== -->
+  <text x="460" y="78" font-size="15" font-weight="600" fill="#2d6a4f">자카드 0.3 이상으로 이으면</text>
+
+  <rect x="460" y="180" width="150" height="44" rx="5" fill="#fff" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="474" y="200" font-size="13" fill="#b45309">공용 설정 — 혼자</text>
+  <text x="474" y="217" font-size="13" fill="#b45309" font-family="Consolas, monospace">common/config.py</text>
+
+  <rect x="670" y="96" width="150" height="44" rx="5" fill="#e7f3ec" stroke="#2d6a4f"/>
+  <text x="684" y="116" font-size="13" fill="#2d6a4f">주문 3개 파일</text>
+  <text x="684" y="133" font-size="13" fill="#2d6a4f" font-family="Consolas, monospace">order/*</text>
+
+  <rect x="670" y="156" width="150" height="44" rx="5" fill="#e7f3ec" stroke="#2d6a4f"/>
+  <text x="684" y="176" font-size="13" fill="#2d6a4f">청구서 — 주문 쪽</text>
+  <text x="684" y="193" font-size="13" fill="#2d6a4f" font-family="Consolas, monospace">billing/invoice.py</text>
+
+  <rect x="670" y="216" width="150" height="44" rx="5" fill="#eef2f7" stroke="#55606e"/>
+  <text x="684" y="236" font-size="13" fill="#222">배송 3개 파일</text>
+  <text x="684" y="253" font-size="13" fill="#55606e" font-family="Consolas, monospace">shipping/*</text>
+
+  <rect x="670" y="276" width="150" height="44" rx="5" fill="#fff" stroke="#55606e" stroke-dasharray="5 3"/>
+  <text x="684" y="296" font-size="13" fill="#222">결제 — 혼자</text>
+  <text x="684" y="313" font-size="13" fill="#55606e" font-family="Consolas, monospace">billing/payment.py</text>
+
+  <line x1="745" y1="140" x2="745" y2="156" stroke="#2d6a4f" stroke-width="2"/>
+
+  <text x="460" y="342" font-size="14" fill="#2d6a4f">묶음 4개 — 청구서가 폴더를 떠나 주문 쪽에 붙는다</text>
+
+  <!-- 주석 -->
+  <rect x="40" y="366" width="800" height="52" rx="5" fill="#f4f6f8" stroke="#55606e"/>
+  <text x="56" y="388" font-size="13" fill="#333">자카드 계수는 동시에 바뀐 커밋 수를 둘 중 하나라도 바뀐 커밋 수로 나눈다. 자주 바뀌는 파일은</text>
+  <text x="56" y="408" font-size="13" fill="#333">분모가 커져 점수가 내려가므로, 모두와 함께 바뀐다는 사실만으로는 이어지지 않는다.</text>
+</svg>

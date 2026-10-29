@@ -1,0 +1,74 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Architecture\2026-10-30-find-service-boundaries-from-cochange
+# 명령      : python cochange.py
+# 수행 시각 : 2026-10-30 08:25 (대한민국 표준시)
+# 소요      : 4.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+1. 집계 대상
+================================================================
+  커밋 26개 · 파일 9개
+
+  파일별 변경 횟수
+    billing/invoice.py         7
+    billing/payment.py         5
+    common/config.py          13
+    order/api.py               7
+    order/model.py             5
+    order/service.py          10
+    shipping/api.py            6
+    shipping/service.py        8
+    shipping/tracking.py       5
+
+================================================================
+2. 동시 변경 횟수 상위 10쌍
+================================================================
+  파일 쌍                                                     동시     자카드
+  billing/invoice.py + order/service.py                     5   0.417
+  order/api.py + order/service.py                           5   0.417
+  shipping/api.py + shipping/service.py                     5   0.556
+  shipping/service.py + shipping/tracking.py                5   0.625
+  billing/invoice.py + common/config.py                     4   0.250
+  billing/payment.py + common/config.py                     4   0.286
+  common/config.py + order/service.py                       4   0.211
+  order/api.py + order/model.py                             4   0.500
+  order/model.py + order/service.py                         4   0.364
+  common/config.py + shipping/api.py                        3   0.188
+
+================================================================
+3. 동시 변경 횟수만으로 묶으면
+================================================================
+
+  동시 변경 3회 이상 — 묶음 1개
+  묶음 1: billing/invoice.py, billing/payment.py, common/config.py, order/api.py, order/model.py, order/service.py, shipping/api.py, shipping/service.py, shipping/tracking.py
+
+  동시 변경 4회 이상 — 묶음 2개
+  묶음 1: billing/invoice.py, billing/payment.py, common/config.py, order/api.py, order/model.py, order/service.py
+  묶음 2: shipping/api.py, shipping/service.py, shipping/tracking.py
+
+================================================================
+4. 자카드 계수로 묶으면
+================================================================
+
+  자카드 0.3 이상 — 묶음 4개
+  묶음 1: billing/invoice.py, order/api.py, order/model.py, order/service.py
+  묶음 2: billing/payment.py
+  묶음 3: common/config.py
+  묶음 4: shipping/api.py, shipping/service.py, shipping/tracking.py
+
+  자카드 0.4 이상 — 묶음 4개
+  묶음 1: billing/invoice.py, order/api.py, order/model.py, order/service.py
+  묶음 2: billing/payment.py
+  묶음 3: common/config.py
+  묶음 4: shipping/api.py, shipping/service.py, shipping/tracking.py
+
+================================================================
+5. 폴더 경계와 어긋나는 쌍
+================================================================
+  파일 쌍                                                     동시     자카드
+  billing/invoice.py + order/service.py                     5   0.417
