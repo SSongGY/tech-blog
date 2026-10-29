@@ -6014,7 +6014,7 @@ topics:
     angle: "ISO 31000의 원칙·프레임워크·프로세스를 AI에 맞춰 옮긴 구조와 부속서의 AI 고유 위험원, ISO/IEC 42001 6.1.2와 어떻게 맞물리는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-203
     title: "생체인식 템플릿 보호 (ISO/IEC 24745)"
     category: PE
@@ -6025,7 +6025,7 @@ topics:
     angle: "얼굴·지문은 유출돼도 바꿀 수 없다는 점에서 출발해 기밀성·무결성·갱신성·비가역성·비연결성 요구를 정리하고, 취소 가능 생체인식과 생체 암호의 구현 갈래를 비교한다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-204
     title: "제시공격 탐지 (PAD, ISO/IEC 30107)"
     category: PE

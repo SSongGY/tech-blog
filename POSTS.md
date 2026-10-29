@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **512편** · 갱신 2026-10-29
+총 **514편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -111,15 +111,17 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 178편
+## 기술사 (pe) — 180편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-29 | [정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션](posts/PE/it-management/2026-10-29-quantitative-risk-analysis-emv-monte-carlo/index.md) | 중급 | Python 3.13.5, IEC 31010:2019 (Edition 2.0), NIST SP 800-30 Rev. 1 | 실행 검증 |
 | 2026-10-29 | [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](posts/PE/ai/2026-10-29-nist-ai-bias-three-categories/index.md) | 중급 | NIST SP 1270 (2022-03-15 발행, 2022-03-24 갱신), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
 | 2026-10-29 | [나이브 베이즈 분류기 — 조건부 독립 가정, 라플라스 스무딩, 로그 확률 합산](posts/PE/data-analysis/2026-10-29-naive-bayes-classifier/index.md) | 중급 | Python 3.13.5, scikit-learn 문서 1.9절 Naive Bayes | 실행 검증 |
+| 2026-10-29 | [ISO/IEC 23894 인공지능 위험관리 — ISO 31000을 AI에 옮긴 세 덩어리와 부속서 3개](posts/PE/it-management/2026-10-29-iso-iec-23894-ai-risk-management/index.md) | 중급 | ISO/IEC 23894:2023 (초판, ISO/IEC JTC 1/SC 42), ISO 31000:2018, ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 | 문서 근거 |
 | 2026-10-29 | [ISO 31000 위험관리 — 원칙 8가지, 프레임워크, 프로세스](posts/PE/it-management/2026-10-29-iso-31000-risk-management-principles-framework-process/index.md) | 중급 | ISO 31000:2018 (2018-02 발행, 2023 재확인), ISO 31000:2009 (철회), IEC 31010:2019, PMBOK Guide 6th Edition (PMI, 2017) | 문서 근거 |
 | 2026-10-29 | [CDN과 캐시 계층 — 응답을 앞당기는 구조](posts/PE/network/2026-10-29-cdn-cache-layers/index.md) | 중급 | RFC 6707 (2012-09), RFC 9111 (2022-06), RFC 9213 (2022-06), RFC 9211 (2022-06), RFC 5861 (2010-05) | 문서 근거 |
+| 2026-10-29 | [생체인식 템플릿 보호 (ISO/IEC 24745) — 바꿀 수 없는 인증정보를 갱신 가능하게 만드는 법](posts/PE/security/2026-10-29-biometric-template-protection-iso-iec-24745/index.md) | 중급 | ISO/IEC 24745:2022 (제2판, ISO/IEC JTC 1/SC 27), ISO/IEC 24745:2011 (철회), ISO/IEC 30136:2018, ISO/IEC 2382-37:2022 | 문서 근거 |
 | 2026-10-28 | [무선 네트워크 보안 — WPA3와 인증 방식](posts/PE/network/2026-10-28-wpa3-wireless-security/index.md) | 중급 | WPA3 Specification v3.5 (2025), RFC 7664, RFC 8110, IEEE 802.11 (SAE) | 문서 근거 |
 | 2026-10-28 | [VLSM — 가변 길이 서브넷 마스크](posts/PE/network/2026-10-28-vlsm-variable-length-subnet-mask/index.md) | 중급 | Python 3.13.5, RFC 950 (1985-08), RFC 1812 (1995-06), RFC 1878 (1995-12), RFC 2453 (1998-11, STD 56) | 실행 검증 |
 | 2026-10-28 | [네트워크 가상화 — VLAN, VXLAN, 오버레이](posts/PE/network/2026-10-28-network-virtualization-vlan-vxlan/index.md) | 중급 | IEEE 802.1Q, RFC 7348 (VXLAN), RFC 8926 (Geneve), RFC 7637 (NVGRE) | 문서 근거 |
