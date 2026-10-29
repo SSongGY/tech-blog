@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="340" fill="#ffffff"/>
+  <defs>
+    <marker id="arrowR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5a6472"/>
+    </marker>
+    <marker id="arrowL" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="28" font-size="15" font-weight="bold" fill="#1b2430">요청이 지나는 캐시 계층과 각 계층을 움직이는 지시어</text>
+
+  <!-- 요청 방향 -->
+  <text x="40" y="62" font-size="13" fill="#5a6472">요청 — 앞 계층에서 신선한 응답을 찾으면 거기서 끊긴다</text>
+  <line x1="470" y1="57" x2="840" y2="57" stroke="#5a6472" stroke-width="1.5" marker-end="url(#arrowR)"/>
+
+  <!-- 계층 박스 -->
+  <g stroke-width="1.5">
+    <rect x="40"  y="76" width="170" height="70" fill="#f6f7f9" stroke="#5a6472"/>
+    <rect x="250" y="76" width="170" height="70" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="460" y="76" width="170" height="70" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="670" y="76" width="170" height="70" fill="#fdf1e0" stroke="#b45309"/>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#1b2430">
+    <text x="125" y="104" font-weight="bold">사용자 에이전트</text>
+    <text x="125" y="126">개인 캐시 (private)</text>
+    <text x="335" y="104" font-weight="bold">CDN 엣지</text>
+    <text x="335" y="126">공유 캐시 (surrogate)</text>
+    <text x="545" y="104" font-weight="bold">오리진 실드</text>
+    <text x="545" y="126">공유 캐시</text>
+    <text x="755" y="104" font-weight="bold">오리진 서버</text>
+    <text x="755" y="126">응답을 만든다</text>
+  </g>
+
+  <!-- 계층 사이 연결 -->
+  <g stroke="#5a6472" stroke-width="1.5">
+    <line x1="210" y1="111" x2="250" y2="111"/>
+    <line x1="420" y1="111" x2="460" y2="111"/>
+    <line x1="630" y1="111" x2="670" y2="111"/>
+  </g>
+
+  <text x="40" y="172" font-size="13" fill="#5a6472">각 계층이 저장 여부와 유효 기간을 정할 때 읽는 필드 (위가 우선)</text>
+
+  <!-- 지시어 박스 -->
+  <g stroke-width="1.2" stroke-dasharray="5 3">
+    <rect x="40"  y="184" width="170" height="68" fill="#ffffff" stroke="#8a93a0"/>
+    <rect x="250" y="184" width="170" height="68" fill="#ffffff" stroke="#8a93a0"/>
+    <rect x="460" y="184" width="170" height="68" fill="#ffffff" stroke="#8a93a0"/>
+    <rect x="670" y="184" width="170" height="68" fill="#ffffff" stroke="#8a93a0"/>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#1b2430">
+    <text x="125" y="210">max-age</text>
+    <text x="125" y="232">no-store · private</text>
+    <text x="335" y="210">CDN-Cache-Control</text>
+    <text x="335" y="232">s-maxage · max-age</text>
+    <text x="545" y="210">s-maxage</text>
+    <text x="545" y="232">max-age</text>
+    <text x="755" y="210">Cache-Control</text>
+    <text x="755" y="232">ETag 발행</text>
+  </g>
+
+  <!-- 응답 방향 -->
+  <line x1="840" y1="278" x2="40" y2="278" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowL)"/>
+  <text x="840" y="300" font-size="13" text-anchor="end" fill="#2d6a4f">응답 — 지나는 공유 캐시마다 저장 여부를 스스로 판단하고 Age 를 더해 보낸다</text>
+
+  <text x="40" y="326" font-size="13" fill="#1b2430">s-maxage 는 공유 캐시에서만 쓰이고 max-age·Expires 를 덮는다. CDN-Cache-Control 은 그 CDN 에서만 둘을 덮는다.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="330" fill="#ffffff"/>
+
+  <text x="40" y="28" font-size="15" font-weight="bold" fill="#1b2430">바뀐 내용을 캐시에 전파하는 세 가지 길</text>
+
+  <g font-size="13" font-weight="bold" fill="#5a6472">
+    <text x="40" y="60">방식</text>
+    <text x="280" y="60">어디까지 닿는가</text>
+    <text x="620" y="60">약한 고리</text>
+  </g>
+  <line x1="40" y1="68" x2="840" y2="68" stroke="#8a93a0" stroke-width="1.2"/>
+
+  <!-- 1 -->
+  <g stroke-width="1.5">
+    <rect x="40"  y="80" width="220" height="62" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="280" y="80" width="320" height="62" fill="#ffffff" stroke="#8a93a0"/>
+    <rect x="620" y="80" width="220" height="62" fill="#fdf1e0" stroke="#b45309"/>
+  </g>
+  <g font-size="13" fill="#1b2430">
+    <text x="56" y="104" font-weight="bold">① 유효 기간 만료</text>
+    <text x="56" y="126">기다린다</text>
+    <text x="296" y="104">모든 계층이 제 시계로 만료한다</text>
+    <text x="296" y="126">개인 캐시까지 닿는 유일한 길</text>
+    <text x="636" y="104">기간이 길면 그만큼</text>
+    <text x="636" y="126">늦게 반영된다</text>
+  </g>
+
+  <!-- 2 -->
+  <g stroke-width="1.5">
+    <rect x="40"  y="155" width="220" height="62" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="280" y="155" width="320" height="62" fill="#ffffff" stroke="#8a93a0"/>
+    <rect x="620" y="155" width="220" height="62" fill="#fdf1e0" stroke="#b45309"/>
+  </g>
+  <g font-size="13" fill="#1b2430">
+    <text x="56" y="179" font-weight="bold">② 무효화 요청</text>
+    <text x="56" y="201">CDN 에 purge 를 건다</text>
+    <text x="296" y="179">CDN 엣지·실드까지만 닿는다</text>
+    <text x="296" y="201">표준이 아니라 사업자별 API 다</text>
+    <text x="636" y="179">이미 내려간 개인</text>
+    <text x="636" y="201">캐시는 못 거둔다</text>
+  </g>
+
+  <!-- 3 -->
+  <g stroke-width="1.5">
+    <rect x="40"  y="230" width="220" height="62" fill="#e8f3ed" stroke="#2d6a4f"/>
+    <rect x="280" y="230" width="320" height="62" fill="#ffffff" stroke="#8a93a0"/>
+    <rect x="620" y="230" width="220" height="62" fill="#fdf1e0" stroke="#b45309"/>
+  </g>
+  <g font-size="13" fill="#1b2430">
+    <text x="56" y="254" font-weight="bold">③ 캐시 키 변경</text>
+    <text x="56" y="276">URL 에 버전을 넣는다</text>
+    <text x="296" y="254">키가 다르면 어느 계층도 못 맞춘다</text>
+    <text x="296" y="276">무효화가 아니라 회피다</text>
+    <text x="636" y="254">참조하는 문서가</text>
+    <text x="636" y="276">같이 바뀌어야 한다</text>
+  </g>
+
+  <text x="40" y="318" font-size="13" fill="#1b2430">안전하지 않은 메서드(PUT·POST·DELETE)가 성공하면 공유 캐시는 그 URI 의 저장본을 스스로 버린다 — 자동으로 도는 네 번째 길이다.</text>
+</svg>
