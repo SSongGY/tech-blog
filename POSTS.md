@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **517편** · 갱신 2026-10-29
+총 **519편** · 갱신 2026-10-29
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -453,7 +453,7 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 98편
+## 주식·재무 (finance) — 100편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -461,6 +461,8 @@
 | 2026-10-29 | [프로그램매매와 차익거래 — 선물이 비싸지면 누가 현물을 사는가](posts/Finance/market/2026-10-29-program-trading-and-index-arbitrage/index.md) | 중급 | Python 3.13.5, 한국거래소 유가증권시장 프로그램매매 제도 — 규정포털 안내 2026-10-29 확인, 한국거래소 코스닥시장 사이드카 제도 — 규정포털 안내 2026-10-29 확인 | 실행 검증 |
 | 2026-10-29 | [정기보고서 세 종류 — 어디까지 감사받았고, 어느 숫자가 아직 바뀌는가](posts/Finance/disclosure/2026-10-29-periodic-reports-audit-review-levels/index.md) | 입문 | Python 3.13.5, 자본시장법 제159조·제160조(2025-07-22 시행), 자본시장법 시행령 제170조(최종 개정 2025-12-30 표시), K-IFRS 제1034호 중간재무보고, ISRE 2410(2012 IAASB Handbook) | 실행 검증 |
 | 2026-10-29 | [주요사항보고서와 수시공시 — 한 사건이 두 갈래로 알려지는 이유](posts/Finance/disclosure/2026-10-29-major-business-report-and-timely-disclosure/index.md) | 중급 | Python 3.13.5, 자본시장과 금융투자업에 관한 법률 — 2025-01-21 개정 제161조, 자본시장과 금융투자업에 관한 법률 시행령 — 2025-04-22 개정 제171조, 한국거래소 유가증권시장 수시공시 제도 — 규정포털 안내 2026-10-29 확인 | 실행 검증 |
+| 2026-10-29 | [내부회계관리제도 — 검토에서 감사로 바뀐 뒤 달라진 것](posts/Finance/disclosure/2026-10-29-icfr-audit-and-adverse-opinion/index.md) | 중급 | Python 3.13.5, 외부감사법 제8조·시행령 제9조(금융감독원 FAQ 2025.12 기준), 회계감사기준 감사기준서 1100, 내부회계관리제도 평가 및 보고 기준(2025 사업연도 의무적용) | 실행 검증 |
+| 2026-10-29 | [DART에서 공시 원문 찾기 — 네 갈래 동선과 XBRL을 쓸 자리](posts/Finance/disclosure/2026-10-29-dart-navigation-and-xbrl/index.md) | 입문 | Python 3.13.5, 자본시장법 제159조·제160조·제161조·제147조·제173조, DART 공시서류검색(2026-10-29 확인), 금융감독원 XBRL 주석 재무공시 세부계획(2025-04-08) | 실행 검증 |
 | 2026-10-27 | [주식에 붙는 세금 — 배당소득세·증권거래세·양도소득세](posts/Finance/market/2026-10-27-taxes-on-korean-stocks/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-27 | [주식 병합과 감자 — 주식 수가 줄 때 자본이 움직이는 방향](posts/Finance/market/2026-10-27-share-consolidation-and-capital-reduction/index.md) | 중급 | Python 3.13.5, 상법 제438조~제451조 (2026-10-27 확인), 일반기업회계기준 제15장 15.11 (2026-10-27 확인) | 실행 검증 |
 | 2026-10-27 | [정리매매 — 상장폐지가 결정된 뒤의 거래](posts/Finance/market/2026-10-27-liquidation-trading-after-delisting/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
