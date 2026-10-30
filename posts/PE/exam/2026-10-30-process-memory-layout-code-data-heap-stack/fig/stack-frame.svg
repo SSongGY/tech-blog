@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" fill="#1b2430" text-anchor="middle">함수 호출 한 번이 스택에 쌓는 것</text>
+
+  <text x="300" y="58" font-size="13" fill="#4a5261" text-anchor="end">높은 주소</text>
+  <text x="300" y="440" font-size="13" fill="#4a5261" text-anchor="end">낮은 주소</text>
+  <line x1="310" y1="46" x2="310" y2="448" stroke="#8a93a0" stroke-width="1"/>
+
+  <!-- 호출자 프레임 -->
+  <rect x="322" y="46" width="330" height="40" fill="#f1f3f6" stroke="#6b7483" stroke-width="1.6" rx="3"/>
+  <text x="340" y="71" font-size="14" fill="#1b2430">호출자(caller)의 프레임</text>
+
+  <!-- 메모리 인자 -->
+  <rect x="322" y="92" width="330" height="44" fill="#e8eef5" stroke="#2f4b6e" stroke-width="1.6" rx="3"/>
+  <text x="340" y="110" font-size="14" font-weight="bold" fill="#1b2430">레지스터에 못 담은 인자</text>
+  <text x="340" y="128" font-size="13" fill="#3c4858">호출자가 CALL 앞에서 쌓는다</text>
+  <text x="668" y="119" font-size="13" fill="#4a5261">16(%rbp) 이상</text>
+
+  <!-- 복귀 주소 -->
+  <rect x="322" y="142" width="330" height="44" fill="#e8eef5" stroke="#2f4b6e" stroke-width="1.6" rx="3"/>
+  <text x="340" y="160" font-size="14" font-weight="bold" fill="#1b2430">복귀 주소</text>
+  <text x="340" y="178" font-size="13" fill="#3c4858">CALL 명령이 넣고 RET 명령이 꺼내 간다</text>
+  <text x="668" y="169" font-size="13" fill="#4a5261">8(%rbp)</text>
+
+  <!-- 이전 rbp -->
+  <rect x="322" y="192" width="330" height="44" fill="#e8eef5" stroke="#2f4b6e" stroke-width="1.6" rx="3"/>
+  <text x="340" y="210" font-size="14" font-weight="bold" fill="#1b2430">이전 프레임 포인터 값</text>
+  <text x="340" y="228" font-size="13" fill="#3c4858">피호출자 프롤로그가 넣는다</text>
+  <text x="668" y="219" font-size="13" fill="#4a5261">0(%rbp)</text>
+
+  <!-- 지역 변수 -->
+  <rect x="322" y="242" width="330" height="58" fill="#eaf3ec" stroke="#2d6a4f" stroke-width="1.6" rx="3"/>
+  <text x="340" y="265" font-size="14" font-weight="bold" fill="#1b2430">지역 변수 · 저장할 레지스터</text>
+  <text x="340" y="285" font-size="13" fill="#3c4858">크기는 컴파일 시점에 정해진다</text>
+  <text x="668" y="276" font-size="13" fill="#4a5261">음수 변위</text>
+
+  <!-- 레드 존 -->
+  <rect x="322" y="316" width="330" height="48" fill="#fdfdfb" stroke="#6b7483" stroke-width="1.4" stroke-dasharray="6 4" rx="3"/>
+  <text x="340" y="337" font-size="14" fill="#1b2430">레드 존 128바이트</text>
+  <text x="340" y="355" font-size="13" fill="#3c4858">신호·인터럽트 처리기가 건드리지 않는다</text>
+  <text x="668" y="346" font-size="13" fill="#4a5261">-128(%rsp)</text>
+
+  <!-- 미사용 -->
+  <rect x="322" y="378" width="330" height="40" fill="none" stroke="#b9c0ca" stroke-width="1.4" stroke-dasharray="6 4" rx="3"/>
+  <text x="487" y="403" font-size="13" fill="#6b7483" text-anchor="middle">아직 쓰지 않은 스택 공간</text>
+
+  <!-- 포인터 표시 -->
+  <line x1="712" y1="214" x2="660" y2="214" stroke="#2f4b6e" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="718" y="218" font-size="13" font-weight="bold" fill="#2f4b6e">%rbp</text>
+  <line x1="712" y1="305" x2="660" y2="305" stroke="#2f4b6e" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="718" y="309" font-size="13" font-weight="bold" fill="#2f4b6e">%rsp</text>
+
+  <!-- 성장 방향 -->
+  <line x1="120" y1="100" x2="120" y2="400" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar3)"/>
+  <text x="134" y="246" font-size="13" fill="#2d6a4f">호출이 깊어질수록</text>
+  <text x="134" y="266" font-size="13" fill="#2d6a4f">낮은 주소로 내려간다</text>
+
+  <defs>
+    <marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#2f4b6e"/>
+    </marker>
+    <marker id="ar3" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+</svg>

@@ -6455,3 +6455,36 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-224
+    title: "ELF 실행 파일 포맷과 프로그램 적재"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "섹션과 세그먼트가 갈리는 이유, PT_LOAD와 p_filesz/p_memsz가 .bss를 만드는 경로, 권한 기준 세그먼트 묶기"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-225
+    title: "함수 호출 규약과 스택 프레임"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "인자 전달 레지스터와 스택의 분담, 프롤로그·에필로그가 하는 일, 정렬 제약과 레드 존, 호출자 저장 대 피호출자 저장 레지스터"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-226
+    title: "동적 메모리 할당기의 구조 — brk·mmap과 아레나"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "할당기가 운영체제와 프로그램 사이에 한 겹 끼는 이유, sbrk와 mmap 경로가 갈리는 문턱, free가 운영체제로 바로 반환되지 않는 경우"
+    code: none
+    origin: exam
+    status: todo
