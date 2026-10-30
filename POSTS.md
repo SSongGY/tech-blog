@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **528편** · 갱신 2026-10-30
+총 **530편** · 갱신 2026-10-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -462,10 +462,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 100편
+## 주식·재무 (finance) — 102편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-30 | [매출채권 손실충당금 — 기대신용손실을 어떻게 잡는가](posts/Finance/statements/2026-10-30-receivables-expected-credit-loss/index.md) | 중급 | Python 3.13.5, K-IFRS 제1109호 금융상품, K-IFRS 제1001호 재무제표 표시 | 실행 검증 |
+| 2026-10-30 | [차입원가 자본화 — 이자가 비용이 아니라 자산이 되는 구간](posts/Finance/statements/2026-10-30-borrowing-cost-capitalisation/index.md) | 중급 | Python 3.13.5, K-IFRS 제1023호 차입원가, 일반기업회계기준 제18장 차입원가자본화 (2019년 개정 반영) | 실행 검증 |
 | 2026-10-29 | [불성실공시와 공시번복 — 벌점이 쌓여 제재가 되는 방식](posts/Finance/disclosure/2026-10-29-unfaithful-disclosure-penalty-points/index.md) | 중급 | Python 3.13.5, 코스닥시장 공시규정 제27조~제37조, 코스닥시장 상장규정 제56조, 한국거래소 코스닥시장 공시·상장관리 해설(2025.9) | 실행 검증 |
 | 2026-10-29 | [프로그램매매와 차익거래 — 선물이 비싸지면 누가 현물을 사는가](posts/Finance/market/2026-10-29-program-trading-and-index-arbitrage/index.md) | 중급 | Python 3.13.5, 한국거래소 유가증권시장 프로그램매매 제도 — 규정포털 안내 2026-10-29 확인, 한국거래소 코스닥시장 사이드카 제도 — 규정포털 안내 2026-10-29 확인 | 실행 검증 |
 | 2026-10-29 | [정기보고서 세 종류 — 어디까지 감사받았고, 어느 숫자가 아직 바뀌는가](posts/Finance/disclosure/2026-10-29-periodic-reports-audit-review-levels/index.md) | 입문 | Python 3.13.5, 자본시장법 제159조·제160조(2025-07-22 시행), 자본시장법 시행령 제170조(최종 개정 2025-12-30 표시), K-IFRS 제1034호 중간재무보고, ISRE 2410(2012 IAASB Handbook) | 실행 검증 |
