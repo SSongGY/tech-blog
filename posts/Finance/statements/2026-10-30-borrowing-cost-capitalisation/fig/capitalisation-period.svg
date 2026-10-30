@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" role="img" aria-label="2026년 12개월을 가로 막대로 놓고, 지출과 차입원가 발생과 건설 활동이 모두 갖춰진 1월에 자본화가 개시되고 8월과 9월 공사 중지 구간에서 자본화가 중단되었다가 10월에 다시 이어지며 12월 완공 시점에 종료되어, 자본화 기간이 12개월에서 10개월로 줄고 자본화액이 53,400,000원에서 43,900,000원으로 줄어드는 것을 보인 타임라인">
+  <rect width="880" height="420" fill="#f7f8fa"/>
+
+  <text x="24" y="32" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1f23">자본화 기간 — 공사가 멈춘 달은 세지 않는다</text>
+
+  <!-- 월 눈금 -->
+  <g font-family="sans-serif" font-size="13" fill="#55606b" text-anchor="middle">
+    <text x="58" y="78">1월</text>
+    <text x="126" y="78">2월</text>
+    <text x="194" y="78">3월</text>
+    <text x="262" y="78">4월</text>
+    <text x="330" y="78">5월</text>
+    <text x="398" y="78">6월</text>
+    <text x="466" y="78">7월</text>
+    <text x="534" y="78">8월</text>
+    <text x="602" y="78">9월</text>
+    <text x="670" y="78">10월</text>
+    <text x="738" y="78">11월</text>
+    <text x="806" y="78">12월</text>
+  </g>
+
+  <!-- 자본화 기간 막대 -->
+  <rect x="24" y="90" width="476" height="44" rx="4" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="262" y="118" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">자본화 — 1월~7월 (7개월)</text>
+
+  <rect x="500" y="90" width="136" height="44" rx="4" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="568" y="112" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208">중단</text>
+  <text x="568" y="129" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9d0208">2개월</text>
+
+  <rect x="636" y="90" width="220" height="44" rx="4" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="746" y="118" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">자본화 — 10월~12월 (3개월)</text>
+
+  <!-- 개시·중단·종료 표시 -->
+  <path d="M24 148 V 166" stroke="#2d6a4f" stroke-width="1.5" fill="none"/>
+  <rect x="24" y="166" width="268" height="96" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="44" y="190" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">개시 (문단 17) — 셋이 모두 충족된 날</text>
+  <text x="44" y="211" font-family="sans-serif" font-size="13" fill="#1b1f23">① 적격자산에 지출한다</text>
+  <text x="44" y="230" font-family="sans-serif" font-size="13" fill="#1b1f23">② 차입원가를 발생시킨다</text>
+  <text x="44" y="249" font-family="sans-serif" font-size="13" fill="#1b1f23">③ 자산을 사용 가능하게 하는 활동을 한다</text>
+
+  <path d="M568 134 V 166" stroke="#9d0208" stroke-width="1.5" fill="none"/>
+  <rect x="312" y="166" width="268" height="96" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="332" y="190" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208">중단 (문단 20)</text>
+  <text x="332" y="211" font-family="sans-serif" font-size="13" fill="#1b1f23">적극적인 개발활동을 중단한 기간</text>
+  <text x="332" y="230" font-family="sans-serif" font-size="13" fill="#55606b">기술·관리활동을 하고 있는 기간이나</text>
+  <text x="332" y="249" font-family="sans-serif" font-size="13" fill="#55606b">필수적인 일시 지연은 중단이 아니다</text>
+
+  <path d="M846 134 V 150 H 728 V 166" stroke="#2d6a4f" stroke-width="1.5" fill="none"/>
+  <rect x="600" y="166" width="256" height="96" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="620" y="190" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">종료 (문단 22)</text>
+  <text x="620" y="211" font-family="sans-serif" font-size="13" fill="#1b1f23">의도된 용도로 사용 가능하게 하는</text>
+  <text x="620" y="230" font-family="sans-serif" font-size="13" fill="#1b1f23">데 필요한 대부분의 활동이</text>
+  <text x="620" y="249" font-family="sans-serif" font-size="13" fill="#1b1f23">완료된 시점</text>
+
+  <!-- 결과 비교 -->
+  <rect x="24" y="282" width="416" height="112" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="44" y="310" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">중단이 없었다면 — 12개월</text>
+  <text x="44" y="338" font-family="sans-serif" font-size="13" fill="#55606b">연평균지출액 875,000,000</text>
+  <text x="44" y="366" font-family="sans-serif" font-size="13" fill="#55606b">자본화할 차입원가</text>
+  <text x="420" y="368" text-anchor="end" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2d6a4f">53,400,000</text>
+
+  <rect x="456" y="282" width="400" height="112" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="476" y="310" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1f23">8~9월이 빠지면 — 10개월</text>
+  <text x="476" y="338" font-family="sans-serif" font-size="13" fill="#55606b">연평균지출액 708,333,333</text>
+  <text x="476" y="366" font-family="sans-serif" font-size="13" fill="#55606b">자본화할 차입원가</text>
+  <text x="836" y="368" text-anchor="end" font-family="sans-serif" font-size="16" font-weight="bold" fill="#9d0208">43,900,000</text>
+</svg>
