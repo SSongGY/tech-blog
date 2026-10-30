@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **533편** · 갱신 2026-10-30
+총 **534편** · 갱신 2026-10-30
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -379,11 +379,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 81편
+## 기출문제 (exam) — 82편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-30 | [기출문제 — 소프트웨어 재공학의 개념·목적·절차와 역공학의 활용](posts/PE/exam/2026-10-30-software-reengineering-process-and-reverse-engineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024), ISO/IEC/IEEE 14764:2022, SEI CORUM II (1998), DoD SB-1 Workshop (1992) | 문서 근거 |
+| 2026-10-30 | [기출문제 — 프로그램 실행 시 메모리 4영역: 코드·데이터·힙·스택](posts/PE/exam/2026-10-30-process-memory-layout-code-data-heap-stack/index.md) | 중급 | System V ABI 일반 ABI(gABI) Chapter 4·5 (Xinuos 판, 2015), System V ABI AMD64 Architecture Processor Supplement, Draft 0.99.7 (2014-11-17), ISO/IEC 9899 작업초안 N2310 (2018-11-06), Linux man-pages 6.19 (2026-02-08) | 문서 근거 |
 | 2026-10-29 | [기출문제 — 클라우드 네이티브 전환 사업의 TA와 AA, 역할 분담과 협업](posts/PE/exam/2026-10-29-ta-aa-role-split-and-collaboration/index.md) | 심화 | NIST SP 800-204 (2019-08), CNCF Cloud Native Definition v1.1 (2024-02-26), ISO/IEC/IEEE 42010:2022 | 문서 근거 |
 | 2026-10-29 | [기출문제 — GPU와 TPU의 개념·비교, TPU 선택 이유와 효율성](posts/PE/exam/2026-10-29-gpu-tpu-architecture-and-efficiency/index.md) | 심화 | Jouppi et al., In-Datacenter Performance Analysis of a TPU, ISCA 2017 (arXiv:1704.04760), Jouppi et al., TPU v4, ISCA 2023 (arXiv:2304.01433), Google Cloud TPU 공식 문서 (TPU7x/Ironwood, 2025), NVIDIA CUDA C++ Programming Guide 12.6, NVIDIA Blackwell Tuning Guide (CUDA 13.4) | 문서 근거 |
 | 2026-10-28 | [기출문제 — 상용 DBMS의 오픈소스 전환: 배경·제약사항·마이그레이션 절차·HA 구성](posts/PE/exam/2026-10-28-open-source-dbms-migration-and-ha/index.md) | 중급 | PostgreSQL 17 문서, MySQL 8.0 Reference Manual, MySQL Shell 8.0 InnoDB ClusterSet 문서, PostgreSQL License (1996-2026) | 문서 근거 |
