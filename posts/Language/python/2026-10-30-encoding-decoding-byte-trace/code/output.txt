@@ -1,0 +1,105 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Language\python\2026-10-30-encoding-decoding-byte-trace
+# 명령      : python mojibake_paths.py
+# 수행 시각 : 2026-10-30 12:23 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+======================================================================
+환경
+======================================================================
+  Python                    3.13.5
+  sys.getdefaultencoding()  utf-8
+  sys.getfilesystemencoding() utf-8
+  locale.getpreferredencoding() utf-8
+  unicodedata.unidata_version 15.1.0
+
+======================================================================
+0. 같은 글자, 코덱마다 다른 바이트 수
+======================================================================
+  원문 '한글'  (코드포인트 2개)
+    utf-8     6바이트  ed 95 9c ea b8 80
+    cp949     4바이트  c7 d1 b1 db
+    euc-kr    4바이트  c7 d1 b1 db
+    utf-16    6바이트  ff fe 5c d5 00 ae
+    utf-32   12바이트  ff fe 00 00 5c d5 00 00 00 ae 00 00
+
+  원문 '가나다'  (코드포인트 3개)
+    utf-8     9바이트  ea b0 80 eb 82 98 eb 8b a4
+    cp949     6바이트  b0 a1 b3 aa b4 d9
+    euc-kr    6바이트  b0 a1 b3 aa b4 d9
+    utf-16    8바이트  ff fe 00 ac 98 b0 e4 b2
+    utf-32   16바이트  ff fe 00 00 00 ac 00 00 98 b0 00 00 e4 b2 00 00
+
+  원문 '똠'  (코드포인트 1개)
+    utf-8     3바이트  eb 98 a0
+    cp949     2바이트  8c 63
+    euc-kr    8바이트  a4 d4 a4 a8 a4 c7 a4 b1
+    utf-16    4바이트  ff fe 20 b6
+    utf-32    8바이트  ff fe 00 00 20 b6 00 00
+
+  원문 '한글abc'  (코드포인트 5개)
+    utf-8     9바이트  ed 95 9c ea b8 80 61 62 63
+    cp949     7바이트  c7 d1 b1 db 61 62 63
+    euc-kr    7바이트  c7 d1 b1 db 61 62 63
+    utf-16   12바이트  ff fe 5c d5 00 ae 61 00 62 00 63 00
+    utf-32   24바이트  ff fe 00 00 5c d5 00 00 00 ae 00 00 61 00 00 00 62 00 00 00 63 00 00 00
+
+
+======================================================================
+경로 1 — 디코더가 다르다. 바이트는 그대로인데 경계가 어긋난다
+======================================================================
+  '한글' utf-8              6바이트  ed 95 9c ea b8 80
+    cp949    디코딩 실패 — illegal multibyte sequence (위치 0)
+    latin-1  읽힌 글자 'í\x95\x9cê¸\x80'  코드포인트 6개  복구됨
+
+  '가나다' utf-8             9바이트  ea b0 80 eb 82 98 eb 8b a4
+    cp949    디코딩 실패 — illegal multibyte sequence (위치 2)
+    latin-1  읽힌 글자 'ê°\x80ë\x82\x98ë\x8b¤'  코드포인트 9개  복구됨
+
+
+======================================================================
+경로 2 — 에러를 삼켰다. 바이트가 그 자리에서 사라진다
+======================================================================
+  '가나다' cp949             6바이트  b0 a1 b3 aa b4 d9
+  이 바이트열은 올바른 utf-8 이 아니다. errors 인자에 따라 결과가 갈린다.
+
+    strict           예외 — invalid start byte (위치 0)
+    replace          '������'  6개  다름 '占쏙옙占쏙옙占쏙옙'
+    ignore           ''  0개  다름 ''
+    backslashreplace '\\xb0\\xa1\\xb3\\xaa\\xb4\\xd9'  24개  다름 '\\xb0\\xa1\\xb3\\xaa\\xb4\\xd9'
+    surrogateescape  '\udcb0\udca1\udcb3\udcaa\udcb4\udcd9'  6개  복구됨
+
+======================================================================
+경로 3 — 인코딩 단계에서 표현하지 못했다
+======================================================================
+  원문 '원화 ₩ 표시'
+    utf-8    17바이트  ec 9b 90 ed 99 94 20 e2 82 a9 20 ed 91 9c ec 8b 9c
+    cp949    인코딩 불가 — illegal multibyte sequence
+      errors='replace'   bf f8 c8 ad 20 3f 20 c7 a5 bd c3  -> '원화 ? 표시'
+      errors='xmlcharrefreplace' -> '원화 &#8361; 표시'
+
+  원문 '이모지 🙂'
+    utf-8    14바이트  ec 9d b4 eb aa a8 ec a7 80 20 f0 9f 99 82
+    cp949    인코딩 불가 — illegal multibyte sequence
+      errors='replace'   c0 cc b8 f0 c1 f6 20 3f  -> '이모지 ?'
+      errors='xmlcharrefreplace' -> '이모지 &#128578;'
+
+  원문 '음표 𝄞'
+    utf-8    11바이트  ec 9d 8c ed 91 9c 20 f0 9d 84 9e
+    cp949    인코딩 불가 — illegal multibyte sequence
+      errors='replace'   c0 bd c7 a5 20 3f  -> '음표 ?'
+      errors='xmlcharrefreplace' -> '음표 &#119070;'
+
+
+======================================================================
+부록 — 깨진 글자를 보고 원래 코덱을 되짚을 수 있는가
+======================================================================
+  화면에 보이는 것  '�븳湲�'
+  이것을 문자열로 받아 cp949 로 다시 인코딩해 본다:
+    errors=strict    인코딩 불가 — illegal multibyte sequence
+    errors=replace   3f 95 9c ea b8 3f  -> utf-8 로 읽으면 '?���?'

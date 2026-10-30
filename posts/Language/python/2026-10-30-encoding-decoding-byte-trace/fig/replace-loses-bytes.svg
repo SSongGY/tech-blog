@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="14" y="26" font-size="16" font-weight="bold" fill="#1b1b1b">errors='replace' 한 번이 바이트를 영구히 지운다</text>
+  <text x="14" y="48" font-size="13" fill="#555">CP949 로 쓴 "가나다" 를 UTF-8 로 읽으려다 깨진 뒤, 그 결과를 다시 저장했을 때의 경로.</text>
+
+  <defs>
+    <marker id="mb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+    <marker id="mbr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <!-- 1 원본 -->
+  <rect x="14" y="76" width="300" height="78" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="28" y="100" font-size="14" font-weight="bold" fill="#1b1b1b">① 원본 — CP949 로 저장된 "가나다"</text>
+  <text x="28" y="124" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">b0 a1  b3 aa  b4 d9</text>
+  <text x="28" y="144" font-size="13" fill="#444">6바이트. 글자마다 2바이트씩.</text>
+
+  <!-- 화살표 1 -->
+  <path d="M 324 122 L 372 122" stroke="#9d0208" stroke-width="2" marker-end="url(#mbr)"/>
+  <text x="348" y="110" font-size="13" fill="#9d0208" text-anchor="middle">UTF-8</text>
+  <text x="348" y="142" font-size="13" fill="#9d0208" text-anchor="middle">로 읽음</text>
+
+  <!-- 2 손실 -->
+  <rect x="382" y="76" width="320" height="78" rx="4" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/>
+  <text x="396" y="100" font-size="14" font-weight="bold" fill="#9d0208">② errors='replace' — 여기서 잃는다</text>
+  <text x="396" y="124" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">U+FFFD × 6</text>
+  <text x="396" y="144" font-size="13" fill="#444">어느 바이트였는지가 남지 않는다.</text>
+
+  <text x="716" y="110" font-size="13" fill="#9d0208">원래 값은</text>
+  <text x="716" y="130" font-size="13" fill="#9d0208">이 시점에 사라진다</text>
+
+  <!-- 아래로 -->
+  <path d="M 542 156 L 542 186" stroke="#555" stroke-width="2" marker-end="url(#mb)"/>
+  <text x="552" y="178" font-size="13" fill="#555">그대로 다시 저장 (UTF-8 로 인코딩)</text>
+
+  <!-- 3 재인코딩 -->
+  <rect x="382" y="194" width="320" height="78" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="396" y="218" font-size="14" font-weight="bold" fill="#1b1b1b">③ 저장된 바이트</text>
+  <text x="396" y="242" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">ef bf bd  ef bf bd  …  (6번 반복)</text>
+  <text x="396" y="262" font-size="13" fill="#444">6바이트였던 것이 18바이트가 됐다.</text>
+
+  <!-- 화살표 왼쪽으로 -->
+  <path d="M 374 240 L 326 240" stroke="#555" stroke-width="2" marker-end="url(#mb)"/>
+  <text x="348" y="228" font-size="13" fill="#555" text-anchor="middle">CP949</text>
+  <text x="348" y="260" font-size="13" fill="#555" text-anchor="middle">로 읽음</text>
+
+  <!-- 4 결과 -->
+  <rect x="14" y="194" width="300" height="78" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="28" y="218" font-size="14" font-weight="bold" fill="#1b1b1b">④ 화면에 뜨는 것</text>
+  <text x="28" y="244" font-size="15" fill="#1b1b1b">占쏙옙占쏙옙占쏙옙</text>
+  <text x="28" y="264" font-size="13" fill="#444">세 글자가 아홉 글자가 됐다.</text>
+
+  <line x1="14" y1="296" x2="866" y2="296" stroke="#ccc"/>
+  <text x="14" y="320" font-size="13" fill="#333">익숙한 이 글자들은 CP949 깨짐 자체가 아니라, U+FFFD 의 UTF-8 표현 ef bf bd 를 CP949 로 읽은 모양이다.</text>
+  <text x="14" y="344" font-size="13" fill="#9d0208">②를 거친 뒤에는 원문을 되돌릴 수 없다. 바이트가 바뀐 것이 아니라 버려졌기 때문이다.</text>
+  <text x="14" y="372" font-size="13" fill="#2d6a4f">errors='surrogateescape' 로 읽으면 같은 자리에 원래 바이트가 보존되어 그대로 되돌아간다.</text>
+</svg>
