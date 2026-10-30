@@ -3062,7 +3062,7 @@ topics:
     angle: "파일을 지워도 용량이 안 주는 현상이 이 구조에서 어떻게 설명되는지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-110
     title: "입출력 방식 — 폴링, 인터럽트, DMA"
     category: PE
@@ -4789,7 +4789,7 @@ topics:
     angle: "포맷 문자와 요일 기준. 월초·월말과 주 단위 집계를 만들 때 걸리는 자리"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-083
     title: "집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치"
     category: Database
@@ -5457,7 +5457,7 @@ topics:
     difficulty: 중급
     angle: "같은 한글을 UTF-8·CP949·UTF-16 으로 인코딩해 바이트 수를 대조하고, 잘못된 짝으로 디코딩했을 때 나오는 글자를 실제로 재현한다. 복구되는 경우와 안 되는 경우를 가른다."
     code: python
-    status: todo
+    status: done
   - id: gen-003
     title: "0.1 + 0.2 가 0.3 이 아닌 것으로 끝나지 않는다 — 금액 계산이 틀어지는 자리"
     category: Language
