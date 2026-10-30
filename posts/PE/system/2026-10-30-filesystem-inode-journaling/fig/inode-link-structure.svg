@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <text x="14" y="26" font-size="16" font-weight="bold" fill="#1b1b1b">이름 · 아이노드 · 데이터 블록의 세 겹 구조</text>
+  <text x="14" y="48" font-size="13" fill="#555">파일 이름은 디렉터리 엔트리에만 있다. 아이노드는 자기 이름을 모른다.</text>
+
+  <!-- 열린 파일 디스크립터 -->
+  <rect x="330" y="68" width="260" height="54" rx="4" fill="#e8eef5" stroke="#38618c" stroke-width="2"/>
+  <text x="460" y="90" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">열린 파일 디스크립터</text>
+  <text x="460" y="110" font-size="13" fill="#444" text-anchor="middle">프로세스가 쥐고 있는 참조</text>
+
+  <!-- 디렉터리 엔트리 -->
+  <text x="20" y="152" font-size="14" font-weight="bold" fill="#1b1b1b">디렉터리 블록</text>
+  <rect x="20" y="166" width="230" height="58" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="36" y="190" font-size="13" fill="#1b1b1b">이름: app.log</text>
+  <text x="36" y="212" font-size="13" fill="#444">아이노드 번호: 1234</text>
+
+  <rect x="20" y="238" width="230" height="58" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="36" y="262" font-size="13" fill="#1b1b1b">이름: 보관본.log</text>
+  <text x="36" y="284" font-size="13" fill="#444">아이노드 번호: 1234</text>
+
+  <text x="20" y="322" font-size="13" fill="#555">이름이 둘이어도</text>
+  <text x="20" y="342" font-size="13" fill="#555">가리키는 번호는 하나다</text>
+
+  <!-- 아이노드 -->
+  <rect x="330" y="150" width="260" height="162" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="460" y="176" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">아이노드 1234</text>
+  <line x1="344" y1="186" x2="576" y2="186" stroke="#2d6a4f"/>
+  <text x="346" y="208" font-size="13" fill="#1b1b1b">i_links_count = 2</text>
+  <text x="346" y="230" font-size="13" fill="#444">소유자 · 권한 · 크기 · 시각</text>
+  <text x="346" y="252" font-size="13" fill="#444">i_block (60바이트)</text>
+  <text x="362" y="274" font-size="13" fill="#555">익스텐트 트리의 뿌리</text>
+  <text x="346" y="298" font-size="13" fill="#9d0208">이름을 담는 자리는 없다</text>
+
+  <!-- 데이터 블록 -->
+  <rect x="660" y="150" width="200" height="162" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="760" y="176" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">데이터 블록</text>
+  <line x1="674" y1="186" x2="846" y2="186" stroke="#777"/>
+  <text x="676" y="212" font-size="13" fill="#444">실제 내용이 놓인 자리</text>
+  <text x="676" y="240" font-size="13" fill="#444">익스텐트 하나가</text>
+  <text x="676" y="260" font-size="13" fill="#444">연속 블록 구간을 가리킨다</text>
+  <text x="676" y="294" font-size="13" fill="#b45309">회수 대상은 여기다</text>
+
+  <!-- 화살표 -->
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#38618c"/>
+    </marker>
+    <marker id="arwg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+  <path d="M 250 195 L 322 195" stroke="#38618c" stroke-width="2" fill="none" marker-end="url(#arw)"/>
+  <path d="M 250 267 L 300 267 L 300 215 L 322 215" stroke="#38618c" stroke-width="2" fill="none" marker-end="url(#arw)"/>
+  <path d="M 460 122 L 460 142" stroke="#38618c" stroke-width="2" fill="none" marker-end="url(#arw)"/>
+  <path d="M 590 231 L 652 231" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#arwg)"/>
+
+  <!-- 하단 설명 -->
+  <line x1="14" y1="360" x2="866" y2="360" stroke="#ccc"/>
+  <text x="14" y="382" font-size="13" fill="#333">unlink() 는 디렉터리 엔트리를 지우고 i_links_count 를 1 줄인다. 데이터 블록은 건드리지 않는다.</text>
+  <text x="14" y="404" font-size="13" fill="#9d0208">i_links_count 가 0 이 되어도 열린 파일 디스크립터가 남아 있으면 블록 회수가 미뤄진다.</text>
+</svg>

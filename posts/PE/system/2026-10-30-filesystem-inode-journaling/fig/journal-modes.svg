@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <text x="14" y="26" font-size="16" font-weight="bold" fill="#1b1b1b">ext4 저널링 세 모드 — 무엇이 저널을 거치는가</text>
+  <text x="14" y="48" font-size="13" fill="#555">세 모드 모두 메타데이터는 저널에 기록한다. 갈리는 것은 파일 데이터의 경로와 순서다.</text>
+
+  <!-- 범례 -->
+  <rect x="610" y="62" width="14" height="14" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="630" y="74" font-size="13" fill="#333">저널 경유</text>
+  <rect x="722" y="62" width="14" height="14" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="742" y="74" font-size="13" fill="#333">최종 위치로 직행</text>
+
+  <defs>
+    <marker id="jarw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- data=journal -->
+  <text x="14" y="112" font-size="14" font-weight="bold" fill="#1b1b1b">data=journal</text>
+  <rect x="150" y="92" width="190" height="42" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="245" y="118" font-size="13" fill="#1b1b1b" text-anchor="middle">데이터 + 메타데이터 → 저널</text>
+  <rect x="380" y="92" width="130" height="42" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="445" y="118" font-size="13" fill="#1b1b1b" text-anchor="middle">커밋 블록</text>
+  <rect x="550" y="92" width="190" height="42" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="645" y="118" font-size="13" fill="#1b1b1b" text-anchor="middle">최종 위치에 기록</text>
+  <path d="M 340 113 L 372 113" stroke="#555" stroke-width="2" marker-end="url(#jarw)"/>
+  <path d="M 510 113 L 542 113" stroke="#555" stroke-width="2" marker-end="url(#jarw)"/>
+  <text x="756" y="118" font-size="13" fill="#555">두 번 쓴다</text>
+
+  <!-- data=ordered -->
+  <text x="14" y="192" font-size="14" font-weight="bold" fill="#1b1b1b">data=ordered</text>
+  <text x="14" y="212" font-size="13" fill="#2d6a4f">기본값</text>
+  <rect x="150" y="172" width="190" height="42" rx="4" fill="#eceae4" stroke="#777" stroke-width="2"/>
+  <text x="245" y="198" font-size="13" fill="#1b1b1b" text-anchor="middle">데이터를 최종 위치에 먼저</text>
+  <rect x="380" y="172" width="190" height="42" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="475" y="198" font-size="13" fill="#1b1b1b" text-anchor="middle">메타데이터 → 저널</text>
+  <rect x="610" y="172" width="130" height="42" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="675" y="198" font-size="13" fill="#1b1b1b" text-anchor="middle">커밋 블록</text>
+  <path d="M 340 193 L 372 193" stroke="#555" stroke-width="2" marker-end="url(#jarw)"/>
+  <path d="M 570 193 L 602 193" stroke="#555" stroke-width="2" marker-end="url(#jarw)"/>
+  <text x="756" y="198" font-size="13" fill="#555">순서를 묶는다</text>
+
+  <!-- data=writeback -->
+  <text x="14" y="272" font-size="14" font-weight="bold" fill="#1b1b1b">data=writeback</text>
+  <rect x="150" y="252" width="190" height="42" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="245" y="278" font-size="13" fill="#1b1b1b" text-anchor="middle">메타데이터 → 저널</text>
+  <rect x="380" y="252" width="130" height="42" rx="4" fill="#d7e8dd" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="445" y="278" font-size="13" fill="#1b1b1b" text-anchor="middle">커밋 블록</text>
+  <rect x="550" y="252" width="190" height="42" rx="4" fill="#eceae4" stroke="#b45309" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="645" y="270" font-size="13" fill="#1b1b1b" text-anchor="middle">데이터는 순서 없이</text>
+  <text x="645" y="287" font-size="13" fill="#1b1b1b" text-anchor="middle">언제든 기록</text>
+  <path d="M 340 273 L 372 273" stroke="#555" stroke-width="2" marker-end="url(#jarw)"/>
+  <path d="M 510 273 L 542 273" stroke="#555" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#jarw)"/>
+  <text x="756" y="278" font-size="13" fill="#b45309">순서 보장 없음</text>
+
+  <line x1="14" y1="320" x2="866" y2="320" stroke="#ccc"/>
+  <text x="14" y="344" font-size="13" fill="#333">커밋 블록이 저널에 닿아야 그 트랜잭션이 완결된 것으로 본다. 닿기 전에 전원이 끊기면 재생 때 버려진다.</text>
+  <text x="14" y="368" font-size="13" fill="#9d0208">writeback 은 메타데이터만 복구되므로, 크기는 늘어난 파일에 옛 내용이 남을 수 있다.</text>
+  <text x="14" y="392" font-size="13" fill="#333">세 모드 중 무엇을 써도 저널은 파일시스템의 일관성을 지킬 뿐, 쓰던 데이터의 보존을 약속하지 않는다.</text>
+</svg>
