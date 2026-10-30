@@ -6344,7 +6344,7 @@ topics:
     angle: "연체 구간별 충당률을 매긴 가상 회사 표로 기대신용손실을 직접 계산하고, 충당금이 늘면 손익계산서와 현금흐름표가 각각 어떻게 움직이는지 대조한다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-104
     title: "차입원가 자본화 — 이자가 비용이 아니라 자산이 되는 구간"
     category: Finance
@@ -6355,7 +6355,7 @@ topics:
     angle: "건설 중인 자산에 들어간 이자를 자본화한 회사와 전액 비용 처리한 회사의 손익·자산을 같은 숫자로 나란히 계산해, 영업이익과 감가상각이 어떻게 이연되는지 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-105
     title: "총액 인식과 순액 인식 — 본인인가 대리인인가"
     category: Finance

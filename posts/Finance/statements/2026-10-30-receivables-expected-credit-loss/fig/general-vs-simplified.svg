@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" role="img" aria-label="일반접근법은 신용위험 증가 여부를 따져 12개월 기대신용손실과 전체기간 기대신용손실 사이를 오가지만, 매출채권에 적용하는 간편법은 그 판정 단계를 건너뛰고 처음부터 끝까지 전체기간 기대신용손실로 측정한다는 것을 두 줄로 나란히 보인 도식">
+  <rect width="880" height="420" fill="#f7f8fa"/>
+
+  <text x="24" y="32" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1f23">같은 손상 규정, 두 갈래 — 매출채권은 판정 단계가 없다</text>
+
+  <!-- 일반접근법 -->
+  <text x="24" y="70" font-family="sans-serif" font-size="14" font-weight="bold" fill="#55606b">일반접근법 (대여금·채무증권 등)</text>
+
+  <rect x="24" y="84" width="150" height="56" rx="5" fill="#e3e7eb" stroke="#55606b" stroke-width="1.5"/>
+  <text x="99" y="108" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">최초 인식</text>
+  <text x="99" y="128" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">금융자산</text>
+
+  <path d="M174 112 H 214" stroke="#55606b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+
+  <rect x="220" y="84" width="186" height="56" rx="5" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="313" y="108" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309">신용위험이 최초 인식 후</text>
+  <text x="313" y="128" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309">유의적으로 증가했는가</text>
+
+  <path d="M406 100 H 452" stroke="#2d6a4f" stroke-width="1.5" fill="none" marker-end="url(#arg)"/>
+  <text x="429" y="92" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2d6a4f">아니오</text>
+  <path d="M406 126 H 452" stroke="#9d0208" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <text x="429" y="146" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9d0208">예</text>
+
+  <rect x="458" y="72" width="212" height="42" rx="5" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="564" y="98" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#2d6a4f">12개월 기대신용손실</text>
+
+  <rect x="458" y="120" width="212" height="42" rx="5" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="564" y="146" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#9d0208">전체기간 기대신용손실</text>
+
+  <rect x="694" y="84" width="162" height="56" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="775" y="106" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#55606b">매 보고기간 말마다</text>
+  <text x="775" y="125" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#55606b">두 칸을 오갈 수 있다</text>
+
+  <line x1="24" y1="190" x2="856" y2="190" stroke="#c3c9cf" stroke-width="1"/>
+
+  <!-- 간편법 -->
+  <text x="24" y="222" font-family="sans-serif" font-size="14" font-weight="bold" fill="#55606b">간편법 (매출채권·계약자산·리스채권)</text>
+
+  <rect x="24" y="236" width="150" height="56" rx="5" fill="#e3e7eb" stroke="#55606b" stroke-width="1.5"/>
+  <text x="99" y="260" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">최초 인식</text>
+  <text x="99" y="280" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1b1f23">매출채권</text>
+
+  <path d="M174 264 H 452" stroke="#55606b" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+  <rect x="200" y="248" width="226" height="32" rx="5" fill="#f7f8fa" stroke="#c3c9cf" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="313" y="269" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#55606b">신용위험 증가 판정 없음</text>
+
+  <rect x="458" y="243" width="212" height="42" rx="5" fill="#fbe9e9" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="564" y="269" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208">항상 전체기간 기대신용손실</text>
+
+  <rect x="694" y="236" width="162" height="56" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="775" y="258" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#55606b">처음부터 끝까지</text>
+  <text x="775" y="277" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#55606b">한 칸에 머문다</text>
+
+  <!-- 각주 -->
+  <rect x="24" y="312" width="832" height="86" rx="5" fill="#ffffff" stroke="#c3c9cf" stroke-width="1"/>
+  <text x="44" y="338" font-family="sans-serif" font-size="13" fill="#1b1f23">유의적인 금융요소를 포함하지 않는 매출채권·계약자산 — 간편법이 <tspan font-weight="bold">의무</tspan></text>
+  <text x="44" y="362" font-family="sans-serif" font-size="13" fill="#1b1f23">유의적인 금융요소를 포함하는 매출채권·계약자산, 리스채권 — 간편법과 일반접근법 중 <tspan font-weight="bold">회계정책으로 선택</tspan></text>
+  <text x="44" y="386" font-family="sans-serif" font-size="13" fill="#55606b">선택한 정책은 해당 자산 전체에 일관되게 적용한다</text>
+
+  <defs>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#55606b"/>
+    </marker>
+    <marker id="arg" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
