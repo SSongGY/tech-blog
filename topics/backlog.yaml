@@ -6366,7 +6366,7 @@ topics:
     angle: "같은 거래를 총액으로 잡은 회사와 순액으로 잡은 회사의 매출액이 몇 배 차이 나는 것을 계산해 보이고, 본인·대리인 판단 지표를 들어 매출 규모 비교가 왜 위험한지 쓴다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-106
     title: "유형자산 손상차손 — 회수가능액은 둘 중 큰 값이다"
     category: Finance
@@ -6377,7 +6377,7 @@ topics:
     angle: "사용가치와 순공정가치를 각각 계산해 둘 중 큰 값을 회수가능액으로 잡는 과정을 가상 회사 숫자로 따라가고, 영업권과 달리 환입이 가능한 점을 대조한다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-107
     title: "영업현금흐름으로 보는 상환 능력 — 이자보상배율이 놓치는 것"
     category: Finance
