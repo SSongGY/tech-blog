@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="430" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="28" font-size="16" font-weight="bold" fill="#212529">ORDER BY·LIMIT 이 붙을 수 있는 자리는 두 곳뿐이다</text>
+  <text x="24" y="50" font-size="13" fill="#495057">compound-select-stmt 의 맨 끝, 또는 피연산자를 서브쿼리로 감싸 그 안쪽. 피연산자에 직접 적으면 파싱 단계에서 막힌다.</text>
+
+  <!-- 왼쪽: 합친 뒤에 거는 자리 -->
+  <text x="24" y="86" font-size="14" font-weight="bold" fill="#212529">① 맨 끝 — 합쳐진 결과 전체에 걸린다</text>
+
+  <rect x="24" y="98" width="380" height="176" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="36" y="118" font-size="13" fill="#868e96">compound-select-stmt</text>
+
+  <rect x="44" y="128" width="340" height="32" rx="4" fill="#e9ecef" stroke="#495057" stroke-width="1.2"/>
+  <text x="214" y="149" font-size="13" fill="#212529" text-anchor="middle">select-core — SELECT name, score FROM seoul</text>
+
+  <text x="214" y="180" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">UNION ALL</text>
+
+  <rect x="44" y="190" width="340" height="32" rx="4" fill="#e9ecef" stroke="#495057" stroke-width="1.2"/>
+  <text x="214" y="211" font-size="13" fill="#212529" text-anchor="middle">select-core — SELECT name, score FROM busan</text>
+
+  <rect x="44" y="232" width="340" height="30" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="214" y="252" font-size="13" fill="#2d6a4f" text-anchor="middle">ORDER BY score DESC  LIMIT 2</text>
+
+  <line x1="214" y1="274" x2="214" y2="296" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="44" y="300" width="340" height="52" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="214" y="321" font-size="13" fill="#212529" text-anchor="middle">6행을 전부 모아 정렬한 뒤 앞에서 2행</text>
+  <text x="214" y="341" font-size="13" fill="#495057" text-anchor="middle">가은 90 · 가은 90 — 부산 행이 하나도 안 남을 수 있다</text>
+
+  <!-- 오른쪽: 서브쿼리로 피연산자에 거는 자리 -->
+  <text x="452" y="86" font-size="14" font-weight="bold" fill="#212529">② 서브쿼리 안 — 피연산자마다 따로 걸린다</text>
+
+  <rect x="452" y="98" width="404" height="176" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="464" y="118" font-size="13" fill="#868e96">compound-select-stmt</text>
+
+  <rect x="472" y="128" width="364" height="32" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="654" y="149" font-size="13" fill="#212529" text-anchor="middle">( SELECT … FROM seoul ORDER BY score DESC LIMIT 2 )</text>
+
+  <text x="654" y="180" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">UNION ALL</text>
+
+  <rect x="472" y="190" width="364" height="32" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="654" y="211" font-size="13" fill="#212529" text-anchor="middle">( SELECT … FROM busan ORDER BY score DESC LIMIT 2 )</text>
+
+  <text x="654" y="252" font-size="13" fill="#868e96" text-anchor="middle">맨 끝에는 아무것도 없다</text>
+
+  <line x1="654" y1="274" x2="654" y2="296" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="472" y="300" width="364" height="52" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="654" y="321" font-size="13" fill="#212529" text-anchor="middle">지역마다 2행씩 뽑아 이어 붙여 4행</text>
+  <text x="654" y="341" font-size="13" fill="#495057" text-anchor="middle">가은 90 · 나래 70 · 가은 90 · 라온 80</text>
+
+  <!-- 막히는 자리 -->
+  <rect x="24" y="358" width="832" height="64" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="40" y="377" font-size="13" font-weight="bold" fill="#9d0208">막히는 자리 — 피연산자에 직접 적는다</text>
+  <text x="40" y="396" font-size="13" fill="#212529">SELECT … FROM seoul ORDER BY score DESC UNION ALL SELECT … FROM busan</text>
+  <text x="40" y="414" font-size="13" fill="#9d0208">→ ORDER BY clause should come after UNION ALL not before</text>
+</svg>

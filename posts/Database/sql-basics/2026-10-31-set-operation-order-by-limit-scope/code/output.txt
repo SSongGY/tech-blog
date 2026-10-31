@@ -1,0 +1,250 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-10-31-set-operation-order-by-limit-scope
+# 명령      : python set_operation_scope.py
+# 수행 시각 : 2026-10-31 23:04 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[busan]  3행
+  컬럼  | 타입    | 제약
+  ------+---------+---------
+  name  | TEXT    | NOT NULL
+  score | INTEGER | NOT NULL
+
+  name | score
+  -----+------
+  라온 |    80
+  마루 |    60
+  가은 |    90
+
+[seoul]  3행
+  컬럼  | 타입    | 제약
+  ------+---------+---------
+  name  | TEXT    | NOT NULL
+  score | INTEGER | NOT NULL
+
+  name | score
+  -----+------
+  가은 |    90
+  나래 |    70
+  다온 |    50
+
+================================================================
+1. 피연산자에 ORDER BY 나 LIMIT 을 적으면 파싱 단계에서 막힌다
+================================================================
+[왼쪽 SELECT 에 ORDER BY]
+  SQL  : SELECT name, score FROM seoul ORDER BY score DESC
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  에러 : OperationalError: ORDER BY clause should come after UNION ALL not before
+
+[왼쪽 SELECT 에 LIMIT]
+  SQL  : SELECT name, score FROM seoul LIMIT 2
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  에러 : OperationalError: LIMIT clause should come after UNION ALL not before
+
+================================================================
+2. 맨 끝에 적은 ORDER BY·LIMIT 은 합쳐진 결과 전체에 걸린다
+================================================================
+[전체 정렬]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : ORDER BY score DESC
+  행   : 가은 | 90
+  행   : 가은 | 90
+  행   : 라온 | 80
+  행   : 나래 | 70
+  행   : 마루 | 60
+  행   : 다온 | 50
+  합계 : 6행
+
+[전체 정렬 후 2행]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : ORDER BY score DESC
+  SQL  : LIMIT 2
+  행   : 가은 | 90
+  행   : 가은 | 90
+  합계 : 2행
+
+[ORDER BY 없이 LIMIT 만 — UNION ALL]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : LIMIT 5
+  행   : 가은 | 90
+  행   : 나래 | 70
+  행   : 다온 | 50
+  행   : 라온 | 80
+  행   : 마루 | 60
+  합계 : 5행
+
+[ORDER BY 없이 LIMIT 만 — UNION]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION
+  SQL  : SELECT name, score FROM busan
+  SQL  : LIMIT 5
+  행   : 가은 | 90
+  행   : 나래 | 70
+  행   : 다온 | 50
+  행   : 라온 | 80
+  행   : 마루 | 60
+  합계 : 5행
+
+================================================================
+3. 피연산자마다 상위 N 개를 뽑고 싶으면 서브쿼리로 감싼다
+================================================================
+[지역별 상위 2명]
+  SQL  : SELECT * FROM (SELECT name, score FROM seoul ORDER BY score DESC LIMIT 2)
+  SQL  : UNION ALL
+  SQL  : SELECT * FROM (SELECT name, score FROM busan ORDER BY score DESC LIMIT 2)
+  행   : 가은 | 90
+  행   : 나래 | 70
+  행   : 가은 | 90
+  행   : 라온 | 80
+  합계 : 4행
+
+[지역별 상위 2명 + 전체 정렬]
+  SQL  : SELECT * FROM (SELECT name, score FROM seoul ORDER BY score DESC LIMIT 2)
+  SQL  : UNION ALL
+  SQL  : SELECT * FROM (SELECT name, score FROM busan ORDER BY score DESC LIMIT 2)
+  SQL  : ORDER BY score DESC
+  행   : 가은 | 90
+  행   : 가은 | 90
+  행   : 라온 | 80
+  행   : 나래 | 70
+  합계 : 4행
+
+================================================================
+4. 합친 뒤의 ORDER BY 항은 출력 컬럼으로만 해석된다
+================================================================
+[출력 컬럼 번호]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : ORDER BY 2 DESC
+  행   : 가은 | 90
+  행   : 가은 | 90
+  행   : 라온 | 80
+  행   : 나래 | 70
+  행   : 마루 | 60
+  행   : 다온 | 50
+  합계 : 6행
+
+[결과에 없는 소스 컬럼]
+  SQL  : SELECT name FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name FROM busan
+  SQL  : ORDER BY score
+  에러 : OperationalError: 1st ORDER BY term does not match any column in the result set
+
+[출력 컬럼에 없는 표현식]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : ORDER BY score * -1
+  에러 : OperationalError: 1st ORDER BY term does not match any column in the result set
+
+[출력 컬럼과 글자까지 같은 표현식]
+  SQL  : SELECT name, score * -1 FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score * -1 FROM busan
+  SQL  : ORDER BY score * -1
+  행   : 가은 | -90
+  행   : 가은 | -90
+  행   : 라온 | -80
+  행   : 나래 | -70
+  행   : 마루 | -60
+  행   : 다온 | -50
+  합계 : 6행
+
+[오른쪽 SELECT 에만 있는 별칭]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name AS who, score FROM busan
+  SQL  : ORDER BY who
+  행   : 가은 | 90
+  행   : 가은 | 90
+  행   : 나래 | 70
+  행   : 다온 | 50
+  행   : 라온 | 80
+  행   : 마루 | 60
+  합계 : 6행
+
+================================================================
+5. 콤마를 쓴 LIMIT 은 앞이 OFFSET 이다
+================================================================
+[LIMIT 2 OFFSET 2]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : ORDER BY score DESC
+  SQL  : LIMIT 2 OFFSET 2
+  행   : 라온 | 80
+  행   : 나래 | 70
+  합계 : 2행
+
+[LIMIT 2, 3]
+  SQL  : SELECT name, score FROM seoul
+  SQL  : UNION ALL
+  SQL  : SELECT name, score FROM busan
+  SQL  : ORDER BY score DESC
+  SQL  : LIMIT 2, 3
+  행   : 라온 | 80
+  행   : 나래 | 70
+  행   : 마루 | 60
+  합계 : 3행
+
+================================================================
+6. 실행계획 — 어디서 정렬하고 어디서 중복을 지우는가
+================================================================
+[UNION ALL + 전체 ORDER BY]
+  QUERY PLAN
+  `--MERGE (UNION ALL)
+     |--LEFT
+     |  |--SCAN seoul
+     |  `--USE TEMP B-TREE FOR ORDER BY
+     `--RIGHT
+        |--SCAN busan
+        `--USE TEMP B-TREE FOR ORDER BY
+
+[UNION (중복 제거) + LIMIT]
+  QUERY PLAN
+  `--COMPOUND QUERY
+     |--LEFT-MOST SUBQUERY
+     |  `--SCAN seoul
+     `--UNION USING TEMP B-TREE
+        `--SCAN busan
+
+[서브쿼리로 피연산자마다 LIMIT]
+  QUERY PLAN
+  `--COMPOUND QUERY
+     |--LEFT-MOST SUBQUERY
+     |  |--CO-ROUTINE (subquery-1)
+     |  |  |--SCAN seoul
+     |  |  `--USE TEMP B-TREE FOR ORDER BY
+     |  `--SCAN (subquery-1)
+     `--UNION ALL
+        |--CO-ROUTINE (subquery-3)
+        |  |--SCAN busan
+        |  `--USE TEMP B-TREE FOR ORDER BY
+        `--SCAN (subquery-3)
+
