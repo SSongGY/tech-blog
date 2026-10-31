@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fdfdfb"/>
+
+  <text x="40" y="34" font-size="16" font-weight="bold" fill="#1b1b1b">증거금 40%로 1,000만 원어치를 산 뒤, 결제일까지 남은 이틀</text>
+
+  <!-- 매수대금 막대 -->
+  <text x="40" y="66" font-size="13" fill="#444">매수대금 10,000,000원 (가나전자 1,000주 × 10,000원)</text>
+
+  <rect x="40" y="78" width="320" height="56" fill="#d8ece0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="200" y="102" font-size="14" font-weight="bold" text-anchor="middle" fill="#1d4731">증거금 40%</text>
+  <text x="200" y="122" font-size="13" text-anchor="middle" fill="#1d4731">예수금 4,000,000원</text>
+
+  <rect x="360" y="78" width="480" height="56" fill="#fbe8cf" stroke="#b45309" stroke-width="2"/>
+  <text x="600" y="102" font-size="14" font-weight="bold" text-anchor="middle" fill="#7c3a06">나머지 60% — 결제일에 채워야 할 돈</text>
+  <text x="600" y="122" font-size="13" text-anchor="middle" fill="#7c3a06">6,000,000원 (못 채우면 미수금)</text>
+
+  <!-- 시간 축 -->
+  <line x1="40" y1="200" x2="470" y2="200" stroke="#555" stroke-width="2"/>
+
+  <circle cx="90" cy="200" r="7" fill="#2d6a4f"/>
+  <text x="90" y="186" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">T+0</text>
+  <text x="90" y="226" font-size="13" text-anchor="middle" fill="#444">매수 체결</text>
+  <text x="90" y="244" font-size="13" text-anchor="middle" fill="#444">증거금만 묶인다</text>
+
+  <circle cx="260" cy="200" r="7" fill="#555"/>
+  <text x="260" y="186" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">T+1</text>
+  <text x="260" y="226" font-size="13" text-anchor="middle" fill="#444">돈을 채울 수 있는</text>
+  <text x="260" y="244" font-size="13" text-anchor="middle" fill="#444">마지막 하루</text>
+
+  <circle cx="430" cy="200" r="9" fill="#b45309"/>
+  <text x="420" y="182" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">T+2 결제일</text>
+  <text x="408" y="226" font-size="13" text-anchor="middle" fill="#7c3a06">6,000,000원</text>
+  <text x="408" y="244" font-size="13" text-anchor="middle" fill="#7c3a06">전액 결제</text>
+
+  <!-- 갈래 -->
+  <path d="M 440 193 L 520 180" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#green)"/>
+  <path d="M 440 208 L 520 300" stroke="#9d0208" stroke-width="2" fill="none" marker-end="url(#red)"/>
+
+  <defs>
+    <marker id="green" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="red" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <rect x="530" y="150" width="310" height="62" fill="#d8ece0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="548" y="175" font-size="14" font-weight="bold" fill="#1d4731">채웠다 — 결제 완료</text>
+  <text x="548" y="197" font-size="13" fill="#1d4731">1,000주를 그대로 들고 간다</text>
+
+  <rect x="530" y="266" width="310" height="112" fill="#f7dcdc" stroke="#9d0208" stroke-width="2"/>
+  <text x="548" y="291" font-size="14" font-weight="bold" fill="#7a0206">못 채웠다 — T+3 반대매매</text>
+  <text x="548" y="313" font-size="13" fill="#7a0206">수량은 하한가 6,300원으로 센다 → 953주</text>
+  <text x="548" y="333" font-size="13" fill="#7a0206">체결은 그날 시장가로 난다</text>
+  <text x="548" y="355" font-size="13" fill="#7a0206">+ 미수동결계좌 30일 (증거금 현금 100%)</text>
+
+  <text x="40" y="300" font-size="13" fill="#444">증거금률은 1998-04-01 부터</text>
+  <text x="40" y="318" font-size="13" fill="#444">증권회사가 자율로 정한다.</text>
+  <text x="40" y="340" font-size="13" fill="#444">미수동결계좌는 2007-05-01</text>
+  <text x="40" y="358" font-size="13" fill="#444">시행이다.</text>
+</svg>

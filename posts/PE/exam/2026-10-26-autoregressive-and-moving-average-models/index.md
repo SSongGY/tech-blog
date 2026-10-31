@@ -145,6 +145,8 @@ sigma²/(1−phi²)를 따라가지만, phi = 1.00에서는 160까지 치솟아 
   계절 항을 넣은 SARIMA로, 배포·프로모션 같은 외부 사건은 설명변수를 더한
   모형으로 간다. 설명해야 할 것을 잔차에 남기면 예측구간이 쓸모없어진다.
 
+> 개념 정리: [ARIMA와 Box-Jenkins 모형화 절차 — 식별·추정·진단 3단계](../../data-analysis/2026-10-30-arima-box-jenkins-modeling-procedure/index.md)
+
 끝
 
 ## 답안 작성 메모

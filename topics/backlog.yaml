@@ -441,7 +441,7 @@ topics:
     difficulty: 중급
     angle: "폭과 높이가 각각 무엇을 뜻하는지, 오독하기 쉬운 패턴 3가지"
     code: python
-    status: todo
+    status: writing
 
   # ========== 제품 시리즈: Tibero 7 (track: product) ==========
   # 실행 환경이 없으면 공식 매뉴얼 근거로만 쓰고 verification: manual-only 로 표시한다.
@@ -3073,7 +3073,7 @@ topics:
     angle: "CPU 관여 정도로 셋을 가르고 각각이 유리한 상황"
     code: none
     origin: manual
-    status: todo
+    status: writing
   - id: pe-111
     title: "위험 관리 — 식별·분석·대응 절차"
     category: PE
@@ -4382,7 +4382,7 @@ topics:
     angle: "증거금률에 따라 살 수 있는 금액이 달라지는 계산과, 못 채웠을 때 벌어지는 일"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-064
     title: "신용융자와 대차잔고 — 빌려서 사고 빌려서 파는 쪽"
     category: Finance
@@ -4393,7 +4393,7 @@ topics:
     angle: "두 숫자가 각각 무엇을 뜻하는지. 공매도 글과 이어서 읽는다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-065
     title: "호가 스프레드 — 체결 비용이 수익률을 깎는 정도"
     category: Finance
@@ -4800,7 +4800,7 @@ topics:
     angle: "UNION 양쪽에 각각 거는 것과 전체에 거는 것이 다르다. 괄호로 묶어 확인"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: pe-162
     title: "적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용"
     category: PE
@@ -6058,7 +6058,7 @@ topics:
     angle: "정상성 판정과 차분, 식별-추정-진단 3단계 절차, 잔차 백색잡음 검정과 정보기준(AIC)에 의한 차수 선택, SARIMA 확장까지"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-207
     title: "MITRE ATT&CK 프레임워크 — 행렬 구조와 활용"
     category: PE
@@ -6069,7 +6069,7 @@ topics:
     angle: "전술·기법·하위기법·절차의 객체 구조와 그룹·소프트웨어·완화 객체의 관계, 커버리지 평가와 공격자 모의에 쓰는 방법까지"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-208
     title: "사이버 킬체인과 침해지표(IoC) — 고통의 피라미드"
     category: PE
