@@ -14,6 +14,11 @@ verified: true
 topic_id: bas-025
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`numeric-types`)
+> - [0.1 + 0.2 로 끝나지 않는다 — 금액 계산이 실제로 틀어지는 자리](../../../Language/python/2026-10-31-float-money-rounding-decimal/index.md) — Python 3.13.5, Windows 11
+<!-- related:end -->
+
 ## 들어가며
 
 카페 주문 앱을 만들면서 가격 컬럼을 `REAL`로 만들고 `0.10`, `0.20`처럼 달러 금액을 넣는다. 화면에서는 소수 둘째 자리까지만

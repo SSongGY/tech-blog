@@ -3084,7 +3084,7 @@ topics:
     angle: "정성·정량 분석 기법과 대응 전략 네 가지"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: pe-112
     title: "정보화 사업 발주와 제안 평가"
     category: PE
@@ -5467,7 +5467,7 @@ topics:
     difficulty: 중급
     angle: "부동소수점 누적 오차를 10만 건 합산으로 키워 보이고, Decimal 과 정수 최소단위 방식으로 각각 고친 뒤 비용을 잰다. 반올림 방식(은행가 반올림)까지 대조한다."
     code: python
-    status: todo
+    status: done
   - id: gen-004
     title: "인증서 체인을 직접 만들어 보면 검증 실패가 읽힌다"
     category: Security
@@ -6135,7 +6135,7 @@ topics:
     angle: "DELETE 후 파일 크기가 그대로인 것을 PRAGMA page_count/freelist_count 로 보이고, VACUUM 과 auto_vacuum 이 각각 무엇을 되돌리는지 대조한다"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-085
     title: "BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가"
     category: Database
@@ -6179,7 +6179,7 @@ topics:
     angle: "외래키를 끈 채 쌓인 데이터에 제약을 걸면 무슨 일이 나는지. PRAGMA foreign_key_check 가 돌려주는 네 칸을 읽는 법과, 고친 뒤 켜는 순서"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-089
     title: "R*Tree 가상 테이블 — 범위가 겹치는 행 찾기"
     category: Database

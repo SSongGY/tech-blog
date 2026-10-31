@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **540편** · 갱신 2026-10-31
+총 **543편** · 갱신 2026-10-31
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 82편
+## DB문법 (basics) — 83편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-31 | [집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치](posts/Database/sql-basics/2026-10-31-set-operation-order-by-limit-scope/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-31 | [foreign_key_check — 제약을 켜기 전에 깨진 참조를 먼저 센다](posts/Database/sql-basics/2026-10-31-pragma-foreign-key-check/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-30 | [날짜 함수 심화 — strftime으로 주차·분기 뽑기](posts/Database/sql-basics/2026-10-30-strftime-week-quarter/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-30 | [문자열을 구분자로 나누기 — SQLite에 split이 없을 때](posts/Database/sql-basics/2026-10-30-split-string-by-delimiter/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-29 | [VACUUM — 지웠는데 파일이 안 줄어들 때](posts/Database/sql-basics/2026-10-29-vacuum-reclaim-free-pages/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -115,10 +116,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 187편
+## 기술사 (pe) — 188편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-31 | [위험 관리 — 식별·분석·대응 절차](posts/PE/it-management/2026-10-31-risk-management-identify-analyze-respond/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-31 | [입출력 방식 — 폴링, 인터럽트, DMA](posts/PE/system/2026-10-31-io-polling-interrupt-dma/index.md) | 중급 | Linux 커널 문서 7.3.0, Linux man-pages io_uring_setup(2) | 문서 근거 |
 | 2026-10-30 | [보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담](posts/PE/security/2026-10-30-security-operations-siem-soar-edr/index.md) | 중급 | NIST SP 800-61r3 (2025-04), NIST CSF 2.0 (2024-02), OMB M-22-01 (2021-10-08) | 문서 근거 |
 | 2026-10-30 | [제시공격 탐지 (PAD, ISO/IEC 30107) — 무엇을 재고 무엇을 재지 않는가](posts/PE/security/2026-10-30-presentation-attack-detection-iso-iec-30107/index.md) | 중급 | ISO/IEC 30107-1:2023 (제2판), ISO/IEC 30107-3:2023 (제2판), ISO/IEC 30107-1:2016 (대체됨), ISO/IEC 2382-37 (생체인식 용어) | 문서 근거 |
@@ -330,11 +332,12 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 47편
+## 일반 (general) — 48편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-10-31 | [플레임 그래프를 제대로 읽는 법 — 폭과 높이가 각각 무엇인가](posts/Tooling/2026-10-31-reading-flame-graphs/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
+| 2026-10-31 | [0.1 + 0.2 로 끝나지 않는다 — 금액 계산이 실제로 틀어지는 자리](posts/Language/python/2026-10-31-float-money-rounding-decimal/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-30 | [모놀리스를 쪼개기 전에 — 커밋 이력에서 경계를 찾아낸다](posts/Architecture/2026-10-30-find-service-boundaries-from-cochange/index.md) | 중급 | Python 3.13.5, git 2.54.0.windows.1 | 실행 검증 |
 | 2026-10-30 | [글자가 깨지는 세 가지 경로 — 인코딩·디코딩을 바이트로 따라가기](posts/Language/python/2026-10-30-encoding-decoding-byte-trace/index.md) | 중급 | Python 3.13.5, Unicode 15.1.0 (unicodedata), Windows 11 | 실행 검증 |
 | 2026-10-29 | [사가 패턴의 보상 트랜잭션은 왜 어려운가](posts/Architecture/2026-10-29-saga-compensating-transaction/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
@@ -624,6 +627,11 @@
 - [COALESCE와 NULLIF — NULL을 다루는 두 함수](posts/Database/sql-basics/2026-09-28-coalesce-nullif-null-handling/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [COUNT(*)와 COUNT(컬럼)이 다른 값을 내는 이유](posts/Database/sql-basics/2026-10-02-count-star-vs-column-null/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [NULL 비교 — = NULL이 안 되는 이유](posts/Database/sql-basics/2026-10-02-null-comparison-three-valued-logic/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+
+**`numeric-types`**
+
+- [숫자 타입과 반올림 — 돈을 다룰 때](posts/Database/sql-basics/2026-10-01-sql-numeric-types-rounding-money/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [0.1 + 0.2 로 끝나지 않는다 — 금액 계산이 실제로 틀어지는 자리](posts/Language/python/2026-10-31-float-money-rounding-decimal/index.md) — Python 3.13.5, Windows 11
 
 **`optimizer-hint`**
 
