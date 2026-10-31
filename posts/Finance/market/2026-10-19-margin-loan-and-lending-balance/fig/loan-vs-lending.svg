@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#37474f"/>
+    </marker>
+    <marker id="arRed" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M 0 0 L 9 4.5 L 0 9 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="32" font-size="16" font-weight="bold" fill="#1b1b1b">빌리는 것이 돈이냐 주식이냐 — 잔고의 단위가 거기서 갈린다</text>
+
+  <line x1="440" y1="50" x2="440" y2="420" stroke="#ccc" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 왼쪽: 신용융자 -->
+  <rect x="40" y="52" width="370" height="38" fill="#37474f"/>
+  <text x="225" y="77" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">신용융자 — 돈을 빌려 산다</text>
+
+  <rect x="40" y="110" width="370" height="46" fill="#ffffff" stroke="#37474f" stroke-width="2"/>
+  <text x="225" y="139" font-size="14" text-anchor="middle" fill="#1b1b1b">증권회사가 매수대금을 빌려준다</text>
+
+  <line x1="225" y1="156" x2="225" y2="180" stroke="#37474f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="40" y="186" width="370" height="46" fill="#ffffff" stroke="#37474f" stroke-width="2"/>
+  <text x="225" y="215" font-size="14" text-anchor="middle" fill="#1b1b1b">투자자가 그 돈으로 주식을 산다</text>
+
+  <line x1="225" y1="232" x2="225" y2="256" stroke="#37474f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="40" y="262" width="370" height="60" fill="#eef1f2" stroke="#37474f" stroke-width="2"/>
+  <text x="225" y="286" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">잔고의 단위 = 원</text>
+  <text x="225" y="308" font-size="13" text-anchor="middle" fill="#444">빌린 돈 6,000,000원 — 주가가 변해도 그대로</text>
+
+  <rect x="40" y="340" width="370" height="76" fill="#f7dcdc" stroke="#9d0208" stroke-width="2"/>
+  <text x="58" y="364" font-size="14" font-weight="bold" fill="#7a0206">주가가 내리면 담보비율이 깨진다</text>
+  <text x="58" y="386" font-size="13" fill="#7a0206">담보평가액 ÷ 융자금 &lt; 유지비율 → 추가담보</text>
+  <text x="58" y="406" font-size="13" fill="#7a0206">기한까지 못 내면 반대매매</text>
+
+  <!-- 오른쪽: 대차 -->
+  <rect x="470" y="52" width="370" height="38" fill="#37474f"/>
+  <text x="655" y="77" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">대차 — 주식을 빌린다</text>
+
+  <rect x="470" y="110" width="370" height="46" fill="#ffffff" stroke="#37474f" stroke-width="2"/>
+  <text x="655" y="139" font-size="14" text-anchor="middle" fill="#1b1b1b">주식을 가진 기관이 빌려준다</text>
+
+  <line x1="655" y1="156" x2="655" y2="180" stroke="#37474f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="470" y="186" width="370" height="46" fill="#ffffff" stroke="#37474f" stroke-width="2"/>
+  <text x="655" y="208" font-size="14" text-anchor="middle" fill="#1b1b1b">차입자가 공매도·헤지·차익거래·결제에</text>
+  <text x="655" y="226" font-size="14" text-anchor="middle" fill="#1b1b1b">쓴다</text>
+
+  <line x1="655" y1="232" x2="655" y2="256" stroke="#37474f" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="470" y="262" width="370" height="60" fill="#eef1f2" stroke="#37474f" stroke-width="2"/>
+  <text x="655" y="286" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b1b1b">잔고의 단위 = 주식 수</text>
+  <text x="655" y="308" font-size="13" text-anchor="middle" fill="#444">잔고금액은 잔고주수 × 종가로 환산한 값</text>
+
+  <rect x="470" y="340" width="370" height="76" fill="#f7dcdc" stroke="#9d0208" stroke-width="2"/>
+  <text x="488" y="364" font-size="14" font-weight="bold" fill="#7a0206">주가가 오르면 되갚을 값이 커진다</text>
+  <text x="488" y="386" font-size="13" fill="#7a0206">빌린 수량은 그대로, 되사는 값만 오른다</text>
+  <text x="488" y="406" font-size="13" fill="#7a0206">담보도 그 방향으로 함께 늘려야 한다</text>
+</svg>
