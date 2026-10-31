@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **534편** · 갱신 2026-10-30
+총 **536편** · 갱신 2026-10-31
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -466,7 +466,7 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 102편
+## 주식·재무 (finance) — 104편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -510,6 +510,8 @@
 | 2026-10-20 | [지수 편입과 리밸런싱 — 지수가 바뀔 때 생기는 수급](posts/Finance/market/2026-10-20-index-inclusion-rebalancing-flow/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-20 | [괴리율 — ETF·ETN 가격이 기준가와 벌어질 때](posts/Finance/market/2026-10-20-disparity-ratio-etf-etn/index.md) | 입문 | Python 3.13.5, 한국거래소 유가증권시장 업무규정 2026-08-19 시행 개정 | 실행 검증 |
 | 2026-10-20 | [액티브와 패시브 — 보수가 장기 수익률을 깎는 정도](posts/Finance/market/2026-10-20-active-vs-passive-fee-drag/index.md) | 입문 | Python 3.13.5, 금융투자협회 전자공시 펀드별 보수비용비교(2026-10-21 조회) | 실행 검증 |
+| 2026-10-19 | [신용융자 잔고와 대차 잔고 — 단위가 다른 두 숫자](posts/Finance/market/2026-10-19-margin-loan-and-lending-balance/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
+| 2026-10-19 | [증거금과 반대매매 — 예수금보다 많이 주문되는 이유](posts/Finance/market/2026-10-19-margin-deposit-and-forced-liquidation/index.md) | 입문 | Python 3.13.5 | 실행 검증 |
 | 2026-10-16 | [총주주수익률(TSR) — 배당과 자사주를 합쳐 보기](posts/Finance/valuation/2026-10-16-tsr-dividend-buyback/index.md) | 중급 | Python 3.13.5, K-IFRS 제1033호 주당이익 | 실행 검증 |
 | 2026-10-16 | [상·하한가와 변동성완화장치(VI) — 어느 장치가 먼저 걸리는가](posts/Finance/market/2026-10-16-price-limit-volatility-interruption/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-15 | [WACC — 할인율은 어떻게 만들어지는가](posts/Finance/valuation/2026-10-15-wacc-capital-structure/index.md) | 중급 | Python 3.13.5, K-IFRS 제1036호 자산손상, K-IFRS 제1012호 법인세 | 실행 검증 |
@@ -640,6 +642,11 @@
 - [트랜잭션 격리 수준별로 실제 무슨 이상 현상이 보이는가](posts/Database/sqlite/2026-09-21-isolation-level-anomalies/index.md) — SQLite 3.49.1, Python 3.13.5
 - [Tibero 7 트랜잭션 격리 수준 — 지원 범위와 설정](posts/Database/tibero/2026-09-30-tibero7-transaction-isolation/index.md) — Tibero 7
 - [트랜잭션 ACID와 격리 수준 — 이상현상으로 수준을 정의하는 방식](posts/PE/database/2026-09-23-acid-and-isolation-levels/index.md) — PostgreSQL 16 문서, Berenson et al., SIGMOD 1995
+
+**`union-compound-select`**
+
+- [UNION과 UNION ALL — 중복 제거 비용](posts/Database/sql-basics/2026-09-28-union-vs-union-all/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치](posts/Database/sql-basics/2026-10-30-set-operation-order-by-limit-scope/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 
 **`window-function`**
 
