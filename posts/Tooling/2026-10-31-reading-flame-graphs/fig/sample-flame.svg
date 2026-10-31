@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="724" viewBox="0 0 880 724" font-family="'Consolas','D2Coding',monospace">
+<rect width="880" height="724" fill="#f8f9fa"/>
+<text x="10" y="28" font-size="16" font-weight="bold" fill="#212529">workload.pipeline() 의 CPU 플레임 그래프</text>
+<text x="10" y="50" font-size="13" fill="#495057">표본 1495개 · 가로폭 = 그 스택이 표본에서 차지한 비율 · 형제 칸은 이름순 (시간순이 아니다)</text>
+<rect x="10.0" y="686" width="859.0" height="20" fill="#e9ecef" stroke="#495057" stroke-width="0.6"><title>all — 1495표본 (100.0%)</title></rect>
+<text x="16.0" y="700" font-size="13" fill="#212529">all</text>
+<rect x="10.0" y="664" width="859.0" height="20" fill="#c98b4b" stroke="#495057" stroke-width="0.6"><title>pipeline — 1495표본 (100.0%)</title></rect>
+<text x="16.0" y="678" font-size="13" fill="#212529">pipeline</text>
+<rect x="10.0" y="642" width="473.0" height="20" fill="#e0b473" stroke="#495057" stroke-width="0.6"><title>stage_load — 824표본 (55.1%)</title></rect>
+<text x="16.0" y="656" font-size="13" fill="#212529">stage_load</text>
+<rect x="10.0" y="620" width="95.1" height="20" fill="#bf7a3c" stroke="#495057" stroke-width="0.6"><title>build_index — 167표본 (11.2%)</title></rect>
+<text x="16.0" y="634" font-size="13" fill="#212529">build_index</text>
+<rect x="106.1" y="620" width="376.9" height="20" fill="#d19a56" stroke="#495057" stroke-width="0.6"><title>checksum_rows — 657표본 (43.9%)</title></rect>
+<text x="112.1" y="634" font-size="13" fill="#212529">checksum_rows</text>
+<rect x="484.0" y="642" width="313.1" height="20" fill="#cf8f4f" stroke="#495057" stroke-width="0.6"><title>stage_report — 546표본 (36.5%)</title></rect>
+<text x="490.0" y="656" font-size="13" fill="#212529">stage_report</text>
+<rect x="484.0" y="620" width="216.4" height="20" fill="#d9a05b" stroke="#495057" stroke-width="0.6"><title>format_rows — 378표본 (25.3%)</title></rect>
+<text x="490.0" y="634" font-size="13" fill="#212529">format_rows</text>
+<rect x="701.5" y="620" width="95.6" height="20" fill="#c98b4b" stroke="#495057" stroke-width="0.6"><title>sort_rows — 168표본 (11.2%)</title></rect>
+<text x="707.5" y="634" font-size="13" fill="#212529">sort_rows</text>
+<rect x="798.1" y="642" width="70.9" height="20" fill="#e0b473" stroke="#495057" stroke-width="0.6"><title>stage_validate — 125표본 (8.4%)</title></rect>
+<text x="804.1" y="656" font-size="13" fill="#212529">stage_v~</text>
+<rect x="798.1" y="620" width="67.5" height="20" fill="#bf7a3c" stroke="#495057" stroke-width="0.6"><title>walk — 119표본 (8.0%)</title></rect>
+<text x="804.1" y="634" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="598" width="66.9" height="20" fill="#d19a56" stroke="#495057" stroke-width="0.6"><title>walk — 118표본 (7.9%)</title></rect>
+<text x="804.1" y="612" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="576" width="66.9" height="20" fill="#cf8f4f" stroke="#495057" stroke-width="0.6"><title>walk — 118표본 (7.9%)</title></rect>
+<text x="804.1" y="590" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="554" width="66.3" height="20" fill="#d9a05b" stroke="#495057" stroke-width="0.6"><title>walk — 117표본 (7.8%)</title></rect>
+<text x="804.1" y="568" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="532" width="66.3" height="20" fill="#c98b4b" stroke="#495057" stroke-width="0.6"><title>walk — 117표본 (7.8%)</title></rect>
+<text x="804.1" y="546" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="510" width="65.7" height="20" fill="#e0b473" stroke="#495057" stroke-width="0.6"><title>walk — 116표본 (7.8%)</title></rect>
+<text x="804.1" y="524" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="488" width="65.2" height="20" fill="#bf7a3c" stroke="#495057" stroke-width="0.6"><title>walk — 115표본 (7.7%)</title></rect>
+<text x="804.1" y="502" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="466" width="65.2" height="20" fill="#d19a56" stroke="#495057" stroke-width="0.6"><title>walk — 115표본 (7.7%)</title></rect>
+<text x="804.1" y="480" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="444" width="64.6" height="20" fill="#cf8f4f" stroke="#495057" stroke-width="0.6"><title>walk — 114표본 (7.6%)</title></rect>
+<text x="804.1" y="458" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="422" width="64.6" height="20" fill="#d9a05b" stroke="#495057" stroke-width="0.6"><title>walk — 114표본 (7.6%)</title></rect>
+<text x="804.1" y="436" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="400" width="64.0" height="20" fill="#c98b4b" stroke="#495057" stroke-width="0.6"><title>walk — 113표본 (7.6%)</title></rect>
+<text x="804.1" y="414" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="378" width="63.4" height="20" fill="#e0b473" stroke="#495057" stroke-width="0.6"><title>walk — 112표본 (7.5%)</title></rect>
+<text x="804.1" y="392" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="356" width="62.9" height="20" fill="#bf7a3c" stroke="#495057" stroke-width="0.6"><title>walk — 111표본 (7.4%)</title></rect>
+<text x="804.1" y="370" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="334" width="62.9" height="20" fill="#d19a56" stroke="#495057" stroke-width="0.6"><title>walk — 111표본 (7.4%)</title></rect>
+<text x="804.1" y="348" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="312" width="62.9" height="20" fill="#cf8f4f" stroke="#495057" stroke-width="0.6"><title>walk — 111표본 (7.4%)</title></rect>
+<text x="804.1" y="326" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="290" width="62.9" height="20" fill="#d9a05b" stroke="#495057" stroke-width="0.6"><title>walk — 111표본 (7.4%)</title></rect>
+<text x="804.1" y="304" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="268" width="62.9" height="20" fill="#c98b4b" stroke="#495057" stroke-width="0.6"><title>walk — 111표본 (7.4%)</title></rect>
+<text x="804.1" y="282" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="246" width="62.9" height="20" fill="#e0b473" stroke="#495057" stroke-width="0.6"><title>walk — 111표본 (7.4%)</title></rect>
+<text x="804.1" y="260" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="224" width="62.3" height="20" fill="#bf7a3c" stroke="#495057" stroke-width="0.6"><title>walk — 110표본 (7.4%)</title></rect>
+<text x="804.1" y="238" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="202" width="61.7" height="20" fill="#d19a56" stroke="#495057" stroke-width="0.6"><title>walk — 109표본 (7.3%)</title></rect>
+<text x="804.1" y="216" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="180" width="61.7" height="20" fill="#cf8f4f" stroke="#495057" stroke-width="0.6"><title>walk — 109표본 (7.3%)</title></rect>
+<text x="804.1" y="194" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="158" width="61.7" height="20" fill="#d9a05b" stroke="#495057" stroke-width="0.6"><title>walk — 109표본 (7.3%)</title></rect>
+<text x="804.1" y="172" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="136" width="61.7" height="20" fill="#c98b4b" stroke="#495057" stroke-width="0.6"><title>walk — 109표본 (7.3%)</title></rect>
+<text x="804.1" y="150" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="114" width="61.7" height="20" fill="#e0b473" stroke="#495057" stroke-width="0.6"><title>walk — 109표본 (7.3%)</title></rect>
+<text x="804.1" y="128" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="92" width="61.7" height="20" fill="#bf7a3c" stroke="#495057" stroke-width="0.6"><title>walk — 109표본 (7.3%)</title></rect>
+<text x="804.1" y="106" font-size="13" fill="#212529">walk</text>
+<rect x="798.1" y="70" width="61.1" height="20" fill="#d19a56" stroke="#495057" stroke-width="0.6"><title>walk — 108표본 (7.2%)</title></rect>
+<text x="804.1" y="84" font-size="13" fill="#212529">walk</text>
+</svg>

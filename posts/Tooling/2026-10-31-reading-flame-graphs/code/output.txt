@@ -1,0 +1,99 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Tooling\2026-10-31-reading-flame-graphs
+# 명령      : python run_profile.py
+# 수행 시각 : 2026-10-31 23:20 (대한민국 표준시)
+# 소요      : 5.8초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : Python 3.13.5, Windows 11
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  Python   3.13.5
+  OS       Windows 11
+  표본 주기 1ms 요청 (sys._current_frames 기반)
+  GIL 전환 0.2ms (sys.setswitchinterval)
+
+================================================================
+요청한 표본 주기 vs 실제로 집힌 주기
+================================================================
+  GIL 전환 간격             표본     측정 시간  실제 주기
+  ------------------------------------------------------
+     5.0ms (기본값)         64     1.00초    15.6ms
+     1.0ms               64     1.00초    15.6ms
+     0.2ms              645     1.00초     1.6ms
+
+  요청 주기는 셋 다 1ms 로 같다. 달라진 것은 GIL 전환 간격뿐이다.
+
+  실행 시간 2.59초 · 표본 1496개 (평균 1.7ms 간격)
+  측정 대상 밖이라 버린 표본 1개 · 그림에 쓰는 표본 1495개
+
+================================================================
+접힌 스택 (collapsed stack) — 그림이 되기 직전의 중간 산출물
+================================================================
+  재귀로 같은 프레임이 이어지는 자리는 '이름*횟수' 로 줄여 적었다.
+    657   43.9%  pipeline;stage_load;checksum_rows
+    378   25.3%  pipeline;stage_report;format_rows
+    168   11.2%  pipeline;stage_report;sort_rows
+    167   11.2%  pipeline;stage_load;build_index
+    108    7.2%  pipeline;stage_validate;walk*26
+      6    0.4%  pipeline;stage_validate
+      1    0.1%  pipeline;stage_validate;walk
+      1    0.1%  pipeline;stage_validate;walk*3
+      1    0.1%  pipeline;stage_validate;walk*5
+      1    0.1%  pipeline;stage_validate;walk*6
+      1    0.1%  pipeline;stage_validate;walk*8
+      1    0.1%  pipeline;stage_validate;walk*10
+      1    0.1%  pipeline;stage_validate;walk*11
+      1    0.1%  pipeline;stage_validate;walk*12
+      1    0.1%  pipeline;stage_validate;walk*18
+      1    0.1%  pipeline;stage_validate;walk*19
+      1    0.1%  pipeline;stage_validate;walk*25
+  --------------------------------------------------------
+   1495  100.0%  합계
+
+================================================================
+포함 시간과 자기 시간 — 플레임 그래프에서 폭과 윗면이 갈리는 지점
+================================================================
+  함수                     포함 표본     포함 %     자기 표본     자기 %
+  ------------------------------------------------------
+  pipeline                1495   100.0%         0     0.0%
+  stage_load               824    55.1%         0     0.0%
+  checksum_rows            657    43.9%       657    43.9%
+  stage_report             546    36.5%         0     0.0%
+  format_rows              378    25.3%       378    25.3%
+  sort_rows                168    11.2%       168    11.2%
+  build_index              167    11.2%       167    11.2%
+  stage_validate           125     8.4%         6     0.4%
+  walk                     119     8.0%       119     8.0%
+
+================================================================
+스택 깊이별 표본 — 높이와 비용은 따로 논다
+================================================================
+    깊이      표본       비율  맨 위 프레임
+  ------------------------------------------------------
+     2       6     0.4%  stage_validate
+     3     167    11.2%  build_index
+     3     657    43.9%  checksum_rows
+     3     378    25.3%  format_rows
+     3     168    11.2%  sort_rows
+     3       1     0.1%  walk
+     5       1     0.1%  walk
+     7       1     0.1%  walk
+     8       1     0.1%  walk
+    10       1     0.1%  walk
+    12       1     0.1%  walk
+    13       1     0.1%  walk
+    14       1     0.1%  walk
+    20       1     0.1%  walk
+    21       1     0.1%  walk
+    27       1     0.1%  walk
+    28     108     7.2%  walk
+
+  가장 깊은 스택이 가장 비싼 스택이 아니다. 위 두 열을 나란히 본다.
+
+  플레임 그래프를 sample-flame.svg 로 저장했다 (7805바이트)
