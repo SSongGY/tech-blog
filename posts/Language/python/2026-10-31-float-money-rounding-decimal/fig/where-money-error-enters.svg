@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="410" viewBox="0 0 880 410" font-family="'Malgun Gothic','Segoe UI',sans-serif">
+  <rect x="0" y="0" width="880" height="410" fill="#fdfdfb"/>
+
+  <text x="40" y="28" font-size="17" font-weight="bold" fill="#1b1b1b">같은 금액, 세 가지 표현 — 오차가 들어오는 자리는 셋뿐이다</text>
+
+  <rect x="330" y="44" width="220" height="40" rx="5" fill="#ffffff" stroke="#555" stroke-width="1.4"/>
+  <text x="440" y="70" font-size="14" fill="#1b1b1b" text-anchor="middle" font-family="Consolas,monospace">'400.77'  (문자열)</text>
+
+  <path d="M380 84 L165 116" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+  <path d="M440 84 L440 116" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+  <path d="M500 84 L715 116" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+
+  <text x="165" y="134" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">float</text>
+  <text x="440" y="134" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">Decimal</text>
+  <text x="715" y="134" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">int (전 단위)</text>
+
+  <rect x="40" y="144" width="250" height="56" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6"/>
+  <text x="56" y="167" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">float('400.77')</text>
+  <text x="56" y="188" font-size="13" fill="#b45309">① 2진수로 근사 — 여기서 오차</text>
+
+  <rect x="315" y="144" width="250" height="56" rx="5" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="331" y="167" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">Decimal('400.77')</text>
+  <text x="331" y="188" font-size="13" fill="#2d6a4f">십진 그대로 — 오차 없음</text>
+
+  <rect x="590" y="144" width="250" height="56" rx="5" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="167" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">40077  (전)</text>
+  <text x="606" y="188" font-size="13" fill="#2d6a4f">정수 — 오차 없음</text>
+
+  <path d="M165 200 L165 218" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+  <path d="M440 200 L440 218" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+  <path d="M715 200 L715 218" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+
+  <rect x="40" y="222" width="250" height="56" rx="5" fill="#fdf0f0" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="56" y="245" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">round(x, 2)   건마다</text>
+  <text x="56" y="266" font-size="13" fill="#9d0208">② 반올림 방식을 고를 수 없다</text>
+
+  <rect x="315" y="222" width="250" height="56" rx="5" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="331" y="245" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">quantize(rounding=…)</text>
+  <text x="331" y="266" font-size="13" fill="#2d6a4f">방식을 코드에 적는다</text>
+
+  <rect x="590" y="222" width="250" height="56" rx="5" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="245" font-size="13" fill="#1b1b1b" font-family="Consolas,monospace">나눌 때만 몫·나머지</text>
+  <text x="606" y="266" font-size="13" fill="#2d6a4f">방식을 직접 정한다</text>
+
+  <path d="M165 278 L165 296" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+  <path d="M440 278 L440 296" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+  <path d="M715 278 L715 296" stroke="#999" stroke-width="1.4" marker-end="url(#grey)"/>
+
+  <rect x="40" y="300" width="250" height="56" rx="5" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6"/>
+  <text x="56" y="323" font-size="13" fill="#1b1b1b">합계 — 끝에 한 번 반올림하면 맞는다</text>
+  <text x="56" y="344" font-size="13" fill="#b45309">③ 2^53 전을 넘으면 1전이 사라진다</text>
+
+  <rect x="315" y="300" width="250" height="56" rx="5" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="331" y="323" font-size="13" fill="#1b1b1b">합계 — 자릿수 한계 없음</text>
+  <text x="331" y="344" font-size="13" fill="#2d6a4f">기본 정밀도 28자리, 조절 가능</text>
+
+  <rect x="590" y="300" width="250" height="56" rx="5" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="606" y="323" font-size="13" fill="#1b1b1b">합계 — 파이썬 정수는 무한 자릿수</text>
+  <text x="606" y="344" font-size="13" fill="#2d6a4f">자릿수로는 깨지지 않는다</text>
+
+  <text x="40" y="386" font-size="13" fill="#555">①은 거의 드러나지 않고 ③은 조 단위에서야 나타난다. 실무에서 금액을 틀리게 만드는 것은 대부분 ②다.</text>
+
+  <defs>
+    <marker id="grey" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0 0 L7 3.2 L0 6.4 z" fill="#999"/>
+    </marker>
+  </defs>
+</svg>
