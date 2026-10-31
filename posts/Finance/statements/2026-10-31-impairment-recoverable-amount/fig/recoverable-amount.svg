@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbfd"/>
+
+  <!-- 기준선 -->
+  <line x1="60" y1="350" x2="840" y2="350" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- 회수가능액 높이를 가로지르는 안내선 -->
+  <line x1="100" y1="150.9" x2="800" y2="150.9" stroke="#2d6a4f" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- 장부금액 1,000 -->
+  <rect x="100" y="150.9" width="110" height="199.1" fill="#cbd5e1" stroke="#94a3b8"/>
+  <rect x="100" y="100" width="110" height="50.9" fill="#9d0208"/>
+  <text x="155" y="90" font-size="15" fill="#1e293b" text-anchor="middle">장부금액 1,000.0</text>
+  <text x="218" y="131" font-size="14" fill="#9d0208">손상차손 203.6</text>
+  <text x="155" y="256" font-size="14" fill="#334155" text-anchor="middle">감액 후 796.4</text>
+
+  <!-- 순공정가치 790 -->
+  <rect x="320" y="152.5" width="110" height="197.5" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="375" y="142" font-size="15" fill="#1e293b" text-anchor="middle">순공정가치</text>
+  <text x="375" y="252" font-size="14" fill="#334155" text-anchor="middle">790.0</text>
+  <text x="375" y="274" font-size="13" fill="#475569" text-anchor="middle">820 − 30</text>
+  <text x="375" y="374" font-size="13" fill="#475569" text-anchor="middle">팔면 손에 남는 금액</text>
+  <text x="375" y="392" font-size="13" fill="#475569" text-anchor="middle">(공정가치 − 처분부대원가)</text>
+
+  <!-- 사용가치 796.4 -->
+  <rect x="470" y="150.9" width="110" height="199.1" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="525" y="140" font-size="15" fill="#1e293b" text-anchor="middle">사용가치</text>
+  <text x="525" y="252" font-size="14" fill="#334155" text-anchor="middle">796.4</text>
+  <text x="525" y="274" font-size="13" fill="#475569" text-anchor="middle">세전 10%</text>
+  <text x="525" y="374" font-size="13" fill="#475569" text-anchor="middle">계속 쓰면 버는 금액</text>
+  <text x="525" y="392" font-size="13" fill="#475569" text-anchor="middle">(현금흐름의 현재가치)</text>
+
+  <!-- 큰 쪽을 고른다 -->
+  <path d="M 594 200 L 634 200" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <polygon points="642,200 632,195 632,205" fill="#2d6a4f"/>
+  <text x="618" y="190" font-size="13" fill="#2d6a4f" text-anchor="middle">큰 쪽</text>
+
+  <!-- 회수가능액 -->
+  <rect x="660" y="150.9" width="110" height="199.1" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="715" y="140" font-size="15" fill="#2d6a4f" text-anchor="middle">회수가능액</text>
+  <text x="715" y="252" font-size="14" fill="#2d6a4f" text-anchor="middle">796.4</text>
+  <text x="715" y="374" font-size="13" fill="#2d6a4f" text-anchor="middle">둘 중 더 많은 금액</text>
+  <text x="715" y="392" font-size="13" fill="#2d6a4f" text-anchor="middle">문단 6·18</text>
+
+  <text x="60" y="416" font-size="13" fill="#475569">단위: 백만원 · 가상 회사 가나제철의 압연 설비</text>
+</svg>
