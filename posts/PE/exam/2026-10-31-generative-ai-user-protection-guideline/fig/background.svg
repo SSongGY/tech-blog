@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#f8f9fa"/>
+
+  <text x="40" y="36" font-size="17" font-weight="bold" fill="#1b1b1b">제정 배경 — 기술 특성과 제도 공백이 겹친 자리</text>
+
+  <!-- 좌: 문제 요인 -->
+  <g>
+    <rect x="30" y="62" width="236" height="70" rx="6" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+    <text x="148" y="86" font-size="13.5" font-weight="bold" fill="#9d0208" text-anchor="middle">기술적 불완전성</text>
+    <text x="148" y="106" font-size="13" fill="#333" text-anchor="middle">결정 과정 불투명(블랙박스)</text>
+    <text x="148" y="124" font-size="13" fill="#333" text-anchor="middle">산출물 부정확 · 데이터 편향</text>
+
+    <rect x="30" y="148" width="236" height="70" rx="6" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+    <text x="148" y="172" font-size="13.5" font-weight="bold" fill="#9d0208" text-anchor="middle">이용 단계의 상호작용</text>
+    <text x="148" y="192" font-size="13" fill="#333" text-anchor="middle">이용자 프롬프트가</text>
+    <text x="148" y="210" font-size="13" fill="#333" text-anchor="middle">산출물에 직접 작용</text>
+
+    <rect x="30" y="234" width="236" height="70" rx="6" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+    <text x="148" y="258" font-size="13.5" font-weight="bold" fill="#9d0208" text-anchor="middle">사회적 피해 표출</text>
+    <text x="148" y="278" font-size="13" fill="#333" text-anchor="middle">딥페이크 성범죄물</text>
+    <text x="148" y="296" font-size="13" fill="#333" text-anchor="middle">차별 · 편향 · 명예훼손</text>
+  </g>
+
+  <!-- 화살표 좌→중 -->
+  <g stroke="#9d0208" stroke-width="2" fill="none">
+    <path d="M 266 97 L 300 160"/>
+    <path d="M 266 183 L 300 183"/>
+    <path d="M 266 269 L 300 206"/>
+  </g>
+  <g fill="#9d0208">
+    <polygon points="306,166 294,160 300,152"/>
+    <polygon points="310,183 298,178 298,188"/>
+    <polygon points="306,200 294,206 300,214"/>
+  </g>
+
+  <!-- 중: 제도 공백 -->
+  <rect x="312" y="124" width="238" height="118" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="431" y="150" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">기존 제도의 공백</text>
+  <text x="431" y="174" font-size="13" fill="#333" text-anchor="middle">행위자 특정이 어려워</text>
+  <text x="431" y="192" font-size="13" fill="#333" text-anchor="middle">기존 구제 절차가 닿지 않음</text>
+  <text x="431" y="214" font-size="13" fill="#333" text-anchor="middle">산출물이 다시 학습데이터가 되어</text>
+  <text x="431" y="232" font-size="13" fill="#333" text-anchor="middle">같은 침해가 재생산됨</text>
+
+  <!-- 화살표 중→우 -->
+  <g stroke="#2d6a4f" stroke-width="2" fill="none">
+    <path d="M 550 183 L 594 183"/>
+  </g>
+  <polygon points="604,183 590,177 590,189" fill="#2d6a4f"/>
+
+  <!-- 우: 가이드라인 -->
+  <rect x="606" y="100" width="244" height="94" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="728" y="126" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">이용자 보호 가이드라인</text>
+  <text x="728" y="150" font-size="13" fill="#333" text-anchor="middle">기본원칙 4가지</text>
+  <text x="728" y="170" font-size="13" fill="#333" text-anchor="middle">실행방식 6가지</text>
+  <text x="728" y="188" font-size="13" fill="#333" text-anchor="middle">실행사례 부록</text>
+
+  <rect x="606" y="210" width="244" height="94" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="728" y="236" font-size="13.5" font-weight="bold" fill="#2d6a4f" text-anchor="middle">성격</text>
+  <text x="728" y="258" font-size="13" fill="#333" text-anchor="middle">생태계 구성원의 자율적 참여</text>
+  <text x="728" y="278" font-size="13" fill="#333" text-anchor="middle">개발사 · 서비스 제공자에 적용</text>
+  <text x="728" y="296" font-size="13" fill="#333" text-anchor="middle">2년마다 타당성 검토</text>
+
+  <g stroke="#2d6a4f" stroke-width="2" fill="none" stroke-dasharray="5 4">
+    <path d="M 728 194 L 728 206"/>
+  </g>
+
+  <text x="40" y="344" font-size="13" fill="#555">사전 예방으로 축을 옮긴 점이 핵심이다. 사후 구제가 닿지 않는 구조라서, 생성 이전 단계의 설계에 요구를 건다.</text>
+</svg>

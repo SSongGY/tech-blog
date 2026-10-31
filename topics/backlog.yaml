@@ -6488,3 +6488,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-227
+    title: "AI 생성물 표시와 콘텐츠 출처·이력(C2PA)"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "생성형 AI 산출물에 AI 생성 사실을 표시하는 방법을 워터마크·메타데이터·C2PA 콘텐츠 자격증명으로 나누고, 각 방식이 어디서 끊기는지와 인공지능 기본법·EU AI법의 표시 의무가 요구하는 수준을 맞춰 본다"
+    code: none
+    origin: exam
+    status: todo

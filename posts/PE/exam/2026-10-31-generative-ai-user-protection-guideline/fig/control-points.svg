@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#f8f9fa"/>
+
+  <text x="40" y="38" font-size="17" font-weight="bold" fill="#1b1b1b">생성형 인공지능 서비스 흐름과 실행방식 4가지의 적용 지점</text>
+  <text x="40" y="60" font-size="13" fill="#555">위: 서비스 단계 · 아래: 그 단계에서 가이드라인이 요구하는 실행방식</text>
+
+  <!-- 서비스 흐름 -->
+  <g>
+    <rect x="40" y="86" width="170" height="54" rx="6" fill="#ffffff" stroke="#3d5a80" stroke-width="2"/>
+    <text x="125" y="110" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 입력</text>
+    <text x="125" y="130" font-size="13" fill="#333" text-anchor="middle">프롬프트 · 이용 데이터</text>
+
+    <rect x="250" y="86" width="170" height="54" rx="6" fill="#ffffff" stroke="#3d5a80" stroke-width="2"/>
+    <text x="335" y="110" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">② 생성</text>
+    <text x="335" y="130" font-size="13" fill="#333" text-anchor="middle">모델 추론 · 알고리즘</text>
+
+    <rect x="460" y="86" width="170" height="54" rx="6" fill="#ffffff" stroke="#3d5a80" stroke-width="2"/>
+    <text x="545" y="110" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">③ 산출물</text>
+    <text x="545" y="130" font-size="13" fill="#333" text-anchor="middle">최종 결과물</text>
+
+    <rect x="670" y="86" width="170" height="54" rx="6" fill="#ffffff" stroke="#3d5a80" stroke-width="2"/>
+    <text x="755" y="110" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">④ 제공 · 표시</text>
+    <text x="755" y="130" font-size="13" fill="#333" text-anchor="middle">이용자에게 전달</text>
+  </g>
+
+  <!-- 흐름 화살표 -->
+  <g stroke="#3d5a80" stroke-width="2" fill="none">
+    <path d="M 210 113 L 244 113"/>
+    <path d="M 420 113 L 454 113"/>
+    <path d="M 630 113 L 664 113"/>
+  </g>
+  <g fill="#3d5a80">
+    <polygon points="250,113 240,108 240,118"/>
+    <polygon points="460,113 450,108 450,118"/>
+    <polygon points="670,113 660,108 660,118"/>
+  </g>
+
+  <!-- 연결선 -->
+  <g stroke="#2d6a4f" stroke-width="2" stroke-dasharray="5 4" fill="none">
+    <path d="M 125 140 L 125 206"/>
+    <path d="M 335 140 L 335 206"/>
+    <path d="M 545 140 L 545 206"/>
+    <path d="M 755 140 L 755 206"/>
+  </g>
+
+  <!-- 실행방식 -->
+  <g>
+    <rect x="40" y="210" width="170" height="104" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="125" y="234" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">입력데이터</text>
+    <text x="125" y="252" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">수집 · 활용 관리</text>
+    <text x="125" y="276" font-size="13" fill="#333" text-anchor="middle">학습 활용 사전 고지</text>
+    <text x="125" y="294" font-size="13" fill="#333" text-anchor="middle">동의 · 거부 절차</text>
+
+    <rect x="250" y="210" width="170" height="104" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="335" y="234" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">다양성 존중 노력</text>
+    <text x="335" y="258" font-size="13" fill="#333" text-anchor="middle">편향 · 차별 저감</text>
+    <text x="335" y="276" font-size="13" fill="#333" text-anchor="middle">차별적 사용 필터링</text>
+    <text x="335" y="294" font-size="13" fill="#333" text-anchor="middle">편향 신고 · 처리 절차</text>
+
+    <rect x="460" y="210" width="170" height="104" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="545" y="234" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">이용자 인격권 보호</text>
+    <text x="545" y="258" font-size="13" fill="#333" text-anchor="middle">침해 요소 발견 · 통제</text>
+    <text x="545" y="276" font-size="13" fill="#333" text-anchor="middle">내부 모니터링 체계</text>
+    <text x="545" y="294" font-size="13" fill="#333" text-anchor="middle">이용자 신고 절차</text>
+
+    <rect x="670" y="210" width="170" height="104" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="755" y="234" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">결정 과정을</text>
+    <text x="755" y="252" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">알리려는 노력</text>
+    <text x="755" y="276" font-size="13" fill="#333" text-anchor="middle">AI 생성 사실 고지</text>
+    <text x="755" y="294" font-size="13" fill="#333" text-anchor="middle">결정 과정 기본정보</text>
+  </g>
+
+  <text x="40" y="348" font-size="13" fill="#555">나머지 두 가지(문제 해결을 위한 책임과 참여 · 건전한 유통 · 배포를 위한 노력)는 전 단계에 걸쳐 적용된다.</text>
+  <rect x="40" y="362" width="800" height="26" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="380" font-size="13" fill="#b45309" text-anchor="middle">기본원칙 4가지(인간 존엄성 · 설명 · 안전한 작동 · 공정성)가 네 실행방식 전부의 상위 방향성이다.</text>
+</svg>
