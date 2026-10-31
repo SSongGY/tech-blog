@@ -441,7 +441,7 @@ topics:
     difficulty: 중급
     angle: "폭과 높이가 각각 무엇을 뜻하는지, 오독하기 쉬운 패턴 3가지"
     code: python
-    status: writing
+    status: done
 
   # ========== 제품 시리즈: Tibero 7 (track: product) ==========
   # 실행 환경이 없으면 공식 매뉴얼 근거로만 쓰고 verification: manual-only 로 표시한다.
@@ -3073,7 +3073,7 @@ topics:
     angle: "CPU 관여 정도로 셋을 가르고 각각이 유리한 상황"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-111
     title: "위험 관리 — 식별·분석·대응 절차"
     category: PE
@@ -4800,7 +4800,7 @@ topics:
     angle: "UNION 양쪽에 각각 거는 것과 전체에 거는 것이 다르다. 괄호로 묶어 확인"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: pe-162
     title: "적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용"
     category: PE

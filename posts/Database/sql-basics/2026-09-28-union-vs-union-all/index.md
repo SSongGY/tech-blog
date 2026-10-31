@@ -14,6 +14,11 @@ verified: true
 topic_id: bas-013
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`union-compound-select`)
+> - [집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치](../2026-10-31-set-operation-order-by-limit-scope/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+<!-- related:end -->
+
 ## 들어가며
 
 회원 정보가 온라인 몰과 오프라인 매장에 따로 쌓여 있는데, 안내 메일을 한 번에 보내야 한다는 요청이 온다.
