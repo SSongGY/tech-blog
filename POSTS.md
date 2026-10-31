@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **536편** · 갱신 2026-10-31
+총 **537편** · 갱신 2026-10-31
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -379,10 +379,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 82편
+## 기출문제 (exam) — 83편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-10-31 | [기출문제 — 생성형 인공지능 서비스 이용자 보호 가이드라인의 제정 배경과 실행방식](posts/PE/exam/2026-10-31-generative-ai-user-protection-guideline/index.md) | 중급 | 생성형 인공지능 서비스 이용자 보호 가이드라인 (방송통신위원회, 2025.2.28. 제정 · 2025.3.28. 시행), 이용자 중심의 지능정보사회를 위한 기본원칙 (2019), OECD Recommendation of the Council on Artificial Intelligence (2024 개정), UNESCO Recommendation on the Ethics of Artificial Intelligence (2021), ISO/IEC 42001:2023 | 문서 근거 |
 | 2026-10-30 | [기출문제 — 소프트웨어 재공학의 개념·목적·절차와 역공학의 활용](posts/PE/exam/2026-10-30-software-reengineering-process-and-reverse-engineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024), ISO/IEC/IEEE 14764:2022, SEI CORUM II (1998), DoD SB-1 Workshop (1992) | 문서 근거 |
 | 2026-10-30 | [기출문제 — 프로그램 실행 시 메모리 4영역: 코드·데이터·힙·스택](posts/PE/exam/2026-10-30-process-memory-layout-code-data-heap-stack/index.md) | 중급 | System V ABI 일반 ABI(gABI) Chapter 4·5 (Xinuos 판, 2015), System V ABI AMD64 Architecture Processor Supplement, Draft 0.99.7 (2014-11-17), ISO/IEC 9899 작업초안 N2310 (2018-11-06), Linux man-pages 6.19 (2026-02-08) | 문서 근거 |
 | 2026-10-29 | [기출문제 — 클라우드 네이티브 전환 사업의 TA와 AA, 역할 분담과 협업](posts/PE/exam/2026-10-29-ta-aa-role-split-and-collaboration/index.md) | 심화 | NIST SP 800-204 (2019-08), CNCF Cloud Native Definition v1.1 (2024-02-26), ISO/IEC/IEEE 42010:2022 | 문서 근거 |
