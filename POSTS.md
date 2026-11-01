@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **549편** · 갱신 2026-11-02
+총 **551편** · 갱신 2026-11-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -477,10 +477,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 106편
+## 주식·재무 (finance) — 108편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-02 | [영업현금흐름으로 보는 상환 능력 — 이자보상배율이 놓치는 것](posts/Finance/ratios/2026-11-02-operating-cash-flow-debt-service-coverage/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
+| 2026-11-02 | [보통주와 우선주의 가격이 갈리는 이유](posts/Finance/market/2026-11-02-common-vs-preferred-share-price-gap/index.md) | 중급 | Python 3.13.5, 상법(법률 제17764호, 2020.12.29. 시행), 자본시장과 금융투자업에 관한 법률 제165조의15(2013.8.29. 시행), 금융위원회 우선주 시장관리 강화방안(2020.7.9. 발표) | 실행 검증 |
 | 2026-10-31 | [유형자산 손상차손 — 회수가능액은 둘 중 큰 값이다](posts/Finance/statements/2026-10-31-impairment-recoverable-amount/index.md) | 중급 | Python 3.13.5, K-IFRS 제1036호 자산손상 | 실행 검증 |
 | 2026-10-31 | [총액 인식과 순액 인식 — 본인인가 대리인인가](posts/Finance/statements/2026-10-31-gross-vs-net-revenue-principal-agent/index.md) | 중급 | Python 3.13.5, K-IFRS 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-10-30 | [매출채권 손실충당금 — 기대신용손실을 어떻게 잡는가](posts/Finance/statements/2026-10-30-receivables-expected-credit-loss/index.md) | 중급 | Python 3.13.5, K-IFRS 제1109호 금융상품, K-IFRS 제1001호 재무제표 표시 | 실행 검증 |
