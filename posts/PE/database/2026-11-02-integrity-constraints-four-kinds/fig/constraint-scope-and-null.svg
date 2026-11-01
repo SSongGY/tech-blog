@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfaf7"/>
+
+  <text x="40" y="36" font-size="18" font-weight="bold" fill="#1b1b1b">무결성 제약 네 종류 — 검사 범위가 넓어지는 순서와 널 취급</text>
+
+  <text x="40" y="62" font-size="13" font-weight="bold" fill="#444">검사 범위</text>
+  <text x="560" y="62" font-size="13" font-weight="bold" fill="#444">그 칸에 널(NULL)이 들어오면</text>
+
+  <!-- 4. 사용자 정의 -->
+  <rect x="40" y="72" width="490" height="324" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="56" y="95" font-size="15" font-weight="bold" fill="#b45309">④ 사용자 정의 무결성 — 업무 규칙</text>
+  <text x="56" y="114" font-size="13" fill="#555">CHECK · 트리거 · 프로시저</text>
+
+  <!-- 3. 참조 -->
+  <rect x="72" y="124" width="426" height="250" rx="6" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="88" y="147" font-size="15" font-weight="bold" fill="#2d6a4f">③ 참조 무결성 — 표와 표 사이</text>
+  <text x="88" y="166" font-size="13" fill="#555">FOREIGN KEY</text>
+
+  <!-- 2. 개체 -->
+  <rect x="104" y="176" width="362" height="176" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="120" y="199" font-size="15" font-weight="bold" fill="#2d6a4f">② 개체 무결성 — 행 하나</text>
+  <text x="120" y="218" font-size="13" fill="#555">PRIMARY KEY · UNIQUE</text>
+
+  <!-- 1. 도메인 -->
+  <rect x="136" y="228" width="298" height="102" rx="6" fill="#d8e9e1" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="152" y="251" font-size="15" font-weight="bold" fill="#2d6a4f">① 도메인 무결성 — 값 한 칸</text>
+  <text x="152" y="270" font-size="13" fill="#555">자료형 · CHECK · NOT NULL · DEFAULT</text>
+  <text x="152" y="294" font-size="13" fill="#333">예) 수량 INTEGER CHECK (수량 &gt; 0)</text>
+  <text x="152" y="316" font-size="13" fill="#555">범위가 좁을수록 검사가 싸다</text>
+
+  <!-- 널 취급 -->
+  <rect x="560" y="76" width="290" height="44" rx="4" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="574" y="95" font-size="13" font-weight="bold" fill="#b45309">통과한다</text>
+  <text x="574" y="113" font-size="13" fill="#444">CHECK는 FALSE일 때만 위반</text>
+
+  <rect x="560" y="128" width="290" height="44" rx="4" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="574" y="147" font-size="13" font-weight="bold" fill="#b45309">통과한다</text>
+  <text x="574" y="165" font-size="13" fill="#444">MATCH SIMPLE이 기본값</text>
+
+  <rect x="560" y="180" width="290" height="44" rx="4" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="574" y="199" font-size="13" font-weight="bold" fill="#2d6a4f">거부한다</text>
+  <text x="574" y="217" font-size="13" fill="#444">네 종류 중 PRIMARY KEY만</text>
+
+  <rect x="560" y="232" width="290" height="44" rx="4" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="574" y="251" font-size="13" font-weight="bold" fill="#b45309">통과한다</text>
+  <text x="574" y="269" font-size="13" fill="#444">막으려면 NOT NULL을 따로 건다</text>
+
+  <!-- 검사 시점 -->
+  <rect x="40" y="412" width="810" height="52" rx="6" fill="#eef1f5" stroke="#5b6b7c" stroke-width="1.5"/>
+  <text x="56" y="434" font-size="13" fill="#333">검사 시점 — 기본값은 NOT DEFERRABLE INITIALLY IMMEDIATE, 즉 문장마다 즉시 검사한다.</text>
+  <text x="56" y="454" font-size="13" fill="#333">① 도메인(NOT NULL · CHECK)은 미룰 수 없고, ② 개체와 ③ 참조만 DEFERRABLE로 선언해 트랜잭션 끝까지 미룰 수 있다.</text>
+</svg>

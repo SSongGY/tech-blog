@@ -120,6 +120,8 @@ IDEF1X는 관계를 둘로 나눈다. 자식이 **부모와의 연결로 식별�
 > 개념 정리: [데이터 모델링 3단계 — 개념·논리·물리](../../database/2026-09-23-data-modeling-three-stages/index.md)
 >
 > 개념 정리: [외래 키 — 참조 무결성과 ON DELETE](../../../Database/sql-basics/2026-10-01-sqlite-foreign-key-on-delete/index.md)
+>
+> 개념 정리: [무결성 제약의 네 종류 — 개체·참조·도메인·사용자 정의](../../database/2026-11-02-integrity-constraints-four-kinds/index.md)
 
 끝
 
