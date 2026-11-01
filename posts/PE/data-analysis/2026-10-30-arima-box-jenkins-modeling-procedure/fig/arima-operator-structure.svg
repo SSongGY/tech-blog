@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" role="img" aria-label="ARIMA(p,d,q) 식을 AR 다항식, 차분 연산자, MA 다항식으로 나눈 구조">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="tick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1a1a1a">ARIMA(p, d, q) — 세 숫자가 식의 어디에 붙는가</text>
+
+  <!-- 식 -->
+  <rect x="20" y="58" width="840" height="58" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="60" y="95" font-family="monospace" font-size="19" fill="#1b4332" font-weight="bold">φ(B)</text>
+  <text x="128" y="95" font-family="monospace" font-size="19" fill="#b45309" font-weight="bold">(1 − B)^d</text>
+  <text x="262" y="95" font-family="monospace" font-size="19" fill="#1a1a1a">y_t</text>
+  <text x="312" y="95" font-family="monospace" font-size="19" fill="#1a1a1a">=</text>
+  <text x="348" y="95" font-family="monospace" font-size="19" fill="#1a1a1a">δ</text>
+  <text x="380" y="95" font-family="monospace" font-size="19" fill="#1a1a1a">+</text>
+  <text x="414" y="95" font-family="monospace" font-size="19" fill="#9d0208" font-weight="bold">θ(B)</text>
+  <text x="482" y="95" font-family="monospace" font-size="19" fill="#1a1a1a">a_t</text>
+  <text x="540" y="95" font-family="sans-serif" font-size="13" fill="#555555">B 는 한 시점 뒤로 미는 연산자 (B·y_t = y_{t−1})</text>
+
+  <!-- 지시선 -->
+  <line x1="78" y1="130" x2="78" y2="158" stroke="#555555" stroke-width="1.5" marker-end="url(#tick)"/>
+  <line x1="190" y1="130" x2="190" y2="158" stroke="#555555" stroke-width="1.5" marker-end="url(#tick)"/>
+  <line x1="432" y1="130" x2="432" y2="158" stroke="#555555" stroke-width="1.5" marker-end="url(#tick)"/>
+  <line x1="490" y1="130" x2="660" y2="158" stroke="#555555" stroke-width="1.5" marker-end="url(#tick)"/>
+
+  <!-- AR -->
+  <rect x="20" y="162" width="200" height="96" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="34" y="184" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b4332">p — AR 차수</text>
+  <text x="34" y="205" font-family="monospace" font-size="13" fill="#1b4332">1 − φ₁B − … − φ_pB^p</text>
+  <text x="34" y="226" font-family="sans-serif" font-size="13" fill="#1b4332">과거 관측값을 얼마나</text>
+  <text x="34" y="244" font-family="sans-serif" font-size="13" fill="#1b4332">끌어다 쓰는가 (PACF)</text>
+
+  <!-- I -->
+  <rect x="240" y="162" width="200" height="96" rx="6" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="254" y="184" font-family="sans-serif" font-size="14" font-weight="bold" fill="#7c3f00">d — 차분 횟수</text>
+  <text x="254" y="205" font-family="monospace" font-size="13" fill="#7c3f00">(1 − B)y_t = y_t − y_{t−1}</text>
+  <text x="254" y="226" font-family="sans-serif" font-size="13" fill="#7c3f00">추세를 빼서 정상성을</text>
+  <text x="254" y="244" font-family="sans-serif" font-size="13" fill="#7c3f00">만든다. 보통 0, 1, 2</text>
+
+  <!-- MA -->
+  <rect x="460" y="162" width="200" height="96" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="2"/>
+  <text x="474" y="184" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208">q — MA 차수</text>
+  <text x="474" y="205" font-family="monospace" font-size="13" fill="#9d0208">1 − θ₁B − … − θ_qB^q</text>
+  <text x="474" y="226" font-family="sans-serif" font-size="13" fill="#9d0208">과거 충격을 얼마나</text>
+  <text x="474" y="244" font-family="sans-serif" font-size="13" fill="#9d0208">끌고 가는가 (ACF)</text>
+
+  <!-- 백색잡음 -->
+  <rect x="680" y="162" width="180" height="96" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="694" y="184" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">a_t — 백색잡음</text>
+  <text x="694" y="205" font-family="sans-serif" font-size="13" fill="#444444">평균 0, 분산 일정,</text>
+  <text x="694" y="226" font-family="sans-serif" font-size="13" fill="#444444">서로 상관 없음.</text>
+  <text x="694" y="247" font-family="sans-serif" font-size="13" fill="#444444">진단이 보는 대상이다</text>
+
+  <!-- 조건 -->
+  <rect x="20" y="268" width="840" height="48" rx="6" fill="#ffffff" stroke="#999999" stroke-width="1"/>
+  <text x="34" y="288" font-family="sans-serif" font-size="13" fill="#333333">조건 — φ(B)=0 의 근이 전부 단위원 밖이면 정상성, θ(B)=0 의 근이 전부 단위원 밖이면 가역성.</text>
+  <text x="34" y="307" font-family="sans-serif" font-size="13" fill="#333333">근이 1 에 붙으면 각각 차분이 모자란 것·한 번 더 뺀 것의 신호다.</text>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" role="img" aria-label="Box-Jenkins 모형화 3단계와 진단 실패 시 되돌아가는 경로">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="arrowBack" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1a1a1a">Box-Jenkins 모형화 — 3단계와 되돌아가는 경로</text>
+
+  <!-- 준비 -->
+  <rect x="20" y="70" width="148" height="72" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="94" y="98" font-family="sans-serif" font-size="14" fill="#1a1a1a" text-anchor="middle">자료 준비</text>
+  <text x="94" y="118" font-family="sans-serif" font-size="13" fill="#444444" text-anchor="middle">시계열 그림</text>
+  <text x="94" y="134" font-family="sans-serif" font-size="13" fill="#444444" text-anchor="middle">분산 안정화</text>
+
+  <!-- 1 식별 -->
+  <rect x="193" y="70" width="148" height="72" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="267" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">① 식별</text>
+  <text x="267" y="116" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">정상성·차분 d</text>
+  <text x="267" y="133" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">ACF·PACF로 p, q</text>
+
+  <!-- 2 추정 -->
+  <rect x="366" y="70" width="148" height="72" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">② 추정</text>
+  <text x="440" y="116" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">계수 φ, θ, δ</text>
+  <text x="440" y="133" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">최대가능도·비선형LS</text>
+
+  <!-- 3 진단 -->
+  <rect x="539" y="70" width="148" height="72" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="613" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">③ 진단</text>
+  <text x="613" y="116" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">잔차 ACF·4-plot</text>
+  <text x="613" y="133" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">Box-Ljung 통계량</text>
+
+  <!-- 예측 -->
+  <rect x="712" y="70" width="148" height="72" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="786" y="98" font-family="sans-serif" font-size="14" fill="#1a1a1a" text-anchor="middle">예측·활용</text>
+  <text x="786" y="118" font-family="sans-serif" font-size="13" fill="#444444" text-anchor="middle">차분을 되돌려</text>
+  <text x="786" y="134" font-family="sans-serif" font-size="13" fill="#444444" text-anchor="middle">수준으로 환원</text>
+
+  <!-- 가로 화살표 -->
+  <line x1="168" y1="106" x2="187" y2="106" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="341" y1="106" x2="360" y2="106" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="514" y1="106" x2="533" y2="106" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="687" y1="106" x2="706" y2="106" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="696" y="62" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">백색잡음</text>
+
+  <!-- 되돌아가는 경로 -->
+  <path d="M 613 142 L 613 196 L 267 196 L 267 148" fill="none" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrowBack)"/>
+  <text x="440" y="188" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">잔차에 구조가 남으면 식별로 되돌아간다</text>
+
+  <!-- 각 단계가 답하는 질문 -->
+  <rect x="193" y="230" width="494" height="76" rx="6" fill="#ffffff" stroke="#999999" stroke-width="1"/>
+  <text x="208" y="252" font-family="sans-serif" font-size="13" fill="#333333">① 차수를 몇으로 둘 것인가 — ARIMA(p, d, q) 의 세 숫자를 정한다</text>
+  <text x="208" y="272" font-family="sans-serif" font-size="13" fill="#333333">② 그 차수에서 계수가 얼마인가 — 비선형 추정 문제다</text>
+  <text x="208" y="292" font-family="sans-serif" font-size="13" fill="#333333">③ 남은 것이 백색잡음인가 — 아니면 차수가 틀린 것이다</text>
+</svg>
