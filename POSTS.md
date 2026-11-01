@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **551편** · 갱신 2026-11-02
+총 **553편** · 갱신 2026-11-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -116,11 +116,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 192편
+## 기술사 (pe) — 194편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-02 | [STIX와 TAXII — 위협정보 공유 표준](posts/PE/security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md) | 중급 | STIX Version 2.1 OASIS Standard (2021-06-10), TAXII Version 2.1 OASIS Standard (2021-06-10), NIST SP 800-150 (2016-10) | 문서 근거 |
+| 2026-11-02 | [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](posts/PE/security/2026-11-02-prompt-injection-defense-design/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
+| 2026-11-02 | [무결성 제약의 네 종류 — 개체·참조·도메인·사용자 정의](posts/PE/database/2026-11-02-integrity-constraints-four-kinds/index.md) | 중급 | PostgreSQL 18.6, MySQL 8.4, SQL Server 2008 | 문서 근거 |
 | 2026-11-02 | [사이버 킬체인과 침해지표(IoC) — 고통의 피라미드](posts/PE/security/2026-11-02-cyber-kill-chain-and-indicators-pyramid-of-pain/index.md) | 중급 | Lockheed Martin 침입 킬체인 백서 (2011), NIST SP 800-150 (2016-10), Pyramid of Pain (2013-03, 2014-01-17 개정) | 문서 근거 |
 | 2026-10-31 | [위험 관리 — 식별·분석·대응 절차](posts/PE/it-management/2026-10-31-risk-management-identify-analyze-respond/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-31 | [입출력 방식 — 폴링, 인터럽트, DMA](posts/PE/system/2026-10-31-io-polling-interrupt-dma/index.md) | 중급 | Linux 커널 문서 7.3.0, Linux man-pages io_uring_setup(2) | 문서 근거 |
