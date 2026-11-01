@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **545편** · 갱신 2026-11-01
+총 **547편** · 갱신 2026-11-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -116,7 +116,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 188편
+## 기술사 (pe) — 190편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -124,8 +124,10 @@
 | 2026-10-31 | [입출력 방식 — 폴링, 인터럽트, DMA](posts/PE/system/2026-10-31-io-polling-interrupt-dma/index.md) | 중급 | Linux 커널 문서 7.3.0, Linux man-pages io_uring_setup(2) | 문서 근거 |
 | 2026-10-30 | [보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담](posts/PE/security/2026-10-30-security-operations-siem-soar-edr/index.md) | 중급 | NIST SP 800-61r3 (2025-04), NIST CSF 2.0 (2024-02), OMB M-22-01 (2021-10-08) | 문서 근거 |
 | 2026-10-30 | [제시공격 탐지 (PAD, ISO/IEC 30107) — 무엇을 재고 무엇을 재지 않는가](posts/PE/security/2026-10-30-presentation-attack-detection-iso-iec-30107/index.md) | 중급 | ISO/IEC 30107-1:2023 (제2판), ISO/IEC 30107-3:2023 (제2판), ISO/IEC 30107-1:2016 (대체됨), ISO/IEC 2382-37 (생체인식 용어) | 문서 근거 |
+| 2026-10-30 | [MITRE ATT&CK — 행렬 구조와 객체 모델, 커버리지를 재는 법](posts/PE/security/2026-10-30-mitre-attack-matrix-structure-and-use/index.md) | 중급 | MITRE ATT&CK content v20.0 (2026-10-30 확인), MITRE ATT&CK Design and Philosophy (2020-03) | 문서 근거 |
 | 2026-10-30 | [ISO/IEC/IEEE 12207 소프트웨어 생명주기 프로세스 — 프로세스군 4개와 15288이 갈리는 한 지점](posts/PE/software-engineering/2026-10-30-iso-iec-ieee-12207-software-life-cycle-processes/index.md) | 중급 | ISO/IEC/IEEE 12207:2026 (제2판), ISO/IEC/IEEE 12207:2017 (제1판), ISO/IEC/IEEE 15288:2023, ISO/IEC 12207:2008 (대체됨) | 문서 근거 |
 | 2026-10-30 | [파일 시스템 구조 — 아이노드와 저널링](posts/PE/system/2026-10-30-filesystem-inode-journaling/index.md) | 중급 | Linux man-pages 6.19, ext4 (커널 7.3.0 문서), IEEE Std 1003.1-2017 | 문서 근거 |
+| 2026-10-30 | [ARIMA와 Box-Jenkins 모형화 절차 — 식별·추정·진단 3단계](posts/PE/data-analysis/2026-10-30-arima-box-jenkins-modeling-procedure/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §6.4.4.5~§6.4.4.8 | 실행 검증 |
 | 2026-10-29 | [정량적 위험 분석 — 기대화폐가치, 의사결정나무, 몬테카를로 시뮬레이션](posts/PE/it-management/2026-10-29-quantitative-risk-analysis-emv-monte-carlo/index.md) | 중급 | Python 3.13.5, IEC 31010:2019 (Edition 2.0), NIST SP 800-30 Rev. 1 | 실행 검증 |
 | 2026-10-29 | [웹 취약점 — OWASP Top 10 분류와 대응](posts/PE/security/2026-10-29-owasp-top-10-categories-and-defenses/index.md) | 중급 | OWASP Top 10:2025, OWASP Top 10:2021 | 문서 근거 |
 | 2026-10-29 | [AI 편향의 3가지 범주 — 체계적·계산통계적·인간인지적](posts/PE/ai/2026-10-29-nist-ai-bias-three-categories/index.md) | 중급 | NIST SP 1270 (2022-03-15 발행, 2022-03-24 갱신), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
