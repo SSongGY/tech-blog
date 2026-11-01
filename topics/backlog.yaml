@@ -6080,7 +6080,7 @@ topics:
     angle: "킬체인 7단계와 침해지표 계층을 나란히 놓고, 탐지를 어느 계층에 걸 때 공격자 비용이 어떻게 달라지는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-209
     title: "STIX와 TAXII — 위협정보 공유 표준"
     category: PE
@@ -6091,7 +6091,7 @@ topics:
     angle: "STIX 2.1 도메인 객체·관계 객체의 구조와 TAXII 교환 방식, 공유 체계에서 무엇이 표준화되고 무엇이 남는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-210
     title: "무결성 제약의 네 종류 — 개체·참조·도메인·사용자 정의"
     category: PE

@@ -108,6 +108,8 @@ ATT&CK 설계 문서는 절차에 대해 두 가지를 짚는다. 첫째, 절차
 
 > 개념 정리: [침해사고 대응 절차 6단계](../../security/2026-09-29-incident-response-six-phases/index.md)
 > · [MITRE ATT&CK — 행렬 구조와 객체 모델, 커버리지를 재는 법](../../security/2026-10-30-mitre-attack-matrix-structure-and-use/index.md)
+> · [사이버 킬체인과 침해지표(IoC) — 고통의 피라미드](../../security/2026-11-02-cyber-kill-chain-and-indicators-pyramid-of-pain/index.md)
+> · [STIX와 TAXII — 위협정보 공유 표준](../../security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md)
 
 끝
 

@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfbf8"/>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#1b1b1b">지표 계층 7단 — 고통의 피라미드</text>
+  <text x="24" y="54" font-size="13" fill="#555">위로 갈수록 공격자가 그 지표를 바꾸는 비용이 커진다</text>
+
+  <!-- pyramid, centered at x=250 -->
+  <g font-size="13">
+    <polygon points="205,74 295,74 299,104 201,104" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="250" y="94" text-anchor="middle" fill="#1b1b1b">TTPs</text>
+
+    <polygon points="201,106 299,106 303,136 197,136" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="250" y="126" text-anchor="middle" fill="#1b1b1b">도구</text>
+
+    <polygon points="188,138 312,138 322,168 178,168" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="250" y="158" text-anchor="middle" fill="#1b1b1b">호스트 산출물</text>
+
+    <polygon points="170,170 330,170 340,200 160,200" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="250" y="190" text-anchor="middle" fill="#1b1b1b">네트워크 산출물</text>
+
+    <polygon points="152,202 348,202 358,232 142,232" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="250" y="222" text-anchor="middle" fill="#1b1b1b">도메인 이름</text>
+
+    <polygon points="134,234 366,234 376,264 124,264" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="250" y="254" text-anchor="middle" fill="#1b1b1b">IP 주소</text>
+
+    <polygon points="116,266 384,266 394,296 106,296" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="250" y="286" text-anchor="middle" fill="#1b1b1b">해시값</text>
+  </g>
+
+  <!-- cost arrow on the left -->
+  <g>
+    <line x1="68" y1="292" x2="68" y2="86" stroke="#2d6a4f" stroke-width="1.6"/>
+    <polygon points="68,76 63,88 73,88" fill="#2d6a4f"/>
+    <text x="52" y="190" text-anchor="middle" font-size="13" fill="#2d6a4f" transform="rotate(-90 52 190)">공격자 비용 증가</text>
+  </g>
+
+  <!-- right-hand explanations -->
+  <g font-size="13" fill="#1b1b1b">
+    <text x="420" y="94">새 행위를 배워야 한다 — 가장 오래 걸린다</text>
+    <text x="420" y="126">새 도구를 찾거나 만들고 다시 익혀야 한다</text>
+    <text x="420" y="158">레지스트리 키·파일 이름을 고쳐야 한다</text>
+    <text x="420" y="190">URI 패턴·User-Agent를 고쳐야 한다</text>
+    <text x="420" y="222">등록·결제·호스팅과 전파 지연이 든다</text>
+    <text x="420" y="254">거의 즉시 바꾼다</text>
+    <text x="420" y="286">한 비트만 바뀌어도 전혀 다른 값이 된다</text>
+  </g>
+
+  <g stroke="#bbb" stroke-width="1" stroke-dasharray="3 3">
+    <path d="M300 89 L414 89"/><path d="M305 121 L414 121"/><path d="M324 153 L414 153"/>
+    <path d="M342 185 L414 185"/><path d="M360 217 L414 217"/><path d="M378 249 L414 249"/>
+    <path d="M396 281 L414 281"/>
+  </g>
+
+  <text x="24" y="322" font-size="13" fill="#555">고통 등급 라벨(trivial·annoying 등)은 원글의 그림 안에만 있고 본문 산문에는 없다.</text>
+</svg>

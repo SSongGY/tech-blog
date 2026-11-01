@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="300" fill="#fbfbf8"/>
+
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#1b1b1b">침입 킬체인 7단계</text>
+  <text x="24" y="56" font-size="13" fill="#555">공격자는 일곱 단계를 전부 통과해야 하고, 방어자는 한 곳만 끊으면 된다</text>
+
+  <g font-size="13">
+    <rect x="24" y="76" width="108" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="78" y="98" text-anchor="middle" fill="#1b1b1b">1 정찰</text>
+    <text x="78" y="117" text-anchor="middle" fill="#555" font-size="13">Recon</text>
+
+    <rect x="144" y="76" width="108" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="198" y="98" text-anchor="middle" fill="#1b1b1b">2 무기화</text>
+    <text x="198" y="117" text-anchor="middle" fill="#555" font-size="13">Weaponize</text>
+
+    <rect x="264" y="76" width="108" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="318" y="98" text-anchor="middle" fill="#1b1b1b">3 전달</text>
+    <text x="318" y="117" text-anchor="middle" fill="#555" font-size="13">Delivery</text>
+
+    <rect x="384" y="76" width="108" height="50" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="438" y="98" text-anchor="middle" fill="#1b1b1b">4 익스플로잇</text>
+    <text x="438" y="117" text-anchor="middle" fill="#555" font-size="13">Exploit</text>
+
+    <rect x="504" y="76" width="108" height="50" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="558" y="98" text-anchor="middle" fill="#1b1b1b">5 설치</text>
+    <text x="558" y="117" text-anchor="middle" fill="#555" font-size="13">Install</text>
+
+    <rect x="624" y="76" width="108" height="50" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="678" y="98" text-anchor="middle" fill="#1b1b1b">6 명령·제어</text>
+    <text x="678" y="117" text-anchor="middle" fill="#555" font-size="13">C2</text>
+
+    <rect x="744" y="76" width="112" height="50" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="800" y="98" text-anchor="middle" fill="#1b1b1b">7 목적 달성</text>
+    <text x="800" y="117" text-anchor="middle" fill="#555" font-size="13">Actions</text>
+  </g>
+
+  <g stroke="#777" stroke-width="1.4" fill="none">
+    <path d="M132 101 L142 101"/><path d="M252 101 L262 101"/><path d="M372 101 L382 101"/>
+    <path d="M492 101 L502 101"/><path d="M612 101 L622 101"/><path d="M732 101 L742 101"/>
+  </g>
+
+  <line x1="24" y1="140" x2="492" y2="140" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="258" y="160" text-anchor="middle" font-size="13" fill="#2d6a4f">침해 이전 — 여기서 끊으면 피해가 없다</text>
+  <line x1="504" y1="140" x2="856" y2="140" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="680" y="160" text-anchor="middle" font-size="13" fill="#9d0208">침해 이후 — 쓸 수 있는 지표가 줄어든다</text>
+
+  <line x1="24" y1="178" x2="856" y2="178" stroke="#ccc" stroke-width="1"/>
+
+  <text x="24" y="204" font-size="15" font-weight="bold" fill="#1b1b1b">대응 행동 6가지를 각 단계에 교차시킨다 — 익스플로잇 단계의 예</text>
+
+  <g font-size="13">
+    <rect x="24" y="218" width="120" height="38" rx="4" fill="#f2f2ee" stroke="#777" stroke-width="1.2"/>
+    <text x="84" y="242" text-anchor="middle" fill="#1b1b1b">익스플로잇</text>
+
+    <rect x="172" y="218" width="152" height="38" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="248" y="242" text-anchor="middle" fill="#1b1b1b">탐지 — HIDS</text>
+
+    <rect x="344" y="218" width="152" height="38" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="420" y="242" text-anchor="middle" fill="#1b1b1b">거부 — 패치</text>
+
+    <rect x="516" y="218" width="152" height="38" rx="4" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="592" y="242" text-anchor="middle" fill="#1b1b1b">교란 — DEP</text>
+
+    <rect x="688" y="218" width="168" height="38" rx="4" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="772" y="242" text-anchor="middle" fill="#1b1b1b">저하·기만·파괴 — 공백</text>
+  </g>
+
+  <g stroke="#777" stroke-width="1.2" fill="none">
+    <path d="M144 237 L170 237"/>
+  </g>
+
+  <text x="24" y="284" font-size="13" fill="#555">7단계 × 6행동 = 42칸. 빈 칸이 곧 역량 공백이다.</text>
+</svg>
