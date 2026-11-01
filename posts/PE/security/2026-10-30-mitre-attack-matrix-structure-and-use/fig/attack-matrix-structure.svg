@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" role="img" aria-label="ATT&amp;CK 행렬의 열은 전술, 칸은 기법, 그 아래가 하위기법과 절차라는 구조">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="32" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1a1a1a">ATT&amp;CK 행렬 — 열이 전술, 칸이 기법</text>
+  <text x="20" y="54" font-family="sans-serif" font-size="13" fill="#555555">엔터프라이즈 전술 15개 중 앞 5개만 그렸다. 칸은 실제 기법 이름의 예시다.</text>
+
+  <!-- 전술 열 머리 -->
+  <rect x="20" y="70" width="125" height="38" rx="4" fill="#2d6a4f"/>
+  <text x="82" y="94" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">정찰</text>
+  <rect x="155" y="70" width="125" height="38" rx="4" fill="#2d6a4f"/>
+  <text x="217" y="94" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">자원 개발</text>
+  <rect x="290" y="70" width="125" height="38" rx="4" fill="#2d6a4f"/>
+  <text x="352" y="94" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">초기 접근</text>
+  <rect x="425" y="70" width="125" height="38" rx="4" fill="#2d6a4f"/>
+  <text x="487" y="94" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">실행</text>
+  <rect x="560" y="70" width="125" height="38" rx="4" fill="#2d6a4f"/>
+  <text x="622" y="94" font-family="sans-serif" font-size="13" fill="#ffffff" text-anchor="middle">지속</text>
+  <text x="706" y="94" font-family="sans-serif" font-size="15" fill="#555555">…</text>
+
+  <!-- 기법 칸 -->
+  <rect x="20" y="114" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="82" y="135" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">능동 스캐닝</text>
+  <rect x="155" y="114" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="217" y="135" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">계정 확보</text>
+  <rect x="290" y="114" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="352" y="135" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">피싱</text>
+  <rect x="425" y="114" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="487" y="135" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">명령·스크립트</text>
+  <rect x="560" y="114" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="622" y="135" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">계정 생성</text>
+
+  <rect x="20" y="150" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="82" y="171" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">피해자 정보 수집</text>
+  <rect x="155" y="150" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="217" y="171" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">인프라 확보</text>
+  <rect x="290" y="150" width="125" height="32" rx="3" fill="#fdeeee" stroke="#9d0208" stroke-width="2"/>
+  <text x="352" y="171" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">유효 계정</text>
+  <rect x="425" y="150" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="487" y="171" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">예약 작업</text>
+  <rect x="560" y="150" width="125" height="32" rx="3" fill="#ffffff" stroke="#999999"/>
+  <text x="622" y="171" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">부팅 자동 실행</text>
+
+  <text x="82" y="202" font-family="sans-serif" font-size="13" fill="#777777" text-anchor="middle">⋮</text>
+  <text x="217" y="202" font-family="sans-serif" font-size="13" fill="#777777" text-anchor="middle">⋮</text>
+  <text x="352" y="202" font-family="sans-serif" font-size="13" fill="#777777" text-anchor="middle">⋮</text>
+  <text x="487" y="202" font-family="sans-serif" font-size="13" fill="#777777" text-anchor="middle">⋮</text>
+  <text x="622" y="202" font-family="sans-serif" font-size="13" fill="#777777" text-anchor="middle">⋮</text>
+
+  <!-- 한 칸을 펼친 모습 -->
+  <line x1="352" y1="182" x2="352" y2="228" stroke="#9d0208" stroke-width="2" marker-end="url(#a1)"/>
+  <rect x="150" y="232" width="590" height="80" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="165" y="254" font-family="sans-serif" font-size="13" fill="#9d0208">기법 — 유효 계정 (T1078) · 전술 목표를 "어떻게" 이루는가</text>
+  <text x="185" y="275" font-family="sans-serif" font-size="13" fill="#333333">└ 하위기법 — 도메인 계정 (T1078.002) · 같은 행동의 더 구체적인 갈래</text>
+  <text x="205" y="296" font-family="sans-serif" font-size="13" fill="#333333">└ 절차 — 특정 공격 집단이 실제로 쓴 구현. 객체가 아니라 기록으로 붙는다</text>
+
+  <!-- 왼쪽 라벨 -->
+  <text x="760" y="135" font-family="sans-serif" font-size="13" fill="#2d6a4f">열 = 전술</text>
+  <text x="760" y="155" font-family="sans-serif" font-size="13" fill="#555555">(왜 하는가)</text>
+  <text x="760" y="182" font-family="sans-serif" font-size="13" fill="#2d6a4f">칸 = 기법</text>
+  <text x="760" y="202" font-family="sans-serif" font-size="13" fill="#555555">(어떻게 하는가)</text>
+</svg>

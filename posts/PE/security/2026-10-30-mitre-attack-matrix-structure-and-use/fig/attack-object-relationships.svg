@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340" role="img" aria-label="ATT&amp;CK 객체 관계도 — 캠페인, 그룹, 소프트웨어, 기법, 완화, 데이터 컴포넌트의 연결">
+  <rect x="0" y="0" width="880" height="340" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="r1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333333"/>
+    </marker>
+    <marker id="r2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="32" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1a1a1a">ATT&amp;CK 객체 관계 — 무엇이 무엇을 가리키는가</text>
+
+  <!-- 캠페인 -->
+  <rect x="20" y="56" width="140" height="52" rx="6" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="90" y="79" font-family="sans-serif" font-size="14" fill="#1a1a1a" text-anchor="middle">캠페인</text>
+  <text x="90" y="98" font-family="sans-serif" font-size="13" fill="#555555" text-anchor="middle">기간·표적이 같은 활동</text>
+
+  <!-- 그룹 -->
+  <rect x="20" y="146" width="140" height="56" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="2"/>
+  <text x="90" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">그룹</text>
+  <text x="90" y="190" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">이름 붙은 활동 군집</text>
+
+  <!-- 소프트웨어 -->
+  <rect x="235" y="146" width="140" height="56" rx="6" fill="#fdeeee" stroke="#9d0208" stroke-width="2"/>
+  <text x="305" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">소프트웨어</text>
+  <text x="305" y="190" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">악성코드·정상 도구</text>
+
+  <!-- 기법 -->
+  <rect x="450" y="138" width="180" height="72" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="540" y="162" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b4332" text-anchor="middle">기법 · 하위기법</text>
+  <text x="540" y="182" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">전술 목표를 이루는 행동</text>
+  <text x="540" y="200" font-family="sans-serif" font-size="13" fill="#1b4332" text-anchor="middle">모든 연결이 모이는 축</text>
+
+  <!-- 완화 -->
+  <rect x="700" y="52" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="780" y="76" font-family="sans-serif" font-size="14" fill="#1b4332" text-anchor="middle">완화</text>
+  <text x="780" y="95" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">막는 개념·기술 분류</text>
+
+  <!-- 데이터 컴포넌트 -->
+  <rect x="700" y="238" width="160" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="780" y="262" font-family="sans-serif" font-size="14" fill="#1b4332" text-anchor="middle">데이터 컴포넌트</text>
+  <text x="780" y="281" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">탐지에 쓰는 속성·값</text>
+
+  <!-- 화살표 -->
+  <line x1="90" y1="108" x2="90" y2="140" stroke="#333333" stroke-width="2" marker-end="url(#r1)"/>
+  <text x="100" y="130" font-family="sans-serif" font-size="13" fill="#333333">귀속</text>
+
+  <line x1="160" y1="174" x2="229" y2="174" stroke="#333333" stroke-width="2" marker-end="url(#r1)"/>
+  <text x="194" y="166" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">사용</text>
+
+  <line x1="375" y1="174" x2="444" y2="174" stroke="#333333" stroke-width="2" marker-end="url(#r1)"/>
+  <text x="409" y="166" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">구현</text>
+
+  <path d="M 90 202 L 90 300 L 540 300 L 540 216" fill="none" stroke="#333333" stroke-width="2" marker-end="url(#r1)"/>
+  <text x="315" y="293" font-family="sans-serif" font-size="13" fill="#333333" text-anchor="middle">사용 — 이 연결에 붙는 구체적 구현 기록이 절차(Procedure)다</text>
+
+  <line x1="720" y1="108" x2="628" y2="140" stroke="#2d6a4f" stroke-width="2" marker-end="url(#r2)"/>
+  <text x="690" y="134" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="end">대응</text>
+
+  <line x1="720" y1="238" x2="628" y2="208" stroke="#2d6a4f" stroke-width="2" marker-end="url(#r2)"/>
+  <text x="690" y="232" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="end">탐지 근거</text>
+
+  <!-- 범례 -->
+  <text x="20" y="325" font-family="sans-serif" font-size="13" fill="#9d0208">붉은 쪽 = 공격자 측 객체</text>
+  <text x="240" y="325" font-family="sans-serif" font-size="13" fill="#2d6a4f">초록 쪽 = 방어자 측 객체</text>
+  <text x="470" y="325" font-family="sans-serif" font-size="13" fill="#555555">둘이 같은 기법 객체에서 만난다</text>
+</svg>

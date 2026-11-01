@@ -107,6 +107,7 @@ ATT&CK 설계 문서는 절차에 대해 두 가지를 짚는다. 첫째, 절차
   TTPs는 둘 사이의 중간 수준 모델이며 둘을 대체하지 않는다
 
 > 개념 정리: [침해사고 대응 절차 6단계](../../security/2026-09-29-incident-response-six-phases/index.md)
+> · [MITRE ATT&CK — 행렬 구조와 객체 모델, 커버리지를 재는 법](../../security/2026-10-30-mitre-attack-matrix-structure-and-use/index.md)
 
 끝
 
