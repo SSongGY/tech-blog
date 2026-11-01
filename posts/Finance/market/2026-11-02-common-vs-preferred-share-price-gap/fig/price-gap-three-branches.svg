@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2937">같은 회사의 두 주식에 다른 값이 붙는 세 갈래</text>
+  <text x="24" y="52" font-size="13" fill="#4b5563">앞의 두 갈래는 주식의 내용이 다른 데서 오고, 세 번째는 시장에서 사고팔기 쉬운 정도에서 온다</text>
+
+  <!-- 루트 -->
+  <rect x="300" y="74" width="280" height="44" rx="6" fill="#ffffff" stroke="#374151" stroke-width="1.8"/>
+  <text x="440" y="102" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">보통주 주가와 우선주 주가의 차이</text>
+
+  <!-- 루트에서 세 갈래로 -->
+  <line x1="440" y1="118" x2="440" y2="138" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="150" y1="138" x2="730" y2="138" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="150" y1="138" x2="150" y2="158" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="440" y1="138" x2="440" y2="158" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="730" y1="138" x2="730" y2="158" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- 갈래 1 : 의결권 -->
+  <rect x="40" y="158" width="220" height="42" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="150" y="184" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">의결권</text>
+  <line x1="150" y1="200" x2="150" y2="222" stroke="#2d6a4f" stroke-width="1.2"/>
+  <rect x="40" y="222" width="220" height="48" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="150" y="241" font-size="13" fill="#374151" text-anchor="middle">주주총회 결의에 참여하는</text>
+  <text x="150" y="259" font-size="13" fill="#374151" text-anchor="middle">권리가 정관으로 배제된다</text>
+  <line x1="150" y1="270" x2="150" y2="292" stroke="#2d6a4f" stroke-width="1.2"/>
+  <rect x="40" y="292" width="220" height="48" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="150" y="311" font-size="13" fill="#374151" text-anchor="middle">경영권 분쟁이나 인수 국면에서</text>
+  <text x="150" y="329" font-size="13" fill="#374151" text-anchor="middle">보통주에만 값이 더 붙는다</text>
+
+  <!-- 갈래 2 : 배당 우선권 -->
+  <rect x="330" y="158" width="220" height="42" rx="6" fill="#e8f0ec" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="440" y="184" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">배당 우선권</text>
+  <line x1="440" y1="200" x2="440" y2="222" stroke="#2d6a4f" stroke-width="1.2"/>
+  <rect x="330" y="222" width="220" height="48" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="440" y="241" font-size="13" fill="#374151" text-anchor="middle">배당재산·가액 결정방법·조건을</text>
+  <text x="440" y="259" font-size="13" fill="#374151" text-anchor="middle">정관에 따로 정해 둔다</text>
+  <line x1="440" y1="270" x2="440" y2="292" stroke="#2d6a4f" stroke-width="1.2"/>
+  <rect x="330" y="292" width="220" height="48" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="440" y="311" font-size="13" fill="#374151" text-anchor="middle">같은 배당금을 더 싼 값에 사면</text>
+  <text x="440" y="329" font-size="13" fill="#374151" text-anchor="middle">배당수익률이 올라간다</text>
+
+  <!-- 갈래 3 : 유동성 -->
+  <rect x="620" y="158" width="220" height="42" rx="6" fill="#fdf2e3" stroke="#b45309" stroke-width="1.6"/>
+  <text x="730" y="184" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">유동성</text>
+  <line x1="730" y1="200" x2="730" y2="222" stroke="#b45309" stroke-width="1.2"/>
+  <rect x="620" y="222" width="220" height="48" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="730" y="241" font-size="13" fill="#374151" text-anchor="middle">상장주식수가 적어 호가가 얇고</text>
+  <text x="730" y="259" font-size="13" fill="#374151" text-anchor="middle">체결까지 걸리는 값이 크다</text>
+  <line x1="730" y1="270" x2="730" y2="292" stroke="#b45309" stroke-width="1.2"/>
+  <rect x="620" y="292" width="220" height="48" rx="5" fill="#ffffff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="730" y="311" font-size="13" fill="#374151" text-anchor="middle">50만 주 미만이면 상시 단일가매매,</text>
+  <text x="730" y="329" font-size="13" fill="#374151" text-anchor="middle">20만 주 미만이면 상장폐지 요건</text>
+
+  <text x="24" y="372" font-size="13" fill="#6b7280">세 갈래는 같은 방향으로만 움직이지 않는다. 배당 우선권은 우선주 쪽 값을 올리고, 의결권과 유동성은 보통주 쪽 값을 올린다</text>
+</svg>
