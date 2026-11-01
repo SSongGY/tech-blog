@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **547편** · 갱신 2026-11-02
+총 **549편** · 갱신 2026-11-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -116,10 +116,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 190편
+## 기술사 (pe) — 192편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-02 | [STIX와 TAXII — 위협정보 공유 표준](posts/PE/security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md) | 중급 | STIX Version 2.1 OASIS Standard (2021-06-10), TAXII Version 2.1 OASIS Standard (2021-06-10), NIST SP 800-150 (2016-10) | 문서 근거 |
+| 2026-11-02 | [사이버 킬체인과 침해지표(IoC) — 고통의 피라미드](posts/PE/security/2026-11-02-cyber-kill-chain-and-indicators-pyramid-of-pain/index.md) | 중급 | Lockheed Martin 침입 킬체인 백서 (2011), NIST SP 800-150 (2016-10), Pyramid of Pain (2013-03, 2014-01-17 개정) | 문서 근거 |
 | 2026-10-31 | [위험 관리 — 식별·분석·대응 절차](posts/PE/it-management/2026-10-31-risk-management-identify-analyze-respond/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-31 | [입출력 방식 — 폴링, 인터럽트, DMA](posts/PE/system/2026-10-31-io-polling-interrupt-dma/index.md) | 중급 | Linux 커널 문서 7.3.0, Linux man-pages io_uring_setup(2) | 문서 근거 |
 | 2026-10-30 | [보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담](posts/PE/security/2026-10-30-security-operations-siem-soar-edr/index.md) | 중급 | NIST SP 800-61r3 (2025-04), NIST CSF 2.0 (2024-02), OMB M-22-01 (2021-10-08) | 문서 근거 |
