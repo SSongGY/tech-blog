@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2937">분자를 무엇으로 두느냐에 따라 덮이는 범위 (억원)</text>
+  <text x="24" y="52" font-size="13" fill="#4b5563">회색 바탕은 1년 안에 내보내야 할 현금 250 — 이자 50 과 원금 200. 그 위에 겹친 막대가 그해 벌어들인 현금이다</text>
+
+  <!-- 눈금 -->
+  <line x1="120" y1="72" x2="820" y2="72" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="120" y1="68" x2="120" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="120" y="64" font-size="13" fill="#6b7280" text-anchor="middle">0</text>
+  <line x1="236.7" y1="68" x2="236.7" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="236.7" y="64" font-size="13" fill="#6b7280" text-anchor="middle">50</text>
+  <line x1="353.3" y1="68" x2="353.3" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="353.3" y="64" font-size="13" fill="#6b7280" text-anchor="middle">100</text>
+  <line x1="470" y1="68" x2="470" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="470" y="64" font-size="13" fill="#6b7280" text-anchor="middle">150</text>
+  <line x1="586.7" y1="68" x2="586.7" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="586.7" y="64" font-size="13" fill="#6b7280" text-anchor="middle">200</text>
+  <line x1="703.3" y1="68" x2="703.3" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="703.3" y="64" font-size="13" fill="#6b7280" text-anchor="middle">250</text>
+  <line x1="820" y1="68" x2="820" y2="76" stroke="#9ca3af" stroke-width="1"/>
+  <text x="820" y="64" font-size="13" fill="#6b7280" text-anchor="middle">300</text>
+
+  <!-- 상환 부담 끝선 -->
+  <line x1="703.3" y1="80" x2="703.3" y2="368" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="703.3" y="384" font-size="13" fill="#b45309" text-anchor="middle">여기까지 닿아야 부채상환비율 1.00</text>
+
+  <!-- 가나정밀 -->
+  <text x="24" y="118" font-size="14" font-weight="bold" fill="#1f2937">가나정밀</text>
+  <rect x="120" y="96" width="583.3" height="92" fill="#eceae5" stroke="#c9c5bc" stroke-width="1"/>
+  <line x1="236.7" y1="96" x2="236.7" y2="188" stroke="#c9c5bc" stroke-width="1"/>
+  <text x="178" y="182" font-size="13" fill="#6b7280" text-anchor="middle">이자 50</text>
+  <text x="470" y="182" font-size="13" fill="#6b7280" text-anchor="middle">1년 내 갚을 원금 200</text>
+
+  <rect x="120" y="104" width="420" height="30" fill="#b45309"/>
+  <text x="132" y="124" font-size="13" fill="#ffffff">영업이익 180.0</text>
+  <text x="548" y="124" font-size="13" fill="#b45309">원금 자리에서 멈춘다</text>
+
+  <rect x="120" y="140" width="597.1" height="30" fill="#2d6a4f"/>
+  <text x="132" y="160" font-size="13" fill="#ffffff">이자지급 전 영업활동 현금흐름 255.9</text>
+  <text x="725" y="160" font-size="13" fill="#2d6a4f">1.02</text>
+
+  <!-- 다라소재 -->
+  <text x="24" y="262" font-size="14" font-weight="bold" fill="#1f2937">다라소재</text>
+  <rect x="120" y="240" width="583.3" height="92" fill="#eceae5" stroke="#c9c5bc" stroke-width="1"/>
+  <line x1="236.7" y1="240" x2="236.7" y2="332" stroke="#c9c5bc" stroke-width="1"/>
+  <text x="178" y="326" font-size="13" fill="#6b7280" text-anchor="middle">이자 50</text>
+  <text x="470" y="326" font-size="13" fill="#6b7280" text-anchor="middle">1년 내 갚을 원금 200</text>
+
+  <rect x="120" y="248" width="420" height="30" fill="#b45309"/>
+  <text x="132" y="268" font-size="13" fill="#ffffff">영업이익 180.0</text>
+  <text x="548" y="268" font-size="13" fill="#b45309">가나정밀과 같은 자리</text>
+
+  <rect x="120" y="284" width="236.6" height="30" fill="#9d0208"/>
+  <text x="132" y="304" font-size="13" fill="#ffffff">같은 기준 101.4</text>
+  <text x="366" y="304" font-size="13" fill="#9d0208">0.41 — 이자를 넘기면 바로 끝난다</text>
+</svg>

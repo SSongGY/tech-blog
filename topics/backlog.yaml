@@ -6388,7 +6388,7 @@ topics:
     angle: "이익은 같은데 영업현금흐름이 갈리는 두 가상 회사로 현금흐름 기준 부채상환비율과 이자보상배율을 동시에 계산해, 발생주의 지표 하나만 볼 때 생기는 공백을 짚는다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-108
     title: "보통주와 우선주의 가격이 갈리는 이유"
     category: Finance
@@ -6399,7 +6399,7 @@ topics:
     angle: "의결권·배당 우선권·유동성 세 갈래로 괴리 요인을 나누고, 가상 회사의 배당금과 발행주식 수로 보통주·우선주 배당수익률을 각각 계산해 대조한다. 특정 종목의 괴리율 수치는 쓰지 않는다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-109
     title: "합병·분할 공시와 주식매수청구권 — 반대한 주주가 받는 길"
     category: Finance

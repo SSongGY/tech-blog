@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2937">다라소재의 매출 성장률만 바꿨을 때 — 두 지표가 반대로 움직인다</text>
+  <text x="24" y="52" font-size="13" fill="#4b5563">회전일수·영업이익률·이자비용은 그대로 두고 1년차 값을 찍었다. 성장은 영업이익을 늘리면서 운전자본을 같이 묶는다</text>
+
+  <!-- 왼쪽 패널 : 이자보상배율 -->
+  <text x="70" y="82" font-size="14" font-weight="bold" fill="#1f2937">이자보상배율 (영업이익 ÷ 이자비용)</text>
+  <line x1="70" y1="90" x2="70" y2="310" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="70" y1="310" x2="410" y2="310" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="70" y1="266" x2="410" y2="266" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="70" y1="178" x2="410" y2="178" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="62" y="314" font-size="13" fill="#6b7280" text-anchor="end">0</text>
+  <text x="62" y="270" font-size="13" fill="#6b7280" text-anchor="end">1</text>
+  <text x="62" y="182" font-size="13" fill="#6b7280" text-anchor="end">3</text>
+  <text x="62" y="94" font-size="13" fill="#6b7280" text-anchor="end">5</text>
+
+  <polyline points="110,151.6 240,135.8 370,119.9" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+  <circle cx="110" cy="151.6" r="5" fill="#2d6a4f"/>
+  <circle cx="240" cy="135.8" r="5" fill="#2d6a4f"/>
+  <circle cx="370" cy="119.9" r="5" fill="#2d6a4f"/>
+  <text x="110" y="143" font-size="13" fill="#2d6a4f" text-anchor="middle">3.60</text>
+  <text x="240" y="127" font-size="13" fill="#2d6a4f" text-anchor="middle">3.96</text>
+  <text x="370" y="111" font-size="13" fill="#2d6a4f" text-anchor="middle">4.32</text>
+
+  <text x="110" y="330" font-size="13" fill="#374151" text-anchor="middle">0%</text>
+  <text x="240" y="330" font-size="13" fill="#374151" text-anchor="middle">10%</text>
+  <text x="370" y="330" font-size="13" fill="#374151" text-anchor="middle">20%</text>
+  <text x="240" y="356" font-size="13" fill="#6b7280" text-anchor="middle">매출 성장률</text>
+  <text x="240" y="382" font-size="13" fill="#2d6a4f" text-anchor="middle">성장할수록 올라간다</text>
+
+  <!-- 오른쪽 패널 : 부채상환비율 -->
+  <text x="500" y="82" font-size="14" font-weight="bold" fill="#1f2937">부채상환비율 (현금 ÷ 이자+원금)</text>
+  <line x1="500" y1="90" x2="500" y2="310" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="500" y1="310" x2="840" y2="310" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="500" y1="90" x2="840" y2="90" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="500" y1="200" x2="840" y2="200" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="492" y="314" font-size="13" fill="#6b7280" text-anchor="end">0</text>
+  <text x="492" y="204" font-size="13" fill="#6b7280" text-anchor="end">0.5</text>
+  <text x="492" y="94" font-size="13" fill="#b45309" text-anchor="end">1.0</text>
+
+  <polyline points="540,134 670,175.8 800,217.6" fill="none" stroke="#9d0208" stroke-width="2.5"/>
+  <circle cx="540" cy="134" r="5" fill="#9d0208"/>
+  <circle cx="670" cy="175.8" r="5" fill="#9d0208"/>
+  <circle cx="800" cy="217.6" r="5" fill="#9d0208"/>
+  <text x="540" y="125" font-size="13" fill="#9d0208" text-anchor="middle">0.80</text>
+  <text x="670" y="167" font-size="13" fill="#9d0208" text-anchor="middle">0.61</text>
+  <text x="800" y="209" font-size="13" fill="#9d0208" text-anchor="middle">0.42</text>
+
+  <text x="540" y="330" font-size="13" fill="#374151" text-anchor="middle">0%</text>
+  <text x="670" y="330" font-size="13" fill="#374151" text-anchor="middle">10%</text>
+  <text x="800" y="330" font-size="13" fill="#374151" text-anchor="middle">20%</text>
+  <text x="670" y="356" font-size="13" fill="#6b7280" text-anchor="middle">매출 성장률</text>
+  <text x="670" y="382" font-size="13" fill="#9d0208" text-anchor="middle">성장할수록 내려간다</text>
+</svg>
