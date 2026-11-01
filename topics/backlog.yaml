@@ -6102,7 +6102,7 @@ topics:
     angle: "네 종류를 널 취급과 검사 시점으로 비교하고, 선언적 제약으로 못 거는 규칙을 어디서 받아야 하는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-211
     title: "프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한"
     category: PE
@@ -6113,7 +6113,7 @@ topics:
     angle: "완전 차단이 없다는 전제에서 시스템을 설계하는 쪽. 스포트라이팅·신뢰 계층 학습 같은 모델층 방어와, 권한 분리·사람 승인·정의된 인터페이스 같은 설계층 방어를 나눠 정리하고 각 방어가 뚫리는 경로까지 적는다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-212
     title: "자원 할당 그래프와 대기 그래프 — 교착 탐지"
     category: PE

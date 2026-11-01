@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#fbfaf7"/>
+
+  <defs>
+    <marker id="arw" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#4a4a4a"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="34" font-size="18" font-weight="bold" fill="#1b1b1b">프롬프트 인젝션 방어의 신뢰 경계 — 도구를 쥔 쪽과 데이터를 읽는 쪽을 가른다</text>
+
+  <!-- 신뢰 경계 -->
+  <line x1="445" y1="60" x2="445" y2="326" stroke="#9d0208" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="445" y="74" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">신뢰 경계</text>
+
+  <text x="60" y="80" font-size="14" font-weight="bold" fill="#2d6a4f">신뢰 영역 — 도구 권한 있음</text>
+  <text x="480" y="80" font-size="14" font-weight="bold" fill="#9d0208">비신뢰 영역 — 도구 권한 없음</text>
+
+  <!-- 좌: 신뢰 -->
+  <rect x="60" y="96" width="350" height="56" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="76" y="120" font-size="14" font-weight="bold" fill="#1b1b1b">사용자 질의</text>
+  <text x="76" y="140" font-size="13" fill="#555">시스템이 따르기로 한 지시</text>
+
+  <rect x="60" y="170" width="350" height="56" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="76" y="194" font-size="14" font-weight="bold" fill="#1b1b1b">특권 LLM — 계획 수립</text>
+  <text x="76" y="214" font-size="13" fill="#555">지시 계층: 시스템 &gt; 사용자 &gt; 제3자</text>
+
+  <rect x="60" y="244" width="350" height="56" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="76" y="268" font-size="14" font-weight="bold" fill="#1b1b1b">확정된 행동 계획</text>
+  <text x="76" y="288" font-size="13" fill="#555">비신뢰 데이터가 이 목록을 못 바꾼다</text>
+
+  <!-- 우: 비신뢰 -->
+  <rect x="480" y="96" width="350" height="56" rx="6" fill="#fdeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="496" y="120" font-size="14" font-weight="bold" fill="#1b1b1b">외부 문서 · 웹 · 도구 출력</text>
+  <text x="496" y="140" font-size="13" fill="#555">스포트라이팅: 구분자 · 데이터마킹 · 인코딩</text>
+
+  <rect x="480" y="170" width="350" height="56" rx="6" fill="#fdeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="496" y="194" font-size="14" font-weight="bold" fill="#1b1b1b">격리 LLM — 읽기 · 추출만</text>
+  <text x="496" y="214" font-size="13" fill="#555">도구를 호출할 권한이 없다</text>
+
+  <rect x="480" y="244" width="350" height="56" rx="6" fill="#fdeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="496" y="268" font-size="14" font-weight="bold" fill="#1b1b1b">정형 스키마 출력</text>
+  <text x="496" y="288" font-size="13" fill="#555">자유 문장이 아니라 정해진 값</text>
+
+  <!-- 세로 화살표 -->
+  <line x1="235" y1="152" x2="235" y2="168" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+  <line x1="235" y1="226" x2="235" y2="242" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+  <line x1="655" y1="152" x2="655" y2="168" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+  <line x1="655" y1="226" x2="655" y2="242" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+
+  <!-- 경계를 넘는 화살표 -->
+  <line x1="478" y1="272" x2="414" y2="272" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="446" y="262" font-size="13" fill="#9d0208" text-anchor="middle">값만 통과</text>
+
+  <!-- 게이트 -->
+  <line x1="235" y1="300" x2="235" y2="334" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+  <rect x="160" y="336" width="560" height="56" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="180" y="360" font-size="14" font-weight="bold" fill="#b45309">도구 호출 게이트</text>
+  <text x="180" y="380" font-size="13" fill="#555">최소권한 · 보안 정책 검사 · 위험이 큰 동작은 사람 승인</text>
+
+  <line x1="440" y1="392" x2="440" y2="406" stroke="#4a4a4a" stroke-width="2" marker-end="url(#arw)"/>
+  <rect x="160" y="408" width="560" height="48" rx="6" fill="#e7f1ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="180" y="438" font-size="14" font-weight="bold" fill="#1b1b1b">실제 동작 — 전송 · 삭제 · 결제처럼 되돌릴 수 없는 일</text>
+</svg>

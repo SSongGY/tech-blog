@@ -109,6 +109,8 @@ SQL은 **구문을 파싱하는 엔진**이 받으므로 질의 틀과 값을 �
   두드린다. 평가는 그 시점의 취약성만 재므로 배포 후에도 이어 간다
 
 > 개념 정리: [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](../../security/2026-10-13-adversarial-ml-attack-taxonomy/index.md)
+>
+> 개념 정리: [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](../../security/2026-11-02-prompt-injection-defense-design/index.md)
 
 끝
 
