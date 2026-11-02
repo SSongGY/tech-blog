@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'맑은 고딕','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbf8"/>
+
+  <text x="20" y="32" font-size="16" font-weight="bold" fill="#1b1b1b">감사인이 정해지는 세 갈래와 지정 절차</text>
+
+  <!-- ===== 선임 경로 ===== -->
+  <rect x="20" y="62" width="210" height="72" rx="5" stroke="#2d6a4f" stroke-width="1.6" fill="#eef5f1"/>
+  <g font-size="13" fill="#1b1b1b" text-anchor="middle">
+    <text x="125" y="88">원칙 — 회사가 선임</text>
+    <text x="125" y="107">감사위원회 또는</text>
+    <text x="125" y="126">감사인선임위원회가 선정</text>
+  </g>
+
+  <rect x="300" y="52" width="230" height="56" rx="5" stroke="#b45309" stroke-width="1.6" fill="#fdf3e4"/>
+  <g font-size="13" fill="#8a4a05" text-anchor="middle">
+    <text x="415" y="76">주기적 지정</text>
+    <text x="415" y="95">연속 6개 사업연도 자유선임</text>
+  </g>
+
+  <rect x="300" y="128" width="230" height="56" rx="5" stroke="#b45309" stroke-width="1.6" fill="#fdf3e4"/>
+  <g font-size="13" fill="#8a4a05" text-anchor="middle">
+    <text x="415" y="152">직권지정</text>
+    <text x="415" y="171">제11조 제1항 12개 호의 사유</text>
+  </g>
+
+  <rect x="566" y="76" width="270" height="84" rx="5" stroke="#9d0208" stroke-width="1.6" fill="#fbeceb"/>
+  <g font-size="13" fill="#7a0206" text-anchor="middle">
+    <text x="701" y="104">증권선물위원회가</text>
+    <text x="701" y="123">회계법인을 지정한다</text>
+    <text x="701" y="142">회사는 고르지 못한다</text>
+  </g>
+
+  <g stroke="#555" stroke-width="1.4" fill="none" marker-end="url(#ar)">
+    <path d="M 230 86 L 265 86 L 265 80 L 296 80"/>
+    <path d="M 230 110 L 265 110 L 265 156 L 296 156"/>
+    <path d="M 530 80 L 548 80 L 548 108 L 562 108"/>
+    <path d="M 530 156 L 548 156 L 548 128 L 562 128"/>
+  </g>
+
+  <rect x="300" y="200" width="556" height="38" rx="5" stroke="#9d0208" stroke-width="1.4" stroke-dasharray="5 3" fill="#fbeceb"/>
+  <text x="578" y="224" font-size="13" fill="#7a0206" text-anchor="middle">지정 기간이 끝난 뒤 그 감사인을 곧바로 다시 선임할 수 없다 (제11조 제6항)</text>
+  <line x1="701" y1="200" x2="701" y2="164" stroke="#9d0208" stroke-width="1.4" stroke-dasharray="5 3" marker-end="url(#arr)"/>
+
+  <!-- ===== 지정 절차 ===== -->
+  <text x="20" y="278" font-size="13" fill="#555">지정이 결정된 뒤의 절차 (시행령 제17조)</text>
+
+  <g stroke="#2d6a4f" stroke-width="1.6" fill="#eef5f1">
+    <rect x="20" y="292" width="190" height="74" rx="5"/>
+    <rect x="224" y="292" width="190" height="74" rx="5"/>
+    <rect x="428" y="292" width="190" height="74" rx="5"/>
+    <rect x="632" y="292" width="190" height="74" rx="5"/>
+  </g>
+
+  <g font-size="13" fill="#1b1b1b" text-anchor="middle">
+    <text x="115" y="318" fill="#8a4a05">지정기준일 4주 전까지</text>
+    <text x="115" y="339">증선위가 회사와</text>
+    <text x="115" y="358">회계법인에 예정 통지</text>
+
+    <text x="319" y="318" fill="#8a4a05">통지받은 날부터 2주 내</text>
+    <text x="319" y="339">회사·회계법인이</text>
+    <text x="319" y="358">의견을 제출할 수 있다</text>
+
+    <text x="523" y="318" fill="#8a4a05">지정기준일까지</text>
+    <text x="523" y="339">증선위가 지정 내용을</text>
+    <text x="523" y="358">통지한다</text>
+
+    <text x="727" y="318" fill="#8a4a05">기준일부터 2주 내</text>
+    <text x="727" y="339">회사가 감사인과</text>
+    <text x="727" y="358">계약을 체결한다</text>
+  </g>
+
+  <g stroke="#555" stroke-width="1.4" marker-end="url(#ar)">
+    <line x1="210" y1="329" x2="220" y2="329"/>
+    <line x1="414" y1="329" x2="424" y2="329"/>
+    <line x1="618" y1="329" x2="628" y2="329"/>
+  </g>
+
+  <text x="20" y="400" font-size="13" fill="#555">직권지정은 3개 사업연도의 범위에서, 주기적 지정은 연속하는 3개 사업연도에 대해 이루어진다.</text>
+  <text x="20" y="422" font-size="13" fill="#555">회사가 다시 지정해 달라고 요청하려면 지정 내용을 통지받은 날부터 1주 안에 해야 한다.</text>
+
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#555"/>
+    </marker>
+    <marker id="arr" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>
