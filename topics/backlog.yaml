@@ -6212,7 +6212,7 @@ topics:
     angle: "거리벡터·링크상태와 구분되는 경로벡터 방식. AS_PATH로 루프를 막는 원리와 BGP 경로 속성·경로 선택 순서, iBGP 풀메시와 경로 반사기"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-215
     title: "이기종 DBMS 마이그레이션 — 스키마 변환과 데이터 정합성 검증"
     category: PE
@@ -6223,7 +6223,7 @@ topics:
     angle: "자동 변환이 어디까지 되고 어디서 사람 손이 필요한지, 건수·체크섬·샘플 대조로 정합성을 어떻게 증명하는지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-216
     title: "전사적 아키텍처(EA/ITA) — 참조모형과 아키텍처 매트릭스"
     category: PE

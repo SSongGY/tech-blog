@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">이기종 DBMS 마이그레이션의 4단계와 사람 손이 필요한 자리</text>
+  <text x="30" y="58" font-size="13" fill="#555">위 칸은 도구가 맡는 작업, 아래 칸은 도구가 대신할 수 없는 판단이다.</text>
+
+  <!-- 단계 박스 -->
+  <rect x="30" y="86" width="190" height="66" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.6"/>
+  <text x="125" y="112" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 평가·범위 산정</text>
+  <text x="125" y="134" font-size="13" fill="#555" text-anchor="middle">대상에 없는 기능</text>
+
+  <rect x="243" y="86" width="190" height="66" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="338" y="112" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">② 스키마 변환</text>
+  <text x="338" y="134" font-size="13" fill="#333" text-anchor="middle">구조·코드·권한</text>
+
+  <rect x="456" y="86" width="190" height="66" rx="6" fill="#eaf3ee" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="551" y="112" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">③ 데이터 적재</text>
+  <text x="551" y="134" font-size="13" fill="#333" text-anchor="middle">INSERT 또는 COPY</text>
+
+  <rect x="669" y="86" width="190" height="66" rx="6" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.6"/>
+  <text x="764" y="112" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">④ 정합성 검증</text>
+  <text x="764" y="134" font-size="13" fill="#555" text-anchor="middle">행 단위 대조</text>
+
+  <line x1="224" y1="119" x2="239" y2="119" stroke="#8a8a84" stroke-width="1.8" marker-end="url(#ar)"/>
+  <line x1="437" y1="119" x2="452" y2="119" stroke="#8a8a84" stroke-width="1.8" marker-end="url(#ar)"/>
+  <line x1="650" y1="119" x2="665" y2="119" stroke="#8a8a84" stroke-width="1.8" marker-end="url(#ar)"/>
+
+  <line x1="125" y1="152" x2="125" y2="196" stroke="#b45309" stroke-width="1.5" marker-end="url(#arb)"/>
+  <line x1="338" y1="152" x2="338" y2="196" stroke="#b45309" stroke-width="1.5" marker-end="url(#arb)"/>
+  <line x1="551" y1="152" x2="551" y2="196" stroke="#b45309" stroke-width="1.5" marker-end="url(#arb)"/>
+  <line x1="764" y1="152" x2="764" y2="196" stroke="#b45309" stroke-width="1.5" marker-end="url(#arb)"/>
+
+  <!-- 사람이 하는 판단 -->
+  <rect x="30" y="200" width="190" height="112" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="125" y="226" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">사람이 판단</text>
+  <text x="125" y="252" font-size="13" fill="#333" text-anchor="middle">라이선스·클라우드</text>
+  <text x="125" y="273" font-size="13" fill="#333" text-anchor="middle">지원 항목을 읽고</text>
+  <text x="125" y="294" font-size="13" fill="#333" text-anchor="middle">설계 범위를 정한다</text>
+
+  <rect x="243" y="200" width="190" height="112" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="338" y="226" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">사람이 판단</text>
+  <text x="338" y="252" font-size="13" fill="#333" text-anchor="middle">PL/SQL 변환본이</text>
+  <text x="338" y="273" font-size="13" fill="#333" text-anchor="middle">대상 문법에 맞는지</text>
+  <text x="338" y="294" font-size="13" fill="#333" text-anchor="middle">검토한다</text>
+
+  <rect x="456" y="200" width="190" height="112" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="551" y="226" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">사람이 판단</text>
+  <text x="551" y="252" font-size="13" fill="#333" text-anchor="middle">빈 문자열과 공백</text>
+  <text x="551" y="273" font-size="13" fill="#333" text-anchor="middle">패딩을 어느 의미로</text>
+  <text x="551" y="294" font-size="13" fill="#333" text-anchor="middle">넣을지 정한다</text>
+
+  <rect x="669" y="200" width="190" height="112" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="764" y="226" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">사람이 판단</text>
+  <text x="764" y="252" font-size="13" fill="#333" text-anchor="middle">검증에서 빠진</text>
+  <text x="764" y="273" font-size="13" fill="#333" text-anchor="middle">테이블의 별도</text>
+  <text x="764" y="294" font-size="13" fill="#333" text-anchor="middle">방법을 지정한다</text>
+
+  <!-- 마무리 띠 -->
+  <rect x="30" y="340" width="829" height="62" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="50" y="366" font-size="13" font-weight="bold" fill="#9d0208">건수가 맞아도 같다는 증명이 되지 않는다.</text>
+  <text x="50" y="390" font-size="13" fill="#333">④에서 걸러지지 않는 의미 차이는 업무가 아는 값을 양쪽에서 다시 계산해야 드러난다.</text>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8a8a84"/>
+    </marker>
+    <marker id="arb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+</svg>

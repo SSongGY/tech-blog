@@ -293,6 +293,7 @@ RPO 0이 요구되면 센터 간 동기 복제가 필요하고, 그 대가는 �
 
 > 개념 정리: [데이터베이스 이중화와 복제 방식](../../database/2026-10-27-database-replication-ha/index.md)
 > · [오픈소스 라이선스 컴플라이언스 — ISO/IEC 5230(OpenChain)과 라이선스 유형](../../it-management/2026-09-29-open-source-license-compliance-iso-5230/index.md)
+> · [이기종 DBMS 마이그레이션 — 자동 변환이 끊기는 자리와 정합성을 증명하는 방법](../../database/2026-11-03-heterogeneous-dbms-migration-schema-and-data-verification/index.md)
 
 끝
 
