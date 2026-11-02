@@ -6410,7 +6410,7 @@ topics:
     angle: "합병 공시부터 주주총회·청구 기간·매수가격 결정까지의 순서를 단계로 정리하고, 합병비율이 지분율을 어떻게 바꾸는지 가상 회사 두 곳으로 계산한다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-110
     title: "감사인 지정제 — 회사가 감사인을 고르지 못하는 경우"
     category: Finance
@@ -6421,7 +6421,7 @@ topics:
     angle: "주기적 지정과 직권 지정을 나누어 사유를 항목으로 정리하고, 지정 사실이 사업보고서 어디에 적히는지와 투자자가 그것을 무엇의 신호로 읽어야 하는지까지 쓴다. 특정 회사 사례는 들지 않는다"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: fin-111
     title: "자기주식의 회계 — 사도 비용이 아니고 팔아도 이익이 아니다"
     category: Finance
