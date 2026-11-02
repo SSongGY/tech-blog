@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **557편** · 갱신 2026-11-02
+총 **560편** · 갱신 2026-11-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 83편
+## DB문법 (basics) — 84편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-01 | [BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가](posts/Database/sql-basics/2026-11-01-begin-deferred-immediate-exclusive-locking/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-31 | [집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치](posts/Database/sql-basics/2026-10-31-set-operation-order-by-limit-scope/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-31 | [foreign_key_check — 제약을 켜기 전에 깨진 참조를 먼저 센다](posts/Database/sql-basics/2026-10-31-pragma-foreign-key-check/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-10-30 | [날짜 함수 심화 — strftime으로 주차·분기 뽑기](posts/Database/sql-basics/2026-10-30-strftime-week-quarter/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -116,7 +117,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 196편
+## 기술사 (pe) — 197편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -126,6 +127,7 @@
 | 2026-11-02 | [기계 학습 제거(Machine Unlearning) — 정확 제거와 근사 제거](posts/PE/security/2026-11-02-machine-unlearning-exact-and-approximate/index.md) | 중급 | Cao & Yang, IEEE S&P 2015, Ginart et al. arXiv:1907.05012v2 (2019-11-04), Bourtoule et al. arXiv:1912.03817v3 (2020-12-15), Guo et al. arXiv:1911.03030v6 (2023-11-08), NIST AI 100-2 E2025 (2025-03) | 문서 근거 |
 | 2026-11-02 | [무결성 제약의 네 종류 — 개체·참조·도메인·사용자 정의](posts/PE/database/2026-11-02-integrity-constraints-four-kinds/index.md) | 중급 | PostgreSQL 18.6, MySQL 8.4, SQL Server 2008 | 문서 근거 |
 | 2026-11-02 | [사이버 킬체인과 침해지표(IoC) — 고통의 피라미드](posts/PE/security/2026-11-02-cyber-kill-chain-and-indicators-pyramid-of-pain/index.md) | 중급 | Lockheed Martin 침입 킬체인 백서 (2011), NIST SP 800-150 (2016-10), Pyramid of Pain (2013-03, 2014-01-17 개정) | 문서 근거 |
+| 2026-11-01 | [정보화 사업 발주와 제안 평가](posts/PE/it-management/2026-11-01-it-procurement-rfp-and-proposal-evaluation/index.md) | 중급 | 소프트웨어 진흥법 (2022.12 가이드 인용본), 소프트웨어사업 계약 및 관리감독에 관한 지침 (발령 2021.12.30.), 공공소프트웨어사업 과업심의 가이드 2022.12 | 문서 근거 |
 | 2026-10-31 | [위험 관리 — 식별·분석·대응 절차](posts/PE/it-management/2026-10-31-risk-management-identify-analyze-respond/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-10-31 | [입출력 방식 — 폴링, 인터럽트, DMA](posts/PE/system/2026-10-31-io-polling-interrupt-dma/index.md) | 중급 | Linux 커널 문서 7.3.0, Linux man-pages io_uring_setup(2) | 문서 근거 |
 | 2026-10-30 | [보안 관제 체계 — SIEM, SOAR, EDR의 역할 분담](posts/PE/security/2026-10-30-security-operations-siem-soar-edr/index.md) | 중급 | NIST SP 800-61r3 (2025-04), NIST CSF 2.0 (2024-02), OMB M-22-01 (2021-10-08) | 문서 근거 |
@@ -340,10 +342,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 48편
+## 일반 (general) — 49편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-01 | [인증서 체인을 직접 만들어 보면 검증 실패가 읽힌다](posts/Security/tls/2026-11-01-x509-chain-build-and-verify-failures/index.md) | 중급 | OpenSSL 3.5.6 7 Apr 2026, GNU bash 5.3.9(1)-release (x86_64-pc-cygwin), Windows 11 | 실행 검증 |
 | 2026-10-31 | [플레임 그래프를 제대로 읽는 법 — 폭과 높이가 각각 무엇인가](posts/Tooling/2026-10-31-reading-flame-graphs/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-31 | [0.1 + 0.2 로 끝나지 않는다 — 금액 계산이 실제로 틀어지는 자리](posts/Language/python/2026-10-31-float-money-rounding-decimal/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-30 | [모놀리스를 쪼개기 전에 — 커밋 이력에서 경계를 찾아낸다](posts/Architecture/2026-10-30-find-service-boundaries-from-cochange/index.md) | 중급 | Python 3.13.5, git 2.54.0.windows.1 | 실행 검증 |
