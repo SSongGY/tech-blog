@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="400" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">인증서 체인 검증은 한 번의 서명 확인이 아니다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">말단에서 신뢰 앵커까지 올라가면서 단계마다 따로 확인한다. 어느 확인에서 걸렸는지가 오류 번호로 구분된다.</text>
+
+  <!-- 체인 -->
+  <rect x="20" y="80" width="230" height="74" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="32" y="104" font-size="14" font-weight="bold" fill="#212529">depth 0 · 서버 인증서</text>
+  <text x="32" y="126" font-size="13" fill="#212529">CN=shop.example.com</text>
+  <text x="32" y="144" font-size="13" fill="#868e96">CA:FALSE</text>
+
+  <rect x="20" y="176" width="230" height="74" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="32" y="200" font-size="14" font-weight="bold" fill="#212529">depth 1 · 중간 CA</text>
+  <text x="32" y="222" font-size="13" fill="#212529">CN=Example Intermediate CA</text>
+  <text x="32" y="240" font-size="13" fill="#868e96">CA:TRUE, pathlen:0</text>
+
+  <rect x="20" y="272" width="230" height="74" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="32" y="296" font-size="14" font-weight="bold" fill="#2d6a4f">depth 2 · 루트 CA</text>
+  <text x="32" y="318" font-size="13" fill="#212529">CN=Example Root CA</text>
+  <text x="32" y="336" font-size="13" fill="#2d6a4f">신뢰 앵커 — 여기서 멈춘다</text>
+
+  <line x1="135" y1="176" x2="135" y2="158" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="135" y1="272" x2="135" y2="254" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="145" y="170" font-size="13" fill="#495057">서명</text>
+  <text x="145" y="266" font-size="13" fill="#495057">서명</text>
+
+  <!-- 검증 항목 -->
+  <rect x="280" y="80" width="570" height="266" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.2"/>
+  <line x1="280" y1="116" x2="850" y2="116" stroke="#495057" stroke-width="1"/>
+  <text x="294" y="105" font-size="13" font-weight="bold" fill="#212529">검증이 확인하는 것</text>
+  <text x="469" y="105" font-size="13" font-weight="bold" fill="#212529">어긋나면 나오는 문구</text>
+  <text x="840" y="105" font-size="13" font-weight="bold" fill="#212529" text-anchor="end">번호</text>
+
+  <text x="294" y="142" font-size="13" fill="#212529">발급자를 찾는다</text>
+  <text x="469" y="142" font-size="13" fill="#9d0208">unable to get local issuer certificate</text>
+  <text x="840" y="142" font-size="13" fill="#9d0208" text-anchor="end">20</text>
+
+  <text x="294" y="172" font-size="13" fill="#212529">신뢰 앵커에 닿는다</text>
+  <text x="469" y="172" font-size="13" fill="#9d0208">self-signed certificate in certificate chain</text>
+  <text x="840" y="172" font-size="13" fill="#9d0208" text-anchor="end">19</text>
+
+  <text x="294" y="202" font-size="13" fill="#212529">유효기간 안이다</text>
+  <text x="469" y="202" font-size="13" fill="#9d0208">certificate has expired / is not yet valid</text>
+  <text x="840" y="202" font-size="13" fill="#9d0208" text-anchor="end">10·9</text>
+
+  <text x="294" y="232" font-size="13" fill="#212529">CA 로 쓸 수 있다</text>
+  <text x="469" y="232" font-size="13" fill="#9d0208">invalid CA certificate</text>
+  <text x="840" y="232" font-size="13" fill="#9d0208" text-anchor="end">79</text>
+
+  <text x="294" y="262" font-size="13" fill="#212529">인증서 서명 권한이 있다</text>
+  <text x="469" y="262" font-size="13" fill="#9d0208">key usage does not include certificate signing</text>
+  <text x="840" y="262" font-size="13" fill="#9d0208" text-anchor="end">32</text>
+
+  <text x="294" y="292" font-size="13" fill="#212529">pathlen 을 지킨다</text>
+  <text x="469" y="292" font-size="13" fill="#9d0208">path length constraint exceeded</text>
+  <text x="840" y="292" font-size="13" fill="#9d0208" text-anchor="end">25</text>
+
+  <text x="294" y="322" font-size="13" fill="#212529">이름이 맞는다</text>
+  <text x="469" y="322" font-size="13" fill="#9d0208">hostname mismatch</text>
+  <text x="840" y="322" font-size="13" fill="#9d0208" text-anchor="end">62</text>
+
+  <text x="20" y="372" font-size="13" fill="#495057">앞의 여섯 항목은 체인의 모든 단계에서 따로 확인된다. 맨 아래 이름 확인만 depth 0 에서, 그것도 검증하는 쪽이 요구했을 때 돈다.</text>
+  <text x="20" y="390" font-size="13" fill="#495057">그래서 "인증서가 유효한가"와 "이 서버의 인증서가 맞는가"는 다른 질문이고, 뒤쪽을 빠뜨리는 코드가 흔하다.</text>
+</svg>

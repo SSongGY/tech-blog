@@ -1,0 +1,7 @@
+#  서버 인증서. 이름은 CN 이 아니라 subjectAltName 으로 확인된다.
+basicConstraints       = critical,CA:FALSE
+keyUsage               = critical,digitalSignature,keyEncipherment
+extendedKeyUsage       = serverAuth
+subjectAltName         = DNS:shop.example.com,DNS:www.shop.example.com
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always

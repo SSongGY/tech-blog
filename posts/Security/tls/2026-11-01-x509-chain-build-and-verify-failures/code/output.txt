@@ -1,0 +1,145 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Security\tls\2026-11-01-x509-chain-build-and-verify-failures
+# 명령      : bash build_chain.sh
+# 수행 시각 : 2026-11-02 19:46 (대한민국 표준시)
+# 소요      : 3.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+----------------------------------------------------------------
+환경
+----------------------------------------------------------------
+  OpenSSL 3.5.6 7 Apr 2026 (Library: OpenSSL 3.5.6 7 Apr 2026)
+  built on: Tue Apr 14 14:00:29 2026 UTC
+  platform: mingw64
+
+----------------------------------------------------------------
+1. 세 단계 체인을 만든다
+----------------------------------------------------------------
+  root    subject= C = KR,O = Example Trust,CN = Example Root CA
+          issuer = C = KR,O = Example Trust,CN = Example Root CA
+  inter   subject= C = KR,O = Example Trust,CN = Example Intermediate CA
+          issuer = C = KR,O = Example Trust,CN = Example Root CA
+  server  subject= C = KR,O = Example Service,CN = shop.example.com
+          issuer = C = KR,O = Example Trust,CN = Example Intermediate CA
+
+  중간 CA 의 제약:
+    X509v3 Basic Constraints: critical
+        CA:TRUE, pathlen:0
+
+----------------------------------------------------------------
+2. 정상 체인 — 루트를 신뢰하고 중간을 함께 준다
+----------------------------------------------------------------
+  체인 전체를 보여 달라고 한다
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem -show_chain probe_work/server.pem
+      probe_work/server.pem: OK
+      Chain:
+      depth=0: C=KR, O=Example Service, CN=shop.example.com (untrusted)
+      depth=1: C=KR, O=Example Trust, CN=Example Intermediate CA (untrusted)
+      depth=2: C=KR, O=Example Trust, CN=Example Root CA
+      (종료 코드 0)
+
+
+----------------------------------------------------------------
+3. 중간 인증서를 빠뜨린다 — 서버 설정에서 가장 흔한 실수
+----------------------------------------------------------------
+  루트만 주고 중간을 주지 않는다
+  $ openssl verify -CAfile probe_work/root.pem probe_work/server.pem
+      C=KR, O=Example Service, CN=shop.example.com
+      error 20 at 0 depth lookup: unable to get local issuer certificate
+      error probe_work/server.pem: verification failed
+      (종료 코드 2)
+
+
+----------------------------------------------------------------
+4. 신뢰 앵커가 없다 — 사설 CA 를 OS 가 모를 때
+----------------------------------------------------------------
+  중간은 주되 루트를 신뢰 목록에서 뺀다
+  $ openssl verify -no-CAfile -no-CApath -untrusted probe_work/inter.pem -untrusted probe_work/root.pem probe_work/server.pem
+      C=KR, O=Example Trust, CN=Example Root CA
+      error 19 at 2 depth lookup: self-signed certificate in certificate chain
+      error probe_work/server.pem: verification failed
+      (종료 코드 2)
+
+
+----------------------------------------------------------------
+5. 기간이 지났다
+----------------------------------------------------------------
+  notBefore=Jan  1 00:00:00 2024 GMT
+  notAfter=Apr  1 00:00:00 2024 GMT
+
+  만료된 서버 인증서
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem probe_work/expired.pem
+      C=KR, O=Example Service, CN=shop.example.com
+      error 10 at 0 depth lookup: certificate has expired
+      error probe_work/expired.pem: verification failed
+      (종료 코드 2)
+
+  같은 인증서를 유효기간 안의 시각으로 검증한다
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem -attime 1709251200 probe_work/expired.pem
+      C=KR, O=Example Trust, CN=Example Root CA
+      error 9 at 2 depth lookup: certificate is not yet valid
+      error probe_work/expired.pem: verification failed
+      (종료 코드 2)
+
+
+----------------------------------------------------------------
+6. 이름이 다르다
+----------------------------------------------------------------
+  서버 인증서의 subjectAltName:
+    X509v3 Subject Alternative Name: 
+        DNS:shop.example.com, DNS:www.shop.example.com
+
+  인증서에 적힌 이름으로 검증
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem -verify_hostname shop.example.com probe_work/server.pem
+      probe_work/server.pem: OK
+      (종료 코드 0)
+
+  적혀 있지 않은 이름으로 검증
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem -verify_hostname app.example.com probe_work/server.pem
+      C=KR, O=Example Service, CN=shop.example.com
+      error 62 at 0 depth lookup: hostname mismatch
+      error probe_work/server.pem: verification failed
+      (종료 코드 2)
+
+  CN 은 같지만 SAN 에 없는 상위 도메인
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem -verify_hostname example.com probe_work/server.pem
+      C=KR, O=Example Service, CN=shop.example.com
+      error 62 at 0 depth lookup: hostname mismatch
+      error probe_work/server.pem: verification failed
+      (종료 코드 2)
+
+
+----------------------------------------------------------------
+7. 중간 인증서가 CA 가 아니다
+----------------------------------------------------------------
+  X509v3 Basic Constraints: critical
+      CA:FALSE
+
+  같은 키로 CA:FALSE 로 다시 발급한 중간 인증서
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/inter.pem probe_work/server.pem
+      C=KR, O=Example Trust, CN=Example Intermediate CA
+      error 79 at 1 depth lookup: invalid CA certificate
+      C=KR, O=Example Trust, CN=Example Intermediate CA
+      error 32 at 1 depth lookup: key usage does not include certificate signing
+      error probe_work/server.pem: verification failed
+      (종료 코드 2)
+
+
+----------------------------------------------------------------
+8. pathlen 을 넘긴다
+----------------------------------------------------------------
+  중간 CA 의 pathlen:0 아래에 또 CA 를 끼운다
+  $ openssl verify -CAfile probe_work/root.pem -untrusted probe_work/bundle.pem probe_work/leaf.pem
+      C=KR, O=Example Trust, CN=Example Intermediate CA
+      error 25 at 2 depth lookup: path length constraint exceeded
+      error probe_work/leaf.pem: verification failed
+      (종료 코드 2)
+
+
+----------------------------------------------------------------
+끝
+----------------------------------------------------------------

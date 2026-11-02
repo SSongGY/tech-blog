@@ -1,0 +1,6 @@
+#  같은 키·같은 주체인데 CA:FALSE 로만 바꿔 발급한 중간 인증서.
+#  서명은 그대로 맞지만 "CA 로 쓸 수 없는 인증서"가 된다.
+basicConstraints       = critical,CA:FALSE
+keyUsage               = critical,digitalSignature
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always

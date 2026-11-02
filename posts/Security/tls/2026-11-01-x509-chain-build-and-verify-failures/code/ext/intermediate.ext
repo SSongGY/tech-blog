@@ -1,0 +1,6 @@
+#  pathlen:0 — 이 CA 아래로 CA 를 하나 더 두지 못한다.
+#  루트가 중간 CA 에게 "너까지"라고 적어 주는 자리다.
+basicConstraints       = critical,CA:TRUE,pathlen:0
+keyUsage               = critical,keyCertSign,cRLSign
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always

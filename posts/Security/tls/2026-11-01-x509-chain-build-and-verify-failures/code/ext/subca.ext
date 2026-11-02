@@ -1,0 +1,6 @@
+#  중간 CA 아래에 또 하나의 CA 를 두려는 인증서.
+#  중간 CA 의 pathlen:0 을 넘기므로 검증에서 걸린다.
+basicConstraints       = critical,CA:TRUE
+keyUsage               = critical,keyCertSign,cRLSign
+subjectKeyIdentifier   = hash
+authorityKeyIdentifier = keyid:always
