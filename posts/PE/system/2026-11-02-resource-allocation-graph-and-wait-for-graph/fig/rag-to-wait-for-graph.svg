@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="arrowReq" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+    <marker id="arrowAssign" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowWait" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arrowPlain" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- 패널 제목 -->
+  <text x="235" y="30" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">자원 할당 그래프 (단일 인스턴스)</text>
+  <text x="690" y="30" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">대기 그래프</text>
+
+  <!-- 변환 화살표 -->
+  <line x1="440" y1="200" x2="520" y2="200" stroke="#334155" stroke-width="2.5" marker-end="url(#arrowPlain)"/>
+  <text x="480" y="188" font-size="13" fill="#334155" text-anchor="middle">자원 노드 제거</text>
+  <text x="480" y="222" font-size="13" fill="#334155" text-anchor="middle">두 간선을 한 줄로</text>
+
+  <!-- ── 왼쪽: 자원 할당 그래프 ── -->
+  <!-- 간선 먼저 그려 노드 아래로 -->
+  <line x1="269" y1="85" x2="318" y2="113" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrowReq)"/>
+  <line x1="352" y1="154" x2="352" y2="246" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#arrowAssign)"/>
+  <line x1="318" y1="288" x2="269" y2="316" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrowReq)"/>
+  <line x1="201" y1="316" x2="152" y2="288" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#arrowAssign)"/>
+  <line x1="118" y1="246" x2="118" y2="154" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrowReq)"/>
+  <line x1="152" y1="113" x2="201" y2="85" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#arrowAssign)"/>
+
+  <!-- 프로세스 노드 -->
+  <rect x="203" y="48" width="64" height="34" rx="17" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="235" y="70" font-size="15" fill="#1f2937" text-anchor="middle">P1</text>
+
+  <rect x="320" y="251" width="64" height="34" rx="17" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="352" y="273" font-size="15" fill="#1f2937" text-anchor="middle">P2</text>
+
+  <rect x="86" y="251" width="64" height="34" rx="17" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="118" y="273" font-size="15" fill="#1f2937" text-anchor="middle">P3</text>
+
+  <!-- 자원 노드 (인스턴스 1개를 점으로) -->
+  <rect x="320" y="115" width="64" height="34" fill="#eef2f7" stroke="#334155" stroke-width="2"/>
+  <circle cx="352" cy="126" r="3.5" fill="#334155"/>
+  <text x="352" y="144" font-size="15" fill="#1f2937" text-anchor="middle">R1</text>
+
+  <rect x="203" y="318" width="64" height="34" fill="#eef2f7" stroke="#334155" stroke-width="2"/>
+  <circle cx="235" cy="329" r="3.5" fill="#334155"/>
+  <text x="235" y="347" font-size="15" fill="#1f2937" text-anchor="middle">R2</text>
+
+  <rect x="86" y="115" width="64" height="34" fill="#eef2f7" stroke="#334155" stroke-width="2"/>
+  <circle cx="118" cy="126" r="3.5" fill="#334155"/>
+  <text x="118" y="144" font-size="15" fill="#1f2937" text-anchor="middle">R3</text>
+
+  <!-- ── 오른쪽: 대기 그래프 ── -->
+  <line x1="701" y1="116" x2="761" y2="229" stroke="#9d0208" stroke-width="2.4" marker-end="url(#arrowWait)"/>
+  <line x1="735" y1="250" x2="645" y2="250" stroke="#9d0208" stroke-width="2.4" marker-end="url(#arrowWait)"/>
+  <line x1="619" y1="229" x2="679" y2="116" stroke="#9d0208" stroke-width="2.4" marker-end="url(#arrowWait)"/>
+
+  <rect x="658" y="78" width="64" height="34" rx="17" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="690" y="100" font-size="15" fill="#1f2937" text-anchor="middle">P1</text>
+
+  <rect x="740" y="233" width="64" height="34" rx="17" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="772" y="255" font-size="15" fill="#1f2937" text-anchor="middle">P2</text>
+
+  <rect x="576" y="233" width="64" height="34" rx="17" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="608" y="255" font-size="15" fill="#1f2937" text-anchor="middle">P3</text>
+
+  <text x="690" y="305" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">사이클 P1→P2→P3→P1</text>
+  <text x="690" y="326" font-size="13" fill="#9d0208" text-anchor="middle">단일 인스턴스이므로 곧 교착</text>
+
+  <!-- 범례 -->
+  <line x1="470" y1="366" x2="508" y2="366" stroke="#b45309" stroke-width="2.2" marker-end="url(#arrowReq)"/>
+  <text x="516" y="371" font-size="13" fill="#1f2937">요청 간선 Pi→Rj</text>
+  <line x1="640" y1="366" x2="678" y2="366" stroke="#2d6a4f" stroke-width="2.2" marker-end="url(#arrowAssign)"/>
+  <text x="686" y="371" font-size="13" fill="#1f2937">할당 간선 Rj→Pi</text>
+  <line x1="60" y1="366" x2="98" y2="366" stroke="#9d0208" stroke-width="2.4" marker-end="url(#arrowWait)"/>
+  <text x="106" y="371" font-size="13" fill="#1f2937">대기 간선 Pi→Pj (Pi 가 Pj 를 기다린다)</text>
+
+  <text x="440" y="400" font-size="13" fill="#4b5563" text-anchor="middle">자원이 모두 단일 인스턴스일 때만 이 변환이 성립한다</text>
+</svg>

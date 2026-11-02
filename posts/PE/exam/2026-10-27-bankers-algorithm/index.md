@@ -111,7 +111,7 @@ verified: true
   요청을 제약하고, **회피는 요청을 그때그때 심사하며**, 탐지와 복구는 일어난 뒤에 희생자를
   고른다. 회피는 **선언 비용을 치르고 예방보다 나은 이용률을 얻는** 중간 선택지다
 
-> 개념 정리: [교착상태 4조건과 해결 기법](../../system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md)
+> 개념 정리: [교착상태 4조건과 해결 기법](../../system/2026-10-12-deadlock-conditions-bankers-algorithm/index.md) · [자원 할당 그래프와 대기 그래프 — 교착 탐지](../../system/2026-11-02-resource-allocation-graph-and-wait-for-graph/index.md)
 
 끝
 
