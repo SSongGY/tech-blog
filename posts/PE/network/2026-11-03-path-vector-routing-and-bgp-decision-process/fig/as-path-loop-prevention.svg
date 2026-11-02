@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="450" viewBox="0 0 880 450" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#fbfbf8"/>
+
+  <text x="30" y="34" font-size="17" font-weight="bold" fill="#1b1b1b">AS_PATH가 쌓이면서 루프가 차단되는 과정</text>
+  <text x="30" y="58" font-size="13" fill="#555">각 AS는 경로를 전달할 때 자기 AS 번호를 AS_PATH 앞에 붙인다.</text>
+
+  <!-- AS 타원 4개 -->
+  <ellipse cx="108" cy="190" rx="62" ry="44" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.6"/>
+  <text x="108" y="186" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">AS 64496</text>
+  <text x="108" y="208" font-size="13" fill="#555" text-anchor="middle">출발</text>
+
+  <ellipse cx="300" cy="190" rx="62" ry="44" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.6"/>
+  <text x="300" y="195" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">AS 64497</text>
+
+  <ellipse cx="492" cy="190" rx="62" ry="44" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.6"/>
+  <text x="492" y="195" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">AS 64498</text>
+
+  <ellipse cx="684" cy="190" rx="62" ry="44" fill="#ffffff" stroke="#3b3b3b" stroke-width="1.6"/>
+  <text x="684" y="195" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">AS 64499</text>
+
+  <!-- 전달 화살표 -->
+  <line x1="172" y1="190" x2="234" y2="190" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arg)"/>
+  <line x1="364" y1="190" x2="426" y2="190" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arg)"/>
+  <line x1="556" y1="190" x2="618" y2="190" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arg)"/>
+
+  <text x="203" y="106" font-size="13" fill="#2d6a4f" text-anchor="middle">AS_PATH</text>
+  <text x="203" y="126" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">64496</text>
+
+  <text x="395" y="106" font-size="13" fill="#2d6a4f" text-anchor="middle">AS_PATH</text>
+  <text x="395" y="126" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">64497 64496</text>
+
+  <text x="587" y="106" font-size="13" fill="#2d6a4f" text-anchor="middle">AS_PATH</text>
+  <text x="587" y="126" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">64498 64497 64496</text>
+
+  <!-- 되돌아오는 경로 -->
+  <path d="M 684 234 L 684 300 L 170 300 L 142 258" fill="none" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="430" y="322" font-size="13" fill="#9d0208" text-anchor="middle">되돌아온 경로의 AS_PATH: 64499 64498 64497 64496</text>
+
+  <text x="128" y="268" font-size="22" font-weight="bold" fill="#9d0208" text-anchor="middle">✕</text>
+
+  <!-- 판정 박스 -->
+  <rect x="30" y="340" width="820" height="88" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="50" y="366" font-size="13" font-weight="bold" fill="#9d0208">AS 64496이 보는 것 — 받은 AS_PATH 안에 자기 AS 번호 64496이 이미 들어 있다.</text>
+  <text x="50" y="390" font-size="13" fill="#333">루프 검사는 로컬 시스템의 AS 번호가 AS 경로에 나타나지 않는지 확인하는 것이다.</text>
+  <text x="50" y="414" font-size="13" fill="#333">나타나면 그 경로는 2단계 후보에서 제외되어야 한다(SHOULD).</text>
+
+  <defs>
+    <marker id="arg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+</svg>

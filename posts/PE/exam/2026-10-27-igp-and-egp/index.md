@@ -119,6 +119,7 @@ IGP와 iBGP가 **서로 다른 종류의 경로를 맡아** 함께 돈다. 경�
   범위가 다르므로 감시도 따로 건다
 
 > 개념 정리: [라우팅 프로토콜 — 거리벡터와 링크상태](../../network/2026-09-28-routing-distance-vector-vs-link-state/index.md)
+> · [경로벡터 라우팅과 BGP 경로 선택 — 메트릭이 아니라 정책으로 고른다](../../network/2026-11-03-path-vector-routing-and-bgp-decision-process/index.md)
 
 끝
 
