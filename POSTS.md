@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **555편** · 갱신 2026-11-02
+총 **557편** · 갱신 2026-11-02
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -116,12 +116,14 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 194편
+## 기술사 (pe) — 196편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-02 | [STIX와 TAXII — 위협정보 공유 표준](posts/PE/security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md) | 중급 | STIX Version 2.1 OASIS Standard (2021-06-10), TAXII Version 2.1 OASIS Standard (2021-06-10), NIST SP 800-150 (2016-10) | 문서 근거 |
+| 2026-11-02 | [자원 할당 그래프와 대기 그래프 — 교착 탐지](posts/PE/system/2026-11-02-resource-allocation-graph-and-wait-for-graph/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-02 | [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](posts/PE/security/2026-11-02-prompt-injection-defense-design/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
+| 2026-11-02 | [기계 학습 제거(Machine Unlearning) — 정확 제거와 근사 제거](posts/PE/security/2026-11-02-machine-unlearning-exact-and-approximate/index.md) | 중급 | Cao & Yang, IEEE S&P 2015, Ginart et al. arXiv:1907.05012v2 (2019-11-04), Bourtoule et al. arXiv:1912.03817v3 (2020-12-15), Guo et al. arXiv:1911.03030v6 (2023-11-08), NIST AI 100-2 E2025 (2025-03) | 문서 근거 |
 | 2026-11-02 | [무결성 제약의 네 종류 — 개체·참조·도메인·사용자 정의](posts/PE/database/2026-11-02-integrity-constraints-four-kinds/index.md) | 중급 | PostgreSQL 18.6, MySQL 8.4, SQL Server 2008 | 문서 근거 |
 | 2026-11-02 | [사이버 킬체인과 침해지표(IoC) — 고통의 피라미드](posts/PE/security/2026-11-02-cyber-kill-chain-and-indicators-pyramid-of-pain/index.md) | 중급 | Lockheed Martin 침입 킬체인 백서 (2011), NIST SP 800-150 (2016-10), Pyramid of Pain (2013-03, 2014-01-17 개정) | 문서 근거 |
 | 2026-10-31 | [위험 관리 — 식별·분석·대응 절차](posts/PE/it-management/2026-10-31-risk-management-identify-analyze-respond/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
