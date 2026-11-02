@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="dn" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">배당가능이익 — 순자산액에서 네 가지를 빼고 남는 금액</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#495057">상법 제462조 제1항</text>
+
+  <!-- 출발 막대 -->
+  <rect x="46" y="80" width="190" height="300" rx="7" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="141" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">순자산액</text>
+  <text x="141" y="126" text-anchor="middle" font-size="13" fill="#495057">대차대조표상 자본총계</text>
+  <text x="141" y="150" text-anchor="middle" font-size="13" fill="#495057">자기주식은 이미</text>
+  <text x="141" y="168" text-anchor="middle" font-size="13" fill="#495057">여기서 빠져 있다</text>
+
+  <!-- 공제 항목 -->
+  <rect x="300" y="78" width="276" height="48" rx="6" fill="#fff1f0" stroke="#9d0208"/>
+  <text x="318" y="98" font-size="14" font-weight="bold" fill="#1b1b1b">제1호 — 자본금의 액</text>
+  <text x="318" y="117" font-size="13" fill="#495057">주주가 넣은 밑천. 함부로 못 빼간다</text>
+
+  <rect x="300" y="138" width="276" height="48" rx="6" fill="#fff1f0" stroke="#9d0208"/>
+  <text x="318" y="158" font-size="14" font-weight="bold" fill="#1b1b1b">제2호 — 적립된 자본·이익준비금</text>
+  <text x="318" y="177" font-size="13" fill="#495057">이미 쌓아 둔 법정준비금 전부</text>
+
+  <rect x="300" y="198" width="276" height="48" rx="6" fill="#ffe8cc" stroke="#b45309"/>
+  <text x="318" y="218" font-size="14" font-weight="bold" fill="#1b1b1b">제3호 — 이번에 적립할 이익준비금</text>
+  <text x="318" y="237" font-size="13" fill="#495057">배당액이 정해져야 금액이 나온다</text>
+
+  <rect x="300" y="258" width="276" height="48" rx="6" fill="#fff1f0" stroke="#9d0208"/>
+  <text x="318" y="278" font-size="14" font-weight="bold" fill="#1b1b1b">제4호 — 대통령령이 정하는 미실현이익</text>
+  <text x="318" y="297" font-size="13" fill="#495057">아직 돈이 되지 않은 평가이익</text>
+
+  <path d="M236 102 L292 102" stroke="#9d0208" stroke-width="2" marker-end="url(#dn)"/>
+  <path d="M236 162 L292 162" stroke="#9d0208" stroke-width="2" marker-end="url(#dn)"/>
+  <path d="M236 222 L292 222" stroke="#b45309" stroke-width="2" marker-end="url(#dn)"/>
+  <path d="M236 282 L292 282" stroke="#9d0208" stroke-width="2" marker-end="url(#dn)"/>
+
+  <!-- 결과 -->
+  <path d="M576 192 L640 192" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ok)"/>
+  <rect x="650" y="140" width="194" height="104" rx="7" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="747" y="170" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">배당가능이익</text>
+  <text x="747" y="192" text-anchor="middle" font-size="13" fill="#495057">이익배당의 한도</text>
+  <text x="747" y="212" text-anchor="middle" font-size="13" fill="#495057">자기주식 취득가액 총액도</text>
+  <text x="747" y="230" text-anchor="middle" font-size="13" fill="#495057">같은 한도를 나눠 쓴다</text>
+
+  <rect x="46" y="400" width="798" height="84" rx="8" fill="#fff8e6" stroke="#b45309"/>
+  <text x="68" y="426" font-size="14" font-weight="bold" fill="#b45309">제3호가 한도를 두 번 건드린다</text>
+  <text x="68" y="448" font-size="13" fill="#1b1b1b">배당액이 커지면 그에 딸린 적립액도 커지고, 그 적립액이 다시 한도에서 빠진다.</text>
+  <text x="68" y="468" font-size="13" fill="#1b1b1b">그래서 배당액과 적립액의 합이 나머지 셋을 뺀 금액을 넘지 못하는 선에서 최대 배당액이 정해진다.</text>
+</svg>
