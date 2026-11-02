@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="420" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">공공 소프트웨어사업 발주 절차와 과업 기준선이 옮겨 가는 자리</text>
+  <text x="20" y="48" font-size="13" fill="#495057">여섯 단계 가운데 두 곳에서 과업의 기준선이 바뀐다. 분쟁은 대부분 지금 기준선이 어느 문서인지가 어긋나서 생긴다.</text>
+
+  <!-- ① -->
+  <rect x="30" y="96" width="240" height="92" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="42" y="120" font-size="14" font-weight="bold" fill="#212529">① 기획·예산 편성</text>
+  <text x="42" y="142" font-size="13" fill="#212529">과업의 내용과 범위를</text>
+  <text x="42" y="160" font-size="13" fill="#212529">명확하게 한다</text>
+  <text x="42" y="180" font-size="13" fill="#868e96">법 제44조제1항</text>
+
+  <!-- ② -->
+  <rect x="320" y="96" width="240" height="92" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="332" y="120" font-size="14" font-weight="bold" fill="#212529">② 과업내용 확정 심의</text>
+  <text x="332" y="142" font-size="13" fill="#212529">발주 전에 사업계획서 또는</text>
+  <text x="332" y="160" font-size="13" fill="#212529">제안요청서를 심의한다</text>
+  <text x="332" y="180" font-size="13" fill="#868e96">법 제50조제1항제1호</text>
+
+  <!-- ③ 기준선 1 -->
+  <rect x="610" y="96" width="240" height="92" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="778" y="104" width="64" height="20" rx="4" fill="#2d6a4f"/>
+  <text x="810" y="118" font-size="13" fill="#ffffff" text-anchor="middle">기준선</text>
+  <text x="622" y="120" font-size="14" font-weight="bold" fill="#2d6a4f">③ 제안요청서 공고</text>
+  <text x="622" y="142" font-size="13" fill="#212529">요구사항을 상세하게</text>
+  <text x="622" y="160" font-size="13" fill="#212529">작성·공개한다</text>
+  <text x="622" y="180" font-size="13" fill="#868e96">법 제44조제2항</text>
+
+  <!-- ④ -->
+  <rect x="30" y="250" width="240" height="92" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="42" y="274" font-size="14" font-weight="bold" fill="#212529">④ 제안 평가와 협상</text>
+  <text x="42" y="296" font-size="13" fill="#212529">기술능력 평가점수가</text>
+  <text x="42" y="314" font-size="13" fill="#212529">100분의 85 이상이면 적격</text>
+  <text x="42" y="334" font-size="13" fill="#868e96">협상에 의한 계약체결기준 제8조</text>
+
+  <!-- ⑤ 기준선 2 -->
+  <rect x="320" y="250" width="240" height="92" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="488" y="258" width="64" height="20" rx="4" fill="#2d6a4f"/>
+  <text x="520" y="272" font-size="13" fill="#ffffff" text-anchor="middle">기준선</text>
+  <text x="332" y="274" font-size="14" font-weight="bold" fill="#2d6a4f">⑤ 계약 체결</text>
+  <text x="332" y="296" font-size="13" fill="#212529">사업수행계획서·과업내용서로</text>
+  <text x="332" y="314" font-size="13" fill="#212529">과업내용이 구체화된다</text>
+  <text x="332" y="334" font-size="13" fill="#868e96">지침 제25조제5항</text>
+
+  <!-- ⑥ -->
+  <rect x="610" y="250" width="240" height="92" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="622" y="274" font-size="14" font-weight="bold" fill="#b45309">⑥ 과업변경 심의</text>
+  <text x="622" y="296" font-size="13" fill="#212529">변경 확정과 계약금액·</text>
+  <text x="622" y="314" font-size="13" fill="#212529">계약기간 조정</text>
+  <text x="622" y="334" font-size="13" fill="#868e96">법 제50조제1항제2호</text>
+
+  <line x1="270" y1="142" x2="316" y2="142" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="560" y1="142" x2="606" y2="142" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="270" y1="296" x2="316" y2="296" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="560" y1="296" x2="606" y2="296" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M850,142 L866,142 L866,215 L14,215 L14,296 L24,296"
+        fill="none" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="358" width="820" height="50" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="44" y="380" font-size="13" fill="#212529">③ 에서 확정된 과업이 ⑤ 에서 더 구체적인 문서로 옮겨 간다. 계약 체결 뒤에는 ⑤ 의 문서가 과업의 기준이다.</text>
+  <text x="44" y="398" font-size="13" fill="#212529">⑥ 의 변경 심의는 그 기준선과 무엇이 달라졌는지를 따지는 절차이므로, 기준선이 흐리면 변경 여부부터 다툼이 된다.</text>
+</svg>
