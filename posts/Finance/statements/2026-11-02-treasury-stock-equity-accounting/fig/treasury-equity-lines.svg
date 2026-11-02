@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">거래마다 자본의 어느 줄에 닿는가 — 일반기업회계기준 제15장</text>
+
+  <text x="140" y="64" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">거래</text>
+  <text x="620" y="64" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">자본의 줄</text>
+
+  <!-- 거래 박스 -->
+  <rect x="34" y="80" width="212" height="52" rx="7" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="140" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">취득</text>
+  <text x="140" y="121" text-anchor="middle" font-size="13" fill="#495057">취득원가로 (15.8)</text>
+
+  <rect x="34" y="150" width="212" height="52" rx="7" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="140" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">처분 — 장부가보다 비싸게</text>
+  <text x="140" y="191" text-anchor="middle" font-size="13" fill="#495057">차액이 이익 (15.9)</text>
+
+  <rect x="34" y="220" width="212" height="52" rx="7" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="140" y="242" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">처분 — 장부가보다 싸게</text>
+  <text x="140" y="261" text-anchor="middle" font-size="13" fill="#495057">차액이 손실 (15.9)</text>
+
+  <rect x="34" y="290" width="212" height="52" rx="7" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="140" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">소각 — 이사회 결의</text>
+  <text x="140" y="331" text-anchor="middle" font-size="13" fill="#495057">취득원가만큼 (15.12)</text>
+
+  <!-- 자본 줄 박스 -->
+  <rect x="494" y="80" width="252" height="52" rx="7" fill="#ffe8cc" stroke="#b45309"/>
+  <text x="620" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자본조정 — 자기주식</text>
+  <text x="620" y="121" text-anchor="middle" font-size="13" fill="#495057">자본에서 빼는 음수 줄</text>
+
+  <rect x="494" y="150" width="252" height="52" rx="7" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="620" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자본잉여금 — 자기주식처분이익</text>
+  <text x="620" y="191" text-anchor="middle" font-size="13" fill="#495057">자본을 늘린다</text>
+
+  <rect x="494" y="220" width="252" height="52" rx="7" fill="#ffe8cc" stroke="#b45309"/>
+  <text x="620" y="242" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자본조정 — 자기주식처분손실</text>
+  <text x="620" y="261" text-anchor="middle" font-size="13" fill="#495057">위 이익과 상계한 나머지만</text>
+
+  <rect x="494" y="290" width="252" height="52" rx="7" fill="#fff1f0" stroke="#9d0208"/>
+  <text x="620" y="312" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">이익잉여금</text>
+  <text x="620" y="331" text-anchor="middle" font-size="13" fill="#495057">자본금은 그대로다</text>
+
+  <!-- 화살표 -->
+  <path d="M246 106 L486 106" stroke="#b45309" stroke-width="2" marker-end="url(#o)"/>
+  <path d="M246 176 L486 176" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <path d="M246 246 L420 246" stroke="#9d0208" stroke-width="2"/>
+  <path d="M420 246 L420 200" stroke="#9d0208" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#r)"/>
+  <path d="M420 252 L486 252" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+  <text x="408" y="222" text-anchor="end" font-size="13" font-weight="bold" fill="#9d0208">먼저 상계</text>
+  <text x="454" y="272" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">나머지</text>
+  <path d="M246 316 L486 316" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+
+  <rect x="34" y="366" width="712" height="80" rx="8" fill="#f8f9fa" stroke="#495057"/>
+  <text x="56" y="392" font-size="13" fill="#1b1b1b">기업회계기준서 제1032호는 자기주식을 자본에서 차감하고 손익으로 인식하지 말라는 데까지만 정한다.</text>
+  <text x="56" y="412" font-size="13" fill="#1b1b1b">자본 안의 어느 줄에 넣을지는 지정하지 않는다. 위 줄 이름은 일반기업회계기준 제15장이 정한 것이다.</text>
+  <text x="56" y="432" font-size="13" fill="#495057">상장회사가 쓰는 K-IFRS 재무제표에서는 회사마다 줄 이름이 다를 수 있다.</text>
+</svg>

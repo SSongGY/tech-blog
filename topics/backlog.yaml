@@ -6432,7 +6432,7 @@ topics:
     angle: "자기주식 취득·처분·소각을 가상 회사의 자본 항목 변화로 따라가며, 손익계산서를 전혀 거치지 않는데도 EPS와 ROE가 바뀌는 경로를 계산으로 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: pe-222
     title: "소프트웨어 유지보수 유형과 유지보수 프로세스"
     category: PE
@@ -6499,3 +6499,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: fin-112
+    title: "배당가능이익 — 이익잉여금이 쌓여 있어도 배당하지 못하는 경우"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, dividend, retained-earnings]
+    difficulty: 중급
+    angle: "상법이 정한 배당가능이익 산식을 항목별로 뜯어, 이익잉여금 잔액과 배당할 수 있는 금액이 왜 다른지를 가상 회사 두 곳으로 계산한다. 이익준비금 적립과 자기주식 보유액이 한도를 깎는 경로까지 본다"
+    code: python
+    origin: manual
+    status: done

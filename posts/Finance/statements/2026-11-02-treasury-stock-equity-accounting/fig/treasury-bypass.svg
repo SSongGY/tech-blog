@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ar-no" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">자기주식 거래의 현금은 손익계산서를 거치지 않고 자본으로 간다</text>
+
+  <!-- 출발 -->
+  <rect x="34" y="162" width="176" height="76" rx="8" fill="#e7f5ff" stroke="#1864ab"/>
+  <text x="122" y="192" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">자기주식 거래</text>
+  <text x="122" y="213" text-anchor="middle" font-size="13" fill="#495057">취득 · 처분 · 소각</text>
+  <text x="122" y="231" text-anchor="middle" font-size="13" fill="#495057">현금이 오간다</text>
+
+  <!-- 막힌 경로 -->
+  <path d="M210 186 L330 126" stroke="#9d0208" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ar-no)"/>
+  <rect x="340" y="86" width="214" height="76" rx="8" fill="#fff1f0" stroke="#9d0208"/>
+  <text x="447" y="114" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">손익계산서</text>
+  <text x="447" y="134" text-anchor="middle" font-size="13" fill="#495057">수익도 비용도 아니다</text>
+  <text x="447" y="152" text-anchor="middle" font-size="13" fill="#495057">당기순이익이 움직이지 않는다</text>
+  <line x1="378" y1="150" x2="516" y2="98" stroke="#9d0208" stroke-width="2.5"/>
+  <text x="268" y="134" text-anchor="middle" font-size="13" font-weight="bold" fill="#9d0208">막힌다</text>
+
+  <!-- 열린 경로 -->
+  <path d="M210 216 L330 276" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="340" y="240" width="214" height="76" rx="8" fill="#d8f3dc" stroke="#2d6a4f"/>
+  <text x="447" y="268" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">자본 (재무상태표)</text>
+  <text x="447" y="288" text-anchor="middle" font-size="13" fill="#495057">지급·수취한 대가를</text>
+  <text x="447" y="306" text-anchor="middle" font-size="13" fill="#495057">자본으로 직접 인식</text>
+  <text x="268" y="276" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">열린다</text>
+
+  <!-- 결과 -->
+  <path d="M554 278 L646 278" stroke="#495057" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="656" y="196" width="196" height="54" rx="8" fill="#f8f9fa" stroke="#495057"/>
+  <text x="754" y="219" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">자본총계가 바뀐다</text>
+  <text x="754" y="239" text-anchor="middle" font-size="13" fill="#495057">ROE·BPS 의 분모</text>
+
+  <rect x="656" y="262" width="196" height="54" rx="8" fill="#f8f9fa" stroke="#495057"/>
+  <text x="754" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">유통주식수가 바뀐다</text>
+  <text x="754" y="305" text-anchor="middle" font-size="13" fill="#495057">EPS 의 분모</text>
+  <path d="M554 290 L646 290" stroke="#495057" stroke-width="2" marker-end="url(#ar)"/>
+
+  <rect x="34" y="346" width="818" height="48" rx="8" fill="#fff8e6" stroke="#b45309"/>
+  <text x="443" y="368" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">그래서 손익계산서의 어느 줄도 바뀌지 않았는데 EPS 와 ROE 는 움직인다</text>
+  <text x="443" y="387" text-anchor="middle" font-size="13" fill="#495057">분자(당기순이익)는 그대로이고 분모만 움직였기 때문이다</text>
+</svg>
