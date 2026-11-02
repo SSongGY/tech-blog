@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+
+  <defs>
+    <marker id="aGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="aAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="26" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">삭제 요청 하나를 세 가지 방법으로 처리했을 때 나오는 모델의 분포</text>
+
+  <!-- 열 제목 -->
+  <text x="160" y="58" font-size="15" font-weight="bold" fill="#334155" text-anchor="middle">재학습 기준선</text>
+  <text x="440" y="58" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">정확 제거</text>
+  <text x="720" y="58" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">근사 제거</text>
+
+  <!-- 1열 -->
+  <rect x="45" y="72" width="230" height="48" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="160" y="92" font-size="14" fill="#1f2937" text-anchor="middle">학습 집합에서 해당 데이터를</text>
+  <text x="160" y="110" font-size="14" fill="#1f2937" text-anchor="middle">지운다</text>
+  <line x1="160" y1="120" x2="160" y2="142" stroke="#334155" stroke-width="2" marker-end="url(#aGray)"/>
+  <rect x="45" y="146" width="230" height="48" rx="6" fill="#ffffff" stroke="#334155" stroke-width="2"/>
+  <text x="160" y="166" font-size="14" fill="#1f2937" text-anchor="middle">남은 전체로 처음부터</text>
+  <text x="160" y="184" font-size="14" fill="#1f2937" text-anchor="middle">다시 학습한다</text>
+  <line x1="160" y1="194" x2="160" y2="216" stroke="#334155" stroke-width="2" marker-end="url(#aGray)"/>
+  <rect x="45" y="220" width="230" height="44" rx="6" fill="#eef2f7" stroke="#334155" stroke-width="2"/>
+  <text x="160" y="248" font-size="15" font-weight="bold" fill="#1f2937" text-anchor="middle">분포 A — 비교의 기준</text>
+
+  <!-- 2열 -->
+  <rect x="325" y="72" width="230" height="48" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="92" font-size="14" fill="#1f2937" text-anchor="middle">데이터를 겹치지 않는 샤드로</text>
+  <text x="440" y="110" font-size="14" fill="#1f2937" text-anchor="middle">나눠 따로 학습해 둔다</text>
+  <line x1="440" y1="120" x2="440" y2="142" stroke="#2d6a4f" stroke-width="2" marker-end="url(#aGreen)"/>
+  <rect x="325" y="146" width="230" height="48" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="166" font-size="14" fill="#1f2937" text-anchor="middle">그 데이터가 든 샤드만</text>
+  <text x="440" y="184" font-size="14" fill="#1f2937" text-anchor="middle">재학습하고 다시 집계한다</text>
+  <line x1="440" y1="194" x2="440" y2="216" stroke="#2d6a4f" stroke-width="2" marker-end="url(#aGreen)"/>
+  <rect x="325" y="220" width="230" height="44" rx="6" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="248" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">분포가 A와 같다</text>
+
+  <!-- 3열 -->
+  <rect x="605" y="72" width="230" height="48" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="720" y="92" font-size="14" fill="#1f2937" text-anchor="middle">이미 학습된 모델을</text>
+  <text x="720" y="110" font-size="14" fill="#1f2937" text-anchor="middle">그대로 둔다</text>
+  <line x1="720" y1="120" x2="720" y2="142" stroke="#b45309" stroke-width="2" marker-end="url(#aAmber)"/>
+  <rect x="605" y="146" width="230" height="48" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="720" y="166" font-size="14" fill="#1f2937" text-anchor="middle">그 데이터의 영향만큼</text>
+  <text x="720" y="184" font-size="14" fill="#1f2937" text-anchor="middle">파라미터를 보정한다</text>
+  <line x1="720" y1="194" x2="720" y2="216" stroke="#b45309" stroke-width="2" marker-end="url(#aAmber)"/>
+  <rect x="605" y="220" width="230" height="44" rx="6" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="720" y="248" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">분포가 A에 가깝다</text>
+
+  <!-- 조건 줄 -->
+  <text x="160" y="294" font-size="13" fill="#4b5563" text-anchor="middle">비용: 전체 학습 1회</text>
+  <text x="160" y="314" font-size="13" fill="#4b5563" text-anchor="middle">보장: 정의 그 자체</text>
+
+  <text x="440" y="294" font-size="13" fill="#2d6a4f" text-anchor="middle">비용: 샤드 1개 학습 + 집계</text>
+  <text x="440" y="314" font-size="13" fill="#2d6a4f" text-anchor="middle">보장: 분포가 똑같다</text>
+
+  <text x="720" y="294" font-size="13" fill="#b45309" text-anchor="middle">비용: 파라미터 보정 1회</text>
+  <text x="720" y="314" font-size="13" fill="#b45309" text-anchor="middle">보장: 분포 비율이 e^ε 안</text>
+
+  <line x1="45" y1="336" x2="835" y2="336" stroke="#d4d4d8" stroke-width="1.5"/>
+  <text x="440" y="362" font-size="14" fill="#334155" text-anchor="middle">오른쪽으로 갈수록 계산은 싸지고 보장은 약해진다 — 맞바꾸는 축은 하나다</text>
+  <text x="440" y="384" font-size="13" fill="#4b5563" text-anchor="middle">세 경우 모두 학습 집합에서 데이터를 지우는 일은 이미 끝났다고 본다</text>
+</svg>

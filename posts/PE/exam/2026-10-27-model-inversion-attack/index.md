@@ -131,7 +131,7 @@ Fredrikson·Jha·Ristenpart가 2015년에 발표한 논문이 예측과 함께 �
   파라미터를 보호해도, **배포된 모델에 질의하는 공격자는 여전히 정보를 빼낼 수 있다.**
   모델 전도는 배포 시점의 공격이므로 학습 단계 대책으로 막히지 않는다
 
-> 개념 정리: [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](../../security/2026-10-13-adversarial-ml-attack-taxonomy/index.md) · [멤버십 추론 공격과 학습 데이터 암기](../../security/2026-10-13-membership-inference-memorization/index.md) · [차분 프라이버시 — 프라이버시 손실 매개변수 ε과 누적 손실](../../security/2026-10-03-differential-privacy-epsilon-composition/index.md)
+> 개념 정리: [적대적 머신러닝 공격 분류 — 회피·오염·프라이버시·오용 허용](../../security/2026-10-13-adversarial-ml-attack-taxonomy/index.md) · [멤버십 추론 공격과 학습 데이터 암기](../../security/2026-10-13-membership-inference-memorization/index.md) · [차분 프라이버시 — 프라이버시 손실 매개변수 ε과 누적 손실](../../security/2026-10-03-differential-privacy-epsilon-composition/index.md) · [기계 학습 제거 — 정확 제거와 근사 제거](../../security/2026-11-02-machine-unlearning-exact-and-approximate/index.md)
 
 끝
 
