@@ -3095,7 +3095,7 @@ topics:
     angle: "제안요청서에 무엇을 적어야 나중에 분쟁이 없는지"
     code: none
     origin: manual
-    status: writing
+    status: done
   - id: pe-113
     title: "Physical AI — 인지·추론·행동 순환과 시뮬레이션 기반 학습"
     category: PE
@@ -5477,7 +5477,7 @@ topics:
     difficulty: 중급
     angle: "openssl 로 루트 CA·중간 CA·서버 인증서를 만들어 verify 를 통과시킨 뒤, 중간 인증서를 빼거나 기간을 넘기거나 CN 을 틀리게 해 각각 어떤 오류 문구가 나오는지 수집한다."
     code: shell
-    status: writing
+    status: done
   - id: gen-005
     title: "대칭키와 공개키의 속도 차이는 몇 배인가 — openssl speed 로 재기"
     category: Security
@@ -6146,7 +6146,7 @@ topics:
     angle: "같은 트랜잭션을 세 모드로 열고 다른 연결에서 쓰기를 시도해, SQLITE_BUSY 가 어느 시점에 나는지 대조한다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-086
     title: "INDEXED BY와 NOT INDEXED — 옵티마이저에 손을 대는 두 구문"
     category: Database

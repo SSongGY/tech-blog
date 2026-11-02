@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">BEGIN 세 모드는 다섯 잠금 상태 중 어디에서 출발하는가</text>
+  <text x="20" y="48" font-size="13" fill="#495057">SQLite 는 파일 하나에 다섯 가지 잠금 상태를 둔다. BEGIN 모드가 정하는 것은 어느 자리에서 시작하느냐다.</text>
+
+  <!-- BEGIN 모드가 들어가는 자리 -->
+  <rect x="20" y="66" width="136" height="26" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="88" y="84" font-size="13" fill="#2d6a4f" text-anchor="middle">BEGIN DEFERRED</text>
+  <line x1="88" y1="92" x2="88" y2="112" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="376" y="66" width="136" height="26" rx="4" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="444" y="84" font-size="13" fill="#b45309" text-anchor="middle">BEGIN IMMEDIATE</text>
+  <line x1="444" y1="92" x2="444" y2="112" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="732" y="66" width="136" height="26" rx="4" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="800" y="84" font-size="13" fill="#9d0208" text-anchor="middle">BEGIN EXCLUSIVE</text>
+  <line x1="800" y1="92" x2="800" y2="112" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 잠금 상태 사다리 -->
+  <rect x="20" y="116" width="136" height="74" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="88" y="140" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">UNLOCKED</text>
+  <text x="88" y="162" font-size="13" fill="#212529" text-anchor="middle">잠금을 하나도</text>
+  <text x="88" y="180" font-size="13" fill="#212529" text-anchor="middle">쥐고 있지 않다</text>
+
+  <rect x="198" y="116" width="136" height="74" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="266" y="140" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">SHARED</text>
+  <text x="266" y="162" font-size="13" fill="#212529" text-anchor="middle">읽기만 가능</text>
+  <text x="266" y="180" font-size="13" fill="#212529" text-anchor="middle">여럿이 동시에</text>
+
+  <rect x="376" y="116" width="136" height="74" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="444" y="140" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">RESERVED</text>
+  <text x="444" y="162" font-size="13" fill="#212529" text-anchor="middle">쓰겠다는 예약</text>
+  <text x="444" y="180" font-size="13" fill="#212529" text-anchor="middle">한 번에 하나만</text>
+
+  <rect x="554" y="116" width="136" height="74" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="622" y="140" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">PENDING</text>
+  <text x="622" y="162" font-size="13" fill="#212529" text-anchor="middle">새 읽기를</text>
+  <text x="622" y="180" font-size="13" fill="#212529" text-anchor="middle">더 받지 않는다</text>
+
+  <rect x="732" y="116" width="136" height="74" rx="6" fill="#fee2e2" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="800" y="140" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">EXCLUSIVE</text>
+  <text x="800" y="162" font-size="13" fill="#212529" text-anchor="middle">다른 잠금과</text>
+  <text x="800" y="180" font-size="13" fill="#212529" text-anchor="middle">같이 있지 못한다</text>
+
+  <line x1="156" y1="153" x2="196" y2="153" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="334" y1="153" x2="374" y2="153" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="512" y1="153" x2="552" y2="153" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="690" y1="153" x2="730" y2="153" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 전이 조건 -->
+  <text x="20" y="214" font-size="13" font-weight="bold" fill="#495057">전이 조건</text>
+  <text x="177" y="214" font-size="13" fill="#495057" text-anchor="middle">첫 SELECT</text>
+  <text x="355" y="214" font-size="13" fill="#495057" text-anchor="middle">첫 쓰기 문장</text>
+  <text x="533" y="214" font-size="13" fill="#495057" text-anchor="middle">COMMIT 시작</text>
+  <text x="711" y="214" font-size="13" fill="#495057" text-anchor="middle">저널을 기록한 뒤</text>
+
+  <!-- 저널 모드에 따라 갈리는 부분 -->
+  <rect x="20" y="236" width="410" height="74" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.2"/>
+  <text x="36" y="258" font-size="13" font-weight="bold" fill="#212529">rollback journal 모드 (기본값 delete)</text>
+  <text x="36" y="280" font-size="13" fill="#212529">EXCLUSIVE 로 열면 다른 연결의 읽기까지 막힌다.</text>
+  <text x="36" y="298" font-size="13" fill="#212529">위 사다리의 맨 오른쪽 자리를 BEGIN 시점에 차지한다.</text>
+
+  <rect x="458" y="236" width="410" height="74" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.2"/>
+  <text x="474" y="258" font-size="13" font-weight="bold" fill="#212529">WAL 모드</text>
+  <text x="474" y="280" font-size="13" fill="#212529">EXCLUSIVE 와 IMMEDIATE 가 같게 동작한다.</text>
+  <text x="474" y="298" font-size="13" fill="#212529">읽기는 막히지 않고 쓰기만 하나로 줄어든다.</text>
+</svg>

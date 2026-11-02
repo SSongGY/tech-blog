@@ -1,0 +1,126 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-01-begin-deferred-immediate-exclusive-locking
+# 명령      : python locking_modes.py
+# 수행 시각 : 2026-11-01 07:06 (대한민국 표준시)
+# 소요      : 0.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  3행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  owner   | TEXT    | NOT NULL
+  balance | INTEGER | NOT NULL
+
+  id | owner  | balance
+  ---+--------+--------
+   1 | 김서준 |  120000
+   2 | 이하은 |   80000
+   3 | 박도윤 |   45000
+
+
+----------------------------------------------------------------
+1. DEFERRED — BEGIN 만으로는 아무것도 잡지 않는다
+----------------------------------------------------------------
+  A: BEGIN DEFERRED
+       -> OK
+  B: UPDATE account SET balance = balance - 1 WHERE id = 3
+       -> OK
+       (A 가 아직 아무 문장도 안 돌렸으므로 B 의 쓰기가 통과한다)
+  A: SELECT SUM(balance) FROM account
+       -> OK
+  B: UPDATE account SET balance = balance - 1 WHERE id = 3
+       -> OperationalError: database is locked
+  A: COMMIT
+       -> OK
+
+----------------------------------------------------------------
+2. DEFERRED — 읽다가 쓰기로 올라가는 순간 막힐 수 있다
+----------------------------------------------------------------
+  A: BEGIN DEFERRED
+       -> OK
+  A: SELECT balance FROM account WHERE id = 1
+       -> OK
+  B: BEGIN IMMEDIATE
+       -> OK
+  A: UPDATE account SET balance = balance + 1 WHERE id = 1
+       -> OperationalError: database is locked
+       (A 는 읽기로 시작해 쓰기 권한이 없고, 그 사이 B 가 가져갔다)
+  B: ROLLBACK
+       -> OK
+  A: ROLLBACK
+       -> OK
+
+----------------------------------------------------------------
+3. IMMEDIATE — BEGIN 하는 순간 쓰기 자리를 잡는다
+----------------------------------------------------------------
+  A: BEGIN IMMEDIATE
+       -> OK
+  B: SELECT COUNT(*) FROM account
+       -> OK
+  B: BEGIN IMMEDIATE
+       -> OperationalError: database is locked
+  B: UPDATE account SET balance = 0 WHERE id = 2
+       -> OperationalError: database is locked
+  A: COMMIT
+       -> OK
+
+----------------------------------------------------------------
+4. EXCLUSIVE — 읽기까지 막는다 (rollback journal 모드)
+----------------------------------------------------------------
+  A: BEGIN EXCLUSIVE
+       -> OK
+  B: SELECT COUNT(*) FROM account
+       -> OperationalError: database is locked
+  A: COMMIT
+       -> OK
+  B: SELECT COUNT(*) FROM account
+       -> OK
+
+----------------------------------------------------------------
+5. 같은 EXCLUSIVE 를 WAL 모드에서
+----------------------------------------------------------------
+  journal_mode -> wal
+  A: BEGIN EXCLUSIVE
+       -> OK
+  B: SELECT COUNT(*) FROM account
+       -> OK
+  B: UPDATE account SET balance = 0 WHERE id = 2
+       -> OperationalError: database is locked
+  A: COMMIT
+       -> OK
+  journal_mode -> delete
+
+----------------------------------------------------------------
+마지막 상태
+----------------------------------------------------------------
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[account]  3행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  owner   | TEXT    | NOT NULL
+  balance | INTEGER | NOT NULL
+
+  id | owner  | balance
+  ---+--------+--------
+   1 | 김서준 |  120000
+   2 | 이하은 |   80000
+   3 | 박도윤 |   44999
+
