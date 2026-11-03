@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="470" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">ADR 한 건의 구성 5항목(Nygard)과 상태 전이 4가지(AWS)</text>
+  <text x="20" y="48" font-size="13" fill="#495057">한 파일 = 한 결정. 번호는 되쓰지 않고, 승인된 뒤에는 고치지 않으며, 뒤집을 때는 새 ADR 이 옛 ADR 을 대체(superseded)한다</text>
+
+  <!-- 왼쪽: 구성 5항목 -->
+  <text x="20" y="80" font-size="14" font-weight="bold" fill="#495057">구성 — 5항목, 이 순서</text>
+
+  <rect x="20" y="92" width="360" height="42" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="110" font-size="13" font-weight="bold" fill="#212529">① 제목 (Title)</text>
+  <text x="36" y="127" font-size="13" fill="#495057">번호 + 결정을 한 줄로.  예: 0007-캐시는-레디스로</text>
+
+  <rect x="20" y="142" width="360" height="58" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="160" font-size="13" font-weight="bold" fill="#212529">② 배경 (Context)</text>
+  <text x="36" y="178" font-size="13" fill="#495057">결정을 강제하는 힘 — 기술·사업·조직·정치 제약을</text>
+  <text x="36" y="196" font-size="13" fill="#495057">가치 판단 없이 사실로 적는다</text>
+
+  <rect x="20" y="204" width="360" height="42" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="36" y="222" font-size="13" font-weight="bold" fill="#2d6a4f">③ 결정 (Decision)</text>
+  <text x="36" y="239" font-size="13" fill="#495057">그 힘에 대한 응답. "우리는 …하기로 한다" 능동태 한 문단</text>
+
+  <rect x="20" y="254" width="360" height="42" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="272" font-size="13" font-weight="bold" fill="#212529">④ 상태 (Status)</text>
+  <text x="36" y="289" font-size="13" fill="#495057">proposed / accepted / deprecated / superseded</text>
+
+  <rect x="20" y="304" width="360" height="60" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="322" font-size="13" font-weight="bold" fill="#212529">⑤ 결과 (Consequences)</text>
+  <text x="36" y="340" font-size="13" fill="#495057">결정 뒤에 달라지는 배경 — 좋은 것·나쁜 것·중립적인 것</text>
+  <text x="36" y="358" font-size="13" fill="#495057">전부. 다음 ADR 의 배경이 된다</text>
+
+  <!-- 오른쪽: 상태 전이 -->
+  <text x="430" y="80" font-size="14" font-weight="bold" fill="#495057">상태 전이 — 4가지 상태</text>
+
+  <rect x="430" y="92" width="190" height="48" rx="6" fill="#fff4e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="525" y="112" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">제안 proposed</text>
+  <text x="525" y="130" font-size="13" fill="#495057" text-anchor="middle">검토 중. 보완이면 여기 유지</text>
+
+  <!-- proposed -> accepted -->
+  <line x1="525" y1="140" x2="525" y2="186" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-green)"/>
+  <text x="535" y="168" font-size="13" fill="#2d6a4f">승인</text>
+
+  <rect x="430" y="190" width="190" height="48" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="525" y="210" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">승인 accepted</text>
+  <text x="525" y="228" font-size="13" fill="#495057" text-anchor="middle">이후 불변. 고치지 않는다</text>
+
+  <!-- proposed -> rejected -->
+  <line x1="620" y1="116" x2="666" y2="116" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <text x="628" y="108" font-size="13" fill="#9d0208">거부</text>
+
+  <rect x="670" y="92" width="190" height="48" rx="6" fill="#fde2e2" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="765" y="112" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">거부 rejected</text>
+  <text x="765" y="130" font-size="13" fill="#495057" text-anchor="middle">기록은 남긴다. 지우지 않는다</text>
+
+  <!-- accepted -> superseded (새 ADR 승인 시) -->
+  <line x1="525" y1="238" x2="525" y2="296" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="535" y="262" font-size="13" fill="#495057">새 ADR 이 승인되면</text>
+  <text x="535" y="280" font-size="13" fill="#495057">옛 ADR 의 상태를 바꾼다</text>
+
+  <rect x="430" y="300" width="190" height="64" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="525" y="320" font-size="13" font-weight="bold" fill="#495057" text-anchor="middle">대체됨 superseded</text>
+  <text x="525" y="338" font-size="13" fill="#495057" text-anchor="middle">"ADR-0012 로 대체" 처럼</text>
+  <text x="525" y="356" font-size="13" fill="#495057" text-anchor="middle">후속 번호를 가리킨다</text>
+
+  <!-- 새 ADR 박스 -->
+  <rect x="670" y="190" width="190" height="48" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <text x="765" y="210" font-size="13" font-weight="bold" fill="#495057" text-anchor="middle">새 ADR (다음 번호)</text>
+  <text x="765" y="228" font-size="13" fill="#495057" text-anchor="middle">바꾸려면 고치지 말고 새로 쓴다</text>
+  <line x1="670" y1="214" x2="624" y2="214" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="20" y="392" font-size="13" fill="#495057">상태 값: Nygard 는 proposed·accepted·deprecated·superseded, AWS 처방 가이드는 proposed·rejected·accepted·superseded.</text>
+  <text x="20" y="412" font-size="13" fill="#495057">두 목록은 deprecated(더는 유효하지 않음)와 rejected(검토 끝에 채택 안 함)에서 갈린다. 답안에는 출처를 밝히고 하나를 고른다.</text>
+  <text x="20" y="444" font-size="13" fill="#868e96">Nygard, "Documenting Architecture Decisions"(2011) 의 5항목과 AWS 처방 가이드 "ADR process" 의 상태 전이를 합쳤다.</text>
+</svg>
