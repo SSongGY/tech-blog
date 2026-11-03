@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **574편** · 갱신 2026-11-03
+총 **575편** · 갱신 2026-11-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -404,11 +404,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 85편
+## 기출문제 (exam) — 86편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-03 | [기출문제 — 로우코드 플랫폼의 특징, 노코드와의 비교, 적용 한계](posts/PE/exam/2026-11-03-low-code-platform-characteristics-and-limits/index.md) | 중급 | Di Ruscio et al., Software and Systems Modeling 21(2) pp.437-446 (2022-01), Sahay et al., Euromicro SEAA 2020 pp.171-178, Luo et al., ACM/IEEE ESEM 2021, Forrester 로우코드 정의 (2014, 2017), Gartner LCAP 시장 구분 (2016) | 문서 근거 |
+| 2026-11-03 | [기출문제 — 가용성 보장: 결함 허용 시스템(FTS)과 고가용성(HA)의 구현 방법과 비교](posts/PE/exam/2026-11-03-fault-tolerant-system-vs-high-availability/index.md) | 중급 | Python 3.13.5, Avizienis·Laprie·Randell·Landwehr, IEEE TDSC 1(1), 2004, Gray, Tandem TR 85.7 (1985), Red Hat Enterprise Linux 8 HA 클러스터 문서, AWS Well-Architected Reliability Pillar (2026-11-03 열람), ISO/IEC 25010 (iso25000.com 요약, 2023판 명칭) | 실행 검증 |
 | 2026-11-03 | [기출문제 — 분산 데이터베이스의 분할 단위와 수평분할·수직분할](posts/PE/exam/2026-11-03-distributed-db-fragmentation-units-horizontal-vertical/index.md) | 중급 | Özsu & Valduriez, Principles of Distributed Database Systems 3판 (2011) 3장, Ceri·Negri·Pelagatti, ACM SIGMOD 1982, Navathe·Ceri·Wiederhold·Dou, ACM TODS 9권 4호 (1984-12) | 문서 근거 |
 | 2026-10-31 | [기출문제 — 생성형 인공지능 서비스 이용자 보호 가이드라인의 제정 배경과 실행방식](posts/PE/exam/2026-10-31-generative-ai-user-protection-guideline/index.md) | 중급 | 생성형 인공지능 서비스 이용자 보호 가이드라인 (방송통신위원회, 2025.2.28. 제정 · 2025.3.28. 시행), 이용자 중심의 지능정보사회를 위한 기본원칙 (2019), OECD Recommendation of the Council on Artificial Intelligence (2024 개정), UNESCO Recommendation on the Ethics of Artificial Intelligence (2021), ISO/IEC 42001:2023 | 문서 근거 |
 | 2026-10-30 | [기출문제 — 소프트웨어 재공학의 개념·목적·절차와 역공학의 활용](posts/PE/exam/2026-10-30-software-reengineering-process-and-reverse-engineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024), ISO/IEC/IEEE 14764:2022, SEI CORUM II (1998), DoD SB-1 Workshop (1992) | 문서 근거 |
