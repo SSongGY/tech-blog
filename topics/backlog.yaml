@@ -6743,3 +6743,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-115
+    title: "투자부동산 — 원가모형과 공정가치모형이 같은 건물을 다르게 적는 이유"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 투자부동산, 공정가치모형, 원가모형]
+    difficulty: 중급
+    angle: "기업회계기준서 제1040호가 인정하는 두 모형. 같은 임대 건물을 원가모형은 감가상각으로, 공정가치모형은 평가손익으로 적는다. 가상 회사로 5년을 계산해 당기순이익·자본총계·부채비율·ROE가 갈리는 자리와 시세가 꺾일 때 뒤집히는 모습을 본다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-116
+    title: "회계정책 변경과 오류 수정 — 작년 숫자가 올해 보고서에서 바뀌어 있는 이유"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [주식, 재무, 회계정책변경, 오류수정, 소급적용, 회계추정]
+    difficulty: 중급
+    angle: "기업회계기준서 제1008호의 세 갈래. 정책 변경과 오류는 소급해 전기 비교 숫자를 다시 적고, 추정 변경은 전진 적용한다. 가상 회사의 재고 원가흐름 변경과 전기 오류를 계산해 비교 손익·기초 이익잉여금·성장률이 어떻게 달라지는지 본다"
+    code: python
+    origin: manual
+    status: done

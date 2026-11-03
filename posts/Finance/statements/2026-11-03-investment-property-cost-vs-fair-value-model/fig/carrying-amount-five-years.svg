@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" role="img" aria-label="5년 동안 원가모형 장부금액은 일직선으로 내려가고 공정가치모형 장부금액은 시세를 따라 올랐다 내려오는 경로">
+  <rect x="0" y="0" width="880" height="420" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">5년 동안 건물 장부금액이 그리는 두 경로 (단위: 억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">원가모형은 매년 20 씩 일직선, 공정가치모형은 기말 시세 그대로</text>
+
+  <!-- 축: x 0~5년 → 110~770, y 380~580 → 330~90 (1억 = 1.2px) -->
+  <line x1="110" y1="330" x2="790" y2="330" stroke="#777" stroke-width="1"/>
+  <line x1="110" y1="330" x2="110" y2="80" stroke="#777" stroke-width="1"/>
+
+  <!-- y 눈금 -->
+  <line x1="106" y1="306" x2="790" y2="306" stroke="#ddd" stroke-width="1"/>
+  <text x="98" y="310" font-family="sans-serif" font-size="13" fill="#444" text-anchor="end">400</text>
+  <line x1="106" y1="186" x2="790" y2="186" stroke="#ddd" stroke-width="1"/>
+  <text x="98" y="190" font-family="sans-serif" font-size="13" fill="#444" text-anchor="end">500</text>
+  <line x1="106" y1="114" x2="790" y2="114" stroke="#ddd" stroke-width="1"/>
+  <text x="98" y="118" font-family="sans-serif" font-size="13" fill="#444" text-anchor="end">560</text>
+
+  <!-- x 눈금 -->
+  <text x="110" y="352" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">취득</text>
+  <text x="242" y="352" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">1년</text>
+  <text x="374" y="352" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">2년</text>
+  <text x="506" y="352" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">3년</text>
+  <text x="638" y="352" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">4년</text>
+  <text x="770" y="352" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">5년</text>
+
+  <!-- 원가모형: 500,480,460,440,420,400 → y = 330 - (v-380)*1.2 -->
+  <polyline points="110,186 242,210 374,234 506,258 638,282 770,306" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+  <circle cx="770" cy="306" r="5" fill="#2d6a4f"/>
+  <text x="776" y="322" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">400</text>
+
+  <!-- 공정가치모형: 500,520,545,560,530,500 -->
+  <polyline points="110,186 242,162 374,132 506,114 638,150 770,186" fill="none" stroke="#b45309" stroke-width="3" stroke-dasharray="7 5"/>
+  <circle cx="242" cy="162" r="5" fill="#b45309"/>
+  <circle cx="374" cy="132" r="5" fill="#b45309"/>
+  <circle cx="506" cy="114" r="5" fill="#b45309"/>
+  <circle cx="638" cy="150" r="5" fill="#b45309"/>
+  <circle cx="770" cy="186" r="5" fill="#b45309"/>
+  <text x="242" y="152" font-family="sans-serif" font-size="13" fill="#b45309" text-anchor="middle">520</text>
+  <text x="374" y="122" font-family="sans-serif" font-size="13" fill="#b45309" text-anchor="middle">545</text>
+  <text x="506" y="104" font-family="sans-serif" font-size="13" fill="#b45309" text-anchor="middle">560</text>
+  <text x="652" y="146" font-family="sans-serif" font-size="13" fill="#b45309">530</text>
+  <text x="776" y="182" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309">500</text>
+
+  <!-- 5년 말 차이 표시 -->
+  <line x1="770" y1="192" x2="770" y2="300" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="812" y="250" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208">차이 100</text>
+
+  <!-- 범례 -->
+  <line x1="640" y1="76" x2="680" y2="76" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="688" y="80" font-family="sans-serif" font-size="13" fill="#1b1b1b">원가모형 (문단 56)</text>
+  <line x1="640" y1="98" x2="680" y2="98" stroke="#b45309" stroke-width="3" stroke-dasharray="7 5"/>
+  <text x="688" y="102" font-family="sans-serif" font-size="13" fill="#1b1b1b">공정가치모형 (문단 33)</text>
+
+  <text x="24" y="386" font-family="sans-serif" font-size="13" fill="#1b1b1b">5년 말 시세가 취득원가로 돌아와도 두 장부금액은 100 만큼 떨어져 있다. 그 100 이 5년 누적 순이익의 차이와</text>
+  <text x="24" y="406" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b">정확히 같다. 모형은 이익을 만들지 않고, 같은 이익을 언제 적느냐를 바꾼다.</text>
+</svg>
