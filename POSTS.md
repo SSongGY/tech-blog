@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **567편** · 갱신 2026-11-03
+총 **570편** · 갱신 2026-11-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 84편
+## DB문법 (basics) — 85편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-03 | [INDEXED BY와 NOT INDEXED — 옵티마이저에 손을 대는 두 구문](posts/Database/sql-basics/2026-11-03-indexed-by-not-indexed/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-01 | [BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가](posts/Database/sql-basics/2026-11-01-begin-deferred-immediate-exclusive-locking/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-31 | [집합 연산에서 ORDER BY와 LIMIT이 걸리는 위치](posts/Database/sql-basics/2026-10-31-set-operation-order-by-limit-scope/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-31 | [foreign_key_check — 제약을 켜기 전에 깨진 참조를 먼저 센다](posts/Database/sql-basics/2026-10-31-pragma-foreign-key-check/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -117,12 +118,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 199편
+## 기술사 (pe) — 200편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-03 | [경로벡터 라우팅과 BGP 경로 선택 — 메트릭이 아니라 정책으로 고른다](posts/PE/network/2026-11-03-path-vector-routing-and-bgp-decision-process/index.md) | 중급 | RFC 1322 (1992-05), RFC 4271 (2006-01), RFC 4456 (2006-04) | 문서 근거 |
 | 2026-11-03 | [이기종 DBMS 마이그레이션 — 자동 변환이 끊기는 자리와 정합성을 증명하는 방법](posts/PE/database/2026-11-03-heterogeneous-dbms-migration-schema-and-data-verification/index.md) | 중급 | Oracle Database 19c SQL Language Reference, PostgreSQL 17 Documentation, AWS DMS User Guide (2026-11-03 확인), AWS SCT User Guide (2026-11-03 확인), Ora2Pg README master (2026-11-03 확인) | 문서 근거 |
+| 2026-11-03 | [전사적 아키텍처(EA/ITA) — 참조모형 5종과 아키텍처 5영역](posts/PE/it-management/2026-11-03-ea-ita-reference-models-and-domains/index.md) | 중급 | 전자정부법 법률 제21394호 (시행 2026. 8. 28.), 정보기술아키텍처 도입·운영 지침 행정안전부고시 제2024-58호 (시행 2024. 7. 10.) | 문서 근거 |
 | 2026-11-02 | [STIX와 TAXII — 위협정보 공유 표준](posts/PE/security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md) | 중급 | STIX Version 2.1 OASIS Standard (2021-06-10), TAXII Version 2.1 OASIS Standard (2021-06-10), NIST SP 800-150 (2016-10) | 문서 근거 |
 | 2026-11-02 | [자원 할당 그래프와 대기 그래프 — 교착 탐지](posts/PE/system/2026-11-02-resource-allocation-graph-and-wait-for-graph/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-02 | [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](posts/PE/security/2026-11-02-prompt-injection-defense-design/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
@@ -344,10 +346,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 49편
+## 일반 (general) — 50편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-03 | [블룸 필터를 직접 만들어 오탐률 수식과 맞춰 보기](posts/Architecture/datastructure/2026-11-03-bloom-filter-false-positive-rate/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-01 | [인증서 체인을 직접 만들어 보면 검증 실패가 읽힌다](posts/Security/tls/2026-11-01-x509-chain-build-and-verify-failures/index.md) | 중급 | OpenSSL 3.5.6 7 Apr 2026, GNU bash 5.3.9(1)-release (x86_64-pc-cygwin), Windows 11 | 실행 검증 |
 | 2026-10-31 | [플레임 그래프를 제대로 읽는 법 — 폭과 높이가 각각 무엇인가](posts/Tooling/2026-10-31-reading-flame-graphs/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-10-31 | [0.1 + 0.2 로 끝나지 않는다 — 금액 계산이 실제로 틀어지는 자리](posts/Language/python/2026-10-31-float-money-rounding-decimal/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
