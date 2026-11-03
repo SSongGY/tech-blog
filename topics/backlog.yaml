@@ -6609,3 +6609,25 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: pe-230
+    title: "반결합(semijoin) — 분산 질의에서 전송량을 줄이는 연산"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "유도 수평분할과 분산 조인에서 반결합이 어떤 중간 결과를 없애는지, 전송 비용 관점에서 언제 이득이고 언제 손해인지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-231
+    title: "속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "질의별 속성 사용 행렬에서 친화도를 계산해 행렬을 재배열하고 분할 지점을 찾는 절차를 단계별로"
+    code: none
+    origin: exam
+    status: todo

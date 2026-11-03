@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="880" height="370" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect width="880" height="370" fill="#f8f9fa"/>
+
+  <text x="250" y="38" font-size="15" font-weight="600" fill="#343a40" text-anchor="middle">수평분할 — 행(튜플)을 가른다</text>
+  <text x="680" y="38" font-size="15" font-weight="600" fill="#343a40" text-anchor="middle">수직분할 — 열(속성)을 가른다</text>
+
+  <!-- left grid: horizontal fragmentation -->
+  <rect x="90" y="60" width="320" height="34" fill="#e9ecef"/>
+  <rect x="90" y="60" width="320" height="170" fill="none" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="170" y1="60" x2="170" y2="230" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="250" y1="60" x2="250" y2="230" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="330" y1="60" x2="330" y2="230" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="90" y1="94" x2="410" y2="94" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="90" y1="128" x2="410" y2="128" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="90" y1="196" x2="410" y2="196" stroke="#adb5bd" stroke-width="1.2"/>
+
+  <text x="130" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">PK</text>
+  <text x="210" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">A1</text>
+  <text x="290" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">A2</text>
+  <text x="370" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">A3</text>
+
+  <text x="82" y="117" font-size="13" fill="#6c757d" text-anchor="end">t1</text>
+  <text x="82" y="151" font-size="13" fill="#6c757d" text-anchor="end">t2</text>
+  <text x="82" y="185" font-size="13" fill="#6c757d" text-anchor="end">t3</text>
+  <text x="82" y="219" font-size="13" fill="#6c757d" text-anchor="end">t4</text>
+
+  <line x1="90" y1="162" x2="410" y2="162" stroke="#2d6a4f" stroke-width="3.5"/>
+  <text x="420" y="134" font-size="13" font-weight="600" fill="#2d6a4f">단편 1</text>
+  <text x="420" y="202" font-size="13" font-weight="600" fill="#2d6a4f">단편 2</text>
+
+  <text x="250" y="262" font-size="14" font-weight="600" fill="#212529" text-anchor="middle">재구성: R = 단편1 ∪ 단편2</text>
+  <text x="250" y="286" font-size="13" fill="#6c757d" text-anchor="middle">각 단편이 모든 속성을 그대로 가진다</text>
+  <text x="250" y="308" font-size="13" fill="#6c757d" text-anchor="middle">조건식으로 가르므로 서로 겹치지 않는다</text>
+
+  <!-- right grid: vertical fragmentation -->
+  <rect x="520" y="60" width="320" height="34" fill="#e9ecef"/>
+  <rect x="520" y="60" width="320" height="170" fill="none" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="600" y1="60" x2="600" y2="230" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="760" y1="60" x2="760" y2="230" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="680" y1="60" x2="680" y2="230" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="520" y1="94" x2="840" y2="94" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="520" y1="128" x2="840" y2="128" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="520" y1="162" x2="840" y2="162" stroke="#adb5bd" stroke-width="1.2"/>
+  <line x1="520" y1="196" x2="840" y2="196" stroke="#adb5bd" stroke-width="1.2"/>
+
+  <text x="560" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">PK</text>
+  <text x="640" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">A1</text>
+  <text x="720" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">A2</text>
+  <text x="800" y="83" font-size="13" font-weight="600" fill="#212529" text-anchor="middle">A3</text>
+
+  <line x1="680" y1="60" x2="680" y2="230" stroke="#2d6a4f" stroke-width="3.5"/>
+  <rect x="520" y="60" width="80" height="170" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="5 4"/>
+
+  <text x="600" y="250" font-size="13" font-weight="600" fill="#2d6a4f" text-anchor="middle">단편 1</text>
+  <text x="760" y="250" font-size="13" font-weight="600" fill="#2d6a4f" text-anchor="middle">단편 2</text>
+
+  <text x="680" y="286" font-size="14" font-weight="600" fill="#212529" text-anchor="middle">재구성: R = 단편1 ⋈ 단편2 (PK로 결합)</text>
+  <text x="680" y="310" font-size="13" fill="#b45309" text-anchor="middle">점선 칸 — PK는 양쪽에 함께 두어야 결합이 된다</text>
+
+  <text x="440" y="346" font-size="13" fill="#6c757d" text-anchor="middle">수평은 조건식이, 수직은 속성 사이의 친화도가 가르는 기준이 된다</text>
+</svg>
