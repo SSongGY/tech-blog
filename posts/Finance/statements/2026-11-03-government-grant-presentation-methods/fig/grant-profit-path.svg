@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" role="img" aria-label="두 표시 방법이 당기손익에 닿는 경로. 이연수익법은 감가상각비 120과 보조금 환입 48, 자산차감법은 감가상각비 72로 순효과가 같다">
+  <rect x="0" y="0" width="880" height="340" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">당기손익에 닿는 경로 — 줄은 다르고 합은 같다 (연간, 억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">설비 600 · 보조금 240 · 내용연수 5년 · 정액법 · 잔존가치 0</text>
+
+  <!-- 이연수익법 경로 -->
+  <text x="24" y="92" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b">이연수익법</text>
+
+  <rect x="24" y="104" width="180" height="56" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="114" y="126" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">감가상각비</text>
+  <text x="114" y="149" font-family="sans-serif" font-size="18" font-weight="bold" fill="#9d0208" text-anchor="middle">−120</text>
+  <text x="114" y="176" font-family="sans-serif" font-size="13" fill="#666" text-anchor="middle">600 ÷ 5</text>
+
+  <text x="228" y="140" font-family="sans-serif" font-size="20" font-weight="bold" fill="#444" text-anchor="middle">+</text>
+
+  <rect x="252" y="104" width="180" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="342" y="126" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">보조금 환입</text>
+  <text x="342" y="149" font-family="sans-serif" font-size="18" font-weight="bold" fill="#2d6a4f" text-anchor="middle">+48</text>
+  <text x="342" y="176" font-family="sans-serif" font-size="13" fill="#666" text-anchor="middle">240 ÷ 5</text>
+
+  <text x="456" y="140" font-family="sans-serif" font-size="20" font-weight="bold" fill="#444" text-anchor="middle">=</text>
+
+  <rect x="480" y="104" width="180" height="56" rx="6" fill="#eceae4" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="570" y="126" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">설비가 깎는 손익</text>
+  <text x="570" y="149" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1b1b1b" text-anchor="middle">−72</text>
+
+  <!-- 자산차감법 경로 -->
+  <text x="24" y="226" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b">자산차감법</text>
+
+  <rect x="24" y="238" width="180" height="56" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="114" y="260" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">감가상각비</text>
+  <text x="114" y="283" font-family="sans-serif" font-size="18" font-weight="bold" fill="#9d0208" text-anchor="middle">−72</text>
+  <text x="114" y="310" font-family="sans-serif" font-size="13" fill="#666" text-anchor="middle">(600 − 240) ÷ 5</text>
+
+  <text x="228" y="274" font-family="sans-serif" font-size="20" font-weight="bold" fill="#444" text-anchor="middle">+</text>
+
+  <rect x="252" y="238" width="180" height="56" rx="6" fill="#f7f7f4" stroke="#999" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="342" y="266" font-family="sans-serif" font-size="13" fill="#666" text-anchor="middle">환입할 것이 없다</text>
+  <text x="342" y="286" font-family="sans-serif" font-size="15" font-weight="bold" fill="#666" text-anchor="middle">0</text>
+
+  <text x="456" y="274" font-family="sans-serif" font-size="20" font-weight="bold" fill="#444" text-anchor="middle">=</text>
+
+  <rect x="480" y="238" width="180" height="56" rx="6" fill="#eceae4" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="570" y="260" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">설비가 깎는 손익</text>
+  <text x="570" y="283" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1b1b1b" text-anchor="middle">−72</text>
+
+  <!-- 같음 표시 -->
+  <path d="M684 132 L700 132 L700 266 L684 266" stroke="#2d6a4f" stroke-width="2" fill="none"/>
+  <text x="716" y="192" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f">당기순이익은 같다</text>
+  <text x="716" y="214" font-family="sans-serif" font-size="13" fill="#9d0208">EBITDA 는 48 만큼 갈린다</text>
+</svg>
