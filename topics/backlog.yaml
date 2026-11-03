@@ -5507,7 +5507,7 @@ topics:
     difficulty: 심화
     angle: "해시가 같은 키를 일부러 만들어 한 버킷에 몰아넣고, 임계값을 넘기 전후의 조회 시간을 잰다. 트리화가 막아 주는 것과 못 막는 것을 실측으로 가른다."
     code: java
-    status: writing
+    status: done
   - id: gen-008
     title: "문자열을 더하는 네 가지 방법의 비용"
     category: Language
@@ -6191,7 +6191,7 @@ topics:
     angle: "기간이나 좌표 범위가 겹치는 행을 BETWEEN 두 개로 찾으면 왜 인덱스가 반만 듣는지 보이고, rtree 가상 테이블로 바꿨을 때 실행계획이 어떻게 달라지는지"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: pe-213
     title: "기계 학습 제거(Machine Unlearning) — 정확 제거와 근사 제거"
     category: PE
@@ -6257,7 +6257,7 @@ topics:
     angle: "연산강도와 능선점으로 메모리 바운드·연산 바운드를 가르는 성능 모델. 병목 판별 절차와 최적화 선택에 쓰는 법"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-219
     title: "도메인 특화 아키텍처(DSA)"
     category: PE
