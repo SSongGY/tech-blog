@@ -6554,3 +6554,58 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: db-094
+    title: "타입 친화성 — 선언한 타입과 실제로 저장되는 값이 다를 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, type-affinity, cast, basics]
+    difficulty: 중급
+    angle: "INTEGER 컬럼에 '42' 를 넣으면 무엇이 저장되는지, VARCHAR·DECIMAL 같은 선언이 어느 친화성으로 접히는지 typeof() 로 확인한다. CAST 가 친화성과 어떻게 다른지도 가른다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-095
+    title: "ON CONFLICT 다섯 가지 — ABORT·FAIL·IGNORE·REPLACE·ROLLBACK"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, conflict, constraint, basics]
+    difficulty: 중급
+    angle: "제약을 어긴 행을 만났을 때 다섯 가지가 각각 어디까지 되돌리는지 여러 행 INSERT 로 재현한다. REPLACE 가 행을 통째로 지우고 다시 넣는다는 점이 왜 외래키와 트리거에서 문제가 되는지까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-096
+    title: "IN과 EXISTS, 그리고 NOT IN이 NULL 하나에 무너지는 자리"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, subquery, null, basics]
+    difficulty: 입문
+    angle: "세 가지가 같은 답을 주는 경우와 갈리는 경우를 나란히 돌린다. 부질의 결과에 NULL 이 하나 섞이면 NOT IN 이 전부 거짓이 되는 것을 재현하고 실행계획 차이도 본다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-097
+    title: "생성 컬럼 — VIRTUAL과 STORED 중 무엇을 고를까"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, generated-column, index, basics]
+    difficulty: 중급
+    angle: "GENERATED ALWAYS AS 로 만든 컬럼을 두 방식으로 각각 만들어 파일 크기와 질의 계획을 비교한다. 생성 컬럼에 인덱스를 걸 수 있는 조건과, ALTER TABLE 로 뒤에 붙일 때의 제약까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-098
+    title: "날짜를 TEXT·INTEGER·REAL 중 무엇으로 저장할까"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, datetime, storage, basics]
+    difficulty: 입문
+    angle: "같은 시각을 세 가지로 저장해 정렬·범위 질의·함수 적용·저장 크기를 나란히 재 본다. 어느 쪽이 인덱스를 그대로 타고, 어느 쪽이 함수를 거쳐야 하는지로 가른다"
+    code: python
+    origin: manual
+    status: todo
