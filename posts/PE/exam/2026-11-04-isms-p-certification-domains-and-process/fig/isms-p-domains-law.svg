@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="400" fill="#fffdf7"/>
+  <defs>
+    <marker id="a-down" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">ISMS-P 인증 영역과 법적 근거</text>
+
+  <!-- 두 법 -->
+  <rect x="120" y="55" width="280" height="56" rx="8" fill="#dbe4ff" stroke="#3652a4" stroke-width="1.8"/>
+  <text x="260" y="78" text-anchor="middle" font-weight="bold" fill="#1e3a8a">정보통신망법 제47조</text>
+  <text x="260" y="98" text-anchor="middle" font-size="13" fill="#1e3a8a">과학기술정보통신부 · 정보보호 영역</text>
+
+  <rect x="480" y="55" width="280" height="56" rx="8" fill="#e4dbff" stroke="#6b3fa4" stroke-width="1.8"/>
+  <text x="620" y="78" text-anchor="middle" font-weight="bold" fill="#4c1d95">개인정보 보호법 제32조의2</text>
+  <text x="620" y="98" text-anchor="middle" font-size="13" fill="#4c1d95">개인정보보호위원회 · 개인정보 영역</text>
+
+  <!-- 공동 고시 -->
+  <rect x="250" y="145" width="380" height="48" rx="8" fill="#fff3e0" stroke="#b45309" stroke-width="1.8"/>
+  <text x="440" y="166" text-anchor="middle" font-weight="bold" fill="#7c2d12">공동 고시 — 인증기준 하나(별표 7)</text>
+  <text x="440" y="184" text-anchor="middle" font-size="13" fill="#7c2d12">두 인증이 기준을 나눠 쓴다</text>
+
+  <line x1="260" y1="111" x2="330" y2="143" stroke="#374151" stroke-width="1.6" marker-end="url(#a-down)"/>
+  <line x1="620" y1="111" x2="550" y2="143" stroke="#374151" stroke-width="1.6" marker-end="url(#a-down)"/>
+
+  <!-- 3개 영역 -->
+  <rect x="60" y="235" width="230" height="120" rx="8" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="175" y="260" text-anchor="middle" font-weight="bold" fill="#1b4332">① 관리체계 수립 및 운영</text>
+  <text x="175" y="283" text-anchor="middle" font-size="13" fill="#1b4332">4개 분야 · 16개 항목</text>
+  <text x="175" y="305" text-anchor="middle" font-size="13" fill="#1b4332">경영진 참여부터 점검·개선까지</text>
+  <text x="175" y="323" text-anchor="middle" font-size="13" fill="#1b4332">반복 수행하는 관리과정</text>
+
+  <rect x="320" y="235" width="230" height="120" rx="8" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="435" y="260" text-anchor="middle" font-weight="bold" fill="#1b4332">② 보호대책 요구사항</text>
+  <text x="435" y="283" text-anchor="middle" font-size="13" fill="#1b4332">12개 분야 · 64개 항목</text>
+  <text x="435" y="305" text-anchor="middle" font-size="13" fill="#1b4332">접근통제·암호화·물리·운영·</text>
+  <text x="435" y="323" text-anchor="middle" font-size="13" fill="#1b4332">사고 대응 등</text>
+
+  <rect x="580" y="235" width="240" height="120" rx="8" fill="#e4dbff" stroke="#6b3fa4" stroke-width="1.8"/>
+  <text x="700" y="260" text-anchor="middle" font-weight="bold" fill="#4c1d95">③ 개인정보 처리 단계별</text>
+  <text x="700" y="283" text-anchor="middle" font-size="13" fill="#4c1d95">5개 분야 · 21개 항목</text>
+  <text x="700" y="305" text-anchor="middle" font-size="13" fill="#4c1d95">수집→이용→제공→파기,</text>
+  <text x="700" y="323" text-anchor="middle" font-size="13" fill="#4c1d95">정보주체 권리보호</text>
+
+  <line x1="380" y1="193" x2="250" y2="233" stroke="#374151" stroke-width="1.6" marker-end="url(#a-down)"/>
+  <line x1="440" y1="193" x2="435" y2="233" stroke="#374151" stroke-width="1.6" marker-end="url(#a-down)"/>
+  <line x1="500" y1="193" x2="650" y2="233" stroke="#374151" stroke-width="1.6" marker-end="url(#a-down)"/>
+
+  <!-- 인증 범위 괄호 -->
+  <text x="248" y="383" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">ISMS = ① + ② (80개)</text>
+  <text x="640" y="383" text-anchor="middle" font-size="13" font-weight="bold" fill="#6b3fa4">ISMS-P = ① + ② + ③ (101개)</text>
+</svg>

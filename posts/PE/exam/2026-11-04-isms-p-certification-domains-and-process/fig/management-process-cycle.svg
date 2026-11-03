@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="420" fill="#fffdf7"/>
+  <defs>
+    <marker id="c-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">ISMS-P 관리과정 — 관리체계 수립 및 운영 4단계 순환</text>
+
+  <!-- 1.1 기반 마련 -->
+  <rect x="100" y="70" width="290" height="110" rx="10" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="245" y="97" text-anchor="middle" font-weight="bold" fill="#1b4332">1.1 관리체계 기반 마련 (6)</text>
+  <text x="245" y="120" text-anchor="middle" font-size="13" fill="#1b4332">경영진 참여 · 최고책임자 지정 · 조직 구성</text>
+  <text x="245" y="140" text-anchor="middle" font-size="13" fill="#1b4332">범위 설정 · 정책 수립 · 자원 할당</text>
+  <text x="245" y="165" text-anchor="middle" font-size="13" font-style="italic" fill="#2d6a4f">Plan — 토대를 세운다</text>
+
+  <!-- 1.2 위험 관리 -->
+  <rect x="490" y="70" width="290" height="110" rx="10" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="635" y="97" text-anchor="middle" font-weight="bold" fill="#1b4332">1.2 위험 관리 (4)</text>
+  <text x="635" y="120" text-anchor="middle" font-size="13" fill="#1b4332">정보자산 식별 · 현황 및 흐름분석</text>
+  <text x="635" y="140" text-anchor="middle" font-size="13" fill="#1b4332">위험 평가 · 보호대책 선정</text>
+  <text x="635" y="165" text-anchor="middle" font-size="13" font-style="italic" fill="#2d6a4f">Plan — 무엇을 지킬지 정한다</text>
+
+  <!-- 1.3 운영 -->
+  <rect x="490" y="240" width="290" height="110" rx="10" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="635" y="267" text-anchor="middle" font-weight="bold" fill="#1b4332">1.3 관리체계 운영 (3)</text>
+  <text x="635" y="290" text-anchor="middle" font-size="13" fill="#1b4332">보호대책 구현 · 보호대책 공유</text>
+  <text x="635" y="310" text-anchor="middle" font-size="13" fill="#1b4332">운영현황 관리</text>
+  <text x="635" y="335" text-anchor="middle" font-size="13" font-style="italic" fill="#2d6a4f">Do — 대책을 돌린다</text>
+
+  <!-- 1.4 점검 및 개선 -->
+  <rect x="100" y="240" width="290" height="110" rx="10" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="245" y="267" text-anchor="middle" font-weight="bold" fill="#1b4332">1.4 관리체계 점검 및 개선 (3)</text>
+  <text x="245" y="290" text-anchor="middle" font-size="13" fill="#1b4332">법적 요구사항 준수 검토</text>
+  <text x="245" y="310" text-anchor="middle" font-size="13" fill="#1b4332">관리체계 점검 · 관리체계 개선</text>
+  <text x="245" y="335" text-anchor="middle" font-size="13" font-style="italic" fill="#2d6a4f">Check·Act — 재고 고친다</text>
+
+  <!-- 순환 화살표 -->
+  <line x1="392" y1="125" x2="488" y2="125" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#c-arrow)"/>
+  <line x1="635" y1="182" x2="635" y2="238" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#c-arrow)"/>
+  <line x1="488" y1="295" x2="392" y2="295" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#c-arrow)"/>
+  <path d="M 245 238 L 245 210 L 245 182" fill="none" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#c-arrow)"/>
+
+  <text x="245" y="388" text-anchor="middle" font-size="13" fill="#1b4332">합 16개 항목 = 6 + 4 + 3 + 3. 네 분야는 한 번 하고 끝나는 단계가 아니라</text>
+  <text x="245" y="407" text-anchor="middle" font-size="13" fill="#1b4332">인증 기간 내내 반복해서 돌아가는 순환이다.</text>
+  <text x="680" y="398" text-anchor="middle" font-size="13" fill="#4b5563">(분야 이름·개수: 인증기준 안내서 2023.11)</text>
+</svg>
