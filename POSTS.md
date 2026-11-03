@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **578편** · 갱신 2026-11-03
+총 **580편** · 갱신 2026-11-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -120,15 +120,17 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 202편
+## 기술사 (pe) — 204편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-03 | [시스톨릭 어레이 — 한 번 읽은 값을 배열 안에서 여러 번 쓰는 구조](posts/PE/computer-architecture/2026-11-03-systolic-array/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
+| 2026-11-03 | [서비스 메시 — 데이터 플레인과 컨트롤 플레인, 그리고 서비스 코드에 남는 것](posts/PE/emerging-tech/2026-11-03-service-mesh-data-plane-control-plane/index.md) | 중급 | NIST SP 800-204A (2020-05), NIST SP 800-204 (2019-08) | 문서 근거 |
 | 2026-11-03 | [루프라인 모델 — 연산강도와 능선점으로 병목이 메모리인지 연산기인지 가른다](posts/PE/computer-architecture/2026-11-03-roofline-model/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [경로벡터 라우팅과 BGP 경로 선택 — 메트릭이 아니라 정책으로 고른다](posts/PE/network/2026-11-03-path-vector-routing-and-bgp-decision-process/index.md) | 중급 | RFC 1322 (1992-05), RFC 4271 (2006-01), RFC 4456 (2006-04) | 문서 근거 |
 | 2026-11-03 | [이기종 DBMS 마이그레이션 — 자동 변환이 끊기는 자리와 정합성을 증명하는 방법](posts/PE/database/2026-11-03-heterogeneous-dbms-migration-schema-and-data-verification/index.md) | 중급 | Oracle Database 19c SQL Language Reference, PostgreSQL 17 Documentation, AWS DMS User Guide (2026-11-03 확인), AWS SCT User Guide (2026-11-03 확인), Ora2Pg README master (2026-11-03 확인) | 문서 근거 |
 | 2026-11-03 | [전사적 아키텍처(EA/ITA) — 참조모형 5종과 아키텍처 5영역](posts/PE/it-management/2026-11-03-ea-ita-reference-models-and-domains/index.md) | 중급 | 전자정부법 법률 제21394호 (시행 2026. 8. 28.), 정보기술아키텍처 도입·운영 지침 행정안전부고시 제2024-58호 (시행 2024. 7. 10.) | 문서 근거 |
+| 2026-11-03 | [도메인 특화 아키텍처(DSA) — 범용 기능을 빼서 얻는 효율과 그 대가](posts/PE/computer-architecture/2026-11-03-domain-specific-architecture-design-guidelines/index.md) | 중급 | Hennessy & Patterson, A New Golden Age for Computer Architecture, CACM 62(2), 2019, Hennessy & Patterson, Computer Architecture: A Quantitative Approach 6th ed., 2019 (Ch.7) | 문서 근거 |
 | 2026-11-02 | [STIX와 TAXII — 위협정보 공유 표준](posts/PE/security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md) | 중급 | STIX Version 2.1 OASIS Standard (2021-06-10), TAXII Version 2.1 OASIS Standard (2021-06-10), NIST SP 800-150 (2016-10) | 문서 근거 |
 | 2026-11-02 | [자원 할당 그래프와 대기 그래프 — 교착 탐지](posts/PE/system/2026-11-02-resource-allocation-graph-and-wait-for-graph/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-02 | [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](posts/PE/security/2026-11-02-prompt-injection-defense-design/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
