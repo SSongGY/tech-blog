@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **585편** · 갱신 2026-11-03
+총 **587편** · 갱신 2026-11-04
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -121,10 +121,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 205편
+## 기술사 (pe) — 207편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-04 | [ELF 실행 파일 포맷과 프로그램 적재](posts/PE/system/2026-11-04-elf-file-format-sections-segments-loading/index.md) | 중급 | System V ABI — ELF Object File Format 4.3 DRAFT (Xinuos, 2026년 11월 확인), Linux man-pages 6.19 — elf(5) | 문서 근거 |
+| 2026-11-04 | [데이터 역공학 — 물리 스키마에서 논리 모델 복원](posts/PE/software-engineering/2026-11-04-data-reverse-engineering-logical-schema-recovery/index.md) | 중급 | J-L Hainaut, Introduction to Database Reverse Engineering (LIBD, Univ. of Namur, 2002), Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024) | 문서 근거 |
 | 2026-11-03 | [시스톨릭 어레이 — 한 번 읽은 값을 배열 안에서 여러 번 쓰는 구조](posts/PE/computer-architecture/2026-11-03-systolic-array/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [서비스 메시 — 데이터 플레인과 컨트롤 플레인, 그리고 서비스 코드에 남는 것](posts/PE/emerging-tech/2026-11-03-service-mesh-data-plane-control-plane/index.md) | 중급 | NIST SP 800-204A (2020-05), NIST SP 800-204 (2019-08) | 문서 근거 |
 | 2026-11-03 | [루프라인 모델 — 연산강도와 능선점으로 병목이 메모리인지 연산기인지 가른다](posts/PE/computer-architecture/2026-11-03-roofline-model/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
