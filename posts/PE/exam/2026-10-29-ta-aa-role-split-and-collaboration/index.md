@@ -215,7 +215,8 @@ AA가 네 종의 차이를 요구로 내지 않으면 **포털 기준으로 과�
 - 성격이 다른 시스템 네 종을 한 기반에 올리는 사업에서는, **차이를 요구로 내는 쪽이 AA이고
   그 차이를 공통 기반의 변형점으로 받아내는 쪽이 TA**다
 
-> 개념 정리: [MSA — 분해 기준과 감당해야 할 비용](../../software-engineering/2026-09-22-msa-decomposition-and-cost/index.md),
+> 개념 정리: [서비스 메시 — 데이터 플레인과 컨트롤 플레인, 그리고 서비스 코드에 남는 것](../../emerging-tech/2026-11-03-service-mesh-data-plane-control-plane/index.md),
+> [MSA — 분해 기준과 감당해야 할 비용](../../software-engineering/2026-09-22-msa-decomposition-and-cost/index.md),
 > [소프트웨어 아키텍처 4+1 뷰](../../software-engineering/2026-09-18-software-architecture-4plus1-views/index.md)
 
 끝

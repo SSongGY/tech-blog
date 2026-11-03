@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1b2430"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrowO" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <!-- 컨트롤 플레인 -->
+  <text x="20" y="24" font-weight="bold" fill="#b45309">컨트롤 플레인 — 메시 전체의 프록시 동작을 제어·구성하는 API와 도구 (고가용·분산)</text>
+
+  <rect x="20" y="36" width="195" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="117" y="60" text-anchor="middle" font-weight="bold" fill="#1b2430">인증서·신원 관리</text>
+  <text x="117" y="82" text-anchor="middle" fill="#1b2430">생성 소프트웨어·저장소</text>
+
+  <rect x="230" y="36" width="195" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="327" y="60" text-anchor="middle" font-weight="bold" fill="#1b2430">인증 정책·인가 엔진</text>
+  <text x="327" y="82" text-anchor="middle" fill="#1b2430">접근 제어 정책</text>
+
+  <rect x="440" y="36" width="195" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="537" y="60" text-anchor="middle" font-weight="bold" fill="#1b2430">텔레메트리 수집·집계</text>
+  <text x="537" y="82" text-anchor="middle" fill="#1b2430">지표·로그·추적</text>
+
+  <rect x="650" y="36" width="210" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="755" y="60" text-anchor="middle" font-weight="bold" fill="#1b2430">네트워크 동작 변경 API</text>
+  <text x="755" y="82" text-anchor="middle" fill="#1b2430">부하분산·회로 차단·속도 제한</text>
+
+  <!-- 플레인 사이 -->
+  <line x1="420" y1="96" x2="420" y2="164" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrowO)"/>
+  <text x="410" y="136" text-anchor="end" fill="#b45309">정책 주입</text>
+  <line x1="460" y1="166" x2="460" y2="98" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowG)"/>
+  <text x="470" y="136" fill="#2d6a4f">텔레메트리</text>
+  <line x1="20" y1="172" x2="860" y2="172" stroke="#999" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- 데이터 플레인 -->
+  <text x="20" y="194" font-weight="bold" fill="#2d6a4f">데이터 플레인 — 사이드카 프록시의 상호 연결 집합. 요청이 실제로 지나는 경로</text>
+
+  <rect x="250" y="206" width="170" height="56" rx="6" fill="#ffffff" stroke="#1b2430" stroke-width="1.2"/>
+  <text x="335" y="229" text-anchor="middle" font-weight="bold" fill="#1b2430">서비스 A</text>
+  <text x="335" y="250" text-anchor="middle" fill="#1b2430">업무 로직·세밀한 인가</text>
+
+  <rect x="460" y="206" width="170" height="56" rx="6" fill="#ffffff" stroke="#1b2430" stroke-width="1.2"/>
+  <text x="545" y="229" text-anchor="middle" font-weight="bold" fill="#1b2430">서비스 B</text>
+  <text x="545" y="250" text-anchor="middle" fill="#1b2430">업무 로직·세밀한 인가</text>
+
+  <!-- 루프백 -->
+  <line x1="335" y1="262" x2="335" y2="294" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <text x="343" y="283" fill="#555">루프백</text>
+  <line x1="545" y1="262" x2="545" y2="294" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+  <text x="553" y="283" fill="#555">루프백</text>
+
+  <rect x="250" y="296" width="170" height="60" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="335" y="320" text-anchor="middle" font-weight="bold" fill="#2d6a4f">사이드카 프록시 A</text>
+  <text x="335" y="342" text-anchor="middle" fill="#1b2430">mTLS·인가·재시도·지표</text>
+
+  <rect x="460" y="296" width="170" height="60" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="545" y="320" text-anchor="middle" font-weight="bold" fill="#2d6a4f">사이드카 프록시 B</text>
+  <text x="545" y="342" text-anchor="middle" fill="#1b2430">mTLS·인가·재시도·지표</text>
+
+  <!-- mTLS -->
+  <line x1="422" y1="326" x2="458" y2="326" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrowG)" marker-start="url(#arrowG)"/>
+  <text x="440" y="314" text-anchor="middle" fill="#2d6a4f" font-weight="bold">mTLS</text>
+
+  <!-- 인그레스 / 이그레스 -->
+  <rect x="15" y="296" width="175" height="60" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="102" y="320" text-anchor="middle" font-weight="bold" fill="#2d6a4f">인그레스 프록시</text>
+  <text x="102" y="342" text-anchor="middle" fill="#1b2430">외부 클라이언트의 사이드카</text>
+  <line x1="190" y1="326" x2="248" y2="326" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="690" y="296" width="160" height="60" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="770" y="320" text-anchor="middle" font-weight="bold" fill="#2d6a4f">이그레스 프록시</text>
+  <text x="770" y="342" text-anchor="middle" fill="#1b2430">외부 서버의 사이드카</text>
+  <line x1="630" y1="326" x2="688" y2="326" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 외부 -->
+  <line x1="102" y1="392" x2="102" y2="358" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="102" y="412" text-anchor="middle" fill="#1b2430">외부 클라이언트 (남북 트래픽)</text>
+  <line x1="770" y1="356" x2="770" y2="390" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="770" y="412" text-anchor="middle" fill="#1b2430">외부 서비스 (자격증명 교환)</text>
+
+  <text x="440" y="448" text-anchor="middle" fill="#555">서비스와 프록시는 루프백으로만, 프록시끼리는 mTLS로만 통신한다 (NIST SP 800-204A, SM-DR6)</text>
+</svg>
