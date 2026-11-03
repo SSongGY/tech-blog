@@ -5577,7 +5577,7 @@ topics:
     difficulty: 심화
     angle: "비트 배열과 해시 개수를 바꿔 가며 실제 오탐률을 세고, 이론식이 주는 값과 나란히 놓는다. 같은 메모리로 집합을 그대로 들고 있을 때와 비교해 언제 이득인지 가른다."
     code: python
-    status: writing
+    status: done
   - id: gen-015
     title: "캐시 크기를 늘리면 적중률은 어디서 꺾이는가"
     category: Performance
