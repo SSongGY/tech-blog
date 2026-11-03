@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="작년 숫자가 바뀐 이유를 회계정책 변경·전기오류·회계추정치 변경 세 갈래로 나누고 각각 소급적용·소급재작성·전진적용으로 잇는 분류도">
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">숫자가 바뀐 이유에 따라 과거를 고치는지가 갈린다 (제1008호)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">왼쪽은 무엇이 바뀌었는지, 가운데는 기준서가 정한 처리, 오른쪽은 독자가 보는 결과</text>
+
+  <!-- 출발 -->
+  <rect x="24" y="170" width="140" height="70" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="94" y="200" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">작년 숫자가</text>
+  <text x="94" y="222" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">달라져 있다</text>
+
+  <line x1="164" y1="190" x2="222" y2="118" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="164" y1="205" x2="222" y2="205" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="164" y1="220" x2="222" y2="292" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 1행: 정책 변경 -->
+  <rect x="226" y="86" width="200" height="64" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="326" y="110" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">회계정책 변경</text>
+  <text x="326" y="132" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">재는 원칙·측정기준이 바뀜</text>
+  <line x1="426" y1="118" x2="484" y2="118" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="488" y="86" width="150" height="64" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="563" y="110" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">소급적용</text>
+  <text x="563" y="132" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">문단 19·22</text>
+  <line x1="638" y1="118" x2="696" y2="118" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="700" y="86" width="156" height="64" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="778" y="110" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">비교기간을 다시 적고</text>
+  <text x="778" y="132" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">기초 이익잉여금 조정</text>
+
+  <!-- 2행: 전기오류 -->
+  <rect x="226" y="173" width="200" height="64" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="326" y="197" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">전기오류</text>
+  <text x="326" y="219" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">그때 알 수 있던 정보를 안 씀</text>
+  <line x1="426" y1="205" x2="484" y2="205" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="488" y="173" width="150" height="64" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="563" y="197" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">소급재작성</text>
+  <text x="563" y="219" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">문단 42</text>
+  <line x1="638" y1="205" x2="696" y2="205" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="700" y="173" width="156" height="64" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="778" y="197" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">오류 난 기간을 다시 적고</text>
+  <text x="778" y="219" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">그 전이면 기초금액 재작성</text>
+
+  <!-- 3행: 추정치 변경 -->
+  <rect x="226" y="260" width="200" height="64" rx="6" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="326" y="284" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">회계추정치 변경</text>
+  <text x="326" y="306" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">새 정보·새 상황이 생김</text>
+  <line x1="426" y1="292" x2="484" y2="292" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="488" y="260" width="150" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="563" y="284" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">전진적용</text>
+  <text x="563" y="306" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">문단 36·38</text>
+  <line x1="638" y1="292" x2="696" y2="292" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="700" y="260" width="156" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="778" y="284" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">과거는 그대로 두고</text>
+  <text x="778" y="306" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">당기와 미래에만 반영</text>
+
+  <text x="24" y="362" font-family="sans-serif" font-size="13" fill="#1b1b1b">정책 변경과 추정치 변경을 가르기 어려우면 추정치 변경으로 본다(문단 35). 정책 변경은 기준서가 요구하거나</text>
+  <text x="24" y="382" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b">더 목적적합한 정보를 줄 때만 허용된다(문단 14). 셋 중 둘만 작년 숫자를 건드린다.</text>
+</svg>

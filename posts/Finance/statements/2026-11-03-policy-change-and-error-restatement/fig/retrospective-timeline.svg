@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="재고 단위원가 정책 변경을 소급적용할 때 비교기간 이전의 누적효과는 기초 이익잉여금으로, 비교기간과 당기는 새 정책으로 다시 적히는 시간축">
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">소급적용이 손대는 세 자리 — 아자상사의 재고 정책 변경 (단위: 억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">선입선출에서 가중평균으로 바꾸면 재고가 0년 말 −8, 1년 말 −15, 2년 말 −30 만큼 작아진다</text>
+
+  <!-- 시간축 -->
+  <line x1="40" y1="110" x2="840" y2="110" stroke="#777" stroke-width="2"/>
+  <line x1="300" y1="100" x2="300" y2="120" stroke="#777" stroke-width="2"/>
+  <line x1="570" y1="100" x2="570" y2="120" stroke="#777" stroke-width="2"/>
+  <text x="170" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#444" text-anchor="middle">0년 말 이전 (비교표시 안 함)</text>
+  <text x="435" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#444" text-anchor="middle">1년차 (비교기간)</text>
+  <text x="705" y="96" font-family="sans-serif" font-size="14" font-weight="bold" fill="#444" text-anchor="middle">2년차 (당기)</text>
+
+  <!-- 열 1: 누적효과 → 기초 이익잉여금 -->
+  <rect x="40" y="136" width="250" height="110" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="165" y="160" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">과거 전체의 누적효과</text>
+  <text x="165" y="186" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">1년차 기초 이익잉여금</text>
+  <text x="165" y="212" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b45309" text-anchor="middle">250 → 242</text>
+  <text x="165" y="236" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">문단 22·26 — 재무제표 본문엔 안 보인다</text>
+
+  <!-- 열 2: 비교기간 재작성 -->
+  <rect x="310" y="136" width="250" height="110" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="435" y="160" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">새 정책으로 다시 적는다</text>
+  <text x="435" y="186" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">1년차 순이익</text>
+  <text x="435" y="212" font-family="sans-serif" font-size="18" font-weight="bold" fill="#9d0208" text-anchor="middle">100 → 93</text>
+  <text x="435" y="236" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">작년 보고서의 100 과 다른 숫자</text>
+
+  <!-- 열 3: 당기 -->
+  <rect x="580" y="136" width="260" height="110" rx="6" fill="#ffffff" stroke="#555" stroke-width="2"/>
+  <text x="710" y="160" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">처음부터 새 정책으로 적는다</text>
+  <text x="710" y="186" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">2년차 순이익</text>
+  <text x="710" y="212" font-family="sans-serif" font-size="18" font-weight="bold" fill="#1b1b1b" text-anchor="middle">105</text>
+  <text x="710" y="236" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">선입선출이었다면 120</text>
+
+  <!-- 결과 띠 -->
+  <rect x="40" y="272" width="800" height="54" rx="6" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="440" y="294" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">성장률: 처음 보고한 두 해로 재면 100 → 120 으로 20.0%</text>
+  <text x="440" y="316" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">소급적용 후 두 해로 재면 93 → 105 로 12.9% — 같은 회사, 같은 거래</text>
+
+  <text x="24" y="362" font-family="sans-serif" font-size="13" fill="#1b1b1b">세 자리의 조정액 합은 0년 말 −8, 1년차 −7, 2년차 −15 로, 2년 말 재고 차이 −30 과 같다. 바뀐 정책이</text>
+  <text x="24" y="382" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b">만든 이익의 총량은 그대로이고, 어느 해에 적히는지만 옮겨 간다.</text>
+</svg>
