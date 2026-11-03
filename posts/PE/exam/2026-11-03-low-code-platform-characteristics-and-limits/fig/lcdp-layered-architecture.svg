@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="agl" markerWidth="10" markerHeight="8" refX="1" refY="4" orient="auto">
+      <path d="M10,0 L0,4 L10,8 Z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b1b1b">로우코드 플랫폼의 4계층 구조</text>
+
+  <!-- actor -->
+  <rect x="34" y="92" width="150" height="62" rx="6" fill="#eef1f6" stroke="#4a4a4a" stroke-width="2"/>
+  <text x="109" y="117" text-anchor="middle" font-size="14" fill="#1b1b1b">시민 개발자</text>
+  <text x="109" y="138" text-anchor="middle" font-size="14" fill="#1b1b1b">전문 개발자</text>
+  <path d="M186,123 L250,123" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+
+  <!-- four layers -->
+  <rect x="252" y="86" width="330" height="74" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="417" y="114" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">애플리케이션 계층</text>
+  <text x="417" y="137" text-anchor="middle" font-size="13" fill="#4a4a4a">툴박스 · 위젯 · 모델링 구성자 · 인증/인가 정의</text>
+
+  <rect x="252" y="172" width="330" height="74" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="417" y="200" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">서비스 통합 계층</text>
+  <text x="417" y="223" text-anchor="middle" font-size="13" fill="#4a4a4a">외부 서비스 API 연결 · 인증 처리</text>
+
+  <rect x="252" y="258" width="330" height="74" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="417" y="286" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">데이터 통합 계층</text>
+  <text x="417" y="309" text-anchor="middle" font-size="13" fill="#4a4a4a">이기종 데이터 원천의 동일한 조작</text>
+
+  <rect x="252" y="344" width="330" height="60" rx="6" fill="#eef1f6" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="417" y="370" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">배포 계층</text>
+  <text x="417" y="391" text-anchor="middle" font-size="13" fill="#4a4a4a">컨테이너화 · 오케스트레이션 · CI/CD</text>
+
+  <!-- external -->
+  <rect x="650" y="172" width="196" height="74" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="748" y="200" text-anchor="middle" font-size="14" fill="#1b1b1b">외부 서비스</text>
+  <text x="748" y="222" text-anchor="middle" font-size="13" fill="#4a4a4a">Dropbox · Git · IFTTT</text>
+
+  <rect x="650" y="258" width="196" height="74" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="748" y="286" text-anchor="middle" font-size="14" fill="#1b1b1b">데이터 원천</text>
+  <text x="748" y="308" text-anchor="middle" font-size="13" fill="#4a4a4a">스프레드시트 · DB</text>
+
+  <rect x="650" y="344" width="196" height="60" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="748" y="370" text-anchor="middle" font-size="14" fill="#1b1b1b">실행 기반</text>
+  <text x="748" y="391" text-anchor="middle" font-size="13" fill="#4a4a4a">클라우드 · 온프레미스</text>
+
+  <path d="M586,209 L646,209" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)" marker-start="url(#agl)"/>
+  <path d="M586,295 L646,295" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)" marker-start="url(#agl)"/>
+  <path d="M586,374 L646,374" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+
+  <text x="109" y="196" text-anchor="middle" font-size="13" fill="#4a4a4a">여기까지만</text>
+  <text x="109" y="216" text-anchor="middle" font-size="13" fill="#4a4a4a">직접 다룬다</text>
+  <text x="109" y="250" text-anchor="middle" font-size="13" fill="#9d0208">아래 세 계층은</text>
+  <text x="109" y="270" text-anchor="middle" font-size="13" fill="#9d0208">플랫폼이 가린다</text>
+</svg>
