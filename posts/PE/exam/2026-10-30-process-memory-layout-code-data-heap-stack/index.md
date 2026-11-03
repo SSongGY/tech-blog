@@ -393,6 +393,8 @@ ABI가 함께 거는 제약이 두 가지다.
 실제 주소 공간을 다룰 때는 확장분을 함께 봐야 한다.
 
 > 개념 정리: [프로세스와 스레드 — 문맥 교환 비용](../../system/2026-09-29-process-thread-context-switch-cost/index.md)
+>
+> 개념 정리: [ELF 실행 파일 포맷과 프로그램 적재](../../system/2026-11-04-elf-file-format-sections-segments-loading/index.md)
 
 끝
 
