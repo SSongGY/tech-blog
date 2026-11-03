@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="470" fill="#f8f9fa"/>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">루프라인 — 연산강도에 따라 상한을 정하는 두 개의 지붕 (AMD Opteron X2, 논문 §3 수치)</text>
+  <text x="20" y="48" font-size="13" fill="#495057">상한 = min(최대 연산 성능 17.6 GFlop/s, 대역폭 15 GB/s × 연산강도). 양축 모두 로그 눈금.</text>
+
+  <!-- 축 -->
+  <line x1="100" y1="380" x2="780" y2="380" stroke="#495057" stroke-width="1.5"/>
+  <line x1="100" y1="380" x2="100" y2="70" stroke="#495057" stroke-width="1.5"/>
+
+  <!-- x 눈금: 0.25 0.5 1 2 4 8 16 -->
+  <g font-size="13" fill="#495057" text-anchor="middle">
+    <text x="100" y="400">1/4</text>
+    <text x="210" y="400">1/2</text>
+    <text x="320" y="400">1</text>
+    <text x="430" y="400">2</text>
+    <text x="540" y="400">4</text>
+    <text x="650" y="400">8</text>
+    <text x="760" y="400">16</text>
+  </g>
+  <text x="440" y="426" font-size="13" fill="#212529" text-anchor="middle">연산강도 (Flops / DRAM byte)</text>
+
+  <!-- y 눈금: 1 2 4 8 16 32 -->
+  <g font-size="13" fill="#495057" text-anchor="end">
+    <text x="92" y="378">1</text>
+    <text x="92" y="324">2</text>
+    <text x="92" y="264">4</text>
+    <text x="92" y="204">8</text>
+    <text x="92" y="144">16</text>
+    <text x="92" y="84">32</text>
+  </g>
+  <text x="30" y="66" font-size="13" fill="#212529">GFlop/s</text>
+
+  <!-- 지붕: 대각선(대역폭) + 수평선(연산) -->
+  <polyline points="100,265.6 345.4,131.7 780,131.7" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="150" y="196" font-size="13" fill="#2d6a4f" transform="rotate(-29 150 196)">기울어진 지붕: 15 GB/s × 연산강도</text>
+  <text x="560" y="124" font-size="13" fill="#2d6a4f">평평한 지붕: 최대 연산 성능 17.6 GFlop/s</text>
+
+  <!-- 천장 하나: 곱·합 불균형 8.8 GFlop/s -->
+  <line x1="235.4" y1="191.7" x2="780" y2="191.7" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="560" y="186" font-size="13" fill="#b45309">천장: 곱·합 불균형이면 8.8 GFlop/s</text>
+
+  <!-- 능선점 -->
+  <circle cx="345.4" cy="131.7" r="6" fill="#ffffff" stroke="#212529" stroke-width="2"/>
+  <line x1="345.4" y1="131.7" x2="345.4" y2="380" stroke="#868e96" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="352" y="104" font-size="13" font-weight="bold" fill="#212529">능선점 = 17.6 ÷ 15 ≈ 1.17</text>
+  <text x="352" y="121" font-size="13" fill="#495057">최대 성능에 닿는 최소 연산강도</text>
+
+  <!-- 커널 A: 연산강도 0.5 → 메모리 바운드 -->
+  <line x1="210" y1="380" x2="210" y2="205.6" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <circle cx="210" cy="205.6" r="6" fill="#9d0208"/>
+  <text x="112" y="300" font-size="13" font-weight="bold" fill="#9d0208">커널 A: 강도 0.5</text>
+  <text x="112" y="318" font-size="13" fill="#9d0208">기울어진 지붕에 닿는다</text>
+  <text x="112" y="336" font-size="13" fill="#9d0208">→ 메모리 바운드, 상한 7.5</text>
+
+  <!-- 커널 B: 연산강도 2 → 연산 바운드 -->
+  <line x1="430" y1="380" x2="430" y2="131.7" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5 3"/>
+  <circle cx="430" cy="131.7" r="6" fill="#2d6a4f"/>
+  <text x="440" y="300" font-size="13" font-weight="bold" fill="#2d6a4f">커널 B: 강도 2</text>
+  <text x="440" y="318" font-size="13" fill="#2d6a4f">평평한 지붕에 닿는다</text>
+  <text x="440" y="336" font-size="13" fill="#2d6a4f">→ 연산 바운드, 상한 17.6</text>
+
+  <text x="20" y="456" font-size="13" fill="#495057">지붕과 천장은 장비마다 한 번만 그린다. 커널은 연산강도 자리에 수직선을 긋고 어느 지붕에 먼저 닿는지 본다.</text>
+</svg>
