@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="460" viewBox="0 0 880 460"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="460" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">HashMap 버킷이 연결 리스트에서 트리로 바뀌는 길 (Java 8 HashMap.java)</text>
+  <text x="20" y="48" font-size="13" fill="#495057">세 상수가 분기를 정한다: TREEIFY_THRESHOLD = 8, MIN_TREEIFY_CAPACITY = 64, UNTREEIFY_THRESHOLD = 6</text>
+
+  <!-- 1. put -->
+  <rect x="20" y="70" width="200" height="70" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="94" font-size="13" font-weight="bold" fill="#495057">① put(key, value)</text>
+  <text x="36" y="114" font-size="13" fill="#212529">hash = h ^ (h &gt;&gt;&gt; 16)</text>
+  <text x="36" y="132" font-size="13" fill="#212529">버킷 = (n − 1) &amp; hash</text>
+
+  <line x1="220" y1="105" x2="250" y2="105" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2. chain walk -->
+  <rect x="254" y="70" width="240" height="70" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="270" y="94" font-size="13" font-weight="bold" fill="#495057">② 버킷의 리스트를 끝까지 걷는다</text>
+  <text x="270" y="114" font-size="13" fill="#212529">같은 키가 없으면 꼬리에 단다</text>
+  <text x="270" y="132" font-size="13" fill="#212529">걸은 노드 수 binCount 를 센다</text>
+
+  <line x1="494" y1="105" x2="524" y2="105" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 3. threshold check -->
+  <rect x="528" y="70" width="332" height="70" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="544" y="94" font-size="13" font-weight="bold" fill="#b45309">③ binCount ≥ TREEIFY_THRESHOLD − 1 ?</text>
+  <text x="544" y="114" font-size="13" fill="#212529">달기 전에 이미 8개였다 = 이번 것이 9번째</text>
+  <text x="544" y="132" font-size="13" fill="#212529">아니면 그대로 끝. 맞으면 treeifyBin()</text>
+
+  <line x1="694" y1="140" x2="694" y2="172" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 4. capacity check -->
+  <rect x="528" y="176" width="332" height="70" rx="6" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="544" y="200" font-size="13" font-weight="bold" fill="#b45309">④ table.length &lt; MIN_TREEIFY_CAPACITY(64) ?</text>
+  <text x="544" y="220" font-size="13" fill="#212529">맞으면 트리 대신 resize() — 표를 두 배로</text>
+  <text x="544" y="238" font-size="13" fill="#212529">아니면 Node 들을 TreeNode 로 바꿔 treeify()</text>
+
+  <!-- 4a resize -->
+  <line x1="528" y1="211" x2="470" y2="211" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="254" y="176" width="212" height="70" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="270" y="200" font-size="13" font-weight="bold" fill="#9d0208">resize() 16 → 32 → 64</text>
+  <text x="270" y="220" font-size="13" fill="#212529">해시가 같으면 흩어지지 않아</text>
+  <text x="270" y="238" font-size="13" fill="#212529">리스트는 그대로, 표만 커진다</text>
+
+  <!-- 5. tree -->
+  <line x1="694" y1="246" x2="694" y2="278" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="528" y="282" width="332" height="88" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="544" y="306" font-size="13" font-weight="bold" fill="#2d6a4f">⑤ TreeNode 레드블랙 트리</text>
+  <text x="544" y="326" font-size="13" fill="#212529">정렬 키: hash → Comparable 이면 compareTo</text>
+  <text x="544" y="344" font-size="13" fill="#212529">→ 아니면 클래스 이름 · identityHashCode 로</text>
+  <text x="544" y="362" font-size="13" fill="#212529">   삽입 순서만 고정 (찾을 때는 못 쓴다)</text>
+
+  <!-- 6. lookup -->
+  <line x1="528" y1="326" x2="470" y2="326" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="20" y="282" width="446" height="88" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="306" font-size="13" font-weight="bold" fill="#495057">⑥ get(key) — 트리에서 찾기 (TreeNode.find)</text>
+  <text x="36" y="326" font-size="13" fill="#2d6a4f">hash 가 다르거나 Comparable 이면 한쪽 가지만 내려간다</text>
+  <text x="36" y="344" font-size="13" fill="#9d0208">hash 도 같고 Comparable 도 아니면 오른쪽 가지를 다 뒤진 뒤 왼쪽 가지</text>
+  <text x="36" y="362" font-size="13" fill="#9d0208">→ 트리인데도 모든 노드를 볼 수 있다 (측정: 16,384개에서 1,200배 차이)</text>
+
+  <!-- untreeify -->
+  <rect x="20" y="392" width="840" height="50" rx="6" fill="#ffffff" stroke="#adb5bd" stroke-width="1.2"/>
+  <text x="36" y="412" font-size="13" font-weight="bold" fill="#495057">되돌아가는 길</text>
+  <text x="36" y="432" font-size="13" fill="#212529">resize() 로 버킷이 둘로 갈라질 때 한쪽이 UNTREEIFY_THRESHOLD(6) 이하면 다시 Node 리스트가 된다.</text>
+  <text x="460" y="412" font-size="13" fill="#495057">8 과 6 사이의 간격이 리스트와 트리를 오가는 일을 막는다.</text>
+</svg>

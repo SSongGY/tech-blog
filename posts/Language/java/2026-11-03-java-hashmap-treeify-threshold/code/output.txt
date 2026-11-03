@@ -1,0 +1,65 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Language\java\2026-11-03-java-hashmap-treeify-threshold
+# 명령      : bash run.sh
+# 수행 시각 : 2026-11-03 15:40 (대한민국 표준시)
+# 소요      : 31.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+java.version = 1.8.0_491
+java.vm.name = Java HotSpot(TM) 64-Bit Server VM 25.491-b10
+
+==============================================================
+1. 한 버킷에 키를 하나씩 더하며 노드 종류를 본다 (기본 용량 16)
+==============================================================
+  키  1개  Node (table.length=16)
+  키  2개  Node (table.length=16)
+  키  3개  Node (table.length=16)
+  키  4개  Node (table.length=16)
+  키  5개  Node (table.length=16)
+  키  6개  Node (table.length=16)
+  키  7개  Node (table.length=16)
+  키  8개  Node (table.length=16)
+  키  9개  Node (table.length=32)
+  키 10개  Node (table.length=64)
+  키 11개  TreeNode (table.length=64)
+  키 12개  TreeNode (table.length=64)
+
+==============================================================
+2. 같은 일을 용량 64 로 시작하면
+==============================================================
+  키  1개  Node (table.length=64)
+  키  2개  Node (table.length=64)
+  키  3개  Node (table.length=64)
+  키  4개  Node (table.length=64)
+  키  5개  Node (table.length=64)
+  키  6개  Node (table.length=64)
+  키  7개  Node (table.length=64)
+  키  8개  Node (table.length=64)
+  키  9개  TreeNode (table.length=64)
+  키 10개  TreeNode (table.length=64)
+  키 11개  TreeNode (table.length=64)
+  키 12개  TreeNode (table.length=64)
+
+==============================================================
+3. 트리가 됐을 때 조회 시간 — Comparable 여부로 갈린다
+==============================================================
+  키 수     PlainKey(비교 불가)   SortableKey(Comparable)   노드 종류
+       8              1.6 µs                 1.6 µs   Node (table.length=16)
+      64             37.9 µs                20.5 µs   TreeNode (table.length=128)
+     512           1063.5 µs               313.6 µs   TreeNode (table.length=1024)
+    4096          76746.6 µs               287.0 µs   TreeNode (table.length=8192)
+   16384        2532246.9 µs              2113.4 µs   TreeNode (table.length=32768)
+
+==============================================================
+4. 해시가 제대로 퍼지면 트리는 등장하지 않는다 (Integer 키 32768개)
+==============================================================
+  table.length=65536  가장 긴 버킷=5  TreeNode 버킷=0  조회 507.8 µs
+
+--- stderr ---
+java version "1.8.0_491"
+Java(TM) SE Runtime Environment (build 1.8.0_491-b10)
+Java HotSpot(TM) 64-Bit Server VM (build 25.491-b10, mixed mode)
