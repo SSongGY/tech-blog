@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **565편** · 갱신 2026-11-03
+총 **567편** · 갱신 2026-11-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -487,10 +487,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 112편
+## 주식·재무 (finance) — 114편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-03 | [이자와 배당금의 현금흐름 분류 — 같은 이익에서 영업현금흐름이 갈린다](posts/Finance/statements/2026-11-03-interest-dividend-cash-flow-classification/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1007호 현금흐름표(2024-11-22 개정) | 실행 검증 |
+| 2026-11-03 | [정부보조금 표시 두 가지 — 순이익은 같은데 부채비율이 갈린다](posts/Finance/statements/2026-11-03-government-grant-presentation-methods/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1020호 정부보조금의 회계처리와 정부지원의 공시(2015-09-25 개정) | 실행 검증 |
 | 2026-11-02 | [자기주식의 회계 — 사도 비용이 아니고 팔아도 이익이 아니다](posts/Finance/statements/2026-11-02-treasury-stock-equity-accounting/index.md) | 중급 | Python 3.13.5, K-IFRS 제1032호 금융상품: 표시 (문단 33·34·35), 일반기업회계기준 제15장 자본 (문단 15.8~15.12), 상법 제343조(2026-03-06 시행), 상법 제341조(2012-04-15 시행) | 실행 검증 |
 | 2026-11-02 | [영업현금흐름으로 보는 상환 능력 — 이자보상배율이 놓치는 것](posts/Finance/ratios/2026-11-02-operating-cash-flow-debt-service-coverage/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, 한국은행 기업경영분석 통계정보보고서(2019.12) | 실행 검증 |
 | 2026-11-02 | [합병·분할 공시와 주식매수청구권 — 반대한 주주가 받는 길](posts/Finance/disclosure/2026-11-02-merger-disclosure-and-appraisal-right/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
