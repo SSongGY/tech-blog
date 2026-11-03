@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="430" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+    <marker id="arrowg" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">가중치 고정 시스톨릭 어레이 — 셀 하나가 곱하고, 그 결과를 옆 셀로 넘긴다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">가중치는 셀에 머문다. 활성값은 왼쪽에서 오른쪽으로, 부분합은 위에서 아래로 한 칸씩 흐른다.</text>
+
+  <!-- 상단 부분합 투입 -->
+  <text x="170" y="86" font-size="13" fill="#2d6a4f">부분합 0 투입</text>
+  <line x1="215" y1="94" x2="215" y2="118" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="339" y1="94" x2="339" y2="118" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="463" y1="94" x2="463" y2="118" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+
+  <!-- 1행 -->
+  <text x="26" y="153" font-size="13" fill="#212529">A 1열 값</text>
+  <line x1="100" y1="148" x2="166" y2="148" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="170" y="120" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="215" y="144" font-size="13" fill="#495057" text-anchor="middle">PE(1,1)</text>
+  <text x="215" y="164" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[1][1]</text>
+  <line x1="260" y1="148" x2="290" y2="148" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="294" y="120" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="339" y="144" font-size="13" fill="#495057" text-anchor="middle">PE(1,2)</text>
+  <text x="339" y="164" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[1][2]</text>
+  <line x1="384" y1="148" x2="414" y2="148" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="418" y="120" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="463" y="144" font-size="13" fill="#495057" text-anchor="middle">PE(1,3)</text>
+  <text x="463" y="164" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[1][3]</text>
+
+  <line x1="215" y1="176" x2="215" y2="204" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="339" y1="176" x2="339" y2="204" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="463" y1="176" x2="463" y2="204" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+
+  <!-- 2행 -->
+  <text x="26" y="239" font-size="13" fill="#212529">A 2열 값</text>
+  <line x1="100" y1="234" x2="166" y2="234" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="170" y="206" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="215" y="230" font-size="13" fill="#495057" text-anchor="middle">PE(2,1)</text>
+  <text x="215" y="250" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[2][1]</text>
+  <line x1="260" y1="234" x2="290" y2="234" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="294" y="206" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="339" y="230" font-size="13" fill="#495057" text-anchor="middle">PE(2,2)</text>
+  <text x="339" y="250" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[2][2]</text>
+  <line x1="384" y1="234" x2="414" y2="234" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="418" y="206" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="463" y="230" font-size="13" fill="#495057" text-anchor="middle">PE(2,3)</text>
+  <text x="463" y="250" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[2][3]</text>
+
+  <line x1="215" y1="262" x2="215" y2="290" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="339" y1="262" x2="339" y2="290" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="463" y1="262" x2="463" y2="290" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+
+  <!-- 3행 -->
+  <text x="26" y="325" font-size="13" fill="#212529">A 3열 값</text>
+  <line x1="100" y1="320" x2="166" y2="320" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="170" y="292" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="215" y="316" font-size="13" fill="#495057" text-anchor="middle">PE(3,1)</text>
+  <text x="215" y="336" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[3][1]</text>
+  <line x1="260" y1="320" x2="290" y2="320" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="294" y="292" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="339" y="316" font-size="13" fill="#495057" text-anchor="middle">PE(3,2)</text>
+  <text x="339" y="336" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[3][2]</text>
+  <line x1="384" y1="320" x2="414" y2="320" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="418" y="292" width="90" height="56" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="463" y="316" font-size="13" fill="#495057" text-anchor="middle">PE(3,3)</text>
+  <text x="463" y="336" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">W=B[3][3]</text>
+
+  <line x1="215" y1="348" x2="215" y2="374" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="339" y1="348" x2="339" y2="374" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <line x1="463" y1="348" x2="463" y2="374" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrowg)"/>
+  <text x="170" y="394" font-size="13" fill="#2d6a4f">완성된 C 한 행이 아래로 빠진다</text>
+
+  <!-- 셀 하나의 동작 -->
+  <rect x="560" y="120" width="300" height="130" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="576" y="144" font-size="13" font-weight="bold" fill="#2d6a4f">셀 하나가 하는 일 (한 사이클)</text>
+  <text x="576" y="170" font-size="13" fill="#212529">psum_out = psum_in + act_in × W</text>
+  <text x="576" y="194" font-size="13" fill="#212529">act_out  = act_in</text>
+  <text x="576" y="220" font-size="13" fill="#495057">가중치 W 는 바뀌지 않는다.</text>
+  <text x="576" y="240" font-size="13" fill="#495057">읽어 온 act 하나가 오른쪽으로 N 번 쓰인다.</text>
+
+  <rect x="560" y="262" width="300" height="112" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="576" y="286" font-size="13" font-weight="bold" fill="#b45309">값을 비스듬히 넣는 이유</text>
+  <text x="576" y="310" font-size="13" fill="#212529">A 의 i번째 행은 r번째 행 입구에</text>
+  <text x="576" y="330" font-size="13" fill="#212529">i + r 사이클에 들어간다.</text>
+  <text x="576" y="354" font-size="13" fill="#495057">그래야 act 와 psum 이 같은 셀에서 만난다.</text>
+</svg>
