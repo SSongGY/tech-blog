@@ -195,6 +195,8 @@ Jacobson과 Lindström은 같은 뜻을 식으로 적었다 — **재공학 = �
 따라서 재공학 과제의 첫 산출물은 코드가 아니라 **재공학과 재개발 중 하나를 고른 근거**여야 한다.
 
 > 개념 정리: [소프트웨어 재공학과 역공학](../../software-engineering/2026-10-23-software-reengineering-reverse-engineering/index.md)
+>
+> 개념 정리: [데이터 역공학 — 물리 스키마에서 논리 모델 복원](../../software-engineering/2026-11-04-data-reverse-engineering-logical-schema-recovery/index.md)
 
 끝
 
