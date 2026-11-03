@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="470" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">(a+)+$ 가 "aaa!" 를 거부하기까지 — 분할마다 끝까지 가서 실패한다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">바깥 + 가 안쪽 a+ 를 몇 덩어리로 자를지가 여러 가지라, 실패를 확정하려면 전부 시도해야 한다</text>
+
+  <!-- 입력 -->
+  <rect x="20" y="72" width="150" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="95" y="96" font-size="13" font-weight="bold" fill="#495057" text-anchor="middle">입력</text>
+  <text x="95" y="117" font-size="14" fill="#212529" text-anchor="middle">a a a !</text>
+
+  <line x1="170" y1="100" x2="212" y2="100" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 분할 4가지 -->
+  <text x="222" y="66" font-size="13" font-weight="bold" fill="#b45309">a+ 덩어리로 자르는 방법 — 2^(3-1) = 4가지</text>
+  <rect x="222" y="72" width="200" height="40" rx="6" fill="#fff4e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="322" y="97" font-size="13" fill="#212529" text-anchor="middle">[aaa]</text>
+  <rect x="222" y="120" width="200" height="40" rx="6" fill="#fff4e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="322" y="145" font-size="13" fill="#212529" text-anchor="middle">[aa][a]</text>
+  <rect x="222" y="168" width="200" height="40" rx="6" fill="#fff4e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="322" y="193" font-size="13" fill="#212529" text-anchor="middle">[a][aa]</text>
+  <rect x="222" y="216" width="200" height="40" rx="6" fill="#fff4e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="322" y="241" font-size="13" fill="#212529" text-anchor="middle">[a][a][a]</text>
+
+  <!-- 각 분할 → $ 검사 실패 -->
+  <line x1="422" y1="92" x2="470" y2="92" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <line x1="422" y1="140" x2="470" y2="140" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <line x1="422" y1="188" x2="470" y2="188" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+  <line x1="422" y1="236" x2="470" y2="236" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <rect x="474" y="72" width="200" height="184" rx="6" fill="#fde2e2" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="574" y="104" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">$ 가 '!' 를 만난다</text>
+  <text x="574" y="128" font-size="13" fill="#212529" text-anchor="middle">끝이 아니므로 실패</text>
+  <text x="574" y="160" font-size="13" fill="#212529" text-anchor="middle">→ 직전 선택으로 되돌아가</text>
+  <text x="574" y="180" font-size="13" fill="#212529" text-anchor="middle">다음 분할을 시도한다</text>
+  <text x="574" y="214" font-size="13" fill="#495057" text-anchor="middle">4가지 전부 실패해야</text>
+  <text x="574" y="234" font-size="13" fill="#495057" text-anchor="middle">"불일치"가 확정된다</text>
+
+  <!-- 결론 -->
+  <rect x="698" y="72" width="162" height="184" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="779" y="104" font-size="13" font-weight="bold" fill="#495057" text-anchor="middle">글자 n개면</text>
+  <text x="779" y="134" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">2^(n-1) 가지</text>
+  <text x="779" y="164" font-size="13" fill="#212529" text-anchor="middle">n 이 1 늘면 시도가</text>
+  <text x="779" y="184" font-size="13" fill="#212529" text-anchor="middle">2배 — 측정값과 같다</text>
+  <text x="779" y="216" font-size="13" fill="#495057" text-anchor="middle">실측: n=18→27 에서</text>
+  <text x="779" y="236" font-size="13" fill="#495057" text-anchor="middle">매 단계 ×2.0</text>
+
+  <!-- 구분선 -->
+  <line x1="20" y1="282" x2="860" y2="282" stroke="#adb5bd" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 고친 식 -->
+  <text x="20" y="308" font-size="14" font-weight="bold" fill="#2d6a4f">고친 식 — 자르는 방법이 하나뿐이면 되돌아갈 곳이 없다</text>
+
+  <rect x="20" y="322" width="150" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="95" y="346" font-size="13" font-weight="bold" fill="#495057" text-anchor="middle">입력</text>
+  <text x="95" y="367" font-size="14" fill="#212529" text-anchor="middle">a a a !</text>
+
+  <line x1="170" y1="350" x2="212" y2="350" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="222" y="322" width="200" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="322" y="346" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">a+$  또는  (a++)+$</text>
+  <text x="322" y="367" font-size="13" fill="#212529" text-anchor="middle">[aaa] 한 가지</text>
+
+  <line x1="422" y1="350" x2="470" y2="350" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <rect x="474" y="322" width="200" height="56" rx="6" fill="#fde2e2" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="574" y="346" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">$ 실패 — 1번</text>
+  <text x="574" y="367" font-size="13" fill="#212529" text-anchor="middle">되돌아갈 선택이 없다</text>
+
+  <rect x="698" y="322" width="162" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="779" y="346" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">시도 n에 비례</text>
+  <text x="779" y="367" font-size="13" fill="#212529" text-anchor="middle">실측: n=40 에 1µs</text>
+
+  <text x="20" y="412" font-size="13" fill="#495057">a++ (소유 한정자) 는 한 번 먹은 글자를 되돌려 주지 않고, (?&gt;…) (원자 그룹) 은 그룹 안으로 되돌아가지 않는다.</text>
+  <text x="20" y="432" font-size="13" fill="#495057">둘 다 Python 3.11 부터 re 모듈이 지원한다. 같은 언어를 받는 식이라도 "자르는 방법의 수"가 비용을 정한다.</text>
+  <text x="20" y="456" font-size="13" fill="#868e96">측정값은 code/output.txt 의 1절·6절. 환경에 따라 절대 시간은 달라도 배수는 같다.</text>
+</svg>
