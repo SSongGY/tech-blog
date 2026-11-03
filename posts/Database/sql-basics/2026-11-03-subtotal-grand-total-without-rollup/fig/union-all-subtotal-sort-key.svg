@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="430" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">UNION ALL 로 쌓은 결과는 한 덩어리로 정렬된다 — 합계 줄의 자리는 정렬 키가 정한다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">복합 SELECT 의 ORDER BY 는 결과 컬럼만 가리킬 수 있으므로, 순서를 정할 값을 컬럼으로 미리 만들어 둔다</text>
+
+  <!-- ① 지역별 집계 -->
+  <rect x="20" y="70" width="250" height="146" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="92" font-size="13" font-weight="bold" fill="#495057">① SELECT 0 AS ord, region, SUM(…)</text>
+  <text x="36" y="110" font-size="13" fill="#495057">   FROM sale GROUP BY region</text>
+  <text x="36" y="138" font-size="13" fill="#212529" font-family="Consolas,monospace">ord  region  total</text>
+  <text x="36" y="158" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   부산      350</text>
+  <text x="36" y="178" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   서울      650</text>
+  <text x="36" y="198" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   화성      150</text>
+
+  <!-- ② 총계 -->
+  <rect x="20" y="240" width="250" height="86" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="262" font-size="13" font-weight="bold" fill="#495057">② SELECT 1, '합계', SUM(amount)</text>
+  <text x="36" y="280" font-size="13" fill="#495057">   FROM sale</text>
+  <text x="36" y="306" font-size="13" fill="#212529" font-family="Consolas,monospace"> 1   합계     1150</text>
+
+  <!-- UNION ALL 묶음 -->
+  <text x="145" y="231" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">UNION ALL</text>
+
+  <line x1="270" y1="198" x2="318" y2="198" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ③ 쌓인 결과 (정렬 전) -->
+  <rect x="322" y="70" width="220" height="256" rx="6" fill="#fff4e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="338" y="92" font-size="13" font-weight="bold" fill="#b45309">③ 쌓인 결과 — 아직 순서 없음</text>
+  <text x="338" y="110" font-size="13" fill="#495057">위아래 구분은 사라진다</text>
+  <text x="338" y="138" font-size="13" fill="#212529" font-family="Consolas,monospace">ord  region  total</text>
+  <text x="338" y="158" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   부산      350</text>
+  <text x="338" y="178" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   서울      650</text>
+  <text x="338" y="198" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   화성      150</text>
+  <text x="338" y="218" font-size="13" fill="#212529" font-family="Consolas,monospace"> 1   합계     1150</text>
+  <text x="338" y="256" font-size="13" fill="#9d0208">ORDER BY region 만 두면</text>
+  <text x="338" y="276" font-size="13" fill="#9d0208">'합계' 가 '화성' 앞에 선다</text>
+  <text x="338" y="296" font-size="13" fill="#495057">(문자 순서: 합 &lt; 화)</text>
+
+  <line x1="542" y1="198" x2="590" y2="198" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ④ ORDER BY ord, region -->
+  <rect x="594" y="70" width="266" height="256" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="610" y="92" font-size="13" font-weight="bold" fill="#2d6a4f">④ ORDER BY ord, region</text>
+  <text x="610" y="110" font-size="13" fill="#495057">ord 가 먼저 갈라 두고, 그 안에서 지역순</text>
+  <text x="610" y="138" font-size="13" fill="#212529" font-family="Consolas,monospace">ord  region  total</text>
+  <text x="610" y="158" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   부산      350</text>
+  <text x="610" y="178" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   서울      650</text>
+  <text x="610" y="198" font-size="13" fill="#212529" font-family="Consolas,monospace"> 0   화성      150</text>
+  <text x="610" y="218" font-size="13" fill="#2d6a4f" font-weight="bold" font-family="Consolas,monospace"> 1   합계     1150</text>
+  <text x="610" y="256" font-size="13" fill="#212529">합계 줄이 항상 마지막에 온다.</text>
+  <text x="610" y="276" font-size="13" fill="#212529">지역 이름이 무엇이든 ord=1 은</text>
+  <text x="610" y="296" font-size="13" fill="#212529">ord=0 뒤에 놓이기 때문이다.</text>
+
+  <text x="20" y="360" font-size="13" fill="#495057">ORDER BY 에 region IS NULL 같은 식을 적으면 SQLite 3.49.1 은 거부한다:</text>
+  <text x="20" y="380" font-size="13" fill="#9d0208">"1st ORDER BY term does not match any column in the result set" — 그래서 is_total 같은 플래그 컬럼을 각 SELECT 에 넣는다.</text>
+  <text x="20" y="412" font-size="13" fill="#868e96">값은 code/output.txt 의 3·4절. 두 단계 소계(지역×제품 → 지역 소계 → 총계)도 같은 원리로 lvl·is_total 두 컬럼을 쓴다.</text>
+</svg>

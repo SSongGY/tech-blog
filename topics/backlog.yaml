@@ -5527,7 +5527,7 @@ topics:
     difficulty: 심화
     angle: "입력 길이를 한 글자씩 늘리며 매칭 시간이 지수로 뛰는 것을 재고, 같은 뜻의 식을 고쳐 선형으로 돌리는 과정을 보인다. 길이 제한·타임아웃·식 재작성 중 무엇이 실제로 막는지 대조한다."
     code: python
-    status: todo
+    status: done
   - id: gen-010
     title: "제너레이터가 실제로 아끼는 것 — tracemalloc 으로 본 메모리"
     category: Performance
@@ -6290,7 +6290,7 @@ topics:
     angle: "결정·배경·대안·결과 네 항목이 왜 그 순서인지, 설계 문서와 무엇이 다른지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-090
     title: "CASE 식 — 조건에 따라 다른 값을 돌려주는 법"
     category: Database
@@ -6301,7 +6301,8 @@ topics:
     angle: "단순 CASE와 검색 CASE의 차이, WHERE·ORDER BY·집계 안에서 쓰는 자리까지"
     code: python
     origin: manual
-    status: todo
+    status: blocked
+    blocked_note: 기존 글 2026-09-28-case-when-conditional-pivot 과 중복(단순·검색 CASE, NULL, WHEN 순서를 이미 다룸)
   - id: db-091
     title: "자기 조인 — 같은 표를 두 번 불러 비교하기"
     category: Database
@@ -6582,7 +6583,7 @@ topics:
     category: Database
     subcategory: sql-basics
     track: basics
-    tags: [sql, subquery, null, basics]
+    tags: [sql, subquery, "null", basics]
     difficulty: 입문
     angle: "세 가지가 같은 답을 주는 경우와 갈리는 경우를 나란히 돌린다. 부질의 결과에 NULL 이 하나 섞이면 NOT IN 이 전부 거짓이 되는 것을 재현하고 실행계획 차이도 본다"
     code: python
@@ -6681,7 +6682,7 @@ topics:
     category: Database
     subcategory: sql-basics
     track: basics
-    tags: [sql, unique, null, constraint, basics]
+    tags: [sql, unique, "null", constraint, basics]
     difficulty: 입문
     angle: "UNIQUE 컬럼에 NULL 을 여러 번 넣어 보고, 복합 UNIQUE 에서 일부만 NULL 일 때 어떻게 되는지 확인한다. 표준이 NULL 을 서로 다르다고 보는 규칙과, 그걸 막으려면 부분 인덱스나 CHECK 를 어떻게 거는지까지"
     code: python
@@ -6731,3 +6732,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-105
+    title: "소계와 총계를 한 결과에 — ROLLUP 이 없는 SQLite 에서 합계 줄 붙이기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, group-by, rollup, union-all, basics]
+    difficulty: 입문
+    angle: "GROUP BY 결과 아래에 합계 행을 붙이는 세 가지 방법을 돌린다. ROLLUP 이 SQLite 3.49.1 에서 문법 오류라는 것을 확인하고, UNION ALL 로 소계·총계 행을 쌓을 때 정렬 키를 따로 두지 않으면 합계 줄이 중간에 끼는 것, 집계를 CTE 에 한 번만 해 두고 그 위에서 총계를 내면 표를 한 번만 읽는 것을 실행계획으로 대조한다. 행을 더하지 않고 SUM() OVER () 로 칸을 더하는 방법까지"
+    code: python
+    origin: manual
+    status: done
