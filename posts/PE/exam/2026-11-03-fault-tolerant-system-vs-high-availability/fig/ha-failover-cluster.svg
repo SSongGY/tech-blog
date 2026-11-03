@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14">
+  <rect width="880" height="400" fill="#fafafa"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#444"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#9d0208"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">장애 전환 클러스터 — 고가용성(HA)의 구조</text>
+
+  <!-- 클라이언트 -->
+  <rect x="30" y="150" width="130" height="60" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="95" y="175" text-anchor="middle" font-weight="bold" fill="#1b1b1b">클라이언트</text>
+  <text x="95" y="196" text-anchor="middle" font-size="13" fill="#333">재접속·재시도</text>
+
+  <!-- 서비스 주소 -->
+  <rect x="200" y="150" width="160" height="60" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="280" y="175" text-anchor="middle" font-weight="bold" fill="#1b1b1b">서비스 주소(VIP)</text>
+  <text x="280" y="196" text-anchor="middle" font-size="13" fill="#333">활성 노드를 따라 이동</text>
+
+  <!-- 노드 1 -->
+  <rect x="420" y="70" width="200" height="90" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="520" y="95" text-anchor="middle" font-weight="bold" fill="#1b1b1b">노드 1 — 활성</text>
+  <text x="520" y="117" text-anchor="middle" font-size="13" fill="#333">자원(DB·IP·파일시스템) 실행</text>
+  <text x="520" y="137" text-anchor="middle" font-size="13" fill="#333">자원 관리자가 주기적으로 감시</text>
+  <text x="520" y="155" text-anchor="middle" font-size="13" fill="#9d0208">응답 없음 → 장애로 판정</text>
+
+  <!-- 노드 2 -->
+  <rect x="420" y="240" width="200" height="90" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="520" y="265" text-anchor="middle" font-weight="bold" fill="#1b1b1b">노드 2 — 대기 → 활성</text>
+  <text x="520" y="287" text-anchor="middle" font-size="13" fill="#333">자원을 넘겨받아 기동</text>
+  <text x="520" y="306" text-anchor="middle" font-size="13" fill="#2d6a4f">기동 시간만큼 서비스 중단</text>
+  <text x="520" y="325" text-anchor="middle" font-size="13" fill="#333">메모리 상태는 이어지지 않음</text>
+
+  <!-- 하트비트 -->
+  <line x1="520" y1="160" x2="520" y2="240" stroke="#444" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="528" y="190" font-size="13" fill="#333">하트비트·멤버십</text>
+  <text x="528" y="208" font-size="13" fill="#333">(과반 = 쿼럼)</text>
+
+  <!-- 펜싱 -->
+  <rect x="690" y="70" width="170" height="90" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="775" y="95" text-anchor="middle" font-weight="bold" fill="#1b1b1b">펜싱 장치(STONITH)</text>
+  <text x="775" y="117" text-anchor="middle" font-size="13" fill="#333">응답 없는 노드의 전원을</text>
+  <text x="775" y="135" text-anchor="middle" font-size="13" fill="#333">강제로 끊어 자원 해제를</text>
+  <text x="775" y="153" text-anchor="middle" font-size="13" fill="#333">확정한 뒤에야 넘긴다</text>
+
+  <!-- 저장소 -->
+  <rect x="690" y="240" width="170" height="90" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="775" y="265" text-anchor="middle" font-weight="bold" fill="#1b1b1b">공유 저장소 / 복제본</text>
+  <text x="775" y="287" text-anchor="middle" font-size="13" fill="#333">두 노드가 같은 데이터를</text>
+  <text x="775" y="305" text-anchor="middle" font-size="13" fill="#333">봐야 인계가 성립</text>
+  <text x="775" y="323" text-anchor="middle" font-size="13" fill="#b45309">동시 쓰기는 펜싱으로 차단</text>
+
+  <!-- 화살표 -->
+  <line x1="160" y1="180" x2="200" y2="180" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="360" y1="170" x2="420" y2="120" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arrow-red)"/>
+  <line x1="360" y1="190" x2="420" y2="270" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <line x1="690" y1="115" x2="620" y2="115" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="620" y1="285" x2="690" y2="285" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="620" y1="140" x2="700" y2="240" stroke="#444" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <text x="440" y="372" text-anchor="middle" font-size="13" fill="#555">장애 판정 → 펜싱 → 자원 인계 → 주소 이동의 순서로 전환된다. 전환 중에는 다른 클러스터 동작이 멈춘다</text>
+  <text x="440" y="390" text-anchor="middle" font-size="13" fill="#555">점선(빨강)은 장애 전, 실선(초록)은 전환 후의 경로</text>
+</svg>

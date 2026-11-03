@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14">
+  <rect width="880" height="400" fill="#fafafa"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 루트 -->
+  <rect x="300" y="20" width="280" height="54" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="43" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">결함 허용 (Fault Tolerance)</text>
+  <text x="440" y="64" text-anchor="middle" fill="#333">오류 검출 + 시스템 복구</text>
+
+  <!-- 1단계 -->
+  <rect x="60" y="120" width="260" height="46" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="190" y="140" text-anchor="middle" font-weight="bold" fill="#1b1b1b">① 오류 검출 (Error Detection)</text>
+  <text x="190" y="158" text-anchor="middle" font-size="13" fill="#333">오류가 있다는 것을 알아낸다</text>
+
+  <rect x="440" y="120" width="380" height="46" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="630" y="140" text-anchor="middle" font-weight="bold" fill="#1b1b1b">② 복구 (Recovery)</text>
+  <text x="630" y="158" text-anchor="middle" font-size="13" fill="#333">오류가 든 상태를 오류·활성 결함이 없는 상태로 바꾼다</text>
+
+  <!-- 2단계: 검출 -->
+  <rect x="40" y="220" width="140" height="96" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="110" y="244" text-anchor="middle" font-weight="bold" fill="#1b1b1b">동시 검출</text>
+  <text x="110" y="266" text-anchor="middle" font-size="13" fill="#333">정상 서비스를</text>
+  <text x="110" y="284" text-anchor="middle" font-size="13" fill="#333">제공하는 중에</text>
+  <text x="110" y="302" text-anchor="middle" font-size="13" fill="#333">(비교기·패리티)</text>
+
+  <rect x="200" y="220" width="140" height="96" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="270" y="244" text-anchor="middle" font-weight="bold" fill="#1b1b1b">선제 검출</text>
+  <text x="270" y="266" text-anchor="middle" font-size="13" fill="#333">서비스를 멈춘 채</text>
+  <text x="270" y="284" text-anchor="middle" font-size="13" fill="#333">잠복 오류·휴면</text>
+  <text x="270" y="302" text-anchor="middle" font-size="13" fill="#333">결함을 점검</text>
+
+  <!-- 2단계: 복구 -->
+  <rect x="395" y="220" width="235" height="150" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="512" y="244" text-anchor="middle" font-weight="bold" fill="#1b1b1b">오류 처리 (Error Handling)</text>
+  <text x="512" y="264" text-anchor="middle" font-size="13" fill="#333">상태에서 오류를 없앤다</text>
+  <text x="408" y="292" font-size="13" fill="#333">· 롤백 — 체크포인트로 되돌림</text>
+  <text x="408" y="314" font-size="13" fill="#333">· 롤포워드 — 새 상태로 옮김</text>
+  <text x="408" y="336" font-size="13" fill="#333">· 보상 — 중복으로 오류를 가림</text>
+  <text x="408" y="358" font-size="13" fill="#b45309">  (상시 적용하면 마스킹)</text>
+
+  <rect x="645" y="220" width="225" height="150" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="757" y="244" text-anchor="middle" font-weight="bold" fill="#1b1b1b">결함 처리 (Fault Handling)</text>
+  <text x="757" y="264" text-anchor="middle" font-size="13" fill="#333">결함이 다시 활성화되지 않게</text>
+  <text x="656" y="292" font-size="13" fill="#333">· 진단 — 원인의 위치·유형 기록</text>
+  <text x="656" y="314" font-size="13" fill="#333">· 격리 — 고장 부품을 뺀다</text>
+  <text x="656" y="336" font-size="13" fill="#333">· 재구성 — 예비 투입·재배정</text>
+  <text x="656" y="358" font-size="13" fill="#333">· 재초기화 — 새 구성 기록</text>
+
+  <!-- 연결선 -->
+  <line x1="440" y1="74" x2="190" y2="120" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="74" x2="630" y2="120" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="190" y1="166" x2="110" y2="220" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="190" y1="166" x2="270" y2="220" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="630" y1="166" x2="512" y2="220" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="630" y1="166" x2="757" y2="220" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="440" y="392" text-anchor="middle" font-size="13" fill="#555">검출 뒤 오류 처리 → 결함 처리 순으로 이어지는 것이 "검출과 복구" 전략이다</text>
+</svg>

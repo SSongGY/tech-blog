@@ -5507,7 +5507,7 @@ topics:
     difficulty: 심화
     angle: "해시가 같은 키를 일부러 만들어 한 버킷에 몰아넣고, 임계값을 넘기 전후의 조회 시간을 잰다. 트리화가 막아 주는 것과 못 막는 것을 실측으로 가른다."
     code: java
-    status: todo
+    status: writing
   - id: gen-008
     title: "문자열을 더하는 네 가지 방법의 비용"
     category: Language
@@ -6191,7 +6191,7 @@ topics:
     angle: "기간이나 좌표 범위가 겹치는 행을 BETWEEN 두 개로 찾으면 왜 인덱스가 반만 듣는지 보이고, rtree 가상 테이블로 바꿨을 때 실행계획이 어떻게 달라지는지"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: pe-213
     title: "기계 학습 제거(Machine Unlearning) — 정확 제거와 근사 제거"
     category: PE
@@ -6257,7 +6257,7 @@ topics:
     angle: "연산강도와 능선점으로 메모리 바운드·연산 바운드를 가르는 성능 모델. 병목 판별 절차와 최적화 선택에 쓰는 법"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-219
     title: "도메인 특화 아키텍처(DSA)"
     category: PE
@@ -6697,4 +6697,37 @@ topics:
     angle: "SQLite 가 지원하는 네 가지 변경을 돌려 보고, 컬럼 타입이나 제약을 바꾸려면 새 표를 만들어 옮기는 절차를 밟아야 하는 것을 확인한다. 그 절차에서 외래키와 인덱스를 어떤 순서로 다뤄야 하는지까지"
     code: python
     origin: manual
+    status: todo
+  - id: pe-232
+    title: "결함 허용 기법의 분류 — 오류 검출과 시스템 복구(롤백·롤포워드·보상, 진단·격리·재구성)"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, computer-architecture, 개념정리]
+    difficulty: 중급
+    angle: "Avizienis 분류 체계를 따라 오류 검출 2종·오류 처리 3종·결함 처리 4종과 네 가지 복구 전략을 정리하고, 커버리지(결함 가정·실패 독립성)가 왜 한계가 되는지까지 쓴다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-233
+    title: "HA 클러스터의 쿼럼과 펜싱 — 스플릿 브레인을 막는 두 장치"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "과반 투표(쿼럼)가 어느 쪽이 살아남을지를 정하고 펜싱(STONITH)이 진 쪽이 멈췄음을 확정하는 관계를 Pacemaker·corosync 문서 근거로 정리하고, 2노드 클러스터의 쿼럼 문제와 쿼럼 장치까지 다룬다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-234
+    title: "프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "Gray(1985)의 페일패스트 모듈·프로세스 쌍 다섯 유형·트랜잭션 결합을 정리하고, 왜 재실행이 일시적 소프트웨어 결함에 듣는지(Heisenbug·Bohrbug)와 N-버전·복구 블록 같은 설계 다양성과의 차이를 비교한다"
+    code: none
+    origin: exam
     status: todo
