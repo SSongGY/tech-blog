@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="384" viewBox="0 0 880 384"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="384" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">범정부 EA — 기준(참조모형·메타모델)과 산출물(현행·목표·이행계획)</text>
+  <text x="20" y="48" font-size="13" fill="#495057">참조모형과 메타모델은 쓰는 말과 틀을 맞추고, 그 위에서 현행·목표 아키텍처를 그린다. 차이가 이행계획이 된다.</text>
+
+  <!-- 기준 층 -->
+  <rect x="20" y="70" width="400" height="92" rx="6" fill="#e7f5ff" stroke="#1864ab" stroke-width="1.5"/>
+  <text x="36" y="92" font-size="14" font-weight="bold" fill="#1864ab">참조모형 5종 (지침 제7조제1항)</text>
+  <text x="36" y="116" font-size="13" fill="#212529">성과 PRM · 업무 BRM · 데이터 DRM</text>
+  <text x="36" y="136" font-size="13" fill="#212529">서비스 SRM · 기술 TRM</text>
+  <text x="36" y="156" font-size="13" fill="#495057">— 분류체계와 형식을 표준화한다</text>
+
+  <rect x="440" y="70" width="420" height="92" rx="6" fill="#e7f5ff" stroke="#1864ab" stroke-width="1.5"/>
+  <text x="456" y="92" font-size="14" font-weight="bold" fill="#1864ab">범정부 EA 메타모델 (지침 제4조제1항제1호)</text>
+  <text x="456" y="116" font-size="13" fill="#212529">어떤 정보를 담고, 그 정보끼리 어떻게 엮이는지를</text>
+  <text x="456" y="136" font-size="13" fill="#212529">정한 모델. 기관 메타모델이 이것을 준용한다.</text>
+  <text x="456" y="156" font-size="13" fill="#495057">— 기관 EA와 범정부 EA의 일치성을 받친다</text>
+
+  <line x1="220" y1="162" x2="220" y2="196" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="650" y1="162" x2="650" y2="196" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="232" y="184" font-size="13" fill="#495057">기준을 준다</text>
+
+  <!-- 산출물 층 -->
+  <rect x="20" y="200" width="250" height="104" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="222" font-size="14" font-weight="bold" fill="#212529">현행아키텍처</text>
+  <text x="36" y="246" font-size="13" fill="#212529">업무 · 응용 · 데이터</text>
+  <text x="36" y="266" font-size="13" fill="#212529">기술 · 보안  (5영역)</text>
+  <text x="36" y="290" font-size="13" fill="#495057">지금 무엇이 있는가</text>
+
+  <line x1="270" y1="252" x2="310" y2="252" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="314" y="200" width="250" height="104" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="330" y="222" font-size="14" font-weight="bold" fill="#2d6a4f">목표아키텍처</text>
+  <text x="330" y="246" font-size="13" fill="#212529">같은 5영역으로 그린다</text>
+  <text x="330" y="266" font-size="13" fill="#212529">(지침 제8조제2항)</text>
+  <text x="330" y="290" font-size="13" fill="#495057">무엇이 되어야 하는가</text>
+
+  <line x1="564" y1="252" x2="604" y2="252" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="566" y="242" font-size="13" fill="#9d0208">차이분석</text>
+
+  <rect x="608" y="200" width="252" height="104" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="624" y="222" font-size="14" font-weight="bold" fill="#b45309">이행계획</text>
+  <text x="624" y="246" font-size="13" fill="#212529">이행과제의 우선순위 ·</text>
+  <text x="624" y="266" font-size="13" fill="#212529">추진방법 · 예산 · 기간</text>
+  <text x="624" y="290" font-size="13" fill="#495057">어떻게 건너가는가</text>
+
+  <line x1="734" y1="304" x2="734" y2="330" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="334" width="840" height="36" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="357" font-size="13" fill="#212529">활용 — 정보화 기획 · 정보화사업 추진 · 정보자원관리와 운영 · 정보화 평가 · 일반업무 (지침 제19조~제23조)</text>
+</svg>

@@ -6234,7 +6234,7 @@ topics:
     angle: "ISP·ISMP와 해상도 계층으로 묶어, BRM·SRM·DRM·TRM/SP·PRM 참조모형과 BA·AA·DA·TA·SA 아키텍처 구성, 현행-목표-이행계획의 3단 구조를 답안 형태로 정리한다"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-217
     title: "시스톨릭 어레이"
     category: PE
