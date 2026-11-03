@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="396" viewBox="0 0 880 396"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="396" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">두 구문이 끼어드는 자리는 실행이 아니라 준비 단계다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">세 가지 형태가 각각 옵티마이저에게 무엇을 후보로 남겨 주는지, 그래서 무엇이 결과로 나오는지.</text>
+
+  <!-- 1. 지정 없음 -->
+  <rect x="20" y="66" width="270" height="30" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="155" y="86" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">FROM employee</text>
+
+  <rect x="20" y="116" width="270" height="92" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="138" font-size="13" font-weight="bold" fill="#495057">후보로 남는 접근 경로</text>
+  <text x="36" y="160" font-size="13" fill="#212529">· 표 전체 훑기</text>
+  <text x="36" y="180" font-size="13" fill="#212529">· idx_emp_dept</text>
+  <text x="36" y="200" font-size="13" fill="#212529">· idx_emp_salary</text>
+
+  <line x1="155" y1="208" x2="155" y2="236" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="20" y="240" width="270" height="92" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="36" y="262" font-size="13" font-weight="bold" fill="#b45309">비용이 가장 싼 것을 고른다</text>
+  <text x="36" y="284" font-size="13" fill="#212529">통계가 바뀌면 선택도 바뀐다.</text>
+  <text x="36" y="304" font-size="13" fill="#212529">인덱스가 사라지면 오류 없이</text>
+  <text x="36" y="324" font-size="13" fill="#212529">전체 훑기로 내려앉는다.</text>
+
+  <!-- 2. NOT INDEXED -->
+  <rect x="305" y="66" width="270" height="30" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="86" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">FROM employee NOT INDEXED</text>
+
+  <rect x="305" y="116" width="270" height="92" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="321" y="138" font-size="13" font-weight="bold" fill="#495057">후보로 남는 접근 경로</text>
+  <text x="321" y="160" font-size="13" fill="#212529">· 표 전체 훑기</text>
+  <text x="321" y="180" font-size="13" fill="#212529">· rowid 직접 찾기</text>
+  <text x="321" y="200" font-size="13" fill="#868e96">(인덱스는 전부 빠진다)</text>
+
+  <line x1="440" y1="208" x2="440" y2="236" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="305" y="240" width="270" height="92" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="321" y="262" font-size="13" font-weight="bold" fill="#2d6a4f">항상 성립한다</text>
+  <text x="321" y="284" font-size="13" fill="#212529">남은 경로가 반드시 있으므로</text>
+  <text x="321" y="304" font-size="13" fill="#212529">준비가 실패하지 않는다.</text>
+  <text x="321" y="324" font-size="13" fill="#212529">느려질 뿐이다.</text>
+
+  <!-- 3. INDEXED BY -->
+  <rect x="590" y="66" width="270" height="30" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="725" y="86" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">FROM employee INDEXED BY idx</text>
+
+  <rect x="590" y="116" width="270" height="92" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="606" y="138" font-size="13" font-weight="bold" fill="#495057">후보로 남는 접근 경로</text>
+  <text x="606" y="160" font-size="13" fill="#212529">· idx 하나뿐</text>
+  <text x="606" y="186" font-size="13" fill="#868e96">(전체 훑기도, 다른 인덱스도</text>
+  <text x="606" y="204" font-size="13" fill="#868e96">후보에서 빠진다)</text>
+
+  <line x1="725" y1="208" x2="725" y2="236" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="590" y="240" width="270" height="92" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="606" y="262" font-size="13" font-weight="bold" fill="#9d0208">남은 경로가 없으면 준비 실패</text>
+  <text x="606" y="284" font-size="13" fill="#212529">이름이 없으면 no such index,</text>
+  <text x="606" y="304" font-size="13" fill="#212529">쓸 수 없으면 no query solution.</text>
+  <text x="606" y="324" font-size="13" fill="#212529">한 행도 읽기 전에 끊긴다.</text>
+
+  <text x="20" y="364" font-size="13" fill="#495057">세 경우 모두 질의를 준비(prepare)하는 시점에 갈린다. 실행 중에 계획이 바뀌는 것이 아니다.</text>
+  <text x="20" y="384" font-size="13" fill="#495057">그래서 INDEXED BY 의 쓸모는 빠르게 만드는 것이 아니라, 계획이 바뀌었다는 사실을 오류로 드러내는 것이다.</text>
+</svg>

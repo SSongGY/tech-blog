@@ -6157,7 +6157,7 @@ topics:
     angle: "EXPLAIN QUERY PLAN 으로 기본 선택을 보이고, 두 구문으로 강제했을 때 계획과 읽는 행 수가 어떻게 달라지는지. 그리고 왜 이것이 성능 힌트가 아니라 안전장치인지"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: db-087
     title: "VALUES 절을 표처럼 쓰기 — 임시 데이터를 조인에 끼워 넣는다"
     category: Database

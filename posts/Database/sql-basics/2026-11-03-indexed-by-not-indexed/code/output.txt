@@ -1,0 +1,117 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-03-indexed-by-not-indexed
+# 명령      : python indexed_by_demo.py
+# 수행 시각 : 2026-11-03 10:12 (대한민국 표준시)
+# 소요      : 0.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  20000행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  emp_id   | INTEGER | PK
+  dept     | TEXT    | NOT NULL
+  salary   | INTEGER | NOT NULL
+  hired_on | TEXT    | NOT NULL
+
+  emp_id | dept | salary | hired_on
+  -------+------+--------+-----------
+       1 | 영업 |   3204 | 2018-04-01
+       2 | 개발 |   4143 | 2013-11-01
+       3 | 영업 |   7837 | 2023-01-01
+       4 | 영업 |   3767 | 2016-04-01
+       5 | 영업 |   7597 | 2016-12-01
+       6 | 재무 |   4805 | 2024-10-01
+       7 | 인사 |   3053 | 2015-12-01
+       8 | 재무 |   5787 | 2018-03-01
+       9 | 개발 |   5757 | 2013-02-01
+      10 | 재무 |   3792 | 2021-06-01
+      11 | 인사 |   3355 | 2024-09-01
+      12 | 영업 |   6100 | 2012-09-01
+  … 19988행 더 있음
+
+[인덱스]
+  이름           | 대상 표  | 정의
+  ---------------+----------+------------------------------------------------
+  idx_emp_dept   | employee | CREATE INDEX idx_emp_dept ON employee(dept)
+  idx_emp_salary | employee | CREATE INDEX idx_emp_salary ON employee(salary)
+
+
+[두 조건이 각각 몇 행을 남기는가]
+  dept = '영업'      5016행
+  salary > 8000    3227행
+  둘 다              816행
+
+[통계 없음 — 방금 만든 상태]
+  지정 없음  (결과 816행, 25909 스텝)
+    SEARCH employee USING INDEX idx_emp_dept (dept=?)
+  NOT INDEXED  (결과 816행, 70862 스텝)
+    SCAN employee
+  INDEXED BY idx_emp_dept  (결과 816행, 25912 스텝)
+    SEARCH employee USING INDEX idx_emp_dept (dept=?)
+  INDEXED BY idx_emp_salary  (결과 816행, 13740 스텝)
+    SEARCH employee USING INDEX idx_emp_salary (salary>?)
+
+[ANALYZE 로 통계를 만든 뒤]
+  지정 없음  (결과 816행, 13741 스텝)
+    SEARCH employee USING INDEX idx_emp_salary (salary>?)
+  NOT INDEXED  (결과 816행, 70862 스텝)
+    SCAN employee
+  INDEXED BY idx_emp_dept  (결과 816행, 25912 스텝)
+    SEARCH employee USING INDEX idx_emp_dept (dept=?)
+  INDEXED BY idx_emp_salary  (결과 816행, 13740 스텝)
+    SEARCH employee USING INDEX idx_emp_salary (salary>?)
+
+[지정한 인덱스를 쓸 수 없을 때]
+
+  조건과 무관한 인덱스를 지정
+    SELECT emp_id FROM employee INDEXED BY idx_emp_salary WHERE dept = '영업'
+    SCAN employee USING INDEX idx_emp_salary
+
+  이름이 없는 인덱스를 지정
+    SELECT emp_id FROM employee INDEXED BY idx_emp_none WHERE dept = '영업'
+    OperationalError: no such index: idx_emp_none
+
+[NOT INDEXED 는 rowid 까지 막지는 않는다]
+
+  기본키 조건
+    SELECT dept FROM employee NOT INDEXED WHERE emp_id = 7
+    SEARCH employee USING INTEGER PRIMARY KEY (rowid=?)
+
+[부분 인덱스는 조건이 겹쳐도 못 쓸 수 있다]
+
+  인덱스 조건과 글자까지 같은 범위
+    SELECT emp_id FROM employee WHERE salary > 7000
+    SEARCH employee USING COVERING INDEX idx_emp_high (salary>?)
+
+  더 좁은 범위인데 글자가 다름
+    SELECT emp_id FROM employee WHERE salary > 8000
+    SEARCH employee USING COVERING INDEX idx_emp_salary (salary>?)
+
+  더 좁은 범위를 지정까지 해 봄
+    SELECT emp_id FROM employee INDEXED BY idx_emp_high WHERE salary > 8000
+    OperationalError: no query solution
+
+[인덱스가 사라진 뒤]
+
+  지정 없음 — 조용히 전체 훑기로 내려앉는다
+    SELECT COUNT(*) FROM employee WHERE dept = '영업'
+    SCAN employee
+
+  지정 있음 — 준비 단계에서 끊긴다
+    SELECT COUNT(*) FROM employee INDEXED BY idx_emp_dept WHERE dept = '영업'
+    OperationalError: no such index: idx_emp_dept
