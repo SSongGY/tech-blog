@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="418" viewBox="0 0 880 418"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="418" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">VALUES 목록은 표가 아니라, 상수 행을 흘려보내는 코루틴이 된다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">그래서 조인 상대에 인덱스가 있느냐가 전체 비용을 가른다. 목록 쪽에는 걸 인덱스가 없다.</text>
+
+  <!-- 1. 적은 SQL -->
+  <rect x="20" y="66" width="258" height="112" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="88" font-size="13" font-weight="bold" fill="#495057">① 적은 것</text>
+  <text x="36" y="110" font-size="13" fill="#212529">WITH channel(code, label) AS (</text>
+  <text x="36" y="129" font-size="13" fill="#212529">  VALUES ('ON','온라인'),</text>
+  <text x="36" y="148" font-size="13" fill="#212529">         ('OF','오프라인'),</text>
+  <text x="36" y="167" font-size="13" fill="#212529">         ('MO','모바일') )</text>
+
+  <line x1="278" y1="122" x2="306" y2="122" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2. 코루틴 -->
+  <rect x="310" y="66" width="246" height="112" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="326" y="88" font-size="13" font-weight="bold" fill="#2d6a4f">② 엔진이 만든 것</text>
+  <text x="326" y="110" font-size="13" fill="#212529">코루틴 channel</text>
+  <text x="326" y="132" font-size="13" fill="#212529">상수 3행을 한 줄씩 넘긴다</text>
+  <text x="326" y="154" font-size="13" fill="#495057">저장되지 않는다 · 인덱스 없음</text>
+  <text x="326" y="172" font-size="13" fill="#868e96">EXPLAIN: SCAN 3 CONSTANT ROWS</text>
+
+  <line x1="556" y1="122" x2="584" y2="122" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 3. 조인 -->
+  <rect x="588" y="66" width="272" height="112" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="604" y="88" font-size="13" font-weight="bold" fill="#495057">③ 조인</text>
+  <text x="604" y="110" font-size="13" fill="#212529">목록이 바깥 루프가 된다</text>
+  <text x="604" y="132" font-size="13" fill="#212529">상수 3행 × 상대 표 접근 3회</text>
+  <text x="604" y="154" font-size="13" fill="#212529">안쪽 접근 방식이 비용을 정한다</text>
+  <text x="604" y="172" font-size="13" fill="#868e96">(아래 두 계획의 네 번째 줄)</text>
+
+  <!-- 계획 비교 -->
+  <text x="20" y="210" font-size="14" font-weight="bold" fill="#212529">안쪽 표에 인덱스가 있을 때와 없을 때 — 같은 질의, 같은 코루틴</text>
+
+  <rect x="20" y="224" width="414" height="174" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="36" y="248" font-size="13" font-weight="bold" fill="#9d0208">big.ch 에 인덱스 없음</text>
+  <text x="36" y="274" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">QUERY PLAN</text>
+  <text x="36" y="296" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">|--CO-ROUTINE channel</text>
+  <text x="36" y="318" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">|  `--SCAN 3 CONSTANT ROWS</text>
+  <text x="36" y="340" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">|--SCAN channel</text>
+  <text x="36" y="362" font-size="13" fill="#9d0208" font-family="'Consolas','D2Coding',monospace">|--SCAN big</text>
+  <text x="36" y="386" font-size="13" fill="#495057">5만 행을 코드 하나마다 다시 훑는다</text>
+
+  <rect x="446" y="224" width="414" height="174" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="462" y="248" font-size="13" font-weight="bold" fill="#2d6a4f">big.ch 에 인덱스 있음</text>
+  <text x="462" y="274" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">QUERY PLAN</text>
+  <text x="462" y="296" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">|--CO-ROUTINE channel</text>
+  <text x="462" y="318" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">|  `--SCAN 3 CONSTANT ROWS</text>
+  <text x="462" y="340" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">|--SCAN channel</text>
+  <text x="462" y="362" font-size="13" fill="#2d6a4f" font-family="'Consolas','D2Coding',monospace">|--SEARCH big USING COVERING INDEX</text>
+  <text x="462" y="386" font-size="13" fill="#495057">코드 하나마다 인덱스로 바로 찾아간다</text>
+</svg>

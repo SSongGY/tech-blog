@@ -5487,7 +5487,7 @@ topics:
     difficulty: 중급
     angle: "AES-GCM 과 RSA·ECDSA 의 처리량을 같은 기계에서 재고, 왜 TLS 가 둘을 섞어 쓰는지를 그 숫자로 설명한다. 키 길이를 올렸을 때 비용이 어떻게 늘어나는지도 본다."
     code: shell
-    status: todo
+    status: done
   - id: gen-006
     title: "압축 알고리즘 고르기 — gzip·bzip2·lzma 를 같은 데이터로 대조"
     category: Performance
@@ -6135,7 +6135,8 @@ topics:
     angle: "DELETE 후 파일 크기가 그대로인 것을 PRAGMA page_count/freelist_count 로 보이고, VACUUM 과 auto_vacuum 이 각각 무엇을 되돌리는지 대조한다"
     code: python
     origin: manual
-    status: writing
+    status: blocked
+    blocked_note: db-078 'VACUUM — 지웠는데 파일이 안 줄어들 때'(2026-10-29)와 주제가 겹친다. freelist 재사용까지 그 글이 이미 다룸
   - id: db-085
     title: "BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가"
     category: Database
@@ -6168,7 +6169,7 @@ topics:
     angle: "코드 매핑표나 기준값 몇 줄을 임시 테이블 없이 VALUES 로 만들어 조인한다. CTE 와 임시 테이블 대비 어디까지가 적당한지"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-088
     title: "foreign_key_check — 제약을 켜기 전에 깨진 참조를 찾는다"
     category: Database
@@ -6245,7 +6246,7 @@ topics:
     angle: "셀 사이로 데이터를 흘려 보내 버퍼 접근을 줄이는 구조. 행렬 곱 매핑, 가중치 고정 대 출력 고정 데이터플로, 지연과 활용률의 트레이드오프"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-218
     title: "루프라인 모델"
     category: PE
