@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="같은 현금 순증감 80억원이 두 가지 작성 방식에서 세 칸에 다르게 나뉘는 모습">
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">가나전자 — 같은 해, 같은 거래, 두 가지 현금흐름표 (단위: 억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">세 칸의 금액은 갈리고 합계는 같다. 칸 사이를 옮겨 다닐 뿐 현금이 더 생기지 않는다.</text>
+
+  <!-- 왼쪽 패널: 영업 집중형 -->
+  <rect x="24" y="76" width="390" height="268" rx="8" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="219" y="102" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">영업 집중형</text>
+  <text x="219" y="122" font-family="sans-serif" font-size="13" fill="#666" text-anchor="middle">이자지급·이자수입·배당금수입을 영업에</text>
+
+  <rect x="48" y="138" width="342" height="52" rx="5" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="68" y="170" font-family="sans-serif" font-size="14" fill="#2d6a4f">영업활동</text>
+  <text x="370" y="170" font-family="sans-serif" font-size="18" font-weight="bold" fill="#2d6a4f" text-anchor="end">170.0</text>
+
+  <rect x="48" y="198" width="342" height="52" rx="5" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="68" y="230" font-family="sans-serif" font-size="14" fill="#b45309">투자활동</text>
+  <text x="370" y="230" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b45309" text-anchor="end">-110.0</text>
+
+  <rect x="48" y="258" width="342" height="52" rx="5" fill="#f0eaf4" stroke="#5b3a7a" stroke-width="2"/>
+  <text x="68" y="290" font-family="sans-serif" font-size="14" fill="#5b3a7a">재무활동</text>
+  <text x="370" y="290" font-family="sans-serif" font-size="18" font-weight="bold" fill="#5b3a7a" text-anchor="end">20.0</text>
+
+  <!-- 오른쪽 패널: 성격 분리형 -->
+  <rect x="466" y="76" width="390" height="268" rx="8" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="661" y="102" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">성격 분리형</text>
+  <text x="661" y="122" font-family="sans-serif" font-size="13" fill="#666" text-anchor="middle">이자지급은 재무에, 이자·배당금수입은 투자에</text>
+
+  <rect x="490" y="138" width="342" height="52" rx="5" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="510" y="170" font-family="sans-serif" font-size="14" fill="#2d6a4f">영업활동</text>
+  <text x="812" y="170" font-family="sans-serif" font-size="18" font-weight="bold" fill="#2d6a4f" text-anchor="end">202.0</text>
+
+  <rect x="490" y="198" width="342" height="52" rx="5" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="510" y="230" font-family="sans-serif" font-size="14" fill="#b45309">투자활동</text>
+  <text x="812" y="230" font-family="sans-serif" font-size="18" font-weight="bold" fill="#b45309" text-anchor="end">-97.0</text>
+
+  <rect x="490" y="258" width="342" height="52" rx="5" fill="#f0eaf4" stroke="#5b3a7a" stroke-width="2"/>
+  <text x="510" y="290" font-family="sans-serif" font-size="14" fill="#5b3a7a">재무활동</text>
+  <text x="812" y="290" font-family="sans-serif" font-size="18" font-weight="bold" fill="#5b3a7a" text-anchor="end">-25.0</text>
+
+  <!-- 차이 표시 -->
+  <text x="430" y="170" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">+32</text>
+  <text x="430" y="230" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">+13</text>
+  <text x="430" y="290" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">-45</text>
+
+  <!-- 합계 -->
+  <rect x="24" y="356" width="832" height="32" rx="5" fill="#eceae4" stroke="#555" stroke-width="1.5"/>
+  <text x="48" y="378" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b">현금 순증감</text>
+  <text x="370" y="378" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="end">80.0</text>
+  <text x="812" y="378" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="end">80.0</text>
+</svg>

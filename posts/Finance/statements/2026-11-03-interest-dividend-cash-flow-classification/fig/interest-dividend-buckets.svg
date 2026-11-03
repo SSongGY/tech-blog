@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" role="img" aria-label="이자와 배당금 네 항목이 영업·투자·재무 중 어느 활동으로 분류될 수 있는지">
+  <rect x="0" y="0" width="880" height="420" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">금융회사가 아닌 기업 — 네 항목의 분류 선택지</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">실선은 기준서가 먼저 드는 분류, 점선은 "대체적인 방법"으로 적힌 분류</text>
+
+  <!-- 왼쪽: 항목 -->
+  <text x="24" y="92" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444">항목</text>
+
+  <rect x="24" y="104" width="170" height="44" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="109" y="132" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">이자지급 (interest paid)</text>
+
+  <rect x="24" y="172" width="170" height="44" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="109" y="200" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">이자수입</text>
+
+  <rect x="24" y="240" width="170" height="44" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="109" y="268" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">배당금수입</text>
+
+  <rect x="24" y="308" width="170" height="44" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="109" y="336" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="middle">배당금지급</text>
+
+  <!-- 오른쪽: 활동 -->
+  <text x="600" y="92" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444">현금흐름표의 세 칸</text>
+
+  <rect x="600" y="104" width="160" height="56" rx="6" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="680" y="138" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">영업활동</text>
+
+  <rect x="600" y="200" width="160" height="56" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="680" y="234" font-family="sans-serif" font-size="15" font-weight="bold" fill="#b45309" text-anchor="middle">투자활동</text>
+
+  <rect x="600" y="296" width="160" height="56" rx="6" fill="#f0eaf4" stroke="#5b3a7a" stroke-width="2"/>
+  <text x="680" y="330" font-family="sans-serif" font-size="15" font-weight="bold" fill="#5b3a7a" text-anchor="middle">재무활동</text>
+
+  <!-- 이자지급: 영업(실선), 재무(점선) -->
+  <path d="M194 126 L600 132" stroke="#2d6a4f" stroke-width="2" fill="none"/>
+  <path d="M194 126 L420 126 L420 316 L600 322" stroke="#5b3a7a" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+
+  <!-- 이자수입: 영업(실선), 투자(점선) -->
+  <path d="M194 194 L600 142" stroke="#2d6a4f" stroke-width="2" fill="none"/>
+  <path d="M194 194 L440 194 L440 220 L600 220" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+
+  <!-- 배당금수입: 영업(실선), 투자(점선) -->
+  <path d="M194 262 L600 152" stroke="#2d6a4f" stroke-width="2" fill="none"/>
+  <path d="M194 262 L460 262 L460 238 L600 238" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+
+  <!-- 배당금지급: 재무(실선), 영업(점선) -->
+  <path d="M194 330 L600 338" stroke="#5b3a7a" stroke-width="2" fill="none"/>
+  <path d="M194 330 L500 330 L500 118 L600 118" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="6 4" fill="none"/>
+
+  <text x="24" y="392" font-family="sans-serif" font-size="13" fill="#9d0208">법인세 납부는 선택이 아니다 — 재무·투자에 명백히 관련되지 않는 한 영업활동이다 (문단 36).</text>
+</svg>
