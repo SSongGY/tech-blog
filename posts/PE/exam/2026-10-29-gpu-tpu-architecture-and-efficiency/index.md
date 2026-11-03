@@ -311,7 +311,8 @@ GPU는 하드웨어가 떠안아 캐시·분기 예측·멀티스레딩으로 �
 **모델 구조가 고정됐는가, 정밀도를 낮출 수 있는가, 지연 상한이 걸려 있는가**이고,
 현실적인 구성은 탐색 구간에 GPU, 대량 서빙 구간에 TPU를 두는 분담이다.
 
-> 개념 정리: [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](../../network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md)
+> 개념 정리: [도메인 특화 아키텍처(DSA) — 범용 기능을 빼서 얻는 효율과 그 대가](../../computer-architecture/2026-11-03-domain-specific-architecture-design-guidelines/index.md),
+> [GPU 클러스터 인터커넥트 — NVLink·InfiniBand·RoCE](../../network/2026-10-01-gpu-cluster-interconnect-nvlink-infiniband-roce/index.md)
 > · 관련 답안: [기출문제 — AI 슈퍼컴퓨팅 플랫폼](../2026-09-30-ai-supercomputing-platform/index.md)
 
 끝

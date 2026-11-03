@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="13">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1b2430"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="470" fill="#fdfdfb"/>
+
+  <!-- 동인 -->
+  <rect x="140" y="20" width="600" height="60" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="43" text-anchor="middle" font-weight="bold" fill="#b45309">동인 — 범용 프로세서의 연간 성능 개선이 몇 %로 둔화</text>
+  <text x="440" y="66" text-anchor="middle" fill="#1b2430">무어 법칙 둔화 · 데나드 스케일링 종료 · ILP 투기의 낭비 · 암달 법칙</text>
+
+  <line x1="440" y1="80" x2="440" y2="108" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- DSA -->
+  <rect x="170" y="110" width="540" height="56" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="132" text-anchor="middle" font-weight="bold" font-size="14" fill="#2d6a4f">DSA — 한 응용 부류에 맞춘, 프로그래밍 가능한 프로세서</text>
+  <text x="440" y="153" text-anchor="middle" fill="#1b2430">범용 기능을 빼고 그 자리를 영역에 맞는 연산기·메모리로 채운다</text>
+
+  <!-- DSA → 출처 4가지 -->
+  <line x1="440" y1="166" x2="440" y2="190" stroke="#1b2430" stroke-width="1.5"/>
+  <line x1="100" y1="190" x2="780" y2="190" stroke="#1b2430" stroke-width="1.5"/>
+  <line x1="100" y1="190" x2="100" y2="212" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="355" y1="190" x2="355" y2="212" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="610" y1="190" x2="610" y2="212" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="780" y1="190" x2="780" y2="212" stroke="#1b2430" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="20" y="183" fill="#555" font-weight="bold">효율의 출처 4가지 — CACM 2019</text>
+
+  <!-- 출처 4 -->
+  <rect x="20" y="214" width="160" height="64" rx="6" fill="#eef2f7" stroke="#1b2430" stroke-width="1.2"/>
+  <text x="100" y="239" text-anchor="middle" font-weight="bold" fill="#1b2430">① 병렬성</text>
+  <text x="100" y="262" text-anchor="middle" fill="#1b2430">SIMD·VLIW·시스톨릭</text>
+
+  <rect x="190" y="214" width="330" height="64" rx="6" fill="#eef2f7" stroke="#1b2430" stroke-width="1.2"/>
+  <text x="355" y="239" text-anchor="middle" font-weight="bold" fill="#1b2430">② 메모리 계층의 명시적 제어</text>
+  <text x="355" y="262" text-anchor="middle" fill="#1b2430">캐시 대신 소프트웨어가 관리하는 메모리</text>
+
+  <rect x="530" y="214" width="160" height="64" rx="6" fill="#eef2f7" stroke="#1b2430" stroke-width="1.2"/>
+  <text x="610" y="239" text-anchor="middle" font-weight="bold" fill="#1b2430">③ 정밀도</text>
+  <text x="610" y="262" text-anchor="middle" fill="#1b2430">INT8·FP16·BF16</text>
+
+  <rect x="700" y="214" width="160" height="64" rx="6" fill="#eef2f7" stroke="#1b2430" stroke-width="1.2"/>
+  <text x="780" y="239" text-anchor="middle" font-weight="bold" fill="#1b2430">④ 도메인 언어</text>
+  <text x="780" y="262" text-anchor="middle" fill="#1b2430">TensorFlow·Halide·P4</text>
+
+  <!-- 출처 → 지침 연결 -->
+  <line x1="100" y1="278" x2="100" y2="328" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="270" y1="278" x2="270" y2="328" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="278" x2="440" y2="328" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="610" y1="278" x2="610" y2="328" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="780" y1="278" x2="780" y2="328" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 지침 5 -->
+  <rect x="20" y="330" width="160" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="100" y="356" text-anchor="middle" font-weight="bold" fill="#2d6a4f">③ 가장 쉬운 병렬성</text>
+  <text x="100" y="380" text-anchor="middle" fill="#1b2430">영역에 맞는 형태</text>
+
+  <rect x="190" y="330" width="160" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="270" y="356" text-anchor="middle" font-weight="bold" fill="#2d6a4f">① 전용 메모리</text>
+  <text x="270" y="380" text-anchor="middle" fill="#1b2430">이동 거리 최소화</text>
+
+  <rect x="360" y="330" width="160" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="356" text-anchor="middle" font-weight="bold" fill="#2d6a4f">② 자원 재투자</text>
+  <text x="440" y="380" text-anchor="middle" fill="#1b2430">제어 회로 → 연산기</text>
+
+  <rect x="530" y="330" width="160" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="610" y="356" text-anchor="middle" font-weight="bold" fill="#2d6a4f">④ 데이터 축소</text>
+  <text x="610" y="380" text-anchor="middle" fill="#1b2430">크기·타입 단순화</text>
+
+  <rect x="700" y="330" width="160" height="70" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="780" y="356" text-anchor="middle" font-weight="bold" fill="#2d6a4f">⑤ 도메인 언어</text>
+  <text x="780" y="380" text-anchor="middle" fill="#1b2430">DSL로 코드 이식</text>
+
+  <text x="20" y="424" fill="#555" font-weight="bold">설계 지침 5가지 — Computer Architecture: A Quantitative Approach 6판 §7.2</text>
+  <text x="20" y="448" fill="#1b2430">지침 ①·②·④는 면적·전력을 어디서 빼 오는가, ③·⑤는 뺀 자리를 어떻게 채워 쓰는가</text>
+</svg>
