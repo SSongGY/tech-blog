@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **580편** · 갱신 2026-11-03
+총 **583편** · 갱신 2026-11-03
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 87편
+## DB문법 (basics) — 88편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-03 | [VALUES 절을 표처럼 쓰기 — 임시 데이터를 조인에 끼워 넣는다](posts/Database/sql-basics/2026-11-03-values-clause-as-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-03 | [소계와 총계를 한 결과에 — ROLLUP 이 없는 SQLite 에서 합계 줄 붙이기](posts/Database/sql-basics/2026-11-03-subtotal-grand-total-without-rollup/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [R*Tree 가상 테이블 — 범위가 겹치는 행 찾기](posts/Database/sql-basics/2026-11-03-rtree-overlapping-ranges/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [INDEXED BY와 NOT INDEXED — 옵티마이저에 손을 대는 두 구문](posts/Database/sql-basics/2026-11-03-indexed-by-not-indexed/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-01 | [BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가](posts/Database/sql-basics/2026-11-01-begin-deferred-immediate-exclusive-locking/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -120,7 +121,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 204편
+## 기술사 (pe) — 205편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -131,6 +132,7 @@
 | 2026-11-03 | [이기종 DBMS 마이그레이션 — 자동 변환이 끊기는 자리와 정합성을 증명하는 방법](posts/PE/database/2026-11-03-heterogeneous-dbms-migration-schema-and-data-verification/index.md) | 중급 | Oracle Database 19c SQL Language Reference, PostgreSQL 17 Documentation, AWS DMS User Guide (2026-11-03 확인), AWS SCT User Guide (2026-11-03 확인), Ora2Pg README master (2026-11-03 확인) | 문서 근거 |
 | 2026-11-03 | [전사적 아키텍처(EA/ITA) — 참조모형 5종과 아키텍처 5영역](posts/PE/it-management/2026-11-03-ea-ita-reference-models-and-domains/index.md) | 중급 | 전자정부법 법률 제21394호 (시행 2026. 8. 28.), 정보기술아키텍처 도입·운영 지침 행정안전부고시 제2024-58호 (시행 2024. 7. 10.) | 문서 근거 |
 | 2026-11-03 | [도메인 특화 아키텍처(DSA) — 범용 기능을 빼서 얻는 효율과 그 대가](posts/PE/computer-architecture/2026-11-03-domain-specific-architecture-design-guidelines/index.md) | 중급 | Hennessy & Patterson, A New Golden Age for Computer Architecture, CACM 62(2), 2019, Hennessy & Patterson, Computer Architecture: A Quantitative Approach 6th ed., 2019 (Ch.7) | 문서 근거 |
+| 2026-11-03 | [아키텍처 결정 기록(ADR) — 배경·결정·상태·결과 네 칸이 설계 문서와 갈리는 지점](posts/PE/software-engineering/2026-11-03-architecture-decision-record/index.md) | 중급 | Michael Nygard, Documenting Architecture Decisions (2011-11-15), MADR 4.0.0 (2024-09-17), AWS Prescriptive Guidance, ADR process (2026-11 열람) | 문서 근거 |
 | 2026-11-02 | [STIX와 TAXII — 위협정보 공유 표준](posts/PE/security/2026-11-02-stix-taxii-threat-intelligence-sharing-standards/index.md) | 중급 | STIX Version 2.1 OASIS Standard (2021-06-10), TAXII Version 2.1 OASIS Standard (2021-06-10), NIST SP 800-150 (2016-10) | 문서 근거 |
 | 2026-11-02 | [자원 할당 그래프와 대기 그래프 — 교착 탐지](posts/PE/system/2026-11-02-resource-allocation-graph-and-wait-for-graph/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-02 | [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](posts/PE/security/2026-11-02-prompt-injection-defense-design/index.md) | 중급 | NIST AI 100-2e2025 (2025-03), OWASP Top 10 for LLM Applications 2025 (LLM01:2025) | 문서 근거 |
@@ -352,10 +354,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 52편
+## 일반 (general) — 53편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-03 | [정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어](posts/Security/redos/2026-11-03-redos-catastrophic-backtracking/index.md) | 심화 | Python 3.13.5, regex 2026.9.29 | 실행 검증 |
 | 2026-11-03 | [대칭키와 공개키의 속도 차이는 몇 배인가 — openssl speed 로 직접 재기](posts/Security/crypto/2026-11-03-openssl-speed-symmetric-vs-public-key/index.md) | 중급 | OpenSSL 3.5.6, GNU bash 5.3.9, GNU Awk 5.4.0 | 실행 검증 |
 | 2026-11-03 | [자바 HashMap 이 연결 리스트를 버리고 트리로 바뀌는 순간 — 그리고 트리가 막지 못하는 것](posts/Language/java/2026-11-03-java-hashmap-treeify-threshold/index.md) | 심화 | Java 1.8.0_491 (HotSpot 25.491-b10), javac 1.8.0_202, Windows 11 | 실행 검증 |
 | 2026-11-03 | [블룸 필터를 직접 만들어 오탐률 수식과 맞춰 보기](posts/Architecture/datastructure/2026-11-03-bloom-filter-false-positive-rate/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
