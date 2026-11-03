@@ -6632,3 +6632,69 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-099
+    title: "LEFT JOIN 에서 조건을 ON 에 두느냐 WHERE 에 두느냐"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, join, outer-join, basics]
+    difficulty: 입문
+    angle: "같은 조건을 ON 과 WHERE 에 각각 두고 결과 행 수를 비교한다. WHERE 에 두면 외부 조인이 내부 조인으로 접히는 것을 실행계획과 함께 보이고, NULL 체크만 예외인 이유까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-100
+    title: "SAVEPOINT — 트랜잭션 안에 되돌릴 지점을 찍어 두기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, savepoint, transaction, basics]
+    difficulty: 중급
+    angle: "SAVEPOINT·RELEASE·ROLLBACK TO 셋이 각각 무엇을 되돌리는지 중첩해 재현한다. BEGIN 없이 쓴 SAVEPOINT 가 트랜잭션을 여는 것과, RELEASE 가 커밋이 아니라는 점을 구분한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-101
+    title: "뷰(VIEW) — 질의에 이름을 붙여 두고 쓰기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, view, instead-of-trigger, basics]
+    difficulty: 입문
+    angle: "뷰가 저장하는 것은 결과가 아니라 질의문이라는 점을 실행계획으로 확인한다. 뷰에 INSERT 가 막히는 것과 INSTEAD OF 트리거로 여는 방법, CTE 와 어느 쪽을 쓸지까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-102
+    title: "외래키의 ON DELETE·ON UPDATE 다섯 가지"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, foreign-key, cascade, basics]
+    difficulty: 중급
+    angle: "NO ACTION·RESTRICT·SET NULL·SET DEFAULT·CASCADE 가 부모 행을 지울 때 각각 어떻게 동작하는지 재현한다. NO ACTION 과 RESTRICT 가 지연 검사 여부로 갈리는 지점과, foreign_keys 가 꺼져 있으면 전부 무시된다는 점까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-103
+    title: "UNIQUE 제약에 NULL 이 여러 개 들어가는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, unique, null, constraint, basics]
+    difficulty: 입문
+    angle: "UNIQUE 컬럼에 NULL 을 여러 번 넣어 보고, 복합 UNIQUE 에서 일부만 NULL 일 때 어떻게 되는지 확인한다. 표준이 NULL 을 서로 다르다고 보는 규칙과, 그걸 막으려면 부분 인덱스나 CHECK 를 어떻게 거는지까지"
+    code: python
+    origin: manual
+    status: todo
+  - id: db-104
+    title: "ALTER TABLE 로 할 수 있는 것과 없는 것"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, alter-table, schema, migration, basics]
+    difficulty: 중급
+    angle: "SQLite 가 지원하는 네 가지 변경을 돌려 보고, 컬럼 타입이나 제약을 바꾸려면 새 표를 만들어 옮기는 절차를 밟아야 하는 것을 확인한다. 그 절차에서 외래키와 인덱스를 어떤 순서로 다뤄야 하는지까지"
+    code: python
+    origin: manual
+    status: todo
