@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **595편** · 갱신 2026-11-05
+총 **596편** · 갱신 2026-11-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -416,10 +416,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 88편
+## 기출문제 (exam) — 89편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-05 | [기출문제 — 단방향 해시 함수의 문제점과 레인보우 테이블, 솔트·키 스트레칭, 활용](posts/PE/exam/2026-11-05-one-way-hash-rainbow-salt-stretching/index.md) | 중급 | FIPS 180-4 Secure Hash Standard (2015), FIPS 202 SHA-3 Standard (2015), RFC 9106 Argon2 (2021), RFC 2104 HMAC (1997), Oechslin, Making a Faster Cryptanalytic Time-Memory Trade-Off (CRYPTO 2003) | 문서 근거 |
 | 2026-11-04 | [기출문제 — ISMS-P 인증 영역·법적 근거·관리과정과 간편인증·강화 방안](posts/PE/exam/2026-11-04-isms-p-certification-domains-and-process/index.md) | 중급 | 정보통신망법 제47조 (법률 제21988호, 2026-10-02 시행), 개인정보 보호법 제32조의2 (법률 제21445호, 2026-09-11 시행), 정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시 (2024-07-24 시행), ISMS-P 인증기준 안내서 2023.11, 개인정보보호위원회 간편인증 보도자료 (2024-07-23) | 문서 근거 |
 | 2026-11-04 | [기출문제 — 인공지능기본법의 목적·기본원칙, 기본계획, 국가인공지능전략위원회와 산업육성 시책](posts/PE/exam/2026-11-04-ai-basic-act-purpose-plan-committee-promotion/index.md) | 중급 | 인공지능 발전과 신뢰 기반 조성 등에 관한 기본법 (법률 제21311호, 2026-01-20 일부개정, 2026-01-22 시행·일부 조항 2026-07-21 시행), 인공지능기본법 시행령 (2026-01-22 시행) | 문서 근거 |
 | 2026-11-03 | [기출문제 — 로우코드 플랫폼의 특징, 노코드와의 비교, 적용 한계](posts/PE/exam/2026-11-03-low-code-platform-characteristics-and-limits/index.md) | 중급 | Di Ruscio et al., Software and Systems Modeling 21(2) pp.437-446 (2022-01), Sahay et al., Euromicro SEAA 2020 pp.171-178, Luo et al., ACM/IEEE ESEM 2021, Forrester 로우코드 정의 (2014, 2017), Gartner LCAP 시장 구분 (2016) | 문서 근거 |

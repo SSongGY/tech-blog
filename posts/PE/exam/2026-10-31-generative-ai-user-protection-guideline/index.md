@@ -238,6 +238,7 @@ verified: true
 결국 시스템에 얼마나 내려갔는지로 판가름난다.
 
 > 개념 정리: [인공지능 기본법과 EU AI법 — 위험 기반 규제 구조 비교](../../it-management/2026-10-05-korea-ai-basic-act-vs-eu-ai-act/index.md)
+> 개념 정리: [AI 생성물 표시와 콘텐츠 출처·이력(C2PA)](../../emerging-tech/2026-11-05-c2pa-ai-content-provenance-labeling/index.md)
 
 끝
 

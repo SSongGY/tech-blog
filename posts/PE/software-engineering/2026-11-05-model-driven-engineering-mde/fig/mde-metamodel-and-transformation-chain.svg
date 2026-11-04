@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fdfdfb"/>
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ak" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#4a4a4a"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b1b1b">모델 기반 공학의 두 축 — 메타모델 계층과 변환 사슬</text>
+
+  <!-- left: meta layers -->
+  <text x="190" y="64" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">축 1. 모델을 정의하는 계층</text>
+
+  <rect x="50" y="84" width="280" height="64" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="190" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">메타메타모델 (MOF)</text>
+  <text x="190" y="132" text-anchor="middle" font-size="13" fill="#4a4a4a">메타모델을 정의하는 언어</text>
+
+  <rect x="50" y="190" width="280" height="64" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="190" y="216" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">메타모델 (UML · 업무별 DSL)</text>
+  <text x="190" y="238" text-anchor="middle" font-size="13" fill="#4a4a4a">모델에 쓸 수 있는 개념과 규칙</text>
+
+  <rect x="50" y="296" width="280" height="64" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="190" y="322" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">모델 (개발자가 작성)</text>
+  <text x="190" y="344" text-anchor="middle" font-size="13" fill="#4a4a4a">메타모델의 인스턴스</text>
+
+  <path d="M190,150 L190,188" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+  <text x="200" y="174" font-size="13" fill="#2d6a4f">정의</text>
+  <path d="M190,256 L190,294" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+  <text x="200" y="280" font-size="13" fill="#2d6a4f">정의</text>
+
+  <!-- right: chain -->
+  <text x="650" y="64" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">축 2. 모델에서 구현으로 가는 변환 사슬</text>
+
+  <rect x="430" y="96" width="200" height="64" rx="6" fill="#eef1f6" stroke="#4a4a4a" stroke-width="2"/>
+  <text x="530" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">PIM</text>
+  <text x="530" y="144" text-anchor="middle" font-size="13" fill="#4a4a4a">플랫폼 독립 모델</text>
+
+  <rect x="430" y="214" width="200" height="64" rx="6" fill="#eef1f6" stroke="#4a4a4a" stroke-width="2"/>
+  <text x="530" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">PSM</text>
+  <text x="530" y="262" text-anchor="middle" font-size="13" fill="#4a4a4a">플랫폼 종속 모델</text>
+
+  <rect x="430" y="332" width="200" height="64" rx="6" fill="#eef1f6" stroke="#4a4a4a" stroke-width="2"/>
+  <text x="530" y="358" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">코드 · 배포 산출물</text>
+  <text x="530" y="380" text-anchor="middle" font-size="13" fill="#4a4a4a">텍스트로 생성</text>
+
+  <path d="M530,162 L530,212" stroke="#4a4a4a" stroke-width="2.5" fill="none" marker-end="url(#ak)"/>
+  <text x="646" y="192" font-size="13" fill="#1b1b1b">모델 변환 (QVT)</text>
+  <path d="M530,280 L530,330" stroke="#4a4a4a" stroke-width="2.5" fill="none" marker-end="url(#ak)"/>
+  <text x="646" y="310" font-size="13" fill="#1b1b1b">모델-텍스트 변환</text>
+
+  <!-- link between axes -->
+  <path d="M332,328 L428,128" stroke="#b45309" stroke-width="2" fill="none" stroke-dasharray="7 5" marker-end="url(#ak)"/>
+  <text x="352" y="400" font-size="13" fill="#b45309">변환의 입력이 되는 모델</text>
+</svg>

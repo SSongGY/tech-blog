@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fdfdfb"/>
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ab" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b1b1b">C2PA 콘텐츠 자격증명의 구성</text>
+
+  <!-- asset -->
+  <rect x="30" y="150" width="170" height="90" rx="6" fill="#eef1f6" stroke="#4a4a4a" stroke-width="2"/>
+  <text x="115" y="188" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">콘텐츠 자산</text>
+  <text x="115" y="212" text-anchor="middle" font-size="13" fill="#4a4a4a">이미지 · 영상 · 문서</text>
+
+  <!-- manifest store -->
+  <rect x="270" y="56" width="400" height="236" rx="8" fill="#f6faf7" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="470" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">매니페스트 저장소 (Manifest Store)</text>
+  <rect x="290" y="96" width="360" height="184" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="470" y="120" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">매니페스트 (Manifest)</text>
+
+  <rect x="306" y="132" width="328" height="42" rx="5" fill="#edf4ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="470" y="158" text-anchor="middle" font-size="14" fill="#1b1b1b">어서션들 — 생성 도구 · 편집 이력 · 콘텐츠 결합</text>
+
+  <rect x="306" y="184" width="328" height="42" rx="5" fill="#edf4ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="470" y="210" text-anchor="middle" font-size="14" fill="#1b1b1b">클레임 — 어서션 집합을 참조하는 변조 감지 구조</text>
+
+  <rect x="306" y="236" width="328" height="34" rx="5" fill="#edf4ef" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="470" y="258" text-anchor="middle" font-size="14" fill="#1b1b1b">클레임 서명 — 서명자 개인키</text>
+
+  <!-- trust list -->
+  <rect x="710" y="96" width="150" height="86" rx="6" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="785" y="130" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">신뢰 목록</text>
+  <text x="785" y="152" text-anchor="middle" font-size="13" fill="#4a4a4a">허용된 서명자의</text>
+  <text x="785" y="170" text-anchor="middle" font-size="13" fill="#4a4a4a">인증서 발급 기관</text>
+  <path d="M708,139 L672,160" stroke="#2d6a4f" stroke-width="2" fill="none" marker-end="url(#ag)"/>
+  <text x="782" y="206" text-anchor="middle" font-size="13" fill="#2d6a4f">서명 검증 기준</text>
+
+  <!-- hard binding arrow -->
+  <path d="M288,176 L202,176" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+  <text x="245" y="168" text-anchor="middle" font-size="13" fill="#2d6a4f">하드 결합</text>
+  <text x="245" y="196" text-anchor="middle" font-size="13" fill="#2d6a4f">(해시)</text>
+
+  <!-- soft binding db -->
+  <rect x="270" y="334" width="400" height="62" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="470" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">소프트 결합 — 보이지 않는 워터마크 · 지문</text>
+  <text x="470" y="381" text-anchor="middle" font-size="13" fill="#4a4a4a">메타데이터가 떨어져 나간 자산에서 매니페스트를 찾아 준다</text>
+  <path d="M115,242 L115,365 L268,365" stroke="#b45309" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#ab)"/>
+  <path d="M470,332 L470,294" stroke="#b45309" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#ab)"/>
+</svg>
