@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="400" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">ISO/IEC/IEEE 14764:2022 의 구조 — 12207 의 유지보수·폐기 프로세스를 상세화한다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">6절·7절이 프로세스 본문, 8절·9절이 구현과 계획이다. 유지보수 유형은 8.2 에 있다.</text>
+
+  <!-- 12207 -->
+  <rect x="20" y="64" width="840" height="50" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="86" font-size="13" font-weight="bold" fill="#495057">ISO/IEC/IEEE 12207:2017 기술 프로세스 — 6.4.13 유지보수 프로세스 · 6.4.14 폐기 프로세스</text>
+  <text x="36" y="106" font-size="13" fill="#868e96">14764 는 이 두 프로세스의 활동·과업을 더 상세히 기술하고 유지보수 유형을 정의한다 (적용범위 1.1)</text>
+
+  <line x1="440" y1="114" x2="440" y2="144" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 6.1 -->
+  <rect x="20" y="148" width="265" height="120" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="34" y="170" font-size="13" font-weight="bold" fill="#2d6a4f">6.1 유지보수 활동과 과업</text>
+  <text x="34" y="192" font-size="13" fill="#212529">전략 · 계획 · 계획서와 절차</text>
+  <text x="34" y="212" font-size="13" fill="#212529">요구사항 검토 · 변경 영향 분석 · 측정</text>
+  <text x="34" y="232" font-size="13" fill="#212529">교체 요소 품질·가용성 감시 · 결과 관리</text>
+  <text x="34" y="254" font-size="13" fill="#868e96">6.1.2 ~ 6.1.9 — 8개 소절</text>
+
+  <line x1="285" y1="208" x2="303" y2="208" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 6.2 -->
+  <rect x="307" y="148" width="265" height="120" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="321" y="170" font-size="13" font-weight="bold" fill="#2d6a4f">6.2 문제·변경 분석 (MR/PR)</text>
+  <text x="321" y="192" font-size="13" fill="#212529">분석 → 타당성 검토 → 재현·검증 → 구현</text>
+  <text x="321" y="212" font-size="13" fill="#212529">→ 검토·기록 → 승인 → 추가 분석 기록</text>
+  <text x="321" y="232" font-size="13" fill="#212529">→ 기술 프로세스로 구현 → 검토 → 반영</text>
+  <text x="321" y="254" font-size="13" fill="#868e96">6.2.1 ~ 6.2.10 — 10개 소절</text>
+
+  <line x1="572" y1="208" x2="590" y2="208" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 7 -->
+  <rect x="594" y="148" width="266" height="120" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="608" y="170" font-size="13" font-weight="bold" fill="#b45309">7 소프트웨어 폐기</text>
+  <text x="608" y="192" font-size="13" fill="#212529">폐기 전략 · 폐기 과업 · 폐기 통지</text>
+  <text x="608" y="212" font-size="13" fill="#212529">사후 과업 · 기록 보관</text>
+  <text x="608" y="254" font-size="13" fill="#868e96">7.2.2 ~ 7.2.7 — 12207 의 6.4.14 대응</text>
+
+  <!-- 8, 9 -->
+  <rect x="20" y="296" width="412" height="88" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="318" font-size="13" font-weight="bold" fill="#495057">8 구현 고려사항</text>
+  <text x="34" y="340" font-size="13" fill="#212529">8.2 유지보수 유형 · 8.3 합의 · 8.4 도구 · 8.5 측정</text>
+  <text x="34" y="360" font-size="13" fill="#212529">8.6 프로세스 정의 · 8.7 개발 단계 조기 참여</text>
+  <text x="34" y="378" font-size="13" fill="#212529">8.8 유지보수성 강화 · 8.9 기록과 정보 항목</text>
+
+  <rect x="448" y="296" width="412" height="88" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="462" y="318" font-size="13" font-weight="bold" fill="#495057">9 소프트웨어 유지보수 계획</text>
+  <text x="462" y="340" font-size="13" fill="#212529">9.1 범위 · 조직 지정 · 프로세스 · 조직과 활동 · 자원</text>
+  <text x="462" y="360" font-size="13" fill="#212529">비용 추정 · 교육 · 통제 요구사항 · 기록과 보고</text>
+  <text x="462" y="378" font-size="13" fill="#212529">9.2 자원 분석 — 인력 · 환경 · 재정</text>
+</svg>

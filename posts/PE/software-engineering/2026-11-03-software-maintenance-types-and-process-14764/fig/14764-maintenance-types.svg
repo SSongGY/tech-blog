@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">유지보수 유형 — 정정 2 + 개선 3 = 5, 여기에 긴급 1</text>
+  <text x="20" y="48" font-size="13" fill="#495057">2006년 제2판의 4유형(수정·적응·완전·예방)에 2022년 제3판이 '추가'를 더해 5유형이 됐고, 긴급은 따로 센다.</text>
+
+  <!-- MR/PR -->
+  <rect x="290" y="66" width="300" height="46" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="306" y="94" font-size="13" font-weight="bold" fill="#495057">변경 요청 (MR) · 문제 보고 (PR) 가 들어온다</text>
+
+  <line x1="360" y1="112" x2="200" y2="146" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="520" y1="112" x2="620" y2="146" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 정정 -->
+  <rect x="20" y="150" width="330" height="126" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="36" y="172" font-size="13" font-weight="bold" fill="#9d0208">정정 (Correction) — 있는 결함을 다룬다</text>
+  <rect x="36" y="186" width="140" height="76" rx="4" fill="#fde2e2" stroke="#9d0208" stroke-width="1"/>
+  <text x="48" y="208" font-size="13" font-weight="bold" fill="#212529">수정 (corrective)</text>
+  <text x="48" y="230" font-size="13" fill="#212529">발견된 문제를</text>
+  <text x="48" y="250" font-size="13" fill="#212529">사후에 고친다</text>
+  <rect x="194" y="186" width="140" height="76" rx="4" fill="#fde2e2" stroke="#9d0208" stroke-width="1"/>
+  <text x="206" y="208" font-size="13" font-weight="bold" fill="#212529">예방 (preventive)</text>
+  <text x="206" y="230" font-size="13" fill="#212529">잠재 결함을 운영에</text>
+  <text x="206" y="250" font-size="13" fill="#212529">나타나기 전에 고친다</text>
+
+  <!-- 개선 -->
+  <rect x="370" y="150" width="490" height="126" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="386" y="172" font-size="13" font-weight="bold" fill="#2d6a4f">개선 (Enhancement) — 결함이 아닌 변화를 다룬다</text>
+  <rect x="386" y="186" width="146" height="76" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="398" y="208" font-size="13" font-weight="bold" fill="#212529">적응 (adaptive)</text>
+  <text x="398" y="230" font-size="13" fill="#212529">바뀐 환경에서</text>
+  <text x="398" y="250" font-size="13" fill="#212529">계속 쓰이게 한다</text>
+  <rect x="548" y="186" width="146" height="76" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="560" y="208" font-size="13" font-weight="bold" fill="#212529">추가 (additive)</text>
+  <text x="560" y="230" font-size="13" fill="#212529">새 기능·특성을</text>
+  <text x="560" y="250" font-size="13" fill="#212529">더한다 (제3판 신설)</text>
+  <rect x="710" y="186" width="136" height="76" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1"/>
+  <text x="722" y="208" font-size="13" font-weight="bold" fill="#212529">완전 (perfective)</text>
+  <text x="722" y="230" font-size="13" fill="#212529">성능·유지보수성·</text>
+  <text x="722" y="250" font-size="13" fill="#212529">문서를 개선한다</text>
+
+  <!-- 긴급 -->
+  <rect x="20" y="290" width="840" height="30" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="36" y="310" font-size="13" fill="#b45309"><tspan font-weight="bold">긴급 (emergency)</tspan> — 일정에 없이 시스템을 임시로 살려 두는 조치. 뒤에 수정 유지보수가 따라와야 하므로 위 분류와 별도로 센다</text>
+</svg>
