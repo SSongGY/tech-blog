@@ -6809,3 +6809,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-235
+    title: "HMAC과 해시 길이 확장 공격"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "HMAC의 구조(내부·외부 해시)와 SHA-2 길이 확장 공격이 H(key||msg)에서만 성립하는 이유"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-236
+    title: "머클 트리(Merkle Tree)와 포함 증명"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "해시 트리 구조, 루트 해시로 일부 데이터의 포함을 증명하는 절차와 블록체인·인증서 투명성에서의 쓰임"
+    code: none
+    origin: exam
+    status: todo

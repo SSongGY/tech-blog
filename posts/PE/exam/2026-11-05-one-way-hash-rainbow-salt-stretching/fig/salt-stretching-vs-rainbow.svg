@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="400" fill="#fffdf7"/>
+  <defs>
+    <marker id="h-bad" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="h-ok" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">솔트와 키 스트레칭이 레인보우 테이블을 막는 구조</text>
+
+  <!-- 위 줄: 방어 없음 -->
+  <text x="40" y="66" font-weight="bold" fill="#9d0208">① 솔트·반복 없음 — 해시 한 번</text>
+  <rect x="40" y="80" width="150" height="56" rx="8" fill="#fde2e4" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="115" y="104" text-anchor="middle" font-weight="bold" fill="#7f1d1d">비밀번호</text>
+  <text x="115" y="123" text-anchor="middle" font-size="13" fill="#7f1d1d">pw</text>
+
+  <rect x="260" y="80" width="170" height="56" rx="8" fill="#fde2e4" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="345" y="104" text-anchor="middle" font-weight="bold" fill="#7f1d1d">해시 함수 H</text>
+  <text x="345" y="123" text-anchor="middle" font-size="13" fill="#7f1d1d">H(pw) 한 번</text>
+
+  <rect x="500" y="80" width="150" height="56" rx="8" fill="#fde2e4" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="575" y="104" text-anchor="middle" font-weight="bold" fill="#7f1d1d">저장값</text>
+  <text x="575" y="123" text-anchor="middle" font-size="13" fill="#7f1d1d">H(pw)</text>
+
+  <rect x="710" y="80" width="140" height="56" rx="8" fill="#fde2e4" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="780" y="104" text-anchor="middle" font-weight="bold" fill="#7f1d1d">레인보우 표</text>
+  <text x="780" y="123" text-anchor="middle" font-size="13" fill="#7f1d1d">일치 → pw 복구</text>
+
+  <line x1="190" y1="108" x2="258" y2="108" stroke="#9d0208" stroke-width="1.8" marker-end="url(#h-bad)"/>
+  <line x1="430" y1="108" x2="498" y2="108" stroke="#9d0208" stroke-width="1.8" marker-end="url(#h-bad)"/>
+  <line x1="708" y1="108" x2="652" y2="108" stroke="#9d0208" stroke-width="1.8" marker-end="url(#h-bad)"/>
+
+  <text x="440" y="170" text-anchor="middle" font-size="13" fill="#7f1d1d">표 하나로 모든 사용자를 조회한다. 같은 비밀번호는 같은 저장값이 나온다.</text>
+
+  <line x1="40" y1="190" x2="840" y2="190" stroke="#d1d5db" stroke-width="1.2" stroke-dasharray="6 5"/>
+
+  <!-- 아래 줄: 솔트 + 스트레칭 -->
+  <text x="40" y="226" font-weight="bold" fill="#2d6a4f">② 솔트 + 키 스트레칭 — 사용자마다 다른 입력, N회 반복</text>
+  <rect x="40" y="240" width="150" height="56" rx="8" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="115" y="264" text-anchor="middle" font-weight="bold" fill="#1b4332">비밀번호 + 솔트</text>
+  <text x="115" y="283" text-anchor="middle" font-size="13" fill="#1b4332">pw ‖ salt(사용자별)</text>
+
+  <rect x="260" y="240" width="170" height="56" rx="8" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="345" y="264" text-anchor="middle" font-weight="bold" fill="#1b4332">반복 해시 N회</text>
+  <text x="345" y="283" text-anchor="middle" font-size="13" fill="#1b4332">시간·메모리 비용 부과</text>
+
+  <rect x="500" y="240" width="150" height="56" rx="8" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="575" y="264" text-anchor="middle" font-weight="bold" fill="#1b4332">저장값</text>
+  <text x="575" y="283" text-anchor="middle" font-size="13" fill="#1b4332">salt, 비용, 해시</text>
+
+  <rect x="710" y="240" width="140" height="56" rx="8" fill="#fff3e0" stroke="#b45309" stroke-width="1.8"/>
+  <text x="780" y="264" text-anchor="middle" font-weight="bold" fill="#7c2d12">미리 만든 표</text>
+  <text x="780" y="283" text-anchor="middle" font-size="13" fill="#7c2d12">솔트가 달라 불일치</text>
+
+  <line x1="190" y1="268" x2="258" y2="268" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#h-ok)"/>
+  <line x1="430" y1="268" x2="498" y2="268" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#h-ok)"/>
+  <line x1="708" y1="268" x2="652" y2="268" stroke="#b45309" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#h-ok)"/>
+
+  <text x="440" y="330" text-anchor="middle" font-size="13" fill="#1b4332">공격자는 사용자마다 따로, 후보 하나마다 N회 계산해야 한다.</text>
+  <text x="440" y="356" text-anchor="middle" font-size="13" fill="#374151">정상 서버는 로그인 한 번에 N회만 계산하므로 부담이 작고, 대량 시도하는 쪽의 비용만 N배가 된다.</text>
+</svg>
