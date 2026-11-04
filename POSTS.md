@@ -1,15 +1,16 @@
 # 글 목록
 
-총 **598편** · 갱신 2026-11-05
+총 **601편** · 갱신 2026-11-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 88편
+## DB문법 (basics) — 89편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-03 | [VALUES 절을 표처럼 쓰기 — 임시 데이터를 조인에 끼워 넣는다](posts/Database/sql-basics/2026-11-03-values-clause-as-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [소계와 총계를 한 결과에 — ROLLUP 이 없는 SQLite 에서 합계 줄 붙이기](posts/Database/sql-basics/2026-11-03-subtotal-grand-total-without-rollup/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-03 | [자기 조인 — 같은 표를 두 번 불러 비교하기](posts/Database/sql-basics/2026-11-03-self-join-compare-rows-in-one-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [R*Tree 가상 테이블 — 범위가 겹치는 행 찾기](posts/Database/sql-basics/2026-11-03-rtree-overlapping-ranges/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [INDEXED BY와 NOT INDEXED — 옵티마이저에 손을 대는 두 구문](posts/Database/sql-basics/2026-11-03-indexed-by-not-indexed/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-01 | [BEGIN DEFERRED·IMMEDIATE·EXCLUSIVE — 잠금을 언제 잡는가](posts/Database/sql-basics/2026-11-01-begin-deferred-immediate-exclusive-locking/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5, Windows 11 | 실행 검증 |
@@ -121,7 +122,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 211편
+## 기술사 (pe) — 212편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -132,6 +133,7 @@
 | 2026-11-04 | [동적 메모리 할당기의 구조 — brk·mmap과 아레나](posts/PE/system/2026-11-04-dynamic-memory-allocator-brk-mmap-arena/index.md) | 중급 | Linux man-pages 6.19 — malloc(3), mallopt(3), brk(2), mmap(2) | 문서 근거 |
 | 2026-11-04 | [데이터 역공학 — 물리 스키마에서 논리 모델 복원](posts/PE/software-engineering/2026-11-04-data-reverse-engineering-logical-schema-recovery/index.md) | 중급 | J-L Hainaut, Introduction to Database Reverse Engineering (LIBD, Univ. of Namur, 2002), Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024) | 문서 근거 |
 | 2026-11-03 | [시스톨릭 어레이 — 한 번 읽은 값을 배열 안에서 여러 번 쓰는 구조](posts/PE/computer-architecture/2026-11-03-systolic-array/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
+| 2026-11-03 | [소프트웨어 유지보수 유형과 유지보수 프로세스 — ISO/IEC/IEEE 14764:2022 가 4유형을 5+1 로 바꾼 지점](posts/PE/software-engineering/2026-11-03-software-maintenance-types-and-process-14764/index.md) | 중급 | ISO/IEC/IEEE 14764:2022 (제3판), ISO/IEC/IEEE 12207:2017, SWEBOK Guide V4.0a (2024), SWEBOK Guide V3.0 (2014), ISO/IEC 14764:2006 (제2판, 대체됨) | 문서 근거 |
 | 2026-11-03 | [서비스 메시 — 데이터 플레인과 컨트롤 플레인, 그리고 서비스 코드에 남는 것](posts/PE/emerging-tech/2026-11-03-service-mesh-data-plane-control-plane/index.md) | 중급 | NIST SP 800-204A (2020-05), NIST SP 800-204 (2019-08) | 문서 근거 |
 | 2026-11-03 | [루프라인 모델 — 연산강도와 능선점으로 병목이 메모리인지 연산기인지 가른다](posts/PE/computer-architecture/2026-11-03-roofline-model/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [경로벡터 라우팅과 BGP 경로 선택 — 메트릭이 아니라 정책으로 고른다](posts/PE/network/2026-11-03-path-vector-routing-and-bgp-decision-process/index.md) | 중급 | RFC 1322 (1992-05), RFC 4271 (2006-01), RFC 4456 (2006-04) | 문서 근거 |
@@ -360,13 +362,14 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 53편
+## 일반 (general) — 54편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-03 | [정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어](posts/Security/redos/2026-11-03-redos-catastrophic-backtracking/index.md) | 심화 | Python 3.13.5, regex 2026.9.29 | 실행 검증 |
 | 2026-11-03 | [대칭키와 공개키의 속도 차이는 몇 배인가 — openssl speed 로 직접 재기](posts/Security/crypto/2026-11-03-openssl-speed-symmetric-vs-public-key/index.md) | 중급 | OpenSSL 3.5.6, GNU bash 5.3.9, GNU Awk 5.4.0 | 실행 검증 |
 | 2026-11-03 | [자바 HashMap 이 연결 리스트를 버리고 트리로 바뀌는 순간 — 그리고 트리가 막지 못하는 것](posts/Language/java/2026-11-03-java-hashmap-treeify-threshold/index.md) | 심화 | Java 1.8.0_491 (HotSpot 25.491-b10), javac 1.8.0_202, Windows 11 | 실행 검증 |
+| 2026-11-03 | [git 은 파일을 어떻게 저장하는가 — blob·tree·commit 을 cat-file 로 뜯어본다](posts/Tooling/git/2026-11-03-git-object-model-blob-tree-commit/index.md) | 중급 | git 2.54.0.windows.1, GNU bash 5.3.9, sha1sum (GNU coreutils) 8.32 | 실행 검증 |
 | 2026-11-03 | [블룸 필터를 직접 만들어 오탐률 수식과 맞춰 보기](posts/Architecture/datastructure/2026-11-03-bloom-filter-false-positive-rate/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-01 | [인증서 체인을 직접 만들어 보면 검증 실패가 읽힌다](posts/Security/tls/2026-11-01-x509-chain-build-and-verify-failures/index.md) | 중급 | OpenSSL 3.5.6 7 Apr 2026, GNU bash 5.3.9(1)-release (x86_64-pc-cygwin), Windows 11 | 실행 검증 |
 | 2026-10-31 | [플레임 그래프를 제대로 읽는 법 — 폭과 높이가 각각 무엇인가](posts/Tooling/2026-10-31-reading-flame-graphs/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
