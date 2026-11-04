@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" role="img" aria-label="분류 시점 측정. 장부금액 600과 순공정가치 520 중 작은 520으로 재고 차이 80을 손상차손으로 인식한다">
+  <rect x="0" y="0" width="880" height="340" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">분류 시점(4년 말)의 측정 (억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">취득원가 1,000 · 10년 정액 · 4년 경과 · 공정가치 540 · 처분부대원가 20</text>
+
+  <!-- 1억원 = 1px, 시작 x=200 -->
+  <text x="190" y="104" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="end">분류 직전 장부금액</text>
+  <rect x="200" y="84" width="600" height="30" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="810" y="105" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" dx="-8" text-anchor="end">600</text>
+
+  <text x="190" y="164" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="end">공정가치</text>
+  <rect x="200" y="144" width="540" height="30" fill="#ffffff" stroke="#444" stroke-width="2"/>
+  <text x="732" y="165" font-family="sans-serif" font-size="14" font-weight="bold" fill="#444" text-anchor="end">540</text>
+
+  <text x="190" y="224" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="end">순공정가치</text>
+  <rect x="200" y="204" width="520" height="30" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="720" y="204" width="20" height="30" fill="#f7f7f4" stroke="#b45309" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="712" y="225" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="end">520</text>
+  <text x="730" y="256" font-family="sans-serif" font-size="13" fill="#b45309" text-anchor="middle">처분부대원가 20</text>
+
+  <text x="190" y="294" font-family="sans-serif" font-size="14" fill="#1b1b1b" text-anchor="end">손상차손</text>
+  <rect x="720" y="274" width="80" height="30" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="760" y="295" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">80</text>
+  <text x="710" y="295" font-family="sans-serif" font-size="13" fill="#444" text-anchor="end">600 − 520 =</text>
+</svg>
