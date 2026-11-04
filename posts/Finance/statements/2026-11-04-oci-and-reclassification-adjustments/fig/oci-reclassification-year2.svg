@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="차카물산의 1년 차와 2년 차 포괄손익계산서. 2년 차 재분류조정이 기타포괄손익에서 60을 빼서 같은 금액이 두 번 세어지지 않게 한다">
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">재분류조정 — 같은 60 이 두 번 세어지지 않게 하는 줄 (차카물산, 채무상품 FVOCI)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">단위: 억원 · 본업 순이익 매년 100 · 1년 차 평가이익 60 · 2년 차 처분이익 60</text>
+
+  <!-- 1년 차 -->
+  <text x="220" y="88" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">1년 차 — 평가</text>
+  <rect x="40" y="100" width="360" height="212" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+
+  <rect x="52" y="112" width="336" height="44" rx="4" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="68" y="139" font-family="sans-serif" font-size="13" fill="#2d6a4f">당기손익 부분 — 당기순이익</text>
+  <text x="372" y="139" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="end">100</text>
+
+  <rect x="52" y="166" width="336" height="76" rx="4" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="68" y="188" font-family="sans-serif" font-size="13" fill="#b45309">기타포괄손익 부분</text>
+  <text x="84" y="210" font-family="sans-serif" font-size="13" fill="#1b1b1b">채무상품 평가이익</text>
+  <text x="372" y="210" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="end">+60</text>
+  <text x="84" y="230" font-family="sans-serif" font-size="13" fill="#1b1b1b">재분류조정</text>
+  <text x="372" y="230" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="end">0</text>
+
+  <rect x="52" y="252" width="336" height="44" rx="4" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="68" y="279" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b">총포괄이익</text>
+  <text x="372" y="279" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="end">160</text>
+
+  <!-- 2년 차 -->
+  <text x="660" y="88" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">2년 차 — 처분</text>
+  <rect x="480" y="100" width="360" height="212" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+
+  <rect x="492" y="112" width="336" height="44" rx="4" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="508" y="131" font-family="sans-serif" font-size="13" fill="#2d6a4f">당기손익 부분 — 당기순이익</text>
+  <text x="508" y="149" font-family="sans-serif" font-size="13" fill="#444">본업 100 + 처분이익 60</text>
+  <text x="812" y="139" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="end">160</text>
+
+  <rect x="492" y="166" width="336" height="76" rx="4" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="508" y="188" font-family="sans-serif" font-size="13" fill="#b45309">기타포괄손익 부분</text>
+  <text x="524" y="210" font-family="sans-serif" font-size="13" fill="#1b1b1b">채무상품 평가이익</text>
+  <text x="812" y="210" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="end">0</text>
+  <text x="524" y="230" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208">재분류조정 (누계액을 당기손익으로 옮김)</text>
+  <text x="812" y="230" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="end">−60</text>
+
+  <rect x="492" y="252" width="336" height="44" rx="4" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="508" y="279" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1b1b1b">총포괄이익</text>
+  <text x="812" y="279" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="end">100</text>
+
+  <text x="24" y="346" font-family="sans-serif" font-size="13" fill="#1b1b1b">2년 누계 총포괄이익 = 160 + 100 = 260 = 본업 200 + 평가이익 60. 재분류조정 −60 이 없으면 280 이 되어</text>
+  <text x="24" y="368" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208">1년 차 기타포괄손익과 2년 차 당기손익에 같은 60 이 두 번 들어간다 (제1001호 문단 93).</text>
+</svg>

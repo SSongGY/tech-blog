@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **587편** · 갱신 2026-11-04
+총 **588편** · 갱신 2026-11-04
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -414,10 +414,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 86편
+## 기출문제 (exam) — 87편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-04 | [기출문제 — ISMS-P 인증 영역·법적 근거·관리과정과 간편인증·강화 방안](posts/PE/exam/2026-11-04-isms-p-certification-domains-and-process/index.md) | 중급 | 정보통신망법 제47조 (법률 제21988호, 2026-10-02 시행), 개인정보 보호법 제32조의2 (법률 제21445호, 2026-09-11 시행), 정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시 (2024-07-24 시행), ISMS-P 인증기준 안내서 2023.11, 개인정보보호위원회 간편인증 보도자료 (2024-07-23) | 문서 근거 |
 | 2026-11-03 | [기출문제 — 로우코드 플랫폼의 특징, 노코드와의 비교, 적용 한계](posts/PE/exam/2026-11-03-low-code-platform-characteristics-and-limits/index.md) | 중급 | Di Ruscio et al., Software and Systems Modeling 21(2) pp.437-446 (2022-01), Sahay et al., Euromicro SEAA 2020 pp.171-178, Luo et al., ACM/IEEE ESEM 2021, Forrester 로우코드 정의 (2014, 2017), Gartner LCAP 시장 구분 (2016) | 문서 근거 |
 | 2026-11-03 | [기출문제 — 가용성 보장: 결함 허용 시스템(FTS)과 고가용성(HA)의 구현 방법과 비교](posts/PE/exam/2026-11-03-fault-tolerant-system-vs-high-availability/index.md) | 중급 | Python 3.13.5, Avizienis·Laprie·Randell·Landwehr, IEEE TDSC 1(1), 2004, Gray, Tandem TR 85.7 (1985), Red Hat Enterprise Linux 8 HA 클러스터 문서, AWS Well-Architected Reliability Pillar (2026-11-03 열람), ISO/IEC 25010 (iso25000.com 요약, 2023판 명칭) | 실행 검증 |
 | 2026-11-03 | [기출문제 — 분산 데이터베이스의 분할 단위와 수평분할·수직분할](posts/PE/exam/2026-11-03-distributed-db-fragmentation-units-horizontal-vertical/index.md) | 중급 | Özsu & Valduriez, Principles of Distributed Database Systems 3판 (2011) 3장, Ceri·Negri·Pelagatti, ACM SIGMOD 1982, Navathe·Ceri·Wiederhold·Dou, ACM TODS 9권 4호 (1984-12) | 문서 근거 |

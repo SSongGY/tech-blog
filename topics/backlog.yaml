@@ -6765,3 +6765,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-117
+    title: "기타포괄손익과 재분류조정 — 순이익 밖에 쌓인 손익이 되돌아오는 것과 안 돌아오는 것"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, oci, reclassification, k-ifrs]
+    difficulty: 중급
+    angle: "기업회계기준서 제1001호 문단 7·82A·90~96. 당기순이익은 같은데 총포괄이익이 갈리는 두 회사. 채무상품 FVOCI 처분은 재분류조정으로 순이익에 들어오고 지분상품 FVOCI 처분은 안 들어오는 차이를 계산으로. 누적 OCI가 자본총계에 들어가 ROE·PBR 분모를 움직이는 자리"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-118
+    title: "영구채와 상환우선주 — 같은 조달이 자본이 되기도 부채가 되기도 하는 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, hybrid-securities, liability-vs-equity, k-ifrs]
+    difficulty: 중급
+    angle: "기업회계기준서 제1032호 문단 11·15~20·25·AG25~26. 계약상 현금 지급 의무가 있느냐가 자본과 부채를 가른다. 같은 500억원을 영구채(자본)와 상환우선주(부채)로 조달한 두 회사의 부채비율·이자비용·당기순이익·보통주 EPS 차이를 계산으로"
+    code: python
+    origin: manual
+    status: writing
