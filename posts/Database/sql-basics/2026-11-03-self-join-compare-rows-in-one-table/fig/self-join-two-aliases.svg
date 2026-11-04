@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="400" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow-ok" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrow-none" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">자기 조인 — 같은 employee 표를 e 와 m 두 이름으로 부른다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">ON e.manager_id = m.emp_id — e 의 한 행마다 manager_id 값으로 m 에서 상사 행을 찾아 옆에 붙인다</text>
+
+  <!-- e 쪽 -->
+  <rect x="20" y="66" width="330" height="178" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="36" y="88" font-size="13" font-weight="bold" fill="#495057">employee AS e — 직원 쪽</text>
+  <text x="36" y="108" font-size="13" fill="#868e96" font-family="'Consolas','D2Coding',monospace">emp_id  name    manager_id</text>
+  <text x="36" y="132" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">1       김대표  NULL</text>
+  <text x="36" y="156" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">2       이부장  1</text>
+  <text x="36" y="180" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">3       박팀장  2</text>
+  <text x="36" y="204" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">4       최사원  3</text>
+  <text x="36" y="228" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">5       정사원  3</text>
+
+  <!-- m 쪽 -->
+  <rect x="530" y="66" width="330" height="178" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="546" y="88" font-size="13" font-weight="bold" fill="#495057">employee AS m — 상사 쪽 (같은 표)</text>
+  <text x="546" y="108" font-size="13" fill="#868e96" font-family="'Consolas','D2Coding',monospace">emp_id  name    salary</text>
+  <text x="546" y="132" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">1       김대표  900</text>
+  <text x="546" y="156" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">2       이부장  600</text>
+  <text x="546" y="180" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">3       박팀장  500</text>
+  <text x="546" y="204" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">4       최사원  350</text>
+  <text x="546" y="228" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">5       정사원  520</text>
+
+  <!-- 화살표: manager_id → emp_id -->
+  <line x1="350" y1="152" x2="526" y2="128" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+  <line x1="350" y1="176" x2="526" y2="152" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+  <line x1="350" y1="200" x2="526" y2="176" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+  <line x1="350" y1="224" x2="526" y2="178" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+  <line x1="350" y1="128" x2="420" y2="128" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-none)"/>
+  <text x="372" y="118" font-size="13" fill="#9d0208">NULL → 짝 없음</text>
+  <text x="386" y="256" font-size="13" fill="#2d6a4f">m 쪽은 기본키로 찾는다 (SEARCH m USING INTEGER PRIMARY KEY)</text>
+
+  <!-- 결과 -->
+  <rect x="20" y="276" width="840" height="108" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="36" y="298" font-size="13" font-weight="bold" fill="#2d6a4f">결과 한 줄 = e 의 행 + m 의 행 — 두 행의 값을 같은 줄에서 비교할 수 있다</text>
+  <text x="36" y="322" font-size="13" fill="#868e96" font-family="'Consolas','D2Coding',monospace">e.name   e.salary   m.name   m.salary   e.salary > m.salary</text>
+  <text x="36" y="346" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">이부장   600        김대표   900        아니오</text>
+  <text x="36" y="370" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">정사원   520        박팀장   500        예 ← 3번 질의가 찾는 행</text>
+  <text x="560" y="346" font-size="13" fill="#9d0208">김대표 행은 JOIN 에서 빠지고</text>
+  <text x="560" y="370" font-size="13" fill="#9d0208">LEFT JOIN 이면 m 쪽이 NULL 로 남는다</text>
+</svg>
