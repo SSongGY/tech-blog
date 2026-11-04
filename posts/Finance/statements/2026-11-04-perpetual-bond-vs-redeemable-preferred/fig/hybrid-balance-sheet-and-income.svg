@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" role="img" aria-label="같은 500억원이 영구채로는 자본에, 상환우선주로는 부채에 앉고, 분배금 25억원이 한쪽은 자본에서 직접 빠지고 다른 쪽은 이자비용이 되는 모습">
+  <rect x="0" y="0" width="880" height="430" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">같은 500억원이 재무상태표에 앉는 두 자리와 분배금 25억원이 빠지는 두 자리</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">조달 전 부채 1,000 · 보통주 자본 1,000 · 영업이익 150 · 기존 이자 40 · 분배율 5%</text>
+
+  <!-- 왼쪽: 타파중공업 영구채 -->
+  <text x="220" y="86" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">타파중공업 — 영구채 (자본)</text>
+  <rect x="40" y="98" width="360" height="176" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="130" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444" text-anchor="middle">부채</text>
+  <rect x="52" y="130" width="156" height="132" rx="4" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="130" y="190" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">차입금</text>
+  <text x="130" y="212" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">1,000</text>
+  <text x="310" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444" text-anchor="middle">자본</text>
+  <rect x="232" y="130" width="156" height="78" rx="4" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="310" y="163" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">보통주 자본</text>
+  <text x="310" y="185" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">1,000</text>
+  <rect x="232" y="214" width="156" height="48" rx="4" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="310" y="234" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">영구채</text>
+  <text x="310" y="254" font-family="sans-serif" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">500</text>
+
+  <!-- 오른쪽: 하거물산 상환우선주 -->
+  <text x="660" y="86" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">하거물산 — 상환우선주 (부채)</text>
+  <rect x="480" y="98" width="360" height="176" rx="6" fill="#ffffff" stroke="#555" stroke-width="1.5"/>
+  <text x="570" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444" text-anchor="middle">부채</text>
+  <rect x="492" y="130" width="156" height="78" rx="4" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="570" y="163" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">차입금</text>
+  <text x="570" y="185" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">1,000</text>
+  <rect x="492" y="214" width="156" height="48" rx="4" fill="#fbe9e7" stroke="#9d0208" stroke-width="2"/>
+  <text x="570" y="234" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">상환우선주</text>
+  <text x="570" y="254" font-family="sans-serif" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">500</text>
+  <text x="750" y="120" font-family="sans-serif" font-size="13" font-weight="bold" fill="#444" text-anchor="middle">자본</text>
+  <rect x="672" y="130" width="156" height="132" rx="4" fill="#eceae4" stroke="#777" stroke-width="1"/>
+  <text x="750" y="190" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">보통주 자본</text>
+  <text x="750" y="212" font-family="sans-serif" font-size="15" font-weight="bold" fill="#1b1b1b" text-anchor="middle">1,000</text>
+
+  <!-- 손익 경로 -->
+  <rect x="40" y="292" width="360" height="56" rx="4" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="220" y="314" font-family="sans-serif" font-size="13" fill="#2d6a4f" text-anchor="middle">영업이익 150 − 이자 40 = 당기순이익 110</text>
+  <text x="220" y="336" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">분배 25 는 자본에서 직접 뺀다 (문단 35)</text>
+  <rect x="480" y="292" width="360" height="56" rx="4" fill="#fbe9e7" stroke="#9d0208" stroke-width="2"/>
+  <text x="660" y="314" font-family="sans-serif" font-size="13" fill="#9d0208" text-anchor="middle">영업이익 150 − 이자 40 − 배당 25 = 당기순이익 85</text>
+  <text x="660" y="336" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">배당 25 가 사채 이자처럼 비용이다 (문단 36)</text>
+
+  <text x="24" y="384" font-family="sans-serif" font-size="13" fill="#1b1b1b">부채비율 66.7% 대 150.0% · 당기순이익 110 대 85 — 그러나 보통주에 귀속되는 순이익은 110 − 25 = 85 로 양쪽이 같다.</text>
+  <text x="24" y="406" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f">총자산 2,500 · 영업이익 150 · 보통주 몫 85 는 분류와 무관하다. 갈리는 것은 자본총계를 쓰는 지표다.</text>
+</svg>
