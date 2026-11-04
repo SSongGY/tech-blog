@@ -395,6 +395,10 @@ ABI가 함께 거는 제약이 두 가지다.
 > 개념 정리: [프로세스와 스레드 — 문맥 교환 비용](../../system/2026-09-29-process-thread-context-switch-cost/index.md)
 >
 > 개념 정리: [ELF 실행 파일 포맷과 프로그램 적재](../../system/2026-11-04-elf-file-format-sections-segments-loading/index.md)
+>
+> 개념 정리: [함수 호출 규약과 스택 프레임](../../system/2026-11-04-function-call-convention-stack-frame/index.md)
+>
+> 개념 정리: [동적 메모리 할당기의 구조 — brk·mmap과 아레나](../../system/2026-11-04-dynamic-memory-allocator-brk-mmap-arena/index.md)
 
 끝
 

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="26" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">malloc 요청이 운영체제로 가는 두 경로 (glibc 기준)</text>
+
+  <!-- 프로그램 -->
+  <rect x="320" y="46" width="240" height="46" fill="#eef2f7" stroke="#444" stroke-width="1.5"/>
+  <text x="440" y="74" font-size="14" text-anchor="middle" fill="#222">프로그램: malloc(n) / free(p)</text>
+  <line x1="440" y1="92" x2="440" y2="118" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 할당기 -->
+  <rect x="290" y="120" width="300" height="52" fill="#eef2f7" stroke="#444" stroke-width="2"/>
+  <text x="440" y="143" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">할당기 (라이브러리)</text>
+  <text x="440" y="162" font-size="13" text-anchor="middle" fill="#555">이미 확보한 영역의 빈 블록을 먼저 찾는다</text>
+  <line x1="440" y1="172" x2="440" y2="198" stroke="#444" stroke-width="1.5" marker-end="url(#ar)"/>
+
+  <!-- 문턱 -->
+  <rect x="320" y="200" width="240" height="46" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="221" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">빈 블록 없음 · n ≥ 문턱?</text>
+  <text x="440" y="238" font-size="13" text-anchor="middle" fill="#555">문턱 기본값 128 KiB</text>
+
+  <!-- 분기 -->
+  <line x1="380" y1="246" x2="220" y2="290" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="270" y="262" font-size="13" fill="#2d6a4f">아니오</text>
+  <line x1="500" y1="246" x2="660" y2="290" stroke="#b45309" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="590" y="262" font-size="13" fill="#b45309">예</text>
+
+  <!-- 힙 경로 -->
+  <rect x="80" y="292" width="280" height="62" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="220" y="316" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">힙 확장: brk / sbrk</text>
+  <text x="220" y="336" font-size="13" text-anchor="middle" fill="#555">프로그램 브레이크를 옮겨 한 덩어리를 늘린다</text>
+
+  <!-- mmap 경로 -->
+  <rect x="520" y="292" width="280" height="62" fill="#fdf3e3" stroke="#b45309" stroke-width="2"/>
+  <text x="660" y="316" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">익명 매핑: mmap</text>
+  <text x="660" y="336" font-size="13" text-anchor="middle" fill="#555">요청마다 독립된 영역, 0으로 초기화</text>
+
+  <text x="440" y="392" font-size="13" text-anchor="middle" fill="#444">스레드 사이에 잠금 경합이 감지되면 할당기가 arena를 추가로 만든다</text>
+  <text x="440" y="411" font-size="13" text-anchor="middle" fill="#444">arena 각각은 brk 또는 mmap으로 확보한 큰 영역이며 자기 잠금으로 관리된다</text>
+</svg>

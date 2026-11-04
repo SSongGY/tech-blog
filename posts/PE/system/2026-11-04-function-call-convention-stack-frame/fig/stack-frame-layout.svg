@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="440" fill="#ffffff"/>
+  <text x="440" y="26" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">x86-64 스택 프레임 (높은 주소 → 낮은 주소)</text>
+
+  <!-- 열 머리 -->
+  <text x="330" y="52" font-size="13" text-anchor="end" fill="#555">기준 위치</text>
+  <text x="640" y="52" font-size="13" fill="#555">레지스터</text>
+
+  <!-- 호출자 프레임 -->
+  <rect x="340" y="62" width="260" height="46" fill="#eef2f7" stroke="#444" stroke-width="1.5"/>
+  <text x="470" y="90" font-size="14" text-anchor="middle" fill="#222">메모리 인자 n (7번째 이후)</text>
+  <text x="330" y="90" font-size="13" text-anchor="end" fill="#222">8n+16(%rbp)</text>
+
+  <rect x="340" y="108" width="260" height="46" fill="#eef2f7" stroke="#444" stroke-width="1.5"/>
+  <text x="470" y="136" font-size="14" text-anchor="middle" fill="#222">메모리 인자 0</text>
+  <text x="330" y="136" font-size="13" text-anchor="end" fill="#222">16(%rbp)</text>
+
+  <!-- 현재 프레임 -->
+  <rect x="340" y="154" width="260" height="46" fill="#fdeceb" stroke="#9d0208" stroke-width="2"/>
+  <text x="470" y="182" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">반환 주소</text>
+  <text x="330" y="182" font-size="13" text-anchor="end" fill="#222">8(%rbp)</text>
+
+  <rect x="340" y="200" width="260" height="46" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="470" y="228" font-size="14" text-anchor="middle" fill="#222">이전 %rbp 값</text>
+  <text x="330" y="228" font-size="13" text-anchor="end" fill="#222">0(%rbp)</text>
+  <text x="640" y="228" font-size="14" font-weight="bold" fill="#2d6a4f">◀ %rbp (프레임 포인터)</text>
+
+  <rect x="340" y="246" width="260" height="62" fill="#eef2f7" stroke="#444" stroke-width="1.5"/>
+  <text x="470" y="274" font-size="14" text-anchor="middle" fill="#222">지역 변수 · 저장한 레지스터</text>
+  <text x="470" y="294" font-size="13" text-anchor="middle" fill="#555">(크기는 함수마다 다르다)</text>
+  <text x="330" y="274" font-size="13" text-anchor="end" fill="#222">-8(%rbp) …</text>
+  <text x="330" y="304" font-size="13" text-anchor="end" fill="#222">0(%rsp)</text>
+  <text x="640" y="304" font-size="14" font-weight="bold" fill="#2d6a4f">◀ %rsp (스택 포인터)</text>
+
+  <!-- 레드 존 -->
+  <rect x="340" y="308" width="260" height="56" fill="#fdf3e3" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="470" y="334" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">레드 존 128바이트</text>
+  <text x="470" y="352" font-size="13" text-anchor="middle" fill="#555">리프 함수가 %rsp를 안 옮기고 쓴다</text>
+  <text x="330" y="360" font-size="13" text-anchor="end" fill="#222">-128(%rsp)</text>
+
+  <!-- 프레임 구분 -->
+  <line x1="150" y1="62" x2="150" y2="152" stroke="#444" stroke-width="2"/>
+  <text x="20" y="112" font-size="14" fill="#222">호출자 프레임</text>
+  <line x1="150" y1="156" x2="150" y2="308" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="20" y="236" font-size="14" fill="#222">현재 프레임</text>
+
+  <!-- 하단 주석 -->
+  <text x="440" y="400" font-size="13" text-anchor="middle" fill="#444">call 직전 %rsp는 16바이트 배수 → 진입 시점 (%rsp + 8)이 16의 배수</text>
+  <text x="440" y="422" font-size="13" text-anchor="middle" fill="#444">레지스터로 받은 인자 6개는 이 그림에 나오지 않는다</text>
+</svg>

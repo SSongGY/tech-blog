@@ -6478,7 +6478,7 @@ topics:
     angle: "인자 전달 레지스터와 스택의 분담, 프롤로그·에필로그가 하는 일, 정렬 제약과 레드 존, 호출자 저장 대 피호출자 저장 레지스터"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-226
     title: "동적 메모리 할당기의 구조 — brk·mmap과 아레나"
     category: PE
@@ -6489,7 +6489,7 @@ topics:
     angle: "할당기가 운영체제와 프로그램 사이에 한 겹 끼는 이유, sbrk와 mmap 경로가 갈리는 문턱, free가 운영체제로 바로 반환되지 않는 경우"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-227
     title: "AI 생성물 표시와 콘텐츠 출처·이력(C2PA)"
     category: PE
