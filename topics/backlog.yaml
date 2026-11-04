@@ -6787,3 +6787,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-119
+    title: "비한정 내용연수 무형자산 — 상각하지 않는 자산과 매년 하는 손상검사"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, intangible, amortisation, ifrs]
+    difficulty: 중급
+    angle: "K-IFRS 제1038호: 내용연수 유한은 상각, 비한정은 상각 없이 매년 손상검사. 가상 회사 두 곳이 같은 상표권을 달리 분류했을 때 이익 차이를 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-120
+    title: "매각예정비유동자산 — 감가상각이 멈추고 장부금액이 공정가치로 내려가는 분류"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, held-for-sale, ifrs, depreciation]
+    difficulty: 중급
+    angle: "K-IFRS 제1105호: 분류 요건, 장부금액과 순공정가치 중 작은 금액 측정, 분류 시점부터 감가상각 중단. 상각이 멈추는 두 경우로 앞 글과 짝"
+    code: python
+    origin: manual
+    status: done

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="무형자산 내용연수 평가에 따른 두 갈래. 유한이면 상각하고 징후가 있을 때 손상검사, 비한정이면 상각하지 않고 매년 손상검사와 내용연수 검토">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">내용연수 평가가 회계처리를 가른다</text>
+
+  <rect x="300" y="52" width="280" height="52" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="440" y="74" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">내용연수 평가</text>
+  <text x="440" y="94" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">순현금유입 기간에 예측가능한 제한이 있는가</text>
+
+  <path d="M380 104 L220 140" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M500 104 L660 140" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <text x="270" y="116" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">제한 있음</text>
+  <text x="610" y="116" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">제한 없음</text>
+
+  <!-- 유한 -->
+  <rect x="60" y="142" width="320" height="52" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="220" y="164" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">내용연수 유한</text>
+  <text x="220" y="184" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">상각한다 (문단 97~106)</text>
+
+  <path d="M220 194 L220 224" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <rect x="60" y="226" width="320" height="52" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="220" y="248" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">손상검사</text>
+  <text x="220" y="268" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">손상 징후가 있을 때</text>
+
+  <!-- 비한정 -->
+  <rect x="500" y="142" width="320" height="52" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="660" y="164" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">내용연수 비한정</text>
+  <text x="660" y="184" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">상각하지 않는다 (문단 107)</text>
+
+  <path d="M660 194 L660 224" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <rect x="500" y="226" width="320" height="52" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="660" y="248" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">손상검사</text>
+  <text x="660" y="268" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">매년 + 징후가 있을 때 (문단 108)</text>
+
+  <path d="M660 278 L660 308" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <rect x="440" y="310" width="380" height="64" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="630" y="332" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">매 회계기간 평가 검토 (문단 109)</text>
+  <text x="630" y="352" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">유한으로 바뀌면 추정치 변경 + 손상 징후 (문단 110)</text>
+</svg>
