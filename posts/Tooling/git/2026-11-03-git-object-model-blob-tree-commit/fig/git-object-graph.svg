@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="420" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+    <marker id="arrow-ok" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">commit → tree → blob — 커밋 셋이 같은 blob 하나를 가리킨다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">복사(③)와 이름 변경(④)은 tree 와 commit 만 새로 만든다. 내용이 같으면 blob 은 한 번만 저장된다.</text>
+
+  <!-- ② commit -->
+  <rect x="20" y="70" width="250" height="78" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="92" font-size="13" font-weight="bold" fill="#495057">② commit a4a9513</text>
+  <text x="34" y="114" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">tree 2e81171</text>
+  <text x="34" y="136" font-size="13" fill="#212529">feat: a.txt 추가</text>
+
+  <!-- ③ commit -->
+  <rect x="315" y="70" width="250" height="78" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="329" y="92" font-size="13" font-weight="bold" fill="#495057">③ commit fbfe369</text>
+  <text x="329" y="114" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">tree b5b0ccc · parent a4a9513</text>
+  <text x="329" y="136" font-size="13" fill="#212529">feat: a.txt 를 b.txt 로 복사</text>
+
+  <!-- ④ commit -->
+  <rect x="610" y="70" width="250" height="78" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="624" y="92" font-size="13" font-weight="bold" fill="#495057">④ commit 05a9a60</text>
+  <text x="624" y="114" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">tree d1a971b · parent fbfe369</text>
+  <text x="624" y="136" font-size="13" fill="#212529">refactor: b.txt 를 c.txt 로</text>
+
+  <!-- parent 화살표 -->
+  <line x1="315" y1="100" x2="274" y2="100" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="274" y="92" font-size="13" fill="#868e96">parent</text>
+  <line x1="610" y1="100" x2="569" y2="100" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="569" y="92" font-size="13" fill="#868e96">parent</text>
+
+  <!-- tree 화살표 -->
+  <line x1="145" y1="148" x2="145" y2="176" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="148" x2="440" y2="176" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="735" y1="148" x2="735" y2="176" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- trees -->
+  <rect x="20" y="180" width="250" height="96" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="202" font-size="13" font-weight="bold" fill="#495057">tree 2e81171 (33 바이트)</text>
+  <text x="34" y="226" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">100644 blob ce01362 a.txt</text>
+
+  <rect x="315" y="180" width="250" height="96" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="329" y="202" font-size="13" font-weight="bold" fill="#495057">tree b5b0ccc (66 바이트)</text>
+  <text x="329" y="226" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">100644 blob ce01362 a.txt</text>
+  <text x="329" y="248" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">100644 blob ce01362 b.txt</text>
+
+  <rect x="610" y="180" width="250" height="96" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="624" y="202" font-size="13" font-weight="bold" fill="#495057">tree d1a971b (66 바이트)</text>
+  <text x="624" y="226" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">100644 blob ce01362 a.txt</text>
+  <text x="624" y="248" font-size="13" fill="#212529" font-family="'Consolas','D2Coding',monospace">100644 blob ce01362 c.txt</text>
+
+  <!-- blob 화살표 -->
+  <line x1="145" y1="276" x2="400" y2="330" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+  <line x1="440" y1="276" x2="440" y2="330" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+  <line x1="735" y1="276" x2="480" y2="330" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow-ok)"/>
+
+  <!-- blob -->
+  <rect x="230" y="334" width="420" height="66" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="244" y="356" font-size="13" font-weight="bold" fill="#2d6a4f">blob ce01362 — "hello\n" 6 바이트, 한 번만 저장</text>
+  <text x="244" y="380" font-size="13" fill="#212529">sha1("blob 6\0hello\n") = ce013625…  파일 이름은 blob 에 없다</text>
+
+  <text x="20" y="318" font-size="13" fill="#495057">tree 항목 = 모드 + 종류 + 해시 + 이름</text>
+  <text x="20" y="338" font-size="13" fill="#495057">이름은 tree 에만 있다</text>
+  <text x="660" y="318" font-size="13" fill="#495057">낱개 객체는 전부 통째로 저장된다</text>
+  <text x="660" y="338" font-size="13" fill="#495057">차분은 git gc 뒤 pack 에서만</text>
+</svg>

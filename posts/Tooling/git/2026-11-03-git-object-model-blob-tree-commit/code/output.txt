@@ -1,0 +1,139 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Tooling\git\2026-11-03-git-object-model-blob-tree-commit
+# 명령      : bash git_objects.sh
+# 수행 시각 : 2026-11-03 23:14 (대한민국 표준시)
+# 소요      : 3.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+
+================================================================
+환경
+================================================================
+git version 2.54.0.windows.1
+sha1sum (GNU coreutils) 8.32
+
+================================================================
+① 파일 하나를 add 만 했을 때 — blob 하나가 생긴다
+================================================================
+blob ce013625030ba8dba906f756967f9e9ca394464a 6
+
+-- git cat-file -t / -s / -p ce013625030ba8dba906f756967f9e9ca394464a
+blob
+6
+hello
+
+-- 해시를 손으로 계산한다: sha1("blob 6\0" + 내용)
+ce013625030ba8dba906f756967f9e9ca394464a *-
+-- 저장된 파일 경로 (앞 2자리가 폴더)
+ce/013625030ba8dba906f756967f9e9ca394464a
+-- 디스크 위 크기 (zlib 압축된 "blob 6\0hello\n")
+21
+
+================================================================
+② 커밋하면 tree 와 commit 이 더해진다 — 객체 3개
+================================================================
+blob ce013625030ba8dba906f756967f9e9ca394464a 6
+commit a4a95136f4542abccd3c35a53ff7e7833a54a0d2 189
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 33
+
+-- git cat-file -p HEAD (commit)
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1
+author Example Author <author@example.com> 1767225600 +0900
+committer Example Author <author@example.com> 1767225600 +0900
+
+feat: a.txt 추가
+
+-- git cat-file -p HEAD^{tree} (tree)
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	a.txt
+
+================================================================
+③ 같은 내용의 파일을 복사해 커밋하면 — blob 은 늘지 않는다
+================================================================
+blob ce013625030ba8dba906f756967f9e9ca394464a 6
+commit a4a95136f4542abccd3c35a53ff7e7833a54a0d2 189
+commit fbfe369e4417f48ae69283e092f7c8b4900069a7 251
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 33
+tree b5b0cccf7401633f12e0fafc6b85731251b86850 66
+
+-- tree 를 열면 두 항목이 같은 blob 을 가리킨다
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	a.txt
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	b.txt
+
+================================================================
+④ 파일 이름만 바꿔 커밋하면 — tree 와 commit 만 새로 생긴다
+================================================================
+blob ce013625030ba8dba906f756967f9e9ca394464a 6
+commit 05a9a6028feacb2e0e41022021be7bf24f9ba19a 248
+commit a4a95136f4542abccd3c35a53ff7e7833a54a0d2 189
+commit fbfe369e4417f48ae69283e092f7c8b4900069a7 251
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 33
+tree b5b0cccf7401633f12e0fafc6b85731251b86850 66
+tree d1a971bbd55be3b49deda5ef24531bf7bf20fb49 66
+
+-- 두 커밋의 tree 는 다르지만 blob 은 같다
+HEAD~1 tree : b5b0cccf7401633f12e0fafc6b85731251b86850
+HEAD   tree : d1a971bbd55be3b49deda5ef24531bf7bf20fb49
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	a.txt
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	c.txt
+
+-- git 은 이름 변경을 저장하지 않고, 보여 줄 때 blob 이 같은 것을 보고 추정한다
+05a9a60 refactor: b.txt 를 c.txt 로
+ b.txt => c.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+================================================================
+⑤ 한 글자만 바꿔도 — blob 은 통째로 새로 생긴다 (낱개 객체는 차분 저장이 없다)
+================================================================
+blob 4effa19f4f75f846c3229b9dbdbad14eff362f32 7
+blob ce013625030ba8dba906f756967f9e9ca394464a 6
+commit 05a9a6028feacb2e0e41022021be7bf24f9ba19a 248
+commit 6fce6e36490ed7d445ad4bb0d1a8b729f4fd002f 233
+commit a4a95136f4542abccd3c35a53ff7e7833a54a0d2 189
+commit fbfe369e4417f48ae69283e092f7c8b4900069a7 251
+tree 2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 33
+tree 8cc573fc07ceb3ae583f666126a56b1c36a08bc6 66
+tree b5b0cccf7401633f12e0fafc6b85731251b86850 66
+tree d1a971bbd55be3b49deda5ef24531bf7bf20fb49 66
+
+100644 blob 4effa19f4f75f846c3229b9dbdbad14eff362f32	a.txt
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	c.txt
+
+================================================================
+⑥ 폴더를 넣으면 — tree 가 tree 를 가리킨다
+================================================================
+-- 최상위 tree
+100644 blob 4effa19f4f75f846c3229b9dbdbad14eff362f32	a.txt
+100644 blob ce013625030ba8dba906f756967f9e9ca394464a	c.txt
+040000 tree 764409de08fa4fda9ba6c85a54f5f31d00cec93e	docs
+
+-- docs tree
+100644 blob 8178c76d627cade75005b40711b92f4177bc6cfc	README.md
+
+낱개 객체 수 : 14
+blob 3 · tree 6 · commit 5
+
+================================================================
+⑦ git gc 뒤 — 낱개 객체가 pack 하나로 묶이고 그제야 차분이 쓰인다
+================================================================
+count: 0
+in-pack: 14
+packs: 1
+
+-- git verify-pack -v : 종류 크기 pack안크기 [깊이 기준객체]
+ce013625030ba8dba906f756967f9e9ca394464a blob   6 15 829
+4effa19f4f75f846c3229b9dbdbad14eff362f32 blob   7 16 813
+8178c76d627cade75005b40711b92f4177bc6cfc blob   7 16 844
+a4a95136f4542abccd3c35a53ff7e7833a54a0d2 commit 189 132 681
+6fce6e36490ed7d445ad4bb0d1a8b729f4fd002f commit 233 160 179
+80690c785df5a1ebbf5b3a48f6d594c6994dbdd0 commit 238 167 12
+05a9a6028feacb2e0e41022021be7bf24f9ba19a commit 248 167 339
+fbfe369e4417f48ae69283e092f7c8b4900069a7 commit 251 175 506
+8cc573fc07ceb3ae583f666126a56b1c36a08bc6 tree   4 15 1010 1 54c0654d45b02e010808c0bc8501d746e447b941
+2e81171448eb9f2ee3821e3d447aa6b2fe3ddba1 tree   33 44 1125
+764409de08fa4fda9ba6c85a54f5f31d00cec93e tree   37 48 962
+b5b0cccf7401633f12e0fafc6b85731251b86850 tree   66 50 1075
+d1a971bbd55be3b49deda5ef24531bf7bf20fb49 tree   66 50 1025
+54c0654d45b02e010808c0bc8501d746e447b941 tree   97 102 860
