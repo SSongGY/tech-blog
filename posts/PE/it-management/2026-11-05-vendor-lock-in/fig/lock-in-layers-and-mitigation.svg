@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">벤더 종속은 두 겹이고, 전환비용을 키우며, 완화 수단 네 가지가 각각 한 곳을 겨냥한다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">개념 관계도다. 두 겹 분류와 수단 짝짓기는 글쓴이의 정리이고, 장애물 다섯 종류는 EU 데이터법의 열거를 따랐다.</text>
+
+  <rect x="30" y="86" width="240" height="96" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="150" y="114" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">① 기술 스택 종속</text>
+  <text x="150" y="138" font-size="13" fill="#212529" text-anchor="middle">독자 API · 독자 문법</text>
+  <text x="150" y="160" font-size="13" fill="#212529" text-anchor="middle">운영 도구 · 숙련된 인력</text>
+
+  <rect x="30" y="206" width="240" height="96" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="150" y="234" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">② 산출물 종속</text>
+  <text x="150" y="258" font-size="13" fill="#212529" text-anchor="middle">쌓아 둔 데이터 · 설정</text>
+  <text x="150" y="280" font-size="13" fill="#212529" text-anchor="middle">벤더 형식으로 만든 모델·화면</text>
+
+  <rect x="340" y="132" width="200" height="124" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="160" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">전환비용</text>
+  <text x="440" y="184" font-size="13" fill="#212529" text-anchor="middle">장애물 5종</text>
+  <text x="440" y="206" font-size="13" fill="#212529" text-anchor="middle">기술 · 계약 · 상업</text>
+  <text x="440" y="228" font-size="13" fill="#212529" text-anchor="middle">조직 · 상업 이전 단계</text>
+
+  <line x1="270" y1="134" x2="338" y2="172" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="270" y1="254" x2="338" y2="216" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="610" y="78" width="240" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="730" y="109" font-size="13" fill="#212529" text-anchor="middle">표준 교환 형식 (기술 장애물)</text>
+  <rect x="610" y="140" width="240" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="730" y="171" font-size="13" fill="#212529" text-anchor="middle">내보내기 보장 (계약 장애물)</text>
+  <rect x="610" y="202" width="240" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="730" y="233" font-size="13" fill="#212529" text-anchor="middle">이중 조달 (상업 장애물)</text>
+  <rect x="610" y="264" width="240" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="730" y="295" font-size="13" fill="#212529" text-anchor="middle">탈출 계획 (조직 장애물)</text>
+
+  <line x1="540" y1="194" x2="608" y2="104" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="194" x2="608" y2="166" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="194" x2="608" y2="228" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="194" x2="608" y2="290" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="20" y="342" font-size="13" fill="#495057">빨강은 종속이 생기는 층, 주황은 그 결과로 커지는 비용, 초록은 비용을 낮추는 수단이다.</text>
