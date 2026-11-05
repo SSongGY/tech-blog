@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2937">당기순이익은 120 으로 같고 영업활동 현금흐름은 갈린다 (억원)</text>
+  <text x="24" y="52" font-size="13" fill="#4b5563">주황 막대는 당기순이익, 그 아래 막대는 영업활동 현금흐름이다. 오른쪽 숫자가 발생액 비율(평균총자산 1,000 기준)</text>
+
+  <!-- 마바화학 -->
+  <text x="24" y="104" font-size="14" font-weight="bold" fill="#1f2937">마바화학</text>
+  <rect x="140" y="78" width="360" height="30" fill="#b45309"/>
+  <text x="152" y="98" font-size="13" fill="#ffffff">순이익 120</text>
+  <rect x="140" y="112" width="480" height="30" fill="#2d6a4f"/>
+  <text x="152" y="132" font-size="13" fill="#ffffff">영업활동 현금흐름 160</text>
+  <text x="640" y="132" font-size="13" fill="#2d6a4f">발생액 −40 → −4.00%</text>
+
+  <!-- 사아식품 -->
+  <text x="24" y="206" font-size="14" font-weight="bold" fill="#1f2937">사아식품</text>
+  <rect x="140" y="180" width="360" height="30" fill="#b45309"/>
+  <text x="152" y="200" font-size="13" fill="#ffffff">순이익 120</text>
+  <rect x="140" y="214" width="225" height="30" fill="#9d0208"/>
+  <text x="152" y="234" font-size="13" fill="#ffffff">영업활동 현금흐름 75</text>
+  <text x="385" y="234" font-size="13" fill="#9d0208">발생액 +45 → +4.50%</text>
+  <text x="140" y="262" font-size="13" fill="#4b5563">원인: 매출 +25.0%, 회수일수 66.9일 → 66.9일 (성장)</text>
+
+  <!-- 아자식품 -->
+  <text x="24" y="320" font-size="14" font-weight="bold" fill="#1f2937">아자식품</text>
+  <rect x="140" y="294" width="360" height="30" fill="#b45309"/>
+  <text x="152" y="314" font-size="13" fill="#ffffff">순이익 120</text>
+  <rect x="140" y="328" width="225" height="30" fill="#9d0208"/>
+  <text x="152" y="348" font-size="13" fill="#ffffff">영업활동 현금흐름 75</text>
+  <text x="385" y="348" font-size="13" fill="#9d0208">발생액 +45 → +4.50%</text>
+  <text x="640" y="314" font-size="13" fill="#4b5563">원인: 매출 0.0%, 53.5일 → 66.9일</text>
+</svg>
