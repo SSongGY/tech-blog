@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14">
+  <rect width="880" height="420" fill="#fafafa"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 루트 -->
+  <rect x="320" y="14" width="240" height="40" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="39" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b1b1b">결함 허용</text>
+
+  <!-- 1단계 -->
+  <rect x="60" y="96" width="220" height="40" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="170" y="121" text-anchor="middle" font-weight="bold" fill="#1b1b1b">오류 검출 (2가지)</text>
+  <rect x="470" y="96" width="350" height="40" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="645" y="121" text-anchor="middle" font-weight="bold" fill="#1b1b1b">시스템 복구 (오류 처리 3 + 결함 처리 4)</text>
+
+  <!-- 검출 2가지 -->
+  <rect x="20" y="190" width="130" height="64" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="85" y="214" text-anchor="middle" font-weight="bold" fill="#1b1b1b">동시 검출</text>
+  <text x="85" y="238" text-anchor="middle" font-size="13" fill="#333">서비스 중에</text>
+  <rect x="170" y="190" width="130" height="64" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="235" y="214" text-anchor="middle" font-weight="bold" fill="#1b1b1b">선제 검출</text>
+  <text x="235" y="238" text-anchor="middle" font-size="13" fill="#333">서비스 멈추고</text>
+
+  <!-- 복구 2가지 -->
+  <rect x="380" y="190" width="220" height="64" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="490" y="214" text-anchor="middle" font-weight="bold" fill="#1b1b1b">오류 처리 (3가지)</text>
+  <text x="490" y="238" text-anchor="middle" font-size="13" fill="#333">상태에서 오류를 없앤다</text>
+  <rect x="660" y="190" width="220" height="64" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="770" y="214" text-anchor="middle" font-weight="bold" fill="#1b1b1b">결함 처리 (4가지)</text>
+  <text x="770" y="238" text-anchor="middle" font-size="13" fill="#333">결함이 다시 활성화 안 되게</text>
+
+  <!-- 오류 처리 3 -->
+  <text x="390" y="290" font-size="13" fill="#333">① 롤백 — 저장해 둔 체크포인트로 복귀</text>
+  <text x="390" y="312" font-size="13" fill="#333">② 롤포워드 — 오류 없는 새 상태로 이동</text>
+  <text x="390" y="334" font-size="13" fill="#333">③ 보상 — 상태에 든 중복으로 오류를 가림</text>
+  <text x="390" y="356" font-size="13" fill="#b45309">    (보상을 상시 적용하면 마스킹)</text>
+
+  <!-- 결함 처리 4 -->
+  <text x="640" y="290" font-size="13" fill="#333">① 진단 — 원인의 위치·유형 기록</text>
+  <text x="640" y="312" font-size="13" fill="#333">② 격리 — 고장 부품을 뺀다</text>
+  <text x="640" y="334" font-size="13" fill="#333">③ 재구성 — 예비 투입·작업 재배정</text>
+  <text x="640" y="356" font-size="13" fill="#333">④ 재초기화 — 새 구성을 기록·갱신</text>
+
+  <!-- 연결선 -->
+  <line x1="440" y1="54" x2="170" y2="96" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="54" x2="645" y2="96" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="170" y1="136" x2="85" y2="190" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="170" y1="136" x2="235" y2="190" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="645" y1="136" x2="490" y2="190" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="645" y1="136" x2="770" y2="190" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="440" y="396" text-anchor="middle" font-size="13" fill="#555">오류 처리를 요구가 생겼을 때 수행한 뒤 결함 처리가 이어지는 조합이 "검출과 복구"다</text>
+</svg>

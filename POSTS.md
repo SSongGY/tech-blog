@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **617편** · 갱신 2026-11-06
+총 **619편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -126,10 +126,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 215편
+## 기술사 (pe) — 216편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
 | 2026-11-05 | [벤더 종속(Vendor Lock-in)](posts/PE/it-management/2026-11-05-vendor-lock-in/index.md) | 중급 | Regulation (EU) 2023/2854 (Data Act, 2025.9.12 적용) | 문서 근거 |
 | 2026-11-05 | [반결합(semijoin) — 분산 질의에서 전송량을 줄이는 연산](posts/PE/database/2026-11-05-semijoin-distributed-query/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [모델 기반 공학(MDE)](posts/PE/software-engineering/2026-11-05-model-driven-engineering-mde/index.md) | 중급 | OMG MOF 2.5.1 (formal/2019-10-01), OMG XMI 2.5.1 (formal/15-06-07), OMG QVT 1.3 (formal/16-06-03), OMG MDA 개요 페이지, Eclipse EMF | 문서 근거 |
@@ -369,11 +370,12 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 57편
+## 일반 (general) — 58편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-05 | [zlib 사전(zdict) — 70바이트짜리 메시지가 압축되지 않을 때](posts/Performance/compression/2026-11-05-zlib-preset-dictionary-short-messages/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
+| 2026-11-05 | [상위 k개만 필요할 때 — sorted 와 heapq.nsmallest 의 손익분기](posts/Performance/algorithm/2026-11-05-topk-sorted-vs-heapq-nsmallest/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [자바 문자열 더하기 네 가지의 비용 — 루프 안 += 는 왜 제곱으로 느려지는가](posts/Language/java/2026-11-05-java-string-concat-four-ways-cost/index.md) | 중급 | Java 1.8.0_491 (HotSpot 25.491-b10), javac 1.8.0_202, Windows 11 | 실행 검증 |
 | 2026-11-05 | [HTTP 조건부 요청 — ETag 와 Last-Modified 로 304 를 받는 조건](posts/Backend/http/2026-11-05-http-conditional-request-etag/index.md) | 중급 | Python 3.13.5, RFC 9110 (2022) | 실행 검증 |
 | 2026-11-03 | [정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어](posts/Security/redos/2026-11-03-redos-catastrophic-backtracking/index.md) | 심화 | Python 3.13.5, regex 2026.9.29 | 실행 검증 |

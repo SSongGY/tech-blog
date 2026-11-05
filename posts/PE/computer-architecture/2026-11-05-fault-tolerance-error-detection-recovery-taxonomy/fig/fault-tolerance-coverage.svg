@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif" font-size="14">
+  <rect width="880" height="300" fill="#fafafa"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <rect x="320" y="14" width="240" height="40" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="440" y="39" text-anchor="middle" font-weight="bold" fill="#1b1b1b">결함 허용 커버리지의 부족</text>
+
+  <rect x="90" y="100" width="260" height="50" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="220" y="122" text-anchor="middle" font-weight="bold" fill="#1b1b1b">오류·결함 처리 커버리지</text>
+  <text x="220" y="141" text-anchor="middle" font-size="13" fill="#333">기법이 가정한 결함을 못 잡음</text>
+
+  <rect x="530" y="100" width="260" height="50" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="660" y="122" text-anchor="middle" font-weight="bold" fill="#1b1b1b">결함 가정 커버리지</text>
+  <text x="660" y="141" text-anchor="middle" font-size="13" fill="#333">가정과 실제 결함이 다름</text>
+
+  <rect x="450" y="210" width="200" height="56" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="550" y="234" text-anchor="middle" font-weight="bold" fill="#1b1b1b">고장 모드 커버리지</text>
+  <text x="550" y="254" text-anchor="middle" font-size="13" fill="#333">부품이 가정대로 안 고장남</text>
+
+  <rect x="670" y="210" width="200" height="56" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="770" y="234" text-anchor="middle" font-weight="bold" fill="#1b1b1b">실패 독립성 커버리지</text>
+  <text x="770" y="254" text-anchor="middle" font-size="13" fill="#333">독립 가정인데 공통 원인</text>
+
+  <line x1="440" y1="54" x2="220" y2="100" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="54" x2="660" y2="100" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="660" y1="150" x2="550" y2="210" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="660" y1="150" x2="770" y2="210" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="60" y="230" font-size="13" fill="#333">커버리지 = 어떤 오류·결함 부류가 일어났을 때</text>
+  <text x="60" y="252" font-size="13" fill="#333">그 기법이 효과를 낼 조건부 확률</text>
+</svg>

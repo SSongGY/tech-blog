@@ -6633,7 +6633,7 @@ topics:
     angle: "질의별 속성 사용 행렬에서 친화도를 계산해 행렬을 재배열하고 분할 지점을 찾는 절차를 단계별로"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: db-099
     title: "LEFT JOIN 에서 조건을 ON 에 두느냐 WHERE 에 두느냐"
     category: Database
@@ -6710,7 +6710,7 @@ topics:
     angle: "Avizienis 분류 체계를 따라 오류 검출 2종·오류 처리 3종·결함 처리 4종과 네 가지 복구 전략을 정리하고, 커버리지(결함 가정·실패 독립성)가 왜 한계가 되는지까지 쓴다"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-233
     title: "HA 클러스터의 쿼럼과 펜싱 — 스플릿 브레인을 막는 두 장치"
     category: PE
