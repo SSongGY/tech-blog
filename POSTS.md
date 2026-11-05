@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **616편** · 갱신 2026-11-06
+총 **617편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -431,10 +431,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 90편
+## 기출문제 (exam) — 91편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [기출문제 — 데이터 통신의 오류 제어와 ARQ(정지-대기·Go-Back-N)](posts/PE/exam/2026-11-06-error-control-arq-stop-and-wait-go-back-n/index.md) | 중급 | RFC 3366 (2002-08), RFC 9293 (2022-08) | 문서 근거 |
 | 2026-11-05 | [기출문제 — 단방향 해시 함수의 문제점과 레인보우 테이블, 솔트·키 스트레칭, 활용](posts/PE/exam/2026-11-05-one-way-hash-rainbow-salt-stretching/index.md) | 중급 | FIPS 180-4 Secure Hash Standard (2015), FIPS 202 SHA-3 Standard (2015), RFC 9106 Argon2 (2021), RFC 2104 HMAC (1997), Oechslin, Making a Faster Cryptanalytic Time-Memory Trade-Off (CRYPTO 2003) | 문서 근거 |
 | 2026-11-05 | [기출문제 — AI-Native 네트워크의 자율 최적화, AI-RAN, 디지털트윈 기반 네트워크 관리](posts/PE/exam/2026-11-05-ai-native-network-self-optimization-ai-ran-digital-twin/index.md) | 중급 | ITU-R M.2160-0 (2023-11), 3GPP TR 28.915 v19.0.0 (Rel-19, ETSI 사본 2026-01), 3GPP TS 28.313 (SON for 5G, Rel-18/19), 3GPP TR 38.843 (Rel-18 연구 과정 문서, 2023), AI-RAN Alliance 백서 (2024-12 게시, 본문 미확인) | 문서 근거 |
 | 2026-11-04 | [기출문제 — ISMS-P 인증 영역·법적 근거·관리과정과 간편인증·강화 방안](posts/PE/exam/2026-11-04-isms-p-certification-domains-and-process/index.md) | 중급 | 정보통신망법 제47조 (법률 제21988호, 2026-10-02 시행), 개인정보 보호법 제32조의2 (법률 제21445호, 2026-09-11 시행), 정보보호 및 개인정보보호 관리체계 인증 등에 관한 고시 (2024-07-24 시행), ISMS-P 인증기준 안내서 2023.11, 개인정보보호위원회 간편인증 보도자료 (2024-07-23) | 문서 근거 |
