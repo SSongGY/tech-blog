@@ -5517,7 +5517,7 @@ topics:
     difficulty: 중급
     angle: "루프 안 + 연산, StringBuilder, String.join, Stream.collect 를 같은 입력으로 돌려 시간과 할당량을 잰다. 컴파일러가 알아서 바꿔 주는 경우와 안 바꿔 주는 경우를 가른다."
     code: java
-    status: todo
+    status: done
   - id: gen-009
     title: "정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어"
     category: Security
@@ -6567,7 +6567,7 @@ topics:
     angle: "INTEGER 컬럼에 '42' 를 넣으면 무엇이 저장되는지, VARCHAR·DECIMAL 같은 선언이 어느 친화성으로 접히는지 typeof() 로 확인한다. CAST 가 친화성과 어떻게 다른지도 가른다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: db-095
     title: "ON CONFLICT 다섯 가지 — ABORT·FAIL·IGNORE·REPLACE·ROLLBACK"
     category: Database
@@ -6633,7 +6633,7 @@ topics:
     angle: "질의별 속성 사용 행렬에서 친화도를 계산해 행렬을 재배열하고 분할 지점을 찾는 절차를 단계별로"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: db-099
     title: "LEFT JOIN 에서 조건을 ON 에 두느냐 WHERE 에 두느냐"
     category: Database
@@ -6710,7 +6710,7 @@ topics:
     angle: "Avizienis 분류 체계를 따라 오류 검출 2종·오류 처리 3종·결함 처리 4종과 네 가지 복구 전략을 정리하고, 커버리지(결함 가정·실패 독립성)가 왜 한계가 되는지까지 쓴다"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-233
     title: "HA 클러스터의 쿼럼과 펜싱 — 스플릿 브레인을 막는 두 장치"
     category: PE
@@ -6721,7 +6721,7 @@ topics:
     angle: "과반 투표(쿼럼)가 어느 쪽이 살아남을지를 정하고 펜싱(STONITH)이 진 쪽이 멈췄음을 확정하는 관계를 Pacemaker·corosync 문서 근거로 정리하고, 2노드 클러스터의 쿼럼 문제와 쿼럼 장치까지 다룬다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-234
     title: "프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설"
     category: PE

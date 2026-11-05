@@ -271,6 +271,7 @@ R = R₁ ⋈ R₂ ⋈ … ⋈ Rₙ
 고른 근거 자체가 비는 설계**가 된다.
 
 > 개념 정리: [분산 데이터베이스 — 투명성 6가지](../../database/2026-09-23-distributed-database-transparency/index.md)
+> 개념 정리: [속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계](../../database/2026-11-05-vertical-partitioning-affinity-bond-energy/index.md)
 
 끝
 
