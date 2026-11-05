@@ -6898,3 +6898,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-237
+    title: "자가조직 네트워크(SON) — 자기 구성·최적화·치유"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "3GPP SON 3그룹과 분산·중앙집중 기능, MRO·ANR·CCO 동작, AI 기반 폐루프로의 확장"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-238
+    title: "O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "O-RAN의 개방 인터페이스(A1·E2·O1), xApp·rApp 구분, 제어 시간 척도별 AI 배치"
+    code: none
+    origin: exam
+    status: todo

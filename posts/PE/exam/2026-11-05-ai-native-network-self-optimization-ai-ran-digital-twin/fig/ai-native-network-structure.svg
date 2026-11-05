@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="430" fill="#fffdf7"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">AI-Native 네트워크 — 세 요소가 맞물리는 구조</text>
+
+  <!-- 실제 네트워크 -->
+  <rect x="40" y="150" width="220" height="100" rx="8" fill="#e5e7eb" stroke="#4b5563" stroke-width="1.8"/>
+  <text x="150" y="190" text-anchor="middle" font-weight="bold" fill="#1f2937">실제 네트워크</text>
+  <text x="150" y="214" text-anchor="middle" font-size="13" fill="#374151">RAN · 코어</text>
+  <text x="150" y="234" text-anchor="middle" font-size="13" fill="#374151">측정값·로그 생성</text>
+
+  <!-- 디지털트윈 -->
+  <rect x="330" y="55" width="220" height="90" rx="8" fill="#dbe4ff" stroke="#3652a4" stroke-width="1.8"/>
+  <text x="440" y="90" text-anchor="middle" font-weight="bold" fill="#1e3a8a">(다) 디지털트윈</text>
+  <text x="440" y="114" text-anchor="middle" font-size="13" fill="#1e3a8a">가상 복제본에서</text>
+  <text x="440" y="132" text-anchor="middle" font-size="13" fill="#1e3a8a">조치를 먼저 검증</text>
+
+  <!-- 자율 최적화 -->
+  <rect x="620" y="150" width="220" height="100" rx="8" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="730" y="188" text-anchor="middle" font-weight="bold" fill="#1b4332">(가) 자율 최적화</text>
+  <text x="730" y="212" text-anchor="middle" font-size="13" fill="#1b4332">분석 → 판단 → 실행</text>
+  <text x="730" y="232" text-anchor="middle" font-size="13" fill="#1b4332">폐루프(Closed Loop)</text>
+
+  <!-- 화살표 -->
+  <path d="M170,150 L340,118" fill="none" stroke="#374151" stroke-width="1.8" marker-end="url(#ar)"/>
+  <text x="196" y="116" font-size="13" fill="#374151">상태 동기화</text>
+  <path d="M550,105 L700,150" fill="none" stroke="#374151" stroke-width="1.8" marker-end="url(#ar)"/>
+  <text x="640" y="104" font-size="13" fill="#374151">검증 결과</text>
+  <path d="M620,200 L262,200" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="440" y="190" text-anchor="middle" font-size="13" fill="#1b4332">검증된 정책·설정 적용</text>
+
+  <!-- AI-RAN -->
+  <rect x="40" y="290" width="800" height="120" rx="10" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="440" y="316" text-anchor="middle" font-weight="bold" fill="#92400e">(나) AI-RAN — 같은 가속기(GPU 등) 위에서 RAN 처리와 AI 연산을 함께 수행</text>
+  <rect x="70" y="334" width="220" height="56" rx="6" fill="#fffdf7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="180" y="358" text-anchor="middle" fill="#92400e">RAN 신호 처리</text>
+  <text x="180" y="378" text-anchor="middle" font-size="13" fill="#92400e">AI-for-RAN 모델 포함</text>
+  <rect x="330" y="334" width="220" height="56" rx="6" fill="#fffdf7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="358" text-anchor="middle" fill="#92400e">남는 연산 자원</text>
+  <text x="440" y="378" text-anchor="middle" font-size="13" fill="#92400e">AI-and-RAN 다중화</text>
+  <rect x="590" y="334" width="220" height="56" rx="6" fill="#fffdf7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="700" y="358" text-anchor="middle" fill="#92400e">외부 AI 서비스</text>
+  <text x="700" y="378" text-anchor="middle" font-size="13" fill="#92400e">AI-on-RAN 추론</text>
+
+  <path d="M150,252 L150,288" fill="none" stroke="#374151" stroke-width="1.8" marker-end="url(#ar)"/>
+  <text x="160" y="276" font-size="13" fill="#374151">기지국 연산</text>
+</svg>
