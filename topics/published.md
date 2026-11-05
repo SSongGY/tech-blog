@@ -533,3 +533,4 @@
 | 2026-11-05 | fin-124 | Finance | 발생액 비율 — 이익은 같은데 현금이 다른 두 회사 |
 | 2026-11-05 | db-107 | Database | INSTEAD OF 트리거 — 읽기 전용인 뷰에 쓰기를 달아 주기 |
 | 2026-11-06 | gen-022 | Performance | 상위 k개만 필요할 때 — sorted 와 heapq.nsmallest 의 손익분기 |
+| 2026-11-06 | pe-234 | PE | 프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설 |

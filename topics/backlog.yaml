@@ -6732,7 +6732,7 @@ topics:
     angle: "Gray(1985)의 페일패스트 모듈·프로세스 쌍 다섯 유형·트랜잭션 결합을 정리하고, 왜 재실행이 일시적 소프트웨어 결함에 듣는지(Heisenbug·Bohrbug)와 N-버전·복구 블록 같은 설계 다양성과의 차이를 비교한다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-105
     title: "소계와 총계를 한 결과에 — ROLLUP 이 없는 SQLite 에서 합계 줄 붙이기"
     category: Database

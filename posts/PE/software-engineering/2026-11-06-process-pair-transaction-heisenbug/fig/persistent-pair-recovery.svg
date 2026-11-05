@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#f8f9fa"/>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">영속 프로세스 쌍 + 트랜잭션: 기억을 잃은 백업을 트랜잭션이 되돌려 맞춘다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">Gray(1985)의 구성. 주 프로세스가 멈춘 뒤 복구까지의 순서</text>
+
+  <rect x="30" y="90" width="150" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="105" y="114" font-size="13" fill="#212529" text-anchor="middle">요청자</text>
+  <text x="105" y="134" font-size="13" fill="#495057" text-anchor="middle">세션 번호 보유</text>
+
+  <rect x="260" y="70" width="170" height="56" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="345" y="94" font-size="13" fill="#212529" text-anchor="middle">주 프로세스</text>
+  <text x="345" y="114" font-size="13" fill="#9d0208" text-anchor="middle">① 결함을 감지하고 정지</text>
+
+  <rect x="260" y="170" width="170" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="345" y="194" font-size="13" fill="#212529" text-anchor="middle">백업 프로세스</text>
+  <text x="345" y="214" font-size="13" fill="#2d6a4f" text-anchor="middle">② 빈 상태로 인계</text>
+
+  <line x1="180" y1="108" x2="260" y2="98" stroke="#495057" stroke-width="1.5"/>
+  <line x1="180" y1="124" x2="260" y2="198" stroke="#b45309" stroke-width="1.5"/>
+  <text x="90" y="196" font-size="13" fill="#b45309">세션 전환</text>
+
+  <rect x="520" y="70" width="330" height="56" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="685" y="94" font-size="13" fill="#212529" text-anchor="middle">③ 끝나지 않은 트랜잭션을 모두 중단</text>
+  <text x="685" y="114" font-size="13" fill="#495057" text-anchor="middle">로그로 변경을 되돌린다</text>
+
+  <rect x="520" y="170" width="330" height="56" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="685" y="194" font-size="13" fill="#212529" text-anchor="middle">④ 입력 메시지로 트랜잭션을 다시 시작</text>
+  <text x="685" y="214" font-size="13" fill="#2d6a4f" text-anchor="middle">시작 시점의 상태에서 재실행</text>
+
+  <line x1="430" y1="198" x2="520" y2="108" stroke="#495057" stroke-width="1.5"/>
+  <line x1="685" y1="126" x2="685" y2="170" stroke="#495057" stroke-width="1.5"/>
+
+  <rect x="30" y="262" width="820" height="62" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="46" y="288" font-size="13" fill="#212529">영속 쌍은 세션의 열기와 닫기만 백업에 알린다. 그래서 만들기는 쉽지만 실패를 숨기지 못한다.</text>
+  <text x="46" y="310" font-size="13" fill="#212529">그 빈틈을 ③④의 트랜잭션이 메운다. 재실행이 듣는 것은 결함이 일시적(Heisenbug)일 때다.</text>
+</svg>
