@@ -1,0 +1,142 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-05-right-full-outer-join
+# 명령      : python outer_join_demo.py
+# 수행 시각 : 2026-11-05 11:22 (대한민국 표준시)
+# 소요      : 0.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer_order]  4행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  order_id | INTEGER | PK
+  amount   | INTEGER | NOT NULL
+
+  order_id | amount
+  ---------+-------
+         1 |   1000
+         2 |   2000
+         3 |   3000
+         4 |   4000
+
+[payment]  4행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  payment_id | INTEGER | PK
+  order_id   | INTEGER | NOT NULL
+  paid       | INTEGER | NOT NULL
+
+  payment_id | order_id | paid
+  -----------+----------+-----
+          10 |        1 | 1000
+          11 |        2 | 2000
+          12 |        2 |  500
+          13 |        9 |  700
+
+
+-- 1. LEFT JOIN: 주문 기준 (입금 없는 주문은 보이지만 주문 없는 입금은 사라진다)
+SELECT o.order_id, o.amount, p.payment_id, p.paid
+FROM customer_order o LEFT JOIN payment p ON p.order_id = o.order_id
+ORDER BY o.order_id, p.payment_id
+   (1, 1000, 10, 1000)
+   (2, 2000, 11, 2000)
+   (2, 2000, 12, 500)
+   (3, 3000, None, None)
+   (4, 4000, None, None)
+
+-- 2. RIGHT JOIN: 입금 기준 (같은 결과를 표 순서만 바꿔 얻는다)
+SELECT o.order_id, o.amount, p.payment_id, p.paid
+FROM customer_order o RIGHT JOIN payment p ON p.order_id = o.order_id
+ORDER BY p.payment_id
+   (1, 1000, 10, 1000)
+   (2, 2000, 11, 2000)
+   (2, 2000, 12, 500)
+   (None, None, 13, 700)
+
+-- 3. FULL OUTER JOIN: 양쪽 모두 남긴다
+SELECT o.order_id, o.amount, p.payment_id, p.paid
+FROM customer_order o FULL OUTER JOIN payment p ON p.order_id = o.order_id
+ORDER BY o.order_id, p.payment_id
+   (None, None, 13, 700)
+   (1, 1000, 10, 1000)
+   (2, 2000, 11, 2000)
+   (2, 2000, 12, 500)
+   (3, 3000, None, None)
+   (4, 4000, None, None)
+
+-- 4. 예전 우회 방식: LEFT JOIN 에 반대편 짝 없는 행을 UNION ALL
+SELECT o.order_id, o.amount, p.payment_id, p.paid
+FROM customer_order o LEFT JOIN payment p ON p.order_id = o.order_id
+UNION ALL
+SELECT NULL, NULL, p.payment_id, p.paid
+FROM payment p LEFT JOIN customer_order o ON p.order_id = o.order_id
+WHERE o.order_id IS NULL
+ORDER BY 1, 3
+   (None, None, 13, 700)
+   (1, 1000, 10, 1000)
+   (2, 2000, 11, 2000)
+   (2, 2000, 12, 500)
+   (3, 3000, None, None)
+   (4, 4000, None, None)
+
+-- 5. 대사 결과만: 어느 한쪽에 짝이 없는 행
+SELECT o.order_id, o.amount, p.payment_id, p.paid
+FROM customer_order o FULL OUTER JOIN payment p ON p.order_id = o.order_id
+WHERE o.order_id IS NULL OR p.payment_id IS NULL
+ORDER BY o.order_id, p.payment_id
+   (None, None, 13, 700)
+   (3, 3000, None, None)
+   (4, 4000, None, None)
+
+-- 6. 조건을 ON 에 두면: 입금액 1000 이상인 짝만 맺는다
+SELECT o.order_id, p.payment_id, p.paid
+FROM customer_order o LEFT JOIN payment p
+  ON p.order_id = o.order_id AND p.paid >= 1000
+ORDER BY o.order_id, p.payment_id
+   (1, 10, 1000)
+   (2, 11, 2000)
+   (3, None, None)
+   (4, None, None)
+
+-- 6'. 같은 조건을 WHERE 에 두면: 짝 없는 주문이 사라진다
+SELECT o.order_id, p.payment_id, p.paid
+FROM customer_order o LEFT JOIN payment p ON p.order_id = o.order_id
+WHERE p.paid >= 1000
+ORDER BY o.order_id, p.payment_id
+   (1, 10, 1000)
+   (2, 11, 2000)
+
+-- 7. 입금 합계로 주문 금액과 대조 (주문당 입금이 여러 건이면 먼저 합친다)
+SELECT o.order_id, o.amount, s.total_paid
+FROM customer_order o
+FULL OUTER JOIN (
+    SELECT order_id, SUM(paid) AS total_paid FROM payment GROUP BY order_id
+) s ON s.order_id = o.order_id
+ORDER BY COALESCE(o.order_id, s.order_id)
+   (1, 1000, 1000)
+   (2, 2000, 2500)
+   (3, 3000, None)
+   (4, 4000, None)
+   (None, None, 700)
+
+-- 8. 실행계획: FULL OUTER JOIN
+SELECT o.order_id, p.payment_id
+FROM customer_order o FULL OUTER JOIN payment p ON p.order_id = o.order_id
+   SCAN o
+   SCAN p LEFT-JOIN
+   RIGHT-JOIN payment
+   SCAN p

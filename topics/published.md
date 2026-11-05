@@ -520,3 +520,6 @@
 | 2026-11-05 | gen-016 | Tooling | git 이 파일을 어떻게 저장하는지 객체를 직접 뜯어본다 |
 | 2026-11-05 | fin-121 | Finance | 리스 제공자 회계 — 금융리스와 운용리스는 무엇으로 갈리고 표에 어떻게 남는가 |
 | 2026-11-05 | fin-122 | Finance | 연결 범위 — 지배력 세 요소가 모자 회사 합산 대상을 가른다 |
+| 2026-11-05 | db-106 | Database | RIGHT JOIN과 FULL OUTER JOIN — SQLite 3.39 에서 생긴 양쪽 외부 조인 |
+| 2026-11-05 | gen-019 | Backend | HTTP 조건부 요청 — ETag 와 Last-Modified 로 304 를 받는 조건 |
+| 2026-11-05 | pe-229 | PE | 벤더 종속(Vendor Lock-in) |

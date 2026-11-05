@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#f8f9fa"/>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">짝이 없는 행을 어느 쪽까지 남기느냐가 조인 종류를 가른다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">본문 예제의 주문 4건·입금 4건. 선은 order_id 가 같은 짝이다.</text>
+
+  <text x="40" y="82" font-size="13" font-weight="bold" fill="#212529">customer_order</text>
+  <text x="300" y="82" font-size="13" font-weight="bold" fill="#212529">payment</text>
+
+  <rect x="40" y="94" width="150" height="34" rx="5" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="115" y="116" font-size="13" fill="#212529" text-anchor="middle">주문 1</text>
+  <rect x="40" y="138" width="150" height="34" rx="5" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="115" y="160" font-size="13" fill="#212529" text-anchor="middle">주문 2</text>
+  <rect x="40" y="182" width="150" height="34" rx="5" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="115" y="204" font-size="13" fill="#212529" text-anchor="middle">주문 3 (입금 없음)</text>
+  <rect x="40" y="226" width="150" height="34" rx="5" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="115" y="248" font-size="13" fill="#212529" text-anchor="middle">주문 4 (입금 없음)</text>
+
+  <rect x="300" y="94" width="190" height="34" rx="5" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="395" y="116" font-size="13" fill="#212529" text-anchor="middle">입금 10 → 주문 1</text>
+  <rect x="300" y="138" width="190" height="34" rx="5" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="395" y="160" font-size="13" fill="#212529" text-anchor="middle">입금 11 → 주문 2</text>
+  <rect x="300" y="182" width="190" height="34" rx="5" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="395" y="204" font-size="13" fill="#212529" text-anchor="middle">입금 12 → 주문 2</text>
+  <rect x="300" y="226" width="190" height="34" rx="5" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="395" y="248" font-size="13" fill="#212529" text-anchor="middle">입금 13 → 주문 9 (없음)</text>
+
+  <line x1="190" y1="111" x2="300" y2="111" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="190" y1="155" x2="300" y2="155" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="190" y1="155" x2="300" y2="199" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <rect x="540" y="86" width="320" height="190" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="556" y="112" font-size="13" font-weight="bold" fill="#212529">조인 종류별 결과 행 수</text>
+  <text x="556" y="140" font-size="13" fill="#212529">INNER JOIN : 3행 (선이 있는 짝)</text>
+  <text x="556" y="166" font-size="13" fill="#212529">LEFT JOIN : 5행 (+ 주문 3, 4)</text>
+  <text x="556" y="192" font-size="13" fill="#212529">RIGHT JOIN : 4행 (+ 입금 13)</text>
+  <text x="556" y="218" font-size="13" fill="#212529">FULL OUTER JOIN : 6행 (+ 주문 3, 4, 입금 13)</text>
+  <text x="556" y="250" font-size="13" fill="#495057">짝이 없는 쪽 컬럼은 NULL 로 채워진다</text>
+
+  <text x="20" y="306" font-size="13" fill="#495057">초록은 짝이 있는 행, 빨강은 주문만 있는 행, 주황은 입금만 있는 행이다.</text>
