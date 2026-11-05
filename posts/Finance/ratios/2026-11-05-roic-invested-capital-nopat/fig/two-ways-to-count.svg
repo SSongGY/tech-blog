@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="340" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2937">투하자본은 영업 쪽과 재무 쪽, 두 방향에서 세어 같은 값이 나온다 (가나전자, 억원)</text>
+
+  <text x="140" y="68" font-size="14" font-weight="bold" fill="#1f2937">영업 쪽 — 자산을 사업에 쓰는 만큼</text>
+  <rect x="60" y="82" width="300" height="48" fill="#b45309"/>
+  <text x="210" y="112" font-size="13" fill="#ffffff" text-anchor="middle">영업운전자본 300 (500 − 200)</text>
+  <rect x="60" y="130" width="300" height="100" fill="#6b7280"/>
+  <text x="210" y="186" font-size="13" fill="#ffffff" text-anchor="middle">유형·무형자산 1,200</text>
+  <text x="210" y="256" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">합계 1,500</text>
+
+  <text x="440" y="160" font-size="22" fill="#1f2937" text-anchor="middle">=</text>
+
+  <text x="660" y="68" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">재무 쪽 — 자금을 대 준 만큼</text>
+  <rect x="520" y="82" width="280" height="68" fill="#2d6a4f"/>
+  <text x="660" y="121" font-size="13" fill="#ffffff" text-anchor="middle">차입금 800</text>
+  <rect x="520" y="150" width="280" height="68" fill="#1d4e89"/>
+  <text x="660" y="189" font-size="13" fill="#ffffff" text-anchor="middle">자본 900</text>
+  <rect x="520" y="218" width="280" height="24" fill="#ffffff" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="660" y="235" font-size="13" fill="#9d0208" text-anchor="middle">빼는 것: 비영업 현금 200</text>
+  <text x="660" y="272" font-size="14" font-weight="bold" fill="#1f2937" text-anchor="middle">800 + 900 − 200 = 1,500</text>
+
+  <text x="24" y="316" font-size="13" fill="#4b5563">영업에 쓰이지 않고 쌓아 둔 현금은 사업이 쓰는 자본이 아니므로 재무 쪽에서 뺀다.</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfaf7"/>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1f2937">같은 세후영업이익 156 을 서로 다른 크기의 자본으로 낸다 (억원)</text>
+  <text x="24" y="52" font-size="13" fill="#4b5563">위 막대는 사업에 묶인 투하자본, 아래 막대는 그 자본이 한 해 동안 만든 세후영업이익(NOPAT)이다. 길이는 같은 축척이다</text>
+
+  <!-- 가나전자 -->
+  <text x="24" y="108" font-size="14" font-weight="bold" fill="#1f2937">가나전자</text>
+  <rect x="140" y="84" width="120" height="40" fill="#b45309"/>
+  <text x="200" y="109" font-size="13" fill="#ffffff" text-anchor="middle">운전자본 300</text>
+  <rect x="260" y="84" width="480" height="40" fill="#6b7280"/>
+  <text x="500" y="109" font-size="13" fill="#ffffff" text-anchor="middle">유형·무형자산 1,200</text>
+  <text x="752" y="109" font-size="13" fill="#1f2937">= 1,500</text>
+  <rect x="140" y="132" width="62.4" height="26" fill="#2d6a4f"/>
+  <text x="212" y="151" font-size="13" fill="#2d6a4f">NOPAT 156.0 → ROIC 10.40%</text>
+
+  <!-- 다라물산 -->
+  <text x="24" y="228" font-size="14" font-weight="bold" fill="#1f2937">다라물산</text>
+  <rect x="140" y="204" width="80" height="40" fill="#b45309"/>
+  <text x="180" y="229" font-size="13" fill="#ffffff" text-anchor="middle">운전자본 200</text>
+  <rect x="220" y="204" width="120" height="40" fill="#6b7280"/>
+  <text x="280" y="229" font-size="13" fill="#ffffff" text-anchor="middle">고정자산 300</text>
+  <text x="352" y="229" font-size="13" fill="#1f2937">= 500</text>
+  <rect x="140" y="252" width="62.4" height="26" fill="#2d6a4f"/>
+  <text x="212" y="271" font-size="13" fill="#2d6a4f">NOPAT 156.0 → ROIC 31.20%</text>
+
+  <line x1="140" y1="300" x2="740" y2="300" stroke="#9ca3af" stroke-width="1"/>
+  <text x="140" y="324" font-size="13" fill="#4b5563">ROIC = NOPAT 마진 7.80% × 투하자본 회전율</text>
+  <text x="140" y="346" font-size="13" fill="#4b5563">가나전자 1.33회 → 10.40%   |   다라물산 4.00회 → 31.20%   (마진은 같고 회전율만 다르다)</text>
+</svg>

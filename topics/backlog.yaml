@@ -6920,3 +6920,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: fin-123
+    title: "ROIC — 투하자본과 세후영업이익으로 읽는 사업의 수익성"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [roic, nopat, 투하자본, 수익성]
+    difficulty: 중급
+    angle: "가나전자·다라물산: 영업이익은 같고 투하자본이 다른 두 회사의 ROIC 대비. NOPAT 계산(법인세율 가정 명시), 투하자본을 영업쪽/재무쪽으로 두 방식으로 구한 값이 일치함을 보인다. ROE와 달리 부채 비중에 덜 흔들리는 이유. 기준선은 쓰지 않고 WACC와 비교하는 구조만 설명"
+    code: none
+    origin: manual
+    status: done
+  - id: fin-124
+    title: "발생액 비율 — 이익은 같은데 현금이 다른 두 회사"
+    category: Finance
+    subcategory: ratios
+    track: finance
+    tags: [발생액, 이익의질, 현금흐름, 비율분석]
+    difficulty: 중급
+    angle: "가나전자·다라물산: 당기순이익은 같고 영업현금흐름이 갈리는 두 회사. 발생액=순이익-영업현금흐름, 평균자산으로 나눈 비율(Sloan 1996 정의 인용). 매출채권·재고 증가가 발생액을 키우는 경로를 숫자로. 높다는 사실과 뜻까지만, 기준선·결론 없음"
+    code: none
+    origin: manual
+    status: done
