@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" role="img" aria-label="같은 5년 현금흐름의 연도별 이익. 금융리스는 8.00에서 1.86으로 줄고 운용리스는 5.05로 일정하며 합계는 둘 다 25.23">
+  <rect x="0" y="0" width="880" height="380" fill="#f7f7f4"/>
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">같은 현금흐름, 다른 이익의 모양 (억원)</text>
+  <text x="24" y="56" font-family="sans-serif" font-size="13" fill="#444">설비 100 · 5년 · 연 리스료 25.05 · 합계는 둘 다 25.23</text>
+
+  <!-- 1억원 = 28px, 바닥선 y=320 -->
+  <line x1="80" y1="320" x2="850" y2="320" stroke="#444" stroke-width="2"/>
+
+  <!-- 1년 -->
+  <rect x="100" y="96" width="44" height="224" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="150" y="178.6" width="44" height="141.4" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="122" y="90" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">8.00</text>
+  <text x="172" y="172" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">5.05</text>
+  <text x="147" y="344" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">1년</text>
+
+  <!-- 2년 -->
+  <rect x="270" y="134.1" width="44" height="185.9" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="320" y="178.6" width="44" height="141.4" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="292" y="128" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">6.64</text>
+  <text x="342" y="172" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">5.05</text>
+  <text x="317" y="344" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">2년</text>
+
+  <!-- 3년 -->
+  <rect x="440" y="175.5" width="44" height="144.5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="490" y="178.6" width="44" height="141.4" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="462" y="169" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">5.16</text>
+  <text x="512" y="172" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">5.05</text>
+  <text x="487" y="344" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">3년</text>
+
+  <!-- 4년 -->
+  <rect x="610" y="220" width="44" height="100" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="660" y="178.6" width="44" height="141.4" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="632" y="214" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">3.57</text>
+  <text x="682" y="172" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">5.05</text>
+  <text x="657" y="344" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">4년</text>
+
+  <!-- 5년 -->
+  <rect x="780" y="268" width="30" height="52" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="814" y="178.6" width="30" height="141.4" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="795" y="262" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">1.86</text>
+  <text x="829" y="172" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">5.05</text>
+  <text x="812" y="344" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">5년</text>
+
+  <rect x="560" y="70" width="14" height="14" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="580" y="82" font-family="sans-serif" font-size="13" fill="#1b1b1b">금융리스 처리 (금융수익)</text>
+  <rect x="560" y="92" width="14" height="14" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="580" y="104" font-family="sans-serif" font-size="13" fill="#1b1b1b">운용리스 처리 (정액 수익 - 감가상각)</text>
+</svg>

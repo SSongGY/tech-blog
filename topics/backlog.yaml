@@ -6324,7 +6324,7 @@ topics:
     angle: "두 절이 걸리는 순서를 실행계획으로 확인하고, 바꿔 쓰면 틀리는 경우를 재현"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-093
     title: "LIMIT과 OFFSET — 페이지를 넘길 때 생기는 문제"
     category: Database
@@ -6533,7 +6533,7 @@ topics:
     angle: "종속을 기술 스택 종속과 산출물 종속 두 겹으로 나눠 정의한다. 전환비용의 구성요소, 클라우드·로우코드·CASE 도구에서 반복돼 온 양상, 완화 수단(표준 교환 형식, 내보내기 보장, 이중 조달, 탈출 계획)을 조달 단계의 판단 항목으로 정리한다."
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: fin-113
     title: "이자와 배당금의 현금흐름 분류 — 같은 이익에서 영업현금흐름이 갈린다"
     category: Finance
@@ -6841,7 +6841,7 @@ topics:
     angle: "파이썬 표준 라이브러리 http.server 로 서버를 띄우고 If-None-Match·If-Modified-Since 를 바꿔 가며 200·304·412 가 갈리는 지점을 실측한다. 약한 ETag 와 강한 ETag, 두 헤더가 함께 올 때 우선순위를 RFC 9110 으로 확인"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: gen-020
     title: "Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서"
     category: Language
@@ -6864,3 +6864,36 @@ topics:
     code: python
     origin: manual
     status: todo
+  - id: db-106
+    title: "RIGHT JOIN과 FULL OUTER JOIN — SQLite 3.39 에서 생긴 양쪽 외부 조인"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, join, full-outer-join, basics]
+    difficulty: 입문
+    angle: "양쪽 표에 짝이 없는 행이 모두 필요한 대사(대조) 작업을 LEFT JOIN + UNION 으로 우회하던 방식과 FULL OUTER JOIN 한 줄을 같은 결과로 비교한다. ON 과 WHERE 에 조건을 두는 위치가 외부 조인 결과를 어떻게 바꾸는지 재현한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-121
+    title: "리스 제공자 회계 — 금융리스와 운용리스는 무엇으로 갈리고 표에 어떻게 남는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, lease, lessor]
+    difficulty: 심화
+    angle: "제1116호 제공자 분류(위험과 보상의 이전)를 가상 회사 두 곳의 같은 설비로 비교하고, 금융리스는 순투자, 운용리스는 자산 유지·수익 정액 인식으로 갈리는 숫자를 계산한다. 앞서 쓴 사용권자산·리스부채(제공받는 쪽)의 반대편이다."
+    code: python
+    origin: manual
+    status: done
+  - id: fin-122
+    title: "연결 범위 — 지배력 세 요소가 모자 회사 합산 대상을 가른다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, consolidation, control]
+    difficulty: 심화
+    angle: "제1110호 지배력 3요소(힘·변동이익 노출·영향력 사용)를 지분율 50% 이하인데 연결되는 가상 사례와 50% 초과인데 연결 안 되는 사례로 대비하고, 연결 후 합산·내부거래 제거·비지배지분 계산을 숫자로 보인다."
+    code: python
+    origin: manual
+    status: done

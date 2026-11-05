@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **601편** · 갱신 2026-11-05
+총 **602편** · 갱신 2026-11-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 89편
+## DB문법 (basics) — 90편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-05 | [GROUP BY 뒤의 HAVING — WHERE와 무엇이 다른가](posts/Database/sql-basics/2026-11-05-right-full-outer-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [VALUES 절을 표처럼 쓰기 — 임시 데이터를 조인에 끼워 넣는다](posts/Database/sql-basics/2026-11-03-values-clause-as-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [소계와 총계를 한 결과에 — ROLLUP 이 없는 SQLite 에서 합계 줄 붙이기](posts/Database/sql-basics/2026-11-03-subtotal-grand-total-without-rollup/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [자기 조인 — 같은 표를 두 번 불러 비교하기](posts/Database/sql-basics/2026-11-03-self-join-compare-rows-in-one-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
