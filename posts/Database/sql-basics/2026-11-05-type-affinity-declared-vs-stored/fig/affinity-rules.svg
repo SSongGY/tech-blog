@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="400" fill="#f8f9fa"/>
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">선언 타입 문자열은 위에서 아래로 다섯 규칙을 순서대로 검사해 첫 일치로 정해진다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">대소문자는 구분하지 않고, 문자열 안에 해당 글자가 들어 있기만 하면 일치한다.</text>
+
+  <rect x="20" y="70" width="440" height="46" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="98" font-size="13" fill="#212529">① "INT" 가 들어 있다</text>
+  <rect x="500" y="70" width="170" height="46" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="98" font-size="13" fill="#212529">INTEGER</text>
+  <text x="690" y="98" font-size="13" fill="#495057">BIGINT, POINT</text>
+  <text x="470" y="98" font-size="16" fill="#495057">→</text>
+
+  <rect x="20" y="130" width="440" height="46" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="158" font-size="13" fill="#212529">② "CHAR" · "CLOB" · "TEXT" 가 들어 있다</text>
+  <rect x="500" y="130" width="170" height="46" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="158" font-size="13" fill="#212529">TEXT</text>
+  <text x="690" y="158" font-size="13" fill="#495057">VARCHAR(20)</text>
+  <text x="470" y="158" font-size="16" fill="#495057">→</text>
+
+  <rect x="20" y="190" width="440" height="46" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="218" font-size="13" fill="#212529">③ "BLOB" 이 들어 있거나 선언이 없다</text>
+  <rect x="500" y="190" width="170" height="46" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="218" font-size="13" fill="#212529">BLOB (변환 없음)</text>
+  <text x="690" y="218" font-size="13" fill="#495057">BLOB, 선언 생략</text>
+  <text x="470" y="218" font-size="16" fill="#495057">→</text>
+
+  <rect x="20" y="250" width="440" height="46" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="278" font-size="13" fill="#212529">④ "REAL" · "FLOA" · "DOUB" 가 들어 있다</text>
+  <rect x="500" y="250" width="170" height="46" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="514" y="278" font-size="13" fill="#212529">REAL</text>
+  <text x="690" y="278" font-size="13" fill="#495057">FLOAT, DOUBLE</text>
+  <text x="470" y="278" font-size="16" fill="#495057">→</text>
+
+  <rect x="20" y="310" width="440" height="46" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="338" font-size="13" fill="#212529">⑤ 위 어디에도 걸리지 않는다</text>
+  <rect x="500" y="310" width="170" height="46" rx="4" fill="#fff3cd" stroke="#b45309" stroke-width="1.5"/>
+  <text x="514" y="338" font-size="13" fill="#212529">NUMERIC</text>
+  <text x="690" y="338" font-size="13" fill="#495057">DECIMAL, DATE</text>
+  <text x="470" y="338" font-size="16" fill="#495057">→</text>
+
+  <text x="20" y="384" font-size="13" fill="#212529">"FLOATING POINT" 는 ① 이 먼저 걸려 INTEGER 가 된다 — 순서가 곧 규칙이다.</text>
+</svg>
