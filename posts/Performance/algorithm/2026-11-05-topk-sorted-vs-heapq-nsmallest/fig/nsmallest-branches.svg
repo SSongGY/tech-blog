@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="340" fill="#f8f9fa"/>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">heapq.nsmallest(k, data) 는 k 와 입력에 따라 세 갈래 중 하나를 탄다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">CPython 3.13.5 Lib/heapq.py 의 nsmallest 분기. key 가 없을 때 기준</text>
+
+  <rect x="30" y="140" width="170" height="60" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="115" y="166" font-size="13" fill="#212529" text-anchor="middle">nsmallest 호출</text>
+  <text x="115" y="186" font-size="13" fill="#495057" text-anchor="middle">k 와 data</text>
+
+  <line x1="200" y1="160" x2="300" y2="86" stroke="#495057" stroke-width="1.5"/>
+  <line x1="200" y1="170" x2="300" y2="170" stroke="#495057" stroke-width="1.5"/>
+  <line x1="200" y1="180" x2="300" y2="254" stroke="#495057" stroke-width="1.5"/>
+
+  <text x="232" y="106" font-size="13" fill="#212529">k 가 1</text>
+  <text x="206" y="162" font-size="13" fill="#212529">k ≥ len(data)</text>
+  <text x="232" y="246" font-size="13" fill="#212529">그 밖</text>
+
+  <rect x="300" y="60" width="250" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="425" y="91" font-size="13" fill="#212529" text-anchor="middle">min(data) 로 끝낸다</text>
+
+  <rect x="300" y="144" width="250" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="425" y="175" font-size="13" fill="#212529" text-anchor="middle">sorted(data)[:k] 로 넘긴다</text>
+
+  <rect x="300" y="228" width="250" height="52" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="425" y="259" font-size="13" fill="#212529" text-anchor="middle">크기 k 인 최대 힙을 유지한다</text>
+
+  <rect x="580" y="214" width="270" height="80" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="595" y="238" font-size="13" fill="#212529">나머지 원소를 하나씩 읽으며</text>
+  <text x="595" y="258" font-size="13" fill="#212529">힙의 최댓값보다 작으면 교체한다</text>
+  <text x="595" y="278" font-size="13" fill="#9d0208">k 가 클수록 교체가 늘어 느려진다</text>
+  <line x1="550" y1="254" x2="580" y2="254" stroke="#9d0208" stroke-width="1.5"/>
+
+  <text x="20" y="316" font-size="13" fill="#495057">초록은 단축 경로, 주황은 힙 경로, 빨강은 그 경로가 느려지는 이유다. 힙 경로는 len 이 없는 이터레이터도 이 갈래로 온다.</text>
+</svg>

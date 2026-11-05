@@ -532,3 +532,4 @@
 | 2026-11-05 | fin-123 | Finance | ROIC — 투하자본과 세후영업이익으로 읽는 사업의 수익성 |
 | 2026-11-05 | fin-124 | Finance | 발생액 비율 — 이익은 같은데 현금이 다른 두 회사 |
 | 2026-11-05 | db-107 | Database | INSTEAD OF 트리거 — 읽기 전용인 뷰에 쓰기를 달아 주기 |
+| 2026-11-06 | gen-022 | Performance | 상위 k개만 필요할 때 — sorted 와 heapq.nsmallest 의 손익분기 |

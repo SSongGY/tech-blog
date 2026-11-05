@@ -1,0 +1,47 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Performance\algorithm\2026-11-05-topk-sorted-vs-heapq-nsmallest
+# 명령      : python topk_bench.py
+# 수행 시각 : 2026-11-06 08:31 (대한민국 표준시)
+# 소요      : 14.6초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5
+
+정렬 대상 200,000개, key=없음
+         k |     k/n |    sorted | nsmallest | 빠른 쪽
+  ---------+---------+-----------+-----------+--------
+         1 |  0.00% |    25.9ms |     1.0ms | nsmallest
+        10 |  0.01% |    26.6ms |     2.2ms | nsmallest
+       100 |  0.05% |    24.8ms |     2.1ms | nsmallest
+     1,000 |  0.50% |    25.3ms |     3.6ms | nsmallest
+    10,000 |  5.00% |    24.3ms |    16.3ms | nsmallest
+    15,000 |  7.50% |    26.3ms |    23.0ms | nsmallest
+    20,000 | 10.00% |    24.2ms |    30.6ms | sorted
+    25,000 | 12.50% |    27.0ms |    42.1ms | sorted
+    30,000 | 15.00% |    25.8ms |    39.6ms | sorted
+   100,000 | 50.00% |    25.3ms |    98.1ms | sorted
+   199,999 | 100.00% |    27.7ms |   118.2ms | sorted
+   200,000 | 100.00% |    27.0ms |    26.5ms | nsmallest
+
+정렬 대상 200,000개, key=있음
+         k |     k/n |    sorted | nsmallest | 빠른 쪽
+  ---------+---------+-----------+-----------+--------
+         1 |  0.00% |    39.6ms |     7.9ms | nsmallest
+        10 |  0.01% |    39.9ms |     7.3ms | nsmallest
+       100 |  0.05% |    45.2ms |     7.7ms | nsmallest
+     1,000 |  0.50% |    45.5ms |    10.2ms | nsmallest
+    10,000 |  5.00% |    39.3ms |    27.9ms | nsmallest
+    15,000 |  7.50% |    43.8ms |    35.2ms | nsmallest
+    20,000 | 10.00% |    41.3ms |    41.7ms | sorted
+    25,000 | 12.50% |    45.2ms |    55.7ms | sorted
+    30,000 | 15.00% |    48.2ms |    63.6ms | sorted
+   100,000 | 50.00% |    45.0ms |   171.3ms | sorted
+   199,999 | 100.00% |    49.8ms |   267.1ms | sorted
+   200,000 | 100.00% |    50.1ms |    44.1ms | nsmallest
+
+k = n 일 때: nsmallest 29.3ms / sorted 26.7ms
+k = n 인데 이터레이터를 넘기면: nsmallest 125.9ms

@@ -314,6 +314,7 @@ HA는 멤버십·자원 관리자·쿼럼·펜싱·공유 데이터의 다섯 �
 독립이 깨진 중복은 식 위에서는 나인을 더하지만 현장에서는 같이 죽는다.
 
 > 개념 정리: [데이터베이스 이중화와 복제 방식](../../database/2026-10-27-database-replication-ha/index.md)
+> 개념 정리: [결함 허용 기법의 분류 — 오류 검출과 시스템 복구](../../computer-architecture/2026-11-05-fault-tolerance-error-detection-recovery-taxonomy/index.md)
 
 끝
 

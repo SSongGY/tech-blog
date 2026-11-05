@@ -6963,7 +6963,7 @@ topics:
     angle: "n 과 k 를 바꿔 가며 sorted()[:k], heapq.nsmallest, heapq.heapify+pop 의 시간을 실측해 어느 k/n 비율에서 순서가 뒤집히는지 찾는다. nsmallest 가 내부에서 k 가 크면 sorted 로 넘어가는 분기를 소스로 확인한다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: pe-239
     title: "CRC와 해밍 코드 — 오류 검출·정정 부호의 원리"
     category: PE
