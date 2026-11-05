@@ -523,3 +523,6 @@
 | 2026-11-05 | db-106 | Database | RIGHT JOIN과 FULL OUTER JOIN — SQLite 3.39 에서 생긴 양쪽 외부 조인 |
 | 2026-11-05 | gen-019 | Backend | HTTP 조건부 요청 — ETag 와 Last-Modified 로 304 를 받는 조건 |
 | 2026-11-05 | pe-229 | PE | 벤더 종속(Vendor Lock-in) |
+| 2026-11-05 | db-093 | Database | LIMIT과 OFFSET — 페이지를 넘길 때 생기는 문제 |
+| 2026-11-05 | pe-230 | PE | 반결합(semijoin) — 분산 질의에서 전송량을 줄이는 연산 |
+| 2026-11-05 | gen-021 | Performance | zlib 압축 수준 1~9 — 시간과 크기가 어디서 꺾이는가 |

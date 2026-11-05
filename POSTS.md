@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **606편** · 갱신 2026-11-05
+총 **607편** · 갱신 2026-11-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -364,10 +364,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 55편
+## 일반 (general) — 56편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-05 | [zlib 사전(zdict) — 70바이트짜리 메시지가 압축되지 않을 때](posts/Performance/compression/2026-11-05-zlib-preset-dictionary-short-messages/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-05 | [HTTP 조건부 요청 — ETag 와 Last-Modified 로 304 를 받는 조건](posts/Backend/http/2026-11-05-http-conditional-request-etag/index.md) | 중급 | Python 3.13.5, RFC 9110 (2022) | 실행 검증 |
 | 2026-11-03 | [정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어](posts/Security/redos/2026-11-03-redos-catastrophic-backtracking/index.md) | 심화 | Python 3.13.5, regex 2026.9.29 | 실행 검증 |
 | 2026-11-03 | [대칭키와 공개키의 속도 차이는 몇 배인가 — openssl speed 로 직접 재기](posts/Security/crypto/2026-11-03-openssl-speed-symmetric-vs-public-key/index.md) | 중급 | OpenSSL 3.5.6, GNU bash 5.3.9, GNU Awk 5.4.0 | 실행 검증 |

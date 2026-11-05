@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="330" fill="#f8f9fa"/>
+  <text x="20" y="26" font-size="16" font-weight="bold" fill="#212529">같은 쪽을 가져와도 OFFSET 은 앞의 행을 읽고 버리고, 키셋은 곧바로 건너뛴다</text>
+  <text x="20" y="48" font-size="13" fill="#495057">created 인덱스를 따라 읽는 경우. 쪽 크기 5, 100000번째 행 다음 쪽을 가져온다.</text>
+
+  <text x="20" y="84" font-size="13" font-weight="bold" fill="#9d0208">① OFFSET 100000 LIMIT 5</text>
+  <rect x="20" y="96" width="540" height="44" rx="4" fill="#fde2e4" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="34" y="123" font-size="13" fill="#212529">인덱스 앞쪽에서 100000행을 읽고 버린다</text>
+  <rect x="560" y="96" width="120" height="44" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="574" y="123" font-size="13" fill="#212529">5행 반환</text>
+  <rect x="680" y="96" width="180" height="44" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="694" y="123" font-size="13" fill="#212529">나머지는 안 읽음</text>
+
+  <text x="20" y="190" font-size="13" font-weight="bold" fill="#2d6a4f">② WHERE created &gt; 100000 LIMIT 5</text>
+  <rect x="20" y="202" width="540" height="44" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="34" y="229" font-size="13" fill="#212529">인덱스 트리를 내려가 100000 다음 위치로 이동</text>
+  <rect x="560" y="202" width="120" height="44" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="574" y="229" font-size="13" fill="#212529">5행 반환</text>
+  <rect x="680" y="202" width="180" height="44" rx="4" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="694" y="229" font-size="13" fill="#212529">나머지는 안 읽음</text>
+
+  <text x="20" y="284" font-size="13" fill="#212529">① 의 비용은 OFFSET 값에 비례하고, ② 의 비용은 OFFSET 과 무관하다.</text>
+  <text x="20" y="306" font-size="13" fill="#495057">② 는 직전 쪽의 마지막 키 값을 기억해야 하므로 임의의 n쪽으로 바로 가는 기능은 잃는다.</text>
+</svg>
