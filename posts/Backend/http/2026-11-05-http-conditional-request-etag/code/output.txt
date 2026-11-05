@@ -1,0 +1,42 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Backend\http\2026-11-05-http-conditional-request-etag
+# 명령      : python conditional_demo.py
+# 수행 시각 : 2026-11-05 11:24 (대한민국 표준시)
+# 소요      : 1.8초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Last-Modified = Thu, 01 Jan 2026 00:00:00 GMT
+
+== 강한 ETag (서버의 ETag = "v1-abc")
+요청 헤더                                                    상태  본문
+----------------------------------------------------------------------
+(조건 헤더 없음)                                               200   26B
+If-None-Match: 같은 강한 태그                                  304   0B
+If-None-Match: 같은 값의 약한 태그                               304   0B
+If-None-Match: 다른 태그                                     200   26B
+If-None-Match: 여러 개 중 하나가 일치                             304   0B
+If-None-Match: *                                         304   0B
+If-Match: 같은 강한 태그                                       200   26B
+If-Match: 다른 태그                                          412   0B
+If-Match: 같은 값의 약한 태그                                    412   0B
+
+== 약한 ETag (서버의 ETag = W/"v1-abc")
+요청 헤더                                                    상태  본문
+----------------------------------------------------------------------
+If-None-Match: 같은 약한 태그                                  304   0B
+If-None-Match: 같은 값의 강한 태그                               304   0B
+If-Match: 같은 약한 태그                                       412   0B
+If-Match: 같은 값의 강한 태그                                    412   0B
+
+== 날짜 헤더와 우선순위 (서버의 ETag = "v1-abc")
+요청 헤더                                                    상태  본문
+----------------------------------------------------------------------
+If-Modified-Since: 수정 시각과 같음                             304   0B
+If-Modified-Since: 수정 시각보다 이전                            200   26B
+If-Modified-Since: 수정 시각보다 이후                            304   0B
+If-Modified-Since 이후 + If-None-Match 다름                  200   26B
+If-Modified-Since 이전 + If-None-Match 같음                  304   0B

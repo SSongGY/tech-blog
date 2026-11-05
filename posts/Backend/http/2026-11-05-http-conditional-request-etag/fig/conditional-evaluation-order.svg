@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="340" fill="#f8f9fa"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">GET 요청에서 조건 헤더는 정해진 순서로 평가된다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">조건이 참이면 다음으로 넘어가고, 거짓이면 아래 응답으로 끝난다. 거짓이 되는 쪽은 If-None-Match 가 일치할 때다.</text>
+
+  <rect x="30" y="80" width="170" height="76" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="115" y="108" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">① If-Match</text>
+  <text x="115" y="130" font-size="13" fill="#212529" text-anchor="middle">강한 비교</text>
+
+  <rect x="250" y="80" width="170" height="76" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="335" y="108" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">② If-None-Match</text>
+  <text x="335" y="130" font-size="13" fill="#212529" text-anchor="middle">약한 비교</text>
+
+  <rect x="470" y="80" width="190" height="76" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="565" y="108" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">③ If-Modified-Since</text>
+  <text x="565" y="130" font-size="13" fill="#212529" text-anchor="middle">② 헤더가 없을 때만</text>
+
+  <rect x="710" y="80" width="140" height="76" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="780" y="108" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">200</text>
+  <text x="780" y="130" font-size="13" fill="#212529" text-anchor="middle">본문을 보낸다</text>
+
+  <line x1="200" y1="118" x2="248" y2="118" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="420" y1="118" x2="468" y2="118" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="660" y1="118" x2="708" y2="118" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="224" y="108" font-size="13" fill="#495057" text-anchor="middle">참</text>
+  <text x="444" y="108" font-size="13" fill="#495057" text-anchor="middle">참</text>
+  <text x="684" y="108" font-size="13" fill="#495057" text-anchor="middle">참</text>
+
+  <line x1="115" y1="156" x2="115" y2="204" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="335" y1="156" x2="335" y2="204" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="565" y1="156" x2="565" y2="204" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="206" width="170" height="60" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="115" y="232" font-size="13" font-weight="bold" fill="#9d0208" text-anchor="middle">412</text>
+  <text x="115" y="252" font-size="13" fill="#212529" text-anchor="middle">Precondition Failed</text>
+
+  <rect x="250" y="206" width="170" height="60" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="335" y="232" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">304</text>
+  <text x="335" y="252" font-size="13" fill="#212529" text-anchor="middle">태그가 일치하면</text>
+
+  <rect x="470" y="206" width="190" height="60" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="565" y="232" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">304</text>
+  <text x="565" y="252" font-size="13" fill="#212529" text-anchor="middle">수정 시각 ≤ 요청 날짜</text>
+
+  <text x="20" y="302" font-size="13" fill="#495057">① 이 거짓이면 412, ② 에서 태그가 일치하면 304, ③ 에서 수정 시각이 날짜 이하이면 304,</text>
+  <text x="20" y="322" font-size="13" fill="#495057">어느 것에도 걸리지 않으면 200 이다.</text>
