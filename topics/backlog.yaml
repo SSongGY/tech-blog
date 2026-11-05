@@ -6963,4 +6963,26 @@ topics:
     angle: "n 과 k 를 바꿔 가며 sorted()[:k], heapq.nsmallest, heapq.heapify+pop 의 시간을 실측해 어느 k/n 비율에서 순서가 뒤집히는지 찾는다. nsmallest 가 내부에서 k 가 크면 sorted 로 넘어가는 분기를 소스로 확인한다"
     code: python
     origin: manual
+    status: writing
+  - id: pe-239
+    title: "CRC와 해밍 코드 — 오류 검출·정정 부호의 원리"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "생성 다항식 나눗셈과 해밍 거리로 검출·정정 능력이 정해지는 원리"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-240
+    title: "Selective Repeat ARQ와 TCP SACK"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "Go-Back-N의 낭비를 줄이는 선택적 재전송과 윈도우 크기 제약"
+    code: none
+    origin: exam
     status: todo

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="sans-serif" font-size="14">
+  <defs>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/></marker>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#9d0208"/></marker>
+    <marker id="ak" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333"/></marker>
+  </defs>
+  <rect width="880" height="430" fill="#ffffff"/>
+  <line x1="440" y1="20" x2="440" y2="415" stroke="#cccccc" stroke-dasharray="4 4"/>
+
+  <!-- 패널 A: 정지-대기 -->
+  <text x="220" y="30" text-anchor="middle" font-weight="bold" fill="#222">정지-대기 ARQ</text>
+  <rect x="30" y="45" width="80" height="30" fill="#eef2f7" stroke="#333"/>
+  <text x="70" y="65" text-anchor="middle" fill="#222">송신</text>
+  <rect x="290" y="45" width="80" height="30" fill="#eef2f7" stroke="#333"/>
+  <text x="330" y="65" text-anchor="middle" fill="#222">수신</text>
+  <line x1="70" y1="75" x2="70" y2="410" stroke="#333"/>
+  <line x1="330" y1="75" x2="330" y2="410" stroke="#333"/>
+
+  <text x="80" y="104" fill="#222">F0</text>
+  <line x1="70" y1="110" x2="330" y2="140" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="250" y="168" fill="#222">ACK1</text>
+  <line x1="330" y1="150" x2="70" y2="180" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ag)"/>
+  <text x="80" y="214" fill="#222">F1</text>
+  <line x1="70" y1="220" x2="200" y2="235" stroke="#9d0208" stroke-width="2"/>
+  <text x="200" y="244" text-anchor="middle" font-weight="bold" fill="#9d0208">✕ 유실</text>
+  <text x="80" y="290" fill="#b45309">타이머 만료</text>
+  <text x="80" y="318" fill="#222">F1 재전송</text>
+  <line x1="70" y1="324" x2="330" y2="354" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="250" y="382" fill="#222">ACK0</text>
+  <line x1="330" y1="364" x2="70" y2="394" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ag)"/>
+
+  <!-- 패널 B: Go-Back-N -->
+  <text x="660" y="30" text-anchor="middle" font-weight="bold" fill="#222">Go-Back-N ARQ</text>
+  <rect x="470" y="45" width="80" height="30" fill="#eef2f7" stroke="#333"/>
+  <text x="510" y="65" text-anchor="middle" fill="#222">송신</text>
+  <rect x="730" y="45" width="80" height="30" fill="#eef2f7" stroke="#333"/>
+  <text x="770" y="65" text-anchor="middle" fill="#222">수신</text>
+  <line x1="510" y1="75" x2="510" y2="410" stroke="#333"/>
+  <line x1="770" y1="75" x2="770" y2="410" stroke="#333"/>
+
+  <text x="520" y="102" fill="#222">F0</text>
+  <line x1="510" y1="108" x2="770" y2="132" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="520" y="132" fill="#222">F1</text>
+  <line x1="510" y1="138" x2="640" y2="150" stroke="#9d0208" stroke-width="2"/>
+  <text x="640" y="166" text-anchor="middle" font-weight="bold" fill="#9d0208">✕ 유실</text>
+  <text x="520" y="190" fill="#222">F2</text>
+  <line x1="510" y1="196" x2="770" y2="220" stroke="#b45309" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="776" y="238" fill="#b45309">F2 폐기</text>
+  <text x="520" y="274" fill="#b45309">F1 타이머 만료</text>
+  <text x="520" y="300" fill="#222">F1부터 다시</text>
+  <line x1="510" y1="306" x2="770" y2="326" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <line x1="510" y1="326" x2="770" y2="346" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="520" y="326" fill="#222">F2</text>
+  <line x1="510" y1="346" x2="770" y2="366" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="520" y="346" fill="#222">F3</text>
+  <text x="600" y="400" fill="#222">ACK 누적 확인</text>
+  <line x1="770" y1="380" x2="510" y2="404" stroke="#2d6a4f" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#ag)"/>
+</svg>

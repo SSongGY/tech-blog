@@ -1,16 +1,17 @@
 # 글 목록
 
-총 **613편** · 갱신 2026-11-05
+총 **616편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 92편
+## DB문법 (basics) — 93편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-05 | [타입 친화성 다시 보기 — CAST 와 비교에서 값이 바뀌는 곳, 안 바뀌는 곳](posts/Database/sql-basics/2026-11-05-type-affinity-declared-vs-stored/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [RIGHT JOIN과 FULL OUTER JOIN — SQLite 3.39 에서 생긴 양쪽 외부 조인](posts/Database/sql-basics/2026-11-05-right-full-outer-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [LIMIT과 OFFSET — 페이지를 넘길 때 생기는 문제](posts/Database/sql-basics/2026-11-05-limit-offset-pagination/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-05 | [INSTEAD OF 트리거 — 읽기 전용인 뷰에 쓰기를 달아 주기](posts/Database/sql-basics/2026-11-05-instead-of-trigger-writable-view/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [VALUES 절을 표처럼 쓰기 — 임시 데이터를 조인에 끼워 넣는다](posts/Database/sql-basics/2026-11-03-values-clause-as-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [소계와 총계를 한 결과에 — ROLLUP 이 없는 SQLite 에서 합계 줄 붙이기](posts/Database/sql-basics/2026-11-03-subtotal-grand-total-without-rollup/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-03 | [자기 조인 — 같은 표를 두 번 불러 비교하기](posts/Database/sql-basics/2026-11-03-self-join-compare-rows-in-one-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -525,12 +526,14 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 122편
+## 주식·재무 (finance) — 124편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-05 | [ROIC — 투하자본과 세후영업이익으로 읽는 사업의 수익성](posts/Finance/ratios/2026-11-05-roic-invested-capital-nopat/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시, K-IFRS 제1116호 리스 | 실행 검증 |
 | 2026-11-05 | [리스 제공자 회계 — 금융리스와 운용리스는 무엇으로 갈리고 표에 어떻게 남는가](posts/Finance/statements/2026-11-05-lessor-finance-vs-operating-lease/index.md) | 심화 | Python 3.13.5, 기업회계기준서 제1116호 리스(2023-05-12 개정) | 실행 검증 |
 | 2026-11-05 | [연결 범위 — 지배력 세 요소가 모자 회사 합산 대상을 가른다](posts/Finance/statements/2026-11-05-consolidation-scope-control-three-elements/index.md) | 심화 | Python 3.13.5, 기업회계기준서 제1110호 연결재무제표(2024-11-22 개정) | 실행 검증 |
+| 2026-11-05 | [발생액 비율 — 이익은 같은데 현금이 다른 두 회사](posts/Finance/ratios/2026-11-05-accrual-ratio-earnings-quality/index.md) | 중급 | Python 3.13.5, K-IFRS 제1007호 현금흐름표, K-IFRS 제1001호 재무제표 표시 | 실행 검증 |
 | 2026-11-04 | [영구채와 상환우선주 — 같은 조달이 자본이 되기도 부채가 되기도 하는 기준](posts/Finance/statements/2026-11-04-perpetual-bond-vs-redeemable-preferred/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1032호 금융상품: 표시(2021-04-23 개정), 기업회계기준서 제1033호 주당이익(2015-09-25 개정) | 실행 검증 |
 | 2026-11-04 | [기타포괄손익과 재분류조정 — 순이익 밖에 쌓인 손익이 되돌아오는 것과 안 돌아오는 것](posts/Finance/statements/2026-11-04-oci-and-reclassification-adjustments/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1001호 재무제표 표시(2023-10-13 개정), 기업회계기준서 제1109호 금융상품(2025-10-17 개정) | 실행 검증 |
 | 2026-11-04 | [비한정 내용연수 무형자산 — 상각하지 않는 자산과 매년 하는 손상검사](posts/Finance/statements/2026-11-04-intangible-indefinite-life-no-amortisation/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1038호 무형자산(2021-04-23 개정) | 실행 검증 |
