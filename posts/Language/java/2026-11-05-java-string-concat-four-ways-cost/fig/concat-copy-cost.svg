@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#f8f9fa"/>
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">루프 안 += 는 회차마다 지금까지의 결과를 통째로 복사한다</text>
+  <text x="20" y="50" font-size="13" fill="#495057">조각 하나가 6자일 때 k번째 회차에서 복사하는 글자 수를 막대 길이로 그렸다 (javap 로 확인한 바이트코드 기준).</text>
+
+  <text x="20" y="84" font-size="13" font-weight="bold" fill="#9d0208">① loop +=  — 회차마다 new StringBuilder → append(result) → append(piece) → toString</text>
+  <rect x="20" y="96" width="60" height="34" rx="4" fill="#fde2e4" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="30" y="118" font-size="13" fill="#212529">1회 6자</text>
+  <rect x="20" y="138" width="120" height="34" rx="4" fill="#fde2e4" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="30" y="160" font-size="13" fill="#212529">2회 12자</text>
+  <rect x="20" y="180" width="240" height="34" rx="4" fill="#fde2e4" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="30" y="202" font-size="13" fill="#212529">4회 24자</text>
+  <rect x="20" y="222" width="480" height="34" rx="4" fill="#fde2e4" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="30" y="244" font-size="13" fill="#212529">8회 48자 — 회차가 두 배가 되면 복사량도 두 배</text>
+  <text x="520" y="244" font-size="13" fill="#9d0208">합계 6·N(N+1)/2 자</text>
+
+  <text x="20" y="284" font-size="13" font-weight="bold" fill="#2d6a4f">② StringBuilder 하나에 append</text>
+  <rect x="20" y="294" width="480" height="34" rx="4" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="30" y="316" font-size="13" fill="#212529">버퍼에 이어 쓰고 마지막에 toString 한 번</text>
+  <text x="520" y="316" font-size="13" fill="#2d6a4f">합계 ≈ 결과 길이의 상수 배</text>
+</svg>
