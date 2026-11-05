@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" role="img" aria-label="연결 절차 세 단계. 합산하면 자산 1230, 투자와 자본 상계 160, 내부채권채무 20, 미실현이익 10 제거 후 연결 자산 1040, 부채 580, 지배기업 소유주지분 416, 비지배지분 44">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="380" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">연결 절차 — 합산, 제거, 귀속 (억원)</text>
+
+  <rect x="24" y="60" width="250" height="170" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="149" y="86" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 합산 (B86 ⑴)</text>
+  <text x="149" y="116" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">가나지주 자산 800</text>
+  <text x="149" y="140" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">+ 다라부품 자산 430</text>
+  <text x="149" y="170" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">= 1,230</text>
+  <text x="149" y="200" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">같은 항목끼리 더한다</text>
+
+  <path d="M274 145 L316 145" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <rect x="318" y="60" width="270" height="170" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="453" y="86" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">② 제거 (B86 ⑵⑶)</text>
+  <text x="453" y="116" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">투자 160 - 다라 자본 지배지분</text>
+  <text x="453" y="140" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">내부 채권채무 20</text>
+  <text x="453" y="164" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">재고에 남은 내부이익 10</text>
+  <text x="453" y="196" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">자산에서 총 190을 뺀다</text>
+
+  <path d="M588 145 L630 145" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <rect x="632" y="60" width="224" height="170" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="744" y="86" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">③ 귀속 (B94)</text>
+  <text x="744" y="116" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">지배기업 소유주지분 416</text>
+  <text x="744" y="140" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">비지배지분 44</text>
+  <text x="744" y="164" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">부채 580</text>
+  <text x="744" y="196" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">= 자산 1,040</text>
+
+  <text x="24" y="276" font-family="sans-serif" font-size="13" fill="#1b1b1b">비지배지분 44 = 다라부품 자본 230 x 20% - 내부이익 제거 몫 2</text>
+  <text x="24" y="302" font-family="sans-serif" font-size="13" fill="#1b1b1b">소유주지분 416 = 가나지주 자본 400 + 취득 후 이익 몫 24 - 내부이익 제거 몫 8</text>
+  <text x="24" y="340" font-family="sans-serif" font-size="13" fill="#444">미실현이익은 종속기업이 낸 것이므로 100%를 빼고, 빼는 몫을 소유주와 비지배지분에 나눈다</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="지배력의 세 요소. 피투자자에 대한 힘, 변동이익에 노출되거나 권리가 있음, 힘을 사용해 이익 금액에 영향을 미치는 능력. 세 가지를 모두 충족하면 연결하고 하나라도 빠지면 연결하지 않는다">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">지배력 — 세 가지를 모두 충족해야 연결한다 (문단 7)</text>
+
+  <rect x="24" y="60" width="260" height="150" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="154" y="86" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 힘 (문단 10~14)</text>
+  <text x="154" y="114" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">관련 활동을 지시할</text>
+  <text x="154" y="134" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">현재의 능력이 있다</text>
+  <text x="154" y="170" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">의결권, 이사 선임권,</text>
+  <text x="154" y="190" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">계약상 권리에서 나온다</text>
+
+  <rect x="310" y="60" width="260" height="150" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="440" y="86" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">② 변동이익 (문단 15~16)</text>
+  <text x="440" y="114" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">관여로 변동이익에 노출되거나</text>
+  <text x="440" y="134" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">그에 대한 권리가 있다</text>
+  <text x="440" y="170" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">배당, 가치 변동, 보수 등이</text>
+  <text x="440" y="190" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">투자 성과에 따라 달라진다</text>
+
+  <rect x="596" y="60" width="260" height="150" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="726" y="86" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">③ 연관 (문단 17~18)</text>
+  <text x="726" y="114" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">힘을 사용해 자신의 이익</text>
+  <text x="726" y="134" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">금액에 영향을 미칠 수 있다</text>
+  <text x="726" y="170" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">남을 위한 대리인이 아니라</text>
+  <text x="726" y="190" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">본인으로서 행사한다</text>
+
+  <path d="M154 210 L154 250 L400 250 L400 276" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M440 210 L440 276" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <path d="M726 210 L726 250 L480 250 L480 276" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <rect x="240" y="278" width="200" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="340" y="304" font-family="sans-serif" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">셋 모두 충족</text>
+  <text x="340" y="326" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">종속기업, 연결 대상</text>
+
+  <rect x="480" y="278" width="200" height="64" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="580" y="304" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">하나라도 빠짐</text>
+  <text x="580" y="326" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">연결 대상이 아니다</text>
+
+  <text x="24" y="378" font-family="sans-serif" font-size="13" fill="#444">지분율은 ①의 근거 중 하나일 뿐이다. 판단 대상은 비율이 아니라 세 요소다 (문단 5~7)</text>
+</svg>
