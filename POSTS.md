@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **604편** · 갱신 2026-11-05
+총 **606편** · 갱신 2026-11-05
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -123,10 +123,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 212편
+## 기술사 (pe) — 213편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-05 | [벤더 종속(Vendor Lock-in)](posts/PE/it-management/2026-11-05-vendor-lock-in/index.md) | 중급 | Regulation (EU) 2023/2854 (Data Act, 2025.9.12 적용) | 문서 근거 |
 | 2026-11-05 | [모델 기반 공학(MDE)](posts/PE/software-engineering/2026-11-05-model-driven-engineering-mde/index.md) | 중급 | OMG MOF 2.5.1 (formal/2019-10-01), OMG XMI 2.5.1 (formal/15-06-07), OMG QVT 1.3 (formal/16-06-03), OMG MDA 개요 페이지, Eclipse EMF | 문서 근거 |
 | 2026-11-05 | [AI 생성물 표시와 콘텐츠 출처·이력(C2PA)](posts/PE/emerging-tech/2026-11-05-c2pa-ai-content-provenance-labeling/index.md) | 중급 | C2PA Technical Specification 2.1 (2024-09), NIST AI 100-4 (Reducing Risks Posed by Synthetic Content), Regulation (EU) 2024/1689 Article 50, 인공지능 기본법 제31조 (2026-01-22 시행) | 문서 근거 |
 | 2026-11-04 | [함수 호출 규약과 스택 프레임](posts/PE/system/2026-11-04-function-call-convention-stack-frame/index.md) | 중급 | System V Application Binary Interface AMD64 Architecture Processor Supplement, Draft Version 1.0 (2018-01-28) | 문서 근거 |
@@ -363,10 +364,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 54편
+## 일반 (general) — 55편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-05 | [HTTP 조건부 요청 — ETag 와 Last-Modified 로 304 를 받는 조건](posts/Backend/http/2026-11-05-http-conditional-request-etag/index.md) | 중급 | Python 3.13.5, RFC 9110 (2022) | 실행 검증 |
 | 2026-11-03 | [정규식 하나로 서버를 멈추는 법 — 백트래킹 폭발 재현과 방어](posts/Security/redos/2026-11-03-redos-catastrophic-backtracking/index.md) | 심화 | Python 3.13.5, regex 2026.9.29 | 실행 검증 |
 | 2026-11-03 | [대칭키와 공개키의 속도 차이는 몇 배인가 — openssl speed 로 직접 재기](posts/Security/crypto/2026-11-03-openssl-speed-symmetric-vs-public-key/index.md) | 중급 | OpenSSL 3.5.6, GNU bash 5.3.9, GNU Awk 5.4.0 | 실행 검증 |
 | 2026-11-03 | [자바 HashMap 이 연결 리스트를 버리고 트리로 바뀌는 순간 — 그리고 트리가 막지 못하는 것](posts/Language/java/2026-11-03-java-hashmap-treeify-threshold/index.md) | 심화 | Java 1.8.0_491 (HotSpot 25.491-b10), javac 1.8.0_202, Windows 11 | 실행 검증 |
