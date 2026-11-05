@@ -6942,3 +6942,25 @@ topics:
     code: none
     origin: manual
     status: done
+  - id: db-107
+    title: "INSTEAD OF 트리거 — 읽기 전용인 뷰에 쓰기를 달아 주기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, trigger, view, basics]
+    difficulty: 중급
+    angle: "조인 뷰에 INSERT 하면 나는 에러를 먼저 재현하고, INSTEAD OF 트리거로 두 테이블에 나눠 쓰게 만든다. 뷰에 건 트리거가 행 단위로만 도는 점, NEW/OLD 가 뷰의 컬럼이라는 점, 갱신 건수(changes)가 0으로 찍히는 함정을 실측한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-022
+    title: "상위 k개만 필요할 때 — sorted 와 heapq.nsmallest 의 손익분기"
+    category: Performance
+    subcategory: algorithm
+    track: general
+    tags: [python, heapq, sorting, top-k]
+    difficulty: 중급
+    angle: "n 과 k 를 바꿔 가며 sorted()[:k], heapq.nsmallest, heapq.heapify+pop 의 시간을 실측해 어느 k/n 비율에서 순서가 뒤집히는지 찾는다. nsmallest 가 내부에서 k 가 크면 sorted 로 넘어가는 분기를 소스로 확인한다"
+    code: python
+    origin: manual
+    status: todo
