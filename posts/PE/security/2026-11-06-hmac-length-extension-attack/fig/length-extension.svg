@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1b1b1b">길이 확장 공격 — H(K‖m)은 뚫리고 HMAC은 막히는 자리</text>
+
+  <text x="24" y="64" font-size="13" font-weight="bold" fill="#2d6a4f">① 서버가 만든 태그 T = H(K‖m)</text>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="24" y="76" width="150" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="99" y="106">초기값 IV</text>
+    <rect x="236" y="76" width="260" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="366" y="106">K ‖ m ‖ 패딩(길이 포함)</text>
+    <rect x="560" y="76" width="296" height="50" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="708" y="106">내부 상태 = 태그 T</text>
+  </g>
+
+  <text x="24" y="168" font-size="13" font-weight="bold" fill="#9d0208">② 공격자 — K는 모르고 T와 |K‖m|만 안다</text>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="24" y="180" width="150" height="50" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="99" y="210">시작 상태 = T</text>
+    <rect x="236" y="180" width="260" height="50" rx="5" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+    <text x="366" y="210">추가 데이터 s ‖ 새 패딩</text>
+    <rect x="560" y="180" width="296" height="50" rx="5" fill="#9d0208"/>
+    <text x="708" y="204" fill="#ffffff" font-weight="bold">H(K‖m‖패딩‖s)</text>
+    <text x="708" y="221" fill="#ffffff">K 없이 만든 태그</text>
+  </g>
+
+  <text x="24" y="272" font-size="13" font-weight="bold" fill="#2d6a4f">③ HMAC — 같은 공격이 성립하지 않는다</text>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="24" y="284" width="150" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="99" y="314">내부 해시값</text>
+    <rect x="236" y="284" width="260" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="366" y="308">(K′⊕opad) ‖ 내부 해시값</text>
+    <text x="366" y="325" fill="#555">외부 해시의 입력</text>
+    <rect x="560" y="284" width="296" height="50" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="574" y="308" text-anchor="start">태그 = 외부 해시 출력</text>
+    <text x="574" y="325" text-anchor="start" fill="#555">K′ 없이 이어 계산 불가</text>
+  </g>
+
+  <g stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <path d="M174 101 L234 101"/><path d="M496 101 L558 101"/>
+    <path d="M174 205 L234 205"/><path d="M496 205 L558 205"/>
+    <path d="M174 309 L234 309"/><path d="M496 309 L558 309"/>
+  </g>
+  <text x="24" y="376" font-size="13" fill="#555">② 의 시작 상태는 ① 의 마지막 상태와 같은 값이다. 태그가 곧 이어 계산할 수 있는 상태이기 때문이다.</text>
+</svg>

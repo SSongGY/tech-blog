@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="330" fill="#fbfbf8"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1b1b1b">HMAC = H( K′⊕opad ‖ H( K′⊕ipad ‖ m ) )</text>
+
+  <text x="24" y="66" font-size="13" font-weight="bold" fill="#2d6a4f">① 내부 해시</text>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="24" y="78" width="170" height="56" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="109" y="102">K′</text><text x="109" y="120" fill="#555">키를 B바이트로 맞춤</text>
+    <rect x="226" y="78" width="150" height="56" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="301" y="102">⊕ ipad</text><text x="301" y="120" fill="#555">0x36 × B</text>
+    <rect x="408" y="78" width="130" height="56" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="473" y="111">‖ 메시지 m</text>
+    <rect x="570" y="78" width="80" height="56" rx="5" fill="#2d6a4f"/>
+    <text x="610" y="112" fill="#ffffff" font-weight="bold">H</text>
+    <rect x="682" y="78" width="174" height="56" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="769" y="102">내부 해시값</text><text x="769" y="120" fill="#555">L바이트</text>
+  </g>
+
+  <text x="24" y="208" font-size="13" font-weight="bold" fill="#b45309">② 외부 해시</text>
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="24" y="220" width="170" height="56" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="109" y="244">K′</text><text x="109" y="262" fill="#555">같은 키, 같은 B바이트</text>
+    <rect x="226" y="220" width="150" height="56" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="301" y="244">⊕ opad</text><text x="301" y="262" fill="#555">0x5C × B</text>
+    <rect x="408" y="220" width="130" height="56" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="473" y="244">‖ 내부 해시값</text><text x="473" y="262" fill="#555">위 결과를 이어 붙임</text>
+    <rect x="570" y="220" width="80" height="56" rx="5" fill="#b45309"/>
+    <text x="610" y="254" fill="#ffffff" font-weight="bold">H</text>
+    <rect x="682" y="220" width="174" height="56" rx="5" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+    <text x="769" y="244" font-weight="bold">HMAC 태그</text><text x="769" y="262" fill="#555">L바이트</text>
+  </g>
+
+  <g stroke="#555" stroke-width="1.5" fill="none" marker-end="url(#a)">
+    <path d="M194 106 L224 106"/><path d="M376 106 L406 106"/><path d="M538 106 L568 106"/><path d="M650 106 L680 106"/>
+    <path d="M194 248 L224 248"/><path d="M376 248 L406 248"/><path d="M538 248 L568 248"/><path d="M650 248 L680 248"/>
+    <path d="M769 134 L769 160 L473 160 L473 218"/>
+  </g>
+  <text x="480" y="152" font-size="13" fill="#555">내부 해시값이 외부 해시의 입력 뒤쪽이 된다</text>
+</svg>

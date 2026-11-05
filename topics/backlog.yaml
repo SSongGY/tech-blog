@@ -6578,7 +6578,7 @@ topics:
     angle: "제약을 어긴 행을 만났을 때 다섯 가지가 각각 어디까지 되돌리는지 여러 행 INSERT 로 재현한다. REPLACE 가 행을 통째로 지우고 다시 넣는다는 점이 왜 외래키와 트리거에서 문제가 되는지까지"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: db-096
     title: "IN과 EXISTS, 그리고 NOT IN이 NULL 하나에 무너지는 자리"
     category: Database
@@ -6820,7 +6820,7 @@ topics:
     angle: "HMAC의 구조(내부·외부 해시)와 SHA-2 길이 확장 공격이 H(key||msg)에서만 성립하는 이유"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-236
     title: "머클 트리(Merkle Tree)와 포함 증명"
     category: PE
@@ -6831,7 +6831,7 @@ topics:
     angle: "해시 트리 구조, 루트 해시로 일부 데이터의 포함을 증명하는 절차와 블록체인·인증서 투명성에서의 쓰임"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: gen-019
     title: "HTTP 조건부 요청 — ETag 와 Last-Modified 로 304 를 받는 조건"
     category: Backend
@@ -6853,7 +6853,7 @@ topics:
     angle: "같은 코드를 메인 모듈과 I/O 콜백 안에서 각각 돌려 setTimeout(0) 과 setImmediate 의 순서가 왜 뒤집히는지 실측한다. 마이크로태스크 큐가 매 단계 사이에 비워지는 것을 출력 순서로 확인"
     code: javascript
     origin: manual
-    status: todo
+    status: writing
   - id: gen-021
     title: "zlib 압축 수준 1~9 — 시간과 크기가 어디서 꺾이는가"
     category: Performance
@@ -6908,7 +6908,7 @@ topics:
     angle: "3GPP SON 3그룹과 분산·중앙집중 기능, MRO·ANR·CCO 동작, AI 기반 폐루프로의 확장"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-238
     title: "O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프"
     category: PE

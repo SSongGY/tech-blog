@@ -194,6 +194,9 @@ SHA-256이라도 ①에는 맞고 ④에는 맞지 않는다.
 강한 SHA-2·SHA-3를, 메시지 인증에는 HMAC을, 비밀번호에는 솔트·스트레칭이 내장된 Argon2id 등을
 쓴다. 알고리즘은 약해지므로 **저장값에 알고리즘과 비용을 함께 기록해 교체 경로**를 열어 둔다.
 
+> 개념 정리: [HMAC과 해시 길이 확장 공격](../../security/2026-11-06-hmac-length-extension-attack/index.md)
+> 개념 정리: [머클 트리와 포함 증명](../../security/2026-11-06-merkle-tree-inclusion-proof/index.md)
+
 끝
 
 ---

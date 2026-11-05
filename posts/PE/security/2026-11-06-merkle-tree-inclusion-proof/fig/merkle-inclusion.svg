@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fbfbf8"/>
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1b1b1b">잎 d2의 포함 증명 — 증명 경로는 2개, 계산하는 노드는 3개</text>
+
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="340" y="56" width="200" height="50" rx="5" fill="#2d6a4f"/>
+    <text x="440" y="78" fill="#ffffff" font-weight="bold">루트 R</text>
+    <text x="440" y="96" fill="#ffffff">신뢰하는 값과 비교</text>
+
+    <rect x="150" y="150" width="170" height="50" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="2"/>
+    <text x="235" y="172">H01 (증명 ①)</text><text x="235" y="190" fill="#555">H(0x01‖H0‖H1)</text>
+    <rect x="560" y="150" width="170" height="50" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="645" y="172">H23 (계산)</text><text x="645" y="190" fill="#555">H(0x01‖H2‖H3)</text>
+
+    <rect x="60" y="250" width="100" height="44" rx="5" fill="#ffffff" stroke="#999" stroke-width="1.2"/>
+    <text x="110" y="277">H0</text>
+    <rect x="200" y="250" width="100" height="44" rx="5" fill="#ffffff" stroke="#999" stroke-width="1.2"/>
+    <text x="250" y="277">H1</text>
+    <rect x="490" y="250" width="100" height="44" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="540" y="277">H2 (계산)</text>
+    <rect x="630" y="250" width="100" height="44" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="2"/>
+    <text x="680" y="277">H3 (증명 ②)</text>
+
+    <rect x="60" y="330" width="100" height="44" rx="5" fill="#ffffff" stroke="#999" stroke-width="1.2"/>
+    <text x="110" y="357">d0</text>
+    <rect x="200" y="330" width="100" height="44" rx="5" fill="#ffffff" stroke="#999" stroke-width="1.2"/>
+    <text x="250" y="357">d1</text>
+    <rect x="490" y="330" width="100" height="44" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="540" y="357" font-weight="bold">d2 (증명할 대상)</text>
+    <rect x="630" y="330" width="100" height="44" rx="5" fill="#ffffff" stroke="#999" stroke-width="1.2"/>
+    <text x="680" y="357">d3</text>
+  </g>
+
+  <g stroke="#999" stroke-width="1.5" fill="none">
+    <path d="M110 330 L110 294"/><path d="M250 330 L250 294"/><path d="M680 330 L680 294"/>
+    <path d="M110 250 L235 200"/><path d="M250 250 L235 200"/>
+    <path d="M235 150 L440 106"/>
+  </g>
+  <g stroke="#2d6a4f" stroke-width="2.5" fill="none">
+    <path d="M540 330 L540 294"/>
+    <path d="M540 250 L645 200"/><path d="M680 250 L645 200" stroke="#b45309"/>
+    <path d="M645 150 L440 106"/>
+  </g>
+
+  <text x="24" y="404" font-size="13" fill="#555">검증자는 d2에서 H2를 만들고, H3과 합쳐 H23을, H01과 합쳐 R′을 만든다. R′ = R 이면 d2는 이 트리의 잎이다.</text>
+</svg>
