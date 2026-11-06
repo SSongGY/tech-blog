@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <!-- 왼쪽: 스칼라 max(a, b) -->
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#222222">스칼라 max(mid_score, final_score)</text>
+  <text x="24" y="56" font-size="13" fill="#555555">인자 2개 이상 · 한 행 안에서 가로로 비교 · 결과는 행마다 1개</text>
+
+  <text x="70" y="90" font-size="13" text-anchor="middle" fill="#555555">student</text>
+  <text x="160" y="90" font-size="13" text-anchor="middle" fill="#555555">mid</text>
+  <text x="240" y="90" font-size="13" text-anchor="middle" fill="#555555">final</text>
+  <text x="370" y="90" font-size="13" text-anchor="middle" fill="#555555">결과</text>
+
+  <g font-size="14" text-anchor="middle">
+    <rect x="124" y="100" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <rect x="204" y="100" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="70" y="122" fill="#222222">kim</text>
+    <text x="160" y="122" fill="#222222">70</text>
+    <text x="240" y="122" fill="#222222">85</text>
+    <line x1="282" y1="117" x2="328" y2="117" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+    <rect x="334" y="100" width="72" height="34" rx="4" fill="#f0f7f3" stroke="#2d6a4f"/>
+    <text x="370" y="122" fill="#2d6a4f">85</text>
+
+    <rect x="124" y="144" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <rect x="204" y="144" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="70" y="166" fill="#222222">lee</text>
+    <text x="160" y="166" fill="#222222">90</text>
+    <text x="240" y="166" fill="#222222">60</text>
+    <line x1="282" y1="161" x2="328" y2="161" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+    <rect x="334" y="144" width="72" height="34" rx="4" fill="#f0f7f3" stroke="#2d6a4f"/>
+    <text x="370" y="166" fill="#2d6a4f">90</text>
+
+    <rect x="124" y="188" width="72" height="34" fill="#fff5f5" stroke="#9d0208"/>
+    <rect x="204" y="188" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="70" y="210" fill="#222222">park</text>
+    <text x="160" y="210" fill="#9d0208">NULL</text>
+    <text x="240" y="210" fill="#222222">75</text>
+    <line x1="282" y1="205" x2="328" y2="205" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+    <rect x="334" y="188" width="72" height="34" rx="4" fill="#fff5f5" stroke="#9d0208"/>
+    <text x="370" y="210" fill="#9d0208">NULL</text>
+
+    <rect x="124" y="232" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <rect x="204" y="232" width="72" height="34" fill="#fff5f5" stroke="#9d0208"/>
+    <text x="70" y="254" fill="#222222">choi</text>
+    <text x="160" y="254" fill="#222222">80</text>
+    <text x="240" y="254" fill="#9d0208">NULL</text>
+    <line x1="282" y1="249" x2="328" y2="249" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+    <rect x="334" y="232" width="72" height="34" rx="4" fill="#fff5f5" stroke="#9d0208"/>
+    <text x="370" y="254" fill="#9d0208">NULL</text>
+  </g>
+  <text x="24" y="300" font-size="13" fill="#9d0208">인자 중 하나라도 NULL 이면 결과가 NULL</text>
+  <text x="24" y="320" font-size="13" fill="#555555">(공식 문서는 max 에 대해 이렇게 적고, min 도 실행해 보니 같았다)</text>
+
+  <line x1="440" y1="24" x2="440" y2="396" stroke="#cccccc" stroke-width="1"/>
+
+  <!-- 오른쪽: 집계 max(col) -->
+  <text x="464" y="34" font-size="16" font-weight="bold" fill="#222222">집계 max(mid_score)</text>
+  <text x="464" y="56" font-size="13" fill="#555555">인자 1개 · 한 컬럼을 세로로 훑음 · 결과는 그룹마다 1개</text>
+
+  <text x="530" y="90" font-size="13" text-anchor="middle" fill="#555555">mid_score</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="494" y="100" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="530" y="122" fill="#222222">70</text>
+    <rect x="494" y="138" width="72" height="34" fill="#f0f7f3" stroke="#2d6a4f"/>
+    <text x="530" y="160" fill="#2d6a4f">90</text>
+    <rect x="494" y="176" width="72" height="34" fill="#ffffff" stroke="#bbbbbb" stroke-dasharray="4 3"/>
+    <text x="530" y="198" fill="#999999">NULL</text>
+    <rect x="494" y="214" width="72" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="530" y="236" fill="#222222">80</text>
+    <rect x="494" y="252" width="72" height="34" fill="#ffffff" stroke="#bbbbbb" stroke-dasharray="4 3"/>
+    <text x="530" y="274" fill="#999999">NULL</text>
+  </g>
+  <text x="580" y="198" font-size="13" fill="#999999">건너뜀</text>
+  <text x="580" y="274" font-size="13" fill="#999999">건너뜀</text>
+
+  <line x1="646" y1="193" x2="712" y2="193" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="718" y="170" width="138" height="46" rx="6" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="787" y="198" font-size="14" text-anchor="middle" fill="#2d6a4f">90 (1행)</text>
+
+  <text x="464" y="320" font-size="13" fill="#2d6a4f">NULL 은 건너뛰고 남은 값 중 가장 큰 것</text>
+  <text x="464" y="340" font-size="13" fill="#555555">NULL 이 나오는 경우: 값이 전부 NULL 이거나 행이 0개일 때</text>
+  <text x="464" y="372" font-size="13" fill="#555555">묶지 않은 컬럼은 90 이 있던 행(lee)의 값을 따라온다</text>
+  <text x="464" y="392" font-size="13" fill="#555555">— min()·max() 가 하나뿐일 때만 정해진 SQLite 의 예외</text>
+</svg>

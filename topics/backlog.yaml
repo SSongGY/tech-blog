@@ -7129,3 +7129,36 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-111
+    title: "max(a, b)와 MAX(col) — 이름은 같고 NULL은 반대로 다룬다"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, aggregate, "null", basics]
+    difficulty: 입문
+    angle: "인자 여럿인 스칼라 max/min 과 집계 MAX/MIN 을 나란히 돌려 NULL 처리가 반대인 것을 보이고, MAX 와 함께 쓴 묶지 않은 컬럼이 그 행의 값을 따라오는 SQLite 의 예외를 확인한다"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-244
+    title: "TLB와 유효 메모리 접근 시간 — 페이지 테이블 단계 수와 적중률로 계산하기"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리, tlb, paging]
+    difficulty: 중급
+    angle: "EAT 공식을 1단계·다단계 페이지 테이블에 적용해 직접 계산하고, 접근 기록으로 TLB 를 흉내 내 적중률을 측정해 공식에 넣어 검산한다"
+    code: python
+    origin: manual
+    status: writing
+  - id: gen-026
+    title: "일관 해싱 — 노드를 하나 더했을 때 옮겨지는 키의 비율"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [consistent-hashing, sharding, distributed, python]
+    difficulty: 중급
+    angle: "나머지 연산 분배·해시 링·가상 노드를 같은 키 집합에 돌려 노드 추가 시 이동 비율과 노드별 부하 편차를 측정한다"
+    code: python
+    origin: manual
+    status: writing
