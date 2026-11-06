@@ -444,7 +444,11 @@ def cmd_new(args: argparse.Namespace) -> int:
     verification = "executed" if track_of(topic) in ("basics", "general") else "manual-only"
     environment = f'["{topic["product"]} {topic["product_version"]}"]' if is_product else "[]"
 
-    tags = ", ".join(topic["tags"])
+    # 프론트매터도 YAML 이라 null·true 같은 태그는 따옴표가 있어야 문자열로 읽힌다.
+    tags = ", ".join(
+        str(t) if isinstance(yaml.safe_load(str(t)), str) else f'"{t}"'
+        for t in topic["tags"]
+    )
     # code/ 가 없으면 그 링크는 깨진 링크다. lint 가 실패로 잡는다.
     example_link = "\n전체 소스: [`code/`](code/)\n" if needs_code else "\n"
     index_md = f"""---
@@ -1474,6 +1478,9 @@ def cmd_add_topic(args: argparse.Namespace) -> int:
 
     topic_id = next_topic_id(raw, TRACK_ID_PREFIX[args.track])
     tags = [t.strip() for t in args.tags.split(",") if t.strip()]
+    # null·true·yes 같은 태그는 따옴표 없이 쓰면 YAML 이 None·bool 로 읽어
+    # `blog.py new` 가 깨진다. 문자열로 읽히지 않는 것만 따옴표로 감싼다.
+    tags = [t if isinstance(yaml.safe_load(t), str) else f'"{t}"' for t in tags]
     entry = "\n".join(
         [
             f"  - id: {topic_id}",
