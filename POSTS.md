@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **632편** · 갱신 2026-11-06
+총 **635편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 95편
+## DB문법 (basics) — 96편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [무작위로 N행 뽑기 — ORDER BY RANDOM()이 표 전체를 정렬하는 이유](posts/Database/sql-basics/2026-11-06-order-by-random-sampling/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [JOIN USING과 NATURAL JOIN — 이름이 같은 컬럼으로 자동 결합하는 구문의 함정](posts/Database/sql-basics/2026-11-06-join-using-natural-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [타입 친화성 다시 보기 — CAST 와 비교에서 값이 바뀌는 곳, 안 바뀌는 곳](posts/Database/sql-basics/2026-11-05-type-affinity-declared-vs-stored/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -104,10 +105,11 @@
 | 2026-09-21 | [ORDER BY — 다중 정렬과 NULL이 놓이는 자리](posts/Database/sql-basics/2026-09-21-order-by-null-placement/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [SELECT 기본 — 컬럼 고르기와 별칭](posts/Database/sql-basics/2026-09-18-select-columns-and-aliases/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## DB기능 (product) — 19편
+## DB기능 (product) — 20편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [Tibero 7 권한과 롤 — ADMIN OPTION과 GRANT OPTION은 회수할 때 갈린다](posts/Database/tibero/2026-11-06-tibero7-privileges-roles-grant/index.md) | 중급 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-14 | [Tibero 7 시노님 — 공용과 전용이 놓인 자리가 다르다](posts/Database/tibero/2026-10-14-tibero7-synonym-public-private/index.md) | 입문 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-13 | [Tibero 7 머티리얼라이즈드 뷰 — 갱신 방식 고르기](posts/Database/tibero/2026-10-13-materialized-view-refresh-modes/index.md) | 심화 | Tibero 7.2.6 매뉴얼 | 문서 근거 |
 | 2026-10-12 | [Tibero 7 제약조건 — 종류와 검증 시점](posts/Database/tibero/2026-10-12-tibero7-constraints-state-deferrable/index.md) | 입문 | Tibero 7.2.6 매뉴얼, SQLite 3.49.1 (비교 절) | 문서 근거 |
@@ -378,10 +380,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 60편
+## 일반 (general) — 61편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적](posts/Database/sqlite/2026-11-06-uuid-v4-v7-primary-key-btree/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [파이썬 dict 조회가 리스트 탐색을 이기는 지점 — 선형·이진·해시 탐색 실측](posts/Performance/algorithm/2026-11-06-python-search-linear-bisect-hash/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-06 | [Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서](posts/Language/node/2026-11-06-nodejs-event-loop-phase-order/index.md) | 중급 | Node.js 24.19.0, Windows 11 | 실행 검증 |
 | 2026-11-05 | [zlib 사전(zdict) — 70바이트짜리 메시지가 압축되지 않을 때](posts/Performance/compression/2026-11-05-zlib-preset-dictionary-short-messages/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
