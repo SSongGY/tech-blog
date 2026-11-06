@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **639편** · 갱신 2026-11-06
+총 **642편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 96편
+## DB문법 (basics) — 97편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가](posts/Database/sql-basics/2026-11-06-percent-rank-cume-dist/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [무작위로 N행 뽑기 — ORDER BY RANDOM()이 표 전체를 정렬하는 이유](posts/Database/sql-basics/2026-11-06-order-by-random-sampling/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [JOIN USING과 NATURAL JOIN — 이름이 같은 컬럼으로 자동 결합하는 구문의 함정](posts/Database/sql-basics/2026-11-06-join-using-natural-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -130,7 +131,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 224편
+## 기술사 (pe) — 225편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -140,6 +141,7 @@
 | 2026-11-06 | [O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프](posts/PE/network/2026-11-06-oran-architecture-ric-control-loops/index.md) | 중급 | Polese 외, arXiv 2202.01032v2 (2022-08), O-RAN Alliance 기술그룹 소개 페이지 (2026 확인) | 문서 근거 |
 | 2026-11-06 | [머클 트리와 포함 증명 — 루트 해시 하나로 일부 데이터의 존재를 확인하는 구조](posts/PE/security/2026-11-06-merkle-tree-inclusion-proof/index.md) | 중급 | RFC 6962 Certificate Transparency (2013-06), RFC 9162 Certificate Transparency Version 2.0 (2021-12), Bitcoin whitepaper (2008-10-31) | 문서 근거 |
 | 2026-11-06 | [HMAC과 해시 길이 확장 공격 — 키를 앞에 붙인 해시가 인증이 되지 못하는 이유](posts/PE/security/2026-11-06-hmac-length-extension-attack/index.md) | 중급 | RFC 2104 HMAC (1997-02), FIPS 180-4 Secure Hash Standard (2015-08), FIPS 202 SHA-3 Standard (2015-08), FIPS 198-1 The Keyed-Hash Message Authentication Code (2008-07) | 문서 근거 |
+| 2026-11-06 | [디스크 스케줄링 — FCFS·SSTF·SCAN·C-SCAN·LOOK·C-LOOK](posts/PE/system/2026-11-06-disk-scheduling-six-algorithms/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.11 슬라이드 (S. Weiss 개정판), Silberschatz·Galvin, Operating System Concepts (1998) Ch.13 슬라이드, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.37 | 실행 검증 |
 | 2026-11-06 | [CRC와 해밍 코드 — 오류 검출·정정 부호의 원리](posts/PE/network/2026-11-06-crc-hamming-code-error-detection-correction/index.md) | 중급 | Hamming 1950 (Bell System Technical Journal), Peterson & Brown 1961 (Proc. IRE), IEEE 802.3 FCS | 문서 근거 |
 | 2026-11-05 | [속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계](posts/PE/database/2026-11-05-vertical-partitioning-affinity-bond-energy/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [벤더 종속(Vendor Lock-in)](posts/PE/it-management/2026-11-05-vendor-lock-in/index.md) | 중급 | Regulation (EU) 2023/2854 (Data Act, 2025.9.12 적용) | 문서 근거 |
@@ -382,11 +384,12 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 61편
+## 일반 (general) — 62편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-06 | [UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적](posts/Database/sqlite/2026-11-06-uuid-v4-v7-primary-key-btree/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-06 | [처리율 제한 네 가지 — 토큰 버킷·누출 버킷·고정 창·슬라이딩 창](posts/Backend/rate-limiting/2026-11-06-rate-limiting-four-algorithms/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [파이썬 dict 조회가 리스트 탐색을 이기는 지점 — 선형·이진·해시 탐색 실측](posts/Performance/algorithm/2026-11-06-python-search-linear-bisect-hash/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-06 | [Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서](posts/Language/node/2026-11-06-nodejs-event-loop-phase-order/index.md) | 중급 | Node.js 24.19.0, Windows 11 | 실행 검증 |
 | 2026-11-05 | [zlib 사전(zdict) — 70바이트짜리 메시지가 압축되지 않을 때](posts/Performance/compression/2026-11-05-zlib-preset-dictionary-short-messages/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
@@ -769,5 +772,6 @@
 - [LAG와 LEAD — 앞뒤 행의 값을 같은 줄에 놓기](posts/Database/sql-basics/2026-10-12-lag-lead-previous-next-row/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝](posts/Database/sql-basics/2026-10-16-first-value-last-value-window-frame/index.md) — SQLite 3.49.1, Python 3.13.5
 - [NTILE — 데이터를 n등분하는 법](posts/Database/sql-basics/2026-10-16-ntile-quartile-remainder/index.md) — SQLite 3.49.1, Python 3.13.5
+- [PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가](posts/Database/sql-basics/2026-11-06-percent-rank-cume-dist/index.md) — SQLite 3.49.1, Python 3.13.5
 - [Tibero 7 분석 함수의 윈도우 절 — ROWS와 RANGE는 어디서 갈리는가](posts/Database/tibero/2026-09-23-tibero7-window-clause/index.md) — Tibero 7
 
