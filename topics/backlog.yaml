@@ -7161,4 +7161,4 @@ topics:
     angle: "나머지 연산 분배·해시 링·가상 노드를 같은 키 집합에 돌려 노드 추가 시 이동 비율과 노드별 부하 편차를 측정한다"
     code: python
     origin: manual
-    status: writing
+    status: done
