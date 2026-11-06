@@ -239,6 +239,10 @@ PET는 데이터를 넘겨받는 쪽을 신뢰한다는 가정을 기술로 대�
 > 개념 정리: [합성데이터 — 유용성과 안전성의 상충, 구별·연결·추론 위험도](../../data-analysis/2026-10-03-synthetic-data-utility-privacy-tradeoff/index.md)
 >
 > 개념 정리: [가명처리용 암호 기법 — 형태보존·순서보존·동형 암호가 분석에서 남기는 것과 새는 것](../../security/2026-10-12-pseudonymization-ope-fpe-he-leakage/index.md)
+>
+> 개념 정리: [동형암호 — 부분·준·완전 동형과 BGV·BFV·CKKS, 잡음과 부트스트래핑](../../security/2026-11-07-homomorphic-encryption-bgv-bfv-ckks-bootstrapping/index.md)
+>
+> 개념 정리: [다자간 연산(MPC)과 사설 교집합(PSI) — 입력을 숨긴 공동 계산](../../security/2026-11-07-mpc-secret-sharing-and-private-set-intersection/index.md)
 
 끝
 

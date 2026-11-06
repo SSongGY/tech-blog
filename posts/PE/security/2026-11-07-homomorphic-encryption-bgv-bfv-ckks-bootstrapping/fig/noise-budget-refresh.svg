@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#fbfbf8"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1b1b1b">암호문 잡음의 크기 — 연산할수록 커지고, 한계선을 넘으면 복호가 틀린다</text>
+
+  <!-- 복호 한계선 -->
+  <line x1="40" y1="92" x2="850" y2="92" stroke="#9d0208" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="44" y="84" font-size="13" fill="#9d0208">복호 한계 — 잡음이 모듈러스 q에 비해 커진 지점</text>
+
+  <!-- 기준선 -->
+  <line x1="40" y1="240" x2="850" y2="240" stroke="#555" stroke-width="1.5"/>
+
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="70" y="222" width="100" height="18" fill="#2d6a4f"/>
+    <text x="120" y="262">암호화</text><text x="120" y="280" fill="#555">Encrypt</text>
+
+    <rect x="225" y="205" width="100" height="35" fill="#2d6a4f"/>
+    <text x="275" y="262">덧셈</text><text x="275" y="280" fill="#555">EvalAdd — 완만히 증가</text>
+
+    <rect x="380" y="165" width="100" height="75" fill="#b45309"/>
+    <text x="430" y="262">곱셈 1회</text><text x="430" y="280" fill="#555">EvalMult</text>
+
+    <rect x="535" y="105" width="100" height="135" fill="#b45309"/>
+    <text x="585" y="262">곱셈 2회</text><text x="585" y="280" fill="#555">한계에 근접</text>
+
+    <rect x="690" y="60" width="100" height="180" fill="#9d0208"/>
+    <text x="740" y="262">곱셈 3회</text><text x="740" y="280" fill="#9d0208">복호 실패</text>
+  </g>
+
+  <!-- 되돌리는 연산 -->
+  <text x="24" y="314" font-size="13" font-weight="bold" fill="#1b1b1b">Refresh로 되돌린다 (곱셈 2회 시점에서)</text>
+  <g font-size="13" fill="#1b1b1b">
+    <rect x="24" y="326" width="400" height="60" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+    <text x="40" y="350" font-weight="bold">모듈러스 전환 (ModSwitch)</text>
+    <text x="40" y="372" fill="#555">q를 줄여 잡음도 같은 비율로 축소 · 단계 1개 소모</text>
+
+    <rect x="450" y="326" width="406" height="60" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="466" y="350" font-weight="bold">부트스트래핑 (Bootstrap)</text>
+    <text x="466" y="372" fill="#555">복호를 동형으로 실행 · 잡음을 일정한 크기로 초기화</text>
+  </g>
+</svg>

@@ -7117,7 +7117,7 @@ topics:
     angle: "암호문 잡음이 연산 깊이를 제한하는 이유와 부트스트래핑, 정수 정확 계산(BGV·BFV)과 실수 근사 계산(CKKS)의 선택 기준을 HomomorphicEncryption.org 표준 근거로"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-243
     title: "다자간 연산(MPC)과 사설 교집합(PSI) — 입력을 숨긴 공동 계산"
     category: PE
@@ -7128,4 +7128,4 @@ topics:
     angle: "비밀 분산 기반 MPC와 PSI의 동작, 결과 누출 한계와 동형암호·TEE와의 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
