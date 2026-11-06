@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **624편** · 갱신 2026-11-06
+총 **626편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -127,10 +127,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 220편
+## 기술사 (pe) — 221편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [자가조직 네트워크(SON) — 자기 구성·최적화·치유](posts/PE/network/2026-11-06-son-self-organizing-network/index.md) | 중급 | 3GPP SON 해설 (2025-04 갱신), 3GPP TS 38.300 v17.3.0 (2023-01) | 문서 근거 |
 | 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
 | 2026-11-06 | [머클 트리와 포함 증명 — 루트 해시 하나로 일부 데이터의 존재를 확인하는 구조](posts/PE/security/2026-11-06-merkle-tree-inclusion-proof/index.md) | 중급 | RFC 6962 Certificate Transparency (2013-06), RFC 9162 Certificate Transparency Version 2.0 (2021-12), Bitcoin whitepaper (2008-10-31) | 문서 근거 |
 | 2026-11-06 | [HMAC과 해시 길이 확장 공격 — 키를 앞에 붙인 해시가 인증이 되지 못하는 이유](posts/PE/security/2026-11-06-hmac-length-extension-attack/index.md) | 중급 | RFC 2104 HMAC (1997-02), FIPS 180-4 Secure Hash Standard (2015-08), FIPS 202 SHA-3 Standard (2015-08), FIPS 198-1 The Keyed-Hash Message Authentication Code (2008-07) | 문서 근거 |
@@ -375,10 +376,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 58편
+## 일반 (general) — 59편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서](posts/Language/node/2026-11-06-nodejs-event-loop-phase-order/index.md) | 중급 | Node.js 24.19.0, Windows 11 | 실행 검증 |
 | 2026-11-05 | [zlib 사전(zdict) — 70바이트짜리 메시지가 압축되지 않을 때](posts/Performance/compression/2026-11-05-zlib-preset-dictionary-short-messages/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-05 | [상위 k개만 필요할 때 — sorted 와 heapq.nsmallest 의 손익분기](posts/Performance/algorithm/2026-11-05-topk-sorted-vs-heapq-nsmallest/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [자바 문자열 더하기 네 가지의 비용 — 루프 안 += 는 왜 제곱으로 느려지는가](posts/Language/java/2026-11-05-java-string-concat-four-ways-cost/index.md) | 중급 | Java 1.8.0_491 (HotSpot 25.491-b10), javac 1.8.0_202, Windows 11 | 실행 검증 |

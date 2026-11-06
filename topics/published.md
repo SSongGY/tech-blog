@@ -541,3 +541,5 @@
 | 2026-11-06 | db-095 | Database | ON CONFLICT 다섯 가지 — ABORT·FAIL·IGNORE·REPLACE·ROLLBACK |
 | 2026-11-06 | pe-237 | PE | 자가조직 네트워크(SON) — 자기 구성·최적화·치유 |
 | 2026-11-06 | gen-020 | Language | Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서 |
+| 2026-11-06 | fin-125 | Finance | 비지배지분 — 지분 80%만 가진 자회사를 100% 합치는 연결 재무제표 |
+| 2026-11-06 | fin-126 | Finance | 사업결합 영업권 — 이전대가·비지배지분·순식별가능자산의 차이 |

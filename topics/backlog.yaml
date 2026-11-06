@@ -6986,3 +6986,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: fin-125
+    title: "비지배지분 — 지분 80%만 가진 자회사를 100% 합치는 연결 재무제표"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, consolidation, nci]
+    difficulty: 중급
+    angle: "가나전자가 다라물산 지분 80%를 보유한 가상 사례로 연결 재무상태표에 자산·부채를 100% 합치고 비지배지분을 자본 안에 따로 표시하는 이유, 연결 당기순이익의 지배주주·비지배지분 배분과 EPS 연결(제1110호·제1001호). 연결 범위 글의 후속"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-126
+    title: "사업결합 영업권 — 이전대가·비지배지분·순식별가능자산의 차이"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, goodwill, business-combination]
+    difficulty: 중급
+    angle: "비지배지분 글의 짝. 같은 가상 사례에서 이전대가+비지배지분-식별가능순자산 공정가치로 영업권을 계산하고, 비지배지분을 공정가치(전부영업권)·순식별가능자산 비례지분(부분영업권) 중 어느 쪽으로 재느냐에 따라 영업권이 달라지는 선택, 염가매수차익(제1103호)"
+    code: python
+    origin: manual
+    status: done
