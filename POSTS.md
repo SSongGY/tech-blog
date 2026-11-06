@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **643편** · 갱신 2026-11-07
+총 **645편** · 갱신 2026-11-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -131,10 +131,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 225편
+## 기술사 (pe) — 227편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-07 | [다자간 연산(MPC)과 사설 교집합(PSI) — 입력을 숨긴 공동 계산](posts/PE/security/2026-11-07-mpc-secret-sharing-and-private-set-intersection/index.md) | 중급 | ISO/IEC 4922-1:2023, ISO/IEC 4922-2:2024, NIST Privacy-Enhancing Cryptography 프로젝트 PSI/PSO 페이지 (2026-10-26 갱신) | 문서 근거 |
+| 2026-11-07 | [동형암호 — 부분·준·완전 동형과 BGV·BFV·CKKS, 잡음과 부트스트래핑](posts/PE/security/2026-11-07-homomorphic-encryption-bgv-bfv-ckks-bootstrapping/index.md) | 중급 | Homomorphic Encryption Standard v1.1 (2018-11-21), ISO/IEC 18033-6:2019, CKKS ASIACRYPT 2017 (ePrint 2016/421) | 문서 근거 |
 | 2026-11-06 | [자가조직 네트워크(SON) — 자기 구성·최적화·치유](posts/PE/network/2026-11-06-son-self-organizing-network/index.md) | 중급 | 3GPP SON 해설 (2025-04 갱신), 3GPP TS 38.300 v17.3.0 (2023-01) | 문서 근거 |
 | 2026-11-06 | [Selective Repeat ARQ와 TCP SACK — 선택적 재전송과 윈도우 크기 제약](posts/PE/network/2026-11-06-selective-repeat-arq-tcp-sack/index.md) | 중급 | RFC 2018 (1996-10), RFC 2883 (2000-07), RFC 9293 (2022-08) | 문서 근거 |
 | 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
