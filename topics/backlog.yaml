@@ -7074,3 +7074,36 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: db-110
+    title: "PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, percentile, basics]
+    difficulty: 입문
+    angle: "같은 점수표에 PERCENT_RANK·CUME_DIST·NTILE을 나란히 돌려 동점이 있을 때 세 값이 어떻게 갈리는지 본다. 공식 (rank-1)/(n-1)과 행수/n을 손으로 검산하고, 한 행뿐인 분할에서 0이 나오는 자리까지"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-241
+    title: "디스크 스케줄링 — FCFS·SSTF·SCAN·C-SCAN·LOOK·C-LOOK"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, 운영체제, disk-scheduling, 개념정리]
+    difficulty: 중급
+    angle: "같은 요청 큐를 여섯 알고리즘으로 돌려 헤드 이동 거리를 직접 계산해 검산한다. SSTF의 기아, SCAN과 C-SCAN의 대기 시간 편차, SSD에서 의미가 사라지는 이유까지"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-025
+    title: "처리율 제한 네 가지 — 토큰 버킷·누출 버킷·고정 창·슬라이딩 창"
+    category: Backend
+    subcategory: rate-limiting
+    track: general
+    tags: [rate-limiting, token-bucket, sliding-window, backend]
+    difficulty: 중급
+    angle: "같은 요청열을 가짜 시계로 네 알고리즘에 흘려 허용·거절 시각을 나란히 찍는다. 고정 창 경계에서 한도의 두 배가 통과하는 장면을 재현하고 슬라이딩 창 근사의 오차를 잰다"
+    code: python
+    origin: manual
+    status: done

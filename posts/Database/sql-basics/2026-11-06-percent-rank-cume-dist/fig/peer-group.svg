@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfaf7"/>
+
+  <text x="40" y="34" font-size="18" font-weight="bold" fill="#1b1b1b">동점 묶음에서 두 함수가 보는 행이 다르다</text>
+  <text x="40" y="58" font-size="13" fill="#444">10명을 ORDER BY score 로 줄 세웠다. 88점 셋이 하나의 동점 묶음(peer)이다.</text>
+
+  <!-- 행 이름 -->
+  <g font-size="13" fill="#333">
+    <text x="40" y="114">점수</text>
+    <text x="40" y="164">RANK</text>
+    <text x="40" y="214">ROW_NUMBER</text>
+    <text x="40" y="264">PERCENT_RANK</text>
+    <text x="40" y="314">CUME_DIST</text>
+  </g>
+
+  <!-- 점수 칸 -->
+  <g stroke="#b9b4a8" stroke-width="1.2" fill="#ffffff">
+    <rect x="170" y="90" width="60" height="38" rx="4"/>
+    <rect x="238" y="90" width="60" height="38" rx="4"/>
+    <rect x="306" y="90" width="60" height="38" rx="4"/>
+    <rect x="374" y="90" width="60" height="38" rx="4"/>
+    <rect x="442" y="90" width="60" height="38" rx="4"/>
+    <rect x="714" y="90" width="60" height="38" rx="4"/>
+    <rect x="782" y="90" width="60" height="38" rx="4"/>
+  </g>
+  <g stroke="#b45309" stroke-width="1.8" fill="#fdf0d9">
+    <rect x="510" y="90" width="60" height="38" rx="4"/>
+    <rect x="578" y="90" width="60" height="38" rx="4"/>
+    <rect x="646" y="90" width="60" height="38" rx="4"/>
+  </g>
+  <g font-size="14" text-anchor="middle" fill="#1b1b1b">
+    <text x="200" y="114">52</text><text x="268" y="114">64</text><text x="336" y="114">70</text>
+    <text x="404" y="114">76</text><text x="472" y="114">80</text>
+    <text x="540" y="114" fill="#7c3d06">88</text><text x="608" y="114" fill="#7c3d06">88</text><text x="676" y="114" fill="#7c3d06">88</text>
+    <text x="744" y="114">91</text><text x="812" y="114">95</text>
+  </g>
+
+  <!-- RANK -->
+  <g font-size="13" text-anchor="middle" fill="#333">
+    <text x="200" y="164">1</text><text x="268" y="164">2</text><text x="336" y="164">3</text>
+    <text x="404" y="164">4</text><text x="472" y="164">5</text>
+    <text x="540" y="164" fill="#7c3d06" font-weight="bold">6</text><text x="608" y="164" fill="#7c3d06">6</text><text x="676" y="164" fill="#7c3d06">6</text>
+    <text x="744" y="164">9</text><text x="812" y="164">10</text>
+  </g>
+
+  <!-- ROW_NUMBER -->
+  <g font-size="13" text-anchor="middle" fill="#333">
+    <text x="200" y="214">1</text><text x="268" y="214">2</text><text x="336" y="214">3</text>
+    <text x="404" y="214">4</text><text x="472" y="214">5</text>
+    <text x="540" y="214" fill="#7c3d06">6</text><text x="608" y="214" fill="#7c3d06">7</text><text x="676" y="214" fill="#7c3d06" font-weight="bold">8</text>
+    <text x="744" y="214">9</text><text x="812" y="214">10</text>
+  </g>
+
+  <!-- 묶음의 첫 행·끝 행 표시 -->
+  <rect x="518" y="146" width="44" height="26" rx="4" fill="none" stroke="#2d6a4f" stroke-width="1.8"/>
+  <rect x="654" y="196" width="44" height="26" rx="4" fill="none" stroke="#2d6a4f" stroke-width="1.8"/>
+
+  <!-- PERCENT_RANK -->
+  <g font-size="13" text-anchor="middle" fill="#333">
+    <text x="200" y="264">0</text><text x="268" y="264">1/9</text><text x="336" y="264">2/9</text>
+    <text x="404" y="264">3/9</text><text x="472" y="264">4/9</text>
+    <text x="540" y="264" fill="#2d6a4f">5/9</text><text x="608" y="264" fill="#2d6a4f">5/9</text><text x="676" y="264" fill="#2d6a4f">5/9</text>
+    <text x="744" y="264">8/9</text><text x="812" y="264">1</text>
+  </g>
+
+  <!-- CUME_DIST -->
+  <g font-size="13" text-anchor="middle" fill="#333">
+    <text x="200" y="314">1/10</text><text x="268" y="314">2/10</text><text x="336" y="314">3/10</text>
+    <text x="404" y="314">4/10</text><text x="472" y="314">5/10</text>
+    <text x="540" y="314" fill="#2d6a4f">8/10</text><text x="608" y="314" fill="#2d6a4f">8/10</text><text x="676" y="314" fill="#2d6a4f">8/10</text>
+    <text x="744" y="314">9/10</text><text x="812" y="314">1</text>
+  </g>
+
+  <text x="40" y="346" font-size="13" fill="#1d4733">PERCENT_RANK = (묶음 첫 행의 RANK − 1) / (전체 행 − 1)  →  (6 − 1) / (10 − 1) = 5/9</text>
+  <text x="40" y="368" font-size="13" fill="#1d4733">CUME_DIST = 묶음 끝 행의 ROW_NUMBER / 전체 행  →  8 / 10</text>
+</svg>

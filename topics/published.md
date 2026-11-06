@@ -553,3 +553,6 @@
 | 2026-11-06 | pe-240 | PE | Selective Repeat ARQ와 TCP SACK |
 | 2026-11-06 | fin-127 | Finance | 단계적 취득 — 지배력을 얻는 날 기존 지분을 공정가치로 다시 잰다 |
 | 2026-11-06 | fin-128 | Finance | 지배력 상실 — 종속기업 지분을 일부 팔고 남은 지분까지 공정가치로 잰다 |
+| 2026-11-06 | db-110 | Database | PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가 |
+| 2026-11-06 | pe-241 | PE | 디스크 스케줄링 — FCFS·SSTF·SCAN·C-SCAN·LOOK·C-LOOK |
+| 2026-11-06 | gen-025 | Backend | 처리율 제한 네 가지 — 토큰 버킷·누출 버킷·고정 창·슬라이딩 창 |

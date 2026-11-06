@@ -1,0 +1,167 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-06-percent-rank-cume-dist
+# 명령      : python percentile_demo.py
+# 수행 시각 : 2026-11-06 23:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[exam]  10행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  student | TEXT    | NOT NULL
+  class   | TEXT    | NOT NULL
+  score   | INTEGER |
+
+  student | class | score
+  --------+-------+------
+  가온    | A반   |    95
+  나래    | A반   |    88
+  다온    | A반   |    88
+  라온    | A반   |    88
+  마루    | A반   |    76
+  바름    | B반   |    91
+  사름    | B반   |    70
+  아름    | B반   |    64
+  자람    | B반   |    52
+  차오    | C반   |    80
+
+
+### 1. 전체 10명 — 네 함수를 나란히
+SELECT student, score,
+       RANK()         OVER w AS rnk,
+       ROW_NUMBER()   OVER w AS rn,
+       PERCENT_RANK() OVER w AS pct_rank,
+       CUME_DIST()    OVER w AS cume
+FROM exam
+WHERE score IS NOT NULL
+WINDOW w AS (ORDER BY score)
+ORDER BY score, student
+  student | score | rnk | rn | pct_rank           | cume
+  --------+-------+-----+----+--------------------+-----
+  자람    |    52 |   1 |  1 |                0.0 |  0.1
+  아름    |    64 |   2 |  2 | 0.1111111111111111 |  0.2
+  사름    |    70 |   3 |  3 | 0.2222222222222222 |  0.3
+  마루    |    76 |   4 |  4 | 0.3333333333333333 |  0.4
+  차오    |    80 |   5 |  5 | 0.4444444444444444 |  0.5
+  나래    |    88 |   6 |  6 | 0.5555555555555556 |  0.8
+  다온    |    88 |   6 |  7 | 0.5555555555555556 |  0.8
+  라온    |    88 |   6 |  8 | 0.5555555555555556 |  0.8
+  바름    |    91 |   9 |  9 | 0.8888888888888888 |  0.9
+  가온    |    95 |  10 | 10 |                1.0 |  1.0
+
+### 2. 공식으로 손 계산한 값과 맞춰 보기 (n = 10)
+  자람  52  (1-1)/(10-1)=0.0000 vs 0.0000   1/10=0.1000 vs 0.1000   일치=True
+  아름  64  (2-1)/(10-1)=0.1111 vs 0.1111   2/10=0.2000 vs 0.2000   일치=True
+  사름  70  (3-1)/(10-1)=0.2222 vs 0.2222   3/10=0.3000 vs 0.3000   일치=True
+  마루  76  (4-1)/(10-1)=0.3333 vs 0.3333   4/10=0.4000 vs 0.4000   일치=True
+  차오  80  (5-1)/(10-1)=0.4444 vs 0.4444   5/10=0.5000 vs 0.5000   일치=True
+  나래  88  (6-1)/(10-1)=0.5556 vs 0.5556   8/10=0.8000 vs 0.8000   일치=True
+  다온  88  (6-1)/(10-1)=0.5556 vs 0.5556   8/10=0.8000 vs 0.8000   일치=True
+  라온  88  (6-1)/(10-1)=0.5556 vs 0.5556   8/10=0.8000 vs 0.8000   일치=True
+  바름  91  (9-1)/(10-1)=0.8889 vs 0.8889   9/10=0.9000 vs 0.9000   일치=True
+  가온  95  (10-1)/(10-1)=1.0000 vs 1.0000   10/10=1.0000 vs 1.0000   일치=True
+
+### 3. 반별로 — 한 명뿐인 C반은 어떻게 되나
+SELECT class, student, score,
+       PERCENT_RANK() OVER (PARTITION BY class ORDER BY score) AS pct_rank,
+       CUME_DIST()    OVER (PARTITION BY class ORDER BY score) AS cume
+FROM exam
+ORDER BY class, score
+  class | student | score | pct_rank           | cume
+  ------+---------+-------+--------------------+-----
+  A반   | 마루    |    76 |                0.0 |  0.2
+  A반   | 나래    |    88 |               0.25 |  0.8
+  A반   | 다온    |    88 |               0.25 |  0.8
+  A반   | 라온    |    88 |               0.25 |  0.8
+  A반   | 가온    |    95 |                1.0 |  1.0
+  B반   | 자람    |    52 |                0.0 | 0.25
+  B반   | 아름    |    64 | 0.3333333333333333 |  0.5
+  B반   | 사름    |    70 | 0.6666666666666666 | 0.75
+  B반   | 바름    |    91 |                1.0 |  1.0
+  C반   | 차오    |    80 |                0.0 |  1.0
+
+### 4. '상위 몇 %' — 내림차순으로 다시 매기기
+SELECT student, score,
+       CUME_DIST() OVER (ORDER BY score DESC)       AS top_share,
+       1 - CUME_DIST() OVER (ORDER BY score)        AS one_minus_asc
+FROM exam
+ORDER BY score DESC, student
+  student | score | top_share | one_minus_asc
+  --------+-------+-----------+--------------------
+  가온    |    95 |       0.1 |                 0.0
+  바름    |    91 |       0.2 | 0.09999999999999998
+  나래    |    88 |       0.5 | 0.19999999999999996
+  다온    |    88 |       0.5 | 0.19999999999999996
+  라온    |    88 |       0.5 | 0.19999999999999996
+  차오    |    80 |       0.6 |                 0.5
+  마루    |    76 |       0.7 |                 0.6
+  사름    |    70 |       0.8 |                 0.7
+  아름    |    64 |       0.9 |                 0.8
+  자람    |    52 |       1.0 |                 0.9
+
+### 5. 손으로 (rank-1)/(n-1) 을 쓰면 — 정수 나눗셈
+  정수끼리 나눔: [0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  한쪽을 실수로: [0.0, 0.1111111111111111, 0.2222222222222222, 0.3333333333333333, 0.4444444444444444, 0.5555555555555556, 0.5555555555555556, 0.5555555555555556, 0.8888888888888888, 1.0]
+
+### 6. 점수가 NULL 인 학생이 끼면 (11명)
+SELECT student, score,
+       PERCENT_RANK() OVER (ORDER BY score) AS pct_rank,
+       CUME_DIST()    OVER (ORDER BY score) AS cume
+FROM exam
+ORDER BY score, student
+  student | score | pct_rank | cume
+  --------+-------+----------+--------------------
+  카람    |  NULL |      0.0 | 0.09090909090909091
+  자람    |    52 |      0.1 | 0.18181818181818182
+  아름    |    64 |      0.2 |  0.2727272727272727
+  사름    |    70 |      0.3 | 0.36363636363636365
+  마루    |    76 |      0.4 | 0.45454545454545453
+  차오    |    80 |      0.5 |  0.5454545454545454
+  나래    |    88 |      0.6 |  0.8181818181818182
+  다온    |    88 |      0.6 |  0.8181818181818182
+  라온    |    88 |      0.6 |  0.8181818181818182
+  바름    |    91 |      0.9 |  0.9090909090909091
+  가온    |    95 |      1.0 |                 1.0
+
+### 7. NULL 을 거르고 매기기 — WHERE 가 먼저다
+SELECT student, score,
+       PERCENT_RANK() OVER (ORDER BY score) AS pct_rank
+FROM exam
+WHERE score IS NOT NULL
+ORDER BY score, student
+LIMIT 3
+  student | score | pct_rank
+  --------+-------+-------------------
+  자람    |    52 |                0.0
+  아름    |    64 | 0.1111111111111111
+  사름    |    70 | 0.2222222222222222
+
+### 8. ORDER BY 를 빼면
+  PERCENT_RANK 값 종류: [0.0]
+  CUME_DIST 값 종류:    [1.0]
+
+### 9. 백분위 '값'을 돌려주는 함수가 있나
+  median(score) -> OperationalError: no such function: median
+  percentile(score, 50) -> OperationalError: no such function: percentile
+  percentile_cont(score, 0.5) -> OperationalError: no such function: percentile_cont
+
+### 10. 실행계획
+QUERY PLAN
+|--CO-ROUTINE (subquery-2)
+|  |--SCAN exam
+|  `--USE TEMP B-TREE FOR ORDER BY
+`--SCAN (subquery-2)
