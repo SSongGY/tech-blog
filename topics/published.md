@@ -538,3 +538,6 @@
 | 2026-11-06 | pe-232 | PE | 결함 허용 기법의 분류 — 오류 검출과 시스템 복구(롤백·롤포워드·보상, 진단·격리·재구성) |
 | 2026-11-06 | pe-235 | PE | HMAC과 해시 길이 확장 공격 |
 | 2026-11-06 | pe-236 | PE | 머클 트리(Merkle Tree)와 포함 증명 |
+| 2026-11-06 | db-095 | Database | ON CONFLICT 다섯 가지 — ABORT·FAIL·IGNORE·REPLACE·ROLLBACK |
+| 2026-11-06 | pe-237 | PE | 자가조직 네트워크(SON) — 자기 구성·최적화·치유 |
+| 2026-11-06 | gen-020 | Language | Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서 |

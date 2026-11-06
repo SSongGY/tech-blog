@@ -14,6 +14,11 @@ verified: true
 topic_id: db-065
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`conflict-resolution`)
+> - [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](../2026-11-06-or-replace-side-effects/index.md) — SQLite 3.49.1, Python 3.13.5
+<!-- related:end -->
+
 ## 들어가며
 
 거래처에서 받은 입고 파일을 재고 표에 한 번에 넣는 일을 맡았다고 하자. 500행을 `INSERT` 한 문장으로

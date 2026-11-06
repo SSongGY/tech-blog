@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **621편** · 갱신 2026-11-06
+총 **624편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 93편
+## DB문법 (basics) — 94편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [타입 친화성 다시 보기 — CAST 와 비교에서 값이 바뀌는 곳, 안 바뀌는 곳](posts/Database/sql-basics/2026-11-05-type-affinity-declared-vs-stored/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [RIGHT JOIN과 FULL OUTER JOIN — SQLite 3.39 에서 생긴 양쪽 외부 조인](posts/Database/sql-basics/2026-11-05-right-full-outer-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [LIMIT과 OFFSET — 페이지를 넘길 때 생기는 문제](posts/Database/sql-basics/2026-11-05-limit-offset-pagination/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -126,11 +127,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 218편
+## 기술사 (pe) — 220편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
+| 2026-11-06 | [머클 트리와 포함 증명 — 루트 해시 하나로 일부 데이터의 존재를 확인하는 구조](posts/PE/security/2026-11-06-merkle-tree-inclusion-proof/index.md) | 중급 | RFC 6962 Certificate Transparency (2013-06), RFC 9162 Certificate Transparency Version 2.0 (2021-12), Bitcoin whitepaper (2008-10-31) | 문서 근거 |
+| 2026-11-06 | [HMAC과 해시 길이 확장 공격 — 키를 앞에 붙인 해시가 인증이 되지 못하는 이유](posts/PE/security/2026-11-06-hmac-length-extension-attack/index.md) | 중급 | RFC 2104 HMAC (1997-02), FIPS 180-4 Secure Hash Standard (2015-08), FIPS 202 SHA-3 Standard (2015-08), FIPS 198-1 The Keyed-Hash Message Authentication Code (2008-07) | 문서 근거 |
 | 2026-11-05 | [속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계](posts/PE/database/2026-11-05-vertical-partitioning-affinity-bond-energy/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [벤더 종속(Vendor Lock-in)](posts/PE/it-management/2026-11-05-vendor-lock-in/index.md) | 중급 | Regulation (EU) 2023/2854 (Data Act, 2025.9.12 적용) | 문서 근거 |
 | 2026-11-05 | [반결합(semijoin) — 분산 질의에서 전송량을 줄이는 연산](posts/PE/database/2026-11-05-semijoin-distributed-query/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
@@ -661,6 +664,11 @@
 | 2026-09-29 | [재무상태표 — 자산은 어디서 왔는가](posts/Finance/statements/2026-09-29-balance-sheet-debt-vs-equity/index.md) | 입문 | Python 3.13.5, 재무보고를 위한 개념체계(2018), K-IFRS 제1032호 | 실행 검증 |
 
 ## 같은 기능을 여러 환경에서 다룬 글
+
+**`conflict-resolution`**
+
+- [ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE](posts/Database/sql-basics/2026-10-19-on-conflict-five-resolutions/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
+- [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) — SQLite 3.49.1, Python 3.13.5
 
 **`constraints`**
 
