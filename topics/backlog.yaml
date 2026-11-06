@@ -7150,7 +7150,7 @@ topics:
     angle: "EAT 공식을 1단계·다단계 페이지 테이블에 적용해 직접 계산하고, 접근 기록으로 TLB 를 흉내 내 적중률을 측정해 공식에 넣어 검산한다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: gen-026
     title: "일관 해싱 — 노드를 하나 더했을 때 옮겨지는 키의 비율"
     category: Architecture
