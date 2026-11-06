@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="380" fill="#f8f9fa"/>
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">프레임 2 손실 시 재전송 범위와 SACK 블록</text>
+
+  <text x="20" y="58" font-size="13" font-weight="bold" fill="#212529">가. 재전송 범위 비교 (프레임 0~4 전송, 2 손실)</text>
+  <g font-size="13" fill="#212529" text-anchor="middle">
+    <text x="60" y="100" text-anchor="start">Go-Back-N</text>
+    <rect x="200" y="82" width="70" height="30" fill="#ffe3e3" stroke="#9d0208"/><text x="235" y="102">2</text>
+    <rect x="270" y="82" width="70" height="30" fill="#ffe3e3" stroke="#9d0208"/><text x="305" y="102">3</text>
+    <rect x="340" y="82" width="70" height="30" fill="#ffe3e3" stroke="#9d0208"/><text x="375" y="102">4</text>
+    <text x="440" y="102" text-anchor="start">3개 재전송 (3, 4는 낭비)</text>
+    <text x="60" y="150" text-anchor="start">Selective Repeat</text>
+    <rect x="200" y="132" width="70" height="30" fill="#d8f3dc" stroke="#2d6a4f"/><text x="235" y="152">2</text>
+    <text x="440" y="152" text-anchor="start">1개 재전송 (3, 4는 수신 버퍼 보관)</text>
+  </g>
+
+  <text x="20" y="200" font-size="13" font-weight="bold" fill="#212529">나. TCP SACK — 수신 측이 ACK에 실어 보내는 정보</text>
+  <rect x="20" y="214" width="400" height="140" rx="6" fill="#ffffff" stroke="#212529" stroke-width="1.5"/>
+  <text x="36" y="240" font-size="13" fill="#212529">누적 ACK 번호: 첫 구멍의 시작 (예: 1000)</text>
+  <text x="36" y="266" font-size="13" fill="#212529">SACK 옵션 (종류 5, 길이 8n+2)</text>
+  <text x="36" y="292" font-size="13" fill="#212529">  블록 1: 왼쪽 끝 2000 ~ 오른쪽 끝 3000</text>
+  <text x="36" y="318" font-size="13" fill="#212529">  블록 2: 왼쪽 끝 4000 ~ 오른쪽 끝 4500</text>
+  <text x="36" y="342" font-size="13" fill="#b45309">  최대 4개 블록 (타임스탬프 병용 시 3개)</text>
+
+  <rect x="450" y="214" width="410" height="140" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="466" y="240" font-size="13" fill="#212529">송신 측 해석</text>
+  <text x="466" y="266" font-size="13" fill="#212529">· 1000 ~ 2000, 3000 ~ 4000 은 구멍 → 재전송</text>
+  <text x="466" y="292" font-size="13" fill="#212529">· 2000 ~ 3000, 4000 ~ 4500 은 수신됨 표시</text>
+  <text x="466" y="318" font-size="13" fill="#212529">· 누적 ACK 가 넘기 전에는 버퍼에서 지우지 않음</text>
+  <text x="466" y="342" font-size="13" fill="#212529">  (SACK 은 권고이며 수신 측이 버릴 수 있음)</text>
+</svg>

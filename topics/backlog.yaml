@@ -6974,7 +6974,7 @@ topics:
     angle: "생성 다항식 나눗셈과 해밍 거리로 검출·정정 능력이 정해지는 원리"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-240
     title: "Selective Repeat ARQ와 TCP SACK"
     category: PE
@@ -6985,7 +6985,7 @@ topics:
     angle: "Go-Back-N의 낭비를 줄이는 선택적 재전송과 윈도우 크기 제약"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: fin-125
     title: "비지배지분 — 지분 80%만 가진 자회사를 100% 합치는 연결 재무제표"
     category: Finance

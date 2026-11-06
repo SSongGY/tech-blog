@@ -549,3 +549,5 @@
 | 2026-11-06 | db-109 | Database | 무작위로 N행 뽑기 — ORDER BY RANDOM()이 표 전체를 정렬하는 이유 |
 | 2026-11-06 | gen-024 | Database | UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적 |
 | 2026-11-06 | tb-020 | Database | Tibero 7 권한과 롤 — GRANT 체계 정리 |
+| 2026-11-06 | pe-239 | PE | CRC와 해밍 코드 — 오류 검출·정정 부호의 원리 |
+| 2026-11-06 | pe-240 | PE | Selective Repeat ARQ와 TCP SACK |

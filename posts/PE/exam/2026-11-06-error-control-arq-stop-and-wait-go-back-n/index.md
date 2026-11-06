@@ -98,6 +98,9 @@ ARQ는 프레임마다 무결성 검사를 하고 사라지거나 깨진 프레�
 
 오류 제어는 **검출 부호로 알아내고, FEC나 ARQ로 복구한다**는 두 단계다. 정지-대기는 단순하지만 지연이 큰 링크에서 이용률이 낮고, Go-Back-N은 윈도우로 이용률을 끌어올리되 오류 한 번에 윈도우 전체를 다시 보낸다. 링크의 지연·오류율·구현 비용을 보고 방식을 고른다.
 
+> 개념 정리: [CRC와 해밍 코드 — 오류 검출·정정 부호의 원리](../../network/2026-11-06-crc-hamming-code-error-detection-correction/index.md)
+> 개념 정리: [Selective Repeat ARQ와 TCP SACK — 선택적 재전송과 윈도우 크기 제약](../../network/2026-11-06-selective-repeat-arq-tcp-sack/index.md)
+
 끝
 
 ## 답안 작성 메모
