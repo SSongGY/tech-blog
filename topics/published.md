@@ -546,3 +546,6 @@
 | 2026-11-06 | db-108 | Database | JOIN USING과 NATURAL JOIN — 이름이 같은 컬럼으로 자동 결합하는 구문의 함정 |
 | 2026-11-06 | gen-023 | Performance | 파이썬 dict 조회가 리스트 탐색을 이기는 지점 — 선형·이진·해시 탐색 실측 |
 | 2026-11-06 | pe-238 | PE | O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프 |
+| 2026-11-06 | db-109 | Database | 무작위로 N행 뽑기 — ORDER BY RANDOM()이 표 전체를 정렬하는 이유 |
+| 2026-11-06 | gen-024 | Database | UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적 |
+| 2026-11-06 | tb-020 | Database | Tibero 7 권한과 롤 — GRANT 체계 정리 |

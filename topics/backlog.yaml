@@ -705,7 +705,7 @@ topics:
     difficulty: 중급
     angle: "시스템 권한·객체 권한·롤의 관계와 WITH ADMIN/GRANT OPTION"
     code: sql
-    status: todo
+    status: done
 
   # ========== DB 기본 문법 (track: basics) ==========
   # 전부 SQLite로 재현 가능한 표준 SQL 범위. 특정 제품에 묶이지 않는다.
@@ -6974,7 +6974,7 @@ topics:
     angle: "생성 다항식 나눗셈과 해밍 거리로 검출·정정 능력이 정해지는 원리"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-240
     title: "Selective Repeat ARQ와 TCP SACK"
     category: PE
@@ -6985,7 +6985,7 @@ topics:
     angle: "Go-Back-N의 낭비를 줄이는 선택적 재전송과 윈도우 크기 제약"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: fin-125
     title: "비지배지분 — 지분 80%만 가진 자회사를 100% 합치는 연결 재무제표"
     category: Finance
@@ -7027,6 +7027,28 @@ topics:
     tags: [python, hash-table, bisect, search, performance]
     difficulty: 중급
     angle: "원소 수를 10배씩 늘리며 list in, bisect, set/dict 조회 시간을 측정해 기울기가 갈리는 지점을 찾는다. 해시 충돌로 느려지는 경우(같은 hash 를 돌려주는 키)까지 재현한다"
+    code: python
+    origin: manual
+    status: done
+  - id: db-109
+    title: "무작위로 N행 뽑기 — ORDER BY RANDOM()이 표 전체를 정렬하는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, random, sampling, basics]
+    difficulty: 입문
+    angle: "ORDER BY RANDOM() LIMIT n 이 행 수만큼 난수를 만들고 임시 B-Tree로 정렬하는 것을 실행계획과 VDBE 명령 수로 확인한다. rowid 범위에서 난수를 뽑는 방법이 빠르지만 빈 번호가 있으면 표본이 치우치는 것을 재현하고, 재현 가능한 표본이 필요할 때의 방법까지"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-024
+    title: "UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적"
+    category: Database
+    subcategory: sqlite
+    track: general
+    tags: [uuid, primary-key, btree, sqlite]
+    difficulty: 중급
+    angle: "같은 행 수를 UUID v4(무작위)·v7(시간 순)·정수 키로 각각 넣고 파일 크기·페이지 수·빈 공간 비율·삽입 시간을 잰다. v7 은 RFC 9562 대로 직접 만들고, 차이가 B-Tree 리프 분할 위치에서 온다는 것을 페이지 채움률로 확인한다"
     code: python
     origin: manual
     status: done

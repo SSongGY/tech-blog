@@ -1,0 +1,88 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-06-order-by-random-sampling
+# 명령      : python random_sampling.py
+# 수행 시각 : 2026-11-06 19:07 (대한민국 표준시)
+# 소요      : 0.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  10행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+-------
+   1 | apple
+   2 | banana
+   3 | cherry
+   4 | grape
+   5 | kiwi
+   6 | lemon
+   7 | mango
+   8 | melon
+   9 | peach
+  10 | plum
+
+
+-- 1) ORDER BY RANDOM() LIMIT 3 를 세 번 실행
+  1회: [(1, 'apple'), (3, 'cherry'), (5, 'kiwi')]
+  2회: [(4, 'grape'), (1, 'apple'), (10, 'plum')]
+  3회: [(1, 'apple'), (9, 'peach'), (6, 'lemon')]
+  QUERY PLAN
+  |--SCAN product
+  `--USE TEMP B-TREE FOR ORDER BY
+
+-- 2) 난수를 몇 번 만드는가: 행 수를 바꿔 가며 random() 호출 수를 센다
+    표의 행 수 | 뽑은 행 | 난수 생성 횟수
+    -----------+---------+---------------
+          1000 |       3 |           1000
+         10000 |       3 |          10000
+        100000 |       3 |         100000
+
+-- 3) rowid 범위에서 난수 하나로 뽑기: 빈 번호가 있으면
+  남은 행 50개, id 범위 1~100 (11~60 삭제)
+  QUERY PLAN
+  `--SEARCH member USING INTEGER PRIMARY KEY (rowid>?)
+  10000번 뽑았을 때 행별로 뽑힌 횟수 (일부)
+    id  | 뽑힌 횟수 | 비율
+    ----+-----------+------
+      1 |        86 |  0.9%
+     10 |       101 |  1.0%
+     61 |      5052 | 50.5%
+     62 |        93 |  0.9%
+    100 |       103 |  1.0%
+  고르게 뽑혔다면 행마다 2.0% 근처여야 한다
+
+-- 4) 200000행 표에서 한 행 뽑는 시간 (20회 평균)
+  QUERY PLAN
+  `--SEARCH big USING INTEGER PRIMARY KEY (rowid>?)
+    방법                      | ms
+    --------------------------+------
+    ORDER BY RANDOM() LIMIT 1 | 9.952
+    id >= 난수 LIMIT 1        | 0.006
+
+-- 5-A) 시드를 더한 정렬 키: (id * 1103515245 + seed) % 2147483648
+  seed=7: [(2, 'banana'), (4, 'grape'), (6, 'lemon')]
+  seed=7: [(2, 'banana'), (4, 'grape'), (6, 'lemon')]
+  seed=8: [(2, 'banana'), (4, 'grape'), (6, 'lemon')]
+  seed=1000000000: [(3, 'cherry'), (5, 'kiwi'), (7, 'mango')]
+
+-- 5-B) id 목록을 받아 파이썬에서 시드로 고른 뒤 IN 으로 읽기
+  seed=7: [(3, 'cherry'), (6, 'lemon'), (7, 'mango')]
+  seed=7: [(3, 'cherry'), (6, 'lemon'), (7, 'mango')]
+  seed=8: [(4, 'grape'), (6, 'lemon'), (7, 'mango')]
