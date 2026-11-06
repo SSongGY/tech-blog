@@ -1,0 +1,41 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sqlite\2026-11-06-uuid-v4-v7-primary-key-btree
+# 명령      : python uuid_pk_btree.py
+# 수행 시각 : 2026-11-06 19:11 (대한민국 표준시)
+# 소요      : 2.8초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+SQLite 3.49.1 / Python 3.13.5
+행 100000개, 1000행마다 커밋, page_size 기본값
+
+앞의 세 키
+  v4 bdd640fb-0667-4ad1-9c80-317fa3b1799d   v7 019a5676-8800-7eae-8657-5c6ceb3f68cb
+  v4 23b8c1e9-3924-46de-beb1-3b9046685257   v7 019a5676-8800-78ab-b888-983d6ba7b925
+  v4 bd9c66b3-ad3c-4d6d-9a3d-1fa7bc8960a9   v7 019a5676-8800-7ae5-8b75-c93d662e452a
+  v7 버전 필드: 7  변형: specified in RFC 4122
+
+[int]  삽입 0.11초 · 파일 565페이지 (2.2 MB) · WAL 프레임 863 (커밋당 8.6)
+  B-Tree                           리프       내부       셀/리프      채움률
+  table t                         561        3      178.3    99.6%
+
+[v4-rowid]  삽입 0.78초 · 파일 1629페이지 (6.4 MB) · WAL 프레임 31780 (커밋당 317.8)
+  B-Tree                           리프       내부       셀/리프      채움률
+  table t                         958        4      104.4    99.2%
+  index sqlite_autoindex_t_1      660        6      150.5    90.9%
+
+[v7-rowid]  삽입 0.19초 · 파일 1655페이지 (6.5 MB) · WAL 프레임 2410 (커밋당 24.1)
+  B-Tree                           리프       내부       셀/리프      채움률
+  table t                         958        4      104.4    99.2%
+  index sqlite_autoindex_t_1      685        7      145.0    87.5%
+
+[v4-without-rowid]  삽입 1.05초 · 파일 985페이지 (3.8 MB) · WAL 프레임 41440 (커밋당 414.4)
+  B-Tree                           리프       내부       셀/리프      채움률
+  table t                         973       11      101.8    89.6%
+
+[v7-without-rowid]  삽입 0.16초 · 파일 1013페이지 (4.0 MB) · WAL 프레임 1617 (커밋당 16.2)
+  B-Tree                           리프       내부       셀/리프      채움률
+  table t                        1000       12       99.0    87.2%
