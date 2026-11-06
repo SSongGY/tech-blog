@@ -1,0 +1,134 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-06-join-using-natural-join
+# 명령      : python join_using.py
+# 수행 시각 : 2026-11-06 13:42 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[dept]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  dept_id   | INTEGER | PK
+  dept_name | TEXT    | NOT NULL
+
+  dept_id | dept_name
+  --------+----------
+       10 | 개발
+       20 | 영업
+       30 | 인사
+
+[emp]  4행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  emp_id   | INTEGER | PK
+  emp_name | TEXT    | NOT NULL
+  dept_id  | INTEGER |
+
+  emp_id | emp_name | dept_id
+  -------+----------+--------
+       1 | 김하늘   |      10
+       2 | 이서준   |      10
+       3 | 박지우   |      20
+       4 | 최민재   |    NULL
+
+
+### 1. 같은 행, 다른 컬럼 수
+
+-- ON
+   SELECT * FROM emp JOIN dept ON emp.dept_id = dept.dept_id
+   컬럼 5개: emp_id, emp_name, dept_id, dept_id, dept_name
+    (1, '김하늘', 10, 10, '개발')
+    (2, '이서준', 10, 10, '개발')
+    (3, '박지우', 20, 20, '영업')
+   (3행)
+
+-- USING
+   SELECT * FROM emp JOIN dept USING (dept_id)
+   컬럼 4개: emp_id, emp_name, dept_id, dept_name
+    (1, '김하늘', 10, '개발')
+    (2, '이서준', 10, '개발')
+    (3, '박지우', 20, '영업')
+   (3행)
+
+-- NATURAL JOIN
+   SELECT * FROM emp NATURAL JOIN dept
+   컬럼 4개: emp_id, emp_name, dept_id, dept_name
+    (1, '김하늘', 10, '개발')
+    (2, '이서준', 10, '개발')
+    (3, '박지우', 20, '영업')
+   (3행)
+
+### 2. 짝이 없는 행
+
+-- LEFT JOIN USING
+   SELECT * FROM emp LEFT JOIN dept USING (dept_id)
+   컬럼 4개: emp_id, emp_name, dept_id, dept_name
+    (1, '김하늘', 10, '개발')
+    (2, '이서준', 10, '개발')
+    (3, '박지우', 20, '영업')
+    (4, '최민재', None, None)
+   (4행)
+
+-- 부서 기준 LEFT JOIN USING
+   SELECT * FROM dept LEFT JOIN emp USING (dept_id)
+   컬럼 4개: dept_id, dept_name, emp_id, emp_name
+    (10, '개발', 1, '김하늘')
+    (10, '개발', 2, '이서준')
+    (20, '영업', 3, '박지우')
+    (30, '인사', None, None)
+   (4행)
+
+### 3. 양쪽에 note 컬럼이 생긴 뒤
+
+-- NATURAL JOIN (note 추가 후)
+   SELECT * FROM emp NATURAL JOIN dept
+   컬럼 5개: emp_id, emp_name, dept_id, note, dept_name
+   (0행)
+
+-- USING (note 추가 후)
+   SELECT emp_name, dept_name FROM emp JOIN dept USING (dept_id)
+   컬럼 2개: emp_name, dept_name
+    ('김하늘', '개발')
+    ('이서준', '개발')
+    ('박지우', '영업')
+   (3행)
+
+-- 이름이 겹치는 컬럼에 값을 채우면
+
+-- NATURAL JOIN (note 가 둘 다 빈 문자열)
+   SELECT emp_name, dept_name FROM emp NATURAL JOIN dept
+   컬럼 2개: emp_name, dept_name
+    ('김하늘', '개발')
+    ('이서준', '개발')
+    ('박지우', '영업')
+   (3행)
+
+-- NATURAL JOIN (개발 부서 note 만 다름)
+   SELECT emp_name, dept_name FROM emp NATURAL JOIN dept
+   컬럼 2개: emp_name, dept_name
+    ('박지우', '영업')
+   (1행)
+
+### 4. 실행계획 (EXPLAIN QUERY PLAN 의 detail 원문)
+
+-- ON
+    SCAN emp
+    SEARCH dept USING INTEGER PRIMARY KEY (rowid=?)
+
+-- USING
+    SCAN emp
+    SEARCH dept USING INTEGER PRIMARY KEY (rowid=?)

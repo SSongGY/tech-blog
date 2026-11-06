@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360" font-family="sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="360" fill="#fafafa"/>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">조인 조건을 쓰는 세 가지 방법</text>
+
+  <rect x="30" y="70" width="170" height="70" rx="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="115" y="98" text-anchor="middle" fill="#222" font-weight="bold">emp</text>
+  <text x="115" y="122" text-anchor="middle" fill="#222">emp_id, emp_name, dept_id</text>
+
+  <rect x="30" y="200" width="170" height="70" rx="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="115" y="228" text-anchor="middle" fill="#222" font-weight="bold">dept</text>
+  <text x="115" y="252" text-anchor="middle" fill="#222">dept_id, dept_name</text>
+
+  <rect x="300" y="55" width="270" height="70" rx="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+  <text x="435" y="80" text-anchor="middle" fill="#222" font-weight="bold">ON e.dept_id = d.dept_id</text>
+  <text x="435" y="104" text-anchor="middle" fill="#222">결과 5컬럼 (dept_id 가 두 번)</text>
+
+  <rect x="300" y="145" width="270" height="70" rx="6" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="435" y="170" text-anchor="middle" fill="#222" font-weight="bold">USING (dept_id)</text>
+  <text x="435" y="194" text-anchor="middle" fill="#222">결과 4컬럼 (dept_id 가 한 번)</text>
+
+  <rect x="300" y="235" width="270" height="70" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="435" y="260" text-anchor="middle" fill="#222" font-weight="bold">NATURAL JOIN</text>
+  <text x="435" y="284" text-anchor="middle" fill="#222">이름이 같은 컬럼 전부가 조건</text>
+
+  <rect x="650" y="235" width="205" height="70" rx="6" fill="#fff" stroke="#9d0208" stroke-width="2"/>
+  <text x="752" y="260" text-anchor="middle" fill="#9d0208" font-weight="bold">note 컬럼이 양쪽에 생기면</text>
+  <text x="752" y="284" text-anchor="middle" fill="#9d0208">dept_id AND note</text>
+
+  <line x1="200" y1="105" x2="300" y2="90" stroke="#555" stroke-width="1.5"/>
+  <line x1="200" y1="105" x2="300" y2="180" stroke="#555" stroke-width="1.5"/>
+  <line x1="200" y1="105" x2="300" y2="270" stroke="#555" stroke-width="1.5"/>
+  <line x1="200" y1="235" x2="300" y2="95" stroke="#555" stroke-width="1.5"/>
+  <line x1="200" y1="235" x2="300" y2="190" stroke="#555" stroke-width="1.5"/>
+  <line x1="200" y1="235" x2="300" y2="275" stroke="#555" stroke-width="1.5"/>
+  <line x1="570" y1="270" x2="650" y2="270" stroke="#9d0208" stroke-width="2"/>
+
+  <text x="440" y="340" text-anchor="middle" fill="#444" font-size="13">초록 테두리: 조건이 코드에 적힘 · 주황·빨강: 조건이 컬럼 이름에서 결정됨</text>
+</svg>
