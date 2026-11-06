@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#f8f9fa"/>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">같은 위반, 다섯 가지 결말 — 어디까지 되돌리고 어디서 멈추는가</text>
+  <text x="20" y="50" font-size="13" fill="#495057">트랜잭션 안에서 행 3 을 넣은 뒤, 한 문장이 행 4 → 행 5(위반) → 행 6 을 넣는 경우</text>
+
+  <text x="40" y="82" font-size="13" font-weight="bold" fill="#212529">해결 방식</text>
+  <text x="200" y="82" font-size="13" font-weight="bold" fill="#212529">결과 (본문 예제 출력 기준)</text>
+
+  <rect x="40" y="94" width="130" height="38" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="105" y="118" font-size="13" fill="#212529" text-anchor="middle">ABORT (기본)</text>
+  <rect x="200" y="94" width="640" height="38" rx="5" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="216" y="118" font-size="13" fill="#212529">오류. 이 문장의 변경만 취소(행 4 도 사라짐). 행 3 과 트랜잭션은 그대로</text>
+
+  <rect x="40" y="142" width="130" height="38" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="105" y="166" font-size="13" fill="#212529" text-anchor="middle">FAIL</text>
+  <rect x="200" y="142" width="640" height="38" rx="5" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="216" y="166" font-size="13" fill="#212529">오류. 행 4 는 남고 행 5 에서 멈춤(행 6 은 시도 안 함). 트랜잭션은 그대로</text>
+
+  <rect x="40" y="190" width="130" height="38" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="105" y="214" font-size="13" fill="#212529" text-anchor="middle">IGNORE</text>
+  <rect x="200" y="190" width="640" height="38" rx="5" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="216" y="214" font-size="13" fill="#212529">오류 없음. 행 5 만 건너뛰고 행 4·6 은 들어감</text>
+
+  <rect x="40" y="238" width="130" height="38" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="105" y="262" font-size="13" fill="#212529" text-anchor="middle">REPLACE</text>
+  <rect x="200" y="238" width="640" height="38" rx="5" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="216" y="262" font-size="13" fill="#212529">오류 없음. 겹친 기존 행(B)을 지우고 새 행 5 를 넣음. 행 4·6 도 들어감</text>
+
+  <rect x="40" y="286" width="130" height="38" rx="5" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="105" y="310" font-size="13" fill="#212529" text-anchor="middle">ROLLBACK</text>
+  <rect x="200" y="286" width="640" height="38" rx="5" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="216" y="310" font-size="13" fill="#212529">오류. 트랜잭션 전체 취소(앞서 넣은 행 3 도 사라짐). 트랜잭션 종료</text>
+
+  <text x="20" y="348" font-size="13" fill="#495057">초록: 가장 좁게 되돌림 · 주황: 일부만 반영 · 빨강: 가장 넓게 되돌림</text>
+</svg>
