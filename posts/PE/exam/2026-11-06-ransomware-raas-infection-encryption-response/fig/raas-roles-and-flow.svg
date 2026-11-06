@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="400" fill="#fffdf7"/>
+  <defs>
+    <marker id="a-bad" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="a-warn" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">RaaS의 역할 분담과 돈의 흐름</text>
+
+  <!-- 운영 조직 -->
+  <rect x="40" y="70" width="230" height="86" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="155" y="98" text-anchor="middle" font-weight="bold" fill="#78350f">① 운영 조직</text>
+  <text x="155" y="120" text-anchor="middle" font-size="13" fill="#78350f">랜섬웨어 개발·유지</text>
+  <text x="155" y="140" text-anchor="middle" font-size="13" fill="#78350f">관리 화면·지원 기능 제공</text>
+
+  <!-- 제휴자 -->
+  <rect x="325" y="70" width="230" height="86" rx="8" fill="#fde2e4" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="440" y="98" text-anchor="middle" font-weight="bold" fill="#7f1d1d">② 제휴자(affiliate)</text>
+  <text x="440" y="120" text-anchor="middle" font-size="13" fill="#7f1d1d">도구를 받아 침투·암호화</text>
+  <text x="440" y="140" text-anchor="middle" font-size="13" fill="#7f1d1d">데이터 반출·협박 수행</text>
+
+  <!-- 피해 조직 -->
+  <rect x="610" y="70" width="230" height="86" rx="8" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+  <text x="725" y="98" text-anchor="middle" font-weight="bold" fill="#1f2937">③ 피해 조직</text>
+  <text x="725" y="120" text-anchor="middle" font-size="13" fill="#1f2937">파일 암호화로 가용성 상실</text>
+  <text x="725" y="140" text-anchor="middle" font-size="13" fill="#1f2937">유출 협박으로 기밀성 위협</text>
+
+  <!-- 화살표 위 -->
+  <line x1="270" y1="113" x2="322" y2="113" stroke="#b45309" stroke-width="2" marker-end="url(#a-warn)"/>
+  <text x="296" y="104" text-anchor="middle" font-size="13" fill="#b45309">도구</text>
+  <line x1="555" y1="113" x2="607" y2="113" stroke="#9d0208" stroke-width="2" marker-end="url(#a-bad)"/>
+  <text x="581" y="104" text-anchor="middle" font-size="13" fill="#9d0208">공격</text>
+
+  <!-- 아래 줄: 대가 -->
+  <rect x="325" y="250" width="230" height="86" rx="8" fill="#fde2e4" stroke="#9d0208" stroke-width="1.8"/>
+  <text x="440" y="278" text-anchor="middle" font-weight="bold" fill="#7f1d1d">④ 몸값 수령</text>
+  <text x="440" y="300" text-anchor="middle" font-size="13" fill="#7f1d1d">제휴자가 먼저 받는 방식과</text>
+  <text x="440" y="320" text-anchor="middle" font-size="13" fill="#7f1d1d">운영 조직이 먼저 받는 방식</text>
+
+  <rect x="40" y="250" width="230" height="86" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="1.8"/>
+  <text x="155" y="278" text-anchor="middle" font-weight="bold" fill="#78350f">⑤ 운영 조직 몫</text>
+  <text x="155" y="300" text-anchor="middle" font-size="13" fill="#78350f">선불금·구독료·수익 분배</text>
+  <text x="155" y="320" text-anchor="middle" font-size="13" fill="#78350f">또는 이들의 조합</text>
+
+  <line x1="725" y1="156" x2="725" y2="293" stroke="#9d0208" stroke-width="2"/>
+  <line x1="725" y1="293" x2="558" y2="293" stroke="#9d0208" stroke-width="2" marker-end="url(#a-bad)"/>
+  <text x="735" y="230" font-size="13" fill="#9d0208">지급</text>
+  <line x1="325" y1="293" x2="273" y2="293" stroke="#b45309" stroke-width="2" marker-end="url(#a-warn)"/>
+  <text x="299" y="284" text-anchor="middle" font-size="13" fill="#b45309">분배</text>
+
+  <text x="440" y="380" text-anchor="middle" font-size="13" fill="#6b7280">돈을 누가 먼저 받는지는 RaaS 집단마다 다르다</text>
+</svg>
