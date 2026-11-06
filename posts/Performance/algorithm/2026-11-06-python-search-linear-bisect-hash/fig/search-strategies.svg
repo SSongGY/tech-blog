@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" width="880" height="330" font-family="sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="330" fill="#fafafa"/>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">키 하나를 찾을 때 비교하는 횟수</text>
+
+  <rect x="30" y="55" width="200" height="75" rx="6" fill="#fff" stroke="#9d0208" stroke-width="2"/>
+  <text x="130" y="82" text-anchor="middle" fill="#222" font-weight="bold">list 의 in</text>
+  <text x="130" y="106" text-anchor="middle" fill="#222">앞에서부터 하나씩 비교</text>
+
+  <rect x="30" y="150" width="200" height="75" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="130" y="177" text-anchor="middle" fill="#222" font-weight="bold">bisect (정렬된 list)</text>
+  <text x="130" y="201" text-anchor="middle" fill="#222">가운데와 비교해 절반 버림</text>
+
+  <rect x="30" y="245" width="200" height="65" rx="6" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="130" y="272" text-anchor="middle" fill="#222" font-weight="bold">set · dict</text>
+  <text x="130" y="296" text-anchor="middle" fill="#222">hash(키)로 위치 계산</text>
+
+  <rect x="320" y="55" width="260" height="75" rx="6" fill="#fff" stroke="#9d0208" stroke-width="2"/>
+  <text x="450" y="82" text-anchor="middle" fill="#222">최악 n번</text>
+  <text x="450" y="106" text-anchor="middle" fill="#222">n 이 10배 → 시간도 대략 10배</text>
+
+  <rect x="320" y="150" width="260" height="75" rx="6" fill="#fff" stroke="#b45309" stroke-width="2"/>
+  <text x="450" y="177" text-anchor="middle" fill="#222">약 log₂ n번</text>
+  <text x="450" y="201" text-anchor="middle" fill="#222">n 이 10배 → 비교 약 3.3번 증가</text>
+
+  <rect x="320" y="245" width="260" height="65" rx="6" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="450" y="272" text-anchor="middle" fill="#222">평균 상수 번</text>
+  <text x="450" y="296" text-anchor="middle" fill="#222">n 과 거의 무관</text>
+
+  <rect x="650" y="245" width="205" height="65" rx="6" fill="#fff" stroke="#9d0208" stroke-width="2"/>
+  <text x="752" y="272" text-anchor="middle" fill="#9d0208" font-weight="bold">해시값이 전부 같으면</text>
+  <text x="752" y="296" text-anchor="middle" fill="#9d0208">최악 n번</text>
+
+  <line x1="230" y1="92" x2="320" y2="92" stroke="#555" stroke-width="1.5"/>
+  <line x1="230" y1="187" x2="320" y2="187" stroke="#555" stroke-width="1.5"/>
+  <line x1="230" y1="277" x2="320" y2="277" stroke="#555" stroke-width="1.5"/>
+  <line x1="580" y1="277" x2="650" y2="277" stroke="#9d0208" stroke-width="2"/>
+</svg>
