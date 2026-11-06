@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **642편** · 갱신 2026-11-07
+총 **643편** · 갱신 2026-11-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -451,10 +451,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 92편
+## 기출문제 (exam) — 93편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-07 | [기출문제 — 개인정보 보호 강화기술(PET): 정의·분류와 동형암호·차분 프라이버시·합성데이터 비교](posts/PE/exam/2026-11-07-privacy-enhancing-technologies-he-dp-synthetic/index.md) | 중급 | OECD Digital Economy Papers No. 351 (2023-03), Homomorphic Encryption Standard v1.1 (2018-11), NIST SP 800-226 (2025-03), NIST SP 800-188 (2023-09), 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12) | 문서 근거 |
 | 2026-11-06 | [기출문제 — 랜섬웨어와 RaaS, 감염 경로와 암호화 원리, 예방과 침해사고 대응 절차](posts/PE/exam/2026-11-06-ransomware-raas-infection-encryption-response/index.md) | 중급 | CISA #StopRansomware Guide (2023-09), CISA·FBI·MS-ISAC Advisory AA23-165A (2023-06-14), NIST IR 8374r1 (2026-06), NIST SP 800-57 Part 1 Rev. 5 (2020-05) | 문서 근거 |
 | 2026-11-06 | [기출문제 — 데이터 통신의 오류 제어와 ARQ(정지-대기·Go-Back-N)](posts/PE/exam/2026-11-06-error-control-arq-stop-and-wait-go-back-n/index.md) | 중급 | RFC 3366 (2002-08), RFC 9293 (2022-08) | 문서 근거 |
 | 2026-11-05 | [기출문제 — 단방향 해시 함수의 문제점과 레인보우 테이블, 솔트·키 스트레칭, 활용](posts/PE/exam/2026-11-05-one-way-hash-rainbow-salt-stretching/index.md) | 중급 | FIPS 180-4 Secure Hash Standard (2015), FIPS 202 SHA-3 Standard (2015), RFC 9106 Argon2 (2021), RFC 2104 HMAC (1997), Oechslin, Making a Faster Cryptanalytic Time-Memory Trade-Off (CRYPTO 2003) | 문서 근거 |
