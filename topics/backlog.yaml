@@ -7073,4 +7073,4 @@ topics:
     angle: "80% 중 50%p를 팔아 관계기업 30%가 남을 때 처분손익 계산(제1110호 문단 25, B98·B99). 잔존 지분 재측정 이익과 OCI 재분류가 처분손익에 섞이는 구조, 지배력 유지 시 자본거래와의 대비"
     code: python
     origin: manual
-    status: writing
+    status: done
