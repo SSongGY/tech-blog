@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfaf7"/>
+
+  <text x="40" y="34" font-size="18" font-weight="bold" fill="#1b1b1b">같은 큐, 세 가지 헤드 경로 — 실린더 0~199, 헤드 53에서 출발</text>
+  <text x="40" y="56" font-size="13" fill="#444">큐 98, 183, 37, 122, 14, 124, 65, 67. 아래로 내려갈수록 나중에 처리한 요청이다.</text>
+
+  <!-- 실린더 축 -->
+  <line x1="80" y1="88" x2="800" y2="88" stroke="#555" stroke-width="1.4"/>
+  <g font-size="13" fill="#333" text-anchor="middle">
+    <text x="80" y="80">0</text>
+    <text x="130.7" y="80">14</text>
+    <text x="213.9" y="80">37</text>
+    <text x="271.8" y="80" font-weight="bold">53</text>
+    <text x="318.8" y="80">65·67</text>
+    <text x="434.6" y="80">98</text>
+    <text x="525" y="80">122·124</text>
+    <text x="742.1" y="80">183</text>
+    <text x="800" y="80">199</text>
+  </g>
+
+  <!-- 요청 실린더 세로 보조선 -->
+  <g stroke="#d6d1c4" stroke-width="1" stroke-dasharray="3 4">
+    <line x1="130.7" y1="92" x2="130.7" y2="465"/>
+    <line x1="213.9" y1="92" x2="213.9" y2="465"/>
+    <line x1="271.8" y1="92" x2="271.8" y2="465"/>
+    <line x1="315.2" y1="92" x2="315.2" y2="465"/>
+    <line x1="322.4" y1="92" x2="322.4" y2="465"/>
+    <line x1="434.6" y1="92" x2="434.6" y2="465"/>
+    <line x1="521.4" y1="92" x2="521.4" y2="465"/>
+    <line x1="528.6" y1="92" x2="528.6" y2="465"/>
+    <line x1="742.1" y1="92" x2="742.1" y2="465"/>
+  </g>
+
+  <!-- 행 제목 뒤 보조선을 가린다 -->
+  <rect x="36" y="97" width="250" height="20" fill="#fbfaf7"/>
+  <rect x="36" y="227" width="250" height="20" fill="#fbfaf7"/>
+  <rect x="36" y="357" width="250" height="20" fill="#fbfaf7"/>
+
+  <!-- SSTF -->
+  <text x="40" y="112" font-size="14" font-weight="bold" fill="#1b1b1b">SSTF — 236</text>
+  <polyline fill="none" stroke="#1b1b1b" stroke-width="2"
+    points="271.8,120 315.2,130 322.4,140 213.9,150 130.7,160 434.6,170 521.4,180 528.6,190 742.1,200"/>
+  <text x="560" y="152" font-size="13" fill="#9d0208">가까운 쪽부터 — 방향이 세 번 바뀐다</text>
+
+  <!-- LOOK -->
+  <text x="40" y="242" font-size="14" font-weight="bold" fill="#1b1b1b">LOOK (0 쪽으로 먼저) — 208</text>
+  <polyline fill="none" stroke="#2d6a4f" stroke-width="2"
+    points="271.8,250 213.9,260 130.7,270 315.2,280 322.4,290 434.6,300 521.4,310 528.6,320 742.1,330"/>
+  <text x="560" y="282" font-size="13" fill="#2d6a4f">14에서 한 번만 꺾는다</text>
+
+  <!-- C-LOOK -->
+  <text x="40" y="372" font-size="14" font-weight="bold" fill="#1b1b1b">C-LOOK — 322 (복귀 169 포함)</text>
+  <polyline fill="none" stroke="#2d6a4f" stroke-width="2"
+    points="271.8,380 315.2,390 322.4,400 434.6,410 521.4,420 528.6,430 742.1,440"/>
+  <line x1="742.1" y1="440" x2="130.7" y2="450" stroke="#b45309" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="130.7" y1="450" x2="213.9" y2="460" stroke="#2d6a4f" stroke-width="2"/>
+
+  <!-- 출발점 -->
+  <circle cx="271.8" cy="120" r="5" fill="#1b1b1b"/>
+  <circle cx="271.8" cy="250" r="5" fill="#2d6a4f"/>
+  <circle cx="271.8" cy="380" r="5" fill="#2d6a4f"/>
+
+  <text x="40" y="490" font-size="13" fill="#b45309">점선: 요청을 처리하지 않고 반대쪽 끝 요청(14)으로 돌아가는 복귀 구간</text>
+</svg>
