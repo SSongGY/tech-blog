@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **635편** · 갱신 2026-11-06
+총 **637편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -130,15 +130,17 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 222편
+## 기술사 (pe) — 224편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-06 | [자가조직 네트워크(SON) — 자기 구성·최적화·치유](posts/PE/network/2026-11-06-son-self-organizing-network/index.md) | 중급 | 3GPP SON 해설 (2025-04 갱신), 3GPP TS 38.300 v17.3.0 (2023-01) | 문서 근거 |
+| 2026-11-06 | [Selective Repeat ARQ와 TCP SACK — 선택적 재전송과 윈도우 크기 제약](posts/PE/network/2026-11-06-selective-repeat-arq-tcp-sack/index.md) | 중급 | RFC 2018 (1996-10), RFC 2883 (2000-07), RFC 9293 (2022-08) | 문서 근거 |
 | 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
 | 2026-11-06 | [O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프](posts/PE/network/2026-11-06-oran-architecture-ric-control-loops/index.md) | 중급 | Polese 외, arXiv 2202.01032v2 (2022-08), O-RAN Alliance 기술그룹 소개 페이지 (2026 확인) | 문서 근거 |
 | 2026-11-06 | [머클 트리와 포함 증명 — 루트 해시 하나로 일부 데이터의 존재를 확인하는 구조](posts/PE/security/2026-11-06-merkle-tree-inclusion-proof/index.md) | 중급 | RFC 6962 Certificate Transparency (2013-06), RFC 9162 Certificate Transparency Version 2.0 (2021-12), Bitcoin whitepaper (2008-10-31) | 문서 근거 |
 | 2026-11-06 | [HMAC과 해시 길이 확장 공격 — 키를 앞에 붙인 해시가 인증이 되지 못하는 이유](posts/PE/security/2026-11-06-hmac-length-extension-attack/index.md) | 중급 | RFC 2104 HMAC (1997-02), FIPS 180-4 Secure Hash Standard (2015-08), FIPS 202 SHA-3 Standard (2015-08), FIPS 198-1 The Keyed-Hash Message Authentication Code (2008-07) | 문서 근거 |
+| 2026-11-06 | [CRC와 해밍 코드 — 오류 검출·정정 부호의 원리](posts/PE/network/2026-11-06-crc-hamming-code-error-detection-correction/index.md) | 중급 | Hamming 1950 (Bell System Technical Journal), Peterson & Brown 1961 (Proc. IRE), IEEE 802.3 FCS | 문서 근거 |
 | 2026-11-05 | [속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계](posts/PE/database/2026-11-05-vertical-partitioning-affinity-bond-energy/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [벤더 종속(Vendor Lock-in)](posts/PE/it-management/2026-11-05-vendor-lock-in/index.md) | 중급 | Regulation (EU) 2023/2854 (Data Act, 2025.9.12 적용) | 문서 근거 |
 | 2026-11-05 | [반결합(semijoin) — 분산 질의에서 전송량을 줄이는 연산](posts/PE/database/2026-11-05-semijoin-distributed-query/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
