@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#fbfbf8"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0 L10 4 L0 8 z" fill="#555"/></marker>
+  </defs>
+
+  <text x="24" y="30" font-size="16" font-weight="bold" fill="#1b1b1b">디피–헬먼 이중 마스킹 PSI — (H(x)^a)^b = (H(x)^b)^a</text>
+
+  <!-- 참여자 -->
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <rect x="24" y="52" width="200" height="60" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="124" y="76" font-weight="bold">참여자 A</text>
+    <text x="124" y="96" fill="#555">집합 X · 비밀 지수 a</text>
+
+    <rect x="656" y="52" width="200" height="60" rx="5" fill="#eef4f0" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="756" y="76" font-weight="bold">참여자 B</text>
+    <text x="756" y="96" text-anchor="middle" fill="#555">집합 Y · 비밀 지수 b</text>
+  </g>
+
+  <!-- 수명선 -->
+  <line x1="124" y1="112" x2="124" y2="290" stroke="#999" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="756" y1="112" x2="756" y2="290" stroke="#999" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <g font-size="13" text-anchor="middle" fill="#1b1b1b">
+    <line x1="130" y1="150" x2="748" y2="150" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+    <text x="440" y="142">① A의 원소를 해시해 a로 마스킹: H(x)^a</text>
+
+    <line x1="750" y1="200" x2="132" y2="200" stroke="#555" stroke-width="1.5" marker-end="url(#a)"/>
+    <text x="440" y="192" text-anchor="middle">② B는 받은 값에 b를 덧씌운 H(x)^ab 와, 자기 원소 H(y)^b 를 보낸다</text>
+
+    <text x="440" y="244" text-anchor="middle" fill="#555">상대의 비밀 지수를 모르므로 마스킹된 값에서 원소를 되돌릴 수 없다</text>
+  </g>
+
+  <!-- 결과 -->
+  <rect x="24" y="270" width="832" height="88" rx="5" fill="#fdf1e7" stroke="#b45309" stroke-width="1.5"/>
+  <g font-size="13" fill="#1b1b1b">
+    <text x="40" y="294" font-weight="bold">③ A가 H(y)^b 에 a를 씌워 H(y)^ab 를 만들고 ②의 H(x)^ab 와 대조한다</text>
+    <text x="40" y="316">같은 원소 → 같은 값(공통 원소로 판정) · 다른 원소 → 무관한 값(드러나지 않음)</text>
+    <text x="40" y="338" fill="#b45309">남는 누출: 교집합 자체는 결과로 드러난다 — 크기만 내는 변형(PSO cardinality)으로 줄인다</text>
+  </g>
+</svg>
