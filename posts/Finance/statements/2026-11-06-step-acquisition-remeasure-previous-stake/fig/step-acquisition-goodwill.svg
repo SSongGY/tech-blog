@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="이전대가 100, 비지배지분 50, 기존 지분 공정가치 87.5의 합계 237.5가 순자산 공정가치 200과 영업권 37.5로 나뉘고, 기존 지분은 장부 70에서 공정가치 87.5로 재측정되어 차액 17.5가 당기손익으로 간다">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#444"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="400" fill="#f7f7f4"/>
+  <text x="24" y="34" font-family="sans-serif" font-size="17" font-weight="bold" fill="#1b1b1b">취득일에 기존 지분도 공정가치로 영업권 계산에 들어간다 (억원)</text>
+
+  <!-- 왼쪽 막대: 대가 쪽 237.5 -->
+  <text x="160" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">대가 쪽 합계 237.5</text>
+  <rect x="80" y="78" width="160" height="100" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="160" y="124" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">이전대가 100</text>
+  <text x="160" y="144" font-family="sans-serif" font-size="13" fill="#444" text-anchor="middle">새로 산 40%</text>
+  <rect x="80" y="178" width="160" height="50" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="160" y="208" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">비지배지분 50</text>
+  <rect x="80" y="228" width="160" height="88" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="160" y="266" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">기존 35% 공정가치</text>
+  <text x="160" y="286" font-family="sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">87.5</text>
+
+  <!-- 오른쪽 막대: 순자산 + 영업권 -->
+  <text x="460" y="66" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">받은 것</text>
+  <rect x="380" y="78" width="160" height="38" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="460" y="102" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">영업권 37.5</text>
+  <rect x="380" y="116" width="160" height="200" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="460" y="212" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">식별 가능한</text>
+  <text x="460" y="232" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">순자산 공정가치 200</text>
+
+  <text x="310" y="200" font-family="sans-serif" font-size="22" fill="#444" text-anchor="middle">=</text>
+
+  <!-- 재측정 -->
+  <rect x="600" y="78" width="256" height="92" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="2"/>
+  <text x="728" y="104" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">기존 지분 재측정</text>
+  <text x="728" y="128" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">지분법 장부 70 → 공정가치 87.5</text>
+  <text x="728" y="152" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">차액 17.5</text>
+  <path d="M240 300 Q 260 334 320 334 L 560 334 Q 572 334 572 320 L 572 146 Q 572 132 597 132" stroke="#b45309" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+
+  <rect x="600" y="210" width="256" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="728" y="236" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2d6a4f" text-anchor="middle">당기손익 21.5</text>
+  <text x="728" y="258" font-family="sans-serif" font-size="13" fill="#1b1b1b" text-anchor="middle">재측정 17.5 + OCI 재분류 4</text>
+  <path d="M728 170 L728 208" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+
+  <text x="24" y="360" font-family="sans-serif" font-size="13" fill="#1b1b1b">영업권 = 이전대가 + 비지배지분 + 기존 지분 공정가치 − 순자산 공정가치 (제1103호 문단 32)</text>
+  <text x="24" y="384" font-family="sans-serif" font-size="13" fill="#444">기존 지분을 장부 70으로 넣으면 영업권이 20으로 줄고 재측정 이익 17.5가 사라진다</text>
+</svg>

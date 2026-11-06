@@ -551,3 +551,4 @@
 | 2026-11-06 | tb-020 | Database | Tibero 7 권한과 롤 — GRANT 체계 정리 |
 | 2026-11-06 | pe-239 | PE | CRC와 해밍 코드 — 오류 검출·정정 부호의 원리 |
 | 2026-11-06 | pe-240 | PE | Selective Repeat ARQ와 TCP SACK |
+| 2026-11-06 | fin-127 | Finance | 단계적 취득 — 지배력을 얻는 날 기존 지분을 공정가치로 다시 잰다 |

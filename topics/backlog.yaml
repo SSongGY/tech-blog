@@ -7052,3 +7052,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-127
+    title: "단계적 취득 — 지배력을 얻는 날 기존 지분을 공정가치로 다시 잰다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, consolidation, business-combination]
+    difficulty: 중급
+    angle: "관계기업 35%를 보유하다 40%를 더 사 지배력을 얻을 때 기존 지분 재측정 손익과 영업권(제1103호 문단 32·42). 기존 지분이 지분법이었는지 FVOCI였는지에 따라 당기손익이 갈린다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-128
+    title: "지배력 상실 — 종속기업 지분을 일부 팔고 남은 지분까지 공정가치로 잰다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, consolidation, loss-of-control]
+    difficulty: 중급
+    angle: "80% 중 50%p를 팔아 관계기업 30%가 남을 때 처분손익 계산(제1110호 문단 25, B98·B99). 잔존 지분 재측정 이익과 OCI 재분류가 처분손익에 섞이는 구조, 지배력 유지 시 자본거래와의 대비"
+    code: python
+    origin: manual
+    status: writing
