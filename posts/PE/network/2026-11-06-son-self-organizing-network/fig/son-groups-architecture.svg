@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="420" fill="#f8f9fa"/>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">SON — 기능 3그룹과 알고리즘이 실행되는 위치 3가지</text>
+
+  <text x="20" y="58" font-size="13" font-weight="bold" fill="#212529">가. 기능 그룹 (3GPP SON 해설 + NR 규격 15절의 기능명)</text>
+
+  <rect x="20" y="70" width="270" height="170" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="155" y="94" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">자가 구성</text>
+  <text x="155" y="114" font-size="13" fill="#212529" text-anchor="middle">새 기지국 투입 시 1회 설정</text>
+  <text x="36" y="144" font-size="13" fill="#212529">· 인터페이스 동적 설정(NG-C, Xn)</text>
+  <text x="36" y="168" font-size="13" fill="#212529">· ANR 이웃 셀 관계 자동 관리</text>
+  <text x="36" y="192" font-size="13" fill="#212529">· Xn-C 전송 주소 탐색</text>
+
+  <rect x="305" y="70" width="270" height="170" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="94" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">자가 최적화</text>
+  <text x="440" y="114" font-size="13" fill="#212529" text-anchor="middle">운영 중 측정값으로 파라미터 조정</text>
+  <text x="321" y="140" font-size="13" fill="#212529">· MLB 부하 분산 · MRO 이동성 견고성</text>
+  <text x="321" y="162" font-size="13" fill="#212529">· RACH 최적화 · CCO 커버리지·용량</text>
+  <text x="321" y="184" font-size="13" fill="#212529">· PCI 최적화</text>
+  <text x="321" y="206" font-size="13" fill="#212529">· 에너지 절감(규격 15.4 별도 절)</text>
+
+  <rect x="590" y="70" width="270" height="170" rx="6" fill="#ffe3e3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="725" y="94" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">자가 치유</text>
+  <text x="725" y="114" font-size="13" fill="#212529" text-anchor="middle">장애 감지 후 임시 보상</text>
+  <text x="606" y="144" font-size="13" fill="#212529">· 기지국이 멈추면 이웃 기지국이</text>
+  <text x="606" y="166" font-size="13" fill="#212529">  재구성되어 커버리지를 제공</text>
+  <text x="606" y="196" font-size="13" fill="#212529">· 근본 원인 수리는 운용자 몫</text>
+
+  <text x="20" y="274" font-size="13" font-weight="bold" fill="#212529">나. 알고리즘 실행 위치 (3가지)</text>
+
+  <rect x="20" y="286" width="270" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="155" y="310" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">중앙집중 SON</text>
+  <text x="155" y="330" font-size="13" fill="#212529" text-anchor="middle">OAM(NM·EM 계층)에서 실행</text>
+
+  <rect x="305" y="286" width="270" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="440" y="310" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">분산 SON</text>
+  <text x="440" y="330" font-size="13" fill="#212529" text-anchor="middle">망 요소(기지국)에서 실행</text>
+
+  <rect x="590" y="286" width="270" height="56" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="725" y="310" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">하이브리드 SON</text>
+  <text x="725" y="330" font-size="13" fill="#212529" text-anchor="middle">NE·EM·NM 중 둘 이상에서 실행</text>
+
+  <text x="20" y="378" font-size="13" fill="#212529">공통: 측정 → 판단 → 파라미터 자동 설정까지 사람 개입 없이 수행하는 폐루프 프로세스</text>
+  <text x="20" y="400" font-size="13" fill="#495057">자가 보호(보안 공격 대응)는 해설 글이 세 그룹과 별도로 언급한다</text>
+</svg>
