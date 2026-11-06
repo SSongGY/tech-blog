@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#1b1b1b" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">PET 4분류 — 데이터를 어떻게 다루는가로 나눈다 (OECD 2023)</text>
+
+  <rect x="250" y="48" width="380" height="58" fill="#eef2f8" stroke="#1d3557" stroke-width="1.6" rx="4"/>
+  <text x="440" y="72" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">PET (개인정보 보호 강화기술)</text>
+  <text x="440" y="94" text-anchor="middle" font-size="13" fill="#4a5568">처리·분석은 허용하고 기밀성은 보호한다</text>
+
+  <line x1="300" y1="106" x2="125" y2="146" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="390" y1="106" x2="335" y2="146" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="490" y1="106" x2="545" y2="146" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="580" y1="106" x2="755" y2="146" stroke="#1b1b1b" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- ① data obfuscation -->
+  <rect x="25" y="150" width="200" height="190" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="125" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">① 데이터 변형</text>
+  <text x="125" y="196" text-anchor="middle" font-size="13" fill="#4a5568">data obfuscation</text>
+  <text x="125" y="222" text-anchor="middle" font-size="13" fill="#1b1b1b">익명·가명처리</text>
+  <text x="125" y="242" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d3557">합성데이터</text>
+  <text x="125" y="262" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d3557">차분 프라이버시</text>
+  <text x="125" y="282" text-anchor="middle" font-size="13" fill="#1b1b1b">영지식 증명</text>
+  <text x="125" y="318" text-anchor="middle" font-size="13" fill="#b45309">값을 바꾸거나 잡음을 넣는다</text>
+
+  <!-- ② encrypted data processing -->
+  <rect x="235" y="150" width="200" height="190" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="335" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">② 암호화 상태 처리</text>
+  <text x="335" y="196" text-anchor="middle" font-size="13" fill="#4a5568">encrypted data processing</text>
+  <text x="335" y="222" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d3557">동형암호</text>
+  <text x="335" y="242" text-anchor="middle" font-size="13" fill="#1b1b1b">다자간 연산 (MPC)</text>
+  <text x="335" y="262" text-anchor="middle" font-size="13" fill="#1b1b1b">사설 교집합 (PSI)</text>
+  <text x="335" y="282" text-anchor="middle" font-size="13" fill="#1b1b1b">신뢰 실행 환경 (TEE)</text>
+  <text x="335" y="318" text-anchor="middle" font-size="13" fill="#b45309">값은 그대로, 암호로 가린다</text>
+
+  <!-- ③ federated and distributed analytics -->
+  <rect x="445" y="150" width="200" height="190" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="545" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③ 연합·분산 분석</text>
+  <text x="545" y="196" text-anchor="middle" font-size="13" fill="#4a5568">federated / distributed</text>
+  <text x="545" y="222" text-anchor="middle" font-size="13" fill="#1b1b1b">연합학습</text>
+  <text x="545" y="242" text-anchor="middle" font-size="13" fill="#1b1b1b">분산 분석</text>
+  <text x="545" y="318" text-anchor="middle" font-size="13" fill="#b45309">원본을 옮기지 않는다</text>
+
+  <!-- ④ data accountability -->
+  <rect x="655" y="150" width="200" height="190" fill="#f4f5f7" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="755" y="176" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④ 데이터 책임성</text>
+  <text x="755" y="196" text-anchor="middle" font-size="13" fill="#4a5568">data accountability</text>
+  <text x="755" y="222" text-anchor="middle" font-size="13" fill="#1b1b1b">책임 추적 시스템</text>
+  <text x="755" y="242" text-anchor="middle" font-size="13" fill="#1b1b1b">임계 비밀 분산</text>
+  <text x="755" y="262" text-anchor="middle" font-size="13" fill="#1b1b1b">개인 데이터 저장소</text>
+  <text x="755" y="318" text-anchor="middle" font-size="13" fill="#b45309">접근 규칙을 정하고 강제한다</text>
+
+  <text x="440" y="372" text-anchor="middle" font-size="13" fill="#4a5568">굵은 파란 글씨가 문항이 비교를 요구한 세 기술이다. 두 기술은 ①에, 동형암호는 ②에 속한다</text>
+  <text x="440" y="392" text-anchor="middle" font-size="13" fill="#4a5568">④는 기밀성을 직접 지키지 않아 좁은 의미의 PET로 보지 않기도 한다</text>
+</svg>
