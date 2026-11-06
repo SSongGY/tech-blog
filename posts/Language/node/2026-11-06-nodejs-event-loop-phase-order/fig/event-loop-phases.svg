@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="360" fill="#f8f9fa"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#495057"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">루프 한 바퀴의 단계 순서와 nextTick·마이크로태스크의 자리</text>
+  <text x="20" y="50" font-size="13" fill="#495057">화살표는 단계가 넘어가는 방향. 아래 박스는 단계가 아니라 콜백 사이사이에 비워지는 큐다.</text>
+
+  <rect x="20" y="80" width="120" height="60" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="80" y="106" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">timers</text>
+  <text x="80" y="126" font-size="13" fill="#212529" text-anchor="middle">setTimeout</text>
+
+  <rect x="160" y="80" width="130" height="60" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="225" y="106" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">pending callbacks</text>
+  <text x="225" y="126" font-size="13" fill="#212529" text-anchor="middle">일부 시스템 콜백</text>
+
+  <rect x="310" y="80" width="130" height="60" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="375" y="106" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">idle, prepare</text>
+  <text x="375" y="126" font-size="13" fill="#212529" text-anchor="middle">내부 전용</text>
+
+  <rect x="460" y="80" width="120" height="60" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="520" y="106" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">poll</text>
+  <text x="520" y="126" font-size="13" fill="#212529" text-anchor="middle">I/O 콜백</text>
+
+  <rect x="600" y="80" width="120" height="60" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="660" y="106" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">check</text>
+  <text x="660" y="126" font-size="13" fill="#212529" text-anchor="middle">setImmediate</text>
+
+  <rect x="740" y="80" width="120" height="60" rx="6" fill="#ffffff" stroke="#495057" stroke-width="1.5"/>
+  <text x="800" y="106" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">close callbacks</text>
+  <text x="800" y="126" font-size="13" fill="#212529" text-anchor="middle">socket close 등</text>
+
+  <line x1="140" y1="110" x2="158" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="290" y1="110" x2="308" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="110" x2="458" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="580" y1="110" x2="598" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="720" y1="110" x2="738" y2="110" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <path d="M800,140 L800,180 L80,180 L80,142" fill="none" stroke="#495057" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="440" y="172" font-size="13" fill="#495057" text-anchor="middle">다음 바퀴</text>
+
+  <rect x="20" y="220" width="840" height="100" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="440" y="248" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">nextTick 큐 → Promise 마이크로태스크 큐</text>
+  <text x="440" y="274" font-size="13" fill="#212529" text-anchor="middle">단계 안의 콜백 하나가 끝날 때마다 비워진다 (본문 3번 출력)</text>
+  <text x="440" y="298" font-size="13" fill="#212529" text-anchor="middle">nextTick 이 계속 새 nextTick 을 예약하면 단계가 넘어가지 못한다 (본문 4번 출력)</text>
+</svg>

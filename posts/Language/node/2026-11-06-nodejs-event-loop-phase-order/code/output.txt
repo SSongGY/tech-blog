@@ -1,0 +1,37 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Language\node\2026-11-06-nodejs-event-loop-phase-order
+# 명령      : node event-loop-order.js
+# 수행 시각 : 2026-11-06 09:25 (대한민국 표준시)
+# 소요      : 2.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+# 종료 코드 : 0
+
+Node.js v24.19.0 / win32
+
+1. 메인 모듈 직후
+  1. 동기 코드 끝
+  2. nextTick
+  3. promise.then
+  4. queueMicrotask
+  5. setImmediate
+  6. setTimeout 0
+
+2. fs.readFile 콜백 안
+  1. setImmediate
+  2. setTimeout 0
+
+3. 같은 timers 단계의 두 콜백 사이
+  1. timer A
+  2. A 의 nextTick
+  3. A 의 promise
+  4. timer B
+
+4. nextTick 연쇄 예약
+  setImmediate 가 실행됐을 때 nextTick 은 100000번 돈 뒤 (상한 100000)
+
+5. 메인 모듈에서 setTimeout 0 대 setImmediate (자식 프로세스 반복)
+Node.js v24.19.0, 자식 프로세스 30회
+  timeout,immediate : 4회
+  immediate,timeout : 26회
