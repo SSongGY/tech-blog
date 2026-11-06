@@ -6919,7 +6919,7 @@ topics:
     angle: "O-RAN의 개방 인터페이스(A1·E2·O1), xApp·rApp 구분, 제어 시간 척도별 AI 배치"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: fin-123
     title: "ROIC — 투하자본과 세후영업이익으로 읽는 사업의 수익성"
     category: Finance
@@ -7005,6 +7005,28 @@ topics:
     tags: [finance, statements, goodwill, business-combination]
     difficulty: 중급
     angle: "비지배지분 글의 짝. 같은 가상 사례에서 이전대가+비지배지분-식별가능순자산 공정가치로 영업권을 계산하고, 비지배지분을 공정가치(전부영업권)·순식별가능자산 비례지분(부분영업권) 중 어느 쪽으로 재느냐에 따라 영업권이 달라지는 선택, 염가매수차익(제1103호)"
+    code: python
+    origin: manual
+    status: done
+  - id: db-108
+    title: "JOIN USING과 NATURAL JOIN — 이름이 같은 컬럼으로 자동 결합하는 구문의 함정"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, join, using, natural-join, basics]
+    difficulty: 입문
+    angle: "ON 으로 쓴 조인, USING, NATURAL JOIN 을 같은 데이터로 돌려 결과 컬럼 수와 NULL 행 처리를 비교한다. 나중에 같은 이름의 컬럼이 추가되면 NATURAL JOIN 결과가 조용히 바뀌는 것을 ALTER TABLE 로 재현한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-023
+    title: "파이썬 dict 조회가 리스트 탐색을 이기는 지점 — 선형·이진·해시 탐색 실측"
+    category: Performance
+    subcategory: algorithm
+    track: general
+    tags: [python, hash-table, bisect, search, performance]
+    difficulty: 중급
+    angle: "원소 수를 10배씩 늘리며 list in, bisect, set/dict 조회 시간을 측정해 기울기가 갈리는 지점을 찾는다. 해시 충돌로 느려지는 경우(같은 hash 를 돌려주는 키)까지 재현한다"
     code: python
     origin: manual
     status: done

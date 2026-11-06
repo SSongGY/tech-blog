@@ -543,3 +543,6 @@
 | 2026-11-06 | gen-020 | Language | Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서 |
 | 2026-11-06 | fin-125 | Finance | 비지배지분 — 지분 80%만 가진 자회사를 100% 합치는 연결 재무제표 |
 | 2026-11-06 | fin-126 | Finance | 사업결합 영업권 — 이전대가·비지배지분·순식별가능자산의 차이 |
+| 2026-11-06 | db-108 | Database | JOIN USING과 NATURAL JOIN — 이름이 같은 컬럼으로 자동 결합하는 구문의 함정 |
+| 2026-11-06 | gen-023 | Performance | 파이썬 dict 조회가 리스트 탐색을 이기는 지점 — 선형·이진·해시 탐색 실측 |
+| 2026-11-06 | pe-238 | PE | O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프 |

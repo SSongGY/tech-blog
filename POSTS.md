@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **628편** · 갱신 2026-11-06
+총 **631편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 94편
+## DB문법 (basics) — 95편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-06 | [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-06 | [JOIN USING과 NATURAL JOIN — 이름이 같은 컬럼으로 자동 결합하는 구문의 함정](posts/Database/sql-basics/2026-11-06-join-using-natural-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [타입 친화성 다시 보기 — CAST 와 비교에서 값이 바뀌는 곳, 안 바뀌는 곳](posts/Database/sql-basics/2026-11-05-type-affinity-declared-vs-stored/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [RIGHT JOIN과 FULL OUTER JOIN — SQLite 3.39 에서 생긴 양쪽 외부 조인](posts/Database/sql-basics/2026-11-05-right-full-outer-join/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [LIMIT과 OFFSET — 페이지를 넘길 때 생기는 문제](posts/Database/sql-basics/2026-11-05-limit-offset-pagination/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -127,12 +128,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 221편
+## 기술사 (pe) — 222편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-06 | [자가조직 네트워크(SON) — 자기 구성·최적화·치유](posts/PE/network/2026-11-06-son-self-organizing-network/index.md) | 중급 | 3GPP SON 해설 (2025-04 갱신), 3GPP TS 38.300 v17.3.0 (2023-01) | 문서 근거 |
 | 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
+| 2026-11-06 | [O-RAN 아키텍처와 RIC — Near-RT·Non-RT 제어 루프](posts/PE/network/2026-11-06-oran-architecture-ric-control-loops/index.md) | 중급 | Polese 외, arXiv 2202.01032v2 (2022-08), O-RAN Alliance 기술그룹 소개 페이지 (2026 확인) | 문서 근거 |
 | 2026-11-06 | [머클 트리와 포함 증명 — 루트 해시 하나로 일부 데이터의 존재를 확인하는 구조](posts/PE/security/2026-11-06-merkle-tree-inclusion-proof/index.md) | 중급 | RFC 6962 Certificate Transparency (2013-06), RFC 9162 Certificate Transparency Version 2.0 (2021-12), Bitcoin whitepaper (2008-10-31) | 문서 근거 |
 | 2026-11-06 | [HMAC과 해시 길이 확장 공격 — 키를 앞에 붙인 해시가 인증이 되지 못하는 이유](posts/PE/security/2026-11-06-hmac-length-extension-attack/index.md) | 중급 | RFC 2104 HMAC (1997-02), FIPS 180-4 Secure Hash Standard (2015-08), FIPS 202 SHA-3 Standard (2015-08), FIPS 198-1 The Keyed-Hash Message Authentication Code (2008-07) | 문서 근거 |
 | 2026-11-05 | [속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계](posts/PE/database/2026-11-05-vertical-partitioning-affinity-bond-energy/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
@@ -376,10 +378,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 59편
+## 일반 (general) — 60편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [파이썬 dict 조회가 리스트 탐색을 이기는 지점 — 선형·이진·해시 탐색 실측](posts/Performance/algorithm/2026-11-06-python-search-linear-bisect-hash/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-06 | [Node.js 이벤트 루프 단계 — nextTick·Promise·setTimeout·setImmediate 의 실행 순서](posts/Language/node/2026-11-06-nodejs-event-loop-phase-order/index.md) | 중급 | Node.js 24.19.0, Windows 11 | 실행 검증 |
 | 2026-11-05 | [zlib 사전(zdict) — 70바이트짜리 메시지가 압축되지 않을 때](posts/Performance/compression/2026-11-05-zlib-preset-dictionary-short-messages/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-05 | [상위 k개만 필요할 때 — sorted 와 heapq.nsmallest 의 손익분기](posts/Performance/algorithm/2026-11-05-topk-sorted-vs-heapq-nsmallest/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
