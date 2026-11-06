@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **626편** · 갱신 2026-11-06
+총 **628편** · 갱신 2026-11-06
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -536,10 +536,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 124편
+## 주식·재무 (finance) — 126편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-06 | [비지배지분 — 지분 80%만 가진 자회사를 100% 합치는 연결 재무제표](posts/Finance/statements/2026-11-06-nci-consolidated-statements/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1110호 연결재무제표, 기업회계기준서 제1033호 주당이익 | 실행 검증 |
+| 2026-11-06 | [사업결합 영업권 — 이전대가·비지배지분·순식별가능자산의 차이](posts/Finance/statements/2026-11-06-goodwill-full-vs-partial/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1103호 사업결합 | 실행 검증 |
 | 2026-11-05 | [ROIC — 투하자본과 세후영업이익으로 읽는 사업의 수익성](posts/Finance/ratios/2026-11-05-roic-invested-capital-nopat/index.md) | 중급 | Python 3.13.5, K-IFRS 제1001호 재무제표 표시, K-IFRS 제1116호 리스 | 실행 검증 |
 | 2026-11-05 | [리스 제공자 회계 — 금융리스와 운용리스는 무엇으로 갈리고 표에 어떻게 남는가](posts/Finance/statements/2026-11-05-lessor-finance-vs-operating-lease/index.md) | 심화 | Python 3.13.5, 기업회계기준서 제1116호 리스(2023-05-12 개정) | 실행 검증 |
 | 2026-11-05 | [연결 범위 — 지배력 세 요소가 모자 회사 합산 대상을 가른다](posts/Finance/statements/2026-11-05-consolidation-scope-control-three-elements/index.md) | 심화 | Python 3.13.5, 기업회계기준서 제1110호 연결재무제표(2024-11-22 개정) | 실행 검증 |
