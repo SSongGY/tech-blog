@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **659편** · 갱신 2026-11-08
+총 **661편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -133,10 +133,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 231편
+## 기술사 (pe) — 233편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [암호 안전성 정의 — IND-CPA·IND-CCA1·IND-CCA2와 의미론적 안전성](posts/PE/security/2026-11-08-ind-cpa-cca-security-notions/index.md) | 중급 | Bellare·Desai·Pointcheval·Rogaway, CRYPTO '98 (IACR ePrint 1998/021), RFC 8017 PKCS #1 v2.2 (2016-11), NIST FIPS 203 (2024-08) | 문서 근거 |
+| 2026-11-08 | [그래프 신경망(GNN) — 메시지 전달 틀과 GCN·GAT·GraphSAGE의 집계 방식 비교](posts/PE/ai/2026-11-08-gnn-message-passing-gcn-gat-graphsage/index.md) | 중급 | Gilmer et al., arXiv:1704.01212 v2 (2017), Kipf & Welling, arXiv:1609.02907 v4 (ICLR 2017), Veličković et al., arXiv:1710.10903 (ICLR 2018), Hamilton et al., arXiv:1706.02216 (NeurIPS 2017), Li et al., arXiv:1801.07606 v1 (2018) | 문서 근거 |
 | 2026-11-07 | [TLB와 유효 메모리 접근 시간 — 페이지 테이블 단계 수와 적중률로 계산하기](posts/PE/system/2026-11-07-tlb-effective-access-time/index.md) | 중급 | Python 3.13.5, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.19·20 | 실행 검증 |
 | 2026-11-07 | [다자간 연산(MPC)과 사설 교집합(PSI) — 입력을 숨긴 공동 계산](posts/PE/security/2026-11-07-mpc-secret-sharing-and-private-set-intersection/index.md) | 중급 | ISO/IEC 4922-1:2023, ISO/IEC 4922-2:2024, NIST Privacy-Enhancing Cryptography 프로젝트 PSI/PSO 페이지 (2026-10-26 갱신) | 문서 근거 |
 | 2026-11-07 | [논리 시계 — 램포트 시계와 벡터 시계로 사건 순서 정하기](posts/PE/system/2026-11-07-logical-clock-lamport-vector/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
