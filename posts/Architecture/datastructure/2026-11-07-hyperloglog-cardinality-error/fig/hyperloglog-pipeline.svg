@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" font-size="16" font-weight="bold" text-anchor="middle" fill="#222222">HyperLogLog — 원소 하나를 넣을 때와 개수를 읽을 때 (32비트 해시, m = 2^b)</text>
+
+  <!-- 1행: 넣기 -->
+  <text x="30" y="62" font-size="14" font-weight="bold" fill="#2d6a4f">넣기 — 원소마다 상수 시간</text>
+
+  <rect x="30" y="76" width="130" height="64" rx="6" fill="#f1f5f9" stroke="#475569"/>
+  <text x="95" y="102" font-size="14" text-anchor="middle" fill="#222222">원소</text>
+  <text x="95" y="124" font-size="13" text-anchor="middle" fill="#333333">"user-42"</text>
+
+  <rect x="200" y="76" width="240" height="64" rx="6" fill="#f1f5f9" stroke="#475569"/>
+  <text x="320" y="102" font-size="14" text-anchor="middle" fill="#222222">32비트 해시 x (b = 4 예)</text>
+  <text x="320" y="124" font-size="13" text-anchor="middle" fill="#333333" font-family="Consolas, monospace">0110 | 0001 0110 …</text>
+
+  <rect x="480" y="76" width="170" height="64" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="565" y="102" font-size="13" text-anchor="middle" fill="#222222">앞 b비트 → 번호 j</text>
+  <text x="565" y="124" font-size="13" text-anchor="middle" fill="#333333">0110 → j = 6</text>
+
+  <rect x="480" y="156" width="170" height="64" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="565" y="182" font-size="13" text-anchor="middle" fill="#222222">나머지 w → ρ(w)</text>
+  <text x="565" y="204" font-size="13" text-anchor="middle" fill="#333333">첫 1비트 위치 = 4</text>
+
+  <rect x="690" y="110" width="160" height="72" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="770" y="138" font-size="13" text-anchor="middle" fill="#222222">M[j] ← max(M[j], ρ)</text>
+  <text x="770" y="162" font-size="13" text-anchor="middle" fill="#333333">같은 원소는 값이 그대로</text>
+
+  <line x1="160" y1="108" x2="196" y2="108" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="100" x2="476" y2="100" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="440" y1="122" x2="476" y2="180" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="650" y1="108" x2="686" y2="130" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="650" y1="188" x2="686" y2="166" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2행: 읽기 -->
+  <text x="30" y="262" font-size="14" font-weight="bold" fill="#2d6a4f">읽기 — 레지스터 m개만 본다</text>
+
+  <rect x="30" y="276" width="210" height="72" rx="6" fill="#f1f5f9" stroke="#475569"/>
+  <text x="135" y="304" font-size="14" text-anchor="middle" fill="#222222">레지스터 M[0..m−1]</text>
+  <text x="135" y="328" font-size="13" text-anchor="middle" fill="#333333">각 5비트면 충분</text>
+
+  <rect x="290" y="276" width="270" height="72" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="425" y="304" font-size="14" text-anchor="middle" fill="#222222">조화평균 추정</text>
+  <text x="425" y="328" font-size="13" text-anchor="middle" fill="#333333">E = α_m · m² / Σ 2^(−M[j])</text>
+
+  <rect x="610" y="276" width="240" height="72" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="730" y="304" font-size="14" text-anchor="middle" fill="#b45309">작은 범위 보정</text>
+  <text x="730" y="328" font-size="13" text-anchor="middle" fill="#333333">E ≤ 2.5m 이면 m · ln(m / V)</text>
+
+  <line x1="240" y1="312" x2="286" y2="312" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="560" y1="312" x2="606" y2="312" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <polyline points="770,182 770,238 160,238 160,272" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <text x="440" y="382" font-size="13" text-anchor="middle" fill="#333333">V = 아직 0 인 레지스터 수 · 표준오차 약 1.04 / √m · 두 스케치의 합집합은 칸마다 max</text>
+</svg>
