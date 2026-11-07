@@ -7162,3 +7162,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-129
+    title: "연결 내부거래 미실현이익 — 재고는 팔릴 때, 설비는 감가상각으로 실현된다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, consolidation, intragroup]
+    difficulty: 중급
+    angle: "제1110호 B86(3) 전부 제거, 재고 하향판매와 설비 이전을 가상 회사로 계산, 이연법인세, 상향판매 비지배지분 배분은 기준서가 정하지 않음"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-130
+    title: "공동영업과 공동기업 — 같은 50% 약정이 재무제표에 다르게 올라간다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, joint-arrangement, equity-method]
+    difficulty: 중급
+    angle: "제1111호 문단 15·16·20·24, B16·B24·B31·B32 분류, 같은 약정을 두 방식으로 계산해 매출·부채비율 비교, B34 거래 손익 한도"
+    code: python
+    origin: manual
+    status: done
