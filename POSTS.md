@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **650편** · 갱신 2026-11-07
+총 **653편** · 갱신 2026-11-07
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 98편
+## DB문법 (basics) — 99편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-07 | [max(a, b)와 MAX(col) — 이름은 같고 NULL은 반대로 다룬다](posts/Database/sql-basics/2026-11-07-scalar-max-vs-aggregate-max/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-07 | [관계 나눗셈 — '전부 가진' 행을 SQL로 찾는 두 가지 방법](posts/Database/sql-basics/2026-11-07-relational-division-all-match/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가](posts/Database/sql-basics/2026-11-06-percent-rank-cume-dist/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [무작위로 N행 뽑기 — ORDER BY RANDOM()이 표 전체를 정렬하는 이유](posts/Database/sql-basics/2026-11-06-order-by-random-sampling/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -132,12 +133,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 228편
+## 기술사 (pe) — 229편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-07 | [TLB와 유효 메모리 접근 시간 — 페이지 테이블 단계 수와 적중률로 계산하기](posts/PE/system/2026-11-07-tlb-effective-access-time/index.md) | 중급 | Python 3.13.5, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.19·20 | 실행 검증 |
 | 2026-11-07 | [다자간 연산(MPC)과 사설 교집합(PSI) — 입력을 숨긴 공동 계산](posts/PE/security/2026-11-07-mpc-secret-sharing-and-private-set-intersection/index.md) | 중급 | ISO/IEC 4922-1:2023, ISO/IEC 4922-2:2024, NIST Privacy-Enhancing Cryptography 프로젝트 PSI/PSO 페이지 (2026-10-26 갱신) | 문서 근거 |
+| 2026-11-07 | [논리 시계 — 램포트 시계와 벡터 시계로 사건 순서 정하기](posts/PE/system/2026-11-07-logical-clock-lamport-vector/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [동형암호 — 부분·준·완전 동형과 BGV·BFV·CKKS, 잡음과 부트스트래핑](posts/PE/security/2026-11-07-homomorphic-encryption-bgv-bfv-ckks-bootstrapping/index.md) | 중급 | Homomorphic Encryption Standard v1.1 (2018-11-21), ISO/IEC 18033-6:2019, CKKS ASIACRYPT 2017 (ePrint 2016/421) | 문서 근거 |
 | 2026-11-06 | [자가조직 네트워크(SON) — 자기 구성·최적화·치유](posts/PE/network/2026-11-06-son-self-organizing-network/index.md) | 중급 | 3GPP SON 해설 (2025-04 갱신), 3GPP TS 38.300 v17.3.0 (2023-01) | 문서 근거 |
 | 2026-11-06 | [Selective Repeat ARQ와 TCP SACK — 선택적 재전송과 윈도우 크기 제약](posts/PE/network/2026-11-06-selective-repeat-arq-tcp-sack/index.md) | 중급 | RFC 2018 (1996-10), RFC 2883 (2000-07), RFC 9293 (2022-08) | 문서 근거 |
@@ -388,10 +390,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 63편
+## 일반 (general) — 64편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-07 | [HyperLogLog — 고유 방문자 수를 몇 KB로 세는 원리와 오차](posts/Architecture/datastructure/2026-11-07-hyperloglog-cardinality-error/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-07 | [일관 해싱 — 노드를 하나 더했을 때 옮겨지는 키의 비율](posts/Architecture/datastructure/2026-11-07-consistent-hashing-key-movement/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적](posts/Database/sqlite/2026-11-06-uuid-v4-v7-primary-key-btree/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [처리율 제한 네 가지 — 토큰 버킷·누출 버킷·고정 창·슬라이딩 창](posts/Backend/rate-limiting/2026-11-06-rate-limiting-four-algorithms/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
