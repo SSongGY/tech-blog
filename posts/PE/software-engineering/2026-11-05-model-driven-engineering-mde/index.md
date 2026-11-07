@@ -7,7 +7,7 @@ track: pe
 tags: [정보관리기술사, mde, mda, 메타모델, 모델변환]
 description: "모델을 1급 산출물로 두는 개발 방식을 메타모델·DSL·모델 변환·코드 생성의 관계로 세우고, 로우코드와 겹치는 영역과 갈라지는 축, 그리고 교환 표준이 종속 완화 수단으로 거론되는 이유를 정리한다."
 difficulty: 중급
-environment: ["OMG MOF 2.5.1 (formal/2019-10-01)", "OMG XMI 2.5.1 (formal/15-06-07)", "OMG QVT 1.3 (formal/16-06-03)", "OMG MDA 개요 페이지", "Eclipse EMF"]
+environment: ["OMG MOF 2.5.1 (formal/2019-10-01)", "OMG XMI 2.5.1 (formal/15-06-07)", "OMG QVT 1.3 (formal/16-06-03)"]
 verification: manual-only
 verified: true
 topic_id: pe-228

@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **661편** · 갱신 2026-11-08
+총 **664편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 99편
+## DB문법 (basics) — 100편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-07 | [연속 구간 찾기 — 날짜에서 행 번호를 빼서 연속 출석을 묶는 법](posts/Database/sql-basics/2026-11-07-sql-gaps-and-islands-consecutive-days/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [max(a, b)와 MAX(col) — 이름은 같고 NULL은 반대로 다룬다](posts/Database/sql-basics/2026-11-07-scalar-max-vs-aggregate-max/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [관계 나눗셈 — '전부 가진' 행을 SQL로 찾는 두 가지 방법](posts/Database/sql-basics/2026-11-07-relational-division-all-match/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가](posts/Database/sql-basics/2026-11-06-percent-rank-cume-dist/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -133,7 +134,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 233편
+## 기술사 (pe) — 234편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -145,6 +146,7 @@
 | 2026-11-07 | [산업제어시스템 보안 표준 IEC 62443 — 영역·도관과 보안 수준](posts/PE/security/2026-11-07-iec-62443-zones-conduits-security-levels/index.md) | 중급 | ISAGCA Quick Start Guide: An Overview of ISA/IEC 62443 Standards (문서 현황 2025-06 기준), NIST SP 800-82 Rev. 3 (2023-09) | 문서 근거 |
 | 2026-11-07 | [동형암호 — 부분·준·완전 동형과 BGV·BFV·CKKS, 잡음과 부트스트래핑](posts/PE/security/2026-11-07-homomorphic-encryption-bgv-bfv-ckks-bootstrapping/index.md) | 중급 | Homomorphic Encryption Standard v1.1 (2018-11-21), ISO/IEC 18033-6:2019, CKKS ASIACRYPT 2017 (ePrint 2016/421) | 문서 근거 |
 | 2026-11-07 | [안티 포렌식 — 데이터 은닉·흔적 삭제·시각 변조와 탐지](posts/PE/security/2026-11-07-anti-forensics-hiding-wiping-timestamp-detection/index.md) | 중급 | NIST IR 8354 (2022-11), NIST SP 800-82 Rev. 3 (2023-09), Conlan·Baggili·Breitinger, Digital Investigation 18 (2016), Schneider 외 SoK, arXiv 2604.05770v2 (2026-04) | 문서 근거 |
+| 2026-11-07 | [암달의 법칙과 구스타프슨의 법칙 — 병렬화 속도 향상의 두 가지 상한](posts/PE/computer-architecture/2026-11-07-amdahl-gustafson-speedup-limits/index.md) | 중급 | Python 3.13.5, Amdahl, AFIPS 1967 (IEEE SSCS News 2007 재수록), Gustafson, CACM 31(5) 1988 | 실행 검증 |
 | 2026-11-06 | [자가조직 네트워크(SON) — 자기 구성·최적화·치유](posts/PE/network/2026-11-06-son-self-organizing-network/index.md) | 중급 | 3GPP SON 해설 (2025-04 갱신), 3GPP TS 38.300 v17.3.0 (2023-01) | 문서 근거 |
 | 2026-11-06 | [Selective Repeat ARQ와 TCP SACK — 선택적 재전송과 윈도우 크기 제약](posts/PE/network/2026-11-06-selective-repeat-arq-tcp-sack/index.md) | 중급 | RFC 2018 (1996-10), RFC 2883 (2000-07), RFC 9293 (2022-08) | 문서 근거 |
 | 2026-11-06 | [프로세스 쌍과 트랜잭션 — 소프트웨어 결함 허용의 원리와 Heisenbug 가설](posts/PE/software-engineering/2026-11-06-process-pair-transaction-heisenbug/index.md) | 중급 | Gray, Why Do Computers Stop and What Can Be Done About It? (Tandem TR 85.7, 1985 개정판) | 문서 근거 |
@@ -394,10 +396,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 64편
+## 일반 (general) — 65편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-07 | [스킵 리스트 — 난수로 레벨을 정해 균형을 맞추는 정렬 연결 리스트](posts/Architecture/datastructure/2026-11-07-skip-list-probabilistic-balance/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [HyperLogLog — 고유 방문자 수를 몇 KB로 세는 원리와 오차](posts/Architecture/datastructure/2026-11-07-hyperloglog-cardinality-error/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-07 | [일관 해싱 — 노드를 하나 더했을 때 옮겨지는 키의 비율](posts/Architecture/datastructure/2026-11-07-consistent-hashing-key-movement/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-06 | [UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적](posts/Database/sqlite/2026-11-06-uuid-v4-v7-primary-key-btree/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
