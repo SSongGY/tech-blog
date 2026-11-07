@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2937">IEC 62443-3-2 위험 평가 7단계 (ZCR 1~7)</text>
+
+  <!-- 위 줄: ZCR 1~4 -->
+  <rect x="30" y="60" width="180" height="64" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+  <text x="120" y="86" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 1</text>
+  <text x="120" y="108" font-size="13" text-anchor="middle" fill="#374151">평가 대상(SuC) 식별</text>
+
+  <rect x="240" y="60" width="180" height="64" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+  <text x="330" y="86" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 2</text>
+  <text x="330" y="108" font-size="13" text-anchor="middle" fill="#374151">초기 위험 평가</text>
+
+  <rect x="450" y="60" width="180" height="64" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+  <text x="540" y="86" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 3</text>
+  <text x="540" y="108" font-size="13" text-anchor="middle" fill="#374151">영역·도관으로 분할</text>
+
+  <polygon points="750,52 840,92 750,132 660,92" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="750" y="86" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 4</text>
+  <text x="750" y="106" font-size="13" text-anchor="middle" fill="#374151">위험 &gt; 허용?</text>
+
+  <line x1="210" y1="92" x2="240" y2="92" stroke="#374151" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="420" y1="92" x2="450" y2="92" stroke="#374151" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="630" y1="92" x2="660" y2="92" stroke="#374151" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 아래 줄: ZCR 5~7 -->
+  <rect x="660" y="200" width="180" height="64" rx="8" fill="#fef2f2" stroke="#9d0208" stroke-width="2"/>
+  <text x="750" y="226" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 5</text>
+  <text x="750" y="248" font-size="13" text-anchor="middle" fill="#374151">상세 위험 평가</text>
+
+  <rect x="400" y="200" width="200" height="64" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="2"/>
+  <text x="500" y="226" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 6</text>
+  <text x="500" y="248" font-size="13" text-anchor="middle" fill="#374151">요구·가정·제약 문서화</text>
+
+  <rect x="140" y="200" width="200" height="64" rx="8" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="240" y="226" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">ZCR 7</text>
+  <text x="240" y="248" font-size="13" text-anchor="middle" fill="#374151">자산 소유자 승인</text>
+
+  <line x1="750" y1="132" x2="750" y2="200" stroke="#9d0208" stroke-width="2" marker-end="url(#a)"/>
+  <text x="760" y="170" font-size="13" fill="#9d0208">예</text>
+  <line x1="705" y1="112" x2="530" y2="198" stroke="#2d6a4f" stroke-width="2" marker-end="url(#a)"/>
+  <text x="560" y="158" font-size="13" fill="#2d6a4f">아니오</text>
+  <line x1="660" y1="232" x2="600" y2="232" stroke="#374151" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="400" y1="232" x2="340" y2="232" stroke="#374151" stroke-width="2" marker-end="url(#a)"/>
+
+  <!-- 산출물 -->
+  <text x="30" y="306" font-size="14" font-weight="bold" fill="#1f2937">단계별 산출물</text>
+  <text x="30" y="330" font-size="13" fill="#374151">ZCR 2 → 위험의 초기 평가    ZCR 3 → 영역·도관 도면(초안 또는 개정판)</text>
+  <text x="30" y="352" font-size="13" fill="#374151">ZCR 5 → 영역·도관별 잔여 위험과 목표 보안 수준(SL-T)</text>
+  <text x="30" y="374" font-size="13" fill="#374151">ZCR 6 → 사이버보안 요구사항 명세서(CRS) — 제품 조달과 설계의 기준이 된다</text>
+
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
