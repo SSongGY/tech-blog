@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">안전성 정의 6가지의 함의 관계 — 화살표는 "이면 성립"</text>
+  <text x="440" y="54" text-anchor="middle" font-size="13" fill="#4a5568">목표 2개(IND · NM) × 공격 3개(CPA · CCA1 · CCA2)</text>
+
+  <!-- 열 머리 -->
+  <text x="170" y="88" text-anchor="middle" font-size="13" fill="#4a5568">CPA (약)</text>
+  <text x="440" y="88" text-anchor="middle" font-size="13" fill="#4a5568">CCA1</text>
+  <text x="710" y="88" text-anchor="middle" font-size="13" fill="#4a5568">CCA2 (강)</text>
+
+  <!-- NM 행 (위) -->
+  <rect x="90" y="100" width="160" height="50" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="170" y="131" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">NM-CPA</text>
+  <rect x="360" y="100" width="160" height="50" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="440" y="131" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">NM-CCA1</text>
+  <rect x="630" y="100" width="160" height="50" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="710" y="131" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">NM-CCA2</text>
+
+  <!-- IND 행 (아래) -->
+  <rect x="90" y="230" width="160" height="50" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="170" y="261" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">IND-CPA</text>
+  <rect x="360" y="230" width="160" height="50" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="440" y="261" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">IND-CCA1</text>
+  <rect x="630" y="230" width="160" height="50" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2" rx="4"/>
+  <text x="710" y="261" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">IND-CCA2</text>
+
+  <!-- 강한 공격 → 약한 공격 -->
+  <line x1="630" y1="125" x2="524" y2="125" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="360" y1="125" x2="254" y2="125" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="630" y1="255" x2="524" y2="255" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="360" y1="255" x2="254" y2="255" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- NM → IND -->
+  <line x1="160" y1="150" x2="160" y2="226" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="430" y1="150" x2="430" y2="226" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="700" y1="150" x2="700" y2="226" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <!-- IND-CCA2 → NM-CCA2 (유일한 비자명 함의) -->
+  <line x1="722" y1="230" x2="722" y2="154" stroke="#2d6a4f" stroke-width="2.4" marker-end="url(#g)"/>
+  <text x="800" y="196" text-anchor="start" font-size="13" font-weight="bold" fill="#2d6a4f">동치</text>
+
+  <!-- 분리 결과 -->
+  <line x1="20" y1="304" x2="860" y2="304" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="440" y="330" text-anchor="middle" font-size="13" fill="#9d0208">성립하지 않음: IND-CCA1 ⇏ NM-CPA · NM-CPA ⇏ IND-CCA1 · NM-CCA1 ⇏ NM-CCA2</text>
+  <text x="440" y="356" text-anchor="middle" font-size="13" fill="#1b1b1b">IND-CCA2 에서 나머지 5가지가 모두 따라 나온다 → 설계 기준은 IND-CCA2</text>
+</svg>

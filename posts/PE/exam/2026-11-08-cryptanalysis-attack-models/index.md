@@ -84,6 +84,8 @@ MAC 위조가 된다고 덧붙인다.
 설계자의 목표를 전수 조사가 **가장 나은 공격이 되게** 하는 것으로 적는다. 키 길이와 사용 기간은
 NIST SP 800-57 기준으로 정한다.
 
+> 개념 정리: [암호 안전성 정의 — IND-CPA·IND-CCA1·IND-CCA2와 의미론적 안전성](../../security/2026-11-08-ind-cpa-cca-security-notions/index.md)
+>
 > 개념 정리: [암호 알고리즘 안전성 — 보안강도, 키 길이, 그리고 암호주기](../../security/2026-10-29-crypto-key-length-and-lifetime/index.md)
 >
 > 개념 정리: [양자 내성 암호(PQC)와 전환 전략](../../emerging-tech/2026-10-15-post-quantum-cryptography-transition/index.md)
