@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2937">안티 포렌식 4갈래 — 무엇을 하고, 조사 측은 무엇으로 알아채는가</text>
+
+  <text x="125" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#374151">분류 (Rogers)</text>
+  <text x="440" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#374151">대표 기법 (NIST IR 8354)</text>
+  <text x="750" y="62" font-size="14" font-weight="bold" text-anchor="middle" fill="#374151">탐지 단서</text>
+
+  <!-- 1행 -->
+  <rect x="30" y="78" width="190" height="80" rx="8" fill="#fef2f2" stroke="#9d0208" stroke-width="2"/>
+  <text x="125" y="113" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">① 데이터 은닉</text>
+  <text x="125" y="135" font-size="13" text-anchor="middle" fill="#374151">Data Hiding</text>
+  <rect x="300" y="78" width="280" height="80" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="110" font-size="13" text-anchor="middle" fill="#111827">스테가노그래피(하위 비트에 숨김)</text>
+  <text x="440" y="132" font-size="13" text-anchor="middle" fill="#111827">파일 시스템 속성·BIOS 영역에 숨김</text>
+  <rect x="640" y="78" width="220" height="80" rx="8" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="750" y="110" font-size="13" text-anchor="middle" fill="#111827">픽셀 값 분포가 고르게</text>
+  <text x="750" y="132" font-size="13" text-anchor="middle" fill="#111827">퍼져 있으면 의심</text>
+
+  <!-- 2행 -->
+  <rect x="30" y="178" width="190" height="80" rx="8" fill="#fef2f2" stroke="#9d0208" stroke-width="2"/>
+  <text x="125" y="213" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">② 아티팩트 삭제</text>
+  <text x="125" y="235" font-size="13" text-anchor="middle" fill="#374151">Artifact Wiping</text>
+  <rect x="300" y="178" width="280" height="80" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="210" font-size="13" text-anchor="middle" fill="#111827">파일 삭제 · 보안 삭제로 덮어쓰기</text>
+  <text x="440" y="232" font-size="13" text-anchor="middle" fill="#111827">와이핑 도구로 잔여 조각 제거</text>
+  <rect x="640" y="178" width="220" height="80" rx="8" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="750" y="210" font-size="13" text-anchor="middle" fill="#111827">삭제 파일 복구 시도</text>
+  <text x="750" y="232" font-size="13" text-anchor="middle" fill="#111827">와이핑 도구의 존재 자체</text>
+
+  <!-- 3행 -->
+  <rect x="30" y="278" width="190" height="80" rx="8" fill="#fef2f2" stroke="#9d0208" stroke-width="2"/>
+  <text x="125" y="313" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">③ 흔적 난독화</text>
+  <text x="125" y="335" font-size="13" text-anchor="middle" fill="#374151">Trail Obfuscation</text>
+  <rect x="300" y="278" width="280" height="80" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="310" font-size="13" text-anchor="middle" fill="#111827">시각 변조 · 시스템 시계 조작</text>
+  <text x="440" y="332" font-size="13" text-anchor="middle" fill="#111827">로그 삭제·변경 · 가짜 아티팩트</text>
+  <rect x="640" y="278" width="220" height="80" rx="8" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="750" y="310" font-size="13" text-anchor="middle" fill="#111827">출처 간 시각 교차 검증</text>
+  <text x="750" y="332" font-size="13" text-anchor="middle" fill="#111827">로그 삭제 이벤트(1102)</text>
+
+  <!-- 4행 -->
+  <rect x="30" y="378" width="190" height="80" rx="8" fill="#fef2f2" stroke="#9d0208" stroke-width="2"/>
+  <text x="125" y="410" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">④ 도구·절차 공격</text>
+  <text x="125" y="432" font-size="13" text-anchor="middle" fill="#374151">Attacks against Tools</text>
+  <rect x="300" y="378" width="280" height="80" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="410" font-size="13" text-anchor="middle" fill="#111827">흔한 포렌식 도구의 동작을</text>
+  <text x="440" y="432" font-size="13" text-anchor="middle" fill="#111827">방해하는 파일 시스템 아티팩트 생성</text>
+  <rect x="640" y="378" width="220" height="80" rx="8" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="750" y="410" font-size="13" text-anchor="middle" fill="#111827">도구 검증 · 복수 도구 대조</text>
+  <text x="750" y="432" font-size="13" text-anchor="middle" fill="#111827">안티 포렌식 도구 해시 세트</text>
+
+  <!-- 화살표 -->
+  <g stroke="#374151" stroke-width="2" marker-end="url(#a)">
+    <line x1="220" y1="118" x2="298" y2="118"/>
+    <line x1="580" y1="118" x2="638" y2="118"/>
+    <line x1="220" y1="218" x2="298" y2="218"/>
+    <line x1="580" y1="218" x2="638" y2="218"/>
+    <line x1="220" y1="318" x2="298" y2="318"/>
+    <line x1="580" y1="318" x2="638" y2="318"/>
+    <line x1="220" y1="418" x2="298" y2="418"/>
+    <line x1="580" y1="418" x2="638" y2="418"/>
+  </g>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>

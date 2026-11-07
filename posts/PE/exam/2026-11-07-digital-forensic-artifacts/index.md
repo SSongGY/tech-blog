@@ -102,6 +102,8 @@ NIST IR 8354는 휴대폰이 특정 차량에 연결된 적이 있는지 묻는 
 애플리케이션 버전 기록**을 미리 갖춰야 ①·③의 요인을 줄일 수 있다.
 
 > 개념 정리: [디지털 포렌식 절차와 증거 무결성](../../security/2026-09-28-digital-forensics-process-evidence-integrity/index.md)
+>
+> 개념 정리: [안티 포렌식 — 데이터 은닉·흔적 삭제·시각 변조와 탐지](../../security/2026-11-07-anti-forensics-hiding-wiping-timestamp-detection/index.md)
 
 끝
 
