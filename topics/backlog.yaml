@@ -7184,3 +7184,36 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: db-112
+    title: "관계 나눗셈 — '전부 가진' 행을 SQL로 찾는 두 가지 방법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, subquery, exists, group-by, basics]
+    difficulty: 중급
+    angle: "모든 필수 과목을 이수한 학생처럼 '전부 만족'을 묻는 질의를 이중 NOT EXISTS 와 GROUP BY HAVING COUNT 두 방식으로 돌려 결과를 맞춰 보고, 남는 과목이 있을 때·필수 목록이 비었을 때·중복 행이 있을 때 둘이 갈리는 자리를 재현한다"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-245
+    title: "논리 시계 — 램포트 시계와 벡터 시계로 사건 순서 정하기"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리, lamport-clock, vector-clock]
+    difficulty: 중급
+    angle: "프로세스 3개의 송수신 사건에 램포트 시계와 벡터 시계를 직접 매겨 검산하고, 램포트 값의 대소로는 동시 사건을 가릴 수 없는 것을 벡터 비교로 보인다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-027
+    title: "HyperLogLog — 고유 방문자 수를 몇 KB로 세는 원리와 오차"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [hyperloglog, cardinality, probabilistic, python]
+    difficulty: 중급
+    angle: "같은 키 집합을 집합(set)과 HyperLogLog 로 세어 메모리와 오차를 비교하고, 레지스터 수 m 에 따른 표준오차 1.04/sqrt(m) 을 실측으로 검산하며 작은 범위 보정이 왜 필요한지 재현한다"
+    code: python
+    origin: manual
+    status: done

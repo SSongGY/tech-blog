@@ -1,0 +1,119 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-07-relational-division-all-match
+# 명령      : python relational_division.py
+# 수행 시각 : 2026-11-07 12:09 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[enrollment]  8행
+  컬럼          | 타입    | 제약
+  --------------+---------+---------
+  enrollment_id | INTEGER | PK
+  student_id    | INTEGER | NOT NULL
+  course        | TEXT    | NOT NULL
+  term          | TEXT    | NOT NULL
+
+  enrollment_id | student_id | course  | term
+  --------------+------------+---------+-------
+              1 |          1 | db      | 2025-1
+              2 |          1 | network | 2025-1
+              3 |          1 | os      | 2025-2
+              4 |          2 | db      | 2025-1
+              5 |          2 | os      | 2025-2
+              6 |          2 | ai      | 2025-2
+              7 |          3 | db      | 2025-1
+              8 |          3 | network | 2025-2
+
+[required_course]  3행
+  컬럼   | 타입 | 제약
+  -------+------+-----
+  course | TEXT | PK
+
+  course
+  -------
+  db
+  network
+  os
+
+[student]  4행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  student_id | INTEGER | PK
+  name       | TEXT    | NOT NULL
+
+  student_id | name
+  -----------+-----
+           1 | kim
+           2 | lee
+           3 | park
+           4 | choi
+
+== 1) 기본 — 두 방법이 같은 답을 낸다 ==
+  NOT EXISTS : ['kim']
+  GROUP BY   : ['kim']
+  EXCEPT     : ['kim']
+
+== 2) 필수가 아닌 과목까지 세면 ==
+  lee 의 수강 과목: ['ai', 'db', 'os']
+  required_course 와 조인하지 않고 COUNT(*) : ['kim', 'lee']
+  required_course 와 조인한 GROUP BY       : ['kim']
+
+== 3) park 이 db 를 한 번 더 들으면 ==
+  park 의 수강 행: [('db', '2025-1'), ('network', '2025-2'), ('db', '2026-1')]
+  COUNT(*)              : ['kim', 'park']
+  COUNT(DISTINCT course): ['kim']
+  NOT EXISTS            : ['kim']
+
+== 4) 필수 과목이 하나도 없으면 ==
+  required_course 행 수: 0
+  NOT EXISTS : ['choi', 'kim', 'lee', 'park']
+  GROUP BY   : []
+  EXCEPT     : ['choi', 'kim', 'lee', 'park']
+
+== 5) 실행계획 ==
+  [이중 NOT EXISTS]
+  QUERY PLAN
+  |--SCAN s
+  |--CORRELATED SCALAR SUBQUERY 2
+  |  |--SCAN r
+  |  `--CORRELATED SCALAR SUBQUERY 1
+  |     `--SCAN e
+  `--USE TEMP B-TREE FOR ORDER BY
+
+  [GROUP BY HAVING]
+  QUERY PLAN
+  |--SCAN e
+  |--SEARCH s USING INTEGER PRIMARY KEY (rowid=?)
+  |--SEARCH r USING COVERING INDEX sqlite_autoindex_required_course_1 (course=?)
+  |--USE TEMP B-TREE FOR GROUP BY
+  |--SCALAR SUBQUERY 1
+  |  `--SCAN required_course
+  |--USE TEMP B-TREE FOR count(DISTINCT)
+  `--USE TEMP B-TREE FOR ORDER BY
+
+== 6) (student_id, course) 인덱스를 만든 뒤 ==
+  [이중 NOT EXISTS]
+  QUERY PLAN
+  |--SCAN s
+  |--CORRELATED SCALAR SUBQUERY 2
+  |  |--SCAN r
+  |  `--CORRELATED SCALAR SUBQUERY 1
+  |     `--SEARCH e USING COVERING INDEX ix_enrollment_student_id_course (student_id=? AND course=?)
+  `--USE TEMP B-TREE FOR ORDER BY
+
+  NOT EXISTS : ['kim']
+

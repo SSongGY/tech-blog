@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">수강 이력 ÷ 필수 과목 = 필수 과목을 전부 들은 학생</text>
+
+  <!-- 입력 두 표 -->
+  <rect x="30" y="60" width="200" height="120" rx="6" fill="#f1f5f9" stroke="#475569"/>
+  <text x="130" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">enrollment (피제수)</text>
+  <text x="130" y="108" font-size="13" text-anchor="middle" fill="#333333">kim: db, network, os</text>
+  <text x="130" y="128" font-size="13" text-anchor="middle" fill="#333333">lee: db, os, ai</text>
+  <text x="130" y="148" font-size="13" text-anchor="middle" fill="#333333">park: db, network</text>
+  <text x="130" y="168" font-size="13" text-anchor="middle" fill="#333333">choi: (없음)</text>
+
+  <rect x="30" y="250" width="200" height="90" rx="6" fill="#f1f5f9" stroke="#475569"/>
+  <text x="130" y="274" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">required_course (제수)</text>
+  <text x="130" y="300" font-size="13" text-anchor="middle" fill="#333333">db, network, os</text>
+  <text x="130" y="322" font-size="13" text-anchor="middle" fill="#333333">3행</text>
+
+  <!-- 방법 1: 이중 NOT EXISTS -->
+  <rect x="300" y="60" width="300" height="130" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="450" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">① 이중 NOT EXISTS</text>
+  <text x="450" y="110" font-size="13" text-anchor="middle" fill="#333333">학생마다 필수 과목을 하나씩 대 보고</text>
+  <text x="450" y="132" font-size="13" text-anchor="middle" fill="#333333">수강 행이 없는 과목을 찾는다</text>
+  <text x="450" y="160" font-size="13" text-anchor="middle" fill="#333333">그런 과목이 0개면 통과</text>
+  <text x="450" y="180" font-size="13" text-anchor="middle" fill="#b45309">필수 0개면 모든 학생 통과</text>
+
+  <!-- 방법 2: GROUP BY HAVING -->
+  <rect x="300" y="230" width="300" height="130" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="450" y="254" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">② GROUP BY + HAVING</text>
+  <text x="450" y="280" font-size="13" text-anchor="middle" fill="#333333">필수 과목과 조인해 남은 행을</text>
+  <text x="450" y="302" font-size="13" text-anchor="middle" fill="#333333">학생별로 묶어 서로 다른 과목 수를 센다</text>
+  <text x="450" y="330" font-size="13" text-anchor="middle" fill="#333333">COUNT(DISTINCT) = 3 이면 통과</text>
+  <text x="450" y="350" font-size="13" text-anchor="middle" fill="#b45309">필수 0개면 조인 결과가 비어 0명</text>
+
+  <!-- 결과 -->
+  <rect x="670" y="160" width="180" height="90" rx="6" fill="#f1f5f9" stroke="#475569"/>
+  <text x="760" y="186" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">결과 (몫)</text>
+  <text x="760" y="214" font-size="13" text-anchor="middle" fill="#333333">kim</text>
+  <text x="760" y="236" font-size="13" text-anchor="middle" fill="#333333">두 방법이 같다</text>
+
+  <!-- 화살표 -->
+  <line x1="230" y1="120" x2="296" y2="120" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="230" y1="160" x2="296" y2="270" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="230" y1="280" x2="296" y2="170" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="230" y1="300" x2="296" y2="300" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="600" y1="125" x2="666" y2="190" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="600" y1="295" x2="666" y2="225" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="440" y="400" font-size="13" text-anchor="middle" fill="#9d0208">COUNT(*) 로 세거나 필수 과목과 조인하지 않으면 재수강·비필수 과목까지 세어 lee·park 이 잘못 통과한다</text>
+</svg>
