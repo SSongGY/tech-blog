@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="o" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">GNN 메시지 전달 — 이웃 정보를 모아 노드 표현을 갱신한다</text>
+
+  <!-- 입력 그래프 -->
+  <rect x="20" y="60" width="200" height="200" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="120" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">입력 그래프 G</text>
+  <line x1="120" y1="165" x2="60" y2="120" stroke="#4a5568" stroke-width="1.4"/>
+  <line x1="120" y1="165" x2="185" y2="120" stroke="#4a5568" stroke-width="1.4"/>
+  <line x1="120" y1="165" x2="120" y2="230" stroke="#4a5568" stroke-width="1.4"/>
+  <circle cx="60" cy="120" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="60" y="125" text-anchor="middle" font-size="13" fill="#1b1b1b">w₁</text>
+  <circle cx="185" cy="120" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="185" y="125" text-anchor="middle" font-size="13" fill="#1b1b1b">w₂</text>
+  <circle cx="120" cy="230" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="120" y="235" text-anchor="middle" font-size="13" fill="#1b1b1b">w₃</text>
+  <circle cx="120" cy="165" r="17" fill="#fff7ed" stroke="#b45309" stroke-width="1.8"/>
+  <text x="120" y="170" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">v</text>
+
+  <!-- 메시지 -->
+  <rect x="255" y="70" width="170" height="80" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="340" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 메시지 M</text>
+  <text x="340" y="122" text-anchor="middle" font-size="13" fill="#4a5568">M(hᵥ, h_w, e_vw)</text>
+  <text x="340" y="140" text-anchor="middle" font-size="13" fill="#4a5568">이웃 w 마다 계산</text>
+
+  <!-- 집계 -->
+  <rect x="255" y="170" width="170" height="80" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="340" y="198" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 집계 Σ</text>
+  <text x="340" y="222" text-anchor="middle" font-size="13" fill="#4a5568">합 · 평균 · 최대 · 어텐션</text>
+  <text x="340" y="240" text-anchor="middle" font-size="13" fill="#4a5568">순서와 무관해야 함</text>
+
+  <!-- 갱신 -->
+  <rect x="460" y="120" width="170" height="80" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="545" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 갱신 U</text>
+  <text x="545" y="172" text-anchor="middle" font-size="13" fill="#4a5568">hᵥᵗ⁺¹ = U(hᵥᵗ, mᵥᵗ⁺¹)</text>
+  <text x="545" y="190" text-anchor="middle" font-size="13" fill="#4a5568">층 하나 = 1 홉</text>
+
+  <line x1="220" y1="120" x2="251" y2="110" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="340" y1="150" x2="340" y2="166" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="425" y1="200" x2="456" y2="175" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- T 회 반복 -->
+  <path d="M545,200 L545,290 L340,290 L340,254" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5,3" marker-end="url(#o)"/>
+  <text x="442" y="310" text-anchor="middle" font-size="13" fill="#b45309">T 회 반복 (층을 쌓을수록 먼 이웃까지 반영)</text>
+
+  <!-- 판독·출력 -->
+  <rect x="665" y="60" width="195" height="70" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="762" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">노드 수준</text>
+  <text x="762" y="110" text-anchor="middle" font-size="13" fill="#4a5568">노드 분류 · 회귀</text>
+
+  <rect x="665" y="145" width="195" height="70" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="762" y="173" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">엣지 수준</text>
+  <text x="762" y="195" text-anchor="middle" font-size="13" fill="#4a5568">엣지 분류 · 링크 예측</text>
+
+  <rect x="665" y="230" width="195" height="80" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="762" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">그래프 수준</text>
+  <text x="762" y="280" text-anchor="middle" font-size="13" fill="#4a5568">④ 판독 R 로 전체 요약</text>
+  <text x="762" y="298" text-anchor="middle" font-size="13" fill="#4a5568">그래프 분류</text>
+
+  <line x1="630" y1="150" x2="661" y2="100" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="630" y1="165" x2="661" y2="178" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="630" y1="185" x2="661" y2="260" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- 한계 -->
+  <line x1="20" y1="336" x2="860" y2="336" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="440" y="362" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">층을 깊게 쌓을 때의 한계</text>
+  <text x="440" y="388" text-anchor="middle" font-size="13" fill="#1b1b1b">이웃 표현이 서로 가까워져 끝내 한 점으로 모인다(과평활화) · 이웃 수가 홉마다 늘어 계산량이 커진다</text>
+</svg>
