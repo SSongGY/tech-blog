@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1d4ed8"/>
+    </marker>
+    <marker id="time" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" font-size="16" font-weight="bold" text-anchor="middle" fill="#222222">시공간 도식 — 사건마다 램포트 값(L)과 벡터 값</text>
+
+  <!-- 램포트 값이 같은 눈금선 -->
+  <g stroke="#cbd5e1" stroke-dasharray="4 4" stroke-width="1">
+    <line x1="200" y1="60" x2="200" y2="380"/>
+    <line x1="300" y1="60" x2="300" y2="380"/>
+    <line x1="400" y1="60" x2="400" y2="380"/>
+    <line x1="500" y1="60" x2="500" y2="380"/>
+    <line x1="600" y1="60" x2="600" y2="380"/>
+    <line x1="700" y1="60" x2="700" y2="380"/>
+    <line x1="800" y1="60" x2="800" y2="380"/>
+  </g>
+  <g font-size="13" fill="#64748b" text-anchor="middle">
+    <text x="200" y="398">L=1</text><text x="300" y="398">L=2</text><text x="400" y="398">L=3</text>
+    <text x="500" y="398">L=4</text><text x="600" y="398">L=5</text><text x="700" y="398">L=6</text>
+    <text x="800" y="398">L=7</text>
+  </g>
+
+  <!-- 프로세스 선 -->
+  <g stroke="#333333" stroke-width="2">
+    <line x1="90" y1="110" x2="850" y2="110"/>
+    <line x1="90" y1="220" x2="850" y2="220"/>
+    <line x1="90" y1="330" x2="850" y2="330"/>
+  </g>
+  <g font-size="15" font-weight="bold" fill="#222222">
+    <text x="40" y="115">P1</text><text x="40" y="225">P2</text><text x="40" y="335">P3</text>
+  </g>
+
+  <!-- 메시지 -->
+  <g stroke="#1d4ed8" stroke-width="1.8" fill="none">
+    <line x1="300" y1="110" x2="396" y2="215" marker-end="url(#arrow)"/>
+    <line x1="500" y1="220" x2="596" y2="325" marker-end="url(#arrow)"/>
+    <line x1="700" y1="330" x2="797" y2="116" marker-end="url(#arrow)"/>
+  </g>
+  <g font-size="13" fill="#1d4ed8">
+    <text x="322" y="175">m1</text><text x="522" y="285">m2</text><text x="760" y="260">m3</text>
+  </g>
+
+  <!-- 사건 점 -->
+  <g fill="#2d6a4f">
+    <circle cx="200" cy="110" r="5"/><circle cx="300" cy="110" r="5"/><circle cx="800" cy="110" r="5"/>
+    <circle cx="200" cy="220" r="5"/><circle cx="400" cy="220" r="5"/><circle cx="500" cy="220" r="5"/>
+    <circle cx="200" cy="330" r="5"/><circle cx="300" cy="330" r="5"/><circle cx="600" cy="330" r="5"/><circle cx="700" cy="330" r="5"/>
+  </g>
+  <g fill="#b45309">
+    <circle cx="400" cy="110" r="6"/><circle cx="600" cy="220" r="6"/>
+  </g>
+
+  <!-- P1, P2 라벨: 선 위 오른쪽 -->
+  <g font-size="13" fill="#222222">
+    <text x="206" y="84">a1 L1</text><text x="206" y="100">(1,0,0)</text>
+    <text x="306" y="84">a2 L2</text><text x="306" y="100">(2,0,0)</text>
+    <text x="406" y="84" fill="#b45309">a3 L3</text><text x="406" y="100" fill="#b45309">(3,0,0)</text>
+    <text x="806" y="84">a4 L7</text><text x="806" y="100">(4,3,4)</text>
+
+    <text x="206" y="194">b1 L1</text><text x="206" y="210">(0,1,0)</text>
+    <text x="406" y="194">b2 L3</text><text x="406" y="210">(2,2,0)</text>
+    <text x="506" y="194">b3 L4</text><text x="506" y="210">(2,3,0)</text>
+    <text x="606" y="194" fill="#b45309">b4 L5</text><text x="606" y="210" fill="#b45309">(2,4,0)</text>
+  </g>
+  <!-- P3 라벨: 선 아래 오른쪽 -->
+  <g font-size="13" fill="#222222">
+    <text x="206" y="350">c1 L1</text><text x="206" y="366">(0,0,1)</text>
+    <text x="306" y="350">c2 L2</text><text x="306" y="366">(0,0,2)</text>
+    <text x="606" y="350">c3 L5</text><text x="606" y="366">(2,3,3)</text>
+    <text x="706" y="350">c4 L6</text><text x="706" y="366">(2,3,4)</text>
+  </g>
+
+  <line x1="90" y1="418" x2="850" y2="418" stroke="#333333" stroke-width="1" marker-end="url(#time)"/>
+  <text x="90" y="440" font-size="13" fill="#333333">논리 시간 →  같은 세로 점선 위의 사건은 램포트 값이 같다</text>
+  <text x="850" y="440" font-size="13" fill="#b45309" text-anchor="end">a3 ∥ b4 : L 은 3 &lt; 5, 벡터는 비교 불가</text>
+</svg>
