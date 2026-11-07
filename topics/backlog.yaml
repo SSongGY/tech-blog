@@ -7217,3 +7217,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-246
+    title: "산업제어시스템 보안 표준 IEC 62443 — 영역·도관과 보안 수준"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "OT망에 인증 없는 프로토콜(MODBUS 등)이 섞일 때 IEC 62443이 요구하는 구획·보안 수준·구성요소 요구사항"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-247
+    title: "안티 포렌식 — 데이터 은닉·흔적 삭제·시각 변조와 탐지"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "아티팩트를 지우거나 위조하는 기법 분류와 조사 측 탐지 단서, 정보시스템이 미리 갖출 대비"
+    code: none
+    origin: exam
+    status: todo

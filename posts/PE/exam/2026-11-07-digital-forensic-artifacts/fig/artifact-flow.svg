@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="a1" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">아티팩트 — 데이터 출처에서 사건 재구성까지</text>
+
+  <!-- 데이터 출처 -->
+  <rect x="20" y="60" width="190" height="210" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="115" y="84" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">데이터 출처</text>
+  <text x="115" y="104" text-anchor="middle" font-size="13" fill="#4a5568">(흔히 찾는 5곳)</text>
+  <text x="38" y="132" font-size="13" fill="#1b1b1b">· 메모리</text>
+  <text x="38" y="156" font-size="13" fill="#1b1b1b">· Windows 레지스트리</text>
+  <text x="38" y="180" font-size="13" fill="#1b1b1b">· 파일 시스템 메타데이터</text>
+  <text x="38" y="204" font-size="13" fill="#1b1b1b">· 이메일</text>
+  <text x="38" y="228" font-size="13" fill="#1b1b1b">· 인터넷 활동</text>
+  <text x="115" y="256" text-anchor="middle" font-size="13" fill="#4a5568">일상 동작이 남긴 흔적</text>
+
+  <!-- 획득·파싱 -->
+  <rect x="250" y="90" width="150" height="70" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="325" y="118" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">획득 · 무결성</text>
+  <text x="325" y="140" text-anchor="middle" font-size="13" fill="#4a5568">이미지 · 해시</text>
+
+  <rect x="250" y="180" width="150" height="70" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="325" y="208" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">파싱 · 탐색</text>
+  <text x="325" y="230" text-anchor="middle" font-size="13" fill="#4a5568">파일 시스템 해석</text>
+
+  <!-- 식별·추출 -->
+  <rect x="440" y="120" width="180" height="100" fill="#fff7ed" stroke="#b45309" stroke-width="1.8" rx="4"/>
+  <text x="530" y="148" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">아티팩트</text>
+  <text x="530" y="168" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">식별 · 추출</text>
+  <text x="530" y="192" text-anchor="middle" font-size="13" fill="#4a5568">키워드 · 메타데이터</text>
+  <text x="530" y="210" text-anchor="middle" font-size="13" fill="#4a5568">해시 · 복구 기록</text>
+
+  <!-- 분석 -->
+  <rect x="660" y="120" width="200" height="100" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="760" y="152" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">분석</text>
+  <text x="760" y="176" text-anchor="middle" font-size="13" fill="#4a5568">누가 · 무엇을 · 어디서 · 언제</text>
+  <text x="760" y="198" text-anchor="middle" font-size="13" fill="#4a5568">사건 서술(재구성)</text>
+
+  <line x1="210" y1="125" x2="246" y2="125" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="325" y1="160" x2="325" y2="176" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="400" y1="200" x2="436" y2="185" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+  <line x1="620" y1="170" x2="656" y2="170" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#a1)"/>
+
+  <!-- 방해 요인 -->
+  <line x1="20" y1="296" x2="860" y2="296" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="440" y="322" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">아티팩트의 해석을 흔드는 요인</text>
+  <text x="440" y="346" text-anchor="middle" font-size="13" fill="#1b1b1b">소프트웨어 버전에 따라 의미가 바뀜 · 암호화 · 압축 · 인코딩으로 검색 누락</text>
+  <text x="440" y="368" text-anchor="middle" font-size="13" fill="#1b1b1b">안티 포렌식(가짜 아티팩트 · 시각 변조 · 로그 변조) · 복구 데이터의 섞임</text>
+</svg>
