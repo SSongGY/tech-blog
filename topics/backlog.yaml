@@ -7239,3 +7239,58 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-113
+    title: "연속 구간 찾기 — 날짜에서 행 번호를 빼서 연속 출석을 묶는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, gaps-and-islands, basics]
+    difficulty: 중급
+    angle: "출석 기록에서 연속으로 나온 날을 한 묶음으로 세는 질의를 ROW_NUMBER 차이 방식과 LAG 경계 표시 방식 두 가지로 돌려 결과를 맞춰 보고, 같은 날 중복 기록과 날짜가 TEXT 로 저장된 경우에 각각 어디서 어긋나는지 재현한다"
+    code: python
+    origin: manual
+    status: writing
+  - id: pe-248
+    title: "암달의 법칙과 구스타프슨의 법칙 — 병렬화 속도 향상의 두 가지 상한"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, computer-architecture, 개념정리, amdahl, gustafson]
+    difficulty: 중급
+    angle: "직렬 비율 s 와 프로세서 수 N 으로 두 법칙의 속도 향상을 직접 계산해 검산하고, 문제 크기를 고정하느냐 시간을 고정하느냐에 따라 같은 s 가 다른 상한을 주는 이유를 보인다"
+    code: python
+    origin: manual
+    status: writing
+  - id: gen-028
+    title: "스킵 리스트 — 동전 던지기로 균형을 잡는 정렬 연결 리스트"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [skip-list, datastructure, probabilistic, python]
+    difficulty: 중급
+    angle: "Pugh 1990 의 알고리즘을 그대로 구현해 레벨 분포와 탐색 비교 횟수를 실측하고, 논문의 기대 탐색 비용 식과 확률 p 에 따른 공간·시간 균형을 검산한다"
+    code: python
+    origin: manual
+    status: writing
+  - id: pe-249
+    title: "그래프 신경망(GNN) — 메시지 전달 틀과 GCN·GAT·GraphSAGE의 집계 방식 비교"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "Gilmer의 M·U·R 틀 하나로 GCN·GAT·GraphSAGE를 풀어 쓰고, 과평활화와 이웃 표본 추출의 이유를 원 논문 근거로"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-250
+    title: "암호 안전성 정의 — IND-CPA·IND-CCA1·IND-CCA2와 의미론적 안전성"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "공격 모델과 안전성 목표를 짝지어 게임 형태로 정의하고, OAEP·Fujisaki-Okamoto 변환이 왜 CCA2를 만드는지를 RFC 8017·FIPS 203 근거로"
+    code: none
+    origin: exam
+    status: todo
