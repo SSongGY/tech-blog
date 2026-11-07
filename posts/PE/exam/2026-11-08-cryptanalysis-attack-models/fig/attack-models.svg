@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="o" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">암호 공격 모델 — 공격자가 손에 쥔 정보로 나눈다</text>
+  <text x="440" y="52" text-anchor="middle" font-size="13" fill="#4a5568">공통 전제: 알고리즘은 공개, 키만 비밀 (Kerckhoffs 원칙)</text>
+
+  <!-- 4개 기본 모델 -->
+  <rect x="20" y="80" width="195" height="120" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="117" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 암호문 단독</text>
+  <text x="117" y="126" text-anchor="middle" font-size="13" fill="#4a5568">Ciphertext-only (COA)</text>
+  <text x="117" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">가진 것: C 만</text>
+  <text x="117" y="180" text-anchor="middle" font-size="13" fill="#9d0208">여기서 깨지면 완전 불안전</text>
+
+  <rect x="235" y="80" width="195" height="120" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="332" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 기지 평문</text>
+  <text x="332" y="126" text-anchor="middle" font-size="13" fill="#4a5568">Known-plaintext (KPA)</text>
+  <text x="332" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">가진 것: (P, C) 쌍</text>
+  <text x="332" y="180" text-anchor="middle" font-size="13" fill="#4a5568">P 는 고를 수 없음</text>
+
+  <rect x="450" y="80" width="195" height="120" fill="#fff7ed" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="547" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 선택 평문</text>
+  <text x="547" y="126" text-anchor="middle" font-size="13" fill="#4a5568">Chosen-plaintext (CPA)</text>
+  <text x="547" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">P 를 골라 넣고 C 를 받음</text>
+  <text x="547" y="180" text-anchor="middle" font-size="13" fill="#4a5568">암호화 기능 접근</text>
+
+  <rect x="665" y="80" width="195" height="120" fill="#fff7ed" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="762" y="106" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">④ 선택 암호문</text>
+  <text x="762" y="126" text-anchor="middle" font-size="13" fill="#4a5568">Chosen-ciphertext (CCA)</text>
+  <text x="762" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">C 를 골라 넣고 P 를 받음</text>
+  <text x="762" y="180" text-anchor="middle" font-size="13" fill="#4a5568">복호 장비 접근, 키는 없음</text>
+
+  <!-- 적응적 변형 -->
+  <rect x="450" y="240" width="195" height="70" fill="#ffffff" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,3" rx="4"/>
+  <text x="547" y="266" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">③′ 적응적 선택 평문</text>
+  <text x="547" y="290" text-anchor="middle" font-size="13" fill="#4a5568">앞 응답을 보고 다음 P 결정</text>
+
+  <rect x="665" y="240" width="195" height="70" fill="#ffffff" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,3" rx="4"/>
+  <text x="762" y="266" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">④′ 적응적 선택 암호문</text>
+  <text x="762" y="290" text-anchor="middle" font-size="13" fill="#4a5568">앞 응답을 보고 다음 C 결정</text>
+
+  <line x1="547" y1="200" x2="547" y2="236" stroke="#b45309" stroke-width="1.6" marker-end="url(#o)"/>
+  <line x1="762" y1="200" x2="762" y2="236" stroke="#b45309" stroke-width="1.6" marker-end="url(#o)"/>
+
+  <!-- 능력 축 -->
+  <line x1="40" y1="350" x2="840" y2="350" stroke="#4a5568" stroke-width="1.8" marker-end="url(#g)"/>
+  <text x="40" y="376" font-size="13" fill="#1b1b1b">관찰만 함</text>
+  <text x="840" y="376" text-anchor="end" font-size="13" fill="#1b1b1b">질의하고 응답을 받음</text>
+  <text x="440" y="404" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">오른쪽 모델에서 버티는 방식은 왼쪽 모델에서도 버틴다</text>
+</svg>
