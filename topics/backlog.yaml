@@ -7282,7 +7282,7 @@ topics:
     angle: "Gilmer의 M·U·R 틀 하나로 GCN·GAT·GraphSAGE를 풀어 쓰고, 과평활화와 이웃 표본 추출의 이유를 원 논문 근거로"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-250
     title: "암호 안전성 정의 — IND-CPA·IND-CCA1·IND-CCA2와 의미론적 안전성"
     category: PE
@@ -7293,4 +7293,4 @@ topics:
     angle: "공격 모델과 안전성 목표를 짝지어 게임 형태로 정의하고, OAEP·Fujisaki-Okamoto 변환이 왜 CCA2를 만드는지를 RFC 8017·FIPS 203 근거로"
     code: none
     origin: exam
-    status: todo
+    status: done

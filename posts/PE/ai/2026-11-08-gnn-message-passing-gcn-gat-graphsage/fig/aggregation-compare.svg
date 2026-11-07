@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">같은 이웃, 세 가지 집계 — 이웃 가중치를 무엇으로 정하는가</text>
+
+  <!-- 입력: 노드 v 와 이웃 -->
+  <rect x="20" y="60" width="170" height="250" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="105" y="84" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">노드 v 의 이웃 N(v)</text>
+  <line x1="105" y1="190" x2="55" y2="130" stroke="#4a5568" stroke-width="1.4"/>
+  <line x1="105" y1="190" x2="155" y2="130" stroke="#4a5568" stroke-width="1.4"/>
+  <line x1="105" y1="190" x2="55" y2="255" stroke="#4a5568" stroke-width="1.4"/>
+  <line x1="105" y1="190" x2="155" y2="255" stroke="#4a5568" stroke-width="1.4"/>
+  <circle cx="55" cy="130" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="55" y="135" text-anchor="middle" font-size="13" fill="#1b1b1b">u₁</text>
+  <circle cx="155" cy="130" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="155" y="135" text-anchor="middle" font-size="13" fill="#1b1b1b">u₂</text>
+  <circle cx="55" cy="255" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="55" y="260" text-anchor="middle" font-size="13" fill="#1b1b1b">u₃</text>
+  <circle cx="155" cy="255" r="15" fill="#ffffff" stroke="#4a5568" stroke-width="1.4"/>
+  <text x="155" y="260" text-anchor="middle" font-size="13" fill="#1b1b1b">u₄</text>
+  <circle cx="105" cy="190" r="17" fill="#fff7ed" stroke="#b45309" stroke-width="1.8"/>
+  <text x="105" y="195" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">v</text>
+  <text x="105" y="295" text-anchor="middle" font-size="13" fill="#4a5568">순서 없음 · 개수 제각각</text>
+
+  <line x1="190" y1="185" x2="216" y2="185" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+
+  <!-- GCN -->
+  <rect x="220" y="60" width="205" height="250" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="322" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">GCN</text>
+  <text x="322" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">가중치 = 차수로 고정</text>
+  <text x="322" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">c_vu = 1 / √(d̃ᵥ · d̃ᵤ)</text>
+  <text x="322" y="166" text-anchor="middle" font-size="13" fill="#4a5568">자기 자신도 이웃 (Ã = A + I)</text>
+  <text x="322" y="192" text-anchor="middle" font-size="13" fill="#4a5568">이웃 전부를 더한다</text>
+  <text x="322" y="240" text-anchor="middle" font-size="13" fill="#b45309">학습 때 그래프 전체 사용</text>
+  <text x="322" y="262" text-anchor="middle" font-size="13" fill="#b45309">전이적 (transductive)</text>
+
+  <!-- GAT -->
+  <rect x="440" y="60" width="205" height="250" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="542" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">GAT</text>
+  <text x="542" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">가중치 = 학습한 어텐션</text>
+  <text x="542" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">e_vu = a(Whᵥ, Whᵤ)</text>
+  <text x="542" y="164" text-anchor="middle" font-size="13" fill="#1b1b1b">α_vu = softmax over N(v)</text>
+  <text x="542" y="192" text-anchor="middle" font-size="13" fill="#4a5568">이웃 안에서만 계산 (masked)</text>
+  <text x="542" y="240" text-anchor="middle" font-size="13" fill="#4a5568">다중 헤드 K 개</text>
+  <text x="542" y="262" text-anchor="middle" font-size="13" fill="#4a5568">은닉층 연결 · 출력층 평균</text>
+
+  <!-- GraphSAGE -->
+  <rect x="660" y="60" width="200" height="250" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="760" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">GraphSAGE</text>
+  <text x="760" y="112" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">이웃 S 개만 균등 추출</text>
+  <text x="760" y="140" text-anchor="middle" font-size="13" fill="#1b1b1b">평균 · LSTM · 최대 풀링</text>
+  <text x="760" y="166" text-anchor="middle" font-size="13" fill="#4a5568">CONCAT(hᵥ, h_N(v)) 후 W</text>
+  <text x="760" y="192" text-anchor="middle" font-size="13" fill="#4a5568">배치당 계산량 고정</text>
+  <text x="760" y="240" text-anchor="middle" font-size="13" fill="#2d6a4f">처음 보는 노드에도 적용</text>
+  <text x="760" y="262" text-anchor="middle" font-size="13" fill="#2d6a4f">귀납적 (inductive)</text>
+
+  <!-- 공통 틀 -->
+  <rect x="220" y="335" width="640" height="80" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="540" y="362" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">공통 틀 — 메시지 전달 (Gilmer 등)</text>
+  <text x="540" y="390" text-anchor="middle" font-size="13" fill="#1b1b1b">mᵥ = Σ_{u∈N(v)} M(hᵥ, hᵤ, e_vu)  →  hᵥ' = U(hᵥ, mᵥ)  →  (그래프 수준이면) ŷ = R({hᵥ})</text>
+  <line x1="322" y1="310" x2="322" y2="331" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="542" y1="310" x2="542" y2="331" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="4,3"/>
+  <line x1="760" y1="310" x2="760" y2="331" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="4,3"/>
+</svg>

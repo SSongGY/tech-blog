@@ -99,6 +99,8 @@ ConvGNN의 대표 3개가 이웃을 모으는 방식이 다르다.
 성능을 좌우한다. 그래프 DB나 관계형 DB의 조인 결과를 그래프로 바꾸는 **데이터 파이프라인과
 갱신 주기**를 함께 설계해야 하고, 새 노드가 계속 들어오면 귀납적 모델을 고른다.
 
+> 개념 정리: [그래프 신경망(GNN) — 메시지 전달 틀과 GCN·GAT·GraphSAGE의 집계 방식 비교](../../ai/2026-11-08-gnn-message-passing-gcn-gat-graphsage/index.md)
+>
 > 개념 정리: [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](../../data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md)
 
 끝
