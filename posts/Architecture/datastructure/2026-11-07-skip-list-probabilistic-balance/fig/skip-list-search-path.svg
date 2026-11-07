@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+
+  <text x="440" y="34" font-size="16" font-weight="bold" text-anchor="middle" fill="#222222">스킵 리스트에서 키 19 찾기 — 맨 위 레벨부터 내려오며 넘치지 않는 포인터만 따라간다</text>
+  <text x="440" y="58" font-size="13" text-anchor="middle" fill="#555555">레벨 k 노드는 forward 포인터 k개를 가진다. 레벨 i 포인터는 오른쪽에서 처음 만나는 레벨 i 이상 노드를 가리킨다</text>
+
+  <!-- 레벨 4 포인터 (y=172) -->
+  <line x1="70" y1="172" x2="168" y2="172" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="210" y1="172" x2="798" y2="172" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <!-- 레벨 3 포인터 (y=202) -->
+  <line x1="70" y1="202" x2="168" y2="202" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="210" y1="202" x2="588" y2="202" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <line x1="630" y1="202" x2="798" y2="202" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- 레벨 2 포인터 (y=232) -->
+  <line x1="70" y1="232" x2="168" y2="232" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="210" y1="232" x2="308" y2="232" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="350" y1="232" x2="448" y2="232" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="490" y1="232" x2="588" y2="232" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <line x1="630" y1="232" x2="728" y2="232" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="770" y1="232" x2="798" y2="232" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <!-- 레벨 1 포인터 (y=262) -->
+  <line x1="70" y1="262" x2="98" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="140" y1="262" x2="168" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="210" y1="262" x2="238" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="280" y1="262" x2="308" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="350" y1="262" x2="378" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="420" y1="262" x2="448" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="490" y1="262" x2="518" y2="262" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow)"/>
+  <line x1="560" y1="262" x2="588" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="630" y1="262" x2="658" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="700" y1="262" x2="728" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="770" y1="262" x2="798" y2="262" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- header: 레벨 4 -->
+  <rect x="30" y="160" width="40" height="24" fill="#eeeeee" stroke="#333333"/>
+  <rect x="30" y="190" width="40" height="24" fill="#eeeeee" stroke="#333333"/>
+  <rect x="30" y="220" width="40" height="24" fill="#eeeeee" stroke="#333333"/>
+  <rect x="30" y="250" width="40" height="24" fill="#eeeeee" stroke="#333333"/>
+  <text x="50" y="177" font-size="13" text-anchor="middle" fill="#333333">4</text>
+  <text x="50" y="207" font-size="13" text-anchor="middle" fill="#333333">3</text>
+  <text x="50" y="237" font-size="13" text-anchor="middle" fill="#333333">2</text>
+  <text x="50" y="267" font-size="13" text-anchor="middle" fill="#333333">1</text>
+
+  <!-- 노드 탑: 키(레벨) 3(1) 6(4) 7(1) 9(2) 12(1) 17(2) 19(1) 21(3) 25(1) 26(2) -->
+  <rect x="100" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="170" y="160" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="170" y="190" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="170" y="220" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="170" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="240" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="310" y="220" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="310" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="380" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="450" y="220" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="450" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="520" y="250" width="40" height="24" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="590" y="190" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="590" y="220" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="590" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="660" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="730" y="220" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+  <rect x="730" y="250" width="40" height="24" fill="#f7f7f7" stroke="#333333"/>
+
+  <!-- NIL -->
+  <rect x="800" y="160" width="50" height="114" fill="#eeeeee" stroke="#333333"/>
+  <text x="825" y="222" font-size="13" text-anchor="middle" fill="#333333">NIL</text>
+
+  <!-- 탐색 경로 (초록) -->
+  <line x1="70" y1="166" x2="166" y2="166" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <line x1="190" y1="166" x2="190" y2="224" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <line x1="210" y1="226" x2="306" y2="226" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <line x1="350" y1="226" x2="446" y2="226" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <line x1="470" y1="226" x2="470" y2="254" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-green)"/>
+
+  <!-- 키 -->
+  <text x="50" y="298" font-size="13" text-anchor="middle" fill="#333333">header</text>
+  <text x="120" y="298" font-size="14" text-anchor="middle" fill="#222222">3</text>
+  <text x="190" y="298" font-size="14" text-anchor="middle" fill="#222222">6</text>
+  <text x="260" y="298" font-size="14" text-anchor="middle" fill="#222222">7</text>
+  <text x="330" y="298" font-size="14" text-anchor="middle" fill="#222222">9</text>
+  <text x="400" y="298" font-size="14" text-anchor="middle" fill="#222222">12</text>
+  <text x="470" y="298" font-size="14" text-anchor="middle" fill="#222222">17</text>
+  <text x="540" y="298" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">19</text>
+  <text x="610" y="298" font-size="14" text-anchor="middle" fill="#222222">21</text>
+  <text x="680" y="298" font-size="14" text-anchor="middle" fill="#222222">25</text>
+  <text x="750" y="298" font-size="14" text-anchor="middle" fill="#222222">26</text>
+  <text x="440" y="120" font-size="13" text-anchor="middle" fill="#555555">header 와 각 노드의 칸 수가 그 노드의 레벨이다 (header 칸의 숫자는 레벨 번호)</text>
+
+  <!-- 범례 -->
+  <line x1="40" y1="334" x2="80" y2="334" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="90" y="339" font-size="13" fill="#222222">탐색 경로 — 오른쪽 이동 3번(header→6, 6→9, 9→17) + 아래로 3단 = 길이 6</text>
+  <line x1="40" y1="364" x2="80" y2="364" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="90" y="369" font-size="13" fill="#222222">비교만 하고 넘어가지 않은 포인터 4개(NIL, 21, 21, 19) — 키 비교 7번 = 경로 길이 6 + 1</text>
+</svg>
