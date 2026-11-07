@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">MODBUS 프레임 — 같은 PDU를 전송 방식마다 다르게 감싼다</text>
+
+  <!-- PDU 공통 -->
+  <rect x="300" y="52" width="400" height="34" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="500" y="74" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">PDU = 기능 코드(1B) + 데이터 — 최대 253B</text>
+
+  <!-- RTU -->
+  <text x="20" y="128" font-size="14" font-weight="bold" fill="#1b1b1b">직렬 RTU ADU</text>
+  <text x="20" y="148" font-size="13" fill="#4a5568">최대 256B</text>
+  <rect x="160" y="110" width="120" height="44" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="220" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">서버 주소</text>
+  <text x="220" y="147" text-anchor="middle" font-size="13" fill="#4a5568">1B · 0=전체</text>
+  <rect x="280" y="110" width="80" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="320" y="137" text-anchor="middle" font-size="13" fill="#1b1b1b">기능 코드</text>
+  <rect x="360" y="110" width="300" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="510" y="137" text-anchor="middle" font-size="13" fill="#1b1b1b">데이터 (0~252B)</text>
+  <rect x="660" y="110" width="110" height="44" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="715" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">CRC-16</text>
+  <text x="715" y="147" text-anchor="middle" font-size="13" fill="#4a5568">2B</text>
+  <text x="790" y="137" font-size="13" fill="#4a5568">틈 3.5문자</text>
+
+  <!-- ASCII -->
+  <text x="20" y="200" font-size="14" font-weight="bold" fill="#1b1b1b">직렬 ASCII ADU</text>
+  <text x="20" y="220" font-size="13" fill="#4a5568">최대 513문자</text>
+  <rect x="160" y="182" width="50" height="44" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="185" y="209" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">:</text>
+  <rect x="210" y="182" width="70" height="44" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="245" y="209" text-anchor="middle" font-size="13" fill="#1b1b1b">주소</text>
+  <rect x="280" y="182" width="380" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="470" y="209" text-anchor="middle" font-size="13" fill="#1b1b1b">기능 코드 + 데이터 (바이트당 16진 문자 2개)</text>
+  <rect x="660" y="182" width="55" height="44" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="687" y="209" text-anchor="middle" font-size="13" fill="#1b1b1b">LRC</text>
+  <rect x="715" y="182" width="55" height="44" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.2"/>
+  <text x="742" y="209" text-anchor="middle" font-size="13" fill="#1b1b1b">CR LF</text>
+
+  <!-- TCP -->
+  <text x="20" y="272" font-size="14" font-weight="bold" fill="#1b1b1b">TCP ADU</text>
+  <text x="20" y="292" font-size="13" fill="#4a5568">최대 260B · 포트 502</text>
+  <rect x="160" y="254" width="70" height="44" fill="#fff7ed" stroke="#b45309" stroke-width="1.2"/>
+  <text x="195" y="274" text-anchor="middle" font-size="13" fill="#1b1b1b">트랜잭션</text>
+  <text x="195" y="291" text-anchor="middle" font-size="13" fill="#4a5568">ID 2B</text>
+  <rect x="230" y="254" width="70" height="44" fill="#fff7ed" stroke="#b45309" stroke-width="1.2"/>
+  <text x="265" y="274" text-anchor="middle" font-size="13" fill="#1b1b1b">프로토콜</text>
+  <text x="265" y="291" text-anchor="middle" font-size="13" fill="#4a5568">ID 2B=0</text>
+  <rect x="300" y="254" width="60" height="44" fill="#fff7ed" stroke="#b45309" stroke-width="1.2"/>
+  <text x="330" y="274" text-anchor="middle" font-size="13" fill="#1b1b1b">길이</text>
+  <text x="330" y="291" text-anchor="middle" font-size="13" fill="#4a5568">2B</text>
+  <rect x="360" y="254" width="60" height="44" fill="#fff7ed" stroke="#b45309" stroke-width="1.2"/>
+  <text x="390" y="274" text-anchor="middle" font-size="13" fill="#1b1b1b">유닛</text>
+  <text x="390" y="291" text-anchor="middle" font-size="13" fill="#4a5568">ID 1B</text>
+  <rect x="420" y="254" width="80" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="460" y="281" text-anchor="middle" font-size="13" fill="#1b1b1b">기능 코드</text>
+  <rect x="500" y="254" width="230" height="44" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="615" y="281" text-anchor="middle" font-size="13" fill="#1b1b1b">데이터</text>
+  <text x="745" y="281" font-size="13" fill="#4a5568">오류 검사 없음</text>
+  <path d="M160,308 L160,314 L420,314 L420,308" fill="none" stroke="#b45309" stroke-width="1.2"/>
+  <text x="290" y="332" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">MBAP 헤더 7B</text>
+
+  <!-- 응답 -->
+  <line x1="20" y1="352" x2="860" y2="352" stroke="#9aa5b1" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="440" y="376" text-anchor="middle" font-size="13" fill="#1b1b1b">정상 응답: 요청의 기능 코드를 그대로 돌려준다</text>
+  <text x="440" y="398" text-anchor="middle" font-size="13" fill="#9d0208">예외 응답: 기능 코드 + 0x80 (최상위 비트 1) 뒤에 예외 코드 1B</text>
+</svg>
