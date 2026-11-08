@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="r" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#9d0208" stroke-width="1.6"/>
+    </marker>
+    <marker id="g" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">부채널 공격 — 알고리즘이 아니라 구현이 새는 정보</text>
+
+  <!-- 암호 모듈 -->
+  <rect x="30" y="70" width="230" height="170" fill="#f5f7fa" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="145" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">암호 모듈 (키 보유)</text>
+  <text x="145" y="128" text-anchor="middle" font-size="13" fill="#1b1b1b">입력 → 암호 연산 → 출력</text>
+  <text x="145" y="158" text-anchor="middle" font-size="13" fill="#4a5568">분기 · 곱셈 · 메모리 접근이</text>
+  <text x="145" y="178" text-anchor="middle" font-size="13" fill="#4a5568">키와 데이터에 따라 달라진다</text>
+  <text x="145" y="216" text-anchor="middle" font-size="13" fill="#4a5568">수학적 구조는 안전해도 된다</text>
+
+  <!-- 누출 채널 4 -->
+  <rect x="320" y="70" width="230" height="170" fill="#fdf2f2" stroke="#9d0208" stroke-width="1.4" rx="4"/>
+  <text x="435" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">누출 채널 4가지</text>
+  <text x="435" y="130" text-anchor="middle" font-size="13" fill="#1b1b1b">① 실행 시간</text>
+  <text x="435" y="156" text-anchor="middle" font-size="13" fill="#1b1b1b">② 전력 소비</text>
+  <text x="435" y="182" text-anchor="middle" font-size="13" fill="#1b1b1b">③ 전자파 방사</text>
+  <text x="435" y="208" text-anchor="middle" font-size="13" fill="#1b1b1b">④ 캐시 상태 (공유 하드웨어)</text>
+  <line x1="260" y1="155" x2="316" y2="155" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+
+  <!-- 분석 2 -->
+  <rect x="610" y="70" width="240" height="170" fill="#fdf2f2" stroke="#9d0208" stroke-width="1.4" rx="4"/>
+  <text x="730" y="98" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">분석 방법 2가지</text>
+  <text x="730" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">단순 분석 (SPA)</text>
+  <text x="730" y="152" text-anchor="middle" font-size="13" fill="#4a5568">파형 하나를 직접 읽는다</text>
+  <text x="730" y="188" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">차분·통계 분석 (DPA)</text>
+  <text x="730" y="208" text-anchor="middle" font-size="13" fill="#4a5568">여러 파형을 키 추측별로 묶는다</text>
+  <line x1="550" y1="155" x2="606" y2="155" stroke="#9d0208" stroke-width="1.6" marker-end="url(#r)"/>
+
+  <!-- 대응 3 -->
+  <rect x="30" y="300" width="820" height="110" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.4" rx="4"/>
+  <text x="440" y="326" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">대응 3가지 (Kocher·Jaffe·Jun 1999 §6)</text>
+  <text x="170" y="358" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">① 신호를 줄인다</text>
+  <text x="170" y="380" text-anchor="middle" font-size="13" fill="#4a5568">상수 실행 경로 · 차폐</text>
+  <text x="440" y="358" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">② 잡음을 넣는다</text>
+  <text x="440" y="380" text-anchor="middle" font-size="13" fill="#4a5568">실행 시간·순서 무작위화</text>
+  <text x="710" y="358" text-anchor="middle" font-size="13" font-weight="bold" fill="#1b1b1b">③ 새도 되게 설계한다</text>
+  <text x="710" y="380" text-anchor="middle" font-size="13" fill="#4a5568">키 갱신 · 사용 횟수 제한</text>
+  <line x1="145" y1="296" x2="145" y2="244" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="435" y1="296" x2="435" y2="244" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+  <line x1="730" y1="296" x2="730" y2="244" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#g)"/>
+</svg>
