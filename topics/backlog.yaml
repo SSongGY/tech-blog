@@ -7458,4 +7458,4 @@ topics:
     angle: "파이썬으로 memtable·SSTable·두 가지 압축 방식을 구현해 같은 키 흐름을 넣고 쓰기 증폭·공간 증폭·읽을 파일 수를 센다"
     code: none
     origin: manual
-    status: todo
+    status: done
