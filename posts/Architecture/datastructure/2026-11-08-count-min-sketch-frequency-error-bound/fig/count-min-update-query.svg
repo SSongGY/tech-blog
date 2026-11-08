@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#222222">갱신: 행마다 해시로 칸 하나를 골라 +c · 조회: 그 칸들의 최솟값</text>
+  <text x="24" y="54" font-size="13" fill="#555555">w = ⌈e/ε⌉ 열, d = ⌈ln(1/δ)⌉ 행 · 해시 h1 … hd 는 쌍별 독립 함수족에서 고른다</text>
+
+  <!-- 항목 -->
+  <rect x="24" y="190" width="110" height="44" rx="6" fill="#f7f7f7" stroke="#555555"/>
+  <text x="79" y="217" font-size="14" text-anchor="middle" fill="#222222">항목 x (+c)</text>
+
+  <!-- 행 라벨 -->
+  <g font-size="13" fill="#555555" text-anchor="end">
+    <text x="236" y="112">h1</text>
+    <text x="236" y="172">h2</text>
+    <text x="236" y="232">h3</text>
+    <text x="236" y="292">h4</text>
+  </g>
+
+  <!-- 격자 4 x 8, 칸 폭 56 -->
+  <g font-size="13" text-anchor="middle" fill="#555555">
+    <rect x="246" y="90" width="448" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <rect x="246" y="150" width="448" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <rect x="246" y="210" width="448" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <rect x="246" y="270" width="448" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <path d="M302,90 V124 M358,90 V124 M414,90 V124 M470,90 V124 M526,90 V124 M582,90 V124 M638,90 V124" stroke="#cccccc"/>
+    <path d="M302,150 V184 M358,150 V184 M414,150 V184 M470,150 V184 M526,150 V184 M582,150 V184 M638,150 V184" stroke="#cccccc"/>
+    <path d="M302,210 V244 M358,210 V244 M414,210 V244 M470,210 V244 M526,210 V244 M582,210 V244 M638,210 V244" stroke="#cccccc"/>
+    <path d="M302,270 V304 M358,270 V304 M414,270 V304 M470,270 V304 M526,270 V304 M582,270 V304 M638,270 V304" stroke="#cccccc"/>
+    <rect x="358" y="90" width="56" height="34" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+    <text x="386" y="112" fill="#b45309">9</text>
+    <rect x="582" y="150" width="56" height="34" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+    <text x="610" y="172" fill="#b45309">12</text>
+    <rect x="302" y="210" width="56" height="34" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="330" y="232" fill="#2d6a4f">7</text>
+    <rect x="470" y="270" width="56" height="34" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+    <text x="498" y="292" fill="#b45309">10</text>
+  </g>
+
+  <!-- 화살표 -->
+  <g stroke="#333333" stroke-width="1.3" fill="none">
+    <path d="M134,206 C190,170 300,140 380,124" marker-end="url(#arr)"/>
+    <path d="M134,210 C260,200 500,195 604,184" marker-end="url(#arr)"/>
+    <path d="M134,214 C200,218 260,224 302,226" marker-end="url(#arr)"/>
+    <path d="M134,220 C220,260 400,280 470,286" marker-end="url(#arr)"/>
+  </g>
+
+  <!-- 조회 -->
+  <line x1="704" y1="227" x2="744" y2="227" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="750" y="198" width="110" height="58" rx="6" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="805" y="222" font-size="14" text-anchor="middle" fill="#2d6a4f">min = 7</text>
+  <text x="805" y="243" font-size="13" text-anchor="middle" fill="#2d6a4f">추정값 â</text>
+
+  <text x="24" y="346" font-size="13" fill="#222222">각 칸 = x 의 실제 빈도 a + 같은 칸으로 해시된 다른 항목들의 빈도 → 어느 칸도 a 보다 작지 않다 (과소 추정 없음)</text>
+  <text x="24" y="370" font-size="13" fill="#b45309">주황 칸: 다른 항목과 많이 겹친 행 — 최솟값을 고르면 가장 덜 겹친 행이 답이 된다</text>
+  <text x="24" y="394" font-size="13" fill="#555555">보장 (정리 1): a ≤ â 이고, 확률 1 − δ 이상으로 â ≤ a + ε·N  (N = 모든 갱신 c 의 합)</text>
+</svg>

@@ -7348,4 +7348,4 @@ topics:
     angle: "Cormode·Muthukrishnan 2005 의 구성(폭 e/ε, 깊이 ln 1/δ)대로 구현해 Zipf 분포 스트림에서 실제 오차가 보장 상한 안에 드는지 재고, 보수적 갱신과 비교한다"
     code: python
     origin: manual
-    status: todo
+    status: done
