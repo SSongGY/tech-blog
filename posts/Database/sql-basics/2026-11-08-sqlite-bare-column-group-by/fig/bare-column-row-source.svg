@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#222222">맨 컬럼(name)의 값은 그룹 안의 어느 한 행에서 가져온다</text>
+  <text x="24" y="56" font-size="13" fill="#555555">GROUP BY dept 로 묶인 dev 그룹 3행 — 어느 행인지는 SELECT 에 있는 집계 함수가 정한다</text>
+
+  <!-- 가운데: dev 그룹 -->
+  <text x="440" y="96" font-size="14" font-weight="bold" text-anchor="middle" fill="#222222">dev 그룹 (입력 행)</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="350" y="108" width="180" height="34" fill="#fff8ec" stroke="#b45309"/>
+    <text x="440" y="130" fill="#222222">kang · 4200</text>
+    <rect x="350" y="150" width="180" height="34" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="440" y="172" fill="#2d6a4f">yoon · 6300</text>
+    <rect x="350" y="192" width="180" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="440" y="214" fill="#222222">jang · 4600</text>
+  </g>
+
+  <!-- 왼쪽: max() 하나 -->
+  <rect x="24" y="120" width="250" height="92" rx="6" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="149" y="146" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">min()·max() 가 하나</text>
+  <text x="149" y="170" font-size="13" text-anchor="middle" fill="#222222">최댓값이 나온 행에서 가져온다</text>
+  <text x="149" y="194" font-size="13" text-anchor="middle" fill="#2d6a4f">name = 'yoon', top = 6300</text>
+  <line x1="344" y1="167" x2="280" y2="167" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 오른쪽: avg() -->
+  <rect x="606" y="120" width="250" height="92" rx="6" fill="#fff8ec" stroke="#b45309"/>
+  <text x="731" y="146" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">avg()·count()·sum()</text>
+  <text x="731" y="170" font-size="13" text-anchor="middle" fill="#222222">그룹 안의 임의의 한 행</text>
+  <text x="731" y="194" font-size="13" text-anchor="middle" fill="#b45309">이번 실행: name = 'kang'</text>
+  <line x1="536" y1="125" x2="600" y2="140" stroke="#b45309" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <line x1="24" y1="250" x2="856" y2="250" stroke="#dddddd" stroke-width="1"/>
+
+  <text x="24" y="280" font-size="14" font-weight="bold" fill="#222222">공식 문서가 "임의"라고 적은 경우</text>
+  <text x="24" y="306" font-size="13" fill="#9d0208">① 최댓값·최솟값이 두 행 이상에서 같으면 그중 어느 행인지 정하지 않는다</text>
+  <text x="24" y="330" font-size="13" fill="#9d0208">② min()·max() 가 둘 이상이면 어느 집계를 따를지 정하지 않는다</text>
+  <text x="24" y="354" font-size="13" fill="#9d0208">③ 애플리케이션이 min()·max() 를 재정의했으면 특례가 적용되지 않는다</text>
+  <text x="24" y="378" font-size="13" fill="#9d0208">④ 집계할 입력 행이 0개면 맨 컬럼은 어떤 값이든 될 수 있다</text>
+  <text x="24" y="404" font-size="13" fill="#555555">대부분의 다른 DBMS 는 맨 컬럼 질의 자체를 오류로 거부한다 — SQLite 고유 확장이다</text>
+</svg>

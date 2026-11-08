@@ -1,0 +1,119 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-08-sqlite-bare-column-group-by
+# 명령      : python bare_column.py
+# 수행 시각 : 2026-11-08 19:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  8행
+  컬럼   | 타입    | 제약
+  -------+---------+---------
+  emp_id | INTEGER | PK
+  dept   | TEXT    | NOT NULL
+  name   | TEXT    | NOT NULL
+  salary | INTEGER | NOT NULL
+
+  emp_id | dept  | name | salary
+  -------+-------+------+-------
+       1 | sales | kim  |   3200
+       2 | sales | lee  |   5100
+       3 | sales | park |   4100
+       4 | dev   | kang |   4200
+       5 | dev   | yoon |   6300
+       6 | dev   | jang |   4600
+       7 | ops   | han  |   3900
+       8 | ops   | seo  |   4300
+
+== 1) max() 하나 — 이름은 최고 연봉 행에서 온다 ==
+  sql> SELECT dept, name, max(salary) AS top FROM employee GROUP BY dept ORDER BY dept
+  dept | name | top
+  'dev' | 'yoon' | 6300
+  'ops' | 'seo' | 4300
+  'sales' | 'lee' | 5100
+
+== 2) max() 가 아닌 집계 — 이름은 그룹 안의 아무 행 ==
+  sql> SELECT dept, name, avg(salary) AS mean FROM employee GROUP BY dept ORDER BY dept
+  dept | name | mean
+  'dev' | 'kang' | 5033.333333333333
+  'ops' | 'han' | 4100.0
+  'sales' | 'kim' | 4133.333333333333
+
+  sql> SELECT dept, name, count(*) AS n FROM employee GROUP BY dept ORDER BY dept
+  dept | name | n
+  'dev' | 'kang' | 3
+  'ops' | 'han' | 2
+  'sales' | 'kim' | 3
+
+  sql> SELECT dept, name, max(salary) + 0 AS top_expr FROM employee GROUP BY dept ORDER BY dept
+  dept | name | top_expr
+  'dev' | 'yoon' | 6300
+  'ops' | 'seo' | 4300
+  'sales' | 'lee' | 5100
+
+== 3) 동점 — dev 에 6300 을 한 명 더 넣는다 ==
+  sql> SELECT dept, name, max(salary) AS top FROM employee WHERE dept = 'dev' GROUP BY dept
+  dept | name | top
+  'dev' | 'yoon' | 6300
+
+  sql> SELECT dept, name, emp_id, max(salary) AS top FROM employee WHERE dept = 'dev' GROUP BY dept
+  dept | name | emp_id | top
+  'dev' | 'yoon' | 5 | 6300
+
+== 4) min() 과 max() 를 함께 ==
+  sql> SELECT dept, name, min(salary) AS low, max(salary) AS top FROM employee GROUP BY dept ORDER BY dept
+  dept | name | low | top
+  'dev' | 'yoon' | 4200 | 6300
+  'ops' | 'seo' | 3900 | 4300
+  'sales' | 'lee' | 3200 | 5100
+
+  sql> SELECT dept, name, max(salary) AS top, min(salary) AS low FROM employee GROUP BY dept ORDER BY dept
+  dept | name | top | low
+  'dev' | 'kang' | 6300 | 4200
+  'ops' | 'han' | 4300 | 3900
+  'sales' | 'kim' | 5100 | 3200
+
+== 5) GROUP BY 없이, 그리고 입력 0행 ==
+  sql> SELECT name, max(salary) AS top FROM employee
+  name | top
+  'yoon' | 6300
+
+  sql> SELECT name, avg(salary) AS mean FROM employee
+  name | mean
+  'kim' | 4462.5
+
+  sql> SELECT name, max(salary) AS top FROM employee WHERE dept = 'hr'
+  name | top
+  NULL | NULL
+
+  sql> SELECT dept, name, max(salary) AS top FROM employee WHERE dept = 'hr' GROUP BY dept
+  dept | name | top
+
+== 6) 규칙에 기대지 않는 쓰기 — 동점까지 드러난다 ==
+  sql> SELECT dept, name, salary FROM ( SELECT dept, name, salary, RANK() OVER (PARTITION BY dept ORDER BY salary DESC) AS rk FROM employee) WHERE rk = 1 ORDER BY dept, name
+  dept | name | salary
+  'dev' | 'baek' | 6300
+  'dev' | 'yoon' | 6300
+  'ops' | 'seo' | 4300
+  'sales' | 'lee' | 5100
+
+  sql> SELECT e.dept, e.name, e.salary FROM employee AS e WHERE e.salary = (SELECT max(salary) FROM employee WHERE dept = e.dept) ORDER BY e.dept, e.name
+  dept | name | salary
+  'dev' | 'baek' | 6300
+  'dev' | 'yoon' | 6300
+  'ops' | 'seo' | 4300
+  'sales' | 'lee' | 5100
+

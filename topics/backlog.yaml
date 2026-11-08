@@ -7371,3 +7371,36 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-115
+    title: "GROUP BY에 없는 컬럼을 SELECT에 쓰면 — SQLite 맨 컬럼 규칙과 MAX()의 특례"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, group-by, aggregate, basics]
+    difficulty: 입문
+    angle: "다른 DBMS는 에러를 내는 맨 컬럼 질의를 SQLite가 받아 주는 규칙을 실측한다. min/max 하나일 때는 그 행 값이 나오고, 집계가 둘이거나 avg일 때는 아무 행 값이 나오는 것을 재현하고 윈도 함수로 바꿔 쓰는 법을 보인다"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-254
+    title: "충돌 직렬 가능성과 선행 그래프 — 동시 실행 스케줄이 직렬 실행과 같은지 판정하기"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, concurrency, serializability, 개념정리]
+    difficulty: 중급
+    angle: "교재 예제 스케줄을 파이썬으로 충돌 쌍과 선행 그래프를 뽑아 사이클 유무로 판정하고, 뷰 직렬 가능성과 2단계 로킹과의 관계를 대비한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-030
+    title: "허프만 부호를 직접 만들어 엔트로피 하한과 zlib에 맞대 보기"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [huffman, entropy, compression, deflate]
+    difficulty: 중급
+    angle: "표준 라이브러리 heapq로 허프만 트리를 만들어 평균 부호 길이를 섀넌 엔트로피와 비교하고, 같은 입력을 zlib(DEFLATE)으로 압축해 문맥을 보는 LZ77이 어디서 이기는지 측정한다"
+    code: python
+    origin: manual
+    status: done
