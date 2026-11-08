@@ -1,14 +1,15 @@
 # 글 목록
 
-총 **678편** · 갱신 2026-11-08
+총 **681편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 102편
+## DB문법 (basics) — 103편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-08 | [GROUP BY에 없는 컬럼을 SELECT에 쓰면 — SQLite 맨 컬럼 규칙과 MAX()의 특례](posts/Database/sql-basics/2026-11-08-sqlite-bare-column-group-by/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
+| 2026-11-08 | [행 값(row value) — 여러 컬럼을 괄호로 묶어 비교하고 IN 하고 UPDATE 하기](posts/Database/sql-basics/2026-11-08-sql-row-value-compare-in-update/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [중앙값 구하기 — 함수가 없을 때 ROW_NUMBER와 COUNT로 홀짝 행을 함께 처리하는 법](posts/Database/sql-basics/2026-11-08-sql-median-row-number-count/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [연속 구간 찾기 — 날짜에서 행 번호를 빼서 연속 출석을 묶는 법](posts/Database/sql-basics/2026-11-07-sql-gaps-and-islands-consecutive-days/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [max(a, b)와 MAX(col) — 이름은 같고 NULL은 반대로 다룬다](posts/Database/sql-basics/2026-11-07-scalar-max-vs-aggregate-max/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -136,10 +137,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 238편
+## 기술사 (pe) — 239편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [신뢰도와 가용성 — MTBF·MTTR과 직렬·병렬 구성의 계산](posts/PE/computer-architecture/2026-11-08-reliability-availability-mtbf-series-parallel/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook §8.1, ITU-T E.800 (09/2008) | 실행 검증 |
 | 2026-11-08 | [MoE(전문가 혼합) — 라우터, 상위 k 선택, 부하 균형과 전문가 병렬](posts/PE/emerging-tech/2026-11-08-mixture-of-experts-routing-load-balancing/index.md) | 중급 | Shazeer et al., arXiv:1701.06538 v1 (ICLR 2017), Lepikhin et al., GShard, arXiv:2006.16668 v1 (2020), Fedus et al., Switch Transformers, arXiv:2101.03961 v3 (JMLR 23, 2022), Jiang et al., Mixtral of Experts, arXiv:2401.04088 v1 (2024-01) | 문서 근거 |
 | 2026-11-08 | [ISO/IEC 38507 AI 거버넌스 — 38500을 AI 사용에 적용한 거버넌스체 지침](posts/PE/it-management/2026-11-08-iso-iec-38507-ai-governance-implications/index.md) | 중급 | ISO/IEC 38507:2022 (제1판, 2022-04), ISO/IEC 38500:2015 (제2판, 2015-02-15), ISO/IEC 42001:2023, ISO/IEC 23894:2023 | 문서 근거 |
 | 2026-11-08 | [암호 안전성 정의 — IND-CPA·IND-CCA1·IND-CCA2와 의미론적 안전성](posts/PE/security/2026-11-08-ind-cpa-cca-security-notions/index.md) | 중급 | Bellare·Desai·Pointcheval·Rogaway, CRYPTO '98 (IACR ePrint 1998/021), RFC 8017 PKCS #1 v2.2 (2016-11), NIST FIPS 203 (2024-08) | 문서 근거 |
@@ -402,10 +404,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 67편
+## 일반 (general) — 68편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [LSM 트리 쓰기 증폭 — 크기 계층 압축과 레벨 압축을 직접 세어 보기](posts/Database/storage-engine/2026-11-08-lsm-compaction-write-amplification/index.md) | 심화 | Python 3.13.5, RocksDB wiki (Leveled-Compaction 2023-11, Universal-Compaction 2023-06) | 실행 검증 |
 | 2026-11-08 | [허프만 부호를 직접 만들어 엔트로피 하한과 zlib에 맞대 보기](posts/Architecture/datastructure/2026-11-08-huffman-code-entropy-vs-zlib/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-08 | [Count-Min Sketch — 고정 메모리로 빈도를 세고 과대 추정의 상한을 보장하는 법](posts/Architecture/datastructure/2026-11-08-count-min-sketch-frequency-error-bound/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-07 | [스킵 리스트 — 난수로 레벨을 정해 균형을 맞추는 정렬 연결 리스트](posts/Architecture/datastructure/2026-11-07-skip-list-probabilistic-balance/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
