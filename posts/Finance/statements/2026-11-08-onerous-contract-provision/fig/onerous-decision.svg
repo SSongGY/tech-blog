@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">손실부담계약 충당부채 판단 순서 (제1037호)</text>
+
+  <!-- 시작 -->
+  <rect x="270" y="50" width="340" height="54" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="73" text-anchor="middle" font-size="14" fill="#1f2937">앞으로 손실이 예상된다</text>
+  <text x="440" y="94" text-anchor="middle" font-size="13" fill="#4b5563">그 손실이 특정 계약에서 나오는가?</text>
+
+  <!-- 왼쪽: 계약 없음 -->
+  <line x1="270" y1="77" x2="170" y2="77" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="170" y1="77" x2="170" y2="138" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="222" y="70" text-anchor="middle" font-size="13" fill="#4b5563">아니오</text>
+  <rect x="30" y="140" width="280" height="62" rx="6" fill="#fef2f2" stroke="#9d0208"/>
+  <text x="170" y="164" text-anchor="middle" font-size="14" fill="#9d0208">미래 영업손실 — 충당부채 아님</text>
+  <text x="170" y="188" text-anchor="middle" font-size="13" fill="#4b5563">문단 63 · 관련 자산 손상검사 (문단 65)</text>
+
+  <!-- 아래: 해약 가능 여부 -->
+  <line x1="440" y1="104" x2="440" y2="138" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="458" y="126" font-size="13" fill="#4b5563">예</text>
+  <rect x="270" y="140" width="340" height="62" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="164" text-anchor="middle" font-size="14" fill="#1f2937">보상 없이 해약할 수 있는 계약인가?</text>
+  <text x="440" y="188" text-anchor="middle" font-size="13" fill="#4b5563">예: 일상적인 구매주문 (문단 67)</text>
+
+  <line x1="610" y1="171" x2="710" y2="171" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="710" y1="171" x2="710" y2="228" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="660" y="163" text-anchor="middle" font-size="13" fill="#4b5563">예</text>
+  <rect x="580" y="230" width="270" height="54" rx="6" fill="#f9fafb" stroke="#6b7280"/>
+  <text x="715" y="253" text-anchor="middle" font-size="14" fill="#1f2937">의무가 없다</text>
+  <text x="715" y="274" text-anchor="middle" font-size="13" fill="#4b5563">충당부채 없음</text>
+
+  <!-- 회피 불가능 원가 -->
+  <line x1="440" y1="202" x2="440" y2="248" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="470" y="230" font-size="13" fill="#4b5563">아니오</text>
+  <rect x="210" y="250" width="340" height="86" rx="6" fill="#fffbeb" stroke="#b45309"/>
+  <text x="380" y="274" text-anchor="middle" font-size="14" fill="#1f2937">회피 불가능 원가 &gt; 받을 경제적 효익?</text>
+  <text x="380" y="298" text-anchor="middle" font-size="13" fill="#4b5563">회피 불가능 원가 = 이행원가와 위약금 중 적은 쪽</text>
+  <text x="380" y="320" text-anchor="middle" font-size="13" fill="#b45309">이행원가 = 증분원가 + 직접 관련 원가 배분액 (68A)</text>
+
+  <line x1="210" y1="293" x2="140" y2="293" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="140" y1="293" x2="140" y2="368" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="172" y="285" text-anchor="middle" font-size="13" fill="#4b5563">아니오</text>
+  <rect x="20" y="370" width="240" height="54" rx="6" fill="#f9fafb" stroke="#6b7280"/>
+  <text x="140" y="393" text-anchor="middle" font-size="14" fill="#1f2937">손실을 부담하지 않는</text>
+  <text x="140" y="414" text-anchor="middle" font-size="13" fill="#4b5563">미이행계약 — 범위 밖 (문단 67)</text>
+
+  <!-- 손상 먼저 -->
+  <line x1="440" y1="336" x2="440" y2="368" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="458" y="358" font-size="13" fill="#4b5563">예</text>
+  <rect x="300" y="370" width="280" height="54" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="393" text-anchor="middle" font-size="14" fill="#1f2937">계약에 쓰는 자산의 손상차손 먼저</text>
+  <text x="440" y="414" text-anchor="middle" font-size="13" fill="#4b5563">문단 69 · 제1036호</text>
+
+  <line x1="440" y1="424" x2="440" y2="446" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="300" y="448" width="280" height="54" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="471" text-anchor="middle" font-size="14" fill="#2d6a4f">남은 현재의무를 충당부채로 인식</text>
+  <text x="440" y="492" text-anchor="middle" font-size="13" fill="#4b5563">문단 66 · 보고기간 말마다 재검토 (문단 59)</text>
+</svg>
