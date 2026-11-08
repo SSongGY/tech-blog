@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **676편** · 갱신 2026-11-08
+총 **678편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -578,11 +578,13 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 132편
+## 주식·재무 (finance) — 134편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [반품권이 있는 판매 — 환불부채와 반환재고 회수권, 변동대가 제약](posts/Finance/statements/2026-11-08-sales-with-right-of-return/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-08 | [손실부담계약 충당부채 — 아직 이행하지 않은 계약의 손실을 미리 잡는 경우](posts/Finance/statements/2026-11-08-onerous-contract-provision/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
+| 2026-11-08 | [고객 포인트 — 중요한 권리면 수익의 일부를 계약부채로 미룬다](posts/Finance/statements/2026-11-08-customer-loyalty-points-material-right/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-08 | [원가기준 진행률 — 추정 총원가가 바뀌면 누적 수익을 그해에 다시 맞춘다](posts/Finance/statements/2026-11-08-cost-to-cost-progress-estimate-change/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-07 | [공동영업과 공동기업 — 같은 50% 약정이 재무제표에 다르게 올라간다](posts/Finance/statements/2026-11-07-joint-operation-vs-joint-venture/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1111호 공동약정 | 실행 검증 |
 | 2026-11-07 | [연결 내부거래 미실현이익 — 재고는 팔릴 때, 설비는 감가상각으로 실현된다](posts/Finance/statements/2026-11-07-intragroup-unrealised-profit-elimination/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1110호 연결재무제표 | 실행 검증 |
