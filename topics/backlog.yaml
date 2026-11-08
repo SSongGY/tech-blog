@@ -7349,3 +7349,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-252
+    title: "MoE(전문가 혼합) — 라우터, 상위 k 선택, 부하 균형과 전문가 병렬"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "Shazeer 2017·Switch·Mixtral 원 논문 기준으로 게이트 수식, 보조 손실, 용량 계수, 토큰 드롭과 전문가 병렬 통신을 정리"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-253
+    title: "ISO/IEC 38507 AI 거버넌스 — 38500을 AI 사용에 적용한 거버넌스체 지침"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "38500 원칙·평가지시감시 모델과의 관계, AI가 다른 IT와 다른 3가지, 정책 영역 6가지, 42001과의 층 구분"
+    code: none
+    origin: exam
+    status: todo

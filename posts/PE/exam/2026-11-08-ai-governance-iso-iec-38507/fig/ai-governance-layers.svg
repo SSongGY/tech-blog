@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 452" width="880" height="452" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="452" fill="#fbfbfd"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- input: why AI differs -->
+  <rect x="24" y="40" width="230" height="124" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="139" y="66" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">AI가 다른 IT와 다른 점</text>
+  <text x="139" y="92" font-size="13" fill="#8a4a0d" text-anchor="middle">① 의사결정 자동화</text>
+  <text x="139" y="116" font-size="13" fill="#8a4a0d" text-anchor="middle">② 데이터 기반 문제 해결</text>
+  <text x="139" y="140" font-size="13" fill="#8a4a0d" text-anchor="middle">③ 적응형 시스템</text>
+  <line x1="254" y1="102" x2="300" y2="102" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)"/>
+
+  <!-- governing body -->
+  <text x="320" y="28" font-size="15" font-weight="bold" fill="#2d6a4f">거버넌스 — 사람(거버넌스체)이 한다</text>
+  <rect x="306" y="40" width="550" height="124" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="581" y="66" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">거버넌스체 (이사회 등)</text>
+  <text x="581" y="92" font-size="13" fill="#39533f" text-anchor="middle">평가 (Evaluate) → 지시 (Direct) → 감시 (Monitor)</text>
+  <text x="581" y="116" font-size="13" fill="#39533f" text-anchor="middle">AI 도입 뒤에도 거버넌스와 책무(accountability)를 유지</text>
+  <text x="581" y="140" font-size="13" fill="#39533f" text-anchor="middle">ISO/IEC 38500 모델을 AI 사용에 적용 (38507 4절)</text>
+
+  <!-- policy areas -->
+  <line x1="440" y1="164" x2="440" y2="206" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="452" y="190" font-size="13" fill="#374151">지시 — 정책으로 내린다</text>
+  <line x1="740" y1="206" x2="740" y2="168" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="752" y="190" font-size="13" fill="#374151">감시</text>
+
+  <text x="24" y="234" font-size="15" font-weight="bold" fill="#2d6a4f">AI 사용을 다루는 정책 영역 6가지 (38507 6절)</text>
+  <rect x="24" y="246" width="262" height="70" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="155" y="274" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">① 감독 ② 의사결정</text>
+  <text x="155" y="298" font-size="13" fill="#39533f" text-anchor="middle">누가 보고 누가 결정하는가</text>
+
+  <rect x="309" y="246" width="262" height="70" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="440" y="274" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">③ 데이터 사용 ④ 문화·가치</text>
+  <text x="440" y="298" font-size="13" fill="#39533f" text-anchor="middle">무엇으로 학습하고 무엇을 지키는가</text>
+
+  <rect x="594" y="246" width="262" height="70" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="725" y="274" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">⑤ 컴플라이언스 ⑥ 위험</text>
+  <text x="725" y="298" font-size="13" fill="#39533f" text-anchor="middle">의무 · 위험 성향 · 통제</text>
+
+  <!-- management layer -->
+  <line x1="440" y1="316" x2="440" y2="358" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="452" y="342" font-size="13" fill="#374151">경영이 실행한다</text>
+  <line x1="740" y1="358" x2="740" y2="320" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="752" y="342" font-size="13" fill="#374151">성과·위험 보고</text>
+
+  <rect x="24" y="364" width="832" height="70" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="440" y="392" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">경영 (Management) — 정책을 운영으로 옮긴다</text>
+  <text x="440" y="416" font-size="13" fill="#4b5563" text-anchor="middle">ISO/IEC 42001 경영시스템 · ISO/IEC 23894 위험관리 · ISO/IEC 42005 영향평가</text>
+</svg>
