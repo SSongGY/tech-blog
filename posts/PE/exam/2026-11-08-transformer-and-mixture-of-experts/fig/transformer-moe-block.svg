@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#fbfbfd"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- left: transformer layer -->
+  <text x="24" y="30" font-size="15" font-weight="bold" fill="#2d6a4f">트랜스포머 층 (N = 6 반복)</text>
+
+  <rect x="24" y="352" width="330" height="62" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="189" y="378" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">입력 임베딩 + 위치 인코딩</text>
+  <text x="189" y="400" font-size="13" fill="#4b5563" text-anchor="middle">d_model = 512, 사인·코사인</text>
+
+  <line x1="189" y1="352" x2="189" y2="278" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="24" y="200" width="330" height="72" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="189" y="226" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">멀티헤드 셀프 어텐션 (h = 8)</text>
+  <text x="189" y="248" font-size="13" fill="#39533f" text-anchor="middle">softmax(QKᵀ/√d_k)·V</text>
+  <text x="189" y="266" font-size="13" fill="#39533f" text-anchor="middle">+ 잔차 연결 · 층 정규화</text>
+
+  <line x1="189" y1="200" x2="189" y2="130" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="24" y="52" width="330" height="72" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="189" y="78" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">위치별 FFN (d_ff = 2048)</text>
+  <text x="189" y="100" font-size="13" fill="#8a4a0d" text-anchor="middle">모든 토큰이 같은 FFN을 지난다</text>
+  <text x="189" y="118" font-size="13" fill="#8a4a0d" text-anchor="middle">+ 잔차 연결 · 층 정규화</text>
+
+  <!-- replace arrow -->
+  <line x1="354" y1="88" x2="420" y2="88" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)"/>
+  <text x="358" y="78" font-size="13" fill="#b45309">MoE가</text>
+  <text x="358" y="110" font-size="13" fill="#b45309">대체</text>
+
+  <!-- right: MoE layer -->
+  <text x="428" y="30" font-size="15" font-weight="bold" fill="#b45309">MoE 층 — FFN 자리에 들어간다</text>
+
+  <rect x="428" y="52" width="428" height="72" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="642" y="78" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">라우터 (게이트)</text>
+  <text x="642" y="100" font-size="13" fill="#39533f" text-anchor="middle">토큰마다 softmax(W_r·x)로 전문가 점수 계산</text>
+  <text x="642" y="118" font-size="13" fill="#39533f" text-anchor="middle">상위 k개만 고른다 (Switch k=1, Mixtral k=2)</text>
+
+  <line x1="642" y1="124" x2="642" y2="168" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="428" y="174" width="428" height="98" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="642" y="198" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">전문가 E₁ … E_N (각자 독립된 FFN)</text>
+  <rect x="446" y="210" width="90" height="34" rx="4" fill="#2d6a4f"/>
+  <text x="491" y="232" font-size="13" fill="#ffffff" text-anchor="middle">E₁ 선택</text>
+  <rect x="548" y="210" width="90" height="34" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="593" y="232" font-size="13" fill="#6b7280" text-anchor="middle">E₂</text>
+  <rect x="650" y="210" width="90" height="34" rx="4" fill="#2d6a4f"/>
+  <text x="695" y="232" font-size="13" fill="#ffffff" text-anchor="middle">E₃ 선택</text>
+  <rect x="752" y="210" width="90" height="34" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="797" y="232" font-size="13" fill="#6b7280" text-anchor="middle">E_N</text>
+  <text x="642" y="262" font-size="13" fill="#8a4a0d" text-anchor="middle">고르지 않은 전문가는 계산하지 않는다 (조건부 연산)</text>
+
+  <line x1="642" y1="272" x2="642" y2="316" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="428" y="322" width="428" height="92" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="642" y="348" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">가중합 y = Σ G(x)ᵢ · Eᵢ(x)</text>
+  <text x="642" y="372" font-size="13" fill="#39533f" text-anchor="middle">보조 손실로 전문가 부하를 고르게 맞춘다</text>
+  <text x="642" y="394" font-size="13" fill="#39533f" text-anchor="middle">용량 초과 토큰은 잔차 연결로 그대로 통과</text>
+</svg>
