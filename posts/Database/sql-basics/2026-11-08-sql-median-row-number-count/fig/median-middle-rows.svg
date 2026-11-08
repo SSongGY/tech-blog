@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#222222">정렬 후 번호를 매기고, 가운데 번호 lo·hi 의 행만 남겨 평균을 낸다</text>
+  <text x="24" y="56" font-size="13" fill="#555555">lo = (cnt + 1) / 2, hi = (cnt + 2) / 2 — 정수끼리 나누면 소수점 아래를 버린다</text>
+
+  <!-- 홀수: sales 5행 -->
+  <text x="24" y="100" font-size="14" font-weight="bold" fill="#222222">홀수 cnt = 5 (sales)</text>
+  <text x="24" y="120" font-size="13" fill="#555555">lo = 6/2 = 3, hi = 7/2 = 3</text>
+  <g font-size="14" text-anchor="middle">
+    <text x="250" y="86" font-size="13" fill="#555555">rn 1</text>
+    <text x="340" y="86" font-size="13" fill="#555555">rn 2</text>
+    <text x="430" y="86" font-size="13" fill="#555555">rn 3</text>
+    <text x="520" y="86" font-size="13" fill="#555555">rn 4</text>
+    <text x="610" y="86" font-size="13" fill="#555555">rn 5</text>
+    <rect x="212" y="94" width="76" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="250" y="116" fill="#222222">3200</text>
+    <rect x="302" y="94" width="76" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="340" y="116" fill="#222222">3500</text>
+    <rect x="392" y="94" width="76" height="34" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="430" y="116" fill="#2d6a4f">3500</text>
+    <rect x="482" y="94" width="76" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="520" y="116" fill="#222222">4100</text>
+    <rect x="572" y="94" width="76" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="610" y="116" fill="#222222">12000</text>
+  </g>
+  <line x1="656" y1="111" x2="716" y2="111" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="722" y="92" width="136" height="38" rx="6" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="790" y="116" font-size="14" text-anchor="middle" fill="#2d6a4f">avg = 3500.0</text>
+  <text x="212" y="152" font-size="13" fill="#555555">lo 와 hi 가 같은 행을 가리키므로 가운데 한 행의 값이 그대로 나온다</text>
+
+  <line x1="24" y1="176" x2="856" y2="176" stroke="#dddddd" stroke-width="1"/>
+
+  <!-- 짝수: dev 4행 -->
+  <text x="24" y="224" font-size="14" font-weight="bold" fill="#222222">짝수 cnt = 4 (dev)</text>
+  <text x="24" y="244" font-size="13" fill="#555555">lo = 5/2 = 2, hi = 6/2 = 3</text>
+  <g font-size="14" text-anchor="middle">
+    <text x="250" y="210" font-size="13" fill="#555555">rn 1</text>
+    <text x="340" y="210" font-size="13" fill="#555555">rn 2</text>
+    <text x="430" y="210" font-size="13" fill="#555555">rn 3</text>
+    <text x="520" y="210" font-size="13" fill="#555555">rn 4</text>
+    <rect x="212" y="218" width="76" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="250" y="240" fill="#222222">4200</text>
+    <rect x="302" y="218" width="76" height="34" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="340" y="240" fill="#2d6a4f">4500</text>
+    <rect x="392" y="218" width="76" height="34" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="430" y="240" fill="#2d6a4f">4601</text>
+    <rect x="482" y="218" width="76" height="34" fill="#f7f7f7" stroke="#999999"/>
+    <text x="520" y="240" fill="#222222">5300</text>
+  </g>
+  <line x1="566" y1="235" x2="716" y2="235" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="722" y="216" width="136" height="38" rx="6" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="790" y="240" font-size="14" text-anchor="middle" fill="#2d6a4f">avg = 4550.5</text>
+  <text x="212" y="276" font-size="13" fill="#555555">가운데 두 행이 남고, avg() 가 실수로 평균을 낸다</text>
+
+  <line x1="24" y1="300" x2="856" y2="300" stroke="#dddddd" stroke-width="1"/>
+
+  <text x="24" y="330" font-size="13" fill="#9d0208">틀리는 자리 ① NULL 을 남겨 두면 COUNT(*) 가 세고, 오름차순에서 맨 앞에 서서 번호가 밀린다</text>
+  <text x="24" y="354" font-size="13" fill="#9d0208">틀리는 자리 ② RANK() 는 동점 뒤 번호를 건너뛰어 lo·hi 번호를 가진 행이 없을 수 있다</text>
+  <text x="24" y="378" font-size="13" fill="#b45309">주의 (4500 + 4601) / 2 처럼 정수끼리 나누면 4550 이 된다 — avg() 나 2.0 으로 나눈다</text>
+</svg>

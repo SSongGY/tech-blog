@@ -7316,3 +7316,36 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: db-114
+    title: "중앙값 구하기 — 함수가 없을 때 ROW_NUMBER와 COUNT로 홀짝 행을 함께 처리하는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, median, window-function, basics]
+    difficulty: 입문
+    angle: "SQLite 에 median 함수가 있는지부터 확인하고, ROW_NUMBER·COUNT 창 함수로 홀수·짝수 행 수 모두 맞는 중앙값을 구한다. 그룹별 중앙값과 NULL·동점 처리를 평균과 나란히 비교한다"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-251
+    title: "캐시 사상 방식 — 직접·완전 연관·집합 연관의 주소 비트 분할과 충돌 미스"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, 컴퓨터구조, cache, 개념정리]
+    difficulty: 중급
+    angle: "주소를 태그·인덱스·오프셋으로 나누는 비트 수를 계산하고, 같은 접근열을 세 방식으로 시뮬레이션해 충돌 미스가 연관도에 따라 어떻게 줄어드는지 검산한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: gen-029
+    title: "Count-Min Sketch — 고정 메모리로 빈도를 세고 과대 추정의 상한을 보장하는 법"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [count-min-sketch, streaming, probabilistic, heavy-hitters]
+    difficulty: 중급
+    angle: "Cormode·Muthukrishnan 2005 의 구성(폭 e/ε, 깊이 ln 1/δ)대로 구현해 Zipf 분포 스트림에서 실제 오차가 보장 상한 안에 드는지 재고, 보수적 갱신과 비교한다"
+    code: python
+    origin: manual
+    status: todo
