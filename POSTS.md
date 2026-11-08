@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **681편** · 갱신 2026-11-09
+총 **683편** · 갱신 2026-11-09
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -137,10 +137,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 239편
+## 기술사 (pe) — 241편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-09 | [부채널 공격 — 구현이 새는 시간·전력·전자파·캐시 정보와 대응 3가지](posts/PE/security/2026-11-09-side-channel-attack-countermeasures/index.md) | 중급 | Kocher, Timing Attacks (CRYPTO '96), Kocher·Jaffe·Jun, Differential Power Analysis (CRYPTO '99), NIST FIPS 140-3 (2019-03), ISO/IEC 17825:2024 | 문서 근거 |
+| 2026-11-09 | [차분 암호분석과 선형 암호분석 — S-box의 차분 분포표와 선형 근사표를 직접 세어 보기](posts/PE/security/2026-11-09-differential-linear-cryptanalysis-ddt-lat/index.md) | 심화 | Python 3.13.5, Heys, A Tutorial on Linear and Differential Cryptanalysis (Cryptologia 26(3), 2002) | 실행 검증 |
 | 2026-11-08 | [신뢰도와 가용성 — MTBF·MTTR과 직렬·병렬 구성의 계산](posts/PE/computer-architecture/2026-11-08-reliability-availability-mtbf-series-parallel/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook §8.1, ITU-T E.800 (09/2008) | 실행 검증 |
 | 2026-11-08 | [MoE(전문가 혼합) — 라우터, 상위 k 선택, 부하 균형과 전문가 병렬](posts/PE/emerging-tech/2026-11-08-mixture-of-experts-routing-load-balancing/index.md) | 중급 | Shazeer et al., arXiv:1701.06538 v1 (ICLR 2017), Lepikhin et al., GShard, arXiv:2006.16668 v1 (2020), Fedus et al., Switch Transformers, arXiv:2101.03961 v3 (JMLR 23, 2022), Jiang et al., Mixtral of Experts, arXiv:2401.04088 v1 (2024-01) | 문서 근거 |
 | 2026-11-08 | [ISO/IEC 38507 AI 거버넌스 — 38500을 AI 사용에 적용한 거버넌스체 지침](posts/PE/it-management/2026-11-08-iso-iec-38507-ai-governance-implications/index.md) | 중급 | ISO/IEC 38507:2022 (제1판, 2022-04), ISO/IEC 38500:2015 (제2판, 2015-02-15), ISO/IEC 42001:2023, ISO/IEC 23894:2023 | 문서 근거 |
