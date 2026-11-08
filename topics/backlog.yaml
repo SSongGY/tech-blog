@@ -7337,7 +7337,7 @@ topics:
     angle: "주소를 태그·인덱스·오프셋으로 나누는 비트 수를 계산하고, 같은 접근열을 세 방식으로 시뮬레이션해 충돌 미스가 연관도에 따라 어떻게 줄어드는지 검산한다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: gen-029
     title: "Count-Min Sketch — 고정 메모리로 빈도를 세고 과대 추정의 상한을 보장하는 법"
     category: Architecture
