@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **683편** · 갱신 2026-11-09
+총 **686편** · 갱신 2026-11-09
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 103편
+## DB문법 (basics) — 104편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-09 | [CREATE TABLE AS SELECT로 복사한 표가 잃는 것 — 기본키·제약조건·인덱스와 INSERT INTO ... SELECT](posts/Database/sql-basics/2026-11-09-ctas-loses-constraints-insert-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [GROUP BY에 없는 컬럼을 SELECT에 쓰면 — SQLite 맨 컬럼 규칙과 MAX()의 특례](posts/Database/sql-basics/2026-11-08-sqlite-bare-column-group-by/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [행 값(row value) — 여러 컬럼을 괄호로 묶어 비교하고 IN 하고 UPDATE 하기](posts/Database/sql-basics/2026-11-08-sql-row-value-compare-in-update/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [중앙값 구하기 — 함수가 없을 때 ROW_NUMBER와 COUNT로 홀짝 행을 함께 처리하는 법](posts/Database/sql-basics/2026-11-08-sql-median-row-number-count/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -137,11 +138,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 241편
+## 기술사 (pe) — 242편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-09 | [부채널 공격 — 구현이 새는 시간·전력·전자파·캐시 정보와 대응 3가지](posts/PE/security/2026-11-09-side-channel-attack-countermeasures/index.md) | 중급 | Kocher, Timing Attacks (CRYPTO '96), Kocher·Jaffe·Jun, Differential Power Analysis (CRYPTO '99), NIST FIPS 140-3 (2019-03), ISO/IEC 17825:2024 | 문서 근거 |
+| 2026-11-09 | [명령어 파이프라인 해저드 — 구조·데이터·제어 3가지와 스톨·포워딩을 사이클 표로 세기](posts/PE/computer-architecture/2026-11-09-pipeline-hazards-stall-forwarding-cycles/index.md) | 중급 | Python 3.13.5, Cornell CS3410 Spring 2019 Lecture 7 (RISC-V 5단계), MIT 6.004 Spring 2017 L15 | 실행 검증 |
 | 2026-11-09 | [차분 암호분석과 선형 암호분석 — S-box의 차분 분포표와 선형 근사표를 직접 세어 보기](posts/PE/security/2026-11-09-differential-linear-cryptanalysis-ddt-lat/index.md) | 심화 | Python 3.13.5, Heys, A Tutorial on Linear and Differential Cryptanalysis (Cryptologia 26(3), 2002) | 실행 검증 |
 | 2026-11-08 | [신뢰도와 가용성 — MTBF·MTTR과 직렬·병렬 구성의 계산](posts/PE/computer-architecture/2026-11-08-reliability-availability-mtbf-series-parallel/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook §8.1, ITU-T E.800 (09/2008) | 실행 검증 |
 | 2026-11-08 | [MoE(전문가 혼합) — 라우터, 상위 k 선택, 부하 균형과 전문가 병렬](posts/PE/emerging-tech/2026-11-08-mixture-of-experts-routing-load-balancing/index.md) | 중급 | Shazeer et al., arXiv:1701.06538 v1 (ICLR 2017), Lepikhin et al., GShard, arXiv:2006.16668 v1 (2020), Fedus et al., Switch Transformers, arXiv:2101.03961 v3 (JMLR 23, 2022), Jiang et al., Mixtral of Experts, arXiv:2401.04088 v1 (2024-01) | 문서 근거 |
@@ -406,10 +408,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 68편
+## 일반 (general) — 69편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-09 | [저수지 표본추출 — 길이를 모르는 스트림에서 k개를 고르게 뽑는 Algorithm R과 X](posts/Architecture/datastructure/2026-11-09-reservoir-sampling-algorithm-r-x/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [LSM 트리 쓰기 증폭 — 크기 계층 압축과 레벨 압축을 직접 세어 보기](posts/Database/storage-engine/2026-11-08-lsm-compaction-write-amplification/index.md) | 심화 | Python 3.13.5, RocksDB wiki (Leveled-Compaction 2023-11, Universal-Compaction 2023-06) | 실행 검증 |
 | 2026-11-08 | [허프만 부호를 직접 만들어 엔트로피 하한과 zlib에 맞대 보기](posts/Architecture/datastructure/2026-11-08-huffman-code-entropy-vs-zlib/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-08 | [Count-Min Sketch — 고정 메모리로 빈도를 세고 과대 추정의 상한을 보장하는 법](posts/Architecture/datastructure/2026-11-08-count-min-sketch-frequency-error-bound/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
