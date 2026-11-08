@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **664편** · 갱신 2026-11-08
+총 **666편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -158,7 +158,7 @@
 | 2026-11-05 | [속성 친화도 행렬과 결합 에너지 알고리즘 — 수직분할 설계](posts/PE/database/2026-11-05-vertical-partitioning-affinity-bond-energy/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-05 | [벤더 종속(Vendor Lock-in)](posts/PE/it-management/2026-11-05-vendor-lock-in/index.md) | 중급 | Regulation (EU) 2023/2854 (Data Act, 2025.9.12 적용) | 문서 근거 |
 | 2026-11-05 | [반결합(semijoin) — 분산 질의에서 전송량을 줄이는 연산](posts/PE/database/2026-11-05-semijoin-distributed-query/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
-| 2026-11-05 | [모델 기반 공학(MDE)](posts/PE/software-engineering/2026-11-05-model-driven-engineering-mde/index.md) | 중급 | OMG MOF 2.5.1 (formal/2019-10-01), OMG XMI 2.5.1 (formal/15-06-07), OMG QVT 1.3 (formal/16-06-03), OMG MDA 개요 페이지, Eclipse EMF | 문서 근거 |
+| 2026-11-05 | [모델 기반 공학(MDE)](posts/PE/software-engineering/2026-11-05-model-driven-engineering-mde/index.md) | 중급 | OMG MOF 2.5.1 (formal/2019-10-01), OMG XMI 2.5.1 (formal/15-06-07), OMG QVT 1.3 (formal/16-06-03) | 문서 근거 |
 | 2026-11-05 | [HA 클러스터의 쿼럼과 펜싱 — 스플릿 브레인을 막는 두 장치](posts/PE/system/2026-11-05-ha-cluster-quorum-fencing-split-brain/index.md) | 중급 | Pacemaker 2.1 문서, Corosync votequorum(5) 매뉴얼 (2018-12-14판), corosync-qdevice(8) 매뉴얼 (2025-10-16판) | 문서 근거 |
 | 2026-11-05 | [결함 허용 기법의 분류 — 오류 검출과 시스템 복구(롤백·롤포워드·보상, 진단·격리·재구성)](posts/PE/computer-architecture/2026-11-05-fault-tolerance-error-detection-recovery-taxonomy/index.md) | 중급 | Avizienis·Laprie·Randell·Landwehr, IEEE TDSC 1(1), 2004, 5.2절 | 문서 근거 |
 | 2026-11-05 | [AI 생성물 표시와 콘텐츠 출처·이력(C2PA)](posts/PE/emerging-tech/2026-11-05-c2pa-ai-content-provenance-labeling/index.md) | 중급 | C2PA Technical Specification 2.1 (2024-09), NIST AI 100-4 (Reducing Risks Posed by Synthetic Content), Regulation (EU) 2024/1689 Article 50, 인공지능 기본법 제31조 (2026-01-22 시행) | 문서 근거 |
@@ -568,10 +568,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 130편
+## 주식·재무 (finance) — 132편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [손실부담계약 충당부채 — 아직 이행하지 않은 계약의 손실을 미리 잡는 경우](posts/Finance/statements/2026-11-08-onerous-contract-provision/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
+| 2026-11-08 | [원가기준 진행률 — 추정 총원가가 바뀌면 누적 수익을 그해에 다시 맞춘다](posts/Finance/statements/2026-11-08-cost-to-cost-progress-estimate-change/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-07 | [공동영업과 공동기업 — 같은 50% 약정이 재무제표에 다르게 올라간다](posts/Finance/statements/2026-11-07-joint-operation-vs-joint-venture/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1111호 공동약정 | 실행 검증 |
 | 2026-11-07 | [연결 내부거래 미실현이익 — 재고는 팔릴 때, 설비는 감가상각으로 실현된다](posts/Finance/statements/2026-11-07-intragroup-unrealised-profit-elimination/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1110호 연결재무제표 | 실행 검증 |
 | 2026-11-06 | [단계적 취득 — 지배력을 얻는 날 기존 지분을 공정가치로 다시 잰다](posts/Finance/statements/2026-11-06-step-acquisition-remeasure-previous-stake/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1103호 사업결합, 기업회계기준서 제1109호 금융상품 | 실행 검증 |
