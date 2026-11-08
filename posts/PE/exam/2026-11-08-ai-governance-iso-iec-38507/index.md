@@ -114,6 +114,8 @@ NIST AI RMF는 같은 내용을 한 프레임워크 안에서 **통제(GOVERN) �
 > 개념 정리: [IT 거버넌스 — COBIT 2019 구성요소](../../it-management/2026-10-16-it-governance-cobit-2019/index.md)
 >
 > 개념 정리: [ISO/IEC 23894 인공지능 위험관리 — ISO 31000을 AI에 옮긴 세 덩어리와 부속서 3개](../../it-management/2026-10-29-iso-iec-23894-ai-risk-management/index.md)
+>
+> 개념 정리: [ISO/IEC 38507 AI 거버넌스 — 38500을 AI 사용에 적용한 거버넌스체 지침](../../it-management/2026-11-08-iso-iec-38507-ai-governance-implications/index.md)
 
 끝
 

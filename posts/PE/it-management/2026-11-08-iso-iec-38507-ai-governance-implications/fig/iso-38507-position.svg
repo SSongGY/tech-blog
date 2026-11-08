@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#fbfbfd"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- 1단: 38500 -->
+  <rect x="250" y="20" width="380" height="70" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="440" y="46" font-size="15" font-weight="bold" fill="#1f3d2c" text-anchor="middle">ISO/IEC 38500:2015 — IT 거버넌스</text>
+  <text x="440" y="70" font-size="13" fill="#39533f" text-anchor="middle">원칙 6가지 · 모델 3활동(평가 · 지시 · 감시)</text>
+
+  <!-- 2단 -->
+  <line x1="330" y1="90" x2="150" y2="128" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <line x1="480" y1="90" x2="500" y2="128" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="200" y="104" font-size="13" fill="#4b5563">대상에 적용</text>
+  <text x="500" y="112" font-size="13" fill="#4b5563">AI 사용에 적용 (인용 규격)</text>
+
+  <rect x="24" y="130" width="230" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="139" y="156" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">ISO/IEC 38505-1</text>
+  <text x="139" y="178" font-size="13" fill="#4b5563" text-anchor="middle">데이터 거버넌스에 적용</text>
+
+  <rect x="740" y="130" width="120" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="800" y="156" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">ISO/IEC 22989</text>
+  <text x="800" y="178" font-size="13" fill="#4b5563" text-anchor="middle">AI 개념·용어</text>
+  <line x1="740" y1="162" x2="702" y2="162" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <!-- 38507 컨테이너 -->
+  <rect x="280" y="130" width="420" height="214" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="490" y="156" font-size="15" font-weight="bold" fill="#1f3d2c" text-anchor="middle">ISO/IEC 38507:2022 — AI 사용에 적용</text>
+  <text x="490" y="178" font-size="13" fill="#39533f" text-anchor="middle">독자: 거버넌스체 · 성격: 지침(guidance)</text>
+
+  <rect x="296" y="196" width="388" height="40" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="490" y="221" font-size="13" fill="#1f3d2c" text-anchor="middle">4절 AI 도입 시 유지할 것 2가지 — 거버넌스 · 책무</text>
+
+  <rect x="296" y="244" width="388" height="40" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="490" y="269" font-size="13" fill="#1f3d2c" text-anchor="middle">5절 다른 IT와 다른 3가지 — 결정 자동화 · 데이터 기반 · 적응</text>
+
+  <rect x="296" y="292" width="388" height="40" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="490" y="317" font-size="13" fill="#1f3d2c" text-anchor="middle">6절 정책 영역 6가지 — 감독 · 결정 · 데이터 · 문화 · 준수 · 위험</text>
+
+  <!-- 층 경계 -->
+  <line x1="16" y1="380" x2="864" y2="380" stroke="#b45309" stroke-width="1.2" stroke-dasharray="6 4"/>
+  <text x="24" y="372" font-size="13" fill="#b45309">↑ 거버넌스 층 (거버넌스체가 평가·지시·감시)</text>
+  <text x="24" y="400" font-size="13" fill="#b45309">↓ 경영 층 (정책의 운영 측면은 경영이 구현 — 38507 서문)</text>
+
+  <line x1="490" y1="344" x2="490" y2="420" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)"/>
+  <text x="500" y="364" font-size="13" fill="#b45309">세부는 다른 표준으로</text>
+
+  <!-- 3단: 경영 층 -->
+  <rect x="200" y="424" width="250" height="70" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="325" y="450" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">ISO/IEC 42001:2023</text>
+  <text x="325" y="474" font-size="13" fill="#7a3b05" text-anchor="middle">AI 경영시스템 (요구사항 · 인증)</text>
+
+  <rect x="470" y="424" width="250" height="70" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="595" y="450" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">ISO/IEC 23894:2023</text>
+  <text x="595" y="474" font-size="13" fill="#7a3b05" text-anchor="middle">AI 위험관리 (지침)</text>
+</svg>
