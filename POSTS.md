@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **669편** · 갱신 2026-11-08
+총 **671편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -469,12 +469,14 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 97편
+## 기출문제 (exam) — 99편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [기출문제 — 트랜스포머와 MoE: 어텐션만으로 된 층과 FFN 자리를 나눠 맡는 전문가](posts/PE/exam/2026-11-08-transformer-and-mixture-of-experts/index.md) | 중급 | Vaswani et al., Attention Is All You Need, NIPS 2017 (arXiv:1706.03762v7), Shazeer et al., Sparsely-Gated MoE, ICLR 2017 (arXiv:1701.06538), Fedus et al., Switch Transformers, JMLR 23 (2022), Jiang et al., Mixtral of Experts, arXiv:2401.04088 (2024-01) | 문서 근거 |
 | 2026-11-08 | [기출문제 — GNN(그래프 신경망): 메시지 전달·4가지 유형·과평활화](posts/PE/exam/2026-11-08-graph-neural-network-message-passing/index.md) | 중급 | Scarselli et al., IEEE TNN 20(1) (2009), Gilmer et al., arXiv:1704.01212 v2 (2017), Kipf & Welling, ICLR 2017, Wu et al., arXiv:1901.00596 v4 (2019) | 문서 근거 |
 | 2026-11-08 | [기출문제 — 암호문 공격: 암호문 단독·기지 평문·선택 평문·선택 암호문](posts/PE/exam/2026-11-08-cryptanalysis-attack-models/index.md) | 중급 | Handbook of Applied Cryptography §1.13 (1997, CRC Press), RFC 8017 PKCS #1 v2.2 (2016-11), NIST FIPS 203 (2024-08) | 문서 근거 |
+| 2026-11-08 | [기출문제 — AI 거버넌스: 거버넌스체의 평가·지시·감시와 정책 영역 6가지](posts/PE/exam/2026-11-08-ai-governance-iso-iec-38507/index.md) | 중급 | ISO/IEC 38507:2022 (제1판, 2022-04), ISO/IEC 38500:2015, ISO/IEC 42001:2023, ISO/IEC 23894:2023, NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
 | 2026-11-07 | [기출문제 — 개인정보 보호 강화기술(PET): 정의·분류와 동형암호·차분 프라이버시·합성데이터 비교](posts/PE/exam/2026-11-07-privacy-enhancing-technologies-he-dp-synthetic/index.md) | 중급 | OECD Digital Economy Papers No. 351 (2023-03), Homomorphic Encryption Standard v1.1 (2018-11), NIST SP 800-226 (2025-03), NIST SP 800-188 (2023-09), 개인정보보호위원회 합성데이터 생성·활용 안내서 (2024-12) | 문서 근거 |
 | 2026-11-07 | [기출문제 — MODBUS 프로토콜](posts/PE/exam/2026-11-07-modbus-protocol/index.md) | 중급 | MODBUS Application Protocol Specification V1.1b3 (2012-04), MODBUS over Serial Line V1.02 (2006-12), MODBUS Messaging on TCP/IP Implementation Guide V1.0b (2006-10), MODBUS/TCP Security v36 (2021-07) | 문서 근거 |
 | 2026-11-07 | [기출문제 — 디지털 포렌식의 아티팩트](posts/PE/exam/2026-11-07-digital-forensic-artifacts/index.md) | 중급 | NIST IR 8354 (2022-11), Microsoft Learn Windows 레지스트리·변경 저널 문서 (2025-03 갱신) | 문서 근거 |
