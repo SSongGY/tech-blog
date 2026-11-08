@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **686편** · 갱신 2026-11-09
+총 **688편** · 갱신 2026-11-09
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -482,10 +482,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 99편
+## 기출문제 (exam) — 101편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-09 | [기출문제 — AI 신뢰성 검·인증 제도(CAT)](posts/PE/exam/2026-11-09-ai-trustworthiness-certification-cat/index.md) | 중급 | TTAK.KO-10.1497 (2023-12 제정), ISO/IEC 23894:2023, ISO/IEC 42001:2023, ISO/IEC 38507:2022, 2차 자료 4건 (2023-10 ~ 2025-04) | 문서 근거 |
+| 2026-11-09 | [기출문제 — A/B 테스팅](posts/PE/exam/2026-11-09-ab-testing-online-controlled-experiments/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §7.3.3, Deng & Shi, KDD 2016, Microsoft ExP, Diagnosing Sample Ratio Mismatch (2020-09) | 실행 검증 |
 | 2026-11-08 | [기출문제 — 트랜스포머와 MoE: 어텐션만으로 된 층과 FFN 자리를 나눠 맡는 전문가](posts/PE/exam/2026-11-08-transformer-and-mixture-of-experts/index.md) | 중급 | Vaswani et al., Attention Is All You Need, NIPS 2017 (arXiv:1706.03762v7), Shazeer et al., Sparsely-Gated MoE, ICLR 2017 (arXiv:1701.06538), Fedus et al., Switch Transformers, JMLR 23 (2022), Jiang et al., Mixtral of Experts, arXiv:2401.04088 (2024-01) | 문서 근거 |
 | 2026-11-08 | [기출문제 — GNN(그래프 신경망): 메시지 전달·4가지 유형·과평활화](posts/PE/exam/2026-11-08-graph-neural-network-message-passing/index.md) | 중급 | Scarselli et al., IEEE TNN 20(1) (2009), Gilmer et al., arXiv:1704.01212 v2 (2017), Kipf & Welling, ICLR 2017, Wu et al., arXiv:1901.00596 v4 (2019) | 문서 근거 |
 | 2026-11-08 | [기출문제 — 암호문 공격: 암호문 단독·기지 평문·선택 평문·선택 암호문](posts/PE/exam/2026-11-08-cryptanalysis-attack-models/index.md) | 중급 | Handbook of Applied Cryptography §1.13 (1997, CRC Press), RFC 8017 PKCS #1 v2.2 (2016-11), NIST FIPS 203 (2024-08) | 문서 근거 |
