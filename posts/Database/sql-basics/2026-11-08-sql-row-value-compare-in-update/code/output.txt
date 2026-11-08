@@ -1,0 +1,213 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-08-sql-row-value-compare-in-update
+# 명령      : python row_value.py
+# 수행 시각 : 2026-11-08 23:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[closed_month]  2행
+  컬럼  | 타입    | 제약
+  ------+---------+-----
+  year  | INTEGER |
+  month | INTEGER |
+
+  year | month
+  -----+------
+  2025 |    11
+  2026 |     1
+
+[employee]  3행
+  컬럼   | 타입    | 제약
+  -------+---------+---------
+  emp_id | INTEGER | PK
+  name   | TEXT    | NOT NULL
+  dept   | TEXT    |
+  grade  | INTEGER |
+
+  emp_id | name | dept  | grade
+  -------+------+-------+------
+       1 | kim  | sales |     3
+       2 | lee  | dev   |     2
+       3 | park | ops   |     1
+
+[monthly_sales]  10행
+  컬럼   | 타입    | 제약
+  -------+---------+---------
+  year   | INTEGER | NOT NULL
+  month  | INTEGER | NOT NULL
+  region | TEXT    | NOT NULL
+  amount | INTEGER | NOT NULL
+
+  year | month | region | amount
+  -----+-------+--------+-------
+  2025 |    10 | north  |    120
+  2025 |    11 | north  |    130
+  2025 |    12 | north  |    150
+  2026 |     1 | north  |    110
+  2026 |     2 | north  |    140
+  2026 |     3 | north  |    160
+  2025 |    11 | south  |     90
+  2026 |     1 | south  |    100
+  2026 |     4 | south  |     95
+  2025 |     1 | south  |     80
+
+[promotion]  2행
+  컬럼      | 타입    | 제약
+  ----------+---------+-----
+  emp_id    | INTEGER | PK
+  new_dept  | TEXT    |
+  new_grade | INTEGER |
+
+  emp_id | new_dept | new_grade
+  -------+----------+----------
+       1 | sales    |         4
+       2 | platform |         3
+
+== 1) 묶음 비교는 왼쪽 컬럼부터 — NULL 이 끼면 ==
+  sql> SELECT (2025, 12) < (2026, 1) AS a, (2026, 3) < (2026, 10) AS b, (2026, 3) = (2026, 3) AS c
+  a | b | c
+  1 | 1 | 1
+
+  sql> SELECT (2026, NULL) = (2026, 3) AS eq_null, (2025, NULL) = (2026, 3) AS eq_false
+  eq_null | eq_false
+  NULL | 0
+
+  sql> SELECT (2025, NULL) < (2026, 3) AS lt_decided, (2026, NULL) < (2026, 3) AS lt_unknown
+  lt_decided | lt_unknown
+  1 | NULL
+
+  sql> SELECT (2026, NULL) IS (2026, NULL) AS is_same
+  is_same
+  1
+
+== 2) 2025년 11월부터 2026년 2월까지 — 컬럼별 조건과 묶음 비교 ==
+  sql> SELECT year, month, region, amount FROM monthly_sales WHERE year >= 2025 AND month >= 11 AND year <= 2026 AND month <= 2 ORDER BY year, month, region
+  year | month | region | amount
+
+  sql> SELECT year, month, region, amount FROM monthly_sales WHERE (year, month) >= (2025, 11) AND (year, month) <= (2026, 2) ORDER BY year, month, region
+  year | month | region | amount
+  2025 | 11 | 'north' | 130
+  2025 | 11 | 'south' | 90
+  2025 | 12 | 'north' | 150
+  2026 | 1 | 'north' | 110
+  2026 | 1 | 'south' | 100
+  2026 | 2 | 'north' | 140
+
+  sql> SELECT year, month, region, amount FROM monthly_sales WHERE (year, month) BETWEEN (2025, 11) AND (2026, 2) ORDER BY year, month, region
+  year | month | region | amount
+  2025 | 11 | 'north' | 130
+  2025 | 11 | 'south' | 90
+  2025 | 12 | 'north' | 150
+  2026 | 1 | 'north' | 110
+  2026 | 1 | 'south' | 100
+  2026 | 2 | 'north' | 140
+
+== 3) 두 컬럼을 함께 IN ==
+  sql> SELECT year, month, region, amount FROM monthly_sales WHERE (year, month) IN (SELECT year, month FROM closed_month) ORDER BY year, month, region
+  year | month | region | amount
+  2025 | 11 | 'north' | 130
+  2025 | 11 | 'south' | 90
+  2026 | 1 | 'north' | 110
+  2026 | 1 | 'south' | 100
+
+  sql> SELECT year, month, region, amount FROM monthly_sales WHERE (year, month) IN (VALUES (2025, 12), (2026, 3)) ORDER BY year, month, region
+  year | month | region | amount
+  2025 | 12 | 'north' | 150
+  2026 | 3 | 'north' | 160
+
+  sql> SELECT year, month, region FROM monthly_sales WHERE (year, month) IN ((2025, 12), (2026, 3))
+  year | month | region
+  2025 | 12 | 'north'
+  2026 | 3 | 'north'
+
+  -- 컬럼마다 따로 IN 을 걸면 짝이 풀린다
+  sql> SELECT year, month, region, amount FROM monthly_sales WHERE year IN (SELECT year FROM closed_month) AND month IN (SELECT month FROM closed_month) ORDER BY year, month, region
+  year | month | region | amount
+  2025 | 1 | 'south' | 80
+  2025 | 11 | 'north' | 130
+  2025 | 11 | 'south' | 90
+  2026 | 1 | 'north' | 110
+  2026 | 1 | 'south' | 100
+
+== 4) NOT IN 과 행 값 안의 NULL ==
+  sql> SELECT count(*) AS open_rows FROM monthly_sales WHERE (year, month) NOT IN (SELECT year, month FROM closed_month)
+  open_rows
+  6
+
+  -- closed_month 에 (2026, NULL) 을 넣은 뒤
+  sql> SELECT year, month, region FROM monthly_sales WHERE (year, month) NOT IN (SELECT year, month FROM closed_month) ORDER BY year, month, region
+  year | month | region
+  2025 | 1 | 'south'
+  2025 | 10 | 'north'
+  2025 | 12 | 'north'
+
+  sql> SELECT year, month, region FROM monthly_sales AS s WHERE NOT EXISTS (SELECT 1 FROM closed_month AS c WHERE c.year = s.year AND c.month = s.month) ORDER BY year, month, region
+  year | month | region
+  2025 | 1 | 'south'
+  2025 | 10 | 'north'
+  2025 | 12 | 'north'
+  2026 | 2 | 'north'
+  2026 | 3 | 'north'
+  2026 | 4 | 'south'
+
+== 5) UPDATE SET (dept, grade) = (SELECT ...) ==
+  sql> SELECT emp_id, name, dept, grade FROM employee ORDER BY emp_id
+  emp_id | name | dept | grade
+  1 | 'kim' | 'sales' | 4
+  2 | 'lee' | 'platform' | 3
+  3 | 'park' | 'ops' | 1
+
+  -- WHERE 없이 같은 UPDATE 를 한 번 더 — park 은 promotion 에 없다
+  바뀐 행 수: 3
+  sql> SELECT emp_id, name, dept, grade FROM employee ORDER BY emp_id
+  emp_id | name | dept | grade
+  1 | 'kim' | 'sales' | 4
+  2 | 'lee' | 'platform' | 3
+  3 | 'park' | NULL | NULL
+
+  -- 두 컬럼 맞바꾸기도 묶음으로 쓸 수 있다
+  sql> SELECT year, month FROM closed_month ORDER BY rowid
+  year | month
+  11 | 2025
+  1 | 2026
+
+== 6) 쓸 수 없는 자리 ==
+  sql> SELECT (1, 2) = (1, 2, 3)
+  OperationalError: row value misused
+
+  sql> SELECT (year, month) FROM monthly_sales LIMIT 1
+  OperationalError: row value misused
+
+  sql> SELECT year FROM monthly_sales WHERE (year, month) = (SELECT year FROM closed_month)
+  OperationalError: row value misused
+
+== 7) 실행계획 — (year, month) 인덱스 ==
+  sql> SELECT * FROM monthly_sales WHERE (year, month) >= (2025, 11) AND (year, month) <= (2026, 2)
+  QUERY PLAN
+  `--SEARCH monthly_sales USING INDEX idx_sales_ym ((year,month)>(?,?) AND (year,month)<(?,?))
+
+  sql> SELECT * FROM monthly_sales WHERE year >= 2025 AND month >= 11 AND year <= 2026 AND month <= 2
+  QUERY PLAN
+  `--SEARCH monthly_sales USING INDEX idx_sales_ym (year>? AND year<?)
+
+  sql> SELECT * FROM monthly_sales WHERE (year, month) IN (SELECT year, month FROM closed_month)
+  QUERY PLAN
+  |--SEARCH monthly_sales USING INDEX idx_sales_ym (year=? AND month=?)
+  `--LIST SUBQUERY 3
+     |--SCAN closed_month
+     `--CREATE BLOOM FILTER
+

@@ -7426,3 +7426,36 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: db-116
+    title: "행 값(row value) — 여러 컬럼을 괄호로 묶어 비교하고 IN 하고 UPDATE 하기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, row-value, comparison, basics]
+    difficulty: 중급
+    angle: "(a, b) 묶음 비교가 사전식 순서로 평가되는 것, (a, b) IN (SELECT ...) 다중 컬럼 IN, UPDATE SET (a, b) = (SELECT ...), 행 값 안의 NULL이 결과를 어떻게 바꾸는지를 SQLite로 돌려 본다"
+    code: none
+    origin: manual
+    status: done
+  - id: pe-255
+    title: "신뢰도와 가용성 — MTBF·MTTR과 직렬·병렬 구성의 계산"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, reliability, availability, 개념정리]
+    difficulty: 중급
+    angle: "지수 분포 가정에서 R(t)=exp(-λt), A=MTBF/(MTBF+MTTR), 직렬은 곱·병렬은 1-Π(1-R)를 직접 계산하고 몬테카를로로 검산한다"
+    code: none
+    origin: manual
+    status: todo
+  - id: gen-031
+    title: "LSM 트리 쓰기 증폭 — 크기 계층 압축과 레벨 압축을 직접 세어 보기"
+    category: Database
+    subcategory: storage-engine
+    track: general
+    tags: [lsm-tree, compaction, write-amplification, storage]
+    difficulty: 심화
+    angle: "파이썬으로 memtable·SSTable·두 가지 압축 방식을 구현해 같은 키 흐름을 넣고 쓰기 증폭·공간 증폭·읽을 파일 수를 센다"
+    code: none
+    origin: manual
+    status: todo
