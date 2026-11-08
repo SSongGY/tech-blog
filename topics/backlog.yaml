@@ -7404,3 +7404,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-133
+    title: "반품권이 있는 판매 — 환불부채와 반환재고 회수권, 변동대가 제약"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, refund-liability]
+    difficulty: 중급
+    angle: "제1115호 문단 53·55~57·B20~B27. 같은 매출을 반품 예상률과 제약 적용 여부로 나눠 수익·환불부채·회수권 자산·매출원가가 어떻게 갈리는지, 보고기간 말 재추정이 수익을 바꾸는 과정을 가상 회사로 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-134
+    title: "고객 포인트 — 중요한 권리면 수익의 일부를 계약부채로 미룬다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, customer-loyalty]
+    difficulty: 중급
+    angle: "제1115호 문단 74·76~79·B39~B46. 포인트를 별도 수행의무로 보는 조건(중요한 권리), 행사 가능성을 반영한 개별 판매가격 추정, 상대적 개별 판매가격 배분, 미행사 부분 수익 인식을 가상 회사로 계산. 마케팅 제안과의 구분"
+    code: python
+    origin: manual
+    status: todo
