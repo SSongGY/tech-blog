@@ -7459,3 +7459,25 @@ topics:
     code: none
     origin: manual
     status: done
+  - id: pe-256
+    title: "차분 암호분석과 선형 암호분석"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, cryptanalysis, 개념정리]
+    difficulty: 심화
+    angle: "S-box 차분 분포표와 선형 근사표를 직접 계산해 선택 평문·기지 평문 공격 모델과 잇고, 블록 암호 설계 기준(차분 균일도·선형 편향)으로 내려간다"
+    code: none
+    origin: exam
+    status: done
+  - id: pe-257
+    title: "부채널 공격과 대응"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, side-channel, 개념정리]
+    difficulty: 중급
+    angle: "알고리즘이 아니라 구현이 새는 정보(시간·전력·전자파·캐시)로 분류하고, 상수 시간·마스킹·숨김 대응과 ISO/IEC 17825·FIPS 140-3 시험 체계로 정리한다"
+    code: none
+    origin: exam
+    status: done

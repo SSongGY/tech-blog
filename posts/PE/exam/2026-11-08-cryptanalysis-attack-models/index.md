@@ -89,6 +89,10 @@ NIST SP 800-57 기준으로 정한다.
 > 개념 정리: [암호 알고리즘 안전성 — 보안강도, 키 길이, 그리고 암호주기](../../security/2026-10-29-crypto-key-length-and-lifetime/index.md)
 >
 > 개념 정리: [양자 내성 암호(PQC)와 전환 전략](../../emerging-tech/2026-10-15-post-quantum-cryptography-transition/index.md)
+>
+> 개념 정리: [차분 암호분석과 선형 암호분석 — S-box의 차분 분포표와 선형 근사표를 직접 세어 보기](../../security/2026-11-09-differential-linear-cryptanalysis-ddt-lat/index.md)
+>
+> 개념 정리: [부채널 공격 — 구현이 새는 시간·전력·전자파·캐시 정보와 대응 3가지](../../security/2026-11-09-side-channel-attack-countermeasures/index.md)
 
 끝
 
