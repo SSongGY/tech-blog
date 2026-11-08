@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 510" width="880" height="510" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="510" fill="#ffffff"/>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#222222">5단계 파이프라인과 해저드 3가지</text>
+  <text x="24" y="54" font-size="13" fill="#555555">위: 포워딩 경로(데이터 해저드 해결) · 아래: 적재-사용 대기와 분기 결정 뒤 제거되는 명령 수</text>
+
+  <!-- 포워딩 경로 -->
+  <path d="M600,170 C600,122 470,122 462,166" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <text x="540" y="126" font-size="13" fill="#2d6a4f" text-anchor="middle">① EX/MEM→EX</text>
+  <path d="M760,170 C760,40 430,40 440,166" fill="none" stroke="#2d6a4f" stroke-width="2" marker-end="url(#g)"/>
+  <text x="766" y="132" font-size="13" fill="#2d6a4f">② MEM/WB→EX</text>
+
+  <!-- 단계 5개 -->
+  <g font-size="15" font-weight="bold" text-anchor="middle">
+    <rect x="60" y="170" width="120" height="60" rx="4" fill="#f7f7f7" stroke="#555555"/>
+    <text x="120" y="198" fill="#222222">IF</text>
+    <rect x="220" y="170" width="120" height="60" rx="4" fill="#f7f7f7" stroke="#555555"/>
+    <text x="280" y="198" fill="#222222">ID</text>
+    <rect x="380" y="170" width="120" height="60" rx="4" fill="#f7f7f7" stroke="#555555"/>
+    <text x="440" y="198" fill="#222222">EX</text>
+    <rect x="540" y="170" width="120" height="60" rx="4" fill="#f7f7f7" stroke="#555555"/>
+    <text x="600" y="198" fill="#222222">MEM</text>
+    <rect x="700" y="170" width="120" height="60" rx="4" fill="#f7f7f7" stroke="#555555"/>
+    <text x="760" y="198" fill="#222222">WB</text>
+  </g>
+  <g font-size="13" fill="#555555" text-anchor="middle">
+    <text x="120" y="218">명령 인출</text>
+    <text x="280" y="218">해독·레지스터 읽기</text>
+    <text x="440" y="218">ALU 연산</text>
+    <text x="600" y="218">데이터 메모리</text>
+    <text x="760" y="218">레지스터 쓰기</text>
+  </g>
+
+  <!-- 적재-사용 -->
+  <path d="M600,230 C600,276 452,276 446,236" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#o)"/>
+  <text x="470" y="294" font-size="13" fill="#b45309">lw 값은 MEM 끝에 생김 → 포워딩해도 1 사이클 대기</text>
+
+  <!-- 분기 결정 -->
+  <path d="M280,230 C280,286 130,286 124,236" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+  <text x="205" y="258" font-size="13" fill="#9d0208" text-anchor="middle">ID 결정: 1개</text>
+  <path d="M430,230 C430,346 104,346 100,236" fill="none" stroke="#9d0208" stroke-width="2" marker-end="url(#r)"/>
+  <text x="265" y="334" font-size="13" fill="#9d0208" text-anchor="middle">EX 결정: 2개</text>
+
+  <!-- 해저드 3가지 -->
+  <rect x="24" y="362" width="272" height="128" rx="4" fill="#fffaf0" stroke="#b45309"/>
+  <text x="38" y="386" font-size="14" font-weight="bold" fill="#222222">구조 해저드</text>
+  <text x="38" y="410" font-size="13" fill="#333333">같은 자원을 같은 사이클에 둘이 씀</text>
+  <text x="38" y="432" font-size="13" fill="#333333">예: IF 와 MEM 이 메모리 하나 공유</text>
+  <text x="38" y="454" font-size="13" fill="#333333">해결: 명령·데이터 메모리 분리</text>
+
+  <rect x="304" y="362" width="272" height="128" rx="4" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="318" y="386" font-size="14" font-weight="bold" fill="#222222">데이터 해저드</text>
+  <text x="318" y="410" font-size="13" fill="#333333">앞 명령 결과가 아직 없음</text>
+  <text x="318" y="432" font-size="13" fill="#333333">해결: 대기 · 포워딩 · 명령 재배치</text>
+  <text x="318" y="454" font-size="13" fill="#333333">적재 직후 사용은 1 사이클이 남는다</text>
+
+  <rect x="584" y="362" width="272" height="128" rx="4" fill="#fff4f4" stroke="#9d0208"/>
+  <text x="598" y="386" font-size="14" font-weight="bold" fill="#222222">제어 해저드</text>
+  <text x="598" y="410" font-size="13" fill="#333333">인출할 때 다음 PC 를 모름</text>
+  <text x="598" y="432" font-size="13" fill="#333333">해결: 결정 앞당김 · 분기 예측</text>
+  <text x="598" y="454" font-size="13" fill="#333333">예측 실패 시 인출한 명령 제거</text>
+</svg>
