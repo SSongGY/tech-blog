@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#fbfbfd"/>
+
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9d0208"/>
+    </marker>
+    <marker id="aro" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <!-- 위: 토큰 하나가 MoE 층을 지나는 순서 -->
+  <text x="24" y="30" font-size="15" font-weight="bold" fill="#1f2937">가. 토큰 하나가 MoE 층을 지나는 5단계</text>
+
+  <rect x="24" y="52" width="150" height="76" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="99" y="78" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">① 라우터 점수</text>
+  <text x="99" y="98" font-size="13" fill="#39533f" text-anchor="middle">h(x) = W_r · x</text>
+  <text x="99" y="116" font-size="13" fill="#39533f" text-anchor="middle">softmax → pᵢ(x)</text>
+
+  <line x1="174" y1="90" x2="196" y2="90" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="198" y="52" width="150" height="76" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="273" y="78" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">② 상위 k 선택</text>
+  <text x="273" y="98" font-size="13" fill="#39533f" text-anchor="middle">나머지 게이트 = 0</text>
+  <text x="273" y="116" font-size="13" fill="#39533f" text-anchor="middle">Switch k=1, Mixtral k=2</text>
+
+  <line x1="348" y1="90" x2="370" y2="90" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="372" y="52" width="160" height="76" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="452" y="78" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">③ 용량 검사</text>
+  <text x="452" y="98" font-size="13" fill="#7a3b05" text-anchor="middle">C = (T / N) × 용량 계수</text>
+  <text x="452" y="116" font-size="13" fill="#7a3b05" text-anchor="middle">전문가마다 C개까지</text>
+
+  <line x1="532" y1="90" x2="554" y2="90" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+  <text x="543" y="80" font-size="13" fill="#2d6a4f" text-anchor="middle">여유</text>
+
+  <rect x="556" y="52" width="140" height="76" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="626" y="78" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">④ 전문가 계산</text>
+  <text x="626" y="98" font-size="13" fill="#39533f" text-anchor="middle">고른 k개만 Eᵢ(x)</text>
+  <text x="626" y="116" font-size="13" fill="#39533f" text-anchor="middle">(전문가 = FFN)</text>
+
+  <line x1="696" y1="90" x2="718" y2="90" stroke="#374151" stroke-width="1.6" marker-end="url(#ar)"/>
+
+  <rect x="720" y="52" width="136" height="76" rx="6" fill="#eef6f1" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="788" y="78" font-size="14" font-weight="bold" fill="#1f3d2c" text-anchor="middle">⑤ 가중합</text>
+  <text x="788" y="98" font-size="13" fill="#39533f" text-anchor="middle">y = Σ gᵢ · Eᵢ(x)</text>
+  <text x="788" y="116" font-size="13" fill="#39533f" text-anchor="middle">→ 잔차 · 다음 층</text>
+
+  <!-- 넘침 경로 -->
+  <line x1="452" y1="128" x2="452" y2="160" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="462" y="150" font-size="13" fill="#9d0208">넘침</text>
+  <rect x="372" y="162" width="300" height="46" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="522" y="182" font-size="14" font-weight="bold" fill="#7a0207" text-anchor="middle">토큰 드롭 — 이 층 계산을 건너뜀</text>
+  <text x="522" y="200" font-size="13" fill="#7a0207" text-anchor="middle">잔차 연결로 표현이 그대로 다음 층에 간다</text>
+
+  <text x="24" y="190" font-size="13" fill="#4b5563">부하 균형 손실 α·N·Σ fᵢ·Pᵢ 가</text>
+  <text x="24" y="208" font-size="13" fill="#4b5563">①②의 쏠림을 줄여 ③의 넘침을 줄인다</text>
+
+  <line x1="16" y1="236" x2="864" y2="236" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 아래: 전문가 병렬 -->
+  <text x="24" y="266" font-size="15" font-weight="bold" fill="#1f2937">나. 전문가 병렬 — 전문가를 장치에 나누면 층마다 all-to-all이 2번</text>
+
+  <rect x="40" y="300" width="220" height="80" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="150" y="326" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">장치 1</text>
+  <text x="150" y="346" font-size="13" fill="#4b5563" text-anchor="middle">토큰 묶음 1 · 라우터 사본</text>
+  <text x="150" y="366" font-size="13" fill="#4b5563" text-anchor="middle">전문가 E₁</text>
+
+  <rect x="330" y="300" width="220" height="80" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="440" y="326" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">장치 2</text>
+  <text x="440" y="346" font-size="13" fill="#4b5563" text-anchor="middle">토큰 묶음 2 · 라우터 사본</text>
+  <text x="440" y="366" font-size="13" fill="#4b5563" text-anchor="middle">전문가 E₂</text>
+
+  <rect x="620" y="300" width="220" height="80" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.6"/>
+  <text x="730" y="326" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">장치 n</text>
+  <text x="730" y="346" font-size="13" fill="#4b5563" text-anchor="middle">토큰 묶음 n · 라우터 사본</text>
+  <text x="730" y="366" font-size="13" fill="#4b5563" text-anchor="middle">전문가 Eₙ</text>
+
+  <!-- dispatch arrows (above boxes are tokens leaving; draw crossing lines) -->
+  <line x1="200" y1="300" x2="400" y2="300" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)" transform="translate(0,-10)"/>
+  <line x1="480" y1="290" x2="680" y2="290" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)"/>
+  <line x1="680" y1="390" x2="480" y2="390" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)"/>
+  <line x1="400" y1="390" x2="200" y2="390" stroke="#b45309" stroke-width="1.6" marker-end="url(#aro)"/>
+
+  <rect x="40" y="410" width="390" height="70" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="235" y="436" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">all-to-all ① 분배(dispatch)</text>
+  <text x="235" y="458" font-size="13" fill="#7a3b05" text-anchor="middle">라우터가 고른 전문가가 있는 장치로 토큰을 보낸다</text>
+
+  <rect x="450" y="410" width="390" height="70" rx="6" fill="#fdf3e4" stroke="#b45309" stroke-width="1.6"/>
+  <text x="645" y="436" font-size="14" font-weight="bold" fill="#7a3b05" text-anchor="middle">all-to-all ② 회수(combine)</text>
+  <text x="645" y="458" font-size="13" fill="#7a3b05" text-anchor="middle">전문가 출력을 토큰이 온 장치로 되돌린다</text>
+</svg>

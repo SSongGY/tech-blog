@@ -97,6 +97,8 @@ Mixtral은 층마다 전문가 8개 중 2개를 골라, 토큰 하나가 **47B �
 > 개념 정리: [KV 캐시 — 트랜스포머 추론의 메모리 병목](../../emerging-tech/2026-10-19-kv-cache-transformer-inference/index.md)
 >
 > 개념 정리: [시계열 딥러닝 예측 — LSTM·TCN·Transformer와 TFT의 입력 3종 분리](../../data-analysis/2026-10-27-time-series-deep-learning-tft-inputs/index.md)
+>
+> 개념 정리: [MoE(전문가 혼합) — 라우터, 상위 k 선택, 부하 균형과 전문가 병렬](../../emerging-tech/2026-11-08-mixture-of-experts-routing-load-balancing/index.md)
 
 끝
 
