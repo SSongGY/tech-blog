@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#111827">AI 신뢰성 검·인증(CAT) — 기준·대상·평가의 관계</text>
+
+  <!-- 운영 주체 -->
+  <rect x="330" y="50" width="220" height="50" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="72" text-anchor="middle" font-size="14" fill="#111827">운영: 과기정통부 · TTA</text>
+  <text x="440" y="90" text-anchor="middle" font-size="13" fill="#4b5563">민간 자율 인증</text>
+
+  <!-- 기준 1 -->
+  <rect x="20" y="140" width="230" height="60" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="135" y="164" text-anchor="middle" font-size="14" fill="#111827">기준 ① TTA 단체표준</text>
+  <text x="135" y="184" text-anchor="middle" font-size="13" fill="#4b5563">TTAK.KO-10.1497 (2023)</text>
+
+  <!-- 기준 2 -->
+  <rect x="20" y="220" width="230" height="60" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="135" y="244" text-anchor="middle" font-size="14" fill="#111827">기준 ② 국제표준</text>
+  <text x="135" y="264" text-anchor="middle" font-size="13" fill="#4b5563">ISO/IEC 23894·42001·38507</text>
+
+  <!-- CAT -->
+  <rect x="340" y="170" width="200" height="80" rx="10" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="203" text-anchor="middle" font-size="16" font-weight="bold" fill="#2d6a4f">CAT 인증</text>
+  <text x="440" y="226" text-anchor="middle" font-size="13" fill="#2d6a4f">기준 충족 시 부여</text>
+
+  <!-- 대상 -->
+  <rect x="630" y="150" width="230" height="120" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="745" y="176" text-anchor="middle" font-size="14" fill="#111827">대상 (2025 개편 후 3분류)</text>
+  <text x="745" y="204" text-anchor="middle" font-size="13" fill="#4b5563">AI 시스템 — 위험관리 체계</text>
+  <text x="745" y="226" text-anchor="middle" font-size="13" fill="#4b5563">AI 사업자 — 경영시스템</text>
+  <text x="745" y="248" text-anchor="middle" font-size="13" fill="#4b5563">AI 이용자 — 거버넌스</text>
+
+  <!-- 평가 1 -->
+  <rect x="200" y="310" width="210" height="60" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="1.8"/>
+  <text x="305" y="334" text-anchor="middle" font-size="14" fill="#b45309">평가 ① 위험요인 분석</text>
+  <text x="305" y="354" text-anchor="middle" font-size="13" fill="#4b5563">편향·설명가능성·환각 등</text>
+
+  <!-- 평가 2 -->
+  <rect x="470" y="310" width="210" height="60" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="1.8"/>
+  <text x="575" y="334" text-anchor="middle" font-size="14" fill="#b45309">평가 ② 요구사항 준수</text>
+  <text x="575" y="354" text-anchor="middle" font-size="13" fill="#4b5563">문서 심사 + 기능·성능 시험</text>
+
+  <!-- 연결선 -->
+  <line x1="440" y1="100" x2="440" y2="168" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="250" y1="175" x2="338" y2="200" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="250" y1="245" x2="338" y2="222" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="540" y1="210" x2="628" y2="210" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="305" y1="310" x2="390" y2="252" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="575" y1="310" x2="490" y2="252" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+</svg>
