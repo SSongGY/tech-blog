@@ -315,6 +315,7 @@ HA는 멤버십·자원 관리자·쿼럼·펜싱·공유 데이터의 다섯 �
 
 > 개념 정리: [데이터베이스 이중화와 복제 방식](../../database/2026-10-27-database-replication-ha/index.md)
 > 개념 정리: [결함 허용 기법의 분류 — 오류 검출과 시스템 복구](../../computer-architecture/2026-11-05-fault-tolerance-error-detection-recovery-taxonomy/index.md)
+> 개념 정리: [신뢰도와 가용성 — MTBF·MTTR과 직렬·병렬 구성의 계산](../../computer-architecture/2026-11-08-reliability-availability-mtbf-series-parallel/index.md)
 
 끝
 

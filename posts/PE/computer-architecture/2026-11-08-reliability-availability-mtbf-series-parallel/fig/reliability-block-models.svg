@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#222222">신뢰도 블록 구성 4가지와 시스템 신뢰도 식</text>
+  <text x="24" y="56" font-size="13" fill="#555555">부품은 서로 독립으로 고장 난다고 가정한다. Rᵢ = 부품 i 의 신뢰도, R = 같은 부품의 신뢰도</text>
+
+  <!-- ① 직렬 -->
+  <text x="24" y="98" font-size="14" font-weight="bold" fill="#9d0208">① 직렬</text>
+  <g font-size="14" text-anchor="middle">
+    <line x1="110" y1="120" x2="420" y2="120" stroke="#555555" stroke-width="1.5"/>
+    <rect x="130" y="102" width="70" height="36" fill="#fff4f4" stroke="#9d0208"/>
+    <text x="165" y="125" fill="#222222">부품 1</text>
+    <rect x="230" y="102" width="70" height="36" fill="#fff4f4" stroke="#9d0208"/>
+    <text x="265" y="125" fill="#222222">부품 2</text>
+    <rect x="330" y="102" width="70" height="36" fill="#fff4f4" stroke="#9d0208"/>
+    <text x="365" y="125" fill="#222222">부품 3</text>
+  </g>
+  <text x="450" y="116" font-size="14" fill="#222222">Rₛ = R₁ × R₂ × R₃</text>
+  <text x="450" y="138" font-size="13" fill="#555555">하나만 고장 나도 시스템이 멈춘다 · 고장률은 더한다</text>
+
+  <line x1="24" y1="162" x2="856" y2="162" stroke="#dddddd"/>
+
+  <!-- ② 병렬 -->
+  <text x="24" y="190" font-size="14" font-weight="bold" fill="#2d6a4f">② 병렬</text>
+  <g font-size="14" text-anchor="middle">
+    <line x1="110" y1="226" x2="150" y2="226" stroke="#555555" stroke-width="1.5"/>
+    <line x1="150" y1="204" x2="150" y2="248" stroke="#555555" stroke-width="1.5"/>
+    <line x1="150" y1="204" x2="180" y2="204" stroke="#555555" stroke-width="1.5"/>
+    <line x1="150" y1="248" x2="180" y2="248" stroke="#555555" stroke-width="1.5"/>
+    <rect x="180" y="188" width="70" height="32" fill="#f0f7f3" stroke="#2d6a4f"/>
+    <text x="215" y="209" fill="#222222">부품 1</text>
+    <rect x="180" y="232" width="70" height="32" fill="#f0f7f3" stroke="#2d6a4f"/>
+    <text x="215" y="253" fill="#222222">부품 2</text>
+    <line x1="250" y1="204" x2="280" y2="204" stroke="#555555" stroke-width="1.5"/>
+    <line x1="250" y1="248" x2="280" y2="248" stroke="#555555" stroke-width="1.5"/>
+    <line x1="280" y1="204" x2="280" y2="248" stroke="#555555" stroke-width="1.5"/>
+    <line x1="280" y1="226" x2="320" y2="226" stroke="#555555" stroke-width="1.5"/>
+  </g>
+  <text x="450" y="220" font-size="14" fill="#222222">Rₛ = 1 − (1 − R₁)(1 − R₂)</text>
+  <text x="450" y="242" font-size="13" fill="#555555">모두 고장 나야 멈춘다 · 고장 확률을 곱한다</text>
+
+  <line x1="24" y1="284" x2="856" y2="284" stroke="#dddddd"/>
+
+  <!-- ③ r-out-of-n -->
+  <text x="24" y="312" font-size="14" font-weight="bold" fill="#b45309">③ 2-out-of-3</text>
+  <g font-size="14" text-anchor="middle">
+    <rect x="130" y="322" width="70" height="28" fill="#fff8ec" stroke="#b45309"/>
+    <text x="165" y="341" fill="#222222">부품 1</text>
+    <rect x="130" y="356" width="70" height="28" fill="#fff8ec" stroke="#b45309"/>
+    <text x="165" y="375" fill="#222222">부품 2</text>
+    <rect x="130" y="390" width="70" height="28" fill="#fff8ec" stroke="#b45309"/>
+    <text x="165" y="409" fill="#222222">부품 3</text>
+    <line x1="200" y1="336" x2="260" y2="366" stroke="#555555" stroke-width="1.5"/>
+    <line x1="200" y1="370" x2="260" y2="370" stroke="#555555" stroke-width="1.5"/>
+    <line x1="200" y1="404" x2="260" y2="374" stroke="#555555" stroke-width="1.5"/>
+    <circle cx="282" cy="370" r="22" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+    <text x="282" y="375" fill="#b45309">2/3</text>
+    <line x1="304" y1="370" x2="330" y2="370" stroke="#555555" stroke-width="1.5"/>
+  </g>
+  <text x="450" y="352" font-size="14" fill="#222222">Rₛ = Σ (i = 2..3) C(3, i) Rⁱ (1 − R)³⁻ⁱ = 3R² − 2R³</text>
+  <text x="450" y="374" font-size="13" fill="#555555">n 개 중 r 개 이상 살아 있으면 동작</text>
+  <text x="450" y="396" font-size="13" fill="#555555">r = n 이면 직렬, r = 1 이면 병렬과 같다</text>
+
+  <line x1="24" y1="430" x2="856" y2="430" stroke="#dddddd"/>
+
+  <!-- ④ 대기 -->
+  <text x="24" y="456" font-size="14" font-weight="bold" fill="#222222">④ 대기(1+1)</text>
+  <text x="450" y="456" font-size="14" fill="#222222">Rₛ = exp(−λt) × (1 + λt)  (지수 분포)</text>
+  <text x="450" y="478" font-size="13" fill="#555555">예비 부품은 꺼져 있다가 주 부품이 고장 나면 넘겨받는다</text>
+</svg>

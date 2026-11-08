@@ -7447,7 +7447,7 @@ topics:
     angle: "지수 분포 가정에서 R(t)=exp(-λt), A=MTBF/(MTBF+MTTR), 직렬은 곱·병렬은 1-Π(1-R)를 직접 계산하고 몬테카를로로 검산한다"
     code: none
     origin: manual
-    status: todo
+    status: done
   - id: gen-031
     title: "LSM 트리 쓰기 증폭 — 크기 계층 압축과 레벨 압축을 직접 세어 보기"
     category: Database
