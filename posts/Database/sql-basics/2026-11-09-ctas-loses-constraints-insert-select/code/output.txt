@@ -1,0 +1,236 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-09-ctas-loses-constraints-insert-select
+# 명령      : python ctas_copy.py
+# 수행 시각 : 2026-11-09 07:10 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product]  4행
+  컬럼       | 타입    | 제약
+  -----------+---------+-------------------
+  product_id | INTEGER | PK
+  name       | TEXT    | NOT NULL
+  price      | INTEGER | NOT NULL DEFAULT 0
+  sku        | TEXT    |
+
+  product_id | name   | price | sku
+  -----------+--------+-------+-----
+           1 | Apple  |  1200 | A-01
+           2 | banana |   800 | B-01
+           3 | Cherry |  3000 | C-01
+           4 | melon  |  5000 | M-01
+
+[인덱스]
+  이름             | 대상 표 | 정의
+  -----------------+---------+------------------------------------------------
+  ix_product_price | product | CREATE INDEX ix_product_price ON product(price)
+
+== 1) 정의 비교 — sqlite_schema ==
+  CREATE TABLE product (
+              product_id  INTEGER PRIMARY KEY,
+              name        TEXT    NOT NULL COLLATE NOCASE,
+              price       INTEGER NOT NULL DEFAULT 0 CHECK (price >= 0),
+              sku         TEXT    UNIQUE
+          )
+
+  CREATE TABLE product_copy(
+    product_id INT,
+    name TEXT,
+    price INT,
+    sku TEXT
+  )
+
+== 2) 컬럼 정보와 인덱스 ==
+  sql> SELECT name, type, "notnull", dflt_value, pk FROM pragma_table_info('product')
+  name | type | notnull | dflt_value | pk
+  'product_id' | 'INTEGER' | 0 | NULL | 1
+  'name' | 'TEXT' | 1 | NULL | 0
+  'price' | 'INTEGER' | 1 | '0' | 0
+  'sku' | 'TEXT' | 0 | NULL | 0
+
+  sql> SELECT name, "unique", origin FROM pragma_index_list('product')
+  name | unique | origin
+  'ix_product_price' | 0 | 'c'
+  'sqlite_autoindex_product_1' | 1 | 'u'
+
+  sql> SELECT name, type, "notnull", dflt_value, pk FROM pragma_table_info('product_copy')
+  name | type | notnull | dflt_value | pk
+  'product_id' | 'INT' | 0 | NULL | 0
+  'name' | 'TEXT' | 0 | NULL | 0
+  'price' | 'INT' | 0 | NULL | 0
+  'sku' | 'TEXT' | 0 | NULL | 0
+
+  sql> SELECT name, "unique", origin FROM pragma_index_list('product_copy')
+  name | unique | origin
+
+  sql> SELECT count(*) AS copied_rows FROM product_copy
+  copied_rows
+  4
+
+== 3) 원본이 막던 값을 넣어 본다 ==
+  -- 대상: product
+  sql> INSERT INTO product(product_id, name, price, sku) VALUES (1, 'dup', 10, 'D-01')
+  IntegrityError: UNIQUE constraint failed: product.product_id
+
+  sql> INSERT INTO product(product_id, name, price, sku) VALUES (10, NULL, 10, 'N-01')
+  IntegrityError: NOT NULL constraint failed: product.name
+
+  sql> INSERT INTO product(product_id, name, price, sku) VALUES (11, 'minus', -5, 'X-01')
+  IntegrityError: CHECK constraint failed: price >= 0
+
+  sql> INSERT INTO product(product_id, name, price, sku) VALUES (12, 'same sku', 10, 'A-01')
+  IntegrityError: UNIQUE constraint failed: product.sku
+
+  -- 대상: product_copy
+  sql> INSERT INTO product_copy(product_id, name, price, sku) VALUES (1, 'dup', 10, 'D-01')
+  (바뀐 행 수: 1)
+
+  sql> INSERT INTO product_copy(product_id, name, price, sku) VALUES (10, NULL, 10, 'N-01')
+  (바뀐 행 수: 1)
+
+  sql> INSERT INTO product_copy(product_id, name, price, sku) VALUES (11, 'minus', -5, 'X-01')
+  (바뀐 행 수: 1)
+
+  sql> INSERT INTO product_copy(product_id, name, price, sku) VALUES (12, 'same sku', 10, 'A-01')
+  (바뀐 행 수: 1)
+
+  -- price 를 빼고 넣으면 기본값이 들어가는가
+  sql> INSERT INTO product(name, sku) VALUES ('kiwi', 'K-01')
+  (바뀐 행 수: 1)
+
+  sql> INSERT INTO product_copy(name, sku) VALUES ('kiwi', 'K-01')
+  (바뀐 행 수: 1)
+
+  sql> SELECT product_id, name, price FROM product WHERE name = 'kiwi'
+  product_id | name | price
+  5 | 'kiwi' | 0
+
+  sql> SELECT product_id, name, price FROM product_copy WHERE name = 'kiwi'
+  product_id | name | price
+  NULL | 'kiwi' | NULL
+
+== 4) COLLATE NOCASE 가 사라지면 ==
+  sql> SELECT product_id, name FROM product WHERE name = 'APPLE'
+  product_id | name
+  1 | 'Apple'
+
+  sql> SELECT product_id, name FROM product_copy WHERE name = 'APPLE'
+  product_id | name
+
+  sql> SELECT name FROM product WHERE product_id <= 4 ORDER BY name
+  name
+  'Apple'
+  'banana'
+  'Cherry'
+  'melon'
+
+  sql> SELECT name FROM product_copy WHERE product_id <= 4 ORDER BY name
+  name
+  'Apple'
+  'Cherry'
+  'banana'
+  'dup'
+  'melon'
+
+== 5) 계산식 컬럼이 받는 타입 이름 ==
+  CREATE TABLE price_report(
+  product_id INT,
+  name TEXT,
+  price_vat,
+  price_real REAL,
+  price_num NUM,
+  name_upper,
+  total_rows,
+  memo
+)
+
+  sql> SELECT name, type FROM pragma_table_info('price_report')
+  name | type
+  'product_id' | 'INT'
+  'name' | 'TEXT'
+  'price_vat' | ''
+  'price_real' | 'REAL'
+  'price_num' | 'NUM'
+  'name_upper' | ''
+  'total_rows' | ''
+  'memo' | ''
+
+  sql> SELECT typeof(price_vat), typeof(name_upper), typeof(total_rows) FROM price_report LIMIT 1
+  typeof(price_vat) | typeof(name_upper) | typeof(total_rows)
+  'real' | 'text' | 'integer'
+
+== 6) 인덱스가 없으니 실행계획이 바뀐다 ==
+  sql> SELECT name FROM product WHERE price > 2500
+  QUERY PLAN
+  `--SEARCH product USING INDEX ix_product_price (price>?)
+
+  sql> SELECT name FROM product_copy WHERE price > 2500
+  QUERY PLAN
+  `--SCAN product_copy
+
+  sql> SELECT name FROM product WHERE product_id = 3
+  QUERY PLAN
+  `--SEARCH product USING INTEGER PRIMARY KEY (rowid=?)
+
+  sql> SELECT name FROM product_copy WHERE product_id = 3
+  QUERY PLAN
+  `--SCAN product_copy
+
+== 7) 뼈대를 먼저 만들고 INSERT INTO ... SELECT ==
+  sql> INSERT INTO product_backup SELECT * FROM product
+  (바뀐 행 수: 5)
+
+  sql> SELECT name, type, "notnull", dflt_value, pk FROM pragma_table_info('product_backup')
+  name | type | notnull | dflt_value | pk
+  'product_id' | 'INTEGER' | 0 | NULL | 1
+  'name' | 'TEXT' | 1 | NULL | 0
+  'price' | 'INTEGER' | 1 | '0' | 0
+  'sku' | 'TEXT' | 0 | NULL | 0
+
+  sql> SELECT name, "unique", origin FROM pragma_index_list('product_backup')
+  name | unique | origin
+  'ix_product_backup_price' | 0 | 'c'
+  'sqlite_autoindex_product_backup_1' | 1 | 'u'
+
+  sql> INSERT INTO product_backup(product_id, name, price) VALUES (20, NULL, 1)
+  IntegrityError: NOT NULL constraint failed: product_backup.name
+
+  sql> SELECT product_id, name FROM product_backup WHERE name = 'APPLE'
+  product_id | name
+  1 | 'Apple'
+
+== 8) INSERT INTO ... SELECT 도중 제약 위반이 나면 ==
+  sql> SELECT count(*) AS before_rows FROM product
+  before_rows
+  5
+
+  sql> INSERT INTO product(name, price, sku) SELECT name, price, sku FROM incoming
+  IntegrityError: CHECK constraint failed: price >= 0
+
+  sql> SELECT count(*) AS after_rows FROM product
+  after_rows
+  5
+
+  sql> INSERT OR IGNORE INTO product(name, price, sku) SELECT name, price, sku FROM incoming
+  (바뀐 행 수: 2)
+
+  sql> SELECT product_id, name, price FROM product WHERE product_id > 4
+  product_id | name | price
+  5 | 'kiwi' | 0
+  6 | 'grape' | 2000
+  7 | 'peach' | 2500
+

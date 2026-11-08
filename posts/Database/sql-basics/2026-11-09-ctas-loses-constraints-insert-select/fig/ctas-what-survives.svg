@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="34" font-size="16" font-weight="bold" fill="#222222">CREATE TABLE ... AS SELECT 가 옮기는 것과 버리는 것</text>
+  <text x="24" y="56" font-size="13" fill="#555555">복사본의 정의는 원본 표가 아니라 SELECT 결과에서 새로 만든다. 그래서 결과 집합에 없는 정보는 따라오지 않는다</text>
+
+  <g font-size="14" font-weight="bold" fill="#222222" text-anchor="middle">
+    <text x="200" y="94">원본 product</text>
+    <text x="660" y="94">복사본 product_copy</text>
+  </g>
+  <text x="430" y="94" font-size="13" fill="#555555" text-anchor="middle">AS SELECT *</text>
+
+  <!-- 1. 컬럼 이름 -->
+  <rect x="40" y="110" width="320" height="44" rx="4" fill="#f7f7f7" stroke="#999999"/>
+  <text x="56" y="137" font-size="14" fill="#222222">컬럼 이름 4개</text>
+  <line x1="364" y1="132" x2="496" y2="132" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="510" y="137" font-size="14" fill="#2d6a4f">그대로 (결과 컬럼 이름)</text>
+
+  <!-- 2. 선언 타입 -->
+  <rect x="40" y="166" width="320" height="44" rx="4" fill="#f7f7f7" stroke="#999999"/>
+  <text x="56" y="193" font-size="14" fill="#222222">선언 타입 INTEGER · TEXT</text>
+  <line x1="364" y1="188" x2="496" y2="188" stroke="#b45309" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="510" y="193" font-size="14" fill="#b45309">INT · TEXT · 계산식은 빈 이름</text>
+
+  <!-- 3. 행 -->
+  <rect x="40" y="222" width="320" height="44" rx="4" fill="#f7f7f7" stroke="#999999"/>
+  <text x="56" y="249" font-size="14" fill="#222222">행 4개</text>
+  <line x1="364" y1="244" x2="496" y2="244" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="510" y="249" font-size="14" fill="#2d6a4f">4개 (rowid 는 1부터 새로)</text>
+
+  <!-- 4. 제약 -->
+  <rect x="40" y="278" width="320" height="44" rx="4" fill="#f7f7f7" stroke="#999999"/>
+  <text x="56" y="305" font-size="14" fill="#222222">PRIMARY KEY · NOT NULL · CHECK · UNIQUE</text>
+  <line x1="364" y1="300" x2="496" y2="300" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="510" y="305" font-size="14" fill="#9d0208">없음 — 어떤 제약도 없다</text>
+
+  <!-- 5. 기본값·정렬 규칙 -->
+  <rect x="40" y="334" width="320" height="44" rx="4" fill="#f7f7f7" stroke="#999999"/>
+  <text x="56" y="361" font-size="14" fill="#222222">DEFAULT 0 · COLLATE NOCASE</text>
+  <line x1="364" y1="356" x2="496" y2="356" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="510" y="361" font-size="14" fill="#9d0208">기본값 NULL · 정렬 BINARY</text>
+
+  <!-- 6. 인덱스 -->
+  <rect x="40" y="390" width="320" height="44" rx="4" fill="#f7f7f7" stroke="#999999"/>
+  <text x="56" y="417" font-size="14" fill="#222222">인덱스 ix_product_price · 자동 인덱스</text>
+  <line x1="364" y1="412" x2="496" y2="412" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="510" y="417" font-size="14" fill="#9d0208">없음 — 따로 만들어야 한다</text>
+
+  <text x="24" y="458" font-size="13" fill="#555555">초록: 그대로 옮겨짐 · 주황: 바뀌어 옮겨짐 · 빨강 점선: 옮겨지지 않음</text>
+</svg>

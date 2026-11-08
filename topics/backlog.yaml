@@ -7481,3 +7481,47 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-117
+    title: "CREATE TABLE AS SELECT로 복사한 표가 잃는 것 — 기본키·제약조건·인덱스와 INSERT INTO ... SELECT"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, ctas, constraint, basics]
+    difficulty: 입문
+    angle: "CTAS로 만든 표에서 PRIMARY KEY·NOT NULL·DEFAULT·CHECK·인덱스가 빠지고 컬럼 타입이 친화도 이름으로 바뀌는 것을 sqlite_schema로 확인하고, 뼈대를 먼저 만든 뒤 INSERT INTO ... SELECT로 채우는 방법과 비교한다"
+    code: none
+    origin: manual
+    status: done
+  - id: pe-258
+    title: "명령어 파이프라인 해저드 — 구조·데이터·제어 3가지와 스톨·포워딩을 사이클 표로 세기"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, pipeline, hazard, 개념정리]
+    difficulty: 중급
+    angle: "5단계 파이프라인 시뮬레이터를 파이썬으로 짜서 같은 명령열을 포워딩 없음·있음·분기 예측 조건에서 돌려 총 사이클·CPI·스톨 수를 세고 손계산 공식 k+n-1과 대조한다"
+    code: none
+    origin: manual
+    status: done
+  - id: gen-032
+    title: "저수지 표본추출 — 길이를 모르는 스트림에서 k개를 고르게 뽑는 Algorithm R과 L"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [sampling, reservoir, streaming, algorithm]
+    difficulty: 중급
+    angle: "Algorithm R과 L을 파이썬으로 구현해 같은 스트림에서 각 원소가 뽑힌 횟수의 균일성(카이제곱)과 난수 호출 횟수를 세어 n에 비례하는지 k log(n/k)에 비례하는지 확인한다"
+    code: none
+    origin: manual
+    status: done
+  - id: pe-259
+    title: "가설 검정 — 1종·2종 오류, 유의수준, 검정력과 표본 크기"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "A/B 테스트 답안에서 나온 개념. 귀무·대립가설, α·β·검정력의 관계, 효과 크기와 표본 크기 공식을 직접 계산해 보이고, 중간 확인(peeking)·다중 비교가 1종 오류를 키우는 이유까지"
+    code: none
+    origin: exam
+    status: todo
