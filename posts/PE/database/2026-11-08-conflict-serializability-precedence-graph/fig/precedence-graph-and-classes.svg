@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="16" font-weight="bold" fill="#222222">선행 그래프로 판정하고, 판정 결과를 스케줄 집합의 포함 관계에 놓는다</text>
+
+  <!-- 왼쪽 위: S4 비순환 -->
+  <text x="24" y="70" font-size="14" font-weight="bold" fill="#2d6a4f">S4: r1(X) w2(X) w3(Y) r1(Y)</text>
+  <g font-size="14" text-anchor="middle">
+    <circle cx="60" cy="120" r="24" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="60" y="125" fill="#2d6a4f">T3</text>
+    <circle cx="200" cy="120" r="24" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="200" y="125" fill="#2d6a4f">T1</text>
+    <circle cx="340" cy="120" r="24" fill="#f0f7f3" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="340" y="125" fill="#2d6a4f">T2</text>
+  </g>
+  <line x1="86" y1="120" x2="172" y2="120" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#g)"/>
+  <text x="129" y="110" font-size="13" text-anchor="middle" fill="#2d6a4f">Y</text>
+  <line x1="226" y1="120" x2="312" y2="120" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#g)"/>
+  <text x="269" y="110" font-size="13" text-anchor="middle" fill="#2d6a4f">X</text>
+  <text x="24" y="168" font-size="13" fill="#222222">사이클 없음 → 충돌 직렬 가능, 위상 정렬 T3 → T1 → T2</text>
+
+  <!-- 왼쪽 아래: S2 순환 -->
+  <text x="24" y="226" font-size="14" font-weight="bold" fill="#9d0208">S2: r1(A) r2(A) w1(A) w2(A)</text>
+  <g font-size="14" text-anchor="middle">
+    <circle cx="110" cy="290" r="24" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+    <text x="110" y="295" fill="#9d0208">T1</text>
+    <circle cx="290" cy="290" r="24" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+    <text x="290" y="295" fill="#9d0208">T2</text>
+  </g>
+  <path d="M132,278 Q200,248 266,278" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#r)"/>
+  <text x="200" y="252" font-size="13" text-anchor="middle" fill="#9d0208">r1&lt;w2, w1&lt;w2</text>
+  <path d="M268,302 Q200,332 134,302" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#r)"/>
+  <text x="200" y="340" font-size="13" text-anchor="middle" fill="#9d0208">r2&lt;w1</text>
+  <text x="24" y="380" font-size="13" fill="#222222">사이클 있음 → 어떤 직렬 순서와도 충돌 동등하지 않다</text>
+
+  <!-- 오른쪽: 포함 관계 -->
+  <rect x="440" y="56" width="416" height="350" rx="10" fill="#fafafa" stroke="#999999"/>
+  <text x="456" y="80" font-size="14" fill="#555555">모든 스케줄</text>
+  <rect x="458" y="94" width="380" height="250" rx="10" fill="#fff8ec" stroke="#b45309"/>
+  <text x="474" y="118" font-size="14" fill="#b45309">뷰 직렬 가능</text>
+  <rect x="476" y="132" width="344" height="164" rx="10" fill="#f0f7f3" stroke="#2d6a4f"/>
+  <text x="492" y="156" font-size="14" fill="#2d6a4f">충돌 직렬 가능 (선행 그래프 비순환)</text>
+  <rect x="494" y="170" width="170" height="100" rx="10" fill="#e1efe7" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="510" y="194" font-size="14" fill="#2d6a4f">2PL 로 생성 가능</text>
+  <text x="579" y="240" font-size="14" text-anchor="middle" fill="#222222">S1</text>
+  <text x="742" y="240" font-size="14" text-anchor="middle" fill="#222222">S4</text>
+  <text x="648" y="324" font-size="14" text-anchor="middle" fill="#222222">S3 (맹목 쓰기)</text>
+  <text x="648" y="378" font-size="14" text-anchor="middle" fill="#222222">S2 (갱신 분실)</text>
+
+  <text x="24" y="428" font-size="13" fill="#555555">S1~S4 의 자리는 code/serializability.py 의 판정 결과다</text>
+</svg>
