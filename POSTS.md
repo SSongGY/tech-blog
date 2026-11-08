@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **673편** · 갱신 2026-11-08
+총 **676편** · 갱신 2026-11-08
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 101편
+## DB문법 (basics) — 102편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [GROUP BY에 없는 컬럼을 SELECT에 쓰면 — SQLite 맨 컬럼 규칙과 MAX()의 특례](posts/Database/sql-basics/2026-11-08-sqlite-bare-column-group-by/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [중앙값 구하기 — 함수가 없을 때 ROW_NUMBER와 COUNT로 홀짝 행을 함께 처리하는 법](posts/Database/sql-basics/2026-11-08-sql-median-row-number-count/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [연속 구간 찾기 — 날짜에서 행 번호를 빼서 연속 출석을 묶는 법](posts/Database/sql-basics/2026-11-07-sql-gaps-and-islands-consecutive-days/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [max(a, b)와 MAX(col) — 이름은 같고 NULL은 반대로 다룬다](posts/Database/sql-basics/2026-11-07-scalar-max-vs-aggregate-max/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -135,7 +136,7 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 237편
+## 기술사 (pe) — 238편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
@@ -143,6 +144,7 @@
 | 2026-11-08 | [ISO/IEC 38507 AI 거버넌스 — 38500을 AI 사용에 적용한 거버넌스체 지침](posts/PE/it-management/2026-11-08-iso-iec-38507-ai-governance-implications/index.md) | 중급 | ISO/IEC 38507:2022 (제1판, 2022-04), ISO/IEC 38500:2015 (제2판, 2015-02-15), ISO/IEC 42001:2023, ISO/IEC 23894:2023 | 문서 근거 |
 | 2026-11-08 | [암호 안전성 정의 — IND-CPA·IND-CCA1·IND-CCA2와 의미론적 안전성](posts/PE/security/2026-11-08-ind-cpa-cca-security-notions/index.md) | 중급 | Bellare·Desai·Pointcheval·Rogaway, CRYPTO '98 (IACR ePrint 1998/021), RFC 8017 PKCS #1 v2.2 (2016-11), NIST FIPS 203 (2024-08) | 문서 근거 |
 | 2026-11-08 | [그래프 신경망(GNN) — 메시지 전달 틀과 GCN·GAT·GraphSAGE의 집계 방식 비교](posts/PE/ai/2026-11-08-gnn-message-passing-gcn-gat-graphsage/index.md) | 중급 | Gilmer et al., arXiv:1704.01212 v2 (2017), Kipf & Welling, arXiv:1609.02907 v4 (ICLR 2017), Veličković et al., arXiv:1710.10903 (ICLR 2018), Hamilton et al., arXiv:1706.02216 (NeurIPS 2017), Li et al., arXiv:1801.07606 v1 (2018) | 문서 근거 |
+| 2026-11-08 | [충돌 직렬 가능성과 선행 그래프 — 동시 실행 스케줄이 직렬 실행과 같은지 판정하기](posts/PE/database/2026-11-08-conflict-serializability-precedence-graph/index.md) | 중급 | Python 3.13.5, Silberschatz·Korth·Sudarshan, Database System Concepts 7th ed. (2019) Ch.17·Ch.18 슬라이드 | 실행 검증 |
 | 2026-11-08 | [캐시 사상 방식 — 직접·완전 연관·집합 연관의 주소 비트 분할과 충돌 미스](posts/PE/computer-architecture/2026-11-08-cache-mapping-direct-associative-set/index.md) | 중급 | Python 3.13.5, Drepper, What Every Programmer Should Know About Memory v1.0 (2007-11-21) | 실행 검증 |
 | 2026-11-07 | [TLB와 유효 메모리 접근 시간 — 페이지 테이블 단계 수와 적중률로 계산하기](posts/PE/system/2026-11-07-tlb-effective-access-time/index.md) | 중급 | Python 3.13.5, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.19·20 | 실행 검증 |
 | 2026-11-07 | [다자간 연산(MPC)과 사설 교집합(PSI) — 입력을 숨긴 공동 계산](posts/PE/security/2026-11-07-mpc-secret-sharing-and-private-set-intersection/index.md) | 중급 | ISO/IEC 4922-1:2023, ISO/IEC 4922-2:2024, NIST Privacy-Enhancing Cryptography 프로젝트 PSI/PSO 페이지 (2026-10-26 갱신) | 문서 근거 |
@@ -400,10 +402,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 66편
+## 일반 (general) — 67편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-08 | [허프만 부호를 직접 만들어 엔트로피 하한과 zlib에 맞대 보기](posts/Architecture/datastructure/2026-11-08-huffman-code-entropy-vs-zlib/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-08 | [Count-Min Sketch — 고정 메모리로 빈도를 세고 과대 추정의 상한을 보장하는 법](posts/Architecture/datastructure/2026-11-08-count-min-sketch-frequency-error-bound/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-07 | [스킵 리스트 — 난수로 레벨을 정해 균형을 맞추는 정렬 연결 리스트](posts/Architecture/datastructure/2026-11-07-skip-list-probabilistic-balance/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-07 | [HyperLogLog — 고유 방문자 수를 몇 KB로 세는 원리와 오차](posts/Architecture/datastructure/2026-11-07-hyperloglog-cardinality-error/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
