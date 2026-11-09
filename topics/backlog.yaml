@@ -7525,3 +7525,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-118
+    title: "윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, frame, basics]
+    difficulty: 중급
+    angle: "EXCLUDE NO OTHERS·CURRENT ROW·GROUP·TIES 네 가지를 같은 동점 데이터에 걸어 프레임에 남는 행을 COUNT·group_concat 으로 찍어 본다. 나를 뺀 부서 평균처럼 실무에서 쓰는 자리와, 프레임 모드(ROWS·RANGE)에 따라 결과가 갈리는 점까지"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-033
+    title: "쿠쿠 필터 — 지울 수 있는 근사 집합과 적재율의 벽"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [cuckoo-filter, bloom-filter, probabilistic, hashing]
+    difficulty: 심화
+    angle: "Fan 등(CoNEXT 2014)의 부분 키 쿠쿠 해싱을 표준 라이브러리로 구현해 지문 길이별 오탐률, 버킷 크기별 최대 적재율, 삭제 동작을 실측하고 같은 메모리의 블룸 필터와 나란히 잰다"
+    code: python
+    origin: manual
+    status: todo

@@ -593,3 +593,4 @@
 | 2026-11-09 | db-117 | Database | CREATE TABLE AS SELECT로 복사한 표가 잃는 것 — 기본키·제약조건·인덱스와 INSERT INTO ... SELECT |
 | 2026-11-09 | pe-258 | PE | 명령어 파이프라인 해저드 — 구조·데이터·제어 3가지와 스톨·포워딩을 사이클 표로 세기 |
 | 2026-11-09 | gen-032 | Architecture | 저수지 표본추출 — 길이를 모르는 스트림에서 k개를 고르게 뽑는 Algorithm R과 L |
+| 2026-11-09 | db-118 | Database | 윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계 |

@@ -1,0 +1,186 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-09-window-frame-exclude-clause
+# 명령      : python window_exclude.py
+# 수행 시각 : 2026-11-09 19:07 (대한민국 표준시)
+# 소요      : 26.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[employee]  7행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  emp_name  | TEXT    | NOT NULL
+  dept_name | TEXT    | NOT NULL
+  salary    | INTEGER | NOT NULL
+
+  emp_name | dept_name | salary
+  ---------+-----------+-------
+  가온     | 개발      |    300
+  나래     | 개발      |    400
+  다온     | 개발      |    400
+  라온     | 개발      |    500
+  마루     | 영업      |    350
+  바름     | 영업      |    450
+  사름     | 인사      |    380
+
+
+### 1. 개발 부서 4명 — 네 가지 EXCLUDE 가 프레임에 남기는 사람
+SELECT emp_name, salary,
+  group_concat(emp_name, ',') OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+                                    EXCLUDE NO OTHERS)  AS no_others,
+  group_concat(emp_name, ',') OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+                                    EXCLUDE CURRENT ROW) AS current_row,
+  group_concat(emp_name, ',') OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+                                    EXCLUDE GROUP)       AS grp,
+  group_concat(emp_name, ',') OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+                                    EXCLUDE TIES)        AS ties
+FROM employee
+WHERE dept_name = '개발'
+ORDER BY salary, emp_name
+  emp_name | salary | no_others           | current_row    | grp            | ties
+  ---------+--------+---------------------+----------------+----------------+--------------------
+  가온     |    300 | 가온,나래,다온,라온 | 나래,다온,라온 | 나래,다온,라온 | 가온,나래,다온,라온
+  나래     |    400 | 가온,나래,다온,라온 | 가온,다온,라온 | 가온,라온      | 가온,나래,라온
+  다온     |    400 | 가온,나래,다온,라온 | 가온,나래,라온 | 가온,라온      | 가온,다온,라온
+  라온     |    500 | 가온,나래,다온,라온 | 가온,나래,다온 | 가온,나래,다온 | 가온,나래,다온,라온
+
+### 2. 나를 뺀 부서 평균 — EXCLUDE CURRENT ROW 와 (합-나)/(수-1)
+SELECT dept_name, emp_name, salary,
+  AVG(salary) OVER (PARTITION BY dept_name ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
+                    EXCLUDE CURRENT ROW)                AS others_avg,
+  (SUM(salary) OVER (PARTITION BY dept_name) - salary)
+    / (COUNT(*) OVER (PARTITION BY dept_name) - 1)      AS by_formula,
+  (SUM(salary) OVER (PARTITION BY dept_name) - salary) * 1.0
+    / (COUNT(*) OVER (PARTITION BY dept_name) - 1)      AS by_formula_real
+FROM employee
+ORDER BY dept_name, salary, emp_name
+  dept_name | emp_name | salary | others_avg        | by_formula | by_formula_real
+  ----------+----------+--------+-------------------+------------+------------------
+  개발      | 가온     |    300 | 433.3333333333333 |        433 | 433.3333333333333
+  개발      | 나래     |    400 |             400.0 |        400 |             400.0
+  개발      | 다온     |    400 |             400.0 |        400 |             400.0
+  개발      | 라온     |    500 | 366.6666666666667 |        366 | 366.6666666666667
+  영업      | 마루     |    350 |             450.0 |        450 |             450.0
+  영업      | 바름     |    450 |             350.0 |        350 |             350.0
+  인사      | 사름     |    380 |              NULL |       NULL |              NULL
+
+### 3. 기본 프레임(RANGE) 그대로 — EXCLUDE CURRENT ROW 가 동점을 남긴다
+SELECT emp_name, salary,
+  SUM(salary) OVER (ORDER BY salary)                         AS running,
+  SUM(salary) OVER (ORDER BY salary
+                    RANGE UNBOUNDED PRECEDING
+                    EXCLUDE CURRENT ROW)                     AS range_excl,
+  SUM(salary) OVER (ORDER BY salary
+                    ROWS UNBOUNDED PRECEDING
+                    EXCLUDE CURRENT ROW)                     AS rows_excl,
+  COUNT(*)    OVER (ORDER BY salary
+                    RANGE UNBOUNDED PRECEDING
+                    EXCLUDE CURRENT ROW)                     AS range_cnt,
+  COUNT(*)    OVER (ORDER BY salary
+                    ROWS UNBOUNDED PRECEDING
+                    EXCLUDE CURRENT ROW)                     AS rows_cnt
+FROM employee
+WHERE dept_name = '개발'
+ORDER BY salary, emp_name
+  emp_name | salary | running | range_excl | rows_excl | range_cnt | rows_cnt
+  ---------+--------+---------+------------+-----------+-----------+---------
+  가온     |    300 |     300 |       NULL |      NULL |         0 |        0
+  나래     |    400 |    1100 |        700 |       300 |         2 |        1
+  다온     |    400 |    1100 |        700 |       700 |         2 |        2
+  라온     |    500 |    1600 |       1100 |      1100 |         3 |        3
+
+### 4. ORDER BY 가 없으면 — 파티션 전체가 동점 묶음이다
+SELECT dept_name, emp_name,
+  COUNT(*) OVER (PARTITION BY dept_name ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING EXCLUDE CURRENT ROW) AS excl_cur,
+  COUNT(*) OVER (PARTITION BY dept_name ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING EXCLUDE GROUP)       AS excl_grp,
+  COUNT(*) OVER (PARTITION BY dept_name ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING EXCLUDE TIES)        AS excl_ties
+FROM employee
+ORDER BY dept_name, emp_name
+  dept_name | emp_name | excl_cur | excl_grp | excl_ties
+  ----------+----------+----------+----------+----------
+  개발      | 가온     |        3 |        0 |         1
+  개발      | 나래     |        3 |        0 |         1
+  개발      | 다온     |        3 |        0 |         1
+  개발      | 라온     |        3 |        0 |         1
+  영업      | 마루     |        1 |        0 |         1
+  영업      | 바름     |        1 |        0 |         1
+  인사      | 사름     |        0 |        0 |         1
+
+### 5. 앞뒤 한 명씩만 — 이웃 평균과 내 값 비교
+SELECT emp_name, salary,
+  AVG(salary) OVER (ORDER BY salary, emp_name
+                    ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING
+                    EXCLUDE CURRENT ROW)                    AS neighbor_avg,
+  group_concat(emp_name, ',') OVER (ORDER BY salary, emp_name
+                    ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING
+                    EXCLUDE CURRENT ROW)                    AS neighbors
+FROM employee
+ORDER BY salary, emp_name
+  emp_name | salary | neighbor_avg | neighbors
+  ---------+--------+--------------+----------
+  가온     |    300 |        350.0 | 마루
+  마루     |    350 |        340.0 | 가온,사름
+  사름     |    380 |        375.0 | 마루,나래
+  나래     |    400 |        390.0 | 사름,다온
+  다온     |    400 |        425.0 | 나래,바름
+  바름     |    450 |        450.0 | 다온,라온
+  라온     |    500 |        450.0 | 바름
+
+### 6. 프레임을 쓰지 않는 함수에 EXCLUDE 를 붙이면
+SELECT emp_name, salary,
+  ROW_NUMBER()     OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING EXCLUDE CURRENT ROW) AS rn,
+  RANK()           OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING EXCLUDE CURRENT ROW) AS rnk,
+  FIRST_VALUE(emp_name)
+                   OVER (ORDER BY salary ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING EXCLUDE CURRENT ROW) AS first_other
+FROM employee
+WHERE dept_name = '개발'
+ORDER BY salary, emp_name
+  emp_name | salary | rn | rnk | first_other
+  ---------+--------+----+-----+------------
+  가온     |    300 |  1 |   1 | 나래
+  나래     |    400 |  2 |   2 | 가온
+  다온     |    400 |  3 |   2 | 가온
+  라온     |    500 |  4 |   4 | 가온
+
+### 7. 문법 — EXCLUDE 는 프레임 경계 뒤에만 온다
+  ORDER BY 뒤에 바로   실패   — ORDER BY salary EXCLUDE TIES
+                    OperationalError: near "EXCLUDE": syntax error
+  경계 앞에            실패   — ORDER BY salary EXCLUDE TIES ROWS UNBOUNDED PRECEDING
+                    OperationalError: near "EXCLUDE": syntax error
+  경계 뒤에            OK     — ORDER BY salary ROWS UNBOUNDED PRECEDING EXCLUDE TIES
+
+### 8. 실행계획 — EXCLUDE 유무
+-- EXCLUDE 없음
+QUERY PLAN
+|--CO-ROUTINE (subquery-2)
+|  |--SCAN employee
+|  `--USE TEMP B-TREE FOR ORDER BY
+`--SCAN (subquery-2)
+-- EXCLUDE CURRENT ROW
+QUERY PLAN
+|--CO-ROUTINE (subquery-2)
+|  |--SCAN employee
+|  `--USE TEMP B-TREE FOR ORDER BY
+`--SCAN (subquery-2)
+
+### 9. 행이 늘어날 때 일의 양 — VDBE 명령 수와 시간
+  한 부서에 n 명. 나를 뺀 평균을 두 방법으로 구한다.
+  n    | EXCLUDE 명령 수 | 공식 명령 수 | EXCLUDE ms | 공식 ms
+  -----+-----------------+--------------+------------+--------
+   500 |         1516041 |        20040 |        7.4 |     0.3
+  1000 |         6032041 |        40039 |       27.5 |     0.6
+  2000 |        24064041 |        80039 |      209.2 |     2.4
+  4000 |        96128041 |       160039 |      820.2 |     4.2
