@@ -110,6 +110,8 @@ N= 10000: 측정 17.71회, 2 ln N = 18.42, lg N = 13.29, 높이 28
 
 > 함께 보기: [기출문제 — 이진 탐색 트리와 라우팅 테이블 탐색 알고리즘의 상관관계](../2026-10-20-bst-and-routing-table-lookup/index.md)
 
+> 개념 정리: [균형 이진 탐색 트리 — AVL 트리와 레드-블랙 트리](../../computer-architecture/2026-11-10-avl-and-red-black-tree/index.md)
+
 끝
 
 ## 답안 작성 메모

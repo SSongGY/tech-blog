@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="360" fill="#ffffff"/>
+
+  <!-- 1. 정렬 입력 BST -->
+  <text x="140" y="34" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">① BST: 1, 2, 3 을 차례로</text>
+  <line x1="80" y1="90" x2="140" y2="150" stroke="#9d0208" stroke-width="2"/>
+  <line x1="140" y1="150" x2="200" y2="210" stroke="#9d0208" stroke-width="2"/>
+  <circle cx="80" cy="90" r="22" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="80" y="96" font-size="16" text-anchor="middle">1</text>
+  <circle cx="140" cy="150" r="22" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="140" y="156" font-size="16" text-anchor="middle">2</text>
+  <circle cx="200" cy="210" r="22" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="200" y="216" font-size="16" text-anchor="middle">3</text>
+  <text x="140" y="268" font-size="14" text-anchor="middle" fill="#9d0208">높이 2 — 사슬로 자란다</text>
+  <text x="140" y="290" font-size="14" text-anchor="middle" fill="#9d0208">N 개면 높이 N−1</text>
+
+  <!-- 화살표 -->
+  <path d="M262 150 L318 150" stroke="#555" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- 2. AVL -->
+  <text x="440" y="34" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">② AVL: 1 에서 높이 차 2</text>
+  <text x="440" y="56" font-size="14" text-anchor="middle" fill="#b45309">RR 경우 → 1 을 축으로 좌회전 1회</text>
+  <line x1="440" y1="110" x2="380" y2="180" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="440" y1="110" x2="500" y2="180" stroke="#2d6a4f" stroke-width="2"/>
+  <circle cx="440" cy="110" r="22" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="440" y="116" font-size="16" text-anchor="middle">2</text>
+  <circle cx="380" cy="180" r="22" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="380" y="186" font-size="16" text-anchor="middle">1</text>
+  <circle cx="500" cy="180" r="22" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="500" y="186" font-size="16" text-anchor="middle">3</text>
+  <text x="440" y="240" font-size="14" text-anchor="middle" fill="#2d6a4f">높이 1 — 모든 노드에서</text>
+  <text x="440" y="262" font-size="14" text-anchor="middle" fill="#2d6a4f">좌우 높이 차 ≤ 1</text>
+  <text x="440" y="290" font-size="14" text-anchor="middle" fill="#333">상한 ≈ 1.44 lg n</text>
+
+  <!-- 3. 레드-블랙 -->
+  <text x="740" y="34" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">③ 레드-블랙: 빨강 2개 연속</text>
+  <text x="740" y="56" font-size="14" text-anchor="middle" fill="#b45309">Case 3 → 색 바꾸고 좌회전 1회</text>
+  <line x1="740" y1="110" x2="680" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="740" y1="110" x2="800" y2="180" stroke="#333" stroke-width="2"/>
+  <circle cx="740" cy="110" r="22" fill="#222" stroke="#222" stroke-width="2"/>
+  <text x="740" y="116" font-size="16" text-anchor="middle" fill="#fff">2</text>
+  <circle cx="680" cy="180" r="22" fill="#fff" stroke="#9d0208" stroke-width="3"/>
+  <text x="680" y="186" font-size="16" text-anchor="middle" fill="#9d0208">1</text>
+  <circle cx="800" cy="180" r="22" fill="#fff" stroke="#9d0208" stroke-width="3"/>
+  <text x="800" y="186" font-size="16" text-anchor="middle" fill="#9d0208">3</text>
+  <text x="740" y="240" font-size="14" text-anchor="middle" fill="#2d6a4f">루트 흑색, 빨강 자식은 흑색,</text>
+  <text x="740" y="262" font-size="14" text-anchor="middle" fill="#2d6a4f">경로마다 흑색 노드 수 같음</text>
+  <text x="740" y="290" font-size="14" text-anchor="middle" fill="#333">상한 2 lg(n+1)</text>
+
+  <text x="440" y="336" font-size="13" text-anchor="middle" fill="#555">검은 원 = 흑색 노드, 빨간 테두리 = 적색 노드. 회전은 키 순서를 바꾸지 않고 부모·자식 관계만 바꾼다.</text>
+</svg>
