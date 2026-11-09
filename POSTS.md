@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **697편** · 갱신 2026-11-10
+총 **699편** · 갱신 2026-11-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -139,10 +139,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 243편
+## 기술사 (pe) — 245편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-10 | [균형 이진 탐색 트리 — AVL 트리와 레드-블랙 트리](posts/PE/computer-architecture/2026-11-10-avl-and-red-black-tree/index.md) | 중급 | Python 3.13.5, MIT 6.006 Fall 2011 Lecture 6, Stanford CS161 Winter 2018 Red-Black Trees, NIST DADS (2019-11 개정) | 실행 검증 |
+| 2026-11-10 | [Apriori 알고리즘 — 빈발 항목집합 탐색과 후보 가지치기](posts/PE/data-analysis/2026-11-10-apriori-candidate-pruning/index.md) | 중급 | Python 3.13.5, Agrawal·Srikant, VLDB 1994, Han·Pei·Yin, ACM SIGMOD 2000, Tan·Steinbach·Kumar, Introduction to Data Mining Ch.6 슬라이드 (2004) | 실행 검증 |
 | 2026-11-09 | [부채널 공격 — 구현이 새는 시간·전력·전자파·캐시 정보와 대응 3가지](posts/PE/security/2026-11-09-side-channel-attack-countermeasures/index.md) | 중급 | Kocher, Timing Attacks (CRYPTO '96), Kocher·Jaffe·Jun, Differential Power Analysis (CRYPTO '99), NIST FIPS 140-3 (2019-03), ISO/IEC 17825:2024 | 문서 근거 |
 | 2026-11-09 | [명령어 파이프라인 해저드 — 구조·데이터·제어 3가지와 스톨·포워딩을 사이클 표로 세기](posts/PE/computer-architecture/2026-11-09-pipeline-hazards-stall-forwarding-cycles/index.md) | 중급 | Python 3.13.5, Cornell CS3410 Spring 2019 Lecture 7 (RISC-V 5단계), MIT 6.004 Spring 2017 L15 | 실행 검증 |
 | 2026-11-09 | [가설 검정 — 1종·2종 오류, 유의수준, 검정력과 표본 크기](posts/PE/data-analysis/2026-11-09-hypothesis-testing-errors-power-sample-size/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §1.3.5·§7.1.3·§7.2.2.2 | 실행 검증 |
