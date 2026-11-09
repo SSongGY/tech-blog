@@ -60,15 +60,15 @@ FIXED_TRACKS = {"basics": 1, "pe": 1}
 ROTATING_TRACKS = ("product", "linux", "general")
 POSTS_PER_DAY = sum(FIXED_TRACKS.values()) + 1
 
-# 작성 루틴은 하루 네 회차(07·12·19·23시), 개념 루틴은 두 회차(04·17시)이고
-# 회차마다 pe 를 2편 가져간다. 기출 루틴도 두 회차(02·15시)다.
+# 작성 루틴은 하루 한 회차(19시), 개념 루틴도 한 회차(04시)이고 회차마다
+# pe 를 2편 가져간다. 기출 루틴만 두 회차(02·15시)로 남았다.
 # status 의 잔량 계산이 이 숫자를 쓰므로, 스케줄을 바꾸면 여기도 같이 고친다.
-DAILY_RUNS_PER_DAY = 4
-CONCEPT_RUNS_PER_DAY = 2
+DAILY_RUNS_PER_DAY = 1
+CONCEPT_RUNS_PER_DAY = 1
 CONCEPT_POSTS_PER_DAY = 2 * CONCEPT_RUNS_PER_DAY
 EXAM_RUNS_PER_DAY = 2
-# 금융 회차(10시·21시)는 하루 두 번, 회차당 2편. 트랙 배분과는 무관하다.
-FINANCE_POSTS_PER_DAY = 4
+# 금융 회차(21시)는 하루 한 번, 회차당 2편. 트랙 배분과는 무관하다.
+FINANCE_POSTS_PER_DAY = 2
 
 
 TRACK_LABEL = {
