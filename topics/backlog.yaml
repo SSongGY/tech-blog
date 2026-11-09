@@ -7524,7 +7524,7 @@ topics:
     angle: "A/B 테스트 답안에서 나온 개념. 귀무·대립가설, α·β·검정력의 관계, 효과 크기와 표본 크기 공식을 직접 계산해 보이고, 중간 확인(peeking)·다중 비교가 1종 오류를 키우는 이유까지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-118
     title: "윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계"
     category: Database

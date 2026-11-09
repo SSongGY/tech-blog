@@ -124,6 +124,8 @@ z = (p̂₂ − p̂₁) / √(p̂(1−p̂)(1/n₁+1/n₂))를 쓴다.
 α 근처에 머무는지, SRM이 없는지를 보아 **배정·로그·지표 계산 시스템 자체를 검증**한다.
 
 > 개념 정리: [대수의 법칙과 중심극한정리 — 전제가 깨지는 운영 데이터에서 무엇이 틀어지는가](../../data-analysis/2026-10-08-lln-clt-assumptions-in-operational-data/index.md)
+>
+> 개념 정리: [가설 검정 — 1종·2종 오류, 유의수준, 검정력과 표본 크기](../../data-analysis/2026-11-09-hypothesis-testing-errors-power-sample-size/index.md)
 
 끝
 
