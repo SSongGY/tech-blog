@@ -90,6 +90,8 @@ Agrawal·Imielinski·Swami(1993)는 이 문제를 **두 하위 문제**로 나�
 
 > 함께 보기: [기출문제 — A/B 테스팅](../2026-11-09-ab-testing-online-controlled-experiments/index.md)
 
+> 개념 정리: [Apriori 알고리즘 — 빈발 항목집합 탐색과 후보 가지치기](../../data-analysis/2026-11-10-apriori-candidate-pruning/index.md)
+
 끝
 
 ## 답안 작성 메모

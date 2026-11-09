@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 1. L1 -->
+  <rect x="30" y="40" width="170" height="64" rx="8" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="115" y="67" font-size="15" text-anchor="middle" font-weight="bold">① DB 스캔 1회</text>
+  <text x="115" y="89" font-size="14" text-anchor="middle">항목 세기 → L1</text>
+
+  <!-- 2. join -->
+  <rect x="250" y="40" width="180" height="64" rx="8" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="340" y="67" font-size="15" text-anchor="middle" font-weight="bold">② join</text>
+  <text x="340" y="89" font-size="14" text-anchor="middle">L(k−1) ⋈ L(k−1) → Ck</text>
+
+  <!-- 3. prune -->
+  <rect x="480" y="40" width="180" height="64" rx="8" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="570" y="67" font-size="15" text-anchor="middle" font-weight="bold">③ prune</text>
+  <text x="570" y="89" font-size="14" text-anchor="middle">(k−1) 부분집합 검사</text>
+
+  <!-- 4. count -->
+  <rect x="480" y="180" width="180" height="64" rx="8" fill="#fff" stroke="#9d0208" stroke-width="2"/>
+  <text x="570" y="207" font-size="15" text-anchor="middle" font-weight="bold">④ DB 스캔 1회</text>
+  <text x="570" y="229" font-size="14" text-anchor="middle">Ck 지지도 세기</text>
+
+  <!-- 5. Lk -->
+  <rect x="250" y="180" width="180" height="64" rx="8" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="340" y="207" font-size="15" text-anchor="middle" font-weight="bold">⑤ Lk</text>
+  <text x="340" y="229" font-size="14" text-anchor="middle">최소 지지도 이상만</text>
+
+  <!-- 6. stop -->
+  <rect x="30" y="180" width="170" height="64" rx="8" fill="#eef5f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="115" y="207" font-size="15" text-anchor="middle" font-weight="bold">⑥ 종료</text>
+  <text x="115" y="229" font-size="14" text-anchor="middle">Ck 또는 Lk 가 빔</text>
+
+  <!-- arrows -->
+  <line x1="200" y1="72" x2="246" y2="72" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="430" y1="72" x2="476" y2="72" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="570" y1="104" x2="570" y2="176" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="480" y1="212" x2="434" y2="212" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="250" y1="212" x2="204" y2="212" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <path d="M340 180 L340 108" stroke="#444" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <text x="350" y="150" font-size="13" fill="#444">k ← k+1</text>
+
+  <!-- 원리 -->
+  <rect x="700" y="40" width="160" height="204" rx="8" fill="#f7f7f7" stroke="#999" stroke-width="1.5"/>
+  <text x="780" y="70" font-size="14" text-anchor="middle" font-weight="bold">Apriori 원리</text>
+  <text x="780" y="98" font-size="13" text-anchor="middle">빈발 집합의</text>
+  <text x="780" y="118" font-size="13" text-anchor="middle">부분집합은 모두 빈발</text>
+  <text x="780" y="150" font-size="13" text-anchor="middle">⇔ 빈발하지 않은</text>
+  <text x="780" y="170" font-size="13" text-anchor="middle">집합의 상위 집합은</text>
+  <text x="780" y="190" font-size="13" text-anchor="middle">빈발하지 않음</text>
+  <text x="780" y="222" font-size="13" text-anchor="middle" fill="#b45309">→ ③ prune 의 근거</text>
+
+  <!-- 예제 수치 -->
+  <text x="30" y="296" font-size="14" font-weight="bold" fill="#222">예제 (거래 5건, 최소 지지 개수 3, 항목 17개)</text>
+  <text x="30" y="322" font-size="13" fill="#333">k=2: join 15 → prune 0 → 센 후보 15 → L2 7</text>
+  <text x="30" y="344" font-size="13" fill="#333">k=3: join 6 → prune 2 ({c,f,p} {c,m,p}) → 센 후보 4 → L3 4</text>
+  <text x="30" y="366" font-size="13" fill="#333">k=4: join 1 → 센 후보 1 → L4 1 · k=5: join 0 → 종료</text>
+  <text x="480" y="322" font-size="13" fill="#2d6a4f">지지도를 센 집합 37개 (전체 131,071개 중)</text>
+  <text x="480" y="344" font-size="13" fill="#9d0208">DB 스캔 4회 (k=1~4, 회차마다 1번)</text>
+</svg>
