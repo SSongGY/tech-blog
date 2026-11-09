@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ak" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#374151"/>
+    </marker>
+    <marker id="aw" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b1b1b">생명주기 단계 사이의 여섯 활동 — 역공학과 재공학의 위치</text>
+  <text x="200" y="64" text-anchor="middle" font-size="13" fill="#6b6b6b">추상화 높음</text>
+  <text x="680" y="64" text-anchor="middle" font-size="13" fill="#6b6b6b">추상화 낮음</text>
+  <path d="M260,60 L620,60" stroke="#c9c9c2" stroke-width="1.5" fill="none" marker-end="url(#ak)"/>
+
+  <!-- restructuring loops -->
+  <path d="M160,170 C160,112 240,112 240,170" stroke="#374151" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#ak)"/>
+  <path d="M400,170 C400,112 480,112 480,170" stroke="#374151" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#ak)"/>
+  <path d="M640,170 C640,112 720,112 720,170" stroke="#374151" stroke-width="1.8" fill="none" stroke-dasharray="5 4" marker-end="url(#ak)"/>
+  <text x="440" y="100" text-anchor="middle" font-size="13" fill="#374151">점선 고리 = 같은 수준 안의 재구조화·재문서화 (외부 동작 보존)</text>
+
+  <!-- phases -->
+  <rect x="120" y="170" width="160" height="62" rx="6" fill="#f3f3f0" stroke="#374151" stroke-width="2"/>
+  <text x="200" y="198" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">요구사항</text>
+  <text x="200" y="219" text-anchor="middle" font-size="13" fill="#4a4a4a">requirements</text>
+  <rect x="360" y="170" width="160" height="62" rx="6" fill="#f3f3f0" stroke="#374151" stroke-width="2"/>
+  <text x="440" y="198" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">설계</text>
+  <text x="440" y="219" text-anchor="middle" font-size="13" fill="#4a4a4a">design</text>
+  <rect x="600" y="170" width="160" height="62" rx="6" fill="#f3f3f0" stroke="#374151" stroke-width="2"/>
+  <text x="680" y="198" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">구현</text>
+  <text x="680" y="219" text-anchor="middle" font-size="13" fill="#4a4a4a">implementation</text>
+
+  <!-- forward engineering -->
+  <path d="M280,184 L356,184" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+  <path d="M520,184 L596,184" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+  <text x="320" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">순공학</text>
+  <text x="560" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#2d6a4f">순공학</text>
+
+  <!-- reverse engineering -->
+  <path d="M356,218 L284,218" stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#ak)"/>
+  <path d="M596,218 L524,218" stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#ak)"/>
+  <text x="320" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">역공학</text>
+  <text x="560" y="252" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">역공학·설계 복구</text>
+
+  <!-- reengineering : up then down -->
+  <path d="M700,232 L700,326 L420,326 L420,236" stroke="#b45309" stroke-width="2.5" fill="none" marker-end="url(#aw)"/>
+  <path d="M460,232 L460,300 L660,300 L660,236" stroke="#b45309" stroke-width="2.5" fill="none" marker-end="url(#aw)"/>
+  <text x="560" y="292" text-anchor="middle" font-size="13" fill="#b45309">② Δ를 더해 순공학으로 내린다</text>
+  <text x="560" y="346" text-anchor="middle" font-size="13" fill="#b45309">① 역공학으로 올린다</text>
+  <text x="560" y="376" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">재공학 = 역공학 + Δ(변경) + 순공학</text>
+
+  <text x="440" y="404" text-anchor="middle" font-size="13" fill="#4a4a4a">역공학은 시스템을 바꾸지 않고 위로 올리기만 한다. 재공학은 올린 뒤 바꿔서 다시 구현한다.</text>
+</svg>
