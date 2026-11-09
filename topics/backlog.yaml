@@ -7546,4 +7546,4 @@ topics:
     angle: "Fan 등(CoNEXT 2014)의 부분 키 쿠쿠 해싱을 표준 라이브러리로 구현해 지문 길이별 오탐률, 버킷 크기별 최대 적재율, 삭제 동작을 실측하고 같은 메모리의 블룸 필터와 나란히 잰다"
     code: python
     origin: manual
-    status: todo
+    status: done
