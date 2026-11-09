@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **688편** · 갱신 2026-11-09
+총 **690편** · 갱신 2026-11-09
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -482,10 +482,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 101편
+## 기출문제 (exam) — 103편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-09 | [기출문제 — 소프트웨어 역공학과 재공학](posts/PE/exam/2026-11-09-software-reverse-engineering-and-reengineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024), DoD SB-1 Workshop (1992) | 문서 근거 |
+| 2026-11-09 | [기출문제 — 데이터 늪(Data Swamp)](posts/PE/exam/2026-11-09-data-swamp/index.md) | 중급 | Sawadogo·Darmont, Journal of Intelligent Information Systems 56(1), 2021, ISO/IEC 38505-1:2017, James Dixon 원 게시글 (2010-10-14) | 문서 근거 |
 | 2026-11-09 | [기출문제 — AI 신뢰성 검·인증 제도(CAT)](posts/PE/exam/2026-11-09-ai-trustworthiness-certification-cat/index.md) | 중급 | TTAK.KO-10.1497 (2023-12 제정), ISO/IEC 23894:2023, ISO/IEC 42001:2023, ISO/IEC 38507:2022, 2차 자료 4건 (2023-10 ~ 2025-04) | 문서 근거 |
 | 2026-11-09 | [기출문제 — A/B 테스팅](posts/PE/exam/2026-11-09-ab-testing-online-controlled-experiments/index.md) | 중급 | Python 3.13.5, NIST/SEMATECH e-Handbook of Statistical Methods §7.3.3, Deng & Shi, KDD 2016, Microsoft ExP, Diagnosing Sample Ratio Mismatch (2020-09) | 실행 검증 |
 | 2026-11-08 | [기출문제 — 트랜스포머와 MoE: 어텐션만으로 된 층과 FFN 자리를 나눠 맡는 전문가](posts/PE/exam/2026-11-08-transformer-and-mixture-of-experts/index.md) | 중급 | Vaswani et al., Attention Is All You Need, NIPS 2017 (arXiv:1706.03762v7), Shazeer et al., Sparsely-Gated MoE, ICLR 2017 (arXiv:1701.06538), Fedus et al., Switch Transformers, JMLR 23 (2022), Jiang et al., Mixtral of Experts, arXiv:2401.04088 (2024-01) | 문서 근거 |
