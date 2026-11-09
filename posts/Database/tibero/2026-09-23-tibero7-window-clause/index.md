@@ -25,6 +25,7 @@ topic_id: tb-003
 > - [FIRST_VALUE와 LAST_VALUE — 구간의 처음과 끝](../../sql-basics/2026-10-16-first-value-last-value-window-frame/index.md) — SQLite 3.49.1, Python 3.13.5
 > - [NTILE — 데이터를 n등분하는 법](../../sql-basics/2026-10-16-ntile-quartile-remainder/index.md) — SQLite 3.49.1, Python 3.13.5
 > - [PERCENT_RANK와 CUME_DIST — 내 점수가 상위 몇 퍼센트인가](../../sql-basics/2026-11-06-percent-rank-cume-dist/index.md) — SQLite 3.49.1, Python 3.13.5
+> - [윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계](../../sql-basics/2026-11-09-window-frame-exclude-clause/index.md) — SQLite 3.49.1, Python 3.13.5
 <!-- related:end -->
 
 > **실행 검증 완료.** 이 글의 출력은 **Tibero 7.2** 인스턴스에서 실제로 돌려 받은 것이다.
