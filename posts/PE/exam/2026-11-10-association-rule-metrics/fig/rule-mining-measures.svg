@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="340" fill="#fdfdfb"/>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">규칙 X → Y 를 걸러내는 세 단계 — 앞의 두 지표는 거르고, 뒤의 세 지표는 독립과 비교한다</text>
+
+  <rect x="20" y="70" width="140" height="80" rx="6" fill="#eef2f7" stroke="#44586e" stroke-width="1.5"/>
+  <text x="90" y="104" text-anchor="middle" font-size="14" fill="#222">거래 데이터</text>
+  <text x="90" y="124" text-anchor="middle" font-size="13" fill="#555">N건의 항목집합</text>
+
+  <rect x="196" y="60" width="200" height="100" rx="6" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="296" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">① 빈발 항목집합</text>
+  <text x="296" y="110" text-anchor="middle" font-size="13" fill="#222">지지도 = P(X∩Y)</text>
+  <text x="296" y="132" text-anchor="middle" font-size="13" fill="#555">≥ 최소 지지도만 남김</text>
+  <text x="296" y="150" text-anchor="middle" font-size="13" fill="#555">얼마나 자주</text>
+
+  <rect x="432" y="60" width="200" height="100" rx="6" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="532" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">② 규칙 생성</text>
+  <text x="532" y="110" text-anchor="middle" font-size="13" fill="#222">신뢰도 = P(Y | X)</text>
+  <text x="532" y="132" text-anchor="middle" font-size="13" fill="#555">≥ 최소 신뢰도만 남김</text>
+  <text x="532" y="150" text-anchor="middle" font-size="13" fill="#555">X가 있을 때 얼마나 자주 Y</text>
+
+  <rect x="668" y="60" width="192" height="100" rx="6" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="764" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">③ 흥미도 평가</text>
+  <text x="764" y="110" text-anchor="middle" font-size="13" fill="#222">X와 Y가 독립일 때와</text>
+  <text x="764" y="130" text-anchor="middle" font-size="13" fill="#222">얼마나 다른가</text>
+
+  <line x1="160" y1="110" x2="190" y2="110" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="396" y1="110" x2="426" y2="110" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="632" y1="110" x2="662" y2="110" stroke="#333" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <rect x="196" y="210" width="210" height="92" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="301" y="236" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">향상도 (비율)</text>
+  <text x="301" y="260" text-anchor="middle" font-size="13" fill="#222">P(X∩Y) / P(X)P(Y)</text>
+  <text x="301" y="282" text-anchor="middle" font-size="13" fill="#555">독립 = 1</text>
+
+  <rect x="432" y="210" width="210" height="92" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="537" y="236" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">레버리지 (차이)</text>
+  <text x="537" y="260" text-anchor="middle" font-size="13" fill="#222">P(X∩Y) − P(X)P(Y)</text>
+  <text x="537" y="282" text-anchor="middle" font-size="13" fill="#555">독립 = 0</text>
+
+  <rect x="668" y="210" width="192" height="92" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="764" y="236" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">확신도 (반례)</text>
+  <text x="764" y="260" text-anchor="middle" font-size="13" fill="#222">P(X)P(¬Y) / P(X∩¬Y)</text>
+  <text x="764" y="282" text-anchor="middle" font-size="13" fill="#555">독립 = 1, 반례 0건 = ∞</text>
+
+  <path d="M 764 160 L 764 204" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#ah)"/>
+  <path d="M 720 180 L 537 180 L 537 204" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#ah)"/>
+  <path d="M 537 180 L 301 180 L 301 204" fill="none" stroke="#b45309" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="720" y1="180" x2="764" y2="180" stroke="#b45309" stroke-width="1.5"/>
+
+  <text x="440" y="328" text-anchor="middle" font-size="13" fill="#444">①·② 는 Agrawal 등(1993)의 두 하위 문제, ③ 의 세 지표는 독립을 기준선으로 둔 보정 지표</text>
+</svg>
