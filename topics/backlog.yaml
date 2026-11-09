@@ -7569,3 +7569,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-260
+    title: "균형 이진 탐색 트리 — AVL 트리와 레드-블랙 트리"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, data-structure, 개념정리]
+    difficulty: 중급
+    angle: "BST가 정렬 입력에서 높이 N-1로 무너지는 문제를 회전으로 어떻게 막는지, AVL(높이 차 1)과 레드-블랙(색 규칙 5가지)의 높이 상한·회전 비용 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-261
+    title: "Apriori 알고리즘 — 빈발 항목집합 탐색과 후보 가지치기"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-mining, 개념정리]
+    difficulty: 중급
+    angle: "빈발하지 않은 집합의 상위 집합도 빈발하지 않다는 성질로 후보를 줄이는 단계별 절차, FP-Growth와의 비교"
+    code: none
+    origin: exam
+    status: todo

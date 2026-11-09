@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="380" fill="#fdfdfb"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">왼쪽 서브트리 &lt; 노드 &lt; 오른쪽 서브트리 — 비교 한 번에 한쪽 서브트리를 버린다</text>
+
+  <!-- 간선: 일반 -->
+  <line x1="440" y1="80" x2="620" y2="160" stroke="#888" stroke-width="1.5"/>
+  <line x1="260" y1="160" x2="170" y2="240" stroke="#888" stroke-width="1.5"/>
+  <line x1="620" y1="160" x2="540" y2="240" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="620" y1="160" x2="700" y2="240" stroke="#888" stroke-width="1.5"/>
+  <!-- 간선: 35 탐색 경로 -->
+  <line x1="440" y1="80" x2="260" y2="160" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="260" y1="160" x2="350" y2="240" stroke="#2d6a4f" stroke-width="3"/>
+  <line x1="350" y1="240" x2="300" y2="320" stroke="#2d6a4f" stroke-width="3"/>
+
+  <!-- 노드 -->
+  <circle cx="440" cy="80" r="22" fill="#e7f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="85" text-anchor="middle" font-size="14" fill="#222">50</text>
+  <circle cx="260" cy="160" r="22" fill="#e7f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="260" y="165" text-anchor="middle" font-size="14" fill="#222">30</text>
+  <circle cx="620" cy="160" r="22" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="620" y="165" text-anchor="middle" font-size="14" fill="#222">70</text>
+  <circle cx="170" cy="240" r="22" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="170" y="245" text-anchor="middle" font-size="14" fill="#222">20</text>
+  <circle cx="350" cy="240" r="22" fill="#e7f3ec" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="350" y="245" text-anchor="middle" font-size="14" fill="#222">40</text>
+  <circle cx="540" cy="240" r="22" fill="#fdf1e0" stroke="#b45309" stroke-width="2"/>
+  <text x="540" y="245" text-anchor="middle" font-size="14" fill="#222">60</text>
+  <circle cx="700" cy="240" r="22" fill="#ffffff" stroke="#44586e" stroke-width="1.5"/>
+  <text x="700" y="245" text-anchor="middle" font-size="14" fill="#222">80</text>
+  <circle cx="300" cy="320" r="22" fill="#2d6a4f" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="300" y="325" text-anchor="middle" font-size="14" font-weight="bold" fill="#ffffff">35</text>
+
+  <!-- 탐색 판정 라벨 -->
+  <text x="345" y="100" text-anchor="end" font-size="13" fill="#2d6a4f">35 &lt; 50 → 왼쪽</text>
+  <text x="312" y="198" text-anchor="start" font-size="13" fill="#2d6a4f">35 &gt; 30 → 오른쪽</text>
+  <text x="270" y="325" text-anchor="end" font-size="13" fill="#2d6a4f">35 &lt; 40 → 왼쪽, 일치</text>
+
+  <!-- 삭제 라벨 -->
+  <text x="540" y="290" text-anchor="middle" font-size="13" fill="#b45309">50 삭제 시 후속자</text>
+  <text x="540" y="308" text-anchor="middle" font-size="13" fill="#b45309">(오른쪽 서브트리 최솟값)</text>
+
+  <!-- 범례 -->
+  <line x1="600" y1="335" x2="630" y2="335" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="638" y="340" font-size="13" fill="#333">키 35 탐색 경로: 비교 4회</text>
+  <text x="440" y="368" text-anchor="middle" font-size="13" fill="#444">중위 순회(왼쪽 → 노드 → 오른쪽) = 20, 30, 35, 40, 50, 60, 70, 80 — 정렬 순서</text>
+</svg>
