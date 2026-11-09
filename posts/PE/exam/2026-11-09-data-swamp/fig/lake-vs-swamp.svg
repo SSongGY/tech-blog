@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 410" width="880" height="410" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="410" fill="#fdfdfb"/>
+
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#9d0208"/>
+    </marker>
+    <marker id="ak" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#4a4a4a"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b1b1b">데이터 레이크와 데이터 늪 — 적재는 같고 추출이 갈린다</text>
+
+  <!-- source -->
+  <rect x="30" y="160" width="140" height="84" rx="6" fill="#f3f3f0" stroke="#4a4a4a" stroke-width="2"/>
+  <text x="100" y="196" text-anchor="middle" font-size="14" fill="#1b1b1b">데이터 원천</text>
+  <text x="100" y="218" text-anchor="middle" font-size="13" fill="#4a4a4a">정형·반정형·비정형</text>
+
+  <path d="M170,185 L246,125" stroke="#4a4a4a" stroke-width="2" fill="none" marker-end="url(#ak)"/>
+  <text x="196" y="140" text-anchor="middle" font-size="13" fill="#4a4a4a">적재</text>
+  <path d="M170,220 L246,280" stroke="#4a4a4a" stroke-width="2" fill="none" marker-end="url(#ak)"/>
+  <text x="196" y="274" text-anchor="middle" font-size="13" fill="#4a4a4a">적재</text>
+
+  <!-- data lake -->
+  <rect x="250" y="56" width="350" height="120" rx="8" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="425" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">데이터 레이크</text>
+  <rect x="265" y="92" width="130" height="68" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="330" y="121" text-anchor="middle" font-size="14" fill="#1b1b1b">원본 데이터</text>
+  <text x="330" y="142" text-anchor="middle" font-size="13" fill="#4a4a4a">원래 형식 그대로</text>
+  <rect x="410" y="92" width="176" height="68" rx="5" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="498" y="121" text-anchor="middle" font-size="14" fill="#1b1b1b">메타데이터 카탈로그</text>
+  <text x="498" y="142" text-anchor="middle" font-size="13" fill="#4a4a4a">거버넌스 정책·도구</text>
+
+  <path d="M600,126 L676,126" stroke="#2d6a4f" stroke-width="2.5" fill="none" marker-end="url(#ag)"/>
+  <text x="638" y="114" text-anchor="middle" font-size="13" fill="#2d6a4f">검색·추출</text>
+  <rect x="680" y="94" width="170" height="64" rx="6" fill="#edf4ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="765" y="121" text-anchor="middle" font-size="14" fill="#1b1b1b">분석·AI 학습</text>
+  <text x="765" y="142" text-anchor="middle" font-size="13" fill="#4a4a4a">데이터셋을 특정한다</text>
+
+  <!-- data swamp -->
+  <rect x="250" y="226" width="350" height="120" rx="8" fill="#fbefef" stroke="#9d0208" stroke-width="2"/>
+  <text x="425" y="248" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">데이터 늪 (data swamp)</text>
+  <rect x="265" y="262" width="130" height="68" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="330" y="291" text-anchor="middle" font-size="14" fill="#1b1b1b">원본 데이터</text>
+  <text x="330" y="312" text-anchor="middle" font-size="13" fill="#4a4a4a">내용 설명 없음</text>
+  <rect x="410" y="262" width="176" height="68" rx="5" fill="#ffffff" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="498" y="291" text-anchor="middle" font-size="14" fill="#9d0208">카탈로그 없음</text>
+  <text x="498" y="312" text-anchor="middle" font-size="13" fill="#9d0208">거버넌스 없음</text>
+
+  <path d="M600,296 L676,296" stroke="#9d0208" stroke-width="2.5" fill="none" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+  <text x="638" y="284" text-anchor="middle" font-size="13" fill="#9d0208">추출 실패</text>
+  <rect x="680" y="264" width="170" height="64" rx="6" fill="#fbefef" stroke="#9d0208" stroke-width="2"/>
+  <text x="765" y="291" text-anchor="middle" font-size="14" fill="#1b1b1b">분석 불가</text>
+  <text x="765" y="312" text-anchor="middle" font-size="13" fill="#4a4a4a">무엇이 있는지 모른다</text>
+
+  <text x="440" y="384" text-anchor="middle" font-size="13" fill="#4a4a4a">적재 경로는 둘이 같다. 메타데이터와 거버넌스가 빠지면 넣을 수는 있어도 다시 꺼낼 수 없다.</text>
+</svg>
