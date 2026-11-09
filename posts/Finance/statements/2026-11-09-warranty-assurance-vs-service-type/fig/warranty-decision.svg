@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">보증을 어느 기준서로 처리하는가 (제1115호 B29~B32)</text>
+
+  <!-- 질문 1 -->
+  <rect x="250" y="52" width="380" height="58" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="76" text-anchor="middle" font-size="14" fill="#1f2937">고객이 보증을 따로 살 수 있는가</text>
+  <text x="440" y="97" text-anchor="middle" font-size="13" fill="#4b5563">별도 가격을 정하거나 협상한다 (B29)</text>
+
+  <line x1="630" y1="81" x2="698" y2="81" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="664" y="72" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+
+  <!-- 질문 2 -->
+  <line x1="440" y1="110" x2="440" y2="148" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="456" y="134" font-size="13" fill="#4b5563">아니요</text>
+  <rect x="250" y="150" width="380" height="58" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="174" text-anchor="middle" font-size="14" fill="#1f2937">규격 부합 확신에 더해 용역을 주는가</text>
+  <text x="440" y="195" text-anchor="middle" font-size="13" fill="#4b5563">판단 요소 세 가지로 평가한다 (B30·B31)</text>
+
+  <!-- 판단 요소 -->
+  <rect x="40" y="236" width="500" height="96" rx="6" fill="#fffbeb" stroke="#b45309"/>
+  <text x="58" y="260" font-size="13" fill="#b45309">⑴ 법률이 요구하는 보증이면 수행의무가 아닌 쪽</text>
+  <text x="58" y="284" font-size="13" fill="#b45309">⑵ 보증기간이 길수록 수행의무일 가능성이 높다</text>
+  <text x="58" y="308" font-size="13" fill="#b45309">⑶ 규격 확신에 필요한 업무(결함품 반품 운송)는 수행의무가 아닌 쪽</text>
+  <line x1="440" y1="208" x2="440" y2="234" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4 3"/>
+
+  <line x1="630" y1="179" x2="698" y2="179" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="664" y="170" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+
+  <!-- 결과: 용역 유형 -->
+  <rect x="700" y="52" width="150" height="156" rx="6" fill="#ecfdf3" stroke="#2d6a4f"/>
+  <text x="775" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">용역 유형</text>
+  <text x="775" y="106" text-anchor="middle" font-size="13" fill="#1f2937">수행의무 (B32)</text>
+  <text x="775" y="132" text-anchor="middle" font-size="13" fill="#4b5563">거래가격 배분</text>
+  <text x="775" y="154" text-anchor="middle" font-size="13" fill="#4b5563">계약부채로 두고</text>
+  <text x="775" y="176" text-anchor="middle" font-size="13" fill="#4b5563">제공할 때 수익</text>
+
+  <!-- 결과: 확신 유형 -->
+  <line x1="290" y1="332" x2="290" y2="368" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="306" y="356" font-size="13" fill="#4b5563">아니요</text>
+  <rect x="40" y="370" width="500" height="70" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="290" y="396" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">확신 유형 — 제1037호 충당부채 (B30)</text>
+  <text x="290" y="420" text-anchor="middle" font-size="13" fill="#4b5563">판매 시점에 수익 전액, 예상 수리비는 기댓값으로 비용·부채</text>
+
+  <!-- 둘 다 -->
+  <rect x="580" y="250" width="270" height="190" rx="6" fill="#fff7f7" stroke="#9d0208"/>
+  <text x="715" y="278" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">두 유형이 섞여 있으면</text>
+  <text x="715" y="306" text-anchor="middle" font-size="13" fill="#1f2937">나눌 수 있으면 각각 처리</text>
+  <text x="715" y="330" text-anchor="middle" font-size="13" fill="#1f2937">나눌 수 없으면 둘을 합쳐</text>
+  <text x="715" y="354" text-anchor="middle" font-size="13" fill="#1f2937">단일 수행의무 (B32)</text>
+  <text x="715" y="390" text-anchor="middle" font-size="13" fill="#4b5563">손해 배상·특허 침해 배상은</text>
+  <text x="715" y="412" text-anchor="middle" font-size="13" fill="#4b5563">수행의무가 아니다 (B33)</text>
+
+  <text x="440" y="478" text-anchor="middle" font-size="13" fill="#4b5563">따로 살 수 있으면 판단 요소를 보지 않고 바로 용역 유형이다</text>
+</svg>

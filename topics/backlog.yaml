@@ -7547,3 +7547,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-135
+    title: "보증의 두 얼굴 — 확신 유형은 충당부채, 용역 유형은 수행의무"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, warranty]
+    difficulty: 중급
+    angle: "제1115호 B28~B33. 같은 제품을 법정 1년 보증과 3년 연장보증으로 판 두 가상 회사를 비교해, 보증을 충당부채로 잡을 때와 거래가격을 배분해 수익을 이연할 때 연도별 수익·매출총이익이 어떻게 갈리는지 계산한다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-136
+    title: "환불되지 않는 선수수수료 — 가입비는 받은 날의 수익이 아니다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, contract-liability]
+    difficulty: 중급
+    angle: "제1115호 B48~B51·25·95·99. 헬스클럽 가입비를 받은 날 수익으로 잡는 경우와 회원 기간에 나눠 인식하는 경우, 갱신 선택권이 중요한 권리라 인식 기간이 늘어나는 경우를 가상 회사로 계산하고, 준비활동 원가를 진행률에서 빼고 계약이행원가 자산으로 상각하는 흐름을 본다"
+    code: python
+    origin: manual
+    status: done
