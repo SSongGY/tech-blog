@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **695편** · 갱신 2026-11-09
+총 **697편** · 갱신 2026-11-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -485,10 +485,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 103편
+## 기출문제 (exam) — 105편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-10 | [기출문제 — 이진 탐색 트리](posts/PE/exam/2026-11-10-binary-search-tree/index.md) | 중급 | Python 3.13.5, Sedgewick·Wayne, Algorithms 4th ed. (2011) §3.2 Binary Search Trees, NIST DADS "binary search tree" (2021-08 개정) | 실행 검증 |
+| 2026-11-10 | [기출문제 — 연관 규칙 분석 지표](posts/PE/exam/2026-11-10-association-rule-metrics/index.md) | 중급 | Python 3.13.5, Agrawal·Imielinski·Swami, ACM SIGMOD 1993, Brin·Motwani·Ullman·Tsur, ACM SIGMOD 1997, Hahsler, arules Interest Measures (2023) | 실행 검증 |
 | 2026-11-09 | [기출문제 — 소프트웨어 역공학과 재공학](posts/PE/exam/2026-11-09-software-reverse-engineering-and-reengineering/index.md) | 중급 | Chikofsky & Cross, IEEE Software 7(1) (1990-01), SWEBOK Guide V4.0a (2024), DoD SB-1 Workshop (1992) | 문서 근거 |
 | 2026-11-09 | [기출문제 — 데이터 늪(Data Swamp)](posts/PE/exam/2026-11-09-data-swamp/index.md) | 중급 | Sawadogo·Darmont, Journal of Intelligent Information Systems 56(1), 2021, ISO/IEC 38505-1:2017, James Dixon 원 게시글 (2010-10-14) | 문서 근거 |
 | 2026-11-09 | [기출문제 — AI 신뢰성 검·인증 제도(CAT)](posts/PE/exam/2026-11-09-ai-trustworthiness-certification-cat/index.md) | 중급 | TTAK.KO-10.1497 (2023-12 제정), ISO/IEC 23894:2023, ISO/IEC 42001:2023, ISO/IEC 38507:2022, 2차 자료 4건 (2023-10 ~ 2025-04) | 문서 근거 |
