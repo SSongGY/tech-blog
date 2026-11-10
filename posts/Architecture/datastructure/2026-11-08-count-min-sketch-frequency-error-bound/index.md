@@ -14,6 +14,11 @@ verified: true
 topic_id: gen-029
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`frequency-estimation`)
+> - [Misra-Gries와 Space-Saving — 칸 m개로 상위 빈도 항목 찾기와 오차 상한](../2026-11-10-misra-gries-space-saving-heavy-hitters/index.md) — Python 3.13.5, Windows 11
+<!-- related:end -->
+
 ## 들어가며
 
 API 게이트웨이에서 "지난 한 시간 동안 가장 많이 호출한 클라이언트"를 보여 달라는 요청은 흔하다. 처음에는 클라이언트 ID 를 키로 하는 해시 맵에 횟수를 더한다. 그런데 키가 IP·URL·사용자 조합으로 늘면 고유 키가 수천만 개가 되고, 시간대별로 맵을 따로 두면 그 배수가 된다. 아래 실측에서 고유 키 6만 4천 개짜리 파이썬 `Counter` 하나가 2.5MiB 를 썼다. 정작 보고 싶은 것은 상위 몇십 개의 대략적인 횟수인데, 이를 위해 한 번 왔다 간 키 수만 개까지 정확히 기억하고 있는 셈이다.
