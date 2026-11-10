@@ -1,0 +1,156 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-10-join-fan-out-inflated-sum
+# 명령      : python join_fan_out.py
+# 수행 시각 : 2026-11-10 19:06 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer]  3행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  customer_id | INTEGER | PK
+  name        | TEXT    | NOT NULL
+
+  customer_id | name
+  ------------+-----
+            1 | kim
+            2 | lee
+            3 | park
+
+[orders]  6행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  order_id    | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  amount      | INTEGER | NOT NULL
+
+  order_id | customer_id | amount
+  ---------+-------------+-------
+       101 |           1 |  10000
+       102 |           1 |  10000
+       103 |           1 |   5000
+       104 |           2 |   7000
+       105 |           2 |   3000
+       106 |           3 |  20000
+
+[payment]  4행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  payment_id  | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  paid        | INTEGER | NOT NULL
+
+  payment_id | customer_id | paid
+  -----------+-------------+------
+         201 |           1 | 15000
+         202 |           1 | 10000
+         203 |           3 | 12000
+         204 |           3 |  8000
+
+== 1) 조인 결과 행 수 = 주문 수 x 결제 수 ==
+  sql> SELECT c.name, o.order_id, o.amount, p.payment_id, p.paid FROM customer c LEFT JOIN orders o ON o.customer_id = c.customer_id LEFT JOIN payment p ON p.customer_id = c.customer_id ORDER BY c.customer_id, o.order_id, p.payment_id
+  name | order_id | amount | payment_id | paid
+  kim | 101 | 10000 | 201 | 15000
+  kim | 101 | 10000 | 202 | 10000
+  kim | 102 | 10000 | 201 | 15000
+  kim | 102 | 10000 | 202 | 10000
+  kim | 103 | 5000 | 201 | 15000
+  kim | 103 | 5000 | 202 | 10000
+  lee | 104 | 7000 | NULL | NULL
+  lee | 105 | 3000 | NULL | NULL
+  park | 106 | 20000 | 203 | 12000
+  park | 106 | 20000 | 204 | 8000
+
+  sql> SELECT c.name, (SELECT COUNT(*) FROM orders o WHERE o.customer_id = c.customer_id) AS m, (SELECT COUNT(*) FROM payment p WHERE p.customer_id = c.customer_id) AS n, COUNT(*) AS joined_rows FROM customer c LEFT JOIN orders o ON o.customer_id = c.customer_id LEFT JOIN payment p ON p.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY c.customer_id
+  name | m | n | joined_rows
+  kim | 3 | 2 | 6
+  lee | 2 | 0 | 2
+  park | 1 | 2 | 2
+
+== 2) 그대로 집계하면 ==
+  sql> SELECT c.name, COUNT(o.order_id) AS order_count, SUM(o.amount) AS order_total, SUM(p.paid) AS paid_total FROM customer c LEFT JOIN orders o ON o.customer_id = c.customer_id LEFT JOIN payment p ON p.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY c.customer_id
+  name | order_count | order_total | paid_total
+  kim | 6 | 50000 | 75000
+  lee | 2 | 10000 | NULL
+  park | 2 | 40000 | 20000
+
+== 3) DISTINCT 로 막으려 하면 ==
+  sql> SELECT c.name, COUNT(DISTINCT o.order_id) AS order_count, SUM(DISTINCT o.amount) AS order_total, SUM(DISTINCT p.paid) AS paid_total FROM customer c LEFT JOIN orders o ON o.customer_id = c.customer_id LEFT JOIN payment p ON p.customer_id = c.customer_id GROUP BY c.customer_id ORDER BY c.customer_id
+  name | order_count | order_total | paid_total
+  kim | 3 | 15000 | 25000
+  lee | 2 | 10000 | NULL
+  park | 1 | 20000 | 20000
+
+== 4) 먼저 집계하고 조인 ==
+  sql> SELECT c.name, o.order_total, p.paid_total FROM customer c LEFT JOIN (SELECT customer_id, SUM(amount) AS order_total FROM orders GROUP BY customer_id) o ON o.customer_id = c.customer_id LEFT JOIN (SELECT customer_id, SUM(paid) AS paid_total FROM payment GROUP BY customer_id) p ON p.customer_id = c.customer_id ORDER BY c.customer_id
+  name | order_total | paid_total
+  kim | 25000 | 25000
+  lee | 10000 | NULL
+  park | 20000 | 20000
+
+== 5) 상관 부질의 ==
+  sql> SELECT c.name, (SELECT SUM(amount) FROM orders o WHERE o.customer_id = c.customer_id) AS order_total, (SELECT SUM(paid) FROM payment p WHERE p.customer_id = c.customer_id) AS paid_total FROM customer c ORDER BY c.customer_id
+  name | order_total | paid_total
+  kim | 25000 | 25000
+  lee | 10000 | NULL
+  park | 20000 | 20000
+
+== 기준값 — 표마다 따로 합계 ==
+  sql> SELECT customer_id, SUM(amount) FROM orders GROUP BY customer_id
+  customer_id | SUM(amount)
+  1 | 25000
+  2 | 10000
+  3 | 20000
+
+  sql> SELECT customer_id, SUM(paid) FROM payment GROUP BY customer_id
+  customer_id | SUM(paid)
+  1 | 25000
+  3 | 20000
+
+== 6) 실행계획 ==
+  sql> SELECT c.name, o.order_total, p.paid_total FROM customer c LEFT JOIN (SELECT customer_id, SUM(amount) AS order_total FROM orders GROUP BY customer_id) o ON o.customer_id = c.customer_id LEFT JOIN (SELECT customer_id, SUM(paid) AS paid_total FROM payment GROUP BY customer_id) p ON p.customer_id = c.customer_id ORDER BY c.customer_id
+  QUERY PLAN
+  |--MATERIALIZE o
+  |  |--SCAN orders
+  |  `--USE TEMP B-TREE FOR GROUP BY
+  |--MATERIALIZE p
+  |  |--SCAN payment
+  |  `--USE TEMP B-TREE FOR GROUP BY
+  |--SCAN c
+  |--BLOOM FILTER ON o (customer_id=?)
+  |--SEARCH o USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN
+  |--BLOOM FILTER ON p (customer_id=?)
+  `--SEARCH p USING AUTOMATIC COVERING INDEX (customer_id=?) LEFT-JOIN
+
+  sql> SELECT c.name, (SELECT SUM(amount) FROM orders o WHERE o.customer_id = c.customer_id) AS order_total, (SELECT SUM(paid) FROM payment p WHERE p.customer_id = c.customer_id) AS paid_total FROM customer c ORDER BY c.customer_id
+  QUERY PLAN
+  |--SCAN c
+  |--CORRELATED SCALAR SUBQUERY 1
+  |  `--SCAN o
+  `--CORRELATED SCALAR SUBQUERY 2
+     `--SCAN p
+
+== 7) 조인 전에 알아내기 — 조인 키가 한쪽에서 유일한가 ==
+  sql> SELECT customer_id, COUNT(*) AS rows_per_key FROM payment GROUP BY customer_id HAVING COUNT(*) > 1
+  customer_id | rows_per_key
+  1 | 2
+  3 | 2
+
+  sql> SELECT (SELECT COUNT(*) FROM orders) AS order_rows, (SELECT COUNT(*) FROM orders o LEFT JOIN payment p ON p.customer_id = o.customer_id) AS after_join
+  order_rows | after_join
+  6 | 10
+

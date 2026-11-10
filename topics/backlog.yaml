@@ -7601,4 +7601,26 @@ topics:
     angle: "적중 정책(WT·WB)과 미스 정책(fetch-on-write·write-validate·write-around·write-invalidate)을 Jouppi 보고서 기준으로 정리하고, 간단한 캐시 시뮬레이터로 접근 패턴별 하위 트래픽을 직접 세어 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
+  - id: db-119
+    title: "조인 뒤 SUM이 부풀려지는 이유 — 1:N 두 개를 한 번에 조인할 때"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, join, aggregate, basics]
+    difficulty: 입문
+    angle: "주문·결제·배송처럼 한 고객에 1:N 표 두 개를 한 번에 조인하면 행이 곱으로 늘어 SUM·COUNT가 부풀려진다. 행 수가 m×n이 되는 것을 직접 세고, 먼저 집계하고 조인하는 방법·상관 부질의·COUNT(DISTINCT)의 한계를 나란히 돌린다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-034
+    title: "Misra-Gries와 Space-Saving — k칸으로 상위 빈도 항목 찾기와 오차 상한"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [algorithm, streaming, heavy-hitters, python]
+    difficulty: 중급
+    angle: "Count-Min 다음 글. 칸 k개만 두고 스트림에서 빈도가 n/(k+1)을 넘는 항목을 놓치지 않는 두 알고리즘을 원 논문 의사코드대로 구현하고, 정확한 빈도와 비교해 과소·과대 추정 오차가 상한 n/(k+1)·n/k 안에 드는지 직접 센다"
+    code: python
+    origin: manual
+    status: done
