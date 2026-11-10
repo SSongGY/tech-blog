@@ -7591,3 +7591,14 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-262
+    title: "캐시 쓰기 정책 — write-through·write-back과 쓰기 미스 4가지 조합"
+    category: PE
+    subcategory: computer-architecture
+    track: pe
+    tags: [정보관리기술사, computer-architecture, 개념정리]
+    difficulty: 중급
+    angle: "적중 정책(WT·WB)과 미스 정책(fetch-on-write·write-validate·write-around·write-invalidate)을 Jouppi 보고서 기준으로 정리하고, 간단한 캐시 시뮬레이터로 접근 패턴별 하위 트래픽을 직접 세어 비교"
+    code: none
+    origin: exam
+    status: todo
