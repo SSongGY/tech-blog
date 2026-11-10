@@ -7646,3 +7646,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-263
+    title: "IPPM 네트워크 성능 지표 — 단방향·왕복 지연, 패킷 손실, 지연 변이와 능동·수동 측정"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "RFC 7679·7680·3393·2681의 지표 정의와 시계 동기화 요구, Tmax 같은 매개변수가 SLA 측정값을 바꾸는 지점, RFC 7799의 능동·수동·혼합 측정 분류"
+    code: none
+    origin: exam
+    status: todo

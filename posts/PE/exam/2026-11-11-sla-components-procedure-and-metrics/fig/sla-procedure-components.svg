@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrw" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827">SLA 수립 절차 5단계와 SLA 문서 구성요소</text>
+
+  <!-- 절차 5단계 -->
+  <g font-size="14" text-anchor="middle">
+    <rect x="22" y="55" width="156" height="70" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+    <text x="100" y="84" font-weight="bold" fill="#111827">① 서비스 정의</text>
+    <text x="100" y="106" font-size="13" fill="#374151">대상·구성 확정</text>
+
+    <rect x="192" y="55" width="156" height="70" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="270" y="84" font-weight="bold" fill="#111827">② 설계</text>
+    <text x="270" y="106" font-size="13" fill="#374151">지표·메트릭·기준선</text>
+
+    <rect x="362" y="55" width="156" height="70" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="440" y="84" font-weight="bold" fill="#111827">③ 평가·체결</text>
+    <text x="440" y="106" font-size="13" fill="#374151">목표·예외·구제</text>
+
+    <rect x="532" y="55" width="156" height="70" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="610" y="84" font-weight="bold" fill="#111827">④ 측정·보고</text>
+    <text x="610" y="106" font-size="13" fill="#374151">자동 수집·월간 보고</text>
+
+    <rect x="702" y="55" width="156" height="70" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+    <text x="780" y="84" font-weight="bold" fill="#111827">⑤ 검토·변경</text>
+    <text x="780" y="106" font-size="13" fill="#374151">정기 검토·개정</text>
+  </g>
+
+  <g stroke="#374151" stroke-width="1.5" fill="none">
+    <line x1="178" y1="90" x2="190" y2="90" marker-end="url(#arr)"/>
+    <line x1="348" y1="90" x2="360" y2="90" marker-end="url(#arr)"/>
+    <line x1="518" y1="90" x2="530" y2="90" marker-end="url(#arr)"/>
+    <line x1="688" y1="90" x2="700" y2="90" marker-end="url(#arr)"/>
+    <!-- 변경 시 설계로 되돌아감 -->
+    <path d="M780,125 L780,152 L270,152 L270,127" marker-end="url(#arr)"/>
+  </g>
+  <text x="525" y="146" font-size="13" text-anchor="middle" fill="#374151">서비스 변경 시 다시 설계</text>
+  <text x="440" y="172" font-size="13" text-anchor="middle" fill="#6b7280">②~⑤ = ISO/IEC 19086-1 7장(설계 · 평가·수용 · 구현·실행 · 변경), ① = 운영 전환용으로 앞에 붙인 단계</text>
+
+  <!-- SLA 문서 -->
+  <rect x="22" y="188" width="836" height="228" rx="10" fill="#fafafa" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="214" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">SLA 문서 — ③에서 체결, ④에서 측정 근거로 쓴다</text>
+
+  <rect x="42" y="228" width="380" height="172" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="232" y="254" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">골격 (9장 구성요소)</text>
+  <g font-size="14" fill="#1f2937">
+    <text x="62" y="284">① 대상 서비스</text>
+    <text x="62" y="312">② SLA 용어 정의</text>
+    <text x="62" y="340">③ 서비스 모니터링</text>
+    <text x="62" y="368">④ 역할과 책임</text>
+  </g>
+
+  <rect x="458" y="228" width="380" height="172" rx="8" fill="#ffffff" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="648" y="254" font-size="14" font-weight="bold" text-anchor="middle" fill="#111827">약속 내용 (8장)</text>
+  <g font-size="14" fill="#1f2937">
+    <text x="478" y="284">⑤ 메트릭 — 식·매개변수·규칙</text>
+    <text x="478" y="312">⑥ SLO·SQO — 정량·정성 목표</text>
+    <text x="478" y="340">⑦ 구제·청구</text>
+    <text x="478" y="368">⑧ 예외</text>
+  </g>
+  <text x="648" y="392" font-size="13" text-anchor="middle" fill="#b45309">메트릭이 먼저 정해져야 목표치가 뜻을 갖는다</text>
+</svg>
