@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **706편** · 갱신 2026-11-11
+총 **707편** · 갱신 2026-11-11
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -140,10 +140,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 246편
+## 기술사 (pe) — 247편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-11 | [IPPM 네트워크 성능 지표 — 단방향·왕복 지연, 패킷 손실, 지연 변이와 능동·수동 측정](posts/PE/network/2026-11-11-ippm-delay-loss-variation-metrics/index.md) | 중급 | RFC 2330 (1998-05), RFC 7679 (2016-01, STD 81), RFC 7680 (2016-01, STD 82), RFC 2681 (1999-09), RFC 3393 (2002-11), RFC 5481 (2009-03), RFC 7799 (2016-05) | 문서 근거 |
 | 2026-11-10 | [캐시 쓰기 정책 — write-through·write-back과 쓰기 미스 4가지 조합](posts/PE/computer-architecture/2026-11-10-cache-write-hit-miss-policies/index.md) | 중급 | Python 3.13.5, Jouppi, DEC WRL Research Report 91/12 (1991-12) | 실행 검증 |
 | 2026-11-10 | [균형 이진 탐색 트리 — AVL 트리와 레드-블랙 트리](posts/PE/computer-architecture/2026-11-10-avl-and-red-black-tree/index.md) | 중급 | Python 3.13.5, MIT 6.006 Fall 2011 Lecture 6, Stanford CS161 Winter 2018 Red-Black Trees, NIST DADS (2019-11 개정) | 실행 검증 |
 | 2026-11-10 | [Apriori 알고리즘 — 빈발 항목집합 탐색과 후보 가지치기](posts/PE/data-analysis/2026-11-10-apriori-candidate-pruning/index.md) | 중급 | Python 3.13.5, Agrawal·Srikant, VLDB 1994, Han·Pei·Yin, ACM SIGMOD 2000, Tan·Steinbach·Kumar, Introduction to Data Mining Ch.6 슬라이드 (2004) | 실행 검증 |
