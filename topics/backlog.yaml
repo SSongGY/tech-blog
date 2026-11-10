@@ -7645,4 +7645,4 @@ topics:
     angle: "제1115호 문단 101~104: 장부금액이 남은 대가-남은 직접원가를 넘는 만큼 손상, 신용위험 반영·변동대가 제약 제외, 다른 기준서 손상 먼저, 환입은 손상 없었을 상각 후 금액까지. 손실부담계약 충당부채와 비교"
     code: python
     origin: manual
-    status: writing
+    status: done
