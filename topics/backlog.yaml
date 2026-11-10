@@ -7624,3 +7624,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-137
+    title: "계약체결 증분원가 — 영업 수수료를 자산으로 두는 조건과 1년 간편법"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, contract-cost]
+    difficulty: 중급
+    angle: "제1115호 문단 91~94·99: 계약을 따내지 못했으면 안 들었을 원가만 자산, 예상 갱신까지 상각기간에 넣으면 1년 간편법이 막힌다. 가상 SaaS 회사로 세 처리의 연도별 비용 비교"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-138
+    title: "계약원가 자산의 손상 — 남은 대가에서 남은 원가를 뺀 한도와 환입 상한"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, impairment, contract-cost]
+    difficulty: 중급
+    angle: "제1115호 문단 101~104: 장부금액이 남은 대가-남은 직접원가를 넘는 만큼 손상, 신용위험 반영·변동대가 제약 제외, 다른 기준서 손상 먼저, 환입은 손상 없었을 상각 후 금액까지. 손실부담계약 충당부채와 비교"
+    code: python
+    origin: manual
+    status: writing
