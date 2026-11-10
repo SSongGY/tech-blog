@@ -7656,4 +7656,4 @@ topics:
     angle: "RFC 7679·7680·3393·2681의 지표 정의와 시계 동기화 요구, Tmax 같은 매개변수가 SLA 측정값을 바꾸는 지점, RFC 7799의 능동·수동·혼합 측정 분류"
     code: none
     origin: exam
-    status: todo
+    status: done

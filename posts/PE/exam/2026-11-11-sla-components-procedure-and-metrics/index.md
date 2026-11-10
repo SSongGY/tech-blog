@@ -200,6 +200,8 @@ ISO/IEC 19086-1:2016은 SLA 관리 모범 사례(7장)를 **설계 → 평가·�
 > 개념 정리: [SLA·SLO·SLI와 서비스수준관리(SLM) — 재는 것, 목표, 그리고 계약](../../it-management/2026-10-19-sla-slo-sli-service-level-management/index.md)
 >
 > 지표 산술: [SLA 지표 설계와 측정 — 99.9%가 실제로 허용하는 장애 시간](../../it-management/2026-10-20-sla-metrics-design-and-measurement/index.md)
+>
+> 네트워크 지표: [IPPM 네트워크 성능 지표 — 단방향·왕복 지연, 패킷 손실, 지연 변이와 능동·수동 측정](../../network/2026-11-11-ippm-delay-loss-variation-metrics/index.md)
 
 끝
 

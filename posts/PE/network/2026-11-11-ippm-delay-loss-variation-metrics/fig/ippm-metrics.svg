@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500"
+     font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="500" fill="#f8f9fa"/>
+  <text x="20" y="28" font-size="16" font-weight="bold" fill="#212529">IPPM 지표 — 무엇을 재고, 어떻게 묶고, 어떻게 보내는가</text>
+
+  <!-- 왼쪽: 시간축 -->
+  <text x="20" y="56" font-size="13" font-weight="bold" fill="#212529">가. 패킷 단위 측정 (시간은 아래로 흐른다)</text>
+  <text x="90" y="78" font-size="13" fill="#212529" text-anchor="middle">Src (시계 A)</text>
+  <text x="330" y="78" font-size="13" fill="#212529" text-anchor="middle">Dst (시계 B)</text>
+  <line x1="90" y1="86" x2="90" y2="450" stroke="#212529" stroke-width="2"/>
+  <line x1="330" y1="86" x2="330" y2="450" stroke="#212529" stroke-width="2"/>
+
+  <defs>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/></marker>
+    <marker id="ak" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#212529"/></marker>
+  </defs>
+
+  <!-- P1 -->
+  <line x1="90" y1="96" x2="328" y2="140" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="60" y="100" font-size="13" fill="#212529" text-anchor="end">T1</text>
+  <text x="342" y="144" font-size="13" fill="#2d6a4f">P1 도착 → 지연 D1</text>
+
+  <!-- P2 -->
+  <line x1="90" y1="166" x2="328" y2="232" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="60" y="170" font-size="13" fill="#212529" text-anchor="end">T2</text>
+  <text x="342" y="236" font-size="13" fill="#2d6a4f">P2 도착 → 지연 D2</text>
+  <text x="342" y="258" font-size="13" font-weight="bold" fill="#212529">IPDV = D2 − D1</text>
+
+  <!-- P3 손실 -->
+  <line x1="90" y1="282" x2="206" y2="306" stroke="#9d0208" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="210" y="312" font-size="16" font-weight="bold" fill="#9d0208">✕</text>
+  <text x="60" y="286" font-size="13" fill="#212529" text-anchor="end">T3</text>
+  <line x1="320" y1="282" x2="320" y2="362" stroke="#b45309" stroke-width="3"/>
+  <line x1="312" y1="282" x2="328" y2="282" stroke="#b45309" stroke-width="2"/>
+  <line x1="312" y1="362" x2="328" y2="362" stroke="#b45309" stroke-width="2"/>
+  <text x="342" y="312" font-size="13" fill="#b45309">Tmax 동안 대기</text>
+  <text x="342" y="332" font-size="13" fill="#9d0208">미도착 → 손실 L = 1</text>
+
+  <!-- P4 왕복 -->
+  <line x1="90" y1="380" x2="328" y2="404" stroke="#212529" stroke-width="2" marker-end="url(#ak)"/>
+  <line x1="330" y1="406" x2="92" y2="436" stroke="#212529" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="60" y="384" font-size="13" fill="#212529" text-anchor="end">T4</text>
+  <text x="342" y="410" font-size="13" fill="#212529">즉시 회신</text>
+  <text x="20" y="474" font-size="13" fill="#212529">단방향 지연: 시계 A·B 동기화 필요 (RFC 7679)</text>
+  <text x="20" y="494" font-size="13" fill="#2d6a4f">왕복 지연: 시계 A 하나로 측정, 동기화 불필요 (RFC 2681)</text>
+
+  <!-- 오른쪽: 3단 구성 -->
+  <text x="490" y="56" font-size="13" font-weight="bold" fill="#212529">나. 지표의 3단 구성 (RFC 2330)</text>
+  <rect x="490" y="70" width="370" height="52" rx="6" fill="#ffffff" stroke="#212529" stroke-width="1.5"/>
+  <text x="506" y="92" font-size="13" font-weight="bold" fill="#212529">① Singleton — 패킷 1개의 측정값</text>
+  <text x="506" y="112" font-size="13" fill="#212529">예: D1, L = 1</text>
+  <line x1="675" y1="122" x2="675" y2="140" stroke="#212529" stroke-width="1.5" marker-end="url(#ak)"/>
+  <rect x="490" y="142" width="370" height="52" rx="6" fill="#ffffff" stroke="#212529" stroke-width="1.5"/>
+  <text x="506" y="164" font-size="13" font-weight="bold" fill="#212529">② Sample — Singleton의 묶음</text>
+  <text x="506" y="184" font-size="13" fill="#212529">Poisson 스트림: 구간 T0~Tf, 평균율 λ</text>
+  <line x1="675" y1="194" x2="675" y2="212" stroke="#212529" stroke-width="1.5" marker-end="url(#ak)"/>
+  <rect x="490" y="214" width="370" height="52" rx="6" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="506" y="236" font-size="13" font-weight="bold" fill="#212529">③ Statistic — 표본에 적용한 통계</text>
+  <text x="506" y="256" font-size="13" fill="#212529">백분위·중앙값·최솟값, 손실 비율</text>
+
+  <!-- 오른쪽 아래: 측정 방법 -->
+  <text x="490" y="306" font-size="13" font-weight="bold" fill="#212529">다. 측정 방법 3가지 (RFC 7799)</text>
+  <rect x="490" y="320" width="114" height="92" rx="6" fill="#ffffff" stroke="#212529" stroke-width="1.5"/>
+  <text x="547" y="344" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">능동</text>
+  <text x="547" y="366" font-size="13" fill="#212529" text-anchor="middle">시험 패킷을</text>
+  <text x="547" y="386" font-size="13" fill="#212529" text-anchor="middle">만들어 보냄</text>
+  <rect x="618" y="320" width="114" height="92" rx="6" fill="#ffffff" stroke="#212529" stroke-width="1.5"/>
+  <text x="675" y="344" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">수동</text>
+  <text x="675" y="366" font-size="13" fill="#212529" text-anchor="middle">기존 트래픽을</text>
+  <text x="675" y="386" font-size="13" fill="#212529" text-anchor="middle">관찰만 함</text>
+  <rect x="746" y="320" width="114" height="92" rx="6" fill="#fff3e0" stroke="#b45309" stroke-width="1.5"/>
+  <text x="803" y="344" font-size="13" font-weight="bold" fill="#212529" text-anchor="middle">혼합</text>
+  <text x="803" y="366" font-size="13" fill="#212529" text-anchor="middle">기존 스트림을</text>
+  <text x="803" y="386" font-size="13" fill="#212529" text-anchor="middle">표시·증강</text>
+  <text x="803" y="404" font-size="13" fill="#b45309" text-anchor="middle">Type I · II</text>
+</svg>
