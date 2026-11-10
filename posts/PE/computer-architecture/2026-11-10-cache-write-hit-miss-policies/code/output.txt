@@ -1,0 +1,63 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\computer-architecture\2026-11-10-cache-write-hit-miss-policies
+# 명령      : python write_policy_sim.py
+# 수행 시각 : 2026-11-10 19:13 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+캐시: 직접 사상, 줄 8개 x 4워드 = 32워드
+
+== ① 블록 복사: 읽기 32 · 쓰기 32 ==
+  적중 | 미스 정책         | 줄 읽기 | 읽은 워드 | 내린 워드 | 끝에 남은 dirty | 합계
+  WT   | fetch-on-write    |      16 |        64 |        32 |               0 |   96
+  WT   | write-validate    |       8 |        32 |        32 |               0 |   64
+  WT   | write-around      |       8 |        32 |        32 |               0 |   64
+  WT   | write-invalidate  |       8 |        32 |        32 |               0 |   64
+  WB   | fetch-on-write    |      16 |        64 |        24 |               8 |   96
+  WB   | write-validate    |       8 |        32 |        24 |               8 |   64
+  Jouppi Figure 17 순서(FoW >= invalidate >= around, validate) 성립: True
+
+== ② 쓰고 바로 다시 읽기: 읽기 16 · 쓰기 16 ==
+  적중 | 미스 정책         | 줄 읽기 | 읽은 워드 | 내린 워드 | 끝에 남은 dirty | 합계
+  WT   | fetch-on-write    |       4 |        16 |        16 |               0 |   32
+  WT   | write-validate    |       0 |         0 |        16 |               0 |   16
+  WT   | write-around      |       4 |        16 |        16 |               0 |   32
+  WT   | write-invalidate  |       4 |        16 |        16 |               0 |   32
+  WB   | fetch-on-write    |       4 |        16 |         0 |              16 |   32
+  WB   | write-validate    |       0 |         0 |         0 |              16 |   16
+  Jouppi Figure 17 순서(FoW >= invalidate >= around, validate) 성립: True
+
+== ③ 읽고-고치고-쓰기: 읽기 32 · 쓰기 32 ==
+  적중 | 미스 정책         | 줄 읽기 | 읽은 워드 | 내린 워드 | 끝에 남은 dirty | 합계
+  WT   | fetch-on-write    |       8 |        32 |        32 |               0 |   64
+  WT   | write-validate    |       8 |        32 |        32 |               0 |   64
+  WT   | write-around      |       8 |        32 |        32 |               0 |   64
+  WT   | write-invalidate  |       8 |        32 |        32 |               0 |   64
+  WB   | fetch-on-write    |       8 |        32 |         0 |              32 |   64
+  WB   | write-validate    |       8 |        32 |         0 |              32 |   64
+  Jouppi Figure 17 순서(FoW >= invalidate >= around, validate) 성립: True
+
+== ④ 결과를 쓰고 입력을 다시 읽기: 읽기 32 · 쓰기 16 ==
+  적중 | 미스 정책         | 줄 읽기 | 읽은 워드 | 내린 워드 | 끝에 남은 dirty | 합계
+  WT   | fetch-on-write    |      12 |        48 |        16 |               0 |   64
+  WT   | write-validate    |       8 |        32 |        16 |               0 |   48
+  WT   | write-around      |       4 |        16 |        16 |               0 |   32
+  WT   | write-invalidate  |       8 |        32 |        16 |               0 |   48
+  WB   | fetch-on-write    |      12 |        48 |        16 |               0 |   64
+  WB   | write-validate    |       8 |        32 |        16 |               0 |   48
+  Jouppi Figure 17 순서(FoW >= invalidate >= around, validate) 성립: True
+
+== ⑤ 같은 카운터를 반복해 고치기: 읽기 64 · 쓰기 64 ==
+  적중 | 미스 정책         | 줄 읽기 | 읽은 워드 | 내린 워드 | 끝에 남은 dirty | 합계
+  WT   | fetch-on-write    |       1 |         4 |        64 |               0 |   68
+  WT   | write-validate    |       1 |         4 |        64 |               0 |   68
+  WT   | write-around      |       1 |         4 |        64 |               0 |   68
+  WT   | write-invalidate  |       1 |         4 |        64 |               0 |   68
+  WB   | fetch-on-write    |       1 |         4 |         0 |               4 |    8
+  WB   | write-validate    |       1 |         4 |         0 |               4 |    8
+  Jouppi Figure 17 순서(FoW >= invalidate >= around, validate) 성립: True
+

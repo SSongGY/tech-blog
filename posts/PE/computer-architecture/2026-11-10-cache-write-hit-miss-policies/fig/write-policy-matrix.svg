@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <text x="440" y="30" font-size="17" text-anchor="middle" font-weight="bold" fill="#222">적중 정책 2 × 미스 정책 4 — 쓸 수 있는 조합 6가지</text>
+
+  <!-- header row -->
+  <rect x="40" y="50" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="120" y="74" font-size="14" text-anchor="middle" fill="#222">적중 정책 ↓</text>
+  <text x="120" y="94" font-size="14" text-anchor="middle" fill="#222">미스 정책 →</text>
+
+  <rect x="200" y="50" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="280" y="74" font-size="14" text-anchor="middle" font-weight="bold" fill="#222">Fetch-on-write</text>
+  <text x="280" y="94" font-size="13" text-anchor="middle" fill="#475569">읽어 오고 자리 잡음</text>
+  <rect x="360" y="50" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="440" y="74" font-size="14" text-anchor="middle" font-weight="bold" fill="#222">Write-validate</text>
+  <text x="440" y="94" font-size="13" text-anchor="middle" fill="#475569">안 읽고 자리 잡음</text>
+  <rect x="520" y="50" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="600" y="74" font-size="14" text-anchor="middle" font-weight="bold" fill="#222">Write-around</text>
+  <text x="600" y="94" font-size="13" text-anchor="middle" fill="#475569">줄은 그대로 둠</text>
+  <rect x="680" y="50" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="760" y="74" font-size="14" text-anchor="middle" font-weight="bold" fill="#222">Write-invalidate</text>
+  <text x="760" y="94" font-size="13" text-anchor="middle" fill="#475569">줄을 무효로 만듦</text>
+
+  <!-- WT row -->
+  <rect x="40" y="106" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="120" y="130" font-size="14" text-anchor="middle" font-weight="bold" fill="#222">Write-through</text>
+  <text x="120" y="150" font-size="13" text-anchor="middle" fill="#475569">캐시 + 하위 동시</text>
+  <rect x="200" y="106" width="160" height="56" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="280" y="140" font-size="15" text-anchor="middle" fill="#2d6a4f">가능</text>
+  <rect x="360" y="106" width="160" height="56" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="440" y="140" font-size="15" text-anchor="middle" fill="#2d6a4f">가능</text>
+  <rect x="520" y="106" width="160" height="56" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="600" y="140" font-size="15" text-anchor="middle" fill="#2d6a4f">가능</text>
+  <rect x="680" y="106" width="160" height="56" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="760" y="140" font-size="15" text-anchor="middle" fill="#2d6a4f">가능</text>
+
+  <!-- WB row -->
+  <rect x="40" y="162" width="160" height="56" fill="#f1f5f9" stroke="#475569"/>
+  <text x="120" y="186" font-size="14" text-anchor="middle" font-weight="bold" fill="#222">Write-back</text>
+  <text x="120" y="206" font-size="13" text-anchor="middle" fill="#475569">캐시만, 교체 때 내림</text>
+  <rect x="200" y="162" width="160" height="56" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="280" y="196" font-size="15" text-anchor="middle" fill="#2d6a4f">가능</text>
+  <rect x="360" y="162" width="160" height="56" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="440" y="186" font-size="15" text-anchor="middle" fill="#2d6a4f">가능</text>
+  <text x="440" y="206" font-size="13" text-anchor="middle" fill="#475569">워드별 유효 비트 필요</text>
+  <rect x="520" y="162" width="320" height="56" fill="#fef2f2" stroke="#9d0208"/>
+  <text x="680" y="186" font-size="15" text-anchor="middle" fill="#9d0208">불가</text>
+  <text x="680" y="206" font-size="13" text-anchor="middle" fill="#9d0208">쓰기가 캐시에 남지 않아 나중에 내릴 것이 없다</text>
+
+  <!-- order -->
+  <text x="440" y="262" font-size="15" text-anchor="middle" font-weight="bold" fill="#222">읽어 오는 트래픽의 순서 (많음 → 적음)</text>
+  <rect x="60" y="282" width="200" height="50" rx="6" fill="#fef2f2" stroke="#9d0208"/>
+  <text x="160" y="312" font-size="14" text-anchor="middle" fill="#222">Fetch-on-write</text>
+  <rect x="340" y="282" width="200" height="50" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="440" y="312" font-size="14" text-anchor="middle" fill="#222">Write-invalidate</text>
+  <rect x="620" y="282" width="200" height="40" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="720" y="307" font-size="14" text-anchor="middle" fill="#222">Write-validate</text>
+  <rect x="620" y="330" width="200" height="40" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="720" y="355" font-size="14" text-anchor="middle" fill="#222">Write-around</text>
+  <line x1="260" y1="307" x2="334" y2="307" stroke="#475569" stroke-width="2"/>
+  <polygon points="334,301 344,307 334,313" fill="#475569"/>
+  <line x1="540" y1="307" x2="614" y2="302" stroke="#475569" stroke-width="2"/>
+  <polygon points="613,296 624,301 614,308" fill="#475569"/>
+  <line x1="540" y1="315" x2="614" y2="346" stroke="#475569" stroke-width="2"/>
+  <polygon points="611,351 622,349 616,340" fill="#475569"/>
+  <text x="440" y="400" font-size="13" text-anchor="middle" fill="#475569">validate 와 around 사이 순서는 프로그램마다 다르다 — 방금 쓴 것을 읽으면 validate, 옛 내용을 읽으면 around 가 적다</text>
+</svg>
