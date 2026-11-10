@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **700편** · 갱신 2026-11-10
+총 **703편** · 갱신 2026-11-10
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 105편
+## DB문법 (basics) — 106편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-10 | [조인 뒤 SUM이 부풀려지는 이유 — 1:N 두 개를 한 번에 조인할 때](posts/Database/sql-basics/2026-11-10-join-fan-out-inflated-sum/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계](posts/Database/sql-basics/2026-11-09-window-frame-exclude-clause/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [CREATE TABLE AS SELECT로 복사한 표가 잃는 것 — 기본키·제약조건·인덱스와 INSERT INTO ... SELECT](posts/Database/sql-basics/2026-11-09-ctas-loses-constraints-insert-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-08 | [GROUP BY에 없는 컬럼을 SELECT에 쓰면 — SQLite 맨 컬럼 규칙과 MAX()의 특례](posts/Database/sql-basics/2026-11-08-sqlite-bare-column-group-by/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -139,10 +140,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 245편
+## 기술사 (pe) — 246편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-10 | [캐시 쓰기 정책 — write-through·write-back과 쓰기 미스 4가지 조합](posts/PE/computer-architecture/2026-11-10-cache-write-hit-miss-policies/index.md) | 중급 | Python 3.13.5, Jouppi, DEC WRL Research Report 91/12 (1991-12) | 실행 검증 |
 | 2026-11-10 | [균형 이진 탐색 트리 — AVL 트리와 레드-블랙 트리](posts/PE/computer-architecture/2026-11-10-avl-and-red-black-tree/index.md) | 중급 | Python 3.13.5, MIT 6.006 Fall 2011 Lecture 6, Stanford CS161 Winter 2018 Red-Black Trees, NIST DADS (2019-11 개정) | 실행 검증 |
 | 2026-11-10 | [Apriori 알고리즘 — 빈발 항목집합 탐색과 후보 가지치기](posts/PE/data-analysis/2026-11-10-apriori-candidate-pruning/index.md) | 중급 | Python 3.13.5, Agrawal·Srikant, VLDB 1994, Han·Pei·Yin, ACM SIGMOD 2000, Tan·Steinbach·Kumar, Introduction to Data Mining Ch.6 슬라이드 (2004) | 실행 검증 |
 | 2026-11-09 | [부채널 공격 — 구현이 새는 시간·전력·전자파·캐시 정보와 대응 3가지](posts/PE/security/2026-11-09-side-channel-attack-countermeasures/index.md) | 중급 | Kocher, Timing Attacks (CRYPTO '96), Kocher·Jaffe·Jun, Differential Power Analysis (CRYPTO '99), NIST FIPS 140-3 (2019-03), ISO/IEC 17825:2024 | 문서 근거 |
@@ -412,10 +414,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 70편
+## 일반 (general) — 71편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-10 | [Misra-Gries와 Space-Saving — 칸 m개로 상위 빈도 항목 찾기와 오차 상한](posts/Architecture/datastructure/2026-11-10-misra-gries-space-saving-heavy-hitters/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-09 | [저수지 표본추출 — 길이를 모르는 스트림에서 k개를 고르게 뽑는 Algorithm R과 X](posts/Architecture/datastructure/2026-11-09-reservoir-sampling-algorithm-r-x/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [쿠쿠 필터 — 지울 수 있는 근사 집합과 적재율의 벽](posts/Architecture/datastructure/2026-11-09-cuckoo-filter-deletion-load-factor/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-08 | [LSM 트리 쓰기 증폭 — 크기 계층 압축과 레벨 압축을 직접 세어 보기](posts/Database/storage-engine/2026-11-08-lsm-compaction-write-amplification/index.md) | 심화 | Python 3.13.5, RocksDB wiki (Leveled-Compaction 2023-11, Universal-Compaction 2023-06) | 실행 검증 |
@@ -772,6 +775,11 @@
 - [실행계획의 비용(cost)은 무엇을 세는 숫자인가](posts/Database/2026-09-30-optimizer-cost-stale-statistics/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [EXPLAIN QUERY PLAN 읽는 법 — SCAN, SEARCH, USE TEMP B-TREE](posts/Database/sql-basics/2026-10-08-explain-query-plan-reading/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [Tibero 7 실행계획 보기 — EXPLAIN PLAN과 DBMS_XPLAN](posts/Database/tibero/2026-09-30-tibero7-explain-plan-dbms-xplan/index.md) — Tibero 7
+
+**`frequency-estimation`**
+
+- [Count-Min Sketch — 고정 메모리로 빈도를 세고 과대 추정의 상한을 보장하는 법](posts/Architecture/datastructure/2026-11-08-count-min-sketch-frequency-error-bound/index.md) — Python 3.13.5, Windows 11
+- [Misra-Gries와 Space-Saving — 칸 m개로 상위 빈도 항목 찾기와 오차 상한](posts/Architecture/datastructure/2026-11-10-misra-gries-space-saving-heavy-hitters/index.md) — Python 3.13.5, Windows 11
 
 **`group-by`**
 
