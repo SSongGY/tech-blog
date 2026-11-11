@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **707편** · 갱신 2026-11-11
+총 **708편** · 갱신 2026-11-11
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -491,11 +491,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 107편
+## 기출문제 (exam) — 108편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-11 | [기출문제 — 전자상거래 시스템을 운영으로 넘길 때의 SLA: 구성요소·절차와 영역별 평가지표](posts/PE/exam/2026-11-11-sla-components-procedure-and-metrics/index.md) | 중급 | ISO/IEC 19086-1:2016 (공개 미리보기 목차·정의), NIST SP 500-307 (2018-04), ITU-T E.800 (09/2008), RFC 7679·7680 (2016-01), RFC 3393 (2002-11), RFC 2681 (1999-09), RFC 7799 (2016-05), RFC 2863 (2000-06), Google SRE Book ch.4 (2016) | 문서 근거 |
+| 2026-11-11 | [기출문제 — MCP로 AI 서비스를 구축할 때의 보안 취약점과 대응 방안](posts/PE/exam/2026-11-11-mcp-ai-service-security-threats-and-controls/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Security Best Practices, Authorization, Tools), OWASP Top 10 for LLM Applications 2025 (LLM01·LLM03·LLM06), OWASP MCP Top 10 2025 (베타), RFC 8707 (2020-02), RFC 9728 (2025-04), RFC 9207 (2022-03) | 문서 근거 |
 | 2026-11-10 | [기출문제 — 캐시 쓰기 정책과 캐시 일관성](posts/PE/exam/2026-11-10-cache-write-policy-and-coherence/index.md) | 중급 | Intel SDM Vol. 3A 253668-082US (2023-12), Jouppi, DEC WRL Research Report 91/12 (1991-12), Papamarcos & Patel, ISCA 1984, Linux kernel 7.4.0-rc2 문서 (docs.kernel.org) | 문서 근거 |
 | 2026-11-10 | [기출문제 — 이진 탐색 트리](posts/PE/exam/2026-11-10-binary-search-tree/index.md) | 중급 | Python 3.13.5, Sedgewick·Wayne, Algorithms 4th ed. (2011) §3.2 Binary Search Trees, NIST DADS "binary search tree" (2021-08 개정) | 실행 검증 |
 | 2026-11-10 | [기출문제 — 연관 규칙 분석 지표](posts/PE/exam/2026-11-10-association-rule-metrics/index.md) | 중급 | Python 3.13.5, Agrawal·Imielinski·Swami, ACM SIGMOD 1993, Brin·Motwani·Ullman·Tsur, ACM SIGMOD 1997, Hahsler, arules Interest Measures (2023) | 실행 검증 |
