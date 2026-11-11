@@ -7678,7 +7678,7 @@ topics:
     angle: "OWASP LLM06:2025의 세 원인과 예방 전략을 정리하고, 전체 중재(complete mediation)를 하위 시스템에서 거는 이유를 에이전트 도구 설계 예로 보인다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-120
     title: "다른 표를 기준으로 행 지우기 — DELETE와 IN·EXISTS, 그리고 SQLite에 없는 DELETE JOIN"
     category: Database

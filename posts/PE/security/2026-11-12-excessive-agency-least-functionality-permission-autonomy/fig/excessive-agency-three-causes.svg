@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">LLM 출력이 실제 작업이 되기까지 — 세 원인이 생기는 자리</text>
+
+  <!-- 입력 -->
+  <rect x="20" y="70" width="150" height="66" rx="8" fill="#f1f3f5" stroke="#555555"/>
+  <text x="95" y="98" font-size="14" text-anchor="middle" fill="#222222">사용자 요청</text>
+  <text x="95" y="118" font-size="13" text-anchor="middle" fill="#9d0208">+ 오염된 외부 입력</text>
+
+  <!-- LLM -->
+  <rect x="210" y="70" width="140" height="66" rx="8" fill="#e7f0fb" stroke="#1d4e89"/>
+  <text x="280" y="98" font-size="14" text-anchor="middle" fill="#222222">LLM 에이전트</text>
+  <text x="280" y="118" font-size="13" text-anchor="middle" fill="#555555">무엇을 부를지 결정</text>
+
+  <!-- 확장 -->
+  <rect x="390" y="70" width="150" height="66" rx="8" fill="#fff7e6" stroke="#b45309" stroke-width="2"/>
+  <text x="465" y="98" font-size="14" text-anchor="middle" fill="#222222">확장(도구)</text>
+  <text x="465" y="118" font-size="13" text-anchor="middle" fill="#555555">읽기·쓰기·삭제·전송</text>
+
+  <!-- 하위 계정 -->
+  <rect x="580" y="70" width="130" height="66" rx="8" fill="#fff7e6" stroke="#b45309" stroke-width="2"/>
+  <text x="645" y="98" font-size="14" text-anchor="middle" fill="#222222">하위 계정</text>
+  <text x="645" y="118" font-size="13" text-anchor="middle" fill="#555555">DB·API 신원</text>
+
+  <!-- 하위 시스템 -->
+  <rect x="750" y="70" width="112" height="66" rx="8" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="806" y="98" font-size="14" text-anchor="middle" fill="#222222">하위 시스템</text>
+  <text x="806" y="118" font-size="13" text-anchor="middle" fill="#2d6a4f">인가 판정</text>
+
+  <line x1="170" y1="103" x2="208" y2="103" stroke="#333333" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="350" y1="103" x2="388" y2="103" stroke="#333333" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="540" y1="103" x2="578" y2="103" stroke="#333333" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <line x1="710" y1="103" x2="748" y2="103" stroke="#333333" stroke-width="1.6" marker-end="url(#arrow)"/>
+
+  <!-- 사람 승인 게이트 -->
+  <rect x="390" y="200" width="320" height="58" rx="8" fill="#fff7e6" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="550" y="225" font-size="14" text-anchor="middle" fill="#222222">사람 승인 (영향 큰 작업만)</text>
+  <text x="550" y="245" font-size="13" text-anchor="middle" fill="#555555">삭제·전송·결제 직전에 멈춤</text>
+  <line x1="465" y1="138" x2="465" y2="198" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+  <line x1="645" y1="198" x2="645" y2="138" stroke="#b45309" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#arrow)"/>
+
+  <!-- 원인 라벨 -->
+  <circle cx="465" cy="300" r="14" fill="#b45309"/>
+  <text x="465" y="305" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">1</text>
+  <text x="465" y="335" font-size="13" text-anchor="middle" fill="#222222">과도한 기능</text>
+  <text x="465" y="353" font-size="13" text-anchor="middle" fill="#555555">필요 없는 도구·함수</text>
+
+  <circle cx="645" cy="300" r="14" fill="#b45309"/>
+  <text x="645" y="305" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">2</text>
+  <text x="645" y="335" font-size="13" text-anchor="middle" fill="#222222">과도한 권한</text>
+  <text x="645" y="353" font-size="13" text-anchor="middle" fill="#555555">필요 이상의 하위 권한</text>
+
+  <circle cx="366" cy="229" r="14" fill="#b45309"/>
+  <text x="366" y="234" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">3</text>
+  <text x="342" y="225" font-size="13" text-anchor="end" fill="#222222">과도한 자율</text>
+  <text x="342" y="245" font-size="13" text-anchor="end" fill="#555555">승인 없이 바로 실행</text>
+
+  <!-- 전체 중재 설명 -->
+  <text x="806" y="165" font-size="13" text-anchor="middle" fill="#2d6a4f">전체 중재:</text>
+  <text x="806" y="183" font-size="13" text-anchor="middle" fill="#2d6a4f">LLM이 아니라</text>
+  <text x="806" y="201" font-size="13" text-anchor="middle" fill="#2d6a4f">여기서 판정</text>
+
+  <text x="20" y="412" font-size="13" fill="#555555">주황 = 크기를 줄일 대상, 초록 = 권한 판정을 두는 곳. 빨강 = 공격 입력이 들어오는 자리.</text>
+</svg>
