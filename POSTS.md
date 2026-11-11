@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **711편** · 갱신 2026-11-11
+총 **713편** · 갱신 2026-11-11
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -607,10 +607,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 138편
+## 주식·재무 (finance) — 140편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-11 | [판매·사용기준 로열티 — 변동대가 추정 대신 실제 판매가 일어날 때 수익을 인식하는 예외](posts/Finance/statements/2026-11-11-sales-based-royalty-exception/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-11-11 | [라이선스 접근권과 사용권 — 같은 계약금이 기간에 걸쳐 또는 한 시점에 수익이 되는 기준](posts/Finance/statements/2026-11-11-license-right-to-access-vs-use/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-10 | [계약체결 증분원가 — 영업 수수료를 자산으로 두는 조건과 1년 간편법](posts/Finance/statements/2026-11-10-incremental-cost-of-obtaining-contract/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-10 | [계약원가 자산의 손상 — 남은 대가에서 남은 원가를 뺀 한도와 환입 상한](posts/Finance/statements/2026-11-10-contract-cost-asset-impairment/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
 | 2026-11-09 | [보증 — 확신 유형은 충당부채, 용역 유형은 수행의무](posts/Finance/statements/2026-11-09-warranty-assurance-vs-service-type/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익, 기업회계기준서 제1037호 충당부채, 우발부채, 우발자산 | 실행 검증 |
