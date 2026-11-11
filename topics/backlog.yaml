@@ -7700,4 +7700,4 @@ topics:
     angle: "Varghese·Lauck 1987 의 단순·해시·계층 타이머 휠을 파이썬으로 구현해 힙 방식과 시작·정지·틱 비용을 연산 횟수로 비교한다. 계층 휠에서 타이머가 아래 휠로 내려오는 순간을 출력으로 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
