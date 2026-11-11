@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 376" width="880" height="376" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="376" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 시작 -->
+  <rect x="270" y="20" width="340" height="50" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="42" text-anchor="middle" font-size="15" font-weight="bold">지적재산 라이선스의 대가로</text>
+  <text x="440" y="61" text-anchor="middle" font-size="13">약속한 판매기준·사용기준 로열티</text>
+
+  <line x1="440" y1="70" x2="440" y2="100" stroke="#444" marker-end="url(#arrow)"/>
+
+  <!-- B63A -->
+  <rect x="190" y="102" width="500" height="68" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="126" text-anchor="middle" font-size="15" font-weight="bold">로열티가 라이선스에만 관련되거나</text>
+  <text x="440" y="146" text-anchor="middle" font-size="15" font-weight="bold">라이선스가 지배적 항목인가</text>
+  <text x="440" y="164" text-anchor="middle" font-size="13" fill="#555">문단 B63A</text>
+
+  <!-- 예 -->
+  <line x1="300" y1="170" x2="230" y2="214" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="246" y="194" font-size="13">예</text>
+  <rect x="30" y="216" width="390" height="140" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="225" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">B63 예외 — 두 사건 중 나중에 인식</text>
+  <rect x="48" y="256" width="170" height="52" rx="4" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="133" y="278" text-anchor="middle" font-size="13">⑴ 고객의</text>
+  <text x="133" y="296" text-anchor="middle" font-size="13">후속 판매나 사용</text>
+  <rect x="232" y="256" width="170" height="52" rx="4" fill="#ffffff" stroke="#2d6a4f"/>
+  <text x="317" y="278" text-anchor="middle" font-size="13">⑵ 로열티가 배분된</text>
+  <text x="317" y="296" text-anchor="middle" font-size="13">수행의무 이행</text>
+  <text x="225" y="338" text-anchor="middle" font-size="13">추정해서 미리 넣지 않는다 (B63B 전단)</text>
+
+  <!-- 아니오 -->
+  <line x1="580" y1="170" x2="650" y2="214" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="626" y="194" font-size="13">아니오</text>
+  <rect x="460" y="216" width="390" height="140" rx="6" fill="#fff8eb" stroke="#b45309" stroke-width="1.5"/>
+  <text x="655" y="240" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">변동대가 규정 — 문단 50~59 (B63B 후단)</text>
+  <text x="480" y="270" font-size="13">① 기댓값 또는 가능성이 가장 높은 금액으로 추정 (53)</text>
+  <text x="480" y="294" font-size="13">② 유의적으로 되돌리지 않을 가능성이 매우 높은</text>
+  <text x="500" y="312" font-size="13">정도까지만 거래가격에 넣는다 (56)</text>
+  <text x="480" y="336" font-size="13">③ 보고기간 말마다 추정을 다시 한다 (59)</text>
+</svg>

@@ -7722,4 +7722,4 @@ topics:
     angle: "제1115호 B63~B63B와 문단 56 변동대가 제약 비교. 고정 계약금과 판매기준 로열티가 섞인 계약에서 사용권·접근권별로 언제 수익이 되는지, 라이선스가 지배적 항목이 아닐 때 변동대가 규정으로 돌아가는 경로를 계산한다"
     code: python
     origin: manual
-    status: writing
+    status: done
