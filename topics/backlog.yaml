@@ -7667,7 +7667,7 @@ topics:
     angle: "RFC 9728·8707·9207을 MCP 인가 흐름에 맞춰 순서대로 그리고, 토큰 전달 금지와 혼동된 대리인 문제가 왜 대상 검증으로 막히는지 설명"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-265
     title: "과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화"
     category: PE

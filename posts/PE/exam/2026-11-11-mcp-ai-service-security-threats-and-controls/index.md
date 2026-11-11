@@ -172,6 +172,8 @@ MCP의 보안 약점은 프로토콜의 결함이라기보다 **LLM이 호출을
 > 관련 답안: [기출문제 — 프롬프트 인젝션](../2026-10-27-prompt-injection/index.md)
 >
 > MCP 구조: [에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기](../../emerging-tech/2026-10-20-agent-interop-capability-and-task-lifecycle/index.md)
+>
+> 개념 정리: [MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증](../../security/2026-11-11-mcp-authorization-oauth-resource-audience/index.md)
 
 끝
 
