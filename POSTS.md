@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **708편** · 갱신 2026-11-11
+총 **711편** · 갱신 2026-11-11
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 106편
+## DB문법 (basics) — 107편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-11 | [다른 표를 기준으로 행 지우기 — DELETE와 IN·EXISTS, 그리고 SQLite에 없는 DELETE JOIN](posts/Database/sql-basics/2026-11-11-delete-using-other-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-10 | [조인 뒤 SUM이 부풀려지는 이유 — 1:N 두 개를 한 번에 조인할 때](posts/Database/sql-basics/2026-11-10-join-fan-out-inflated-sum/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계](posts/Database/sql-basics/2026-11-09-window-frame-exclude-clause/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [CREATE TABLE AS SELECT로 복사한 표가 잃는 것 — 기본키·제약조건·인덱스와 INSERT INTO ... SELECT](posts/Database/sql-basics/2026-11-09-ctas-loses-constraints-insert-select/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -140,10 +141,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 247편
+## 기술사 (pe) — 248편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-11 | [MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증](posts/PE/security/2026-11-11-mcp-authorization-oauth-resource-audience/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Authorization, Security Best Practices), RFC 9728 (2025-04), RFC 8707 (2020-02), RFC 9207 (2022-03), RFC 8414 (2018-06), draft-ietf-oauth-v2-1-17 (2026-10-31) | 문서 근거 |
 | 2026-11-11 | [IPPM 네트워크 성능 지표 — 단방향·왕복 지연, 패킷 손실, 지연 변이와 능동·수동 측정](posts/PE/network/2026-11-11-ippm-delay-loss-variation-metrics/index.md) | 중급 | RFC 2330 (1998-05), RFC 7679 (2016-01, STD 81), RFC 7680 (2016-01, STD 82), RFC 2681 (1999-09), RFC 3393 (2002-11), RFC 5481 (2009-03), RFC 7799 (2016-05) | 문서 근거 |
 | 2026-11-10 | [캐시 쓰기 정책 — write-through·write-back과 쓰기 미스 4가지 조합](posts/PE/computer-architecture/2026-11-10-cache-write-hit-miss-policies/index.md) | 중급 | Python 3.13.5, Jouppi, DEC WRL Research Report 91/12 (1991-12) | 실행 검증 |
 | 2026-11-10 | [균형 이진 탐색 트리 — AVL 트리와 레드-블랙 트리](posts/PE/computer-architecture/2026-11-10-avl-and-red-black-tree/index.md) | 중급 | Python 3.13.5, MIT 6.006 Fall 2011 Lecture 6, Stanford CS161 Winter 2018 Red-Black Trees, NIST DADS (2019-11 개정) | 실행 검증 |
@@ -415,10 +417,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 71편
+## 일반 (general) — 72편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-11 | [타이머 휠 — 수만 개의 타임아웃을 정렬 없이 거는 자료구조](posts/Architecture/datastructure/2026-11-11-timing-wheel-hashed-hierarchical/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-10 | [Misra-Gries와 Space-Saving — 칸 m개로 상위 빈도 항목 찾기와 오차 상한](posts/Architecture/datastructure/2026-11-10-misra-gries-space-saving-heavy-hitters/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-09 | [저수지 표본추출 — 길이를 모르는 스트림에서 k개를 고르게 뽑는 Algorithm R과 X](posts/Architecture/datastructure/2026-11-09-reservoir-sampling-algorithm-r-x/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [쿠쿠 필터 — 지울 수 있는 근사 집합과 적재율의 벽](posts/Architecture/datastructure/2026-11-09-cuckoo-filter-deletion-load-factor/index.md) | 심화 | Python 3.13.5, Windows 11 | 실행 검증 |
