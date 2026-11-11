@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 1단계 -->
+  <rect x="250" y="20" width="380" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="44" text-anchor="middle" font-size="15" font-weight="bold">라이선스가 다른 재화·용역과 구별되는가</text>
+  <text x="440" y="64" text-anchor="middle" font-size="13" fill="#555">문단 B53·B54, 문단 22~30</text>
+
+  <!-- 구별 안 됨 -->
+  <line x1="630" y1="48" x2="700" y2="48" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="665" y="40" text-anchor="middle" font-size="13">아니오</text>
+  <rect x="702" y="20" width="160" height="56" rx="6" fill="#fff8eb" stroke="#b45309"/>
+  <text x="782" y="44" text-anchor="middle" font-size="13">함께 묶은 수행의무로</text>
+  <text x="782" y="62" text-anchor="middle" font-size="13">문단 31~38 판단 (B55)</text>
+
+  <!-- 2단계 -->
+  <line x1="440" y1="76" x2="440" y2="116" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="452" y="100" font-size="13">예</text>
+  <rect x="170" y="118" width="540" height="112" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="142" text-anchor="middle" font-size="15" font-weight="bold">문단 B58 세 기준을 모두 충족하는가</text>
+  <text x="190" y="168" font-size="13">⑴ 지적재산에 유의적으로 영향을 미치는 활동을 기업이 한다 (B59·B59A)</text>
+  <text x="190" y="190" font-size="13">⑵ 고객이 그 활동의 긍정적·부정적 영향에 직접 노출된다</text>
+  <text x="190" y="212" font-size="13">⑶ 그 활동이 고객에게 별도 재화나 용역을 이전하지 않는다</text>
+
+  <!-- 접근권 -->
+  <line x1="300" y1="230" x2="220" y2="290" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="232" y="258" font-size="13">모두 충족</text>
+  <rect x="40" y="292" width="320" height="76" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="200" y="318" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">접근권 — 기간에 걸쳐 이행</text>
+  <text x="200" y="340" text-anchor="middle" font-size="13">라이선스 기간 동안 진행률로 인식 (B60)</text>
+  <text x="200" y="358" text-anchor="middle" font-size="13" fill="#555">예: 계속 관리되는 상표·캐릭터</text>
+
+  <!-- 사용권 -->
+  <line x1="580" y1="230" x2="660" y2="290" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="632" y="258" font-size="13">하나라도 미충족</text>
+  <rect x="520" y="292" width="320" height="76" rx="6" fill="#eef2ff" stroke="#3f4c8a" stroke-width="1.5"/>
+  <text x="680" y="318" text-anchor="middle" font-size="15" font-weight="bold" fill="#3f4c8a">사용권 — 한 시점에 이행</text>
+  <text x="680" y="340" text-anchor="middle" font-size="13">고객이 사용할 수 있게 된 뒤 인식 (B61)</text>
+  <text x="680" y="358" text-anchor="middle" font-size="13" fill="#555">예: 완성 영화, 소프트웨어, 약물 제조법</text>
+
+  <!-- B62 -->
+  <rect x="170" y="396" width="540" height="58" rx="6" fill="#fff8eb" stroke="#b45309" stroke-dasharray="5 3"/>
+  <text x="440" y="419" text-anchor="middle" font-size="13" font-weight="bold" fill="#b45309">판단에 넣지 않는 것 (B62)</text>
+  <text x="440" y="441" text-anchor="middle" font-size="13">기간·지역·사용 제약, 특허를 지키겠다는 약속</text>
+</svg>
