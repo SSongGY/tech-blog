@@ -7657,3 +7657,25 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: pe-264
+    title: "MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "RFC 9728·8707·9207을 MCP 인가 흐름에 맞춰 순서대로 그리고, 토큰 전달 금지와 혼동된 대리인 문제가 왜 대상 검증으로 막히는지 설명"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-265
+    title: "과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "OWASP LLM06:2025의 세 원인과 예방 전략을 정리하고, 전체 중재(complete mediation)를 하위 시스템에서 거는 이유를 에이전트 도구 설계 예로 보인다"
+    code: none
+    origin: exam
+    status: todo
