@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **713편** · 갱신 2026-11-12
+총 **714편** · 갱신 2026-11-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -141,10 +141,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 248편
+## 기술사 (pe) — 249편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-12 | [과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화](posts/PE/security/2026-11-12-excessive-agency-least-functionality-permission-autonomy/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM06:2025), Saltzer & Schroeder, Proceedings of the IEEE 63(9) (1975), NIST SP 800-53 Rev. 5 (AC-6) | 문서 근거 |
 | 2026-11-11 | [MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증](posts/PE/security/2026-11-11-mcp-authorization-oauth-resource-audience/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Authorization, Security Best Practices), RFC 9728 (2025-04), RFC 8707 (2020-02), RFC 9207 (2022-03), RFC 8414 (2018-06), draft-ietf-oauth-v2-1-17 (2026-10-31) | 문서 근거 |
 | 2026-11-11 | [IPPM 네트워크 성능 지표 — 단방향·왕복 지연, 패킷 손실, 지연 변이와 능동·수동 측정](posts/PE/network/2026-11-11-ippm-delay-loss-variation-metrics/index.md) | 중급 | RFC 2330 (1998-05), RFC 7679 (2016-01, STD 81), RFC 7680 (2016-01, STD 82), RFC 2681 (1999-09), RFC 3393 (2002-11), RFC 5481 (2009-03), RFC 7799 (2016-05) | 문서 근거 |
 | 2026-11-10 | [캐시 쓰기 정책 — write-through·write-back과 쓰기 미스 4가지 조합](posts/PE/computer-architecture/2026-11-10-cache-write-hit-miss-policies/index.md) | 중급 | Python 3.13.5, Jouppi, DEC WRL Research Report 91/12 (1991-12) | 실행 검증 |
