@@ -7723,3 +7723,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-266
+    title: "분류 트리 기법 — 분류와 클래스로 입력 영역을 계층 분할하고 조합표로 케이스를 고르는 법"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "동등 분할과의 차이(계층 세분), 최소 클래스 커버리지와 pairwise 조합 기준, 양립 불가 조합 제외와 feature model, 트리가 데이터 조합만 만들고 기대 결과는 따로 붙여야 하는 한계"
+    code: none
+    origin: exam
+    status: todo

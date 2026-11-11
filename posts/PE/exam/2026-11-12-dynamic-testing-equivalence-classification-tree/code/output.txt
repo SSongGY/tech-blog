@@ -1,0 +1,53 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\exam\2026-11-12-dynamic-testing-equivalence-classification-tree
+# 명령      : python run_tests.py
+# 수행 시각 : 2026-11-12 08:41 (대한민국 표준시)
+# 소요      : 0.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : ISO/IEC/IEEE 29119-4:2021 (2판), ISTQB CTFL Syllabus v4.0.1 (2024-09-15), ISTQB CTAL-TA Syllabus v3.1.2 (2021-05-15), Python 3.13.5, coverage.py 7.6.10
+# 종료 코드 : 0
+
+Python 3.13.5, coverage 7.6.10, Windows 11
+
+[동등 분할] 4건
+  EP-1  정수 · 10 미만             입력 '5'     기대 Fail
+  EP-2  정수 · 10 이상 100 이하      입력 '50'    기대 Pass
+  EP-3  정수 · 100 초과            입력 '150'   기대 Fail
+  EP-4  정수 아님                  입력 'abc'   기대 Invalid Input
+
+[분류 트리 최소 클래스 커버리지] 6건
+  CT-1  정수 > 10 미만             입력 '5'     기대 Fail
+  CT-2  정수 > 10 이상 100 이하      입력 '50'    기대 Pass
+  CT-3  정수 > 100 초과            입력 '150'   기대 Fail
+  CT-4  정수 아님 > 소수             입력 '12.5'  기대 Invalid Input
+  CT-5  정수 아님 > 문자             입력 'abc'   기대 Invalid Input
+  CT-6  정수 아님 > 빈 입력           입력 ''      기대 Invalid Input
+
+[분류 트리 경계값 보강] 4건
+  BV-1  10 미만 상한               입력 '9'     기대 Fail
+  BV-2  10 이상 하한               입력 '10'    기대 Pass
+  BV-3  100 이하 상한              입력 '100'   기대 Pass
+  BV-4  100 초과 하한              입력 '101'   기대 Fail
+
+[커버리지] 동등 분할 4건 — 실패 0건
+  Name         Stmts   Miss Branch BrPart  Cover   Missing
+  --------------------------------------------------------
+  checker.py      13      1      4      1    88%   13
+  --------------------------------------------------------
+  TOTAL           13      1      4      1    88%
+
+[커버리지] 분류 트리 6건 — 실패 0건
+  Name         Stmts   Miss Branch BrPart  Cover   Missing
+  --------------------------------------------------------
+  checker.py      13      0      4      0   100%
+  --------------------------------------------------------
+  TOTAL           13      0      4      0   100%
+
+[결함 구현] 상한 비교를 >= 로 쓴 구현에 돌린 결과
+  동등 분할 4건                   통과(놓침)
+  분류 트리 6건                   통과(놓침)
+  분류 트리 6건 + 경계값 4건          검출
+    BV-3 입력 '100' 기대 Pass 실제 Fail

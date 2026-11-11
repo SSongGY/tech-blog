@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="880" height="370" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="370" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <text x="230" y="40" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">테스트 베이시스</text>
+  <text x="455" y="40" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">테스트 모델</text>
+  <text x="695" y="40" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">커버리지 아이템</text>
+
+  <!-- 명세 기반 -->
+  <text x="20" y="110" font-size="15" font-weight="bold" fill="#1f2937">명세 기반</text>
+  <rect x="140" y="70" width="180" height="70" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="230" y="100" font-size="14" fill="#111827" text-anchor="middle">요구사항 · 명세</text>
+  <text x="230" y="122" font-size="13" fill="#4b5563" text-anchor="middle">구현과 무관하게 작성</text>
+  <rect x="360" y="70" width="190" height="70" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="455" y="100" font-size="14" fill="#111827" text-anchor="middle">동등 분할 파티션</text>
+  <text x="455" y="122" font-size="14" fill="#111827" text-anchor="middle">분류 트리</text>
+  <rect x="590" y="70" width="210" height="70" rx="6" fill="#eef2ff" stroke="#4b5563"/>
+  <text x="695" y="100" font-size="14" fill="#111827" text-anchor="middle">파티션 · 클래스</text>
+  <text x="695" y="122" font-size="13" fill="#4b5563" text-anchor="middle">경계값 · 조합</text>
+  <line x1="320" y1="105" x2="356" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="105" x2="586" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="140" y="168" font-size="13" fill="#9d0208">놓치는 것: 명세에 없는 구현 갈래 (예: 빈 입력을 따로 거르는 분기)</text>
+
+  <!-- 구조 기반 -->
+  <text x="20" y="240" font-size="15" font-weight="bold" fill="#1f2937">구조 기반</text>
+  <rect x="140" y="200" width="180" height="70" rx="6" fill="#ecfdf5" stroke="#4b5563"/>
+  <text x="230" y="230" font-size="14" fill="#111827" text-anchor="middle">소스코드 · 설계 구조</text>
+  <text x="230" y="252" font-size="13" fill="#4b5563" text-anchor="middle">구현 이후에 작성</text>
+  <rect x="360" y="200" width="190" height="70" rx="6" fill="#ecfdf5" stroke="#4b5563"/>
+  <text x="455" y="230" font-size="14" fill="#111827" text-anchor="middle">제어 흐름 그래프</text>
+  <text x="455" y="252" font-size="14" fill="#111827" text-anchor="middle">데이터 흐름</text>
+  <rect x="590" y="200" width="210" height="70" rx="6" fill="#ecfdf5" stroke="#4b5563"/>
+  <text x="695" y="230" font-size="14" fill="#111827" text-anchor="middle">문장 · 분기 · 결정</text>
+  <text x="695" y="252" font-size="13" fill="#4b5563" text-anchor="middle">조건 · MC/DC · 정의-사용</text>
+  <line x1="320" y1="235" x2="356" y2="235" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="235" x2="586" y2="235" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="140" y="298" font-size="13" fill="#9d0208">놓치는 것: 구현되지 않은 요구사항 (코드에 흔적이 남지 않는다)</text>
+
+  <text x="440" y="345" font-size="14" font-weight="bold" fill="#2d6a4f" text-anchor="middle">한쪽이 보지 못하는 결함을 다른 쪽이 잡는다 — 함께 적용한다</text>
+</svg>
