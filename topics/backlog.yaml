@@ -7679,3 +7679,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-120
+    title: "다른 표를 기준으로 행 지우기 — DELETE와 IN·EXISTS, 그리고 SQLite에 없는 DELETE JOIN"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, delete, subquery, basics]
+    difficulty: 입문
+    angle: "DELETE JOIN 이 문법 오류임을 확인하고 IN·EXISTS·행 값 IN 으로 바꿔 쓴다. 같은 표를 부질의에서 다시 읽을 때 지우기 전 값으로 평가되는지, DELETE LIMIT 가 기본 빌드에 없는지도 직접 돌린다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-035
+    title: "타이머 휠 — 수만 개의 타임아웃을 정렬 없이 거는 자료구조"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [timer, timing-wheel, data-structure, scheduling]
+    difficulty: 중급
+    angle: "Varghese·Lauck 1987 의 단순·해시·계층 타이머 휠을 파이썬으로 구현해 힙 방식과 시작·정지·틱 비용을 연산 횟수로 비교한다. 계층 휠에서 타이머가 아래 휠로 내려오는 순간을 출력으로 보인다"
+    code: python
+    origin: manual
+    status: todo
