@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **714편** · 갱신 2026-11-12
+총 **715편** · 갱신 2026-11-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -495,10 +495,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 108편
+## 기출문제 (exam) — 109편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-12 | [기출문제 — 동적 테스트: 명세 기반과 구조 기반 비교, 동등 분할·분류 트리 테스트 케이스 작성](posts/PE/exam/2026-11-12-dynamic-testing-equivalence-classification-tree/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021 (2판), ISTQB CTFL Syllabus v4.0.1 (2024-09-15), ISTQB CTAL-TA Syllabus v3.1.2 (2021-05-15), Python 3.13.5, coverage.py 7.6.10 | 실행 검증 |
 | 2026-11-11 | [기출문제 — 전자상거래 시스템을 운영으로 넘길 때의 SLA: 구성요소·절차와 영역별 평가지표](posts/PE/exam/2026-11-11-sla-components-procedure-and-metrics/index.md) | 중급 | ISO/IEC 19086-1:2016 (공개 미리보기 목차·정의), NIST SP 500-307 (2018-04), ITU-T E.800 (09/2008), RFC 7679·7680 (2016-01), RFC 3393 (2002-11), RFC 2681 (1999-09), RFC 7799 (2016-05), RFC 2863 (2000-06), Google SRE Book ch.4 (2016) | 문서 근거 |
 | 2026-11-11 | [기출문제 — MCP로 AI 서비스를 구축할 때의 보안 취약점과 대응 방안](posts/PE/exam/2026-11-11-mcp-ai-service-security-threats-and-controls/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Security Best Practices, Authorization, Tools), OWASP Top 10 for LLM Applications 2025 (LLM01·LLM03·LLM06), OWASP MCP Top 10 2025 (베타), RFC 8707 (2020-02), RFC 9728 (2025-04), RFC 9207 (2022-03) | 문서 근거 |
 | 2026-11-10 | [기출문제 — 캐시 쓰기 정책과 캐시 일관성](posts/PE/exam/2026-11-10-cache-write-policy-and-coherence/index.md) | 중급 | Intel SDM Vol. 3A 253668-082US (2023-12), Jouppi, DEC WRL Research Report 91/12 (1991-12), Papamarcos & Patel, ISCA 1984, Linux kernel 7.4.0-rc2 문서 (docs.kernel.org) | 문서 근거 |
