@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#0f172a">Text-to-SQL 처리 절차</text>
+
+  <!-- 맥락 입력 -->
+  <rect x="250" y="50" width="380" height="58" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="1.5"/>
+  <text x="440" y="74" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">메타데이터 · 시맨틱 모델</text>
+  <text x="440" y="96" text-anchor="middle" font-size="13" fill="#334155">테이블·컬럼 설명 · 예시 질의(질문-SQL 쌍) · 업무 용어</text>
+  <line x1="325" y1="108" x2="325" y2="158" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="545" y1="108" x2="545" y2="158" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 1행 -->
+  <rect x="20" y="160" width="170" height="70" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="105" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">① 자연어 질문</text>
+  <text x="105" y="212" text-anchor="middle" font-size="13" fill="#334155">업무 사용자</text>
+
+  <rect x="240" y="160" width="170" height="70" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="325" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">② 스키마 연결</text>
+  <text x="325" y="212" text-anchor="middle" font-size="13" fill="#334155">관련 테이블·컬럼 선택</text>
+
+  <rect x="460" y="160" width="170" height="70" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="545" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">③ SQL 생성</text>
+  <text x="545" y="212" text-anchor="middle" font-size="13" fill="#334155">LLM + 예시 질의</text>
+
+  <rect x="680" y="160" width="180" height="70" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="770" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">④ 검증 · 자가 수정</text>
+  <text x="770" y="212" text-anchor="middle" font-size="13" fill="#334155">문법·대상 객체 점검</text>
+
+  <line x1="190" y1="195" x2="238" y2="195" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="410" y1="195" x2="458" y2="195" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="630" y1="195" x2="678" y2="195" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 2행 -->
+  <rect x="680" y="300" width="180" height="70" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="770" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">⑤ DB 실행</text>
+  <text x="770" y="352" text-anchor="middle" font-size="13" fill="#2d6a4f">읽기 전용 역할 · 사용자 권한</text>
+
+  <rect x="240" y="300" width="300" height="70" rx="8" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="390" y="330" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">⑥ 결과와 SQL 응답</text>
+  <text x="390" y="352" text-anchor="middle" font-size="13" fill="#334155">생성된 SQL을 함께 보여 줌</text>
+
+  <line x1="770" y1="230" x2="770" y2="298" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="780" y="270" font-size="13" fill="#334155">통과</text>
+
+  <line x1="680" y1="350" x2="542" y2="350" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+  <polyline points="240,335 105,335 105,232" fill="none" stroke="#334155" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 실패 경로 -->
+  <polyline points="680,316 600,316 600,232" fill="none" stroke="#b45309" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrw)"/>
+  <text x="610" y="272" font-size="13" fill="#b45309">실행 오류 시 재생성</text>
+
+  <text x="20" y="405" font-size="13" fill="#334155">초록 테두리: 권한을 DBMS가 강제하는 지점 · 주황 점선: 실패 경로</text>
+</svg>

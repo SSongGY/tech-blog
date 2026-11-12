@@ -7734,3 +7734,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-267
+    title: "Text-to-SQL — 스키마 연결·분해·자가 수정과 실행 정확도"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "LLM 기반 Text-to-SQL의 다단계 절차(스키마 연결, 질의 분류·분해, 자가 수정)와 평가 지표 CM·EM·EX·VES의 차이를 SQLite로 직접 재현해 보인다"
+    code: none
+    origin: exam
+    status: todo
