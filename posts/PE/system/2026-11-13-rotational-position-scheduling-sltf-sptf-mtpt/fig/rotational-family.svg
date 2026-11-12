@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+
+  <!-- 맨 위: 접근 시간 분해 -->
+  <rect x="190" y="18" width="500" height="44" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="440" y="46" font-size="16" text-anchor="middle" fill="#0f172a">위치 결정 시간 = 탐색 시간 + 회전 지연</text>
+
+  <!-- 열 머리 -->
+  <text x="300" y="98" font-size="14" text-anchor="middle" fill="#334155">탐색만 본다</text>
+  <text x="510" y="98" font-size="14" text-anchor="middle" fill="#334155">회전만 본다</text>
+  <text x="730" y="98" font-size="14" text-anchor="middle" fill="#334155">둘을 합쳐 본다</text>
+
+  <!-- 행 머리 -->
+  <text x="20" y="140" font-size="14" fill="#334155">다음 요청</text>
+  <text x="20" y="158" font-size="14" fill="#334155">하나를 고른다</text>
+  <text x="20" y="250" font-size="14" fill="#334155">묶음 전체의</text>
+  <text x="20" y="268" font-size="14" fill="#334155">순서를 정한다</text>
+  <text x="20" y="360" font-size="14" fill="#334155">기아를</text>
+  <text x="20" y="378" font-size="14" fill="#334155">보정한다</text>
+
+  <!-- 1행: 탐욕 선택 -->
+  <rect x="210" y="115" width="180" height="62" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="300" y="140" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">SSTF</text>
+  <text x="300" y="162" font-size="13" text-anchor="middle" fill="#334155">실린더 사이 순서</text>
+
+  <rect x="420" y="115" width="180" height="62" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="510" y="140" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">SLTF</text>
+  <text x="510" y="162" font-size="13" text-anchor="middle" fill="#334155">실린더 안·드럼</text>
+
+  <rect x="630" y="115" width="200" height="62" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="730" y="140" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">SPTF (SATF·STF)</text>
+  <text x="730" y="162" font-size="13" text-anchor="middle" fill="#334155">장치 내부 스케줄러</text>
+
+  <!-- 2행: MTPT -->
+  <rect x="420" y="225" width="180" height="62" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="510" y="250" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">MTPT</text>
+  <text x="510" y="272" font-size="13" text-anchor="middle" fill="#334155">총처리시간 최소</text>
+
+  <!-- 3행: 기아 보정 -->
+  <rect x="560" y="335" width="130" height="62" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="625" y="360" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">WSTF</text>
+  <text x="625" y="382" font-size="13" text-anchor="middle" fill="#334155">대기 시간 가중</text>
+
+  <rect x="710" y="335" width="130" height="62" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="775" y="360" font-size="16" font-weight="bold" text-anchor="middle" fill="#0f172a">GSTF</text>
+  <text x="775" y="382" font-size="13" text-anchor="middle" fill="#334155">실린더 그룹 단위</text>
+
+  <!-- 화살표 -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#475569"/>
+    </marker>
+  </defs>
+  <line x1="510" y1="177" x2="510" y2="221" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="520" y="205" font-size="13" fill="#334155">탐욕 → 전체 최적</text>
+  <line x1="700" y1="177" x2="640" y2="331" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="760" y1="177" x2="775" y2="331" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="790" y="260" font-size="13" fill="#334155">변형</text>
+</svg>

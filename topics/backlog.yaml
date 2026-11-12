@@ -7744,7 +7744,7 @@ topics:
     angle: "LLM 기반 Text-to-SQL의 다단계 절차(스키마 연결, 질의 분류·분해, 자가 수정)와 평가 지표 CM·EM·EX·VES의 차이를 SQLite로 직접 재현해 보인다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-121
     title: "NULL끼리도 같다고 비교하기 — IS와 IS DISTINCT FROM으로 두 스냅숏의 바뀐 행 찾기"
     category: Database
@@ -7799,4 +7799,4 @@ topics:
     angle: "탐색만 보는 SSTF의 한계에서 출발해 회전 지연을 보는 SLTF, 탐색과 회전을 합친 SPTF(SATF), 실린더 안 총처리시간을 최소로 하는 MTPT를 1차 논문(Fuller 1973, Seltzer 1990, OSTEP 37.5) 기준으로 비교하고 장치 내부 스케줄링으로 옮겨 간 이유를 정리한다"
     code: none
     origin: exam
-    status: todo
+    status: done

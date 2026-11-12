@@ -207,7 +207,7 @@ SJF·SRT는 CPU 버스트를, SSTF는 탐색 거리를, SLTF는 회전 거리를
 골라 넘기고 병합하는 역할을 맡는다. 헤드가 없는 SSD에서는 탐색·회전 비용이 없으므로
 이 계열의 순서 최적화가 의미를 잃는다.
 
-> 개념 정리: [프로세스 스케줄링 알고리즘과 평균 대기시간 계산](../../system/2026-10-12-cpu-scheduling-waiting-time/index.md) · [디스크 스케줄링 — FCFS·SSTF·SCAN·C-SCAN·LOOK·C-LOOK](../../system/2026-11-06-disk-scheduling-six-algorithms/index.md)
+> 개념 정리: [프로세스 스케줄링 알고리즘과 평균 대기시간 계산](../../system/2026-10-12-cpu-scheduling-waiting-time/index.md) · [디스크 스케줄링 — FCFS·SSTF·SCAN·C-SCAN·LOOK·C-LOOK](../../system/2026-11-06-disk-scheduling-six-algorithms/index.md) · [회전 위치 최적화 — SLTF·SPTF·MTPT](../../system/2026-11-13-rotational-position-scheduling-sltf-sptf-mtpt/index.md)
 
 끝
 
