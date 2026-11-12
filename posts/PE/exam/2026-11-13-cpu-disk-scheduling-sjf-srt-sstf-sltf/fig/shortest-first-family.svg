@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 열 제목 -->
+  <text x="220" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">CPU 스케줄링 — 준비 큐에서 고른다</text>
+  <text x="660" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#222">디스크 스케줄링 — 요청 큐에서 고른다</text>
+
+  <!-- CPU: 비용 요소 -->
+  <rect x="60" y="50" width="320" height="56" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <text x="220" y="74" text-anchor="middle" font-size="14" fill="#222">줄일 비용: 준비 큐에서 기다린 시간</text>
+  <text x="220" y="94" text-anchor="middle" font-size="13" fill="#444">기준 값 = CPU 버스트(실행 시간)</text>
+
+  <!-- 디스크: 비용 요소 -->
+  <rect x="500" y="50" width="320" height="56" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+  <text x="660" y="74" text-anchor="middle" font-size="14" fill="#222">접근 시간 = 탐색 + 회전 지연 + 전송</text>
+  <text x="660" y="94" text-anchor="middle" font-size="13" fill="#444">기준 값 = 헤드에서 요청까지의 거리</text>
+
+  <line x1="140" y1="106" x2="140" y2="146" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="300" y1="106" x2="300" y2="146" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="580" y1="106" x2="580" y2="146" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="740" y1="106" x2="740" y2="146" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- SJF -->
+  <rect x="60" y="150" width="155" height="96" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="137" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">SJF</text>
+  <text x="137" y="198" text-anchor="middle" font-size="13" fill="#222">다음 버스트가</text>
+  <text x="137" y="216" text-anchor="middle" font-size="13" fill="#222">가장 짧은 것</text>
+  <text x="137" y="236" text-anchor="middle" font-size="13" fill="#444">비선점</text>
+
+  <!-- SRT -->
+  <rect x="225" y="150" width="155" height="96" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="302" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">SRT</text>
+  <text x="302" y="198" text-anchor="middle" font-size="13" fill="#222">남은 시간이</text>
+  <text x="302" y="216" text-anchor="middle" font-size="13" fill="#222">가장 짧은 것</text>
+  <text x="302" y="236" text-anchor="middle" font-size="13" fill="#444">도착마다 재선택(선점)</text>
+
+  <!-- SSTF -->
+  <rect x="500" y="150" width="155" height="96" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="577" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">SSTF</text>
+  <text x="577" y="198" text-anchor="middle" font-size="13" fill="#222">탐색 거리가</text>
+  <text x="577" y="216" text-anchor="middle" font-size="13" fill="#222">가장 짧은 것</text>
+  <text x="577" y="236" text-anchor="middle" font-size="13" fill="#444">실린더 사이</text>
+
+  <!-- SLTF -->
+  <rect x="665" y="150" width="155" height="96" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="742" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">SLTF</text>
+  <text x="742" y="198" text-anchor="middle" font-size="13" fill="#222">회전 지연이</text>
+  <text x="742" y="216" text-anchor="middle" font-size="13" fill="#222">가장 짧은 것</text>
+  <text x="742" y="236" text-anchor="middle" font-size="13" fill="#444">같은 실린더 안</text>
+
+  <!-- 관계 표시 -->
+  <text x="220" y="272" text-anchor="middle" font-size="13" fill="#444">SRT = SJF의 선점판</text>
+  <text x="660" y="272" text-anchor="middle" font-size="13" fill="#444">탐색은 SSTF, 회전은 SLTF가 줄인다</text>
+
+  <line x1="220" y1="282" x2="380" y2="318" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="660" y1="282" x2="500" y2="318" stroke="#444" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 공통 원리 -->
+  <rect x="200" y="322" width="480" height="76" rx="6" fill="#fffbeb" stroke="#b45309" stroke-width="1.8"/>
+  <text x="440" y="348" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">공통 원리: 가장 짧은 것 먼저 (탐욕 선택)</text>
+  <text x="440" y="370" text-anchor="middle" font-size="13" fill="#222">평균 대기·이동은 줄어든다</text>
+  <text x="440" y="389" text-anchor="middle" font-size="13" fill="#9d0208">긴 작업·먼 실린더 요청은 기아 위험 → 에이징·SCAN</text>
+</svg>

@@ -7789,3 +7789,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-268
+    title: "회전 위치 최적화 — SLTF·SPTF·MTPT"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "탐색만 보는 SSTF의 한계에서 출발해 회전 지연을 보는 SLTF, 탐색과 회전을 합친 SPTF(SATF), 실린더 안 총처리시간을 최소로 하는 MTPT를 1차 논문(Fuller 1973, Seltzer 1990, OSTEP 37.5) 기준으로 비교하고 장치 내부 스케줄링으로 옮겨 간 이유를 정리한다"
+    code: none
+    origin: exam
+    status: todo
