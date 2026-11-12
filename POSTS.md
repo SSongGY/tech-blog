@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **721편** · 갱신 2026-11-13
+총 **722편** · 갱신 2026-11-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -498,10 +498,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 110편
+## 기출문제 (exam) — 111편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-13 | [기출문제 — CPU·디스크 스케줄링, SJF와 SRT, SSTF와 SLTF](posts/PE/exam/2026-11-13-cpu-disk-scheduling-sjf-srt-sstf-sltf/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.5·Ch.11 슬라이드 (S. Weiss 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.37, S. H. Fuller, MTPT Drum and Disk Scheduling Disciplines, ACM SOSP (1973) 요약본, Seltzer·Chen·Ousterhout, Disk Scheduling Revisited, USENIX Winter 1990 | 실행 검증 |
 | 2026-11-12 | [기출문제 — TEXT2SQL의 개념과 활용 사례](posts/PE/exam/2026-11-12-text-to-sql-concept-and-use-cases/index.md) | 중급 | Hong et al., arXiv:2406.08426v8 (2025-11-24), Yu et al., Spider, EMNLP 2018 (arXiv:1809.08887v5), Li et al., BIRD, NeurIPS 2023 (arXiv:2305.03111v3), Pourreza & Rafiei, DIN-SQL, NeurIPS 2023 (arXiv:2304.11015v3), Pedro et al., ICSE 2025 (arXiv:2308.01990v4), Snowflake Cortex Analyst 문서 (2026-11-12 확인), Amazon Bedrock Knowledge Bases 사용자 안내서 (2026-11-12 확인), Databricks Genie 문서 (2026-11-11 갱신) | 문서 근거 |
 | 2026-11-12 | [기출문제 — 동적 테스트: 명세 기반과 구조 기반 비교, 동등 분할·분류 트리 테스트 케이스 작성](posts/PE/exam/2026-11-12-dynamic-testing-equivalence-classification-tree/index.md) | 중급 | ISO/IEC/IEEE 29119-4:2021 (2판), ISTQB CTFL Syllabus v4.0.1 (2024-09-15), ISTQB CTAL-TA Syllabus v3.1.2 (2021-05-15), Python 3.13.5, coverage.py 7.6.10 | 실행 검증 |
 | 2026-11-11 | [기출문제 — 전자상거래 시스템을 운영으로 넘길 때의 SLA: 구성요소·절차와 영역별 평가지표](posts/PE/exam/2026-11-11-sla-components-procedure-and-metrics/index.md) | 중급 | ISO/IEC 19086-1:2016 (공개 미리보기 목차·정의), NIST SP 500-307 (2018-04), ITU-T E.800 (09/2008), RFC 7679·7680 (2016-01), RFC 3393 (2002-11), RFC 2681 (1999-09), RFC 7799 (2016-05), RFC 2863 (2000-06), Google SRE Book ch.4 (2016) | 문서 근거 |
