@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **716편** · 갱신 2026-11-12
+총 **719편** · 갱신 2026-11-12
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 107편
+## DB문법 (basics) — 108편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-12 | [NULL끼리도 같다고 비교하기 — IS와 IS DISTINCT FROM으로 두 스냅숏의 바뀐 행 찾기](posts/Database/sql-basics/2026-11-12-sql-is-distinct-from-null-safe-compare/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [다른 표를 기준으로 행 지우기 — DELETE와 IN·EXISTS, 그리고 SQLite에 없는 DELETE JOIN](posts/Database/sql-basics/2026-11-11-delete-using-other-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-10 | [조인 뒤 SUM이 부풀려지는 이유 — 1:N 두 개를 한 번에 조인할 때](posts/Database/sql-basics/2026-11-10-join-fan-out-inflated-sum/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-09 | [윈도우 프레임 EXCLUDE 절 — 나를 뺀 평균과 동점을 뺀 합계](posts/Database/sql-basics/2026-11-09-window-frame-exclude-clause/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -141,11 +142,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 249편
+## 기술사 (pe) — 250편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-12 | [과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화](posts/PE/security/2026-11-12-excessive-agency-least-functionality-permission-autonomy/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM06:2025), Saltzer & Schroeder, Proceedings of the IEEE 63(9) (1975), NIST SP 800-53 Rev. 5 (AC-6) | 문서 근거 |
+| 2026-11-12 | [분류 트리 기법 — 분류와 클래스로 입력 영역을 계층 분할하고 조합표로 케이스를 고르는 법](posts/PE/software-engineering/2026-11-12-classification-tree-method-test-design/index.md) | 중급 | ISTQB CTAL-TA Syllabus v3.1.2 (2021-05-15), ISTQB CTAL-TA Syllabus v4.0 (2025-05-02), ISO/IEC/IEEE 29119-4:2021 (2판), Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증](posts/PE/security/2026-11-11-mcp-authorization-oauth-resource-audience/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Authorization, Security Best Practices), RFC 9728 (2025-04), RFC 8707 (2020-02), RFC 9207 (2022-03), RFC 8414 (2018-06), draft-ietf-oauth-v2-1-17 (2026-10-31) | 문서 근거 |
 | 2026-11-11 | [IPPM 네트워크 성능 지표 — 단방향·왕복 지연, 패킷 손실, 지연 변이와 능동·수동 측정](posts/PE/network/2026-11-11-ippm-delay-loss-variation-metrics/index.md) | 중급 | RFC 2330 (1998-05), RFC 7679 (2016-01, STD 81), RFC 7680 (2016-01, STD 82), RFC 2681 (1999-09), RFC 3393 (2002-11), RFC 5481 (2009-03), RFC 7799 (2016-05) | 문서 근거 |
 | 2026-11-10 | [캐시 쓰기 정책 — write-through·write-back과 쓰기 미스 4가지 조합](posts/PE/computer-architecture/2026-11-10-cache-write-hit-miss-policies/index.md) | 중급 | Python 3.13.5, Jouppi, DEC WRL Research Report 91/12 (1991-12) | 실행 검증 |
@@ -418,10 +420,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 72편
+## 일반 (general) — 73편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-12 | [rsync의 롤링 체크섬 — 파일 전체를 보내지 않고 바뀐 부분만 보내는 원리](posts/Architecture/architecture/2026-11-12-rsync-rolling-checksum-delta-transfer/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [타이머 휠 — 수만 개의 타임아웃을 정렬 없이 거는 자료구조](posts/Architecture/datastructure/2026-11-11-timing-wheel-hashed-hierarchical/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-10 | [Misra-Gries와 Space-Saving — 칸 m개로 상위 빈도 항목 찾기와 오차 상한](posts/Architecture/datastructure/2026-11-10-misra-gries-space-saving-heavy-hitters/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-09 | [저수지 표본추출 — 길이를 모르는 스트림에서 k개를 고르게 뽑는 Algorithm R과 X](posts/Architecture/datastructure/2026-11-09-reservoir-sampling-algorithm-r-x/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
