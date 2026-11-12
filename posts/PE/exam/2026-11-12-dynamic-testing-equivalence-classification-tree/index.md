@@ -240,6 +240,8 @@ pairwise를 기준으로 삼고, 서로 양립할 수 없는 조합은 트리 �
 >
 > 개념 정리: [MC/DC — 조건마다 독립 영향을 보이는 커버리지와 안전필수 소프트웨어](../../software-engineering/2026-10-23-mcdc-modified-condition-decision-coverage/index.md)
 >
+> 개념 정리: [분류 트리 기법 — 분류와 클래스로 입력 영역을 계층 분할하고 조합표로 케이스를 고르는 법](../../software-engineering/2026-11-12-classification-tree-method-test-design/index.md)
+>
 > 관련 답안: [기출문제 — 소프트웨어 테스트 7대 원리와 동등 분할·경계값 분석 테스트 케이스 설계](../2026-10-19-test-principles-equivalence-boundary/index.md)
 
 끝
