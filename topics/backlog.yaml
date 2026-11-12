@@ -7788,4 +7788,4 @@ topics:
     angle: "제1115호 B70~B76. 풋 가격을 원래 판매가격과 예상 시장가치에 견줘 네 갈래로 나눈다. 가상 회사로 풋 가격만 다른 세 계약의 3년 손익을 계산"
     code: python
     origin: manual
-    status: writing
+    status: done
