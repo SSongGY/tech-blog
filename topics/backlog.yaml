@@ -7767,3 +7767,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-141
+    title: "재매입 선도·콜옵션 — 다시 사 오기로 한 판매를 리스나 금융약정으로 처리하는 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, repurchase]
+    difficulty: 중급
+    angle: "제1115호 B64~B69. 재매입 가격이 원래 판매가격보다 낮으면 리스, 이상이면 금융약정. 가상 회사로 매출 인식·리스·금융약정 세 처리의 2년 손익과 옵션 소멸 시 처리를 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-142
+    title: "고객 풋옵션이 붙은 판매 — 행사 유인으로 리스·반품권 판매·금융약정을 가르는 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, put-option]
+    difficulty: 중급
+    angle: "제1115호 B70~B76. 풋 가격을 원래 판매가격과 예상 시장가치에 견줘 네 갈래로 나눈다. 가상 회사로 풋 가격만 다른 세 계약의 3년 손익을 계산"
+    code: python
+    origin: manual
+    status: writing

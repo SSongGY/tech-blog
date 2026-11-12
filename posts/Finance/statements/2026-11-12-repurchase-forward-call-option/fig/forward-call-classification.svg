@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 390" width="880" height="390" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="390" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 시작 -->
+  <rect x="250" y="20" width="380" height="54" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="43" text-anchor="middle" font-size="15" font-weight="bold">기업이 다시 사야 하는 의무(선도)나</text>
+  <text x="440" y="63" text-anchor="middle" font-size="15" font-weight="bold">다시 살 수 있는 권리(콜옵션)가 있다</text>
+
+  <line x1="440" y1="74" x2="440" y2="100" stroke="#444" marker-end="url(#arrow)"/>
+
+  <!-- 통제 -->
+  <rect x="210" y="102" width="460" height="54" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="440" y="125" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">고객은 자산을 통제하지 못한다 → 판매 아님</text>
+  <text x="440" y="145" text-anchor="middle" font-size="13" fill="#555">사용 지시·나머지 효익 획득 능력이 제한된다 (B66)</text>
+
+  <line x1="440" y1="156" x2="440" y2="182" stroke="#444" marker-end="url(#arrow)"/>
+
+  <!-- 비교 -->
+  <rect x="210" y="184" width="460" height="54" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="207" text-anchor="middle" font-size="15" font-weight="bold">재매입 가격 대 원래 판매가격</text>
+  <text x="440" y="227" text-anchor="middle" font-size="13" fill="#555">비교할 때 화폐의 시간가치를 고려한다 (B67)</text>
+
+  <!-- 낮다 -->
+  <line x1="330" y1="238" x2="230" y2="276" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="200" y="258" font-size="13">낮다</text>
+  <rect x="30" y="278" width="390" height="96" rx="6" fill="#fff8eb" stroke="#b45309" stroke-width="1.5"/>
+  <text x="225" y="302" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">리스 — 제1116호 (B66⑴)</text>
+  <text x="48" y="327" font-size="13">고객이 낸 차액은 일정 기간 사용의 대가</text>
+  <text x="48" y="349" font-size="13">판매후리스의 일부면 자산 유지 + 금융부채</text>
+
+  <!-- 이상 -->
+  <line x1="550" y1="238" x2="650" y2="276" stroke="#444" marker-end="url(#arrow)"/>
+  <text x="650" y="258" font-size="13">이상</text>
+  <rect x="460" y="278" width="390" height="96" rx="6" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="655" y="302" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">금융약정 (B66⑵, B68)</text>
+  <text x="478" y="327" font-size="13">자산 유지, 받은 대가는 금융부채</text>
+  <text x="478" y="349" font-size="13">지급할 대가와의 차이는 이자</text>
+</svg>
