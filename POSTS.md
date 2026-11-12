@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **722편** · 갱신 2026-11-13
+총 **724편** · 갱신 2026-11-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -142,10 +142,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 250편
+## 기술사 (pe) — 252편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-13 | [Text-to-SQL — 스키마 연결·분해·자가 수정과 실행 정확도](posts/PE/emerging-tech/2026-11-13-text-to-sql-pipeline-and-evaluation-metrics/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Hong et al., arXiv:2406.08426v8 (2025-11-24), Yu et al., Spider, arXiv:1809.08887v5, Li et al., BIRD, arXiv:2305.03111v3, Pourreza & Rafiei, DIN-SQL, arXiv:2304.11015v3, Zhong·Yu·Klein, Test Suite, arXiv:2010.02840v1 | 실행 검증 |
+| 2026-11-13 | [회전 위치 최적화 — SLTF·SPTF·MTPT](posts/PE/system/2026-11-13-rotational-position-scheduling-sltf-sptf-mtpt/index.md) | 중급 | Python 3.13.5, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.37, S. H. Fuller, MTPT Drum and Disk Scheduling Disciplines, ACM SOSP (1973) 요약본, Seltzer·Chen·Ousterhout, Disk Scheduling Revisited, USENIX Winter 1990 | 실행 검증 |
 | 2026-11-12 | [과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화](posts/PE/security/2026-11-12-excessive-agency-least-functionality-permission-autonomy/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM06:2025), Saltzer & Schroeder, Proceedings of the IEEE 63(9) (1975), NIST SP 800-53 Rev. 5 (AC-6) | 문서 근거 |
 | 2026-11-12 | [분류 트리 기법 — 분류와 클래스로 입력 영역을 계층 분할하고 조합표로 케이스를 고르는 법](posts/PE/software-engineering/2026-11-12-classification-tree-method-test-design/index.md) | 중급 | ISTQB CTAL-TA Syllabus v3.1.2 (2021-05-15), ISTQB CTAL-TA Syllabus v4.0 (2025-05-02), ISO/IEC/IEEE 29119-4:2021 (2판), Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증](posts/PE/security/2026-11-11-mcp-authorization-oauth-resource-audience/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Authorization, Security Best Practices), RFC 9728 (2025-04), RFC 8707 (2020-02), RFC 9207 (2022-03), RFC 8414 (2018-06), draft-ietf-oauth-v2-1-17 (2026-10-31) | 문서 근거 |
