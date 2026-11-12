@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="440" viewBox="0 0 880 440" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <text x="30" y="26" font-size="14" fill="#334155">생성 — DIN-SQL 4개 모듈</text>
+
+  <!-- 1행: 입력과 4개 모듈 -->
+  <rect x="30" y="40" width="140" height="58" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="100" y="65" font-size="14" text-anchor="middle" fill="#0f172a">자연어 질문</text>
+  <text x="100" y="85" font-size="14" text-anchor="middle" fill="#0f172a">+ DB 스키마</text>
+
+  <rect x="200" y="40" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="270" y="65" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">① 스키마 연결</text>
+  <text x="270" y="85" font-size="13" text-anchor="middle" fill="#334155">쓸 테이블·컬럼</text>
+
+  <rect x="370" y="40" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="440" y="65" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">② 분류·분해</text>
+  <text x="440" y="85" font-size="13" text-anchor="middle" fill="#334155">질의 3종 판정</text>
+
+  <rect x="540" y="40" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="610" y="65" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">③ SQL 생성</text>
+  <text x="610" y="85" font-size="13" text-anchor="middle" fill="#334155">종류별 프롬프트</text>
+
+  <rect x="710" y="40" width="140" height="58" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="780" y="65" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">④ 자가 수정</text>
+  <text x="780" y="85" font-size="13" text-anchor="middle" fill="#334155">오류 점검·고침</text>
+
+  <line x1="170" y1="69" x2="196" y2="69" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="340" y1="69" x2="366" y2="69" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="510" y1="69" x2="536" y2="69" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="680" y1="69" x2="706" y2="69" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <text x="440" y="122" font-size="13" text-anchor="middle" fill="#334155">쉬움 · 비중첩 복합 · 중첩 복합</text>
+
+  <!-- 2행: 예측 SQL -->
+  <path d="M780,98 L780,180 L522,180" fill="none" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="360" y="152" width="160" height="56" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+  <text x="440" y="185" font-size="15" font-weight="bold" text-anchor="middle" fill="#0f172a">예측 SQL</text>
+
+  <text x="30" y="246" font-size="14" fill="#334155">평가 — 지표 4가지</text>
+
+  <!-- 왼쪽 묶음: 내용 일치 -->
+  <rect x="30" y="258" width="400" height="160" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="230" y="282" font-size="14" text-anchor="middle" fill="#334155">내용 일치 — SQL 문장을 정답과 비교</text>
+  <rect x="60" y="300" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="130" y="325" font-size="15" font-weight="bold" text-anchor="middle" fill="#0f172a">CM</text>
+  <text x="130" y="345" font-size="13" text-anchor="middle" fill="#334155">절 단위 집합 비교</text>
+  <rect x="260" y="300" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="330" y="325" font-size="15" font-weight="bold" text-anchor="middle" fill="#0f172a">EM</text>
+  <text x="330" y="345" font-size="13" text-anchor="middle" fill="#334155">모든 절 일치</text>
+  <line x1="200" y1="329" x2="256" y2="329" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="230" y="395" font-size="13" text-anchor="middle" fill="#9d0208">놓치는 것: 뜻은 같은데 문장이 다른 정답</text>
+
+  <!-- 오른쪽 묶음: 실행 기반 -->
+  <rect x="450" y="258" width="400" height="160" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="650" y="282" font-size="14" text-anchor="middle" fill="#334155">실행 기반 — 결과를 정답과 비교</text>
+  <rect x="480" y="300" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="550" y="325" font-size="15" font-weight="bold" text-anchor="middle" fill="#0f172a">EX</text>
+  <text x="550" y="345" font-size="13" text-anchor="middle" fill="#334155">결과 집합 일치</text>
+  <rect x="680" y="300" width="140" height="58" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+  <text x="750" y="325" font-size="15" font-weight="bold" text-anchor="middle" fill="#0f172a">VES</text>
+  <text x="750" y="345" font-size="13" text-anchor="middle" fill="#334155">EX × 효율 R</text>
+  <line x1="620" y1="329" x2="676" y2="329" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="650" y="395" font-size="13" text-anchor="middle" fill="#9d0208">놓치는 것: 이 DB에서만 우연히 맞는 오답</text>
+
+  <!-- 예측 SQL에서 두 묶음으로 -->
+  <line x1="410" y1="208" x2="270" y2="254" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="470" y1="208" x2="610" y2="254" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>

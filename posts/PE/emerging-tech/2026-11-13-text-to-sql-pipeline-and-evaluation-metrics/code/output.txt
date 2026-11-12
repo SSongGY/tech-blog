@@ -1,0 +1,121 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\emerging-tech\2026-11-13-text-to-sql-pipeline-and-evaluation-metrics
+# 명령      : python metrics_demo.py
+# 수행 시각 : 2026-11-13 04:13 (대한민국 표준시)
+# 소요      : 3.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[dept]  3행
+  컬럼 | 타입    | 제약
+  -----+---------+---------
+  id   | INTEGER | PK
+  name | TEXT    | NOT NULL
+
+  id | name
+  ---+-----
+   1 | 개발
+   2 | 영업
+   3 | 재무
+
+[employee]  6행
+  컬럼    | 타입    | 제약
+  --------+---------+---------
+  id      | INTEGER | PK
+  name    | TEXT    | NOT NULL
+  dept_id | INTEGER |
+  age     | INTEGER |
+  salary  | INTEGER |
+
+  id | name   | dept_id | age | salary
+  ---+--------+---------+-----+-------
+   1 | 김하늘 |       1 |  28 |   4200
+   2 | 이도윤 |       1 |  35 |   6100
+   3 | 박서연 |       2 |  41 |   5300
+   4 | 최민준 |       2 |  26 |   3900
+   5 | 정유진 |       3 |  33 |   4800
+   6 | 한지호 |       1 |  45 |   7200
+
+[sales]  200000행
+  컬럼    | 타입    | 제약
+  --------+---------+-----
+  id      | INTEGER | PK
+  emp_id  | INTEGER |
+  sold_on | TEXT    |
+  amount  | INTEGER |
+
+  id | emp_id | sold_on    | amount
+  ---+--------+------------+-------
+   1 |      5 | 2025-09-01 |   9016
+   2 |      3 | 2025-05-14 |   9994
+   3 |      6 | 2026-05-01 |   9616
+   4 |      5 | 2025-03-09 |    315
+   5 |      3 | 2026-04-26 |   9124
+   6 |      2 | 2025-08-28 |   7804
+   7 |      5 | 2026-07-08 |   7904
+   8 |      6 | 2026-02-11 |   2567
+   9 |      6 | 2025-08-26 |   2584
+  10 |      4 | 2026-06-20 |    348
+  11 |      1 | 2026-11-19 |   2711
+  12 |      1 | 2026-08-29 |   5035
+  … 199988행 더 있음
+
+[인덱스]
+  이름             | 대상 표 | 정의
+  -----------------+---------+------------------------------------------------
+  ix_sales_sold_on | sales   | CREATE INDEX ix_sales_sold_on ON sales(sold_on)
+
+두 번째 DB(테스트 스위트용) = 위와 같고 employee 에 (7, '오세린', 2, 30, 5000) 한 행이 더 있다
+
+========================================================================
+쌍별 판정 — CM 칸은 SELECT/FROM/WHERE 절이 각각 같은지(O/X)
+========================================================================
+[1] 30세 초과 직원 수
+    gold: SELECT count(*) FROM employee WHERE age > 30
+    pred: select COUNT(*)  from employee where age>30
+    문자열일치=O  CM=OOO  EM=O  EX=O  테스트스위트=O  R=1.00
+[2] 30세 초과 직원 수
+    gold: SELECT count(*) FROM employee WHERE age > 30
+    pred: SELECT count(*) FROM employee WHERE age >= 30
+    문자열일치=X  CM=OOX  EM=X  EX=O  테스트스위트=X  R=1.00
+[3] 30세 초과이고 급여 5000 초과인 직원 이름
+    gold: SELECT name FROM employee WHERE age > 30 AND salary > 5000
+    pred: SELECT name FROM employee WHERE salary > 5000 AND age > 30
+    문자열일치=X  CM=OOO  EM=O  EX=O  테스트스위트=O  R=1.00
+[4] 개발 부서 직원 이름
+    gold: SELECT e.name FROM employee e JOIN dept d ON e.dept_id = d.id WHERE d.name = '개발'
+    pred: SELECT name FROM employee WHERE dept_id IN (SELECT id FROM dept WHERE name = '개발')
+    문자열일치=X  CM=XXX  EM=X  EX=O  테스트스위트=O  R=0.76
+[5] 2026년 1월 매출 합계
+    gold: SELECT sum(amount) FROM sales WHERE sold_on >= '2026-01-01' AND sold_on < '2026-02-01'
+    pred: SELECT sum(amount) FROM sales WHERE strftime('%Y-%m', sold_on) = '2026-01'
+    문자열일치=X  CM=OOX  EM=X  EX=O  테스트스위트=O  R=0.24
+
+문자열 일치 1/5  EM 2/5  EX 5/5  테스트 스위트 4/5  VES 0.80
+
+========================================================================
+[5] 결과는 같은데 R 이 1 보다 작은 이유 — 실행계획
+========================================================================
+gold:
+QUERY PLAN
+`--SEARCH sales USING INDEX ix_sales_sold_on (sold_on>? AND sold_on<?)
+pred:
+QUERY PLAN
+`--SCAN sales
+
+[2] 두 DB 에서의 결과
+    DB1: gold=4  pred=4
+    DB2: gold=4  pred=5

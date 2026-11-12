@@ -202,6 +202,8 @@ TEXT2SQL은 자연어와 스키마를 받아 실행 가능한 SQL을 만드는 �
 그리고 **권한을 DBMS에서 강제하는 설계**에 달려 있다. 셀프서비스 BI에서는 지표 정의의 일관성이,
 생성형 AI 서비스에서는 인젝션과 데이터 노출 통제가 도입 검토의 첫 항목이 된다.
 
+> 개념 정리: [Text-to-SQL — 스키마 연결·분해·자가 수정과 실행 정확도](../../emerging-tech/2026-11-13-text-to-sql-pipeline-and-evaluation-metrics/index.md)
+>
 > 관련 개념: [RAG 구성요소와 검색 품질 지표](../../emerging-tech/2026-10-14-rag-components-retrieval-metrics/index.md)
 >
 > 관련 개념: [프롬프트 인젝션 방어 설계 — 신뢰 경계와 최소권한](../../security/2026-11-02-prompt-injection-defense-design/index.md)
