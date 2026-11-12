@@ -1,0 +1,182 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-12-sql-is-distinct-from-null-safe-compare
+# 명령      : python null_safe_compare.py
+# 수행 시각 : 2026-11-12 19:11 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : SQLite 3.49.1, Python 3.13.5
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer_today]  7행
+  컬럼        | 타입    | 제약
+  ------------+---------+-----
+  customer_id | INTEGER | PK
+  email       | TEXT    |
+  phone       | TEXT    |
+
+  customer_id | email   | phone
+  ------------+---------+---------
+            1 | a@x.kr  | 010-1000
+            2 | b2@x.kr | NULL
+            3 | c@x.kr  | 010-3000
+            4 | d@x.kr  | NULL
+            5 | NULL    | NULL
+            6 | f@x.kr  | 010-6001
+            7 | g@x.kr  | NULL
+
+[customer_yesterday]  7행
+  컬럼        | 타입    | 제약
+  ------------+---------+-----
+  customer_id | INTEGER | PK
+  email       | TEXT    |
+  phone       | TEXT    |
+
+  customer_id | email  | phone
+  ------------+--------+---------
+            1 | a@x.kr | 010-1000
+            2 | b@x.kr | NULL
+            3 | c@x.kr | NULL
+            4 | d@x.kr | 010-4000
+            5 | NULL   | NULL
+            6 | f@x.kr | 010-6000
+            7 | g@x.kr |
+
+[1] 비교 연산자 진리표
+  sql> SELECT a, b, a = b AS eq, a <> b AS ne, NOT (a = b) AS not_eq, a IS b AS is_, a IS NOT b AS is_not, a IS DISTINCT FROM b AS distinct_from, a IS NOT DISTINCT FROM b AS not_distinct_from FROM (SELECT 1 AS a, 1 AS b UNION ALL SELECT 1, 2 UNION ALL SELECT 1, NULL UNION ALL SELECT NULL, NULL)
+  a | b | eq | ne | not_eq | is_ | is_not | distinct_from | not_distinct_from
+  1 | 1 | 1 | 0 | 0 | 1 | 0 | 0 | 1
+  1 | 2 | 0 | 1 | 1 | 0 | 1 | 1 | 0
+  1 | NULL | NULL | NULL | NULL | 0 | 1 | 1 | 0
+  NULL | NULL | NULL | NULL | NULL | 1 | 0 | 0 | 1
+  (4행)
+
+[2] 전화번호가 바뀐 고객 — <> 로 찾기
+  sql> SELECT y.customer_id, y.phone AS before, t.phone AS after FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE y.phone <> t.phone
+  customer_id | before | after
+  6 | '010-6000' | '010-6001'
+  (1행)
+
+[2] 같은 질문 — IS NOT 으로 찾기
+  sql> SELECT y.customer_id, y.phone AS before, t.phone AS after FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE y.phone IS NOT t.phone
+  customer_id | before | after
+  3 | NULL | '010-3000'
+  4 | '010-4000' | NULL
+  6 | '010-6000' | '010-6001'
+  7 | '' | NULL
+  (4행)
+
+[2] 같은 질문 — IS DISTINCT FROM 으로 찾기
+  sql> SELECT y.customer_id FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE y.phone IS DISTINCT FROM t.phone
+  customer_id
+  3
+  4
+  6
+  7
+  (4행)
+
+[3] COALESCE 로 NULL 을 빈 문자열로 바꿔 비교
+  sql> SELECT y.customer_id, y.phone AS before, t.phone AS after FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE COALESCE(y.phone, '') <> COALESCE(t.phone, '')
+  customer_id | before | after
+  3 | NULL | '010-3000'
+  4 | '010-4000' | NULL
+  6 | '010-6000' | '010-6001'
+  (3행)
+
+[4] 이메일이나 전화가 바뀐 고객 — 컬럼마다 IS NOT 을 OR 로
+  sql> SELECT y.customer_id FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE y.email IS NOT t.email OR y.phone IS NOT t.phone
+  customer_id
+  2
+  3
+  4
+  6
+  7
+  (5행)
+
+[4] 같은 질문 — 행 값 (email, phone) IS NOT (...)
+  sql> SELECT y.customer_id FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE (y.email, y.phone) IS NOT (t.email, t.phone)
+  customer_id
+  2
+  3
+  4
+  6
+  7
+  (5행)
+
+[4] 같은 질문 — 컬럼마다 <> 를 OR 로
+  sql> SELECT y.customer_id FROM customer_yesterday AS y JOIN customer_today AS t USING (customer_id) WHERE y.email <> t.email OR y.phone <> t.phone
+  customer_id
+  2
+  6
+  (2행)
+
+[4] 같은 질문 — 오늘 EXCEPT 어제 (집합 연산은 NULL 을 같은 값으로 본다)
+  sql> SELECT customer_id, email, phone FROM customer_today EXCEPT SELECT customer_id, email, phone FROM customer_yesterday
+  customer_id | email | phone
+  2 | 'b2@x.kr' | NULL
+  3 | 'c@x.kr' | '010-3000'
+  4 | 'd@x.kr' | NULL
+  6 | 'f@x.kr' | '010-6001'
+  7 | 'g@x.kr' | NULL
+  (5행)
+
+[5] 전화번호로 두 스냅숏 잇기 — = 와 IS
+  sql> SELECT COUNT(*) AS matched_by_eq FROM customer_yesterday AS y JOIN customer_today AS t ON y.phone = t.phone
+  matched_by_eq
+  1
+  (1행)
+
+  sql> SELECT COUNT(*) AS matched_by_is FROM customer_yesterday AS y JOIN customer_today AS t ON y.phone IS t.phone
+  matched_by_is
+  13
+  (1행)
+
+  sql> SELECT y.customer_id AS y_id, t.customer_id AS t_id, y.phone FROM customer_yesterday AS y JOIN customer_today AS t ON y.phone IS t.phone WHERE y.phone IS NULL ORDER BY y_id, t_id
+  y_id | t_id | phone
+  2 | 2 | NULL
+  2 | 4 | NULL
+  2 | 5 | NULL
+  2 | 7 | NULL
+  3 | 2 | NULL
+  3 | 4 | NULL
+  3 | 5 | NULL
+  3 | 7 | NULL
+  5 | 2 | NULL
+  5 | 4 | NULL
+  5 | 5 | NULL
+  5 | 7 | NULL
+  (12행)
+
+[6] 실행계획 — phone 에 인덱스를 만든 뒤
+  sql> SELECT customer_id FROM customer_today WHERE phone = '010-3000'
+  QUERY PLAN
+  `--SEARCH customer_today USING COVERING INDEX ix_customer_today_phone (phone=?)
+
+  sql> SELECT customer_id FROM customer_today WHERE phone IS '010-3000'
+  QUERY PLAN
+  `--SEARCH customer_today USING COVERING INDEX ix_customer_today_phone (phone=?)
+
+  sql> SELECT customer_id FROM customer_today WHERE phone IS NULL
+  QUERY PLAN
+  `--SEARCH customer_today USING COVERING INDEX ix_customer_today_phone (phone=?)
+
+  sql> SELECT customer_id FROM customer_today WHERE phone IS NOT DISTINCT FROM '010-3000'
+  QUERY PLAN
+  `--SEARCH customer_today USING COVERING INDEX ix_customer_today_phone (phone=?)
+
+  sql> SELECT customer_id FROM customer_today WHERE phone IS NOT NULL
+  QUERY PLAN
+  `--SEARCH customer_today USING COVERING INDEX ix_customer_today_phone (phone>?)
+

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="34" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">전화번호가 바뀐 네 고객을 비교식마다 찾았는가</text>
+
+  <!-- 머리 줄 -->
+  <rect x="30" y="58" width="320" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="190" y="86" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">고객 · 어제 → 오늘</text>
+  <rect x="350" y="58" width="166" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="433" y="86" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">y.phone &lt;&gt; t.phone</text>
+  <rect x="516" y="58" width="166" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="599" y="80" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">COALESCE(…, '')</text>
+  <text x="599" y="96" font-size="13" text-anchor="middle" fill="#1f2937">끼리 &lt;&gt;</text>
+  <rect x="682" y="58" width="168" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="766" y="86" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">y.phone IS NOT t.phone</text>
+
+  <!-- 3번 -->
+  <rect x="30" y="102" width="320" height="52" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="133" font-size="15" fill="#1f2937">3번 · NULL → '010-3000'</text>
+  <rect x="350" y="102" width="166" height="52" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="433" y="126" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">놓침</text>
+  <text x="433" y="144" font-size="13" text-anchor="middle" fill="#9d0208">결과 NULL</text>
+  <rect x="516" y="102" width="166" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="599" y="133" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+  <rect x="682" y="102" width="168" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="766" y="133" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+
+  <!-- 4번 -->
+  <rect x="30" y="154" width="320" height="52" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="185" font-size="15" fill="#1f2937">4번 · '010-4000' → NULL</text>
+  <rect x="350" y="154" width="166" height="52" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="433" y="178" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">놓침</text>
+  <text x="433" y="196" font-size="13" text-anchor="middle" fill="#9d0208">결과 NULL</text>
+  <rect x="516" y="154" width="166" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="599" y="185" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+  <rect x="682" y="154" width="168" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="766" y="185" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+
+  <!-- 6번 -->
+  <rect x="30" y="206" width="320" height="52" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="237" font-size="15" fill="#1f2937">6번 · '010-6000' → '010-6001'</text>
+  <rect x="350" y="206" width="166" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="433" y="237" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+  <rect x="516" y="206" width="166" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="599" y="237" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+  <rect x="682" y="206" width="168" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="766" y="237" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+
+  <!-- 7번 -->
+  <rect x="30" y="258" width="320" height="52" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="289" font-size="15" fill="#1f2937">7번 · '' (빈 문자열) → NULL</text>
+  <rect x="350" y="258" width="166" height="52" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="433" y="282" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">놓침</text>
+  <text x="433" y="300" font-size="13" text-anchor="middle" fill="#9d0208">결과 NULL</text>
+  <rect x="516" y="258" width="166" height="52" fill="#fef3c7" stroke="#9ca3af"/>
+  <text x="599" y="282" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">놓침</text>
+  <text x="599" y="300" font-size="13" text-anchor="middle" fill="#b45309">'' 와 '' 로 같아짐</text>
+  <rect x="682" y="258" width="168" height="52" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="766" y="289" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">찾음</text>
+
+  <!-- 합계 -->
+  <rect x="30" y="310" width="320" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="46" y="336" font-size="15" font-weight="bold" fill="#1f2937">찾은 행 / 바뀐 행</text>
+  <rect x="350" y="310" width="166" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="433" y="336" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">1 / 4</text>
+  <rect x="516" y="310" width="166" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="599" y="336" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">3 / 4</text>
+  <rect x="682" y="310" width="168" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="766" y="336" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">4 / 4</text>
+
+  <text x="440" y="378" font-size="13" text-anchor="middle" fill="#4b5563">WHERE 는 결과가 참(1)인 행만 남긴다. NULL 은 참이 아니므로 그 행은 빠진다 · SQLite 3.49.1 실행 결과</text>
+</svg>

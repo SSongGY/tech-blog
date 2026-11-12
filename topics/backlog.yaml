@@ -7733,7 +7733,7 @@ topics:
     angle: "동등 분할과의 차이(계층 세분), 최소 클래스 커버리지와 pairwise 조합 기준, 양립 불가 조합 제외와 feature model, 트리가 데이터 조합만 만들고 기대 결과는 따로 붙여야 하는 한계"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-267
     title: "Text-to-SQL — 스키마 연결·분해·자가 수정과 실행 정확도"
     category: PE
@@ -7745,3 +7745,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-121
+    title: "NULL끼리도 같다고 비교하기 — IS와 IS DISTINCT FROM으로 두 스냅숏의 바뀐 행 찾기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, "null", comparison, basics]
+    difficulty: 입문
+    angle: "어제와 오늘 스냅숏을 <> 로 비교하면 NULL에서 값으로 바뀐 행이 빠지는 것을 재현하고, IS NOT·IS DISTINCT FROM·COALESCE 우회를 나란히 돌려 결과와 실행계획을 비교한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-036
+    title: "rsync의 롤링 체크섬 — 파일 전체를 보내지 않고 바뀐 부분만 보내는 원리"
+    category: Architecture
+    subcategory: architecture
+    track: general
+    tags: [rsync, rolling-checksum, delta, algorithm]
+    difficulty: 중급
+    angle: "Tridgell·Mackerras 기술 보고서의 약한 체크섬 a·b 와 강한 해시 2단 검사를 파이썬으로 구현하고, 앞에 바이트를 끼워 넣은 파일에서 고정 블록 비교와 롤링 비교가 보내는 바이트 수를 대조한다. 블록 크기에 따른 손익과 약한 체크섬 충돌 횟수도 센다"
+    code: python
+    origin: manual
+    status: done
