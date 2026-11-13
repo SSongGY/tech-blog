@@ -7865,7 +7865,7 @@ topics:
     angle: "삽입·교체·삭제 충돌 3유형과 LWW가 조용히 잃는 쓰기, 병합 규칙과 CRDT가 수렴을 보장하는 조건을 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-271
     title: "전역 트래픽 라우팅 — DNS 기반 부하분산과 애니캐스트"
     category: PE
@@ -7876,4 +7876,4 @@ topics:
     angle: "DNS TTL과 리졸버 캐시가 장애 리전 제외를 늦추는 이유, 애니캐스트·프록시형 전역 부하분산기와의 비교"
     code: none
     origin: exam
-    status: todo
+    status: done

@@ -253,6 +253,10 @@ DynamoDB 전역 테이블이 두 방식을 모두 구현한다. 다중 리전 �
 >
 > 개념 정리: [재해복구 전략 — RTO·RPO·MTD와 4가지 복구 방식](../../system/2026-10-02-disaster-recovery-mtd-rto-rpo-strategies/index.md)
 >
+> 개념 정리: [다중 리전 쓰기 충돌 해결 — 마지막 쓰기 우선, 사용자 정의 병합, CRDT](../../database/2026-11-14-multi-region-write-conflict-lww-merge-crdt/index.md)
+>
+> 개념 정리: [전역 트래픽 라우팅 — DNS 기반 부하분산과 애니캐스트](../../network/2026-11-14-global-traffic-routing-dns-anycast/index.md)
+>
 > 관련 답안: [기출문제 — 클라우드 네이티브 환경의 재해복구 전략](../2026-10-02-disaster-recovery-rto-rpo-strategies/index.md)
 
 끝
