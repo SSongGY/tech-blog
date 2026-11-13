@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **725편** · 갱신 2026-11-13
+총 **726편** · 갱신 2026-11-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 108편
+## DB문법 (basics) — 109편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-13 | [한 질의로 쪽 데이터와 전체 건수 받기 — COUNT(*) OVER ()는 LIMIT보다 먼저 센다](posts/Database/sql-basics/2026-11-13-count-over-total-with-limit-paging/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-12 | [NULL끼리도 같다고 비교하기 — IS와 IS DISTINCT FROM으로 두 스냅숏의 바뀐 행 찾기](posts/Database/sql-basics/2026-11-12-sql-is-distinct-from-null-safe-compare/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [다른 표를 기준으로 행 지우기 — DELETE와 IN·EXISTS, 그리고 SQLite에 없는 DELETE JOIN](posts/Database/sql-basics/2026-11-11-delete-using-other-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-10 | [조인 뒤 SUM이 부풀려지는 이유 — 1:N 두 개를 한 번에 조인할 때](posts/Database/sql-basics/2026-11-10-join-fan-out-inflated-sum/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+    <marker id="arrow-g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <!-- 범례 -->
+  <line x1="560" y1="22" x2="600" y2="22" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="608" y="27" font-size="13">물리적 점유가 넘어감</text>
+  <line x1="560" y1="44" x2="600" y2="44" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-g)"/>
+  <text x="608" y="49" font-size="13" fill="#2d6a4f">통제가 넘어감 = 수익 인식</text>
+
+  <!-- 판매 -->
+  <text x="30" y="90" font-size="15" font-weight="bold">가. 판매 계약</text>
+  <rect x="30" y="104" width="170" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="115" y="137" text-anchor="middle" font-size="15">제조사(기업)</text>
+  <rect x="355" y="104" width="170" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="137" text-anchor="middle" font-size="15">유통업자(고객)</text>
+  <rect x="680" y="104" width="170" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="765" y="137" text-anchor="middle" font-size="15">최종 고객</text>
+  <line x1="200" y1="124" x2="353" y2="124" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="200" y1="142" x2="353" y2="142" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-g)"/>
+  <text x="276" y="182" text-anchor="middle" font-size="13" fill="#2d6a4f">인도할 때 수익 (B77)</text>
+  <line x1="525" y1="132" x2="678" y2="132" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="601" y="182" text-anchor="middle" font-size="13" fill="#555">유통업자 자신의 판매</text>
+
+  <!-- 위탁 -->
+  <text x="30" y="232" font-size="15" font-weight="bold">나. 위탁 계약</text>
+  <rect x="30" y="246" width="170" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="115" y="279" text-anchor="middle" font-size="15">위탁자(기업)</text>
+  <rect x="355" y="246" width="170" height="56" rx="6" fill="#fff8eb" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="270" text-anchor="middle" font-size="15">수탁자(중개인)</text>
+  <text x="440" y="291" text-anchor="middle" font-size="13" fill="#b45309">점유만 한다</text>
+  <rect x="680" y="246" width="170" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="765" y="279" text-anchor="middle" font-size="15">최종 고객</text>
+  <line x1="200" y1="274" x2="353" y2="274" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="276" y="324" text-anchor="middle" font-size="13" fill="#9d0208">넘겨도 수익 없음 (B77)</text>
+  <line x1="525" y1="274" x2="678" y2="274" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- 통제는 기업에서 최종 고객으로 곧장 -->
+  <path d="M115,302 L115,340 L765,340 L765,304" fill="none" stroke="#2d6a4f" stroke-width="3" marker-end="url(#arrow-g)"/>
+  <text x="440" y="360" text-anchor="middle" font-size="13" fill="#2d6a4f">최종 고객에게 팔릴 때 수익 — 통제는 수탁자를 거치지 않는다</text>
+
+  <!-- 지표 -->
+  <rect x="30" y="378" width="820" height="40" rx="6" fill="#fff8eb" stroke="#b45309"/>
+  <text x="440" y="403" text-anchor="middle" font-size="13">위탁 지표 (B78): ⑴ 정해진 사건까지 기업이 통제 · ⑵ 반환 요구·제삼자 이전 가능 · ⑶ 수탁자의 무조건적 지급 의무 없음</text>
+</svg>

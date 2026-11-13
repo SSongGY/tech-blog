@@ -7821,7 +7821,7 @@ topics:
     angle: "가상 프로젝트로 PV·EV·AC 를 직접 계산하고 차이·지수·완료 시점 예측(EAC 3식·TCPI)을 검산한다. 일정 지수가 완료 시점에 1.0 으로 돌아가는 한계도 계산으로 보인다"
     code: python
     origin: manual
-    status: todo
+    status: writing
   - id: gen-037
     title: "MinHash와 LSH 밴딩 — 자카드 유사도를 서명 몇 개로 추정하기"
     category: Architecture
@@ -7830,6 +7830,28 @@ topics:
     tags: [minhash, lsh, jaccard, similarity, algorithm]
     difficulty: 중급
     angle: "해시 k 개 서명으로 자카드 유사도를 추정해 오차가 1/sqrt(k) 로 줄어드는지 재고, 밴드 b·행 r 로 나눈 LSH 의 후보 확률 1-(1-s^r)^b 를 시뮬레이션과 맞춰 본다"
+    code: python
+    origin: manual
+    status: todo
+  - id: fin-143
+    title: "위탁약정 — 유통업자에게 넘긴 제품을 언제 매출로 잡는가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, consignment]
+    difficulty: 중급
+    angle: "제1115호 B77~B78 위탁약정 지표 3가지와 문단 38 통제 이전 지표. 같은 제품을 유통업자에게 판매로 넘긴 경우와 위탁으로 넘긴 경우 분기별 매출·재고를 가상 회사로 비교"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-144
+    title: "미인도청구약정 — 창고에 남은 제품을 매출로 잡는 네 가지 조건"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, bill-and-hold]
+    difficulty: 중급
+    angle: "제1115호 B79~B82 미인도청구약정 4가지 기준과 보관 용역 배분(B82). 4가지 기준 충족 여부에 따라 수익 인식 시점과 보관 용역 수익이 갈리는 것을 가상 회사로 계산"
     code: python
     origin: manual
     status: todo
