@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+
+  <text x="440" y="28" font-size="16" font-weight="bold" text-anchor="middle" fill="#111827">운영·유지보수 감리의 점검분야 체계 — 사업유형 2가지 × 감리대상 3가지</text>
+
+  <!-- 1단: 전체 -->
+  <rect x="300" y="45" width="280" height="54" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="440" y="68" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">운영·유지보수 감리</text>
+  <text x="440" y="89" font-size="13" text-anchor="middle" fill="#374151">대상: 개발SW(DS) · 상용SW(CS) · 인프라(IF)</text>
+
+  <!-- 2단: 사업유형 -->
+  <rect x="40" y="135" width="290" height="56" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="185" y="158" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">운영 감리 (OP)</text>
+  <text x="185" y="179" font-size="13" text-anchor="middle" fill="#374151">점검분야 16개 = DS 3 + IF 13</text>
+
+  <rect x="400" y="135" width="440" height="56" rx="8" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="620" y="158" font-size="15" font-weight="bold" text-anchor="middle" fill="#111827">유지보수 감리 (MA)</text>
+  <text x="620" y="179" font-size="13" text-anchor="middle" fill="#374151">점검분야 34개(개요 기준) = DS 12 + CS 12 + IF 10</text>
+
+  <g stroke="#374151" stroke-width="1.5" fill="none">
+    <polyline points="440,99 440,115 185,115 185,135"/>
+    <polyline points="440,115 620,115 620,135"/>
+    <polyline points="185,191 185,210 92,210 92,228"/>
+    <polyline points="185,210 260,210 260,228"/>
+    <polyline points="620,191 620,210 455,210 455,228"/>
+    <line x1="620" y1="210" x2="620" y2="228"/>
+    <polyline points="620,210 785,210 785,228"/>
+  </g>
+
+  <!-- 3단: 대상별 점검분야 -->
+  <g font-size="13" text-anchor="middle" fill="#374151">
+    <rect x="18" y="228" width="148" height="200" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+    <text x="92" y="250" font-size="14" font-weight="bold" fill="#111827">개발SW · 3개</text>
+    <text x="92" y="276">릴리스·배포관리</text>
+    <text x="92" y="298">테스트 지원</text>
+    <text x="92" y="320">장애관리</text>
+
+    <rect x="176" y="228" width="168" height="200" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+    <text x="260" y="250" font-size="14" font-weight="bold" fill="#111827">인프라 · 13개</text>
+    <text x="260" y="276">서비스 기획·수준·보고</text>
+    <text x="260" y="298">연속성·가용성·용량</text>
+    <text x="260" y="320">정보보안</text>
+    <text x="260" y="342">비즈니스 관계·공급자</text>
+    <text x="260" y="364">인시던트·문제</text>
+    <text x="260" y="386">구성·변경·릴리스</text>
+    <text x="260" y="408">운영상태관리</text>
+
+    <rect x="372" y="228" width="166" height="200" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+    <text x="455" y="250" font-size="14" font-weight="bold" fill="#111827">개발SW · 12(13)개</text>
+    <text x="455" y="276">모니터링·장애처리</text>
+    <text x="455" y="298">사용자지원·성능관리</text>
+    <text x="455" y="320">정기/비정기 점검</text>
+    <text x="455" y="342">계획·표준 및 절차</text>
+    <text x="455" y="364">요구사항·CSR 처리</text>
+    <text x="455" y="386">구성·릴리스 관리</text>
+
+    <rect x="546" y="228" width="148" height="200" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+    <text x="620" y="250" font-size="14" font-weight="bold" fill="#111827">상용SW · 12개</text>
+    <text x="620" y="276">계획·표준 및 절차</text>
+    <text x="620" y="298">업그레이드·패치</text>
+    <text x="620" y="320">이전·재설치</text>
+    <text x="620" y="342">일상지원·장애처리</text>
+    <text x="620" y="364">예방점검·교육</text>
+    <text x="620" y="386">보안 정책·점검</text>
+    <text x="620" y="408">보안 조치</text>
+
+    <rect x="702" y="228" width="166" height="200" rx="8" fill="#ffffff" stroke="#374151" stroke-width="1.5"/>
+    <text x="785" y="250" font-size="14" font-weight="bold" fill="#111827">인프라 · 10개</text>
+    <text x="785" y="276" text-anchor="middle">OS 패치·HW 업그레이드</text>
+    <text x="785" y="298" text-anchor="middle">예방점검·장애처리</text>
+    <text x="785" y="320" text-anchor="middle">자원 할당·회수</text>
+    <text x="785" y="342" text-anchor="middle">운영자 교육</text>
+    <text x="785" y="364" text-anchor="middle">기술이전·부품지원</text>
+    <text x="785" y="386" text-anchor="middle">운영상태관리</text>
+    <text x="785" y="408" text-anchor="middle">이전·재설치(증설)</text>
+  </g>
+
+  <text x="440" y="458" font-size="13" text-anchor="middle" fill="#b45309">운영은 서비스를 돌리는 프로세스를, 유지보수는 시스템을 고치고 바꾸는 활동을 점검한다</text>
+  <text x="440" y="482" font-size="13" text-anchor="middle" fill="#6b7280">상용SW는 운영 감리 대상에 없다 · 개발SW 유지보수는 상세표에서 '시스템 테스트 지원'이 더해져 13개</text>
+</svg>

@@ -131,6 +131,8 @@ topic_id: pe-087
   독립해 점검한다.** 그래서 감리법인은 PMO와도 특수관계를 가질 수 없다.
 
 > 기출 답안: [기출문제 — PMC와 PMO 비교](../../exam/2026-09-21-pmc-pmo/index.md)
+>
+> 기출 답안: [기출문제 — 정보시스템 운영 감리와 유지보수 감리: 개념과 점검분야](../../exam/2026-11-13-information-system-operation-maintenance-audit/index.md)
 
 ## 참고 자료
 
