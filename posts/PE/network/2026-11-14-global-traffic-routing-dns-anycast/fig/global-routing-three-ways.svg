@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="520" viewBox="0 0 880 520" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="ak" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">전역 트래픽 라우팅 — 리전을 고르는 자리 3가지</text>
+
+  <!-- user -->
+  <rect x="360" y="44" width="160" height="38" fill="#fafbfc" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="440" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">사용자</text>
+  <line x1="380" y1="82" x2="155" y2="108" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+  <line x1="440" y1="82" x2="440" y2="108" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+  <line x1="500" y1="82" x2="725" y2="108" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+
+  <!-- panel 1: DNS -->
+  <rect x="20" y="110" width="270" height="230" fill="#fafbfc" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="6,4" rx="6"/>
+  <text x="155" y="134" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① DNS 기반 부하분산</text>
+  <rect x="30" y="148" width="250" height="56" fill="#fdf6ec" stroke="#b45309" stroke-width="1.4" rx="4"/>
+  <text x="155" y="171" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">리졸버 캐시</text>
+  <text x="155" y="192" text-anchor="middle" font-size="13" fill="#b45309">TTL 동안 같은 답을 돌려준다</text>
+  <line x1="155" y1="204" x2="155" y2="222" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+  <rect x="30" y="224" width="250" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="155" y="247" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">권한 DNS (전역 라우팅)</text>
+  <text x="155" y="268" text-anchor="middle" font-size="13" fill="#4a5568">상태 점검 결과로 리전 IP 선택</text>
+  <text x="155" y="310" text-anchor="middle" font-size="13" fill="#4a5568">요청 트래픽은 거치지 않는다</text>
+  <text x="155" y="328" text-anchor="middle" font-size="13" fill="#4a5568">받은 IP로 리전에 직접 접속</text>
+
+  <!-- panel 2: anycast -->
+  <rect x="305" y="110" width="270" height="230" fill="#fafbfc" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="6,4" rx="6"/>
+  <text x="440" y="134" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② 애니캐스트</text>
+  <rect x="315" y="148" width="250" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="440" y="171" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">같은 IP를 여러 지점이 광고</text>
+  <text x="440" y="192" text-anchor="middle" font-size="13" fill="#4a5568">BGP 경로가 도달 지점을 정한다</text>
+  <line x1="440" y1="204" x2="440" y2="222" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+  <rect x="315" y="224" width="250" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="440" y="247" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">가장 가까운 지점이 받는다</text>
+  <text x="440" y="268" text-anchor="middle" font-size="13" fill="#4a5568">라우팅 지표 기준, 지연 기준 아님</text>
+  <text x="440" y="310" text-anchor="middle" font-size="13" fill="#4a5568">장애 지점은 경로 광고를 철회한다</text>
+  <text x="440" y="328" text-anchor="middle" font-size="13" fill="#b45309">경로 변경 시 TCP가 끊길 수 있다</text>
+
+  <!-- panel 3: proxy -->
+  <rect x="590" y="110" width="270" height="230" fill="#fafbfc" stroke="#4a5568" stroke-width="1.2" stroke-dasharray="6,4" rx="6"/>
+  <text x="725" y="134" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 프록시형 전역 부하분산기</text>
+  <rect x="600" y="148" width="250" height="56" fill="#ffffff" stroke="#4a5568" stroke-width="1.4" rx="4"/>
+  <text x="725" y="171" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">엣지 접점이 연결을 받는다</text>
+  <text x="725" y="192" text-anchor="middle" font-size="13" fill="#4a5568">HTTP(S)를 종단 · 7계층 판단</text>
+  <line x1="725" y1="204" x2="725" y2="222" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+  <rect x="600" y="224" width="250" height="56" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.4" rx="4"/>
+  <text x="725" y="247" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">건강한 리전으로 전달</text>
+  <text x="725" y="268" text-anchor="middle" font-size="13" fill="#2d6a4f">점검 실패 리전은 접점에서 제외</text>
+  <text x="725" y="310" text-anchor="middle" font-size="13" fill="#4a5568">모든 요청이 접점을 지난다</text>
+  <text x="725" y="328" text-anchor="middle" font-size="13" fill="#4a5568">DNS 캐시와 무관하게 반영</text>
+
+  <!-- regions -->
+  <line x1="155" y1="340" x2="255" y2="384" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <line x1="440" y1="340" x2="320" y2="384" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <line x1="725" y1="340" x2="360" y2="388" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+
+  <rect x="150" y="388" width="250" height="52" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="275" y="410" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">리전 A (정상)</text>
+  <text x="275" y="429" text-anchor="middle" font-size="13" fill="#2d6a4f">요청을 받는다</text>
+
+  <rect x="480" y="388" width="250" height="52" fill="#fbeaea" stroke="#9d0208" stroke-width="1.6" rx="4"/>
+  <text x="605" y="410" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">리전 B (장애)</text>
+  <text x="605" y="429" text-anchor="middle" font-size="13" fill="#9d0208">라우팅 대상에서 빼야 한다</text>
+
+  <text x="440" y="476" text-anchor="middle" font-size="13" fill="#4a5568">장애 리전 제외가 반영되는 시점 — ① 리졸버 캐시가 만료된 뒤</text>
+  <text x="440" y="498" text-anchor="middle" font-size="13" fill="#4a5568">② 경로 철회가 전파된 뒤 · ③ 접점의 상태 점검이 실패를 판정한 직후</text>
+</svg>
