@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **726편** · 갱신 2026-11-13
+총 **728편** · 갱신 2026-11-13
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -618,10 +618,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 142편
+## 주식·재무 (finance) — 144편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-13 | [위탁약정 — 유통업자에게 넘긴 제품을 언제 매출로 잡는가](posts/Finance/statements/2026-11-13-consignment-arrangement-revenue-timing/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-11-13 | [미인도청구약정 — 창고에 남은 제품을 매출로 잡는 네 가지 조건](posts/Finance/statements/2026-11-13-bill-and-hold-four-criteria/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-12 | [재매입 선도·콜옵션 — 다시 사 오기로 한 판매를 리스나 금융약정으로 처리하는 기준](posts/Finance/statements/2026-11-12-repurchase-forward-call-option/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익, 기업회계기준서 제1116호 리스 | 실행 검증 |
 | 2026-11-12 | [고객 풋옵션이 붙은 판매 — 행사 유인으로 리스·반품권 판매·금융약정을 가르는 기준](posts/Finance/statements/2026-11-12-customer-put-option-sale/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익, 기업회계기준서 제1116호 리스 | 실행 검증 |
 | 2026-11-11 | [판매·사용기준 로열티 — 변동대가 추정 대신 실제 판매가 일어날 때 수익을 인식하는 예외](posts/Finance/statements/2026-11-11-sales-based-royalty-exception/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
