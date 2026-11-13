@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555555"/>
+    </marker>
+  </defs>
+
+  <text x="16" y="30" font-size="16" font-weight="bold" fill="#222222">한 질의 방식 — 창 함수가 LIMIT 보다 먼저 계산된다</text>
+
+  <!-- 1단계 행 -->
+  <g>
+    <rect x="16" y="50" width="128" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="80" y="76" text-anchor="middle" fill="#222222">① FROM</text>
+    <text x="80" y="98" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#222222">article</text>
+
+    <rect x="160" y="50" width="128" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="224" y="76" text-anchor="middle" fill="#222222">② WHERE</text>
+    <text x="224" y="98" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#222222">category='db'</text>
+
+    <rect x="304" y="50" width="128" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="368" y="76" text-anchor="middle" fill="#222222">③ GROUP BY</text>
+    <text x="368" y="98" text-anchor="middle" fill="#6b7280">이 질의엔 없음</text>
+
+    <rect x="448" y="50" width="128" height="64" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="512" y="76" text-anchor="middle" fill="#2d6a4f">④ SELECT 목록</text>
+    <text x="512" y="98" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#2d6a4f">COUNT(*) OVER ()</text>
+
+    <rect x="592" y="50" width="128" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="656" y="76" text-anchor="middle" fill="#222222">⑤ ORDER BY</text>
+    <text x="656" y="98" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#222222">created_at DESC</text>
+
+    <rect x="736" y="50" width="128" height="64" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+    <text x="800" y="76" text-anchor="middle" fill="#b45309">⑥ LIMIT·OFFSET</text>
+    <text x="800" y="98" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#b45309">LIMIT 3</text>
+
+    <line x1="144" y1="82" x2="158" y2="82" stroke="#555555" marker-end="url(#arrow)"/>
+    <line x1="288" y1="82" x2="302" y2="82" stroke="#555555" marker-end="url(#arrow)"/>
+    <line x1="432" y1="82" x2="446" y2="82" stroke="#555555" marker-end="url(#arrow)"/>
+    <line x1="576" y1="82" x2="590" y2="82" stroke="#555555" marker-end="url(#arrow)"/>
+    <line x1="720" y1="82" x2="734" y2="82" stroke="#555555" marker-end="url(#arrow)"/>
+
+    <text x="80" y="140" text-anchor="middle" fill="#222222">11행</text>
+    <text x="224" y="140" text-anchor="middle" fill="#222222">7행</text>
+    <text x="368" y="140" text-anchor="middle" fill="#222222">7행</text>
+    <text x="512" y="140" text-anchor="middle" fill="#2d6a4f" font-weight="bold">7행, 모두 total=7</text>
+    <text x="656" y="140" text-anchor="middle" fill="#222222">7행 정렬</text>
+    <text x="800" y="140" text-anchor="middle" fill="#b45309" font-weight="bold">3행, total=7</text>
+    <text x="512" y="164" text-anchor="middle" font-size="13" fill="#6b7280">세는 대상: LIMIT 전의 행 전부</text>
+    <text x="800" y="164" text-anchor="middle" font-size="13" fill="#6b7280">OFFSET 9 면 0행</text>
+    <text x="800" y="182" text-anchor="middle" font-size="13" fill="#6b7280">total 도 사라짐</text>
+  </g>
+
+  <line x1="16" y1="196" x2="864" y2="196" stroke="#d1d5db" stroke-dasharray="4 4"/>
+
+  <text x="16" y="230" font-size="16" font-weight="bold" fill="#222222">LIMIT 을 부질의 안에 넣으면 — 순서가 바뀌어 3행만 센다</text>
+
+  <g>
+    <rect x="16" y="250" width="560" height="96" rx="8" fill="none" stroke="#9ca3af" stroke-dasharray="5 4"/>
+    <text x="28" y="270" font-size="13" fill="#6b7280">안쪽 부질의</text>
+
+    <rect x="40" y="282" width="128" height="52" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="104" y="304" text-anchor="middle" fill="#222222">WHERE</text>
+    <text x="104" y="324" text-anchor="middle" font-size="13" fill="#222222">7행</text>
+
+    <rect x="224" y="282" width="128" height="52" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+    <text x="288" y="304" text-anchor="middle" fill="#222222">ORDER BY</text>
+    <text x="288" y="324" text-anchor="middle" font-size="13" fill="#222222">7행 정렬</text>
+
+    <rect x="408" y="282" width="128" height="52" rx="6" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+    <text x="472" y="304" text-anchor="middle" fill="#b45309">LIMIT 3</text>
+    <text x="472" y="324" text-anchor="middle" font-size="13" fill="#b45309">3행</text>
+
+    <rect x="656" y="282" width="208" height="52" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+    <text x="760" y="304" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#9d0208">COUNT(*) OVER ()</text>
+    <text x="760" y="324" text-anchor="middle" font-size="13" fill="#9d0208">3행, 모두 total=3</text>
+
+    <line x1="168" y1="308" x2="222" y2="308" stroke="#555555" marker-end="url(#arrow)"/>
+    <line x1="352" y1="308" x2="406" y2="308" stroke="#555555" marker-end="url(#arrow)"/>
+    <line x1="536" y1="308" x2="654" y2="308" stroke="#555555" marker-end="url(#arrow)"/>
+    <text x="760" y="270" text-anchor="middle" font-size="13" fill="#6b7280">바깥 질의</text>
+  </g>
+
+  <text x="16" y="380" font-size="13" fill="#6b7280">행 수는 이 글의 실습 [2]·[3]·[4]를 SQLite 3.49.1 에서 돌린 결과다.</text>
+</svg>

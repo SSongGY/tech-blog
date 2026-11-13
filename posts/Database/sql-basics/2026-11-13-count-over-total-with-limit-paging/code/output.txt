@@ -1,0 +1,116 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-13-count-over-total-with-limit-paging
+# 명령      : python count_over_paging.py
+# 수행 시각 : 2026-11-13 19:04 (대한민국 표준시)
+# 소요      : 1.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[article]  11행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  article_id | INTEGER | PK
+  category   | TEXT    | NOT NULL
+  title      | TEXT    | NOT NULL
+  created_at | TEXT    | NOT NULL
+
+  article_id | category | title         | created_at
+  -----------+----------+---------------+-----------
+           1 | db       | 인덱스 기초   | 2026-11-01
+           2 | web      | HTTP 캐시     | 2026-11-02
+           3 | db       | 조인 순서     | 2026-11-03
+           4 | db       | 실행계획 읽기 | 2026-11-04
+           5 | linux    | grep 옵션     | 2026-11-05
+           6 | db       | 트랜잭션      | 2026-11-06
+           7 | web      | 쿠키와 세션   | 2026-11-07
+           8 | db       | 창 함수       | 2026-11-08
+           9 | db       | NULL 비교     | 2026-11-09
+          10 | linux    | tar 묶기      | 2026-11-10
+          11 | db       | 페이징        | 2026-11-11
+
+[1] 두 질의로 받기 — 1쪽(3행)과 전체 건수
+  sql> SELECT article_id, title, created_at FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 0
+  article_id | title | created_at
+  11 | 페이징 | 2026-11-11
+  9 | NULL 비교 | 2026-11-09
+  8 | 창 함수 | 2026-11-08
+  (3행)
+
+  sql> SELECT COUNT(*) AS total FROM article WHERE category = 'db'
+  total
+  7
+  (1행)
+
+[2] 한 질의로 받기 — COUNT(*) OVER ()
+  sql> SELECT article_id, title, created_at, COUNT(*) OVER () AS total FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 0
+  article_id | title | created_at | total
+  11 | 페이징 | 2026-11-11 | 7
+  9 | NULL 비교 | 2026-11-09 | 7
+  8 | 창 함수 | 2026-11-08 | 7
+  (3행)
+
+[2] 같은 질의의 3쪽 (OFFSET 6)
+  sql> SELECT article_id, title, created_at, COUNT(*) OVER () AS total FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 6
+  article_id | title | created_at | total
+  1 | 인덱스 기초 | 2026-11-01 | 7
+  (1행)
+
+[3] 범위 밖 쪽 (OFFSET 9) — 두 질의 방식과 한 질의 방식
+  sql> SELECT article_id, title, created_at FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 9
+  article_id | title | created_at
+  (0행)
+
+  sql> SELECT COUNT(*) AS total FROM article WHERE category = 'db'
+  total
+  7
+  (1행)
+
+  sql> SELECT article_id, title, created_at, COUNT(*) OVER () AS total FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 9
+  article_id | title | created_at | total
+  (0행)
+
+[4] LIMIT 을 부질의 안에 넣으면 — 창 함수는 LIMIT 뒤의 행을 센다
+  sql> SELECT article_id, title, COUNT(*) OVER () AS total FROM (SELECT article_id, title, created_at FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3)
+  article_id | title | total
+  11 | 페이징 | 3
+  9 | NULL 비교 | 3
+  8 | 창 함수 | 3
+  (3행)
+
+[5] 일량 — 20만 행, (category, created_at) 인덱스, 1쪽 3행
+  category = 'db' 인 행: 50,000
+    질의                       | VDBE 명령 수 | 반환 행
+    ---------------------------+--------------+--------
+    쪽 질의만                  |           40 |       3
+    COUNT(*) 질의만            |      150,011 |       1
+    한 질의 (COUNT(*) OVER ()) |    1,800,047 |       3
+
+[6] 실행계획 — 20만 행 표
+  sql> SELECT article_id, title, created_at FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 0
+  QUERY PLAN
+  `--SEARCH article USING INDEX ix_article_category_created_at (category=?)
+
+  sql> SELECT COUNT(*) AS total FROM article WHERE category = 'db'
+  QUERY PLAN
+  `--SEARCH article USING COVERING INDEX ix_article_category_created_at (category=?)
+
+  sql> SELECT article_id, title, created_at, COUNT(*) OVER () AS total FROM article WHERE category = 'db' ORDER BY created_at DESC LIMIT 3 OFFSET 0
+  QUERY PLAN
+  |--CO-ROUTINE (subquery-2)
+     `--SEARCH article USING INDEX ix_article_category_created_at (category=?)
+  |--SCAN (subquery-2)
+  `--USE TEMP B-TREE FOR ORDER BY
+
