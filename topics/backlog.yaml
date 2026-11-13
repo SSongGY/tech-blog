@@ -7854,4 +7854,4 @@ topics:
     angle: "제1115호 B79~B82 미인도청구약정 4가지 기준과 보관 용역 배분(B82). 4가지 기준 충족 여부에 따라 수익 인식 시점과 보관 용역 수익이 갈리는 것을 가상 회사로 계산"
     code: python
     origin: manual
-    status: todo
+    status: done
