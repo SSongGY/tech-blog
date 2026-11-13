@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="500" viewBox="0 0 880 500" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="ags" markerWidth="10" markerHeight="10" refX="1" refY="4" orient="auto">
+      <path d="M9,0 L0,4 L9,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="ak" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">다중 리전 동시 가동 — 모든 리전이 평시 트래픽을 받는다</text>
+
+  <!-- clients -->
+  <text x="440" y="62" text-anchor="middle" font-size="14" fill="#4a5568">사용자 요청</text>
+  <line x1="440" y1="70" x2="440" y2="104" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ak)"/>
+
+  <!-- global routing -->
+  <rect x="190" y="108" width="500" height="64" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="440" y="134" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">전역 트래픽 라우팅 (DNS 기반 / 전역 부하분산기)</text>
+  <text x="440" y="158" text-anchor="middle" font-size="13" fill="#4a5568">지연·가중치 정책으로 분산, 상태 점검에 실패한 리전은 대상에서 뺀다</text>
+
+  <line x1="300" y1="172" x2="220" y2="212" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <line x1="580" y1="172" x2="660" y2="212" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+
+  <!-- region A -->
+  <rect x="30" y="216" width="380" height="170" fill="#fafbfc" stroke="#4a5568" stroke-width="1.4" stroke-dasharray="6,4" rx="6"/>
+  <text x="46" y="238" font-size="14" font-weight="bold" fill="#1b1b1b">리전 A (독립 배포 단위)</text>
+  <rect x="50" y="250" width="340" height="50" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="220" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">애플리케이션 계층</text>
+  <text x="220" y="291" text-anchor="middle" font-size="13" fill="#4a5568">세션 비의존 · 멱등 처리 · 전체 용량 확보</text>
+  <rect x="50" y="318" width="340" height="50" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="220" y="340" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">데이터 저장소 복제본</text>
+  <text x="220" y="359" text-anchor="middle" font-size="13" fill="#4a5568">읽기 + 쓰기 (쓰기 전략에 따라)</text>
+
+  <!-- region B -->
+  <rect x="470" y="216" width="380" height="170" fill="#fafbfc" stroke="#4a5568" stroke-width="1.4" stroke-dasharray="6,4" rx="6"/>
+  <text x="486" y="238" font-size="14" font-weight="bold" fill="#1b1b1b">리전 B (독립 배포 단위)</text>
+  <rect x="490" y="250" width="340" height="50" fill="#ffffff" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="660" y="272" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">애플리케이션 계층</text>
+  <text x="660" y="291" text-anchor="middle" font-size="13" fill="#4a5568">세션 비의존 · 멱등 처리 · 전체 용량 확보</text>
+  <rect x="490" y="318" width="340" height="50" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="660" y="340" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">데이터 저장소 복제본</text>
+  <text x="660" y="359" text-anchor="middle" font-size="13" fill="#4a5568">읽기 + 쓰기 (쓰기 전략에 따라)</text>
+
+  <!-- app to data inside regions -->
+  <line x1="220" y1="300" x2="220" y2="316" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+  <line x1="660" y1="300" x2="660" y2="316" stroke="#4a5568" stroke-width="1.4" marker-end="url(#ak)"/>
+
+  <!-- replication -->
+  <line x1="394" y1="343" x2="486" y2="343" stroke="#2d6a4f" stroke-width="2" marker-start="url(#ags)" marker-end="url(#ag)"/>
+  <text x="440" y="410" text-anchor="middle" font-size="13" fill="#2d6a4f">양방향 복제 — 비동기: 복제 지연만큼 유실 가능 / 동기: 정족수, 쓰기 지연 증가</text>
+
+  <!-- backup -->
+  <rect x="250" y="430" width="380" height="52" fill="#fdf6ec" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="440" y="452" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b1b1b">시점 백업 (별도 보관)</text>
+  <text x="440" y="471" text-anchor="middle" font-size="13" fill="#b45309">손상·삭제는 복제가 그대로 옮긴다</text>
+  <path d="M120,368 L120,456 L246,456" fill="none" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#ao)"/>
+  <path d="M760,368 L760,456 L634,456" fill="none" stroke="#b45309" stroke-width="1.4" stroke-dasharray="5,3" marker-end="url(#ao)"/>
+</svg>
