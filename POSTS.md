@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **729편** · 갱신 2026-11-14
+총 **731편** · 갱신 2026-11-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -143,10 +143,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 252편
+## 기술사 (pe) — 254편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-14 | [다중 리전 쓰기 충돌 해결 — 마지막 쓰기 우선, 사용자 정의 병합, CRDT](posts/PE/database/2026-11-14-multi-region-write-conflict-lww-merge-crdt/index.md) | 중급 | Shapiro et al., Conflict-free Replicated Data Types, INRIA RR-7687 v2 (2011-08), DeCandia et al., Dynamo, SOSP 2007, Azure Cosmos DB 문서 — Conflict resolution policies (2026-04-27 갱신), Amazon DynamoDB Developer Guide — How global tables work (2026-11-14 확인) | 문서 근거 |
+| 2026-11-14 | [전역 트래픽 라우팅 — DNS 기반 부하분산과 애니캐스트](posts/PE/network/2026-11-14-global-traffic-routing-dns-anycast/index.md) | 중급 | RFC 4786 (2006-12), RFC 7094 (2014-01), RFC 8767 (2020-03), RFC 7871 (2016-05), Azure Traffic Manager·Front Door 문서 (2026-10 갱신), AWS Global Accelerator Developer Guide (2026-11-14 확인) | 문서 근거 |
 | 2026-11-13 | [Text-to-SQL — 스키마 연결·분해·자가 수정과 실행 정확도](posts/PE/emerging-tech/2026-11-13-text-to-sql-pipeline-and-evaluation-metrics/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Hong et al., arXiv:2406.08426v8 (2025-11-24), Yu et al., Spider, arXiv:1809.08887v5, Li et al., BIRD, arXiv:2305.03111v3, Pourreza & Rafiei, DIN-SQL, arXiv:2304.11015v3, Zhong·Yu·Klein, Test Suite, arXiv:2010.02840v1 | 실행 검증 |
 | 2026-11-13 | [회전 위치 최적화 — SLTF·SPTF·MTPT](posts/PE/system/2026-11-13-rotational-position-scheduling-sltf-sptf-mtpt/index.md) | 중급 | Python 3.13.5, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.37, S. H. Fuller, MTPT Drum and Disk Scheduling Disciplines, ACM SOSP (1973) 요약본, Seltzer·Chen·Ousterhout, Disk Scheduling Revisited, USENIX Winter 1990 | 실행 검증 |
 | 2026-11-12 | [과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화](posts/PE/security/2026-11-12-excessive-agency-least-functionality-permission-autonomy/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM06:2025), Saltzer & Schroeder, Proceedings of the IEEE 63(9) (1975), NIST SP 800-53 Rev. 5 (AC-6) | 문서 근거 |
