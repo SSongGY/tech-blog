@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **738편** · 갱신 2026-11-15
+총 **739편** · 갱신 2026-11-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -144,10 +144,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 255편
+## 기술사 (pe) — 256편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-15 | [인터넷 프로토콜 설계 원칙 — RFC 1958 아키텍처 원칙과 강건성 원칙의 재평가](posts/PE/network/2026-11-15-internet-protocol-design-principles-robustness/index.md) | 중급 | RFC 1958 (1996-06), RFC 1122 (1989-10), RFC 6709 (2012-09), RFC 8701 (2020-01), RFC 9413 (2023-06) | 문서 근거 |
 | 2026-11-14 | [다중 리전 쓰기 충돌 해결 — 마지막 쓰기 우선, 사용자 정의 병합, CRDT](posts/PE/database/2026-11-14-multi-region-write-conflict-lww-merge-crdt/index.md) | 중급 | Shapiro et al., Conflict-free Replicated Data Types, INRIA RR-7687 v2 (2011-08), DeCandia et al., Dynamo, SOSP 2007, Azure Cosmos DB 문서 — Conflict resolution policies (2026-04-27 갱신), Amazon DynamoDB Developer Guide — How global tables work (2026-11-14 확인) | 문서 근거 |
 | 2026-11-14 | [전역 트래픽 라우팅 — DNS 기반 부하분산과 애니캐스트](posts/PE/network/2026-11-14-global-traffic-routing-dns-anycast/index.md) | 중급 | RFC 4786 (2006-12), RFC 7094 (2014-01), RFC 8767 (2020-03), RFC 7871 (2016-05), Azure Traffic Manager·Front Door 문서 (2026-10 갱신), AWS Global Accelerator Developer Guide (2026-11-14 확인) | 문서 근거 |
 | 2026-11-14 | [연속 메모리 할당 — 최초·다음·최적·최악 적합과 외부 단편화](posts/PE/system/2026-11-14-contiguous-allocation-first-best-worst-fit/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.9 슬라이드 (S. Weiss 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.17 | 실행 검증 |
