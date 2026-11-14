@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **732편** · 갱신 2026-11-14
+총 **735편** · 갱신 2026-11-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 109편
+## DB문법 (basics) — 110편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-14 | [ALL·ANY 비교를 SQLite에서 쓰는 법 — MAX·MIN과 NOT EXISTS 재작성이 빈 집합과 NULL에서 갈리는 자리](posts/Database/sql-basics/2026-11-14-sqlite-all-any-rewrite-empty-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-13 | [한 질의로 쪽 데이터와 전체 건수 받기 — COUNT(*) OVER ()는 LIMIT보다 먼저 센다](posts/Database/sql-basics/2026-11-13-count-over-total-with-limit-paging/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-12 | [NULL끼리도 같다고 비교하기 — IS와 IS DISTINCT FROM으로 두 스냅숏의 바뀐 행 찾기](posts/Database/sql-basics/2026-11-12-sql-is-distinct-from-null-safe-compare/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [다른 표를 기준으로 행 지우기 — DELETE와 IN·EXISTS, 그리고 SQLite에 없는 DELETE JOIN](posts/Database/sql-basics/2026-11-11-delete-using-other-table/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -143,12 +144,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 254편
+## 기술사 (pe) — 255편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-14 | [다중 리전 쓰기 충돌 해결 — 마지막 쓰기 우선, 사용자 정의 병합, CRDT](posts/PE/database/2026-11-14-multi-region-write-conflict-lww-merge-crdt/index.md) | 중급 | Shapiro et al., Conflict-free Replicated Data Types, INRIA RR-7687 v2 (2011-08), DeCandia et al., Dynamo, SOSP 2007, Azure Cosmos DB 문서 — Conflict resolution policies (2026-04-27 갱신), Amazon DynamoDB Developer Guide — How global tables work (2026-11-14 확인) | 문서 근거 |
 | 2026-11-14 | [전역 트래픽 라우팅 — DNS 기반 부하분산과 애니캐스트](posts/PE/network/2026-11-14-global-traffic-routing-dns-anycast/index.md) | 중급 | RFC 4786 (2006-12), RFC 7094 (2014-01), RFC 8767 (2020-03), RFC 7871 (2016-05), Azure Traffic Manager·Front Door 문서 (2026-10 갱신), AWS Global Accelerator Developer Guide (2026-11-14 확인) | 문서 근거 |
+| 2026-11-14 | [연속 메모리 할당 — 최초·다음·최적·최악 적합과 외부 단편화](posts/PE/system/2026-11-14-contiguous-allocation-first-best-worst-fit/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.9 슬라이드 (S. Weiss 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.17 | 실행 검증 |
 | 2026-11-13 | [Text-to-SQL — 스키마 연결·분해·자가 수정과 실행 정확도](posts/PE/emerging-tech/2026-11-13-text-to-sql-pipeline-and-evaluation-metrics/index.md) | 중급 | Python 3.13.5, SQLite 3.49.1, Hong et al., arXiv:2406.08426v8 (2025-11-24), Yu et al., Spider, arXiv:1809.08887v5, Li et al., BIRD, arXiv:2305.03111v3, Pourreza & Rafiei, DIN-SQL, arXiv:2304.11015v3, Zhong·Yu·Klein, Test Suite, arXiv:2010.02840v1 | 실행 검증 |
 | 2026-11-13 | [회전 위치 최적화 — SLTF·SPTF·MTPT](posts/PE/system/2026-11-13-rotational-position-scheduling-sltf-sptf-mtpt/index.md) | 중급 | Python 3.13.5, Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.37, S. H. Fuller, MTPT Drum and Disk Scheduling Disciplines, ACM SOSP (1973) 요약본, Seltzer·Chen·Ousterhout, Disk Scheduling Revisited, USENIX Winter 1990 | 실행 검증 |
 | 2026-11-12 | [과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화](posts/PE/security/2026-11-12-excessive-agency-least-functionality-permission-autonomy/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM06:2025), Saltzer & Schroeder, Proceedings of the IEEE 63(9) (1975), NIST SP 800-53 Rev. 5 (AC-6) | 문서 근거 |
@@ -425,10 +427,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 73편
+## 일반 (general) — 74편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-14 | [가변 길이 정수 인코딩 — varint와 지그재그, 음수 하나가 10바이트가 되는 이유](posts/Architecture/datastructure/2026-11-14-varint-zigzag-encoding/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-12 | [rsync의 롤링 체크섬 — 파일 전체를 보내지 않고 바뀐 부분만 보내는 원리](posts/Architecture/architecture/2026-11-12-rsync-rolling-checksum-delta-transfer/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [타이머 휠 — 수만 개의 타임아웃을 정렬 없이 거는 자료구조](posts/Architecture/datastructure/2026-11-11-timing-wheel-hashed-hierarchical/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-10 | [Misra-Gries와 Space-Saving — 칸 m개로 상위 빈도 항목 찾기와 오차 상한](posts/Architecture/datastructure/2026-11-10-misra-gries-space-saving-heavy-hitters/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
