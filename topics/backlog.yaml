@@ -7932,3 +7932,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-273
+    title: "인터넷 프로토콜 설계 원칙 — RFC 1958 아키텍처 원칙과 강건성 원칙의 재평가"
+    category: PE
+    subcategory: network
+    track: pe
+    tags: [정보관리기술사, network, 개념정리]
+    difficulty: 중급
+    angle: "RFC 1958의 설계 원칙(단순성·모듈성·강건성·확장성)과 RFC 9413이 강건성 원칙을 재평가한 이유, RFC 6709의 확장 설계 고려사항을 답안용으로 정리"
+    code: none
+    origin: exam
+    status: todo

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="sans-serif" font-size="14">
+  <defs>
+    <marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#2d6a4f"/></marker>
+    <marker id="ak" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#333"/></marker>
+  </defs>
+  <rect width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="28" text-anchor="middle" font-weight="bold" font-size="16" fill="#222">송신 측 순서번호 공간과 슬라이딩 윈도우</text>
+
+  <!-- 윈도우 괄호 -->
+  <path d="M240,72 L240,62 L680,62 L680,72" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="460" y="54" text-anchor="middle" fill="#2d6a4f" font-weight="bold">송신 윈도우 (SND.WND)</text>
+
+  <!-- 네 구간 -->
+  <rect x="40" y="80" width="200" height="70" fill="#e5e7eb" stroke="#333"/>
+  <text x="140" y="110" text-anchor="middle" fill="#222">① 보냈고</text>
+  <text x="140" y="130" text-anchor="middle" fill="#222">확인됨</text>
+
+  <rect x="240" y="80" width="220" height="70" fill="#fdf0e0" stroke="#b45309" stroke-width="2"/>
+  <text x="350" y="110" text-anchor="middle" fill="#b45309">② 보냈으나</text>
+  <text x="350" y="130" text-anchor="middle" fill="#b45309">미확인 (재전송 대상)</text>
+
+  <rect x="460" y="80" width="220" height="70" fill="#e3f1ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="570" y="110" text-anchor="middle" fill="#2d6a4f">③ 아직 안 보냈지만</text>
+  <text x="570" y="130" text-anchor="middle" fill="#2d6a4f">바로 보낼 수 있음</text>
+
+  <rect x="680" y="80" width="160" height="70" fill="#f8e5e6" stroke="#9d0208"/>
+  <text x="760" y="110" text-anchor="middle" fill="#9d0208">④ 아직</text>
+  <text x="760" y="130" text-anchor="middle" fill="#9d0208">보낼 수 없음</text>
+
+  <!-- 경계 포인터 -->
+  <line x1="240" y1="190" x2="240" y2="155" stroke="#333" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="240" y="208" text-anchor="middle" fill="#222">SND.UNA</text>
+  <line x1="460" y1="190" x2="460" y2="155" stroke="#333" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="460" y="208" text-anchor="middle" fill="#222">SND.NXT</text>
+  <line x1="680" y1="190" x2="680" y2="155" stroke="#333" stroke-width="2" marker-end="url(#ak)"/>
+  <text x="680" y="208" text-anchor="middle" fill="#222">SND.UNA + SND.WND</text>
+
+  <!-- 미끄러짐 -->
+  <line x1="200" y1="250" x2="300" y2="250" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="60" y="280" fill="#222">ACK 도착 → 왼쪽 끝(SND.UNA)이 오른쪽으로 이동</text>
+  <line x1="640" y1="250" x2="740" y2="250" stroke="#2d6a4f" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="470" y="280" fill="#222">수신 측 광고 윈도우 → 오른쪽 끝이 열림</text>
+
+  <!-- 혼잡 제어와 만나는 곳 -->
+  <rect x="140" y="310" width="600" height="70" fill="#f3f4f6" stroke="#333"/>
+  <text x="440" y="338" text-anchor="middle" fill="#222">실제 송신 한도 = min(cwnd, rwnd)</text>
+  <text x="440" y="362" text-anchor="middle" fill="#555">rwnd: 수신 측이 정함(흐름 제어) · cwnd: 송신 측이 추정(혼잡 제어)</text>
+</svg>
