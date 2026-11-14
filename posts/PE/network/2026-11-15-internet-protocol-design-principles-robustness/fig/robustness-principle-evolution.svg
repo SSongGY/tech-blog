@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#222222">강건성 원칙의 변천과 RFC 9413의 재평가</text>
+
+  <!-- 위: 변천 -->
+  <text x="21" y="66" font-size="14" font-weight="bold" fill="#444444">① 원칙이 자리 잡은 과정</text>
+
+  <rect x="21" y="80" width="150" height="86" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="96" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">RFC 760 (1980)</text>
+  <text x="96" y="128" text-anchor="middle" font-size="13" fill="#333333">IP 구현 지침</text>
+  <text x="96" y="148" text-anchor="middle" font-size="13" fill="#333333">송신 보수·수신 관대</text>
+
+  <rect x="193" y="80" width="150" height="86" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="268" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">RFC 793 (1981)</text>
+  <text x="268" y="128" text-anchor="middle" font-size="13" fill="#333333">TCP 강건성 원칙</text>
+  <text x="268" y="148" text-anchor="middle" font-size="13" fill="#333333">Postel 문구 확정</text>
+
+  <rect x="365" y="80" width="150" height="86" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="440" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">RFC 1122 (1989)</text>
+  <text x="440" y="128" text-anchor="middle" font-size="13" fill="#333333">호스트 요구사항</text>
+  <text x="440" y="148" text-anchor="middle" font-size="13" fill="#333333">모든 계층에 적용</text>
+
+  <rect x="537" y="80" width="150" height="86" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="612" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">RFC 1958 (1996)</text>
+  <text x="612" y="128" text-anchor="middle" font-size="13" fill="#333333">아키텍처 원칙</text>
+  <text x="612" y="148" text-anchor="middle" font-size="13" fill="#333333">14개 설계 항목 중 하나</text>
+
+  <rect x="709" y="80" width="150" height="86" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="784" y="104" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">RFC 9413 (2023)</text>
+  <text x="784" y="128" text-anchor="middle" font-size="13" fill="#333333">IAB의 재평가</text>
+  <text x="784" y="148" text-anchor="middle" font-size="13" fill="#333333">세 측면으로 분해</text>
+
+  <line x1="171" y1="123" x2="191" y2="123" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="343" y1="123" x2="363" y2="123" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="515" y1="123" x2="535" y2="123" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="687" y1="123" x2="707" y2="123" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 아래: 세 측면 -->
+  <text x="21" y="190" font-size="14" font-weight="bold" fill="#444444">② RFC 9413이 나눈 강건성의 세 측면</text>
+
+  <line x1="784" y1="166" x2="784" y2="204" stroke="#444444" stroke-width="1.5"/>
+  <line x1="130" y1="204" x2="784" y2="204" stroke="#444444" stroke-width="1.5"/>
+  <line x1="130" y1="204" x2="130" y2="228" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="390" y1="204" x2="390" y2="228" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="660" y1="204" x2="660" y2="228" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="30" y="230" width="200" height="78" rx="6" fill="#ecf5ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="130" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">소프트웨어 결함</text>
+  <text x="130" y="284" text-anchor="middle" font-size="13" fill="#333333">유지 — 필요한 지침</text>
+
+  <rect x="290" y="230" width="200" height="78" rx="6" fill="#ecf5ef" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="390" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">공격</text>
+  <text x="390" y="284" text-anchor="middle" font-size="13" fill="#333333">유지 — 필요한 지침</text>
+
+  <rect x="550" y="230" width="220" height="78" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="2"/>
+  <text x="660" y="258" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">예상 밖 입력의 관용</text>
+  <text x="660" y="284" text-anchor="middle" font-size="13" fill="#333333">재검토 — 항상 모범은 아님</text>
+
+  <line x1="660" y1="308" x2="660" y2="346" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="470" y="348" width="380" height="96" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="660" y="374" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">대안: 능동적 프로토콜 유지보수</text>
+  <text x="660" y="400" text-anchor="middle" font-size="13" fill="#333333">명세 위반은 치명 오류로 드러냄(선량한 불관용)</text>
+  <text x="660" y="424" text-anchor="middle" font-size="13" fill="#333333">명세와 구현의 차이는 표준 절차로 해소</text>
+
+  <text x="30" y="372" font-size="13" fill="#555555">초록: 그대로 유지하는 측면</text>
+  <text x="30" y="396" font-size="13" fill="#555555">빨강: 문제로 지목된 측면</text>
+  <text x="30" y="420" font-size="13" fill="#555555">주황: 재평가 문서</text>
+</svg>

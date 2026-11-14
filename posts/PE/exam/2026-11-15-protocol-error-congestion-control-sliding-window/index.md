@@ -110,6 +110,7 @@ IAB의 인터넷 아키텍처 원칙(RFC 1958)을 뼈대로, 혼잡·확장·보
 > 개념 정리: [TCP 혼잡 제어 알고리즘 비교 — Reno·CUBIC·BBR은 무엇을 신호로 삼는가](../../network/2026-10-06-tcp-congestion-control-reno-cubic-bbr/index.md)
 > 개념 정리: [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](../../network/2026-09-28-tcp-handshake-flow-congestion-control/index.md)
 > 개념 정리: [Selective Repeat ARQ와 TCP SACK — 선택적 재전송과 윈도우 크기 제약](../../network/2026-11-06-selective-repeat-arq-tcp-sack/index.md)
+> 개념 정리: [인터넷 프로토콜 설계 원칙 — RFC 1958 아키텍처 원칙과 강건성 원칙의 재평가](../../network/2026-11-15-internet-protocol-design-principles-robustness/index.md)
 
 끝
 

@@ -7942,4 +7942,4 @@ topics:
     angle: "RFC 1958의 설계 원칙(단순성·모듈성·강건성·확장성)과 RFC 9413이 강건성 원칙을 재평가한 이유, RFC 6709의 확장 설계 고려사항을 답안용으로 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
