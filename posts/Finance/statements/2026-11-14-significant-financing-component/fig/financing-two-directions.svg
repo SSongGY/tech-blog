@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 가. 할부 -->
+  <text x="30" y="40" font-size="15" font-weight="bold">가. 대금을 늦게 받는다 — 기업이 고객에게 금융을 제공</text>
+  <line x1="60" y1="110" x2="830" y2="110" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="140" cy="110" r="7" fill="#2d6a4f"/>
+  <text x="140" y="90" text-anchor="middle" font-size="13">인도일</text>
+  <text x="140" y="138" text-anchor="middle" font-size="13" fill="#2d6a4f">수익 = 현금판매가격</text>
+  <circle cx="400" cy="110" r="6" fill="#444"/>
+  <circle cx="580" cy="110" r="6" fill="#444"/>
+  <circle cx="760" cy="110" r="6" fill="#444"/>
+  <text x="580" y="90" text-anchor="middle" font-size="13">할부금 회수 (1·2·3년 말)</text>
+  <rect x="170" y="152" width="620" height="44" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="480" y="179" text-anchor="middle" font-size="14">수취채권이 유효이자율로 불어난 뒤 회수로 줄어든다 → 이자수익</text>
+
+  <!-- 나. 선수금 -->
+  <text x="30" y="250" font-size="15" font-weight="bold">나. 대금을 먼저 받는다 — 고객이 기업에 금융을 제공</text>
+  <line x1="60" y1="320" x2="830" y2="320" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <circle cx="140" cy="320" r="6" fill="#444"/>
+  <text x="140" y="300" text-anchor="middle" font-size="13">계약일 · 선수금 수령</text>
+  <circle cx="700" cy="320" r="7" fill="#2d6a4f"/>
+  <text x="700" y="300" text-anchor="middle" font-size="13">인도일</text>
+  <text x="700" y="348" text-anchor="middle" font-size="13" fill="#2d6a4f">계약부채 → 수익</text>
+  <rect x="140" y="362" width="560" height="44" rx="6" fill="#fff8eb" stroke="#b45309"/>
+  <text x="420" y="389" text-anchor="middle" font-size="14">계약부채가 이자만큼 늘어난다 → 이자비용 (문단 65: 수익과 구분 표시)</text>
+
+  <text x="440" y="430" text-anchor="middle" font-size="13" fill="#555">인도~지급 간격이 1년 이내로 예상되면 조정하지 않을 수 있다 (문단 63)</text>
+</svg>

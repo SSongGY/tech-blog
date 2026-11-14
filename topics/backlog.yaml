@@ -7910,3 +7910,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-145
+    title: "유의적인 금융요소 — 할부판매와 선수금에서 거래가격을 현금판매가격으로 조정하는 법"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, time-value]
+    difficulty: 중급
+    angle: "제1115호 문단 60~65. 대금을 늦게 받는 할부판매(이자수익)와 먼저 받는 선수금(이자비용) 두 방향을 같은 가상 회사 숫자로 계산하고, 1년 이내 간편법과 문단 62 예외를 짚는다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-146
+    title: "계약변경 — 별도 계약, 기존 계약 종료 후 새 계약, 누적효과 일괄조정의 세 갈래"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, contract-modification]
+    difficulty: 중급
+    angle: "제1115호 문단 18~21. 같은 수량 추가 주문을 가격 조건만 바꿔 세 갈래로 나누고 변경일 전후 수익을 계산해 비교한다"
+    code: python
+    origin: manual
+    status: writing
