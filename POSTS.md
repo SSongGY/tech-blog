@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **731편** · 갱신 2026-11-14
+총 **732편** · 갱신 2026-11-14
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -503,10 +503,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 113편
+## 기출문제 (exam) — 114편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-14 | [기출문제 — 데이터베이스 트랜잭션 격리 수준 4가지와 수준별 이상 현상](posts/PE/exam/2026-11-14-transaction-isolation-levels-and-anomalies/index.md) | 중급 | Berenson et al., A Critique of ANSI SQL Isolation Levels, SIGMOD 1995, PostgreSQL 16 문서 13.2 Transaction Isolation (2026-11-14 확인) | 문서 근거 |
 | 2026-11-14 | [기출문제 — 다중 리전 동시 가동(Multi-Region Active-Active) 재해복구시스템의 개념과 기술 요소](posts/PE/exam/2026-11-14-multi-region-active-active-dr/index.md) | 심화 | AWS Prescriptive Guidance — AWS Multi-Region Fundamentals (2026-11-14 확인), AWS Disaster Recovery of Workloads on AWS (2021-02), Amazon DynamoDB Developer Guide — How global tables work (2026-11-14 확인), Azure Well-Architected Framework — Redundancy (2025-12-15 갱신), Azure Cosmos DB 문서 — Conflict resolution policies, Consistency levels (2026-04-27 갱신), NIST SP 800-34 Rev.1 (2010-05) | 문서 근거 |
 | 2026-11-13 | [기출문제 — 정보시스템 운영 감리와 유지보수 감리: 개념과 점검분야](posts/PE/exam/2026-11-13-information-system-operation-maintenance-audit/index.md) | 중급 | 정보시스템 운영 및 유지보수 감리 점검 가이드 Ver.2.0 (NIA, 2018.3), 정보시스템 감리기준 (행정안전부고시 제2017-1호) — 가이드 공지 근거, 전자정부법 (법률 제21394호, 2026.2.27. 일부개정) 제2조제14호 | 문서 근거 |
 | 2026-11-13 | [기출문제 — CPU·디스크 스케줄링, SJF와 SRT, SSTF와 SLTF](posts/PE/exam/2026-11-13-cpu-disk-scheduling-sjf-srt-sstf-sltf/index.md) | 중급 | Python 3.13.5, Silberschatz·Galvin·Gagne, Operating System Concepts 10th ed. (2018) Ch.5·Ch.11 슬라이드 (S. Weiss 개정판), Arpaci-Dusseau, Operating Systems: Three Easy Pieces v1.10 Ch.37, S. H. Fuller, MTPT Drum and Disk Scheduling Disciplines, ACM SOSP (1973) 요약본, Seltzer·Chen·Ousterhout, Disk Scheduling Revisited, USENIX Winter 1990 | 실행 검증 |
