@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <text x="440" y="32" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">varint 로 150 을 쓰는 과정과 지그재그 대응</text>
+
+  <!-- 1단계: 2진수 -->
+  <text x="30" y="72" font-size="15" font-weight="bold" fill="#1f2937">① 150 을 2진수로</text>
+  <rect x="300" y="52" width="250" height="34" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="425" y="75" font-size="16" text-anchor="middle" fill="#1f2937" font-family="Consolas, monospace">1001 0110</text>
+
+  <!-- 2단계: 7비트 묶음 -->
+  <text x="30" y="128" font-size="15" font-weight="bold" fill="#1f2937">② 낮은 자리부터 7비트씩 자른다</text>
+  <rect x="300" y="108" width="150" height="34" fill="#e8f0fe" stroke="#9ca3af"/>
+  <text x="375" y="131" font-size="16" text-anchor="middle" fill="#1f2937" font-family="Consolas, monospace">0010110</text>
+  <text x="375" y="160" font-size="13" text-anchor="middle" fill="#4b5563">낮은 묶음 (22)</text>
+  <rect x="470" y="108" width="150" height="34" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="545" y="131" font-size="16" text-anchor="middle" fill="#1f2937" font-family="Consolas, monospace">0000001</text>
+  <text x="545" y="160" font-size="13" text-anchor="middle" fill="#4b5563">높은 묶음 (1 × 128)</text>
+
+  <!-- 3단계: 바이트 -->
+  <text x="30" y="200" font-size="15" font-weight="bold" fill="#1f2937">③ 낮은 묶음을 먼저 쓰고,</text>
+  <text x="30" y="220" font-size="15" font-weight="bold" fill="#1f2937">    뒤에 더 있으면 맨 앞 비트를 1</text>
+  <rect x="300" y="186" width="150" height="40" fill="#e8f0fe" stroke="#9ca3af"/>
+  <text x="375" y="212" font-size="16" text-anchor="middle" fill="#1f2937" font-family="Consolas, monospace"><tspan fill="#2d6a4f" font-weight="bold">1</tspan>0010110</text>
+  <rect x="470" y="186" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="545" y="212" font-size="16" text-anchor="middle" fill="#1f2937" font-family="Consolas, monospace"><tspan fill="#9d0208" font-weight="bold">0</tspan>0000001</text>
+  <text x="375" y="248" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">0x96</text>
+  <text x="545" y="248" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">0x01</text>
+  <text x="650" y="205" font-size="13" fill="#2d6a4f">1 = 다음 바이트가 이어진다</text>
+  <text x="650" y="225" font-size="13" fill="#9d0208">0 = 여기서 끝</text>
+
+  <line x1="30" y1="272" x2="850" y2="272" stroke="#d1d5db"/>
+
+  <!-- 지그재그 -->
+  <text x="30" y="304" font-size="15" font-weight="bold" fill="#1f2937">④ 지그재그 — 부호 있는 값을 0 에서 가까운 순서로 다시 번호 매긴다</text>
+  <text x="30" y="346" font-size="14" fill="#1f2937">원래 값</text>
+  <text x="30" y="420" font-size="14" fill="#1f2937">인코딩 값</text>
+
+  <rect x="200" y="324" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="240" y="347" font-size="16" text-anchor="middle" fill="#1f2937">0</text>
+  <rect x="320" y="324" width="80" height="34" fill="#fef3c7" stroke="#9ca3af"/>
+  <text x="360" y="347" font-size="16" text-anchor="middle" fill="#1f2937">-1</text>
+  <rect x="440" y="324" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="480" y="347" font-size="16" text-anchor="middle" fill="#1f2937">1</text>
+  <rect x="560" y="324" width="80" height="34" fill="#fef3c7" stroke="#9ca3af"/>
+  <text x="600" y="347" font-size="16" text-anchor="middle" fill="#1f2937">-2</text>
+  <rect x="680" y="324" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="720" y="347" font-size="16" text-anchor="middle" fill="#1f2937">2</text>
+
+  <line x1="240" y1="358" x2="240" y2="398" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="360" y1="358" x2="360" y2="398" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="480" y1="358" x2="480" y2="398" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="600" y1="358" x2="600" y2="398" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="720" y1="358" x2="720" y2="398" stroke="#4b5563" stroke-width="1.5"/>
+
+  <rect x="200" y="398" width="80" height="34" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="240" y="421" font-size="16" text-anchor="middle" fill="#1f2937">0</text>
+  <rect x="320" y="398" width="80" height="34" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="360" y="421" font-size="16" text-anchor="middle" fill="#1f2937">1</text>
+  <rect x="440" y="398" width="80" height="34" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="480" y="421" font-size="16" text-anchor="middle" fill="#1f2937">2</text>
+  <rect x="560" y="398" width="80" height="34" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="600" y="421" font-size="16" text-anchor="middle" fill="#1f2937">3</text>
+  <rect x="680" y="398" width="80" height="34" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="720" y="421" font-size="16" text-anchor="middle" fill="#1f2937">4</text>
+
+  <text x="440" y="456" font-size="13" text-anchor="middle" fill="#4b5563">양수 p → 2p, 음수 n → 2|n| − 1 · 공식 (n &lt;&lt; 1) XOR (n &gt;&gt; 31) · 값은 code/varint.py 로 검산</text>
+</svg>

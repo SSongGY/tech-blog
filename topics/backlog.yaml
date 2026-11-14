@@ -7909,4 +7909,4 @@ topics:
     angle: "Protocol Buffers 인코딩 명세대로 varint·지그재그를 표준 라이브러리로 구현해 명세 예제(150 → 96 01)로 검산하고, 값 분포별 바이트 수를 고정 길이와 비교한다"
     code: python
     origin: manual
-    status: todo
+    status: done
