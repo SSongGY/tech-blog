@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="32" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">빈 블록 5개에 요청 212·417·112·426 KB 를 차례로 넣으면</text>
+
+  <!-- 머리 줄 -->
+  <rect x="20" y="52" width="110" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="75" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">기법</text>
+  <rect x="130" y="52" width="120" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="190" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">100</text>
+  <rect x="250" y="52" width="120" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="310" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">500</text>
+  <rect x="370" y="52" width="120" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="430" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">200</text>
+  <rect x="490" y="52" width="120" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="550" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">300</text>
+  <rect x="610" y="52" width="120" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="670" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">600</text>
+  <rect x="730" y="52" width="130" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="795" y="79" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">426 KB</text>
+
+  <!-- 최초 적합 -->
+  <rect x="20" y="96" width="110" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="75" y="130" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">최초 적합</text>
+  <rect x="130" y="96" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="190" y="130" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="250" y="96" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="310" y="120" font-size="14" text-anchor="middle" fill="#1f2937">212 · 112</text>
+  <text x="310" y="141" font-size="13" text-anchor="middle" fill="#4b5563">남음 176</text>
+  <rect x="370" y="96" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="430" y="130" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="490" y="96" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="550" y="130" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="610" y="96" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="670" y="120" font-size="14" text-anchor="middle" fill="#1f2937">417</text>
+  <text x="670" y="141" font-size="13" text-anchor="middle" fill="#4b5563">남음 183</text>
+  <rect x="730" y="96" width="130" height="58" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="795" y="120" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">대기</text>
+  <text x="795" y="141" font-size="13" text-anchor="middle" fill="#9d0208">합계 959 · 최대 300</text>
+
+  <!-- 다음 적합 -->
+  <rect x="20" y="154" width="110" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="75" y="188" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">다음 적합</text>
+  <rect x="130" y="154" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="190" y="188" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="250" y="154" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="310" y="178" font-size="14" text-anchor="middle" fill="#1f2937">212</text>
+  <text x="310" y="199" font-size="13" text-anchor="middle" fill="#4b5563">남음 288</text>
+  <rect x="370" y="154" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="430" y="188" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="490" y="154" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="550" y="188" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="610" y="154" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="670" y="178" font-size="14" text-anchor="middle" fill="#1f2937">417 · 112</text>
+  <text x="670" y="199" font-size="13" text-anchor="middle" fill="#4b5563">남음 71</text>
+  <rect x="730" y="154" width="130" height="58" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="795" y="178" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">대기</text>
+  <text x="795" y="199" font-size="13" text-anchor="middle" fill="#9d0208">합계 959 · 최대 300</text>
+
+  <!-- 최적 적합 -->
+  <rect x="20" y="212" width="110" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="75" y="246" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">최적 적합</text>
+  <rect x="130" y="212" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="190" y="246" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="250" y="212" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="310" y="236" font-size="14" text-anchor="middle" fill="#1f2937">417</text>
+  <text x="310" y="257" font-size="13" text-anchor="middle" fill="#4b5563">남음 83</text>
+  <rect x="370" y="212" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="430" y="236" font-size="14" text-anchor="middle" fill="#1f2937">112</text>
+  <text x="430" y="257" font-size="13" text-anchor="middle" fill="#4b5563">남음 88</text>
+  <rect x="490" y="212" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="550" y="236" font-size="14" text-anchor="middle" fill="#1f2937">212</text>
+  <text x="550" y="257" font-size="13" text-anchor="middle" fill="#4b5563">남음 88</text>
+  <rect x="610" y="212" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="670" y="236" font-size="14" text-anchor="middle" fill="#1f2937">426</text>
+  <text x="670" y="257" font-size="13" text-anchor="middle" fill="#4b5563">남음 174</text>
+  <rect x="730" y="212" width="130" height="58" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="795" y="236" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">배치</text>
+  <text x="795" y="257" font-size="13" text-anchor="middle" fill="#2d6a4f">600 에 들어감</text>
+
+  <!-- 최악 적합 -->
+  <rect x="20" y="270" width="110" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="75" y="304" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">최악 적합</text>
+  <rect x="130" y="270" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="190" y="304" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="250" y="270" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="310" y="294" font-size="14" text-anchor="middle" fill="#1f2937">417</text>
+  <text x="310" y="315" font-size="13" text-anchor="middle" fill="#4b5563">남음 83</text>
+  <rect x="370" y="270" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="430" y="304" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="490" y="270" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="550" y="304" font-size="14" text-anchor="middle" fill="#6b7280">—</text>
+  <rect x="610" y="270" width="120" height="58" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="670" y="294" font-size="14" text-anchor="middle" fill="#1f2937">212 · 112</text>
+  <text x="670" y="315" font-size="13" text-anchor="middle" fill="#4b5563">남음 276</text>
+  <rect x="730" y="270" width="130" height="58" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="795" y="294" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">대기</text>
+  <text x="795" y="315" font-size="13" text-anchor="middle" fill="#9d0208">합계 959 · 최대 300</text>
+
+  <text x="440" y="358" font-size="13" text-anchor="middle" fill="#4b5563">머리 줄의 숫자는 처음 빈 블록 크기(KB, 주소 순서). 칸 안은 그 블록에 들어간 요청과 끝에 남은 크기</text>
+  <text x="440" y="382" font-size="13" text-anchor="middle" fill="#9d0208">빨간 칸: 빈 공간 합계(959)는 요청보다 크지만 이어진 블록이 없어 못 넣음 — 외부 단편화</text>
+  <text x="440" y="404" font-size="13" text-anchor="middle" fill="#4b5563">code/placement.py 로 계산한 결과</text>
+</svg>
