@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 시작 -->
+  <rect x="300" y="20" width="280" height="48" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="440" y="42" text-anchor="middle" font-size="15">계약변경이 승인됨</text>
+  <text x="440" y="60" text-anchor="middle" font-size="13" fill="#555">범위·가격 변경 (문단 18·19)</text>
+  <line x1="440" y1="68" x2="440" y2="98" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 질문 1 -->
+  <rect x="200" y="100" width="480" height="62" rx="6" fill="#fff8eb" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="125" text-anchor="middle" font-size="14">⑴ 구별되는 재화·용역이 추가되고</text>
+  <text x="440" y="147" text-anchor="middle" font-size="14">⑵ 가격이 그 개별 판매가격만큼 오르는가 (문단 20)</text>
+  <line x1="680" y1="131" x2="718" y2="131" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="699" y="122" text-anchor="middle" font-size="13">예</text>
+  <rect x="720" y="100" width="140" height="62" rx="6" fill="#f1f3f5" stroke="#444" stroke-width="1.5"/>
+  <text x="790" y="126" text-anchor="middle" font-size="14" font-weight="bold">별도 계약</text>
+  <text x="790" y="147" text-anchor="middle" font-size="13">원 계약은 그대로</text>
+  <line x1="440" y1="162" x2="440" y2="210" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="456" y="192" font-size="13">아니오</text>
+
+  <!-- 질문 2 -->
+  <rect x="200" y="212" width="480" height="62" rx="6" fill="#fff8eb" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="237" text-anchor="middle" font-size="14">나머지 재화·용역이 이미 이전한 것과</text>
+  <text x="440" y="259" text-anchor="middle" font-size="14">구별되는가 (문단 21)</text>
+
+  <line x1="300" y1="274" x2="200" y2="330" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="232" y="296" text-anchor="middle" font-size="13">예</text>
+  <line x1="580" y1="274" x2="680" y2="330" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="652" y="296" text-anchor="middle" font-size="13">아니오</text>
+
+  <rect x="40" y="332" width="330" height="78" rx="6" fill="#f1f3f5" stroke="#444" stroke-width="1.5"/>
+  <text x="205" y="358" text-anchor="middle" font-size="14" font-weight="bold">기존 계약 종료 후 새 계약 — 21⑴</text>
+  <text x="205" y="380" text-anchor="middle" font-size="13">미인식 대가 + 추가 대가를 나머지에 배분</text>
+  <text x="205" y="399" text-anchor="middle" font-size="13">이미 잡은 수익은 건드리지 않는다</text>
+
+  <rect x="510" y="332" width="330" height="78" rx="6" fill="#f1f3f5" stroke="#444" stroke-width="1.5"/>
+  <text x="675" y="358" text-anchor="middle" font-size="14" font-weight="bold">기존 계약의 일부 — 21⑵</text>
+  <text x="675" y="380" text-anchor="middle" font-size="13">진행률·거래가격을 다시 계산해</text>
+  <text x="675" y="399" text-anchor="middle" font-size="13">변경일에 누적효과를 수익에 반영</text>
+
+  <text x="440" y="442" text-anchor="middle" font-size="13" fill="#555">두 경우가 섞여 있으면 문단의 목적에 맞게 결합해 처리한다 — 21⑶</text>
+</svg>

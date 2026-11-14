@@ -7931,4 +7931,4 @@ topics:
     angle: "제1115호 문단 18~21. 같은 수량 추가 주문을 가격 조건만 바꿔 세 갈래로 나누고 변경일 전후 수익을 계산해 비교한다"
     code: python
     origin: manual
-    status: writing
+    status: done
