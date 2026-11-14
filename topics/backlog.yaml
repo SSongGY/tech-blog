@@ -7877,3 +7877,36 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-123
+    title: "ALL·ANY 비교를 SQLite에서 쓰는 법 — MAX·MIN과 NOT EXISTS 재작성이 빈 집합과 NULL에서 갈리는 자리"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, subquery, "null", basics]
+    difficulty: 입문
+    angle: "SQLite 에 없는 > ALL·> ANY 를 MAX·MIN 비교와 NOT EXISTS·EXISTS 로 바꿔 쓰고, 부질의가 빈 집합이거나 NULL 을 품을 때 세 재작성의 결과가 갈리는 것을 실제로 돌려 본다"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-272
+    title: "연속 메모리 할당 — 최초·다음·최적·최악 적합과 외부 단편화"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, memory, 개념정리]
+    difficulty: 중급
+    angle: "교재 예제(분할 100·500·200·300·600, 요청 212·417·112·426)를 네 배치 기법으로 직접 계산해 검산하고, 50% 규칙과 압축·페이징으로 단편화를 다루는 방법을 비교한다"
+    code: python
+    origin: manual
+    status: todo
+  - id: gen-038
+    title: "가변 길이 정수 인코딩 — varint와 지그재그, 음수 하나가 10바이트가 되는 이유"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [encoding, varint, protobuf, zigzag]
+    difficulty: 중급
+    angle: "Protocol Buffers 인코딩 명세대로 varint·지그재그를 표준 라이브러리로 구현해 명세 예제(150 → 96 01)로 검산하고, 값 분포별 바이트 수를 고정 길이와 비교한다"
+    code: python
+    origin: manual
+    status: todo

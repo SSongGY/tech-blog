@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="34" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">price &lt; ALL (경쟁 가격) 을 세 가지로 바꿔 쓴 결과</text>
+
+  <!-- 머리 줄 -->
+  <rect x="25" y="58" width="230" height="56" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="140" y="81" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">상품 · 가격</text>
+  <text x="140" y="101" font-size="13" text-anchor="middle" fill="#1f2937">같은 분류의 경쟁 가격</text>
+  <rect x="255" y="58" width="150" height="56" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="330" y="81" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">표준 &lt; ALL</text>
+  <text x="330" y="101" font-size="13" text-anchor="middle" fill="#1f2937">(SQLite 에 없음)</text>
+  <rect x="405" y="58" width="150" height="56" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="480" y="81" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">&lt; MIN(…) [3-A]</text>
+  <text x="480" y="101" font-size="13" text-anchor="middle" fill="#1f2937">스칼라 부질의</text>
+  <rect x="555" y="58" width="150" height="56" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="630" y="81" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">NOT EXISTS [3-B]</text>
+  <text x="630" y="101" font-size="13" text-anchor="middle" fill="#1f2937">r.price &lt;= p.price</text>
+  <rect x="705" y="58" width="150" height="56" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="780" y="81" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">NOT EXISTS [3-C]</text>
+  <text x="780" y="101" font-size="13" text-anchor="middle" fill="#1f2937">(비교) IS NOT 1</text>
+
+  <!-- 1번 -->
+  <rect x="25" y="114" width="230" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="41" y="137" font-size="15" fill="#1f2937">1번 pen · 1000</text>
+  <text x="41" y="157" font-size="13" fill="#4b5563">경쟁 1200, 1500</text>
+  <rect x="255" y="114" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="330" y="147" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">참 → 남김</text>
+  <rect x="405" y="114" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="480" y="147" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">남김</text>
+  <rect x="555" y="114" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="630" y="147" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">남김</text>
+  <rect x="705" y="114" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="780" y="147" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">남김</text>
+
+  <!-- 2번 -->
+  <rect x="25" y="170" width="230" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="41" y="193" font-size="15" fill="#1f2937">2번 pen · 1300</text>
+  <text x="41" y="213" font-size="13" fill="#4b5563">경쟁 1200, 1500</text>
+  <rect x="255" y="170" width="150" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="330" y="203" font-size="15" text-anchor="middle" fill="#1f2937">거짓 → 뺌</text>
+  <rect x="405" y="170" width="150" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="480" y="203" font-size="15" text-anchor="middle" fill="#1f2937">뺌</text>
+  <rect x="555" y="170" width="150" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="630" y="203" font-size="15" text-anchor="middle" fill="#1f2937">뺌</text>
+  <rect x="705" y="170" width="150" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="780" y="203" font-size="15" text-anchor="middle" fill="#1f2937">뺌</text>
+
+  <!-- 3번 -->
+  <rect x="25" y="226" width="230" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="41" y="249" font-size="15" fill="#1f2937">3번 note · 2500</text>
+  <text x="41" y="269" font-size="13" fill="#4b5563">경쟁 3000, NULL</text>
+  <rect x="255" y="226" width="150" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="330" y="259" font-size="15" text-anchor="middle" fill="#1f2937">NULL → 뺌</text>
+  <rect x="405" y="226" width="150" height="56" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="480" y="250" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">남김</text>
+  <text x="480" y="270" font-size="13" text-anchor="middle" fill="#9d0208">MIN 이 NULL 을 건너뜀</text>
+  <rect x="555" y="226" width="150" height="56" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="630" y="250" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">남김</text>
+  <text x="630" y="270" font-size="13" text-anchor="middle" fill="#9d0208">NULL 행은 안 걸림</text>
+  <rect x="705" y="226" width="150" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="780" y="259" font-size="15" text-anchor="middle" fill="#1f2937">뺌</text>
+
+  <!-- 4번 -->
+  <rect x="25" y="282" width="230" height="56" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="41" y="305" font-size="15" fill="#1f2937">4번 ink · 5000</text>
+  <text x="41" y="325" font-size="13" fill="#4b5563">경쟁 행 없음 (빈 집합)</text>
+  <rect x="255" y="282" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="330" y="315" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">참 → 남김</text>
+  <rect x="405" y="282" width="150" height="56" fill="#fde8e8" stroke="#9ca3af"/>
+  <text x="480" y="306" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">뺌</text>
+  <text x="480" y="326" font-size="13" text-anchor="middle" fill="#9d0208">MIN 이 NULL</text>
+  <rect x="555" y="282" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="630" y="315" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">남김</text>
+  <rect x="705" y="282" width="150" height="56" fill="#e6f4ea" stroke="#9ca3af"/>
+  <text x="780" y="315" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">남김</text>
+
+  <!-- 합계 -->
+  <rect x="25" y="338" width="230" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="41" y="364" font-size="15" font-weight="bold" fill="#1f2937">남은 상품</text>
+  <rect x="255" y="338" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="330" y="364" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">1, 4</text>
+  <rect x="405" y="338" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="480" y="364" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">1, 3</text>
+  <rect x="555" y="338" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="630" y="364" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">1, 3, 4</text>
+  <rect x="705" y="338" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="780" y="364" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">1, 4</text>
+
+  <text x="440" y="402" font-size="13" text-anchor="middle" fill="#4b5563">빨간 칸이 표준 ALL 과 갈린 자리 · 표준 열은 PostgreSQL 16 문서의 ALL 규칙, 나머지는 SQLite 3.49.1 실행 결과</text>
+</svg>
