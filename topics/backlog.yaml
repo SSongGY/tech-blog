@@ -7997,4 +7997,4 @@ topics:
     angle: "제1115호 문단 70~72. 유통사에 입점 장려금·광고비·쿠폰을 지급하는 가상 식품회사로, 구별되는 용역 여부와 공정가치 초과분에 따라 비용과 매출 차감이 갈리는 것을 계산하고, 나중 사건 기준의 차감 시점을 분기별로 보인다"
     code: python
     origin: manual
-    status: writing
+    status: done
