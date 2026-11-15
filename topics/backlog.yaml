@@ -7821,7 +7821,7 @@ topics:
     angle: "가상 프로젝트로 PV·EV·AC 를 직접 계산하고 차이·지수·완료 시점 예측(EAC 3식·TCPI)을 검산한다. 일정 지수가 완료 시점에 1.0 으로 돌아가는 한계도 계산으로 보인다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: gen-037
     title: "MinHash와 LSH 밴딩 — 자카드 유사도를 서명 몇 개로 추정하기"
     category: Architecture

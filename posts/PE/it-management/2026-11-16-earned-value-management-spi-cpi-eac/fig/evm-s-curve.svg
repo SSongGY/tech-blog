@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="tip" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222222"/>
+    </marker>
+  </defs>
+
+  <text x="16" y="26" font-size="16" font-weight="bold" fill="#222222">누적 PV·EV·AC 곡선 — 5개월 시점의 SV·CV 와 완료 시점</text>
+
+  <!-- 축: x = 80 + 56.923 × 월, y = 380 − 0.28333 × 금액 -->
+  <line x1="80" y1="380" x2="830" y2="380" stroke="#444444"/>
+  <line x1="80" y1="380" x2="80" y2="50" stroke="#444444"/>
+  <text x="80" y="400" text-anchor="middle" font-size="13" fill="#444444">0</text>
+  <text x="364.6" y="400" text-anchor="middle" font-size="13" fill="#444444">5</text>
+  <text x="649.2" y="400" text-anchor="middle" font-size="13" fill="#444444">10</text>
+  <text x="820" y="400" text-anchor="middle" font-size="13" fill="#444444">13</text>
+  <text x="455" y="420" text-anchor="middle" font-size="13" fill="#444444">경과 월</text>
+  <text x="72" y="384" text-anchor="end" font-size="13" fill="#444444">0</text>
+  <text x="72" y="242" text-anchor="end" font-size="13" fill="#444444">500</text>
+  <text x="72" y="100" text-anchor="end" font-size="13" fill="#444444">1000</text>
+  <text x="34" y="60" font-size="13" fill="#444444">백만 원</text>
+
+  <!-- BAC 기준선 -->
+  <line x1="80" y1="96.7" x2="830" y2="96.7" stroke="#9ca3af" stroke-dasharray="5 4"/>
+  <text x="90" y="90" font-size="13" fill="#6b7280">BAC 1,000</text>
+
+  <!-- PV: 10개월까지 100씩, 그 뒤 평탄 -->
+  <polyline fill="none" stroke="#1f4e79" stroke-width="2.5" points="80,380 136.9,351.7 193.8,323.3 250.8,295 307.7,266.7 364.6,238.3 421.5,210 478.5,181.7 535.4,153.3 592.3,125 649.2,96.7 706.2,96.7 763.1,96.7 820,96.7"/>
+  <!-- EV -->
+  <polyline fill="none" stroke="#2d6a4f" stroke-width="2.5" points="80,380 136.9,363 193.8,340.3 250.8,314.8 307.7,292.2 364.6,272.3 421.5,246.8 478.5,218.5 535.4,190.2 592.3,161.8 649.2,136.3 706.2,113.7 763.1,102.3 820,96.7"/>
+  <!-- AC -->
+  <polyline fill="none" stroke="#9d0208" stroke-width="2.5" stroke-dasharray="7 4" points="80,380 136.9,360.2 193.8,333.2 250.8,304.9 307.7,278 364.6,253.9 421.5,225.6 478.5,194.4 535.4,164.7 592.3,134.9 649.2,108 706.2,83.9 763.1,71.2 820,64.1"/>
+
+  <!-- 5개월 시점 -->
+  <line x1="364.6" y1="380" x2="364.6" y2="200" stroke="#b45309" stroke-dasharray="3 3"/>
+  <text x="364.6" y="194" text-anchor="middle" font-size="13" fill="#b45309">현재(5개월)</text>
+  <line x1="350" y1="240.5" x2="350" y2="270" stroke="#222222" marker-start="url(#tip)" marker-end="url(#tip)"/>
+  <text x="342" y="214" text-anchor="end" font-size="13" fill="#222222">SV = EV − PV</text>
+  <text x="342" y="230" text-anchor="end" font-size="13" fill="#222222">= −120</text>
+  <line x1="379" y1="256" x2="379" y2="270" stroke="#222222" marker-start="url(#tip)" marker-end="url(#tip)"/>
+  <text x="372" y="300" font-size="13" fill="#222222">CV = EV − AC = −65</text>
+
+  <!-- 완료 시점 -->
+  <circle cx="820" cy="64.1" r="4" fill="#9d0208"/>
+  <text x="812" y="54" text-anchor="end" font-size="13" fill="#9d0208">최종 AC 1,115</text>
+  <circle cx="820" cy="96.7" r="4" fill="#2d6a4f"/>
+  <text x="812" y="184" text-anchor="end" font-size="13" fill="#2d6a4f">13개월: EV = PV, SV 0, SPI 1.0</text>
+  <line x1="649.2" y1="380" x2="649.2" y2="200" stroke="#9ca3af" stroke-dasharray="2 4"/>
+  <text x="656" y="372" font-size="13" fill="#6b7280">계획 완료</text>
+
+  <!-- 범례 -->
+  <line x1="120" y1="446" x2="150" y2="446" stroke="#1f4e79" stroke-width="2.5"/>
+  <text x="158" y="451" font-size="13" fill="#222222">PV 계획 가치(BCWS)</text>
+  <line x1="320" y1="446" x2="350" y2="446" stroke="#2d6a4f" stroke-width="2.5"/>
+  <text x="358" y="451" font-size="13" fill="#222222">EV 획득 가치(BCWP)</text>
+  <line x1="520" y1="446" x2="550" y2="446" stroke="#9d0208" stroke-width="2.5" stroke-dasharray="7 4"/>
+  <text x="558" y="451" font-size="13" fill="#222222">AC 실제 원가(ACWP)</text>
+</svg>
