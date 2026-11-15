@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">RSA 키 생성 4단계와 기본 연산 4가지 (RFC 8017)</text>
+
+  <!-- 키 생성 -->
+  <rect x="25" y="55" width="180" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="115" y="80" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">① 소수 p, q 선택</text>
+  <text x="115" y="103" font-size="13" text-anchor="middle" fill="#374151">서로 다른 홀수 소수</text>
+
+  <rect x="235" y="55" width="180" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="325" y="80" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">② n = p × q</text>
+  <text x="325" y="103" font-size="13" text-anchor="middle" fill="#374151">λ(n) = lcm(p−1, q−1)</text>
+
+  <rect x="445" y="55" width="190" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="540" y="80" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">③ e 선택</text>
+  <text x="540" y="103" font-size="13" text-anchor="middle" fill="#374151">3 ≤ e ≤ n−1, gcd(e, λ(n)) = 1</text>
+
+  <rect x="665" y="55" width="190" height="64" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="760" y="80" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">④ d = e⁻¹ mod λ(n)</text>
+  <text x="760" y="103" font-size="13" text-anchor="middle" fill="#374151">e × d ≡ 1 (mod λ(n))</text>
+
+  <line x1="205" y1="87" x2="233" y2="87" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="415" y1="87" x2="443" y2="87" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="635" y1="87" x2="663" y2="87" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 키 -->
+  <rect x="110" y="165" width="300" height="62" rx="6" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="260" y="191" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">공개키 (n, e)</text>
+  <text x="260" y="213" font-size="13" text-anchor="middle" fill="#374151">누구에게나 공개한다</text>
+
+  <rect x="470" y="165" width="340" height="62" rx="6" fill="#fff4e5" stroke="#b45309" stroke-width="2"/>
+  <text x="640" y="191" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">개인키 (n, d) 또는 (p, q, dP, dQ, qInv)</text>
+  <text x="640" y="213" font-size="13" text-anchor="middle" fill="#374151">뒤의 다섯 값이 CRT 복호용 표현</text>
+
+  <line x1="325" y1="119" x2="275" y2="163" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="760" y1="119" x2="680" y2="163" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 연산 -->
+  <rect x="40" y="285" width="380" height="92" rx="6" fill="#ffffff" stroke="#6b7280"/>
+  <text x="230" y="311" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">기밀성 — 암호화와 복호</text>
+  <text x="230" y="336" font-size="14" text-anchor="middle" fill="#2d6a4f">RSAEP  c = mᵉ mod n  (공개키)</text>
+  <text x="230" y="361" font-size="14" text-anchor="middle" fill="#b45309">RSADP  m = cᵈ mod n  (개인키)</text>
+
+  <rect x="460" y="285" width="380" height="92" rx="6" fill="#ffffff" stroke="#6b7280"/>
+  <text x="650" y="311" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">인증 — 서명과 검증</text>
+  <text x="650" y="336" font-size="14" text-anchor="middle" fill="#b45309">RSASP1  s = mᵈ mod n  (개인키)</text>
+  <text x="650" y="361" font-size="14" text-anchor="middle" fill="#2d6a4f">RSAVP1  m = sᵉ mod n  (공개키)</text>
+
+  <line x1="230" y1="227" x2="230" y2="283" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="680" y1="227" x2="680" y2="283" stroke="#b45309" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="380" y1="227" x2="560" y2="283" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+  <line x1="500" y1="227" x2="330" y2="283" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrow)"/>
+
+  <text x="440" y="408" font-size="13" text-anchor="middle" fill="#4b5563">m, c, s 는 모두 0 이상 n−1 이하 · 실습 예: p=61, q=53, e=17 → n=3233, λ(n)=780, d=413</text>
+</svg>

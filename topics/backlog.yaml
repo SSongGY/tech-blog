@@ -7964,7 +7964,7 @@ topics:
     angle: "RFC 8017 의 키 생성·RSAEP·RSADP·CRT 복호를 작은 소수로 직접 계산해 검산하고, 교과서 RSA 가 결정적이라 패딩이 필요한 이유를 보인다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: gen-039
     title: "Gorilla 시계열 압축 — 타임스탬프 delta-of-delta와 값 XOR 부호화"
     category: Architecture
