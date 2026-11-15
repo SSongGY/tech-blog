@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">Gorilla 점 하나의 부호화 — 시각은 delta-of-delta, 값은 XOR</text>
+
+  <!-- 왼쪽: 타임스탬프 -->
+  <rect x="30" y="52" width="380" height="50" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="220" y="74" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">시각: D = (tₙ − tₙ₋₁) − (tₙ₋₁ − tₙ₋₂)</text>
+  <text x="220" y="93" font-size="13" text-anchor="middle" fill="#374151">간격이 그대로면 D = 0</text>
+
+  <rect x="30" y="118" width="380" height="40" rx="4" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="46" y="143" font-size="14" fill="#1f2937">D = 0</text>
+  <text x="394" y="143" font-size="14" font-weight="bold" text-anchor="end" fill="#2d6a4f">'0' · 1비트</text>
+
+  <rect x="30" y="166" width="380" height="40" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="191" font-size="14" fill="#1f2937">−63 ≤ D ≤ 64</text>
+  <text x="394" y="191" font-size="14" text-anchor="end" fill="#1f2937">'10' + 7비트 = 9비트</text>
+
+  <rect x="30" y="214" width="380" height="40" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="239" font-size="14" fill="#1f2937">−255 ≤ D ≤ 256</text>
+  <text x="394" y="239" font-size="14" text-anchor="end" fill="#1f2937">'110' + 9비트 = 12비트</text>
+
+  <rect x="30" y="262" width="380" height="40" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="46" y="287" font-size="14" fill="#1f2937">−2047 ≤ D ≤ 2048</text>
+  <text x="394" y="287" font-size="14" text-anchor="end" fill="#1f2937">'1110' + 12비트 = 16비트</text>
+
+  <rect x="30" y="310" width="380" height="40" rx="4" fill="#fde8e8" stroke="#9d0208"/>
+  <text x="46" y="335" font-size="14" fill="#1f2937">그 밖</text>
+  <text x="394" y="335" font-size="14" font-weight="bold" text-anchor="end" fill="#9d0208">'1111' + 32비트 = 36비트</text>
+
+  <!-- 오른쪽: 값 -->
+  <rect x="470" y="52" width="380" height="50" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="660" y="74" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">값: X = 이번 값 XOR 직전 값</text>
+  <text x="660" y="93" font-size="13" text-anchor="middle" fill="#374151">64비트 double 의 비트끼리 XOR</text>
+
+  <rect x="470" y="118" width="380" height="40" rx="4" fill="#e6f4ea" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="486" y="143" font-size="14" fill="#1f2937">X = 0 (같은 값)</text>
+  <text x="834" y="143" font-size="14" font-weight="bold" text-anchor="end" fill="#2d6a4f">'0' · 1비트</text>
+
+  <rect x="470" y="166" width="380" height="64" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="486" y="190" font-size="14" fill="#1f2937">앞·뒤 0 이 직전 창보다 많거나 같다</text>
+  <text x="486" y="216" font-size="14" fill="#1f2937">→ '10' + 직전 창 너비만큼의 비트</text>
+
+  <rect x="470" y="238" width="380" height="112" rx="4" fill="#fff4e5" stroke="#b45309"/>
+  <text x="486" y="262" font-size="14" fill="#1f2937">그 밖 → 새 창을 연다</text>
+  <text x="486" y="288" font-size="14" fill="#1f2937">'11' + 앞자리 0 개수 5비트</text>
+  <text x="510" y="312" font-size="14" fill="#1f2937">+ 의미 비트 길이 6비트</text>
+  <text x="510" y="336" font-size="14" fill="#1f2937">+ 의미 비트 (머리만 13비트)</text>
+
+  <text x="440" y="388" font-size="13" text-anchor="middle" fill="#4b5563">블록 머리: 두 시간 경계 시각 64비트 + 첫 시각과의 차 14비트 + 첫 값 64비트(압축 없음)</text>
+  <text x="440" y="412" font-size="13" text-anchor="middle" fill="#4b5563">점마다 시각 부호 뒤에 값 부호가 이어 붙는다 · 초록은 1비트로 끝나는 경로</text>
+</svg>

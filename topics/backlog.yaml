@@ -7975,4 +7975,4 @@ topics:
     angle: "VLDB 2015 Gorilla 논문의 부호화를 파이썬으로 구현해 규칙적인 시계열과 들쭉날쭉한 시계열의 점당 비트 수를 재고, 어디서 압축이 무너지는지 본다"
     code: python
     origin: manual
-    status: writing
+    status: done
