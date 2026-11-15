@@ -1,0 +1,152 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-15-sql-bucket-histogram-integer-division
+# 명령      : python bucket_histogram.py
+# 수행 시각 : 2026-11-15 19:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[reading]  15행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  reading_id | INTEGER | PK
+  temp       | INTEGER | NOT NULL
+  temp_exact | REAL    | NOT NULL
+
+  reading_id | temp | temp_exact
+  -----------+------+-----------
+           1 |  -12 |      -12.4
+           2 |   -7 |       -6.6
+           3 |   -5 |       -5.0
+           4 |   -3 |       -3.2
+           5 |   -1 |       -0.8
+           6 |    0 |        0.0
+           7 |    2 |        2.3
+           8 |    4 |        4.9
+           9 |    5 |        5.0
+          10 |    9 |        9.1
+          11 |   13 |       12.7
+          12 |   18 |       18.2
+  … 3행 더 있음
+
+[1-A] BETWEEN 으로 구간을 나누면 (경계값 5 가 두 구간에 걸린다)
+  sql> SELECT SUM(temp BETWEEN 0 AND 5) AS b_0_5, SUM(temp BETWEEN 5 AND 10) AS b_5_10, SUM(temp BETWEEN 0 AND 10) AS b_0_10 FROM reading
+  b_0_5 | b_5_10 | b_0_10
+  4 | 2 | 5
+  (1행)
+
+[1-B] CASE 로 반열린 구간 [하한, 상한) 을 쓰면
+  sql> SELECT CASE WHEN temp < 0 THEN '영하' WHEN temp < 10 THEN '0~9' WHEN temp < 20 THEN '10~19' ELSE '20 이상' END AS band, COUNT(*) AS n FROM reading GROUP BY band ORDER BY MIN(temp)
+  band | n
+  영하 | 5
+  0~9 | 5
+  10~19 | 2
+  20 이상 | 3
+  (4행)
+
+[2] 정수 나눗셈 버킷 (temp / 5) * 5
+  sql> SELECT (temp / ?) * ? AS bucket_start, COUNT(*) AS n, group_concat(temp, ',') AS members FROM reading GROUP BY bucket_start ORDER BY bucket_start
+  bucket_start | n | members
+  -10 | 1 | -12
+  -5 | 2 | -7,-5
+  0 | 5 | -3,-1,0,2,4
+  5 | 2 | 5,9
+  10 | 1 | 13
+  15 | 1 | 18
+  20 | 2 | 21,22
+  30 | 1 | 33
+  (8행)
+
+[3-A] 음수에서 / 와 % 가 내는 값
+  sql> SELECT temp, temp / 5 AS div, temp % 5 AS rem, (temp / 5) * 5 + temp % 5 AS restored FROM reading WHERE temp < 1 ORDER BY temp
+  temp | div | rem | restored
+  -12 | -2 | -2 | -12
+  -7 | -1 | -2 | -7
+  -5 | -1 | 0 | -5
+  -3 | 0 | -3 | -3
+  -1 | 0 | -1 | -1
+  0 | 0 | 0 | 0
+  (6행)
+
+[3-B] floor() 가 있는가
+  sql> SELECT floor(-3 / 5.0) AS f, floor(-0.6) AS g
+  f | g
+  -1.0 | -1.0
+  (1행)
+
+[4-A] floor() 로 내림한 버킷
+  sql> SELECT CAST(floor(temp * 1.0 / ?) AS INTEGER) * ? AS bucket_start, COUNT(*) AS n, group_concat(temp, ',') AS members FROM reading GROUP BY bucket_start ORDER BY bucket_start
+  bucket_start | n | members
+  -15 | 1 | -12
+  -10 | 1 | -7
+  -5 | 3 | -5,-3,-1
+  0 | 3 | 0,2,4
+  5 | 2 | 5,9
+  10 | 1 | 13
+  15 | 1 | 18
+  20 | 2 | 21,22
+  30 | 1 | 33
+  (9행)
+
+[4-B] floor() 없이 — 나머지가 음수면 한 칸 내린다
+  sql> SELECT (temp / ? - (temp % ? < 0)) * ? AS bucket_start, COUNT(*) AS n, group_concat(temp, ',') AS members FROM reading GROUP BY bucket_start ORDER BY bucket_start
+  bucket_start | n | members
+  -15 | 1 | -12
+  -10 | 1 | -7
+  -5 | 3 | -5,-3,-1
+  0 | 3 | 0,2,4
+  5 | 2 | 5,9
+  10 | 1 | 13
+  15 | 1 | 18
+  20 | 2 | 21,22
+  30 | 1 | 33
+  (9행)
+
+[5] 빈 구간까지 0 으로 채우기 (재귀 CTE 로 구간표를 만들고 LEFT JOIN)
+  sql> WITH RECURSIVE bucket(start) AS ( SELECT -15 UNION ALL SELECT start + ? FROM bucket WHERE start + ? <= 30 ), tagged AS ( SELECT temp, (temp / ? - (temp % ? < 0)) * ? AS start FROM reading ) SELECT b.start AS bucket_start, b.start + ? - 1 AS bucket_end, COUNT(t.temp) AS n, printf('%.*c', COUNT(t.temp), '#') AS bar_printf, substr('##########', 1, COUNT(t.temp)) AS bar_substr FROM bucket AS b LEFT JOIN tagged AS t ON t.start = b.start GROUP BY b.start ORDER BY b.start
+  bucket_start | bucket_end | n | bar_printf | bar_substr
+  -15 | -11 | 1 | # | #
+  -10 | -6 | 1 | # | #
+  -5 | -1 | 3 | ### | ###
+  0 | 4 | 3 | ### | ###
+  5 | 9 | 2 | ## | ##
+  10 | 14 | 1 | # | #
+  15 | 19 | 1 | # | #
+  20 | 24 | 2 | ## | ##
+  25 | 29 | 0 | # | 
+  30 | 34 | 1 | # | #
+  (10행)
+
+[5-B] printf 의 %.*c 에 반복 횟수 0, 1, 3 을 주면
+  sql> SELECT printf('[%.*c]', 0, '#') AS zero, printf('[%.*c]', 1, '#') AS one, printf('[%.*c]', 3, '#') AS three, printf('[%.*c]', -1, '#') AS minus_one
+  zero | one | three | minus_one
+  [#] | [#] | [###] | [#]
+  (1행)
+
+[6] REAL 값 — CAST 는 0 쪽으로 자르고 floor 는 내린다
+  sql> SELECT temp_exact, CAST(temp_exact / 5 AS INTEGER) * 5 AS by_cast, CAST(floor(temp_exact / 5) AS INTEGER) * 5 AS by_floor FROM reading WHERE temp_exact < 6 ORDER BY temp_exact
+  temp_exact | by_cast | by_floor
+  -12.4 | -10 | -15
+  -6.6 | -5 | -10
+  -5.0 | -5 | -5
+  -3.2 | 0 | -5
+  -0.8 | 0 | -5
+  0.0 | 0 | 0
+  2.3 | 0 | 0
+  4.9 | 0 | 0
+  5.0 | 5 | 5
+  (9행)
+

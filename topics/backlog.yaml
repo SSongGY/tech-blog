@@ -7943,3 +7943,36 @@ topics:
     code: none
     origin: exam
     status: done
+  - id: db-124
+    title: "값을 구간으로 묶어 세기 — 정수 나눗셈 버킷과 음수에서 틀어지는 경계"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, group-by, histogram, basics]
+    difficulty: 입문
+    angle: "CASE 구간과 정수 나눗셈 버킷으로 분포표를 만들고, 음수가 0 쪽으로 잘려 엉뚱한 구간에 들어가는 것과 빈 구간이 사라지는 것을 재현해 고친다"
+    code: python
+    origin: manual
+    status: done
+  - id: pe-274
+    title: "RSA 공개키 암호 — 키 생성, 암복호, 서명을 작은 수로 계산하기"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, rsa, 개념정리]
+    difficulty: 중급
+    angle: "RFC 8017 의 키 생성·RSAEP·RSADP·CRT 복호를 작은 소수로 직접 계산해 검산하고, 교과서 RSA 가 결정적이라 패딩이 필요한 이유를 보인다"
+    code: python
+    origin: manual
+    status: writing
+  - id: gen-039
+    title: "Gorilla 시계열 압축 — 타임스탬프 delta-of-delta와 값 XOR 부호화"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [time-series, compression, gorilla, float]
+    difficulty: 심화
+    angle: "VLDB 2015 Gorilla 논문의 부호화를 파이썬으로 구현해 규칙적인 시계열과 들쭉날쭉한 시계열의 점당 비트 수를 재고, 어디서 압축이 무너지는지 본다"
+    code: python
+    origin: manual
+    status: writing
