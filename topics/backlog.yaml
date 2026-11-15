@@ -7976,3 +7976,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-147
+    title: "변동대가 추정과 제약 — 기댓값과 가능성이 가장 높은 금액, 되돌릴 수익의 크기"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, variable-consideration]
+    difficulty: 중급
+    angle: "제1115호 문단 50~57·59·87~88. 성과보너스와 소급 수량 리베이트를 가진 가상 회사로 두 추정 방법을 계산하고, 결과별로 되돌릴 수익 크기를 비교해 제약의 뜻을 보인다. 분기별 재추정의 누적 따라잡기도 계산한다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-148
+    title: "고객에게 지급할 대가 — 판매장려금과 광고 지원금을 매출에서 빼는 기준과 시점"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, consideration-payable]
+    difficulty: 중급
+    angle: "제1115호 문단 70~72. 유통사에 입점 장려금·광고비·쿠폰을 지급하는 가상 식품회사로, 구별되는 용역 여부와 공정가치 초과분에 따라 비용과 매출 차감이 갈리는 것을 계산하고, 나중 사건 기준의 차감 시점을 분기별로 보인다"
+    code: python
+    origin: manual
+    status: writing
