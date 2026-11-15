@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **739편** · 갱신 2026-11-15
+총 **742편** · 갱신 2026-11-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 110편
+## DB문법 (basics) — 111편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-15 | [값을 구간으로 묶어 세기 — 정수 나눗셈 버킷과 음수에서 틀어지는 경계](posts/Database/sql-basics/2026-11-15-sql-bucket-histogram-integer-division/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-14 | [ALL·ANY 비교를 SQLite에서 쓰는 법 — MAX·MIN과 NOT EXISTS 재작성이 빈 집합과 NULL에서 갈리는 자리](posts/Database/sql-basics/2026-11-14-sqlite-all-any-rewrite-empty-null/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-13 | [한 질의로 쪽 데이터와 전체 건수 받기 — COUNT(*) OVER ()는 LIMIT보다 먼저 센다](posts/Database/sql-basics/2026-11-13-count-over-total-with-limit-paging/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-12 | [NULL끼리도 같다고 비교하기 — IS와 IS DISTINCT FROM으로 두 스냅숏의 바뀐 행 찾기](posts/Database/sql-basics/2026-11-12-sql-is-distinct-from-null-safe-compare/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -144,10 +145,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 256편
+## 기술사 (pe) — 257편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-15 | [RSA 공개키 암호 — 키 생성, 암복호, 서명을 작은 수로 계산하기](posts/PE/security/2026-11-15-rsa-key-generation-encrypt-sign/index.md) | 중급 | Python 3.13.5, RFC 8017 PKCS #1 v2.2 (2016-11), NIST SP 800-131A Rev.2 (2019-03) | 실행 검증 |
 | 2026-11-15 | [인터넷 프로토콜 설계 원칙 — RFC 1958 아키텍처 원칙과 강건성 원칙의 재평가](posts/PE/network/2026-11-15-internet-protocol-design-principles-robustness/index.md) | 중급 | RFC 1958 (1996-06), RFC 1122 (1989-10), RFC 6709 (2012-09), RFC 8701 (2020-01), RFC 9413 (2023-06) | 문서 근거 |
 | 2026-11-14 | [다중 리전 쓰기 충돌 해결 — 마지막 쓰기 우선, 사용자 정의 병합, CRDT](posts/PE/database/2026-11-14-multi-region-write-conflict-lww-merge-crdt/index.md) | 중급 | Shapiro et al., Conflict-free Replicated Data Types, INRIA RR-7687 v2 (2011-08), DeCandia et al., Dynamo, SOSP 2007, Azure Cosmos DB 문서 — Conflict resolution policies (2026-04-27 갱신), Amazon DynamoDB Developer Guide — How global tables work (2026-11-14 확인) | 문서 근거 |
 | 2026-11-14 | [전역 트래픽 라우팅 — DNS 기반 부하분산과 애니캐스트](posts/PE/network/2026-11-14-global-traffic-routing-dns-anycast/index.md) | 중급 | RFC 4786 (2006-12), RFC 7094 (2014-01), RFC 8767 (2020-03), RFC 7871 (2016-05), Azure Traffic Manager·Front Door 문서 (2026-10 갱신), AWS Global Accelerator Developer Guide (2026-11-14 확인) | 문서 근거 |
@@ -428,10 +430,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 74편
+## 일반 (general) — 75편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-15 | [Gorilla 시계열 압축 — 타임스탬프 delta-of-delta와 값 XOR 부호화](posts/Architecture/datastructure/2026-11-15-gorilla-time-series-compression/index.md) | 심화 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-14 | [가변 길이 정수 인코딩 — varint와 지그재그, 음수 하나가 10바이트가 되는 이유](posts/Architecture/datastructure/2026-11-14-varint-zigzag-encoding/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-12 | [rsync의 롤링 체크섬 — 파일 전체를 보내지 않고 바뀐 부분만 보내는 원리](posts/Architecture/architecture/2026-11-12-rsync-rolling-checksum-delta-transfer/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-11 | [타이머 휠 — 수만 개의 타임아웃을 정렬 없이 거는 자료구조](posts/Architecture/datastructure/2026-11-11-timing-wheel-hashed-hierarchical/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
