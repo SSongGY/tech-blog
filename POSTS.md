@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **742편** · 갱신 2026-11-15
+총 **744편** · 갱신 2026-11-15
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -630,10 +630,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 146편
+## 주식·재무 (finance) — 148편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-15 | [변동대가 추정과 제약 — 기댓값과 가능성이 가장 높은 금액, 되돌릴 수익의 크기](posts/Finance/statements/2026-11-15-variable-consideration-estimate-constraint/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-11-15 | [고객에게 지급할 대가 — 판매장려금과 광고 지원금을 매출에서 빼는 기준과 시점](posts/Finance/statements/2026-11-15-consideration-payable-to-customer/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-14 | [유의적인 금융요소 — 할부판매와 선수금에서 거래가격을 현금판매가격으로 조정하는 법](posts/Finance/statements/2026-11-14-significant-financing-component/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-14 | [계약변경 — 별도 계약, 기존 계약 종료 후 새 계약, 누적효과 일괄조정의 세 갈래](posts/Finance/statements/2026-11-14-contract-modification-three-paths/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-13 | [위탁약정 — 유통업자에게 넘긴 제품을 언제 매출로 잡는가](posts/Finance/statements/2026-11-13-consignment-arrangement-revenue-timing/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
