@@ -8075,3 +8075,25 @@ topics:
     code: none
     origin: manual
     status: done
+  - id: fin-149
+    title: "비현금 대가 — 주식이나 설비로 받는 판매 대가를 공정가치로 재는 법"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, noncash-consideration]
+    difficulty: 중급
+    angle: "제1115호 문단 66~69. 공정가치 측정, 추정 불가 시 개별 판매가격 참조, 형태 때문의 변동과 그 밖의 변동 구분(56~58 제약), 고객 제공 자재의 통제 판단. 가상 회사가 주식으로 받는 용역 대가로 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-150
+    title: "거래가격 배분 — 묶음 할인을 일부 수행의무에만 몰아주는 조건과 잔여접근법"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, transaction-price-allocation]
+    difficulty: 중급
+    angle: "제1115호 문단 73~86. 상대적 개별 판매가격 배분, 추정 방법 3가지(시장평가 조정·예상원가 이윤 가산·잔여), 할인 비례 배분 원칙과 82의 3조건, 83 순서, 85 변동대가 특정 배분. 가상 회사 묶음 판매로 배분 방식별 매출 시점 비교"
+    code: python
+    origin: manual
+    status: writing

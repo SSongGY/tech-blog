@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 출발 -->
+  <rect x="30" y="30" width="230" height="64" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="145" y="56" text-anchor="middle" font-size="14">고객이 현금 외의 형태로</text>
+  <text x="145" y="76" text-anchor="middle" font-size="14">대가를 약속 (문단 66)</text>
+
+  <line x1="260" y1="62" x2="320" y2="62" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 질문 -->
+  <rect x="325" y="30" width="230" height="64" rx="6" fill="#ffffff" stroke="#444"/>
+  <text x="440" y="56" text-anchor="middle" font-size="14">그 대가의 공정가치를</text>
+  <text x="440" y="76" text-anchor="middle" font-size="14">합리적으로 추정할 수 있는가?</text>
+
+  <line x1="555" y1="62" x2="615" y2="62" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="585" y="52" text-anchor="middle" font-size="13">아니오</text>
+  <rect x="620" y="30" width="230" height="64" rx="6" fill="#fff8eb" stroke="#b45309"/>
+  <text x="735" y="56" text-anchor="middle" font-size="14" fill="#b45309">약속한 재화·용역의 개별</text>
+  <text x="735" y="76" text-anchor="middle" font-size="14" fill="#b45309">판매가격으로 간접 측정 (67)</text>
+
+  <line x1="440" y1="94" x2="440" y2="140" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="455" y="122" font-size="13">예</text>
+  <rect x="325" y="145" width="230" height="52" rx="6" fill="#e9f5ef" stroke="#2d6a4f"/>
+  <text x="440" y="176" text-anchor="middle" font-size="14" fill="#2d6a4f">공정가치로 거래가격에 넣는다</text>
+
+  <line x1="440" y1="197" x2="440" y2="243" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 변동 이유 -->
+  <rect x="295" y="248" width="290" height="52" rx="6" fill="#ffffff" stroke="#444"/>
+  <text x="440" y="279" text-anchor="middle" font-size="14">공정가치가 왜 변하는가? (문단 68)</text>
+
+  <line x1="380" y1="300" x2="200" y2="350" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="500" y1="300" x2="680" y2="350" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="40" y="355" width="330" height="64" rx="6" fill="#e9f5ef" stroke="#2d6a4f"/>
+  <text x="205" y="381" text-anchor="middle" font-size="14" fill="#2d6a4f">대가의 형태 때문 (예: 주가 변동)</text>
+  <text x="205" y="401" text-anchor="middle" font-size="13">거래가격을 바꾸지 않는다</text>
+
+  <rect x="510" y="355" width="330" height="64" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="675" y="381" text-anchor="middle" font-size="14" fill="#9d0208">그 밖의 이유 (예: 기업의 성과)</text>
+  <text x="675" y="401" text-anchor="middle" font-size="13">변동대가 제약 적용 (문단 56~58)</text>
+
+  <text x="440" y="452" text-anchor="middle" font-size="13" fill="#444">고객이 넘겨준 재료·설비·노동력은 기업이 통제하게 될 때만 비현금 대가 (문단 69)</text>
+</svg>
