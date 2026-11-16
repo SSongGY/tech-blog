@@ -8019,7 +8019,7 @@ topics:
     angle: "서로 다른 보안등급 도메인 사이 데이터 흐름 통제. NSA NCDSMO 자료와 N2SF 가이드라인 참고 절 근거로 유형 3가지와 DLP·CDR·ABAC 역할 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-277
     title: "BPF와 eBPF — 소켓 필터에서 커널 안 범용 실행 환경으로"
     category: PE
@@ -8030,7 +8030,7 @@ topics:
     angle: "classic BPF 소켓 필터의 구조와 eBPF 확장(검증기·JIT·훅), 관측·보안 도구 활용과 악용 사례(BPFDoor)를 대비"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-278
     title: "YARA 룰 — 문자열·바이트 패턴 기반 악성코드 탐지"
     category: PE

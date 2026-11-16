@@ -224,6 +224,8 @@ N2SF는 정보화사업(신규 구축, 또는 기존 서비스에 N2SF 적용)�
 
 > 개념 정리: [국가 망 보안체계(N2SF) — C/S/O 등급분류와 위치-주체-객체 위협 모델](../../security/2026-11-16-n2sf-location-subject-object-threat-model/index.md)
 
+> 개념 정리: [CDS(Cross Domain Solution) — 접근형·전송형·다중등급형과 등급 간 데이터 연계](../../security/2026-11-17-cross-domain-solution-access-transfer-multilevel/index.md)
+
 끝
 
 ## 답안 작성 메모
