@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">위치-주체-객체 모델 — 업무환경에서 생성형 AI 활용 (부록2 모델 2)</text>
+
+  <!-- 위치: 기관 전산망 S -->
+  <rect x="30" y="60" width="330" height="250" rx="8" fill="#eef2ff" stroke="#4338ca" stroke-dasharray="6 4"/>
+  <text x="45" y="84" font-size="14" font-weight="bold" fill="#4338ca">위치 · 기관 전산망 (S)</text>
+  <rect x="70" y="120" width="250" height="70" rx="6" fill="#ffffff" stroke="#4338ca" stroke-width="2"/>
+  <text x="195" y="148" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">주체 · 이용자 단말 (S)</text>
+  <text x="195" y="172" font-size="13" text-anchor="middle" fill="#4b5563">업무 단말 · 온북</text>
+  <text x="195" y="225" font-size="13" text-anchor="middle" fill="#1f2937">S 정보 · O 정보 작성·보관</text>
+  <text x="195" y="247" font-size="13" text-anchor="middle" fill="#2d6a4f">생산·저장 원칙: 허용</text>
+
+  <!-- 연계체계 -->
+  <rect x="385" y="150" width="110" height="70" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">AI 연계체계</text>
+  <text x="440" y="202" font-size="13" text-anchor="middle" fill="#b45309">연계 구간</text>
+
+  <!-- 위치: 인터넷 O -->
+  <rect x="520" y="60" width="330" height="250" rx="8" fill="#f3f4f6" stroke="#6b7280" stroke-dasharray="6 4"/>
+  <text x="535" y="84" font-size="14" font-weight="bold" fill="#4b5563">인터넷 영역 (O)</text>
+  <rect x="560" y="120" width="250" height="70" rx="6" fill="#ffffff" stroke="#6b7280" stroke-width="2"/>
+  <text x="685" y="148" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">객체 · 생성형 AI 서비스 (O)</text>
+  <text x="685" y="172" font-size="13" text-anchor="middle" fill="#4b5563">상용 서비스</text>
+  <text x="685" y="225" font-size="13" text-anchor="middle" fill="#1f2937">S 정보 생산</text>
+  <text x="685" y="247" font-size="13" text-anchor="middle" fill="#9d0208">생산·저장 원칙: 위배</text>
+
+  <!-- 흐름 화살표 -->
+  <line x1="320" y1="135" x2="550" y2="135" stroke="#2d6a4f" stroke-width="2"/>
+  <polygon points="548,129 558,135 548,141" fill="#2d6a4f"/>
+  <text x="440" y="128" font-size="13" text-anchor="middle" fill="#2d6a4f">O 정보 전송 · 허용</text>
+
+  <line x1="550" y1="175" x2="505" y2="175" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="375" y1="175" x2="330" y2="175" stroke="#2d6a4f" stroke-width="2"/>
+  <polygon points="332,169 322,175 332,181" fill="#2d6a4f"/>
+
+  <line x1="320" y1="290" x2="550" y2="290" stroke="#9d0208" stroke-width="2" stroke-dasharray="5 3"/>
+  <polygon points="548,284 558,290 548,296" fill="#9d0208"/>
+  <text x="440" y="282" font-size="13" text-anchor="middle" fill="#9d0208">S 정보 전송 · 위배</text>
+
+  <!-- 원칙 -->
+  <rect x="30" y="335" width="820" height="110" rx="6" fill="#fafafa" stroke="#9ca3af"/>
+  <text x="50" y="362" font-size="14" font-weight="bold" fill="#1f2937">보안원칙 2가지 (등급 O &lt; S &lt; C)</text>
+  <text x="50" y="390" font-size="14" fill="#1f2937">① 정보 생산·저장 — 시스템은 자기 등급 이하의 정보만 생산·저장한다</text>
+  <text x="50" y="416" font-size="14" fill="#1f2937">② 정보 이동 — 정보는 자기 등급 이상의 시스템으로만 이동한다</text>
+  <text x="50" y="436" font-size="13" fill="#4b5563">가운데 초록 화살표: 생성형 AI 의 O 결과 → 단말(S) 전송 · 허용</text>
+</svg>

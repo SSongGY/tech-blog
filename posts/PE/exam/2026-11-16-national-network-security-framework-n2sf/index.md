@@ -222,6 +222,8 @@ N2SF는 정보화사업(신규 구축, 또는 기존 서비스에 N2SF 적용)�
 
 > 개념 정리: [제로 트러스트 아키텍처 — NIST SP 800-207의 7원칙과 3구성요소](../../security/2026-10-08-zero-trust-architecture-nist-sp-800-207/index.md)
 
+> 개념 정리: [국가 망 보안체계(N2SF) — C/S/O 등급분류와 위치-주체-객체 위협 모델](../../security/2026-11-16-n2sf-location-subject-object-threat-model/index.md)
+
 끝
 
 ## 답안 작성 메모
