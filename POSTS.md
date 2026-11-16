@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **754편** · 갱신 2026-11-17
+총 **756편** · 갱신 2026-11-17
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -146,10 +146,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 259편
+## 기술사 (pe) — 261편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-17 | [CDS(Cross Domain Solution) — 접근형·전송형·다중등급형과 등급 간 데이터 연계](posts/PE/security/2026-11-17-cross-domain-solution-access-transfer-multilevel/index.md) | 중급 | CNSSI 4009-2022 (NIST CSRC Glossary 수록 정의), 국가정보원, 국가 망 보안체계 보안 가이드라인 1.0 부록1 (2025-09), UK NCSC Security principles for cross domain solutions v1.0 (2021-01-21) | 문서 근거 |
+| 2026-11-17 | [BPF와 eBPF — 소켓 필터에서 커널 안 범용 실행 환경으로](posts/PE/system/2026-11-17-bpf-ebpf-socket-filter-to-kernel-runtime/index.md) | 중급 | Linux kernel 문서 (docs.kernel.org, 7.4.0-rc3), RFC 9669 BPF Instruction Set Architecture (2024-10), bpf(2) man-pages 6.19 (2026-02-10) | 문서 근거 |
 | 2026-11-16 | [국가 망 보안체계(N2SF) — C/S/O 등급분류와 위치-주체-객체 위협 모델](posts/PE/security/2026-11-16-n2sf-location-subject-object-threat-model/index.md) | 중급 | 국가정보원, 국가 망 보안체계 보안 가이드라인 1.0 부록1·부록2 (2025-09), Python 3.13.5 | 실행 검증 |
 | 2026-11-16 | [획득가치관리(EVM) — PV·EV·AC와 SPI·CPI·EAC 계산](posts/PE/it-management/2026-11-16-earned-value-management-spi-cpi-eac/index.md) | 중급 | Python 3.13.5, GAO-20-195G (2020-03) | 실행 검증 |
 | 2026-11-15 | [RSA 공개키 암호 — 키 생성, 암복호, 서명을 작은 수로 계산하기](posts/PE/security/2026-11-15-rsa-key-generation-encrypt-sign/index.md) | 중급 | Python 3.13.5, RFC 8017 PKCS #1 v2.2 (2016-11), NIST SP 800-131A Rev.2 (2019-03) | 실행 검증 |
