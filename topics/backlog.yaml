@@ -8097,3 +8097,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-280
+    title: "쿠버네티스 컨트롤러 패턴 — 선언적 상태와 조정 루프"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "spec과 status, 레벨 기반 조정, 컨트롤러가 서로를 부르지 않고 API 서버를 관찰하는 구조와 HPA·ReplicaSet을 사례로"
+    code: none
+    origin: exam
+    status: todo

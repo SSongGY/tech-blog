@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#111">쿠버네티스 주요 컴포넌트와 HPA 제어 루프</text>
+
+  <!-- 컨트롤 플레인 -->
+  <rect x="20" y="50" width="840" height="150" rx="8" fill="#eef3f8" stroke="#5b6b7b" stroke-dasharray="6 4"/>
+  <text x="36" y="72" font-size="14" font-weight="bold" fill="#33414f">컨트롤 플레인</text>
+
+  <rect x="40" y="95" width="130" height="70" rx="6" fill="#fff" stroke="#333"/>
+  <text x="105" y="124" text-anchor="middle" font-size="15" font-weight="bold">etcd</text>
+  <text x="105" y="146" text-anchor="middle" font-size="13">클러스터 상태 저장</text>
+
+  <rect x="210" y="95" width="180" height="70" rx="6" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="300" y="124" text-anchor="middle" font-size="15" font-weight="bold">kube-apiserver</text>
+  <text x="300" y="146" text-anchor="middle" font-size="13">유일한 API 창구</text>
+
+  <rect x="430" y="95" width="170" height="70" rx="6" fill="#fff" stroke="#333"/>
+  <text x="515" y="124" text-anchor="middle" font-size="15" font-weight="bold">kube-scheduler</text>
+  <text x="515" y="146" text-anchor="middle" font-size="13">Pod를 노드에 배정</text>
+
+  <rect x="640" y="95" width="200" height="70" rx="6" fill="#fff" stroke="#333"/>
+  <text x="740" y="119" text-anchor="middle" font-size="14" font-weight="bold">kube-controller-manager</text>
+  <text x="740" y="139" text-anchor="middle" font-size="13">컨트롤러 실행</text>
+  <text x="740" y="157" text-anchor="middle" font-size="13" fill="#2d6a4f">(HPA 컨트롤러 포함)</text>
+
+  <line x1="170" y1="130" x2="208" y2="130" stroke="#333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <line x1="430" y1="130" x2="392" y2="130" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <polyline points="740,95 740,82 300,82 300,93" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrg)"/>
+
+  <!-- 워커 노드 -->
+  <rect x="20" y="250" width="600" height="150" rx="8" fill="#f6f4ee" stroke="#7a6f55" stroke-dasharray="6 4"/>
+  <text x="604" y="272" text-anchor="end" font-size="14" font-weight="bold" fill="#5a4f35">워커 노드 (여러 대)</text>
+
+  <rect x="40" y="295" width="160" height="70" rx="6" fill="#fff" stroke="#333"/>
+  <text x="120" y="324" text-anchor="middle" font-size="15" font-weight="bold">kubelet</text>
+  <text x="120" y="346" text-anchor="middle" font-size="13">Pod 실행 보장</text>
+
+  <rect x="230" y="295" width="160" height="70" rx="6" fill="#fff" stroke="#333"/>
+  <text x="310" y="324" text-anchor="middle" font-size="15" font-weight="bold">kube-proxy</text>
+  <text x="310" y="346" text-anchor="middle" font-size="13">Service 네트워크 규칙</text>
+
+  <rect x="420" y="295" width="180" height="70" rx="6" fill="#fff" stroke="#333"/>
+  <text x="510" y="324" text-anchor="middle" font-size="15" font-weight="bold">컨테이너 런타임</text>
+  <text x="510" y="346" text-anchor="middle" font-size="13">Pod의 컨테이너 실행</text>
+
+  <line x1="200" y1="330" x2="418" y2="330" stroke="#333" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <text x="300" y="388" text-anchor="middle" font-size="13" fill="#555">kubelet → 런타임: CRI로 컨테이너 기동</text>
+
+  <!-- 애드온 -->
+  <rect x="660" y="295" width="180" height="70" rx="6" fill="#fff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="750" y="324" text-anchor="middle" font-size="15" font-weight="bold">Metrics Server</text>
+  <text x="750" y="346" text-anchor="middle" font-size="13">애드온, metrics.k8s.io</text>
+
+  <line x1="120" y1="295" x2="270" y2="168" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="310" y1="295" x2="303" y2="168" stroke="#333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="750" y1="295" x2="345" y2="168" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrg)"/>
+
+  <text x="440" y="432" text-anchor="middle" font-size="14" fill="#2d6a4f" font-weight="bold">HPA 루프(기본 15초): 지표 조회 → 목표 복제 수 계산 → scale 갱신 → 컨트롤러가 Pod 증감</text>
+  <text x="440" y="458" text-anchor="middle" font-size="13" fill="#555">모든 컴포넌트는 kube-apiserver를 거쳐서만 상태를 읽고 쓴다</text>
+</svg>
