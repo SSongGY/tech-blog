@@ -8042,3 +8042,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-279
+    title: "역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "k-평균 조대 양자화기, 역리스트, nlist·nprobe 비용 식(nlist + nprobe×N/nlist), 불균형 계수, 잔차 부호화를 직접 계산해 확인"
+    code: none
+    origin: exam
+    status: todo
