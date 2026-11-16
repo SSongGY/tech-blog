@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">position = position + 1 — 행을 읽는 순서가 결과를 가른다</text>
+  <text x="440" y="54" font-size="13" text-anchor="middle" fill="#4b5563">시작 상태: position 1, 2, 3, 4, 5 (UNIQUE) · 조건 position &gt;= 2</text>
+
+  <!-- 왼쪽: 오름차순 -->
+  <text x="225" y="92" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">오름차순으로 읽을 때 (2 → 3 → 4 → 5)</text>
+  <text x="225" y="112" font-size="13" text-anchor="middle" fill="#4b5563">UNIQUE 인덱스로 찾거나, rowid 가 position 과 같은 순서</text>
+
+  <rect x="60" y="130" width="330" height="48" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="225" y="160" font-size="14" text-anchor="middle" fill="#1f2937">① position 2 인 행을 3 으로 바꾸려 한다</text>
+
+  <line x1="225" y1="178" x2="225" y2="206" stroke="#9d0208" stroke-width="2"/>
+  <polygon points="219,204 231,204 225,214" fill="#9d0208"/>
+
+  <rect x="60" y="216" width="330" height="62" rx="6" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/>
+  <text x="225" y="242" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">3 은 아직 다른 행이 갖고 있다</text>
+  <text x="225" y="264" font-size="13" text-anchor="middle" fill="#9d0208">UNIQUE constraint failed</text>
+
+  <line x1="225" y1="278" x2="225" y2="306" stroke="#9d0208" stroke-width="2"/>
+  <polygon points="219,304 231,304 225,314" fill="#9d0208"/>
+
+  <rect x="60" y="316" width="330" height="62" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="225" y="342" font-size="14" text-anchor="middle" fill="#1f2937">ABORT: 이 문장이 바꾼 것을 전부 되돌린다</text>
+  <text x="225" y="364" font-size="13" text-anchor="middle" fill="#4b5563">표는 1, 2, 3, 4, 5 그대로</text>
+
+  <!-- 가운데 구분선 -->
+  <line x1="440" y1="80" x2="440" y2="390" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 오른쪽: 내림차순 -->
+  <text x="655" y="92" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">내림차순으로 읽을 때 (5 → 4 → 3 → 2)</text>
+  <text x="655" y="112" font-size="13" text-anchor="middle" fill="#4b5563">rowid 가 position 과 반대 순서인 표, NOT INDEXED</text>
+
+  <rect x="490" y="130" width="330" height="148" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="510" y="160" font-size="14" fill="#1f2937">① 5 → 6  (6 은 비어 있다)</text>
+  <text x="510" y="190" font-size="14" fill="#1f2937">② 4 → 5  (①에서 5 가 비었다)</text>
+  <text x="510" y="220" font-size="14" fill="#1f2937">③ 3 → 4  (②에서 4 가 비었다)</text>
+  <text x="510" y="250" font-size="14" fill="#1f2937">④ 2 → 3  (③에서 3 이 비었다)</text>
+
+  <line x1="655" y1="278" x2="655" y2="306" stroke="#2d6a4f" stroke-width="2"/>
+  <polygon points="649,304 661,304 655,314" fill="#2d6a4f"/>
+
+  <rect x="490" y="316" width="330" height="62" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="655" y="342" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">성공 — 바뀐 행 4</text>
+  <text x="655" y="364" font-size="13" text-anchor="middle" fill="#2d6a4f">표는 1, 3, 4, 5, 6</text>
+
+  <text x="440" y="408" font-size="13" text-anchor="middle" fill="#b45309">같은 문장, 같은 데이터 값 — 읽는 순서만 달랐다 (SQLite 3.49.1, 실습 [1]·[3-B])</text>
+</svg>

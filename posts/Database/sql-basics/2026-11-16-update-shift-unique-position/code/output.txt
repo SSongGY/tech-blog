@@ -1,0 +1,113 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-16-update-shift-unique-position
+# 명령      : python shift_position.py
+# 수행 시각 : 2026-11-16 19:11 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[playlist_item]  5행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  item_id  | INTEGER | PK
+  position | INTEGER | NOT NULL
+  title    | TEXT    | NOT NULL
+
+  item_id | position | title
+  --------+----------+------
+        1 |        1 | Intro
+        2 |        2 | Blue
+        3 |        3 | Rain
+        4 |        4 | Night
+        5 |        5 | Outro
+
+[1] 2번 자리를 비우려고 position >= 2 를 +1
+  plan> SEARCH playlist_item USING INDEX sqlite_autoindex_playlist_item_1 (position>?)
+  읽는 순서(position): 2, 3, 4, 5
+  sql> UPDATE playlist_item SET position = position + 1 WHERE position >= 2
+  IntegrityError: UNIQUE constraint failed: playlist_item.position
+
+[2] 실패한 뒤 표 상태 (일부만 바뀌었는가)
+  item_id | position | title
+  1 | 1 | Intro
+  2 | 2 | Blue
+  3 | 3 | Rain
+  4 | 4 | Night
+  5 | 5 | Outro
+
+[3-A] 인덱스를 쓰지 않게 하면 (rowid 순서로 읽는다)
+  plan> SCAN playlist_item
+  sql> UPDATE playlist_item NOT INDEXED SET position = position + 1 WHERE position >= 2
+  IntegrityError: UNIQUE constraint failed: playlist_item.position
+
+[3-B] rowid 가 position 과 반대 순서인 표에서 같은 UPDATE
+  읽는 순서(position): 5, 4, 3, 2
+  sql> UPDATE playlist_item NOT INDEXED SET position = position + 1 WHERE position >= 2
+  성공, 바뀐 행 4
+  item_id | position | title
+  5 | 1 | Intro
+  4 | 3 | Blue
+  3 | 4 | Rain
+  2 | 5 | Night
+  1 | 6 | Outro
+
+[4] UPDATE ... ORDER BY position DESC 로 순서를 정하면
+  sql> UPDATE playlist_item SET position = position + 1 WHERE position >= 2 ORDER BY position DESC
+  OperationalError: near "ORDER": syntax error
+
+[5] 우회 1: 음수로 뒤집었다가 되돌린다
+  sql> UPDATE playlist_item SET position = -(position + 1) WHERE position >= 2
+  성공, 바뀐 행 4
+  sql> UPDATE playlist_item SET position = -position WHERE position < 0
+  성공, 바뀐 행 4
+  sql> INSERT INTO playlist_item (item_id, position, title) VALUES (6, 2, 'New')
+  성공, 바뀐 행 1
+  item_id | position | title
+  1 | 1 | Intro
+  6 | 2 | New
+  2 | 3 | Blue
+  3 | 4 | Rain
+  4 | 5 | Night
+  5 | 6 | Outro
+
+[6] 우회 2: 큰 수를 더했다가 뺀다
+  sql> UPDATE playlist_item SET position = position + 1000001 WHERE position >= 2
+  성공, 바뀐 행 4
+  sql> UPDATE playlist_item SET position = position - 1000000 WHERE position > 1000000
+  성공, 바뀐 행 4
+  item_id | position | title
+  1 | 1 | Intro
+  2 | 3 | Blue
+  3 | 4 | Rain
+  4 | 5 | Night
+  5 | 6 | Outro
+
+[7-A] 두 행 맞바꾸기 — CASE 한 문장
+  sql> UPDATE playlist_item SET position = CASE position WHEN 2 THEN 4 WHEN 4 THEN 2 END WHERE position IN (2, 4)
+  IntegrityError: UNIQUE constraint failed: playlist_item.position
+[7-B] 두 행 맞바꾸기 — 비어 있는 값 0 을 거쳐 세 문장으로
+  sql> UPDATE playlist_item SET position = 0 WHERE position = 2
+  성공, 바뀐 행 1
+  sql> UPDATE playlist_item SET position = 2 WHERE position = 4
+  성공, 바뀐 행 1
+  sql> UPDATE playlist_item SET position = 4 WHERE position = 0
+  성공, 바뀐 행 1
+  item_id | position | title
+  1 | 1 | Intro
+  4 | 2 | Night
+  3 | 3 | Rain
+  2 | 4 | Blue
+  5 | 5 | Outro

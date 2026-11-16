@@ -8008,7 +8008,7 @@ topics:
     angle: "망 분리와 무엇이 다른지를 등급분류 3대상, 생산·저장/이동 원칙, 보안통제 6개 대항목, 오버레이로 정리. 국가정보원 가이드라인 1.0 본문 근거"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-276
     title: "CDS(Cross Domain Solution) — 접근형·전송형·다중등급형과 등급 간 데이터 연계"
     category: PE
@@ -8053,3 +8053,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-125
+    title: "순번을 한 칸씩 밀 때 — UPDATE pos = pos + 1이 UNIQUE에 걸리는 이유"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, update, unique, basics]
+    difficulty: 중급
+    angle: "UNIQUE 컬럼을 일괄로 1씩 올리면 행마다 즉시 검사돼 중간 상태에서 충돌한다. 실패 재현, 행 처리 순서에 따라 성공·실패가 갈리는 것, 음수 두 단계 우회와 임시 오프셋 우회를 실측한다"
+    code: none
+    origin: manual
+    status: done
+  - id: gen-040
+    title: "Roaring 비트맵 — 배열 컨테이너와 비트맵 컨테이너가 4096에서 갈리는 이유"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [bitmap, roaring, compression, datastructure]
+    difficulty: 중급
+    angle: "Chambi 2016 논문대로 상위 16비트로 나누고 4096 기준으로 컨테이너를 바꾸는 구현을 표준 라이브러리로 짜서, 밀도별 크기를 단순 비트맵·정렬 배열과 비교하고 교집합 비용을 센다"
+    code: none
+    origin: manual
+    status: done
