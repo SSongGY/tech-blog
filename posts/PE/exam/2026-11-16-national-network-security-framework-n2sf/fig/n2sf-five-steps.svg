@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="ag" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#2d6a4f" stroke-width="1.6"/>
+    </marker>
+    <marker id="ao" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#b45309" stroke-width="1.6"/>
+    </marker>
+    <marker id="ak" markerWidth="10" markerHeight="10" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8" fill="none" stroke="#4a5568" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b1b1b">국가 망 보안체계(N2SF) 적용 절차 — 5단계 14개 활동</text>
+
+  <!-- step boxes -->
+  <rect x="20" y="60" width="152" height="64" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="96" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">① 준비</text>
+  <text x="96" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Prepare</text>
+
+  <rect x="194" y="60" width="152" height="64" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="270" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">② C/S/O 등급분류</text>
+  <text x="270" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Categorize</text>
+
+  <rect x="368" y="60" width="152" height="64" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="444" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">③ 위협식별</text>
+  <text x="444" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Identify</text>
+
+  <rect x="542" y="60" width="152" height="64" fill="#eef4f1" stroke="#2d6a4f" stroke-width="1.6" rx="4"/>
+  <text x="618" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">④ 보안대책 수립</text>
+  <text x="618" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Select</text>
+
+  <rect x="716" y="60" width="152" height="64" fill="#fdf3e7" stroke="#b45309" stroke-width="1.6" rx="4"/>
+  <text x="792" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">⑤ 적절성 평가·조정</text>
+  <text x="792" y="108" text-anchor="middle" font-size="13" fill="#4a5568">Assess</text>
+
+  <line x1="172" y1="92" x2="192" y2="92" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <line x1="346" y1="92" x2="366" y2="92" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <line x1="520" y1="92" x2="540" y2="92" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+  <line x1="694" y1="92" x2="714" y2="92" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#ag)"/>
+
+  <!-- activities -->
+  <g font-size="13" fill="#1b1b1b">
+    <text x="26" y="152">· 적용계획 수립</text>
+    <text x="26" y="174">· 업무·기능 분석</text>
+    <text x="26" y="196">· 업무정보 식별</text>
+    <text x="26" y="218">· 정보시스템 식별</text>
+    <text x="26" y="240">· 정보서비스 식별</text>
+
+    <text x="200" y="152">· 업무정보 C/S/O</text>
+    <text x="200" y="174">· 정보시스템 C/S/O</text>
+    <text x="200" y="196" fill="#4a5568">  (+ 위치 등급)</text>
+
+    <text x="374" y="152">· 모델링·C/S/O 평가</text>
+    <text x="374" y="174">· 보안원칙 적용</text>
+    <text x="374" y="196">· 보안위협 식별</text>
+
+    <text x="548" y="152">· 보안 요구사항 도출</text>
+    <text x="548" y="174">· 보안통제 선택</text>
+    <text x="548" y="196" fill="#4a5568">  (우선검토 사항 활용)</text>
+
+    <text x="722" y="152">· 적절성 평가</text>
+    <text x="722" y="174">· 결과 협의·조정</text>
+    <text x="722" y="196">· 평가결과 확인</text>
+  </g>
+
+  <!-- feedback arrow -->
+  <path d="M792,210 L792,290 L96,290 L96,252" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6,4" marker-end="url(#ao)"/>
+  <text x="444" y="282" text-anchor="middle" font-size="13" fill="#b45309">미흡하면 앞 단계로 돌아가 보완</text>
+
+  <!-- 3-element models -->
+  <rect x="20" y="320" width="500" height="120" fill="#fafbfc" stroke="#9aa5b1" stroke-width="1.4" rx="4"/>
+  <text x="36" y="344" font-size="14" font-weight="bold" fill="#1b1b1b">위협식별의 기준 — 위치-주체-객체 모델 + 보안원칙 2가지</text>
+  <text x="36" y="370" font-size="13" fill="#1b1b1b">· 정보 생산·저장 원칙: 시스템은 자기 등급 이하의 정보만 생산·저장</text>
+  <text x="36" y="394" font-size="13" fill="#1b1b1b">· 정보 이동 원칙: 정보는 자기 등급 이상의 시스템으로만 이동</text>
+  <text x="36" y="418" font-size="13" fill="#9d0208">→ 등급이 섞이는 지점(주체·객체·연계구간)이 보안대책 적용 대상</text>
+
+  <!-- NIS review -->
+  <rect x="580" y="340" width="288" height="80" fill="#ffffff" stroke="#4a5568" stroke-width="1.6" rx="4"/>
+  <text x="724" y="368" text-anchor="middle" font-size="15" font-weight="bold" fill="#1b1b1b">국가정보원 보안성 검토</text>
+  <text x="724" y="392" text-anchor="middle" font-size="13" fill="#4a5568">사업계획서·제안요청서·</text>
+  <text x="724" y="410" text-anchor="middle" font-size="13" fill="#4a5568">정보통신망 구성도·자체 보안대책</text>
+  <line x1="830" y1="210" x2="830" y2="336" stroke="#4a5568" stroke-width="1.6" marker-end="url(#ak)"/>
+  <text x="822" y="324" text-anchor="end" font-size="13" fill="#4a5568">완료 후</text>
+</svg>
