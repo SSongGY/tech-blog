@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff" stroke="#d0d0d0"/>
+
+  <!-- 경계선 -->
+  <line x1="440" y1="20" x2="440" y2="420" stroke="#d0d0d0" stroke-dasharray="6 4"/>
+
+  <!-- 왼쪽: 기존 리스닝 백도어 -->
+  <text x="220" y="42" text-anchor="middle" font-size="17" font-weight="bold" fill="#222222">기존 백도어 (포트 대기)</text>
+
+  <rect x="80" y="70" width="280" height="54" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="220" y="102" text-anchor="middle" font-size="15" fill="#222222">공격자 접속 시도</text>
+
+  <line x1="220" y1="124" x2="220" y2="166" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="170" width="280" height="64" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="220" y="198" text-anchor="middle" font-size="15" fill="#222222">열린 포트</text>
+  <text x="220" y="220" text-anchor="middle" font-size="14" fill="#444444">LISTEN 상태로 계속 대기</text>
+
+  <line x1="220" y1="234" x2="220" y2="276" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="80" y="280" width="280" height="54" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="220" y="312" text-anchor="middle" font-size="15" fill="#222222">백도어 프로세스</text>
+
+  <text x="220" y="372" text-anchor="middle" font-size="14" fill="#9d0208">포트 스캔과 LISTEN 목록에 드러난다</text>
+
+  <!-- 오른쪽: BPFDoor -->
+  <text x="640" y="42" text-anchor="middle" font-size="17" font-weight="bold" fill="#222222">BPFDoor (패킷 감시 대기)</text>
+
+  <rect x="470" y="70" width="260" height="54" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="600" y="102" text-anchor="middle" font-size="15" fill="#222222">공격자 매직 패킷 송신</text>
+
+  <line x1="600" y1="124" x2="600" y2="166" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <rect x="470" y="170" width="260" height="64" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="600" y="198" text-anchor="middle" font-size="15" fill="#222222">커널 안 BPF 필터</text>
+  <text x="600" y="220" text-anchor="middle" font-size="14" fill="#444444">패킷 소켓에 부착</text>
+
+  <line x1="730" y1="202" x2="768" y2="202" stroke="#9d0208" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="776" y="196" font-size="13" fill="#9d0208">그 밖의 패킷</text>
+  <text x="776" y="214" font-size="13" fill="#9d0208">필터가 버림</text>
+
+  <line x1="600" y1="234" x2="600" y2="276" stroke="#333333" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="610" y="260" font-size="13" fill="#444444">매직 바이트 일치 시만</text>
+
+  <rect x="470" y="280" width="260" height="54" rx="6" fill="#f3f4f6" stroke="#555555"/>
+  <text x="600" y="304" text-anchor="middle" font-size="15" fill="#222222">백도어 프로세스</text>
+  <text x="600" y="324" text-anchor="middle" font-size="13" fill="#444444">시스템 데몬 이름으로 위장</text>
+
+  <text x="640" y="372" text-anchor="middle" font-size="14" fill="#b45309">LISTEN 포트가 없어 포트 스캔에 보이지 않는다</text>
+  <text x="640" y="396" text-anchor="middle" font-size="14" fill="#b45309">탐지 지점: 패킷 소켓·부착된 필터 (ss -0pb)</text>
+</svg>

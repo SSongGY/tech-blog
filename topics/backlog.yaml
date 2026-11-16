@@ -8020,3 +8020,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-277
+    title: "BPF와 eBPF — 소켓 필터에서 커널 안 범용 실행 환경으로"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "classic BPF 소켓 필터의 구조와 eBPF 확장(검증기·JIT·훅), 관측·보안 도구 활용과 악용 사례(BPFDoor)를 대비"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-278
+    title: "YARA 룰 — 문자열·바이트 패턴 기반 악성코드 탐지"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "룰 구성(meta·strings·condition), 해시·시그니처 탐지와의 차이, 오탐 관리와 배포 절차"
+    code: none
+    origin: exam
+    status: todo
