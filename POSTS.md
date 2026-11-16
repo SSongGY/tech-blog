@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **745편** · 갱신 2026-11-16
+총 **746편** · 갱신 2026-11-16
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -511,10 +511,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 115편
+## 기출문제 (exam) — 116편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-16 | [기출문제 — 국가 망 보안체계(N2SF)의 개념, 적용 절차, 고려사항](posts/PE/exam/2026-11-16-national-network-security-framework-n2sf/index.md) | 심화 | 국가정보원, 국가 망 보안체계 보안 가이드라인 1.0 (2025-09), 국가 망 보안체계 보안 가이드라인 Draft (2025-01) | 문서 근거 |
 | 2026-11-15 | [기출문제 — 통신 프로토콜의 오류·혼잡 제어, 슬라이딩 윈도우, 설계 고려사항](posts/PE/exam/2026-11-15-protocol-error-congestion-control-sliding-window/index.md) | 중급 | RFC 9293 (2022-08), RFC 5681 (2009-09), RFC 6298 (2011-06), RFC 7323 (2014-09), RFC 1958 (1996-06), RFC 2914 (2000-09), RFC 6709 (2012-09), RFC 9413 (2023-06) | 문서 근거 |
 | 2026-11-14 | [기출문제 — 데이터베이스 트랜잭션 격리 수준 4가지와 수준별 이상 현상](posts/PE/exam/2026-11-14-transaction-isolation-levels-and-anomalies/index.md) | 중급 | Berenson et al., A Critique of ANSI SQL Isolation Levels, SIGMOD 1995, PostgreSQL 16 문서 13.2 Transaction Isolation (2026-11-14 확인) | 문서 근거 |
 | 2026-11-14 | [기출문제 — 다중 리전 동시 가동(Multi-Region Active-Active) 재해복구시스템의 개념과 기술 요소](posts/PE/exam/2026-11-14-multi-region-active-active-dr/index.md) | 심화 | AWS Prescriptive Guidance — AWS Multi-Region Fundamentals (2026-11-14 확인), AWS Disaster Recovery of Workloads on AWS (2021-02), Amazon DynamoDB Developer Guide — How global tables work (2026-11-14 확인), Azure Well-Architected Framework — Redundancy (2025-12-15 갱신), Azure Cosmos DB 문서 — Conflict resolution policies, Consistency levels (2026-04-27 갱신), NIST SP 800-34 Rev.1 (2010-05) | 문서 근거 |
