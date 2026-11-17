@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **757편** · 갱신 2026-11-17
+총 **759편** · 갱신 2026-11-17
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -641,10 +641,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 150편
+## 주식·재무 (finance) — 152편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-17 | [수행의무 식별 — 구별되는 재화와 결합산출물, 일련의 재화](posts/Finance/statements/2026-11-17-performance-obligation-distinct-goods/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-11-17 | [진행률 산출법과 미설치 자재 — 원가 진행률이 수행 정도를 나타내지 못할 때](posts/Finance/statements/2026-11-17-output-method-uninstalled-materials/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-16 | [거래가격 배분 — 묶음 할인을 일부 수행의무에만 몰아주는 조건과 잔여접근법](posts/Finance/statements/2026-11-16-transaction-price-allocation-discount/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-16 | [비현금 대가 — 주식이나 설비로 받는 판매 대가를 공정가치로 재는 법](posts/Finance/statements/2026-11-16-noncash-consideration-fair-value/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-15 | [변동대가 추정과 제약 — 기댓값과 가능성이 가장 높은 금액, 되돌릴 수익의 크기](posts/Finance/statements/2026-11-15-variable-consideration-estimate-constraint/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
