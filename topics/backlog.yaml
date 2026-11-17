@@ -8163,3 +8163,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-282
+    title: "유전 알고리즘 — 스키마 정리와 엘리트 보존의 수렴 조건"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "부호화·선택·교차·변이를 정의하고, 스키마 정리가 보장하는 것과 보장하지 않는 것, Rudolph 1994의 수렴 결과를 손으로 계산 가능한 예로 정리"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-283
+    title: "메타휴리스틱 비교 — 시뮬레이티드 어닐링·타부 탐색·유전 알고리즘"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "단일 해 탐색과 집단 탐색의 차이, 지역 최적해 탈출 방식, 공짜 점심 없음 정리로 본 선택 기준"
+    code: none
+    origin: exam
+    status: todo

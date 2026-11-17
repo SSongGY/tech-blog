@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="26" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">유전 알고리즘의 세대 반복 절차</text>
+
+  <!-- ① 부호화·초기 집단 -->
+  <rect x="250" y="44" width="180" height="56" rx="8" fill="#eef2f7" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="68" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">① 부호화·초기 집단</text>
+  <text x="340" y="88" text-anchor="middle" font-size="13" fill="#444444">해를 염색체로, N개 무작위</text>
+
+  <!-- ② 적합도 평가 -->
+  <rect x="250" y="150" width="180" height="56" rx="8" fill="#eef2f7" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">② 적합도 평가</text>
+  <text x="340" y="194" text-anchor="middle" font-size="13" fill="#444444">적합도 함수 f(x)</text>
+
+  <!-- 종료 조건 -->
+  <polygon points="570,140 650,178 570,216 490,178" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="570" y="183" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">종료 조건?</text>
+
+  <!-- ⑦ 최적해 출력 -->
+  <rect x="700" y="150" width="160" height="56" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="780" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑦ 최적해 출력</text>
+  <text x="780" y="194" text-anchor="middle" font-size="13" fill="#444444">최고 적합도 개체</text>
+
+  <!-- ③ 선택 -->
+  <rect x="480" y="290" width="180" height="56" rx="8" fill="#eef2f7" stroke="#334155" stroke-width="1.5"/>
+  <text x="570" y="314" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">③ 선택</text>
+  <text x="570" y="334" text-anchor="middle" font-size="13" fill="#444444">룰렛·토너먼트·순위</text>
+
+  <!-- ④ 교차 -->
+  <rect x="250" y="290" width="180" height="56" rx="8" fill="#eef2f7" stroke="#334155" stroke-width="1.5"/>
+  <text x="340" y="314" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">④ 교차 (확률 pc)</text>
+  <text x="340" y="334" text-anchor="middle" font-size="13" fill="#444444">1점·2점·균등</text>
+
+  <!-- ⑤ 변이 -->
+  <rect x="20" y="290" width="180" height="56" rx="8" fill="#eef2f7" stroke="#334155" stroke-width="1.5"/>
+  <text x="110" y="314" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">⑤ 변이 (확률 pm)</text>
+  <text x="110" y="334" text-anchor="middle" font-size="13" fill="#444444">유전자 반전·교환</text>
+
+  <!-- ⑥ 세대 교체 -->
+  <rect x="20" y="150" width="180" height="56" rx="8" fill="#eef2f7" stroke="#334155" stroke-width="1.5"/>
+  <text x="110" y="174" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">⑥ 세대 교체</text>
+  <text x="110" y="194" text-anchor="middle" font-size="13" fill="#444444">엘리트 보존 여부</text>
+
+  <!-- 화살표 -->
+  <line x1="340" y1="100" x2="340" y2="148" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="430" y1="178" x2="488" y2="178" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="650" y1="178" x2="698" y2="178" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="674" y="168" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+  <line x1="570" y1="216" x2="570" y2="288" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="588" y="258" font-size="13" fill="#333333">아니오</text>
+  <line x1="480" y1="318" x2="432" y2="318" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="250" y1="318" x2="202" y2="318" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="110" y1="290" x2="110" y2="208" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="200" y1="178" x2="248" y2="178" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="440" y="384" text-anchor="middle" font-size="13" fill="#555555">③~⑥이 한 세대다. 선택이 좋은 해를 이용하고, 교차·변이가 새 해를 탐색한다</text>
+</svg>

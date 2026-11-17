@@ -1,0 +1,73 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\exam\2026-11-18-genetic-algorithm-procedure-optimization
+# 명령      : python ga.py
+# 수행 시각 : 2026-11-18 02:16 (대한민국 표준시)
+# 소요      : 1.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 선언 환경 : Python 3.13.5
+# 종료 코드 : 0
+
+items (weight, value): [(12, 24), (7, 13), (11, 23), (8, 15), (9, 16), (6, 11), (14, 28), (5, 8), (10, 19), (3, 4)] capacity: 40
+brute force over 2^10 = 1024 candidates: 0111001000 weight 40 value 79
+
+=== part 1: one generation by hand ===
+
+[gen 0] initial population
+  no  chromosome  weight  value  fitness  roulette
+   0  1010001000      37     75       75     0.253
+   1  0110001000      32     64       64     0.215
+   2  0100001100      26     49       49     0.165
+   3  1000100001      24     44       44     0.148
+   4  1111110000      53    102       37     0.125
+   5  1111100101      55    103       28     0.094
+  sum of fitness = 297, best = 75
+
+[selection] roulette wheel, 6 picks
+  picked 1010001000 (fitness 75)
+  picked 0100001100 (fitness 49)
+  picked 1010001000 (fitness 75)
+  picked 1000100001 (fitness 44)
+  picked 1000100001 (fitness 44)
+  picked 0100001100 (fitness 49)
+
+[crossover] one-point, pc = 0.9
+  1010001000 x 0100001100 -> 1010001100, 0100001000 (cut after gene 6)
+  1010001000 x 1000100001 -> 1010000001, 1000101000 (cut after gene 6)
+  1000100001 x 0100001100 -> 1000100000, 0100001101 (cut after gene 8)
+
+[mutation] bit flip, pm = 0.1 per gene
+  1010001100 -> 0110101100 flipped [0, 1, 4]
+  0100001000 -> 0100001000 flipped -
+  1010000001 -> 1010000001 flipped -
+  1000101000 -> 1000001100 flipped [4, 7]
+  1000100000 -> 1000100000 flipped -
+  0100001101 -> 0100001101 flipped -
+
+[gen 1] next population
+  no  chromosome  weight  value  fitness  roulette
+   0  0110101100      46     88       58     0.191
+   1  0100001000      21     41       41     0.135
+   2  1010000001      26     51       51     0.168
+   3  1000001100      31     60       60     0.198
+   4  1000100000      21     40       40     0.132
+   5  0100001101      29     53       53     0.175
+  sum of fitness = 303, best = 60
+
+=== part 2: optimization settings compared ===
+
+population 20, generations 40, pc 0.9, pm 0.1, 50 runs (seed 0..49)
+setting              final=opt  mean final  lost best  mean evals
+A roulette               5/50        75.1         44         820
+B roulette+elite        42/50        78.8          0         820
+C tournament+elite      46/50        78.9          0         820
+D C+local search        50/50        79.0          0       14098
+
+mean best fitness by generation
+setting               gen0     gen5     gen10    gen20    gen40  
+A roulette               74.3     75.4     74.3     74.9     75.1
+B roulette+elite         74.3     77.4     77.8     78.7     78.8
+C tournament+elite       74.3     77.5     78.0     78.8     78.9
+D C+local search         74.3     78.9     79.0     79.0     79.0
