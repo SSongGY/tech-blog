@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="140" y="32" font-size="16" font-weight="bold" fill="#111827" text-anchor="middle">구축 (학습 → 배정 → 부호화)</text>
+  <text x="740" y="32" font-size="16" font-weight="bold" fill="#111827" text-anchor="middle">질의 (조대 양자화 → 목록 주사)</text>
+
+  <!-- 구축 열 -->
+  <rect x="40" y="52" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="140" y="76" font-size="14" fill="#111827" text-anchor="middle">① 기준 벡터 y</text>
+  <text x="140" y="96" font-size="13" fill="#4b5563" text-anchor="middle">N개, D차원</text>
+
+  <rect x="40" y="140" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="140" y="164" font-size="14" fill="#111827" text-anchor="middle">② 조대 양자화기 q_c</text>
+  <text x="140" y="184" font-size="13" fill="#4b5563" text-anchor="middle">k-평균 중심 nlist개</text>
+
+  <rect x="40" y="228" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="140" y="252" font-size="14" fill="#111827" text-anchor="middle">③ 잔차 r = y − q_c(y)</text>
+  <text x="140" y="272" font-size="13" fill="#4b5563" text-anchor="middle">중심과의 차이</text>
+
+  <rect x="40" y="316" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="140" y="340" font-size="14" fill="#111827" text-anchor="middle">④ 곱 양자화 부호화</text>
+  <text x="140" y="360" font-size="13" fill="#4b5563" text-anchor="middle">M조각 × 1바이트</text>
+
+  <line x1="140" y1="108" x2="140" y2="138" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="140" y1="196" x2="140" y2="226" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="140" y1="284" x2="140" y2="314" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- 가운데: 역리스트 -->
+  <rect x="320" y="120" width="240" height="250" rx="8" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="440" y="146" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">⑤ 역리스트 nlist개</text>
+  <rect x="340" y="164" width="200" height="34" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="440" y="186" font-size="13" fill="#111827" text-anchor="middle">목록 1: (id, 코드) …</text>
+  <rect x="340" y="208" width="200" height="34" rx="4" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="230" font-size="13" fill="#2d6a4f" text-anchor="middle">목록 j: (id, 코드) …</text>
+  <text x="440" y="274" font-size="15" fill="#111827" text-anchor="middle">⋮</text>
+  <rect x="340" y="296" width="200" height="34" rx="4" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="440" y="318" font-size="13" fill="#111827" text-anchor="middle">목록 nlist: (id, 코드) …</text>
+  <text x="440" y="356" font-size="13" fill="#4b5563" text-anchor="middle">크기가 고르지 않다 → 불균형 계수</text>
+
+  <path d="M240,344 L300,344 L300,225 L338,225" fill="none" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="270" y="400" font-size="13" fill="#4b5563" text-anchor="middle">가장 가까운 중심의 목록에 넣는다</text>
+
+  <!-- 질의 열 -->
+  <rect x="640" y="52" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="740" y="76" font-size="14" fill="#111827" text-anchor="middle">⑥ 질의 x</text>
+  <text x="740" y="96" font-size="13" fill="#4b5563" text-anchor="middle">중심 nlist개와 비교</text>
+
+  <rect x="640" y="140" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="740" y="164" font-size="14" fill="#2d6a4f" text-anchor="middle">⑦ 가까운 nprobe개 선택</text>
+  <text x="740" y="184" font-size="13" fill="#4b5563" text-anchor="middle">재현율 손잡이</text>
+
+  <rect x="640" y="228" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="740" y="252" font-size="14" fill="#111827" text-anchor="middle">⑧ 목록마다 거리표</text>
+  <text x="740" y="272" font-size="13" fill="#4b5563" text-anchor="middle">x − c_j 로 M × k* 칸</text>
+
+  <rect x="640" y="316" width="200" height="56" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="740" y="340" font-size="14" fill="#111827" text-anchor="middle">⑨ 코드로 표 합산</text>
+  <text x="740" y="360" font-size="13" fill="#4b5563" text-anchor="middle">상위 k개 반환</text>
+
+  <line x1="740" y1="108" x2="740" y2="138" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="740" y1="196" x2="740" y2="226" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="740" y1="284" x2="740" y2="314" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <path d="M638,168 L600,168 L600,225 L562,225" fill="none" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arrg)"/>
+  <text x="600" y="400" font-size="13" fill="#4b5563" text-anchor="middle">고른 목록만 훑는다</text>
+
+  <text x="440" y="440" font-size="13" fill="#9d0208" text-anchor="middle">고르지 않은 목록에 든 정답은 돌려줄 수 없다 — 근사인 이유</text>
+</svg>

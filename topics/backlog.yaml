@@ -8052,7 +8052,7 @@ topics:
     angle: "k-평균 조대 양자화기, 역리스트, nlist·nprobe 비용 식(nlist + nprobe×N/nlist), 불균형 계수, 잔차 부호화를 직접 계산해 확인"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-125
     title: "순번을 한 칸씩 밀 때 — UPDATE pos = pos + 1이 UNIQUE에 걸리는 이유"
     category: Database
@@ -8107,7 +8107,7 @@ topics:
     angle: "spec과 status, 레벨 기반 조정, 컨트롤러가 서로를 부르지 않고 API 서버를 관찰하는 구조와 HPA·ReplicaSet을 사례로"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-281
     title: "페트리 넷(Petri Net) — 플레이스·트랜지션·토큰과 병행성 분석"
     category: PE

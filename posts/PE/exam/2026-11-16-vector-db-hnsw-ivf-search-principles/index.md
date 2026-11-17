@@ -183,6 +183,8 @@ HNSW와 IVF는 모두 고차원에서 정확 탐색을 포기하고 **거리 계
 > 개념 정리: [근사 최근접 이웃 탐색과 HNSW 색인 — 정확한 답을 포기하고 얻는 것](../../database/2026-09-22-approximate-nearest-neighbor-hnsw/index.md)
 >
 > 개념 정리: [벡터 양자화와 율-왜곡 이론 — 비트를 줄이면 무엇을 잃는가](../../data-analysis/2026-10-19-vector-quantization-rate-distortion/index.md)
+>
+> 개념 정리: [역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기](../../database/2026-11-18-ivf-pq-inverted-file-residual-encoding/index.md)
 
 끝
 
