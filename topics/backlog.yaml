@@ -8108,3 +8108,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-281
+    title: "페트리 넷(Petri Net) — 플레이스·트랜지션·토큰과 병행성 분석"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "UML 활동 다이어그램이 기대는 토큰 흐름 의미의 원형. 구성요소 4가지, 발화 규칙, 도달성·활성·유계성 분석, 활동 다이어그램과의 대응"
+    code: none
+    origin: exam
+    status: todo

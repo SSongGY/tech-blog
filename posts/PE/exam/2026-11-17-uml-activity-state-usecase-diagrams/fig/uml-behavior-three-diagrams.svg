@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <defs>
+    <marker id="solid" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#222"/>
+    </marker>
+    <marker id="open" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#222" stroke-width="1.5"/>
+    </marker>
+    <marker id="fail" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="880" height="460" fill="#ffffff"/>
+
+  <line x1="293" y1="15" x2="293" y2="445" stroke="#ccc" stroke-width="1"/>
+  <line x1="586" y1="15" x2="586" y2="445" stroke="#ccc" stroke-width="1"/>
+
+  <!-- ① 유스케이스 -->
+  <text x="146" y="32" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">① 유스케이스 다이어그램</text>
+  <text x="146" y="52" font-size="13" text-anchor="middle" fill="#555">무엇을 제공하는가</text>
+
+  <rect x="95" y="75" width="185" height="335" fill="none" stroke="#222" stroke-width="1.5"/>
+  <text x="103" y="94" font-size="13" font-weight="bold" fill="#222">주문 시스템 (주체)</text>
+
+  <circle cx="45" cy="205" r="11" fill="none" stroke="#222" stroke-width="1.5"/>
+  <line x1="45" y1="216" x2="45" y2="250" stroke="#222" stroke-width="1.5"/>
+  <line x1="27" y1="229" x2="63" y2="229" stroke="#222" stroke-width="1.5"/>
+  <line x1="45" y1="250" x2="31" y2="275" stroke="#222" stroke-width="1.5"/>
+  <line x1="45" y1="250" x2="59" y2="275" stroke="#222" stroke-width="1.5"/>
+  <text x="45" y="296" font-size="13" text-anchor="middle" fill="#222">고객 (액터)</text>
+
+  <ellipse cx="187" cy="140" rx="70" ry="24" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="187" y="145" font-size="14" text-anchor="middle" fill="#222">결제</text>
+  <ellipse cx="187" cy="240" rx="70" ry="24" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="187" y="245" font-size="14" text-anchor="middle" fill="#222">상품 주문</text>
+  <ellipse cx="187" cy="350" rx="70" ry="24" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="187" y="355" font-size="14" text-anchor="middle" fill="#222">쿠폰 적용</text>
+
+  <line x1="63" y1="232" x2="117" y2="240" stroke="#222" stroke-width="1.5"/>
+  <line x1="187" y1="216" x2="187" y2="167" stroke="#222" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#open)"/>
+  <text x="194" y="196" font-size="13" fill="#222">«include»</text>
+  <line x1="187" y1="326" x2="187" y2="267" stroke="#222" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#open)"/>
+  <text x="194" y="301" font-size="13" fill="#222">«extend»</text>
+
+  <!-- ② 활동 -->
+  <text x="440" y="32" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">② 활동 다이어그램</text>
+  <text x="440" y="52" font-size="13" text-anchor="middle" fill="#555">어떤 순서로 흘러가는가</text>
+
+  <circle cx="440" cy="80" r="8" fill="#222"/>
+  <text x="456" y="85" font-size="13" fill="#555">시작</text>
+  <line x1="440" y1="88" x2="440" y2="107" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+
+  <rect x="385" y="108" width="110" height="34" rx="14" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="440" y="130" font-size="14" text-anchor="middle" fill="#222">주문 접수</text>
+  <line x1="440" y1="142" x2="440" y2="164" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+
+  <polygon points="440,165 457,182 440,199 423,182" fill="#ffffff" stroke="#222" stroke-width="1.5"/>
+  <text x="417" y="187" font-size="13" text-anchor="end" fill="#555">결정</text>
+
+  <line x1="457" y1="182" x2="528" y2="182" stroke="#9d0208" stroke-width="1.5" marker-end="url(#fail)"/>
+  <text x="492" y="174" font-size="13" text-anchor="middle" fill="#9d0208">[재고 없음]</text>
+  <circle cx="540" cy="182" r="10" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <line x1="533" y1="175" x2="547" y2="189" stroke="#9d0208" stroke-width="1.5"/>
+  <line x1="547" y1="175" x2="533" y2="189" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="540" y="211" font-size="13" text-anchor="middle" fill="#9d0208">흐름 종료</text>
+
+  <line x1="440" y1="199" x2="440" y2="235" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#solid)"/>
+  <text x="448" y="222" font-size="13" fill="#2d6a4f">[재고 있음]</text>
+
+  <line x1="370" y1="240" x2="510" y2="240" stroke="#222" stroke-width="6"/>
+  <text x="365" y="245" font-size="13" text-anchor="end" fill="#555">포크</text>
+  <line x1="385" y1="243" x2="385" y2="274" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <line x1="495" y1="243" x2="495" y2="274" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+
+  <rect x="337" y="275" width="96" height="34" rx="14" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="385" y="297" font-size="14" text-anchor="middle" fill="#222">결제 처리</text>
+  <rect x="447" y="275" width="96" height="34" rx="14" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="495" y="297" font-size="14" text-anchor="middle" fill="#222">배송 준비</text>
+
+  <line x1="385" y1="309" x2="385" y2="339" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <line x1="495" y1="309" x2="495" y2="339" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <line x1="370" y1="343" x2="510" y2="343" stroke="#222" stroke-width="6"/>
+  <text x="365" y="348" font-size="13" text-anchor="end" fill="#555">조인</text>
+
+  <line x1="440" y1="346" x2="440" y2="376" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <circle cx="440" cy="389" r="11" fill="#ffffff" stroke="#222" stroke-width="1.5"/>
+  <circle cx="440" cy="389" r="6" fill="#222"/>
+  <text x="458" y="394" font-size="13" fill="#555">활동 종료</text>
+
+  <!-- ③ 상태 머신 -->
+  <text x="733" y="32" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">③ 상태 머신 다이어그램</text>
+  <text x="733" y="52" font-size="13" text-anchor="middle" fill="#555">객체가 어떤 상태를 거치는가</text>
+
+  <circle cx="680" cy="80" r="8" fill="#222"/>
+  <line x1="680" y1="88" x2="680" y2="107" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+
+  <rect x="620" y="108" width="120" height="36" rx="12" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="680" y="131" font-size="14" text-anchor="middle" fill="#222">결제 대기</text>
+
+  <line x1="680" y1="144" x2="680" y2="227" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <text x="690" y="172" font-size="13" fill="#222">결제승인</text>
+  <text x="690" y="190" font-size="13" fill="#222">[금액 일치]</text>
+  <text x="690" y="208" font-size="13" fill="#222">/ 영수증 발행</text>
+
+  <rect x="610" y="228" width="140" height="52" rx="12" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="680" y="249" font-size="14" text-anchor="middle" fill="#222">결제 완료</text>
+  <line x1="614" y1="256" x2="746" y2="256" stroke="#222" stroke-width="1"/>
+  <text x="680" y="273" font-size="13" text-anchor="middle" fill="#222">entry / 포인트 적립</text>
+
+  <line x1="680" y1="280" x2="680" y2="337" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <text x="690" y="313" font-size="13" fill="#222">출고</text>
+
+  <rect x="620" y="338" width="120" height="36" rx="12" fill="#f4f8f6" stroke="#222" stroke-width="1.5"/>
+  <text x="680" y="361" font-size="14" text-anchor="middle" fill="#222">배송 중</text>
+
+  <line x1="680" y1="374" x2="680" y2="401" stroke="#222" stroke-width="1.5" marker-end="url(#solid)"/>
+  <text x="690" y="392" font-size="13" fill="#222">수령</text>
+  <circle cx="680" cy="414" r="11" fill="#ffffff" stroke="#222" stroke-width="1.5"/>
+  <circle cx="680" cy="414" r="6" fill="#222"/>
+  <text x="698" y="419" font-size="13" fill="#555">종료 상태</text>
+
+  <text x="812" y="172" font-size="13" fill="#555">트리거</text>
+  <text x="812" y="190" font-size="13" fill="#555">[가드]</text>
+  <text x="812" y="208" font-size="13" fill="#555">/ 효과</text>
+  <path d="M803,160 L803,212" stroke="#bbb" stroke-width="1"/>
+</svg>
