@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **760편** · 갱신 2026-11-18
+총 **762편** · 갱신 2026-11-18
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -146,10 +146,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 261편
+## 기술사 (pe) — 263편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-18 | [쿠버네티스 컨트롤러 패턴 — 선언적 상태와 조정 루프](posts/PE/emerging-tech/2026-11-18-kubernetes-controller-pattern-reconcile-loop/index.md) | 중급 | Kubernetes v1.37 문서 (2026-11-18 확인), kubernetes/community API Conventions·Writing Controllers (main, 2026-11-18 확인) | 문서 근거 |
+| 2026-11-18 | [역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기](posts/PE/database/2026-11-18-ivf-pq-inverted-file-residual-encoding/index.md) | 중급 | Python 3.13.5, numpy 2.3.4, Windows 11 | 실행 검증 |
 | 2026-11-17 | [CDS(Cross Domain Solution) — 접근형·전송형·다중등급형과 등급 간 데이터 연계](posts/PE/security/2026-11-17-cross-domain-solution-access-transfer-multilevel/index.md) | 중급 | CNSSI 4009-2022 (NIST CSRC Glossary 수록 정의), 국가정보원, 국가 망 보안체계 보안 가이드라인 1.0 부록1 (2025-09), UK NCSC Security principles for cross domain solutions v1.0 (2021-01-21) | 문서 근거 |
 | 2026-11-17 | [BPF와 eBPF — 소켓 필터에서 커널 안 범용 실행 환경으로](posts/PE/system/2026-11-17-bpf-ebpf-socket-filter-to-kernel-runtime/index.md) | 중급 | Linux kernel 문서 (docs.kernel.org, 7.4.0-rc3), RFC 9669 BPF Instruction Set Architecture (2024-10), bpf(2) man-pages 6.19 (2026-02-10) | 문서 근거 |
 | 2026-11-16 | [국가 망 보안체계(N2SF) — C/S/O 등급분류와 위치-주체-객체 위협 모델](posts/PE/security/2026-11-16-n2sf-location-subject-object-threat-model/index.md) | 중급 | 국가정보원, 국가 망 보안체계 보안 가이드라인 1.0 부록1·부록2 (2025-09), Python 3.13.5 | 실행 검증 |
