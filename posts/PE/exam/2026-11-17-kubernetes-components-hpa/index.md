@@ -202,6 +202,8 @@ desiredReplicas = ceil[ currentReplicas × ( currentMetricValue / desiredMetricV
 > 개념 정리: [컨테이너와 가상머신 — 격리 수준의 차이](../../emerging-tech/2026-09-30-container-vs-vm-isolation/index.md)
 >
 > 개념 정리: [무중단 배포 전략 — 롤링·블루그린·카나리와 확장-축소 스키마 변경](../../software-engineering/2026-10-09-zero-downtime-deployment-expand-contract/index.md)
+>
+> 개념 정리: [쿠버네티스 컨트롤러 패턴 — 선언적 상태와 조정 루프](../../emerging-tech/2026-11-18-kubernetes-controller-pattern-reconcile-loop/index.md)
 
 끝
 

@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <!-- 사용자 -->
+  <rect x="30" y="60" width="150" height="60" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="105" y="86" font-size="14" fill="#111827" text-anchor="middle">사용자·kubectl</text>
+  <text x="105" y="106" font-size="13" fill="#4b5563" text-anchor="middle">spec 작성</text>
+
+  <!-- API 서버 -->
+  <rect x="30" y="170" width="150" height="120" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="105" y="200" font-size="15" font-weight="bold" fill="#2d6a4f" text-anchor="middle">API 서버</text>
+  <text x="105" y="222" font-size="13" fill="#111827" text-anchor="middle">+ etcd</text>
+  <text x="105" y="250" font-size="13" fill="#4b5563" text-anchor="middle">spec = 원하는 상태</text>
+  <text x="105" y="270" font-size="13" fill="#4b5563" text-anchor="middle">status = 관찰한 상태</text>
+
+  <line x1="105" y1="120" x2="105" y2="168" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+
+  <!-- 컨트롤러 영역 -->
+  <rect x="240" y="40" width="610" height="270" rx="10" fill="none" stroke="#9ca3af" stroke-dasharray="6 4"/>
+  <text x="545" y="64" font-size="15" font-weight="bold" fill="#111827" text-anchor="middle">컨트롤러 하나의 조정 루프</text>
+
+  <rect x="270" y="90" width="160" height="60" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="350" y="116" font-size="14" fill="#111827" text-anchor="middle">① 감시</text>
+  <text x="350" y="136" font-size="13" fill="#4b5563" text-anchor="middle">list + watch</text>
+
+  <rect x="470" y="90" width="160" height="60" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="550" y="116" font-size="14" fill="#111827" text-anchor="middle">② 로컬 캐시</text>
+  <text x="550" y="136" font-size="13" fill="#4b5563" text-anchor="middle">공유 인포머</text>
+
+  <rect x="670" y="90" width="160" height="60" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="750" y="116" font-size="14" fill="#111827" text-anchor="middle">③ 작업 큐</text>
+  <text x="750" y="136" font-size="13" fill="#4b5563" text-anchor="middle">객체 키만 넣는다</text>
+
+  <rect x="570" y="210" width="260" height="70" rx="6" fill="#f3f4f6" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="700" y="238" font-size="14" fill="#2d6a4f" text-anchor="middle">④ 조정(reconcile)</text>
+  <text x="700" y="260" font-size="13" fill="#4b5563" text-anchor="middle">원하는 상태 − 현재 상태 = 할 일</text>
+
+  <rect x="270" y="210" width="240" height="70" rx="6" fill="#f3f4f6" stroke="#374151"/>
+  <text x="390" y="238" font-size="14" fill="#111827" text-anchor="middle">⑤ 변경 요청 · status 기록</text>
+  <text x="390" y="260" font-size="13" fill="#4b5563" text-anchor="middle">충돌(409)이면 큐에 다시</text>
+
+  <line x1="182" y1="200" x2="268" y2="128" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="430" y1="120" x2="468" y2="120" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="630" y1="120" x2="668" y2="120" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="750" y1="150" x2="750" y2="208" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="570" y1="245" x2="512" y2="245" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="270" y1="250" x2="182" y2="250" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arrg)"/>
+
+  <!-- 컨트롤러 연쇄 -->
+  <text x="440" y="350" font-size="14" font-weight="bold" fill="#111827" text-anchor="middle">컨트롤러끼리는 서로 부르지 않는다 — 객체를 남기고 다음 컨트롤러가 그것을 관찰한다</text>
+
+  <rect x="40" y="380" width="170" height="56" rx="6" fill="#ffffff" stroke="#374151"/>
+  <text x="125" y="404" font-size="14" fill="#111827" text-anchor="middle">HPA 컨트롤러</text>
+  <text x="125" y="424" font-size="13" fill="#4b5563" text-anchor="middle">scale.replicas 갱신</text>
+
+  <rect x="250" y="380" width="170" height="56" rx="6" fill="#ffffff" stroke="#374151"/>
+  <text x="335" y="404" font-size="14" fill="#111827" text-anchor="middle">Deployment 컨트롤러</text>
+  <text x="335" y="424" font-size="13" fill="#4b5563" text-anchor="middle">ReplicaSet 조정</text>
+
+  <rect x="460" y="380" width="170" height="56" rx="6" fill="#ffffff" stroke="#374151"/>
+  <text x="545" y="404" font-size="14" fill="#111827" text-anchor="middle">ReplicaSet 컨트롤러</text>
+  <text x="545" y="424" font-size="13" fill="#4b5563" text-anchor="middle">Pod 생성·삭제</text>
+
+  <rect x="670" y="380" width="170" height="56" rx="6" fill="#ffffff" stroke="#374151"/>
+  <text x="755" y="404" font-size="14" fill="#111827" text-anchor="middle">스케줄러 · kubelet</text>
+  <text x="755" y="424" font-size="13" fill="#4b5563" text-anchor="middle">배치 · 컨테이너 기동</text>
+
+  <line x1="210" y1="408" x2="248" y2="408" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="420" y1="408" x2="458" y2="408" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="630" y1="408" x2="668" y2="408" stroke="#374151" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="440" y="470" font-size="13" fill="#4b5563" text-anchor="middle">화살표 하나하나가 API 서버의 객체 쓰기 → 관찰이다</text>
+</svg>
