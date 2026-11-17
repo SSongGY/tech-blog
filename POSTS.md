@@ -803,6 +803,11 @@
 - [ON CONFLICT 다섯 가지 — ROLLBACK·ABORT·FAIL·IGNORE·REPLACE](posts/Database/sql-basics/2026-10-19-on-conflict-five-resolutions/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [OR REPLACE 의 부작용 — UPDATE 의 충돌 처리, 외래키 CASCADE, 삭제 트리거](posts/Database/sql-basics/2026-11-06-or-replace-side-effects/index.md) — SQLite 3.49.1, Python 3.13.5
 
+**`consistent-hashing`**
+
+- [일관 해싱 — 노드를 하나 더했을 때 옮겨지는 키의 비율](posts/Architecture/datastructure/2026-11-07-consistent-hashing-key-movement/index.md) — Python 3.13.5
+- [Jump 일관 해시 — 메모리 없이 키를 버킷에 나누고, 가운데 버킷은 뺄 수 없는 이유](posts/Architecture/datastructure/2026-11-17-jump-consistent-hash/index.md) — Python 3.13.5, Windows 11
+
 **`constraints`**
 
 - [CREATE TABLE — 타입과 기본 제약조건](posts/Database/sql-basics/2026-09-29-create-table-constraints-when-checked/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11

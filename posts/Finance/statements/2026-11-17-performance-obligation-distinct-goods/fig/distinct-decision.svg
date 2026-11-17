@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 560" width="880" height="560" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <!-- 약속 나열 -->
+  <rect x="30" y="24" width="400" height="56" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="230" y="48" text-anchor="middle" font-size="14">계약 개시시점에 약속한 재화·용역을 나열</text>
+  <text x="230" y="68" text-anchor="middle" font-size="13">명시된 것 + 관행·방침으로 암시된 것 (문단 24·26)</text>
+
+  <line x1="230" y1="80" x2="230" y2="118" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 준비 활동 -->
+  <rect x="30" y="122" width="400" height="52" rx="6" fill="#ffffff" stroke="#444"/>
+  <text x="230" y="153" text-anchor="middle" font-size="14">고객에게 재화·용역을 이전하는 활동인가? (문단 25)</text>
+  <line x1="430" y1="148" x2="485" y2="148" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="457" y="138" text-anchor="middle" font-size="13">아니오</text>
+  <rect x="490" y="122" width="360" height="52" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="670" y="153" text-anchor="middle" font-size="14">준비 활동 — 수행의무가 아니다</text>
+
+  <line x1="230" y1="174" x2="230" y2="212" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="245" y="198" font-size="13">예</text>
+
+  <!-- 27(1) -->
+  <rect x="30" y="216" width="400" height="56" rx="6" fill="#ffffff" stroke="#444"/>
+  <text x="230" y="240" text-anchor="middle" font-size="14">⑴ 구별될 수 있는가 (문단 27⑴·28)</text>
+  <text x="230" y="260" text-anchor="middle" font-size="13">그 자체로 또는 쉽게 구할 수 있는 자원과 함께 효익</text>
+
+  <line x1="230" y1="272" x2="230" y2="310" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="245" y="296" font-size="13">예</text>
+
+  <!-- 27(2) -->
+  <rect x="30" y="314" width="400" height="70" rx="6" fill="#fff8eb" stroke="#b45309"/>
+  <text x="230" y="338" text-anchor="middle" font-size="14" fill="#b45309">⑵ 계약상 구별되는가 (문단 27⑵·29)</text>
+  <text x="230" y="358" text-anchor="middle" font-size="13">유의적 통합 · 유의적 변형·맞춤화 · 높은 상호의존</text>
+  <text x="230" y="376" text-anchor="middle" font-size="13">중 하나라도 있으면 구별되지 않는다</text>
+
+  <line x1="230" y1="384" x2="230" y2="422" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="245" y="408" font-size="13">예</text>
+  <rect x="30" y="426" width="400" height="52" rx="6" fill="#e9f5ef" stroke="#2d6a4f"/>
+  <text x="230" y="457" text-anchor="middle" font-size="14" fill="#2d6a4f">별도 수행의무 (문단 22⑴)</text>
+
+  <!-- 결합 -->
+  <line x1="430" y1="244" x2="660" y2="244" stroke="#444" stroke-width="2"/>
+  <line x1="660" y1="244" x2="660" y2="310" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="545" y="234" text-anchor="middle" font-size="13">아니오</text>
+  <line x1="430" y1="349" x2="485" y2="349" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="457" y="339" text-anchor="middle" font-size="13">아니오</text>
+  <rect x="490" y="314" width="360" height="70" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="670" y="342" text-anchor="middle" font-size="14" fill="#9d0208">다른 약속과 결합 (문단 30)</text>
+  <text x="670" y="364" text-anchor="middle" font-size="13">구별되는 묶음이 될 때까지 합친다</text>
+
+  <line x1="660" y1="384" x2="660" y2="422" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="490" y="426" width="360" height="52" rx="6" fill="#e9f5ef" stroke="#2d6a4f"/>
+  <text x="670" y="457" text-anchor="middle" font-size="14" fill="#2d6a4f">묶음 하나가 수행의무 (결합산출물)</text>
+
+  <text x="440" y="516" text-anchor="middle" font-size="13" fill="#444">실질이 같고 이전 방식이 같은 일련의 구별되는 재화·용역은 수행의무 하나로 본다 (문단 22⑵·23)</text>
+</svg>

@@ -8041,7 +8041,7 @@ topics:
     angle: "룰 구성(meta·strings·condition), 해시·시그니처 탐지와의 차이, 오탐 관리와 배포 절차"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-279
     title: "역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기"
     category: PE
@@ -8119,3 +8119,47 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-126
+    title: "숫자가 섞인 문자열 정렬 — file10이 file2보다 앞에 오는 이유와 자연 정렬"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, order-by, sort, basics]
+    difficulty: 입문
+    angle: "TEXT 비교가 바이트 비교라 숫자 부분이 자릿수대로 정렬되지 않는 것을 재현하고, CAST·길이 먼저 정렬·접두어와 숫자 분리·버전 문자열 세 토막 나누기로 자연 정렬을 만든다. 식 인덱스로 정렬을 없앨 수 있는지 실행계획으로 본다"
+    code: python
+    origin: manual
+    status: writing
+  - id: gen-041
+    title: "Jump 일관 해시 — 메모리 없이 키를 버킷에 나누고, 가운데 버킷은 뺄 수 없는 이유"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [consistent-hashing, jump-hash, sharding, python]
+    difficulty: 중급
+    angle: "Lamping·Veach 2014 논문 알고리즘을 파이썬으로 구현해 버킷을 늘릴 때 옮겨 가는 키 비율, 버킷별 편차, 링 해시(가상 노드 100개)와의 메모리·속도를 실측한다. 끝 버킷만 뺄 수 있는 제약을 재현한다"
+    code: python
+    origin: manual
+    status: writing
+  - id: fin-151
+    title: "수행의무 식별 — 구별되는 재화와 결합산출물, 일련의 재화"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, performance-obligation]
+    difficulty: 중급
+    angle: "제1115호 문단 22~30. 장비·설치·유지보수 계약에서 설치가 유의적 통합·고객 맞춤화인지에 따라 수행의무가 셋이 되거나 둘이 될 때 연도별 수익이 어떻게 갈리는지 계산. 준비 활동(25)과 일련의 재화(22⑵·23)도 다룬다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-152
+    title: "진행률 산출법과 미설치 자재 — 원가 진행률이 수행 정도를 나타내지 못할 때"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, percentage-of-completion]
+    difficulty: 중급
+    angle: "제1115호 문단 39~42·B14~B17·B19⑵. 같은 승강기 설치 계약을 원가기준 그대로, 미설치 자재 조정, 산출법(설치 대수·도달 단계)으로 재면 1년차 수익과 이익이 얼마나 갈리는지 계산. B16 청구권 금액 간편법 포함"
+    code: python
+    origin: manual
+    status: writing
