@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **756편** · 갱신 2026-11-17
+총 **757편** · 갱신 2026-11-17
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -516,10 +516,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 119편
+## 기출문제 (exam) — 120편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-17 | [기출문제 — UML 행위 다이어그램: 활동·상태 머신·유스케이스](posts/PE/exam/2026-11-17-uml-activity-state-usecase-diagrams/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01) | 문서 근거 |
 | 2026-11-17 | [기출문제 — 쿠버네티스의 개념·주요 컴포넌트와 HPA](posts/PE/exam/2026-11-17-kubernetes-components-hpa/index.md) | 중급 | Kubernetes v1.37 문서 (2026-11-17 확인), Verma et al., Borg, EuroSys 2015, Burns et al., Borg, Omega, and Kubernetes, ACM Queue 14(1) 2016 | 문서 근거 |
 | 2026-11-16 | [기출문제 — 벡터 데이터베이스의 HNSW와 IVF 색인 동작 원리](posts/PE/exam/2026-11-16-vector-db-hnsw-ivf-search-principles/index.md) | 중급 | Malkov & Yashunin, arXiv:1603.09320v4 (2018), Douze et al., The Faiss library, arXiv:2401.08281v4 (2025-10-23), pgvector 0.8.7 README (2026-11-16 확인) | 문서 근거 |
 | 2026-11-16 | [기출문제 — 국가 망 보안체계(N2SF)의 개념, 적용 절차, 고려사항](posts/PE/exam/2026-11-16-national-network-security-framework-n2sf/index.md) | 심화 | 국가정보원, 국가 망 보안체계 보안 가이드라인 1.0 (2025-09), 국가 망 보안체계 보안 가이드라인 Draft (2025-01) | 문서 근거 |
