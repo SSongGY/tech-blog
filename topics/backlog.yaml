@@ -8229,3 +8229,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-285
+    title: "멀티테넌트 SaaS의 테넌트 격리 모델과 요청-테넌트 매핑"
+    category: PE
+    subcategory: cloud
+    track: pe
+    tags: [정보관리기술사, cloud, 개념정리]
+    difficulty: 중급
+    angle: "테넌시 모델(단일·완전 공유·수직·수평 분할), 도메인·경로·토큰 클레임 기반 매핑, 커스텀 도메인 검증과 서브도메인 탈취 방지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-286
+    title: "EU 범용 AI 행동강령 — 투명성·저작권·안전보안 3개 장"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "AI법 제53조·제55조 의무와 행동강령 3개 장의 대응, 모델 문서 양식, 시스템적 위험 관리 약속 10가지"
+    code: none
+    origin: exam
+    status: todo
