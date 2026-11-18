@@ -7832,7 +7832,7 @@ topics:
     angle: "해시 k 개 서명으로 자카드 유사도를 추정해 오차가 1/sqrt(k) 로 줄어드는지 재고, 밴드 b·행 r 로 나눈 LSH 의 후보 확률 1-(1-s^r)^b 를 시뮬레이션과 맞춰 본다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-143
     title: "위탁약정 — 유통업자에게 넘긴 제품을 언제 매출로 잡는가"
     category: Finance
@@ -8118,7 +8118,7 @@ topics:
     angle: "UML 활동 다이어그램이 기대는 토큰 흐름 의미의 원형. 구성요소 4가지, 발화 규칙, 도달성·활성·유계성 분석, 활동 다이어그램과의 대응"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-126
     title: "숫자가 섞인 문자열 정렬 — file10이 file2보다 앞에 오는 이유와 자연 정렬"
     category: Database
@@ -8196,3 +8196,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-127
+    title: "코호트 표 — 첫 구매 월을 기준으로 재구매 고객을 세는 SQL"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, cohort, window-function, basics]
+    difficulty: 입문
+    angle: "고객마다 첫 구매 월을 MIN 으로 구하고, 이후 구매 월과의 차이를 연*12+월 로 계산해 코호트×경과 월 표를 만든다. 날짜 차이를 일수/30 으로 구하면 어긋나는 자리와 COUNT(DISTINCT) 가 빠지면 부풀려지는 자리를 재현한다"
+    code: python
+    origin: manual
+    status: done

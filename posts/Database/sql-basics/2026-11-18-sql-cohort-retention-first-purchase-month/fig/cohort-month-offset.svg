@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">주문 한 줄이 코호트 표의 어느 칸으로 가는가</text>
+
+  <!-- 주문 두 줄 -->
+  <rect x="250" y="50" width="380" height="64" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="440" y="76" font-size="15" text-anchor="middle" fill="#1f2937">고객 5 — 첫 구매 2026-02-28</text>
+  <text x="440" y="100" font-size="15" text-anchor="middle" fill="#1f2937">다음 구매 2026-04-01</text>
+
+  <line x1="330" y1="114" x2="230" y2="150" stroke="#9d0208" stroke-width="2"/>
+  <line x1="550" y1="114" x2="650" y2="150" stroke="#2d6a4f" stroke-width="2"/>
+
+  <!-- 왼쪽: 일수 / 30 -->
+  <rect x="60" y="150" width="340" height="110" rx="6" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/>
+  <text x="230" y="176" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">일수 / 30</text>
+  <text x="230" y="202" font-size="14" text-anchor="middle" fill="#1f2937">julianday 차 = 32일</text>
+  <text x="230" y="224" font-size="14" text-anchor="middle" fill="#1f2937">CAST(32 / 30 AS INTEGER) = 1</text>
+  <text x="230" y="248" font-size="13" text-anchor="middle" fill="#9d0208">달은 2월 → 4월인데 1개월로 센다</text>
+
+  <!-- 오른쪽: 연*12+월 -->
+  <rect x="480" y="150" width="340" height="110" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="650" y="176" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">연 × 12 + 월</text>
+  <text x="650" y="202" font-size="14" text-anchor="middle" fill="#1f2937">2026×12+4 = 24316</text>
+  <text x="650" y="224" font-size="14" text-anchor="middle" fill="#1f2937">2026×12+2 = 24314 → 차 2</text>
+  <text x="650" y="248" font-size="13" text-anchor="middle" fill="#2d6a4f">달력상 몇 번째 달인지 그대로 나온다</text>
+
+  <line x1="650" y1="260" x2="650" y2="300" stroke="#2d6a4f" stroke-width="2"/>
+  <polygon points="644,296 656,296 650,306" fill="#2d6a4f"/>
+
+  <!-- 코호트 표 -->
+  <g font-size="14" text-anchor="middle" fill="#1f2937">
+    <rect x="300" y="310" width="120" height="34" fill="#f3f4f6" stroke="#9ca3af"/><text x="360" y="332">코호트</text>
+    <rect x="420" y="310" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/><text x="460" y="332">m0</text>
+    <rect x="500" y="310" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/><text x="540" y="332">m1</text>
+    <rect x="580" y="310" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/><text x="620" y="332">m2</text>
+    <rect x="660" y="310" width="80" height="34" fill="#f3f4f6" stroke="#9ca3af"/><text x="700" y="332">m3</text>
+
+    <rect x="300" y="344" width="120" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="360" y="366">2026-01</text>
+    <rect x="420" y="344" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="460" y="366">4</text>
+    <rect x="500" y="344" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="540" y="366">2</text>
+    <rect x="580" y="344" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="620" y="366">1</text>
+    <rect x="660" y="344" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="700" y="366">1</text>
+
+    <rect x="300" y="378" width="120" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="360" y="400">2026-02</text>
+    <rect x="420" y="378" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="460" y="400">3</text>
+    <rect x="500" y="378" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="540" y="400">1</text>
+    <rect x="580" y="378" width="80" height="34" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/><text x="620" y="400">1</text>
+    <rect x="660" y="378" width="80" height="34" fill="#fef3c7" stroke="#b45309" stroke-dasharray="4 3"/><text x="700" y="400" fill="#b45309">0</text>
+
+    <rect x="300" y="412" width="120" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="360" y="434">2026-03</text>
+    <rect x="420" y="412" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="460" y="434">2</text>
+    <rect x="500" y="412" width="80" height="34" fill="#ffffff" stroke="#9ca3af"/><text x="540" y="434">1</text>
+    <rect x="580" y="412" width="80" height="34" fill="#fef3c7" stroke="#b45309" stroke-dasharray="4 3"/><text x="620" y="434" fill="#b45309">0</text>
+    <rect x="660" y="412" width="80" height="34" fill="#fef3c7" stroke="#b45309" stroke-dasharray="4 3"/><text x="700" y="434" fill="#b45309">0</text>
+  </g>
+  <text x="200" y="370" font-size="13" text-anchor="middle" fill="#4b5563">칸 값 =</text>
+  <text x="200" y="390" font-size="13" text-anchor="middle" fill="#4b5563">COUNT(DISTINCT</text>
+  <text x="200" y="410" font-size="13" text-anchor="middle" fill="#4b5563">customer_id)</text>
+
+  <text x="440" y="478" font-size="13" text-anchor="middle" fill="#b45309">점선 칸은 2026-05 이후라 데이터가 아직 없다 — "재구매 0명"이 아니라 "관측 전"이다</text>
+  <text x="440" y="504" font-size="13" text-anchor="middle" fill="#4b5563">SQLite 3.49.1, 실습 [2]·[4] — 주문 데이터는 2026-04-30 까지</text>
+</svg>

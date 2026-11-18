@@ -1,0 +1,117 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-18-sql-cohort-retention-first-purchase-month
+# 명령      : python cohort.py
+# 수행 시각 : 2026-11-18 19:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[customer_order]  18행
+  컬럼        | 타입    | 제약
+  ------------+---------+---------
+  order_id    | INTEGER | PK
+  customer_id | INTEGER | NOT NULL
+  order_date  | TEXT    | NOT NULL
+
+  order_id | customer_id | order_date
+  ---------+-------------+-----------
+         1 |           1 | 2026-01-05
+         2 |           1 | 2026-01-20
+         3 |           1 | 2026-02-03
+         4 |           1 | 2026-04-11
+         5 |           2 | 2026-01-31
+         6 |           2 | 2026-02-01
+         7 |           3 | 2026-01-15
+         8 |           9 | 2026-01-08
+         9 |           9 | 2026-03-31
+        10 |           4 | 2026-02-10
+        11 |           4 | 2026-03-09
+        12 |           4 | 2026-03-28
+  … 6행 더 있음
+
+
+[1] 고객마다 첫 구매 월
+  sql> SELECT customer_id, first_date, strftime('%Y-%m', first_date) AS cohort FROM ( SELECT customer_id, MIN(order_date) AS first_date FROM customer_order GROUP BY customer_id ) ORDER BY customer_id
+    ('customer_id', 'first_date', 'cohort')
+    (1, '2026-01-05', '2026-01')
+    (2, '2026-01-31', '2026-01')
+    (3, '2026-01-15', '2026-01')
+    (4, '2026-02-10', '2026-02')
+    (5, '2026-02-28', '2026-02')
+    (6, '2026-02-14', '2026-02')
+    (7, '2026-03-03', '2026-03')
+    (8, '2026-03-20', '2026-03')
+    (9, '2026-01-08', '2026-01')
+
+[2] 경과 월 — 일수/30 과 달력 월 차이가 갈리는 주문만
+  sql> SELECT o.customer_id, f.first_date, o.order_date, julianday(o.order_date) - julianday(f.first_date) AS days, CAST((julianday(o.order_date) - julianday(f.first_date)) / 30 AS INTEGER) AS by_days, (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) AS by_month FROM customer_order AS o JOIN ( SELECT customer_id, MIN(order_date) AS first_date FROM customer_order GROUP BY customer_id ) AS f USING (customer_id) WHERE CAST((julianday(o.order_date) - julianday(f.first_date)) / 30 AS INTEGER) <> (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) ORDER BY o.customer_id, o.order_date
+    ('customer_id', 'first_date', 'order_date', 'days', 'by_days', 'by_month')
+    (1, '2026-01-05', '2026-02-03', 29.0, 0, 1)
+    (2, '2026-01-31', '2026-02-01', 1.0, 0, 1)
+    (4, '2026-02-10', '2026-03-09', 27.0, 0, 1)
+    (5, '2026-02-28', '2026-04-01', 32.0, 1, 2)
+
+[3] 코호트 x 경과 월 — COUNT(*) 와 COUNT(DISTINCT)
+  sql> SELECT strftime('%Y-%m', f.first_date) AS cohort, (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) AS month_no, COUNT(*) AS order_rows, COUNT(DISTINCT o.customer_id) AS customers FROM customer_order AS o JOIN ( SELECT customer_id, MIN(order_date) AS first_date FROM customer_order GROUP BY customer_id ) AS f USING (customer_id) GROUP BY cohort, month_no ORDER BY cohort, month_no
+    ('cohort', 'month_no', 'order_rows', 'customers')
+    ('2026-01', 0, 5, 4)
+    ('2026-01', 1, 2, 2)
+    ('2026-01', 2, 1, 1)
+    ('2026-01', 3, 1, 1)
+    ('2026-02', 0, 3, 3)
+    ('2026-02', 1, 2, 1)
+    ('2026-02', 2, 1, 1)
+    ('2026-03', 0, 2, 2)
+    ('2026-03', 1, 1, 1)
+
+[4] 가로 표로 펼치기 — 경과 월마다 CASE 한 칸
+  sql> SELECT strftime('%Y-%m', f.first_date) AS cohort, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 0 THEN o.customer_id END) AS m0, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 1 THEN o.customer_id END) AS m1, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 2 THEN o.customer_id END) AS m2, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 3 THEN o.customer_id END) AS m3 FROM customer_order AS o JOIN ( SELECT customer_id, MIN(order_date) AS first_date FROM customer_order GROUP BY customer_id ) AS f USING (customer_id) GROUP BY cohort ORDER BY cohort
+    ('cohort', 'm0', 'm1', 'm2', 'm3')
+    ('2026-01', 4, 2, 1, 1)
+    ('2026-02', 3, 1, 1, 0)
+    ('2026-03', 2, 1, 0, 0)
+
+[5] 비율 — 정수끼리 나누면
+  sql> SELECT cohort, m0, m1, m1 / m0 AS int_div, ROUND(100.0 * m1 / m0, 1) AS pct FROM ( SELECT strftime('%Y-%m', f.first_date) AS cohort, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 0 THEN o.customer_id END) AS m0, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 1 THEN o.customer_id END) AS m1, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 2 THEN o.customer_id END) AS m2, COUNT(DISTINCT CASE WHEN (CAST(strftime('%Y', o.order_date) AS INTEGER) * 12 + CAST(strftime('%m', o.order_date) AS INTEGER)) - (CAST(strftime('%Y', f.first_date) AS INTEGER) * 12 + CAST(strftime('%m', f.first_date) AS INTEGER)) = 3 THEN o.customer_id END) AS m3 FROM customer_order AS o JOIN ( SELECT customer_id, MIN(order_date) AS first_date FROM customer_order GROUP BY customer_id ) AS f USING (customer_id) GROUP BY cohort ORDER BY cohort )
+    ('cohort', 'm0', 'm1', 'int_div', 'pct')
+    ('2026-01', 4, 2, 0, 50.0)
+    ('2026-02', 3, 1, 0, 33.3)
+    ('2026-03', 2, 1, 0, 50.0)
+
+[6] 첫 구매일을 창 함수로 — 행마다 그 고객의 MIN 을 붙인다
+  sql> SELECT customer_id, order_date, MIN(order_date) OVER (PARTITION BY customer_id) AS first_date FROM customer_order WHERE customer_id IN (1, 2) ORDER BY customer_id, order_date
+    ('customer_id', 'order_date', 'first_date')
+    (1, '2026-01-05', '2026-01-05')
+    (1, '2026-01-20', '2026-01-05')
+    (1, '2026-02-03', '2026-01-05')
+    (1, '2026-04-11', '2026-01-05')
+    (2, '2026-01-31', '2026-01-31')
+    (2, '2026-02-01', '2026-01-31')
+  plan> SELECT o.customer_id FROM customer_order AS o JOIN ( SELECT customer_i ...
+    QUERY PLAN
+    |--CO-ROUTINE f
+    |  |--SCAN customer_order
+    |  `--USE TEMP B-TREE FOR GROUP BY
+    |--SCAN o
+    |--BLOOM FILTER ON f (customer_id=?)
+    `--SEARCH f USING AUTOMATIC COVERING INDEX (customer_id=?)
+  plan> SELECT customer_id, order_date, MIN(order_date) OVER (PARTITION BY cus ...
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-2)
+    |  |--SCAN customer_order
+    |  `--USE TEMP B-TREE FOR ORDER BY
+    |--SCAN (subquery-2)
+    `--USE TEMP B-TREE FOR ORDER BY
