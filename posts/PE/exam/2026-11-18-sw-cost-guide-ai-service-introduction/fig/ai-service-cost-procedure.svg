@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 370" width="900" height="370" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="900" height="370" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#334155"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">AI 서비스 도입 사업비 산정 5단계와 비용 항목 3개</text>
+
+  <!-- 절차 5단계 -->
+  <g font-size="14" fill="#1e293b" text-anchor="middle">
+    <rect x="20" y="56" width="150" height="66" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="95" y="83" font-weight="bold">1. 사전 준비</text>
+    <text x="95" y="105" font-size="13">대상 서비스·유형 결정</text>
+
+    <rect x="192" y="56" width="150" height="66" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="267" y="83" font-weight="bold">2. 이용료 계산</text>
+    <text x="267" y="105" font-size="13">기간 × 규모 × 단가</text>
+
+    <rect x="364" y="56" width="150" height="66" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="439" y="83" font-weight="bold">3. 커스터마이징</text>
+    <text x="439" y="105" font-size="13">작업비용 계산</text>
+
+    <rect x="536" y="56" width="150" height="66" rx="6" fill="#f1f5f9" stroke="#334155" stroke-width="1.5"/>
+    <text x="611" y="83" font-weight="bold">4. 구축·개발비</text>
+    <text x="611" y="105" font-size="13">FP 또는 투입공수</text>
+
+    <rect x="708" y="56" width="150" height="66" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+    <text x="783" y="83" font-weight="bold" fill="#2d6a4f">5. 사업비 산정</text>
+    <text x="783" y="105" font-size="13">① + ② + ③</text>
+  </g>
+
+  <g stroke="#334155" stroke-width="1.5" fill="none">
+    <line x1="170" y1="89" x2="190" y2="89" marker-end="url(#arrow)"/>
+    <line x1="342" y1="89" x2="362" y2="89" marker-end="url(#arrow)"/>
+    <line x1="514" y1="89" x2="534" y2="89" marker-end="url(#arrow)"/>
+    <line x1="686" y1="89" x2="706" y2="89" marker-end="url(#arrow)"/>
+    <!-- 단계 2·3·4 가 각각 비용 항목 하나를 만든다 -->
+    <line x1="267" y1="122" x2="248" y2="190" marker-end="url(#arrow)"/>
+    <line x1="439" y1="122" x2="455" y2="190" marker-end="url(#arrow)"/>
+    <line x1="611" y1="122" x2="662" y2="190" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- 비용 항목 3개 -->
+  <g font-size="14" fill="#1e293b" text-anchor="middle">
+    <rect x="150" y="192" width="190" height="84" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="245" y="217" font-weight="bold">① 서비스 총이용료</text>
+    <text x="245" y="240" font-size="13">가격표·견적서 기준</text>
+    <text x="245" y="263" font-size="13" fill="#475569">적용: 모든 유형</text>
+
+    <rect x="360" y="192" width="190" height="84" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="455" y="217" font-weight="bold">② 커스터마이징 작업비</text>
+    <text x="455" y="240" font-size="13">작업요소 4개, 투입공수</text>
+    <text x="455" y="263" font-size="13" fill="#475569">적용: 커스터마이징형·통합형</text>
+
+    <rect x="570" y="192" width="190" height="84" rx="6" fill="#ffffff" stroke="#334155" stroke-width="1.5"/>
+    <text x="665" y="217" font-weight="bold">③ 구축·개발 비용</text>
+    <text x="665" y="240" font-size="13">기존 개발비 방식 준용</text>
+    <text x="665" y="263" font-size="13" fill="#475569">적용: 시스템통합형</text>
+  </g>
+
+  <!-- 세 항목을 더해 5단계로 -->
+  <g stroke="#2d6a4f" stroke-width="1.5" fill="none">
+    <line x1="245" y1="276" x2="245" y2="302"/>
+    <line x1="455" y1="276" x2="455" y2="302"/>
+    <line x1="665" y1="276" x2="665" y2="302"/>
+    <polyline points="245,302 810,302 810,124" marker-end="url(#arrow-green)"/>
+  </g>
+  <text x="350" y="240" text-anchor="middle" font-size="18" fill="#1e293b">+</text>
+  <text x="560" y="240" text-anchor="middle" font-size="18" fill="#1e293b">+</text>
+
+  <text x="440" y="340" text-anchor="middle" font-size="13" fill="#b45309">도입 이후 유지관리·운영비는 연간 이용료 + 투입공수 방식 운영비로 따로 산정한다</text>
+</svg>

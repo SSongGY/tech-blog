@@ -8185,3 +8185,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-284
+    title: "투입공수 방식 대가산정 — SW기술자 평균임금과 MD·MM 환산"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "기능점수로 규모를 셀 수 없는 작업(AI 커스터마이징, 운영, ISP)을 투입공수로 산정할 때 직접인건비·제경비·기술료 구성과 등급별 평균임금 적용, 기능점수 방식과의 선택 기준"
+    code: none
+    origin: exam
+    status: todo
