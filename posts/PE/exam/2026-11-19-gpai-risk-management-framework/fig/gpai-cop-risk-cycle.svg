@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 490" width="880" height="490" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="490" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">EU 범용 AI 행동강령 안전·보안 장 — 시스템적 위험 관리 흐름</text>
+
+  <!-- C1 -->
+  <rect x="40" y="46" width="800" height="44" rx="6" fill="#eef3f8" stroke="#355070" stroke-width="1.5"/>
+  <text x="440" y="74" text-anchor="middle" font-size="14" fill="#222222">① 안전·보안 프레임워크 (Commitment 1) — 아래 과정의 절차·기준을 미리 문서로 정한다</text>
+
+  <!-- row 2 -->
+  <rect x="40" y="130" width="180" height="96" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="130" y="154" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">② 위험 식별</text>
+  <text x="130" y="176" text-anchor="middle" font-size="13" fill="#333333">구조화된 식별 절차</text>
+  <text x="130" y="196" text-anchor="middle" font-size="13" fill="#333333">위험 시나리오 작성</text>
+  <text x="130" y="216" text-anchor="middle" font-size="13" fill="#666666">(Commitment 2)</text>
+
+  <rect x="260" y="130" width="180" height="96" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="350" y="154" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">③ 위험 분석</text>
+  <text x="350" y="176" text-anchor="middle" font-size="13" fill="#333333">모델 외 정보·모델 평가</text>
+  <text x="350" y="196" text-anchor="middle" font-size="13" fill="#333333">위험 모델링·위험 추정</text>
+  <text x="350" y="216" text-anchor="middle" font-size="13" fill="#333333">시장 후 모니터링</text>
+
+  <rect x="480" y="130" width="170" height="96" rx="6" fill="#fff7ed" stroke="#b45309" stroke-width="2"/>
+  <text x="565" y="154" text-anchor="middle" font-size="15" font-weight="bold" fill="#b45309">④ 수용 판정</text>
+  <text x="565" y="176" text-anchor="middle" font-size="13" fill="#333333">사전에 정한</text>
+  <text x="565" y="196" text-anchor="middle" font-size="13" fill="#333333">수용 기준으로 판단</text>
+  <text x="565" y="216" text-anchor="middle" font-size="13" fill="#666666">(Commitment 4)</text>
+
+  <rect x="690" y="130" width="150" height="96" rx="6" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="765" y="160" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">⑦ 모델 보고서</text>
+  <text x="765" y="184" text-anchor="middle" font-size="13" fill="#333333">AI Office 제출</text>
+  <text x="765" y="206" text-anchor="middle" font-size="13" fill="#666666">(Commitment 7)</text>
+
+  <!-- row 3 -->
+  <rect x="480" y="290" width="170" height="80" rx="6" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+  <text x="565" y="316" text-anchor="middle" font-size="15" font-weight="bold" fill="#9d0208">⑤⑥ 완화 조치</text>
+  <text x="565" y="338" text-anchor="middle" font-size="13" fill="#333333">안전 완화 (C5)</text>
+  <text x="565" y="358" text-anchor="middle" font-size="13" fill="#333333">보안 완화 (C6)</text>
+
+  <rect x="690" y="290" width="150" height="80" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="765" y="316" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">출시 후 감시</text>
+  <text x="765" y="338" text-anchor="middle" font-size="13" fill="#333333">중대사고 보고 (C9)</text>
+  <text x="765" y="358" text-anchor="middle" font-size="13" fill="#333333">시장 후 모니터링</text>
+
+  <!-- arrows -->
+  <line x1="130" y1="90" x2="130" y2="128" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="220" y1="178" x2="258" y2="178" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="440" y1="178" x2="478" y2="178" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="650" y1="178" x2="688" y2="178" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="669" y="168" text-anchor="middle" font-size="13" fill="#2d6a4f">수용</text>
+
+  <line x1="565" y1="226" x2="565" y2="288" stroke="#9d0208" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="575" y="262" font-size="13" fill="#9d0208">수용 불가</text>
+  <polyline points="480,330 350,330 350,228" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="415" y="322" text-anchor="middle" font-size="13" fill="#9d0208">완화 후 재분석</text>
+
+  <line x1="765" y1="226" x2="765" y2="288" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="775" y="262" font-size="13" fill="#2d6a4f">출시</text>
+
+  <polyline points="765,370 765,410 130,410 130,228" fill="none" stroke="#355070" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="450" y="430" text-anchor="middle" font-size="13" fill="#355070">출시 후 새 정보(사고·평가 결과) → 식별·분석을 다시 수행하고 보고서를 갱신</text>
+
+  <text x="440" y="470" text-anchor="middle" font-size="13" fill="#555555">⑧ 책임 배분·자원·위험 문화, ⑩ 추가 문서화·공개 투명성은 전 과정에 걸친 조직·기록 의무</text>
+</svg>
