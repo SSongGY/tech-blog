@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **765편** · 갱신 2026-11-18
+총 **766편** · 갱신 2026-11-18
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -521,10 +521,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 121편
+## 기출문제 (exam) — 122편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-18 | [기출문제 — SW사업 대가산정 가이드의 목적과 AI 서비스 도입 사업유형·사업비 산정 절차](posts/PE/exam/2026-11-18-sw-cost-guide-ai-service-introduction/index.md) | 중급 | SW사업 대가산정 가이드 2025년 개정판, Python 3.13.5 | 실행 검증 |
 | 2026-11-18 | [기출문제 — 유전 알고리즘의 절차와 최적화 방법](posts/PE/exam/2026-11-18-genetic-algorithm-procedure-optimization/index.md) | 중급 | Python 3.13.5, Holland, Adaptation in Natural and Artificial Systems (1975, MIT Press 재판 1992), Rudolph, IEEE Trans. Neural Networks 5(1) (1994), Eiben·Smith, Introduction to Evolutionary Computing 2nd ed. (2015), PostgreSQL 16 문서 62장 Genetic Query Optimizer | 실행 검증 |
 | 2026-11-17 | [기출문제 — UML 행위 다이어그램: 활동·상태 머신·유스케이스](posts/PE/exam/2026-11-17-uml-activity-state-usecase-diagrams/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01) | 문서 근거 |
 | 2026-11-17 | [기출문제 — 쿠버네티스의 개념·주요 컴포넌트와 HPA](posts/PE/exam/2026-11-17-kubernetes-components-hpa/index.md) | 중급 | Kubernetes v1.37 문서 (2026-11-17 확인), Verma et al., Borg, EuroSys 2015, Burns et al., Borg, Omega, and Kubernetes, ACM Queue 14(1) 2016 | 문서 근거 |
