@@ -246,6 +246,8 @@ UML 표준은 다이어그램을 **구조 다이어그램과 행위 다이어그
 정한다는 점에서 셋을 함께 그려야 설계 누락이 줄어든다.
 
 > 개념 정리: [UML 다이어그램 분류 — 구조 7종과 행위 7종](../../software-engineering/2026-10-26-uml-diagram-classification-structure-behavior/index.md)
+>
+> 개념 정리: [페트리 넷(Petri Net) — 플레이스·트랜지션·토큰과 병행성 분석](../../software-engineering/2026-11-18-petri-net-reachability-liveness-boundedness/index.md)
 
 끝
 
