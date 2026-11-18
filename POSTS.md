@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **766편** · 갱신 2026-11-18
+총 **769편** · 갱신 2026-11-18
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 113편
+## DB문법 (basics) — 114편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-18 | [코호트 표 — 첫 구매 월을 기준으로 재구매 고객을 세는 SQL](posts/Database/sql-basics/2026-11-18-sql-cohort-retention-first-purchase-month/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-17 | [숫자가 섞인 문자열 정렬 — file10이 file2보다 앞에 오는 이유와 자연 정렬](posts/Database/sql-basics/2026-11-17-sql-natural-sort-numbers-in-text/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-16 | [순번을 한 칸씩 밀 때 — UPDATE pos = pos + 1이 UNIQUE에 걸리는 이유](posts/Database/sql-basics/2026-11-16-update-shift-unique-position/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-15 | [값을 구간으로 묶어 세기 — 정수 나눗셈 버킷과 음수에서 틀어지는 경계](posts/Database/sql-basics/2026-11-15-sql-bucket-histogram-integer-division/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -147,10 +148,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 264편
+## 기술사 (pe) — 265편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-18 | [페트리 넷(Petri Net) — 플레이스·트랜지션·토큰과 병행성 분석](posts/PE/software-engineering/2026-11-18-petri-net-reachability-liveness-boundedness/index.md) | 중급 | Murata, Proc. IEEE 77(4) 1989, OMG UML 2.5 (formal/15-03-01), Python 3.13.5 | 실행 검증 |
 | 2026-11-18 | [쿠버네티스 컨트롤러 패턴 — 선언적 상태와 조정 루프](posts/PE/emerging-tech/2026-11-18-kubernetes-controller-pattern-reconcile-loop/index.md) | 중급 | Kubernetes v1.37 문서 (2026-11-18 확인), kubernetes/community API Conventions·Writing Controllers (main, 2026-11-18 확인) | 문서 근거 |
 | 2026-11-18 | [역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기](posts/PE/database/2026-11-18-ivf-pq-inverted-file-residual-encoding/index.md) | 중급 | Python 3.13.5, numpy 2.3.4, Windows 11 | 실행 검증 |
 | 2026-11-17 | [YARA 룰 — 문자열·바이트 패턴 기반 악성코드 탐지](posts/PE/security/2026-11-17-yara-rule-pattern-malware-detection/index.md) | 중급 | YARA 4.4.0 문서 (yara.readthedocs.io stable), NIST SP 800-83 Rev.1 (2013-07) | 문서 근거 |
@@ -439,10 +441,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 77편
+## 일반 (general) — 78편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-18 | [MinHash와 LSH 밴딩 — 자카드 유사도를 서명 몇 개로 추정하기](posts/Architecture/datastructure/2026-11-18-minhash-lsh-banding-jaccard/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-17 | [Jump 일관 해시 — 메모리 없이 키를 버킷에 나누고, 가운데 버킷은 뺄 수 없는 이유](posts/Architecture/datastructure/2026-11-17-jump-consistent-hash/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-16 | [Roaring 비트맵 — 배열 컨테이너와 비트맵 컨테이너가 4096에서 갈리는 이유](posts/Architecture/datastructure/2026-11-16-roaring-bitmap-container-switch/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-15 | [Gorilla 시계열 압축 — 타임스탬프 delta-of-delta와 값 XOR 부호화](posts/Architecture/datastructure/2026-11-15-gorilla-time-series-compression/index.md) | 심화 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
