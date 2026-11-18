@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **773편** · 갱신 2026-11-19
+총 **775편** · 갱신 2026-11-19
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -148,10 +148,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 265편
+## 기술사 (pe) — 267편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-19 | [메타휴리스틱 비교 — 시뮬레이티드 어닐링·타부 탐색·유전 알고리즘](posts/PE/ai/2026-11-19-metaheuristic-sa-tabu-ga-comparison/index.md) | 중급 | Python 3.13.5, Kirkpatrick·Gelatt·Vecchi, Science 220(4598) (1983), Glover, ORSA J. Computing 1(3) (1989), Wolpert·Macready, IEEE Trans. Evol. Comput. 1(1) (1997), Sörensen·Sevaux·Glover, arXiv:1704.00853 v1 (2017) | 실행 검증 |
+| 2026-11-19 | [유전 알고리즘 — 스키마 정리와 엘리트 보존의 수렴 조건](posts/PE/ai/2026-11-19-ga-schema-theorem-elitist-convergence/index.md) | 중급 | Python 3.13.5, Holland, Adaptation in Natural and Artificial Systems (1975, MIT Press 재판 1992), Goldberg, Genetic Algorithms in Search, Optimization, and Machine Learning (1989), Rudolph, IEEE Trans. Neural Networks 5(1) (1994) | 실행 검증 |
 | 2026-11-18 | [페트리 넷(Petri Net) — 플레이스·트랜지션·토큰과 병행성 분석](posts/PE/software-engineering/2026-11-18-petri-net-reachability-liveness-boundedness/index.md) | 중급 | Murata, Proc. IEEE 77(4) 1989, OMG UML 2.5 (formal/15-03-01), Python 3.13.5 | 실행 검증 |
 | 2026-11-18 | [쿠버네티스 컨트롤러 패턴 — 선언적 상태와 조정 루프](posts/PE/emerging-tech/2026-11-18-kubernetes-controller-pattern-reconcile-loop/index.md) | 중급 | Kubernetes v1.37 문서 (2026-11-18 확인), kubernetes/community API Conventions·Writing Controllers (main, 2026-11-18 확인) | 문서 근거 |
 | 2026-11-18 | [역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기](posts/PE/database/2026-11-18-ivf-pq-inverted-file-residual-encoding/index.md) | 중급 | Python 3.13.5, numpy 2.3.4, Windows 11 | 실행 검증 |
