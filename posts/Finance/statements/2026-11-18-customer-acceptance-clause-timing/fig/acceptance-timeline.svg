@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="15">같은 인수 조항, 다른 수익 인식일 — 결산일 12월 31일 전후</text>
+
+  <!-- 축: 12/1 = x 200, 하루 = 6px → 12/31 = 380, 1/30 = 554 -->
+  <line x1="190" y1="370" x2="600" y2="370" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="200" y="392" text-anchor="middle" font-size="13">12/1</text>
+  <text x="302" y="392" text-anchor="middle" font-size="13">12/18</text>
+  <text x="446" y="392" text-anchor="middle" font-size="13">1/12</text>
+  <text x="518" y="392" text-anchor="middle" font-size="13">1/20</text>
+  <text x="560" y="392" text-anchor="middle" font-size="13">1/30</text>
+
+  <!-- 결산일 -->
+  <line x1="380" y1="56" x2="380" y2="378" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="380" y="50" text-anchor="middle" font-size="13" fill="#b45309">결산일 12/31</text>
+  <text x="290" y="420" text-anchor="middle" font-size="13">1년차 수익</text>
+  <text x="490" y="420" text-anchor="middle" font-size="13">2년차 수익</text>
+
+  <!-- 행 라벨 -->
+  <text x="20" y="104" font-size="14">A 객관적 규격</text>
+  <text x="20" y="124" font-size="13">인수는 형식적 (B84)</text>
+  <text x="20" y="204" font-size="14">B 현장 연동 성능</text>
+  <text x="20" y="224" font-size="13">객관적 판단 불가 (B85)</text>
+  <text x="20" y="304" font-size="14">C 시험·평가용 인도</text>
+  <text x="20" y="324" font-size="13">60일 시험기간 (B86)</text>
+
+  <!-- A -->
+  <line x1="302" y1="110" x2="518" y2="110" stroke="#999" stroke-width="2"/>
+  <circle cx="302" cy="110" r="8" fill="#2d6a4f"/>
+  <text x="302" y="92" text-anchor="middle" font-size="13" fill="#2d6a4f">인도 = 장비 수익 262.5</text>
+  <circle cx="446" cy="110" r="6" fill="#ffffff" stroke="#444" stroke-width="2"/>
+  <text x="446" y="136" text-anchor="middle" font-size="13">인수</text>
+  <circle cx="518" cy="110" r="8" fill="#2d6a4f"/>
+  <text x="560" y="92" text-anchor="middle" font-size="13" fill="#2d6a4f">설치 수익 37.5</text>
+
+  <!-- B -->
+  <line x1="302" y1="210" x2="446" y2="210" stroke="#999" stroke-width="2"/>
+  <circle cx="302" cy="210" r="6" fill="#ffffff" stroke="#444" stroke-width="2"/>
+  <text x="302" y="236" text-anchor="middle" font-size="13">인도</text>
+  <circle cx="446" cy="210" r="8" fill="#9d0208"/>
+  <text x="446" y="192" text-anchor="middle" font-size="13" fill="#9d0208">인수 = 수익 300</text>
+
+  <!-- C -->
+  <line x1="200" y1="310" x2="560" y2="310" stroke="#999" stroke-width="2" stroke-dasharray="3 3"/>
+  <circle cx="200" cy="310" r="6" fill="#ffffff" stroke="#444" stroke-width="2"/>
+  <text x="200" y="336" text-anchor="middle" font-size="13">인도</text>
+  <circle cx="464" cy="310" r="8" fill="#9d0208"/>
+  <text x="464" y="292" text-anchor="middle" font-size="13" fill="#9d0208">인수 1/15 = 수익 300</text>
+  <circle cx="560" cy="310" r="6" fill="#ffffff" stroke="#444" stroke-width="2"/>
+  <text x="560" y="336" text-anchor="middle" font-size="13">시험기간 끝</text>
+
+  <!-- 범례 -->
+  <rect x="640" y="90" width="220" height="110" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <circle cx="662" cy="118" r="7" fill="#2d6a4f"/>
+  <text x="678" y="123" font-size="13">이행한 날 수익 인식</text>
+  <circle cx="662" cy="148" r="7" fill="#9d0208"/>
+  <text x="678" y="153" font-size="13">인수까지 늦춰진 수익</text>
+  <circle cx="662" cy="178" r="6" fill="#ffffff" stroke="#444" stroke-width="2"/>
+  <text x="678" y="183" font-size="13">수익과 무관한 사건</text>
+
+  <rect x="640" y="230" width="220" height="100" rx="6" fill="#ffffff" stroke="#444"/>
+  <text x="750" y="256" text-anchor="middle" font-size="13">결산일 재무상태표</text>
+  <text x="750" y="280" text-anchor="middle" font-size="13">인식한 수익 262.5</text>
+  <text x="750" y="302" text-anchor="middle" font-size="13">고객 현장의 회사 재고 420</text>
+</svg>
