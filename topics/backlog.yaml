@@ -8041,7 +8041,7 @@ topics:
     angle: "룰 구성(meta·strings·condition), 해시·시그니처 탐지와의 차이, 오탐 관리와 배포 절차"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-279
     title: "역파일 색인(IVF)과 IVF-PQ — 군집 분할과 잔차 압축으로 벡터 검색 범위 줄이기"
     category: PE
@@ -8129,7 +8129,7 @@ topics:
     angle: "TEXT 비교가 바이트 비교라 숫자 부분이 자릿수대로 정렬되지 않는 것을 재현하고, CAST·길이 먼저 정렬·접두어와 숫자 분리·버전 문자열 세 토막 나누기로 자연 정렬을 만든다. 식 인덱스로 정렬을 없앨 수 있는지 실행계획으로 본다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: gen-041
     title: "Jump 일관 해시 — 메모리 없이 키를 버킷에 나누고, 가운데 버킷은 뺄 수 없는 이유"
     category: Architecture
@@ -8140,7 +8140,7 @@ topics:
     angle: "Lamping·Veach 2014 논문 알고리즘을 파이썬으로 구현해 버킷을 늘릴 때 옮겨 가는 키 비율, 버킷별 편차, 링 해시(가상 노드 100개)와의 메모리·속도를 실측한다. 끝 버킷만 뺄 수 있는 제약을 재현한다"
     code: python
     origin: manual
-    status: writing
+    status: done
   - id: fin-151
     title: "수행의무 식별 — 구별되는 재화와 결합산출물, 일련의 재화"
     category: Finance

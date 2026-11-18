@@ -1,0 +1,130 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-17-sql-natural-sort-numbers-in-text
+# 명령      : python natural_sort.py
+# 수행 시각 : 2026-11-17 19:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[app_release]  6행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  release_id | INTEGER | PK
+  version    | TEXT    | NOT NULL
+
+  release_id | version
+  -----------+--------
+           1 | 1.2.0
+           2 | 1.10.0
+           3 | 1.9.3
+           4 | 2.0.0
+           5 | 1.10.12
+           6 | 1.10.2
+
+[scan_file]  10행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  file_id   | INTEGER | PK
+  file_name | TEXT    | NOT NULL
+
+  file_id | file_name
+  --------+----------
+        1 | img1
+        2 | img2
+        3 | img10
+        4 | img9
+        5 | img100
+        6 | img20
+        7 | doc3
+        8 | doc12
+        9 | img007
+       10 | img7
+
+[ticket]  6행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  ticket_id | INTEGER | PK
+  ticket_no | TEXT    | NOT NULL
+
+  ticket_id | ticket_no
+  ----------+----------
+          1 | 9
+          2 | 10
+          3 | 100
+          4 | 25
+          5 | 007
+          6 | 12A
+
+
+[1] 파일 이름을 그대로 정렬한다
+  sql> SELECT file_name FROM scan_file ORDER BY file_name
+  결과: doc12, doc3, img007, img1, img10, img100, img2, img20, img7, img9
+
+[2] 문자열 비교와 숫자 비교
+  sql> SELECT '10' < '9', 10 < 9, typeof('10'), typeof(10)
+    (1, 0, 'text', 'integer')
+
+[3] 숫자만 든 문자열: 그대로 vs CAST
+  sql> SELECT ticket_no FROM ticket ORDER BY ticket_no
+  결과: 007, 10, 100, 12A, 25, 9
+  sql> SELECT ticket_no FROM ticket ORDER BY CAST(ticket_no AS INTEGER)
+  결과: 007, 9, 10, 12A, 25, 100
+
+[4] CAST 가 돌려주는 값
+  sql> SELECT CAST('12A' AS INTEGER), CAST('A12' AS INTEGER), CAST('007' AS INTEGER), CAST('1.10.2' AS INTEGER)
+    (12, 0, 7, 1)
+
+[5] 길이 먼저 정렬
+  sql> SELECT ticket_no FROM ticket ORDER BY length(ticket_no), ticket_no
+  결과: 9, 10, 25, 007, 100, 12A
+
+[6] 접두어와 숫자를 떼어 정렬한다
+  sql> SELECT file_name, rtrim(file_name, '0123456789') AS prefix, CAST(substr(file_name, length(rtrim(file_name, '0123456789')) + 1) AS INTEGER) AS num FROM scan_file WHERE file_id IN (3, 7, 9, 10)
+    ('img10', 'img', 10)
+    ('doc3', 'doc', 3)
+    ('img007', 'img', 7)
+    ('img7', 'img', 7)
+  sql> SELECT file_name FROM scan_file ORDER BY rtrim(file_name, '0123456789'), CAST(substr(file_name, length(rtrim(file_name, '0123456789')) + 1) AS INTEGER)
+  결과: doc3, doc12, img1, img2, img007, img7, img9, img10, img20, img100
+  sql> SELECT file_name FROM scan_file ORDER BY rtrim(file_name, '0123456789'), CAST(substr(file_name, length(rtrim(file_name, '0123456789')) + 1) AS INTEGER), file_name
+  결과: doc3, doc12, img1, img2, img007, img7, img9, img10, img20, img100
+
+[7] 버전 문자열을 세 토막으로 나눈다
+  sql> SELECT version FROM app_release ORDER BY version
+  결과: 1.10.0, 1.10.12, 1.10.2, 1.2.0, 1.9.3, 2.0.0
+  sql> WITH part AS ( SELECT version, substr(version, instr(version, '.') + 1) AS rest FROM app_release ) SELECT version, CAST(version AS INTEGER) AS major, CAST(rest AS INTEGER) AS minor, CAST(substr(rest, instr(rest, '.') + 1) AS INTEGER) AS patch FROM part ORDER BY major, minor, patch
+    ('1.2.0', 1, 2, 0)
+    ('1.9.3', 1, 9, 3)
+    ('1.10.0', 1, 10, 0)
+    ('1.10.2', 1, 10, 2)
+    ('1.10.12', 1, 10, 12)
+    ('2.0.0', 2, 0, 0)
+
+[8] 정렬 식과 인덱스
+  plan> SELECT file_name FROM scan_file ORDER BY file_name
+    QUERY PLAN
+    `--SCAN scan_file USING COVERING INDEX idx_scan_file_name
+  plan> SELECT file_name FROM scan_file ORDER BY rtrim(file_name, '0123456789'), CAST(substr(file_name, length(rtrim(file_name, '0123456789')) + 1) AS INTEGER)
+    QUERY PLAN
+    |--SCAN scan_file
+    `--USE TEMP B-TREE FOR ORDER BY
+  plan> SELECT file_name FROM scan_file ORDER BY rtrim(file_name, '0123456789'), CAST(substr(file_name, length(rtrim(file_name, '0123456789')) + 1) AS INTEGER)
+    QUERY PLAN
+    `--SCAN scan_file USING INDEX idx_scan_file_natural
+  plan> SELECT file_name FROM scan_file ORDER BY rtrim(file_name, '9876543210'), CAST(substr(file_name, length(rtrim(file_name, '0123456789')) + 1) AS INTEGER)
+    QUERY PLAN
+    |--SCAN scan_file
+    `--USE TEMP B-TREE FOR ORDER BY

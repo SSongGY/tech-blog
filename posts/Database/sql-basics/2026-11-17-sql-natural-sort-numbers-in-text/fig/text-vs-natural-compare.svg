@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">'img10' 과 'img2' — 무엇을 비교하느냐에 따라 순서가 뒤집힌다</text>
+
+  <!-- 왼쪽: 바이트 비교 -->
+  <text x="225" y="70" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">TEXT 그대로 (BINARY 콜레이션)</text>
+  <text x="225" y="90" font-size="13" text-anchor="middle" fill="#4b5563">앞에서부터 한 바이트씩, 처음 다른 자리에서 끝난다</text>
+
+  <g font-size="16" text-anchor="middle" fill="#1f2937">
+    <rect x="60" y="110" width="50" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="85" y="136">i</text>
+    <rect x="110" y="110" width="50" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="135" y="136">m</text>
+    <rect x="160" y="110" width="50" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="185" y="136">g</text>
+    <rect x="210" y="110" width="50" height="40" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/><text x="235" y="136">1</text>
+    <rect x="260" y="110" width="50" height="40" fill="#ffffff" stroke="#d1d5db" stroke-dasharray="4 3"/><text x="285" y="136" fill="#9ca3af">0</text>
+
+    <rect x="60" y="170" width="50" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="85" y="196">i</text>
+    <rect x="110" y="170" width="50" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="135" y="196">m</text>
+    <rect x="160" y="170" width="50" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="185" y="196">g</text>
+    <rect x="210" y="170" width="50" height="40" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/><text x="235" y="196">2</text>
+  </g>
+  <text x="340" y="136" font-size="13" fill="#4b5563">img10</text>
+  <text x="340" y="196" font-size="13" fill="#4b5563">img2</text>
+
+  <text x="235" y="236" font-size="13" text-anchor="middle" fill="#9d0208">넷째 바이트 '1'(0x31) &lt; '2'(0x32)</text>
+  <text x="235" y="256" font-size="13" text-anchor="middle" fill="#9d0208">여기서 결정 — 뒤의 '0' 은 보지 않는다</text>
+
+  <rect x="60" y="280" width="330" height="56" rx="6" fill="#fde8e8" stroke="#9d0208" stroke-width="2"/>
+  <text x="225" y="314" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">img10 이 먼저 → img1, img10, img100, img2</text>
+
+  <line x1="440" y1="60" x2="440" y2="390" stroke="#d1d5db" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 오른쪽: 접두어 + 숫자 -->
+  <text x="655" y="70" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">접두어와 숫자로 나눠 비교</text>
+  <text x="655" y="90" font-size="13" text-anchor="middle" fill="#4b5563">rtrim 으로 접두어, 나머지를 CAST 로 정수</text>
+
+  <g font-size="16" text-anchor="middle" fill="#1f2937">
+    <rect x="490" y="110" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="565" y="136">'img'</text>
+    <rect x="640" y="110" width="100" height="40" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/><text x="690" y="136">10</text>
+    <rect x="490" y="170" width="150" height="40" fill="#f3f4f6" stroke="#9ca3af"/><text x="565" y="196">'img'</text>
+    <rect x="640" y="170" width="100" height="40" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/><text x="690" y="196">2</text>
+  </g>
+  <text x="755" y="136" font-size="13" fill="#4b5563">img10</text>
+  <text x="755" y="196" font-size="13" fill="#4b5563">img2</text>
+
+  <text x="655" y="236" font-size="13" text-anchor="middle" fill="#2d6a4f">1순위 접두어는 같다 → 2순위 정수</text>
+  <text x="655" y="256" font-size="13" text-anchor="middle" fill="#2d6a4f">정수 2 &lt; 10</text>
+
+  <rect x="490" y="280" width="330" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="655" y="314" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">img2 가 먼저 → img1, img2, img10, img100</text>
+
+  <text x="440" y="372" font-size="13" text-anchor="middle" fill="#b45309">주의: 'img7' 과 'img007' 은 오른쪽 방식에서 ('img', 7) 로 같아진다 — 동률을 가를 키를 하나 더 둔다</text>
+  <text x="440" y="408" font-size="13" text-anchor="middle" fill="#4b5563">SQLite 3.49.1, 실습 [1]·[6]</text>
+</svg>
