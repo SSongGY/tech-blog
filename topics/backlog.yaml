@@ -8207,3 +8207,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-153
+    title: "기간에 걸쳐 이행하는 수행의무의 세 기준 — 대체 용도와 집행 가능한 지급청구권"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, over-time]
+    difficulty: 중급
+    angle: "제1115호 문단 35~37·B3~B13. 같은 맞춤 설비 계약이 해지 조항 하나로 기간 인식과 인도 시점 인식으로 갈리는 것을 가상 회사로 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-154
+    title: "고객의 인수 조항 — 형식적 인수와 실질적 인수가 수익 인식 시점을 가르는 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, customer-acceptance]
+    difficulty: 중급
+    angle: "제1115호 문단 38⑸·B83~B86. 객관적 규격 판정 가능 여부와 시험기간 인도에 따라 결산일 전후로 수익이 갈리는 것을 계산"
+    code: python
+    origin: manual
+    status: writing

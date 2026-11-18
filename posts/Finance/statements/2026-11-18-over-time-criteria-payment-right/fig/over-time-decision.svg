@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="15">수행의무 하나 — 셋 중 하나라도 충족하면 기간에 걸쳐 인식 (문단 35)</text>
+
+  <!-- 35(1) -->
+  <rect x="40" y="50" width="400" height="64" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="240" y="76" text-anchor="middle" font-size="14">⑴ 고객이 효익을 동시에 얻고 소비하는가</text>
+  <text x="240" y="98" text-anchor="middle" font-size="13">다른 기업이 이어받아도 다시 할 일이 없는가 (B3·B4)</text>
+
+  <!-- 35(2) -->
+  <rect x="40" y="150" width="400" height="64" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="240" y="176" text-anchor="middle" font-size="14">⑵ 만들어지는 자산을 고객이 통제하는가</text>
+  <text x="240" y="198" text-anchor="middle" font-size="13">고객 땅 위의 건물, 고객 서버의 개발물 (B5)</text>
+
+  <!-- 35(3) two prongs -->
+  <rect x="40" y="250" width="180" height="78" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="130" y="276" text-anchor="middle" font-size="14">⑶-① 대체 용도 없음</text>
+  <text x="130" y="298" text-anchor="middle" font-size="13">계약상 제약·실무상 제한</text>
+  <text x="130" y="316" text-anchor="middle" font-size="13">(문단 36, B6~B8)</text>
+
+  <rect x="260" y="250" width="180" height="78" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="350" y="276" text-anchor="middle" font-size="14">⑶-② 지급청구권</text>
+  <text x="350" y="298" text-anchor="middle" font-size="13">언제 해지돼도 원가+이윤</text>
+  <text x="350" y="316" text-anchor="middle" font-size="13">(문단 37, B9~B13)</text>
+  <text x="240" y="294" text-anchor="middle" font-size="14" font-weight="bold">AND</text>
+
+  <!-- arrows down -->
+  <line x1="240" y1="114" x2="240" y2="146" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="252" y="136" font-size="13">아니오</text>
+  <line x1="240" y1="214" x2="240" y2="246" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="252" y="236" font-size="13">아니오</text>
+
+  <!-- results -->
+  <rect x="540" y="120" width="300" height="90" rx="6" fill="#e9f5ef" stroke="#2d6a4f"/>
+  <text x="690" y="148" text-anchor="middle" font-size="15" fill="#2d6a4f">기간에 걸쳐 수익 인식</text>
+  <text x="690" y="172" text-anchor="middle" font-size="13">진행률로 해마다 나눈다 (문단 39)</text>
+  <text x="690" y="194" text-anchor="middle" font-size="13">예제 계약 A: 1년차 수익 600</text>
+
+  <rect x="540" y="380" width="300" height="90" rx="6" fill="#fdecec" stroke="#9d0208"/>
+  <text x="690" y="408" text-anchor="middle" font-size="15" fill="#9d0208">한 시점에 수익 인식</text>
+  <text x="690" y="432" text-anchor="middle" font-size="13">통제 이전 지표 다섯 가지 (문단 38)</text>
+  <text x="690" y="454" text-anchor="middle" font-size="13">예제 계약 B·C·D: 1년차 수익 0</text>
+
+  <!-- yes arrows -->
+  <line x1="440" y1="82" x2="560" y2="118" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="490" y="88" font-size="13" fill="#2d6a4f">예</text>
+  <line x1="440" y1="182" x2="536" y2="168" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="482" y="168" font-size="13" fill="#2d6a4f">예</text>
+  <line x1="440" y1="270" x2="560" y2="212" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="470" y="236" font-size="13" fill="#2d6a4f">둘 다 예</text>
+
+  <line x1="240" y1="328" x2="240" y2="425" stroke="#9d0208" stroke-width="2"/>
+  <line x1="240" y1="425" x2="536" y2="425" stroke="#9d0208" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="252" y="364" font-size="13" fill="#9d0208">하나라도 아니오</text>
+  <text x="40" y="458" font-size="13" fill="#b45309">B: 원가만 보상 → 이윤 없음</text>
+  <text x="40" y="478" font-size="13" fill="#b45309">C: 선급금 200만 보유 → 2분기부터 부족</text>
+  <text x="40" y="498" font-size="13" fill="#b45309">D: 표준 사양 → 대체 용도 있음</text>
+</svg>
