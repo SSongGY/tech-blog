@@ -1,0 +1,29 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\ai\2026-11-19-metaheuristic-sa-tabu-ga-comparison
+# 명령      : python compare.py
+# 수행 시각 : 2026-11-19 04:12 (대한민국 표준시)
+# 소요      : 0.9초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5
+items = 20, capacity = 150
+weights = [25, 8, 5, 28, 13, 12, 12, 9, 28, 8, 26, 28, 22, 7, 23, 18, 6, 5, 7, 11]
+values  = [24, 42, 48, 11, 45, 22, 55, 51, 54, 44, 36, 24, 38, 47, 27, 10, 58, 20, 54, 37]
+optimum by dynamic programming = 595
+
+=== Metropolis acceptance probability exp(-delta/T) ===
+  delta       T=50      T=10       T=2     T=0.5
+      1    0.98020   0.90484   0.60653   0.13534
+      5    0.90484   0.60653   0.08208   0.00005
+     20    0.67032   0.13534   0.00005   0.00000
+
+=== same budget: 2000 evaluations, 30 seeds ===
+  method              hit opt   mean best   worst   mean gap
+  hill climb+restart     1/30      552.77     516      7.10%
+  simulated annealing    6/30      585.93     545      1.52%
+  tabu search           30/30      595.00     595      0.00%
+  genetic algorithm     18/30      592.53     584      0.41%
