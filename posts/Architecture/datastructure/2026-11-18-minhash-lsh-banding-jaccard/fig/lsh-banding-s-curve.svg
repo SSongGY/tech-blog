@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">서명 100칸을 밴드 20개 × 5행으로 나누면 후보 확률이 S자가 된다</text>
+
+  <!-- 왼쪽: 밴딩 -->
+  <text x="220" y="64" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">MinHash 서명 (문서마다 100칸)</text>
+  <text x="140" y="88" font-size="14" text-anchor="middle" fill="#1f2937">문서 A</text>
+  <text x="300" y="88" font-size="14" text-anchor="middle" fill="#1f2937">문서 B</text>
+
+  <rect x="90" y="100" width="100" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="140" y="127" font-size="13" text-anchor="middle" fill="#1f2937">밴드 1 (5행)</text>
+  <rect x="250" y="100" width="100" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="300" y="127" font-size="13" text-anchor="middle" fill="#1f2937">밴드 1 (5행)</text>
+  <text x="220" y="127" font-size="15" text-anchor="middle" fill="#9d0208">≠</text>
+
+  <rect x="90" y="156" width="100" height="44" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="140" y="183" font-size="13" text-anchor="middle" fill="#1f2937">밴드 2 (5행)</text>
+  <rect x="250" y="156" width="100" height="44" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="300" y="183" font-size="13" text-anchor="middle" fill="#1f2937">밴드 2 (5행)</text>
+  <text x="220" y="183" font-size="15" text-anchor="middle" fill="#2d6a4f">=</text>
+
+  <text x="140" y="230" font-size="15" text-anchor="middle" fill="#4b5563">⋮</text>
+  <text x="300" y="230" font-size="15" text-anchor="middle" fill="#4b5563">⋮</text>
+
+  <rect x="90" y="250" width="100" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="140" y="277" font-size="13" text-anchor="middle" fill="#1f2937">밴드 20</text>
+  <rect x="250" y="250" width="100" height="44" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="300" y="277" font-size="13" text-anchor="middle" fill="#1f2937">밴드 20</text>
+  <text x="220" y="277" font-size="15" text-anchor="middle" fill="#9d0208">≠</text>
+
+  <line x1="220" y1="298" x2="220" y2="322" stroke="#2d6a4f" stroke-width="1.6"/>
+  <polygon points="214,318 226,318 220,328" fill="#2d6a4f"/>
+  <rect x="90" y="332" width="260" height="60" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="220" y="356" font-size="13" text-anchor="middle" fill="#2d6a4f">밴드 2 의 5칸을 키로 같은 버킷에 들어감</text>
+  <text x="220" y="378" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">→ A·B 는 후보 쌍</text>
+
+  <text x="220" y="420" font-size="13" text-anchor="middle" fill="#4b5563">한 칸이 같을 확률 = 자카드 유사도 s</text>
+  <text x="220" y="442" font-size="13" text-anchor="middle" fill="#4b5563">한 밴드 전체가 같을 확률 = s^5</text>
+  <text x="220" y="464" font-size="13" text-anchor="middle" fill="#4b5563">밴드 20개 중 하나라도 = 1 − (1 − s^5)^20</text>
+
+  <line x1="445" y1="60" x2="445" y2="470" stroke="#d1d5db" stroke-dasharray="4 4"/>
+
+  <!-- 오른쪽: S 곡선 -->
+  <text x="680" y="64" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">후보가 될 확률 (b=20, r=5)</text>
+  <line x1="520" y1="400" x2="840" y2="400" stroke="#374151" stroke-width="1.4"/>
+  <line x1="520" y1="400" x2="520" y2="150" stroke="#374151" stroke-width="1.4"/>
+  <text x="520" y="420" font-size="13" text-anchor="middle" fill="#4b5563">0</text>
+  <text x="680" y="420" font-size="13" text-anchor="middle" fill="#4b5563">0.5</text>
+  <text x="840" y="420" font-size="13" text-anchor="middle" fill="#4b5563">1</text>
+  <text x="680" y="442" font-size="13" text-anchor="middle" fill="#4b5563">자카드 유사도 s</text>
+  <text x="510" y="404" font-size="13" text-anchor="end" fill="#4b5563">0</text>
+  <text x="510" y="164" font-size="13" text-anchor="end" fill="#4b5563">1</text>
+  <line x1="520" y1="160" x2="840" y2="160" stroke="#e5e7eb"/>
+  <line x1="520" y1="280" x2="840" y2="280" stroke="#e5e7eb"/>
+  <text x="510" y="284" font-size="13" text-anchor="end" fill="#4b5563">0.5</text>
+
+  <polyline points="520,400 552,400 584,398.5 616,388.6 648,355.4 680,287.2 712,207.5 744,166 776,160.1 808,160 840,160" fill="none" stroke="#2d6a4f" stroke-width="2.5"/>
+
+  <line x1="682.8" y1="160" x2="682.8" y2="400" stroke="#2d6a4f" stroke-dasharray="4 3"/>
+  <line x1="695.8" y1="160" x2="695.8" y2="400" stroke="#b45309" stroke-dasharray="4 3"/>
+  <text x="676" y="148" font-size="13" text-anchor="end" fill="#2d6a4f">0.5 지점 s=0.509</text>
+  <text x="702" y="148" font-size="13" fill="#b45309">근사 (1/20)^(1/5)=0.549</text>
+
+  <circle cx="776" cy="160.1" r="4" fill="#2d6a4f"/>
+  <text x="760" y="200" font-size="13" fill="#1f2937">s=0.8 → 0.9996</text>
+  <circle cx="616" cy="388.6" r="4" fill="#9d0208"/>
+  <line x1="598" y1="336" x2="613" y2="383" stroke="#9d0208" stroke-width="1"/>
+  <text x="560" y="330" font-size="13" fill="#9d0208">s=0.3 → 0.0475</text>
+
+  <text x="680" y="472" font-size="13" text-anchor="middle" fill="#4b5563">곡선 값은 실습 [2]·[3] 의 공식 계산</text>
+</svg>
