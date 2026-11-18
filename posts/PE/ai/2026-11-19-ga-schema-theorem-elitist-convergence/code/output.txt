@@ -1,0 +1,40 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\ai\2026-11-19-ga-schema-theorem-elitist-convergence
+# 명령      : python ga_schema.py
+# 수행 시각 : 2026-11-19 04:06 (대한민국 표준시)
+# 소요      : 2.8초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5
+
+=== part 1: schema theorem lower bound ===
+  no  chromosome  fitness  in 1***0
+   0       10110       22  yes
+   1       11000       24  yes
+   2       10100       20  yes
+   3       01110       14  no
+   4       00011        3  no
+   5       11010       26  yes
+  m(H,t) = 4, f(H) = 23.0000, f_avg = 18.1667
+  o(H) = 2, delta(H) = 4, l = 5, pc = 0.6, pm = 0.01
+  selection term  m*f(H)/f_avg            = 5.0642
+  crossover term  1 - pc*delta/(l-1)       = 0.4000
+  mutation term   1 - o*pm                 = 0.9800
+  lower bound E[m(H,t+1)] >=               1.9852
+  simulated mean m(H,t+1) over 200000 runs = 4.8889
+
+=== part 2: Rudolph 1994, exact Markov chain (l=2, n=2, pc=0) ===
+  f = {'00': 1, '01': 2, '10': 2, '11': 4}, states = 16
+  P{best fitness in population = f*} at step t
+  pm    variant           t=1      t=5     t=10     t=50    t=200   t=1000
+  0.05  canonical      0.4047   0.4512   0.5040   0.5810   0.5822   0.5822
+  0.05  keep-best      0.4704   0.5939   0.7102   0.9808   1.0000   1.0000
+        transition matrix all entries > 0: True
+  0.2   canonical      0.4047   0.4804   0.4920   0.4930   0.4930   0.4930
+  0.2   keep-best      0.5543   0.8317   0.9505   1.0000   1.0000   1.0000
+        transition matrix all entries > 0: True
+
