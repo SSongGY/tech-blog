@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">AI 에이전트의 핵심 구성요소 8가지</text>
+
+  <!-- 7 controls -->
+  <rect x="40" y="48" width="640" height="276" rx="8" fill="#fdf6ec" stroke="#b45309" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="360" y="72" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">⑦ 통제 — 접근 통제 · 가드레일 · 사람 승인</text>
+
+  <!-- 2 instructions -->
+  <rect x="70" y="96" width="170" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="155" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">② 지시문</text>
+  <text x="155" y="144" text-anchor="middle" font-size="13" fill="#333333">역할·행동 제약</text>
+
+  <!-- 3 memory -->
+  <rect x="70" y="226" width="170" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="155" y="252" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">③ 메모리</text>
+  <text x="155" y="274" text-anchor="middle" font-size="13" fill="#333333">단기·장기 저장</text>
+
+  <!-- 1 model -->
+  <rect x="290" y="96" width="170" height="64" rx="6" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="375" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">① 모델</text>
+  <text x="375" y="144" text-anchor="middle" font-size="13" fill="#333333">SLM · LLM · MLLM</text>
+
+  <!-- 4 planning -->
+  <rect x="290" y="226" width="170" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="375" y="252" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">④ 계획·추론</text>
+  <text x="375" y="274" text-anchor="middle" font-size="13" fill="#333333">과업을 단계로 나눔</text>
+
+  <!-- 5 tools -->
+  <rect x="510" y="96" width="140" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="580" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">⑤ 도구</text>
+  <text x="580" y="144" text-anchor="middle" font-size="13" fill="#333333">읽기·쓰기·거래</text>
+
+  <!-- 6 protocols -->
+  <rect x="510" y="226" width="140" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="580" y="252" text-anchor="middle" font-size="15" font-weight="bold" fill="#222222">⑥ 프로토콜</text>
+  <text x="580" y="274" text-anchor="middle" font-size="13" fill="#333333">MCP · A2A</text>
+
+  <!-- arrows -->
+  <line x1="240" y1="128" x2="288" y2="128" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <polyline points="240,258 265,258 265,146 288,146" fill="none" stroke="#333333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <line x1="375" y1="162" x2="375" y2="224" stroke="#333333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <line x1="460" y1="128" x2="508" y2="128" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="484" y="118" text-anchor="middle" font-size="13" fill="#333333">호출</text>
+  <line x1="580" y1="160" x2="580" y2="224" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="650" y1="258" x2="728" y2="258" stroke="#333333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+  <!-- outside -->
+  <text x="800" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">외부 시스템</text>
+  <text x="800" y="266" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">다른 에이전트</text>
+  <text x="800" y="288" text-anchor="middle" font-size="13" fill="#555555">DB·API·기기</text>
+
+  <!-- 8 logging -->
+  <rect x="40" y="340" width="640" height="44" rx="6" fill="#eef3f8" stroke="#355070" stroke-width="1.5"/>
+  <text x="360" y="367" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">⑧ 로깅·모니터링 — 모든 구성요소의 행동·결정·상호작용을 기록</text>
+
+  <text x="440" y="412" text-anchor="middle" font-size="13" fill="#555555">①~③ LLM 앱과 공통 · ④~⑥ 복잡한 과업 수행 · ⑦~⑧ 안전과 신뢰성</text>
+</svg>
