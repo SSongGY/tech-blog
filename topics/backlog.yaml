@@ -8295,3 +8295,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-155
+    title: "계약의 식별 — 다섯 조건과 회수 가능성이 낮은 고객에게서 받은 대가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, contract-identification]
+    difficulty: 중급
+    angle: "제1115호 문단 9~16. 다섯 조건, 양쪽 무보상 해지권(12), 재검토(13), 조건 미충족 시 받은 대가를 부채로 두는 규칙(15·16)을 가상 회사 계약 세 건으로 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-156
+    title: "계약의 결합 — 같은 고객과 따로 맺은 계약을 하나로 회계처리하는 세 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, contract-combination]
+    difficulty: 중급
+    angle: "제1115호 문단 17. 일괄 협상, 대가 연동, 단일 수행의무 세 기준과 결합 여부에 따라 할인 배분과 연도별 수익이 달라지는 것을 계산"
+    code: python
+    origin: manual
+    status: done
