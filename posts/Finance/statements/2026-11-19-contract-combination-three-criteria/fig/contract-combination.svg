@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="28" text-anchor="middle" font-size="15">계약의 결합 — 판정과 그 결과로 바뀌는 배분</text>
+
+  <!-- 왼쪽: 판정 -->
+  <rect x="24" y="52" width="300" height="64" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="174" y="78" text-anchor="middle" font-size="14">같은 고객 또는 그 특수관계자</text>
+  <text x="174" y="100" text-anchor="middle" font-size="13">동시에 또는 가까운 시기에 체결</text>
+  <line x1="174" y1="116" x2="174" y2="146" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="24" y="148" width="300" height="104" rx="6" fill="#ffffff" stroke="#444"/>
+  <text x="174" y="172" text-anchor="middle" font-size="14">하나 이상 해당하면 결합</text>
+  <text x="40" y="198" font-size="13">⑴ 하나의 상업적 목적으로 일괄 협상</text>
+  <text x="40" y="220" font-size="13">⑵ 대가가 다른 계약의 가격·수행에 연동</text>
+  <text x="40" y="242" font-size="13">⑶ 합치면 단일 수행의무</text>
+  <line x1="174" y1="252" x2="174" y2="282" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <rect x="24" y="284" width="300" height="64" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="174" y="310" text-anchor="middle" font-size="14" fill="#2d6a4f">단일 계약으로 회계처리</text>
+  <text x="174" y="332" text-anchor="middle" font-size="13">이후 수행의무 식별·배분을 계약 전체로</text>
+  <text x="174" y="380" text-anchor="middle" font-size="13">(문단 17)</text>
+
+  <!-- 오른쪽: 배분 막대 — 1 = 0.5px, 900 = 450px -->
+  <text x="600" y="72" text-anchor="middle" font-size="14">계약 쌍 P의 거래가격 900 배분</text>
+
+  <text x="372" y="124" text-anchor="end" font-size="13">따로</text>
+  <rect x="380" y="104" width="200" height="34" fill="#dfe7e2" stroke="#444"/>
+  <text x="480" y="126" text-anchor="middle" font-size="13">장비 400</text>
+  <rect x="580" y="104" width="250" height="34" fill="#f5e6d3" stroke="#444"/>
+  <text x="705" y="126" text-anchor="middle" font-size="13">유지보수 500</text>
+  <text x="380" y="160" font-size="13">계약서 가격이 그대로 배분액</text>
+
+  <text x="372" y="214" text-anchor="end" font-size="13">결합</text>
+  <rect x="380" y="194" width="270" height="34" fill="#dfe7e2" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="515" y="216" text-anchor="middle" font-size="13">장비 540</text>
+  <rect x="650" y="194" width="180" height="34" fill="#f5e6d3" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="740" y="216" text-anchor="middle" font-size="13">유지보수 360</text>
+  <text x="380" y="250" font-size="13">개별 판매가격 600 : 400 비율로 다시 배분</text>
+
+  <!-- 결과 -->
+  <rect x="380" y="284" width="450" height="96" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="605" y="310" text-anchor="middle" font-size="14">연도별 수익 (장비 1년차, 유지보수 2년 정액)</text>
+  <text x="605" y="336" text-anchor="middle" font-size="13">따로: 1년차 650 · 2년차 250</text>
+  <text x="605" y="360" text-anchor="middle" font-size="13" fill="#b45309">결합: 1년차 720 · 2년차 180 — 합계는 900으로 같다</text>
+</svg>
