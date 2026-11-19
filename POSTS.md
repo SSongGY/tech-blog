@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **775편** · 갱신 2026-11-19
+총 **777편** · 갱신 2026-11-19
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -526,12 +526,14 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 124편
+## 기출문제 (exam) — 126편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-19 | [기출문제 — 화이트 레이블 마케팅](posts/PE/exam/2026-11-19-white-label-marketing/index.md) | 중급 | Microsoft Azure Architecture Center, Domain name considerations in multitenant solutions (2025-06-13), Microsoft Azure Architecture Center, Map requests to tenants (2024-11-24), Shopify Blog, White label products (2026-09-07), BotPenguin, White Label Partnership (2026-10-09 갱신) | 문서 근거 |
 | 2026-11-19 | [기출문제 — 범용 AI 위험관리 프레임워크](posts/PE/exam/2026-11-19-gpai-risk-management-framework/index.md) | 심화 | Regulation (EU) 2024/1689 (AI Act) 제3조·제51조·제53조·제55조, General-Purpose AI Code of Practice, Safety and Security 장 (2025-07-10), UC Berkeley CLTC, AI Risk-Management Standards Profile for GPAI/Foundation Models v1.1 (2025-01), NIST AI 600-1 (2024-07), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
+| 2026-11-19 | [기출문제 — 제4정규형(4NF)](posts/PE/exam/2026-11-19-fourth-normal-form-multivalued-dependency/index.md) | 중급 | R. Fagin, Multivalued Dependencies and a New Normal Form for Relational Databases, ACM TODS 2(3), 1977-09 | 문서 근거 |
+| 2026-11-19 | [기출문제 — 에이전틱 AI(Agentic AI)](posts/PE/exam/2026-11-19-agentic-ai-components-autonomy-governance/index.md) | 중급 | IMDA, Model AI Governance Framework for Agentic AI v1.5 (2026-05-20 발행, 2026-06-05 갱신), OpenAI 백서, Practices for Governing Agentic AI Systems (Shavit 외, 문서에 발행일 표기 없음·2026-11-19 확인), Anthropic Engineering, Building effective agents (2024-12-19), OWASP Top 10 for Agentic Applications for 2026 (2025-12-09) | 문서 근거 |
 | 2026-11-18 | [기출문제 — SW사업 대가산정 가이드의 목적과 AI 서비스 도입 사업유형·사업비 산정 절차](posts/PE/exam/2026-11-18-sw-cost-guide-ai-service-introduction/index.md) | 중급 | SW사업 대가산정 가이드 2025년 개정판, Python 3.13.5 | 실행 검증 |
 | 2026-11-18 | [기출문제 — 유전 알고리즘의 절차와 최적화 방법](posts/PE/exam/2026-11-18-genetic-algorithm-procedure-optimization/index.md) | 중급 | Python 3.13.5, Holland, Adaptation in Natural and Artificial Systems (1975, MIT Press 재판 1992), Rudolph, IEEE Trans. Neural Networks 5(1) (1994), Eiben·Smith, Introduction to Evolutionary Computing 2nd ed. (2015), PostgreSQL 16 문서 62장 Genetic Query Optimizer | 실행 검증 |
 | 2026-11-17 | [기출문제 — UML 행위 다이어그램: 활동·상태 머신·유스케이스](posts/PE/exam/2026-11-17-uml-activity-state-usecase-diagrams/index.md) | 중급 | OMG UML 2.5 (formal/15-03-01) | 문서 근거 |

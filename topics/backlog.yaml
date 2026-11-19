@@ -8251,3 +8251,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-287
+    title: "다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "다치 종속의 추론 규칙과 무손실 분해 정리를 예제 릴레이션으로 직접 검산하고, 두 프로젝션으로 안 나뉘는 조인 종속과 제5정규형으로 잇는다"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-288
+    title: "에이전트의 행동 공간과 자율성 — 사람 관여 4단계와 승인 지점 설계"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "행동 공간(도구·권한)과 자율성(지시문·사람 관여)을 두 축으로 놓고, 되돌릴 수 있는지와 영향 범위에 따라 승인 지점을 어디에 두는지와 자동화 편향 대응을 정리한다"
+    code: none
+    origin: exam
+    status: todo
