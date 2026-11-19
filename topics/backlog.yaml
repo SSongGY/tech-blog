@@ -8317,3 +8317,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-289
+    title: "DevSecOps와 CI/CD 파이프라인 공급망 보안"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "NIST SP 800-204D 기준으로 파이프라인 단계별 보안 통제와 DevOps 대비 무엇이 추가되는지"
+    code: none
+    origin: exam
+    status: todo

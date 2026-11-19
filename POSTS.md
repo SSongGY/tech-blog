@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **782편** · 갱신 2026-11-19
+총 **784편** · 갱신 2026-11-20
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -529,10 +529,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 126편
+## 기출문제 (exam) — 128편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-20 | [기출문제 — 프록시(Proxy) 디자인 패턴](posts/PE/exam/2026-11-20-proxy-design-pattern/index.md) | 중급 | Gamma·Helm·Johnson·Vlissides, Design Patterns (Addison-Wesley, 1994), Java SE 21 API — java.lang.reflect.Proxy | 문서 근거 |
+| 2026-11-20 | [기출문제 — DevOps의 장점과 단점](posts/PE/exam/2026-11-20-devops-advantages-disadvantages/index.md) | 중급 | ISO/IEC/IEEE 32675:2022, DORA software delivery performance metrics (2026-01-05 갱신), NIST SP 800-204D (2024-02) | 문서 근거 |
 | 2026-11-19 | [기출문제 — 화이트 레이블 마케팅](posts/PE/exam/2026-11-19-white-label-marketing/index.md) | 중급 | Microsoft Azure Architecture Center, Domain name considerations in multitenant solutions (2025-06-13), Microsoft Azure Architecture Center, Map requests to tenants (2024-11-24), Shopify Blog, White label products (2026-09-07), BotPenguin, White Label Partnership (2026-10-09 갱신) | 문서 근거 |
 | 2026-11-19 | [기출문제 — 범용 AI 위험관리 프레임워크](posts/PE/exam/2026-11-19-gpai-risk-management-framework/index.md) | 심화 | Regulation (EU) 2024/1689 (AI Act) 제3조·제51조·제53조·제55조, General-Purpose AI Code of Practice, Safety and Security 장 (2025-07-10), UC Berkeley CLTC, AI Risk-Management Standards Profile for GPAI/Foundation Models v1.1 (2025-01), NIST AI 600-1 (2024-07), NIST AI 100-1 AI RMF 1.0 (2023-01) | 문서 근거 |
 | 2026-11-19 | [기출문제 — 제4정규형(4NF)](posts/PE/exam/2026-11-19-fourth-normal-form-multivalued-dependency/index.md) | 중급 | R. Fagin, Multivalued Dependencies and a New Normal Form for Relational Databases, ACM TODS 2(3), 1977-09 | 문서 근거 |
