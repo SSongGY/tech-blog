@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">요청-테넌트 매핑과 테넌시 모델</text>
+
+  <!-- column labels -->
+  <text x="125" y="60" text-anchor="middle" font-size="13" fill="#355070">① 테넌트 식별 근거</text>
+  <text x="430" y="60" text-anchor="middle" font-size="13" fill="#355070">② 매핑·검증</text>
+  <text x="735" y="60" text-anchor="middle" font-size="13" fill="#355070">③ 배포 (테넌시 모델)</text>
+
+  <!-- identifiers -->
+  <rect x="30" y="76" width="190" height="56" rx="6" fill="#eef3f8" stroke="#355070" stroke-width="1.5"/>
+  <text x="125" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">도메인 (Host 헤더)</text>
+  <text x="125" y="120" text-anchor="middle" font-size="13" fill="#333333">acme.app.example</text>
+
+  <rect x="30" y="148" width="190" height="56" rx="6" fill="#eef3f8" stroke="#355070" stroke-width="1.5"/>
+  <text x="125" y="172" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">요청 속성</text>
+  <text x="125" y="192" text-anchor="middle" font-size="13" fill="#333333">경로 /acme/ · 쿼리 · 헤더</text>
+
+  <rect x="30" y="220" width="190" height="56" rx="6" fill="#eef3f8" stroke="#355070" stroke-width="1.5"/>
+  <text x="125" y="244" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">자격 증명</text>
+  <text x="125" y="264" text-anchor="middle" font-size="13" fill="#333333">토큰 클레임 · API 키 · 인증서</text>
+
+  <!-- mapping layer -->
+  <rect x="320" y="76" width="220" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="430" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">매핑 계층</text>
+  <text x="430" y="122" text-anchor="middle" font-size="13" fill="#333333">리버스 프록시 · API 게이트웨이</text>
+
+  <rect x="320" y="160" width="220" height="56" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="430" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">테넌트 카탈로그</text>
+  <text x="430" y="204" text-anchor="middle" font-size="13" fill="#333333">테넌트 → 배포 대응표</text>
+
+  <rect x="320" y="236" width="220" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="430" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">요청 검증 (인가)</text>
+  <text x="430" y="280" text-anchor="middle" font-size="13" fill="#333333">이 사용자가 이 테넌트에 권한?</text>
+
+  <!-- arrows identifiers -> mapping -->
+  <line x1="220" y1="104" x2="318" y2="104" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="220" y1="176" x2="318" y2="116" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="220" y1="248" x2="318" y2="128" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="430" y1="140" x2="430" y2="158" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="430" y1="216" x2="430" y2="234" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- deployments -->
+  <rect x="630" y="76" width="215" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="737" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">완전 멀티테넌트</text>
+  <text x="737" y="122" text-anchor="middle" font-size="13" fill="#333333">전부 공유 · 테넌트 A B C</text>
+
+  <rect x="630" y="156" width="215" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="737" y="180" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">수평 분할</text>
+  <text x="737" y="202" text-anchor="middle" font-size="13" fill="#333333">앱 계층 공유 · DB 테넌트별</text>
+
+  <rect x="630" y="236" width="215" height="64" rx="6" fill="#ffffff" stroke="#355070" stroke-width="1.5"/>
+  <text x="737" y="260" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">단일 테넌트 (자동 배포)</text>
+  <text x="737" y="282" text-anchor="middle" font-size="13" fill="#333333">테넌트 D 전용 인프라</text>
+
+  <!-- vertical partition bracket -->
+  <path d="M850,82 L858,82 L858,294 L850,294" fill="none" stroke="#b45309" stroke-width="1.5"/>
+
+  <!-- arrow validation -> deployments -->
+  <line x1="540" y1="264" x2="560" y2="264" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="560" y1="108" x2="560" y2="268" stroke="#2d6a4f" stroke-width="1.5"/>
+  <line x1="560" y1="108" x2="628" y2="108" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="560" y1="188" x2="628" y2="188" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="560" y1="268" x2="628" y2="268" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- isolation axis -->
+  <line x1="630" y1="330" x2="845" y2="330" stroke="#555555" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="635" y="352" font-size="13" fill="#333333">비용 효율 ↑</text>
+  <text x="840" y="352" text-anchor="end" font-size="13" fill="#333333">격리 ↑</text>
+  <text x="845" y="374" text-anchor="end" font-size="13" fill="#b45309">주황 괄호: 수직 분할 = 공유 배포 + 전용 배포 혼합</text>
+
+  <!-- custom domain risk -->
+  <rect x="30" y="390" width="820" height="84" rx="6" fill="#fff6ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="50" y="416" font-size="14" font-weight="bold" fill="#b45309">커스텀 도메인 주의: 댕글링 DNS → 서브도메인 탈취</text>
+  <text x="50" y="440" font-size="13" fill="#333333">해지 뒤 고객 DNS에 CNAME이 남으면, 공격자가 같은 테넌트 이름을 재등록해 고객 도메인을 차지한다.</text>
+  <text x="50" y="462" font-size="13" fill="#9d0208">대책 3가지: 삭제 전 CNAME 제거 요구 · 테넌트 식별자 재사용 금지 · 온보딩마다 새 TXT 값으로 소유권 검증</text>
+</svg>

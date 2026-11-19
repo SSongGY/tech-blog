@@ -92,6 +92,8 @@ Shopify와 BotPenguin은 둘을 구분한다. 답안에는 "구분하는 쪽이 
 | ④ 공급사 종속과 평판 위험 | 원 제공사의 품질 문제·장애를 고객은 재판매사 탓으로 본다. 차별화도 어렵다 | Voluum, BotPenguin |
 | ⑤ 계약과 종료 계획 | 원 제공사의 고객 직접 접촉 금지, 재판매사용 SLA, 가격 변경 조건, 계약 종료 시 고객 데이터 이관 방법을 정한다 | BotPenguin |
 
+> 개념 정리: [멀티테넌트 SaaS의 테넌트 격리 모델과 요청-테넌트 매핑](../../cloud/2026-11-20-multitenant-saas-isolation-tenant-mapping/index.md)
+
 끝
 
 ## 답안 작성 메모
