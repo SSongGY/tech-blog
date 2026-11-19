@@ -8195,7 +8195,7 @@ topics:
     angle: "기능점수로 규모를 셀 수 없는 작업(AI 커스터마이징, 운영, ISP)을 투입공수로 산정할 때 직접인건비·제경비·기술료 구성과 등급별 평균임금 적용, 기능점수 방식과의 선택 기준"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-127
     title: "코호트 표 — 첫 구매 월을 기준으로 재구매 고객을 세는 SQL"
     category: Database
@@ -8273,3 +8273,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-128
+    title: "시간 간격으로 세션 나누기 — LAG로 끊는 자리를 찾고 누적 SUM으로 번호 붙이기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, lag, sessionization, basics]
+    difficulty: 중급
+    angle: "클릭 로그를 30분 넘게 쉬면 새 세션으로 끊는다. LAG로 앞 행과의 간격을 구해 끊는 표시를 만들고 누적 SUM으로 세션 번호를 매긴다. 첫 행의 NULL, 정확히 30분인 경계, TEXT 시각을 unixepoch로 바꾸는 이유, 사용자별 PARTITION을 빠뜨리면 생기는 일까지"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-042
+    title: "지수가중 이동평균(EWMA) — 응답 시간 감시에서 α가 정하는 반응 속도와 잡음"
+    category: Backend
+    subcategory: monitoring
+    track: general
+    tags: [ewma, moving-average, monitoring, statistics]
+    difficulty: 중급
+    angle: "응답 시간 계열에 계단 변화를 넣고 단순 이동평균과 EWMA를 나란히 돌려 감지 지연과 흔들림을 잰다. 유효 창 크기 2/α-1, 정상 상태 분산 α/(2-α) 식을 NIST 핸드북 근거로 시뮬레이션과 맞춰 보고, 초깃값 편향과 메모리 비용까지"
+    code: python
+    origin: manual
+    status: done

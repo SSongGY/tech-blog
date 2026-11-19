@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **777편** · 갱신 2026-11-19
+총 **780편** · 갱신 2026-11-19
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 114편
+## DB문법 (basics) — 115편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-19 | [시간 간격으로 세션 나누기 — LAG로 끊는 자리를 찾고 누적 SUM으로 번호 붙이기](posts/Database/sql-basics/2026-11-19-sql-sessionize-by-time-gap/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-18 | [코호트 표 — 첫 구매 월을 기준으로 재구매 고객을 세는 SQL](posts/Database/sql-basics/2026-11-18-sql-cohort-retention-first-purchase-month/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-17 | [숫자가 섞인 문자열 정렬 — file10이 file2보다 앞에 오는 이유와 자연 정렬](posts/Database/sql-basics/2026-11-17-sql-natural-sort-numbers-in-text/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-16 | [순번을 한 칸씩 밀 때 — UPDATE pos = pos + 1이 UNIQUE에 걸리는 이유](posts/Database/sql-basics/2026-11-16-update-shift-unique-position/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -148,10 +149,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 267편
+## 기술사 (pe) — 268편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-19 | [투입공수 방식 대가산정 — SW기술자 평균임금과 MD·MM 환산](posts/PE/software-engineering/2026-11-19-sw-cost-estimation-man-month/index.md) | 중급 | SW사업 대가산정 가이드 2025년 개정판, 2026년 적용 SW기술자 평균임금 (2025-12-19 공표), Python 3.13.5 | 실행 검증 |
 | 2026-11-19 | [메타휴리스틱 비교 — 시뮬레이티드 어닐링·타부 탐색·유전 알고리즘](posts/PE/ai/2026-11-19-metaheuristic-sa-tabu-ga-comparison/index.md) | 중급 | Python 3.13.5, Kirkpatrick·Gelatt·Vecchi, Science 220(4598) (1983), Glover, ORSA J. Computing 1(3) (1989), Wolpert·Macready, IEEE Trans. Evol. Comput. 1(1) (1997), Sörensen·Sevaux·Glover, arXiv:1704.00853 v1 (2017) | 실행 검증 |
 | 2026-11-19 | [유전 알고리즘 — 스키마 정리와 엘리트 보존의 수렴 조건](posts/PE/ai/2026-11-19-ga-schema-theorem-elitist-convergence/index.md) | 중급 | Python 3.13.5, Holland, Adaptation in Natural and Artificial Systems (1975, MIT Press 재판 1992), Goldberg, Genetic Algorithms in Search, Optimization, and Machine Learning (1989), Rudolph, IEEE Trans. Neural Networks 5(1) (1994) | 실행 검증 |
 | 2026-11-18 | [페트리 넷(Petri Net) — 플레이스·트랜지션·토큰과 병행성 분석](posts/PE/software-engineering/2026-11-18-petri-net-reachability-liveness-boundedness/index.md) | 중급 | Murata, Proc. IEEE 77(4) 1989, OMG UML 2.5 (formal/15-03-01), Python 3.13.5 | 실행 검증 |
@@ -443,10 +445,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 78편
+## 일반 (general) — 79편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-19 | [지수가중 이동평균(EWMA) — 응답 시간 감시에서 α가 정하는 반응 속도와 잡음](posts/Backend/monitoring/2026-11-19-ewma-alpha-response-noise/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-18 | [MinHash와 LSH 밴딩 — 자카드 유사도를 서명 몇 개로 추정하기](posts/Architecture/datastructure/2026-11-18-minhash-lsh-banding-jaccard/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-17 | [Jump 일관 해시 — 메모리 없이 키를 버킷에 나누고, 가운데 버킷은 뺄 수 없는 이유](posts/Architecture/datastructure/2026-11-17-jump-consistent-hash/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-16 | [Roaring 비트맵 — 배열 컨테이너와 비트맵 컨테이너가 4096에서 갈리는 이유](posts/Architecture/datastructure/2026-11-16-roaring-bitmap-container-switch/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
