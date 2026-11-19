@@ -111,6 +111,8 @@ Berkeley 프로파일은 최소 기대치로 지켜야 할 **우선 단계**를 
 >
 > 개념 정리: [인공지능 기본법과 EU AI법 — 위험 기반 규제 구조 비교](../../it-management/2026-10-05-korea-ai-basic-act-vs-eu-ai-act/index.md)
 >
+> 개념 정리: [EU 범용 AI 행동강령 — 투명성·저작권·안전보안 3개 장](../../ai/2026-11-20-eu-gpai-code-of-practice-three-chapters/index.md)
+>
 > 관련 답안: [기출문제 — NIST AI RMF의 핵심구조 4가지와 신뢰 가능한 AI 특성 7가지](../2026-10-24-nist-ai-rmf-core-and-trustworthy-characteristics/index.md)
 
 끝
