@@ -8239,7 +8239,7 @@ topics:
     angle: "테넌시 모델(단일·완전 공유·수직·수평 분할), 도메인·경로·토큰 클레임 기반 매핑, 커스텀 도메인 검증과 서브도메인 탈취 방지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-286
     title: "EU 범용 AI 행동강령 — 투명성·저작권·안전보안 3개 장"
     category: PE
@@ -8250,7 +8250,7 @@ topics:
     angle: "AI법 제53조·제55조 의무와 행동강령 3개 장의 대응, 모델 문서 양식, 시스템적 위험 관리 약속 10가지"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-287
     title: "다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지"
     category: PE
