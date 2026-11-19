@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **780편** · 갱신 2026-11-19
+총 **782편** · 갱신 2026-11-19
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -660,10 +660,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 154편
+## 주식·재무 (finance) — 156편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-19 | [계약의 식별 — 다섯 조건과 회수 가능성이 낮은 고객에게서 받은 대가](posts/Finance/statements/2026-11-19-contract-identification-collectibility/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-11-19 | [계약의 결합 — 같은 고객과 따로 맺은 계약을 하나로 회계처리하는 세 기준](posts/Finance/statements/2026-11-19-contract-combination-three-criteria/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-18 | [기간에 걸쳐 이행하는 수행의무의 세 기준 — 대체 용도와 집행 가능한 지급청구권](posts/Finance/statements/2026-11-18-over-time-criteria-payment-right/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-18 | [고객의 인수 조항 — 형식적 인수와 실질적 인수가 수익 인식 시점을 가르는 기준](posts/Finance/statements/2026-11-18-customer-acceptance-clause-timing/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-17 | [수행의무 식별 — 구별되는 재화와 결합산출물, 일련의 재화](posts/Finance/statements/2026-11-17-performance-obligation-distinct-goods/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
