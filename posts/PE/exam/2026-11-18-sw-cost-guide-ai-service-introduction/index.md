@@ -235,6 +235,8 @@ AI 서비스 도입 사업은 **이용료·커스터마이징 작업비용·구�
 쪽에 요구하는 실질적인 준비다.
 
 > 개념 정리: [소프트웨어 비용 산정 — 기능점수와 COCOMO](../../software-engineering/2026-10-19-function-point-cocomo-cost-estimation/index.md)
+>
+> 개념 정리: [투입공수 방식 대가산정 — SW기술자 평균임금과 MD·MM 환산](../../software-engineering/2026-11-19-sw-cost-estimation-man-month/index.md)
 
 끝
 
