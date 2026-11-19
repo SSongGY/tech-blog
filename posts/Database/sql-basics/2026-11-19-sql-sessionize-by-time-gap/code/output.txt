@@ -1,0 +1,143 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-19-sql-sessionize-by-time-gap
+# 명령      : python session.py
+# 수행 시각 : 2026-11-19 19:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[click_log]  12행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  click_id   | INTEGER | PK
+  user_id    | INTEGER | NOT NULL
+  clicked_at | TEXT    | NOT NULL
+  page       | TEXT    | NOT NULL
+
+  click_id | user_id | clicked_at          | page
+  ---------+---------+---------------------+------------
+         1 |       1 | 2026-11-19 09:00:00 | /
+         2 |       2 | 2026-11-19 09:05:00 | /
+         3 |       1 | 2026-11-19 09:10:00 | /item/7
+         4 |       1 | 2026-11-19 09:39:59 | /cart
+         5 |       2 | 2026-11-19 09:20:00 | /item/3
+         6 |       1 | 2026-11-19 10:09:59 | /item/9
+         7 |       1 | 2026-11-19 11:00:00 | /
+         8 |       2 | 2026-11-19 10:30:00 | /
+         9 |       2 | 2026-11-19 10:45:00 | /order
+        10 |       1 | 2026-11-19 23:50:00 | /
+        11 |       1 | 2026-11-20 00:10:00 | /item/7
+        12 |       2 | 2026-11-19 10:45:00 | /order/done
+
+
+[1] LAG — 같은 사용자의 바로 앞 클릭과의 간격(초)
+  sql> SELECT click_id, user_id, clicked_at, unixepoch(clicked_at) - unixepoch(LAG(clicked_at) OVER (PARTITION BY user_id ORDER BY clicked_at, click_id)) AS  ...
+    ('click_id', 'user_id', 'clicked_at', 'gap_sec')
+    (1, 1, '2026-11-19 09:00:00', None)
+    (3, 1, '2026-11-19 09:10:00', 600)
+    (4, 1, '2026-11-19 09:39:59', 1799)
+    (6, 1, '2026-11-19 10:09:59', 1800)
+    (7, 1, '2026-11-19 11:00:00', 3001)
+    (10, 1, '2026-11-19 23:50:00', 46200)
+    (11, 1, '2026-11-20 00:10:00', 1200)
+    (2, 2, '2026-11-19 09:05:00', None)
+    (5, 2, '2026-11-19 09:20:00', 900)
+    (8, 2, '2026-11-19 10:30:00', 4200)
+    (9, 2, '2026-11-19 10:45:00', 900)
+    (12, 2, '2026-11-19 10:45:00', 0)
+
+[2] 끊는 표시 is_new — 첫 클릭이거나 1800초 초과
+[3] 누적 SUM — 끊는 표시를 더해 가면 세션 번호
+  sql> SELECT *, SUM(is_new) OVER (PARTITION BY user_id ORDER BY clicked_at, click_id ROWS UNBOUNDED PRECEDING) AS session_no FROM ( SELECT *, CASE WHEN gap_ ...
+    ('click_id', 'user_id', 'clicked_at', 'gap_sec', 'is_new', 'session_no')
+    (1, 1, '2026-11-19 09:00:00', None, 1, 1)
+    (3, 1, '2026-11-19 09:10:00', 600, 0, 1)
+    (4, 1, '2026-11-19 09:39:59', 1799, 0, 1)
+    (6, 1, '2026-11-19 10:09:59', 1800, 0, 1)
+    (7, 1, '2026-11-19 11:00:00', 3001, 1, 2)
+    (10, 1, '2026-11-19 23:50:00', 46200, 1, 3)
+    (11, 1, '2026-11-20 00:10:00', 1200, 0, 3)
+    (2, 2, '2026-11-19 09:05:00', None, 1, 1)
+    (5, 2, '2026-11-19 09:20:00', 900, 0, 1)
+    (8, 2, '2026-11-19 10:30:00', 4200, 1, 2)
+    (9, 2, '2026-11-19 10:45:00', 900, 0, 2)
+    (12, 2, '2026-11-19 10:45:00', 0, 0, 2)
+
+[4] 세션마다 묶기
+  sql> SELECT user_id, session_no, MIN(clicked_at) AS started_at, MAX(clicked_at) AS ended_at, COUNT(*) AS clicks, unixepoch(MAX(clicked_at)) - unixepoch(MIN ...
+    ('user_id', 'session_no', 'started_at', 'ended_at', 'clicks', 'length_sec')
+    (1, 1, '2026-11-19 09:00:00', '2026-11-19 10:09:59', 4, 4199)
+    (1, 2, '2026-11-19 11:00:00', '2026-11-19 11:00:00', 1, 0)
+    (1, 3, '2026-11-19 23:50:00', '2026-11-20 00:10:00', 2, 1200)
+    (2, 1, '2026-11-19 09:05:00', '2026-11-19 09:20:00', 2, 900)
+    (2, 2, '2026-11-19 10:30:00', '2026-11-19 10:45:00', 3, 900)
+
+[5-1] 경계 — 정확히 1800초인 행을 > 와 >= 로
+  sql> SELECT click_id, user_id, gap_sec, gap_sec > 1800 AS gt, gap_sec >= 1800 AS ge FROM ( SELECT click_id, user_id, clicked_at, unixepoch(clicked_at) - un ...
+    ('click_id', 'user_id', 'gap_sec', 'gt', 'ge')
+    (4, 1, 1799, 0, 0)
+    (6, 1, 1800, 0, 1)
+
+[5-2] 첫 행 NULL 을 빠뜨리면 — is_new 가 NULL, 첫 세션이 0 번
+  sql> SELECT click_id, user_id, gap_sec, is_new, SUM(is_new) OVER (PARTITION BY user_id ORDER BY clicked_at, click_id ROWS UNBOUNDED PRECEDING) AS session_n ...
+    ('click_id', 'user_id', 'gap_sec', 'is_new', 'session_no')
+    (2, 2, None, None, None)
+    (5, 2, 900, 0, 0)
+    (8, 2, 4200, 1, 1)
+    (9, 2, 900, 0, 1)
+    (12, 2, 0, 0, 1)
+
+[5-3] PARTITION BY user_id 를 빠뜨리면 — 사용자별 세션 수
+  sql> SELECT 'with_partition' AS version, COUNT(DISTINCT user_id || '-' || session_no) FROM ( SELECT *, SUM(is_new) OVER (PARTITION BY user_id ORDER BY clic ...
+    ('version', 'sessions')
+    ('with_partition', 5)
+    ('no_partition', 2)
+  sql> SELECT *, SUM(is_new) OVER (ORDER BY clicked_at, click_id ROWS UNBOUNDED PRECEDING) AS session_no FROM ( SELECT *, CASE WHEN gap_sec IS NULL OR gap_se ...
+    ('click_id', 'user_id', 'clicked_at', 'gap_sec', 'is_new', 'session_no')
+    (1, 1, '2026-11-19 09:00:00', None, 1, 1)
+    (2, 2, '2026-11-19 09:05:00', 300, 0, 1)
+    (3, 1, '2026-11-19 09:10:00', 300, 0, 1)
+    (5, 2, '2026-11-19 09:20:00', 600, 0, 1)
+    (4, 1, '2026-11-19 09:39:59', 1199, 0, 1)
+    (6, 1, '2026-11-19 10:09:59', 1800, 0, 1)
+
+[5-4] 시각 문자열을 그대로 빼면
+  sql> SELECT '2026-11-19 10:09:59' - '2026-11-19 09:39:59' AS text_minus, unixepoch('2026-11-19 10:09:59') - unixepoch('2026-11-19 09:39:59') AS unixepoch_m ...
+    ('text_minus', 'unixepoch_minus', 'type')
+    (0, 1800, 'integer')
+
+[6] 실행계획 — 인덱스 없을 때
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-4)
+    |  |--CO-ROUTINE (subquery-1)
+    |  |  |--CO-ROUTINE (subquery-5)
+    |  |  |  |--SCAN click_log
+    |  |  |  `--USE TEMP B-TREE FOR ORDER BY
+    |  |  `--SCAN (subquery-5)
+    |  |--SCAN (subquery-1)
+    |  `--USE TEMP B-TREE FOR ORDER BY
+    `--SCAN (subquery-4)
+
+[6] 실행계획 — (user_id, clicked_at, click_id) 인덱스를 만든 뒤
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-4)
+    |  |--CO-ROUTINE (subquery-1)
+    |  |  |--CO-ROUTINE (subquery-5)
+    |  |  |  `--SCAN click_log USING COVERING INDEX ix_click_log_user_id_clicked_at
+    |  |  `--SCAN (subquery-5)
+    |  |--SCAN (subquery-1)
+    |  `--USE TEMP B-TREE FOR ORDER BY
+    `--SCAN (subquery-4)

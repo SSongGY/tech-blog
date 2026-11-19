@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">사용자 1의 클릭 7개가 세션 번호를 얻는 순서</text>
+
+  <!-- 행 이름 -->
+  <g font-size="14" fill="#1f2937" text-anchor="end">
+    <text x="176" y="78">click_id</text>
+    <text x="176" y="118">clicked_at</text>
+    <text x="176" y="158">① gap_sec</text>
+    <text x="176" y="198">② is_new</text>
+    <text x="176" y="238">③ session_no</text>
+  </g>
+  <g font-size="12" fill="#4b5563" text-anchor="end">
+    <text x="176" y="177">LAG 로 앞 행과의 차</text>
+    <text x="176" y="217">NULL 이거나 &gt; 1800</text>
+    <text x="176" y="257">is_new 누적 SUM</text>
+  </g>
+
+  <!-- 값 칸: 열마다 x 시작 190 + 95*n, 폭 90 -->
+  <g font-size="14" text-anchor="middle" fill="#1f2937">
+    <!-- click_id -->
+    <rect x="190" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="235" y="78">1</text>
+    <rect x="285" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="330" y="78">3</text>
+    <rect x="380" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="425" y="78">4</text>
+    <rect x="475" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="520" y="78">6</text>
+    <rect x="570" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="615" y="78">7</text>
+    <rect x="665" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="710" y="78">10</text>
+    <rect x="760" y="58" width="90" height="30" fill="#f3f4f6" stroke="#9ca3af"/><text x="805" y="78">11</text>
+
+    <!-- clicked_at -->
+    <rect x="190" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="235" y="118">09:00:00</text>
+    <rect x="285" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="330" y="118">09:10:00</text>
+    <rect x="380" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="425" y="118">09:39:59</text>
+    <rect x="475" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="520" y="118">10:09:59</text>
+    <rect x="570" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="615" y="118">11:00:00</text>
+    <rect x="665" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="710" y="118">23:50:00</text>
+    <rect x="760" y="98" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="803" y="118" font-size="13">00:10:00*</text>
+
+    <!-- gap_sec -->
+    <rect x="190" y="138" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="235" y="158" fill="#6b7280">NULL</text>
+    <rect x="285" y="138" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="330" y="158">600</text>
+    <rect x="380" y="138" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="425" y="158">1799</text>
+    <rect x="475" y="138" width="90" height="30" fill="#fef3c7" stroke="#b45309" stroke-width="2"/><text x="520" y="158" fill="#b45309">1800</text>
+    <rect x="570" y="138" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="615" y="158">3001</text>
+    <rect x="665" y="138" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="710" y="158">46200</text>
+    <rect x="760" y="138" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="805" y="158">1200</text>
+
+    <!-- is_new -->
+    <rect x="190" y="178" width="90" height="30" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/><text x="235" y="198" fill="#2d6a4f">1</text>
+    <rect x="285" y="178" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="330" y="198">0</text>
+    <rect x="380" y="178" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="425" y="198">0</text>
+    <rect x="475" y="178" width="90" height="30" fill="#fef3c7" stroke="#b45309" stroke-width="2"/><text x="520" y="198" fill="#b45309">0</text>
+    <rect x="570" y="178" width="90" height="30" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/><text x="615" y="198" fill="#2d6a4f">1</text>
+    <rect x="665" y="178" width="90" height="30" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/><text x="710" y="198" fill="#2d6a4f">1</text>
+    <rect x="760" y="178" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="805" y="198">0</text>
+
+    <!-- session_no -->
+    <rect x="190" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="235" y="238">1</text>
+    <rect x="285" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="330" y="238">1</text>
+    <rect x="380" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="425" y="238">1</text>
+    <rect x="475" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="520" y="238">1</text>
+    <rect x="570" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="615" y="238">2</text>
+    <rect x="665" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="710" y="238">3</text>
+    <rect x="760" y="218" width="90" height="30" fill="#ffffff" stroke="#9ca3af"/><text x="805" y="238">3</text>
+  </g>
+
+  <!-- 세션 묶음 괄호 -->
+  <g stroke="#2d6a4f" stroke-width="2" fill="none">
+    <path d="M 192 262 L 192 272 L 563 272 L 563 262"/>
+    <path d="M 572 262 L 572 272 L 658 272 L 658 262"/>
+    <path d="M 667 262 L 667 272 L 848 272 L 848 262"/>
+  </g>
+  <g font-size="14" text-anchor="middle" fill="#2d6a4f">
+    <text x="377" y="294">세션 1 — 클릭 4개</text>
+    <text x="615" y="294">세션 2</text>
+    <text x="757" y="294">세션 3</text>
+    <text x="757" y="314" font-size="13">자정 넘어 이어짐</text>
+  </g>
+
+  <!-- 설명 -->
+  <rect x="60" y="320" width="760" height="96" rx="6" fill="#fef3c7" stroke="#b45309"/>
+  <text x="440" y="346" font-size="14" text-anchor="middle" fill="#b45309">클릭 6은 정확히 1800초 뒤라 &gt; 1800 이 거짓 → 세션 1에 남는다</text>
+  <text x="440" y="370" font-size="14" text-anchor="middle" fill="#1f2937">&gt;= 1800 으로 쓰면 이 칸이 1이 되고 세션이 하나 늘어난다</text>
+  <text x="440" y="394" font-size="14" text-anchor="middle" fill="#1f2937">첫 클릭의 NULL 을 1로 바꾸지 않으면 session_no 가 NULL·0 부터 시작한다</text>
+
+  <text x="440" y="444" font-size="13" text-anchor="middle" fill="#4b5563">* 2026-11-20. 나머지는 2026-11-19. SQLite 3.49.1, 실습 [1]·[3] 의 user_id = 1 행</text>
+</svg>
