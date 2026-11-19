@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Noto Sans KR', 'Malgun Gothic', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <text x="440" y="30" font-size="18" font-weight="bold" text-anchor="middle" fill="#1f2937">k 표본 전 값이 평균에 들어가는 가중치</text>
+
+  <!-- 범례 -->
+  <rect x="520" y="56" width="14" height="14" fill="#9ca3af"/>
+  <text x="542" y="68" font-size="14" fill="#1f2937">SMA N=19 — 19개에 1/19 씩, 그 앞은 0</text>
+  <rect x="520" y="80" width="14" height="14" fill="#2d6a4f"/>
+  <text x="542" y="92" font-size="14" fill="#1f2937">EWMA α=0.1 — 0.1 × 0.9^k</text>
+
+  <!-- 축 -->
+  <line x1="85" y1="380" x2="856" y2="380" stroke="#4b5563" stroke-width="1.5"/>
+  <line x1="85" y1="120" x2="85" y2="380" stroke="#4b5563" stroke-width="1.5"/>
+  <g font-size="13" fill="#4b5563" text-anchor="end">
+    <text x="78" y="134">0.10</text>
+    <text x="78" y="259">0.05</text>
+    <text x="78" y="384">0</text>
+  </g>
+  <line x1="85" y1="130" x2="856" y2="130" stroke="#e5e7eb"/>
+  <line x1="85" y1="255" x2="856" y2="255" stroke="#e5e7eb"/>
+
+  <!-- SMA 막대 (k = 0..18) -->
+  <g fill="#9ca3af">
+    <rect x="91" y="248.4" width="8" height="131.6"/><rect x="110" y="248.4" width="8" height="131.6"/>
+    <rect x="129" y="248.4" width="8" height="131.6"/><rect x="148" y="248.4" width="8" height="131.6"/>
+    <rect x="167" y="248.4" width="8" height="131.6"/><rect x="186" y="248.4" width="8" height="131.6"/>
+    <rect x="205" y="248.4" width="8" height="131.6"/><rect x="224" y="248.4" width="8" height="131.6"/>
+    <rect x="243" y="248.4" width="8" height="131.6"/><rect x="262" y="248.4" width="8" height="131.6"/>
+    <rect x="281" y="248.4" width="8" height="131.6"/><rect x="300" y="248.4" width="8" height="131.6"/>
+    <rect x="319" y="248.4" width="8" height="131.6"/><rect x="338" y="248.4" width="8" height="131.6"/>
+    <rect x="357" y="248.4" width="8" height="131.6"/><rect x="376" y="248.4" width="8" height="131.6"/>
+    <rect x="395" y="248.4" width="8" height="131.6"/><rect x="414" y="248.4" width="8" height="131.6"/>
+    <rect x="433" y="248.4" width="8" height="131.6"/>
+  </g>
+
+  <!-- EWMA 막대 (k = 0..39) -->
+  <g fill="#2d6a4f">
+    <rect x="99" y="130.0" width="8" height="250.0"/><rect x="118" y="155.0" width="8" height="225.0"/>
+    <rect x="137" y="177.5" width="8" height="202.5"/><rect x="156" y="197.7" width="8" height="182.3"/>
+    <rect x="175" y="216.0" width="8" height="164.0"/><rect x="194" y="232.4" width="8" height="147.6"/>
+    <rect x="213" y="247.1" width="8" height="132.9"/><rect x="232" y="260.4" width="8" height="119.6"/>
+    <rect x="251" y="272.4" width="8" height="107.6"/><rect x="270" y="283.1" width="8" height="96.9"/>
+    <rect x="289" y="292.8" width="8" height="87.2"/><rect x="308" y="301.5" width="8" height="78.5"/>
+    <rect x="327" y="309.4" width="8" height="70.6"/><rect x="346" y="316.5" width="8" height="63.5"/>
+    <rect x="365" y="322.8" width="8" height="57.2"/><rect x="384" y="328.5" width="8" height="51.5"/>
+    <rect x="403" y="333.7" width="8" height="46.3"/><rect x="422" y="338.3" width="8" height="41.7"/>
+    <rect x="441" y="342.5" width="8" height="37.5"/><rect x="460" y="346.2" width="8" height="33.8"/>
+    <rect x="479" y="349.6" width="8" height="30.4"/><rect x="498" y="352.6" width="8" height="27.4"/>
+    <rect x="517" y="355.4" width="8" height="24.6"/><rect x="536" y="357.8" width="8" height="22.2"/>
+    <rect x="555" y="360.1" width="8" height="19.9"/><rect x="574" y="362.1" width="8" height="17.9"/>
+    <rect x="593" y="363.8" width="8" height="16.2"/><rect x="612" y="365.5" width="8" height="14.5"/>
+    <rect x="631" y="366.9" width="8" height="13.1"/><rect x="650" y="368.2" width="8" height="11.8"/>
+    <rect x="669" y="369.4" width="8" height="10.6"/><rect x="688" y="370.5" width="8" height="9.5"/>
+    <rect x="707" y="371.4" width="8" height="8.6"/><rect x="726" y="372.3" width="8" height="7.7"/>
+    <rect x="745" y="373.0" width="8" height="7.0"/><rect x="764" y="373.7" width="8" height="6.3"/>
+    <rect x="783" y="374.4" width="8" height="5.6"/><rect x="802" y="374.9" width="8" height="5.1"/>
+    <rect x="821" y="375.4" width="8" height="4.6"/><rect x="840" y="375.9" width="8" height="4.1"/>
+  </g>
+
+  <!-- x 축 눈금: k 의 막대 쌍 가운데 = 99 + 19k -->
+  <g font-size="13" fill="#4b5563" text-anchor="middle">
+    <text x="99" y="400">0</text>
+    <text x="270" y="400">9</text>
+    <text x="460" y="400">19</text>
+    <text x="840" y="400">39</text>
+    <text x="470" y="422">k (몇 표본 전인가)</text>
+  </g>
+
+  <!-- 평균 나이 -->
+  <line x1="270" y1="150" x2="270" y2="380" stroke="#b45309" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="280" y="168" font-size="14" fill="#b45309">평균 나이 9 — 둘이 같다</text>
+  <text x="560" y="200" font-size="14" fill="#9d0208">EWMA 는 k=19 이후에도 0 이 아니다</text>
+  <text x="560" y="222" font-size="14" fill="#9d0208">(최근 19개의 몫 0.865, 나머지 0.135)</text>
+
+  <text x="440" y="458" font-size="13" text-anchor="middle" fill="#4b5563">EWMA_t = α·Y_t + (1−α)·EWMA_t−1 을 풀어 쓰면 k 표본 전 값의 가중치가 α(1−α)^k 가 된다</text>
+  <text x="440" y="482" font-size="13" text-anchor="middle" fill="#4b5563">가중치 합·평균 나이·최근 19개 몫은 code/output.txt 의 [5]</text>
+</svg>
