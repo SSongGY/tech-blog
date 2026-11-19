@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">DevOps의 세 축이 낳는 장점과 대가</text>
+
+  <!-- left: three levers -->
+  <rect x="40" y="70" width="200" height="70" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="140" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">문화</text>
+  <text x="140" y="122" text-anchor="middle" font-size="13" fill="#333333">공동 책임·사일로 해소</text>
+
+  <rect x="40" y="165" width="200" height="70" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="140" y="193" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">자동화</text>
+  <text x="140" y="217" text-anchor="middle" font-size="13" fill="#333333">CI/CD 파이프라인</text>
+
+  <rect x="40" y="260" width="200" height="70" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="140" y="288" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">측정·되먹임</text>
+  <text x="140" y="312" text-anchor="middle" font-size="13" fill="#333333">인도 성과 지표</text>
+
+  <!-- middle -->
+  <rect x="320" y="150" width="200" height="100" rx="4" fill="#ffffff" stroke="#333333" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="420" y="180" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">DevOps</text>
+  <text x="420" y="204" text-anchor="middle" font-size="13" fill="#333333">원칙과 실천의 집합</text>
+  <text x="420" y="226" text-anchor="middle" font-size="13" fill="#333333">(생애주기 전체)</text>
+
+  <line x1="240" y1="105" x2="318" y2="175" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="240" y1="200" x2="318" y2="200" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="240" y1="295" x2="318" y2="225" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- right: benefit -->
+  <rect x="600" y="70" width="240" height="120" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="720" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">장점</text>
+  <text x="720" y="122" text-anchor="middle" font-size="13" fill="#333333">속도와 안정성을 함께 개선</text>
+  <text x="720" y="144" text-anchor="middle" font-size="13" fill="#333333">빠른 되먹임·지속적 개선</text>
+  <text x="720" y="166" text-anchor="middle" font-size="13" fill="#333333">품질·보안 조기 반영</text>
+
+  <!-- right: cost -->
+  <rect x="600" y="210" width="240" height="120" rx="4" fill="#fdf1f1" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="720" y="236" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">단점·대가</text>
+  <text x="720" y="262" text-anchor="middle" font-size="13" fill="#333333">문화 전환 비용, 도구만 남는 실패</text>
+  <text x="720" y="284" text-anchor="middle" font-size="13" fill="#333333">파이프라인이 새 공격 대상</text>
+  <text x="720" y="306" text-anchor="middle" font-size="13" fill="#333333">직무 분리 규제와의 긴장</text>
+
+  <line x1="520" y1="185" x2="598" y2="135" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="520" y1="215" x2="598" y2="265" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <text x="440" y="372" text-anchor="middle" font-size="13" fill="#555555">자동화 도구만 들이고 문화가 바뀌지 않으면 장점은 나오지 않고 대가만 남는다</text>
+</svg>
