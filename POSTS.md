@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **788편** · 갱신 2026-11-20
+총 **791편** · 갱신 2026-11-20
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 115편
+## DB문법 (basics) — 116편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-20 | [구성비 — SUM() OVER()로 전체 대비 비율을 구하고 반올림 합을 100에 맞추기](posts/Database/sql-basics/2026-11-20-sql-percent-of-total-rounding/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-19 | [시간 간격으로 세션 나누기 — LAG로 끊는 자리를 찾고 누적 SUM으로 번호 붙이기](posts/Database/sql-basics/2026-11-19-sql-sessionize-by-time-gap/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-18 | [코호트 표 — 첫 구매 월을 기준으로 재구매 고객을 세는 SQL](posts/Database/sql-basics/2026-11-18-sql-cohort-retention-first-purchase-month/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-17 | [숫자가 섞인 문자열 정렬 — file10이 file2보다 앞에 오는 이유와 자연 정렬](posts/Database/sql-basics/2026-11-17-sql-natural-sort-numbers-in-text/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -149,10 +150,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 270편
+## 기술사 (pe) — 271편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-20 | [다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지](posts/PE/database/2026-11-20-multivalued-join-dependency-4nf-5nf/index.md) | 중급 | Python 3.13.5, Abiteboul·Hull·Vianu, Foundations of Databases (1995) Ch.8·Ch.11, Silberschatz·Korth·Sudarshan, Database System Concepts 7th ed. (2019) Ch.7 슬라이드 | 실행 검증 |
 | 2026-11-20 | [멀티테넌트 SaaS의 테넌트 격리 모델과 요청-테넌트 매핑](posts/PE/cloud/2026-11-20-multitenant-saas-isolation-tenant-mapping/index.md) | 중급 | Microsoft Azure Architecture Center, Tenancy models for a multitenant solution (2025-06-11), Microsoft Azure Architecture Center, Map requests to tenants (2024-11-24), Microsoft Azure Architecture Center, Domain name considerations in multitenant solutions (2025-06-13), AWS Whitepaper, SaaS Tenant Isolation Strategies (2020-08) | 문서 근거 |
 | 2026-11-20 | [EU 범용 AI 행동강령 — 투명성·저작권·안전보안 3개 장](posts/PE/ai/2026-11-20-eu-gpai-code-of-practice-three-chapters/index.md) | 중급 | Regulation (EU) 2024/1689 (AI Act) 제53조·제55조·제101조·제111조·제113조, 부속서 XI·XII, General-Purpose AI Code of Practice 최종본 (2025-07-10), European Commission, The General-Purpose AI Code of Practice (2026-10-07 갱신), European Commission, General-Purpose AI Models in the AI Act – Questions & Answers (2025-09-09 갱신) | 문서 근거 |
 | 2026-11-19 | [투입공수 방식 대가산정 — SW기술자 평균임금과 MD·MM 환산](posts/PE/software-engineering/2026-11-19-sw-cost-estimation-man-month/index.md) | 중급 | SW사업 대가산정 가이드 2025년 개정판, 2026년 적용 SW기술자 평균임금 (2025-12-19 공표), Python 3.13.5 | 실행 검증 |
@@ -447,10 +449,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 79편
+## 일반 (general) — 80편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-20 | [Base64 — 3바이트를 4글자로 바꾸는 규칙과 패딩·URL 안전 변형](posts/Architecture/datastructure/2026-11-20-base64-padding-url-safe-rfc4648/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-19 | [지수가중 이동평균(EWMA) — 응답 시간 감시에서 α가 정하는 반응 속도와 잡음](posts/Backend/monitoring/2026-11-19-ewma-alpha-response-noise/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-18 | [MinHash와 LSH 밴딩 — 자카드 유사도를 서명 몇 개로 추정하기](posts/Architecture/datastructure/2026-11-18-minhash-lsh-banding-jaccard/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
 | 2026-11-17 | [Jump 일관 해시 — 메모리 없이 키를 버킷에 나누고, 가운데 버킷은 뺄 수 없는 이유](posts/Architecture/datastructure/2026-11-17-jump-consistent-hash/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
@@ -880,6 +883,11 @@
 
 - [재귀 CTE — 조직도를 한 질의로 펴는 법](posts/Database/sql-basics/2026-10-07-recursive-cte-hierarchy/index.md) — SQLite 3.49.1, Python 3.13.5, Windows 11
 - [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) — Tibero 7
+
+**`normalization`**
+
+- [정규화 1NF부터 BCNF까지](posts/PE/database/2026-09-23-normalization-1nf-to-bcnf/index.md) — Python 3.13.5, SQLite 3.49.1, Windows 11
+- [다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지](posts/PE/database/2026-11-20-multivalued-join-dependency-4nf-5nf/index.md) — Python 3.13.5, Abiteboul·Hull·Vianu, Foundations of Databases (1995) Ch.8·Ch.11, Silberschatz·Korth·Sudarshan, Database System Concepts 7th ed. (2019) Ch.7 슬라이드
 
 **`null-semantics`**
 

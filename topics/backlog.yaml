@@ -8261,7 +8261,7 @@ topics:
     angle: "다치 종속의 추론 규칙과 무손실 분해 정리를 예제 릴레이션으로 직접 검산하고, 두 프로젝션으로 안 나뉘는 조인 종속과 제5정규형으로 잇는다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-288
     title: "에이전트의 행동 공간과 자율성 — 사람 관여 4단계와 승인 지점 설계"
     category: PE
@@ -8328,3 +8328,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-129
+    title: "구성비 — SUM() OVER()로 전체 대비 비율을 구하고 반올림 합을 100에 맞추기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, ratio, basics]
+    difficulty: 입문
+    angle: "그룹별 합계를 전체 합으로 나누는 세 가지 방법(부질의·CROSS JOIN·SUM() OVER())을 같은 데이터로 돌려 결과와 실행계획을 비교한다. 정수 나눗셈 함정, 반올림한 비율의 합이 100이 안 되는 것을 재현하고 최대 나머지 방식으로 맞춘다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-043
+    title: "Base64 — 3바이트를 4글자로 바꾸는 규칙과 패딩·URL 안전 변형"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [base64, encoding, rfc4648, datastructure]
+    difficulty: 중급
+    angle: "RFC 4648의 6비트 묶음 규칙을 직접 구현해 표준 라이브러리 결과와 맞춰 보고, 입력 길이별 출력 길이와 패딩 개수, 줄바꿈(MIME 76자)·URL 안전 알파벳·패딩 생략이 디코딩에서 어떻게 깨지는지 재현한다. Base32·Base16과 크기 증가율을 비교한다"
+    code: python
+    origin: manual
+    status: done
