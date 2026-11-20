@@ -1,0 +1,200 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-20-sql-percent-of-total-rounding
+# 명령      : python share.py
+# 수행 시각 : 2026-11-20 19:07 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[sale]  10행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  sale_id  | INTEGER | PK
+  region   | TEXT    | NOT NULL
+  category | TEXT    | NOT NULL
+  amount   | INTEGER | NOT NULL
+
+  sale_id | region | category   | amount
+  --------+--------+------------+-------
+        1 | seoul  | book       |   1200
+        2 | seoul  | food       |   3300
+        3 | seoul  | clothes    |   2100
+        4 | seoul  | toy        |    700
+        5 | busan  | book       |    800
+        6 | busan  | food       |   1400
+        7 | busan  | clothes    |    900
+        8 | busan  | toy        |    600
+        9 | seoul  | food       |    500
+       10 | busan  | stationery |    500
+
+
+[1] 정수끼리 나누면 — 100 을 어디서 곱하느냐
+  sql> SELECT category, amount, amount / (SELECT SUM(amount) FROM sale) * 100 AS div_then_mul, amount * 100 / (SELECT SUM(amount) FROM sale) AS mul_then_div, ...
+    ('category', 'amount', 'div_then_mul', 'mul_then_div', 'real_pct')
+    ('book', 2000, 0, 16, 16.666666666666668)
+    ('clothes', 3000, 0, 25, 25.0)
+    ('food', 5200, 0, 43, 43.333333333333336)
+    ('stationery', 500, 0, 4, 4.166666666666667)
+    ('toy', 1300, 0, 10, 10.833333333333334)
+
+[2-1] 스칼라 부질의로 전체 합을 붙인다
+  sql> SELECT category, amount, ROUND(amount * 100.0 / (SELECT SUM(amount) FROM sale), 2) AS pct FROM ( SELECT category, SUM(amount) AS amount FROM sale GROU ...
+    ('category', 'amount', 'pct')
+    ('book', 2000, 16.67)
+    ('clothes', 3000, 25.0)
+    ('food', 5200, 43.33)
+    ('stationery', 500, 4.17)
+    ('toy', 1300, 10.83)
+
+[2-2] CROSS JOIN 으로 전체 합을 붙인다
+  sql> SELECT c.category, c.amount, ROUND(c.amount * 100.0 / t.total, 2) AS pct FROM ( SELECT category, SUM(amount) AS amount FROM sale GROUP BY category ) A ...
+    ('category', 'amount', 'pct')
+    ('book', 2000, 16.67)
+    ('clothes', 3000, 25.0)
+    ('food', 5200, 43.33)
+    ('stationery', 500, 4.17)
+    ('toy', 1300, 10.83)
+
+[2-3] SUM(SUM(amount)) OVER () — GROUP BY 결과 위에 창 함수
+  sql> SELECT category, SUM(amount) AS amount, ROUND(SUM(amount) * 100.0 / SUM(SUM(amount)) OVER (), 2) AS pct FROM sale GROUP BY category ORDER BY category ...
+    ('category', 'amount', 'pct')
+    ('book', 2000, 16.67)
+    ('clothes', 3000, 25.0)
+    ('food', 5200, 43.33)
+    ('stationery', 500, 4.17)
+    ('toy', 1300, 10.83)
+
+[3] 지역 안에서의 비율 — PARTITION BY region
+  sql> SELECT region, category, SUM(amount) AS amount, ROUND(SUM(amount) * 100.0 / SUM(SUM(amount)) OVER (PARTITION BY region), 2) AS pct_in_region, ROUND(SU ...
+    ('region', 'category', 'amount', 'pct_in_region', 'pct_of_all')
+    ('busan', 'book', 800, 19.05, 6.67)
+    ('busan', 'clothes', 900, 21.43, 7.5)
+    ('busan', 'food', 1400, 33.33, 11.67)
+    ('busan', 'stationery', 500, 11.9, 4.17)
+    ('busan', 'toy', 600, 14.29, 5.0)
+    ('seoul', 'book', 1200, 15.38, 10.0)
+    ('seoul', 'clothes', 2100, 26.92, 17.5)
+    ('seoul', 'food', 3800, 48.72, 31.67)
+    ('seoul', 'toy', 700, 8.97, 5.83)
+
+[4] 반올림한 비율을 더하면
+  sql> SELECT SUM(ROUND(pct_exact, 0)) AS sum_round0, SUM(ROUND(pct_exact, 1)) AS sum_round1, SUM(pct_exact) AS sum_exact FROM ( SELECT SUM(amount) * 100.0 / ...
+    ('sum_round0', 'sum_round1', 'sum_exact')
+    (100.0, 100.0, 100.0)
+  sql> SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS pct_exact, ROUND(SUM(amount) * 100.0 / SUM(SUM(amount)) OVER (), 0) AS pct_round0 F ...
+    ('category', 'pct_exact', 'pct_round0')
+    ('book', 16.666666666666668, 17.0)
+    ('clothes', 25.0, 25.0)
+    ('food', 43.333333333333336, 43.0)
+    ('stationery', 4.166666666666667, 4.0)
+    ('toy', 10.833333333333334, 11.0)
+
+[4-2] 세 몫이 똑같을 때 (1:1:1)
+  sql> SELECT category, amount * 100.0 / SUM(amount) OVER () AS pct_exact, ROUND(amount * 100.0 / SUM(amount) OVER (), 0) AS pct_round0 FROM (SELECT 'a' AS c ...
+    ('category', 'pct_exact', 'pct_round0')
+    ('a', 33.333333333333336, 33.0)
+    ('b', 33.333333333333336, 33.0)
+    ('c', 33.333333333333336, 33.0)
+  sql> SELECT SUM(pct_round0) AS sum_round0 FROM ( SELECT category, amount * 100.0 / SUM(amount) OVER () AS pct_exact, ROUND(amount * 100.0 / SUM(amount) OVE ...
+    ('sum_round0',)
+    (99.0,)
+
+[4-3] .5 가 둘 있을 때 (125:125:750)
+  sql> SELECT category, amount * 100.0 / SUM(amount) OVER () AS pct_exact, ROUND(amount * 100.0 / SUM(amount) OVER (), 0) AS pct_round0 FROM (SELECT 'a' AS c ...
+    ('category', 'pct_exact', 'pct_round0')
+    ('a', 12.5, 13.0)
+    ('b', 12.5, 13.0)
+    ('c', 75.0, 75.0)
+  sql> SELECT SUM(pct_round0) AS sum_round0 FROM ( SELECT category, amount * 100.0 / SUM(amount) OVER () AS pct_exact, ROUND(amount * 100.0 / SUM(amount) OVE ...
+    ('sum_round0',)
+    (101.0,)
+
+[5-1] 최대 나머지 방식 — sale 표
+  sql> WITH raw AS ( SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS exact_pct FROM (SELECT category, amount FROM sale) GROUP BY category  ...
+    ('category', 'exact_pct', 'floor_pct', 'remainder', 'remainder_rank', 'final_pct')
+    ('book', 16.6667, 16, 0.6667, 2, 17)
+    ('clothes', 25.0, 25, 0.0, 5, 25)
+    ('food', 43.3333, 43, 0.3333, 3, 43)
+    ('stationery', 4.1667, 4, 0.1667, 4, 4)
+    ('toy', 10.8333, 10, 0.8333, 1, 11)
+  sql> SELECT SUM(final_pct) AS sum_final FROM ( WITH raw AS ( SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS exact_pct FROM (SELECT cate ...
+    ('sum_final',)
+    (100,)
+
+[5-2] 최대 나머지 방식 — 1:1:1
+  sql> WITH raw AS ( SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS exact_pct FROM (SELECT 'a' AS category, 1 AS amount UNION ALL SELECT  ...
+    ('category', 'exact_pct', 'floor_pct', 'remainder', 'remainder_rank', 'final_pct')
+    ('a', 33.3333, 33, 0.3333, 1, 34)
+    ('b', 33.3333, 33, 0.3333, 2, 33)
+    ('c', 33.3333, 33, 0.3333, 3, 33)
+  sql> SELECT SUM(final_pct) AS sum_final FROM ( WITH raw AS ( SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS exact_pct FROM (SELECT 'a'  ...
+    ('sum_final',)
+    (100,)
+
+[5-2] 최대 나머지 방식 — 125:125:750
+  sql> WITH raw AS ( SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS exact_pct FROM (SELECT 'a' AS category, 125 AS amount UNION ALL SELEC ...
+    ('category', 'exact_pct', 'floor_pct', 'remainder', 'remainder_rank', 'final_pct')
+    ('a', 12.5, 12, 0.5, 1, 13)
+    ('b', 12.5, 12, 0.5, 2, 12)
+    ('c', 75.0, 75, 0.0, 3, 75)
+  sql> SELECT SUM(final_pct) AS sum_final FROM ( WITH raw AS ( SELECT category, SUM(amount) * 100.0 / SUM(SUM(amount)) OVER () AS exact_pct FROM (SELECT 'a'  ...
+    ('sum_final',)
+    (100,)
+
+[6-1] WHERE 로 거르면 분모도 바뀐다 — 창 함수는 WHERE 뒤에 계산된다
+  sql> SELECT category, SUM(amount) AS amount, ROUND(SUM(amount) * 100.0 / SUM(SUM(amount)) OVER (), 2) AS pct FROM sale WHERE category IN ('book', 'toy') GR ...
+    ('category', 'amount', 'pct')
+    ('book', 2000, 60.61)
+    ('toy', 1300, 39.39)
+[6-2] 전체 대비 비율을 유지하려면 거르기 전에 계산하고 바깥에서 거른다
+  sql> SELECT * FROM ( SELECT category, SUM(amount) AS amount, ROUND(SUM(amount) * 100.0 / SUM(SUM(amount)) OVER (), 2) AS pct FROM sale GROUP BY category OR ...
+    ('category', 'amount', 'pct')
+    ('book', 2000, 16.67)
+    ('toy', 1300, 10.83)
+
+[7] 합이 0 이면 — 0 으로 나누기
+  sql> SELECT 1200 * 100.0 / 0 AS div_zero, typeof(1200 * 100.0 / 0) AS type, 1200 * 100.0 / NULLIF(0, 0) AS with_nullif ...
+    ('div_zero', 'type', 'with_nullif')
+    (None, 'null', None)
+
+[8-1] 실행계획 — 스칼라 부질의
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-2)
+    |  |--SCAN sale
+    |  `--USE TEMP B-TREE FOR GROUP BY
+    |--SCAN (subquery-2)
+    |--SCALAR SUBQUERY 1
+    |  `--SCAN sale
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[8-2] 실행계획 — CROSS JOIN
+    QUERY PLAN
+    |--CO-ROUTINE c
+    |  |--SCAN sale
+    |  `--USE TEMP B-TREE FOR GROUP BY
+    |--MATERIALIZE t
+    |  `--SCAN sale
+    |--SCAN c
+    |--SCAN t
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[8-3] 실행계획 — SUM(SUM(amount)) OVER ()
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-2)
+    |  |--SCAN sale
+    |  `--USE TEMP B-TREE FOR GROUP BY
+    |--SCAN (subquery-2)
+    `--USE TEMP B-TREE FOR ORDER BY
