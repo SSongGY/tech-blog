@@ -79,7 +79,8 @@ verified: true
 | ④ 문화를 역량으로 관리한다 | DORA는 정보 흐름을 중시하는 생성적(generative) 조직 문화를 인도 성과를 예측하는 핵심 역량으로 둔다. 도입 계획에 조직 문화 항목을 따로 둔다 |
 
 > 개념 정리: [애자일과 DevOps — 무엇이 같고 무엇이 다른가](../../software-engineering/2026-09-22-agile-and-devops-scope/index.md),
-> [DevOps 파이프라인 구성요소와 DORA 지표](../../software-engineering/2026-10-03-devops-pipeline-dora-metrics/index.md)
+> [DevOps 파이프라인 구성요소와 DORA 지표](../../software-engineering/2026-10-03-devops-pipeline-dora-metrics/index.md),
+> [DevSecOps와 CI/CD 파이프라인 공급망 보안](../../security/2026-11-21-devsecops-cicd-supply-chain-security/index.md)
 
 끝
 
