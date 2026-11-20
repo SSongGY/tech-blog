@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">CC 평가의 뼈대 — 보안 문제에서 요구사항까지, 그리고 평가와 인증</text>
+
+  <!-- Row 1: SPD -> Objectives -> Requirements -->
+  <rect x="30" y="56" width="240" height="104" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="150" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">① 보안 문제 정의 (SPD)</text>
+  <text x="150" y="106" text-anchor="middle" font-size="13" fill="#333333">위협 (Threats)</text>
+  <text x="150" y="126" text-anchor="middle" font-size="13" fill="#333333">조직 보안정책 (OSPs)</text>
+  <text x="150" y="146" text-anchor="middle" font-size="13" fill="#333333">가정 (Assumptions)</text>
+
+  <rect x="320" y="56" width="240" height="104" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="440" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">② 보안 목적</text>
+  <text x="440" y="110" text-anchor="middle" font-size="13" fill="#333333">TOE의 보안 목적</text>
+  <text x="440" y="134" text-anchor="middle" font-size="13" fill="#333333">운영환경의 보안 목적</text>
+
+  <rect x="610" y="56" width="240" height="104" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="730" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">③ 보안 요구사항</text>
+  <text x="730" y="110" text-anchor="middle" font-size="13" fill="#333333">SFR — 기능 (Part 2)</text>
+  <text x="730" y="134" text-anchor="middle" font-size="13" fill="#333333">SAR — 보증 (Part 3, EAL은 Part 5)</text>
+
+  <line x1="272" y1="108" x2="318" y2="108" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="562" y1="108" x2="608" y2="108" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Row 2: PP / ST -->
+  <rect x="120" y="210" width="290" height="80" rx="4" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="265" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">PP (보호 프로파일)</text>
+  <text x="265" y="264" text-anchor="middle" font-size="13" fill="#333333">구현 독립 — 제품 유형의 보안 요구</text>
+
+  <rect x="470" y="210" width="290" height="80" rx="4" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="615" y="240" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">ST (보안 목표 명세서)</text>
+  <text x="615" y="264" text-anchor="middle" font-size="13" fill="#333333">구현 종속 — 특정 제품의 보안 요구</text>
+
+  <line x1="412" y1="250" x2="468" y2="250" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="440" y="240" text-anchor="middle" font-size="13" fill="#555555">준수</text>
+  <path d="M730,162 L730,186 L440,186 L440,206" fill="none" stroke="#333333" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="590" y="180" text-anchor="middle" font-size="13" fill="#555555">①~③을 문서로 담는다</text>
+
+  <!-- Row 3: TOE evaluation -> certificate -->
+  <rect x="120" y="336" width="290" height="70" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="265" y="364" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">TOE 평가 (평가기관)</text>
+  <text x="265" y="388" text-anchor="middle" font-size="13" fill="#333333">평가 방법론 CEM (ISO/IEC 18045)</text>
+
+  <rect x="470" y="336" width="290" height="70" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="615" y="364" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">인증서 (인증기관)</text>
+  <text x="615" y="388" text-anchor="middle" font-size="13" fill="#333333">CCRA 회원국 간 상호 인정</text>
+
+  <path d="M615,292 L615,308 L265,308 L265,332" fill="none" stroke="#333333" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="440" y="329" text-anchor="middle" font-size="13" fill="#555555">ST 기준으로 평가</text>
+  <line x1="412" y1="371" x2="468" y2="371" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="440" y="428" text-anchor="middle" font-size="13" fill="#555555">TOE: 평가 대상이 되는 소프트웨어·펌웨어·하드웨어(설명서 포함)의 집합</text>
+</svg>

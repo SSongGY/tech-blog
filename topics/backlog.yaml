@@ -8372,3 +8372,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-290
+    title: "CC(공통평가기준) — PP·ST·EAL과 CC:2022에서 달라진 것"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "보안 문제 정의에서 SFR·SAR로 이어지는 도출 구조, PP와 ST의 준수 유형(정확·엄격·입증), EAL 7단계가 각각 더하는 보증 컴포넌트, CC:2022의 Part 4·5와 다중 보증 평가를 CC 원문 근거로 정리"
+    code: none
+    origin: exam
+    status: todo
