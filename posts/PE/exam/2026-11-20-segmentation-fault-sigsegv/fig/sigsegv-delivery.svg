@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">세그먼테이션 오류의 발생 경로 — 잘못된 참조에서 종료까지</text>
+
+  <!-- 1 process -->
+  <rect x="30" y="70" width="170" height="70" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="115" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">① 메모리 참조</text>
+  <text x="115" y="120" text-anchor="middle" font-size="13" fill="#333333">load / store / 실행</text>
+
+  <!-- 2 translation -->
+  <rect x="250" y="60" width="200" height="90" rx="4" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="350" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">② 주소 변환 실패</text>
+  <text x="350" y="108" text-anchor="middle" font-size="13" fill="#333333">매핑 없음 또는</text>
+  <text x="350" y="128" text-anchor="middle" font-size="13" fill="#333333">접근 권한 위반</text>
+
+  <!-- 3 kernel -->
+  <rect x="500" y="60" width="200" height="90" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="600" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">③ 커널 예외 처리</text>
+  <text x="600" y="108" text-anchor="middle" font-size="13" fill="#333333">유효 영역이 아니면</text>
+  <text x="600" y="128" text-anchor="middle" font-size="13" fill="#333333">SIGSEGV 생성</text>
+
+  <line x1="200" y1="105" x2="248" y2="105" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="450" y1="105" x2="498" y2="105" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- siginfo -->
+  <rect x="730" y="60" width="130" height="90" rx="4" fill="#ffffff" stroke="#333333" stroke-width="1.2" stroke-dasharray="5 3"/>
+  <text x="795" y="84" text-anchor="middle" font-size="13" font-weight="bold" fill="#222222">siginfo_t</text>
+  <text x="795" y="106" text-anchor="middle" font-size="13" fill="#333333">si_code</text>
+  <text x="795" y="126" text-anchor="middle" font-size="13" fill="#333333">si_addr</text>
+  <line x1="700" y1="105" x2="728" y2="105" stroke="#333333" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <line x1="600" y1="150" x2="600" y2="198" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 4 disposition -->
+  <rect x="490" y="200" width="220" height="60" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="600" y="226" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">④ 시그널 처리 방식</text>
+  <text x="600" y="246" text-anchor="middle" font-size="13" fill="#333333">sigaction 등록 여부</text>
+
+  <!-- 5a handler -->
+  <rect x="160" y="310" width="300" height="80" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="310" y="336" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑤-1 핸들러 실행</text>
+  <text x="310" y="358" text-anchor="middle" font-size="13" fill="#333333">진단 기록 후 종료 (스택 고갈이면</text>
+  <text x="310" y="378" text-anchor="middle" font-size="13" fill="#333333">sigaltstack 대체 스택 필요)</text>
+
+  <!-- 5b default -->
+  <rect x="540" y="310" width="300" height="80" rx="4" fill="#fbeaea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="690" y="336" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">⑤-2 기본 동작</text>
+  <text x="690" y="358" text-anchor="middle" font-size="13" fill="#333333">비정상 종료 + 코어 덤프</text>
+  <text x="690" y="378" text-anchor="middle" font-size="13" fill="#333333">(RLIMIT_CORE, core_pattern)</text>
+
+  <line x1="560" y1="260" x2="360" y2="308" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="640" y1="260" x2="680" y2="308" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="420" y="282" text-anchor="middle" font-size="13" fill="#555555">등록됨</text>
+  <text x="712" y="286" text-anchor="start" font-size="13" fill="#555555">등록 안 됨</text>
+</svg>
