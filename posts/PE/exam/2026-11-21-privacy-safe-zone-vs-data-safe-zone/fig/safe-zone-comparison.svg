@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">두 안심구역 — 같은 "격리된 분석 공간", 다른 데이터와 다른 목적</text>
+
+  <!-- Lane 1: 개인정보 안심구역 -->
+  <text x="40" y="62" font-size="14" font-weight="bold" fill="#2d6a4f">개인정보 안심구역 — 개인정보보호위원회 (2023-12 시범 지정)</text>
+  <rect x="40" y="74" width="230" height="96" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="155" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">가명정보</text>
+  <text x="155" y="124" text-anchor="middle" font-size="13" fill="#333333">개인정보를 가명처리한 정보</text>
+  <text x="155" y="146" text-anchor="middle" font-size="13" fill="#555555">결합키로 여러 기관 자료 결합</text>
+
+  <rect x="320" y="74" width="240" height="96" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">안심구역 (처리 환경)</text>
+  <text x="440" y="124" text-anchor="middle" font-size="13" fill="#333333">폐쇄망 분석환경 · 다중 인증</text>
+  <text x="440" y="146" text-anchor="middle" font-size="13" fill="#333333">4인 이상 담당조직</text>
+
+  <rect x="610" y="74" width="230" height="96" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="725" y="100" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">완화되는 처리 제한</text>
+  <text x="725" y="124" text-anchor="middle" font-size="13" fill="#333333">가명처리 수준 완화</text>
+  <text x="725" y="146" text-anchor="middle" font-size="13" fill="#333333">장기 보관 · 제3자 재사용</text>
+
+  <line x1="272" y1="122" x2="318" y2="122" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="562" y1="122" x2="608" y2="122" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="440" y="192" text-anchor="middle" font-size="13" fill="#9d0208">데이터 외부 반출 금지 — 안전성을 높인 만큼 처리 제한을 푼다</text>
+
+  <!-- divider -->
+  <line x1="40" y1="212" x2="840" y2="212" stroke="#bbbbbb" stroke-width="1" stroke-dasharray="5 4"/>
+
+  <!-- Lane 2: 데이터안심구역 -->
+  <text x="40" y="242" font-size="14" font-weight="bold" fill="#b45309">데이터안심구역 — 과학기술정보통신부 (데이터산업법 제11조)</text>
+  <rect x="40" y="254" width="230" height="96" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="155" y="280" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">미개방데이터</text>
+  <text x="155" y="304" text-anchor="middle" font-size="13" fill="#333333">공공·민간이 공개하지 않은 데이터</text>
+  <text x="155" y="326" text-anchor="middle" font-size="13" fill="#555555">개인정보에 한정되지 않음</text>
+
+  <rect x="320" y="254" width="240" height="96" rx="4" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="280" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">안심구역 (시설 · 가상공간)</text>
+  <text x="440" y="304" text-anchor="middle" font-size="13" fill="#333333">기술적·물리적·관리적 보안대책</text>
+  <text x="440" y="326" text-anchor="middle" font-size="13" fill="#333333">분석 장비 · 4인 이상 조직</text>
+
+  <rect x="610" y="254" width="230" height="96" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="725" y="280" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">분석 결과물</text>
+  <text x="725" y="304" text-anchor="middle" font-size="13" fill="#333333">사전 신청·승인 뒤 분석</text>
+  <text x="725" y="326" text-anchor="middle" font-size="13" fill="#333333">결과물만 반출</text>
+
+  <line x1="272" y1="302" x2="318" y2="302" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="562" y1="302" x2="608" y2="302" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="440" y="372" text-anchor="middle" font-size="13" fill="#9d0208">원 데이터는 구역 밖으로 나가지 않는다 — 데이터 접근 기회를 넓힌다</text>
+
+  <text x="440" y="408" text-anchor="middle" font-size="13" fill="#555555">개인정보 안심구역 공모는 기존 데이터안심구역·결합전문기관도 신청 대상으로 열어 두었다</text>
+</svg>
