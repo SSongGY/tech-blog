@@ -14,6 +14,11 @@ verified: true
 topic_id: pe-009
 ---
 
+<!-- related:start -->
+> **같은 기능을 다른 환경에서 다룬 글** (`normalization`)
+> - [다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지](../2026-11-20-multivalued-join-dependency-4nf-5nf/index.md) — Python 3.13.5, Abiteboul·Hull·Vianu, Foundations of Databases (1995) Ch.8·Ch.11, Silberschatz·Korth·Sudarshan, Database System Concepts 7th ed. (2019) Ch.7 슬라이드
+<!-- related:end -->
+
 ## 들어가며
 
 시험에서 정규화는 두 가지 형태로 나온다. 하나는 "제3정규형을 정의하고 예를 들어 설명하시오"

@@ -97,6 +97,8 @@ verified: true
 
 > 개념 정리: [정규화 1NF부터 BCNF까지](../../database/2026-09-23-normalization-1nf-to-bcnf/index.md)
 
+> 개념 정리: [다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지](../../database/2026-11-20-multivalued-join-dependency-4nf-5nf/index.md)
+
 끝
 
 ## 답안 작성 메모
