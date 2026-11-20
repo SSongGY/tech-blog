@@ -126,6 +126,8 @@ OpenAI 백서는 에이전트인가 아닌가로 나누지 않고 **에이전트
 > 관련 답안: [기출문제 — 다중 에이전트 시스템(MAS)의 정의·비교·효과](../2026-10-16-multi-agent-system-enterprise/index.md)
 >
 > 개념 정리: [에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기](../../emerging-tech/2026-10-20-agent-interop-capability-and-task-lifecycle/index.md)
+>
+> 개념 정리: [에이전트의 행동 공간과 자율성 — 사람 관여 4단계와 승인 지점 설계](../../emerging-tech/2026-11-21-agent-action-space-autonomy-approval-points/index.md)
 
 끝
 

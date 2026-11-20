@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#f7f7f4"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="30" font-size="17" font-weight="bold" fill="#1b1b1b">행동 공간 × 자율성 — 두 축 위의 사람 관여 4단계</text>
+
+  <!-- 세로축: 자율성 -->
+  <line x1="248" y1="330" x2="248" y2="58" stroke="#444444" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="24" y="56" font-size="13" font-weight="bold" fill="#1b1b1b">자율성 ↑ (지시문 + 사람 관여)</text>
+
+  <!-- 사람 관여 4단계 (위가 자율성 높음) -->
+  <rect x="24" y="68" width="214" height="56" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="131" y="91" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">④ 에이전트 운영 · 사람 관찰</text>
+  <text x="131" y="111" font-size="13" fill="#444444" text-anchor="middle">승인 없음, 사후 감사</text>
+
+  <rect x="24" y="132" width="214" height="56" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="131" y="155" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">③ 에이전트 운영 · 사람 승인</text>
+  <text x="131" y="175" font-size="13" fill="#444444" text-anchor="middle">치명 단계·실패 때만 승인</text>
+
+  <rect x="24" y="196" width="214" height="56" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="131" y="219" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">② 에이전트 · 사람 협업</text>
+  <text x="131" y="239" font-size="13" fill="#444444" text-anchor="middle">중요 단계 승인, 언제든 개입</text>
+
+  <rect x="24" y="260" width="214" height="56" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="131" y="283" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">① 에이전트 제안 · 사람 운영</text>
+  <text x="131" y="303" font-size="13" fill="#444444" text-anchor="middle">모든 행동을 사람이 승인</text>
+
+  <!-- 격자: 행 = 관여 단계, 열 = 접근 시스템 -->
+  <!-- ④ -->
+  <rect x="262" y="68" width="180" height="56" fill="#f8efe0" stroke="#b45309"/>
+  <text x="352" y="101" font-size="13" fill="#b45309" text-anchor="middle">중간</text>
+  <rect x="450" y="68" width="180" height="56" fill="#f6e7e7" stroke="#9d0208"/>
+  <text x="540" y="101" font-size="13" fill="#9d0208" text-anchor="middle">높음</text>
+  <rect x="638" y="68" width="180" height="56" fill="#f6e7e7" stroke="#9d0208"/>
+  <text x="728" y="101" font-size="13" fill="#9d0208" text-anchor="middle">높음</text>
+  <!-- ③ -->
+  <rect x="262" y="132" width="180" height="56" fill="#f8efe0" stroke="#b45309"/>
+  <text x="352" y="165" font-size="13" fill="#b45309" text-anchor="middle">중간</text>
+  <rect x="450" y="132" width="180" height="56" fill="#f8efe0" stroke="#b45309"/>
+  <text x="540" y="165" font-size="13" fill="#b45309" text-anchor="middle">중간</text>
+  <rect x="638" y="132" width="180" height="56" fill="#f6e7e7" stroke="#9d0208"/>
+  <text x="728" y="165" font-size="13" fill="#9d0208" text-anchor="middle">높음</text>
+  <!-- ② -->
+  <rect x="262" y="196" width="180" height="56" fill="#e8f0ec" stroke="#2d6a4f"/>
+  <text x="352" y="229" font-size="13" fill="#2d6a4f" text-anchor="middle">낮음</text>
+  <rect x="450" y="196" width="180" height="56" fill="#f8efe0" stroke="#b45309"/>
+  <text x="540" y="229" font-size="13" fill="#b45309" text-anchor="middle">중간</text>
+  <rect x="638" y="196" width="180" height="56" fill="#f8efe0" stroke="#b45309"/>
+  <text x="728" y="229" font-size="13" fill="#b45309" text-anchor="middle">중간</text>
+  <!-- ① -->
+  <rect x="262" y="260" width="180" height="56" fill="#e8f0ec" stroke="#2d6a4f"/>
+  <text x="352" y="293" font-size="13" fill="#2d6a4f" text-anchor="middle">낮음</text>
+  <rect x="450" y="260" width="180" height="56" fill="#e8f0ec" stroke="#2d6a4f"/>
+  <text x="540" y="293" font-size="13" fill="#2d6a4f" text-anchor="middle">낮음</text>
+  <rect x="638" y="260" width="180" height="56" fill="#f8efe0" stroke="#b45309"/>
+  <text x="728" y="293" font-size="13" fill="#b45309" text-anchor="middle">중간</text>
+
+  <!-- 가로축: 행동 공간 -->
+  <line x1="248" y1="330" x2="836" y2="330" stroke="#444444" stroke-width="2" marker-end="url(#ar)"/>
+  <rect x="262" y="342" width="180" height="50" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="352" y="364" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">샌드박스</text>
+  <text x="352" y="383" font-size="13" fill="#444444" text-anchor="middle">다른 시스템에 영향 없음</text>
+  <rect x="450" y="342" width="180" height="50" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="540" y="364" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">내부 시스템</text>
+  <text x="540" y="383" font-size="13" fill="#444444" text-anchor="middle">조직 DB 조회·갱신</text>
+  <rect x="638" y="342" width="180" height="50" rx="4" fill="#ffffff" stroke="#444444" stroke-width="1.5"/>
+  <text x="728" y="364" font-size="13" font-weight="bold" fill="#1b1b1b" text-anchor="middle">외부 시스템</text>
+  <text x="728" y="383" font-size="13" fill="#444444" text-anchor="middle">제3자 API 조회·갱신</text>
+  <text x="262" y="414" font-size="13" font-weight="bold" fill="#1b1b1b">행동 공간 → (쓸 수 있는 도구가 닿는 시스템 + 각 시스템에서 읽기만인가, 쓰기까지인가)</text>
+
+  <text x="24" y="446" font-size="13" fill="#555555">칸의 색: 오른쪽(영향 범위)과 위쪽(예측하기 어려움)으로 갈수록 위험이 커진다. 같은 칸에서도 쓰기 권한이 있으면 한 단계 올려 본다.</text>
+</svg>
