@@ -1,0 +1,98 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\database\2026-11-20-multivalued-join-dependency-4nf-5nf
+# 명령      : python dependencies.py
+# 수행 시각 : 2026-11-20 19:12 (대한민국 표준시)
+# 소요      : 65.5초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+[1] 4NF 예제 — 강좌(과목 S, 강사 T, 교재 B)
+  강좌  5행
+    S | T | B
+    db | kim | book1
+    db | kim | book2
+    db | lee | book1
+    db | lee | book2
+    os | park | book3
+  S →→ T  정의로 판정: True · 조인으로 판정: True
+  S →→ B  (상보 규칙)  : True
+  이 인스턴스에서 성립하는 비자명 FD(결정자 1개 이하): [('T', 'S'), ('T', 'ST'), ('B', 'S'), ('B', 'BS')]
+  비자명 MVD 목록: [('S', 'T'), ('S', 'B'), ('T', 'S'), ('T', 'B'), ('B', 'S'), ('B', 'T')]
+  분해 R1(S,T)  3행
+    S | T
+    db | kim
+    db | lee
+    os | park
+  분해 R2(S,B)  3행
+    S | B
+    db | book1
+    db | book2
+    os | book3
+  R1 ⋈ R2 = 원래 릴레이션? True  (5행)
+
+[1-2] 강사-교재가 묶여 있으면 (kim 은 book1 만, lee 는 book2 만)
+  강좌'  3행
+    S | T | B
+    db | kim | book1
+    db | lee | book2
+    os | park | book3
+  S →→ T  정의: False · 조인: False
+  (S,T)⋈(S,B) = 5행, 가짜 행: [('db', 'kim', 'book2'), ('db', 'lee', 'book1')]
+
+[2] 정의 판정 = 조인 판정인가 — 무작위 릴레이션에서 비교
+  U=ABC 값 2개씩 · 릴레이션 3000개 · (X,Y) 판정 192000회 · 일치 192000회 · MVD 성립 155540회
+  U=ABCD 값 2개씩 · 릴레이션 3000개 · (X,Y) 판정 768000회 · 일치 768000회 · MVD 성립 464342회
+
+[3] 추론 규칙 — 전제가 성립한 경우마다 결론도 성립하는가 (U=ABCD)
+  MVD0 상보        전제 성립    61608회 · 결론 깨짐 0회
+  MVD1 반사        전제 성립    32400회 · 결론 깨짐 0회
+  MVD2 증가        전제 성립   985728회 · 결론 깨짐 0회
+  MVD3 이행        전제 성립   595480회 · 결론 깨짐 0회
+  FMVD1 변환       전제 성립    34110회 · 결론 깨짐 0회
+  FMVD2 상호작용     전제 성립   706316회 · 결론 깨짐 0회
+
+[4] X →→ YZ 이면 X →→ Y 인가 — 반례 찾기 (U=ABCD, X=A, Y=B, Z=C)
+  55번째 무작위 릴레이션에서 찾음
+  반례  6행
+    A | B | C | D
+    a0 | b0 | c0 | d0
+    a0 | b1 | c0 | d0
+    a0 | b1 | c1 | d0
+    a1 | b0 | c0 | d0
+    a1 | b1 | c0 | d0
+    a1 | b1 | c1 | d0
+  A →→ BC: True · A →→ B: False
+
+[5] 5NF 예제 — 공급(공급자 S, 부품 P, 프로젝트 J)
+  공급  4행
+    S | P | J
+    s1 | p1 | j1
+    s1 | p1 | j2
+    s1 | p2 | j1
+    s2 | p1 | j1
+  비자명 MVD 목록: 없음
+  *[SP, PJ]  조인 5행 · 가짜 행 [('s2', 'p1', 'j2')]
+  *[SP, JS]  조인 5행 · 가짜 행 [('s1', 'p2', 'j2')]
+  *[PJ, JS]  조인 5행 · 가짜 행 [('s2', 'p2', 'j1')]
+  *[SP, PJ, JS] 조인 4행 · 가짜 행 [] · 성립 True
+  분해 SP  3행
+    S | P
+    s1 | p1
+    s1 | p2
+    s2 | p1
+  분해 PJ  3행
+    P | J
+    p1 | j1
+    p1 | j2
+    p2 | j1
+  분해 JS  3행
+    J | S
+    j1 | s1
+    j1 | s2
+    j2 | s1
+
+[6] (s1, p1, j1) 을 빼면
+  *[SP, PJ, JS] 조인 4행 · 가짜 행 [('s1', 'p1', 'j1')] · 성립 False

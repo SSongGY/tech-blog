@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">4NF 는 둘로, 5NF 는 셋으로 나눈다</text>
+
+  <!-- left panel: 4NF -->
+  <text x="215" y="62" text-anchor="middle" font-weight="bold" fill="#111827">다치 종속 S →→ T | B (2-분해)</text>
+  <rect x="115" y="80" width="200" height="60" rx="8" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+  <text x="215" y="106" text-anchor="middle" font-weight="bold" fill="#9d0208">강좌(S, T, B)</text>
+  <text x="215" y="128" text-anchor="middle" fill="#374151">5행 · 4NF 위반</text>
+
+  <rect x="30" y="220" width="170" height="60" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="115" y="246" text-anchor="middle" font-weight="bold" fill="#2d6a4f">R1(S, T)</text>
+  <text x="115" y="268" text-anchor="middle" fill="#374151">3행</text>
+  <rect x="230" y="220" width="170" height="60" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="315" y="246" text-anchor="middle" font-weight="bold" fill="#2d6a4f">R2(S, B)</text>
+  <text x="315" y="268" text-anchor="middle" fill="#374151">3행</text>
+
+  <line x1="190" y1="140" x2="125" y2="214" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="119,210 122,222 130,214" fill="#4b5563"/>
+  <line x1="240" y1="140" x2="305" y2="214" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="300,214 308,222 311,210" fill="#4b5563"/>
+  <text x="215" y="190" text-anchor="middle" fill="#374151">공통 속성 S</text>
+
+  <text x="215" y="320" text-anchor="middle" fill="#2d6a4f">R1 ⋈ R2 = 원래 5행</text>
+  <text x="215" y="344" text-anchor="middle" fill="#374151">X →→ Y 이면 *[XY, X(U−Y)] 가 성립</text>
+
+  <line x1="440" y1="55" x2="440" y2="400" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6,5"/>
+
+  <!-- right panel: 5NF -->
+  <text x="660" y="62" text-anchor="middle" font-weight="bold" fill="#111827">조인 종속 *[SP, PJ, JS] (3-분해)</text>
+  <rect x="560" y="80" width="200" height="60" rx="8" fill="#fdf0f0" stroke="#9d0208" stroke-width="2"/>
+  <text x="660" y="106" text-anchor="middle" font-weight="bold" fill="#9d0208">공급(S, P, J)</text>
+  <text x="660" y="128" text-anchor="middle" fill="#374151">4행 · 4NF 이지만 5NF 위반</text>
+
+  <rect x="470" y="220" width="120" height="60" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="530" y="246" text-anchor="middle" font-weight="bold" fill="#2d6a4f">SP</text>
+  <text x="530" y="268" text-anchor="middle" fill="#374151">3행</text>
+  <rect x="600" y="220" width="120" height="60" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="660" y="246" text-anchor="middle" font-weight="bold" fill="#2d6a4f">PJ</text>
+  <text x="660" y="268" text-anchor="middle" fill="#374151">3행</text>
+  <rect x="730" y="220" width="120" height="60" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="790" y="246" text-anchor="middle" font-weight="bold" fill="#2d6a4f">JS</text>
+  <text x="790" y="268" text-anchor="middle" fill="#374151">3행</text>
+
+  <line x1="620" y1="140" x2="545" y2="214" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="539,210 542,222 550,214" fill="#4b5563"/>
+  <line x1="660" y1="140" x2="660" y2="212" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="654,212 660,222 666,212" fill="#4b5563"/>
+  <line x1="700" y1="140" x2="775" y2="214" stroke="#4b5563" stroke-width="2"/>
+  <polygon points="770,214 778,222 781,210" fill="#4b5563"/>
+
+  <text x="660" y="320" text-anchor="middle" fill="#9d0208">어느 둘을 조인해도 5행 (가짜 1행)</text>
+  <text x="660" y="344" text-anchor="middle" fill="#2d6a4f">셋을 모두 조인하면 정확히 4행</text>
+  <text x="660" y="368" text-anchor="middle" fill="#374151">MVD 는 JD 중 성분이 2개인 경우</text>
+</svg>
