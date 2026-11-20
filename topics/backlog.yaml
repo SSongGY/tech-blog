@@ -8350,3 +8350,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-157
+    title: "수익의 구분 공시 — 매출 한 줄을 제품·지역·이행 시기로 나누는 기준"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, disclosure]
+    difficulty: 중급
+    angle: "제1115호 문단 113~115·B87~B89. 합계가 같은 두 가상 회사의 수익을 범주별로 나눠 현금흐름 시기·불확실성이 어떻게 드러나는지 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-158
+    title: "계약 잔액과 나머지 수행의무 공시 — 계약부채 변동표와 수주잔고 읽기"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, disclosure, contract-liability]
+    difficulty: 중급
+    angle: "제1115호 문단 116~122. 가상 회사의 계약자산·계약부채 기초-기말 변동을 재구성하고 나머지 수행의무 금액과 1년 이내 간편법(121)이 숫자를 어떻게 바꾸는지 계산"
+    code: python
+    origin: manual
+    status: writing

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="15">같은 부문 매출, 다른 구분 공시 — 고객과의 계약 수익 1,000억원</text>
+
+  <!-- 막대 축척: 1억원 = 0.55px, 1000 = 550px, 시작 x=230 -->
+
+  <!-- 위: 부문 공시 -->
+  <text x="24" y="70" font-size="14">부문 공시 (제1108호)</text>
+  <text x="220" y="106" text-anchor="end" font-size="13">가나소프트</text>
+  <rect x="230" y="88" width="330" height="28" fill="#dfe7e2" stroke="#444"/>
+  <text x="395" y="107" text-anchor="middle" font-size="13">소프트웨어 600</text>
+  <rect x="560" y="88" width="220" height="28" fill="#f5e6d3" stroke="#444"/>
+  <text x="670" y="107" text-anchor="middle" font-size="13">서비스 400</text>
+
+  <text x="220" y="146" text-anchor="end" font-size="13">다라시스템</text>
+  <rect x="230" y="128" width="330" height="28" fill="#dfe7e2" stroke="#444"/>
+  <text x="395" y="147" text-anchor="middle" font-size="13">소프트웨어 600</text>
+  <rect x="560" y="128" width="220" height="28" fill="#f5e6d3" stroke="#444"/>
+  <text x="670" y="147" text-anchor="middle" font-size="13">서비스 400</text>
+  <text x="230" y="180" font-size="13">두 회사가 구별되지 않는다</text>
+
+  <line x1="24" y1="200" x2="856" y2="200" stroke="#ccc"/>
+
+  <!-- 아래: 이행 시기별 구분 -->
+  <text x="24" y="232" font-size="14">이행 시기별 구분 (제1115호 문단 114·B89⑹)</text>
+  <text x="220" y="268" text-anchor="end" font-size="13">가나소프트</text>
+  <rect x="230" y="250" width="33" height="28" fill="#f8e3c4" stroke="#b45309"/>
+  <rect x="263" y="250" width="517" height="28" fill="#d8eadf" stroke="#2d6a4f"/>
+  <text x="521" y="269" text-anchor="middle" font-size="13">기간에 걸쳐 940</text>
+  <text x="246" y="296" text-anchor="middle" font-size="13" fill="#b45309">60</text>
+
+  <text x="220" y="330" text-anchor="end" font-size="13">다라시스템</text>
+  <rect x="230" y="312" width="297" height="28" fill="#f8e3c4" stroke="#b45309"/>
+  <text x="378" y="331" text-anchor="middle" font-size="13">한 시점 540</text>
+  <rect x="527" y="312" width="253" height="28" fill="#d8eadf" stroke="#2d6a4f"/>
+  <text x="653" y="331" text-anchor="middle" font-size="13">기간에 걸쳐 460</text>
+
+  <rect x="230" y="362" width="550" height="50" rx="6" fill="#f1f3f5" stroke="#444"/>
+  <text x="505" y="383" text-anchor="middle" font-size="13">한 시점 수익은 새 판매가 있어야 다음 해에 다시 생긴다</text>
+  <text x="505" y="403" text-anchor="middle" font-size="13">기간에 걸친 고정가격 수익: 가나 79.0% · 다라 16.0%</text>
+</svg>
