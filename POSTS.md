@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **795편** · 갱신 2026-11-21
+총 **797편** · 갱신 2026-11-21
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -150,10 +150,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 271편
+## 기술사 (pe) — 273편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-21 | [DevSecOps와 CI/CD 파이프라인 공급망 보안](posts/PE/security/2026-11-21-devsecops-cicd-supply-chain-security/index.md) | 중급 | NIST SP 800-204D (2024-02-12 최종판) | 문서 근거 |
+| 2026-11-21 | [에이전트의 행동 공간과 자율성 — 사람 관여 4단계와 승인 지점 설계](posts/PE/emerging-tech/2026-11-21-agent-action-space-autonomy-approval-points/index.md) | 중급 | IMDA, Model AI Governance Framework for Agentic AI v1.5 (2026-05-20 발행, 2026-06-05 갱신), Feng·McDonald·Zhang, Levels of Autonomy for AI Agents (Knight First Amendment Institute, 2025-07-28) | 문서 근거 |
 | 2026-11-20 | [다치 종속과 조인 종속 — 제4정규형에서 제5정규형까지](posts/PE/database/2026-11-20-multivalued-join-dependency-4nf-5nf/index.md) | 중급 | Python 3.13.5, Abiteboul·Hull·Vianu, Foundations of Databases (1995) Ch.8·Ch.11, Silberschatz·Korth·Sudarshan, Database System Concepts 7th ed. (2019) Ch.7 슬라이드 | 실행 검증 |
 | 2026-11-20 | [멀티테넌트 SaaS의 테넌트 격리 모델과 요청-테넌트 매핑](posts/PE/cloud/2026-11-20-multitenant-saas-isolation-tenant-mapping/index.md) | 중급 | Microsoft Azure Architecture Center, Tenancy models for a multitenant solution (2025-06-11), Microsoft Azure Architecture Center, Map requests to tenants (2024-11-24), Microsoft Azure Architecture Center, Domain name considerations in multitenant solutions (2025-06-13), AWS Whitepaper, SaaS Tenant Isolation Strategies (2020-08) | 문서 근거 |
 | 2026-11-20 | [EU 범용 AI 행동강령 — 투명성·저작권·안전보안 3개 장](posts/PE/ai/2026-11-20-eu-gpai-code-of-practice-three-chapters/index.md) | 중급 | Regulation (EU) 2024/1689 (AI Act) 제53조·제55조·제101조·제111조·제113조, 부속서 XI·XII, General-Purpose AI Code of Practice 최종본 (2025-07-10), European Commission, The General-Purpose AI Code of Practice (2026-10-07 갱신), European Commission, General-Purpose AI Models in the AI Act – Questions & Answers (2025-09-09 갱신) | 문서 근거 |
