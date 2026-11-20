@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+
+  <text x="440" y="28" text-anchor="middle" font-size="15">계약 잔액 공시와 나머지 수행의무 공시 — 마바소프트 (억원)</text>
+
+  <!-- 왼쪽: 계약부채 변동, 1억원 = 0.5px, 기준 x=200 -->
+  <text x="230" y="62" text-anchor="middle" font-size="14">계약부채 변동 (문단 116·118)</text>
+
+  <text x="190" y="98" text-anchor="end" font-size="13">기초</text>
+  <rect x="200" y="82" width="150" height="24" fill="#e9ecef" stroke="#444"/>
+  <text x="358" y="99" font-size="13">300</text>
+
+  <text x="190" y="136" text-anchor="end" font-size="13">기초분 수익 인식 116⑵</text>
+  <rect x="220" y="120" width="130" height="24" fill="#f6d5d5" stroke="#9d0208"/>
+  <text x="358" y="137" font-size="13" fill="#9d0208">−260</text>
+
+  <text x="190" y="174" text-anchor="end" font-size="13">당기 선청구</text>
+  <rect x="220" y="158" width="210" height="24" fill="#d8eadf" stroke="#2d6a4f"/>
+  <text x="325" y="175" text-anchor="middle" font-size="13" fill="#2d6a4f">+420</text>
+
+  <text x="190" y="212" text-anchor="end" font-size="13">당기분 수익 인식</text>
+  <rect x="305" y="196" width="125" height="24" fill="#f6d5d5" stroke="#9d0208"/>
+  <text x="367" y="213" text-anchor="middle" font-size="13" fill="#9d0208">−250</text>
+
+  <text x="190" y="250" text-anchor="end" font-size="13">사업결합 118⑴</text>
+  <rect x="305" y="234" width="15" height="24" fill="#f8e3c4" stroke="#b45309"/>
+  <text x="328" y="251" font-size="13" fill="#b45309">+30</text>
+
+  <text x="190" y="288" text-anchor="end" font-size="13">기말</text>
+  <rect x="200" y="272" width="120" height="24" fill="#e9ecef" stroke="#444"/>
+  <text x="328" y="289" font-size="13">240</text>
+
+  <text x="24" y="330" font-size="13">기초 잔액 300 중 86.7%가 당기 수익이 됐다</text>
+  <text x="24" y="352" font-size="13">→ 이미 받을 권리가 생긴 대가만 보인다</text>
+
+  <line x1="452" y1="50" x2="452" y2="400" stroke="#ccc"/>
+
+  <!-- 오른쪽: 나머지 수행의무, 1억원 = 0.55px, 기준 x=480 -->
+  <text x="666" y="62" text-anchor="middle" font-size="14">기말 나머지 수행의무 (문단 120·121)</text>
+
+  <text x="480" y="98" font-size="13">간편법 미적용 626</text>
+  <rect x="480" y="106" width="186" height="30" fill="#d8eadf" stroke="#2d6a4f"/>
+  <text x="573" y="126" text-anchor="middle" font-size="13">1년 이내 338</text>
+  <rect x="666" y="106" width="106" height="30" fill="#e9ecef" stroke="#444"/>
+  <text x="719" y="126" text-anchor="middle" font-size="13">1~2년 192</text>
+  <rect x="772" y="106" width="53" height="30" fill="#f1f3f5" stroke="#444"/>
+  <text x="798" y="126" text-anchor="middle" font-size="13">96</text>
+
+  <text x="480" y="174" font-size="13">간편법 적용 후 공시 480</text>
+  <rect x="480" y="182" width="106" height="30" fill="#d8eadf" stroke="#2d6a4f"/>
+  <text x="533" y="202" text-anchor="middle" font-size="13">192</text>
+  <rect x="586" y="182" width="106" height="30" fill="#e9ecef" stroke="#444"/>
+  <text x="639" y="202" text-anchor="middle" font-size="13">1~2년 192</text>
+  <rect x="692" y="182" width="53" height="30" fill="#f1f3f5" stroke="#444"/>
+  <text x="718" y="202" text-anchor="middle" font-size="13">96</text>
+
+  <rect x="480" y="236" width="376" height="76" rx="6" fill="#ffffff" stroke="#b45309"/>
+  <text x="668" y="260" text-anchor="middle" font-size="13" fill="#b45309">빠진 146은 전부 1년 이내 몫</text>
+  <text x="668" y="282" text-anchor="middle" font-size="13">121⑴ 1년 이내 계약 56</text>
+  <text x="668" y="302" text-anchor="middle" font-size="13">121⑵ B16 청구권 간편법 90</text>
+
+  <text x="480" y="340" font-size="13">아직 청구하지 않은 대가까지 포함한다</text>
+  <text x="480" y="362" font-size="13">제약된 변동대가 30은 금액에서 빠지고 122로 설명</text>
+</svg>
