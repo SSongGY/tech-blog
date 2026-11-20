@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif" font-size="14">
+  <rect x="0" y="0" width="880" height="430" fill="#ffffff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">Base64 — 8비트 3개를 6비트 4개로 다시 자른다</text>
+
+  <!-- row 1: "foo" -->
+  <text x="30" y="72" font-weight="bold" fill="#111827">입력 "foo" (3바이트)</text>
+  <rect x="140" y="84" width="200" height="40" fill="#f3f4f6" stroke="#4b5563"/>
+  <rect x="340" y="84" width="200" height="40" fill="#f3f4f6" stroke="#4b5563"/>
+  <rect x="540" y="84" width="200" height="40" fill="#f3f4f6" stroke="#4b5563"/>
+  <text x="240" y="109" text-anchor="middle" font-family="Consolas, monospace" fill="#111827">f 0x66 01100110</text>
+  <text x="440" y="109" text-anchor="middle" font-family="Consolas, monospace" fill="#111827">o 0x6F 01101111</text>
+  <text x="640" y="109" text-anchor="middle" font-family="Consolas, monospace" fill="#111827">o 0x6F 01101111</text>
+
+  <rect x="140" y="140" width="150" height="40" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="290" y="140" width="150" height="40" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="440" y="140" width="150" height="40" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="590" y="140" width="150" height="40" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="215" y="165" text-anchor="middle" font-family="Consolas, monospace" fill="#2d6a4f">011001 = 25 → Z</text>
+  <text x="365" y="165" text-anchor="middle" font-family="Consolas, monospace" fill="#2d6a4f">100110 = 38 → m</text>
+  <text x="515" y="165" text-anchor="middle" font-family="Consolas, monospace" fill="#2d6a4f">111101 = 61 → 9</text>
+  <text x="665" y="165" text-anchor="middle" font-family="Consolas, monospace" fill="#2d6a4f">101111 = 47 → v</text>
+  <text x="760" y="165" font-weight="bold" fill="#2d6a4f">"Zm9v"</text>
+  <text x="30" y="165" fill="#374151">6비트 4개</text>
+
+  <!-- row 2: "f" -->
+  <text x="30" y="232" font-weight="bold" fill="#111827">입력 "f" (1바이트)</text>
+  <rect x="140" y="244" width="200" height="40" fill="#f3f4f6" stroke="#4b5563"/>
+  <rect x="340" y="244" width="400" height="40" fill="#fff7ed" stroke="#b45309" stroke-dasharray="6,4"/>
+  <text x="240" y="269" text-anchor="middle" font-family="Consolas, monospace" fill="#111827">f 0x66 01100110</text>
+  <text x="540" y="269" text-anchor="middle" fill="#b45309">바이트 없음 — 오른쪽에 0 비트를 채운다</text>
+
+  <rect x="140" y="300" width="150" height="40" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="290" y="300" width="150" height="40" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="440" y="300" width="150" height="40" fill="#fff7ed" stroke="#b45309"/>
+  <rect x="590" y="300" width="150" height="40" fill="#fff7ed" stroke="#b45309"/>
+  <text x="215" y="325" text-anchor="middle" font-family="Consolas, monospace" fill="#2d6a4f">011001 = 25 → Z</text>
+  <text x="365" y="325" text-anchor="middle" font-family="Consolas, monospace" fill="#2d6a4f">10 + 0000 → g</text>
+  <text x="515" y="325" text-anchor="middle" font-family="Consolas, monospace" fill="#b45309">=</text>
+  <text x="665" y="325" text-anchor="middle" font-family="Consolas, monospace" fill="#b45309">=</text>
+  <text x="760" y="325" font-weight="bold" fill="#2d6a4f">"Zg=="</text>
+  <text x="30" y="325" fill="#374151">6비트 2개</text>
+
+  <text x="440" y="372" text-anchor="middle" fill="#374151">'g' 의 아래 4비트 0000 은 데이터가 아니라 채운 비트(패드 비트)다.</text>
+  <text x="440" y="396" text-anchor="middle" fill="#374151">마지막 묶음이 1바이트면 글자 2개 + "==", 2바이트면 글자 3개 + "=".</text>
+</svg>

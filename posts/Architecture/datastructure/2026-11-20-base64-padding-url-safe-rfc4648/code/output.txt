@@ -1,0 +1,73 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Architecture\datastructure\2026-11-20-base64-padding-url-safe-rfc4648
+# 명령      : python base64_rfc4648.py
+# 수행 시각 : 2026-11-20 19:17 (대한민국 표준시)
+# 소요      : 0.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+[1] 직접 만든 인코더 vs base64.b64encode
+  ''         직접 ''           표준 ''           같음 True
+  'f'        직접 'Zg=='       표준 'Zg=='       같음 True
+  'fo'       직접 'Zm8='       표준 'Zm8='       같음 True
+  'foo'      직접 'Zm9v'       표준 'Zm9v'       같음 True
+  'foob'     직접 'Zm9vYg=='   표준 'Zm9vYg=='   같음 True
+  'fooba'    직접 'Zm9vYmE='   표준 'Zm9vYmE='   같음 True
+  'foobar'   직접 'Zm9vYmFy'   표준 'Zm9vYmFy'   같음 True
+  무작위 입력 3000개(0~300바이트) · 불일치 0개
+
+[2-1] 입력 길이별 출력 길이
+  입력 | Base64 | '=' | Base32 | '=' | Base16
+     0 |      0 |   0 |      0 |   0 |      0
+     1 |      4 |   2 |      8 |   6 |      2
+     2 |      4 |   1 |      8 |   4 |      4
+     3 |      4 |   0 |      8 |   3 |      6
+     4 |      8 |   2 |      8 |   1 |      8
+     5 |      8 |   1 |      8 |   0 |     10
+     6 |      8 |   0 |     16 |   6 |     12
+     7 |     12 |   2 |     16 |   4 |     14
+     8 |     12 |   1 |     16 |   3 |     16
+     9 |     12 |   0 |     16 |   1 |     18
+    10 |     16 |   2 |     16 |   0 |     20
+
+[2-2] 3,000바이트를 인코딩한 크기
+  Base16 (b16encode)                    6000바이트 · 원본의 2.0000배
+  Base32 (b32encode)                    4800바이트 · 원본의 1.6000배
+  Base64 (b64encode)                    4000바이트 · 원본의 1.3333배
+  Base64 + 76자 줄바꿈 (encodebytes)        4053바이트 · 원본의 1.3510배
+  encodebytes 줄 수 53 · 첫 줄 길이 76 · 줄 끝 바이트 b'\n'
+
+[3] URL 안전 알파벳 (RFC 4648 §5)
+  바이트 fb ff bf  표준 '+/+/'  URL 안전 '-_-_'
+  b64decode (표준 디코더)                       '-_-_'         → b''
+  b64decode(validate=True)                 '-_-_'         → Error: Only base64 data is allowed
+  urlsafe_b64decode (URL 안전 디코더)           '-_-_'         → b'\xfb\xff\xbf'
+  urlsafe_b64decode 에 표준 문자열               '+/+/'         → b'\xfb\xff\xbf'
+
+[4] 패딩을 뺀 문자열 (RFC 4648 §3.2)
+  b64decode                                'Zm9vYg'       → Error: Incorrect padding
+  b64decode                                'Zm9vYmE'      → Error: Incorrect padding
+  b64decode                                'Zm9vYmFy'     → b'foobar'
+  '=' 를 (-길이 % 4)개 붙여서                     'Zm9vYg=='     → b'foob'
+  '=' 를 (-길이 % 4)개 붙여서                     'Zm9vYmE='     → b'fooba'
+  길이 % 4 == 1 은 복원 불가                      'Zm9vY==='     → Error: Invalid base64-encoded string: number of data characters (5) cannot be 1 more than a multiple of 4
+
+[5] 알파벳 밖 글자 (RFC 4648 §3.3)
+  b64decode                                'Zm9v\nYmFy'   → b'foobar'
+  b64decode(validate=True)                 'Zm9v\nYmFy'   → Error: Only base64 data is allowed
+  b64decode                                'Zm9v YmFy'    → b'foobar'
+  b64decode(validate=True)                 'Zm9v YmFy'    → Error: Only base64 data is allowed
+  b64decode                                'Zm9v*YmFy'    → b'foobar'
+  b64decode(validate=True)                 'Zm9v*YmFy'    → Error: Only base64 data is allowed
+  b64decode                                'Zm=9vYmFy'    → b'foobar'
+  b64decode(validate=True)                 'Zm=9vYmFy'    → Error: Discontinuous padding not allowed
+
+[6] 정규 인코딩 — 패드 비트 (RFC 4648 §3.5)
+  (두 번째 글자 6비트 중 위 2비트가 데이터, 아래 4비트가 패드)
+  두 번째 글자 'g' = 100000                     'Zg=='         → b'f'
+  두 번째 글자 'h' = 100001                     'Zh=='         → b'f'
+  두 번째 글자 'i' = 100010                     'Zi=='         → b'f'
+  두 번째 글자 'v' = 101111                     'Zv=='         → b'f'
