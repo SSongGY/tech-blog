@@ -8448,4 +8448,4 @@ topics:
     angle: "제1115호 문단 127~129. 계약체결원가·계약이행원가 자산의 범주별 변동표와 상각 방법을 계산하고, 문단 94 간편법을 쓰면 자산과 비용이 어떻게 달라지는지 보인다"
     code: python
     origin: manual
-    status: writing
+    status: done
