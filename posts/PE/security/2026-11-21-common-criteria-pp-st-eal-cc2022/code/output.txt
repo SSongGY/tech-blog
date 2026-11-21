@@ -1,0 +1,58 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\security\2026-11-21-common-criteria-pp-st-eal-cc2022
+# 명령      : python eal_matrix.py
+# 수행 시각 : 2026-11-21 19:16 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+[1] Table 1(요약)과 Table 2~8(등급별)의 대조
+  EAL1: 컴포넌트 13개 · 일치
+  EAL2: 컴포넌트 19개 · 일치
+  EAL3: 컴포넌트 22개 · 일치
+  EAL4: 컴포넌트 24개 · 일치
+  EAL5: 컴포넌트 25개 · 일치
+  EAL6: 컴포넌트 26개 · 일치
+  EAL7: 컴포넌트 26개 · 일치
+
+[2] 한 패밀리에 하나 · 등급이 오를 때 내려가는 패밀리
+  Table 1 의 패밀리 26개 · 클래스 6개 ['ADV', 'AGD', 'ALC', 'ASE', 'ATE', 'AVA']
+  EAL1: 패밀리 13개 · 앞 등급보다 내려간 패밀리 없음
+  EAL2: 패밀리 19개 · 앞 등급보다 내려간 패밀리 없음
+  EAL3: 패밀리 22개 · 앞 등급보다 내려간 패밀리 없음
+  EAL4: 패밀리 24개 · 앞 등급보다 내려간 패밀리 없음
+  EAL5: 패밀리 25개 · 앞 등급보다 내려간 패밀리 없음
+  EAL6: 패밀리 26개 · 앞 등급보다 내려간 패밀리 없음
+  EAL7: 패밀리 26개 · 앞 등급보다 내려간 패밀리 없음
+
+[3] 한 등급 오를 때 바뀌는 것
+  EAL1→EAL2: 새 패밀리 6 ['ADV_ARC.1', 'ADV_TDS.1', 'ALC_DEL.1', 'ASE_SPD.1', 'ATE_COV.1', 'ATE_FUN.1']
+               올라간 컴포넌트 7 ['ADV_FSP.1→2', 'ALC_CMC.1→2', 'ALC_CMS.1→2', 'ASE_OBJ.1→2', 'ASE_REQ.1→2', 'ATE_IND.1→2', 'AVA_VAN.1→2']
+  EAL2→EAL3: 새 패밀리 3 ['ALC_DVS.1', 'ALC_LCD.1', 'ATE_DPT.1']
+               올라간 컴포넌트 5 ['ADV_FSP.2→3', 'ADV_TDS.1→2', 'ALC_CMC.2→3', 'ALC_CMS.2→3', 'ATE_COV.1→2']
+  EAL3→EAL4: 새 패밀리 2 ['ADV_IMP.1', 'ALC_TAT.1']
+               올라간 컴포넌트 5 ['ADV_FSP.3→4', 'ADV_TDS.2→3', 'ALC_CMC.3→4', 'ALC_CMS.3→4', 'AVA_VAN.2→3']
+  EAL4→EAL5: 새 패밀리 1 ['ADV_INT.2']
+               올라간 컴포넌트 6 ['ADV_FSP.4→5', 'ADV_TDS.3→4', 'ALC_CMS.4→5', 'ALC_TAT.1→2', 'ATE_DPT.1→3', 'AVA_VAN.3→4']
+  EAL5→EAL6: 새 패밀리 1 ['ADV_SPM.1']
+               올라간 컴포넌트 9 ['ADV_IMP.1→2', 'ADV_INT.2→3', 'ADV_TDS.4→5', 'ALC_CMC.4→5', 'ALC_DVS.1→2', 'ALC_TAT.2→3', 'ATE_COV.2→3', 'ATE_FUN.1→2', 'AVA_VAN.4→5']
+  EAL6→EAL7: 새 패밀리 0 []
+               올라간 컴포넌트 5 ['ADV_FSP.5→6', 'ADV_TDS.5→6', 'ALC_LCD.1→2', 'ATE_DPT.3→4', 'ATE_IND.2→3']
+
+[4] 클래스별 컴포넌트 수
+  클래스 EAL1 EAL2 EAL3 EAL4 EAL5 EAL6 EAL7
+  ADV       1    3    3    4    5    6    6
+  AGD       2    2    2    2    2    2    2
+  ALC       2    3    5    6    6    6    6
+  ASE       6    7    7    7    7    7    7
+  ATE       1    3    4    4    4    4    4
+  AVA       1    1    1    1    1    1    1
+
+[5] ST 평가 패키지와 EAL 의 ASE 부분
+  STA-STD == EAL2 의 ASE        : True
+  STA-DR  - EAL1 의 ASE         : ['ASE_SPD.1']
+  EAL1 의 ASE - STA-DR          : []
+  STA-STD - STA-DR (올라간 것)   : ['ASE_OBJ.2', 'ASE_REQ.2']

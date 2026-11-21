@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">PP 준수 유형 3가지 — ST 가 PP 의 요구를 어떻게 담는가</text>
+
+  <!-- ① 정확 준수 -->
+  <rect x="20" y="50" width="270" height="290" rx="8" fill="#f7f7f7" stroke="#666666"/>
+  <text x="155" y="78" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">① 정확 준수 (exact)</text>
+  <circle cx="155" cy="170" r="62" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="155" y="164" font-size="14" text-anchor="middle" fill="#2d6a4f">PP = ST</text>
+  <text x="155" y="186" font-size="13" text-anchor="middle" fill="#2d6a4f">더하지도 빼지도 않음</text>
+  <text x="155" y="262" font-size="13" text-anchor="middle" fill="#222222">SPD·목적이 PP 와 똑같고</text>
+  <text x="155" y="284" font-size="13" text-anchor="middle" fill="#222222">SFR 은 할당·선택만 채운다</text>
+  <text x="155" y="306" font-size="13" text-anchor="middle" fill="#222222">EAL 증강 불가</text>
+  <text x="155" y="328" font-size="13" text-anchor="middle" fill="#555555">ST 만 주장할 수 있다</text>
+
+  <!-- ② 엄격 준수 -->
+  <rect x="305" y="50" width="270" height="290" rx="8" fill="#f7f7f7" stroke="#666666"/>
+  <text x="440" y="78" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">② 엄격 준수 (strict)</text>
+  <circle cx="440" cy="170" r="72" fill="#fdf3e7" stroke="#b45309" stroke-width="2"/>
+  <circle cx="440" cy="186" r="44" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="190" font-size="14" text-anchor="middle" fill="#2d6a4f">PP</text>
+  <text x="440" y="124" font-size="13" text-anchor="middle" fill="#b45309">ST (상위집합)</text>
+  <text x="440" y="262" font-size="13" text-anchor="middle" fill="#222222">PP 의 요구를 전부 담고</text>
+  <text x="440" y="284" font-size="13" text-anchor="middle" fill="#222222">위협·목적·SFR 을 더할 수 있다</text>
+  <text x="440" y="306" font-size="13" text-anchor="middle" fill="#222222">새 가정이 PP 를 약화하면 안 됨</text>
+  <text x="440" y="328" font-size="13" text-anchor="middle" fill="#555555">PP·ST 모두 주장 가능</text>
+
+  <!-- ③ 입증 준수 -->
+  <rect x="590" y="50" width="270" height="290" rx="8" fill="#f7f7f7" stroke="#666666"/>
+  <text x="725" y="78" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">③ 입증 준수 (demonstrable)</text>
+  <circle cx="725" cy="170" r="62" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="725" y="160" font-size="14" text-anchor="middle" fill="#2d6a4f">ST ⇒ PP</text>
+  <text x="725" y="182" font-size="13" text-anchor="middle" fill="#2d6a4f">다른 문장이어도</text>
+  <text x="725" y="200" font-size="13" text-anchor="middle" fill="#2d6a4f">동등 이상</text>
+  <text x="725" y="262" font-size="13" text-anchor="middle" fill="#222222">ST 의 SFR 이 PP 의 SFR 을</text>
+  <text x="725" y="284" font-size="13" text-anchor="middle" fill="#222222">함의함을 근거로 보인다</text>
+  <text x="725" y="306" font-size="13" text-anchor="middle" fill="#222222">PP 가 허용할 때만</text>
+  <text x="725" y="328" font-size="13" text-anchor="middle" fill="#555555">PP·ST 모두 주장 가능</text>
+
+  <text x="440" y="368" font-size="13" text-anchor="middle" fill="#555555">허용 폭: 정확 &lt; 엄격 &lt; 입증 · CC 는 "부분 준수"를 인정하지 않는다</text>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="380" viewBox="0 0 880 380" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444444"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">다중 보증 평가 — TSF 의 부분마다 다른 SAR, 전체에는 전역 SAR</text>
+
+  <!-- 왼쪽: 요구를 정하는 쪽 -->
+  <rect x="30" y="70" width="230" height="250" rx="8" fill="#f7f7f7" stroke="#666666"/>
+  <text x="145" y="98" font-size="14" font-weight="bold" text-anchor="middle" fill="#222222">다중 보증 PP-Configuration</text>
+  <rect x="55" y="118" width="180" height="56" rx="6" fill="#ffffff" stroke="#666666"/>
+  <text x="145" y="142" font-size="13" text-anchor="middle" fill="#222222">PP — 기기 본체</text>
+  <text x="145" y="162" font-size="13" text-anchor="middle" fill="#555555">SAR 집합 A</text>
+  <rect x="55" y="190" width="180" height="56" rx="6" fill="#ffffff" stroke="#666666"/>
+  <text x="145" y="214" font-size="13" text-anchor="middle" fill="#222222">PP-Module — 키 저장</text>
+  <text x="145" y="234" font-size="13" text-anchor="middle" fill="#555555">SAR 집합 B (더 높음)</text>
+  <text x="145" y="276" font-size="13" text-anchor="middle" fill="#222222">+ 전역 보증 패키지</text>
+  <text x="145" y="298" font-size="13" text-anchor="middle" fill="#555555">ST 는 이것 하나만 준수</text>
+
+  <line x1="260" y1="195" x2="318" y2="195" stroke="#444444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 오른쪽: TOE -->
+  <rect x="322" y="60" width="528" height="270" rx="8" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="586" y="88" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">TOE 전체 — 전역 보증 패키지가 적용된다</text>
+
+  <rect x="350" y="110" width="220" height="190" rx="8" fill="#ffffff" stroke="#666666"/>
+  <text x="460" y="140" font-size="14" text-anchor="middle" fill="#222222">sub-TSF ①</text>
+  <text x="460" y="166" font-size="13" text-anchor="middle" fill="#222222">인증·관리 기능</text>
+  <text x="460" y="204" font-size="13" text-anchor="middle" fill="#555555">SAR 집합 A 로 평가</text>
+
+  <rect x="600" y="110" width="220" height="190" rx="8" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="710" y="140" font-size="14" text-anchor="middle" fill="#222222">sub-TSF ②</text>
+  <text x="710" y="166" font-size="13" text-anchor="middle" fill="#222222">키 저장·처리 장치</text>
+  <text x="710" y="204" font-size="13" text-anchor="middle" fill="#b45309">SAR 집합 B 로 평가</text>
+  <text x="710" y="230" font-size="13" text-anchor="middle" fill="#555555">더 노출되거나</text>
+  <text x="710" y="250" font-size="13" text-anchor="middle" fill="#555555">더 중요한 부분</text>
+
+  <text x="440" y="362" font-size="13" text-anchor="middle" fill="#555555">단일 보증 평가(이전 판의 방식)는 SAR 집합 하나를 TOE 전체에 적용한다</text>
+</svg>
