@@ -8404,7 +8404,7 @@ topics:
     angle: "2025-11-25 이전의 initialize 세션 방식과 2026-07-28 무상태 방식을 메시지 단위로 비교하고, 샘플링·루트 폐지 예정의 의미와 서버 설계 영향을 사양 근거로 정리한다"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: db-130
     title: "ORDER BY CASE — 가나다순이 아닌 업무 순서로 정렬하기"
     category: Database

@@ -107,6 +107,8 @@ MCP는 그 사이에 공통 규격을 두어 **기능 쪽은 서버를 한 번, 
 >
 > 개념 정리: [MCP 인가 구조 — OAuth 2.1, 보호 자원 메타데이터, 자원 지시자와 토큰 대상 검증](../../security/2026-11-11-mcp-authorization-oauth-resource-audience/index.md)
 >
+> 개념 정리: [MCP 개정판 2026-07-28의 무상태 전환 — 핸드셰이크 제거, 요청별 버전·능력 선언, server/discover](../../emerging-tech/2026-11-22-mcp-stateless-revision-2026-07-28/index.md)
+>
 > MCP 구조: [에이전트 간 상호운용 프로토콜 — 능력 공표와 과업 수명주기](../../emerging-tech/2026-10-20-agent-interop-capability-and-task-lifecycle/index.md)
 
 끝
