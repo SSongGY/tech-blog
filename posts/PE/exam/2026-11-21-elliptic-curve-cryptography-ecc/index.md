@@ -99,6 +99,8 @@ TLS 핸드셰이크의 키 교환(ECDHE)과 서버 인증서 서명, 코드 서�
 > 관련 글: [RSA 공개키 암호 — 키 생성, 암복호, 서명을 작은 수로 계산하기](../../security/2026-11-15-rsa-key-generation-encrypt-sign/index.md)
 >
 > 관련 글: [대칭키와 공개키 — 쓰임이 갈리는 지점](../../security/2026-09-29-symmetric-vs-public-key-hybrid/index.md)
+>
+> 개념 정리: [타원곡선 암호(ECC) — 점 덧셈과 스칼라 곱, ECDH·ECDSA를 작은 체에서 계산하기](../../security/2026-11-22-ecc-point-addition-ecdh-ecdsa-small-field/index.md)
 
 끝
 
