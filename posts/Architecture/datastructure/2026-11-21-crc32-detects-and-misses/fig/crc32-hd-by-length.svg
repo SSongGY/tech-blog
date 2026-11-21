@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">IEEE 802.3 CRC-32 — 데이터 길이에 따라 반드시 잡는 비트 오류 수</text>
+  <text x="440" y="52" font-size="13" text-anchor="middle" fill="#555555">HD 가 d 이면 d−1 비트 이하 오류는 모두 잡힌다 · 가로축: 데이터 비트 수(로그 눈금)</text>
+
+  <!-- 구간 막대: x = 60 + (log10(bits) - log10(32)) * 216 -->
+  <rect x="60"  y="100" width="98"  height="56" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="158" y="100" width="59"  height="56" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="217" y="100" width="42"  height="56" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <rect x="259" y="100" width="226" height="56" fill="#fdf3e7" stroke="#b45309"/>
+  <rect x="485" y="100" width="322" height="56" fill="#fdf3e7" stroke="#b45309"/>
+  <rect x="807" y="100" width="33"  height="56" fill="#fdecea" stroke="#9d0208"/>
+
+  <text x="109" y="133" font-size="14" text-anchor="middle" fill="#2d6a4f">HD≥8</text>
+  <text x="187" y="133" font-size="13" text-anchor="middle" fill="#2d6a4f">HD=7</text>
+  <text x="238" y="90"  font-size="13" text-anchor="middle" fill="#2d6a4f">HD=6</text>
+  <line x1="238" y1="94" x2="238" y2="100" stroke="#2d6a4f"/>
+  <text x="372" y="125" font-size="14" text-anchor="middle" fill="#b45309">HD=5</text>
+  <text x="372" y="145" font-size="13" text-anchor="middle" fill="#b45309">4비트까지 잡음</text>
+  <text x="646" y="125" font-size="14" text-anchor="middle" fill="#b45309">HD=4</text>
+  <text x="646" y="145" font-size="13" text-anchor="middle" fill="#b45309">3비트까지 잡음</text>
+  <text x="823" y="90"  font-size="13" text-anchor="middle" fill="#9d0208">HD=3</text>
+  <line x1="823" y1="94" x2="823" y2="100" stroke="#9d0208"/>
+
+  <!-- 경계 눈금 -->
+  <text x="158" y="176" font-size="13" text-anchor="middle" fill="#222222">91</text>
+  <text x="217" y="176" font-size="13" text-anchor="middle" fill="#222222">171</text>
+  <text x="259" y="194" font-size="13" text-anchor="middle" fill="#222222">268</text>
+  <text x="485" y="176" font-size="13" text-anchor="middle" fill="#222222">2974</text>
+  <text x="807" y="176" font-size="13" text-anchor="middle" fill="#222222">91607</text>
+
+  <!-- Koopman 이 기준으로 삼은 이더넷 MTU 크기 데이터 워드 12112비트 -->
+  <line x1="617" y1="96" x2="617" y2="160" stroke="#444444" stroke-dasharray="4,3"/>
+  <text x="617" y="214" font-size="13" text-anchor="middle" fill="#444444">이더넷 MTU 크기 데이터 12112비트</text>
+  <line x1="617" y1="160" x2="617" y2="200" stroke="#444444" stroke-dasharray="4,3"/>
+
+  <!-- 아래: 보장되는 것과 아닌 것 -->
+  <rect x="40" y="250" width="250" height="120" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="165" y="278" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">길이와 무관하게 보장</text>
+  <text x="165" y="306" font-size="13" text-anchor="middle" fill="#222222">길이 32 이하의 버스트 오류</text>
+  <text x="165" y="330" font-size="13" text-anchor="middle" fill="#222222">(연속 구간 안에서 생긴 오류)</text>
+  <text x="165" y="354" font-size="13" text-anchor="middle" fill="#222222">는 모두 잡는다</text>
+
+  <rect x="315" y="250" width="250" height="120" rx="6" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="440" y="278" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">길이에 따라 보장</text>
+  <text x="440" y="306" font-size="13" text-anchor="middle" fill="#222222">흩어진 비트 오류는</text>
+  <text x="440" y="330" font-size="13" text-anchor="middle" fill="#222222">위 막대의 HD−1 개까지만</text>
+  <text x="440" y="354" font-size="13" text-anchor="middle" fill="#222222">반드시 잡는다</text>
+
+  <rect x="590" y="250" width="250" height="120" rx="6" fill="#fdecea" stroke="#9d0208"/>
+  <text x="715" y="278" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">보장하지 않음</text>
+  <text x="715" y="306" font-size="13" text-anchor="middle" fill="#222222">의도적인 변경(변조)</text>
+  <text x="715" y="330" font-size="13" text-anchor="middle" fill="#222222">CRC 는 인증·서명에</text>
+  <text x="715" y="354" font-size="13" text-anchor="middle" fill="#222222">쓰지 않는다</text>
+
+  <text x="440" y="402" font-size="13" text-anchor="middle" fill="#555555">구간 경계는 Koopman(2002) Table 1 의 802.3 다항식 값이다</text>
+</svg>
