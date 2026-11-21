@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" width="880" height="430" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <defs>
+    <marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrK" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#444444"/>
+    </marker>
+    <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="880" height="430" fill="#fbfbf8"/>
+
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#222222">공급망의 두 흐름과 두 기능 — 효율성과 효과성</text>
+
+  <!-- 물리적 기능 (효율성) -->
+  <rect x="40" y="50" width="800" height="62" rx="8" fill="#e8f3ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="60" y="76" font-size="15" font-weight="bold" fill="#2d6a4f">물리적 기능 → 효율성</text>
+  <text x="60" y="99" font-size="13" fill="#222222">원자재를 부품·완제품으로 바꾸고 다음 지점으로 운송한다 · 비용: 생산비, 운송비, 재고 보관비</text>
+
+  <!-- 공급망 단계 4개 -->
+  <rect x="40" y="150" width="170" height="64" rx="8" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="125" y="188" text-anchor="middle" font-size="15" fill="#222222">공급자</text>
+  <rect x="250" y="150" width="170" height="64" rx="8" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="335" y="188" text-anchor="middle" font-size="15" fill="#222222">제조사</text>
+  <rect x="460" y="150" width="170" height="64" rx="8" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="545" y="188" text-anchor="middle" font-size="15" fill="#222222">유통·도매</text>
+  <rect x="670" y="150" width="170" height="64" rx="8" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="755" y="188" text-anchor="middle" font-size="15" fill="#222222">소매·고객</text>
+
+  <!-- 물자 흐름 (하류 방향) -->
+  <line x1="212" y1="166" x2="248" y2="166" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrG)"/>
+  <line x1="422" y1="166" x2="458" y2="166" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrG)"/>
+  <line x1="632" y1="166" x2="668" y2="166" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrG)"/>
+  <!-- 정보 흐름 (상류 방향) -->
+  <line x1="248" y1="198" x2="212" y2="198" stroke="#444444" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrK)"/>
+  <line x1="458" y1="198" x2="422" y2="198" stroke="#444444" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrK)"/>
+  <line x1="668" y1="198" x2="632" y2="198" stroke="#444444" stroke-width="2" stroke-dasharray="5 3" marker-end="url(#arrK)"/>
+
+  <text x="40" y="236" font-size="13" fill="#2d6a4f">━ 물자 흐름 (하류로)</text>
+  <text x="220" y="236" font-size="13" fill="#444444">┅ 주문·판매(POS)·재고 정보 흐름 (상류로)</text>
+
+  <!-- 시장 중개 기능 (효과성) -->
+  <rect x="40" y="256" width="800" height="62" rx="8" fill="#eef1f7" stroke="#3b4a6b" stroke-width="1.5"/>
+  <text x="60" y="282" font-size="15" font-weight="bold" fill="#3b4a6b">시장 중개 기능 → 효과성</text>
+  <text x="60" y="305" font-size="13" fill="#222222">시장에 닿는 품목 구성이 고객이 사려는 것과 맞게 한다 · 비용: 공급 과잉의 할인 판매, 공급 부족의 판매 기회 손실</text>
+
+  <!-- 채찍 효과 -->
+  <line x1="836" y1="352" x2="44" y2="352" stroke="#9d0208" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="440" y="342" text-anchor="middle" font-size="13" fill="#9d0208">채찍 효과: 상류로 갈수록 주문 변동이 커진다</text>
+  <text x="440" y="378" text-anchor="middle" font-size="13" fill="#9d0208">원인 4가지 — 수요 예측 갱신, 주문 일괄 처리, 가격 변동, 배급·품절 대비 과다 주문</text>
+  <text x="440" y="408" text-anchor="middle" font-size="13" fill="#444444">대응 — 판매 정보 공유(POS·EDI), 공급자 재고관리(VMI), 연속 보충(CRP), 가격 안정, 과거 판매 기준 배분</text>
+</svg>
