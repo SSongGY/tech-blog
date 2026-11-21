@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **804편** · 갱신 2026-11-22
+총 **805편** · 갱신 2026-11-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -539,10 +539,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 134편
+## 기출문제 (exam) — 135편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-22 | [기출문제 — 공급망관리(SCM)의 정의와 배경, 효과성과 효율성](posts/PE/exam/2026-11-22-supply-chain-management-effectiveness-efficiency/index.md) | 중급 | ISO 9000:2015, SCOR Digital Standard (ASCM, 2020), Fisher, Harvard Business Review 1997년 3-4월호, Lee·Padmanabhan·Whang, Sloan Management Review 1997년 봄호, CSCMP SCM Definitions and Glossary (2026-11 열람) | 문서 근거 |
 | 2026-11-21 | [기출문제 — 개인정보 안심구역과 데이터안심구역 비교](posts/PE/exam/2026-11-21-privacy-safe-zone-vs-data-safe-zone/index.md) | 중급 | 개인정보보호위원회 보도자료 — 개인정보 안심구역 추가 지정 (2024-07-02), 개인정보보호위원회 보도자료 — 가명정보 활용 정책 설명회 (2024-02-27), 과학기술정보통신부 공고 제2026-0905호 — 2026년 하반기 데이터안심구역 지정 신청 공고 (2026-09-01) | 문서 근거 |
 | 2026-11-21 | [기출문제 — MCP(Model Context Protocol)](posts/PE/exam/2026-11-21-model-context-protocol-mcp/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Overview, Architecture, Base Protocol, Versioning and Compatibility, Transports, Server Features, Elicitation), JSON-RPC 2.0 (2010-03-26, 2013-01-04 갱신) | 문서 근거 |
 | 2026-11-21 | [기출문제 — 타원곡선 암호(ECC)](posts/PE/exam/2026-11-21-elliptic-curve-cryptography-ecc/index.md) | 중급 | NIST SP 800-186 (2023-02), FIPS 186-5 (2023-02), NIST SP 800-57 Part 1 Rev. 5 (2020-05), NIST IR 8547 초기 공개 초안 (2024-11) | 문서 근거 |
