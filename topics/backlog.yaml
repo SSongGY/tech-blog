@@ -8427,3 +8427,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-159
+    title: "수익 인식의 유의적 판단 공시 — 진행률 방법, 통제 이전 시점, 거래가격 가정"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, disclosure, judgement]
+    difficulty: 중급
+    angle: "제1115호 문단 123~126. 같은 계약에 진행률 방법·반품률 가정만 바꾸면 수익이 얼마나 달라지는지 계산해 판단 공시가 왜 필요한지 보인다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-160
+    title: "계약원가 자산 공시 — 범주별 잔액, 상각 방법, 간편법 사용 사실"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, revenue, disclosure, contract-cost]
+    difficulty: 중급
+    angle: "제1115호 문단 127~129. 계약체결원가·계약이행원가 자산의 범주별 변동표와 상각 방법을 계산하고, 문단 94 간편법을 쓰면 자산과 비용이 어떻게 달라지는지 보인다"
+    code: python
+    origin: manual
+    status: writing
