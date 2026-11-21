@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">MCP 구조 — 호스트·클라이언트·서버와 두 가지 표준 전송</text>
+
+  <!-- User -->
+  <rect x="30" y="180" width="110" height="70" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="85" y="210" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">사용자</text>
+  <text x="85" y="232" text-anchor="middle" font-size="13" fill="#333333">동의·선택</text>
+  <line x1="142" y1="215" x2="186" y2="215" stroke="#333333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+  <!-- Host container -->
+  <rect x="190" y="56" width="300" height="350" rx="6" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="340" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">호스트 (LLM 애플리케이션)</text>
+  <text x="340" y="100" text-anchor="middle" font-size="13" fill="#333333">클라이언트 생성·권한·보안 정책·사용자 인가</text>
+
+  <rect x="230" y="118" width="220" height="60" rx="4" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  <text x="340" y="146" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">LLM</text>
+  <text x="340" y="166" text-anchor="middle" font-size="13" fill="#333333">도구 선택·호출 결정</text>
+
+  <rect x="230" y="210" width="220" height="70" rx="4" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  <text x="340" y="238" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">클라이언트 A</text>
+  <text x="340" y="260" text-anchor="middle" font-size="13" fill="#333333">서버 1개와 1:1 연결</text>
+
+  <rect x="230" y="310" width="220" height="70" rx="4" fill="#ffffff" stroke="#333333" stroke-width="1.5"/>
+  <text x="340" y="338" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">클라이언트 B</text>
+  <text x="340" y="360" text-anchor="middle" font-size="13" fill="#333333">서버 1개와 1:1 연결</text>
+
+  <!-- Servers -->
+  <rect x="620" y="200" width="230" height="90" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="735" y="226" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">로컬 서버 (하위 프로세스)</text>
+  <text x="735" y="250" text-anchor="middle" font-size="13" fill="#333333">도구 · 자원 · 프롬프트</text>
+  <text x="735" y="272" text-anchor="middle" font-size="13" fill="#333333">자격 증명은 환경에서 읽음</text>
+
+  <rect x="620" y="300" width="230" height="90" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="735" y="326" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">원격 서버 (서비스)</text>
+  <text x="735" y="350" text-anchor="middle" font-size="13" fill="#333333">도구 · 자원 · 프롬프트</text>
+  <text x="735" y="372" text-anchor="middle" font-size="13" fill="#333333">인가: OAuth 기반 인가 절</text>
+
+  <line x1="452" y1="245" x2="618" y2="245" stroke="#333333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="535" y="237" text-anchor="middle" font-size="13" fill="#555555">stdio</text>
+  <line x1="452" y1="345" x2="618" y2="345" stroke="#333333" stroke-width="1.5" marker-start="url(#arr)" marker-end="url(#arr)"/>
+  <text x="535" y="337" text-anchor="middle" font-size="13" fill="#555555">Streamable HTTP</text>
+
+  <line x1="340" y1="180" x2="340" y2="206" stroke="#333333" stroke-width="1.2" marker-start="url(#arr)" marker-end="url(#arr)"/>
+
+  <text x="735" y="96" text-anchor="middle" font-size="13" fill="#555555">메시지: JSON-RPC 2.0 (UTF-8)</text>
+  <text x="735" y="120" text-anchor="middle" font-size="13" fill="#555555">요청 · 결과/오류 응답 · 알림</text>
+  <text x="735" y="144" text-anchor="middle" font-size="13" fill="#555555">요청마다 프로토콜 버전·클라이언트</text>
+  <text x="735" y="164" text-anchor="middle" font-size="13" fill="#555555">능력을 _meta에 실음 (무상태)</text>
+  <text x="440" y="434" text-anchor="middle" font-size="13" fill="#555555">서버는 대화 전체를 읽지 못하고 다른 서버를 들여다보지 못한다 (설계 원칙)</text>
+</svg>
