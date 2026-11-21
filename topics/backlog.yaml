@@ -8383,3 +8383,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-291
+    title: "타원곡선 암호(ECC) — 점 덧셈과 스칼라 곱, ECDH·ECDSA를 작은 체에서 계산하기"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "작은 소수체 곡선에서 현-접선 덧셈과 스칼라 곱을 직접 계산해 ECDH 공유 비밀과 ECDSA 서명·검증을 검산하고, k 재사용 시 개인키가 풀리는 과정을 보인다. SP 800-186·FIPS 186-5 근거"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-292
+    title: "MCP 개정판 2026-07-28의 무상태 전환 — 핸드셰이크 제거, 요청별 버전·능력 선언, server/discover"
+    category: PE
+    subcategory: emerging-tech
+    track: pe
+    tags: [정보관리기술사, emerging-tech, 개념정리]
+    difficulty: 중급
+    angle: "2025-11-25 이전의 initialize 세션 방식과 2026-07-28 무상태 방식을 메시지 단위로 비교하고, 샘플링·루트 폐지 예정의 의미와 서버 설계 영향을 사양 근거로 정리한다"
+    code: none
+    origin: exam
+    status: todo

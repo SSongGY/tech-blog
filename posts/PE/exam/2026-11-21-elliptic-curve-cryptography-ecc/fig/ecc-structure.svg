@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#222222">타원곡선 암호의 구조 — 도메인 파라미터, 키 쌍, 응용</text>
+
+  <!-- Row 1: domain parameters -->
+  <text x="30" y="56" font-size="13" fill="#555555">도메인 파라미터 (모두가 공유)</text>
+  <rect x="30" y="66" width="230" height="80" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="145" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">① 유한체 GF(p)</text>
+  <text x="145" y="122" text-anchor="middle" font-size="13" fill="#333333">p 미만 정수, mod p 연산</text>
+
+  <rect x="310" y="66" width="260" height="80" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="440" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">② 타원곡선 E</text>
+  <text x="440" y="122" text-anchor="middle" font-size="13" fill="#333333">y² = x³ + ax + b (4a³+27b² ≠ 0)</text>
+
+  <rect x="620" y="66" width="230" height="80" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="735" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">③ 기점 G, 위수 n</text>
+  <text x="735" y="122" text-anchor="middle" font-size="13" fill="#333333">곡선 위 점들이 이루는 군</text>
+
+  <line x1="262" y1="106" x2="308" y2="106" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="572" y1="106" x2="618" y2="106" stroke="#333333" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Row 2: key pair -->
+  <rect x="80" y="196" width="240" height="80" rx="4" fill="#fdf4e7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="200" y="226" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">④ 개인키 d</text>
+  <text x="200" y="252" text-anchor="middle" font-size="13" fill="#333333">난수, 1 ≤ d ≤ n−1</text>
+
+  <rect x="560" y="196" width="240" height="80" rx="4" fill="#ecf6f0" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="680" y="226" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">⑤ 공개키 Q = dG</text>
+  <text x="680" y="252" text-anchor="middle" font-size="13" fill="#333333">곡선 위의 한 점</text>
+
+  <line x1="322" y1="220" x2="558" y2="220" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrg)"/>
+  <text x="440" y="212" text-anchor="middle" font-size="13" fill="#2d6a4f">스칼라 곱 — 계산 쉬움</text>
+  <line x1="558" y1="256" x2="322" y2="256" stroke="#9d0208" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrr)"/>
+  <text x="440" y="276" text-anchor="middle" font-size="13" fill="#9d0208">Q·G로 d 찾기 = ECDLP — 어려움</text>
+
+  <path d="M735,148 L735,172 L440,172 L440,186" fill="none" stroke="#333333" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="600" y="166" text-anchor="middle" font-size="13" fill="#555555">G를 d번 더한다</text>
+
+  <!-- Row 3: applications -->
+  <rect x="80" y="330" width="320" height="76" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="240" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">⑥ 키 합의 — ECDH</text>
+  <text x="240" y="384" text-anchor="middle" font-size="13" fill="#333333">공유 비밀 = d_A·Q_B = d_B·Q_A</text>
+
+  <rect x="480" y="330" width="320" height="76" rx="4" fill="#f4f4f4" stroke="#333333" stroke-width="1.5"/>
+  <text x="640" y="360" text-anchor="middle" font-size="14" font-weight="bold" fill="#222222">⑦ 전자서명 — ECDSA·EdDSA</text>
+  <text x="640" y="384" text-anchor="middle" font-size="13" fill="#333333">d로 서명, Q로 검증</text>
+
+  <path d="M440,282 L440,304 L240,304 L240,326" fill="none" stroke="#333333" stroke-width="1.2" marker-end="url(#arr)"/>
+  <path d="M440,304 L640,304 L640,326" fill="none" stroke="#333333" stroke-width="1.2" marker-end="url(#arr)"/>
+  <text x="440" y="428" text-anchor="middle" font-size="13" fill="#555555">보안 강도 ≈ n 비트 길이의 절반 (P-256 → 128비트)</text>
+</svg>
