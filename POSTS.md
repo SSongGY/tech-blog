@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **802편** · 갱신 2026-11-21
+총 **804편** · 갱신 2026-11-21
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -678,10 +678,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 158편
+## 주식·재무 (finance) — 160편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-21 | [수익 인식의 유의적 판단 공시 — 진행률 방법, 통제 이전 시점, 거래가격 가정](posts/Finance/statements/2026-11-21-revenue-significant-judgement-disclosure/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
+| 2026-11-21 | [계약원가 자산 공시 — 범주별 잔액, 상각 방법, 간편법 사용 사실](posts/Finance/statements/2026-11-21-contract-cost-asset-disclosure/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-20 | [수익의 구분 공시 — 매출 한 줄을 제품·지역·이행 시기로 나누는 기준](posts/Finance/statements/2026-11-20-revenue-disaggregation-disclosure/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-20 | [계약 잔액과 나머지 수행의무 공시 — 계약부채 변동표와 수주잔고 읽기](posts/Finance/statements/2026-11-20-contract-balance-remaining-obligation/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-19 | [계약의 식별 — 다섯 조건과 회수 가능성이 낮은 고객에게서 받은 대가](posts/Finance/statements/2026-11-19-contract-identification-collectibility/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
