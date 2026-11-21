@@ -1,0 +1,182 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-21-order-by-case-custom-sort-order
+# 명령      : python custom_sort.py
+# 수행 시각 : 2026-11-21 19:08 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[priority_rank]  3행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  priority  | TEXT    | PK
+  sort_rank | INTEGER | NOT NULL
+
+  priority | sort_rank
+  ---------+----------
+  high     |         1
+  medium   |         2
+  low      |         3
+
+[ticket]  8행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  ticket_id  | INTEGER | PK
+  title      | TEXT    | NOT NULL
+  priority   | TEXT    |
+  created_at | TEXT    | NOT NULL
+
+  ticket_id | title              | priority | created_at
+  ----------+--------------------+----------+-----------
+          1 | login fails        | medium   | 2026-11-02
+          2 | typo on footer     | low      | 2026-11-01
+          3 | payment timeout    | high     | 2026-11-03
+          4 | slow search        | medium   | 2026-11-01
+          5 | old browser layout | low      | 2026-11-04
+          6 | data loss on save  | high     | 2026-11-02
+          7 | new logo           | later    | 2026-11-05
+          8 | unknown report     | NULL     | 2026-11-03
+
+
+[1] 문자열 그대로 정렬 — 오름차순과 내림차순
+  sql> SELECT ticket_id, priority FROM ticket WHERE priority IN ('high', 'medium', 'low') ORDER BY priority, ticket_id ...
+    ('ticket_id', 'priority')
+    (3, 'high')
+    (6, 'high')
+    (2, 'low')
+    (5, 'low')
+    (1, 'medium')
+    (4, 'medium')
+  sql> SELECT ticket_id, priority FROM ticket WHERE priority IN ('high', 'medium', 'low') ORDER BY priority DESC, ticket_id ...
+    ('ticket_id', 'priority')
+    (1, 'medium')
+    (4, 'medium')
+    (2, 'low')
+    (5, 'low')
+    (3, 'high')
+    (6, 'high')
+
+[2] ORDER BY CASE — 순서를 직접 매긴다 (같은 순위 안에서는 오래된 것 먼저)
+  sql> SELECT ticket_id, priority, created_at FROM ticket WHERE priority IN ('high', 'medium', 'low') ORDER BY CASE priority WHEN 'high' THEN 1 WHEN 'medium' ...
+    ('ticket_id', 'priority', 'created_at')
+    (6, 'high', '2026-11-02')
+    (3, 'high', '2026-11-03')
+    (4, 'medium', '2026-11-01')
+    (1, 'medium', '2026-11-02')
+    (2, 'low', '2026-11-01')
+    (5, 'low', '2026-11-04')
+
+[3-1] 목록에 없는 값('later')과 NULL — ELSE 가 없으면
+  sql> SELECT ticket_id, priority, CASE priority WHEN 'high' THEN 1 WHEN 'medium' THEN 2 WHEN 'low' THEN 3 END AS rank_value FROM ticket ORDER BY CASE priori ...
+    ('ticket_id', 'priority', 'rank_value')
+    (8, None, None)
+    (7, 'later', None)
+    (6, 'high', 1)
+    (3, 'high', 1)
+    (4, 'medium', 2)
+    (1, 'medium', 2)
+    (2, 'low', 3)
+    (5, 'low', 3)
+[3-2] ELSE 9 를 붙이면
+  sql> SELECT ticket_id, priority, CASE priority WHEN 'high' THEN 1 WHEN 'medium' THEN 2 WHEN 'low' THEN 3 ELSE 9 END AS rank_value FROM ticket ORDER BY CASE ...
+    ('ticket_id', 'priority', 'rank_value')
+    (6, 'high', 1)
+    (3, 'high', 1)
+    (4, 'medium', 2)
+    (1, 'medium', 2)
+    (2, 'low', 3)
+    (5, 'low', 3)
+    (8, None, 9)
+    (7, 'later', 9)
+[3-3] CASE 만 내림차순으로 — DESC 는 그 식 하나에만 붙는다
+  sql> SELECT ticket_id, priority FROM ticket ORDER BY CASE priority WHEN 'high' THEN 1 WHEN 'medium' THEN 2 WHEN 'low' THEN 3 END DESC, ticket_id ...
+    ('ticket_id', 'priority')
+    (2, 'low')
+    (5, 'low')
+    (1, 'medium')
+    (4, 'medium')
+    (3, 'high')
+    (6, 'high')
+    (7, 'later')
+    (8, None)
+
+[4-1] 순서 표 조인 — INNER JOIN 이면 표에 없는 행이 사라진다
+  sql> SELECT t.ticket_id, t.priority, r.sort_rank FROM ticket AS t JOIN priority_rank AS r ON r.priority = t.priority ORDER BY r.sort_rank, t.created_at, t. ...
+    ('ticket_id', 'priority', 'sort_rank')
+    (6, 'high', 1)
+    (3, 'high', 1)
+    (4, 'medium', 2)
+    (1, 'medium', 2)
+    (2, 'low', 3)
+    (5, 'low', 3)
+[4-2] LEFT JOIN + COALESCE 로 표에 없는 값을 맨 뒤로
+  sql> SELECT t.ticket_id, t.priority, COALESCE(r.sort_rank, 9) AS sort_rank FROM ticket AS t LEFT JOIN priority_rank AS r ON r.priority = t.priority ORDER B ...
+    ('ticket_id', 'priority', 'sort_rank')
+    (6, 'high', 1)
+    (3, 'high', 1)
+    (4, 'medium', 2)
+    (1, 'medium', 2)
+    (2, 'low', 3)
+    (5, 'low', 3)
+    (8, None, 9)
+    (7, 'later', 9)
+
+[5-1] instr() — 순서 문자열 안의 위치
+  sql> SELECT ticket_id, priority, instr(',high,medium,low,', ',' || priority || ',') AS pos FROM ticket ORDER BY pos, ticket_id ...
+    ('ticket_id', 'priority', 'pos')
+    (8, None, None)
+    (7, 'later', 0)
+    (3, 'high', 1)
+    (6, 'high', 1)
+    (1, 'medium', 6)
+    (4, 'medium', 6)
+    (2, 'low', 13)
+    (5, 'low', 13)
+[5-2] 구분자 없이 쓰면 — 'ow' 같은 값이 'low' 안에서 찾아진다
+  sql> SELECT value AS priority, instr('highmediumlow', value) AS pos_no_comma, instr(',high,medium,low,', ',' || value || ',') AS pos_with_comma FROM (SELEC ...
+    ('priority', 'pos_no_comma', 'pos_with_comma')
+    ('low', 11, 13)
+    ('ow', 12, 0)
+    ('dium', 7, 0)
+
+[6-1] 실행계획 — 문자열 정렬은 인덱스 순서를 그대로 쓴다
+    QUERY PLAN
+    `--SCAN ticket USING COVERING INDEX ticket_priority_created
+
+[6-2] 실행계획 — ORDER BY CASE
+    QUERY PLAN
+    |--SCAN ticket USING COVERING INDEX ticket_priority_created
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[6-3] 실행계획 — 순서 표 LEFT JOIN
+    QUERY PLAN
+    |--SCAN t USING COVERING INDEX ticket_priority_created
+    |--SEARCH r USING INDEX sqlite_autoindex_priority_rank_1 (priority=?) LEFT-JOIN
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[7-1] 실행계획 — 같은 CASE 식으로 식 인덱스를 만든 뒤
+    QUERY PLAN
+    `--SCAN ticket USING INDEX ticket_rank_created
+  sql> SELECT ticket_id, priority FROM ticket ORDER BY CASE priority WHEN 'high' THEN 1 WHEN 'medium' THEN 2 WHEN 'low' THEN 3 ELSE 9 END, created_at LIMIT 3 ...
+    ('ticket_id', 'priority')
+    (6, 'high')
+    (3, 'high')
+    (4, 'medium')
+
+[7-2] 실행계획 — WHEN 순서만 바꾼 같은 뜻의 CASE
+    QUERY PLAN
+    |--SCAN ticket USING COVERING INDEX ticket_priority_created
+    `--USE TEMP B-TREE FOR ORDER BY

@@ -8382,7 +8382,7 @@ topics:
     angle: "보안 문제 정의에서 SFR·SAR로 이어지는 도출 구조, PP와 ST의 준수 유형(정확·엄격·입증), EAL 7단계가 각각 더하는 보증 컴포넌트, CC:2022의 Part 4·5와 다중 보증 평가를 CC 원문 근거로 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-291
     title: "타원곡선 암호(ECC) — 점 덧셈과 스칼라 곱, ECDH·ECDSA를 작은 체에서 계산하기"
     category: PE
@@ -8405,3 +8405,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-130
+    title: "ORDER BY CASE — 가나다순이 아닌 업무 순서로 정렬하기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, order-by, case, basics]
+    difficulty: 입문
+    angle: "상태값을 긴급·보통·낮음 순으로 정렬해야 할 때 문자열 정렬이 틀리는 것을 보이고, ORDER BY CASE·정렬 순서 표 조인·instr 세 방법을 같은 데이터로 돌려 결과와 실행계획(임시 B-Tree 유무), 목록에 없는 값의 자리를 비교한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-044
+    title: "CRC-32가 반드시 잡는 오류와 놓치는 오류"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [crc32, checksum, error-detection, zlib]
+    difficulty: 중급
+    angle: "RFC 1952 표 방식 CRC-32를 직접 구현해 zlib.crc32와 맞춰 보고, 1비트·버스트·2비트 오류 검출을 전수·표본으로 세며, 선형성 때문에 4바이트만 덧붙여 원하는 CRC를 만들 수 있어 변조 방지에는 못 쓴다는 것을 실측한다"
+    code: python
+    origin: manual
+    status: done
