@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **812편** · 갱신 2026-11-23
+총 **813편** · 갱신 2026-11-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -544,10 +544,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 135편
+## 기출문제 (exam) — 136편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-23 | [기출문제 — 정보시스템 감리의 법적 근거와 PMO의 정의·역할·대상 범위, 상주감리와의 비교](posts/PE/exam/2026-11-23-information-system-audit-law-and-pmo/index.md) | 중급 | 전자정부법 (법률 제21394호, 2026.2.27.), 전자정부법 시행령 (대통령령 제36605호, 2026.8.25.), 정보시스템 감리기준 (행정안전부고시 제2024-53호, 2024.6.27.), 전자정부사업관리 위탁에 관한 규정 (행정안전부고시 제2024-54호, 2024.6.27.) | 문서 근거 |
 | 2026-11-22 | [기출문제 — 공급망관리(SCM)의 정의와 배경, 효과성과 효율성](posts/PE/exam/2026-11-22-supply-chain-management-effectiveness-efficiency/index.md) | 중급 | ISO 9000:2015, SCOR Digital Standard (ASCM, 2020), Fisher, Harvard Business Review 1997년 3-4월호, Lee·Padmanabhan·Whang, Sloan Management Review 1997년 봄호, CSCMP SCM Definitions and Glossary (2026-11 열람) | 문서 근거 |
 | 2026-11-21 | [기출문제 — 개인정보 안심구역과 데이터안심구역 비교](posts/PE/exam/2026-11-21-privacy-safe-zone-vs-data-safe-zone/index.md) | 중급 | 개인정보보호위원회 보도자료 — 개인정보 안심구역 추가 지정 (2024-07-02), 개인정보보호위원회 보도자료 — 가명정보 활용 정책 설명회 (2024-02-27), 과학기술정보통신부 공고 제2026-0905호 — 2026년 하반기 데이터안심구역 지정 신청 공고 (2026-09-01) | 문서 근거 |
 | 2026-11-21 | [기출문제 — MCP(Model Context Protocol)](posts/PE/exam/2026-11-21-model-context-protocol-mcp/index.md) | 중급 | Model Context Protocol 사양 개정판 2026-07-28 (Overview, Architecture, Base Protocol, Versioning and Compatibility, Transports, Server Features, Elicitation), JSON-RPC 2.0 (2010-03-26, 2013-01-04 갱신) | 문서 근거 |
