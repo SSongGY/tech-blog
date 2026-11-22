@@ -8493,3 +8493,25 @@ topics:
     code: none
     origin: manual
     status: done
+  - id: fin-161
+    title: "구조조정 충당부채 — 이사회 결의만으로는 잡지 않는 이유와 넣을 수 있는 원가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, provisions, restructuring]
+    difficulty: 중급
+    angle: "제1037호 70~83과 제1019호 165로 의제의무가 생기는 시점(공표·착수)과 직접비용만 넣는 범위(80~83, 51)를 가상 회사 공장 폐쇄로 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-162
+    title: "충당부채의 변제 — 보험금을 부채에서 빼지 않고 자산으로 따로 잡는 이유"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, provisions, reimbursement]
+    difficulty: 중급
+    angle: "제1037호 53~58·29·85로 변제 자산의 인식 요건(거의 확실), 충당부채 한도, 손익 상계 표시 허용과 재무상태표 총액 표시, 연대채무를 가상 회사 소송으로 계산"
+    code: python
+    origin: manual
+    status: writing
