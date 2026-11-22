@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#222">hongdae 매장의 최빈값 — 동점 두 메뉴가 갈리는 두 갈래</text>
+
+  <!-- 집계 결과 -->
+  <rect x="30" y="110" width="210" height="170" rx="6" fill="#f4f4f4" stroke="#666" stroke-width="1.5"/>
+  <text x="135" y="134" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">GROUP BY store, menu</text>
+  <text x="60" y="166" font-size="13" fill="#555">menu</text>
+  <text x="200" y="166" text-anchor="end" font-size="13" fill="#555">sold</text>
+  <line x1="50" y1="174" x2="220" y2="174" stroke="#999"/>
+  <text x="60" y="198" font-size="14" fill="#222">americano</text>
+  <text x="200" y="198" text-anchor="end" font-size="14" fill="#b45309" font-weight="bold">2</text>
+  <text x="60" y="226" font-size="14" fill="#222">latte</text>
+  <text x="200" y="226" text-anchor="end" font-size="14" fill="#b45309" font-weight="bold">2</text>
+  <text x="60" y="254" font-size="14" fill="#222">mocha</text>
+  <text x="200" y="254" text-anchor="end" font-size="14" fill="#222">1</text>
+
+  <!-- 위 갈래: 하나만 -->
+  <rect x="300" y="60" width="270" height="110" rx="6" fill="#fdecea" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="435" y="86" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">한 행만 남긴다</text>
+  <text x="435" y="112" text-anchor="middle" font-size="13" fill="#222">max() 옆 맨 컬럼</text>
+  <text x="435" y="134" text-anchor="middle" font-size="13" fill="#222">ORDER BY COUNT(*) DESC LIMIT 1</text>
+  <text x="435" y="156" text-anchor="middle" font-size="13" fill="#222">ROW_NUMBER() = 1</text>
+
+  <!-- 아래 갈래: 최대와 비교 -->
+  <rect x="300" y="220" width="270" height="110" rx="6" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="435" y="246" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">최대 건수와 같은 행을 전부</text>
+  <text x="435" y="272" text-anchor="middle" font-size="13" fill="#222">GROUP BY 두 번 + JOIN</text>
+  <text x="435" y="294" text-anchor="middle" font-size="13" fill="#222">HAVING COUNT(*) = (상관 부질의)</text>
+  <text x="435" y="316" text-anchor="middle" font-size="13" fill="#222">RANK() = 1</text>
+
+  <!-- 결과 -->
+  <rect x="630" y="75" width="220" height="80" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="740" y="104" text-anchor="middle" font-size="14" fill="#222">americano 또는 latte</text>
+  <text x="740" y="130" text-anchor="middle" font-size="13" fill="#9d0208">어느 쪽인지 약속 없음</text>
+
+  <rect x="630" y="235" width="220" height="80" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="740" y="264" text-anchor="middle" font-size="14" fill="#222">americano, latte</text>
+  <text x="740" y="290" text-anchor="middle" font-size="13" fill="#2d6a4f">동점 2행이 모두 남는다</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#444"/>
+    </marker>
+  </defs>
+  <line x1="240" y1="170" x2="294" y2="120" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="240" y1="220" x2="294" y2="270" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="570" y1="115" x2="624" y2="115" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="570" y1="275" x2="624" y2="275" stroke="#444" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="30" y="370" font-size="13" fill="#b45309">동점이 없으면 두 갈래의 결과가 같다 — 차이는 동점이 생긴 그룹에서만 드러난다</text>
+</svg>

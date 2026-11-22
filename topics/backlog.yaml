@@ -8471,3 +8471,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-131
+    title: "그룹별 최빈값 구하기 — 동점을 버리지 않는 세 가지 방법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, group-by, window-function, basics]
+    difficulty: 중급
+    angle: "그룹마다 가장 많이 나온 값을 GROUP BY 두 번, 상관 부질의, RANK 창 함수로 각각 구한다. 동점이 있을 때 맨 컬럼이나 LIMIT 1 이 하나만 남기고 버리는 것과, 세 방법이 동점을 어떻게 다루는지를 나란히 본다"
+    code: none
+    origin: manual
+    status: done
