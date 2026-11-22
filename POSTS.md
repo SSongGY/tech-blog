@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **811편** · 갱신 2026-11-22
+총 **812편** · 갱신 2026-11-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -684,11 +684,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 161편
+## 주식·재무 (finance) — 162편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-22 | [구조조정 충당부채 — 이사회 결의만으로는 잡지 않는 이유와 넣을 수 있는 원가](posts/Finance/statements/2026-11-22-restructuring-provision-direct-costs/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산, 기업회계기준서 제1019호 종업원급여 | 실행 검증 |
+| 2026-11-22 | [충당부채의 변제 — 보험금을 부채에서 빼지 않고 자산으로 따로 잡는 이유](posts/Finance/statements/2026-11-22-provision-reimbursement-separate-asset/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
 | 2026-11-21 | [수익 인식의 유의적 판단 공시 — 진행률 방법, 통제 이전 시점, 거래가격 가정](posts/Finance/statements/2026-11-21-revenue-significant-judgement-disclosure/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-21 | [계약원가 자산 공시 — 범주별 잔액, 상각 방법, 간편법 사용 사실](posts/Finance/statements/2026-11-21-contract-cost-asset-disclosure/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
 | 2026-11-20 | [수익의 구분 공시 — 매출 한 줄을 제품·지역·이행 시기로 나누는 기준](posts/Finance/statements/2026-11-20-revenue-disaggregation-disclosure/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1115호 고객과의 계약에서 생기는 수익 | 실행 검증 |
