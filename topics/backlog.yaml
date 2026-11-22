@@ -8459,7 +8459,7 @@ topics:
     angle: "Lee·Padmanabhan·Whang(1997) 원문의 4가지 원인별 대응을 정리하고, 단계별 주문 분산 증폭을 직접 시뮬레이션해 검산"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-294
     title: "SCOR 모델 — 관리 프로세스 6가지와 성과 속성 5가지"
     category: PE

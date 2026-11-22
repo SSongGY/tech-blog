@@ -198,6 +198,8 @@ Fisher가 든 계산이 우선순위를 설명한다. 공헌이익률 40%·품�
 판매 정보의 기업 간 공유는 효율성과 효과성을 함께 올리는 몇 안 되는 수단이므로, 교환 표준과
 데이터 품질 관리가 SCM 구축의 선행 과제다.
 
+> 개념 정리: [채찍 효과(Bullwhip Effect) — 4가지 원인과 정보 공유 대응](../../it-management/2026-11-22-bullwhip-effect-four-causes-information-sharing/index.md)
+
 끝
 
 ---
