@@ -8482,3 +8482,14 @@ topics:
     code: none
     origin: manual
     status: done
+  - id: gen-045
+    title: "t-digest — 꼬리 분위수가 정확한 이유는 척도 함수에 있다"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [t-digest, quantile, percentile, sketch]
+    difficulty: 중급
+    angle: "Dunning·Ertl(2019) Algorithm 1 의 병합 t-digest 를 파이썬으로 구현하고, 선형 척도 k0 와 아크사인 척도 k1 로 같은 로그정규 데이터의 p0.1~p99.9 순위 오차를 잰다. 꼬리 클러스터 크기, 클러스터 수 상한, 나눠 만든 다이제스트 병합까지 확인한다"
+    code: none
+    origin: manual
+    status: done
