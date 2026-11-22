@@ -8515,3 +8515,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-295
+    title: "전자정부사업관리 위탁(PMO) — 위탁 3단계와 대상 사업 4가지"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "법 제64조의2·시행령 제78조의2~4·위탁 규정으로 PMO의 정의, 위탁 단계별 업무, 대상 사업, 선정·독립성 요건, 감리 면제와의 연결을 정리"
+    code: none
+    origin: exam
+    status: todo
