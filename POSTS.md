@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **807편** · 갱신 2026-11-22
+총 **810편** · 갱신 2026-11-22
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 117편
+## DB문법 (basics) — 118편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-22 | [그룹별 최빈값 구하기 — 동점을 버리지 않는 세 가지 방법](posts/Database/sql-basics/2026-11-22-sql-mode-per-group-ties/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-21 | [ORDER BY CASE — 가나다순이 아닌 업무 순서로 정렬하기](posts/Database/sql-basics/2026-11-21-order-by-case-custom-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-20 | [구성비 — SUM() OVER()로 전체 대비 비율을 구하고 반올림 합을 100에 맞추기](posts/Database/sql-basics/2026-11-20-sql-percent-of-total-rounding/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-19 | [시간 간격으로 세션 나누기 — LAG로 끊는 자리를 찾고 누적 SUM으로 번호 붙이기](posts/Database/sql-basics/2026-11-19-sql-sessionize-by-time-gap/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -151,12 +152,13 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 276편
+## 기술사 (pe) — 277편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-22 | [MCP 개정판 2026-07-28의 무상태 전환 — 핸드셰이크 제거, 요청별 버전·능력 선언, server/discover](posts/PE/emerging-tech/2026-11-22-mcp-stateless-revision-2026-07-28/index.md) | 심화 | Model Context Protocol 사양 개정판 2026-07-28, Model Context Protocol 사양 개정판 2025-11-25 (Lifecycle) | 문서 근거 |
 | 2026-11-22 | [타원곡선 암호(ECC) — 점 덧셈과 스칼라 곱, ECDH·ECDSA를 작은 체에서 계산하기](posts/PE/security/2026-11-22-ecc-point-addition-ecdh-ecdsa-small-field/index.md) | 중급 | Python 3.13.5, NIST SP 800-186 (2023-02), FIPS 186-5 (2023-02), NIST SP 800-56A Rev. 3 (2018-04) | 실행 검증 |
+| 2026-11-22 | [채찍 효과(Bullwhip Effect) — 4가지 원인과 정보 공유 대응](posts/PE/it-management/2026-11-22-bullwhip-effect-four-causes-information-sharing/index.md) | 중급 | Python 3.13.5, Lee·Padmanabhan·Whang, Management Science 43(4), 1997 | 실행 검증 |
 | 2026-11-21 | [DevSecOps와 CI/CD 파이프라인 공급망 보안](posts/PE/security/2026-11-21-devsecops-cicd-supply-chain-security/index.md) | 중급 | NIST SP 800-204D (2024-02-12 최종판) | 문서 근거 |
 | 2026-11-21 | [CC(공통평가기준) — PP·ST·EAL과 CC:2022에서 달라진 것](posts/PE/security/2026-11-21-common-criteria-pp-st-eal-cc2022/index.md) | 중급 | Python 3.13.5, CC:2022 Release 1 Part 1 (CCMB, 2022-11), CC:2022 Release 1 Part 5 (CCMB-2022-11-005, 2022-11) | 실행 검증 |
 | 2026-11-21 | [에이전트의 행동 공간과 자율성 — 사람 관여 4단계와 승인 지점 설계](posts/PE/emerging-tech/2026-11-21-agent-action-space-autonomy-approval-points/index.md) | 중급 | IMDA, Model AI Governance Framework for Agentic AI v1.5 (2026-05-20 발행, 2026-06-05 갱신), Feng·McDonald·Zhang, Levels of Autonomy for AI Agents (Knight First Amendment Institute, 2025-07-28) | 문서 근거 |
@@ -455,10 +457,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 81편
+## 일반 (general) — 82편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-22 | [t-digest — 꼬리 분위수가 정확한 이유는 척도 함수에 있다](posts/Architecture/datastructure/2026-11-22-t-digest-scale-function-tail-accuracy/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
 | 2026-11-21 | [CRC-32가 반드시 잡는 오류와 놓치는 오류](posts/Architecture/datastructure/2026-11-21-crc32-detects-and-misses/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
 | 2026-11-20 | [Base64 — 3바이트를 4글자로 바꾸는 규칙과 패딩·URL 안전 변형](posts/Architecture/datastructure/2026-11-20-base64-padding-url-safe-rfc4648/index.md) | 중급 | Python 3.13.5 | 실행 검증 |
 | 2026-11-19 | [지수가중 이동평균(EWMA) — 응답 시간 감시에서 α가 정하는 반응 속도와 잡음](posts/Backend/monitoring/2026-11-19-ewma-alpha-response-noise/index.md) | 중급 | Python 3.13.5, Windows 11 | 실행 검증 |
