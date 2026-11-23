@@ -8536,7 +8536,7 @@ topics:
     angle: "환각 패키지가 생기는 원인, 반복성 때문에 선점이 가능한 구조, 타이포스쿼팅과의 차이, 설치 전 검증·허용 목록·SCA 대응. Spracklen 외 USENIX Security 2025 근거"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-132
     title: "최고 기록을 갱신한 행만 고르기 — 직전까지의 누적 MAX와 비교"
     category: Database
@@ -8591,7 +8591,7 @@ topics:
     angle: "ISO/IEC 26550 참조 모델의 두 생명주기·두 관리 그룹, 공통성·가변성·바인딩 용어, SEI 세 관리 영역과 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-298
     title: "피처 모델과 가변성 모델링 — 가변점·변형·바인딩 시점"
     category: PE

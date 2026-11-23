@@ -149,6 +149,8 @@ LLM 출력을 신뢰하지 않는 입력으로 다뤄 기존 시큐어 코딩·�
 >
 > 개념 정리: [과도한 에이전시(Excessive Agency) — 기능·권한·자율의 최소화](../../security/2026-11-12-excessive-agency-least-functionality-permission-autonomy/index.md)
 >
+> 개념 정리: [패키지 환각과 슬롭스쿼팅 — LLM이 지어낸 의존성 이름을 노리는 공급망 공격](../../security/2026-11-24-package-hallucination-slopsquatting/index.md)
+>
 > 개념 정리: [DevSecOps와 CI/CD 파이프라인 공급망 보안](../../security/2026-11-21-devsecops-cicd-supply-chain-security/index.md)
 >
 > 개념 정리: [소프트웨어 개발 보안 — 시큐어 코딩과 SDL](../../software-engineering/2026-10-23-secure-coding-and-sdl/index.md)
