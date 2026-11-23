@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **818편** · 갱신 2026-11-24
+총 **820편** · 갱신 2026-11-24
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -153,10 +153,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 277편
+## 기술사 (pe) — 279편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-24 | [SCOR 모델 — 관리 프로세스 6가지와 성과 속성 5가지](posts/PE/it-management/2026-11-24-scor-model-six-processes-five-attributes/index.md) | 중급 | SCOR Digital Standard (ASCM, 2020), SCOR Revision 11.0 (Supply Chain Council, 2012-10) | 문서 근거 |
+| 2026-11-24 | [전자정부사업관리 위탁(PMO) — 위탁 3단계와 대상 사업 4가지](posts/PE/it-management/2026-11-24-egov-project-management-entrustment-pmo/index.md) | 중급 | 전자정부법 (법률 제21394호, 2026.2.27.), 전자정부법 시행령 (대통령령 제36605호, 2026.8.25.), 전자정부사업관리 위탁에 관한 규정 (행정안전부고시 제2024-54호, 2024.6.27.) | 문서 근거 |
 | 2026-11-22 | [MCP 개정판 2026-07-28의 무상태 전환 — 핸드셰이크 제거, 요청별 버전·능력 선언, server/discover](posts/PE/emerging-tech/2026-11-22-mcp-stateless-revision-2026-07-28/index.md) | 심화 | Model Context Protocol 사양 개정판 2026-07-28, Model Context Protocol 사양 개정판 2025-11-25 (Lifecycle) | 문서 근거 |
 | 2026-11-22 | [타원곡선 암호(ECC) — 점 덧셈과 스칼라 곱, ECDH·ECDSA를 작은 체에서 계산하기](posts/PE/security/2026-11-22-ecc-point-addition-ecdh-ecdsa-small-field/index.md) | 중급 | Python 3.13.5, NIST SP 800-186 (2023-02), FIPS 186-5 (2023-02), NIST SP 800-56A Rev. 3 (2018-04) | 실행 검증 |
 | 2026-11-22 | [채찍 효과(Bullwhip Effect) — 4가지 원인과 정보 공유 대응](posts/PE/it-management/2026-11-22-bullwhip-effect-four-causes-information-sharing/index.md) | 중급 | Python 3.13.5, Lee·Padmanabhan·Whang, Management Science 43(4), 1997 | 실행 검증 |
