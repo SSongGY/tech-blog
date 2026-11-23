@@ -203,6 +203,8 @@ PMO는 지시한 근거를, 발주기관은 사업 종료 후에도 운영·개�
 > 개념 정리: [정보시스템 감리 — 제3자 점검이 법으로 자리 잡은 구조](../../it-management/2026-09-21-information-system-audit/index.md)
 >
 > 기출 답안: [기출문제 — PMC와 PMO 비교](../2026-09-21-pmc-pmo/index.md)
+>
+> 개념 정리: [전자정부사업관리 위탁(PMO) — 위탁 3단계와 대상 사업 4가지](../../it-management/2026-11-24-egov-project-management-entrustment-pmo/index.md)
 
 끝
 

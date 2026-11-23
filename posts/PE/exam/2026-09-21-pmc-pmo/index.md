@@ -76,6 +76,8 @@ verified: true
   같은 문제다. PMO든 PMC든 후속 사업 참여 제한을 조건으로 건다.
 
 > 개념 정리: [정보시스템 감리 — 제3자 점검이 법으로 자리 잡은 구조](../../it-management/2026-09-21-information-system-audit/index.md)
+>
+> 개념 정리: [전자정부사업관리 위탁(PMO) — 위탁 3단계와 대상 사업 4가지](../../it-management/2026-11-24-egov-project-management-entrustment-pmo/index.md)
 
 끝
 
