@@ -159,6 +159,8 @@ ISO/IEC 26550이 정리한 핵심은 두 가지다 — 자산을 만드는 **도
 체계를 유지하는 데 달려 있다. 표준이 대상으로 삼는 제품은 소프트웨어만이 아니라 하드웨어와
 소프트웨어가 함께 있는 시스템 수준 제품까지 포함하므로(1절), 임베디드 제품군에도 같은 틀을 적용할 수 있다.
 
+> 개념 정리: [소프트웨어 제품계열 공학 — 도메인 공학과 애플리케이션 공학](../../software-engineering/2026-11-24-software-product-line-engineering/index.md)
+>
 > 개념 정리: [형상관리 — 4대 활동과 베이스라인](../../software-engineering/2026-09-22-configuration-management-baseline/index.md)
 >
 > 개념 정리: [소프트웨어 아키텍처 4+1 뷰](../../software-engineering/2026-09-18-software-architecture-4plus1-views/index.md)

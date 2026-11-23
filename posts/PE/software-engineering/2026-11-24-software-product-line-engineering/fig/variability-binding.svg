@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#f7f7f4"/>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b5b92"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" font-size="17" font-weight="bold" fill="#1b1b1b">가변점 · 변형 · 바인딩 — 도메인 자산 하나에서 제품 둘이 갈라진다</text>
+
+  <!-- 도메인 공학 산출물 -->
+  <text x="24" y="62" font-size="13" font-weight="bold" fill="#2d6a4f">도메인 공학 — 도메인 자산 (한 번 만든다)</text>
+  <rect x="24" y="72" width="832" height="186" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+
+  <rect x="40" y="90" width="190" height="150" rx="6" fill="#eef5f0" stroke="#2d6a4f" stroke-width="1.2"/>
+  <text x="135" y="116" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">공통부 (공통성)</text>
+  <text x="135" y="144" font-size="13" fill="#444444" text-anchor="middle">주문 처리 · 로그</text>
+  <text x="135" y="166" font-size="13" fill="#444444" text-anchor="middle">도메인 아키텍처</text>
+  <text x="135" y="196" font-size="13" fill="#2d6a4f" text-anchor="middle">모든 제품이 그대로 쓴다</text>
+
+  <rect x="246" y="90" width="196" height="150" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="344" y="116" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">가변점 VP1: 결제</text>
+  <rect x="262" y="134" width="164" height="28" rx="4" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="344" y="153" font-size="13" fill="#1b1b1b" text-anchor="middle">변형 a — 카드</text>
+  <rect x="262" y="172" width="164" height="28" rx="4" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="344" y="191" font-size="13" fill="#1b1b1b" text-anchor="middle">변형 b — 계좌이체</text>
+  <text x="344" y="224" font-size="13" fill="#444444" text-anchor="middle">하나 이상 선택</text>
+
+  <rect x="458" y="90" width="196" height="150" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="556" y="116" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">가변점 VP2: 인증</text>
+  <rect x="474" y="134" width="164" height="28" rx="4" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="556" y="153" font-size="13" fill="#1b1b1b" text-anchor="middle">변형 c — 비밀번호</text>
+  <rect x="474" y="172" width="164" height="28" rx="4" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="556" y="191" font-size="13" fill="#1b1b1b" text-anchor="middle">변형 d — OTP</text>
+  <text x="556" y="224" font-size="13" fill="#444444" text-anchor="middle">하나만 선택 (대안)</text>
+
+  <rect x="670" y="90" width="172" height="150" rx="6" fill="#eef2f9" stroke="#3b5b92" stroke-width="1.5"/>
+  <text x="756" y="116" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">가변성 모델</text>
+  <text x="756" y="144" font-size="13" fill="#444444" text-anchor="middle">가변점 · 변형 목록</text>
+  <text x="756" y="166" font-size="13" fill="#444444" text-anchor="middle">요구 · 배제 제약</text>
+  <text x="756" y="188" font-size="13" fill="#444444" text-anchor="middle">자산과의 추적 링크</text>
+  <text x="756" y="218" font-size="13" fill="#3b5b92" text-anchor="middle">기술 관리가 유지</text>
+
+  <!-- 바인딩 -->
+  <line x1="300" y1="262" x2="230" y2="338" stroke="#3b5b92" stroke-width="2" marker-end="url(#ar)"/>
+  <line x1="580" y1="262" x2="650" y2="338" stroke="#3b5b92" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="440" y="300" font-size="14" font-weight="bold" fill="#3b5b92" text-anchor="middle">바인딩 — 가변성 모델에 따라 변형을 고른다</text>
+  <text x="440" y="322" font-size="13" fill="#444444" text-anchor="middle">빌드 시 · 로드 시 · 실행 시</text>
+
+  <!-- 애플리케이션 공학 산출물 -->
+  <text x="24" y="356" font-size="13" font-weight="bold" fill="#b45309">애플리케이션 공학 — 회원 제품 (제품마다 반복)</text>
+  <rect x="80" y="366" width="300" height="80" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.5"/>
+  <text x="230" y="394" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">제품 A</text>
+  <text x="230" y="422" font-size="13" fill="#444444" text-anchor="middle">공통부 + 카드 + 비밀번호</text>
+
+  <rect x="500" y="366" width="300" height="80" rx="6" fill="#ffffff" stroke="#1b1b1b" stroke-width="1.5"/>
+  <text x="650" y="394" font-size="14" font-weight="bold" fill="#1b1b1b" text-anchor="middle">제품 B</text>
+  <text x="650" y="422" font-size="13" fill="#444444" text-anchor="middle">공통부 + 카드 · 계좌이체 + OTP</text>
+</svg>
