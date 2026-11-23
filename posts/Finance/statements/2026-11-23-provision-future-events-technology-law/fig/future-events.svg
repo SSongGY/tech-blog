@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 460" width="880" height="460" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="460" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">충당부채 측정에 미래사건을 넣는 문턱 (제1037호 문단 48~50)</text>
+
+  <rect x="240" y="52" width="400" height="62" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="440" y="77" text-anchor="middle" font-size="14" fill="#1f2937">지출 금액에 영향을 주는 미래사건</text>
+  <text x="440" y="99" text-anchor="middle" font-size="13" fill="#4b5563">충분하고 객관적인 증거가 있는가 (문단 48)</text>
+
+  <line x1="330" y1="114" x2="160" y2="160" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="440" y1="114" x2="440" y2="160" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="550" y1="114" x2="720" y2="160" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 기술: 경험 축적 -->
+  <rect x="30" y="162" width="260" height="110" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="160" y="187" text-anchor="middle" font-size="14" fill="#2d6a4f">현재 기술의 경험 축적</text>
+  <text x="160" y="211" text-anchor="middle" font-size="13" fill="#4b5563">예상 원가 절감 · 작업 난도 할증</text>
+  <text x="160" y="235" text-anchor="middle" font-size="13" fill="#4b5563">독립 전문가의 합리적 예측</text>
+  <text x="160" y="259" text-anchor="middle" font-size="13" fill="#2d6a4f">측정에 반영 (문단 49)</text>
+
+  <!-- 기술: 신기술 -->
+  <rect x="310" y="162" width="260" height="110" rx="6" fill="#fef2f2" stroke="#9d0208"/>
+  <text x="440" y="187" text-anchor="middle" font-size="14" fill="#9d0208">완전히 새로운 기술</text>
+  <text x="440" y="211" text-anchor="middle" font-size="13" fill="#4b5563">개발되리라는 기대만 있다</text>
+  <text x="440" y="235" text-anchor="middle" font-size="13" fill="#4b5563">객관적 증거로 뒷받침되지 않음</text>
+  <text x="440" y="259" text-anchor="middle" font-size="13" fill="#9d0208">반영하지 않음 (문단 49)</text>
+
+  <!-- 법률 -->
+  <rect x="590" y="162" width="260" height="110" rx="6" fill="#fffbeb" stroke="#b45309"/>
+  <text x="720" y="187" text-anchor="middle" font-size="14" fill="#b45309">새로운 법률</text>
+  <text x="720" y="211" text-anchor="middle" font-size="13" fill="#4b5563">요구 내용과 적당한 시일 안의</text>
+  <text x="720" y="235" text-anchor="middle" font-size="13" fill="#4b5563">제정·시행이 거의 확실할 때만</text>
+  <text x="720" y="259" text-anchor="middle" font-size="13" fill="#b45309">대개 제정 전에는 증거 없음 (문단 50)</text>
+
+  <line x1="720" y1="272" x2="720" y2="318" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="590" y="320" width="260" height="62" rx="6" fill="#f9fafb" stroke="#6b7280"/>
+  <text x="720" y="345" text-anchor="middle" font-size="13" fill="#4b5563">입법예고 → 반영 안 함</text>
+  <text x="720" y="367" text-anchor="middle" font-size="13" fill="#4b5563">공포 → 반영</text>
+
+  <rect x="30" y="320" width="540" height="62" rx="6" fill="#f9fafb" stroke="#6b7280"/>
+  <text x="300" y="345" text-anchor="middle" font-size="14" fill="#1f2937">반영한 미래사건의 주요 가정은 주석에 공시한다</text>
+  <text x="300" y="367" text-anchor="middle" font-size="13" fill="#4b5563">유출 금액·시기의 불확실성 정도 (문단 85⑵)</text>
+
+  <text x="440" y="420" text-anchor="middle" font-size="13" fill="#4b5563">측정 대상은 이미 있는 현재의무다 — 미래사건은 그 지출 금액을 추정하는 데만 쓴다</text>
+</svg>
