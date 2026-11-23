@@ -1,0 +1,179 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-23-sql-running-max-record-breaking-rows
+# 명령      : python record_breaking_rows.py
+# 수행 시각 : 2026-11-23 19:08 (대한민국 표준시)
+# 소요      : 0.6초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[play_log]  12행
+  컬럼      | 타입    | 제약
+  ----------+---------+---------
+  play_id   | INTEGER | PK
+  player    | TEXT    | NOT NULL
+  played_on | TEXT    | NOT NULL
+  score     | INTEGER | NOT NULL
+
+  play_id | player | played_on  | score
+  --------+--------+------------+------
+        1 | mina   | 2026-11-01 |   120
+        2 | mina   | 2026-11-02 |   150
+        3 | mina   | 2026-11-03 |   140
+        4 | mina   | 2026-11-04 |   150
+        5 | mina   | 2026-11-05 |   180
+        6 | mina   | 2026-11-05 |   210
+        7 | mina   | 2026-11-06 |   200
+        8 | jun    | 2026-11-01 |   300
+        9 | jun    | 2026-11-02 |   280
+       10 | jun    | 2026-11-03 |   310
+       11 | jun    | 2026-11-03 |   305
+       12 | jun    | 2026-11-04 |   330
+
+
+[1] 판마다 직전까지의 최고점을 나란히
+  sql> SELECT play_id, player, score, MAX(score) OVER (PARTITION BY player ORDER BY play_id ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS prev_best FR ...
+    ('play_id', 'player', 'score', 'prev_best')
+    (8, 'jun', 300, None)
+    (9, 'jun', 280, 300)
+    (10, 'jun', 310, 300)
+    (11, 'jun', 305, 310)
+    (12, 'jun', 330, 310)
+    (1, 'mina', 120, None)
+    (2, 'mina', 150, 120)
+    (3, 'mina', 140, 150)
+    (4, 'mina', 150, 150)
+    (5, 'mina', 180, 150)
+    (6, 'mina', 210, 180)
+    (7, 'mina', 200, 210)
+
+[2] score > prev_best 로만 거른다 — 첫 판이 빠진다
+  sql> SELECT play_id, player, score, prev_best FROM ( SELECT play_id, player, score, MAX(score) OVER (PARTITION BY player ORDER BY play_id ROWS BETWEEN UNBO ...
+    ('play_id', 'player', 'score', 'prev_best')
+    (10, 'jun', 310, 300)
+    (12, 'jun', 330, 310)
+    (2, 'mina', 150, 120)
+    (5, 'mina', 180, 150)
+    (6, 'mina', 210, 180)
+[2-1] 첫 판의 비교 결과는 거짓이 아니라 NULL 이다
+  sql> SELECT 120 > NULL AS cmp, (120 > NULL) IS NULL AS is_null ...
+    ('cmp', 'is_null')
+    (None, 1)
+
+[3-1] prev_best IS NULL 을 더한다
+  sql> SELECT play_id, player, score FROM ( SELECT play_id, player, score, MAX(score) OVER (PARTITION BY player ORDER BY play_id ROWS BETWEEN UNBOUNDED PRECE ...
+    ('play_id', 'player', 'score')
+    (8, 'jun', 300)
+    (10, 'jun', 310)
+    (12, 'jun', 330)
+    (1, 'mina', 120)
+    (2, 'mina', 150)
+    (5, 'mina', 180)
+    (6, 'mina', 210)
+[3-2] COALESCE 로 바닥값을 둔다 — 점수가 음수가 될 수 없을 때만 안전하다
+  sql> SELECT play_id, player, score FROM ( SELECT play_id, player, score, MAX(score) OVER (PARTITION BY player ORDER BY play_id ROWS BETWEEN UNBOUNDED PRECE ...
+    ('play_id', 'player', 'score')
+    (8, 'jun', 300)
+    (10, 'jun', 310)
+    (12, 'jun', 330)
+    (1, 'mina', 120)
+    (2, 'mina', 150)
+    (5, 'mina', 180)
+    (6, 'mina', 210)
+
+[4] 동점을 갱신으로 볼 때 (>=) — mina 4번 판 150 이 끼어든다
+  sql> SELECT play_id, player, score FROM ( SELECT play_id, player, score, MAX(score) OVER (PARTITION BY player ORDER BY play_id ROWS BETWEEN UNBOUNDED PRECE ...
+    ('play_id', 'player', 'score')
+    (8, 'jun', 300)
+    (10, 'jun', 310)
+    (12, 'jun', 330)
+    (1, 'mina', 120)
+    (2, 'mina', 150)
+    (4, 'mina', 150)
+    (5, 'mina', 180)
+    (6, 'mina', 210)
+
+[5-1] 날짜만으로 정렬한 ROWS — 같은 날 두 판의 순서는 질의가 정하지 않았다
+  sql> SELECT play_id, player, played_on, score, MAX(score) OVER (PARTITION BY player ORDER BY played_on ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS ...
+    ('play_id', 'player', 'played_on', 'score', 'prev_rows')
+    (8, 'jun', '2026-11-01', 300, None)
+    (9, 'jun', '2026-11-02', 280, 300)
+    (10, 'jun', '2026-11-03', 310, 300)
+    (11, 'jun', '2026-11-03', 305, 310)
+    (12, 'jun', '2026-11-04', 330, 310)
+    (1, 'mina', '2026-11-01', 120, None)
+    (2, 'mina', '2026-11-02', 150, 120)
+    (3, 'mina', '2026-11-03', 140, 150)
+    (4, 'mina', '2026-11-04', 150, 150)
+    (5, 'mina', '2026-11-05', 180, 150)
+    (6, 'mina', '2026-11-05', 210, 180)
+    (7, 'mina', '2026-11-06', 200, 210)
+[5-2] GROUPS — 같은 날 판은 서로를 보지 않는다 ('전날까지의 최고점')
+  sql> SELECT play_id, player, played_on, score, MAX(score) OVER (PARTITION BY player ORDER BY played_on GROUPS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING)  ...
+    ('play_id', 'player', 'played_on', 'score', 'prev_days')
+    (8, 'jun', '2026-11-01', 300, None)
+    (9, 'jun', '2026-11-02', 280, 300)
+    (10, 'jun', '2026-11-03', 310, 300)
+    (11, 'jun', '2026-11-03', 305, 300)
+    (12, 'jun', '2026-11-04', 330, 310)
+    (1, 'mina', '2026-11-01', 120, None)
+    (2, 'mina', '2026-11-02', 150, 120)
+    (3, 'mina', '2026-11-03', 140, 150)
+    (4, 'mina', '2026-11-04', 150, 150)
+    (5, 'mina', '2026-11-05', 180, 150)
+    (6, 'mina', '2026-11-05', 210, 150)
+    (7, 'mina', '2026-11-06', 200, 210)
+
+[6-1] 상관 부질의 > (SELECT MAX ...) — [2] 와 같은 NULL 함정
+  sql> SELECT p.play_id, p.player, p.score FROM play_log AS p WHERE p.score > (SELECT MAX(e.score) FROM play_log AS e WHERE e.player = p.player AND e.play_id ...
+    ('play_id', 'player', 'score')
+    (10, 'jun', 310)
+    (12, 'jun', 330)
+    (2, 'mina', 150)
+    (5, 'mina', 180)
+    (6, 'mina', 210)
+[6-2] NOT EXISTS — 앞선 판이 없으면 참이라 첫 판이 저절로 들어온다
+  sql> SELECT p.play_id, p.player, p.score FROM play_log AS p WHERE NOT EXISTS (SELECT 1 FROM play_log AS e WHERE e.player = p.player AND e.play_id < p.play_ ...
+    ('play_id', 'player', 'score')
+    (8, 'jun', 300)
+    (10, 'jun', 310)
+    (12, 'jun', 330)
+    (1, 'mina', 120)
+    (2, 'mina', 150)
+    (5, 'mina', 180)
+    (6, 'mina', 210)
+
+[7-1] 실행계획 — 창 함수
+  QUERY PLAN
+  |--CO-ROUTINE (subquery-1)
+  |  |--CO-ROUTINE (subquery-3)
+  |  |  |--SCAN play_log
+  |  |  `--USE TEMP B-TREE FOR ORDER BY
+  |  `--SCAN (subquery-3)
+  `--SCAN (subquery-1)
+[7-2] 실행계획 — NOT EXISTS
+  QUERY PLAN
+  |--SCAN p
+  `--CORRELATED SCALAR SUBQUERY 1
+     `--SEARCH e USING INTEGER PRIMARY KEY (rowid<?)
+
+[7-3] 판 수를 늘려 가며 VDBE 명령 수 (선수 1명)
+    (pattern, rows, records, window, not_exists)
+    ('mixed', 200, 8, 10866, 11709)
+    ('mixed', 400, 12, 21682, 29092)
+    ('mixed', 800, 12, 43282, 59669)
+    ('rising', 200, 200, 11634, 182112)
+    ('rising', 400, 400, 23234, 724212)
+    ('rising', 800, 800, 46434, 2888412)

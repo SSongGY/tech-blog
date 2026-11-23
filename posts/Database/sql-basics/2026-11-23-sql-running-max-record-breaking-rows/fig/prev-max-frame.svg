@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="380" fill="#ffffff"/>
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#222">mina 의 판별 점수와 직전까지의 최고점 — 5번 판을 계산하는 순간</text>
+
+  <!-- 5번 판의 프레임: 1~4번 판 -->
+  <line x1="95" y1="72" x2="495" y2="72" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="95" y1="66" x2="95" y2="80" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="495" y1="66" x2="495" y2="80" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="295" y="60" text-anchor="middle" font-size="13" fill="#2d6a4f">ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING → MAX = 150</text>
+
+  <!-- 행 이름 -->
+  <text x="14" y="100" font-size="13" fill="#555">play_id</text>
+  <text x="14" y="134" font-size="13" fill="#555">score</text>
+  <text x="14" y="184" font-size="13" fill="#555">prev_best</text>
+  <text x="14" y="218" font-size="13" fill="#555">판정 (&gt;)</text>
+
+  <!-- 1 -->
+  <text x="137" y="100" text-anchor="middle" font-size="13" fill="#555">1</text>
+  <rect x="90" y="110" width="95" height="40" rx="4" fill="#f4f4f4" stroke="#666"/>
+  <text x="137" y="135" text-anchor="middle" font-size="15" fill="#222">120</text>
+  <text x="137" y="184" text-anchor="middle" font-size="14" fill="#b45309">NULL</text>
+  <text x="137" y="218" text-anchor="middle" font-size="13" fill="#b45309">NULL → 탈락</text>
+  <!-- 2 -->
+  <text x="242" y="100" text-anchor="middle" font-size="13" fill="#555">2</text>
+  <rect x="195" y="110" width="95" height="40" rx="4" fill="#e6f2ec" stroke="#2d6a4f"/>
+  <text x="242" y="135" text-anchor="middle" font-size="15" fill="#222">150</text>
+  <text x="242" y="184" text-anchor="middle" font-size="14" fill="#222">120</text>
+  <text x="242" y="218" text-anchor="middle" font-size="13" fill="#2d6a4f">갱신</text>
+  <!-- 3 -->
+  <text x="347" y="100" text-anchor="middle" font-size="13" fill="#555">3</text>
+  <rect x="300" y="110" width="95" height="40" rx="4" fill="#f4f4f4" stroke="#666"/>
+  <text x="347" y="135" text-anchor="middle" font-size="15" fill="#222">140</text>
+  <text x="347" y="184" text-anchor="middle" font-size="14" fill="#222">150</text>
+  <text x="347" y="218" text-anchor="middle" font-size="13" fill="#555">-</text>
+  <!-- 4 -->
+  <text x="452" y="100" text-anchor="middle" font-size="13" fill="#555">4</text>
+  <rect x="405" y="110" width="95" height="40" rx="4" fill="#fff4e5" stroke="#b45309"/>
+  <text x="452" y="135" text-anchor="middle" font-size="15" fill="#222">150</text>
+  <text x="452" y="184" text-anchor="middle" font-size="14" fill="#222">150</text>
+  <text x="452" y="218" text-anchor="middle" font-size="13" fill="#b45309">동점 → 탈락</text>
+  <!-- 5: 현재 행 -->
+  <text x="557" y="100" text-anchor="middle" font-size="13" fill="#555">5 (현재 행)</text>
+  <rect x="510" y="110" width="95" height="40" rx="4" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="3"/>
+  <text x="557" y="135" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">180</text>
+  <text x="557" y="184" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">150</text>
+  <text x="557" y="218" text-anchor="middle" font-size="13" fill="#2d6a4f">갱신</text>
+  <!-- 6 -->
+  <text x="662" y="100" text-anchor="middle" font-size="13" fill="#555">6</text>
+  <rect x="615" y="110" width="95" height="40" rx="4" fill="#e6f2ec" stroke="#2d6a4f"/>
+  <text x="662" y="135" text-anchor="middle" font-size="15" fill="#222">210</text>
+  <text x="662" y="184" text-anchor="middle" font-size="14" fill="#222">180</text>
+  <text x="662" y="218" text-anchor="middle" font-size="13" fill="#2d6a4f">갱신</text>
+  <!-- 7 -->
+  <text x="767" y="100" text-anchor="middle" font-size="13" fill="#555">7</text>
+  <rect x="720" y="110" width="95" height="40" rx="4" fill="#f4f4f4" stroke="#666"/>
+  <text x="767" y="135" text-anchor="middle" font-size="15" fill="#222">200</text>
+  <text x="767" y="184" text-anchor="middle" font-size="14" fill="#222">210</text>
+  <text x="767" y="218" text-anchor="middle" font-size="13" fill="#555">-</text>
+
+  <line x1="20" y1="245" x2="860" y2="245" stroke="#ccc"/>
+  <text x="20" y="275" font-size="13" fill="#222">· 프레임 끝이 1 PRECEDING 이라 현재 행은 자기 자신과 비교하지 않는다. 5번 판은 1~4번 판의 최고점 150 과 비교된다</text>
+  <text x="20" y="303" font-size="13" fill="#b45309">· 1번 판은 프레임이 비어 MAX 가 NULL 이다. 120 &gt; NULL 은 NULL 이라 WHERE 를 통과하지 못한다</text>
+  <text x="20" y="331" font-size="13" fill="#b45309">· 4번 판은 직전 최고점과 같다. &gt; 로 거르면 빠지고 &gt;= 로 거르면 들어온다</text>
+  <text x="20" y="359" font-size="13" fill="#222">· 5·6번 판은 같은 날이다. GROUPS 프레임으로 바꾸면 6번 판의 prev_best 는 180 이 아니라 150 이 된다</text>
+</svg>

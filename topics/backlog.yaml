@@ -8537,3 +8537,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-132
+    title: "최고 기록을 갱신한 행만 고르기 — 직전까지의 누적 MAX와 비교"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, running-max, basics]
+    difficulty: 중급
+    angle: "각 행을 그 앞 행들까지의 MAX(ROWS UNBOUNDED PRECEDING AND 1 PRECEDING)와 비교해 기록 갱신 행만 남긴다. 첫 행의 NULL, 같은 값(동점)을 갱신으로 볼지, 정렬 키가 같은 행에서 ROWS와 RANGE가 갈리는 지점, 상관 부질의 방식과의 결과·실행계획 비교"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-046
+    title: "ARC 캐시 — 순차 스캔 한 번에 LRU가 비워질 때 최근성과 빈도를 나눠 갖는 법"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [cache, arc, lru, replacement-policy]
+    difficulty: 심화
+    angle: "Megiddo·Modha FAST 2003 논문의 ARC 의사코드를 파이썬으로 옮겨 LRU와 같은 접근열에서 적중률을 잰다. 순차 스캔이 섞일 때 LRU가 뜨거운 키를 잃는 장면, T1·T2·B1·B2 네 목록과 적응 변수 p가 움직이는 과정을 기록으로 보인다"
+    code: python
+    origin: manual
+    status: todo
