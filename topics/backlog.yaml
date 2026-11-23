@@ -8526,3 +8526,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-296
+    title: "패키지 환각과 슬롭스쿼팅 — LLM이 지어낸 의존성 이름을 노리는 공급망 공격"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "환각 패키지가 생기는 원인, 반복성 때문에 선점이 가능한 구조, 타이포스쿼팅과의 차이, 설치 전 검증·허용 목록·SCA 대응. Spracklen 외 USENIX Security 2025 근거"
+    code: none
+    origin: exam
+    status: todo
