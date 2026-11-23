@@ -8470,7 +8470,7 @@ topics:
     angle: "ASCM SCOR Digital Standard 기준으로 프로세스 계층·성과 속성·1수준 지표 체계와 지표 분해(root-causing)를 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-131
     title: "그룹별 최빈값 구하기 — 동점을 버리지 않는 세 가지 방법"
     category: Database
@@ -8525,7 +8525,7 @@ topics:
     angle: "법 제64조의2·시행령 제78조의2~4·위탁 규정으로 PMO의 정의, 위탁 단계별 업무, 대상 사업, 선정·독립성 요건, 감리 면제와의 연결을 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-296
     title: "패키지 환각과 슬롭스쿼팅 — LLM이 지어낸 의존성 이름을 노리는 공급망 공격"
     category: PE

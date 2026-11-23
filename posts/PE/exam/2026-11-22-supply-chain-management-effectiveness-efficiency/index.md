@@ -199,6 +199,8 @@ Fisher가 든 계산이 우선순위를 설명한다. 공헌이익률 40%·품�
 데이터 품질 관리가 SCM 구축의 선행 과제다.
 
 > 개념 정리: [채찍 효과(Bullwhip Effect) — 4가지 원인과 정보 공유 대응](../../it-management/2026-11-22-bullwhip-effect-four-causes-information-sharing/index.md)
+>
+> 개념 정리: [SCOR 모델 — 관리 프로세스 6가지와 성과 속성 5가지](../../it-management/2026-11-24-scor-model-six-processes-five-attributes/index.md)
 
 끝
 
