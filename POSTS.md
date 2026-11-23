@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **814편** · 갱신 2026-11-23
+총 **815편** · 갱신 2026-11-23
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 118편
+## DB문법 (basics) — 119편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-23 | [최고 기록을 갱신한 행만 고르기 — 직전까지의 누적 MAX와 비교](posts/Database/sql-basics/2026-11-23-sql-running-max-record-breaking-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-22 | [그룹별 최빈값 구하기 — 동점을 버리지 않는 세 가지 방법](posts/Database/sql-basics/2026-11-22-sql-mode-per-group-ties/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-21 | [ORDER BY CASE — 가나다순이 아닌 업무 순서로 정렬하기](posts/Database/sql-basics/2026-11-21-order-by-case-custom-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-20 | [구성비 — SUM() OVER()로 전체 대비 비율을 구하고 반올림 합을 100에 맞추기](posts/Database/sql-basics/2026-11-20-sql-percent-of-total-rounding/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |

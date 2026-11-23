@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 470" width="880" height="470" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+  <text x="440" y="30" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">충당부채의 현재가치 — 위험은 한 곳에만 (제1037호)</text>
+
+  <!-- 출발점 -->
+  <rect x="290" y="55" width="300" height="62" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="440" y="80" text-anchor="middle" font-size="14" fill="#1f2937">결과 분포의 기댓값 1,000</text>
+  <text x="440" y="102" text-anchor="middle" font-size="13" fill="#4b5563">10년 뒤 정화 지출 · 문단 36·39</text>
+
+  <line x1="370" y1="117" x2="190" y2="160" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="510" y1="117" x2="690" y2="160" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 가) -->
+  <rect x="40" y="162" width="340" height="96" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="210" y="186" text-anchor="middle" font-size="14" fill="#2d6a4f">가) 현금흐름에 위험조정</text>
+  <text x="210" y="210" text-anchor="middle" font-size="13" fill="#4b5563">현금흐름 1,080 · 할인율 4.000%</text>
+  <text x="210" y="234" text-anchor="middle" font-size="13" fill="#4b5563">할인율에는 위험을 넣지 않는다 (문단 47)</text>
+
+  <!-- 나) -->
+  <rect x="500" y="162" width="340" height="96" rx="6" fill="#ecfdf5" stroke="#2d6a4f"/>
+  <text x="670" y="186" text-anchor="middle" font-size="14" fill="#2d6a4f">나) 할인율에 위험 반영</text>
+  <text x="670" y="210" text-anchor="middle" font-size="13" fill="#4b5563">현금흐름 1,000 · 할인율 3.203%</text>
+  <text x="670" y="234" text-anchor="middle" font-size="13" fill="#4b5563">부채의 위험은 할인율을 낮춘다</text>
+
+  <line x1="210" y1="258" x2="380" y2="300" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="670" y1="258" x2="500" y2="300" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="290" y="302" width="300" height="56" rx="6" fill="#ecfdf5" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="440" y="326" text-anchor="middle" font-size="14" fill="#2d6a4f">충당부채 729.61</text>
+  <text x="440" y="346" text-anchor="middle" font-size="13" fill="#4b5563">두 길은 같은 금액에 닿는다</text>
+
+  <!-- 다) -->
+  <rect x="190" y="388" width="500" height="62" rx="6" fill="#fef2f2" stroke="#9d0208"/>
+  <text x="440" y="412" text-anchor="middle" font-size="14" fill="#9d0208">다) 1,080 을 3.203% 로 할인 → 787.98</text>
+  <text x="440" y="436" text-anchor="middle" font-size="13" fill="#4b5563">같은 위험을 두 번 넣은 과대 표시 · 문단 43</text>
+</svg>
