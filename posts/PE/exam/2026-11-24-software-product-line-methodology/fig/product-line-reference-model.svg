@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <text x="440" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#222">제품계열 참조 모델 — 두 생명주기와 두 관리 그룹</text>
+
+  <!-- 관리 프로세스 그룹 -->
+  <rect x="40" y="56" width="390" height="56" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="235" y="80" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">조직 관리 프로세스 그룹</text>
+  <text x="235" y="100" text-anchor="middle" font-size="13" fill="#444">조직 수준 계획 · 전환 기반 마련 · 제품계열 운영</text>
+
+  <rect x="450" y="56" width="390" height="56" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="645" y="80" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">기술 관리 프로세스 그룹</text>
+  <text x="645" y="100" text-anchor="middle" font-size="13" fill="#444">프로세스 · 가변성 · 자산 · 지원 관리</text>
+
+  <line x1="440" y1="112" x2="440" y2="140" stroke="#555" stroke-dasharray="4 3"/>
+  <text x="452" y="132" font-size="13" fill="#555">두 생명주기 전체를 계획·통제</text>
+
+  <!-- 도메인 공학 -->
+  <rect x="40" y="148" width="520" height="116" rx="8" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="300" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">도메인 공학 — 공통성·가변성을 정의하고 자산을 만든다</text>
+  <text x="300" y="208" text-anchor="middle" font-size="13" fill="#333">① 제품계열 범위 정의 → ② 도메인 요구공학 → ③ 도메인 설계</text>
+  <text x="300" y="232" text-anchor="middle" font-size="13" fill="#333">→ ④ 도메인 구현 → ⑤ 도메인 검증·확인</text>
+  <text x="300" y="254" text-anchor="middle" font-size="13" fill="#2d6a4f">한 번 만들어 여러 제품이 쓴다 (재사용을 위한 개발)</text>
+
+  <!-- 자산 기반 -->
+  <rect x="620" y="148" width="220" height="116" rx="8" fill="#e7f0ff" stroke="#3b5b92" stroke-width="1.6"/>
+  <text x="730" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">도메인 자산 (핵심 자산)</text>
+  <text x="730" y="204" text-anchor="middle" font-size="13" fill="#333">요구 · 도메인 아키텍처</text>
+  <text x="730" y="226" text-anchor="middle" font-size="13" fill="#333">컴포넌트 · 테스트 케이스</text>
+  <text x="730" y="250" text-anchor="middle" font-size="13" font-weight="bold" fill="#3b5b92">+ 가변성 모델</text>
+
+  <line x1="560" y1="206" x2="616" y2="206" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrGreen)"/>
+
+  <!-- 애플리케이션 공학 -->
+  <rect x="40" y="330" width="520" height="104" rx="8" fill="#fff4e6" stroke="#b45309" stroke-width="1.6"/>
+  <text x="300" y="358" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">애플리케이션 공학 — 자산을 재사용하고 가변성을 바인딩한다</text>
+  <text x="300" y="390" text-anchor="middle" font-size="13" fill="#333">① 애플리케이션 요구공학 → ② 설계 → ③ 구현 → ④ 검증·확인</text>
+  <text x="300" y="416" text-anchor="middle" font-size="13" fill="#b45309">제품마다 반복한다 (재사용에 의한 개발)</text>
+
+  <!-- 회원 제품 -->
+  <rect x="620" y="330" width="220" height="104" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="730" y="362" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">회원 제품</text>
+  <text x="730" y="390" text-anchor="middle" font-size="13" fill="#333">제품 A · 제품 B · 제품 C</text>
+  <text x="730" y="414" text-anchor="middle" font-size="13" fill="#444">(시장·고객별 변형)</text>
+
+  <!-- 자산 → 애플리케이션 공학 -->
+  <line x1="690" y1="264" x2="500" y2="326" stroke="#3b5b92" stroke-width="2" marker-end="url(#arrGray)"/>
+  <text x="650" y="322" font-size="13" fill="#3b5b92">재사용 · 바인딩</text>
+  <!-- 애플리케이션 공학 → 자산 (피드백) -->
+  <path d="M 200 330 L 200 296 L 760 296 L 760 268" fill="none" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrAmber)"/>
+  <text x="212" y="290" font-size="13" fill="#b45309">피드백: 애플리케이션 자산 → 도메인 자산 승격</text>
+
+  <line x1="560" y1="382" x2="616" y2="382" stroke="#b45309" stroke-width="2" marker-end="url(#arrAmber)"/>
+
+  <text x="440" y="474" text-anchor="middle" font-size="13" fill="#444">단일 시스템 공학과 갈리는 두 가지: 생명주기가 둘이다 · 가변성을 명시적으로 정의한다</text>
+</svg>

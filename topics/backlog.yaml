@@ -8581,3 +8581,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-297
+    title: "소프트웨어 제품계열 공학 — 도메인 공학과 애플리케이션 공학"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "ISO/IEC 26550 참조 모델의 두 생명주기·두 관리 그룹, 공통성·가변성·바인딩 용어, SEI 세 관리 영역과 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-298
+    title: "피처 모델과 가변성 모델링 — 가변점·변형·바인딩 시점"
+    category: PE
+    subcategory: software-engineering
+    track: pe
+    tags: [정보관리기술사, software-engineering, 개념정리]
+    difficulty: 중급
+    angle: "FODA 피처 다이어그램의 필수·선택·대안과 제약, ISO/IEC 26550 가변성 모델 요소, 빌드·로드·실행 시 바인딩 기법 비교"
+    code: none
+    origin: exam
+    status: todo
