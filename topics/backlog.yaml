@@ -8624,4 +8624,4 @@ topics:
     angle: "제1037호 문단 27~30·86~88·91~92. 소송 다섯 건이 해마다 희박·높지 않음·높음 사이를 옮겨 다닐 때 재무상태표와 주석이 어떻게 바뀌는지 계산한다"
     code: python
     origin: manual
-    status: todo
+    status: done

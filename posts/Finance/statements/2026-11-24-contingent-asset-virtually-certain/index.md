@@ -133,4 +133,5 @@ def plaintiff_view(outcomes, settled):
 - [기업회계기준서 제1037호 '충당부채, 우발부채 및 우발자산'](https://www.samili.com/acc/Kijun/Kijunjomun.asp?code=1978-1037) (제3자 전재, 2021-04-23 개정) — 문단 10 정의, 14 인식 요건, 23 가능성이 높음, 27·28 우발부채, 31~35 우발자산, 36·40 최선의 추정치, 53 변제, 86 우발부채 공시, 89·90 우발자산 공시
 - [IAS 37 Provisions, Contingent Liabilities and Contingent Assets](https://www.ifrs.org/issued-standards/list-of-standards/ias-37-provisions-contingent-liabilities-and-contingent-assets/) — IFRS Foundation
 - [충당부채와 우발부채 — 아직 나가지 않은 돈을 부채로 잡는 기준](../2026-10-10-provisions-and-contingent-liabilities/index.md) — 이 블로그의 앞선 글
+- [우발부채 공시 — 유출 가능성 세 구간과 해마다 다시 하는 평가](../2026-11-24-contingent-liability-disclosure-bands/index.md) — 같은 문턱을 낼 돈 쪽에서 본 글
 - 숫자는 이 글의 [`code/output.txt`](code/output.txt) `[1]`~`[3]`에서 옮겼다
