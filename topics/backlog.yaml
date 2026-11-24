@@ -8558,7 +8558,7 @@ topics:
     angle: "Megiddo·Modha FAST 2003 논문의 ARC 의사코드를 파이썬으로 옮겨 LRU와 같은 접근열에서 적중률을 잰다. 순차 스캔이 섞일 때 LRU가 뜨거운 키를 잃는 장면, T1·T2·B1·B2 네 목록과 적응 변수 p가 움직이는 과정을 기록으로 보인다"
     code: python
     origin: manual
-    status: todo
+    status: done
   - id: fin-163
     title: "충당부채의 할인율 — 위험을 현금흐름과 할인율 중 한 곳에만 반영하는 이유"
     category: Finance
