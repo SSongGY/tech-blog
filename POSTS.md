@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **826편** · 갱신 2026-11-25
+총 **827편** · 갱신 2026-11-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -551,10 +551,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 138편
+## 기출문제 (exam) — 139편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-25 | [기출문제 — 데이터베이스 인덱스, 클러스터드와 논클러스터드 인덱스 비교](posts/PE/exam/2026-11-25-clustered-vs-nonclustered-index/index.md) | 중급 | SQL Server 2022 문서 (Microsoft Learn, 2026-10 갱신), MySQL 8.0 Reference Manual §17.6.2.1, Oracle Database 19c Concepts 3장, PostgreSQL 16 문서 | 문서 근거 |
 | 2026-11-24 | [기출문제 — 소프트웨어 제품계열(Product Line) 방법론의 개념·특징, 활용 기술과 고려사항](posts/PE/exam/2026-11-24-software-product-line-methodology/index.md) | 중급 | ISO/IEC 26550:2015 (2판, 2022 확인), CMU/SEI-2003-TN-031 (2003-10), CMU/SEI-90-TR-21 (1990-11), Krueger, PFE 2001 (LNCS 2290, 2002) | 문서 근거 |
 | 2026-11-23 | [기출문제 — AI 기반 소프트웨어 개발에 LLM을 도입할 때의 보안 위험과 대응 방안](posts/PE/exam/2026-11-23-llm-adoption-security-risks-in-software-development/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM01·LLM02·LLM05·LLM06·LLM09), NIST AI 600-1 (2024-07), NIST SP 800-218A (2024-07), Pearce 외, IEEE S&P 2022 (arXiv:2108.09293v3), Spracklen 외, USENIX Security 2025 (arXiv:2406.10279v3) | 문서 근거 |
 | 2026-11-23 | [기출문제 — 정보시스템 감리의 법적 근거와 PMO의 정의·역할·대상 범위, 상주감리와의 비교](posts/PE/exam/2026-11-23-information-system-audit-law-and-pmo/index.md) | 중급 | 전자정부법 (법률 제21394호, 2026.2.27.), 전자정부법 시행령 (대통령령 제36605호, 2026.8.25.), 정보시스템 감리기준 (행정안전부고시 제2024-53호, 2024.6.27.), 전자정부사업관리 위탁에 관한 규정 (행정안전부고시 제2024-54호, 2024.6.27.) | 문서 근거 |
