@@ -8603,3 +8603,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: fin-165
+    title: "우발자산 — 실현이 거의 확실해질 때까지 장부에 올리지 않는 받을 돈"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, contingent-asset, provisions]
+    difficulty: 중급
+    angle: "제1037호 문단 31~35·89~90. 같은 소송의 원고와 피고가 단계마다 장부에 무엇을 올리는지 비교해 인식 문턱의 비대칭을 계산한다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-166
+    title: "우발부채 공시 — 유출 가능성 세 구간과 해마다 다시 하는 평가"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, contingent-liability, disclosure]
+    difficulty: 중급
+    angle: "제1037호 문단 27~30·86~88·91~92. 소송 다섯 건이 해마다 희박·높지 않음·높음 사이를 옮겨 다닐 때 재무상태표와 주석이 어떻게 바뀌는지 계산한다"
+    code: python
+    origin: manual
+    status: todo

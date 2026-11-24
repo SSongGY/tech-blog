@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <text x="440" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">같은 가능성, 받을 쪽과 낼 쪽의 처리</text>
+
+  <!-- 열 제목 -->
+  <text x="130" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">가능성</text>
+  <text x="400" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">받을 수도 있는 돈 (우발자산)</text>
+  <text x="700" y="76" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">낼 수도 있는 돈 (우발부채)</text>
+
+  <!-- 행 1: 거의 확실 -->
+  <rect x="40" y="92" width="180" height="70" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="130" y="122" text-anchor="middle" font-size="14" fill="#111827">거의 확실</text>
+  <text x="130" y="142" text-anchor="middle" font-size="13" fill="#4b5563">수치 기준 없음</text>
+  <rect x="260" y="92" width="280" height="70" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="400" y="122" text-anchor="middle" font-size="14" fill="#2d6a4f" font-weight="bold">자산과 이익 인식</text>
+  <text x="400" y="142" text-anchor="middle" font-size="13" fill="#1f2937">우발자산이 아니다 (33·35)</text>
+  <rect x="580" y="92" width="260" height="70" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="710" y="122" text-anchor="middle" font-size="14" fill="#2d6a4f" font-weight="bold">부채 인식</text>
+  <text x="710" y="142" text-anchor="middle" font-size="13" fill="#1f2937">이미 아래 칸에서 인식됨</text>
+
+  <!-- 행 2: 높음 -->
+  <rect x="40" y="176" width="180" height="70" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="130" y="206" text-anchor="middle" font-size="14" fill="#111827">높음</text>
+  <text x="130" y="226" text-anchor="middle" font-size="13" fill="#4b5563">일어날 쪽이 더 큼 (23)</text>
+  <rect x="260" y="176" width="280" height="70" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="400" y="206" text-anchor="middle" font-size="14" fill="#b45309" font-weight="bold">인식 안 함, 공시</text>
+  <text x="400" y="226" text-anchor="middle" font-size="13" fill="#1f2937">특성과 추정 금액 (34·89)</text>
+  <rect x="580" y="176" width="260" height="70" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="710" y="206" text-anchor="middle" font-size="14" fill="#2d6a4f" font-weight="bold">충당부채 인식</text>
+  <text x="710" y="226" text-anchor="middle" font-size="13" fill="#1f2937">최선의 추정치 (14·36)</text>
+
+  <!-- 행 3: 높지 않음 -->
+  <rect x="40" y="260" width="180" height="70" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="130" y="290" text-anchor="middle" font-size="14" fill="#111827">높지 않음</text>
+  <text x="130" y="310" text-anchor="middle" font-size="13" fill="#4b5563">희박하지는 않음</text>
+  <rect x="260" y="260" width="280" height="70" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="400" y="290" text-anchor="middle" font-size="14" fill="#9d0208" font-weight="bold">인식도 공시도 안 함</text>
+  <text x="400" y="310" text-anchor="middle" font-size="13" fill="#1f2937">문단 34 의 문턱 아래</text>
+  <rect x="580" y="260" width="260" height="70" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="710" y="290" text-anchor="middle" font-size="14" fill="#b45309" font-weight="bold">인식 안 함, 공시</text>
+  <text x="710" y="310" text-anchor="middle" font-size="13" fill="#1f2937">특성과 추정 금액 (28·86)</text>
+
+  <!-- 행 4: 희박 -->
+  <rect x="40" y="344" width="180" height="70" rx="6" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="130" y="374" text-anchor="middle" font-size="14" fill="#111827">희박</text>
+  <text x="130" y="394" text-anchor="middle" font-size="13" fill="#4b5563">수치 기준 없음</text>
+  <rect x="260" y="344" width="280" height="70" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="400" y="384" text-anchor="middle" font-size="14" fill="#9d0208" font-weight="bold">인식도 공시도 안 함</text>
+  <rect x="580" y="344" width="260" height="70" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="710" y="384" text-anchor="middle" font-size="14" fill="#9d0208" font-weight="bold">인식도 공시도 안 함</text>
+</svg>
