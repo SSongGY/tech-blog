@@ -131,6 +131,8 @@ ISO/IEC 26550 서문은 단일 시스템 공학과 가르는 특성으로 **두 
 > 기출 답안: [기출문제 — 소프트웨어 제품계열(Product Line) 방법론의 개념·특징, 활용 기술과 고려사항](../../exam/2026-11-24-software-product-line-methodology/index.md)
 >
 > 함께 보기: [형상관리 — 4대 활동과 베이스라인](../2026-09-22-configuration-management-baseline/index.md)
+>
+> 피처 모델 표기: [피처 모델과 가변성 모델링 — 피처 3종류, 조합 규칙 2가지, 바인딩 시점 3가지](../2026-11-24-foda-feature-model-composition-binding/index.md)
 
 ## 참고 자료
 

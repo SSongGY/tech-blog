@@ -1,0 +1,35 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\PE\software-engineering\2026-11-24-foda-feature-model-composition-binding
+# 명령      : python feature_configs.py
+# 수행 시각 : 2026-11-24 23:00 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+[1] FODA 자동차 예 — 원시 조합과 유효 구성
+    비루트 피처 7개 -> 원시 조합 128개
+    구조 규칙만 적용      -> 유효 8개
+    + requires 1개 적용   -> 유효 6개
+      ['automatic', 'horsepower', 'hp_over_100', 'transmission']
+      ['automatic', 'horsepower', 'hp_100_or_less', 'transmission']
+      ['horsepower', 'hp_over_100', 'manual', 'transmission']
+      ['horsepower', 'hp_100_or_less', 'manual', 'transmission']
+      ['air_conditioning', 'automatic', 'horsepower', 'hp_over_100', 'transmission']
+      ['air_conditioning', 'horsepower', 'hp_over_100', 'manual', 'transmission']
+
+[2] 부분 선택 전파 — 고객이 에어컨과 수동 변속기만 골랐다
+    유효로 정해짐: ['air_conditioning', 'horsepower', 'hp_over_100', 'manual', 'transmission']
+    무효로 정해짐: ['automatic', 'hp_100_or_less']
+    충돌: 없음
+  같은 고객이 '100 이하' 엔진까지 고르면
+    충돌: ['hp_100_or_less', 'hp_over_100']
+
+[3] 독립 선택 피처 10개 (f0..f9) 에 조합 규칙을 더할 때
+    규칙 없음                            유효  1024개
+    f0 requires f1                   유효   768개
+    f2 mutex-with f3                 유효   768개
+    둘 다                              유효   576개
+    f0 requires f1, f1 requires f2   유효   512개

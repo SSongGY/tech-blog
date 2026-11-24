@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="28" text-anchor="middle" font-size="17" font-weight="bold" fill="#222">FODA 피처 다이어그램 — 자동차 예 (필수·선택·대안 + 조합 규칙)</text>
+
+  <!-- 간선 -->
+  <line x1="440" y1="100" x2="200" y2="170" stroke="#444" stroke-width="1.5"/>
+  <line x1="440" y1="100" x2="440" y2="170" stroke="#444" stroke-width="1.5"/>
+  <line x1="440" y1="100" x2="680" y2="164" stroke="#444" stroke-width="1.5"/>
+  <circle cx="680" cy="164" r="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <line x1="200" y1="210" x2="120" y2="290" stroke="#444" stroke-width="1.5"/>
+  <line x1="200" y1="210" x2="280" y2="290" stroke="#444" stroke-width="1.5"/>
+  <path d="M175,235 A35.4,35.4 0 0 0 225,235" fill="none" stroke="#444" stroke-width="1.5"/>
+
+  <!-- 피처 -->
+  <rect x="380" y="60" width="120" height="40" rx="4" fill="#f4f4f4" stroke="#444" stroke-width="1.5"/>
+  <text x="440" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#222">Car</text>
+
+  <rect x="125" y="170" width="150" height="40" rx="4" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="200" y="195" text-anchor="middle" font-size="14" fill="#222">Transmission</text>
+  <rect x="365" y="170" width="150" height="40" rx="4" fill="#e6f2ec" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="440" y="195" text-anchor="middle" font-size="14" fill="#222">Horsepower</text>
+  <rect x="605" y="170" width="150" height="40" rx="4" fill="#fff4e5" stroke="#b45309" stroke-width="1.5"/>
+  <text x="680" y="195" text-anchor="middle" font-size="14" fill="#222">Air conditioning</text>
+
+  <rect x="60" y="290" width="120" height="40" rx="4" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="120" y="315" text-anchor="middle" font-size="14" fill="#222">Manual</text>
+  <rect x="220" y="290" width="120" height="40" rx="4" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="280" y="315" text-anchor="middle" font-size="14" fill="#222">Automatic</text>
+
+  <!-- 범례 -->
+  <text x="440" y="236" text-anchor="middle" font-size="13" fill="#2d6a4f">필수 (선만)</text>
+  <text x="680" y="236" text-anchor="middle" font-size="13" fill="#b45309">선택 (끝의 빈 원)</text>
+  <text x="200" y="358" text-anchor="middle" font-size="13" fill="#222">대안 (간선을 잇는 호) — 하나만 고른다</text>
+
+  <!-- 조합 규칙 -->
+  <rect x="430" y="280" width="410" height="80" rx="6" fill="#f7f7f7" stroke="#666" stroke-dasharray="5,3"/>
+  <text x="450" y="306" font-size="13" font-weight="bold" fill="#222">조합 규칙 (도식 밖에 글로 적는다)</text>
+  <text x="450" y="330" font-size="13" fill="#222">Air conditioning requires Horsepower &gt; 100</text>
+  <text x="450" y="350" font-size="13" fill="#555">형식: &lt;피처1&gt; requires | mutex-with &lt;피처2&gt;</text>
+
+  <text x="40" y="396" font-size="13" fill="#555">유효 구성 = 변속기 2 × 엔진 구간 2 × 에어컨 유무 2 = 8, requires 가 '100 이하 + 에어컨' 2개를 지워 6 (실습 [1])</text>
+</svg>
