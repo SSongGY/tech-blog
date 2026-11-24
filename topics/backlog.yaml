@@ -8625,3 +8625,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-299
+    title: "클러스터드 인덱스와 인덱스 구성 테이블(IOT)"
+    category: PE
+    subcategory: database
+    track: pe
+    tags: [정보관리기술사, database, 개념정리]
+    difficulty: 중급
+    angle: "행 위치자(RID·클러스터드 키·논리 rowid)로 SQL Server·InnoDB·Oracle IOT·PostgreSQL 저장 방식을 가르고 키 설계 기준을 정리"
+    code: none
+    origin: exam
+    status: todo
