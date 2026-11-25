@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#ffffff"/>
+
+  <!-- 왼쪽: 정규화 형식 네 가지 -->
+  <text x="220" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">정규화 형식 4가지</text>
+  <text x="180" y="62" font-size="13" text-anchor="middle" fill="#444">분해만</text>
+  <text x="330" y="62" font-size="13" text-anchor="middle" fill="#444">분해 → 정준 결합</text>
+  <text x="40" y="112" font-size="13" fill="#444">정준</text>
+  <text x="40" y="130" font-size="13" fill="#444">분해</text>
+  <text x="40" y="202" font-size="13" fill="#444">호환</text>
+  <text x="40" y="220" font-size="13" fill="#444">분해</text>
+
+  <rect x="110" y="80" width="140" height="70" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="180" y="110" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">NFD</text>
+  <text x="180" y="134" font-size="13" text-anchor="middle" fill="#333">각 → ᄀ ᅡ ᆨ</text>
+
+  <rect x="260" y="80" width="140" height="70" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="330" y="110" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">NFC</text>
+  <text x="330" y="134" font-size="13" text-anchor="middle" fill="#333">ᄀ ᅡ ᆨ → 각</text>
+
+  <rect x="110" y="170" width="140" height="70" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="180" y="200" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">NFKD</text>
+  <text x="180" y="224" font-size="13" text-anchor="middle" fill="#333">① → 1, ﬁ → f i</text>
+
+  <rect x="260" y="170" width="140" height="70" rx="6" fill="#fdf3e7" stroke="#b45309"/>
+  <text x="330" y="200" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">NFKC</text>
+  <text x="330" y="224" font-size="13" text-anchor="middle" fill="#b45309">ㄱㅏ → 가</text>
+
+  <text x="220" y="272" font-size="13" text-anchor="middle" fill="#444">정준 동등: 같은 글자의 다른 표기 — 뜻이 그대로다</text>
+  <text x="220" y="292" font-size="13" text-anchor="middle" fill="#444">호환 동등: 더 약한 동등 — 모양·뜻이 바뀔 수 있다</text>
+
+  <!-- 오른쪽: 한글 음절 산술 분해 -->
+  <line x1="450" y1="20" x2="450" y2="310" stroke="#dddddd"/>
+  <text x="665" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">한글 음절의 산술 분해</text>
+
+  <rect x="595" y="50" width="140" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="665" y="76" font-size="18" font-weight="bold" text-anchor="middle" fill="#222">각</text>
+  <text x="665" y="97" font-size="13" text-anchor="middle" fill="#333">U+AC01 (1글자, 3바이트)</text>
+
+  <text x="665" y="130" font-size="13" text-anchor="middle" fill="#333">SIndex = 0xAC01 − SBase(0xAC00) = 1</text>
+  <text x="665" y="148" font-size="13" text-anchor="middle" fill="#333">L = 1 div 588 = 0 · V = (1 mod 588) div 28 = 0</text>
+  <text x="665" y="166" font-size="13" text-anchor="middle" fill="#333">T = 1 mod 28 = 1</text>
+
+  <line x1="665" y1="174" x2="535" y2="190" stroke="#3a6ea5" stroke-width="1.5"/>
+  <line x1="665" y1="174" x2="665" y2="190" stroke="#3a6ea5" stroke-width="1.5"/>
+  <line x1="665" y1="174" x2="795" y2="190" stroke="#3a6ea5" stroke-width="1.5"/>
+
+  <rect x="470" y="192" width="130" height="62" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="535" y="217" font-size="15" text-anchor="middle" fill="#222">초성 ᄀ</text>
+  <text x="535" y="241" font-size="13" text-anchor="middle" fill="#333">LBase+0 = U+1100</text>
+  <rect x="600" y="192" width="130" height="62" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="665" y="217" font-size="15" text-anchor="middle" fill="#222">중성 ᅡ</text>
+  <text x="665" y="241" font-size="13" text-anchor="middle" fill="#333">VBase+0 = U+1161</text>
+  <rect x="730" y="192" width="130" height="62" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="795" y="217" font-size="15" text-anchor="middle" fill="#222">종성 ᆨ</text>
+  <text x="795" y="241" font-size="13" text-anchor="middle" fill="#333">TBase+1 = U+11A8</text>
+
+  <text x="665" y="276" font-size="13" text-anchor="middle" fill="#333">NFD: 3글자, 9바이트 · T = 0 이면 종성 없이 2글자</text>
+  <text x="665" y="296" font-size="13" text-anchor="middle" fill="#333">588 = 21 × 28,  11,172 = 19 × 588</text>
+
+  <!-- 아래: 같은 이름이 둘 -->
+  <line x1="40" y1="322" x2="840" y2="322" stroke="#dddddd"/>
+  <text x="440" y="348" font-size="14" font-weight="bold" text-anchor="middle" fill="#222">화면은 같고 문자열은 다르다 — 실측 (Python 3.13.5, NTFS)</text>
+  <rect x="70" y="362" width="340" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="240" y="386" font-size="14" text-anchor="middle" fill="#222">보고서.txt (NFC)</text>
+  <text x="240" y="406" font-size="13" text-anchor="middle" fill="#333">len 7 · 내용 nfc</text>
+  <rect x="470" y="362" width="340" height="56" rx="6" fill="#fbeaea" stroke="#9d0208"/>
+  <text x="640" y="386" font-size="14" text-anchor="middle" fill="#222">보고서.txt (NFD)</text>
+  <text x="640" y="406" font-size="13" text-anchor="middle" fill="#9d0208">len 10 · 내용 nfd · 같은 폴더에 따로 존재</text>
+</svg>

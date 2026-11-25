@@ -1,0 +1,63 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Language\python\2026-11-25-unicode-nfc-nfd-hangul-normalization
+# 명령      : python normalization.py
+# 수행 시각 : 2026-11-25 19:21 (대한민국 표준시)
+# 소요      : 0.1초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+Python 3.13.5 · unicodedata.unidata_version = 15.1.0
+
+[1] '가' 와 '각' — NFC 와 NFD
+  NFC  len=1  utf8=3B  U+AC00
+  NFD  len=2  utf8=6B  U+1100 U+1161
+  nfc == nfd: False   NFC(nfd) == nfc: True
+  NFC  len=1  utf8=3B  U+AC01
+  NFD  len=3  utf8=9B  U+1100 U+1161 U+11A8
+  nfc == nfd: False   NFC(nfd) == nfc: True
+  is_normalized('NFC', NFD 문자열): False
+
+[2] 3.12절 산술 분해·결합을 11,172 음절 전부에 대해 unicodedata 와 대조
+  음절 수 11172, 분해 불일치 0, 결합 왕복 불일치 0
+  받침 있는 음절(자모 3개) 10773, 받침 없는 음절(자모 2개) 399
+  예: '퓛' -> U+1111 U+1171 U+11B6 (3.12절 예시 U+D4DB)
+
+[3] NTFS 폴더에 NFC·NFD 이름으로 파일을 하나씩 만든다
+  폴더 안 파일 수: 2
+    len=10  내용=nfd  U+1107 ...
+    len= 7  내용=nfc  U+BCF4 ...
+  NFC 이름으로 열면 읽히는 내용: nfc
+  정규화 후 이름 수: 1
+
+[4] 부분 문자열 검색
+  NFC 안에서 NFC '가': False
+  NFD 안에서 NFD '가': True   <- '각' 의 앞 두 자모와 맞는다
+  NFC 안에서 NFD '가': False
+
+[5-1] 정렬 — 코드 포인트 순서
+    하늘  첫 코드 포인트 U+1112
+    가방  첫 코드 포인트 U+AC00
+    나무  첫 코드 포인트 U+B098
+[5-2] SQLite UNIQUE 열에 NFC·NFD '보고서' 를 넣는다
+  들어간 행: (2, 2)
+  length(title): [3, 6]
+
+[6] NFC 와 NFKC 를 나란히 (NFKD 는 따로)
+    (원문, NFC, NFKC)
+    (U+2460       ) NFC=U+2460        NFKC=U+0031  '1'
+    (U+FB01       ) NFC=U+FB01        NFKC=U+0066 U+0069  'fi'
+    (U+FF21       ) NFC=U+FF21        NFKC=U+0041  'A'
+    (U+321C       ) NFC=U+321C        NFKC=U+0028 U+C8FC U+0029  '(주)'
+    (U+FF76       ) NFC=U+FF76        NFKC=U+30AB  'カ'
+    (U+3131       ) NFC=U+3131        NFKC=U+1100  'ᄀ'
+    (U+0065 U+0301) NFC=U+00E9        NFKC=U+00E9  'é'
+    NFKD(①) = U+0031
+    NFKD(ﬁ) = U+0066 U+0069
+    NFKD(㈜) = U+0028 U+110C U+116E U+0029
+[6-1] 호환 자모 두 글자 'ㄱㅏ' 를 정규화하면
+    NFC  U+3131 U+314F 'ㄱㅏ'
+    NFKD U+1100 U+1161 '가'
+    NFKC U+AC00        '가'
