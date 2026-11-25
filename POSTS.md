@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **827편** · 갱신 2026-11-25
+총 **828편** · 갱신 2026-11-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -551,10 +551,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 139편
+## 기출문제 (exam) — 140편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-25 | [기출문제 — TLS 프로토콜 구조와 핸드셰이크, TLS 1.2 취약점과 TLS 1.3 개선 사항](posts/PE/exam/2026-11-25-tls-handshake-tls12-weaknesses-tls13/index.md) | 중급 | RFC 8446 (2018-08), RFC 9846 (2026-07), RFC 5246 (2008-08), RFC 7457 (2015-02), RFC 9325 (2022-11, BCP 195), RFC 8996 (2021-03) | 문서 근거 |
 | 2026-11-25 | [기출문제 — 데이터베이스 인덱스, 클러스터드와 논클러스터드 인덱스 비교](posts/PE/exam/2026-11-25-clustered-vs-nonclustered-index/index.md) | 중급 | SQL Server 2022 문서 (Microsoft Learn, 2026-10 갱신), MySQL 8.0 Reference Manual §17.6.2.1, Oracle Database 19c Concepts 3장, PostgreSQL 16 문서 | 문서 근거 |
 | 2026-11-24 | [기출문제 — 소프트웨어 제품계열(Product Line) 방법론의 개념·특징, 활용 기술과 고려사항](posts/PE/exam/2026-11-24-software-product-line-methodology/index.md) | 중급 | ISO/IEC 26550:2015 (2판, 2022 확인), CMU/SEI-2003-TN-031 (2003-10), CMU/SEI-90-TR-21 (1990-11), Krueger, PFE 2001 (LNCS 2290, 2002) | 문서 근거 |
 | 2026-11-23 | [기출문제 — AI 기반 소프트웨어 개발에 LLM을 도입할 때의 보안 위험과 대응 방안](posts/PE/exam/2026-11-23-llm-adoption-security-risks-in-software-development/index.md) | 중급 | OWASP Top 10 for LLM Applications 2025 (LLM01·LLM02·LLM05·LLM06·LLM09), NIST AI 600-1 (2024-07), NIST SP 800-218A (2024-07), Pearce 외, IEEE S&P 2022 (arXiv:2108.09293v3), Spracklen 외, USENIX Security 2025 (arXiv:2406.10279v3) | 문서 근거 |
