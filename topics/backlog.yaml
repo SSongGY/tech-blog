@@ -8702,3 +8702,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-302
+    title: "터크만 팀 발달 5단계 모델"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "1965년 4단계와 1977년 해산기 추가의 출처를 가르고, 집단 구조·과업 활동 두 영역 기술과 단계 역행, 후속 비판(Gersick 단속평형 모형)과 비교"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-303
+    title: "토마스-킬만 갈등 처리 모드 5가지"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "주장성·협조성 두 축으로 5모드를 정의하고 PMBOK 갈등 해결 기법 명칭과 대응, 과업·관계·절차 갈등 연구와 연결해 상황별 선택 기준"
+    code: none
+    origin: exam
+    status: todo

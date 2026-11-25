@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="880" height="420" fill="#fbfaf7"/>
+  <text x="20" y="30" font-size="16" font-weight="bold" fill="#1f2937">갈등 유형별로 성과와의 관계가 다르다 (개념도 — 축에 수치 없음)</text>
+
+  <!-- 축 -->
+  <line x1="90" y1="330" x2="560" y2="330" stroke="#374151" stroke-width="1.5"/>
+  <line x1="90" y1="330" x2="90" y2="60" stroke="#374151" stroke-width="1.5"/>
+  <path d="M560 330 l-8 -5 v10 z" fill="#374151"/>
+  <path d="M90 60 l-5 8 h10 z" fill="#374151"/>
+  <text x="560" y="356" font-size="13" text-anchor="end" fill="#374151">갈등 수준 →</text>
+  <text x="80" y="60" font-size="13" text-anchor="end" fill="#374151">성과</text>
+  <text x="94" y="352" font-size="13" fill="#6b7280">낮음</text>
+  <text x="300" y="352" font-size="13" fill="#6b7280" text-anchor="middle">중간</text>
+
+  <!-- 과업 갈등: 역U자 (혁신 성과) -->
+  <path d="M100 270 Q300 30 540 280" fill="none" stroke="#2d6a4f" stroke-width="3"/>
+  <circle cx="312" cy="152" r="5" fill="#2d6a4f"/>
+  <line x1="312" y1="152" x2="312" y2="330" stroke="#2d6a4f" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- 관계 갈등: 단조 감소 -->
+  <path d="M100 120 L540 310" fill="none" stroke="#9d0208" stroke-width="3" stroke-dasharray="9 5"/>
+
+  <!-- 범례 -->
+  <g font-size="13">
+    <line x1="580" y1="90" x2="612" y2="90" stroke="#2d6a4f" stroke-width="3"/>
+    <text x="620" y="95" fill="#14532d" font-weight="bold">과업 갈등 (task conflict)</text>
+    <text x="620" y="116" fill="#374151">중간 수준에서 혁신이 가장 높다</text>
+    <text x="620" y="136" fill="#6b7280">De Dreu (2006)</text>
+
+    <line x1="580" y1="180" x2="612" y2="180" stroke="#9d0208" stroke-width="3" stroke-dasharray="9 5"/>
+    <text x="620" y="185" fill="#9d0208" font-weight="bold">관계 갈등 · 절차 갈등</text>
+    <text x="620" y="206" fill="#374151">높을수록 성과가 떨어진다</text>
+    <text x="620" y="226" fill="#6b7280">de Wit·Greer·Jehn (2012)</text>
+  </g>
+
+  <rect x="590" y="254" width="270" height="76" rx="5" fill="#fff7ed" stroke="#b45309" stroke-width="1.5"/>
+  <text x="602" y="278" font-size="13" fill="#b45309" font-weight="bold">주의</text>
+  <text x="602" y="298" font-size="13" fill="#374151">과업 갈등이 관계 갈등으로 번지면</text>
+  <text x="602" y="318" font-size="13" fill="#374151">과업 갈등의 이점도 사라진다</text>
+
+  <line x1="20" y1="378" x2="860" y2="378" stroke="#d1d5db" stroke-width="1"/>
+  <text x="20" y="402" font-size="13" fill="#6b7280">곡선 모양만 나타낸 개념도다. 연구가 보고한 효과 크기를 옮긴 것이 아니다.</text>
+</svg>
