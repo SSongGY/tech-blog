@@ -162,6 +162,8 @@ PostgreSQL의 인덱스 전용 스캔은 행 가시성 정보가 힙에만 있�
 
 > 개념 정리: [인덱스 구조 비교 — B+트리, 해시, 비트맵](../../database/2026-10-26-index-structure-comparison/index.md)
 >
+> 개념 정리: [클러스터드 인덱스와 인덱스 구성 테이블(IOT)](../../database/2026-11-25-clustered-index-and-index-organized-table/index.md)
+>
 > 관련 글: [커버링 인덱스 — 테이블을 안 보고 끝내기](../../../Database/sql-basics/2026-10-14-covering-index-no-table-lookup/index.md)
 >
 > 관련 글: [UUID v4와 v7을 기본키로 넣으면 — 무작위 키가 B-Tree에 남기는 흔적](../../../Database/sqlite/2026-11-06-uuid-v4-v7-primary-key-btree/index.md)

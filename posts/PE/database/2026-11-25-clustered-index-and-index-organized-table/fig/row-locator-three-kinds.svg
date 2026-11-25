@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3a6ea5"/></marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/></marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/></marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+  <text x="440" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">보조 인덱스의 행 위치자 3가지 — 리프에서 행까지 가는 길</text>
+
+  <!-- ① 물리 주소 -->
+  <text x="30" y="78" font-size="14" font-weight="bold" fill="#222">① 물리 주소</text>
+  <text x="30" y="98" font-size="13" fill="#555">힙 + 보조 인덱스</text>
+  <text x="30" y="116" font-size="13" fill="#555">(SQL Server 힙, Oracle 힙)</text>
+  <rect x="230" y="62" width="230" height="56" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="345" y="86" font-size="14" text-anchor="middle" fill="#222">보조 인덱스 리프</text>
+  <text x="345" y="106" font-size="13" text-anchor="middle" fill="#333">키 + RID / 물리 rowid</text>
+  <line x1="460" y1="90" x2="588" y2="90" stroke="#3a6ea5" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="524" y="82" font-size="13" text-anchor="middle" fill="#3a6ea5">바로 간다</text>
+  <rect x="590" y="62" width="250" height="56" rx="6" fill="#f4f4f4" stroke="#666"/>
+  <text x="715" y="86" font-size="14" text-anchor="middle" fill="#222">힙의 데이터 페이지</text>
+  <text x="715" y="106" font-size="13" text-anchor="middle" fill="#333">행이 옮겨지면 주소가 깨진다</text>
+
+  <line x1="30" y1="140" x2="850" y2="140" stroke="#e2e2e2"/>
+
+  <!-- ② 클러스터드 키 -->
+  <text x="30" y="178" font-size="14" font-weight="bold" fill="#222">② 클러스터드 키</text>
+  <text x="30" y="198" font-size="13" fill="#555">SQL Server 클러스터드,</text>
+  <text x="30" y="216" font-size="13" fill="#555">MySQL InnoDB</text>
+  <rect x="230" y="162" width="230" height="56" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="345" y="186" font-size="14" text-anchor="middle" fill="#222">보조 인덱스 리프</text>
+  <text x="345" y="206" font-size="13" text-anchor="middle" fill="#333">키 + 클러스터드(기본) 키</text>
+  <line x1="460" y1="190" x2="588" y2="190" stroke="#3a6ea5" stroke-width="2" marker-end="url(#arrow-blue)"/>
+  <text x="524" y="182" font-size="13" text-anchor="middle" fill="#3a6ea5">한 번 더 탐색</text>
+  <rect x="590" y="162" width="250" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="715" y="186" font-size="14" text-anchor="middle" fill="#222">클러스터드 B-트리 리프 = 행</text>
+  <text x="715" y="206" font-size="13" text-anchor="middle" fill="#333">행이 옮겨져도 위치자는 그대로</text>
+
+  <line x1="30" y1="240" x2="850" y2="240" stroke="#e2e2e2"/>
+
+  <!-- ③ 논리 rowid -->
+  <text x="30" y="290" font-size="14" font-weight="bold" fill="#222">③ 논리 rowid</text>
+  <text x="30" y="310" font-size="13" fill="#555">Oracle 인덱스 구성</text>
+  <text x="30" y="328" font-size="13" fill="#555">테이블(IOT)</text>
+  <rect x="230" y="276" width="230" height="64" rx="6" fill="#eef4fb" stroke="#3a6ea5"/>
+  <text x="345" y="298" font-size="14" text-anchor="middle" fill="#222">보조 인덱스 리프</text>
+  <text x="345" y="317" font-size="13" text-anchor="middle" fill="#333">키 + 논리 rowid</text>
+  <text x="345" y="334" font-size="13" text-anchor="middle" fill="#333">(기본키 + physical guess)</text>
+  <line x1="460" y1="292" x2="588" y2="276" stroke="#2d6a4f" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="520" y="272" font-size="13" text-anchor="middle" fill="#2d6a4f">추측 맞음</text>
+  <rect x="590" y="252" width="250" height="50" rx="6" fill="#e8f3ee" stroke="#2d6a4f"/>
+  <text x="715" y="274" font-size="14" text-anchor="middle" fill="#222">추측한 리프 블록 = 행</text>
+  <text x="715" y="293" font-size="13" text-anchor="middle" fill="#333">블록 I/O 1번 더</text>
+  <line x1="460" y1="326" x2="588" y2="346" stroke="#9d0208" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="520" y="358" font-size="13" text-anchor="middle" fill="#9d0208">추측 틀림</text>
+  <rect x="590" y="320" width="250" height="56" rx="6" fill="#fbeaea" stroke="#9d0208"/>
+  <text x="715" y="343" font-size="14" text-anchor="middle" fill="#222">틀린 블록 I/O 뒤</text>
+  <text x="715" y="363" font-size="13" text-anchor="middle" fill="#333">기본키 값으로 IOT 고유 스캔</text>
+
+  <text x="440" y="406" font-size="13" text-anchor="middle" fill="#555">①은 빠르지만 행 이동에 약하고, ②는 이동에 강하지만 탐색이 한 번 더 붙는다.</text>
+  <text x="440" y="426" font-size="13" text-anchor="middle" fill="#555">③은 물리 추측으로 ①의 속도를 노리고, 추측이 틀리면 ②처럼 기본키로 되돌아간다.</text>
+</svg>
