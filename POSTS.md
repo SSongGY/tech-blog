@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **834편** · 갱신 2026-11-26
+총 **836편** · 갱신 2026-11-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -154,10 +154,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 283편
+## 기술사 (pe) — 285편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-26 | [전방 비밀성(Forward Secrecy) — 임시 키 교환과 키 유출 피해 범위](posts/PE/security/2026-11-26-forward-secrecy-ephemeral-key-exchange/index.md) | 중급 | RFC 4949 (2007-08), RFC 5246 (2008-08), RFC 8446 (2018-08), RFC 9325 (2022-11, BCP 195) | 문서 근거 |
+| 2026-11-26 | [AEAD 인증 암호 — MAC-then-Encrypt의 패딩 오라클에서 GCM까지](posts/PE/security/2026-11-26-aead-generic-composition-padding-oracle-gcm/index.md) | 중급 | RFC 5116 (2008-01), NIST SP 800-38D (2007-11), RFC 5246 (2008-08), RFC 7366 (2014-09), RFC 7457 (2015-02), RFC 8446 (2018-08) | 문서 근거 |
 | 2026-11-25 | [클러스터드 인덱스와 인덱스 구성 테이블(IOT)](posts/PE/database/2026-11-25-clustered-index-and-index-organized-table/index.md) | 중급 | Oracle Database 19c Concepts, SQL Server 2022 문서 (Microsoft Learn), MySQL 8.0 Reference Manual, PostgreSQL 16 문서 | 문서 근거 |
 | 2026-11-24 | [소프트웨어 제품계열 공학 — 도메인 공학과 애플리케이션 공학](posts/PE/software-engineering/2026-11-24-software-product-line-engineering/index.md) | 중급 | ISO/IEC 26550:2015 (2판, 2022 확인), CMU/SEI-2003-TN-031 (2003-10), CMU/SEI-90-TR-21 (1990-11) | 문서 근거 |
 | 2026-11-24 | [SCOR 모델 — 관리 프로세스 6가지와 성과 속성 5가지](posts/PE/it-management/2026-11-24-scor-model-six-processes-five-attributes/index.md) | 중급 | SCOR Digital Standard (ASCM, 2020), SCOR Revision 11.0 (Supply Chain Council, 2012-10) | 문서 근거 |
