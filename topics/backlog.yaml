@@ -8636,3 +8636,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-300
+    title: "전방 비밀성(Forward Secrecy) — 임시 키 교환과 키 유출 피해 범위"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "정적 RSA 키 전송과 (EC)DHE를 비교해 개인키 유출 시 과거 세션이 왜 안전한지, TLS 1.3 PSK 단독 모드·0-RTT의 예외까지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-301
+    title: "AEAD 인증 암호 — MAC-then-Encrypt의 패딩 오라클에서 GCM까지"
+    category: PE
+    subcategory: security
+    track: pe
+    tags: [정보관리기술사, security, 개념정리]
+    difficulty: 중급
+    angle: "MAC-then-Encrypt·Encrypt-then-MAC·AEAD 세 결합 방식을 비교하고 TLS 1.3이 AEAD만 남긴 이유"
+    code: none
+    origin: exam
+    status: todo
