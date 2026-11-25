@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **831편** · 갱신 2026-11-25
+총 **833편** · 갱신 2026-11-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -699,10 +699,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 166편
+## 주식·재무 (finance) — 168편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-25 | [리스 변경 — 별도 리스, 범위 축소, 그 밖의 변경을 가르는 기준](posts/Finance/statements/2026-11-25-lease-modification-separate-or-scope-decrease/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용) | 실행 검증 |
+| 2026-11-25 | [리스부채 재측정 — 할인율을 바꾸는 경우와 그대로 두는 경우](posts/Finance/statements/2026-11-25-lease-liability-remeasurement-discount-rate/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용) | 실행 검증 |
 | 2026-11-24 | [우발부채 공시 — 유출 가능성 세 구간과 해마다 다시 하는 평가](posts/Finance/statements/2026-11-24-contingent-liability-disclosure-bands/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
 | 2026-11-24 | [우발자산 — 실현이 거의 확실해질 때까지 장부에 올리지 않는 받을 돈](posts/Finance/statements/2026-11-24-contingent-asset-virtually-certain/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
 | 2026-11-23 | [충당부채 측정에 넣는 미래사건 — 예상되는 기술 발전과 제정을 앞둔 법률](posts/Finance/statements/2026-11-23-provision-future-events-technology-law/index.md) | 중급 | Python 3.13.5, 기업회계기준서 제1037호 충당부채, 우발부채 및 우발자산 | 실행 검증 |
