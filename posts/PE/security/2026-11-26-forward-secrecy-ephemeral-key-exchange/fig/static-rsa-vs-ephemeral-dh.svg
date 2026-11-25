@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="470" viewBox="0 0 880 470" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="470" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+
+  <!-- 왼쪽: 정적 RSA 키 전송 -->
+  <text x="220" y="34" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">정적 RSA 키 전송 (TLS 1.2)</text>
+  <rect x="30" y="60" width="140" height="56" rx="6" fill="#f1f3f5" stroke="#555555"/>
+  <text x="100" y="93" font-size="15" text-anchor="middle" fill="#222222">클라이언트</text>
+  <rect x="270" y="60" width="140" height="56" rx="6" fill="#f1f3f5" stroke="#555555"/>
+  <text x="340" y="86" font-size="15" text-anchor="middle" fill="#222222">서버</text>
+  <text x="340" y="105" font-size="13" text-anchor="middle" fill="#555555">장기 개인키 d</text>
+  <line x1="172" y1="88" x2="266" y2="88" stroke="#333333" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="219" y="146" font-size="13" text-anchor="middle" fill="#333333">사전 마스터 시크릿을</text>
+  <text x="219" y="168" font-size="13" text-anchor="middle" fill="#333333">서버 공개키로 암호화해 전송</text>
+
+  <rect x="30" y="190" width="380" height="64" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="220" y="216" font-size="14" text-anchor="middle" fill="#b45309">공격자: 암호문을 녹화해 둔다</text>
+  <text x="220" y="238" font-size="14" text-anchor="middle" fill="#b45309">몇 년 뒤 개인키 d 유출</text>
+  <line x1="220" y1="256" x2="220" y2="290" stroke="#9d0208" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="30" y="294" width="380" height="88" rx="6" fill="#fdecec" stroke="#9d0208" stroke-width="1.6"/>
+  <text x="220" y="322" font-size="14" text-anchor="middle" fill="#9d0208">d로 녹화본의 사전 마스터 시크릿을 푼다</text>
+  <text x="220" y="344" font-size="14" text-anchor="middle" fill="#9d0208">→ 세션 키 재계산</text>
+  <text x="220" y="366" font-size="14" font-weight="bold" text-anchor="middle" fill="#9d0208">과거 세션 전부 복호화</text>
+
+  <!-- 가운데 구분선 -->
+  <line x1="440" y1="20" x2="440" y2="400" stroke="#cccccc" stroke-dasharray="6 5"/>
+
+  <!-- 오른쪽: 임시 (EC)DH -->
+  <text x="660" y="34" font-size="17" font-weight="bold" text-anchor="middle" fill="#222222">임시 키 교환 (EC)DHE (TLS 1.3)</text>
+  <rect x="470" y="60" width="140" height="56" rx="6" fill="#f1f3f5" stroke="#555555"/>
+  <text x="540" y="86" font-size="15" text-anchor="middle" fill="#222222">클라이언트</text>
+  <text x="540" y="105" font-size="13" text-anchor="middle" fill="#555555">임시 비밀 a</text>
+  <rect x="710" y="52" width="140" height="74" rx="6" fill="#f1f3f5" stroke="#555555"/>
+  <text x="780" y="74" font-size="15" text-anchor="middle" fill="#222222">서버</text>
+  <text x="780" y="96" font-size="13" text-anchor="middle" fill="#555555">임시 비밀 b</text>
+  <text x="780" y="117" font-size="13" text-anchor="middle" fill="#555555">장기 개인키 d (서명)</text>
+  <line x1="612" y1="80" x2="706" y2="80" stroke="#333333" stroke-width="1.6" marker-end="url(#arr)"/>
+  <line x1="706" y1="98" x2="612" y2="98" stroke="#333333" stroke-width="1.6" marker-end="url(#arr)"/>
+  <text x="659" y="146" font-size="13" text-anchor="middle" fill="#333333">공개값 aG, bG 교환 · 서버는 d로 서명</text>
+  <text x="659" y="168" font-size="13" text-anchor="middle" fill="#333333">공유 비밀 abG → 세션 키, a·b는 삭제</text>
+
+  <rect x="470" y="190" width="380" height="64" rx="6" fill="#fff7ed" stroke="#b45309"/>
+  <text x="660" y="216" font-size="14" text-anchor="middle" fill="#b45309">공격자: aG, bG가 든 녹화본</text>
+  <text x="660" y="238" font-size="14" text-anchor="middle" fill="#b45309">몇 년 뒤 개인키 d 유출</text>
+  <line x1="660" y1="256" x2="660" y2="290" stroke="#2d6a4f" stroke-width="1.6" marker-end="url(#arr)"/>
+  <rect x="470" y="294" width="380" height="88" rx="6" fill="#e8f5ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="660" y="322" font-size="14" text-anchor="middle" fill="#2d6a4f">d는 서명 키일 뿐 세션 키 계산에 안 쓰였다</text>
+  <text x="660" y="344" font-size="14" text-anchor="middle" fill="#2d6a4f">a·b가 지워져 abG를 다시 만들 수 없다</text>
+  <text x="660" y="366" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">과거 세션 안전 · 이후 위장만 가능</text>
+
+  <text x="440" y="430" font-size="13" text-anchor="middle" fill="#555555">같은 사건(장기 개인키 유출)에서 피해 범위가 갈리는 지점은 "세션 키 계산에 장기 키가 들어갔는가"다</text>
+  <text x="440" y="452" font-size="13" text-anchor="middle" fill="#555555">G: 곡선의 기점, a·b: 연결마다 새로 뽑는 임시 비밀값</text>
+</svg>

@@ -208,6 +208,10 @@ TLS 1.2의 취약점은 대부분 **명세가 남겨 둔 선택지** — 정적 
 > 관련 실습: [인증서 체인을 직접 만들어 보면 검증 실패가 읽힌다](../../../Security/tls/2026-11-01-x509-chain-build-and-verify-failures/index.md)
 >
 > 개념 정리: [TCP 3-way 핸드셰이크와 흐름·혼잡 제어](../../network/2026-09-28-tcp-handshake-flow-congestion-control/index.md)
+>
+> 개념 정리: [전방 비밀성(Forward Secrecy) — 임시 키 교환과 키 유출 피해 범위](../../security/2026-11-26-forward-secrecy-ephemeral-key-exchange/index.md)
+>
+> 개념 정리: [AEAD 인증 암호 — MAC-then-Encrypt의 패딩 오라클에서 GCM까지](../../security/2026-11-26-aead-generic-composition-padding-oracle-gcm/index.md)
 
 끝
 
