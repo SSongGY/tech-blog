@@ -8635,7 +8635,7 @@ topics:
     angle: "행 위치자(RID·클러스터드 키·논리 rowid)로 SQL Server·InnoDB·Oracle IOT·PostgreSQL 저장 방식을 가르고 키 설계 기준을 정리"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-300
     title: "전방 비밀성(Forward Secrecy) — 임시 키 교환과 키 유출 피해 범위"
     category: PE
@@ -8658,3 +8658,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-133
+    title: "누적 비율로 ABC 등급 나누기 — 80%를 넘기는 경계 행과 동점"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, running-total, basics]
+    difficulty: 중급
+    angle: "SUM OVER 로 누적 매출 비율을 구해 A·B·C 등급을 매긴다. 경계를 넘기는 행을 어느 쪽에 넣는지(누적 전 비율로 판정), 기본 프레임 RANGE 가 동점 행에 같은 누적값을 주는 것, 정렬 키를 하나 더 둬야 결과가 고정되는 것을 실행으로 확인한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-047
+    title: "같은 한글 파일명이 두 개 — 유니코드 정규화 NFC와 NFD"
+    category: Language
+    subcategory: python
+    track: general
+    tags: [unicode, normalization, nfc, nfd, python]
+    difficulty: 중급
+    angle: "가와 ㄱ+ㅏ 조합이 화면엔 같고 바이트·길이·비교가 다른 것을 unicodedata 로 재현한다. UAX #15 의 정준 분해·결합, 한글 음절 산술 분해(유니코드 3.12절), NFKC 가 바꾸는 것, 정규화가 필요한 자리(파일명·검색·유일 키)를 실측으로 정리한다"
+    code: python
+    origin: manual
+    status: done

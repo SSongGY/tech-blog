@@ -1,0 +1,153 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-25-abc-grade-cumulative-share-boundary
+# 명령      : python abc_grade.py
+# 수행 시각 : 2026-11-25 19:16 (대한민국 표준시)
+# 소요      : 0.2초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[product_sales]  10행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  product_id | TEXT    | PK
+  category   | TEXT    | NOT NULL
+  sales      | INTEGER | NOT NULL
+
+  product_id | category | sales
+  -----------+----------+------
+  P01        | 식품     |   400
+  P02        | 생활     |   200
+  P03        | 식품     |   150
+  P04        | 생활     |    80
+  P05        | 식품     |    80
+  P06        | 생활     |    40
+  P07        | 식품     |    20
+  P08        | 생활     |    15
+  P09        | 식품     |    10
+  P10        | 생활     |     5
+
+
+[1] 정수 / 정수 — 비율이 전부 0 이 된다
+  sql> SELECT product_id, sales, sales / SUM(sales) OVER () AS int_div, sales * 1.0 / SUM(sales) OVER () AS real_div FROM product_sales ORDER BY sales DESC, product_id ...
+    ('product_id', 'sales', 'int_div', 'real_div')
+    ('P01', 400, 0, 0.4)
+    ('P02', 200, 0, 0.2)
+    ('P03', 150, 0, 0.15)
+
+[2] ORDER BY 만 준 누적 합 — 프레임을 적지 않았다
+  sql> SELECT product_id, sales, SUM(sales) OVER (ORDER BY sales DESC) AS cum_default, ROUND(SUM(sales) OVER (ORDER BY sales DESC) * 100.0 / SUM(sales) OVER (), 1) AS  ...
+    ('product_id', 'sales', 'cum_default', 'cum_pct')
+    ('P01', 400, 400, 40.0)
+    ('P02', 200, 600, 60.0)
+    ('P03', 150, 750, 75.0)
+    ('P04', 80, 910, 91.0)
+    ('P05', 80, 910, 91.0)
+    ('P06', 40, 950, 95.0)
+    ('P07', 20, 970, 97.0)
+    ('P08', 15, 985, 98.5)
+    ('P09', 10, 995, 99.5)
+    ('P10', 5, 1000, 100.0)
+
+[3] 기본 프레임(RANGE) 과 ROWS 를 나란히 — 동점 P04·P05 를 본다
+  sql> SELECT product_id, sales, SUM(sales) OVER (ORDER BY sales DESC RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cum_range, SUM(sales) OVER (ORDER BY sales  ...
+    ('product_id', 'sales', 'cum_range', 'cum_rows', 'cum_groups')
+    ('P01', 400, 400, 400, 400)
+    ('P02', 200, 600, 600, 600)
+    ('P03', 150, 750, 750, 750)
+    ('P04', 80, 910, 830, 910)
+    ('P05', 80, 910, 910, 910)
+    ('P06', 40, 950, 950, 950)
+    ('P07', 20, 970, 970, 970)
+    ('P08', 15, 985, 985, 985)
+    ('P09', 10, 995, 995, 995)
+    ('P10', 5, 1000, 1000, 1000)
+
+[4-1] A = 누적 ≤ 80% — 80% 를 넘기는 P04 는 B 로 간다
+  sql> SELECT product_id, sales, cum, CASE WHEN cum * 100 <= 80 * total THEN 'A' ELSE '-' END AS grade FROM (SELECT product_id, sales, SUM(sales) OVER (ORDER BY sales  ...
+    ('product_id', 'sales', 'cum', 'grade')
+    ('P01', 400, 400, 'A')
+    ('P02', 200, 600, 'A')
+    ('P03', 150, 750, 'A')
+    ('P04', 80, 830, '-')
+    ('P05', 80, 910, '-')
+[4-2] A = 누적 전 < 80% — 80% 선에 걸친 P04 까지 A
+  sql> SELECT product_id, sales, cum - sales AS prev_cum, cum, CASE WHEN (cum - sales) * 100 < 80 * total THEN 'A' ELSE '-' END AS grade FROM (SELECT product_id, sales ...
+    ('product_id', 'sales', 'prev_cum', 'cum', 'grade')
+    ('P01', 400, 0, 400, 'A')
+    ('P02', 200, 400, 600, 'A')
+    ('P03', 150, 600, 750, 'A')
+    ('P04', 80, 750, 830, 'A')
+    ('P05', 80, 830, 910, '-')
+
+[5] 기본 프레임으로 '누적 전' 을 구하면 — P04·P05 가 함께 밀려난다
+  sql> SELECT product_id, sales, cum - sales AS prev_cum, cum, CASE WHEN (cum - sales) * 100 < 80 * total THEN 'A' ELSE '-' END AS grade FROM (SELECT product_id, sales ...
+    ('product_id', 'sales', 'prev_cum', 'cum', 'grade')
+    ('P01', 400, 0, 400, 'A')
+    ('P02', 200, 400, 600, 'A')
+    ('P03', 150, 600, 750, 'A')
+    ('P04', 80, 830, 910, '-')
+    ('P05', 80, 830, 910, '-')
+
+[6] 최종 질의 — ROWS + 정렬 키 product_id, 누적 전 비율로 판정
+  sql> SELECT product_id, sales, cum, prev_cum, total, CASE WHEN prev_cum * 100 < 80 * total THEN 'A' WHEN prev_cum * 100 < 95 * total THEN 'B' ELSE 'C' END AS grade F ...
+    ('product_id', 'sales', 'cum', 'prev_cum', 'total', 'grade')
+    ('P01', 400, 400, 0, 1000, 'A')
+    ('P02', 200, 600, 400, 1000, 'A')
+    ('P03', 150, 750, 600, 1000, 'A')
+    ('P04', 80, 830, 750, 1000, 'A')
+    ('P05', 80, 910, 830, 1000, 'B')
+    ('P06', 40, 950, 910, 1000, 'B')
+    ('P07', 20, 970, 950, 1000, 'C')
+    ('P08', 15, 985, 970, 1000, 'C')
+    ('P09', 10, 995, 985, 1000, 'C')
+    ('P10', 5, 1000, 995, 1000, 'C')
+
+[6-1] 정렬 키 없이 ROWS 만 — 같은 데이터를 거꾸로 넣은 표에서 다시 돌린다
+  sql> SELECT product_id, sales, SUM(sales) OVER (ORDER BY sales DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cum FROM product_sales ORDER BY cum LIMIT 5 ...
+    ('product_id', 'sales', 'cum')
+    ('P01', 400, 400)
+    ('P02', 200, 600)
+    ('P03', 150, 750)
+    ('P04', 80, 830)
+    ('P05', 80, 910)
+  sql> SELECT product_id, sales, SUM(sales) OVER (ORDER BY sales DESC ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cum FROM product_sales_rev ORDER BY cum LIMI ...
+    ('product_id', 'sales', 'cum')
+    ('P01', 400, 400)
+    ('P02', 200, 600)
+    ('P03', 150, 750)
+    ('P05', 80, 830)
+    ('P04', 80, 910)
+
+[7] 등급별 상품 수와 매출 비중
+  sql> SELECT grade, COUNT(*) AS items, SUM(sales) AS sales, ROUND(SUM(sales) * 100.0 / MAX(total), 1) AS pct FROM ( SELECT product_id, sales, cum, prev_cum, total, CA ...
+    ('grade', 'items', 'sales', 'pct')
+    ('A', 4, 830, 83.0)
+    ('B', 2, 120, 12.0)
+    ('C', 4, 50, 5.0)
+
+[8] 분류별로 따로 — PARTITION BY category
+  sql> SELECT category, product_id, sales, prev_cum, total, CASE WHEN prev_cum * 100 < 80 * total THEN 'A' WHEN prev_cum * 100 < 95 * total THEN 'B' ELSE 'C' END AS gr ...
+    ('category', 'product_id', 'sales', 'prev_cum', 'total', 'grade')
+    ('생활', 'P02', 200, 0, 340, 'A')
+    ('생활', 'P04', 80, 200, 340, 'A')
+    ('생활', 'P06', 40, 280, 340, 'B')
+    ('생활', 'P08', 15, 320, 340, 'B')
+    ('생활', 'P10', 5, 335, 340, 'C')
+    ('식품', 'P01', 400, 0, 660, 'A')
+    ('식품', 'P03', 150, 400, 660, 'A')
+    ('식품', 'P05', 80, 550, 660, 'B')
+    ('식품', 'P07', 20, 630, 660, 'C')
+    ('식품', 'P09', 10, 650, 660, 'C')
