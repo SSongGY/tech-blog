@@ -8701,4 +8701,4 @@ topics:
     angle: "K-IFRS 제1116호 문단 44~46과 적용사례 17. 면적을 늘리는 변경이 별도 리스가 되는 두 조건, 면적을 줄이면 사용권자산·리스부채를 비율로 줄이고 차이를 손익으로, 나머지 변경은 사용권자산만 조정. 가상 회사로 세 경로를 계산"
     code: python
     origin: manual
-    status: writing
+    status: done

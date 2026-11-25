@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">리스 변경을 회계처리하는 세 경로</text>
+
+  <!-- 질문 1 -->
+  <rect x="200" y="52" width="480" height="74" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="78" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">사용권을 더하고, 대가가 개별 가격만큼 늘었나</text>
+  <text x="440" y="100" text-anchor="middle" font-size="13" fill="#4b5563">두 조건을 모두 충족 (문단 44)</text>
+  <text x="440" y="117" text-anchor="middle" font-size="13" fill="#4b5563">계약 상황에 맞춘 조정은 허용</text>
+
+  <!-- 예: 별도 리스 -->
+  <line x1="680" y1="89" x2="716" y2="89" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="698" y="80" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+  <rect x="718" y="52" width="142" height="74" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="789" y="82" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">별도 리스</text>
+  <text x="789" y="104" text-anchor="middle" font-size="13" fill="#1f2937">기존 리스 그대로</text>
+
+  <!-- 아니오: 재측정 -->
+  <line x1="440" y1="126" x2="440" y2="170" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="462" y="152" font-size="13" fill="#9d0208">아니오</text>
+  <rect x="160" y="172" width="560" height="100" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="198" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">변경 유효일에 다시 잰다 (문단 45)</text>
+  <text x="440" y="220" text-anchor="middle" font-size="13" fill="#1f2937">① 변경된 대가를 리스·비리스요소에 배분</text>
+  <text x="440" y="240" text-anchor="middle" font-size="13" fill="#1f2937">② 변경된 리스기간 결정</text>
+  <text x="440" y="260" text-anchor="middle" font-size="13" fill="#1f2937">③ 변경된 리스료를 수정 할인율로 할인해 리스부채 재측정</text>
+
+  <!-- 질문 2 -->
+  <line x1="440" y1="272" x2="440" y2="306" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="240" y="308" width="400" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="440" y="342" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">리스의 범위를 좁히는 변경인가 (문단 46)</text>
+
+  <!-- 예: 범위 축소 -->
+  <line x1="340" y1="364" x2="230" y2="404" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="270" y="378" text-anchor="middle" font-size="13" fill="#2d6a4f">예</text>
+  <rect x="40" y="406" width="380" height="90" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="230" y="432" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">범위 축소 46⑴</text>
+  <text x="230" y="454" text-anchor="middle" font-size="13" fill="#1f2937">종료된 몫만큼 사용권자산을 줄이고</text>
+  <text x="230" y="474" text-anchor="middle" font-size="13" fill="#1f2937">부채 감소분과의 차이를 당기손익</text>
+  <text x="230" y="490" text-anchor="middle" font-size="13" fill="#4b5563">나머지 재측정분은 사용권자산</text>
+
+  <!-- 아니오: 그 밖의 변경 -->
+  <line x1="540" y1="364" x2="650" y2="404" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="610" y="378" text-anchor="middle" font-size="13" fill="#9d0208">아니오</text>
+  <rect x="460" y="406" width="380" height="90" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="650" y="432" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">그 밖의 변경 46⑵</text>
+  <text x="650" y="454" text-anchor="middle" font-size="13" fill="#1f2937">기간 연장·대가 변경·별도 리스가</text>
+  <text x="650" y="474" text-anchor="middle" font-size="13" fill="#1f2937">아닌 범위 확대</text>
+  <text x="650" y="490" text-anchor="middle" font-size="13" fill="#4b5563">재측정분 전액 사용권자산, 손익 0</text>
+</svg>
