@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **828편** · 갱신 2026-11-25
+총 **831편** · 갱신 2026-11-25
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 119편
+## DB문법 (basics) — 120편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-25 | [누적 비율로 ABC 등급 나누기 — 80%를 넘기는 경계 행과 동점](posts/Database/sql-basics/2026-11-25-abc-grade-cumulative-share-boundary/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-23 | [최고 기록을 갱신한 행만 고르기 — 직전까지의 누적 MAX와 비교](posts/Database/sql-basics/2026-11-23-sql-running-max-record-breaking-rows/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-22 | [그룹별 최빈값 구하기 — 동점을 버리지 않는 세 가지 방법](posts/Database/sql-basics/2026-11-22-sql-mode-per-group-ties/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-21 | [ORDER BY CASE — 가나다순이 아닌 업무 순서로 정렬하기](posts/Database/sql-basics/2026-11-21-order-by-case-custom-sort-order/index.md) | 입문 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -153,10 +154,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 282편
+## 기술사 (pe) — 283편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-25 | [클러스터드 인덱스와 인덱스 구성 테이블(IOT)](posts/PE/database/2026-11-25-clustered-index-and-index-organized-table/index.md) | 중급 | Oracle Database 19c Concepts, SQL Server 2022 문서 (Microsoft Learn), MySQL 8.0 Reference Manual, PostgreSQL 16 문서 | 문서 근거 |
 | 2026-11-24 | [소프트웨어 제품계열 공학 — 도메인 공학과 애플리케이션 공학](posts/PE/software-engineering/2026-11-24-software-product-line-engineering/index.md) | 중급 | ISO/IEC 26550:2015 (2판, 2022 확인), CMU/SEI-2003-TN-031 (2003-10), CMU/SEI-90-TR-21 (1990-11) | 문서 근거 |
 | 2026-11-24 | [SCOR 모델 — 관리 프로세스 6가지와 성과 속성 5가지](posts/PE/it-management/2026-11-24-scor-model-six-processes-five-attributes/index.md) | 중급 | SCOR Digital Standard (ASCM, 2020), SCOR Revision 11.0 (Supply Chain Council, 2012-10) | 문서 근거 |
 | 2026-11-24 | [패키지 환각과 슬롭스쿼팅 — LLM이 지어낸 의존성 이름을 노리는 공급망 공격](posts/PE/security/2026-11-24-package-hallucination-slopsquatting/index.md) | 중급 | Spracklen 외, USENIX Security 2025 (arXiv 2406.10279v3, 2025-03-02), MITRE ATT&CK T1195.001 v2.0 (2026-11-03 수정), OWASP Top 10 for LLM Applications 2025 | 문서 근거 |
@@ -463,10 +465,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 83편
+## 일반 (general) — 84편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-25 | [같은 한글 파일명이 두 개 — 유니코드 정규화 NFC와 NFD](posts/Language/python/2026-11-25-unicode-nfc-nfd-hangul-normalization/index.md) | 중급 | Python 3.13.5, Unicode 15.1.0 (unicodedata), SQLite 3.49.1, Windows 11 NTFS | 실행 검증 |
 | 2026-11-24 | [ARC 캐시 — 순차 스캔 한 번에 LRU가 비워질 때 최근성과 빈도를 나눠 갖는 법](posts/Architecture/datastructure/2026-11-24-arc-cache-scan-resistance-vs-lru/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
 | 2026-11-22 | [t-digest — 꼬리 분위수가 정확한 이유는 척도 함수에 있다](posts/Architecture/datastructure/2026-11-22-t-digest-scale-function-tail-accuracy/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
 | 2026-11-21 | [CRC-32가 반드시 잡는 오류와 놓치는 오류](posts/Architecture/datastructure/2026-11-21-crc32-detects-and-misses/index.md) | 중급 | Python 3.13.5, zlib 1.3.1 | 실행 검증 |
