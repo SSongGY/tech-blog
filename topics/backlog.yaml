@@ -8778,4 +8778,4 @@ topics:
     angle: "K-IFRS 제1116호 문단 47~60. 문단 53 금액 공시 열 가지, 단기·소액·변동리스료가 부채 밖에 남는 구조, 현금흐름표 분류(문단 50)와 리스의 총 현금유출, 만기분석(문단 58). 가상 회사 두 곳의 주석 표를 만들어 비교"
     code: python
     origin: manual
-    status: writing
+    status: done
