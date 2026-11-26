@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **842편** · 갱신 2026-11-26
+총 **844편** · 갱신 2026-11-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -155,10 +155,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 286편
+## 기술사 (pe) — 288편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-27 | [토마스-킬만 갈등 처리 모드 5가지 — 주장성·협조성 두 차원과 30쌍 강제 선택 도구](posts/PE/it-management/2026-11-27-thomas-kilmann-conflict-handling-five-modes/index.md) | 중급 | Kilmann & Thomas (1977) Educational and Psychological Measurement 37(2), Kilmann, 16 Tips for Using the TKI Tool (2026-11-27 열람), PMBOK Guide 6th ed. (2017) | 문서 근거 |
+| 2026-11-27 | [AI 도입 성숙도와 준비도 진단 — 5개 수준·8개 차원 모형과 데이터·역량 평가 항목](posts/PE/it-management/2026-11-27-ai-adoption-maturity-readiness-assessment/index.md) | 중급 | CMU SEI, A Preliminary Report on a Model for Maturing AI Adoption (2025-12), Microsoft Cloud Adoption Framework, Plan for AI adoption (2026-10-15 갱신), CMMI Institute, CMMI Levels of Capability and Performance (2025 열람본), Cisco AI Readiness Index 2025 | 문서 근거 |
 | 2026-11-26 | [터크만 팀 발달 5단계 모델 — 1965년 4단계와 1977년 해산기, 단속 평형 모형과의 비교](posts/PE/it-management/2026-11-26-tuckman-team-development-five-stages/index.md) | 중급 | Tuckman (1965) Psychological Bulletin 63(6), Tuckman (1984) Current Contents Citation Classic, Tuckman & Jensen (1977) Group & Organization Studies 2(4), Gersick (1988) Academy of Management Journal 31(1), Gersick (1989) Academy of Management Journal 32(2) | 문서 근거 |
 | 2026-11-26 | [전방 비밀성(Forward Secrecy) — 임시 키 교환과 키 유출 피해 범위](posts/PE/security/2026-11-26-forward-secrecy-ephemeral-key-exchange/index.md) | 중급 | RFC 4949 (2007-08), RFC 5246 (2008-08), RFC 8446 (2018-08), RFC 9325 (2022-11, BCP 195) | 문서 근거 |
 | 2026-11-26 | [AEAD 인증 암호 — MAC-then-Encrypt의 패딩 오라클에서 GCM까지](posts/PE/security/2026-11-26-aead-generic-composition-padding-oracle-gcm/index.md) | 중급 | RFC 5116 (2008-01), NIST SP 800-38D (2007-11), RFC 5246 (2008-08), RFC 7366 (2014-09), RFC 7457 (2015-02), RFC 8446 (2018-08) | 문서 근거 |

@@ -8723,7 +8723,7 @@ topics:
     angle: "주장성·협조성 두 축으로 5모드를 정의하고 PMBOK 갈등 해결 기법 명칭과 대응, 과업·관계·절차 갈등 연구와 연결해 상황별 선택 기준"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-304
     title: "AI 도입 성숙도와 준비도 진단 — 데이터·역량·인프라 수준 평가"
     category: PE
@@ -8734,7 +8734,7 @@ topics:
     angle: "AX 추진 2단계인 준비도 진단을 성숙도 수준별 기준과 평가 항목으로 정리하고, 진단 결과가 사용 사례 우선순위로 이어지는 방식을 다룬다"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-134
     title: "가격 이력 표에서 주문 시점의 가격 찾기 — 시점 조회를 세 가지로 쓰기"
     category: Database
