@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 370" width="880" height="370" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#555555"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="370" fill="#fafaf7"/>
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#1b1b1b">HOTP 값이 만들어지는 세 단계 — RFC 4226의 예시 값으로</text>
+
+  <!-- 1단계 -->
+  <rect x="80" y="50" width="170" height="46" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="165" y="78" font-size="14" text-anchor="middle" fill="#1b1b1b">비밀 값 K</text>
+  <rect x="270" y="50" width="200" height="46" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="370" y="78" font-size="14" text-anchor="middle" fill="#1b1b1b">카운터 C (8바이트)</text>
+  <line x1="472" y1="73" x2="558" y2="73" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="560" y="50" width="240" height="46" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="680" y="78" font-size="14" text-anchor="middle" fill="#1b1b1b">① HMAC-SHA-1(K, C)</text>
+  <text x="80" y="118" font-size="13" fill="#555555">TOTP는 C 자리에 T = ⌊(유닉스 시각 − T0) ÷ 30⌋ 을 넣는다</text>
+  <line x1="680" y1="96" x2="680" y2="146" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- HMAC 20바이트 -->
+  <text x="80" y="142" font-size="13" fill="#1b1b1b">HMAC 결과 20바이트</text>
+  <g font-family="Consolas,'Courier New',monospace" font-size="14" text-anchor="middle" fill="#1b1b1b">
+    <g fill="#ffffff" stroke="#888888" stroke-width="1">
+      <rect x="80" y="150" width="36" height="32"/><rect x="116" y="150" width="36" height="32"/>
+      <rect x="152" y="150" width="36" height="32"/><rect x="188" y="150" width="36" height="32"/>
+      <rect x="224" y="150" width="36" height="32"/><rect x="260" y="150" width="36" height="32"/>
+      <rect x="296" y="150" width="36" height="32"/><rect x="332" y="150" width="36" height="32"/>
+      <rect x="368" y="150" width="36" height="32"/><rect x="404" y="150" width="36" height="32"/>
+      <rect x="584" y="150" width="36" height="32"/><rect x="620" y="150" width="36" height="32"/>
+      <rect x="656" y="150" width="36" height="32"/><rect x="692" y="150" width="36" height="32"/>
+      <rect x="728" y="150" width="36" height="32"/>
+    </g>
+    <g fill="#d3e6da" stroke="#2d6a4f" stroke-width="1.5">
+      <rect x="440" y="150" width="36" height="32"/><rect x="476" y="150" width="36" height="32"/>
+      <rect x="512" y="150" width="36" height="32"/><rect x="548" y="150" width="36" height="32"/>
+    </g>
+    <rect x="764" y="150" width="36" height="32" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+    <text x="98" y="171">1f</text><text x="134" y="171">86</text><text x="170" y="171">98</text>
+    <text x="206" y="171">69</text><text x="242" y="171">0e</text><text x="278" y="171">02</text>
+    <text x="314" y="171">ca</text><text x="350" y="171">16</text><text x="386" y="171">61</text>
+    <text x="422" y="171">85</text><text x="458" y="171">50</text><text x="494" y="171">ef</text>
+    <text x="530" y="171">7f</text><text x="566" y="171">19</text><text x="602" y="171">da</text>
+    <text x="638" y="171">8e</text><text x="674" y="171">94</text><text x="710" y="171">5b</text>
+    <text x="746" y="171">55</text><text x="782" y="171">5a</text>
+  </g>
+  <g font-size="13" text-anchor="middle" fill="#555555">
+    <text x="98" y="200">0</text><text x="458" y="200">10</text><text x="566" y="200">13</text><text x="782" y="200">19</text>
+  </g>
+
+  <text x="818" y="228" font-size="13" text-anchor="end" fill="#b45309">② 0x5a의 아래 4비트 → 오프셋 10</text>
+  <text x="512" y="228" font-size="13" text-anchor="middle" fill="#2d6a4f">오프셋부터 4바이트</text>
+  <path d="M512,236 L512,254 L170,254 L170,278" fill="none" stroke="#2d6a4f" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 2~3단계 -->
+  <rect x="80" y="280" width="180" height="48" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="1.4"/>
+  <text x="170" y="309" font-size="14" text-anchor="middle" fill="#1b1b1b">0x50ef7f19</text>
+  <line x1="262" y1="304" x2="298" y2="304" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="300" y="280" width="260" height="48" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="430" y="300" font-size="13" text-anchor="middle" fill="#1b1b1b">최상위 비트를 0으로 (31비트)</text>
+  <text x="430" y="319" font-size="14" text-anchor="middle" fill="#1b1b1b">1357872921</text>
+  <line x1="562" y1="304" x2="598" y2="304" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="600" y="280" width="200" height="48" fill="#e6f0ea" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="700" y="300" font-size="13" text-anchor="middle" fill="#1b1b1b">③ mod 10^6</text>
+  <text x="700" y="319" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">872921</text>
+
+  <text x="440" y="354" font-size="13" text-anchor="middle" fill="#555555">오프셋은 0~15라서 꺼내는 4바이트는 항상 20바이트 안에 들어온다</text>
+</svg>
