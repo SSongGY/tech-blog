@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <defs>
+    <marker id="arrGray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="450" fill="#ffffff"/>
+  <text x="440" y="34" text-anchor="middle" font-size="17" font-weight="bold" fill="#222">인스펙션 프로세스 — 7개 절차와 종료 판정</text>
+
+  <!-- 1행: 회의 전 -->
+  <rect x="40" y="70" width="170" height="80" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="125" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">① 관리 준비</text>
+  <text x="125" y="128" text-anchor="middle" font-size="13" fill="#444">자원·교육·일정 확보</text>
+
+  <rect x="250" y="70" width="170" height="80" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="335" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">② 인스펙션 계획</text>
+  <text x="335" y="128" text-anchor="middle" font-size="13" fill="#444">팀 구성·자료 배포</text>
+
+  <rect x="460" y="70" width="170" height="80" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="545" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">③ 절차 개요</text>
+  <text x="545" y="128" text-anchor="middle" font-size="13" fill="#444">역할·규칙 안내</text>
+
+  <rect x="670" y="70" width="170" height="80" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="755" y="102" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">④ 산출물 개요</text>
+  <text x="755" y="128" text-anchor="middle" font-size="13" fill="#444">작성자가 대상 설명</text>
+
+  <line x1="210" y1="110" x2="246" y2="110" stroke="#555" stroke-width="1.8" marker-end="url(#arrGray)"/>
+  <line x1="420" y1="110" x2="456" y2="110" stroke="#555" stroke-width="1.8" marker-end="url(#arrGray)"/>
+  <line x1="630" y1="110" x2="666" y2="110" stroke="#555" stroke-width="1.8" marker-end="url(#arrGray)"/>
+  <line x1="755" y1="150" x2="755" y2="226" stroke="#555" stroke-width="1.8" marker-end="url(#arrGray)"/>
+
+  <!-- 2행: 오른쪽에서 왼쪽으로 -->
+  <rect x="670" y="230" width="170" height="80" rx="8" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="755" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">⑤ 준비</text>
+  <text x="755" y="288" text-anchor="middle" font-size="13" fill="#333">각자 검토·이상 기록</text>
+
+  <rect x="460" y="230" width="170" height="80" rx="8" fill="#eaf4ee" stroke="#2d6a4f" stroke-width="1.6"/>
+  <text x="545" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">⑥ 검사 회의</text>
+  <text x="545" y="288" text-anchor="middle" font-size="13" fill="#333">이상 기록·종료 판정</text>
+
+  <rect x="250" y="230" width="170" height="80" rx="8" fill="#fff4e6" stroke="#b45309" stroke-width="1.6"/>
+  <text x="335" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">⑦ 재작업·후속 확인</text>
+  <text x="335" y="288" text-anchor="middle" font-size="13" fill="#333">작성자 수정, 리더 확인</text>
+
+  <rect x="40" y="230" width="170" height="80" rx="8" fill="#e7f0ff" stroke="#3b5b92" stroke-width="1.6"/>
+  <text x="125" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#222">종료</text>
+  <text x="125" y="288" text-anchor="middle" font-size="13" fill="#333">종료 기준 충족</text>
+
+  <line x1="670" y1="270" x2="634" y2="270" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrGreen)"/>
+  <line x1="460" y1="270" x2="424" y2="270" stroke="#b45309" stroke-width="1.8" marker-end="url(#arrGray)"/>
+  <line x1="250" y1="270" x2="214" y2="270" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrGreen)"/>
+
+  <!-- 재작업 검증 없이 수락 -->
+  <path d="M 545 310 L 545 346 L 125 346 L 125 314" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrGreen)"/>
+  <text x="335" y="366" text-anchor="middle" font-size="13" fill="#2d6a4f">재작업 검증 없이 수락</text>
+
+  <!-- 재인스펙션 -->
+  <line x1="335" y1="230" x2="335" y2="154" stroke="#9d0208" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arrRed)"/>
+  <text x="347" y="196" font-size="13" fill="#9d0208">재인스펙션</text>
+
+  <text x="440" y="402" text-anchor="middle" font-size="13" fill="#444">종료 판정 3가지: 재작업 검증 없이 수락 · 재작업 검증 후 수락 · 재인스펙션</text>
+  <text x="440" y="426" text-anchor="middle" font-size="13" fill="#444">역할 5가지: 리더 · 기록자 · 낭독자 · 작성자 · 검사자 (관리자는 참여하지 않는다)</text>
+</svg>
