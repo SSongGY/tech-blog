@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#555555"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="450" fill="#fafaf7"/>
+
+  <text x="40" y="32" font-size="16" font-weight="bold" fill="#1b1b1b">갈등 처리 모드 5가지 — 주장성과 협조성 두 차원</text>
+
+  <line x1="150" y1="385" x2="150" y2="56" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="150" y1="385" x2="652" y2="385" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="60" y="220" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b" transform="rotate(-90 60 220)">주장성</text>
+  <text x="84" y="220" font-size="13" text-anchor="middle" fill="#555555" transform="rotate(-90 84 220)">자기 관심사를 채우려는 정도</text>
+  <text x="135" y="106" font-size="13" text-anchor="end" fill="#1b1b1b">높음</text>
+  <text x="135" y="343" font-size="13" text-anchor="end" fill="#1b1b1b">낮음</text>
+
+  <text x="405" y="428" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">협조성 <tspan font-size="13" font-weight="normal" fill="#555555">— 상대 관심사를 채우려는 정도</tspan></text>
+  <text x="260" y="405" font-size="13" text-anchor="middle" fill="#1b1b1b">낮음</text>
+  <text x="550" y="405" font-size="13" text-anchor="middle" fill="#1b1b1b">높음</text>
+
+  <line x1="260" y1="338" x2="550" y2="102" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <line x1="260" y1="102" x2="550" y2="338" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 4"/>
+
+  <rect x="175" y="70" width="170" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="260" y="95" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">경쟁</text>
+  <text x="260" y="118" font-size="13" text-anchor="middle" fill="#555555">Competing</text>
+
+  <rect x="465" y="70" width="170" height="64" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="550" y="95" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">협력</text>
+  <text x="550" y="118" font-size="13" text-anchor="middle" fill="#555555">Collaborating</text>
+
+  <rect x="320" y="188" width="170" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="405" y="213" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">타협</text>
+  <text x="405" y="236" font-size="13" text-anchor="middle" fill="#555555">Compromising</text>
+
+  <rect x="175" y="306" width="170" height="64" fill="#ffffff" stroke="#555555" stroke-width="1.5"/>
+  <text x="260" y="331" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">회피</text>
+  <text x="260" y="354" font-size="13" text-anchor="middle" fill="#555555">Avoiding</text>
+
+  <rect x="465" y="306" width="170" height="64" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="550" y="331" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">수용</text>
+  <text x="550" y="354" font-size="13" text-anchor="middle" fill="#555555">Accommodating</text>
+
+  <line x1="676" y1="96" x2="716" y2="96" stroke="#2d6a4f" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="724" y="101" font-size="15" font-weight="bold" fill="#2d6a4f">통합 차원</text>
+  <text x="676" y="126" font-size="13" fill="#1b1b1b">회피 → 협력</text>
+  <text x="676" y="148" font-size="13" fill="#1b1b1b">양쪽이 얻는 몫의</text>
+  <text x="676" y="168" font-size="13" fill="#1b1b1b">합을 키울 수 있다</text>
+
+  <line x1="676" y1="226" x2="716" y2="226" stroke="#b45309" stroke-width="1.6" stroke-dasharray="6 4"/>
+  <text x="724" y="231" font-size="15" font-weight="bold" fill="#b45309">분배 차원</text>
+  <text x="676" y="256" font-size="13" fill="#1b1b1b">경쟁 ↔ 타협 ↔ 수용</text>
+  <text x="676" y="278" font-size="13" fill="#1b1b1b">합이 고정된 몫을</text>
+  <text x="676" y="298" font-size="13" fill="#1b1b1b">둘이 나눈다</text>
+
+  <text x="676" y="346" font-size="13" fill="#555555">타협은 두 차원 모두</text>
+  <text x="676" y="366" font-size="13" fill="#555555">중간에 놓인다</text>
+</svg>

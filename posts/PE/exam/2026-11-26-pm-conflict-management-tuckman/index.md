@@ -178,6 +178,8 @@ PMBOK 7판(2021)도 팀 발달 모델 항목(§4.2.6.1)에서 이 모델을 다�
 생긴다.
 
 > 개념 정리: [아키텍처 결정 기록(ADR) — 배경·결정·상태·결과 네 칸이 설계 문서와 갈리는 지점](../../software-engineering/2026-11-03-architecture-decision-record/index.md)
+>
+> 개념 정리: [토마스-킬만 갈등 처리 모드 5가지 — 주장성·협조성 두 차원과 30쌍 강제 선택 도구](../../it-management/2026-11-27-thomas-kilmann-conflict-handling-five-modes/index.md)
 
 끝
 
