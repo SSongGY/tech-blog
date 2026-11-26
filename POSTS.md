@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **844편** · 갱신 2026-11-27
+총 **845편** · 갱신 2026-11-27
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -561,10 +561,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 142편
+## 기출문제 (exam) — 143편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-27 | [기출문제 — 소프트웨어 품질의 의미, 품질보증의 목적과 기능, 인스펙션과 인스펙션 프로세스](posts/PE/exam/2026-11-27-software-quality-assurance-inspection-process/index.md) | 중급 | IEEE 730-2014, IEEE 1028-2008, ISO/IEC 25010:2011 (1판), ISO/IEC 25010:2023 (2판), Fagan, IBM Systems Journal 15(3), 1976, ISO/IEC 20246:2017 | 문서 근거 |
 | 2026-11-26 | [기출문제 — IT 프로젝트 PM의 갈등 관리: 갈등과 성과의 관계, 갈등 요인과 해결 전략, 터크만 팀 발달 5단계](posts/PE/exam/2026-11-26-pm-conflict-management-tuckman/index.md) | 중급 | Tuckman (1965) Psychological Bulletin 63(6), Tuckman & Jensen (1977) Group & Organization Studies 2(4), Thamhain & Wilemon (1975) Sloan Management Review 16(3), Kilmann & Thomas (1977) Educational and Psychological Measurement 37(2), de Wit·Greer·Jehn (2012) Journal of Applied Psychology 97(2), PMBOK Guide 6th ed. (2017), 7th ed. (2021) | 문서 근거 |
 | 2026-11-26 | [기출문제 — 기업의 AI 전환(AX): 중요성, 전략적 추진 절차, 장애 요인과 대응](posts/PE/exam/2026-11-26-enterprise-ai-transformation-ax-strategy/index.md) | 중급 | Eurostat, Use of artificial intelligence in enterprises (2025 자료, 2025-12 추출), Microsoft Cloud Adoption Framework, AI adoption (2026-11-14 갱신)·Plan for AI adoption (2026-10-15 갱신), ISO/IEC 42001:2023, NIST AI 100-1 AI RMF 1.0 (2023-01), NIST AI 600-1 (2024-07), 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정) | 문서 근거 |
 | 2026-11-25 | [기출문제 — TLS 프로토콜 구조와 핸드셰이크, TLS 1.2 취약점과 TLS 1.3 개선 사항](posts/PE/exam/2026-11-25-tls-handshake-tls12-weaknesses-tls13/index.md) | 중급 | RFC 8446 (2018-08), RFC 9846 (2026-07), RFC 5246 (2008-08), RFC 7457 (2015-02), RFC 9325 (2022-11, BCP 195), RFC 8996 (2021-03) | 문서 근거 |
