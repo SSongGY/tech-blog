@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 450" width="880" height="450" font-family="'Malgun Gothic','Apple SD Gothic Neo',sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#555555"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="450" fill="#fafaf7"/>
+
+  <text x="40" y="32" font-size="16" font-weight="bold" fill="#1b1b1b">AI 도입 성숙도 — 5개 수준과 8개 차원</text>
+
+  <rect x="40" y="204" width="150" height="56" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="115" y="228" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">① 탐색</text>
+  <text x="115" y="248" font-size="13" text-anchor="middle" fill="#555555">Exploratory AI</text>
+
+  <rect x="200" y="168" width="150" height="56" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="275" y="192" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">② 구현</text>
+  <text x="275" y="212" font-size="13" text-anchor="middle" fill="#555555">Implemented AI</text>
+
+  <rect x="360" y="132" width="150" height="56" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="435" y="156" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">③ 정렬</text>
+  <text x="435" y="176" font-size="13" text-anchor="middle" fill="#555555">Aligned AI</text>
+
+  <rect x="520" y="96" width="150" height="56" fill="#ffffff" stroke="#555555" stroke-width="1.4"/>
+  <text x="595" y="120" font-size="15" font-weight="bold" text-anchor="middle" fill="#1b1b1b">④ 확산</text>
+  <text x="595" y="140" font-size="13" text-anchor="middle" fill="#555555">Scaled AI</text>
+
+  <rect x="680" y="60" width="160" height="56" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.8"/>
+  <text x="760" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">⑤ 미래 대비</text>
+  <text x="760" y="104" font-size="13" text-anchor="middle" fill="#555555">Future Ready AI</text>
+
+  <text x="40" y="84" font-size="13" fill="#1b1b1b">수준은 조직 전체가 아니라</text>
+  <text x="40" y="104" font-size="13" fill="#1b1b1b">정한 범위(단위)에 매긴다</text>
+
+  <line x1="440" y1="318" x2="440" y2="282" stroke="#555555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="456" y="304" font-size="13" fill="#1b1b1b">수준마다 요구되는 역량 영역을 갖추면 올라간다</text>
+
+  <rect x="40" y="326" width="390" height="84" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="235" y="350" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">조직 변화 차원 4개</text>
+  <text x="235" y="374" font-size="13" text-anchor="middle" fill="#1b1b1b">조직 전략 · 인력과 문화</text>
+  <text x="235" y="396" font-size="13" text-anchor="middle" fill="#1b1b1b">워크플로 재설계 · 위험과 거버넌스</text>
+
+  <rect x="450" y="326" width="390" height="84" fill="#ffffff" stroke="#b45309" stroke-width="1.5"/>
+  <text x="645" y="350" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">수명주기 공학 차원 4개</text>
+  <text x="645" y="374" font-size="13" text-anchor="middle" fill="#1b1b1b">데이터 · 엔지니어링</text>
+  <text x="645" y="396" font-size="13" text-anchor="middle" fill="#1b1b1b">운영과 유지 · 생태계</text>
+
+  <text x="440" y="436" font-size="13" text-anchor="middle" fill="#555555">진단의 결과물은 인증 등급이 아니라 우선순위가 매겨진 로드맵이다</text>
+</svg>

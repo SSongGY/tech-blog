@@ -142,6 +142,8 @@ AX는 DX가 만든 데이터와 시스템 위에서 업무의 판단과 생성�
 역할은 AI 모델을 고르는 것보다 **데이터를 통합하고, AI를 업무 시스템에 연계하고, 그 동작을 통제할
 체계를 먼저 갖추는 것**이다.
 
+> 개념 정리: [AI 도입 성숙도와 준비도 진단 — 5개 수준·8개 차원 모형과 데이터·역량 평가 항목](../../it-management/2026-11-27-ai-adoption-maturity-readiness-assessment/index.md)
+>
 > 개념 정리: [ISO/IEC 42001:2023 인공지능 경영시스템](../2026-10-25-iso-iec-42001-ai-management-system/index.md)
 >
 > 개념 정리: [MLOps 파이프라인과 모델 드리프트 대응](../../emerging-tech/2026-10-15-mlops-pipeline-model-drift/index.md)
