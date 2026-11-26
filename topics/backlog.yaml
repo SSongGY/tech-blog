@@ -8724,3 +8724,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-304
+    title: "AI 도입 성숙도와 준비도 진단 — 데이터·역량·인프라 수준 평가"
+    category: PE
+    subcategory: it-management
+    track: pe
+    tags: [정보관리기술사, it-management, 개념정리]
+    difficulty: 중급
+    angle: "AX 추진 2단계인 준비도 진단을 성숙도 수준별 기준과 평가 항목으로 정리하고, 진단 결과가 사용 사례 우선순위로 이어지는 방식을 다룬다"
+    code: none
+    origin: exam
+    status: todo
