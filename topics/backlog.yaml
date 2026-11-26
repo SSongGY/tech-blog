@@ -8712,7 +8712,7 @@ topics:
     angle: "1965년 4단계와 1977년 해산기 추가의 출처를 가르고, 집단 구조·과업 활동 두 영역 기술과 단계 역행, 후속 비판(Gersick 단속평형 모형)과 비교"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: pe-303
     title: "토마스-킬만 갈등 처리 모드 5가지"
     category: PE
@@ -8735,3 +8735,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-134
+    title: "가격 이력 표에서 주문 시점의 가격 찾기 — 시점 조회를 세 가지로 쓰기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, history, correlated-subquery, basics]
+    difficulty: 중급
+    angle: "적용 시작일만 있는 가격 이력 표에서 주문일 기준 가격을 상관 부질의·LEAD로 만든 구간 조인·ROW_NUMBER 세 가지로 찾아 결과와 실행계획을 비교한다. 이력 시작 전 주문과 같은 날 두 번 바뀐 가격에서 어떻게 갈리는지까지"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-048
+    title: "TOTP 6자리 코드는 어떻게 만들어지는가 — RFC 시험 벡터로 맞춰 보는 HOTP·TOTP"
+    category: Backend
+    subcategory: security
+    track: general
+    tags: [totp, hotp, hmac, otp, rfc6238]
+    difficulty: 중급
+    angle: "RFC 4226의 동적 절단과 RFC 6238의 시간 스텝을 표준 라이브러리로 구현해 부록 시험 벡터와 전부 대조한다. 시계 오차 허용 창을 넓힐 때 추측 성공 확률이 얼마나 늘어나는지 계산하고 모의 실험으로 확인한다"
+    code: python
+    origin: manual
+    status: done

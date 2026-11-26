@@ -1,0 +1,163 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-26-price-history-as-of-lookup
+# 명령      : python as_of_price.py
+# 수행 시각 : 2026-11-26 19:07 (대한민국 표준시)
+# 소요      : 7.3초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[orders]  6행
+  컬럼       | 타입    | 제약
+  -----------+---------+---------
+  order_id   | INTEGER | PK
+  product_id | TEXT    | NOT NULL
+  order_date | TEXT    | NOT NULL
+  qty        | INTEGER | NOT NULL
+
+  order_id | product_id | order_date | qty
+  ---------+------------+------------+----
+         1 | P01        | 2026-01-15 |   2
+         2 | P01        | 2026-03-01 |   1
+         3 | P01        | 2026-05-31 |   3
+         4 | P01        | 2026-07-10 |   1
+         5 | P02        | 2026-01-20 |   1
+         6 | P02        | 2026-05-01 |   2
+
+[price_history]  5행
+  컬럼       | 타입    | 제약
+  -----------+---------+------------
+  product_id | TEXT    | PK NOT NULL
+  valid_from | TEXT    | PK NOT NULL
+  price      | INTEGER | NOT NULL
+
+  product_id | valid_from | price
+  -----------+------------+------
+  P01        | 2026-01-01 |  1000
+  P01        | 2026-03-01 |  1200
+  P01        | 2026-06-01 |  1100
+  P02        | 2026-02-01 |  5000
+  P02        | 2026-05-01 |  5500
+
+
+[1] 흔한 실수 — 상품별 최신 가격을 모든 주문에 곱한다
+  sql> SELECT o.order_id, o.product_id, o.order_date, o.qty, c.price, o.qty * c.price AS amount FROM orders o JOIN (SELECT product_id, price, MAX(valid_from) AS valid_from FROM  ...
+    ('order_id', 'product_id', 'order_date', 'qty', 'price', 'amount')
+    (1, 'P01', '2026-01-15', 2, 1100, 2200)
+    (2, 'P01', '2026-03-01', 1, 1100, 1100)
+    (3, 'P01', '2026-05-31', 3, 1100, 3300)
+    (4, 'P01', '2026-07-10', 1, 1100, 1100)
+    (5, 'P02', '2026-01-20', 1, 5500, 5500)
+    (6, 'P02', '2026-05-01', 2, 5500, 11000)
+
+[2] 방법 A — 상관 부질의: 주문일 이전 가격 중 가장 늦은 1건
+  sql> SELECT o.order_id, o.product_id, o.order_date, o.qty, (SELECT p.price FROM price_history p WHERE p.product_id = o.product_id AND p.valid_from <= o.order_date ORDER BY p.v ...
+    ('order_id', 'product_id', 'order_date', 'qty', 'price')
+    (1, 'P01', '2026-01-15', 2, 1000)
+    (2, 'P01', '2026-03-01', 1, 1200)
+    (3, 'P01', '2026-05-31', 3, 1200)
+    (4, 'P01', '2026-07-10', 1, 1100)
+    (5, 'P02', '2026-01-20', 1, None)
+    (6, 'P02', '2026-05-01', 2, 5500)
+
+[3] 방법 B — LEAD 로 끝 날짜를 만든다
+  sql> SELECT product_id, valid_from, price, LEAD(valid_from) OVER (PARTITION BY product_id ORDER BY valid_from) AS valid_to FROM price_history ORDER BY product_id, valid_from ...
+    ('product_id', 'valid_from', 'price', 'valid_to')
+    ('P01', '2026-01-01', 1000, '2026-03-01')
+    ('P01', '2026-03-01', 1200, '2026-06-01')
+    ('P01', '2026-06-01', 1100, None)
+    ('P02', '2026-02-01', 5000, '2026-05-01')
+    ('P02', '2026-05-01', 5500, None)
+[3-1] 그 구간에 주문일을 넣어 조인 — 시작은 포함, 끝은 제외
+  sql> WITH price_range AS ( SELECT product_id, valid_from, price, LEAD(valid_from) OVER (PARTITION BY product_id ORDER BY valid_from) AS valid_to FROM price_history) SELECT o.o ...
+    ('order_id', 'product_id', 'order_date', 'qty', 'price')
+    (1, 'P01', '2026-01-15', 2, 1000)
+    (2, 'P01', '2026-03-01', 1, 1200)
+    (3, 'P01', '2026-05-31', 3, 1200)
+    (4, 'P01', '2026-07-10', 1, 1100)
+    (6, 'P02', '2026-05-01', 2, 5500)
+
+[4] 방법 C — 주문일 이전 가격을 전부 붙이고 ROW_NUMBER 로 1건
+  sql> SELECT order_id, product_id, order_date, qty, price FROM (SELECT o.order_id, o.product_id, o.order_date, o.qty, p.price, ROW_NUMBER() OVER (PARTITION BY o.order_id ORDER  ...
+    ('order_id', 'product_id', 'order_date', 'qty', 'price')
+    (1, 'P01', '2026-01-15', 2, 1000)
+    (2, 'P01', '2026-03-01', 1, 1200)
+    (3, 'P01', '2026-05-31', 3, 1200)
+    (4, 'P01', '2026-07-10', 1, 1100)
+    (6, 'P02', '2026-05-01', 2, 5500)
+
+[5] 이력 시작 전 주문(order_id 5) — 방법별 결과 행 수
+    A 상관 부질의       6행  order_id=[1, 2, 3, 4, 5, 6]
+    B 구간 조인        5행  order_id=[1, 2, 3, 4, 6]
+    C ROW_NUMBER   5행  order_id=[1, 2, 3, 4, 6]
+[5-1] 방법 B 를 LEFT JOIN 으로 바꾸면 주문 5 가 price NULL 로 남는다
+  sql> WITH price_range AS ( SELECT product_id, valid_from, price, LEAD(valid_from) OVER (PARTITION BY product_id ORDER BY valid_from) AS valid_to FROM price_history) SELECT o.o ...
+    ('order_id', 'product_id', 'order_date', 'qty', 'price')
+    (1, 'P01', '2026-01-15', 2, 1000)
+    (2, 'P01', '2026-03-01', 1, 1200)
+    (3, 'P01', '2026-05-31', 3, 1200)
+    (4, 'P01', '2026-07-10', 1, 1100)
+    (5, 'P02', '2026-01-20', 1, None)
+    (6, 'P02', '2026-05-01', 2, 5500)
+
+[6] 양 끝을 BETWEEN 으로 닫으면 — 가격이 바뀐 날의 주문 2·6 이 두 줄
+  sql> WITH price_range AS ( SELECT product_id, valid_from, price, LEAD(valid_from) OVER (PARTITION BY product_id ORDER BY valid_from) AS valid_to FROM price_history) SELECT o.o ...
+    ('order_id', 'order_date', 'valid_from', 'valid_to', 'price')
+    (1, '2026-01-15', '2026-01-01', '2026-03-01', 1000)
+    (2, '2026-03-01', '2026-01-01', '2026-03-01', 1000)
+    (2, '2026-03-01', '2026-03-01', '2026-06-01', 1200)
+    (3, '2026-05-31', '2026-03-01', '2026-06-01', 1200)
+    (4, '2026-07-10', '2026-06-01', None, 1100)
+    (6, '2026-05-01', '2026-02-01', '2026-05-01', 5000)
+    (6, '2026-05-01', '2026-05-01', None, 5500)
+
+[7] 실행계획
+  -- A 상관 부질의
+    QUERY PLAN
+    |--SCAN o
+    `--CORRELATED SCALAR SUBQUERY 1
+       `--SEARCH p USING PRIMARY KEY (product_id=? AND valid_from<?)
+  -- B 구간 조인
+    QUERY PLAN
+    |--CO-ROUTINE price_range
+    |  |--CO-ROUTINE (subquery-3)
+    |  |  `--SCAN price_history
+    |  `--SCAN (subquery-3)
+    |--SCAN o
+    `--SEARCH r USING AUTOMATIC COVERING INDEX (product_id=?)
+  -- C ROW_NUMBER
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-1)
+    |  |--CO-ROUTINE (subquery-3)
+    |  |  |--SCAN o
+    |  |  `--SEARCH p USING PRIMARY KEY (product_id=? AND valid_from<?)
+    |  `--SCAN (subquery-3)
+    |--SCAN (subquery-1)
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[8] 행을 늘려 잰다 — 상품 200개, 주문 20,000건, 3회 중 가장 빠른 값
+     ('changes_per_product', 'method', 'rows', 'seconds')
+     (5, 'A', 20000, 0.019)
+     (5, 'B', 20000, 0.025)
+     (5, 'C', 20000, 0.048)
+     가격 이력 1000행 — 세 방법의 결과가 같은가: True
+     (50, 'A', 20000, 0.019)
+     (50, 'B', 20000, 0.087)
+     (50, 'C', 20000, 0.246)
+     가격 이력 10000행 — 세 방법의 결과가 같은가: True
+     (300, 'A', 20000, 0.022)
+     (300, 'B', 20000, 0.464)
+     (300, 'C', 20000, 1.349)
+     가격 이력 60000행 — 세 방법의 결과가 같은가: True
