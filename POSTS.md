@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **836편** · 갱신 2026-11-26
+총 **837편** · 갱신 2026-11-26
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -556,11 +556,12 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 141편
+## 기출문제 (exam) — 142편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
 | 2026-11-26 | [기출문제 — IT 프로젝트 PM의 갈등 관리: 갈등과 성과의 관계, 갈등 요인과 해결 전략, 터크만 팀 발달 5단계](posts/PE/exam/2026-11-26-pm-conflict-management-tuckman/index.md) | 중급 | Tuckman (1965) Psychological Bulletin 63(6), Tuckman & Jensen (1977) Group & Organization Studies 2(4), Thamhain & Wilemon (1975) Sloan Management Review 16(3), Kilmann & Thomas (1977) Educational and Psychological Measurement 37(2), de Wit·Greer·Jehn (2012) Journal of Applied Psychology 97(2), PMBOK Guide 6th ed. (2017), 7th ed. (2021) | 문서 근거 |
+| 2026-11-26 | [기출문제 — 기업의 AI 전환(AX): 중요성, 전략적 추진 절차, 장애 요인과 대응](posts/PE/exam/2026-11-26-enterprise-ai-transformation-ax-strategy/index.md) | 중급 | Eurostat, Use of artificial intelligence in enterprises (2025 자료, 2025-12 추출), Microsoft Cloud Adoption Framework, AI adoption (2026-11-14 갱신)·Plan for AI adoption (2026-10-15 갱신), ISO/IEC 42001:2023, NIST AI 100-1 AI RMF 1.0 (2023-01), NIST AI 600-1 (2024-07), 인공지능 기본법 법률 제21311호 (2026-01-20 일부개정) | 문서 근거 |
 | 2026-11-25 | [기출문제 — TLS 프로토콜 구조와 핸드셰이크, TLS 1.2 취약점과 TLS 1.3 개선 사항](posts/PE/exam/2026-11-25-tls-handshake-tls12-weaknesses-tls13/index.md) | 중급 | RFC 8446 (2018-08), RFC 9846 (2026-07), RFC 5246 (2008-08), RFC 7457 (2015-02), RFC 9325 (2022-11, BCP 195), RFC 8996 (2021-03) | 문서 근거 |
 | 2026-11-25 | [기출문제 — 데이터베이스 인덱스, 클러스터드와 논클러스터드 인덱스 비교](posts/PE/exam/2026-11-25-clustered-vs-nonclustered-index/index.md) | 중급 | SQL Server 2022 문서 (Microsoft Learn, 2026-10 갱신), MySQL 8.0 Reference Manual §17.6.2.1, Oracle Database 19c Concepts 3장, PostgreSQL 16 문서 | 문서 근거 |
 | 2026-11-24 | [기출문제 — 소프트웨어 제품계열(Product Line) 방법론의 개념·특징, 활용 기술과 고려사항](posts/PE/exam/2026-11-24-software-product-line-methodology/index.md) | 중급 | ISO/IEC 26550:2015 (2판, 2022 확인), CMU/SEI-2003-TN-031 (2003-10), CMU/SEI-90-TR-21 (1990-11), Krueger, PFE 2001 (LNCS 2290, 2002) | 문서 근거 |
