@@ -8757,3 +8757,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-169
+    title: "판매후리스 — 처분이익 중 계속 쓰는 몫은 인식하지 않는다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, lease, ifrs16, sale-and-leaseback]
+    difficulty: 심화
+    angle: "K-IFRS 제1116호 문단 98~103. 판매 여부 판단, 사용권자산을 종전 장부금액에 비례해 측정, 시장조건과 다른 판매가격의 선급리스료·추가 금융 조정, 판매가 아닌 경우 금융부채. 가상 회사 건물 매각으로 세 경우를 계산"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-170
+    title: "리스이용자 주석 읽기 — 리스부채에 안 잡힌 리스료와 총 현금유출"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [finance, disclosure, lease, ifrs16, notes]
+    difficulty: 중급
+    angle: "K-IFRS 제1116호 문단 47~60. 문단 53 금액 공시 열 가지, 단기·소액·변동리스료가 부채 밖에 남는 구조, 현금흐름표 분류(문단 50)와 리스의 총 현금유출, 만기분석(문단 58). 가상 회사 두 곳의 주석 표를 만들어 비교"
+    code: python
+    origin: manual
+    status: writing
