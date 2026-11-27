@@ -8866,4 +8866,4 @@ topics:
     angle: "제1116호 B58·68·61~66, 적용사례 20·21. 중간리스제공자가 남은 기간 전부를 전대하면 금융리스, 일부만 전대하면 운용리스가 되는 것을 가상 회사로 계산하고 상위리스 부채가 남는 모양을 보인다"
     code: python
     origin: manual
-    status: writing
+    status: done

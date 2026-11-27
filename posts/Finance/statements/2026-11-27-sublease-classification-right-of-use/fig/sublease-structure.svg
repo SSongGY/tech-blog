@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">전대리스 — 중간리스제공자가 보는 두 계약과 분류 기준</text>
+
+  <!-- 세 당사자 -->
+  <rect x="40" y="62" width="200" height="60" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="140" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">상위리스제공자</text>
+  <text x="140" y="108" text-anchor="middle" font-size="13" fill="#4b5563">건물 소유자</text>
+
+  <rect x="340" y="62" width="200" height="60" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">중간리스제공자</text>
+  <text x="440" y="108" text-anchor="middle" font-size="13" fill="#1f2937">가나물산</text>
+
+  <rect x="640" y="62" width="200" height="60" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="740" y="88" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">전대리스이용자</text>
+  <text x="740" y="108" text-anchor="middle" font-size="13" fill="#4b5563">다라상사</text>
+
+  <line x1="240" y1="92" x2="338" y2="92" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="289" y="84" text-anchor="middle" font-size="13" fill="#1f2937">상위리스</text>
+  <line x1="540" y1="92" x2="638" y2="92" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="589" y="84" text-anchor="middle" font-size="13" fill="#1f2937">전대리스</text>
+
+  <!-- 분류 기준 -->
+  <line x1="440" y1="122" x2="440" y2="156" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="200" y="158" width="480" height="70" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="180" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">전대리스 분류 기준 (B58)</text>
+  <text x="440" y="201" text-anchor="middle" font-size="13" fill="#1f2937">⑴ 상위리스가 단기리스면 운용리스</text>
+  <text x="440" y="220" text-anchor="middle" font-size="13" fill="#1f2937">⑵ 아니면 기초자산이 아닌 사용권자산 기준으로 문단 61~66</text>
+
+  <line x1="330" y1="228" x2="230" y2="266" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="550" y1="228" x2="650" y2="266" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 금융 -->
+  <rect x="40" y="268" width="380" height="200" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="230" y="296" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">금융리스로 분류</text>
+  <text x="230" y="316" text-anchor="middle" font-size="13" fill="#4b5563">사용권자산의 위험과 보상 대부분을 넘김</text>
+  <text x="60" y="348" font-size="13" fill="#1f2937">· 넘긴 사용권자산을 제거한다</text>
+  <text x="60" y="372" font-size="13" fill="#1f2937">· 전대리스 순투자를 인식한다</text>
+  <text x="60" y="396" font-size="13" fill="#1f2937">· 차이는 당기손익</text>
+  <text x="60" y="420" font-size="13" fill="#1f2937">· 상위리스 리스부채는 그대로 둔다</text>
+  <text x="60" y="448" font-size="13" fill="#4b5563">손익: 금융수익 + 상위리스 이자비용</text>
+
+  <!-- 운용 -->
+  <rect x="460" y="268" width="380" height="200" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="2"/>
+  <text x="650" y="296" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">운용리스로 분류</text>
+  <text x="650" y="316" text-anchor="middle" font-size="13" fill="#4b5563">위험과 보상 대부분을 넘기지 않음</text>
+  <text x="480" y="348" font-size="13" fill="#1f2937">· 사용권자산을 그대로 둔다</text>
+  <text x="480" y="372" font-size="13" fill="#1f2937">· 상위리스 리스부채도 그대로 둔다</text>
+  <text x="480" y="396" font-size="13" fill="#1f2937">· 받는 리스료는 리스수익</text>
+  <text x="480" y="448" font-size="13" fill="#4b5563">손익: 리스수익 + 감가상각비 + 이자비용</text>
+</svg>
