@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2937">Bitcask 구조 — 메모리의 keydir 와 디스크의 추가 전용 데이터 파일</text>
+
+  <!-- 메모리 영역 -->
+  <rect x="30" y="50" width="820" height="150" rx="8" fill="#f3f4f6" stroke="#9ca3af" stroke-dasharray="6 4"/>
+  <text x="46" y="74" font-size="14" font-weight="bold" fill="#4b5563">메모리</text>
+
+  <rect x="230" y="62" width="420" height="124" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="440" y="84" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">keydir (해시 표, 모든 키)</text>
+  <text x="440" y="108" font-size="13" text-anchor="middle" fill="#374151">key → file_id · value_sz · value_pos · tstamp</text>
+  <line x1="250" y1="120" x2="630" y2="120" stroke="#d1d5db"/>
+  <text x="260" y="142" font-size="13" fill="#1f2937">user:0007 → 2, 100, 3487, 1844</text>
+  <text x="260" y="166" font-size="13" fill="#1f2937">user:0123 → 3, 100,  615, 1907</text>
+
+  <text x="46" y="110" font-size="13" fill="#374151">get(key)</text>
+  <line x1="108" y1="105" x2="226" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="46" y="130" font-size="13" fill="#2d6a4f">① 해시 조회</text>
+
+  <!-- 디스크 영역 -->
+  <rect x="30" y="220" width="820" height="280" rx="8" fill="#f9fafb" stroke="#9ca3af" stroke-dasharray="6 4"/>
+  <text x="46" y="244" font-size="14" font-weight="bold" fill="#4b5563">디스크 (디렉터리 하나)</text>
+
+  <!-- 불변 파일 -->
+  <rect x="60" y="262" width="210" height="96" rx="6" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="165" y="286" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">000001.data</text>
+  <text x="165" y="310" font-size="13" text-anchor="middle" fill="#6b7280">닫힌 파일 · 불변</text>
+  <text x="165" y="334" font-size="13" text-anchor="middle" fill="#9d0208">옛 값이 그대로 남는다</text>
+
+  <rect x="300" y="262" width="210" height="96" rx="6" fill="#ffffff" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="405" y="286" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">000002.data</text>
+  <text x="405" y="310" font-size="13" text-anchor="middle" fill="#6b7280">닫힌 파일 · 불변</text>
+  <text x="405" y="334" font-size="13" text-anchor="middle" fill="#374151">user:0007 최신 값</text>
+
+  <!-- 활성 파일 -->
+  <rect x="540" y="262" width="280" height="96" rx="6" fill="#e8f5ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="680" y="286" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">000003.data (활성)</text>
+  <text x="680" y="310" font-size="13" text-anchor="middle" fill="#2d6a4f">끝에 추가만 한다</text>
+  <text x="680" y="334" font-size="13" text-anchor="middle" fill="#374151">크기 한도에 닿으면 닫고 새 파일</text>
+
+  <!-- keydir → 파일 -->
+  <line x1="390" y1="186" x2="405" y2="258" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+  <text x="60" y="214" font-size="13" fill="#2d6a4f">② 위치로 바로 읽기 (seek 1번)</text>
+  <line x1="560" y1="186" x2="640" y2="258" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrow-green)"/>
+
+  <text x="835" y="110" font-size="13" text-anchor="end" fill="#374151">put(key, value)</text>
+  <line x1="790" y1="118" x2="790" y2="258" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="782" y="215" font-size="13" text-anchor="end" fill="#374151">추가 후 keydir 갱신</text>
+
+  <!-- 항목 형식 -->
+  <text x="60" y="384" font-size="13" fill="#374151">항목 형식: crc · tstamp · key_sz · value_sz · key · value  (삭제는 묘비 값을 가진 항목)</text>
+
+  <!-- 병합 -->
+  <rect x="60" y="402" width="450" height="80" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="285" y="426" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">병합 (merge)</text>
+  <text x="285" y="450" font-size="13" text-anchor="middle" fill="#374151">닫힌 파일만 훑어 살아 있는 최신 값만 새 파일에 쓴다</text>
+  <text x="285" y="472" font-size="13" text-anchor="middle" fill="#374151">옛 값·묘비는 버려진다</text>
+
+  <line x1="514" y1="442" x2="566" y2="442" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="570" y="402" width="250" height="80" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="695" y="426" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">병합 데이터 + 힌트 파일</text>
+  <text x="695" y="450" font-size="13" text-anchor="middle" fill="#374151">힌트 = 값 대신 위치와 크기</text>
+  <text x="695" y="472" font-size="13" text-anchor="middle" fill="#374151">기동할 때 데이터 대신 읽는다</text>
+</svg>
