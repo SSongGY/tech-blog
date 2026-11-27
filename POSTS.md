@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **852편** · 갱신 2026-11-28
+총 **854편** · 갱신 2026-11-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -156,10 +156,12 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 289편
+## 기술사 (pe) — 291편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-28 | [IEEE 730 소프트웨어 품질보증 프로세스 — 3개 그룹 16개 활동과 SQA 계획서](posts/PE/software-engineering/2026-11-28-ieee-730-sqa-process-activities/index.md) | 중급 | IEEE 730-2014, IEEE 730-2026, ISO/IEC/IEEE 12207:2008, ISO 9000:2015 | 문서 근거 |
+| 2026-11-28 | [맥락 아웃라이어 탐지 — 맥락 속성과 행동 속성을 나누는 설계](posts/PE/data-analysis/2026-11-28-contextual-outlier-context-behavioral-attributes/index.md) | 중급 | Python 3.13.5, Chandola·Banerjee·Kumar, ACM CSUR 41(3), 2009, NIST/SEMATECH e-Handbook of Statistical Methods (2012) | 실행 검증 |
 | 2026-11-27 | [토마스-킬만 갈등 처리 모드 5가지 — 주장성·협조성 두 차원과 30쌍 강제 선택 도구](posts/PE/it-management/2026-11-27-thomas-kilmann-conflict-handling-five-modes/index.md) | 중급 | Kilmann & Thomas (1977) Educational and Psychological Measurement 37(2), Kilmann, 16 Tips for Using the TKI Tool (2026-11-27 열람), PMBOK Guide 6th ed. (2017) | 문서 근거 |
 | 2026-11-27 | [소프트웨어 리뷰 유형 — IEEE 1028의 관리 리뷰·기술 리뷰·인스펙션·워크스루·감사](posts/PE/software-engineering/2026-11-27-ieee-1028-software-review-types/index.md) | 중급 | IEEE 1028-2008, ISO/IEC 20246:2017, SWEBOK V3 (2014), ISTQB CTFL v4.0.1 (2024-09-15) | 문서 근거 |
 | 2026-11-27 | [AI 도입 성숙도와 준비도 진단 — 5개 수준·8개 차원 모형과 데이터·역량 평가 항목](posts/PE/it-management/2026-11-27-ai-adoption-maturity-readiness-assessment/index.md) | 중급 | CMU SEI, A Preliminary Report on a Model for Maturing AI Adoption (2025-12), Microsoft Cloud Adoption Framework, Plan for AI adoption (2026-10-15 갱신), CMMI Institute, CMMI Levels of Capability and Performance (2025 열람본), Cisco AI Readiness Index 2025 | 문서 근거 |
