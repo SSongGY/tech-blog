@@ -8867,3 +8867,14 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-309
+    title: "매튜스 상관계수(MCC)와 불균형 데이터의 분류 평가"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "F1이 TN을 쓰지 않는 구조와 정확도가 다수 클래스에 끌리는 문제를 MCC·균형 정확도·특이도와 비교하고, 같은 F1에서 MCC가 갈리는 혼동행렬을 직접 계산해 보인다"
+    code: none
+    origin: exam
+    status: todo

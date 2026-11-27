@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
+  <rect x="0" y="0" width="880" height="420" fill="#ffffff"/>
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2937">혼동행렬 네 칸과 지표가 쓰는 칸</text>
+
+  <!-- 열 머리 -->
+  <text x="225" y="88" font-size="14" text-anchor="middle" fill="#374151">예측 양성</text>
+  <text x="375" y="88" font-size="14" text-anchor="middle" fill="#374151">예측 음성</text>
+  <!-- 행 머리 -->
+  <text x="95" y="160" font-size="14" text-anchor="middle" fill="#374151">실제 양성</text>
+  <text x="95" y="250" font-size="14" text-anchor="middle" fill="#374151">실제 음성</text>
+
+  <!-- 네 칸 -->
+  <rect x="150" y="110" width="150" height="90" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="225" y="150" font-size="16" font-weight="bold" text-anchor="middle" fill="#2d6a4f">TP = 100</text>
+  <text x="225" y="175" font-size="13" text-anchor="middle" fill="#2d6a4f">참 양성</text>
+
+  <rect x="300" y="110" width="150" height="90" fill="#fde2e2" stroke="#9d0208" stroke-width="2"/>
+  <text x="375" y="150" font-size="16" font-weight="bold" text-anchor="middle" fill="#9d0208">FN = 7</text>
+  <text x="375" y="175" font-size="13" text-anchor="middle" fill="#9d0208">거짓 음성 (놓침)</text>
+
+  <rect x="150" y="200" width="150" height="90" fill="#fde2e2" stroke="#9d0208" stroke-width="2"/>
+  <text x="225" y="240" font-size="16" font-weight="bold" text-anchor="middle" fill="#9d0208">FP = 5</text>
+  <text x="225" y="265" font-size="13" text-anchor="middle" fill="#9d0208">거짓 양성 (오경보)</text>
+
+  <rect x="300" y="200" width="150" height="90" fill="#d8f3dc" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="375" y="240" font-size="16" font-weight="bold" text-anchor="middle" fill="#2d6a4f">TN = 9</text>
+  <text x="375" y="265" font-size="13" text-anchor="middle" fill="#2d6a4f">참 음성</text>
+
+  <!-- 합계 -->
+  <text x="225" y="315" font-size="13" text-anchor="middle" fill="#374151">열 합 105</text>
+  <text x="375" y="315" font-size="13" text-anchor="middle" fill="#374151">열 합 16</text>
+  <text x="485" y="160" font-size="13" text-anchor="middle" fill="#374151">행 합 107</text>
+  <text x="485" y="250" font-size="13" text-anchor="middle" fill="#374151">행 합 14</text>
+  <text x="300" y="345" font-size="13" text-anchor="middle" fill="#374151">전체 121 (양성 107 : 음성 14)</text>
+  <text x="300" y="368" font-size="13" text-anchor="middle" fill="#b45309">음성이 12% 뿐인 불균형 데이터</text>
+
+  <!-- 지표 상자 -->
+  <rect x="540" y="60" width="310" height="70" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="555" y="88" font-size="15" font-weight="bold" fill="#1f2937">정밀도 = TP / (TP+FP)</text>
+  <text x="555" y="113" font-size="13" fill="#374151">예측 양성 열만 본다 → 100/105 = 95%</text>
+
+  <rect x="540" y="145" width="310" height="70" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="555" y="173" font-size="15" font-weight="bold" fill="#1f2937">재현율 = TP / (TP+FN)</text>
+  <text x="555" y="198" font-size="13" fill="#374151">실제 양성 행만 본다 → 100/107 = 93%</text>
+
+  <rect x="540" y="230" width="310" height="70" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="555" y="258" font-size="15" font-weight="bold" fill="#1f2937">정확도 = (TP+TN) / 전체</text>
+  <text x="555" y="283" font-size="13" fill="#374151">초록 대각선 두 칸 → 109/121 = 90%</text>
+
+  <rect x="540" y="315" width="310" height="70" rx="6" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="555" y="343" font-size="15" font-weight="bold" fill="#1f2937">F1 = 2TP / (2TP+FP+FN)</text>
+  <text x="555" y="368" font-size="13" fill="#374151">정밀도·재현율 조화평균 → 200/212 = 94%</text>
+</svg>
