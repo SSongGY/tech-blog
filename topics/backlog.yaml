@@ -8789,7 +8789,7 @@ topics:
     angle: "다섯 리뷰의 목적·진행자·데이터 수집·출력 차이를 IEEE 1028-2008 비교표로 정리하고 ISO/IEC 20246 일반 리뷰 프로세스와 대응시킨다"
     code: none
     origin: exam
-    status: todo
+    status: writing
   - id: pe-306
     title: "IEEE 730 소프트웨어 품질보증 프로세스 — 3개 그룹 16개 활동과 SQA 계획서"
     category: PE
@@ -8823,3 +8823,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-135
+    title: "NULL을 직전 값으로 채우기 — IGNORE NULLS 없이 COUNT 창으로 묶는 법"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, "null", basics]
+    difficulty: 중급
+    angle: "센서·가격 기록처럼 값이 빠진 행을 바로 앞의 값으로 채운다. 상관 서브쿼리, COUNT(x) OVER로 묶음 번호를 만든 뒤 MAX로 펴는 방법, 재귀 CTE 세 가지를 같은 데이터로 돌려 결과와 일의 양(VDBE 명령 수)을 비교한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-049
+    title: "Bitcask — 추가 전용 로그와 메모리 해시 색인으로 읽기를 한 번에 끝내는 저장 구조"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [bitcask, log-structured, hash-index, compaction, storage]
+    difficulty: 중급
+    angle: "Bitcask 논문의 keydir·데이터 파일·병합·힌트 파일을 파이썬으로 구현해, 덮어쓰기가 쌓일 때 공간이 몇 배로 늘고 병합이 얼마나 되돌리는지, 힌트 파일이 기동 시 읽는 바이트를 얼마나 줄이는지 잰다"
+    code: python
+    origin: manual
+    status: writing

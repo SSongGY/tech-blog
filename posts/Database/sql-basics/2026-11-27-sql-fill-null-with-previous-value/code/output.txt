@@ -1,0 +1,176 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-27-sql-fill-null-with-previous-value
+# 명령      : python fill_forward.py
+# 수행 시각 : 2026-11-27 19:10 (대한민국 표준시)
+# 소요      : 8.4초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[reading]  11행
+  컬럼      | 타입 | 제약
+  ----------+------+------------
+  sensor_id | TEXT | PK NOT NULL
+  ts        | TEXT | PK NOT NULL
+  temp      | REAL |
+
+  sensor_id | ts    | temp
+  ----------+-------+-----
+  S1        | 09:00 | NULL
+  S1        | 09:10 | 21.5
+  S1        | 09:20 | NULL
+  S1        | 09:30 | NULL
+  S1        | 09:40 | 22.0
+  S1        | 09:50 | NULL
+  S2        | 09:00 | 30.1
+  S2        | 09:10 | NULL
+  S2        | 09:20 | NULL
+  S2        | 09:30 | NULL
+  S2        | 09:40 | 29.8
+
+
+[1] COALESCE(temp, LAG(temp)) — 빈 칸이 이어지면 둘째 칸부터 못 채운다
+  sql> SELECT sensor_id, ts, temp, COALESCE(temp, LAG(temp) OVER (PARTITION BY sensor_id ORDER BY ts)) AS filled FROM reading ORDER BY sensor_id, ts ...
+    ('sensor_id', 'ts', 'temp', 'filled')
+    ('S1', '09:00', None, None)
+    ('S1', '09:10', 21.5, 21.5)
+    ('S1', '09:20', None, 21.5)
+    ('S1', '09:30', None, None)
+    ('S1', '09:40', 22.0, 22.0)
+    ('S1', '09:50', None, 22.0)
+    ('S2', '09:00', 30.1, 30.1)
+    ('S2', '09:10', None, 30.1)
+    ('S2', '09:20', None, None)
+    ('S2', '09:30', None, None)
+    ('S2', '09:40', 29.8, 29.8)
+
+[2] LAST_VALUE(temp IGNORE NULLS)
+  sqlite3.OperationalError: near "IGNORE": syntax error
+
+[3] 방법 A — 상관 부질의
+  sql> SELECT r.sensor_id, r.ts, r.temp, (SELECT p.temp FROM reading p WHERE p.sensor_id = r.sensor_id AND p.ts <= r.ts AND p.temp IS NOT NULL ORDER BY p.ts  ...
+    ('sensor_id', 'ts', 'temp', 'filled')
+    ('S1', '09:00', None, None)
+    ('S1', '09:10', 21.5, 21.5)
+    ('S1', '09:20', None, 21.5)
+    ('S1', '09:30', None, 21.5)
+    ('S1', '09:40', 22.0, 22.0)
+    ('S1', '09:50', None, 22.0)
+    ('S2', '09:00', 30.1, 30.1)
+    ('S2', '09:10', None, 30.1)
+    ('S2', '09:20', None, 30.1)
+    ('S2', '09:30', None, 30.1)
+    ('S2', '09:40', 29.8, 29.8)
+
+[4] 방법 B — COUNT(temp) 누적으로 묶음 번호(grp)를 만들고 묶음 안에서 MAX
+  sql> WITH grouped AS ( SELECT sensor_id, ts, temp, COUNT(temp) OVER (PARTITION BY sensor_id ORDER BY ts ROWS UNBOUNDED PRECEDING) AS grp FROM reading ) SEL ...
+    ('sensor_id', 'ts', 'temp', 'grp', 'filled')
+    ('S1', '09:00', None, 0, None)
+    ('S1', '09:10', 21.5, 1, 21.5)
+    ('S1', '09:20', None, 1, 21.5)
+    ('S1', '09:30', None, 1, 21.5)
+    ('S1', '09:40', 22.0, 2, 22.0)
+    ('S1', '09:50', None, 2, 22.0)
+    ('S2', '09:00', 30.1, 1, 30.1)
+    ('S2', '09:10', None, 1, 30.1)
+    ('S2', '09:20', None, 1, 30.1)
+    ('S2', '09:30', None, 1, 30.1)
+    ('S2', '09:40', 29.8, 2, 29.8)
+
+[5] 방법 C — 재귀 CTE
+  sql> WITH RECURSIVE numbered AS ( SELECT sensor_id, ts, temp, ROW_NUMBER() OVER (PARTITION BY sensor_id ORDER BY ts) AS rn FROM reading ), walk(sensor_id,  ...
+    ('sensor_id', 'ts', 'temp', 'filled')
+    ('S1', '09:00', None, None)
+    ('S1', '09:10', 21.5, 21.5)
+    ('S1', '09:20', None, 21.5)
+    ('S1', '09:30', None, 21.5)
+    ('S1', '09:40', 22.0, 22.0)
+    ('S1', '09:50', None, 22.0)
+    ('S2', '09:00', 30.1, 30.1)
+    ('S2', '09:10', None, 30.1)
+    ('S2', '09:20', None, 30.1)
+    ('S2', '09:30', None, 30.1)
+    ('S2', '09:40', 29.8, 29.8)
+
+  세 방법의 결과가 같은가: True
+
+[6] 같은 시각이 두 번 찍힌 행 — 키를 (sensor_id, ts, seq) 로 바꾼 표
+  (6-1) 프레임을 적지 않음 — 기본 RANGE 는 같은 ts 를 한 덩어리로 센다
+  sql> SELECT ts, seq, temp, COUNT(temp) OVER (ORDER BY ts) AS grp FROM reading_dup ORDER BY ts, seq ...
+    ('ts', 'seq', 'temp', 'grp')
+    ('09:00', 1, 20.0, 1)
+    ('09:10', 1, None, 2)
+    ('09:10', 2, 25.0, 2)
+    ('09:20', 1, None, 2)
+  (6-2) ROWS UNBOUNDED PRECEDING, 정렬 키에 seq 까지
+  sql> SELECT ts, seq, temp, COUNT(temp) OVER (ORDER BY ts, seq ROWS UNBOUNDED PRECEDING) AS grp FROM reading_dup ORDER BY ts, seq ...
+    ('ts', 'seq', 'temp', 'grp')
+    ('09:00', 1, 20.0, 1)
+    ('09:10', 1, None, 1)
+    ('09:10', 2, 25.0, 2)
+    ('09:20', 1, None, 2)
+
+[7] 실행계획
+  [A 상관 부질의]
+    QUERY PLAN
+    |--SCAN r USING INDEX sqlite_autoindex_reading_1
+    `--CORRELATED SCALAR SUBQUERY 1
+       `--SEARCH p USING INDEX sqlite_autoindex_reading_1 (sensor_id=? AND ts<?)
+  [B COUNT 묶음]
+    QUERY PLAN
+    |--CO-ROUTINE (subquery-3)
+    |  |--CO-ROUTINE grouped
+    |  |  |--CO-ROUTINE (subquery-4)
+    |  |  |  `--SCAN reading USING INDEX sqlite_autoindex_reading_1
+    |  |  `--SCAN (subquery-4)
+    |  |--SCAN grouped
+    |  `--USE TEMP B-TREE FOR ORDER BY
+    |--SCAN (subquery-3)
+    `--USE TEMP B-TREE FOR ORDER BY
+  [C 재귀 CTE]
+    QUERY PLAN
+    |--CO-ROUTINE walk
+    |  |--SETUP
+    |  |  |--MATERIALIZE numbered
+    |  |  |  |--CO-ROUTINE (subquery-5)
+    |  |  |  |  `--SCAN reading USING INDEX sqlite_autoindex_reading_1
+    |  |  |  `--SCAN (subquery-5)
+    |  |  `--SCAN numbered
+    |  `--RECURSIVE STEP
+    |     |--SCAN w
+    |     |--BLOOM FILTER ON n (sensor_id=? AND rn=?)
+    |     `--SEARCH n USING AUTOMATIC COVERING INDEX (sensor_id=? AND rn=?)
+    |--SCAN walk
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[8] 센서 20개 x 행 수, 빈 칸 비율 30% — VDBE 명령 수
+       행 수       A 상관 부질의     B COUNT 묶음       C 재귀 CTE  결과 일치
+     1,000         29,811        116,362        102,470  True
+     4,000        118,361        465,262        409,370  True
+    16,000        472,925      1,860,871      1,636,969  True
+
+[9] 빈 칸이 길게 이어질 때 — 빈 칸 비율 90%, 16,000행
+  A 상관 부질의 1,265,272   B COUNT 묶음 1,774,822
+
+[10] (sensor_id, ts) 인덱스가 없는 표 — 빈 칸 비율 30%
+   1,000행  A 상관 부질의    4,439,390   B COUNT 묶음    125,363
+   4,000행  A 상관 부질의   70,772,132   B COUNT 묶음    501,263
+  [A 상관 부질의, 인덱스 없음]
+    QUERY PLAN
+    |--SCAN r
+    |--CORRELATED SCALAR SUBQUERY 1
+    |  |--SCAN p
+    |  `--USE TEMP B-TREE FOR ORDER BY
+    `--USE TEMP B-TREE FOR ORDER BY
