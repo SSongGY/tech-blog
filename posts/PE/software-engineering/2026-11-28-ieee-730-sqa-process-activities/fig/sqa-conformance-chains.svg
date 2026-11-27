@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
+  <text x="440" y="30" font-size="17" font-weight="bold" text-anchor="middle" fill="#1f2937">IEEE 730-2014 적합성 관계 — 각 산출물은 바로 위 단계와 대조한다</text>
+
+  <!-- SQA 프로세스 구현 띠 -->
+  <rect x="40" y="48" width="800" height="44" rx="6" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="440" y="76" font-size="14" font-weight="bold" text-anchor="middle" fill="#1f2937">SQA 프로세스 구현 (5.3, 6개) — 프로세스 수립 · 조정 · SQAP · 실행 · 기록 · 독립성 평가</text>
+
+  <!-- 계약, 법규 -->
+  <rect x="330" y="116" width="220" height="50" rx="6" fill="#ffffff" stroke="#1f2937" stroke-width="1.8"/>
+  <text x="440" y="139" font-size="15" font-weight="bold" text-anchor="middle" fill="#1f2937">계약</text>
+  <text x="440" y="157" font-size="13" text-anchor="middle" fill="#4b5563">이해관계자 요구사항</text>
+  <rect x="640" y="116" width="200" height="50" rx="6" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="740" y="146" font-size="14" text-anchor="middle" fill="#1f2937">법 · 규정 · 규칙</text>
+  <line x1="552" y1="141" x2="636" y2="141" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="594" y="133" font-size="13" text-anchor="middle" fill="#374151">준수</text>
+
+  <!-- 왼쪽 사슬: 제품 보증 -->
+  <rect x="60" y="190" width="300" height="270" rx="8" fill="#e8f5ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <rect x="90" y="206" width="240" height="46" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="210" y="235" font-size="14" text-anchor="middle" fill="#1f2937">제품(시스템) 요구사항</text>
+  <rect x="90" y="292" width="240" height="46" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="210" y="321" font-size="14" text-anchor="middle" fill="#1f2937">소프트웨어 요구사항</text>
+  <rect x="90" y="378" width="240" height="46" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="210" y="407" font-size="14" text-anchor="middle" fill="#1f2937">소프트웨어 제품</text>
+  <line x1="210" y1="376" x2="210" y2="342" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="210" y1="290" x2="210" y2="256" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="222" y="364" font-size="13" fill="#374151">적합</text>
+  <text x="222" y="278" font-size="13" fill="#374151">적합</text>
+  <text x="210" y="448" font-size="14" font-weight="bold" text-anchor="middle" fill="#2d6a4f">제품 보증 (5.4, 5개)</text>
+  <path d="M330,229 C380,229 400,200 410,170" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- 오른쪽 사슬: 프로세스 보증 -->
+  <rect x="520" y="190" width="300" height="270" rx="8" fill="#e8eef8" stroke="#1e3a8a" stroke-width="1.5"/>
+  <rect x="550" y="206" width="240" height="46" rx="6" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.5"/>
+  <text x="670" y="235" font-size="14" text-anchor="middle" fill="#1f2937">프로세스 요구사항</text>
+  <rect x="550" y="292" width="240" height="46" rx="6" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.5"/>
+  <text x="670" y="321" font-size="14" text-anchor="middle" fill="#1f2937">프로젝트 프로세스 · 계획</text>
+  <rect x="550" y="378" width="240" height="46" rx="6" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.5"/>
+  <text x="670" y="407" font-size="14" text-anchor="middle" fill="#1f2937">활동 수행</text>
+  <line x1="670" y1="376" x2="670" y2="342" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="670" y1="290" x2="670" y2="256" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="682" y="364" font-size="13" fill="#374151">적합</text>
+  <text x="682" y="278" font-size="13" fill="#374151">적합</text>
+  <text x="670" y="448" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a8a">프로세스 보증 (5.5, 5개)</text>
+  <path d="M550,229 C500,229 480,200 470,170" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <text x="440" y="490" font-size="13" text-anchor="middle" fill="#4b5563">화살표는 "아래 산출물이 위 산출물에 적합해야 한다"는 뜻. 프로세스 보증은 법·규정 준수 확인을 더한다</text>
+  <text x="440" y="510" font-size="13" text-anchor="middle" fill="#4b5563">IEEE 730-2014 4.4절 그림 4를 줄여 그림. 활동 수는 5.2절 표 1</text>
+</svg>

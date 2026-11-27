@@ -252,6 +252,8 @@ ISO/IEC 20246:2017은 리뷰 유형과 무관한 일반 리뷰 프로세스를 *
 >
 > 개념 정리: [소프트웨어 리뷰 유형 — IEEE 1028의 관리 리뷰·기술 리뷰·인스펙션·워크스루·감사](../../software-engineering/2026-11-27-ieee-1028-software-review-types/index.md)
 >
+> 개념 정리: [IEEE 730 소프트웨어 품질보증 프로세스 — 3개 그룹 16개 활동과 SQA 계획서](../../software-engineering/2026-11-28-ieee-730-sqa-process-activities/index.md)
+>
 > 관련 답안: [기출문제 — ISO/IEC 25010 제품 품질 모델의 주특성과 부특성](../2026-09-22-iso-iec-25010-product-quality-model/index.md)
 
 끝
