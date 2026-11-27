@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">아웃라이어 3유형 — 무엇과 비교해 벗어났는가</text>
+
+  <!-- 전역 -->
+  <rect x="20" y="50" width="260" height="250" rx="6" fill="#fafafa" stroke="#bbbbbb"/>
+  <line x1="45" y1="270" x2="260" y2="270" stroke="#888"/>
+  <line x1="45" y1="270" x2="45" y2="70" stroke="#888"/>
+  <g fill="#2d6a4f">
+    <circle cx="100" cy="210" r="5"/><circle cx="115" cy="220" r="5"/><circle cx="125" cy="200" r="5"/>
+    <circle cx="110" cy="195" r="5"/><circle cx="135" cy="215" r="5"/><circle cx="95" cy="225" r="5"/>
+    <circle cx="140" cy="198" r="5"/><circle cx="120" cy="232" r="5"/><circle cx="150" cy="222" r="5"/>
+    <circle cx="105" cy="182" r="5"/><circle cx="130" cy="185" r="5"/>
+  </g>
+  <circle cx="230" cy="100" r="7" fill="#9d0208"/>
+  <text x="222" y="128" font-size="13" text-anchor="end" fill="#9d0208">전체와 동떨어진 점</text>
+  <text x="120" y="258" font-size="13" text-anchor="middle" fill="#2d6a4f">정상 객체</text>
+  <text x="150" y="328" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">① 전역 (점 이상)</text>
+  <text x="150" y="350" font-size="13" text-anchor="middle" fill="#333">데이터 전체 기준으로 벗어남</text>
+  <text x="150" y="372" font-size="13" text-anchor="middle" fill="#555">비교 대상: 전체 분포 하나</text>
+
+  <!-- 맥락 -->
+  <rect x="310" y="50" width="260" height="250" rx="6" fill="#fafafa" stroke="#bbbbbb"/>
+  <line x1="330" y1="270" x2="555" y2="270" stroke="#888"/>
+  <line x1="330" y1="270" x2="330" y2="70" stroke="#888"/>
+  <polyline points="335,245 365,245 395,245 415,200 435,145 455,135 485,135 515,135 535,185 552,235" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <line x1="372" y1="135" x2="485" y2="135" stroke="#b45309" stroke-dasharray="5,4"/>
+  <circle cx="372" cy="135" r="7" fill="#9d0208"/>
+  <circle cx="485" cy="135" r="6" fill="#2d6a4f"/>
+  <text x="372" y="115" font-size="13" text-anchor="middle" fill="#9d0208">03시 175</text>
+  <text x="490" y="115" font-size="13" text-anchor="middle" fill="#2d6a4f">14시 175</text>
+  <text x="372" y="236" font-size="13" text-anchor="middle" fill="#555">평소 30</text>
+  <text x="440" y="288" font-size="13" text-anchor="middle" fill="#555">맥락 속성: 시각</text>
+  <text x="440" y="328" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">② 맥락 (조건부)</text>
+  <text x="440" y="350" font-size="13" text-anchor="middle" fill="#333">같은 값이 맥락에 따라 갈림</text>
+  <text x="440" y="372" font-size="13" text-anchor="middle" fill="#555">비교 대상: 같은 맥락의 분포</text>
+
+  <!-- 군집 -->
+  <rect x="600" y="50" width="260" height="250" rx="6" fill="#fafafa" stroke="#bbbbbb"/>
+  <line x1="620" y1="270" x2="845" y2="270" stroke="#888"/>
+  <line x1="620" y1="270" x2="620" y2="70" stroke="#888"/>
+  <polyline points="625,180 637,165 649,192 661,170 673,188 685,160 697,178 709,150" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <polyline points="709,150 789,150" fill="none" stroke="#9d0208" stroke-width="4"/>
+  <polyline points="789,150 801,182 813,165 825,190 840,172" fill="none" stroke="#2d6a4f" stroke-width="2"/>
+  <rect x="703" y="132" width="92" height="36" fill="none" stroke="#9d0208" stroke-dasharray="5,4"/>
+  <text x="749" y="122" font-size="13" text-anchor="middle" fill="#9d0208">같은 값 반복</text>
+  <text x="732" y="225" font-size="13" text-anchor="middle" fill="#555">점 하나하나는 정상 범위</text>
+  <text x="730" y="328" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">③ 군집 (집단)</text>
+  <text x="730" y="350" font-size="13" text-anchor="middle" fill="#333">함께 나타난 묶음이 벗어남</text>
+  <text x="730" y="372" font-size="13" text-anchor="middle" fill="#555">비교 대상: 관련된 인스턴스 묶음</text>
+</svg>

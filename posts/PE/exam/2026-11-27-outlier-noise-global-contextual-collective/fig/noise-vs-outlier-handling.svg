@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="880" height="320" font-family="'Malgun Gothic','Apple SD Gothic Neo','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="320" fill="#ffffff"/>
+  <text x="440" y="28" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">벗어난 관측값을 다루는 세 갈래 — 관심 대상이냐가 가른다</text>
+
+  <rect x="20" y="115" width="230" height="110" rx="8" fill="#f1f3f5" stroke="#555"/>
+  <text x="135" y="150" font-size="15" font-weight="bold" text-anchor="middle" fill="#222">관측 데이터</text>
+  <text x="135" y="176" font-size="13" text-anchor="middle" fill="#333">정상 패턴 + 노이즈</text>
+  <text x="135" y="198" font-size="13" text-anchor="middle" fill="#333">+ 아웃라이어</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <line x1="250" y1="150" x2="325" y2="85" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="250" y1="170" x2="325" y2="170" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="250" y1="190" x2="325" y2="255" stroke="#555" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <rect x="330" y="50" width="530" height="70" rx="8" fill="#ffffff" stroke="#555"/>
+  <text x="350" y="77" font-size="15" font-weight="bold" fill="#222">노이즈 제거 (noise removal)</text>
+  <text x="350" y="102" font-size="13" fill="#333">분석 전에 관심 없는 변동을 걷어낸다. 걷어낸 것은 버린다</text>
+
+  <rect x="330" y="135" width="530" height="70" rx="8" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="350" y="162" font-size="15" font-weight="bold" fill="#2d6a4f">노이즈 수용 (noise accommodation)</text>
+  <text x="350" y="187" font-size="13" fill="#333">추정이 벗어난 값에 끌려가지 않게 만든다. 강건 추정</text>
+
+  <rect x="330" y="220" width="530" height="70" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="350" y="247" font-size="15" font-weight="bold" fill="#9d0208">이상 탐지 (anomaly detection)</text>
+  <text x="350" y="272" font-size="13" fill="#333">벗어난 것 자체가 분석 결과다. 남겨 두고 원인을 본다</text>
+
+  <text x="135" y="260" font-size="13" text-anchor="middle" fill="#555">위 두 갈래: 노이즈 취급</text>
+  <text x="135" y="282" font-size="13" text-anchor="middle" fill="#555">아래 한 갈래: 아웃라이어 취급</text>
+</svg>

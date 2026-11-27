@@ -8801,3 +8801,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-307
+    title: "맥락 아웃라이어 탐지 — 맥락 속성과 행동 속성을 나누는 설계"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "맥락 속성·행동 속성 분리, 맥락을 잘게 나눌수록 비교 표본이 줄어 노이즈가 아웃라이어로 오탐되는 상충, 시계열·공간 데이터에서 맥락을 정의하는 방식"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-308
+    title: "신규성 탐지(novelty detection) — 이상 탐지와 갈리는 지점"
+    category: PE
+    subcategory: data-analysis
+    track: pe
+    tags: [정보관리기술사, data-analysis, 개념정리]
+    difficulty: 중급
+    angle: "검출 결과가 정상 모델에 편입되느냐로 이상 탐지와 갈린다. 학습 데이터가 깨끗하다는 전제, 개념 드리프트와의 관계"
+    code: none
+    origin: exam
+    status: todo
