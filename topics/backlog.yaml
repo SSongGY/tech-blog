@@ -8789,7 +8789,7 @@ topics:
     angle: "다섯 리뷰의 목적·진행자·데이터 수집·출력 차이를 IEEE 1028-2008 비교표로 정리하고 ISO/IEC 20246 일반 리뷰 프로세스와 대응시킨다"
     code: none
     origin: exam
-    status: writing
+    status: done
   - id: pe-306
     title: "IEEE 730 소프트웨어 품질보증 프로세스 — 3개 그룹 16개 활동과 SQA 계획서"
     category: PE
