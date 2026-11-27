@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="540" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">계약이 리스를 포함하는지 — 고객 쪽에서 보는 판단 순서</text>
+
+  <rect x="200" y="52" width="320" height="44" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="360" y="79" text-anchor="middle" font-size="14" fill="#111827">대가를 주고 자산을 쓰는 계약 (문단 9)</text>
+
+  <!-- 1 -->
+  <line x1="360" y1="96" x2="360" y2="118" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="200" y="120" width="320" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="360" y="144" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">① 자산이 특정되는가</text>
+  <text x="360" y="164" text-anchor="middle" font-size="13" fill="#1f2937">명시 또는 암묵적 특정 · 물리적 구분 (B13·B20)</text>
+
+  <!-- 2 -->
+  <line x1="360" y1="176" x2="360" y2="210" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="198" font-size="13" fill="#2d6a4f">예</text>
+  <rect x="200" y="212" width="320" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="360" y="236" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">② 공급자의 대체권이 실질적인가</text>
+  <text x="360" y="256" text-anchor="middle" font-size="13" fill="#1f2937">실질적 능력 + 대체 효익 &gt; 원가 (B14~B19)</text>
+
+  <!-- 3 -->
+  <line x1="360" y1="268" x2="360" y2="302" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="290" font-size="13" fill="#2d6a4f">아니오</text>
+  <rect x="200" y="304" width="320" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="360" y="328" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">③ 경제적 효익의 대부분을 얻는가</text>
+  <text x="360" y="348" text-anchor="middle" font-size="13" fill="#1f2937">사용권 범위 안의 효익만 센다 (B21~B23)</text>
+
+  <!-- 4 -->
+  <line x1="360" y1="360" x2="360" y2="394" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="382" font-size="13" fill="#2d6a4f">예</text>
+  <rect x="200" y="396" width="320" height="56" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="360" y="420" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">④ 어떻게·무엇에 쓸지 고객이 정하는가</text>
+  <text x="360" y="440" text-anchor="middle" font-size="13" fill="#1f2937">또는 미리 정해졌고 고객이 운용·설계 (B24)</text>
+
+  <!-- 리스 -->
+  <line x1="360" y1="452" x2="360" y2="478" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="372" y="470" font-size="13" fill="#2d6a4f">예</text>
+  <rect x="200" y="480" width="320" height="44" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="360" y="507" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">리스를 포함한다 → 요소 분리 (문단 12~16)</text>
+
+  <!-- 리스 아님 -->
+  <rect x="640" y="250" width="200" height="72" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="740" y="280" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">리스가 아니다</text>
+  <text x="740" y="302" text-anchor="middle" font-size="13" fill="#1f2937">용역 계약으로 처리</text>
+
+  <path d="M520,148 L600,148 L600,262 L638,262" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="560" y="140" text-anchor="middle" font-size="13" fill="#9d0208">아니오</text>
+  <line x1="520" y1="240" x2="638" y2="276" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="566" y="232" text-anchor="middle" font-size="13" fill="#9d0208">예</text>
+  <line x1="520" y1="332" x2="638" y2="300" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="566" y="344" text-anchor="middle" font-size="13" fill="#9d0208">아니오</text>
+  <path d="M520,424 L600,424 L600,314 L638,314" fill="none" stroke="#9d0208" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="560" y="416" text-anchor="middle" font-size="13" fill="#9d0208">아니오</text>
+
+  <text x="40" y="150" font-size="13" fill="#4b5563">고객이 쓸</text>
+  <text x="40" y="168" font-size="13" fill="#4b5563">자산이 있는가</text>
+  <text x="40" y="380" font-size="13" fill="#4b5563">그 자산의 사용을</text>
+  <text x="40" y="398" font-size="13" fill="#4b5563">통제하는가 (B9)</text>
+  <line x1="150" y1="120" x2="150" y2="268" stroke="#9ca3af" stroke-width="1"/>
+  <line x1="150" y1="304" x2="150" y2="452" stroke="#9ca3af" stroke-width="1"/>
+</svg>

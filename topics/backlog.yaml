@@ -8845,3 +8845,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-171
+    title: "리스의 식별과 구성요소 분리 — 식별되는 자산, 실질적 대체권, 사용 지시권"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, lease, ifrs16, lease-identification]
+    difficulty: 심화
+    angle: "제1116호 문단 9~17·B9~B33. 같은 운송 계약이 리스인지 용역인지에 따라 재무상태표와 EBITDA가 갈리는 것을 가상 회사로 계산하고, 리스·비리스요소 배분과 문단 15 간편법의 차이를 보인다"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-172
+    title: "전대리스 — 분류 기준은 기초자산이 아니라 사용권자산이다"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, lease, ifrs16, sublease]
+    difficulty: 심화
+    angle: "제1116호 B58·68·61~66, 적용사례 20·21. 중간리스제공자가 남은 기간 전부를 전대하면 금융리스, 일부만 전대하면 운용리스가 되는 것을 가상 회사로 계산하고 상위리스 부채가 남는 모양을 보인다"
+    code: python
+    origin: manual
+    status: writing
