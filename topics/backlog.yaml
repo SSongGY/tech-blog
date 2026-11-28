@@ -8878,3 +8878,14 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: pe-310
+    title: "가비지 컬렉션 알고리즘 — 참조 계수·마크 앤 스윕·복사·세대별 수집"
+    category: PE
+    subcategory: system
+    track: pe
+    tags: [정보관리기술사, system, 개념정리]
+    difficulty: 중급
+    angle: "도달 가능성 판단 방식 4가지를 비교하고 순환 참조·일시 정지·단편화에서 각각 무엇을 얻고 잃는지 정리. CPython gc_ref 절차와 HotSpot 세대 구조를 사례로"
+    code: none
+    origin: exam
+    status: todo

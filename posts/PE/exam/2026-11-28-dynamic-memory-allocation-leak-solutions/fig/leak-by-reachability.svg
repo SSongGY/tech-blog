@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="480" viewBox="0 0 880 480" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+
+  <text x="30" y="36" font-size="17" font-weight="bold" fill="#222222">도달 가능성으로 나눈 메모리 누수 2유형</text>
+
+  <!-- 루트 -->
+  <rect x="30" y="160" width="160" height="76" rx="8" fill="#f1f3f5" stroke="#333333" stroke-width="1.5"/>
+  <text x="110" y="192" font-size="15" font-weight="bold" text-anchor="middle" fill="#222222">루트</text>
+  <text x="110" y="214" font-size="13" text-anchor="middle" fill="#333333">스택 변수·전역·스레드</text>
+
+  <!-- 사용 중 객체 -->
+  <rect x="300" y="66" width="230" height="64" rx="8" fill="#e9f5ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="415" y="93" font-size="15" font-weight="bold" text-anchor="middle" fill="#2d6a4f">사용 중 객체</text>
+  <text x="415" y="115" font-size="13" text-anchor="middle" fill="#333333">앞으로도 참조된다</text>
+
+  <!-- 논리적 누수 -->
+  <rect x="300" y="160" width="230" height="76" rx="8" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="415" y="188" font-size="15" font-weight="bold" text-anchor="middle" fill="#b45309">① 논리적 누수</text>
+  <text x="415" y="210" font-size="13" text-anchor="middle" fill="#333333">도달 가능하지만 다시 안 쓴다</text>
+  <text x="415" y="228" font-size="13" text-anchor="middle" fill="#333333">예: 정적 컬렉션에 쌓인 항목</text>
+
+  <!-- 해결 메모 -->
+  <rect x="580" y="160" width="270" height="76" rx="8" fill="#ffffff" stroke="#b45309" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="715" y="190" font-size="14" font-weight="bold" text-anchor="middle" fill="#b45309">GC도 회수하지 못한다</text>
+  <text x="715" y="214" font-size="13" text-anchor="middle" fill="#333333">약한 참조·명시적 제거로 끊는다</text>
+
+  <!-- 화살표: 루트 → 객체 -->
+  <line x1="190" y1="180" x2="296" y2="104" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="190" y1="198" x2="296" y2="198" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="530" y1="198" x2="576" y2="198" stroke="#b45309" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- 도달 불가 영역 -->
+  <rect x="290" y="268" width="570" height="160" rx="10" fill="#fbeaea" fill-opacity="0.45" stroke="#9d0208" stroke-width="1.5" stroke-dasharray="7,5"/>
+  <text x="306" y="292" font-size="14" font-weight="bold" fill="#9d0208">② 루트에서 도달할 수 없는 영역</text>
+
+  <rect x="310" y="312" width="220" height="64" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="420" y="339" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">해제 누락 블록</text>
+  <text x="420" y="361" font-size="13" text-anchor="middle" fill="#333333">C: free() 호출 없음</text>
+
+  <rect x="580" y="312" width="110" height="64" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="635" y="349" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">객체 A</text>
+  <rect x="740" y="312" width="110" height="64" rx="8" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="795" y="349" font-size="15" font-weight="bold" text-anchor="middle" fill="#9d0208">객체 B</text>
+  <line x1="690" y1="332" x2="736" y2="332" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="740" y1="358" x2="694" y2="358" stroke="#333333" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="715" y="404" font-size="13" text-anchor="middle" fill="#333333">순환 참조 — 참조 계수가 0이 되지 않는다</text>
+
+  <text x="30" y="458" font-size="13" fill="#333333">②는 추적식 GC(Java)와 순환 수집기(Python)가 회수한다. C는 free()를 빠뜨리면 프로세스가 끝날 때까지 남는다.</text>
+</svg>
