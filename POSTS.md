@@ -1,13 +1,14 @@
 # 글 목록
 
-총 **855편** · 갱신 2026-11-28
+총 **858편** · 갱신 2026-11-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
-## DB문법 (basics) — 122편
+## DB문법 (basics) — 123편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-28 | [로그인·로그아웃 행을 한 줄 구간으로 — 시작·종료 이벤트 짝짓기](posts/Database/sql-basics/2026-11-28-sql-pair-start-end-events/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-27 | [NULL을 직전 값으로 채우기 — IGNORE NULLS 없이 COUNT 창으로 묶는 법](posts/Database/sql-basics/2026-11-27-sql-fill-null-with-previous-value/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-26 | [가격 이력 표에서 주문 시점의 가격 찾기 — 시점 조회를 세 가지로 쓰기](posts/Database/sql-basics/2026-11-26-price-history-as-of-lookup/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-11-25 | [누적 비율로 ABC 등급 나누기 — 80%를 넘기는 경계 행과 동점](posts/Database/sql-basics/2026-11-25-abc-grade-cumulative-share-boundary/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
@@ -156,10 +157,11 @@
 | 2026-09-22 | [Tibero 7 계층 질의 — CONNECT BY와 순환 참조](posts/Database/tibero/2026-09-22-tibero7-connect-by-hierarchy/index.md) | 중급 | Tibero 7.2 | 실행 검증 |
 | 2026-09-18 | [Tibero 7 시퀀스 — 생성, 캐시, 그리고 값이 건너뛰는 순간](posts/Database/tibero/2026-09-18-tibero7-sequence-cache/index.md) | 입문 | Tibero 7.2 | 실행 검증 |
 
-## 기술사 (pe) — 291편
+## 기술사 (pe) — 292편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-28 | [신규성 탐지(novelty detection) — 이상 탐지와 갈리는 지점](posts/PE/data-analysis/2026-11-28-novelty-detection-vs-anomaly-detection/index.md) | 중급 | Python 3.13.5, Pimentel 외, Signal Processing 99, 2014, Chandola·Banerjee·Kumar, ACM CSUR 41(3), 2009, scikit-learn 1.9.1 User Guide | 실행 검증 |
 | 2026-11-28 | [IEEE 730 소프트웨어 품질보증 프로세스 — 3개 그룹 16개 활동과 SQA 계획서](posts/PE/software-engineering/2026-11-28-ieee-730-sqa-process-activities/index.md) | 중급 | IEEE 730-2014, IEEE 730-2026, ISO/IEC/IEEE 12207:2008, ISO 9000:2015 | 문서 근거 |
 | 2026-11-28 | [맥락 아웃라이어 탐지 — 맥락 속성과 행동 속성을 나누는 설계](posts/PE/data-analysis/2026-11-28-contextual-outlier-context-behavioral-attributes/index.md) | 중급 | Python 3.13.5, Chandola·Banerjee·Kumar, ACM CSUR 41(3), 2009, NIST/SEMATECH e-Handbook of Statistical Methods (2012) | 실행 검증 |
 | 2026-11-27 | [토마스-킬만 갈등 처리 모드 5가지 — 주장성·협조성 두 차원과 30쌍 강제 선택 도구](posts/PE/it-management/2026-11-27-thomas-kilmann-conflict-handling-five-modes/index.md) | 중급 | Kilmann & Thomas (1977) Educational and Psychological Measurement 37(2), Kilmann, 16 Tips for Using the TKI Tool (2026-11-27 열람), PMBOK Guide 6th ed. (2017) | 문서 근거 |
@@ -475,10 +477,11 @@
 | 2026-09-22 | [awk — 로그를 표로 집계하기](posts/Linux/command/2026-09-22-awk-log-aggregation/index.md) | 중급 | GNU Awk 5.4.0, bash 5.3.9, Windows 11 | 실행 검증 |
 | 2026-09-21 | [TLS 핸드셰이크에서 실제로 오가는 것](posts/Infra/tls/2026-09-21-tls-handshake-openssl/index.md) | 중급 | OpenSSL 3.5.6 (2026-04-07), Git Bash on Windows 11, Python 3.13.5 | 실행 검증 |
 
-## 일반 (general) — 86편
+## 일반 (general) — 87편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-28 | [하이브리드 논리 시계(HLC) — 물리 시계 오차 안에서 인과 순서를 지키는 타임스탬프](posts/Architecture/datastructure/2026-11-28-hybrid-logical-clock-hlc/index.md) | 심화 | Python 3.13.5 | 실행 검증 |
 | 2026-11-27 | [Bitcask — 추가 전용 로그와 메모리 해시 색인으로 읽기를 한 번에 끝내는 저장 구조](posts/Architecture/datastructure/2026-11-27-bitcask-log-structured-hash-index/index.md) | 중급 | Python 3.13.5, Bitcask 논문 2010-04-27판 | 실행 검증 |
 | 2026-11-26 | [TOTP 6자리 코드는 어떻게 만들어지는가 — RFC 시험 벡터로 맞춰 보는 HOTP·TOTP](posts/Backend/security/2026-11-26-totp-hotp-rfc-test-vectors/index.md) | 중급 | Python 3.13.5, RFC 4226 (2005-12), RFC 6238 (2011-05) | 실행 검증 |
 | 2026-11-25 | [같은 한글 파일명이 두 개 — 유니코드 정규화 NFC와 NFD](posts/Language/python/2026-11-25-unicode-nfc-nfd-hangul-normalization/index.md) | 중급 | Python 3.13.5, Unicode 15.1.0 (unicodedata), SQLite 3.49.1, Windows 11 NTFS | 실행 검증 |
