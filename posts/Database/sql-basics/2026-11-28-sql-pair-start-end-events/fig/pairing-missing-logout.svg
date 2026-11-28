@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <text x="440" y="30" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">U2의 이벤트 세 개 — 09:10 로그인 뒤 로그아웃이 빠졌다</text>
+
+  <!-- 방법 A -->
+  <text x="30" y="80" font-size="15" font-weight="bold" fill="#9d0208">방법 A · 상관 부질의 — "그 뒤 첫 로그아웃"</text>
+  <line x1="120" y1="150" x2="820" y2="150" stroke="#888" stroke-width="2"/>
+  <circle cx="200" cy="150" r="9" fill="#ffffff" stroke="#222" stroke-width="2"/>
+  <circle cx="560" cy="150" r="9" fill="#ffffff" stroke="#222" stroke-width="2"/>
+  <circle cx="680" cy="150" r="9" fill="#222"/>
+  <text x="200" y="180" font-size="13" text-anchor="middle" fill="#222">09:10 in</text>
+  <text x="560" y="180" font-size="13" text-anchor="middle" fill="#222">11:00 in</text>
+  <text x="680" y="180" font-size="13" text-anchor="middle" fill="#222">11:20 out</text>
+  <path d="M200 140 C 300 95, 580 95, 676 138" fill="none" stroke="#9d0208" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <path d="M560 140 C 600 115, 640 115, 672 138" fill="none" stroke="#9d0208" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+  <text x="440" y="208" font-size="13" text-anchor="middle" fill="#9d0208">로그인 두 개가 같은 로그아웃을 받는다 → 130분 + 20분 = 150분 (겹친 구간을 두 번 셈)</text>
+
+  <!-- 방법 B -->
+  <text x="30" y="250" font-size="15" font-weight="bold" fill="#2d6a4f">방법 B · LEAD — "바로 다음 이벤트가 out일 때만"</text>
+  <line x1="120" y1="320" x2="820" y2="320" stroke="#888" stroke-width="2"/>
+  <circle cx="200" cy="320" r="9" fill="#ffffff" stroke="#222" stroke-width="2"/>
+  <circle cx="560" cy="320" r="9" fill="#ffffff" stroke="#222" stroke-width="2"/>
+  <circle cx="680" cy="320" r="9" fill="#222"/>
+  <text x="200" y="350" font-size="13" text-anchor="middle" fill="#222">09:10 in</text>
+  <text x="560" y="350" font-size="13" text-anchor="middle" fill="#222">11:00 in</text>
+  <text x="680" y="350" font-size="13" text-anchor="middle" fill="#222">11:20 out</text>
+  <path d="M210 310 C 300 280, 460 280, 552 308" fill="none" stroke="#b45309" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arrowAmber)"/>
+  <text x="380" y="276" font-size="13" text-anchor="middle" fill="#b45309">다음이 in → logout_ts = NULL</text>
+  <path d="M568 310 C 600 290, 640 290, 672 308" fill="none" stroke="#2d6a4f" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="700" y="290" font-size="13" text-anchor="start" fill="#2d6a4f">짝 = 20분</text>
+  <text x="440" y="382" font-size="13" text-anchor="middle" fill="#222">○ 로그인 · ● 로그아웃 · 시간은 왼쪽에서 오른쪽</text>
+
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#9d0208"/></marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/></marker>
+  </defs>
+</svg>

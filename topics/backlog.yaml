@@ -8822,7 +8822,7 @@ topics:
     angle: "검출 결과가 정상 모델에 편입되느냐로 이상 탐지와 갈린다. 학습 데이터가 깨끗하다는 전제, 개념 드리프트와의 관계"
     code: none
     origin: exam
-    status: todo
+    status: done
   - id: db-135
     title: "NULL을 직전 값으로 채우기 — IGNORE NULLS 없이 COUNT 창으로 묶는 법"
     category: Database
@@ -8889,3 +8889,25 @@ topics:
     code: none
     origin: exam
     status: todo
+  - id: db-136
+    title: "로그인·로그아웃 행을 한 줄 구간으로 — 시작·종료 이벤트 짝짓기"
+    category: Database
+    subcategory: sql-basics
+    track: basics
+    tags: [sql, window-function, lead, basics]
+    difficulty: 중급
+    angle: "시작·종료가 따로 찍힌 이벤트 로그를 한 행짜리 구간으로 묶는다. 상관 부질의(다음 종료 시각의 MIN)와 LEAD 두 방식을 나란히 돌리고, 로그아웃이 빠진 세션에서 상관 부질의가 두 로그인을 같은 로그아웃에 붙이는 것을 재현한다"
+    code: python
+    origin: manual
+    status: done
+  - id: gen-050
+    title: "하이브리드 논리 시계(HLC) — 물리 시계 오차 안에서 인과 순서를 지키는 타임스탬프"
+    category: Architecture
+    subcategory: datastructure
+    track: general
+    tags: [hlc, clock, distributed, timestamp]
+    difficulty: 심화
+    angle: "Kulkarni 2014 알고리즘을 파이썬으로 구현해, 시계가 어긋난 노드 사이에서 물리 시각만 쓰면 인과 순서가 뒤집히는 것과 HLC가 그것을 막으면서 물리 시각과의 차이를 오차 한도 안에 묶는 것을 측정한다"
+    code: python
+    origin: manual
+    status: done

@@ -1,0 +1,115 @@
+# 이 파일은 예제를 실제로 돌린 기록이다.
+# scripts/blog.py run-example 이 만든다. 손으로 고치지 않는다.
+#
+# 글        : posts\Database\sql-basics\2026-11-28-sql-pair-start-end-events
+# 명령      : python pair_events.py
+# 수행 시각 : 2026-11-28 19:08 (대한민국 표준시)
+# 소요      : 13.7초
+# 실행 환경 : Python 3.13.5 / Windows 11
+#             SQLite 3.49.1 (파이썬 내장)
+# 종료 코드 : 0
+
+================================================================
+환경
+================================================================
+  SQLite  3.49.1  (파이썬 sqlite3 모듈 내장)
+  Python  3.13.5
+  OS      Windows 11
+
+================================================================
+스키마와 데이터 — 아래 질의는 전부 이 표를 대상으로 한다
+================================================================
+[login_event]  9행
+  컬럼     | 타입    | 제약
+  ---------+---------+---------
+  event_id | INTEGER | PK
+  user_id  | TEXT    | NOT NULL
+  ts       | TEXT    | NOT NULL
+  kind     | TEXT    | NOT NULL
+
+  event_id | user_id | ts               | kind
+  ---------+---------+------------------+-----
+         1 | U1      | 2026-11-28 09:00 | in
+         2 | U1      | 2026-11-28 09:30 | out
+         3 | U1      | 2026-11-28 10:00 | in
+         4 | U1      | 2026-11-28 10:45 | out
+         5 | U2      | 2026-11-28 09:10 | in
+         6 | U2      | 2026-11-28 11:00 | in
+         7 | U2      | 2026-11-28 11:20 | out
+         8 | U3      | 2026-11-28 09:05 | out
+         9 | U3      | 2026-11-28 09:40 | in
+
+[인덱스]
+  이름                    | 대상 표     | 정의
+  ------------------------+-------------+------------------------------------------------------------------
+  idx_login_event_user_ts | login_event | CREATE INDEX idx_login_event_user_ts ON login_event (user_id, ts)
+
+
+[1] 방법 A — 상관 부질의: 로그인 뒤 첫 로그아웃
+    ('user_id', 'login_ts', 'logout_ts')
+    ('U1', '2026-11-28 09:00', '2026-11-28 09:30')
+    ('U1', '2026-11-28 10:00', '2026-11-28 10:45')
+    ('U2', '2026-11-28 09:10', '2026-11-28 11:20')
+    ('U2', '2026-11-28 11:00', '2026-11-28 11:20')
+    ('U3', '2026-11-28 09:40', None)
+
+[2] 방법 B — LEAD: 바로 다음 이벤트가 로그아웃일 때만
+    ('user_id', 'login_ts', 'logout_ts')
+    ('U1', '2026-11-28 09:00', '2026-11-28 09:30')
+    ('U1', '2026-11-28 10:00', '2026-11-28 10:45')
+    ('U2', '2026-11-28 09:10', None)
+    ('U2', '2026-11-28 11:00', '2026-11-28 11:20')
+    ('U3', '2026-11-28 09:40', None)
+
+[3] 짝 없는 로그아웃 — 바로 앞 이벤트가 로그인이 아닌 것
+    ('user_id', 'ts', 'prev_kind')
+    ('U3', '2026-11-28 09:05', None)
+
+[4-1] 사용자별 접속 시간 — 방법 A 결과로
+    ('user_id', 'sessions', 'closed', 'minutes')
+    ('U1', 2, 2, 75.0)
+    ('U2', 2, 2, 150.0)
+    ('U3', 1, 0, None)
+
+[4-2] 사용자별 접속 시간 — 방법 B 결과로 (끝나지 않은 세션은 NULL)
+    ('user_id', 'sessions', 'closed', 'minutes')
+    ('U1', 2, 2, 75.0)
+    ('U2', 2, 1, 20.0)
+    ('U3', 1, 0, None)
+
+[4-3] 방법 B, 끝나지 않은 세션은 집계 시각 12:00 까지로 친다
+    ('user_id', 'sessions', 'closed', 'minutes')
+    ('U1', 2, 2, 75.0)
+    ('U2', 2, 1, 190.0)
+    ('U3', 1, 0, 140.0)
+
+[5] 실행계획
+  [A 상관 부질의]
+    QUERY PLAN
+    |--SCAN i USING INDEX idx_login_event_user_ts
+    `--CORRELATED SCALAR SUBQUERY 1
+       `--SEARCH o USING INDEX idx_login_event_user_ts (user_id=? AND ts>?)
+  [B LEAD]
+    QUERY PLAN
+    |--CO-ROUTINE ordered
+    |  |--CO-ROUTINE (subquery-3)
+    |  |  `--SCAN login_event USING INDEX idx_login_event_user_ts
+    |  `--SCAN (subquery-3)
+    |--SCAN ordered
+    `--USE TEMP B-TREE FOR ORDER BY
+
+[6] 사용자 100명 x 세션 수 — VDBE 명령 수 (로그아웃 누락 없음)
+     이벤트 수       A 상관 부질의       B LEAD  결과 일치
+     2,000         33,021      126,842  True
+     8,000        132,021      504,842  True
+    32,000        528,021    2,016,842  True
+
+[7] (user_id, ts) 인덱스가 없는 표
+     2,000  A 상관 부질의    8,113,515   B LEAD    148,843
+     8,000  A 상관 부질의  129,474,015   B LEAD    592,843
+  [A 상관 부질의, 인덱스 없음]
+    QUERY PLAN
+    |--SCAN i
+    |--CORRELATED SCALAR SUBQUERY 1
+    |  `--SEARCH o
+    `--USE TEMP B-TREE FOR ORDER BY
