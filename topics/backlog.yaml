@@ -8933,3 +8933,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: pe-311
+    title: "국가 인공지능 윤리기준 — 3대 기본원칙·10대 핵심요건과 자율점검표"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "최고가치 인간성에서 원칙·요건으로 내려가는 구조, 원칙 간 우선순위를 두지 않는 이유, 후속 자율점검표·개발안내서가 요건을 어떻게 점검 항목으로 바꿨는지"
+    code: none
+    origin: exam
+    status: todo
+  - id: pe-312
+    title: "NIST AI 600-1 생성형 AI 프로파일 — 12가지 위험과 3갈래 분류"
+    category: PE
+    subcategory: ai
+    track: pe
+    tags: [정보관리기술사, ai, 개념정리]
+    difficulty: 중급
+    angle: "AI RMF 대비 생성형 AI에서 새로 생기거나 커지는 위험 12가지, 기술·오남용·생태계 3갈래 분류, 거버넌스·콘텐츠 출처·배포 전 시험·사고 공개 4가지 고려사항"
+    code: none
+    origin: exam
+    status: todo

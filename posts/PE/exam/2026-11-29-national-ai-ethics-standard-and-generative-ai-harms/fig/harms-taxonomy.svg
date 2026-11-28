@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 440" width="880" height="440" font-family="'Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect x="0" y="0" width="880" height="440" fill="#f8f9fa"/>
+
+  <text x="40" y="38" font-size="17" font-weight="bold" fill="#1b1b1b">생성형 AI 역기능 요소 — 위험이 어디서 생기는가에 따른 3갈래</text>
+  <text x="40" y="60" font-size="13" fill="#555">굵은 글씨: 가이드북의 역기능 영역 · 괄호: 대응하는 NIST AI 600-1 위험 이름</text>
+
+  <!-- 중심 -->
+  <rect x="320" y="78" width="240" height="44" rx="6" fill="#ffffff" stroke="#9d0208" stroke-width="2"/>
+  <text x="440" y="106" font-size="15" font-weight="bold" fill="#9d0208" text-anchor="middle">생성형 AI 역기능</text>
+
+  <g stroke="#9d0208" stroke-width="2" fill="none">
+    <path d="M 440 122 L 440 138 L 165 138 L 165 154"/>
+    <path d="M 440 138 L 440 154"/>
+    <path d="M 440 138 L 715 138 L 715 154"/>
+  </g>
+  <g fill="#9d0208">
+    <polygon points="165,160 160,150 170,150"/>
+    <polygon points="440,160 435,150 445,150"/>
+    <polygon points="715,160 710,150 720,150"/>
+  </g>
+
+  <!-- 기술·모델 -->
+  <rect x="40" y="160" width="250" height="176" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="165" y="186" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">① 기술 · 모델 위험</text>
+  <text x="165" y="204" font-size="13" fill="#555" text-anchor="middle">모델 자체의 오작동</text>
+  <text x="58" y="234" font-size="13" font-weight="bold" fill="#1b1b1b">허위 생성(환각)</text>
+  <text x="58" y="252" font-size="13" fill="#333">(Confabulation)</text>
+  <text x="58" y="278" font-size="13" font-weight="bold" fill="#1b1b1b">편향 · 차별</text>
+  <text x="58" y="296" font-size="13" fill="#333">(Harmful Bias)</text>
+  <text x="58" y="322" font-size="13" fill="#333">학습데이터 속 개인정보 노출</text>
+
+  <!-- 사람의 오남용 -->
+  <rect x="315" y="160" width="250" height="176" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="440" y="186" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">② 사람의 오남용</text>
+  <text x="440" y="204" font-size="13" fill="#555" text-anchor="middle">악의적 사용 · 부적절한 의존</text>
+  <text x="333" y="234" font-size="13" font-weight="bold" fill="#1b1b1b">허위조작정보 · 딥페이크</text>
+  <text x="333" y="252" font-size="13" fill="#333">(Information Integrity)</text>
+  <text x="333" y="278" font-size="13" font-weight="bold" fill="#1b1b1b">오남용 · 과의존</text>
+  <text x="333" y="296" font-size="13" fill="#333">(Human-AI Configuration)</text>
+  <text x="333" y="322" font-size="13" fill="#333">입력한 기밀 · 개인정보 유출</text>
+
+  <!-- 생태계·사회 -->
+  <rect x="590" y="160" width="250" height="176" rx="6" fill="#ffffff" stroke="#b45309" stroke-width="2"/>
+  <text x="715" y="186" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">③ 생태계 · 사회 위험</text>
+  <text x="715" y="204" font-size="13" fill="#555" text-anchor="middle">개별 시스템을 넘는 영향</text>
+  <text x="608" y="234" font-size="13" font-weight="bold" fill="#1b1b1b">저작권 침해 · 귀속 모호</text>
+  <text x="608" y="252" font-size="13" fill="#333">(Intellectual Property)</text>
+  <text x="608" y="278" font-size="13" fill="#333">대량 수집의 프라이버시 영향</text>
+  <text x="608" y="296" font-size="13" fill="#333">(Data Privacy)</text>
+  <text x="608" y="322" font-size="13" fill="#333">환경 영향(Environmental)</text>
+
+  <!-- 책임성 -->
+  <rect x="40" y="356" width="800" height="56" rx="6" fill="#fdf3f3" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="440" y="380" font-size="14" font-weight="bold" fill="#9d0208" text-anchor="middle">책임성 — 세 갈래 모두에 걸친다</text>
+  <text x="440" y="400" font-size="13" fill="#333" text-anchor="middle">개발자 · 서비스 제공자 · 이용자 중 누가 산출물의 결과를 책임지는지가 불분명하다</text>
+</svg>
