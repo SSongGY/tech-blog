@@ -255,6 +255,8 @@ Chandola 외는 맥락 정보를 넣으면 **점·군집 아웃라이어 문제�
 >
 > 개념 정리: [맥락 아웃라이어 탐지 — 맥락 속성과 행동 속성을 나누는 설계](../../data-analysis/2026-11-28-contextual-outlier-context-behavioral-attributes/index.md)
 >
+> 개념 정리: [신규성 탐지(novelty detection) — 이상 탐지와 갈리는 지점](../../data-analysis/2026-11-28-novelty-detection-vs-anomaly-detection/index.md)
+>
 > 개념 정리: [Isolation Forest — 고립에 필요한 분할 횟수로 이상치를 찾는 원리](../../data-analysis/2026-10-07-isolation-forest-path-length/index.md)
 >
 > 개념 정리: [오토인코더 기반 이상 탐지 — 재구성 오차로 정상에서 벗어난 것을 찾는 원리](../../data-analysis/2026-10-07-autoencoder-reconstruction-anomaly-detection/index.md)

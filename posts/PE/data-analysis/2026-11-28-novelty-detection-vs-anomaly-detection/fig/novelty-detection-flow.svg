@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="390" viewBox="0 0 880 390" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="390" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2d6a4f"/></marker>
+    <marker id="arrowAmber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#b45309"/></marker>
+  </defs>
+
+  <!-- 학습 -->
+  <rect x="20" y="60" width="160" height="60" rx="6" fill="#f1f5f9" stroke="#444" stroke-width="1.5"/>
+  <text x="100" y="86" font-size="14" text-anchor="middle" fill="#222">학습 데이터</text>
+  <text x="100" y="106" font-size="13" text-anchor="middle" fill="#444">정상만 (이상 거의 없음)</text>
+
+  <rect x="215" y="60" width="150" height="60" rx="6" fill="#f1f5f9" stroke="#444" stroke-width="1.5"/>
+  <text x="290" y="86" font-size="14" text-anchor="middle" fill="#222">정상 모델</text>
+  <text x="290" y="106" font-size="13" text-anchor="middle" fill="#444">M(θ)</text>
+
+  <rect x="400" y="60" width="150" height="60" rx="6" fill="#f1f5f9" stroke="#444" stroke-width="1.5"/>
+  <text x="475" y="86" font-size="14" text-anchor="middle" fill="#222">신규성 점수</text>
+  <text x="475" y="106" font-size="13" text-anchor="middle" fill="#444">z(x)</text>
+
+  <rect x="400" y="170" width="150" height="46" rx="6" fill="#ffffff" stroke="#444" stroke-width="1.5"/>
+  <text x="475" y="198" font-size="14" text-anchor="middle" fill="#222">새 데이터 x</text>
+
+  <rect x="585" y="60" width="140" height="60" rx="6" fill="#f1f5f9" stroke="#444" stroke-width="1.5"/>
+  <text x="655" y="86" font-size="14" text-anchor="middle" fill="#222">임곗값 비교</text>
+  <text x="655" y="106" font-size="13" text-anchor="middle" fill="#444">z(x) ≤ k ?</text>
+
+  <rect x="760" y="36" width="104" height="44" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="812" y="63" font-size="14" text-anchor="middle" fill="#2d6a4f">정상</text>
+
+  <rect x="760" y="110" width="104" height="44" rx="6" fill="#fdf1e3" stroke="#b45309" stroke-width="1.5"/>
+  <text x="812" y="137" font-size="14" text-anchor="middle" fill="#b45309">신규</text>
+
+  <rect x="215" y="280" width="350" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="390" y="304" font-size="14" text-anchor="middle" fill="#2d6a4f">확인 후 정상 모델에 편입</text>
+  <text x="390" y="324" font-size="13" text-anchor="middle" fill="#2d6a4f">신규성 탐지만 이 단계를 갖는다</text>
+
+  <!-- 화살표 -->
+  <line x1="180" y1="90" x2="211" y2="90" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="365" y1="90" x2="396" y2="90" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="475" y1="170" x2="475" y2="124" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="550" y1="90" x2="581" y2="90" stroke="#444" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <line x1="725" y1="80" x2="756" y2="62" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowGreen)"/>
+  <line x1="725" y1="100" x2="756" y2="126" stroke="#b45309" stroke-width="1.8" marker-end="url(#arrowAmber)"/>
+  <polyline points="812,154 812,308 569,308" fill="none" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowGreen)"/>
+  <line x1="290" y1="280" x2="290" y2="124" stroke="#2d6a4f" stroke-width="1.8" marker-end="url(#arrowGreen)"/>
+  <text x="300" y="210" font-size="13" text-anchor="start" fill="#2d6a4f">모델 갱신</text>
+  <text x="600" y="190" font-size="13" text-anchor="start" fill="#b45309">이상 탐지는 여기서</text>
+  <text x="600" y="208" font-size="13" text-anchor="start" fill="#b45309">경보로 끝난다</text>
+  <line x1="735" y1="172" x2="760" y2="152" stroke="#b45309" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <text x="440" y="372" font-size="13" text-anchor="middle" fill="#222">점수 z(x)가 임곗값 k 를 넘으면 신규 — 학습·점수·임곗값의 틀은 Pimentel 외, 편입 단계는 Chandola 외</text>
+</svg>
