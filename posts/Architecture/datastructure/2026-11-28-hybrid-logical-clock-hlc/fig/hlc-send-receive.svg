@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="400" viewBox="0 0 880 400" font-family="'Malgun Gothic', 'Noto Sans KR', sans-serif">
+  <rect x="0" y="0" width="880" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker>
+  </defs>
+  <text x="440" y="28" font-size="16" font-weight="bold" text-anchor="middle" fill="#222">노드 B 의 시계가 40ms 늦을 때 — 같은 메시지에 찍히는 두 가지 타임스탬프</text>
+
+  <!-- 노드 축 -->
+  <text x="40" y="104" font-size="14" font-weight="bold" fill="#222">노드 A</text>
+  <text x="40" y="244" font-size="14" font-weight="bold" fill="#222">노드 B</text>
+  <line x1="110" y1="100" x2="840" y2="100" stroke="#888" stroke-width="2"/>
+  <line x1="110" y1="240" x2="840" y2="240" stroke="#888" stroke-width="2"/>
+  <text x="840" y="70" font-size="13" text-anchor="end" fill="#666">시계 오프셋 0ms</text>
+  <text x="840" y="270" font-size="13" text-anchor="end" fill="#666">시계 오프셋 −40ms</text>
+
+  <!-- 사건 -->
+  <circle cx="300" cy="100" r="8" fill="#222"/>
+  <circle cx="460" cy="240" r="8" fill="#222"/>
+  <line x1="304" y1="107" x2="454" y2="231" stroke="#444" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="400" y="160" font-size="13" text-anchor="start" fill="#444">메시지 m (전송 5ms)</text>
+
+  <!-- A 의 값 -->
+  <rect x="95" y="116" width="195" height="46" rx="6" fill="#f1f5f9" stroke="#444" stroke-width="1.2"/>
+  <text x="192" y="135" font-size="13" text-anchor="middle" fill="#222">send: pt = 1000</text>
+  <text x="192" y="153" font-size="13" text-anchor="middle" fill="#222">HLC (l, c) = (1000, 0)</text>
+
+  <!-- B 의 값: 물리 시각 -->
+  <rect x="500" y="290" width="160" height="46" rx="6" fill="#fde8e8" stroke="#9d0208" stroke-width="1.5"/>
+  <text x="580" y="309" font-size="13" text-anchor="middle" fill="#9d0208">물리 시각 pt = 965</text>
+  <text x="580" y="327" font-size="13" text-anchor="middle" fill="#9d0208">965 &lt; 1000 — 순서 뒤집힘</text>
+
+  <!-- B 의 값: HLC -->
+  <rect x="680" y="290" width="180" height="46" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="1.5"/>
+  <text x="770" y="309" font-size="13" text-anchor="middle" fill="#2d6a4f">HLC (1000, 1)</text>
+  <text x="770" y="327" font-size="13" text-anchor="middle" fill="#2d6a4f">(1000,0) &lt; (1000,1)</text>
+  <line x1="465" y1="247" x2="560" y2="288" stroke="#9d0208" stroke-width="1.2" stroke-dasharray="4 3"/>
+  <line x1="467" y1="244" x2="740" y2="288" stroke="#2d6a4f" stroke-width="1.2" stroke-dasharray="4 3"/>
+
+  <text x="40" y="372" font-size="13" fill="#222">receive 규칙: l = max(l_old, l.m, pt) = max(0, 1000, 965) = 1000 → l 이 l.m 과 같으므로 c = c.m + 1 = 1</text>
+</svg>
