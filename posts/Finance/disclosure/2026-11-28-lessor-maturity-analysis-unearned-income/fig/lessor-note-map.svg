@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="880" height="480" font-family="'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif">
+  <rect x="0" y="0" width="880" height="480" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <text x="440" y="32" text-anchor="middle" font-size="17" font-weight="bold" fill="#1f2937">리스제공자 주석 — 만기분석에서 재무상태표 금액까지</text>
+
+  <!-- 금융리스 열 -->
+  <text x="230" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#2d6a4f">금융리스 (문단 94)</text>
+
+  <rect x="60" y="80" width="340" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="230" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">할인 전 리스료 만기분석</text>
+  <text x="230" y="123" text-anchor="middle" font-size="13" fill="#4b5563">1~5년 연도별 + 5년 초과 합계</text>
+
+  <line x1="230" y1="136" x2="230" y2="164" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="60" y="166" width="340" height="50" rx="6" fill="#fbeaea" stroke="#9d0208" stroke-width="2"/>
+  <text x="230" y="196" text-anchor="middle" font-size="14" font-weight="bold" fill="#9d0208">− 미실현 금융수익</text>
+
+  <line x1="230" y1="216" x2="230" y2="244" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="60" y="246" width="340" height="50" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="230" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">= 리스료 현재가치</text>
+
+  <line x1="230" y1="296" x2="230" y2="324" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="60" y="326" width="340" height="50" rx="6" fill="#fdf3e6" stroke="#b45309" stroke-width="2"/>
+  <text x="230" y="356" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">+ 할인된 무보증잔존가치</text>
+
+  <line x1="230" y1="376" x2="230" y2="404" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="60" y="406" width="340" height="56" rx="6" fill="#e8f3ee" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="230" y="429" text-anchor="middle" font-size="14" font-weight="bold" fill="#2d6a4f">= 리스순투자</text>
+  <text x="230" y="449" text-anchor="middle" font-size="13" fill="#1f2937">재무상태표 금액 · 변동은 문단 93</text>
+
+  <!-- 운용리스 열 -->
+  <text x="650" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#374151">운용리스 (문단 95·97)</text>
+
+  <rect x="480" y="80" width="340" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="650" y="103" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">할인 전 리스료 만기분석</text>
+  <text x="650" y="123" text-anchor="middle" font-size="13" fill="#4b5563">1~5년 연도별 + 5년 초과 합계</text>
+
+  <line x1="650" y1="136" x2="650" y2="164" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <rect x="480" y="166" width="340" height="70" rx="6" fill="#ffffff" stroke="#6b7280" stroke-dasharray="5,4"/>
+  <text x="650" y="194" text-anchor="middle" font-size="14" font-weight="bold" fill="#374151">조정할 장부 금액이 없다</text>
+  <text x="650" y="216" text-anchor="middle" font-size="13" fill="#4b5563">받을 리스료는 채권으로 잡히지 않음</text>
+
+  <rect x="480" y="326" width="340" height="56" rx="6" fill="#f3f4f6" stroke="#6b7280"/>
+  <text x="650" y="349" text-anchor="middle" font-size="14" font-weight="bold" fill="#111827">유형자산 주석</text>
+  <text x="650" y="369" text-anchor="middle" font-size="13" fill="#4b5563">운용리스 대상과 그 밖의 자산 구분</text>
+
+  <!-- 공통 -->
+  <rect x="480" y="406" width="340" height="56" rx="6" fill="#ffffff" stroke="#2d6a4f" stroke-width="2"/>
+  <text x="650" y="429" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">리스수익 표 (문단 90·91)</text>
+  <text x="650" y="449" text-anchor="middle" font-size="13" fill="#4b5563">매출손익 · 금융수익 · 변동리스료</text>
+</svg>
