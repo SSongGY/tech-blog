@@ -8911,3 +8911,25 @@ topics:
     code: python
     origin: manual
     status: done
+  - id: fin-173
+    title: "제조자·판매자 리스제공자 — 개시일 매출이익과 시장이자율 상한"
+    category: Finance
+    subcategory: statements
+    track: finance
+    tags: [finance, statements, lease, ifrs16, lessor]
+    difficulty: 심화
+    angle: "제1116호 문단 71~74. 매출액은 공정가치와 시장이자율 현재가치 중 적은 금액, 매출원가는 원가에서 무보증잔존가치 현재가치를 뺀 금액. 인위적 저금리 제시 시 이익이 부풀려지는 것을 가상 회사 숫자로 비교"
+    code: python
+    origin: manual
+    status: done
+  - id: fin-174
+    title: "리스제공자 주석 읽기 — 금융리스 만기분석과 미실현 금융수익"
+    category: Finance
+    subcategory: disclosure
+    track: finance
+    tags: [finance, disclosure, lease, ifrs16, lessor]
+    difficulty: 심화
+    angle: "제1116호 문단 89~97. 리스수익 구분, 할인되지 않은 리스료 만기분석을 순투자로 조정(미실현 금융수익·할인된 무보증잔존가치), 운용리스 만기분석과 대조. 가상 회사 주석을 계산으로 재구성"
+    code: python
+    origin: manual
+    status: done
