@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **854편** · 갱신 2026-11-28
+총 **855편** · 갱신 2026-11-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -566,10 +566,11 @@
 | 2026-09-18 | [복합 인덱스의 컬럼 순서가 성능을 가르는 이유](posts/Database/sqlite/2026-09-18-composite-index-column-order/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 | 2026-09-18 | [B-Tree 인덱스를 못 타는 조건들](posts/Database/sqlite/2026-09-18-btree-index-not-used/index.md) | 중급 | SQLite 3.49.1, Python 3.13.5 | 실행 검증 |
 
-## 기출문제 (exam) — 145편
+## 기출문제 (exam) — 146편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-28 | [기출문제 — 동적 메모리 할당의 필요성, 메모리 누수의 문제, 언어별 해결 방안](posts/PE/exam/2026-11-28-dynamic-memory-allocation-leak-solutions/index.md) | 중급 | ISO/IEC 9899 작업초안 N2310 (2018-11-06), CWE 5.0 (CWE-401·772, 2026-10-28 갱신), Java SE 21 API 문서·JLS SE 21·Troubleshooting Guide 21, JDK 25 HotSpot GC Tuning Guide, Python 3.13.18 문서, CPython main 브랜치 InternalDocs/garbage_collector.md (2026-11 열람), The Rust Programming Language 4.1·15.6장 (2026-11 열람) | 문서 근거 |
 | 2026-11-28 | [기출문제 — 혼동행렬로 정확도·정밀도·재현율·F1 계산과 해석](posts/PE/exam/2026-11-28-confusion-matrix-accuracy-precision-recall-f1/index.md) | 중급 | Python 3.13.5, scikit-learn 1.9.1 문서, Google Machine Learning Crash Course (2026-11-28 열람), Chicco·Jurman, BMC Genomics 21:6 (2020) | 실행 검증 |
 | 2026-11-27 | [기출문제 — 소프트웨어 품질의 의미, 품질보증의 목적과 기능, 인스펙션과 인스펙션 프로세스](posts/PE/exam/2026-11-27-software-quality-assurance-inspection-process/index.md) | 중급 | IEEE 730-2014, IEEE 1028-2008, ISO/IEC 25010:2011 (1판), ISO/IEC 25010:2023 (2판), Fagan, IBM Systems Journal 15(3), 1976, ISO/IEC 20246:2017 | 문서 근거 |
 | 2026-11-27 | [기출문제 — 아웃라이어의 개념, 노이즈와의 차이, 전역·맥락·군집 유형](posts/PE/exam/2026-11-27-outlier-noise-global-contextual-collective/index.md) | 중급 | Python 3.13.5, Chandola·Banerjee·Kumar, ACM CSUR 41(3), 2009, Han·Kamber·Pei, Data Mining: Concepts and Techniques 3rd ed. (2011) Ch.12, NIST/SEMATECH e-Handbook of Statistical Methods (2012) | 실행 검증 |
