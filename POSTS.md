@@ -1,6 +1,6 @@
 # 글 목록
 
-총 **858편** · 갱신 2026-11-28
+총 **860편** · 갱신 2026-11-28
 
 > 이 파일은 `python scripts/blog.py index`가 생성한다. 직접 고치지 말 것.
 
@@ -720,10 +720,12 @@
 | 2026-09-21 | [기출문제 — ATAM(Architecture Trade-off Analysis Method)](posts/PE/exam/2026-09-21-atam/index.md) | 중급 | CMU/SEI-2000-TR-004 (2000.8), Evaluating Software Architectures (2002) | 문서 근거 |
 | 2026-09-21 | [기출문제 — AI 기반 업무 프로세스 재설계(BPR) 도입 효과](posts/PE/exam/2026-09-21-ai-driven-bpr/index.md) | 중급 | Hammer & Champy, Reengineering the Corporation (1993), IEEE 1849-2023 (XES), ISO/IEC 22989:2022, ISO/IEC 42001:2023, NIST AI RMF 1.0 (2023) | 문서 근거 |
 
-## 주식·재무 (finance) — 172편
+## 주식·재무 (finance) — 174편
 
 | 날짜 | 제목 | 난이도 | 환경 | 검증 |
 |---|---|---|---|---|
+| 2026-11-28 | [제조자·판매자 리스제공자 — 개시일 매출이익과 시장이자율 상한](posts/Finance/statements/2026-11-28-manufacturer-dealer-lessor-selling-profit/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용, 2023-05-12 개정 의결 반영 게재본) | 실행 검증 |
+| 2026-11-28 | [리스제공자 주석 읽기 — 금융리스 만기분석과 미실현 금융수익](posts/Finance/disclosure/2026-11-28-lessor-maturity-analysis-unearned-income/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용, 2023-05-12 개정 의결 반영 게재본) | 실행 검증 |
 | 2026-11-27 | [전대리스 — 분류 기준은 기초자산이 아니라 사용권자산이다](posts/Finance/statements/2026-11-27-sublease-classification-right-of-use/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용) | 실행 검증 |
 | 2026-11-27 | [리스의 식별과 구성요소 분리 — 식별되는 자산, 실질적 대체권, 사용 지시권](posts/Finance/statements/2026-11-27-lease-identification-substitution-right/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용) | 실행 검증 |
 | 2026-11-26 | [판매후리스 — 처분이익 중 계속 쓰는 몫은 인식하지 않는다](posts/Finance/statements/2026-11-26-sale-and-leaseback-retained-right-gain/index.md) | 심화 | Python 3.13.5, K-IFRS 제1116호 리스 (2019.1.1 이후 시작 회계연도 적용, 문단 102A는 2024.1.1 이후) | 실행 검증 |
